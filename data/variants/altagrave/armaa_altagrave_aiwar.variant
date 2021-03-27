@@ -1,0 +1,48 @@
+{
+  "displayName": "Dronekiller",
+  "fluxCapacitors": 18,
+  "fluxVents": 20,
+  "goalVariant": true,
+  "hullId": "armaa_altagrave",
+  "hullMods": 
+	[
+		"stabilizedshieldemitter"
+	],
+  "modules": [
+    {
+      "WS0001": "armaa_altagrave_rightleg_variant"
+    },
+    {
+      "WS0002": "armaa_altagrave_leftleg_variant"
+    },
+    {
+      "SKIRT": "armaa_altagrave_bp_variant"
+    }
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_altagrave_aiwar",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"E_HEAD": "armaa_altagrave_head"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"E_RARM": "armaa_altagrave_rightArm"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"WS0004": "heavyblaster"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"WS0003": "lightneedler"}
+    }
+  ],
+  "wings": []
+}

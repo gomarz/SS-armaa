@@ -1,0 +1,54 @@
+{
+  "displayName": "Command",
+  "fluxCapacitors": 16,
+  "fluxVents": 20,
+  "hullId": "armaa_altagrave_c",
+  "goalVariant": true,
+  "hullMods": 
+	[
+		"magazines",
+		"targetingunit"
+	],
+  "modules": [
+    {
+      "WS0001": "armaa_altagrave_rightleg_variant"
+    },
+    {
+      "WS0002": "armaa_altagrave_leftleg_variant"
+    },
+    {
+      "SKIRT": "armaa_altagrave_c_bp_variant"
+    }
+  ],
+  "permaMods": ["operations_center"],
+  "quality": 0,
+  "variantId": "armaa_altagrave_c_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"WS0003": "lightac"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"WS0006": "irpulse"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"WS0004": "heavyblaster"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"E_RARM": "armaa_altagrave_rightArm"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"E_HEAD": "armaa_altagrave_head_c"}
+    }
+  ],
+  "wings": []
+}

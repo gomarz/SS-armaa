@@ -1,0 +1,216 @@
+{
+  "bounds": [
+    15,
+    -4.5,
+    6,
+    -8,
+    3,
+    -13.5,
+    -1,
+    -13.5,
+    -3,
+    -6.5,
+    -13,
+    -5.5,
+    -13,
+    5.5,
+    -3,
+    6.5,
+    -1,
+    13.5,
+    3,
+    13.5,
+    6,
+    8,
+    15,
+    4.5
+  ],
+  "builtInMods": [
+    "cataphract",
+    "autorepair"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_aleste_rightArm",
+    "B_TORSO": "armaa_aleste_torso",
+    "C_ARML": "armaa_alesteLeftArm",
+    "C_ARMR": "armaa_sprigganRightArm",
+    "D_PAULDRONL": "armaa_aleste_leftPauldron",
+    "D_PAULDRONR": "armaa_aleste_rightPauldron",
+    "E_HEAD": "armaa_alesteHead",
+    "H_GLOW": "armaa_sprigganHeadGlow"
+  },
+  "center": [
+    9,
+    16.5
+  ],
+  "collisionRadius": 18,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 18,
+      "location": [
+        -14,
+        -5
+      ],
+      "style": "MIDLINE",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 18,
+      "location": [
+        -14,
+        5
+      ],
+      "style": "MIDLINE",
+      "width": 8
+    },
+    {
+      "angle": 141.5,
+      "contrailSize": 5,
+      "length": 16.5,
+      "location": [
+        -14,
+        6
+      ],
+      "style": "MIDLINE",
+      "width": 5
+    },
+    {
+      "angle": -141.5,
+      "contrailSize": 5,
+      "length": 16.5,
+      "location": [
+        -14,
+        -6
+      ],
+      "style": "MIDLINE",
+      "width": 5
+    }
+  ],
+  "height": 26,
+  "hullId": "armaa_aleste",
+  "hullName": "Aleste",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 35,
+  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
+  "style": "armaa_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -15,
+      "arc": 90,
+      "id": "A_GUN",
+      "locations": [
+        0,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "B_TORSO",
+      "locations": [
+        0,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 15,
+      "arc": 90,
+      "id": "C_ARML",
+      "locations": [
+        5,
+        3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -15,
+      "arc": 360,
+      "id": "C_ARMR",
+      "locations": [
+        3,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "D_PAULDRONL",
+      "locations": [
+        0,
+        3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "D_PAULDRONR",
+      "locations": [
+        0,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "E_HEAD",
+      "locations": [
+        3,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "F_GLOW",
+      "locations": [
+        0,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "H_GLOW",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 18
+}

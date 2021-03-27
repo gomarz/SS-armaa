@@ -1,0 +1,27 @@
+{
+    "playableFaction":false,
+	"startingFaction":true,
+    "corvusCompatible":true,
+    "freeStart":true,
+	"spawnAsFactionId":"player",
+    "noRandomizeRelations":true,
+	# transfer to this faction at start (after new game time pass)
+    "ngcTooltip":"Start with some ArmaA hardware and loose ties to the corp",
+	
+	"startRelationships":{
+		"independent": 0.5,
+		"hegemony": 0.05,
+		"luddic_church": -0.1,
+		"tritachyon": -0.33,
+		"sindrian_diktat":-0.3,
+		"persean":0,
+		"pirates": -0.51,
+		"ORA": -0.3,
+		"tiandong": 0.15,
+		"interstellarimperium": 0.15,
+	},
+
+	"startShipsCarrierSmall":[["armaa_einhander_Strike", "armaa_condor_Support"],],
+	"startShipsSuper":[["armaa_altagrave_c_Standard","wayfarer_Standard"],["armaa_altagrave_standard","wayfarer_Standard"],["armaa_altagrave_g_Standard","wayfarer_Standard"],["armaa_garegga_standard","wayfarer_Standard"]],
+	"startSpecialItems":[[["armaa_cataphract_package",""]],],
+}

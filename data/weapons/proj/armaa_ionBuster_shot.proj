@@ -1,0 +1,19 @@
+{
+	"id":"armaa_ionBuster_shot",
+	"specClass":"projectile",
+        "onHitEffect":"data.scripts.weapons.armaa_gBusterOnHitEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":70.0,
+	"width":30.0,
+	"fadeTime":0.2,
+	"glowRadius":50,
+	"hitGlowRadius":40,
+	"glowColor":[245,188,44,50],
+	"fringeColor":[255,0,0,255],
+	"coreColor":[245,188,44,255],
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
+}

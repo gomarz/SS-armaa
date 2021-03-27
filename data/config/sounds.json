@@ -1,0 +1,107 @@
+{
+
+# collapseclose
+
+#collapseopen SYSTEMS	
+	
+	"mechmove":[ 
+		{"file":"sounds/armaa/mechmove.ogg","pitch":1,"volume":0.65},
+	],
+	"armaa_silversword_warning":[ 
+		{"file":"sounds/armaa/armaa_silversword_warning.ogg","pitch":1,"volume":0.65},
+	],
+	"armaa_silversword_activate":[ 
+		{"file":"sounds/armaa/armaa_silversword_activate.ogg","pitch":1,"volume":0.65},
+	],
+	"armaa_buster_charge":[ 
+	{"file":"sounds/armaa/armaa_buster_charge.ogg","pitch":.8,"volume":0.9},
+	{"file":"sounds/armaa/armaa_buster_charge.ogg","pitch":.8,"volume":0.93},
+	{"file":"sounds/armaa/armaa_buster_charge.ogg","pitch":.8,"volume":0.87},
+	],
+        # ION BUST
+        "armaa_buster_fire":[
+        {"file":"sounds/armaa/armaa_buster_fire.ogg","pitch":0.97,"volume":0.99},
+        {"file":"sounds/armaa/armaa_buster_fire.ogg","pitch":1.00,"volume":1.00},
+        {"file":"sounds/armaa/armaa_buster_fire.ogg","pitch":1.03,"volume":1.01},
+
+        ],
+        "armaa_buster_hit":[
+        {"file":"sounds/armaa/armaa_buster_impact_1.ogg","pitch":1.07,"volume":0.99},
+        {"file":"sounds/armaa/armaa_buster_impact_1.ogg","pitch":1.1,"volume":1.00},
+        {"file":"sounds/armaa/armaa_buster_impact_1.ogg","pitch":1.13,"volume":1.01},
+        {"file":"sounds/armaa/armaa_buster_impact_2.ogg","pitch":1.07,"volume":0.99},
+        {"file":"sounds/armaa/armaa_buster_impact_2.ogg","pitch":1.10,"volume":1.00},
+        {"file":"sounds/armaa/armaa_buster_impact_2.ogg","pitch":1.13,"volume":1.01},
+
+        ],
+	"armaa_chaingun_fire":[ 
+		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":1,"volume":0.65},
+		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":1.03,"volume":0.66},
+		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":.97,"volume":0.64},
+		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":1,"volume":0.65},
+		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":1.03,"volume":0.66},
+		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":.97,"volume":0.64}
+	],
+
+	"armaa_stake_shot":[ 
+		{"file":"sounds/armaa/stake_shot.ogg","pitch":.9,"volume":0.5},
+	],
+	"armaa_stake_empty":[ 
+		{"file":"sounds/armaa/armaa_spike_empty01.ogg","pitch":1,"volume":0.65},
+	],
+	"rynex_fire":
+	[
+		{"file":"sounds/armaa/rynex_beam_fire.ogg","pitch":1,"volume":.5},
+		{"file":"sounds/armaa/rynex_beam_fire.ogg","pitch":1.03,"volume":.53},
+  		{"file":"sounds/armaa/rynex_beam_fire_02.ogg","pitch":1,"volume":.5},
+  		{"file":"sounds/armaa/rynex_beam_fire_02.ogg","pitch":1.03,"volume":.55},
+	],
+	"armaa_shotgun_fire":
+	[
+		{"file":"sounds/armaa/shotgun_shot.ogg","pitch":1,"volume":0.8},
+	],
+	"armaa_shotgun_cock":
+	[
+		{"file":"sounds/armaa/shotgun_cock.ogg","pitch":1.4,"volume":0.5},
+	],
+	
+	"homing_fire":[							{"file":"sounds/armaa/Fire3.ogg","pitch":1,"volume":0.4},
+	],
+	"carbinecharge":[							{"file":"sounds/armaa/SND.DAT_00121slo.ogg","pitch":1,"volume":0.5},
+	],
+	"beamcharge":[							
+			{"file":"sounds/armaa/beamcharge2.ogg","pitch":1,"volume":0.8},
+	],
+	"beamchargeM":[							
+			{"file":"sounds/armaa/beamchargeM.ogg","pitch":1,"volume":0.95},
+	],
+	"beambang":[							
+			{"file":"sounds/armaa/beambang.ogg","pitch":1,"volume":0.6},
+	],
+	"beambangM":[							
+			{"file":"sounds/armaa/beambangM.ogg","pitch":1,"volume":0.95},
+	],
+	"beamfire":[							
+			{"file":"sounds/armaa/beamfire.ogg","pitch":1,"volume":0.6},
+	],
+	"beamfireM":[							
+			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
+	],
+	"carbine2":[							{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1,"volume":0.35},
+	],
+	"launch":[
+{"file":"sounds/armaa/emp_emitter_activate.ogg","pitch":1,"volume":0.5},
+	],
+	"armaa_repair":[
+{"file":"sounds/armaa/drone_repair.ogg","pitch":.8,"volume":0.5},
+	],
+	"reloaddrone":[
+{"file":"sounds/armaa/reloaddrone.ogg","pitch":1,"volume":0.15},
+	],
+		
+	
+}
+
+
+
+

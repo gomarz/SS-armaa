@@ -1,0 +1,61 @@
+{
+  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    250,
+    197,
+    92,
+    255
+  ],
+  "fireSoundTwo": "phase_beam_loop",
+  "fringeColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 10,
+  "id": "armaa_valkenxLeftArm",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "pixelsPerTexel": 10,
+  "renderAboveAllWeapons": 0,
+  "showDamageWhenDecorative": true,
+"interruptibleBurst": true,
+"beamFireOnlyOnFullCharge": true,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 2000,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    19,
+    18
+  ],
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenxLeftArm.png",
+  "type": "ENERGY",
+  "width": 20
+}

@@ -1,0 +1,38 @@
+{
+  "displayName": "Strike",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "armaa_einhander",
+  "hullMods": [
+	"eccm",
+	"hardened_subsystems"
+  ],
+  "modules": [{"MODULAR": "armaa_bit_faux"}],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_einhander_Strike",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"A_GUN": "armaa_einhanderGun"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"B_TORSO": "armaa_sprigganTorso"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"WS0001": "armaa_heavyJavelin"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"E_HEAD": "armaa_sprigganHead"}
+    }
+  ],
+  "wings": []
+}

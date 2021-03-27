@@ -1,0 +1,29 @@
+{
+    "displayName": "Strike",
+    "fluxCapacitors": 4,
+    "fluxVents": 4,
+    "goalVariant": false,
+    "hullId": "condor",
+    "hullMods": [],
+    "permaMods": [],
+    "variantId": "armaa_condor_Support2",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {"WS 003": "pilum"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "lightmg",
+                "WS 002": "lightmg"
+            }
+        }
+    ],
+    "wings": [
+        "armaa_record_wing",
+        "armaa_record_wing"
+    ]
+}

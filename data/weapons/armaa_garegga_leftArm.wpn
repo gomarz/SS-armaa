@@ -1,0 +1,51 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "armaa_chaingun_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_garegga_leftArm",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      200,
+      200,
+      200,
+      220
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.04,
+    "particleSizeMin": 18,
+    "particleSizeRange": 23,
+    "spread": 12
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_rrifle_shot2",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "showDamageWhenDecorative": true,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/armaa/ships/garegga/leftArm.png",
+  "turretOffsets": [
+    55.5,
+    12
+  ],
+  "turretSprite": "graphics/armaa/ships/garegga/leftArm0.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 2
+}

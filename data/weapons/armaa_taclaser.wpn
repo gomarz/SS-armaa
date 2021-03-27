@@ -1,0 +1,63 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "convergeOnPoint": true,
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffect",
+  "fireSoundOne": "burst_pd_fire",
+  "fireSoundTwo": "laser_loop",
+  "fringeColor": [
+    235,
+    55,
+    143,
+    255
+  ],
+  "glowColor": [
+    255,
+    155,
+    100,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hitGlowRadius": 0,
+  "id": "armaa_taclaser",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 128,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/armaa/weapons/armaa_valkenlaserGunBarrelGlow.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkenlaserGunBarrel.png",
+  "turretOffsets": [
+    24,
+    -15
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_valkenlaserGunBarrel.png",
+  "type": "ENERGY",
+  "width": 17
+}

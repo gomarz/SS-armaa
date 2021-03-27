@@ -1,0 +1,14 @@
+{
+  "displayName": "Support",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "armaa_reloaddrone",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_reloaddrone_standard",
+  "weaponGroups": [],
+  "wings": []
+}

@@ -1,0 +1,182 @@
+{
+  "bounds": [
+    15,
+    -4.5,
+    6,
+    -8,
+    3,
+    -13.5,
+    -1,
+    -13.5,
+    -3,
+    -6.5,
+    -13,
+    -5.5,
+    -13,
+    5.5,
+    -3,
+    6.5,
+    -1,
+    13.5,
+    3,
+    13.5,
+    6,
+    8,
+    15,
+    4.5
+  ],
+  "builtInMods": [
+    "cataphract"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_flamer",
+    "B_TORSO": "armaa_kouto_torso",
+    "C_ARML": "armaa_koutoLeftArm",
+    "C_ARMR": "armaa_sprigganRightArm",
+    "D_PAULDRONL": "armaa_kouto_leftPauldron",
+    "D_PAULDRONR": "armaa_kouto_rightPauldron",
+    "E_HEAD": "armaa_kouto_head",
+    "H_GLOW": "armaa_sprigganHeadGlow"
+  },
+  "center": [
+    9,
+    16.5
+  ],
+  "collisionRadius": 18,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 19.5,
+      "location": [
+        -13.5,
+        -0
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    }
+  ],
+  "height": 26,
+  "hullId": "armaa_kouto",
+  "hullName": "kouto",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 32,
+  "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 90,
+      "id": "A_GUN",
+      "locations": [
+        0,
+        -2
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "B_TORSO",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "C_ARML",
+      "locations": [
+        2,
+        2
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "C_ARMR",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "D_PAULDRONL",
+      "locations": [
+        0,
+        2
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "D_PAULDRONR",
+      "locations": [
+        0,
+        -2
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "E_HEAD",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "H_GLOW",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        3.5,
+        5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    }
+  ],
+  "width": 18
+}

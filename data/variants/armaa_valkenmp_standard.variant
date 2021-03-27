@@ -1,0 +1,33 @@
+{
+  "displayName": "Standard Cataphract",
+  "fluxCapacitors": 0,
+  "goalVariant": true,
+  "fluxVents": 0,
+  "hullId": "armaa_valkenmp",
+  "hullMods": [
+  ],
+  "variantId": "armaa_valkenmp_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "armaa_einhanderGun",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_sprigganTorso",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead",
+      }
+    }
+  ]
+}

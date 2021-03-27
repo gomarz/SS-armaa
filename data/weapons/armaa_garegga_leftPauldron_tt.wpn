@@ -1,0 +1,51 @@
+{
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "everyFrameEffect": "data.scripts.weapons.armaa_gareggaEffect",
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "armaa_garegga_leftPauldron_tt",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  #"renderAboveAllWeapons": 0,
+  "showDamageWhenDecorative": true,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    -16,
+    33
+  ],
+  "turretSprite": "graphics/armaa/ships/garegga/armaa_gareggaleftShoulder_tt.png",
+  "type": "DECORATIVE",
+  "width": 1
+}

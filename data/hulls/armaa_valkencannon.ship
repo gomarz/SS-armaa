@@ -1,0 +1,219 @@
+{
+  "bounds": [
+    15,
+    -4.5,
+    6,
+    -8,
+    3,
+    -13.5,
+    -1,
+    -13.5,
+    -3,
+    -6.5,
+    -13,
+    -5.5,
+    -13,
+    5.5,
+    -3,
+    6.5,
+    -1,
+    13.5,
+    3,
+    13.5,
+    6,
+    8,
+    15,
+    4.5
+  ],
+  "builtInMods": [
+    "cataphract",
+    "autorepair"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_lightmg",
+    "B_TORSO": "armaa_sprigganTorsomk3",
+    "C_ARML": "armaa_sprigganLeftArm",
+    "C_ARMR": "armaa_sprigganRightArm",
+    "D_PAULDRONL": "armaa_sprigganmk3leftPauldron",
+    "D_PAULDRONR": "armaa_sprigganmk3rightPauldron",
+    "E_HEAD": "armaa_sprigganHeadmk3",
+    "F_GLOW": "armaa_sprigganHeadGlow",
+    "WS0001": "armaa_javelin"
+  },
+  "center": [
+    9,
+    16.5
+  ],
+  "collisionRadius": 18,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 19.5,
+      "location": [
+        -13.5,
+        -0
+      ],
+      "style": "COBRA_BOMBER",
+      "width": 8
+    },
+    {
+      "angle": -148,
+      "contrailSize": 6.786158,
+      "length": 11.553657,
+      "location": [
+        -14,
+        -5.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 6.786158
+    },
+    {
+      "angle": 148,
+      "contrailSize": 6.786158,
+      "length": 11.553657,
+      "location": [
+        -14,
+        5.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 6.786158
+    }
+  ],
+  "height": 26,
+  "hullId": "armaa_valkencannon",
+  "hullName": "Valken Cannon",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 32.5,
+  "spriteName": "graphics/armaa/ships/bihander/armaa_bihander_body.png",
+  "style": "armaa_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 90,
+      "id": "A_GUN",
+      "locations": [
+        0,
+        -1.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "B_TORSO",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "C_ARML",
+      "locations": [
+        0,
+        1.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "C_ARMR",
+      "locations": [
+        0,
+        -1.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "D_PAULDRONL",
+      "locations": [
+        0,
+        1.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "D_PAULDRONR",
+      "locations": [
+        0,
+        -1.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "E_HEAD",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "F_GLOW",
+      "locations": [
+        0,
+        -1.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "H_GLOW",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "renderOrderMod": 999999, 
+      "locations": [
+        7,
+        9
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BUILT_IN"
+    }
+  ],
+  "width": 18
+}

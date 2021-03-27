@@ -1,0 +1,15 @@
+{
+	"id":"armaa_valkengun_scattershot",
+	"specClass":"projectile",
+	"spawnType":"PLASMA",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	#"width":45.0,
+	"width":23.0,
+	"fadeTime":0.5,
+	#"hitGlowRadius":38,
+	"fringeColor":[100,255,100,255],
+	"coreColor":[255,255,255,255],
+	#"fringeColor":[255,0,0,255],
+	#"coreColor":[255,100,255,255],	
+}

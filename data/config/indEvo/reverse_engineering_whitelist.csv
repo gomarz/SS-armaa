@@ -1,0 +1,7 @@
+id
+# NOTES
+# Ship IDs entered here will be allowed by the Engineering hub (Reverse Engineering ship hulls)
+# Ships that would break the game (Balance/Technical/Lore) if the player could produce them via blueprint should not be on this list.
+"# I'd ask you to not go overboard with forbidding things, we are all in this to have fun. Reverse Engineering is neither easy nor cheap."
+armaa_einhander
+armaa_altagrave

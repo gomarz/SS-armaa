@@ -1,0 +1,59 @@
+{
+"combatSmallForSmallFleet":{
+"armaa_garegga_tt_standard":1,
+"armaa_garegga_tt_assault":1,
+},
+  "combatSmall": {
+    "armaa_garegga_standard":1,
+    "armaa_garegga_tt_standard":1,	
+  },
+  "combatMedium": {
+    "armaa_altagrave_standard":1,
+    "armaa_altagrave_c_Standard":0.5,
+    "armaa_altagrave_g_Standard":0.5,
+  },
+  "phaseSmall": {
+    "armaa_einhander_Strike": 1,
+    "armaa_einhander_Overclocked": 0.5,
+  },
+  "phaseMedium": {
+  },
+  "phaseLarge": {
+  },
+  "phaseCapital": {
+  },
+  "freighterSmall": {
+  },
+  "freighterMedium": {
+  },
+  "freighterLarge": {
+  },
+  "tankerSmall": {
+  },
+  "tankerMedium": { 
+  },
+  "tankerLarge": {
+  },
+  "personnelSmall": {
+  },
+  "personnelMedium": {
+  },
+  "personnelLarge": {
+  },
+  "linerSmall": {
+  },
+  "linerMedium": {
+  },
+  "linerLarge": {
+  },
+  "tug": {
+  },
+  "crig": {
+  },
+  "utility": {
+  },
+  "orbitalStationLowTech": {
+  },
+  "battlestationLowTech": {
+  },
+}

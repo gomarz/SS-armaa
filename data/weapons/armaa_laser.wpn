@@ -1,0 +1,52 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffect",
+  "fireSoundTwo": "ir_pulse_laser_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "id": "armaa_laser",
+  "muzzleFlashSpec": {
+    "length": 16,
+    "particleColor": [
+      255,
+      100,
+      100,
+      255
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.12,
+    "particleSizeMin": 5,
+    "particleSizeRange": 12,
+    "spread": 3
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "irpulse_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkenmachineGunBarrel.png",
+  "turretOffsets": [
+    33,
+    -15
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "type": "ENERGY",
+  "visualRecoil": 3
+}

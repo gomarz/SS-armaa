@@ -1,0 +1,24 @@
+{
+  "displayName": "",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "armaa_gallant",
+  "hullMods": [
+"no_weapon_flux"
+],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_gallant_standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "armaa_fluxcannon_ftr"
+      }
+    }
+  ],
+  "wings": []
+}

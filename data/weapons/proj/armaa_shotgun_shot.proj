@@ -1,0 +1,19 @@
+{
+	"id":"armaa_shotgun_shot",
+	"onHitEffect":"data.scripts.weapons.armaa_shotgunEffect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":10.0,
+	"hitGlowRadius":20,
+	"width":10.0,
+	"fadeTime":0.20,
+	"explosionColor":[250,0,0,75],
+	"fringeColor":[245,150,44,255],
+	"coreColor":[225,150,150,255],
+	"glowColor":[245,188,10,150],
+	"glowRadius":0,
+	"bulletSprite":"graphics/missiles/flechette_med.png"
+
+}

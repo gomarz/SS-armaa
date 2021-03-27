@@ -1,0 +1,14 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "armaa_altagrave_leftleg",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_altagrave_leftleg_variant",
+  "weaponGroups": [],
+  "wings": []
+}

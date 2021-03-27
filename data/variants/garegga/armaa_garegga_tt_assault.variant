@@ -1,0 +1,42 @@
+{
+  "displayName": "Assault",
+  "fluxCapacitors": 3,
+  "fluxVents": 0,
+  "goalVariant": false,
+  "hullId": "armaa_garegga_tt",
+  "hullMods": [
+    "safetyoverrides",
+    "unstable_injector",
+    "hardened_subsystems"
+  ],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_garegga_tt_assault",
+  "weaponGroups": [
+  {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_RARM": "armaa_garegga_rightArm",
+	"E_LARM": "armaa_garegga_leftArm"
+      }
+    },
+{
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "amblaster"
+      }
+    },
+{
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 005": "reaper",
+        "WS 006": "reaper"
+      }
+    }
+  ],
+  "wings": []
+}

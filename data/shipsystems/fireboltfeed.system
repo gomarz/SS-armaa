@@ -1,0 +1,13 @@
+{
+	"id":"armaa_fireboltfeed",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.armaa_GU14FireboltFeeder",
+	
+	"weaponGlowColor":[255,100,0,155],
+	"weaponTypes":[BALLISTIC],
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

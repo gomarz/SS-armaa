@@ -1,0 +1,50 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 7,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "armaa_garegga",
+  "hullMods": [
+    "unstable_injector",
+    "missleracks",
+    "fluxdistributor"
+
+  ],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_garegga_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "E_RARM": "armaa_garegga_rightArm"
+      }
+    },
+{
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "armaa_ionBuster"
+      }
+    },
+{
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "E_LARM": "armaa_garegga_leftArm"
+      }
+    },
+
+{
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 005": "hammer",
+        "WS 006": "hammer"
+      }
+    }
+  ],
+  "wings": []
+}

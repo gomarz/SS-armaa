@@ -1,0 +1,213 @@
+{
+"bounds": [
+    15,
+    -6,
+    5,
+    -6.5,
+    3,
+    -13.5,
+    -1,
+    -13.5,
+    -3,
+    -6.5,
+    -13,
+    -5.5,
+    -13,
+    5.5,
+    -3,
+    6.5,
+    -1,
+    13.5,
+    3,
+    13.5,
+    5,
+    6.5,
+    15,
+    6
+  ],
+  "builtInMods": [
+    "cataphract",
+    "beamcoat",
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_einhanderGun",
+    "B_TORSO": "armaa_sprigganTorso",
+    "C_ARML": "armaa_einhanderLeftArm",
+    "C_ARMR": "armaa_sprigganRightArm",
+    "D_PAULDRONL": "armaa_sprigganleftPauldron",
+    "D_PAULDRONR": "armaa_sprigganrightPauldron",
+    "E_HEAD": "armaa_sprigganHead",
+    "WS0001": "armaa_heavyJavelin"
+  },
+  "center": [
+    9,
+    16.5
+  ],
+  "collisionRadius": 18,
+  "renderOrderMod": 999998,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 19.5,
+      "location": [
+        -13.5,
+        -0
+      ],
+      "style": "CUSTOM",
+      "styleId": "MechaTrail",
+      "width": 8
+    },
+    {
+      "angle": -148,
+      "contrailSize": 6.786158,
+      "length": 11.553657,
+      "location": [
+        -14,
+        -5.5
+      ],
+      "style": "CUSTOM",
+      "styleId": "MechaTrail",
+      "width": 6.786158
+    },
+    {
+      "angle": 148,
+      "contrailSize": 6.786158,
+      "length": 11.553657,
+      "location": [
+        -14,
+        5.5
+      ],
+      "style": "CUSTOM",
+      "styleId": "MechaTrail",
+      "width": 6.786158
+    }
+  ],
+  "height": 26,
+  "hullId": "armaa_einhander_ftr",
+  "hullName": "Einhander",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 35,
+  "spriteName": "graphics/armaa/ships/einhander/armaa_einhander_body.png",
+  "style": "armaa_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 90,
+      "id": "A_GUN",
+      "locations": [
+        1,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "B_TORSO",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "C_ARML",
+      "locations": [
+        1,
+        3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "C_ARMR",
+      "renderOrderMod": -1,
+      "locations": [
+        1,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "D_PAULDRONL",
+      "locations": [
+        0,
+        3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "D_PAULDRONR",
+      "locations": [
+        0,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "E_HEAD",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "renderOrderMod": 999998,
+      "locations": [
+        7,
+        10
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -8,
+        5,
+	-8,
+	-5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 18
+}

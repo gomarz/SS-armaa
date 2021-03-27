@@ -1,0 +1,111 @@
+{
+  "bounds": [
+    -6,
+    -38,
+    -6,
+    -39,
+    -30,
+    -27.5,
+    -25,
+    -0.5,
+    -30,
+    27.5,
+    -12,
+    38,
+    -6,
+    38
+  ],
+  "builtInMods": [
+   "always_detaches",
+    "novent",
+    "armaa_legmodule",
+    "reduced_explosion"
+  ],
+  "center": [
+    64,
+    97
+  ],
+  "collisionRadius": 38.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 17,
+      "length": 54,
+      "location": [
+        -32,
+        13
+      ],
+      "style": "HIGH_TECH",
+      "width": 17
+    },
+    {
+      "angle": -180,
+      "contrailSize": 17,
+      "length": 54,
+      "location": [
+        -32,
+        -13
+      ],
+      "style": "HIGH_TECH",
+      "width": 17
+    },
+    {
+      "angle": -170,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -32,
+        9
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    },
+    {
+      "angle": 170,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -32,
+        -9
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    },
+    {
+      "angle": 170,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -32,
+        16
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    },
+    {
+      "angle": -170,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -32,
+        -16
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    }
+  ],
+  "height": 192,
+  "hullId": "armaa_altagrave_g_bp",
+  "hullName": "Backpack",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0.5
+  ],
+  "shieldRadius": 37,
+  "spriteName": "graphics/armaa/ships/proto/armaa_altagrave_skirt_g.png",
+  "style": "armaa_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "width": 128
+}

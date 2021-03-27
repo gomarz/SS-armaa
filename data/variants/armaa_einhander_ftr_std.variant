@@ -1,0 +1,34 @@
+{
+  "displayName": "Experimental",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "armaa_einhander_ftr",
+  "hullMods": ["no_weapon_flux"],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_einhander_ftr_std",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"A_GUN": "armaa_einhanderGun"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"B_TORSO": "armaa_sprigganTorso"}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"WS0001": "armaa_heavyJavelin"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"E_HEAD": "armaa_sprigganHead"}
+    }
+  ],
+  "wings": ["armaa_bit2_wing"]
+}

@@ -1,0 +1,51 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "heavy_mauler_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "id": "armaa_ilorin_ac",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [
+      255,
+      100,
+      165,
+      200
+    ],
+    "particleCount": 8,
+    "particleDuration": 0.5,
+    "particleSizeMin": 6,
+    "particleSizeRange": 8,
+    "spread": 5
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_luna_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/armaa/ships/ilorin/armaa_ilorin_pilum.png",
+  "turretOffsets": [
+    27,
+    13
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 3
+}

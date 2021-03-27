@@ -1,0 +1,62 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "plasma_cannon_fire",
+  "glowColor": [
+    50,
+    142,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_altagrave_syrinx_left",
+  "muzzleFlashSpec": {
+    "length": 20,
+    "particleColor": [
+      250,
+      192,
+      92,
+      255
+    ],
+    "particleCount": 22,
+    "particleDuration": 0.35,
+    "particleSizeMin": 15,
+    "particleSizeRange": 30,
+    "spread": 20
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_mrm",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "showDamageWhenDecorative": true,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "",
+  "turretGunSprite": "graphics/armaa/ships/proto/armaa_altagrave_missile_l.png",
+  "turretOffsets": [
+    63,
+    -12,
+    63,
+    -4,
+    63,
+    -19,
+  ],
+  "turretSprite": "",
+  "type": "MISSILE",
+  "visualRecoil": 1
+}

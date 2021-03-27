@@ -1,0 +1,2 @@
+id,name,faction,desc,script,icon,order
+armaa_market,Arma Armatura,armaarmatura,"Ocassionally offers rare ArmaA Corp hardware, alongside some high-end vessels.",data.scripts.campaign.submarkets.armaa_subMarketPlugin,,800.05

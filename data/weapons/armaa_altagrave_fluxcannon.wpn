@@ -1,0 +1,67 @@
+{
+  "beamEffect": "data.scripts.weapons.armaa_fluxBeam",
+  "beamFireOnlyOnFullCharge": true,
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    0,
+    255
+  ],
+  "everyFrameEffect": "data.scripts.weapons.armaa_fluxBeamAEffect",
+  "fireSoundOne": "beambangM",
+  "fireSoundTwo": "beamfireM",
+  "fringeColor": [
+    200,
+    0,
+    200,
+    200
+  ],
+  "glowColor": [
+    255,
+    255,
+    0,
+    140
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    47.5,
+    0
+  ],
+  "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
+  "hitGlowRadius": 0,
+  "id": "armaa_altagrave_fluxcannon",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF,
+    FIGHTER
+  ],
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 256,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    62,
+    12
+  ],
+  "turretSprite": "graphics/armaa/ships/proto/armaa_altagrave_juno.png",
+  "type": "ENERGY",
+  "width": 25
+}

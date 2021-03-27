@@ -1,0 +1,66 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "LINKED",
+  "fireSoundOne": "launch",
+  "fireSoundTwo": "homing_fire",
+  "glowColor": [
+    255,
+    25,
+    155,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_sprigganTorso",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      255,
+      25,
+      233,
+      135
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.12,
+    "particleSizeMin": 10,
+    "particleSizeRange": 14,
+    "spread": 14
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_hominglaser",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    -90,
+    90,
+    127,
+    -127
+  ],
+  "turretGlowSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso_glow.png",
+  "turretOffsets": [
+    -7.5,
+    -1.5,
+    -7.5,
+    1.5,
+    -11.5,
+    1.5,
+    -11.5,
+    -1.5
+  ],
+  "turretSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso.png",
+  "type": "ENERGY"
+}

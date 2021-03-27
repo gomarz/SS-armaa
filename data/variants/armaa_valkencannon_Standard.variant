@@ -1,0 +1,43 @@
+{
+  "displayName": "Anti-Ship Cataphract",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "armaa_valkencannon",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_valkencannon_Standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN": "armaa_laser"
+      }
+    },
+ {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_sprigganTorsomk3"
+      }
+    },
+ {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHeadmk3",
+      }
+    },
+ {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "armaa_javelin"
+      }
+    }
+  ],
+  "wings": []
+}

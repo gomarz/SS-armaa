@@ -1,0 +1,28 @@
+{
+    "plugins":{
+            "armaa_EinhanderPlugin":"data.scripts.plugins.armaa_EinhanderHaxPlugin",
+    },
+    "designTypeColors":{
+        "Arma Armatura":[152,171,75,255],
+    }, 
+    "graphics":{	
+
+        "blueprint_packages":{
+                "armaa_cataphract_package":"graphics/armaa/icons/cargo/armaa_cataphract_package.png",
+
+            },
+		"fx":{
+			#these are DME trails, thanks harmful mechanic!
+			"beam_trail_smooth":"graphics/armaa/fx/armaa_projectile_contrail_smooth.png",
+			#mine
+			"beam_trail_cel":"graphics/armaa/fx/armaa_projectile_cel.png",
+			"beam_trail_helix":"graphics/armaa/fx/armaa_projectile_contrail_helix.png",
+			#vayra helix trail
+			"glaive_trail_helix":"graphics/armaa/fx/trails_doublehelix.png",
+		},
+		"portraits":{
+			"armaa_portrait_shard":"graphics/armaa/portraits/armaa_ai.png",
+			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
+		},	
+    }
+}

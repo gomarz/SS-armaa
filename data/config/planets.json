@@ -1,0 +1,20 @@
+{
+   	"lava_mission":{
+		"name":"Lava",
+		"tilt":-20, # left-right (>0 tilts to the left)
+		"pitch":-5, # towards-away from the viewer (>0 pitches towards)
+		"rotation":-1.5, # degrees/second
+		"planetColor":[200,200,200,255],
+		"atmosphereThickness":0.1, # as fraction of radius.  Set to 0 for no atmosphere
+		"atmosphereThicknessMin":30, #  minimum thickness in pixels
+		"atmosphereColor":[215,50,15,60],
+		"texture":"graphics/planets/lava_major.jpg",
+		"icon":"graphics/warroom/icon_planet.png",
+		"iconColor":[215,115,55,255],
+		"isStar":false,
+		"lightPosition":[0,0,50], # in planet radii.  Not used for stars.  z > 0 is above the playing field.
+		"glowTexture":"graphics/planets/lava_major_glow.png", # omit for no glow layer
+		"glowColor":[50,50,50,50],
+		"useReverseLightForGlow":false,
+	},
+}

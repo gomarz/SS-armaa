@@ -1,0 +1,34 @@
+{
+  "displayName": "Heavy Cataphract",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "hullId": "armaa_kouto",
+  "hullMods": [
+    "cataphract",
+    "autorepair"
+  ],
+  "variantId": "armaa_kouto_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "armaa_taclaser",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_sprigganTorso",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead",
+      }
+    }
+  ]
+}

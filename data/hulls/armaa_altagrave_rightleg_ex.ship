@@ -1,0 +1,70 @@
+{
+  "bounds": [
+    -51.5,
+    -17.5,
+    11.5,
+    21,
+    11,
+    -3,
+    18.5,
+    -8,
+    20.5,
+    -15.5,
+    -21.5,
+    -28.5,
+    -49,
+    -34,
+    -53.5,
+    -27
+  ],
+  "builtInMods": [
+    "armaa_legmodule",
+    "always_detaches",
+    "reduced_explosion",
+    "novent",
+    "leg_engine"
+  ],
+  "center": [
+    67,
+    79
+  ],
+  "collisionRadius": 60.5,
+  "engineSlots": [
+    {
+      "angle": -170.5,
+      "contrailSize": 8.210512,
+      "length": 24.487688,
+      "location": [
+        -20,
+        -2
+      ],
+      "style": "MechaTrailZ",
+      "width": 8.210512
+    },
+    {
+      "angle": -171.5,
+      "contrailSize": 8.210512,
+      "length": 24.487688,
+      "location": [
+        -1,
+        6
+      ],
+      "style": "MechaTrailZ",
+      "width": 8.210512
+    }
+  ],
+  "height": 192,
+  "hullId": "armaa_altagrave_rightleg_ex",
+  "hullName": "New Hull",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    -19,
+    -2.5
+  ],
+  "shieldRadius": 45,
+  "spriteName": "graphics/armaa/ships/proto/armaa_altagrave_leg_r_ex.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "width": 128
+}

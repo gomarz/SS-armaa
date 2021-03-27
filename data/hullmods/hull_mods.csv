@@ -1,0 +1,44 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel.
+
+Like fighters, can %s, and %s. Additionally, the units smaller engines yield %s.
+
+Combat readiness decays %s faster than normal ships, but can return to friendly carriers to gradually recover CR (up to the carrier's current CR).
+
+So long as there is no significant enemy threat in the immediate area, friendly carriers will dispatch drones to %s. 
+
+Being serviced by a carrier cuts directly into resources used to refit its other wings, and they will suffer a %s penalty to fighter replacement rate during maintenance.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
+Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Torment has an auxiliary reactor that grants an additional shield, but can be attacked and destroyed during combat, which shuts down the secondary shield and reduces flux dissipation and capacity by %s percent.
+
+The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
+
+The reactor and its shield are affected by the Torment captain's skills, but not by any hullmods applied to the Torment itself.",Severe reduction in combat capability if generator is destroyed.,graphics/armaa/hullmods/cataphract.png
+Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract-class mechs are durable machines with reinforced internals and triple redundant systems - they're %s more resistant to EMP effects, and weapons and engines are %s less likely to fail. The relatively small frame means that %s. Finally, these units are capable of deploying to support planetary operations, increasing their effective strength by %s, (up to the total number of marines in the fleet), at the cost of %s combat readiness.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
+Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
+
+Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.
+
+While the Phase Damper Field is active, effect is augmented to provide a %s reduction.",Reduces beam damage by %s .,graphics/hullmods/solar_shielding.png
+Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by %s (Up to the number of marines in the fleet)",,graphics/armaa/hullmods/cataphracts.png
+Variable Weaponry,variawep,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_bitWeaponAssignment2,This drone can be equipped with a selection of different weaponry.,,graphics/icons/hullsys/drone_sensor.png
+No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables active venting,,graphics/hullmods/vast_bulk.png
+Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,graphics/hullmods/reduced_explosion.png
+Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,graphics/hullmods/vast_bulk.png
+Karma Counter,armaa_karma,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod,Counts Karma for ship system,,graphics/hullmods/vast_bulk.png
+Karma Counter [C],armaa_karmaC,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod_Command,Counts Karma for ship system,,graphics/hullmods/vast_bulk.png
+Greater Reduced Explosion,explosionredux,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.greaterReducedExplosion,Counts Karma for ship system,,graphics/hullmods/vast_bulk.png
+Modular Mobile Armor,armaa_ma,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_ma,"This vessel is modular in nature; the core unit houses the pilot and support staff and is equipped with additional modules that grant bonuses during battle.
+
+Leg modules area equipped with %s suited for point-defense. 
+
+On standard models, The backpack modules house %s. 
+
+Modules %s, and %s.
+
+%s, where applicable.",,graphics/icons/hullsys/drone_sensor.png
+SERAPH,seraph,,,????,,,,,TRUE,TRUE,-6,-12,-18,-30,data.hullmods.seraph,"Armor is increased by %s standard units, and %s increase in speed and maneuverability. Exceptionally well-tuned energy systems increase flux throughput and capacity by %s over standard examples of this hull.",,graphics/icons/markets/rogue_ai.png
+SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SeraphTargetingSoftware,"A specialized combat support suite governed by an (allegedly) delta-level AI core which excels in precision strikes. Small non-missile weapons automatically target missiles and ignore flares, and damage against missiles and fighters is increased by %s.
+
+This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
+
+Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png

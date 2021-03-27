@@ -1,0 +1,18 @@
+{
+	"id":"armaa_mauler_shot",
+	"onHitEffect":"data.scripts.weapons.armaa_javelinEffect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":180.0,
+	"hitGlowRadius":150,
+	"width":22.0,
+	"fadeTime":0.2,
+	"explosionColor":[255,255,255,175],
+	"fringeColor":[50,175,255,255],
+	"coreColor":[200,200,255,200],
+	"glowColor":[5,5,150,50],
+	"glowRadius":28,
+
+}

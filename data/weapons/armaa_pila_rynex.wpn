@@ -1,0 +1,51 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "rynex_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "id": "armaa_pila_rynex",
+  "muzzleFlashSpec": {
+    "length": 10,
+    "particleColor": [
+      255,
+      0,
+      0,
+      200
+    ],
+    "particleCount": 11,
+    "particleDuration": 0.02,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_rynex_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/armaa/weapons/armaa_alestechainGunBarrel.png",
+  "turretOffsets": [
+    25,
+    -12.5
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 3
+}

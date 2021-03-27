@@ -1,0 +1,19 @@
+{
+	"id":"armaa_rynex_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":100.0,
+	"width":10,
+	"fadeTime":0.3,
+	"fringeColor":[245,188,44,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[255,100,0,75],
+	"glowRadius":11,
+	"hitGlowRadius":30,	
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
+
+}

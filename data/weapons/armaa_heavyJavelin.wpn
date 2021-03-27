@@ -1,0 +1,52 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "plasma_cannon_fire",
+ "everyFrameEffect": "data.scripts.weapons.armaa_javelin",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    26,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/assault_chaingun_hardpoint_base.png",
+  "id": "armaa_heavyJavelin",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [
+      50,
+      142,
+      255,
+      200
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.08,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_mauler_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/armaa/weapons/armaa_javelin_barrel.png",
+  "turretOffsets": [
+    11.5,
+    1
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_heavyjavelin_turret.png",
+  "type": "ENERGY",
+  "visualRecoil": 7
+}

@@ -1,0 +1,8 @@
+id,trigger,conditions,script,text,options,notes
+# Market descriptions,,,,,,
+flavorTextMarketMeshan,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == independent
+$market.id == armaa_meshanii_market","AddText ""One of the crewmembers aboard the shuttle with you note that several prominently placed, futuristic billboards starkly contrast with the decidely archaiac  architecture of several buildings you've seen as your shuttle makes it's way to the landing zone. When ArmaA gained rights to administer this colony, it seems to have produced a peculiar melting pot of consumerism in excess with the more subdued and traditional sensibilities of the colonies original denizens. As if on cue, two security officers in bizzarely ornate power armor meander into view, ostensibly to deal with some kind of ruckus."" marketFlavorTextColor
+AddText ""The haze of pollution hangs thick above you, but the people here seem to be getting along well enough - or at least what qualifies as 'well enough' in the Sector, these days."" marketFlavorTextColor",,,
+,,,,,,
+,,,,,,

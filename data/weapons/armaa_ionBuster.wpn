@@ -1,0 +1,54 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundOne": "armaa_buster_charge",
+  "fireSoundTwo": "armaa_buster_fire",
+  "glowColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/armaa/ships/garegga/armaa_gareggaHead_glow.png",
+  "hardpointOffsets": [
+    13,
+    0
+  ],
+  "hardpointSprite": "graphics/armaa/ships/garegga/armaa_gareggaHead.png",
+  "id": "armaa_ionBuster",
+  "muzzleFlashSpec": {
+    "length": 45,
+    "particleColor": [
+      255,
+      100,
+      44,
+      255
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 25,
+    "particleSizeRange": 25,
+    "spread": 50
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_ionBuster_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/armaa/ships/garegga/armaa_gareggaHead_glow.png",
+  "turretOffsets": [
+    7,
+    0
+  ],
+  "turretSprite": "graphics/armaa/ships/garegga/armaa_gareggaHead.png",
+  "type": "ENERGY"
+}

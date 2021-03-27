@@ -1,0 +1,48 @@
+{
+  "animationType": "SMOKE",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.armaa_ilorinEffect",
+  "fireSoundTwo":"annihilator_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "id": "armaa_ilorin_rocket",
+"smokeSpec":{"particleSizeMin":10.0,
+							 "particleSizeRange":14.0,
+							 "cloudParticleCount":3,
+							 "cloudDuration":1.5,
+							 "cloudRadius":12.0;
+							 "blowbackParticleCount":3,
+							 "blowbackDuration":0.45,
+							 "blowbackLength":20.0,
+							 "blowbackSpread":6.0,
+							 "particleColor":[190,180,160,95]},
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId":"annihilator_rocket",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/armaa/ships/ilorin/armaa_ilorin_rocketLauncher.png",
+  "turretOffsets": [
+    33,
+    -15
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "type": "MISSILE",
+  "visualRecoil": 2
+}

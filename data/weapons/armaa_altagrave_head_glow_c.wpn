@@ -1,0 +1,45 @@
+{
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_altagrave_head_glow_c",
+  "muzzleFlashSpec": {
+    "length": 5,
+    "particleColor": [
+      255,
+      240,
+      165,
+      150
+    ],
+    "particleCount": 7,
+    "particleDuration": 0.15,
+    "particleSizeMin": 6,
+    "particleSizeRange": 8,
+    "spread": 6
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "vulcan_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass":"beam",
+  "showDamageWhenDecorative":false,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    9
+  ],
+  "turretSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_rabbit_glow.png",
+  "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_rabbit_glow.png",
+  "renderHints":["RENDER_ADDITIVE"],
+  "type": "DECORATIVE"
+}

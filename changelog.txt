@@ -1,0 +1,516 @@
+V1.4.3
+-----------
+- 0.95a compat 
+- removed some glib stuff temporarily
+- removed some drone stuff since it was causing a crash 
+V1.4.2
+-----------
+- Fixed Altagrave[G]'s getting [EX]'s backpack and EX being CC'd in missing modules. / [C] backpack module missing drones
+
+V1.4.1
+------------
+-Fixed crash caused by duplicate class name
+
+V1.4
+------------
+ADDITIONS:
+	-Aleste:
+		-  14 OP, single wing with two support drones
+		-  +20 ground bonus to equipped carrier
+		-  Primarily energy+frag DPS with some KE and HE
+	-Gallup-9A:
+		-  15 op 
+		-  wingsize: 2 single shot sparkly beam bomber
+		- cannot move or turn during firing sequence, very vulnerable
+	-Garegga:
+		- Dakka
+		- 1x small energy, 2x small composites, 2x built-ins
+		- Short-Range
+		- 8 DP
+	-Trihänder:
+		- Tri-tachyon modified Garegga
+	-Einhänder:
+		- Single wing - 25 OP
+		- +30 ground bonus to equipped carrier
+		- only can be obtained by finding its blueprint through normal exploration
+		- only here in prep for some 0.95a modding features, may be altered considerably 
+
+-Added two new Altagrave variants, revised [C] variant
+	-Altagrave[G]
+		-Exceliza Grenade Launcher, 300 shield radius, Plasma Jets as ship system
+		-upsized central small hybrid to medium energy
+	-???
+		- HVB, appears at level 30 + certain fleet strength
+	-Altagrave[C]
+		- Syrinx MRM
+		- Backpack Module: Active Flare Launcher
+		- Karma[C]: Grants all friendly ships(except itself) within 1000 SU a degrading time dilation bonus based on  the total of the karma gauge. At full charge, the bonus granted is 15%, and maximum duration is 20 seconds.
+
+-Added 3 new nex starts for base Altagrave, Altagrave[G], and Garegga
+
+MISC:
+-Reduced LPC frequency chance in fleets across the board by 40-60% depending on rarity
+-Fixed LPCs never appearing in PL markets/fleets due to a incorrectly named faction file
+-Implemented MagicSettings missile resistance modsetting for Altagrave's system
+-Changed portrait for meshan admin + fixed missing parameters in cataphract defense base planet condition
+-armaa lpcs should now appear in persean league markets/fleets
+
+Valken-X:
+- nerfed paintjob saturation by 40%
+- minor gfx changes to make head more prominent/distinguishable
+-Removed omni shields
+-HP -> 575->850
+- Light Mortar -> Ion Cannon(High Delay)
+- Assault Chaingun(Fighter) DMG -> 45->60
+-LS-99 MOONLIGHT Range: 35->45; Cooldown: .33->1 
+	-interruptibleBurst -> true
+	-beamFireOnlyOnFullCharge -> true
+	-empDamage: 500->50
+
+Einhänder:
+-Removed Delicate Machinery
+-AS Glaive Ammo:4->10
+-Hullmods can no longer be equipped to the dummy drone (these had no effect, so nothing was lost)
+- Pila Drone system: Teleporter->Temporal Shell(2x dilation)
+
+Bihänder:
+- Ship System: Phase Damper Field -> None
+	- Can actually be killed before firing beam now
+
+Kouto:
+- Engagement Range: 2000 -> 4000
+- Plasma Gatling: 
+	- Range: 500->600
+	- Damage: 15->30
+	- Recoil:
+		-Min: 15->0
+		-Max: 30->10
+
+	- Damage Type: ENERGY-> FRAG
+-Shield Radius: 70->360
+
+Altagrave:
+-There appears to be a bug with ships that use modules that makes them much more aggressive than they should normally be. This seemingly is fixed in 0.9.5a, but if you want to prevent this behavior from occuring with AItagrave's, destroying their back module with a console command or assigning them a ship to escort resolves the issue.
+-For this reason, modules no longer confer any statistical bonus/malus to speed/manuverability.
+
+-Fixed weird interaction with shipsystem and missiles using custom AI
+-DP: 14->15
+-Shield Radius -> 120
+-Seeker Damage 250->150
+-HP -> 2500->3000
+-Flux Cap -> 5750-> 5850
+-Armor -> 450 -> 375
+-Leg modules: system -> low-grade EMP
+-Backpack Module: System-> Pila UWS
+-Modules vent & overload with core
+
+
+
+
+V1.2.4b
+------------
+-Cleaned up some descriptions courtesy of Avanitia
+-Increased hull frequency for Altagrave on New Meshan's market by 15%
+
+Fighters:
+
+-Reduced Valken engagement range to standard 4k su
+
+-Reduced Valken wing size from 5->4
+
+-Increased Ilorin engagement range to 4k su, speed 110->140, OP->16
+
+Bihänder:
+-Increased Juno Mk. II DPS from 400->1.5k
+
+
+Altagrave:
+-Increased DP: 12->14
+-Modules no longer consume additional fleet points on deployment
+
+-Added BACK_OFF AI flag to encourage AI altagrave's to back down in certain scenarios. It's not 100% reliable but should improve survivability somewhat. AI gonna AI
+
+-Previouly ship system would absorb up to 2000 points of damage, and when maxing out gauge generate 10 projectiles worth 2.5k damage in total, even if the amount absorbed exceeded the threshold.
+
+-Adjusted system to generate a scaling number of seeker projectiles based off the total amount of damage absorbed, up to 5,000 at 20 projectiles. The default amount generated has been decreased to 8 from 10 to equate to the base threshold of absorbed damage, however.
+
+-added small trail fx to seeker projectiles.
+
+V1.2.3
+---------
+-Altagrave's built in hullmod is now properly hidden and wont be found as loot
+
+-Attempted to improve AI performance with Altagrave:
+	-Generally speaking, Alta is flux hungry, and wont fire main gun after a certain threshold
+	-AI cannot perceive that modules are important to its survival, very often eats hits to the side of modules that easily could have been avoided by a player as a result
+
+	-Converted Front Shield to Omni Shield
+		-Omni Shield doesnt extend to some parts of the legs, for now this is intentional
+	-Increased collision radius 67->100
+	-increased shield radius-> 67->90
+	-base flux: 5500->5700
+	-base dissipation: 350->360 
+	-Shield Efficiency: 0.7->0.66
+	-Vajra flux/shot: 120->110
+
+-cr recovery %/day: 8%->6%
+
+V1.2.2RC2
+--------
+Nex:
+
+-removed random folder in mission folder
+
+-Super Ship start: Replaced Altagrave and Condor with Altagrave[C] and Wayfarer
+	-Differences between the two are mostly superficial, [C] has built-in Op Center and is more suitable as a flag
+
+-Added Ground Support bonus for new fighter wings. Non-cataphract fighters were conferring additional bonus if a single cataphract wing was added, this was fixed.
+
+-Added Juno Mk. III, a modular medium fire support beam cannon. Available on New Meshan, may need further tweaks
+
+Altagrave:
+-Standard Altagrave now has very low chance of appearing in scavenger fleets
+
+-Adjusted base variant auto groups
+
+-Karma Seekers: Damage type to Kinetic
+	-reverted damage back to 250 from 200
+
+-Added additional small hybrid mount; increased OP by 5
+
+-Altagrave should be less inclined to suicidally charge at things 2x its size or into swarms of enemies, not 100% what caused this issue, may have some relation to weapon loadout
+
+-Added normal maps for gLib support and shadow effect to some turrets/decos
+
+-Limb animation now slightly affected by turning/strafing left or right
+
+-new head sprite for Altagrave[C]
+
+Vajra:
+	-Drastically reduced tracking effect of Vajra, should be much easier to hit smaller ships, both under player and AI control
+	-Increased projectile speed: 950->1000
+
+-increased armor on all modules to match parent hull armor: 400->450
+	- Won't do much against heavy hits, but will help mitigate issue with getting papercut to death by fighters
+
+-swapped active flare launcher to Low-Grade EMP Emitter (Same system as Recordbreaker) on backpack module
+
+-Modules now mirror the hullmods applied to the parent ship
+
+-Increased OP of all modules to 1000 to prevent any unintended behavior caused by hullmods that readd themselves in certain scenarios
+
+-Added hullmod describing modules and their effects
+
+-Altagrave[C] would never spawn in markets with modules, is now a seperate hull instead of being skin-based [Used exact same ID for the hull that was used by the skin file, so save compatible; tested and confirmed myself]
+
+Recordbreaker:
+Armor: 45->30
+HP: 450->400
+
+Valken-X:
+-Fixed deco weapon being listed in Armaments
+-Plasma Blade was set at an ammo of 1, removed ammo limitation
+
+Bihänder:
+-Altered Juno Mk. II for better visual consistency with other Juno family weapons
+
+
+V1.2RC2
+--------
+-Removed Omni-Shields from Altagrave's legs, increased armor by 200, HP by 200
+-Gave Altagrave[C] a Default Role so that it actually appears in markets
+-All projectiles weren't properly being tallied when absorbed, corrected issue
+-Karma increases much faster, increased threshold as a result: 1000->2000
+-Reduced amount of projectiles generated from Karma: 15->10
+-Altagrave System projectiles DMG: 250->200
+V1.2RC1
+----------
+
+New Ship: Altagrave
+- 12DP with modules that increase speed while they are intact;
+- 1x Medium Synergy, 1x Small Universal
+- 2x built-ins
+	-Vajra
+		energy-based projectile weapon with some missile characteristics, has slight homing capability, can be intercepted
+- System: K.A.R.M.A
+	-Absorbing projectiles increases "Enlightenment"
+	-Enlightenment grants a scaling bonus to Weapon RoF and Flux Cost Reduction as damage absorbed increases, up to 30%
+	-Exceeding/reaching max karma generates an explosion that damages anything within 300 su and flings homing projectiles
+		-Projectiles will home in on selected target after a few second delay, otherwise random target is chosen
+	-Bonus is lost once karma is maxed.
+
+New Mission: Battle of Meshan 1A9
+- Survive against waves of redacted
+
+Nexerelin:
+-Added start with Altagrave
+-Added basic BP to all starts
+
+New Wing: Valken-X - 10 OP
+System: Overboost
+	- brief, but significant increase to speed + manuverability for 1 second
+- Assault Chaingun(F), 50% potency of original ACG fired in 5 shot bursts
+- LS-99 MOONLIGHT, short-range plasma blade
+- Wing Size: 2
+- Not very effective vs shields, but overboost + the LS-99 makes it lethal at close range and an effective dogfighter
+
+New Wing: Recordbreaker - 10 OP
+- Fast interceptor with weak EMP emitter suited for anti-fighter/missile and escort. Best paired with other fighter types
+- Wing Size: 2
+
+-New Star System: Gamlin
+-New Meshan, Size 5 Colony
+-Has special submarket accesible at high indie rep that sells all cataphracts, rarely Einhander or Altagrave will appear
+
+-Adjusted spawn rate of all wings, they should actually appear occassionally in various fleets
+
+Einhänder:
+- fixed fx bug caused during interaction with some approlight systems
+- fixed crash caused when running simulation during armaa mission with Einhänder
+- Phase Damper Field Time Dilation: 60%->55%
+- Phase Damper Field Beam Resistance: 50%->55%
+- Phase Damper Field Base Resistance: 40%->35%
+- Vulcan Cannon Turn Rate: 90 -> 75
+- AS Glaive Range was 650, when should have been 550->550
+- Einhander receives damage bonus as flux level increases when using ship system. Exceeding flux leads to overload
+- Repair Drones will now always deploy so long as there are no enemies within 2000 su
+
+--Fighters--
+-General all-around buffs. They should be more effective overall
+
+Valken:
+-Fixed bug that prevented valken from ever spawning in fleets, or appearing in simulator
+HP: 300->450
+Armor: 15->30
+Flux Dissipation:60->80
+
+Kouto: 
+DR-79 Plasma Gatling: 10 -> 15 DMG
+	-Bullet Size reduced by 50%
+
+Overshield granted 10x damage resistance instead of 5x, corrected to proper value
+Increased flux stats for overall improved shield efficiency
+Reduced Seeker flare count to 1
+HP-> 425-> 500
+Armor -> 50-> 35
+Max Flux -> 700
+Dissipation ->  150
+OP:12->13
+Refit Time: 25->15
+
+Ilorin:
+OP: 12->14
+Crew Size: 1->3
+
+-removed Juno. Mk III from drop table
+
+-added armaa_ prefix to all ship systems
+
+Known Bugs:
+- Einhänder damage weighting with Starship Legends gets weird in some scenarios, will be fixed in next version of legends 
+
+
+V1.1.4
+---------
+- Fixed damage bug with Starship Legends (
+- Added Nex Carrier(small) start
+- Can now immediately issue orders to Einhänder instead of having to open Command UI and unpausing
+- Fixed "bug" where Einhänder being the last living friendly remaining would result in an instant loss 
+
+Cataphract Complement:
+-Each wing now grants a different ground support bonus:
+Valken, Kouto: 4
+Bihander: 16
+Ilorin: 12
+
+Einhänder:
+-Phase Damper Field Time Dilation: 50%->60%
+-Phase Damper Field Beam Resistance: 40%->50%
+-Beam Coat Beam Resistance: 35%->40%
+-Beam Coat tooltip stated total stacking beam resistance was 77% when it was in reality around 60%, corrected to reflect new values. Max resistance is 70%
+-With these changes beam heavy enemies and burst PD beams shouldn't be as insurmountable, while remaining a threat
+-AS Glaive size: Medium->Small, this will give it a more accurate (and reduced weapon health) HP for its physical size
+-Increased texture scroll speed on AS Glaive's trail
+-Added role for Homing Laser
+-Vulcan Cannon: Chargedown: .1 -> 0.05, Damage: 35->25, Range: 350->250; Replaced projectile for vanilla vulcan_shot
+
+Kouto:
+-Added System: Overshield
+-Shield Radius: 90->75
+-Blank Torso Weapon-> Seeker Flares
+
+Valken:
+-Wing Size: 3->5
+-IR Pulse Laser: Energy/Shot: 0->50
+-Flux Dissipation: 25->60
+-Adjusted sprite
+-Vulcan Cannon: Chargedown: .1 -> 0.05, replaced projectile for vanilla vulcan_shot
+-Refit Time: 10->9
+-Changed Engine Style from lowtech to midline
+
+Ilorin:
+-Rocket Pod Ammo: 9->15
+-Added System: Fast Missile Racks
+-Minor description tweaks
+-replaced midline tags with low tech
+
+V1.1.3
+------------
+-small fx adjustment on Einhänder + Bihänder
+-Add system desc for P-Damper Field (Bihander ver)
+-Fix bug where Pila would never equipped their assigned weapon
+
+V1.1.2
+---------
+-Fixed crash when deploying AI-controlled Einhänder in certain order
+-Fixed crash when deploying Einhänder without any weapons assigned to the Pila
+
+V1.1.1
+---------
+Einhänder:
+-Increase turn rate 100->110
+Offense Mode: Speed+Manuverability:40%->50%
+Corrected system desc; stated 30% dmg increase, replaced with more accurate description
+Juno DMG: 100->110;
+DP: 7 -> 6 
+-Juno hit fx with system active reduced in intensity
+-misc fx adjustments
+- AI controlled Einhänder will autonomously return to carrier at low CR
+---------
+Bihander:
+-System: Damper-> Production P-Damper
+-HP: 700
+-Armor: 150->200
+Replaced Micromissile -> Homing Laser
+---
+v1.1
+-------------------
+-Added fake_fighter tag to Einhänder, which will resolve some targeting and fuze logic bugs with several THI scripted weapons and how they interact with frigates that setHullSize to fighter via script. (Note to other mods that might do similar things, please add the "fake_fighter" tag to the pertinent vessels in ship_data.csv! credit to MesoTroniK )
+-Fixed crash with Einhänder caused by attempting to retreat from the top of the map during 'escape' battles
+-Fixed bug that wiped faction blueprints from Tritachyon/Independent fleets
+-Adjusted rarity of all fighters so they are less common in NPC fleets
+-Added compatibility for some IndEvo features ( i think )
+
+=== Einhänder ===
+-Synergy Mount has been axed. It just looks too weird with some combos. I'll probably make an alternate version with mounts replacing some built-ins
+-Added built-in drone wing with customizable small hybrid mount as replacement.
+-Can equip weapons up to 9OP, but flux reserves might not be enough for it to actually fire them all (I.E) you can actually mount an AM blaster on the drone, but it can't actually fire. I'll add hard restrictions to this later
+-Added Phase Field hullmod
+==-New System-==
+-Phase Charge->Offense Mode
+Damage Bonus: 35%->30%
+Speed Bonus: 65%->40%
+Manuverability Bonus: 50%->40%
+Reduce RoF by 50%
+Increases Recoil by 100%
+replaces Juno standard projectile with enhanced alternative that does 135 Energy Damage and 200 EMP Damage with arc chance
+-----
+-small sprite alterations
+
+OP: 35->30
+HP: 700->750
+-Reduced armor from 310->300.
+-Increased turn accel 115 -> 180
+-Top Speed: 160->165
+-CR to Deploy: 16%->20%
+-CR loss per second: .25%->.20%
+-Turn rate: 115 -> 120
+-Increased decel 120->170
+-Increased accel 170->190
+-Max Flux: 1200->1100 
+-Mass:  75-> 60
+-AS Glaive Range: 500->550; Damage: 400->450; Ammo: 4->6
+-Juno DMG 90 -> 100
+-Juno EMP DMG 60->0
+-Juno Chargeup 1.05-> 0.525
+-Juno Chargedown 2->1.6
+-Juno Min Spread 0->3
+-Juno Max Spread 10->30
+-Burst size: 9->8
+
+-Homing Laser bonus damage chance: 50%->25%
+-Burst size: 4->2
+
+=== Valken ===
+-Increased speed to 230
+-Hull: 550>300
+-Armor: 40->15
+-Wing Size: 3->4
+- Pulse Laser DMG: 50->30
+- Light Mortar Ammo: 0-> 15
+- Replacement Time: 8-> 12
+
+
+=== Kouto ===
+Shield Efficiency 75%->100%
+Blazer Rifle -> DR-79 Gatling Plasma
+=== Bihänder ===
+- New Sprite
+- OP: 12->14
+- Wing Size: 2->1
+- AP Javelin -> Juno Mk. II: Burst Charge Beam
+= Light Machine Gun -> Micro Rail Rifle
+- added new sfx + fx
+
+-Added new wing: Ilorin 
+- High HP and Armor
+- Slow speed & manuverability
+- Armed with annihilator Rocket Pod & Autocannon
+
+-Added new wing: Pila UWS
+Short-range drone wing used by the Einhänder
+
+=========================
+v1.0.6
+------------------------
+-Cataphract Complement now grants +4 bonus for every cataphract wing
+-Fixed bug where ships without the CARRIER tag would not receive Cataphract Complement hullmod
+-Added info on ammo resupply drone for strikecraft hullmod
+
+====================
+1.0.5
+--------------------
+-Any carrier with at least 1 Cataphract wing will now get the hullmod "cataphract complement" that grants small ground support bonus, applied when visiting markets 
+
+=== Einhänder ===
+-can start active vent during phase instead of having to exit phase first, and then venting.
+
+- Increased OP from 30 -> 35
+
+- Added small SYNERGY hardpoint
+
+- Decreased armor from 325 -> 310.
+
+-Juno-
+- Increased Juno's per shot damage from 83 -> 100
+- Burst size decreased 16->9
+- EMP Damage Increased 30->60 
+- Juno now has a 25% chance to create EMP arcs on impact that do 3x EMP damage(150) and 1/2 its per shot damage(50) in energy
+- Chargedown decreased 3->2
+
+-AS Javelin renamed -> AS Glaive ((II has weapon with very similar name))
+- Damage decreased from 500 -> 400
+- Ammo decreased from 10 -> 4
+- chargedown decreased from 6->3
+- EMP Damage increased 0 -> 200
+- No longer fully reloads between engagements
+
+-Homing Laser-
+- Chargedown decreased from 12->10
+
+- Limited Ammo weapons can be reloaded by returning to carrier, if the weapons max ammo count is at least 2 (no spamming reapers ): )
+
+- Einhänder has been fully switched to fighter hullsize, outside of a few edge cases. Gameplay wise this means it **should** suffer or benefit from all the same effects that fighters do, including custom ones (so long as that effect checks if a ship is a **fighter** and not checking its **fighter_wing**), including custom ones, and AI will react and evaluate it as as a fighter also. Thanks to MesoTronIk for bringing this to my attention.
+
+-Fighter Doctrine Lv2 bonus now applies to the Einhänder as well
+
+=== Valken === 
+-Fixed severed Valken arms showing up in markets.
+
+-Replaced Valken's AAF system with new system: GU-14 Firebolt Feeder
++25% Damage, +25% ROF, -10% Flux Cost for ballistics
+
+----------------
+1.0
+
+-initial release

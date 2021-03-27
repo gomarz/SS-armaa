@@ -1,0 +1,32 @@
+{
+  "displayName": "Support Cataphract",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "hullId": "armaa_record",
+  "hullMods": [
+  ],
+  "variantId": "armaa_record_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "armaa_taclaser",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_sprigganTorso",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead",
+      }
+    }
+  ]
+}

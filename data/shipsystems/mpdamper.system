@@ -1,0 +1,51 @@
+{
+	"id":"armaa_mpdamper",
+	"type":"PHASE_CLOAK",
+	"aiType":"PHASE_CLOAK",
+	
+	"statsScript":"data.scripts.shipsystems.MPhaseDamperStats",
+	#"runScriptWhilePaused":true, # only for the player's ship
+	#"runScriptWhileIdle":true,  # this means unapply() never gets called
+	#"blockActionsWhileChargingDown":false,
+	
+	"jitterUnderColor":[147,52,199,155],
+	"jitterUnderCopies":25,
+	"jitterUnderMinRange":0,
+	"jitterUnderRange":20,
+	"jitterUnderRangeRadiusFraction":0,
+	
+	"jitterColor":[155,100,155,55],
+	"jitterCopies":8,
+	"jitterMinRange":0,
+	"jitterRange":20,
+	"jitterRangeRadiusFraction":0,
+
+	"phaseHighlight":"_glow1",
+	"phaseDiffuse":"_glow2",
+
+	"effectColor1":[255,175,255,155],
+	"effectColor2":[255,0,255,100],
+	#"shipAlpha":.6,
+	
+	#"weaponGlowColor":[255,165,90,0],
+	#"weaponTypes":[ENERGY, BALLISTIC, MISSILE],
+	
+	#"engineGlowColor":[255,90,255,255],
+	
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.75,
+	"soundFilterGainHF":0.25,
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_phase_cloak_activate",
+	"loopSound":"system_damper_loop",
+	"deactivateSound":"system_phase_cloak_deactivate",
+	"outOfUsesSound":"system_phase_cloak_collision",
+	
+	"aiHints":{
+		"averageSpeedIncrease":100,
+	}
+}
+
+
+

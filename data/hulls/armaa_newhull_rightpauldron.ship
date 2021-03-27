@@ -1,0 +1,47 @@
+{
+  "bounds": [
+    -18,
+    3.5,
+    -19.5,
+    -13,
+    -1,
+    -14,
+    22.5,
+    1.5,
+    -1.5,
+    16
+  ],
+  "center": [
+    17.5,
+    20
+  ],
+  "collisionRadius": 25.5,
+  "engineSlots": [],
+  "height": 44,
+  "hullId": "armaa_altagrave_rightpauldron",
+  "hullName": "New Hull",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    12,
+    -22.5
+  ],
+  "shieldRadius": 75.5,
+  "spriteName": "graphics/armaa/ships/proto/armaa_altagrave_rightpauldron.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "HAND",
+      "locations": [
+        20,
+        -12
+      ],
+      "mount": "HARDPOINT",
+      "size": "LARGE",
+      "type": "STATION_MODULE"
+    }
+  ],
+  "width": 33
+}

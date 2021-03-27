@@ -1,0 +1,17 @@
+{
+	"id":"armaa_pikeSecondary",
+	"specClass":"projectile",
+	"type":"MISSILE",
+	"size":"SMALL",
+	"turretSprite":"",
+	"hardpointSprite":"",
+	"hardpointOffsets":[0, 0],
+	"turretOffsets":[0, 0],
+	"hardpointAngleOffsets":[0],
+	"turretAngleOffsets":[0],
+	"barrelMode":"ALTERNATING",
+	"interruptibleBurst":false,
+	"animationType":"NONE",				 
+	"projectileSpecId":"armaa_spike_rod",
+	"fireSoundTwo":"",
+}

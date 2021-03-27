@@ -1,0 +1,18 @@
+{
+	"id":"armaa_valkengun_shot",
+	"specClass":"projectile",
+	"onHitEffect":"data.scripts.weapons.valkenGunEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY_FIGHTER",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":80.0,
+	"hitGlowRadius":15,
+	"width":13.0,
+	"fadeTime":0.15,
+	"explosionColor":[125,0,155,75],
+	"fringeColor":[140,55,255,255],
+	"coreColor":[255,100,100,255],
+	"glowColor":[15,0,0,25],
+	"glowRadius":0,
+
+}

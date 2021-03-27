@@ -1,0 +1,14 @@
+{
+  "displayName": "Support",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "armaa_repairdrone",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_repairdrone_standard",
+  "weaponGroups": [],
+  "wings": []
+}

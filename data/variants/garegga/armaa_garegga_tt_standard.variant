@@ -1,0 +1,41 @@
+{
+  "displayName": "Corporate",
+  "fluxCapacitors": 6,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "armaa_garegga_tt",
+  "hullMods": [
+    "missleracks",
+    "hardenedshieldemitter"
+  ],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "armaa_garegga_tt_standard",
+  "weaponGroups": [
+  {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_RARM": "armaa_garegga_rightArm",
+	"E_LARM": "armaa_garegga_leftArm"
+      }
+    },
+{
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "pdburst"
+      }
+    },
+{
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 005": "sabot",
+        "WS 006": "sabot"
+      }
+    }
+  ],
+  "wings": []
+}

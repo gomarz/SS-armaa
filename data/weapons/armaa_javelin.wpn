@@ -1,0 +1,59 @@
+{
+  "collisionClass": "RAY", 
+"beamEffect":"com.fs.starfarer.api.impl.combat.TachyonLanceEffect",
+"everyFrameEffect": "data.scripts.weapons.armaa_javelinBeamEffect",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    0,
+    255
+  ],
+  "fireSoundOne": "beambang",
+  "fireSoundTwo": "beamfire",
+  "fringeColor": [
+    200,
+    0,
+    200,
+    200
+  ],
+  "glowColor": [
+    255,
+    255,
+    0,
+    140
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    26,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/assault_chaingun_hardpoint_base.png",
+  "hitGlowRadius": 0,
+  "id": "armaa_javelin",
+  "noImpactSounds": false,
+  "beamFireOnlyOnFullCharge":true,
+  "noNonShieldImpactSounds": false,
+  "pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 256,
+   #128
+    "textureType":["graphics/fx/beam_laser_fringe.png","graphics/fx/beamcore.png"],
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    14,
+    1.5
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_javelin_turret.png",
+  "type": "ENERGY",
+  "width": 20
+}

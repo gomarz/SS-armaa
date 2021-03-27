@@ -1,0 +1,50 @@
+{
+  "bounds": [
+    -15,
+    -6,
+    7,
+    -2.5,
+    7,
+    2.5,
+    -15,
+    6
+  ],
+  "builtInMods": [
+    "variawep",
+    "reduced_explosion",
+    "always_detaches"
+  ],
+  "center": [
+    6,
+    10.5
+  ],
+  "collisionRadius": 16.5,
+  "engineSlots": [],
+  "height": 21,
+  "hullId": "armaa_dBit",
+  "hullName": "Bit",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 14.5,
+  "spriteName": "graphics/armaa/ships/armaa_bit.png",
+  "style": "armaa_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0001",
+      "locations": [
+        7.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "HYBRID"
+    }
+  ],
+  "width": 12
+}

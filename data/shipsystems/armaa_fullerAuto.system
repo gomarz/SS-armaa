@@ -1,0 +1,14 @@
+{
+	"id":"armaa_fullerAuto",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.armaa_fullerAutoStats",
+	
+	#"weaponGlowColor":[255,200,0,155],
+	"weaponGlowColor":[205,50,20,155],
+	"weaponTypes":[BALLISTIC,ENERGY],
+
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

@@ -1,0 +1,23 @@
+{
+    "id":"armaa_grenade_shot",
+    "specClass":"missile",	
+    #"missileType":"ROCKET",	
+    "missileType":"BOMB",
+    "sprite":"graphics/missiles/shell_hellbore.png",
+    "size":[12,16],	
+    "center":[5,6],
+    "collisionRadius":6,
+    "collisionClass":"MISSILE_NO_FF",
+    "explosionColor":[255,100,100,255],
+    "explosionRadius":75,
+    "maxFlightTime":3.5,
+    "armingTime":1.5,	
+    "engineSpec":{
+        "turnAcc":0,
+        "turnRate":0,
+        "acc":40,
+        "dec":80,
+        "maxSpeed":400
+    },		  
+	
+}

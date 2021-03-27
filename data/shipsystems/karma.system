@@ -1,0 +1,21 @@
+{
+	"id":"armaa_karma",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.armaa_karmaAI",
+
+	"statsScript":"data.scripts.shipsystems.armaa_karma",
+	
+	"jitterColor":[255,255,255,50],
+	"jitterCopies":5,
+	"jitterRange":10,
+	"jitterRangeRadiusFraction":0.05,
+	"loopSound":"system_fortress_shield_loop",
+	"outOfUsesSound":"gun_out_of_ammo",
+
+	"aiHints":{
+		"activeSpeedIncrease":0,
+		"burstMovementPotential":0,
+		"averageSpeedIncrease":0,
+	}
+}

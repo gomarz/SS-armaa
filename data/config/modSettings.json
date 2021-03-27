@@ -1,0 +1,12 @@
+{
+	"armaarmatura":{
+		"missile_resist_karma":[
+			"ora_echoesS",
+			"ora_invocationS",
+			"ora_callingS",
+			"SCY_phasedS",
+			"SKR_can",
+			"SKR_drill_shot",
+		],
+	},
+}

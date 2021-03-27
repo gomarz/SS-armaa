@@ -1,0 +1,61 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.armaa_einhanderEffectC",
+  "fireSoundOne": "carbinecharge",
+  "fireSoundTwo": "carbine2",
+  "glowColor": [
+    255,
+    0,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0.5
+  ],
+  "hardpointOffsets": [
+    33,
+    -12
+  ],
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkenGun.png",
+  "id": "armaa_einhanderGun",
+  "interruptibleBurst": true,
+  "autocharge": true,
+  "muzzleFlashSpec": {
+    "length": 10,
+    "particleColor": [
+      232,
+      49,
+      198,
+      255
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.02,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_valkengun_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0.5
+  ],
+  "turretGlowSprite": "graphics/armaa/ships/einhander/armaa_einhanderGunGlow.png",
+  "turretGunSprite": "graphics/armaa/ships/einhander/armaa_einhanderGunBarrel.png",
+  "turretOffsets": [
+    30,
+    -15
+  ],
+  "turretSprite": "",
+  "type": "ENERGY",
+  "visualRecoil": 2
+}

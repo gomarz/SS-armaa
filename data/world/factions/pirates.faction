@@ -1,0 +1,16 @@
+{
+	"hullFrequency":{		
+		"fighters":{
+			"armaa_valkenmp_wing":0.5,
+			"armaa_ilorin_wing":0.5,
+		},
+	},
+	"knownFighters":{
+		#"tags":["armaa_cataphract_bp"],
+		"fighters":
+		[
+			"armaa_valkenmp_wing",
+			"armaa_ilorin_wing",
+		],
+	},
+},	

@@ -1,0 +1,19 @@
+{
+	"id":"armaa_valkengun_shot2",
+	"specClass":"projectile",
+	"onHitEffect":"data.scripts.weapons.valkenGunEffect2",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FIGHTER",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":30.0,
+	"hitGlowRadius":10,
+	"width":30.0,
+	"fadeTime":0.10,
+	"explosionColor":[250,236,240,75],
+	"fringeColor":[250,236,240,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[10,200,10,15],
+	"glowRadius":0,
+	"bulletSprite":"graphics/armaa/weapons/nrg.png"
+
+}

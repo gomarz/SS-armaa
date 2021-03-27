@@ -1,0 +1,45 @@
+{
+	"id":"armaa_karma_seeker",
+	"specClass":"missile",	
+	"missileType":"MISSILE",
+	"sprite":"graphics/missiles/bomblet0.png",
+	"size":[4,4],	
+	"center":[2,2],
+	"collisionRadius":11,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[149,206,240,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":75, # purely visual
+	"flameoutTime":1, # total time from flameout to full fadeout
+	"noEngineGlowTime":0.5, # time spent without the engine glow being rendered
+	"fadeTime":0.5, # fadeout duration
+	#"collisionClassAfterFlameout":"MISSILE_NO_FF",
+	"behaviorSpec":{"behavior":"CUSTOM",
+					"effectRange":100,
+					"effectChance":0.3,
+				   },
+	"engineSpec":{"turnAcc":800,
+				  "turnRate":450,
+				  "acc":450,
+				  "dec":1500},
+	"engineSlots":[
+					{"id":"ES1",
+					"loc":[0, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"engineColor":[149,206,240,255],
+						"contrailParticleSizeMult":15,
+						"contrailParticleDuration":2,
+						"contrailDuration":4,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":8, # min segment length, in 
+						"contrailMaxSpeedMult":-0.1,
+						"contrailAngularVelocityMult":0f,
+						"contrailColor":[149,206,255,35],
+						"type":"GLOW" # GLOW or SMOKE
+					},
+				    "width":10.0,
+				    "length":25.0,
+				    "angle":180.0},
+				   ]
+}

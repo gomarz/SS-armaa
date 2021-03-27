@@ -1,0 +1,60 @@
+{
+    "baseHullId":"armaa_altagrave_g",
+    "skinHullId":"armaa_altagrave_ex2",
+    "hullName":"Altagrave[EX]",
+    "descriptionId":"armaa_altagrave_ex",
+    "descriptionPrefix":"An enhanced Altagrave variant. The left arm has been replaced with a built-in Juno Mk. III beam cannon, while modular hardpoints have been upsized.",
+    "spriteName":"graphics/armaa/ships/proto/armaa_altagrave_ex.png",
+    "baseValueMult":2,
+    "restoreToBaseHull":false,
+    "addHints":["HIDE_IN_CODEX"],
+    "tags":["armaa_ma"],
+	"systemId":"armaa_oboost",
+    "tech":"Arma Armatura",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[], 		# hullmod ids
+    "removeBuiltInWeapons":[
+		"E_HEAD",
+		"E_RARM",
+	],
+ "weaponSlotChanges":{
+	   "E_LARM":{
+		  "angle": 15,
+		  "arc": 90,
+		  "mount": "TURRET",
+		  "size": "MEDIUM",
+		  "type": "BUILT_IN"
+	   },
+	   "WS0004":{
+		  "angle": 0,
+		  "arc": 5,
+		  "mount": "HARDPOINT",
+		  "size": "SMALL",
+		  "type": "UNIVERSAL"
+	   },
+	   "WS0003":{
+		  "angle": 0,
+		  "arc": 5,
+		  "mount": "HARDPOINT",
+		  "size": "SMALL",
+		  "type": "UNIVERSAL"
+	   },
+	   "WS0006":{
+		  "angle": 0,
+		  "arc": 15,
+		  "mount": "TURRET",
+		  "size": "MEDIUM",
+		  "type": "UNIVERSAL"
+	   },
+    },
+    "builtInMods":["armaa_karma","seraph"],
+    "builtInWeapons":{
+        	"E_HEAD": "armaa_altagrave_head_ex",
+		"E_RARM": "armaa_altagrave_shotgun",
+		"E_LARM": "armaa_altagrave_fluxcannon",
+		"E_LSHOULDER": "armaa_altagrave_leftPauldron_ex",
+		"E_RSHOULDER": "armaa_altagrave_rightPauldron_ex",
+		"COVER": "armaa_altagrave_cover_ex",
+    }
+}

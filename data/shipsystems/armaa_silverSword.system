@@ -1,0 +1,25 @@
+{
+    "id":"armaa_silverSword",
+    "type":"STAT_MOD",
+    "aiType":"CUSTOM",
+    "aiScript":"data.scripts.shipsystems.ai.armaa_SilverSwordAI",
+
+    "statsScript":"data.scripts.shipsystems.armaa_SilverSysStats",
+    "runScriptWhilePaused":true, # only for the player's ship
+    "runScriptWhileIdle":true,  # this means unapply() never gets called
+
+    "engineGlowLengthMult":1.01,
+
+    "flameoutOnImpactChance":0,
+
+    #"useSound":"ii_overdrive_activate",
+	#"loopSound":"ii_overdrive_loop",
+	#"deactivateSound":"ii_overdrive_deactivate",
+    "outOfUsesSound":"engine_disabled",
+
+    "aiHints":{
+        "activeSpeedIncrease":50,
+        "burstMovementPotential":0,
+        "averageSpeedIncrease":15
+    }
+}

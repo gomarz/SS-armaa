@@ -1,0 +1,204 @@
+{
+  "bounds": [
+    25,
+    -4,
+    13,
+    -10,
+    -0.5,
+    -32,
+    -31,
+    -13.5,
+    -39,
+    -4,
+    -39,
+    4,
+    -30.5,
+    15.5,
+    -0.5,
+    32,
+    13,
+    10,
+    25,
+    4
+  ],
+  "builtInMods": [
+    "armaa_SeraphTargetingSoftware"
+  ],
+  "builtInWeapons": {
+    "E_LARM": "armaa_garegga_leftArm",
+    "E_LSHOULDER": "armaa_garegga_leftPauldron",
+    "E_RARM": "armaa_garegga_rightArm",
+    "E_RSHOULDER": "armaa_garegga_rightPauldron"
+  },
+  "center": [
+    55,
+    57
+  ],
+  "collisionRadius": 86,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 13,
+      "length": 21,
+      "location": [
+        -34,
+        11
+      ],
+      "style": "MIDLINE",
+      #"styleId": "MechaTrail",
+      "width": 13
+    },
+    {
+      "angle": -180,
+      "contrailSize": 13,
+      "length": 21,
+      "location": [
+        -34,
+        -11
+      ],
+      "style": "MIDLINE",
+      #"styleId": "MechaTrail",
+      "width": 13
+    },
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 28,
+      "location": [
+        -41,
+        -0
+      ],
+      "style": "MIDLINE",
+      #"styleId": "MechaTrail",
+      "width": 10
+    }
+  ],
+  "height": 132,
+  "hullId": "armaa_garegga",
+  "hullName": "Garegga",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 86,
+  "spriteName": "graphics/armaa/ships/garegga/body.png",
+  "style": "MIDLINE",
+  "viewOffset": 50,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 150,
+      "id": "WS 001",
+      "locations": [
+        -5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "renderOrderMod": 5,
+    },
+    {
+      "angle": -30,
+      "arc": 100,
+      "id": "WS 005",
+      "locations": [
+        -5,
+        -20
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "renderOrderMod": 200
+    },
+    {
+      "angle": 30,
+      "arc": 100,
+      "id": "WS 006",
+      "locations": [
+        -5,
+        20
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "renderOrderMod": 200
+    },
+    {
+      "angle": 30,
+      "arc": 90,
+      "id": "E_LSHOULDER",
+      "locations": [
+        -5,
+        19
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 30,
+      "arc": 100,
+      "id": "E_LARM",
+"renderOrderMod": -99998,
+      "locations": [
+        -5,
+        24
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -30,
+      "arc": 90,
+      "id": "E_RSHOULDER",
+      "locations": [
+        -5,
+        -19
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -30,
+      "arc": 100,
+      "id": "E_RARM",
+"renderOrderMod": -99998,
+      "locations": [
+        -5,
+        -24
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BUILT_IN"
+    },
+    {
+            "angle": 180,
+            "arc": -165,
+            "id": "SYS1",
+            "locations": [
+                -11,
+                -10
+            ],
+            "mount": "HIDDEN",
+            "size": "SMALL",
+            "type": "SYSTEM"
+    },
+    {
+            "angle": 180,
+            "arc": -165,
+            "id": "SYS1",
+            "locations": [
+                -11,
+                10
+            ],
+            "mount": "HIDDEN",
+            "size": "SMALL",
+            "type": "SYSTEM"
+    }
+  ],
+  "width": 110
+}
