@@ -1,11 +1,11 @@
 {
     "variantOverrides":{
-        "armaa_garegga_tt_standard":5,
-	"armaa_garegga_tt_assault":2,
+        "armaa_garegga_tt_standard":1,
+	"armaa_garegga_tt_assault":1,
     },
     "hullFrequency":{
         "hulls":{
-            "armaa_garegga_tt":.6,
+            "armaa_garegga_tt":.1,
         },
     },
     "knownShips":{
