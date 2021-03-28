@@ -1,3 +1,8 @@
+V1.4.3b
+-----------
+-  Trihänder Pulse Lasers reflect the statistics of .95a pulse laser
+- fixed crash caused by emp arc with Einhander Experimental
+
 V1.4.3
 -----------
 - 0.95a compat 
