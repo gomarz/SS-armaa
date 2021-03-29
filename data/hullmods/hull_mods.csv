@@ -1,7 +1,7 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel.
 
-Like fighters, can %s, and %s. Additionally, the units smaller engines yield %s.
+Like fighters, can %s, and %s. Additionally, the unit's smaller engines yield %s.
 
 Combat readiness decays %s faster than normal ships, but can return to friendly carriers to gradually recover CR (up to the carrier's current CR).
 
