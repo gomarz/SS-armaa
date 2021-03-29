@@ -6,6 +6,18 @@
 	"description":"Mechs. Requires library mods.",
 	"gameVersion":"0.95a-RC10",
 	"jars":["jars/armaa.jar"],
+    "dependencies": [
+        {
+            "id": "lw_lazylib",
+            "name": "LazyLib",
+            "version": "2.6" # If a specific version or higher is required, include this line
+        },
+        {
+            "id": "MagicLib",
+            "name": "MagicLib",
+            #"version": "0.32rc2" # If a specific version is NOT required, comment out this line
+        }
+    ],
 	"modPlugin":"data.scripts.MechaModPlugin"
 
 }
