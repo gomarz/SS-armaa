@@ -1,3 +1,9 @@
+V1.4.3c
+-----------
+- minor hullmod description fixes
+- fixed occurence where Einhänder would suffer an infinite overload
+
+
 V1.4.3b
 -----------
 -  Trihänder Pulse Lasers reflect the statistics of .95a pulse laser
