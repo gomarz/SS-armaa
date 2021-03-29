@@ -2,9 +2,9 @@
 	"id":"armaa",
 	"name":"Arma Armatura",
 	"author":"shoi",
-	"version":"1.4",
+	"version":"1.4.3b",
 	"description":"Mechs. Requires library mods.",
-	"gameVersion":"0.95a-RC9",
+	"gameVersion":"0.95a-RC10",
 	"jars":["jars/armaa.jar"],
 	"modPlugin":"data.scripts.MechaModPlugin"
 
