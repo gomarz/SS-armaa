@@ -1,7 +1,17 @@
+V1.4.3d
+----------
+- Reduced Trihänder spam in Tri-Tachyon fleets
+- Garegga:
+	Ship System:
+		-Weapon RoF: +30%->+40%
+-Trihänder:
+	-Pulse Laser Flux/Shot: 100->80
 V1.4.3c
 -----------
 - minor hullmod description fixes
 - fixed occurence where Einhänder would suffer an infinite overload
+-added magiclib and lazylib as dependencies in modinfo.json
+
 
 
 V1.4.3b

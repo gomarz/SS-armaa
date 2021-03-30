@@ -105,10 +105,10 @@ Degraded Juno Mk. III,armaa_altagrave_fluxcannon,2,,4600,800,850,,,20,20,16,,,,K
 ,armaa_garegga_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_garegga_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Heavy Machine Gun,heavymg,2,,1200,450,,40,,3,40,10,,,,KINETIC,15,,0,0.2,4,0.1,0,5,1,15,,700,,,30,PD,"kinetic11, pd10, SR, midline_bp",,,,Point Defense,,,,,,,,,,3.85
-Mutilator-K,armaa_garegga_leftArm,2,,1200,450,,45,,3,40,42,,,,KINETIC,18.75,,0,0.2,4,0.1,0,5,1,15,,700,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
-Mutilator,armaa_garegga_rightArm,2,,1000,450,,75,,5,40,42,,,,HIGH_EXPLOSIVE,55,,0,0.14,1,,0,20,0.9,10,,850,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
+Mutilator-K,armaa_garegga_leftArm,2,,1200,450,,55,,3,40,42,,,,KINETIC,20.9,,0,0.2,4,0.1,0,5,1,15,,700,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
+Mutilator,armaa_garegga_rightArm,2,,1000,450,,85,,5,40,42,,,,HIGH_EXPLOSIVE,55.25,,0,0.14,1,,0,20,0.9,10,,850,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
 Ion Buster,armaa_ionBuster,3,0.7,500,500,,300,1850,0,40,6,,,,ENERGY,540,,0.55,5,,,,,,,,800,,,,"STRIKE, USE_VS_FRIGATES",energy8,,Arma Armatura,,Suppression(Strike),,,,,"Hits on hull or armor arc to weapons and engines, dealing extra damage equal to the original hit. May generate shield-piercing EMP arcs, depending on the target's flux level.",25%,,,,19
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,1.133333333,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GAREGGA TT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_garegga_rightPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_garegga_leftPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999

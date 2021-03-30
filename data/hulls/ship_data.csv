@@ -16,7 +16,7 @@ Altagrave[C],armaa_altagrave_c,Mobile Armor,Arma Armatura,armaa_karma,15,3000,37
 Altagrave[G],armaa_altagrave_g,Mobile Armor,Arma Armatura,plasmajets,15,3000,375,5850,,360,70,,110,110,80,95,100,250,OMNI,,300,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,15,15,SHIP_WITH_MODULES,armaa_mobilearmor,0.7,0.3,2,4,2
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Altagrave[EX],armaa_altagrave_ex,Mobile Armor,Arma Armatura,armaa_oboost,20,3000,375,5850,,360,70,,110,110,80,95,100,250,OMNI,,300,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,20,20,"SHIP_WITH_MODULES,HIDE_IN_CODEX",armaa_mobilearmor,0.7,0.3,2,4,2
-Garegga,armaa_garegga,Cataphract ASM,Arma Armatura,armaa_silverSword,8,2000,300,2750,6667,275,45,,120,150,150,85,190,180,FRONT,,270,0.25,0.8,,,1,0,0,10,1,20,9,26000,8,10,300,0.25,8,8,,rare_bp,0.6,0.4,2,4,309
+Garegga,armaa_garegga,Cataphract ASM,Arma Armatura,armaa_silverSword,8,2000,300,2750,6667,295,45,,120,150,150,85,190,180,FRONT,,270,0.25,0.8,,,1,0,0,10,1,20,9,26000,8,10,300,0.25,8,8,,rare_bp,0.6,0.4,2,4,309
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Repair Drone,armaa_repairdrone,Drone,Low Tech,,,25,5,32,,0,,,100,350,300,90,180,30,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,,,0,0.5,2,4,5
