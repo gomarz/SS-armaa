@@ -9,6 +9,7 @@
 
         "blueprint_packages":{
                 "armaa_cataphract_package":"graphics/armaa/icons/cargo/armaa_cataphract_package.png",
+"armaa_advcataphract_package":"graphics/armaa/icons/cargo/armaa_cataphract_package.png",
 
             },
 		"fx":{
