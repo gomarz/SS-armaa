@@ -1,6 +1,6 @@
 V1.4.3d
 ----------
-- Reduced Trihänder spam in Tri-Tachyon fleets
+- Reduced Trihänder spam in Tri-Tachyon fleets and markets
 - Garegga:
 	Ship System:
 		-Weapon RoF: +30%->+40%
@@ -14,13 +14,21 @@ V1.4.3d
 -Garegga now can appear on black market
 
 -Einhänder:
+	-AI use should be much more viable now
 	-Juno Mk. I DMG: FRAG->ENERGY; 
+	-Juno Mk. I Range: 500->600
 	-110 DP/SHOT -> 75 DP/SHOT; 
 	-FLUX/SHOT-> 55->75
 	-Can now use Ship System without disabling Phase Damper Field
-	-Time Dilation: 55%->85%
-	-DMG Resistance: 35%->15%
-	-AI use should be much more viable now
+	-Phase Damper Field
+		-Should now benefit from Phase Mastery
+		-Time Dilation: 55%->85%
+		-DMG Resistance: 35%->15%
+	-AIhänder without any explicit orders assigned will retreat to nearest carrier with highest CR for repairs if HP or CR drops below a certain threshold
+		-70% for cautious+timid
+		-50% for steady 
+		-30% for aggressive
+		-10% for reckless
 
 -Bihänder:
 - Juno Mk. II Damage/Sec: 1500->1050
