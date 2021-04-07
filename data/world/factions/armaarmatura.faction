@@ -29,7 +29,6 @@
 	"hullFrequency":{
 			"hulls":
 			{
-				"armaa_einhander":0.9,
 				"armaa_altagrave":1.3,
 				"armaa_altagrave_c":0.3,
 				"armaa_altagrave_g":1,
@@ -92,6 +91,14 @@
 		"armaa_ionBuster",
 		],
 	},
+    "priorityShips":{
+        #"tags":[],
+        "hulls":[
+            "armaa_altagrave",
+            "armaa_altagrave_g",
+            "armaa_garegga",
+        ],
+    },
 	"knownHullMods":{
 		"tags":["base_bp"],
 		"hullMods":[

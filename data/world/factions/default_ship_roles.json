@@ -4,13 +4,13 @@
 "armaa_garegga_tt_assault":.5,
 },
   "combatSmall": {
-    "armaa_garegga_standard":1,
-    "armaa_garegga_tt_standard":1,	
+    "armaa_garegga_tt_standard":1,
+    "armaa_garegga_standard":.8,	
   },
   "combatMedium": {
     "armaa_altagrave_standard":1,
-    "armaa_altagrave_c_Standard":0.5,
-    "armaa_altagrave_g_Standard":0.5,
+    "armaa_altagrave_c_Standard":0.8,
+    "armaa_altagrave_g_Standard":0.8,
   },
   "phaseSmall": {
     "armaa_einhander_Strike": 1,

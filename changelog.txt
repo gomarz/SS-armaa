@@ -6,6 +6,26 @@ V1.4.3d
 		-Weapon RoF: +30%->+40%
 -Trihänder:
 	-Pulse Laser Flux/Shot: 100->80
+
+-Fixed up some descs, courtesy of Avanitia
+
+-Added Altagrave(s) and Garegga to known hulls for the independent faction, at reduced frequency
+
+-Garegga now can appear on black market
+
+-Einhänder:
+	-Juno Mk. I DMG: FRAG->ENERGY; 
+	-110 DP/SHOT -> 75 DP/SHOT; 
+	-FLUX/SHOT-> 55->75
+	-Can now use Ship System without disabling Phase Damper Field
+	-Time Dilation: 55%->85%
+	-DMG Resistance: 35%->15%
+	-AI use should be much more viable now
+
+-Bihänder:
+- Juno Mk. II Damage/Sec: 1500->1050
+
+-Set Altagrave/garegga to priorityhulls at the special market on New Meshan, which should generally increase their frequency there
 V1.4.3c
 -----------
 - minor hullmod description fixes

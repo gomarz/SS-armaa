@@ -1,0 +1,26 @@
+{
+	"id":"armaa_oboost2",
+	"type":"PHASE_CLOAK",
+	"aiType":"PHASE_CLOAK",
+	
+	"statsScript":"com.fs.starfarer.api.impl.combat.PlasmaJetsStats",
+	
+	"engineGlowLengthMult":1,
+	"engineGlowWidthMult":1,
+	"engineGlowGlowMult":2,
+	
+	"flameoutOnImpactChance":.3,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":false,
+
+	"useSound":"system_plasma_jets",
+	"loopSound":"system_plasma_jets_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":125,
+		"burstMovementPotential":100,
+		"averageSpeedIncrease":80,
+	}
+}

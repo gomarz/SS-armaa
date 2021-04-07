@@ -1,5 +1,18 @@
 {
-		"hullFrequency":{		
+		"hullFrequency":{
+			"hulls":
+			{
+				"armaa_altagrave":0.6,
+				"armaa_altagrave_c":0.5,
+				"armaa_altagrave_g":0.6,
+				"armaa_garegga":.8,	
+			},	
+	"knownShips":{
+		"hulls":[	
+				"armaa_altagrave",
+				"armaa_garegga",
+			],
+	},	
 		"fighters":{
 			"armaa_valkenmp_wing":0.5,
 			"armaa_kouto_wing":0.5,
@@ -7,7 +20,7 @@
 			"armaa_valkencannon_wing":0.25,
 			"armaa_valkenx_wing":0.5,
 			"armaa_record_wing":0.5,
-			"armaa_aleste_wing":0.35,
+			"armaa_aleste_wing":0.5,
 			"armaa_ortype_wing":0.5,
 		},
 	},
@@ -24,4 +37,16 @@
 			"armaa_aleste_wing",
 		],
 	},
+    "shipsWhenImporting":{
+        "hulls":[
+"armaa_garegga"
+        ],
+    },
+	
+    "knownWeapons":{
+        "weapons":[
+			"armaa_fluxcannon",
+			"armaa_ionBuster",
+        ],
+    },
 },	

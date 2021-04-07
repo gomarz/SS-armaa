@@ -7,8 +7,8 @@ name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn r
 ,armaa_sprigganLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Vulcan Cannon,armaa_sprigganHead,,,,250,,25,,,75,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,1000,,,10,"PD,SYSTEM",,,,,Point Defense,,,,,,,,,,
 ,armaa_sprigganHeadGlow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Homing Laser,armaa_sprigganTorso,5,,5500,700,,50,0,10,0,42,144,0.35,16,ENERGY,55,,,10,2,0.2,,,,,,400,75,5,70,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,Pressure,Fast,Good,Great,Great,%s:  %s chance for an additional %s-%s points of %s damage when striking hull or armor.,Volatile|25%|5|30|High Explosive,,,,12.95
-Juno Mk. I,armaa_einhanderGun,,,4500,500,,110,0,5,20,42,,,,FRAGMENTATION,55,,0.525,1.6,8,0.1,3,15,1,5,,950,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,%s Inflicts %s pts %s damage alongside %s pts of %s damage per shot when ship system is activate.,Safety Release:|140|ENERGY|200|EMP,%s %s chance to generate EMP arcs on hull impact.,Safety Release:|25%|140|ENERGY|200|EMP,,
+Homing Laser,armaa_sprigganTorso,5,,5500,700,,50,0,10,0,42,144,0.35,16,ENERGY,55,,,10,2,0.2,,,,,,600,75,5,70,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,Pressure,Fast,Good,Great,Great,%s:  %s chance for an additional %s-%s points of %s damage when striking hull or armor.,Volatile|25%|5|30|High Explosive,,,,12.95
+Juno Mk. I,armaa_einhanderGun,,,4500,500,,75,0,5,20,42,,,,ENERGY,75,,0.525,1.6,8,0.1,3,15,1,5,,950,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,%s Inflicts %s pts %s damage alongside %s pts of %s damage per shot when ship system is activate.,Safety Release:|140|ENERGY|200|EMP,%s %s chance to generate EMP arcs on hull impact.,Safety Release:|25%|140|ENERGY|200|EMP,,
 Juno Mk. I (FP),armaa_einhanderGun2,,,4500,550,,140,200,20,20,42,,,,ENERGY,110,,1.05,1.6,8,0.1,0,15,1,6,,750,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
 Juno Mk. I (S),armaa_einhanderGunS,,,4500,800,,50,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,1100,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
 AS Glaive,armaa_heavyJavelin,3,0.3,2000,550,,450,300,50,20,42,10,,,HIGH_EXPLOSIVE,575,,0,5,1,,0,10,2,5,,700,,,30,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Anti Armor,,,,,,,%s: Ammo can be replenished by returning to a carrier.,Combat Resupply,,
@@ -38,7 +38,7 @@ LS-99 MOONLIGHT,armaa_valkenxLeftArm,,,,45,350,,50,20,,,,,,ENERGY,,,0.33,0.33,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #BIHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Micro Rail Rifle,armaa_lightmg,2,0.5,600,700,,100,,10,90,7,,,,KINETIC,,,,1,1,0.2,,,,,,1000,,,50,SYSTEM,,,,,Anti Shield,,,,,,,,,,0.5
-Juno Mk. II,armaa_javelin,2,,0,500,1500,,,50,0,3,3,,,ENERGY,,350,1.05,0.5,1,3,,,,,10000,,,,,"SYSTEM,STRIKE,USE_VS_FRIGATES",,,,,Strike,,,,,,,,,,15.6
+Juno Mk. II,armaa_javelin,2,,0,500,1050,,,50,0,3,3,,,ENERGY,,350,1.05,0.5,1,3,,,,,10000,,,,,"SYSTEM,STRIKE,USE_VS_FRIGATES",,,,,Strike,,,,,,,,,,15.6
 Vulcan Cannon,armaa_sprigganHeadmk3,,,,250,,25,,,40,4,,,,FRAGMENTATION,1.3,,0,0.3,1,,0,12,1,20,,1000,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
 Homing Laser,armaa_sprigganTorsomk3,5,,5500,700,,50,0,10,0,42,72,0.175,8,ENERGY,55,,,10,1,0.2,,,,,,400,75,5,70,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,,Fast,Good,Great,Great,,,,,,12.95
 ,armaa_sprigganmk3leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
@@ -49,7 +49,7 @@ Seeker Flares,armaa_kouto_torso,,,,800,,10,400,,,,1,0.1,,ENERGY,0,0,0,5,2,0.1,90
 ,armaa_kouto_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_kouto_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Blazer Rifle,armaa_taclaser,2,,600,250,350,,,0,100,7,3,0.05,,ENERGY,,,0.1,0.1,0.3,0.1,,,,,10000,,,,,"ANTI_FTR,SYSTEM",,,,,Anti Fighter,,,,,,,,,,15.6
-DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.05,0,10,1,5,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352
+DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.05,0,0,0,0,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352
 ,armaa_koutoLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #ILORIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -105,8 +105,8 @@ Degraded Juno Mk. III,armaa_altagrave_fluxcannon,2,,4600,800,850,,,20,20,16,,,,K
 ,armaa_garegga_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_garegga_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Heavy Machine Gun,heavymg,2,,1200,450,,40,,3,40,10,,,,KINETIC,15,,0,0.2,4,0.1,0,5,1,15,,700,,,30,PD,"kinetic11, pd10, SR, midline_bp",,,,Point Defense,,,,,,,,,,3.85
-Mutilator-K,armaa_garegga_leftArm,2,,1200,450,,55,,3,40,42,,,,KINETIC,20.9,,0,0.2,4,0.1,0,5,1,15,,700,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
-Mutilator,armaa_garegga_rightArm,2,,1000,450,,85,,5,40,42,,,,HIGH_EXPLOSIVE,55.25,,0,0.14,1,,0,20,0.9,10,,850,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
+Mutilator-K,armaa_garegga_leftArm,2,,1200,450,,52,,3,40,42,,,,KINETIC,20.9,,0,0.2,4,0.1,0,5,1,15,,700,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
+Mutilator,armaa_garegga_rightArm,2,,1000,450,,82,,5,40,42,,,,HIGH_EXPLOSIVE,55.25,,0,0.14,1,,0,20,0.9,10,,850,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
 Ion Buster,armaa_ionBuster,3,0.7,500,500,,300,1850,0,40,6,,,,ENERGY,540,,0.55,5,,,,,,,,800,,,,"STRIKE, USE_VS_FRIGATES",energy8,,Arma Armatura,,Suppression(Strike),,,,,"Hits on hull or armor arc to weapons and engines, dealing extra damage equal to the original hit. May generate shield-piercing EMP arcs, depending on the target's flux level.",25%,,,,19
 ,,,,,,,1.133333333,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GAREGGA TT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

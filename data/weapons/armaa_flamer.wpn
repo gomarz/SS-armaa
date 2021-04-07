@@ -19,7 +19,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_plasma_shot",
+  "projectileSpecId": "cryoblaster_shot2",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "specClass": "projectile",

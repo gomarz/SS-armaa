@@ -16,7 +16,7 @@
 		 "faceEnemy":true,
 		 "holdRoamRange":150,
 		 "freeRoamRange":300,
-		 "targetPriority":[MISSILE, SHIP_TARGET, FIGHTER, SHIP],
+		 "targetPriority":[MISSILE, FIGHTER, SHIP_TARGET, SHIP],
 		 "initialOrbitAngle":0,
 		 "orbitRadius":50, 				# plus ship radius
 		 "orbitDir":1, 					# -1 or 1
