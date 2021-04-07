@@ -49,7 +49,7 @@ Seeker Flares,armaa_kouto_torso,,,,800,,10,400,,,,1,0.1,,ENERGY,0,0,0,5,2,0.1,90
 ,armaa_kouto_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_kouto_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Blazer Rifle,armaa_taclaser,2,,600,250,350,,,0,100,7,3,0.05,,ENERGY,,,0.1,0.1,0.3,0.1,,,,,10000,,,,,"ANTI_FTR,SYSTEM",,,,,Anti Fighter,,,,,,,,,,15.6
-DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.05,0,0,0,0,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352
+DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.1,0,0,0,0,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352
 ,armaa_koutoLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #ILORIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
