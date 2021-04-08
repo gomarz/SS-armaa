@@ -15,6 +15,9 @@ V1.4.3d
 
 -Einhänder:
 	-AI use should be much more viable now
+	-Autopilot is immediately engaged upon opening Command UI
+		-Should prevent crashes caused by null AI pointer/AIhänder ceasing to move with
+		autopilot enabled
 	-Juno Mk. I DMG: FRAG->ENERGY; 
 	-Juno Mk. I Range: 500->600
 	-110 DP/SHOT -> 75 DP/SHOT; 
@@ -24,6 +27,7 @@ V1.4.3d
 		-Should now benefit from Phase Mastery
 		-Time Dilation: 55%->85%
 		-DMG Resistance: 35%->15%
+		-All damage reduced by 15% when active
 	-AIhänder without any explicit orders assigned will retreat to nearest carrier with highest CR for repairs if HP or CR drops below a certain threshold
 		-70% for cautious+timid
 		-50% for steady 
