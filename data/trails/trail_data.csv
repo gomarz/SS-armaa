@@ -45,3 +45,7 @@ armaa_garegga_trail,armaa_ionBuster_shot,base_trail_zap,10,0.1,0.05,0.25,20,15,"
 armaa_garegga_trail2,armaa_ionBuster_shot,beam_trail_helix,10,0.05,0.05,0.25,16,12,"[225,100,50]","[125,40,0]",0.5,300,-1024,0,2,1,FALSE,FALSE,TRUE,100,50,0.75,180,360,15,TRUE,TRUE
 armaa_garegga_trail3,armaa_ionBuster_shot,base_trail_zap,10,0.15,0.05,0.15,10,3.5,"[245,188,44]","[100,30,10]",0.5,300,-1024,0,3,1,FALSE,FALSE,TRUE,70,10,0.5,180,360,10,TRUE,TRUE
 armaa_garegga_trail4,armaa_ionBuster_shot,base_trail_zap,10,0.05,0.05,0.25,15,3.5,"[255,0,0]","[145,188,44]",0.5,300,-1024,0,1,1,FALSE,FALSE,TRUE,50,10,0.25,180,360,5,TRUE,TRUE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_einhanderS,armaa_valkengun_shot2,beam_trail_helix,10,0,0.2,0.4,20,30,"[200,0,200]","[0,0,200]",0.8,400,-256,0,10,1,TRUE,FALSE,TRUE,150,0,0,180,150,0,TRUE,FALSE
+armaa_einhanderS2,armaa_valkengun_shot2,base_trail_zap,10,0,0.2,0.7,12,8,"[200,0,200]","[200,0,200]",0.8,200,-3000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+armaa_einhanderS3,armaa_valkengun_shot2,beam_trail_smooth,10,0,0.2,0.5,20,20,"[245,245,0]","[0,0,200]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE

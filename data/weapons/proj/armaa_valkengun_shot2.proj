@@ -6,14 +6,20 @@
 	"collisionClass":"PROJECTILE_FIGHTER",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"length":30.0,
-	"hitGlowRadius":10,
+	"hitGlowRadius":15,
 	"width":30.0,
-	"fadeTime":0.10,
-	"explosionColor":[250,236,240,75],
-	"fringeColor":[250,236,240,255],
+	"fadeTime":0.1,
+	"explosionColor":[255,255,0,75],
+	"fringeColor":[200,200,0,255],
 	"coreColor":[255,255,255,255],
-	"glowColor":[10,200,10,15],
-	"glowRadius":0,
-	"bulletSprite":"graphics/armaa/weapons/nrg.png"
+	"glowColor":[244,244,0,15],
+	"glowRadius":100,
+	"bulletSprite":"graphics/armaa/weapons/nrg.png",
+  "textureScrollSpeed": 256,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+	"pixelsPerTexel":5.0
 
 }

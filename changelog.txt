@@ -14,12 +14,15 @@ V1.4.3d
 -Garegga now can appear on black market
 
 -Einhänder:
+	-Replaced Repair/Rearm drone system with a modified version of Harupea's Combat Docking Module
+		-
 	-AI use should be much more viable now
 	-Autopilot is immediately engaged upon opening Command UI
 		-Should prevent crashes caused by null AI pointer/AIhänder ceasing to move with
 		autopilot enabled
 	-Juno Mk. I DMG: FRAG->ENERGY; 
 	-Juno Mk. I Range: 500->600
+	-Altered enhanced Juno projectile/fx to more closely resemble the other weapons in the Juno
 	-110 DP/SHOT -> 75 DP/SHOT; 
 	-FLUX/SHOT-> 55->75
 	-Can now use Ship System without disabling Phase Damper Field
