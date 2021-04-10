@@ -6,8 +6,6 @@
 	
 	"mechmove":[ 
 		{"file":"sounds/armaa/mechmove.ogg","pitch":1,"volume":0.65},
-		{"file":"sounds/armaa/mechmove.ogg","pitch":1.03,"volume":0.68},
-		{"file":"sounds/armaa/mechmove.ogg","pitch":.97,"volume":0.62},
 	],
 	"armaa_silversword_warning":[ 
 		{"file":"sounds/armaa/armaa_silversword_warning.ogg","pitch":1,"volume":0.65},
@@ -68,12 +66,8 @@
 	],
 	
 	"homing_fire":[							{"file":"sounds/armaa/Fire3.ogg","pitch":1,"volume":0.4},
-{"file":"sounds/armaa/Fire3.ogg","pitch":1.03,"volume":0.43},
-{"file":"sounds/armaa/Fire3.ogg","pitch":.97,"volume":0.37},
 	],
 	"carbinecharge":[							{"file":"sounds/armaa/SND.DAT_00121slo.ogg","pitch":1,"volume":0.5},
-{"file":"sounds/armaa/SND.DAT_00121slo.ogg","pitch":1.03,"volume":0.53},
-{"file":"sounds/armaa/SND.DAT_00121slo.ogg","pitch":.97,"volume":0.47},
 	],
 	"beamcharge":[							
 			{"file":"sounds/armaa/beamcharge2.ogg","pitch":1,"volume":0.8},
@@ -94,8 +88,6 @@
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
 	],
 	"carbine2":[							{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1,"volume":0.35},
-{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1.03,"volume":0.38},
-{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":.97,"volume":0.32},
 	],
 	"launch":[
 {"file":"sounds/armaa/emp_emitter_activate.ogg","pitch":1,"volume":0.5},

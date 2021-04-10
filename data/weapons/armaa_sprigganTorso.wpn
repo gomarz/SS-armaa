@@ -1,7 +1,7 @@
 {
   "animationType": "GLOW_AND_FLASH",
   "autocharge": true,
-  "barrelMode": "LINKED",
+  "barrelMode": "ALTERNATING",
   "fireSoundOne": "launch",
   "fireSoundTwo": "homing_fire",
   "glowColor": [
@@ -48,18 +48,36 @@
     -90,
     90,
     127,
-    -127
+    -127,
+    135,
+    -135,
+    -90,
+    90,
+    -180,
+    180
   ],
   "turretGlowSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso_glow.png",
   "turretOffsets": [
-    -7.5,
-    -1.5,
-    -7.5,
-    1.5,
+    -7,
+    -3,
+    -7,
+    3,
     -11.5,
-    1.5,
+    3,
     -11.5,
-    -1.5
+    -3,
+    -9,
+    8,
+    -9,
+    -8,
+    -6,
+    -8,
+    -6,
+    8,
+    -12,
+    5.5,
+    -12,
+    -5.5
   ],
   "turretSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso.png",
   "type": "ENERGY"
