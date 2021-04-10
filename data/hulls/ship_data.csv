@@ -1,5 +1,5 @@
 name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,tags,rarity,breakProb,minPieces,maxPieces,number
-Einhänder,armaa_einhander,Cataphract,Arma Armatura,armaa_energysurge,6,750,300,1100,,175,30,1,170,200,200,130,180,60,PHASE,armaa_pdamper,,,,0.08,0.11,2,0,0,0,1,,11,14000,8,20,2,0.25,6,6,"SHIP_WITH_MODULES, PHASE","rare_bp,fake_fighter,independent_of_carrier",0.7,0.5,8,8,1
+Einhänder,armaa_einhander,Cataphract,Arma Armatura,armaa_energysurge,7,750,300,1100,,175,30,1,170,200,200,130,180,60,PHASE,armaa_pdamper,,,,0.08,0.11,2,0,0,0,1,,11,14000,8,20,110,0.25,7,7,"SHIP_WITH_MODULES, PHASE","rare_bp,fake_fighter,independent_of_carrier",0.7,0.5,8,8,1
 Einhänder,armaa_einhander_ftr,Cataphract,Arma Armatura,armaa_energysurge2,,750,300,1100,,175,,,170,200,200,130,180,60,PHASE,phasecloak,0,,1,0.08,0.11,2,0,0,0,1,,11,14000,25,20,,,1,1,,,0.7,0.5,8,8,1
 Valken,armaa_valkenmp,Fodder Cataphract,Arma Armatura,armaa_fireboltfeed,,425,30,150,,80,,,275,325,225,180,180,50,NONE,,,,,,,1,1,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
 Valken-X,armaa_valkenx,Gen. Purpose Cataphract,Arma Armatura,,,850,60,550,,125,,,180,200,200,125,125,60,PHASE,armaa_oboost2,,,1,0.08,0.11,2,2,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
@@ -26,7 +26,7 @@ Resupply Drone,armaa_reloaddrone,Drone,Low Tech,,,25,5,32,,0,,,200,25,50,90,180,
 CLAW,armaa_alesteBit,UWS,Arma Armatura,temporalshell,,100,20,600,,100,,,400,400,400,350,350,10,NONE,,,,,,,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454
 Pila,armaa_bit,UWS,Arma Armatura,armaa_tshell,,100,50,1000,,100,,,350,400,400,325,325,10,PHASE,armaa_pdamper,,,,0.08,0.11,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454
 Pila-X,armaa_bit_ex,UWS,Arma Armatura,temporalshell,,100,50,600,,100,,,350,400,400,300,300,10,NONE,armaa_pdamper,,,,0.08,0.11,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454
-Pila,armaa_dBit,Drone Bay,,,,750,300,600,,100,9,,400,400,400,200,200,5,NONE,,,,,,,0,0,0,0,0,0,0,100,100,1,110,0,1,1,"UNBOARDABLE,HIDE_IN_CODEX",,,0.5,2,2,5
+Pila,armaa_dBit,Drone Bay,,,1,750,300,600,,100,9,,400,400,400,200,200,5,NONE,,,,,,,0,0,0,0,0,0,0,100,100,1,110,0,0,0,"UNBOARDABLE,HIDE_IN_CODEX",,,0.5,2,2,5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #,armaa_newhull_leftpauldron,,Tri-Tachyon,,,2000,500,500,,20,,,110,110,110,65,65,25,NONE,,,,,,,1,1,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
 #,armaa_newhull_rightpauldron,,Tri-Tachyon,,,2000,500,500,,20,,,110,110,110,65,65,25,NONE,,,,,,,1,1,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2

@@ -14,8 +14,15 @@ V1.4.3d
 -Garegga now can appear on black market
 
 -Einhänder:
-	-Replaced Repair/Rearm drone system with a modified version of Harupea's Combat Docking Module
-		-
+	- DP: 6->7
+	- Fixed extra 1 DP being deducted on deployment due to hidden module
+	-Replaced Repair/Rearm drone system with a modified version of Harupea's Combat Docking Module(https://fractalsoftworks.com/forum/index.php?topic=20415.0)
+		-AIhänder will attempt to resupply at various thresholds, depending on pilot personality type
+		-Activating autopilot on player-controlled einhander will have it return to carrier
+		- Once landed, 'assigned' the carrier as a mothership and will attempt to return to it in the future
+		- Refit restores 20% CR and fully replenishes hp, armor, ammo, and PPT
+		- Refit time is proportional to the carrier's replacement rate
+		- Destruction of the carrier will also destroy Einhänder
 	-AI use should be much more viable now
 	-Autopilot is immediately engaged upon opening Command UI
 		-Should prevent crashes caused by null AI pointer/AIhänder ceasing to move with
