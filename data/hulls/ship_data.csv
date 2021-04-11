@@ -13,7 +13,7 @@ Gallant,armaa_gallant,Beam Bomber,Arma Armatura,,,500,30,350,,50,,,160,200,200,7
 #Seperate hulls instead of skins since they don’t properly spawn in markets for some reason,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Altagrave,armaa_altagrave,Mobile Armor,Arma Armatura,armaa_karma,15,3000,375,5850,,360,70,,110,110,80,95,100,250,OMNI,,140,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,15,15,SHIP_WITH_MODULES,armaa_mobilearmor,0.7,0.3,2,4,2
 Altagrave[C],armaa_altagrave_c,Mobile Armor,Arma Armatura,armaa_karma,15,3000,375,5850,,360,70,,110,110,80,95,100,250,OMNI,,140,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,15,15,SHIP_WITH_MODULES,armaa_mobilearmor,0.7,0.3,2,4,2
-Altagrave[G],armaa_altagrave_g,Mobile Armor,Arma Armatura,plasmajets,15,3000,375,5850,,360,70,,110,110,80,95,100,250,OMNI,,300,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,15,15,SHIP_WITH_MODULES,armaa_mobilearmor,0.7,0.3,2,4,2
+Altagrave[G],armaa_altagrave_g,Mobile Armor,Arma Armatura,plasmajets,15,3000,375,6000,,400,70,,110,110,80,95,100,250,OMNI,,300,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,15,15,SHIP_WITH_MODULES,armaa_mobilearmor,0.7,0.3,2,4,2
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Altagrave[EX],armaa_altagrave_ex,Mobile Armor,Arma Armatura,armaa_oboost,20,3000,375,5850,,360,70,,110,110,80,95,100,250,OMNI,,300,0.4,0.65,,,15,15,10,10,1,15,10,65000,6,20,280,0.25,20,20,"SHIP_WITH_MODULES,HIDE_IN_CODEX",armaa_mobilearmor,0.7,0.3,2,4,2
 Garegga,armaa_garegga,Cataphract ASM,Arma Armatura,armaa_silverSword,8,2000,300,2750,6667,295,45,,120,150,150,85,190,180,FRONT,,270,0.25,0.8,,,5,0,0,10,1,20,9,26000,8,10,300,0.25,8,8,,rare_bp,0.6,0.4,2,4,309

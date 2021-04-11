@@ -53,6 +53,13 @@ V1.4.3d
 - Juno Mk. II Damage/Sec: 1500->1050
 
 -Set Altagrave/garegga to priorityhulls at the special market on New Meshan, which should generally increase their frequency there
+-Fix Altagrave Karma desc to include details on both variants
+-Fix Altagrave[G] desc
+-Fix Altagrave[C] desc
+-Increase Flux cap/diss for Altagrave[G]
+-Caps:5850->6000
+-Dis:360->400
+----------
 V1.4.3c
 -----------
 - minor hullmod description fixes
