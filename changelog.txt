@@ -12,6 +12,7 @@ V1.4.3d
 -Added Altagrave(s) and Garegga to known hulls for the independent faction, at reduced frequency
 
 -Garegga now can appear on black market
+-Garegga + Trihander indevo support
 -removed sound files that were in jar for some reason
 
 -Einhänder:
