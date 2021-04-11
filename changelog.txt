@@ -16,6 +16,7 @@ V1.4.3d
 
 -Einhänder:
 	- DP: 6->7
+	- Added slightly different after-action raid report based on if player is piloting an Einhänder or not
 	- Fixed extra 1 DP being deducted on deployment
 	-Replaced Repair/Rearm drone system with a modified version of Harupea's Combat Docking Module(https://fractalsoftworks.com/forum/index.php?topic=20415.0)
 		-AIhänder will attempt to resupply at various thresholds, depending on pilot personality type

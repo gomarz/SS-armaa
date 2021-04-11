@@ -13,7 +13,7 @@ armaa_repairdrone_wing,armaa_repairdrone_standard,"no_drop, no_sell",3,1,2,8,DIA
 armaa_reloaddrone_wing,armaa_reloaddrone_standard,"no_drop, no_sell",3,1,2,8,DIAMOND,2500,400,600,1,SUPPORT,Resupply Drone,10,10000,,,,,,,,,,,,,6,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_bit_wing,armaa_bit_std,"no_drop, no_sell",3,,3,4,BOX,1000,500,,2,FIGHTER,Fire Support,15,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
+armaa_bit_wing,armaa_bit_std,"no_drop, no_sell",3,,3,4,V,1000,500,,2,SUPPORT,Fire Support,15,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit2_wing,armaa_bit_alta,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,6,0,BOX,0,500,,1,SUPPORT,Fire Support,20,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
