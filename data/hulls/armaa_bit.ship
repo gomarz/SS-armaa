@@ -11,7 +11,7 @@
     6,
     10.5
   ],
-"builtInMods": ["terminator_core","pointdefenseai"],
+"builtInMods": ["pointdefenseai"],
   "collisionRadius": 16.5,
   "engineSlots": [
     {

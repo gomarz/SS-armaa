@@ -12,7 +12,8 @@
   "builtInMods": [
     "variawep",
     "reduced_explosion",
-    "always_detaches"
+    "always_detaches",
+    "pointdefenseai"
   ],
   "center": [
     6,

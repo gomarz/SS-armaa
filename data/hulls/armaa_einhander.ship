@@ -27,9 +27,10 @@
   ],
   "builtInWings": ["armaa_bit_wing"],
   "builtInMods": [
-    "cataphract",
-    "strikeCraft",
     "beamcoat",
+    "phasefield",
+    "strikeCraft",
+    "cataphract"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_einhanderGun",

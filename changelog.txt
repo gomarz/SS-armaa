@@ -42,7 +42,7 @@ V1.4.3d
 		-Should now benefit from Phase Mastery
 		-Time Dilation: 55%->85%
 		-DMG Resistance: 35%->15%
-		-All damage reduced by 15% when active
+		-Damage Dealt: +0% ->-15% when active
 	-AIhänder without any explicit orders assigned will retreat to nearest carrier with highest CR for repairs if HP or CR drops below a certain threshold
 		-70% for cautious+timid
 		-50% for steady 
