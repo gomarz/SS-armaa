@@ -21,7 +21,7 @@
 		"engineGlowGlowMult":1.2,
 		"type":"GLOW" # GLOW or SMOKE
 	},
-"KILLIA_FIGHTER_ENGINE":{        
+"DRONE_ENGINE":{        
         "mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
         "contrailDuration":1.5,
         "contrailWidthMult":.67,

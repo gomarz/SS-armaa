@@ -55,7 +55,7 @@
         -0
       ],
       "style": "CUSTOM",
-      "styleId": "KILLIA_FIGHTER_ENGINE",
+      "styleId": "DRONE_ENGINE",
       "width": 8
     },
     {
@@ -67,7 +67,7 @@
         -5.5
       ],
       "style": "CUSTOM",
-      "styleId": "KILLIA_FIGHTER_ENGINE",
+      "styleId": "DRONE_ENGINE",
       "width": 6.786158
     },
     {
@@ -79,7 +79,7 @@
         5.5
       ],
       "style": "CUSTOM",
-      "styleId": "KILLIA_FIGHTER_ENGINE",
+      "styleId": "DRONE_ENGINE",
       "width": 6.786158
     }
   ],
