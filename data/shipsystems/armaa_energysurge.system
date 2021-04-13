@@ -29,7 +29,7 @@
 	
 	
 	#"useSound":"system_high_energy_focus_activate",
-	"deactivateSound":"system_high_energy_focus_deactivate",
+	"deactivateSound":"mechmoveRev",
 	# Stian deactivated these two because of audio playback timing issues. See fortressshield.system for more.
 	# Re-enable for testing.
 	

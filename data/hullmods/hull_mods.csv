@@ -3,11 +3,7 @@ Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"Th
 
 Like fighters, can %s, and %s. Additionally, the unit's smaller engines yield %s.
 
-Combat readiness decays %s faster than normal ships, but can return to friendly carriers to gradually recover CR (up to the carrier's current CR).
-
-So long as there is no significant enemy threat in the immediate area, friendly carriers will dispatch drones to %s. 
-
-Being serviced by a carrier cuts directly into resources used to refit its other wings, and they will suffer a %s penalty to fighter replacement rate during maintenance.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
+Combat readiness decays %s faster than normal ships, but can return to friendly carriers for refit, recovering %s CR and replenishing armor, hull, and ammo by %s.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
 Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Torment has an auxiliary reactor that grants an additional shield, but can be attacked and destroyed during combat, which shuts down the secondary shield and reduces flux dissipation and capacity by %s percent.
 
 The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
