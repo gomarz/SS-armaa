@@ -8,8 +8,8 @@
 	#"runScriptWhileIdle":true,  # this means unapply() never gets called
 	#"blockActionsWhileChargingDown":false,
 	
-	"jitterUnderColor":[147,52,199,155],
-	"jitterUnderCopies":25,
+	"jitterUnderColor":[147,52,199,100],
+	"jitterUnderCopies":10,
 	"jitterUnderMinRange":0,
 	"jitterUnderRange":20,
 	"jitterUnderRangeRadiusFraction":0,
@@ -17,15 +17,15 @@
 	"jitterColor":[155,100,155,55],
 	"jitterCopies":8,
 	"jitterMinRange":0,
-	"jitterRange":20,
+	"jitterRange":10,
 	"jitterRangeRadiusFraction":0,
 
 	"phaseHighlight":"_glow1",
 	"phaseDiffuse":"_glow2",
 
-	"effectColor1":[255,175,255,155],
-	"effectColor2":[255,0,255,100],
-	"shipAlpha":.7,
+	"effectColor1":[255,175,200,155],
+	"effectColor2":[255,0,200,100],
+	#"shipAlpha":.7,
 	
 	#"weaponGlowColor":[255,165,90,0],
 	#"weaponTypes":[ENERGY, BALLISTIC, MISSILE],

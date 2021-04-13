@@ -3,7 +3,9 @@ Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"Th
 
 Like fighters, can %s, and %s. Additionally, the unit's smaller engines yield %s.
 
-Combat readiness decays %s faster than normal ships, but can return to friendly carriers for refit, recovering %s CR and replenishing armor, hull, and ammo by %s.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
+Combat readiness decays %s faster than normal ships, but can return to friendly carriers for refit, recovering %s CR and replenishing armor, hull, and ammo by %s. Refit time increases based on the total amount of damage the craft has taken.
+
+Cannot capture objectives.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
 Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Torment has an auxiliary reactor that grants an additional shield, but can be attacked and destroyed during combat, which shuts down the secondary shield and reduces flux dissipation and capacity by %s percent.
 
 The secondary shield has %s capacity, %s dissipation and has a %s efficiency.

@@ -35,7 +35,7 @@ V1.4.3d
 		autopilot enabled
 	-Juno Mk. I:
 		DMG: FRAG->ENERGY; 
-		-Juno Mk. I Range: 500->600
+		-Range: 500->600
 		-Altered enhanced Juno projectile/fx to more closely resemble the other weapons in the Juno fam
 		-110 DP/SHOT -> 75 DP/SHOT; 
 		-FLUX/SHOT-> 55->75
@@ -45,6 +45,9 @@ V1.4.3d
 		-Time Dilation: 55%->85%
 		-DMG Resistance: 35%->15%
 		-Damage Dealt: +0% ->-15% when active
+	-Energy Surge
+		- Max Damage Bonus: 100%->50%
+		- Can now use with defensive systems
 	-AIhänder without any explicit orders assigned will retreat to nearest carrier with highest CR for repairs if HP or CR drops below a certain threshold
 		-70% for cautious+timid
 		-50% for steady 
