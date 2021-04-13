@@ -1,4 +1,4 @@
-V1.4.3d
+V1.4.4
 ----------
 - Reduced Trihänder spam in Tri-Tachyon fleets and markets
 - Garegga:
