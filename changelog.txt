@@ -20,11 +20,11 @@ V1.4.3d
 	- Added slightly different after-action raid report based on if player is piloting an Einhänder or not
 	- Fixed extra 1 DP being deducted on deployment
 	-Replaced Repair/Rearm drone system with a modified version of Harupea's Combat Docking Module(https://fractalsoftworks.com/forum/index.php?topic=20415.0)
-		-AIhänder will attempt to resupply at various thresholds, depending on pilot personality type
+		-AIhänder will attempt to resupply at various thresholds determined by pilot personality type
 		-Activating autopilot on player-controlled einhander will have it return to carrier if:
-			- CR <= 30%
-			- HP <= 80%
-			- Ammo exhausted on any weapon
+			- CR <= 40% or
+			- HP <= 50%
+			- non-ammo regen weapon exhausted
 		- Once landed, 'assigned' the carrier as a mothership and will attempt to return to it in the future
 		- Refit restores 20% CR and fully replenishes hp, armor, ammo, and PPT
 		- Refit time is proportional to the carrier's replacement rate, with reduced rates increasing refit time
@@ -36,9 +36,10 @@ V1.4.3d
 	-Juno Mk. I:
 		DMG: FRAG->ENERGY; 
 		-Range: 500->600
+		-Cooldown: 1.6->1
 		-Altered enhanced Juno projectile/fx to more closely resemble the other weapons in the Juno fam
-		-110 DP/SHOT -> 75 DP/SHOT; 
-		-FLUX/SHOT-> 55->75
+		-110 DP/SHOT -> 85 DP/SHOT; 
+		-FLUX/SHOT-> 55->85
 	-Can now use Ship System without disabling Phase Damper Field
 	-Phase Damper Field
 		-Should now benefit from Phase Mastery
@@ -46,7 +47,7 @@ V1.4.3d
 		-DMG Resistance: 35%->15%
 		-Damage Dealt: +0% ->-15% when active
 	-Energy Surge
-		- Max Damage Bonus: 100%->50%
+		- Max Damage Bonus: 100%->70%
 		- Can now use with defensive systems
 	-AIhänder without any explicit orders assigned will retreat to nearest carrier with highest CR for repairs if HP or CR drops below a certain threshold
 		-70% for cautious+timid
