@@ -45,7 +45,7 @@
     -16,
     33
   ],
-  "turretSprite": "graphics/armaa/ships/garegga/leftShoulder.png",
+  "turretSprite": "graphics/armaa/ships/garegga/LeftShoulder.png",
   "type": "DECORATIVE",
   "width": 1
 }

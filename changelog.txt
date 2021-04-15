@@ -1,3 +1,18 @@
+V1.4.5
+----------
+- fixed crash caused by case sensitivity for linux (probably?)
+
+-Einhänder:
+	- Flux Caps: 1100->1000
+	- Flux Diss: 175->200
+	- Juno Mk. I
+		-Burst Size: 8->10
+	- Will now opt for the nearest viable carrier to land on instead of traveling to one across the map
+	- Can now land on station hangar modules
+	- If friendly carrier with launch bays is targetted before activating autopilot, will attempt to use it to refit
+	- Minimum refit rate can no longer reach lower threshold than 30%
+	- Added random chatter text based on condition when landing(only if flagship)
+
 V1.4.4
 ----------
 - Reduced Trihänder spam in Tri-Tachyon fleets and markets
