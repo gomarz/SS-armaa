@@ -7,6 +7,8 @@ V1.4.5
 	- Flux Diss: 175->200
 	- Juno Mk. I
 		-Burst Size: 8->10
+	- AS Glaive:
+		- DMG: 450->500
 	- Will now opt for the nearest viable carrier to land on instead of traveling to one across the map
 	- Can now land on station hangar modules
 	- If friendly carrier with launch bays is targetted before activating autopilot, will attempt to use it to refit
