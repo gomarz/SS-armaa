@@ -1,7 +1,7 @@
 V1.4.5b
 ----------
--Crushed the elusive FighterAI crashes, hopefully once and for all
--Einhänder can no longer leisurely dock with a carrier on the opposing side
+-Crushed the elusive FighterAI bug/crash, hopefully once and for all
+-fixed bad logic that allowed Einhänder to land on enemy carriers 
 
 V1.4.5
 ----------
