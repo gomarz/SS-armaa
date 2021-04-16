@@ -1,3 +1,8 @@
+V1.4.5b
+----------
+-Crushed the elusive FighterAI crashes, hopefully once and for all
+-Einhänder can no longer leisurely dock with a carrier on the opposing side
+
 V1.4.5
 ----------
 - fixed crash caused by case sensitivity for linux (probably?)
