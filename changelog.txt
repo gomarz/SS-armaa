@@ -1,7 +1,8 @@
-V1.4.5b
+V1.4.5d
 ----------
 -Crushed the elusive FighterAI bug/crash, hopefully once and for all
--fixed bad logic that allowed Einhänder to land on enemy carriers 
+-fixed bad logic that allowed Einhänder to land on enemy carriers
+-add temporary workaround to vanilla's infinite overload bug affecting fighters 
 
 V1.4.5
 ----------
