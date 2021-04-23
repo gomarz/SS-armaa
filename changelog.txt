@@ -1,3 +1,12 @@
+V1.4.5dRC2
+----------
+-Einhänder:
+	- Reduced scale of some on-hit effects
+	- Armor: 300->275
+	- Refit Time: 20->30
+
+-Slight gfx tweaks to Ilorin, Valken, and Kouto
+
 V1.4.5d
 ----------
 -Crushed the elusive FighterAI bug/crash, hopefully once and for all

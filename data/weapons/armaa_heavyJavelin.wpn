@@ -35,7 +35,8 @@
   "noShieldImpactSounds": false,
   "projectileSpecId": "armaa_mauler_shot",
   "renderAboveAllWeapons": 0,
-  "size": "SMALL",
+  "size": "MEDIUM",
+  "glowColor":[50,175,250,255],
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [

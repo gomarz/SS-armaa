@@ -14,7 +14,7 @@
     5
   ],
   "hardpointSprite": "",
-  "id": "armaa_aleste_torso",
+  "id": "armaa_aleste_torso_ace",
   "muzzleFlashSpec": {
     "length": 25,
     "particleColor": [
@@ -49,7 +49,7 @@
     18,
     0
   ],
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_torso.png",
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_torso_c.png",
   "type": "DECORATIVE",
   "visualRecoil": 3
 }

@@ -1,0 +1,61 @@
+{
+  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    200,
+    200,
+    255,
+    255
+  ],
+  "fireSoundTwo": "phase_beam_loop",
+  "fringeColor": [
+    80,
+    180,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 10,
+  "id": "armaa_aleste_blade_LeftArm",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "pixelsPerTexel": 10,
+  "renderAboveAllWeapons": 0,
+  "showDamageWhenDecorative": true,
+"interruptibleBurst": true,
+"beamFireOnlyOnFullCharge": true,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 2000,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    19,
+    18
+  ],
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArm_blade.png",
+  "type": "ENERGY",
+  "width": 20
+}

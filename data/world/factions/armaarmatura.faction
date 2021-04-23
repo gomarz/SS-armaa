@@ -53,7 +53,9 @@
 	},
 	"knownFighters":{
 		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
-			"fighters":[],
+			"fighters":[
+			"armaa_gallant_wing",
+			],
 	},
 	"knownWeapons":{
 		"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp"],
@@ -97,6 +99,7 @@
             "armaa_altagrave",
             "armaa_altagrave_g",
             "armaa_garegga",
+	    "armaa_einhander",
         ],
     },
 	"knownHullMods":{
@@ -228,3 +231,4 @@
 
 	}
 },
+z

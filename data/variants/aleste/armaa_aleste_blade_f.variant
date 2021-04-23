@@ -1,0 +1,32 @@
+{
+  "displayName": "Blade",
+  "fluxCapacitors": 0,
+  "goalVariant": true,
+  "fluxVents": 0,
+  "hullId": "armaa_aleste_frig",
+  "hullMods": ["armaa_selector_blade","armaa_selector_chaingun"],
+  "variantId": "armaa_aleste_blade_f",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "armaa_aleste_rightArm",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "C_ARML": "armaa_aleste_blade_LeftArm",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead",
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
     "displayName": "Strike",
-    "fluxCapacitors": 4,
-    "fluxVents": 4,
+    "fluxCapacitors": 5,
+    "fluxVents": 5,
     "goalVariant": false,
     "hullId": "condor",
     "hullMods": [],
@@ -24,6 +24,6 @@
     ],
     "wings": [
         "armaa_valkenmp_wing",
-        "armaa_valkenmp_wing"
+        "armaa_ilorin_wing"
     ]
 }

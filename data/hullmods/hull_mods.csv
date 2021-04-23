@@ -40,3 +40,31 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+# ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
+Sensible Tuning,armaa_weaponSwap,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_weaponSwap,"This ship is a precisely fine-tuned machine of war that does not like getting tinkered with. 
+
+As such, using Hull-mods that increase mechanical stress, such as %s, %s, %s or %s, will reduce its peak performance time. 
+
+Current impact on PPT: %s",,graphics/icons/markets/rogue_ai.png
+L ARM: LASER BLADE,armaa_selector_blade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s deals immense amounts of damage, but has extremely short range.
+
+%s",,graphics/icons/markets/rogue_ai.png
+L ARM: STAKE DRIVER,armaa_selector_stake,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s fires large spikes that explodes after a few seconds, but has limited ammo.
+
+%s""",,graphics/icons/markets/rogue_ai.png
+R ARM:CHAINGUN,armaa_selector_chaingun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_chaingun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s has much better damage per shot and range, but worse sustained firepower and flux efficiency.
+
+%s",,graphics/icons/markets/rogue_ai.png
+R ARM: LASER,armaa_selector_lrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s is a general-purpose, rapid firing energy weapon, but is flux intensive.
+
+%s",,graphics/icons/markets/rogue_ai.png
