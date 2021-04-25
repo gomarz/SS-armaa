@@ -1,11 +1,19 @@
 V1.4.5dRC2
 ----------
+
+-ADDITIONS:
+	-Aleste(pilotable) - 4 DP
+	-Mechanically similar to Einhänder
+	-Much less flashy, but much more modular with 2x universal hardpoints
+	-left and right built-ins can be swapped
+
 -Einhänder:
 	- Reduced scale of some on-hit effects
 	- Armor: 300->275
 	- Refit Time: 20->30
+	- added high maintenance hmod
 
--Slight gfx tweaks to Ilorin, Valken, and Kouto
+-Slight gfx tweaks to Ilorin, Valken, Aleste and Kouto
 
 V1.4.5d
 ----------

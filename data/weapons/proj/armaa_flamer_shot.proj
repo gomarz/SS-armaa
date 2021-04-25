@@ -1,19 +1,20 @@
 {
-	"id":"cryoblaster_shot2",
+	"id":"armaa_flamer_shot",
 	"specClass":"projectile",
-	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryoblasterEffect",
-	"onFireEffect":"com.fs.starfarer.api.impl.combat.CryoblasterEffect",
+	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
+	
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	"length":40.0,
+	"length":80.0,
 	"width":20.0,
-	"hitGlowRadius":20,
-	"fadeTime":0.2,
-	"fringeColor":[255,0,0,255],
-	"coreColor":[250,150,255,255],
+	"hitGlowRadius":0,
+	"fadeTime":0.25,
+	"fringeColor":[255,0,000,100],
+	"coreColor":[250,197,92,100],
 	#"coreColor":[255,255,255,50],
 	"textureType":"SMOOTH",  # only needed for BEAM spawnType
 	"textureScrollSpeed":-256,
 	"pixelsPerTexel":5.0
+	
 }
