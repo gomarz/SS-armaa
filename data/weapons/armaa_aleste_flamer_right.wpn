@@ -3,7 +3,7 @@
   "barrelMode": "ALTERNATING",
   "everyFrameEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
   #"fireSoundTwo": "chaingun_fire",
-"fireSoundThree":"cryoflamer_loop",
+"fireSoundThree":"armaa_flamer_loop",
   "hardpointAngleOffsets": [
     0
   ],
@@ -18,15 +18,15 @@
     "length": 30,
     "particleColor": [
       255,
-      120,
-      165,
+      180,
+      100,
       200
     ],
     "particleCount": 11,
     "particleDuration": 0.02,
     "particleSizeMin": 16,
     "particleSizeRange": 22,
-    "spread": 10
+    "spread": 30
   },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
@@ -40,6 +40,7 @@
   "size": "SMALL",
   "specClass": "projectile",
   "textureType": ROUGH,
+  "glowColor":[255,180,100,200],
   "turretAngleOffsets": [
     0
   ],

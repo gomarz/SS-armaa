@@ -64,3 +64,8 @@ R ARM: LASER RIFLE,armaa_selector_lrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.arma
 %s is a general-purpose, rapid firing energy weapon, but is flux intensive.
 
 %s",,graphics/icons/markets/rogue_ai.png
+R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_flamer,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s is a short-range, flux-efficient energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge. Lacks automatic PD targeting software.
+
+%s",,graphics/icons/markets/rogue_ai.png

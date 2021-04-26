@@ -21,6 +21,7 @@
     255,
     255
   ],
+#"fringeColor":[125,0,205,255],
   "hardpointAngleOffsets": [
     0
   ],
