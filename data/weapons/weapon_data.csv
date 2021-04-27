@@ -68,14 +68,15 @@ Juno Mk. III (Ftr),armaa_fluxcannon_ftr,2,,4600,900,850,,,20,10,16,1,,,KINETIC,,
 #ALESTE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_aleste_torso_ace,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_aleste_torso,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Micro Needler,armaa_alesteHead,3,0.3,800,500,,50,,1,20,9,,,,KINETIC,30,,0.33,4.3,10,0.05,0,15,0.66,5,,1000,,,10,SYSTEM,,,,,Point Defense,,,,,,,,,,
+Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,30,,,4,10,0.05,0,15,0.66,5,,1000,,,10,SYSTEM,,,,,Anti Shield,,,,,,,,,,
 ,armaa_aleste_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,20,0,11,,,FRAGMENTATION,100,,0.25,4,2,0.5,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,,,Finisher,,,,,%s:Thows charges that stick to the hull and explode together for %s damage each.,Remote Detonation|200 High Explosive,,,,
-LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,600,,600,20,40,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
-Assault Chaingun(F),armaa_aleste_chaingun_right,1,,1000,450,,60,,3,30,0,,,,HIGH_EXPLOSIVE,40,,0,1,5,0.12,0,15,1,5,,925,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
-Rynex Laser Rifle,armaa_aleste_rightArm,1,,1000,600,,100,,3,30,0,,,,ENERGY,80,,0.2,0.2,1,,0,0,0,0,,1500,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
+Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,15,,,FRAGMENTATION,100,,0.25,4,2,0.5,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,,,Finisher,,,,,%s:Thows charges that stick to the hull and explode together for %s damage each.,Remote Detonation|200 High Explosive,,,,
+LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,600,,600,20,60,,,,,ENERGY,,200,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
+Assault Chaingun(F),armaa_aleste_chaingun_right,1,,1000,450,,60,,3,40,0,,,,HIGH_EXPLOSIVE,40,,0,1,5,0.12,0,15,1,5,,925,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
+Rynex Laser Rifle,armaa_aleste_rightArm,1,,1000,600,,100,,3,40,0,,,,ENERGY,80,,0.18,0.18,1,,0,0,0,0,,1500,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
 Plasma Flamer,armaa_aleste_flamer_right,3,,1000,400,,37.5,,3,60,0,140,4,40,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
+Exceliza Grenade Launcher,armaa_aleste_rifle_left,2,,2500,600,,500,,40,15,0,10,,,HIGH_EXPLOSIVE,500,,0,2,1,0.3,5,15,2,9,,,550,4,300,SYSTEM,,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25
 #,armaa_alesteBunker,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,Arma Armatura,,,,,,,,,,,,999
 ,armaa_pikeSecondary,1,,100,100,,50,250,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,
 Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,75,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5

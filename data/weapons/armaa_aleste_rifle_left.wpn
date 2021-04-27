@@ -1,9 +1,8 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect":"data.scripts.weapons.armaa_flamerEffect",
-  #"fireSoundTwo": "chaingun_fire",
-"fireSoundThree":"armaa_flamer_loop",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
+  "fireSoundTwo": "light_machinegun_fire",
   "hardpointAngleOffsets": [
     0
   ],
@@ -13,26 +12,25 @@
     0
   ],
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_aleste_flamer_right",
+  "id": "armaa_aleste_rifle_left",
   "muzzleFlashSpec": {
-    "length": 30,
+    "length": 20,
     "particleColor": [
       255,
-      180,
       100,
+      0,
       200
     ],
     "particleCount": 11,
-    "particleDuration": 0.02,
-    "particleSizeMin": 16,
-    "particleSizeRange": 22,
-    "spread": 30
+    "particleDuration": 0.1,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "spread": 10
   },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-"unaffectedByProjectileSpeedBonuses":true,
-  "projectileSpecId": "armaa_flamer_shot",
+  "projectileSpecId": "armaa_grenade_shot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -40,18 +38,21 @@
   "size": "SMALL",
   "specClass": "projectile",
   "textureType": ROUGH,
-  "glowColor":[255,180,100,200],
   "turretAngleOffsets": [
     0
   ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_alesteflamerGunBarrel.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_rifle_left.png",
   "turretOffsets": [
     44,
-    -12.5
+    12.5
+  ],
+  "glowColor": [
+    255,
+    100,
+    0,
+    255
   ],
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "type": "ENERGY",
-	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
-  "mountTypeOverride":"HYBRID",
-  "visualRecoil": 1
+  "type": "BALLISTIC",
+  "visualRecoil": 3
 }

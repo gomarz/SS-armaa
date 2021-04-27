@@ -3,14 +3,14 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "coreColor": [
-    200,
-    200,
-    255,
+    92,
+    197,
+    250,
     255
   ],
   "fireSoundTwo": "phase_beam_loop",
   "fringeColor": [
-    80,
+    0,
     100,
     255,
     255

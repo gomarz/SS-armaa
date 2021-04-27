@@ -160,7 +160,7 @@
       "type": "UNIVERSAL"
     },
     {
-      "angle": 0,
+      "angle": 15,
       "arc": 90,
       "id": "C_ARML",
       "locations": [
@@ -211,6 +211,7 @@
       "angle": 0,
       "arc": 135,
       "id": "E_HEAD",
+      "renderOrderMod":100,
       "locations": [
         3,
         -0
