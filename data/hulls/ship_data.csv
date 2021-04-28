@@ -7,8 +7,8 @@ Kouto,armaa_kouto,Vanguard Cataphract,Arma Armatura,armaa_overshield,,450,35,700
 Bih√§nder,armaa_valkencannon,Anti-Ship Cataphract,Arma Armatura,,,700,200,1000,,150,,,155,200,170,120,180,55,NONE,,,,1,,,2,2,0,0,1,,1,25000,25,1,,,1,1,,,0.7,1,3,5,4
 Ilorin,armaa_ilorin,Assault Cataphract,Arma Armatura,,,1000,100,150,,20,,,140,110,110,65,65,70,NONE,,,,,,,3,3,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
 Recordbreaker,armaa_record,Frankenphract,Arma Armatura,armaa_lowgradeemp,,400,30,300,,50,,,300,620,350,75,100,55,OMNI,,60,,1,,,1,1,0,0,1,,1,25000,25,25,,,1,1,,,0.5,1,3,5,3
-Aleste,armaa_aleste,Gen. Purpose Cataphract,Arma Armatura,armaa_claw,,1250,150,850,,180,,,165,165,165,110,110,65,NONE,,75,,1,,,3,5,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
-Aleste,armaa_aleste_frig,Cataphract,Arma Armatura,microburn,4,1250,150,850,,180,35,,165,165,165,100,100,70,OMNI,NONE,120,0.4,0.8,,,1,0,0,0,1,,11,8000,10,15,100,0.25,4,4,,"rare_bp,fake_fighter,independent_of_carrier",0.3,0.1,1,5,2
+Aleste,armaa_aleste,Gen. Purpose Cataphract,Arma Armatura,armaa_claw,,1250,150,850,,195,,,165,165,165,110,110,65,NONE,,75,,1,,,3,5,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
+Aleste,armaa_aleste_frig,Cataphract,Arma Armatura,microburn,4,1250,150,850,,195,35,,165,165,165,100,100,70,OMNI,NONE,120,0.4,0.8,,,1,0,0,0,1,,11,8000,10,15,100,0.25,4,4,,"rare_bp,fake_fighter,independent_of_carrier",0.3,0.1,1,5,2
 Gallant,armaa_gallant,Beam Bomber,Arma Armatura,,,500,30,350,,50,,,160,200,200,70,120,50,OMNI,,120,,1,,,2,2,0,0,1,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Seperate hulls instead of skins since they donít properly spawn in markets for some reason,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

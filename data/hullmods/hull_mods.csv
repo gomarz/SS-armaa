@@ -54,6 +54,11 @@ L ARM: STAKE DRIVER,armaa_selector_stake,,,,,,,,TRUE,,0,0,0,0,data.hullmods.arma
 %s fires large spikes that explodes after a few seconds, but has limited ammo.
 
 %s""",,graphics/icons/markets/rogue_ai.png
+L ARM: DISPERSAL GRENADE,armaa_selector_grenade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_grenade,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s fires six explosive submunitions per shot to saturate an area with firepower. Wildly inaccurate, but effective vs fighter formations and larger ships.
+
+%s",,graphics/icons/markets/rogue_ai.png
 R ARM:CHAINGUN,armaa_selector_chaingun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_chaingun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s has much better damage per shot and range, but worse sustained firepower and flux efficiency.

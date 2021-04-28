@@ -1,58 +1,52 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
-  #"everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
-  "fireSoundTwo": "rynex_fire",
-  "hardpointAngleOffsets": [
+  "id": "armaa_aleste_rightArm",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_rynex_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_alestechainGunBarrel.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "glowColor": [
+    255,
+    142,
+    50,
+    255
+  ],
+  "turretOffsets": [
+    48.5,
+    -12.5
+  ],
+  "turretAngleOffsets": [
     0
   ],
-  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "hardpointOffsets": [
     17,
     0
   ],
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_aleste_rightArm",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
     "length": 20,
+    "spread": 10,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "particleDuration": 0.1,
+    "particleCount": 11,
     "particleColor": [
       255,
       100,
       0,
       200
-    ],
-    "particleCount": 11,
-    "particleDuration": 0.1,
-    "particleSizeMin": 18,
-    "particleSizeRange": 24,
-    "spread": 10
+    ]
   },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_rynex_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
-  ],
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_alestechainGunBarrel.png",
-  "turretOffsets": [
-    44,
-    -12.5
-  ],
-  "glowColor": [
-    255,
-    100,
-    0,
-    255
-  ],
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "type": "ENERGY",
-  "visualRecoil": 3
+  "fireSoundTwo": "rynex_fire"
 }

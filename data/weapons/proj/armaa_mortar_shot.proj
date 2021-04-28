@@ -1,0 +1,23 @@
+{
+    "id":"armaa_mortar_shot",
+    "specClass":"missile",	
+    #"missileType":"ROCKET",	
+    "missileType":"BOMB",
+    "sprite":"graphics/missiles/bomb_HE.png",
+    "size":[12,16],	
+    "center":[6,8],
+    "collisionRadius":16,
+    "collisionClass":"MISSILE_NO_FF",
+    "explosionColor":[255,0,100,255],
+    "explosionRadius":75,
+    "maxFlightTime":3.5,
+    "armingTime":1.5,	
+    "engineSpec":{
+        "turnAcc":0,
+        "turnRate":0,
+        "acc":40,
+        "dec":80,
+        "maxSpeed":400
+    },		  
+	
+}
