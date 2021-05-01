@@ -30,7 +30,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_chaingun_shot",
+  "projectileSpecId": "heavyblaster_shot3",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW

@@ -1,21 +1,11 @@
 {
 	"hullFrequency":{
 		"hulls":{
-			"armaa_altagrave":0.6,
+			"armaa_altagrave":0.8,
 			"armaa_altagrave_c":0.5,
-			"armaa_altagrave_g":0.6,
+			"armaa_altagrave_g":0.8,
 			"armaa_garegga":0.8,
-			"armaa_einhander":0.5,	
-		},
-		"fighters":{
-			"armaa_valkenmp_wing":0.5,
-			"armaa_kouto_wing":0.5,
-			"armaa_ilorin_wing":0.5,
-			"armaa_valkencannon_wing":0.25,
-			"armaa_valkenx_wing":0.5,
-			"armaa_record_wing":0.4,
-			"armaa_aleste_wing":0.5,
-			"armaa_gallant_wing":0.4,
+			"armaa_einhander":0.3,	
 		},
 	},
 	"shipsWhenImporting":{

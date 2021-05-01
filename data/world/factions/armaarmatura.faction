@@ -29,14 +29,17 @@
 	"hullFrequency":{
 			"hulls":
 			{
-				"armaa_altagrave":1.3,
+				"armaa_altagrave":1,
 				"armaa_altagrave_c":0.3,
-				"armaa_altagrave_g":1,
-				"armaa_garegga":1,	
+				"armaa_altagrave_g":0.9,
+				"armaa_garegga":1.1,
+				"armaa_aleste_frig":1,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.1,
 			"armaa_valkenx_wing":1.2,
+			"armaa_kouto_wing":1.1,
+			"armaa_ilorin_wing":1.1,
 		},
 	},
 	"knownShips":{
@@ -87,7 +90,7 @@
 	},
 
 	"priorityWeapons":{
-		"tags":[],
+		#"tags":[],
 		"weapons":[
 		"armaa_fluxcannon",
 		"armaa_ionBuster",
