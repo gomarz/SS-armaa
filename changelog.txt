@@ -3,7 +3,6 @@ V1.4.5dRC2
 
 -Lowered indie reputation requirement for meshan submarket to favorable (25->10)
 -Submarket will now only sell armaa ships! No longer travel across the sector, only to find nothing in stock!
--All blueprints should now be discoverable through exploration, or added to the pool of BPs the historian offers
 -Tweaked indie + persean LPC usage rate
 
 -ADDITIONS:
@@ -20,13 +19,18 @@ V1.4.5dRC2
 		- Dispersal Grenade
 
 ----balance changes---
+-Altagrave[EX]
+	-fixed bug where shotgun would sometimes not fire properly when under time dilation
 
-Altagrave:
+-Altagrave[G],[C], and standard:
 	-Increased DP: 15->18
-	-Increased price to better match ships around DP value
+	-Increased prices to better match ships around DP value
+	-Removed EMP emitter from leg modules
+-Altagrave[C] and standard:
+	-Max Flux: 6000->5800
 
 -Valken X:
-	-renamed LS-99 to LS-2001
+	-LS-99 DPS: 350->150
 -Ilorin:
 	-minor sprite adjustments
 	-Sol rocket pod: 15 ammo->8; burst size: 15->4
@@ -39,7 +43,8 @@ Altagrave:
 -Einhänder:
 	- Reduced scale of some on-hit effects
 	- Armor: 300->275
-	- DP: 6->8
+	- DP: 6->7
+	- Added High Maintenance hmod
 
 -Revamped aleste sprite to more closely resemble high-tech coloration
 -Slight sprite adjustment to Valken and Kouto
