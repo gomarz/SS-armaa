@@ -1,9 +1,4 @@
 {
-		"hullFrequency":{		
-		"fighters":{
-			"armaa_ilorin_wing":0.45,
-		},
-	},
 	"knownFighters":{
 		#"tags":["armaa_cataphract_bp"],
 		"fighters":

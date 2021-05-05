@@ -3,7 +3,7 @@ V1.4.6
 -Fixed hulls not being procurable in nex
 -Soft removal of Einhander (LPC version)
 -Soft removal of Recordbreaker, will rework into something not as lame
--added missing bp to nex starts
+-added missing bp to nex starts; adjusted starting ships for carrier(small)
 -Lowered indie reputation requirement for meshan submarket to favorable (25->10)
 -Submarket now only sells armaa ships, but stock has been reduced by 25%
 -All blueprints should now be discoverable through exploration, or added to the pool of BPs the historian offers
@@ -35,6 +35,11 @@ Altagrave:
 	-renamed LS-99 to LS-2001
 	-DPS: 300->125
 
+-Valken:
+	-Wing Size: 4->3
+	-IR Pulse Laser(High Delay)->IR Pulse Laser
+	-Fixed weird deco weapon spacing
+
 -Ilorin:
 	-minor sprite adjustments
 	-Sol rocket pod: 15 ammo->8; burst size: 15->4
@@ -42,6 +47,7 @@ Altagrave:
 
 -Strikecraft(Hullmod)
 	- Refit Time: 20->30
+	- Fix inordinately long refit time caused by landing with very little hull remaining
 	- AI will return to carrier to resupply only when all weapon ammo is exhausted, previously would return as soon as one weapon was empty
 
 -Einhänder:

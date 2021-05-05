@@ -1,11 +1,11 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 10,
+  "displayName": "Anti-Ship",
+  "fluxCapacitors": 5,
   "goalVariant": true,
   "fluxVents": 10,
   "hullId": "armaa_aleste_frig",
-  "hullMods": ["armaa_selector_stake","armaa_selector_lrifle","reinforcedhull"],
-  "variantId": "armaa_aleste_standard_f",
+  "hullMods": ["armaa_selector_stake","armaa_selector_lrifle","heavyarmor","targetingunit"],
+  "variantId": "armaa_aleste_as_f",
   "weaponGroups": [
     {
       "autofire": true,
@@ -32,8 +32,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS001": "lightag",
-        "WS002": "lightdualac",
+        "WS001": "atropos",
+        "WS002": "atropos",
       }
     },
   ]

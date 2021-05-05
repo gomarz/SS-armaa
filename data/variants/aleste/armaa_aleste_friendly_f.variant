@@ -18,7 +18,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_aleste_blade_LeftArm",
+        "C_ARML": "armaa_aleste_rifle_left",
       }
     },
     {
