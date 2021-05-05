@@ -48,29 +48,34 @@ L ARM: LASER BLADE,armaa_selector_blade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa
 
 %s deals immense amounts of damage, but has extremely short range.
 
-%s",,graphics/icons/markets/rogue_ai.png
+%s",,graphics/armaa/hullmods/hand_l.png
 L ARM: STAKE DRIVER,armaa_selector_stake,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires large spikes that explodes after a few seconds, but has limited ammo.
 
-%s""",,graphics/icons/markets/rogue_ai.png
+%s""",,graphics/armaa/hullmods/hand_l.png
 L ARM: DISPERSAL GRENADE,armaa_selector_grenade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_grenade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires six explosive submunitions per shot to saturate an area with firepower. Wildly inaccurate, but effective vs fighter formations and larger ships.
 
-%s",,graphics/icons/markets/rogue_ai.png
-R ARM:CHAINGUN,armaa_selector_chaingun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_chaingun,"HAND weapons can be changed to better suit the pilot's preferences. 
+%s",,graphics/armaa/hullmods/hand_l.png
+L ARM: LASER RIFLE,armaa_selector_lrifle_left,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-%s has much better damage per shot and range, but worse sustained firepower and flux efficiency.
+%s is a general-purpose, rapid firing energy weapon, but is flux intensive.
 
-%s",,graphics/icons/markets/rogue_ai.png
+%s",,graphics/armaa/hullmods/hand_l.png
+R ARM:HEAVY RIFLE,armaa_selector_heavyrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_heavyrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s has significant damage per shot and range, but poor sustained firepower and flux efficiency.
+
+%s",,graphics/armaa/hullmods/hand_r.png
 R ARM: LASER RIFLE,armaa_selector_lrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a general-purpose, rapid firing energy weapon, but is flux intensive.
 
-%s",,graphics/icons/markets/rogue_ai.png
+%s",,graphics/armaa/hullmods/hand_r.png
 R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_flamer,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a short-range, flux-efficient energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge. Lacks automatic PD targeting software.
 
-%s",,graphics/icons/markets/rogue_ai.png
+%s",,graphics/armaa/hullmods/hand_r.png

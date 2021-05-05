@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   #"everyFrameEffect": "data.scripts.weapons.armaa_valkenXEffect",
-  "fireSoundTwo": "chaingun_fire",
+  "fireSoundTwo": "heavy_rynex_fire",
   "hardpointAngleOffsets": [
     0
   ],
@@ -12,25 +12,25 @@
     0
   ],
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_aleste_chaingun_right",
+  "id": "armaa_aleste_heavyrifle_right",
   "muzzleFlashSpec": {
-    "length": 30,
+    "length": 66,
     "particleColor": [
       255,
       120,
       165,
       200
     ],
-    "particleCount": 11,
+    "particleCount": 20,
     "particleDuration": 0.02,
-    "particleSizeMin": 16,
-    "particleSizeRange": 22,
-    "spread": 10
+    "particleSizeMin": 24,
+    "particleSizeRange": 30,
+    "spread": 25
   },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "heavyblaster_shot3",
+  "projectileSpecId": "heavyrynex_shot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -41,12 +41,12 @@
   "turretAngleOffsets": [
     0
   ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_heavyrifle.png",
   "turretOffsets": [
-    27,
-    -14.5
+    48.5,
+    -12.5
   ],
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "type": "BALLISTIC",
-  "visualRecoil": 3
+  "visualRecoil": 5
 }

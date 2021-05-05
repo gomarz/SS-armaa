@@ -53,7 +53,7 @@ armaa_aleste,SHIP,"Exceptional durability combined with a diverse loadout. The a
 
 The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
 
-armaa_aleste_frig,SHIP,"Exceptionally durable and versatile. This version of the Aleste has been further optimized for anti-ship assault, with the original built-in drone bay repurposed as a mounting for two hardpoints that can equip weaponry rated effective versus starships.
+armaa_aleste_frig,SHIP,"The Aleste Type-S has been further optimized for anti-ship assault, with the original built-in drone bay repurposed to accomodate two hardpoints. While it can only operate independently for short periods of time, an Aleste attached to a carrier can bring a significant number of strike options to the table for fleet commanders.
 
 The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
 
@@ -69,9 +69,15 @@ armaa_alesteHead,WEAPON,"Fires bursts of small flechettes at a high rate of fire
 
 armaa_aleste_rightArm,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
 
+armaa_aleste_rifle_left,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
+
+armaa_aleste_heavyrifle_right,WEAPON,"Enhanced Rynex Pulse Rifle. Fires a significantly stronger laser, but capacitors can only last long enough to fire a few shots.",,,
+
+armaa_aleste_grenade_left,WEAPON,"Fires a burst of high-explosive grenades. Effective in target rich enviroments or versus slower enemies. ",,,
+
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
 
-armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't vaporized by point defenses.
+armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 armaa_aleste_flamer_right,WEAPON,"Evolution of the DR-79 plasma gatling. Rather short-ranged, but deadly in close-quarters combat.",,,
@@ -112,6 +118,6 @@ armaa_oboost,SHIP_SYSTEM,"Dramatically increases speed, and moderately increases
 armaa_claw,SHIP_SYSTEM,"Autonomous hunter-killer drones that frequently sheathe themselves in lesser temporal shells for higher performance. Two can be launched simultaneously, and carries 6 in total.",,,
 armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
 #CAMPAIGN STUFF,,,,,
-armaa_homeworld,CUSTOM,"Little more than another unremarkable, yet promising dustball several decades ago, the fortune of this planet was reversed when Arma Armatura received rights to the planet via corporate charter following the AI wars. 
+armaa_homeworld,CUSTOM,"A formerly unremarkable planet, it's fortune reversed when Arma Armatura received rights to the planet via corporate charter following the Second AI War. 
 
-New Meshan grew rapidly and has become a thriving hub of industry, and houses one of the most well-trained independent conglomoration of mercenaries and soldiers in the region. ArmaA has apparently left the population to self-govern for the most part, and New Meshan is outwardly a constitutional monarchy. Those ""in the know"", however, maintain that the supervisory board covertly calls the shots.",,,
+The colony has enjoyed rapid growth, housing one of the most well-trained independent conglomoration of mercenaries and soldiers in the region. ArmaA has apparently left the population to self-govern for the most part, and New Meshan is outwardly a constitutional monarchy. Those ""in the know"", however, maintain that the supervisory board covertly calls the shots.",,,

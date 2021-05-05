@@ -29,11 +29,11 @@
 	"hullFrequency":{
 			"hulls":
 			{
-				"armaa_altagrave":1,
+				"armaa_altagrave":0.6,
 				"armaa_altagrave_c":0.3,
-				"armaa_altagrave_g":0.9,
+				"armaa_altagrave_g":0.6,
 				"armaa_garegga":1.1,
-				"armaa_aleste_frig":1,	
+				"armaa_aleste_frig":1.2,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.1,
@@ -48,6 +48,7 @@
 				"armaa_einhander",
 				"armaa_altagrave",
 				"armaa_garegga",
+				"armaa_aleste_frig",
 			],
 	},
 	"shipsWhenImporting":{
@@ -103,6 +104,7 @@
             "armaa_altagrave_g",
             "armaa_garegga",
 	    "armaa_einhander",
+	    "armaa_aleste_frig",
         ],
     },
 	"knownHullMods":{

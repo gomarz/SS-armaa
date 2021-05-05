@@ -17,7 +17,7 @@
         "turnRate":0,
         "acc":40,
         "dec":80,
-        "maxSpeed":400
+        "maxSpeed":500
     },		  
 	
 }

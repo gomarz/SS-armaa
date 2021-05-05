@@ -31,11 +31,11 @@ IR Pulse Laser (High Delay),armaa_laser,1,,250,500,,50,,0,50,5,,,,ENERGY,50,,0.3
 #VALKEN-X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_valkenx_torso_vernier,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Ion Cannon (High Delay),armaa_valkenx_torso,2,,500,500,,25,400,0,40,6,,,,ENERGY,30,,0.5,0.5,,,,,,,,1000,,,,SYSTEM,energy8,,,,Suppression,,,,,,,,,,19.1
-Vulcan Cannon,armaa_valkenxHead,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD,PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
+Vulcan Cannon,armaa_valkenxHead,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
 ,armaa_valkenx_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_valkenx_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Assault Chaingun(F),armaa_chaingun,1,,1000,450,,60,,3,30,42,,,,HIGH_EXPLOSIVE,,,0,1,5,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
-LS-2001 Blade,armaa_valkenxLeftArm,,,,45,150,,50,20,,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
+LS-20  Blade,armaa_valkenxLeftArm,,,,45,125,,50,20,,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #BIHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Micro Rail Rifle,armaa_lightmg,2,0.5,600,700,,100,,10,90,7,,,,KINETIC,,,,1,1,0.2,,,,,,1000,,,50,SYSTEM,,,,,Anti Shield,,,,,,,,,,0.5
@@ -73,10 +73,11 @@ Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,30,,,4,10,0.
 ,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,15,,,FRAGMENTATION,100,,0.25,4,2,0.5,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,,,Finisher,,,,,%s:Thows charges that stick to the hull and explode together for %s damage each.,Remote Detonation|200 High Explosive,,,,
 LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,600,,600,20,60,,,,,ENERGY,,200,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
-Heavy Rynex Pulse Laser,armaa_aleste_chaingun_right,2,,2500,600,,400,,0,15,12,,,,ENERGY,576,,0,1,,,,,,,,1000,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
-Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,650,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,10,1,10,,1500,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
-Plasma Flamer,armaa_aleste_flamer_right,3,,1000,400,,37.5,,3,60,0,140,4,40,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
-Dispersal Grenade,armaa_aleste_rifle_left,2,,2500,600,,200,,5,40,0,60,,,HIGH_EXPLOSIVE,200,,0,4,6,0.15,0,15,5,9,,,450,4,225,"SYSTEM, DO_NOT_CONSERVE, ANTI_FTR",,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25
+Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
+Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,650,,130,,3,40,0,,,,ENERGY,104,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
+Plasma Flamer,armaa_aleste_flamer_right,3,,1000,450,,37.5,,3,60,0,200,4,40,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
+Rynex Pulse Rifle,armaa_aleste_rifle_left,1,,1000,650,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
+Dispersal Grenade,armaa_aleste_grenade_left,2,,2500,600,,200,,5,40,0,50,,,HIGH_EXPLOSIVE,200,,0,4,6,0.15,0,10,5,9,,,500,4,225,"SYSTEM, DO_NOT_CONSERVE, ANTI_FTR",,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25
 #,armaa_alesteBunker,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,Arma Armatura,,,,,,,,,,,,999
 ,armaa_pikeSecondary,1,,100,100,,50,250,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,
 Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,100,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5

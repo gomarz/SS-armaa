@@ -1,23 +1,35 @@
 {
-  "id": "armaa_aleste_rightArm",
+  "id": "armaa_aleste_grenade_left",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_rynex_shot",
-  "type": "ENERGY",
+  "projectileSpecId": "armaa_mortar_shot",
+  "type": "BALLISTIC",
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_alestechainGunBarrel.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_grenade_left.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 3,
+  "visualRecoil": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    44.5,
-    -12.5
+    40,
+    12,
+    40,
+    12.5,
+    40,
+    12,
+    40,
+    12,
+    40,
+    12.5
   ],
   "turretAngleOffsets": [
-    0
+    0,
+    -9.5,
+    12,
+    11.5,
+    -8
   ],
   "hardpointOffsets": [
     17,
@@ -42,5 +54,5 @@
       200
     ]
   },
-  "fireSoundTwo": "rynex_fire"
+  "fireSoundTwo": "armaa_grenade_fire"
 }

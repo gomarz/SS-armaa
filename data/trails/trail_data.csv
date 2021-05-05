@@ -21,9 +21,13 @@ armaa_seeker_trail,armaa_karma_seeker,beam_trail_smooth,10,0,0.1,0.1,10,5,"[149,
 armaa_spike_shot,armaa_spike_shot,base_trail_mild,10,0.1,0.1,1,10,5,"[225,200,200]","[128,128,128]",0.5,256,-256,0,0,1,FALSE,FALSE,TRUE,50,0,0,180,45,0,TRUE,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_aleste1,armaa_rynex_shot,beam_trail_helix,5,0,0.2,0.4,10,15,"[245,188,44]","[255,0,0]",1,400,-256,0,10,1,TRUE,FALSE,TRUE,150,0,0,180,150,0,TRUE,FALSE
-armaa_aleste2,armaa_rynex_shot,base_trail_zap,10,0,0.2,0.7,6,4,"[255,0,0]","[255,0,0]",1,200,-3000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
-armaa_aleste3,armaa_rynex_shot,beam_trail_smooth,10,0,0.1,0.5,10,10,"[245,188,44]","[255,0,0]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_aleste1,heavyrynex_shot,beam_trail_helix,5,0,0.2,0.4,12,15,"[245,188,44]","[255,0,0]",1,400,-256,0,10,1,TRUE,FALSE,TRUE,150,0,0,180,150,0,TRUE,FALSE
+armaa_aleste2,heavyrynex_shot,base_trail_zap,10,0,0.2,0.7,8,6,"[255,0,0]","[255,0,0]",1,200,-3000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+armaa_aleste3,heavyrynex_shot,beam_trail_smooth,10,0,0.1,0.5,10,12,"[245,188,44]","[255,0,0]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_grenade_shot,armaa_grenade_shot,base_trail_mild,10,0.1,0.1,1,10,20,"[225,200,200]","[128,128,128]",0.5,256,-256,0,0,1,FALSE,FALSE,TRUE,50,0,0,180,45,0,TRUE,
 armaa_mortar_shot,armaa_mortar_shot,base_trail_mild,10,0.1,0.1,1,8,15,"[225,200,200]","[128,128,128]",0.3,256,-256,0,0,1,FALSE,FALSE,TRUE,50,0,0,180,45,0,TRUE,

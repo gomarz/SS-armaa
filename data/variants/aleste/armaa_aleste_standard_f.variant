@@ -1,10 +1,10 @@
 {
-  "displayName": "Next-Gen Cataphract",
-  "fluxCapacitors": 0,
+  "displayName": "Standard",
+  "fluxCapacitors": 9,
   "goalVariant": true,
-  "fluxVents": 0,
+  "fluxVents": 10,
   "hullId": "armaa_aleste_frig",
-  "hullMods": ["armaa_selector_stake","armaa_selector_lrifle"],
+  "hullMods": ["armaa_selector_stake","armaa_selector_lrifle","heavyarmor","targetingunit"],
   "variantId": "armaa_aleste_standard_f",
   "weaponGroups": [
     {
@@ -27,6 +27,14 @@
       "weapons": {
         "E_HEAD": "armaa_sprigganHead",
       }
-    }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS001": "atropos",
+        "WS002": "atropos",
+      }
+    },
   ]
 }

@@ -21,8 +21,8 @@
 		"interstellarimperium": 0.15,
 	},
 
-	"startShipsCarrierSmall":[["armaa_aleste_standard_f", "armaa_condor_Support"],["armaa_aleste_standard_f", "gemini_Standard"]],
+	"startShipsCarrierSmall":[["armaa_aleste_standard_f", "armaa_condor_Support","hound_d_pirates_Shielded"],],
 	"startShipsSuper":[["armaa_altagrave_c_Standard","wayfarer_Standard"],["armaa_altagrave_standard","wayfarer_Standard"],["armaa_altagrave_g_Standard","wayfarer_Standard"],["armaa_garegga_standard","wayfarer_Standard"],
 ["armaa_einhander_Strike", "armaa_condor_Support"],],
-	"startSpecialItems":[[["armaa_cataphract_package",""]],],
+	"startSpecialItems":[[["armaa_cataphract_package","armaa_advcataphract_package",""]],],
 }

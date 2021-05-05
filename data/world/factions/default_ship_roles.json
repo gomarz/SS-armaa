@@ -5,7 +5,8 @@
 },
   "combatSmall": {
     "armaa_garegga_tt_standard":1,
-    "armaa_garegga_standard":.8,	
+    "armaa_garegga_standard":.8,
+    "armaa_aleste_standard_f":1,	
   },
   "combatMedium": {
     "armaa_altagrave_standard":1,

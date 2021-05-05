@@ -1,35 +1,23 @@
 {
   "id": "armaa_aleste_rifle_left",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_mortar_shot",
-  "type": "BALLISTIC",
+  "projectileSpecId": "armaa_rynex_shot",
+  "type": "ENERGY",
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_rifle_left.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 1,
+  "visualRecoil": 3,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    40,
-    12,
-    40,
-    12.5,
-    40,
-    12,
-    40,
-    12,
-    40,
+    44.5,
     12.5
   ],
   "turretAngleOffsets": [
-    0,
-    -9.5,
-    12,
-    11.5,
-    -8
+    0
   ],
   "hardpointOffsets": [
     17,
@@ -54,5 +42,5 @@
       200
     ]
   },
-  "fireSoundTwo": "armaa_grenade_fire"
+  "fireSoundTwo": "rynex_fire"
 }
