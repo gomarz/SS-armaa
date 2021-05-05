@@ -2,18 +2,18 @@ V1.4.6
 ----------
 -Fixed hulls not being procurable in nex
 -Soft removal of Einhander (LPC version)
--Soft removal of Recordbreaker, will rework into something not as lame
--added missing bp to nex starts; adjusted starting ships for carrier(small)
+-Soft removal of Recordbreaker
+-added missing bp to nex starts; adjusted starting ships for carrier(small) start
 -Lowered indie reputation requirement for meshan submarket to favorable (25->10)
 -Submarket now only sells armaa ships, but stock has been reduced by 25%
 -All blueprints should now be discoverable through exploration, or added to the pool of BPs the historian offers
--LPC frequency values were flipped, should be rarer in NPC fleets
 
 -ADDITIONS:
 	-Aleste(pilotable) - 5 DP
 	-Mechanically similar to Einhänder
 	-More modular, less flashy
 	-2x universal hardpoints
+	-Revamped sprite to more closely resemble high-tech,minor variations between pilotable and lpc version
 	-left and right built-ins can be swapped
 		- Laser Blade, 
 		- Stake Driver, 
@@ -39,6 +39,7 @@ Altagrave:
 	-Wing Size: 4->3
 	-IR Pulse Laser(High Delay)->IR Pulse Laser
 	-Fixed weird deco weapon spacing
+	-minor sprite adjustments
 
 -Ilorin:
 	-minor sprite adjustments
@@ -55,9 +56,6 @@ Altagrave:
 	- Armor: 300->275
 	- DP: 6->8
 	- Added High Maintenance Hullmod
-
--Revamped aleste sprite to more closely resemble high-tech
--Slight sprite adjustment to Valken and Kouto
 
 V1.4.5d
 ----------

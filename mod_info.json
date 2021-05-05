@@ -2,15 +2,15 @@
 	"id":"armaa",
 	"name":"Arma Armatura",
 	"author":"shoi",
-	"version":"1.4.5d",
+	"version":"1.4.6d",
 	"description":"Mechs. Requires LazyLib + MagicLib.",
-	"gameVersion":"0.95a-RC12",
+	"gameVersion":"0.95a-RC15",
 	"jars":["jars/armaa.jar"],
     "dependencies": [
         {
             "id": "lw_lazylib",
             "name": "LazyLib",
-            "version": "2.6" # If a specific version or higher is required, include this line
+            #"version": "2.6" # If a specific version or higher is required, include this line
         },
         {
             "id": "MagicLib",
