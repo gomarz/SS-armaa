@@ -1,5 +1,9 @@
 V1.4.7
 ---------
+
+-Removed LPCs from vanilla factions since there's no easy way to control their usage in fleets
+-Scavengers still have access
+
 - Fixed missing description for Gallant LPC
 
 - Cataphract(Hullmod)
