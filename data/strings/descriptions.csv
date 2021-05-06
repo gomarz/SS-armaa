@@ -111,7 +111,7 @@ armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like
 
 In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,
 armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
-armaa_mburn,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",
+armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,
 armaa_pdamper,SHIP_SYSTEM,"Decreases damage taken by 40%, with 60% time dilation effect.",,,
 armaa_mpdamper,SHIP_SYSTEM,"Speeds up timeflow by 30%, reduces damage by 20%.",,,
