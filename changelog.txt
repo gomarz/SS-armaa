@@ -1,14 +1,27 @@
+V1.4.7
+---------
+- Fixed missing description for Gallant LPC
+
+- Cataphract(Hullmod)
+	-Reduced Ground Support Bonus: 30->25
+	-Ships with hullmod can no longer install Advanced Optics
+
+- Aleste
+	- Equipped missiles with per shot damage > 200 will now increase refit time(Multiplied by number of barrels for LINKED, by 2 for DUAL_LINKED, and by the number of missiles for MIRVs), up to 30%
+	- AIleste equipped with LS-99 will actively attempt to use the melee weapon with ...varying degrees of success (Thanks Sinosauropteryx!)
+	- Reduced flux cost of Dispersal Grenade
+
 V1.4.6
 ----------
--Fixed hulls not being procurable in nex
--Soft removal of Einhander (LPC version)
--Soft removal of Recordbreaker
--added missing bp to nex starts; adjusted starting ships for carrier(small) start
--Lowered indie reputation requirement for meshan submarket to favorable (25->10)
--Submarket now only sells armaa ships, but stock has been reduced by 25%
--All blueprints should now be discoverable through exploration, or added to the pool of BPs the historian offers
+- Fixed hulls not being procurable in nex
+- Soft removal of Einhander (LPC version)
+- Soft removal of Recordbreaker
+- added missing bp to nex starts; adjusted starting ships for carrier(small) start
+- Lowered indie reputation requirement for meshan submarket to favorable (25->10)
+- Submarket now only sells armaa ships, but stock has been reduced by 25%
+- All blueprints should now be discoverable through exploration, or added to the pool of BPs the historian offers
 
--ADDITIONS:
+- ADDITIONS:
 	-Aleste(pilotable) - 5 DP
 	-Mechanically similar to Einhänder
 	-More modular, less flashy

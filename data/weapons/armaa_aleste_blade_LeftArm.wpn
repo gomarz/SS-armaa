@@ -45,6 +45,7 @@
   "showDamageWhenDecorative": true,
 "interruptibleBurst": true,
 "beamFireOnlyOnFullCharge": true,
+"unaffectedByBeamRangeBonuses": true,
   "size": "SMALL",
   "specClass": "beam",
   "textureScrollSpeed": 2000,

@@ -51,5 +51,5 @@
     ]
   },
   "mountTypeOverride": "HYBRID",
-  "unaffectedByProjectileSpeedBonuses": true
+  "unaffectedByProjectileRangeBonuses": true
 }

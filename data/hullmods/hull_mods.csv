@@ -1,9 +1,9 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
-Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel.
+Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel.This vehicle depends on larger ships for support, maintenance, and long-range travel.
 
 Like fighters, can %s, and %s. Additionally, the unit's smaller engines yield %s.
 
-Combat readiness decays %s faster than normal ships, but can return to friendly carriers for refit, recovering %s CR and replenishing armor, hull, and ammo by %s. Refit time increases based on the total amount of damage the craft has taken.
+Combat readiness decays %s faster than normal ships, but can return to friendly carriers for refit, recovering %s CR and replenishing armor, hull, and ammo by %s. Refit time increases based on the total amount of damage the craft has taken, and the type of weapons equipped.
 
 Cannot capture objectives.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
 Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Torment has an auxiliary reactor that grants an additional shield, but can be attacked and destroyed during combat, which shuts down the secondary shield and reduces flux dissipation and capacity by %s percent.
@@ -48,6 +48,8 @@ L ARM: LASER BLADE,armaa_selector_blade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa
 
 %s deals immense amounts of damage, but has extremely short range.
 
+%s 
+
 %s",,graphics/armaa/hullmods/hand_l.png
 L ARM: STAKE DRIVER,armaa_selector_stake,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
 
@@ -79,3 +81,4 @@ R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,,,,,TRUE,,0,0,0,0,data.hullmods.ar
 The %s is a short-range, flux-efficient energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge. Lacks automatic PD targeting software.
 
 %s",,graphics/armaa/hullmods/hand_r.png
+Melee,armaa_melee,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png

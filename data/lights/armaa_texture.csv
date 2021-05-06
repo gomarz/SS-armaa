@@ -30,8 +30,3 @@ armaa_altagrave_cover,turret,,1,normal,graphics/armaa/maps/ships/armaa_altagrave
 armaa_altagrave_cover_ex,turret,,1,normal,graphics/armaa/maps/ships/armaa_altagrave_cover_ex.png
 armaa_altagrave_head,turret,,1,normal,graphics/armaa/maps/ships/armaa_altagrave_head.png
 armaa_altagrave_head_ex,turret,,1,normal,graphics/armaa/maps/ships/armaa_altagrave_head_ex.png
-,,,,,
-armaa_aleste_torso,turret,,1,normal,graphics/armaa/maps/ships/armaa_aleste_torso.png
-armaa_alesteHead,turret,,1,normal,graphics/armaa/maps/ships/armaa_aleste_head.png
-armaa_aleste_leftPauldron,turret,,1,normal,graphics/armaa/maps/ships/armaa_alesteLeftShoulder.png
-armaa_aleste_rightPauldron,turret,,1,normal,graphics/armaa/maps/ships/armaa_alesteRightShoulder.png

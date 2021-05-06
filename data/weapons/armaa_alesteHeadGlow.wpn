@@ -1,0 +1,33 @@
+{
+	"specClass":"beam",
+	"id":"armaa_alesteHeadGlow",
+	"type":"DECORATIVE",
+	"size":"SMALL",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	#"turretSprite":"",
+        "renderHints":["RENDER_ADDITIVE"],
+	"showDamageWhenDecorative":false,
+         "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_head_glow.png",
+  "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_glow.png",
+	"hardpointSprite":"",
+	"hardpointGlowSprite":"",	
+	"turretOffsets":[2, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[4, 0],
+	"hardpointAngleOffsets":[0],
+
+	"darkCore":true,
+	
+	"fringeColor":[155,155,15,255],
+	"coreColor":[238,255,239,255],
+	"glowColor":[155,155,15,255],
+
+	"width":16.0,
+
+	"textureType":ROUGH,
+	"textureScrollSpeed":128.0,
+	"pixelsPerTexel":5.0,
+	"pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
+
+}
