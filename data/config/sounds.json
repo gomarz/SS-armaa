@@ -9,6 +9,12 @@
 		{"file":"sounds/armaa/mechmove.ogg","pitch":1.03,"volume":0.68},
 		{"file":"sounds/armaa/mechmove.ogg","pitch":.97,"volume":0.62},
 	],
+	"armaa_mb_start":[ 
+		{"file":"sounds/armaa/armaa_mb_start.ogg","pitch":1,"volume":0.65},
+	],
+	"armaa_mb_loop":[ 
+		{"file":"sounds/armaa/armaa_mb_loop.ogg","pitch":1,"volume":0.65},
+	],
 	"armaa_grenade_fire":[ 
 		{"file":"sounds/armaa/armaa_grenade_fire.ogg","pitch":1,"volume":0.95},
 		{"file":"sounds/armaa/armaa_grenade_fire.ogg","pitch":1.03,"volume":0.98},

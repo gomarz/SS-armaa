@@ -22,8 +22,8 @@
 	#"deactivateSound":"system_burn_drive_deactivate",
 	#"outOfUsesSound":"engine_disabled",
 	
-	"useSound":"system_plasma_burn",
-	"loopSound":"system_plasma_burn_loop",
+	"useSound":"armaa_mb_start",
+	"loopSound":"armaa_mb_loop",
 	"outOfUsesSound":"engine_disabled",
 	
 	"aiHints":{
