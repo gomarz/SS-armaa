@@ -10,10 +10,10 @@
 		{"file":"sounds/armaa/mechmove.ogg","pitch":.97,"volume":0.62},
 	],
 	"armaa_mb_start":[ 
-		{"file":"sounds/armaa/armaa_mb_start.ogg","pitch":1,"volume":0.65},
+		{"file":"sounds/armaa/armaa_mb_start.ogg","pitch":1,"volume":0.9},
 	],
 	"armaa_mb_loop":[ 
-		{"file":"sounds/armaa/armaa_mb_loop.ogg","pitch":1,"volume":0.65},
+		{"file":"sounds/armaa/armaa_mb_loop.ogg","pitch":1,"volume":0.9},
 	],
 	"armaa_grenade_fire":[ 
 		{"file":"sounds/armaa/armaa_grenade_fire.ogg","pitch":1,"volume":0.95},
@@ -29,9 +29,9 @@
 		{"file":"sounds/armaa/armaa_silversword_warning.ogg","pitch":1,"volume":0.65},
 	],
 	"armaa_flamer_loop":[ 
-		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1,"volume":0.65},
-		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1.03,"volume":0.68},
-		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":.97,"volume":0.62},
+		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1,"volume":0.85},
+		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1.03,"volume":0.88},
+		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":.97,"volume":0.82},
 	],
 	"armaa_silversword_activate":[ 
 		{"file":"sounds/armaa/armaa_silversword_activate.ogg","pitch":1,"volume":0.65},
@@ -67,7 +67,7 @@
 	],
 
 	"armaa_stake_shot":[ 
-		{"file":"sounds/armaa/stake_shot.ogg","pitch":.9,"volume":0.5},
+		{"file":"sounds/armaa/stake_shot.ogg","pitch":.9,"volume":0.6},
 	],
 	"armaa_stake_empty":[ 
 		{"file":"sounds/armaa/armaa_spike_empty01.ogg","pitch":1,"volume":0.65},
