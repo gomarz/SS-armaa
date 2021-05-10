@@ -38,8 +38,8 @@
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead",
-    "H_GLOW": "armaa_alesteHeadGlow"
+    "E_HEAD": "armaa_alesteHead"
+   # "H_GLOW": "armaa_alesteHeadGlow"
   },
   "center": [
     9,
