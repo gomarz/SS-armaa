@@ -11,7 +11,7 @@ Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Tor
 The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
 
 The reactor and its shield are affected by the Torment captain's skills, but not by any hullmods applied to the Torment itself.",Severe reduction in combat capability if generator is destroyed.,graphics/armaa/hullmods/cataphract.png
-Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract-class mechs are durable machines with reinforced internals and triple redundant systems - they're %s more resistant to EMP effects, and weapons and engines are %s less likely to fail. The relatively small frame means that %s. Finally, these units are capable of deploying to support planetary operations, increasing their effective strength by %s, (up to the total number of marines in the fleet), at the cost of %s combat readiness.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
+Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract-class mechs are durable machines with reinforced internals and triple redundant systems - they're %s more resistant to EMP effects while weapons and engines are %s less likely to fail. The relatively small frame means that %s. Finally, these units are capable of deploying to support planetary operations, increasing their effective strength by %s, (up to the total number of marines in the fleet), at the cost of %s combat readiness.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
 Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
 
 Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.
@@ -68,17 +68,17 @@ L ARM: LASER RIFLE,armaa_selector_lrifle_left,,,,,,,,TRUE,,0,0,0,0,data.hullmods
 %s",,graphics/armaa/hullmods/hand_l.png
 R ARM:HEAVY RIFLE,armaa_selector_heavyrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_heavyrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-%s has significant damage per shot and range, but poor sustained firepower and flux efficiency.
+The %s has significant damage per shot and range, but poor sustained firepower and flux efficiency.
 
 %s",,graphics/armaa/hullmods/hand_r.png
 R ARM: LASER RIFLE,armaa_selector_lrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-%s is a general-purpose, rapid firing energy weapon, but is flux intensive.
+%s is a general-purpose, rapid firing energy weapon, with no major strengths or weaknesses.
 
 %s",,graphics/armaa/hullmods/hand_r.png
 R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_flamer,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-The %s is a short-range, flux-efficient energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge. Lacks automatic PD targeting software.
+The %s is a short-range energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge and relatively flux-intensive with sustained use. Lacks automatic PD targeting software.
 
 %s",,graphics/armaa/hullmods/hand_r.png
 Melee,armaa_melee,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png

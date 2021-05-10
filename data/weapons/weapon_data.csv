@@ -73,7 +73,7 @@ Juno Mk. III (Ftr),armaa_fluxcannon_ftr,2,,4600,900,850,,,20,10,16,1,,,KINETIC,,
 Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,30,,,4,10,0.05,0,15,0.66,5,,1000,,,10,SYSTEM,,,,,Anti Shield,,,,,,,,,,
 ,armaa_aleste_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,15,,,FRAGMENTATION,100,,0.25,4,6,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines.","Remote Detonation|50 High Explosive, 250 EMP",,,,
+Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,18,,,FRAGMENTATION,100,,0.25,4,6,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines.","Remote Detonation|50 High Explosive, 250 EMP",,,,
 LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,65,600,,600,20,80,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
 Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
 Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
