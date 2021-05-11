@@ -133,3 +133,6 @@ Pulse Laser,armaa_garegga_rightArm_tt,2,,1000,600,,100,,1,20,42,,,,ENERGY,80,,0.
 #ALTAGRAVE SYSTEM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Adharma Seeker,armaa_karma,,,,1000,50,150,400,25,,,3,0.1,,KINETIC,0,0,0,5,3,0.1,90,90,0,0,,1500,1000,10,150,SYSTEM,,,,,,,,,,,,,,,
 ,armaa_karmicburst,,,,320,,300,0,40,80,0,,,,ENERGY,200,,0.4,2,1,,,,,,,600,,,100,"SYSTEM, PD",energy20,,,,Point Defense,,,,,,,,,,8.018
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Strikecraft Misc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Landing Override ,armaa_landingBeacon,,,,,1,,,,,,1,,,OTHER,,,,,,,,,,,,0,0,0,0,SYSTEM,,,Arma Armatura,,,,,,,,,Only usable by flagship.,,,

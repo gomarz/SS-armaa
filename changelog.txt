@@ -1,3 +1,20 @@
+V1.4.8RC2
+--------------
+- Added more details on what fighter-related skills affect Strikecraft to Strikecraft hmod
+- Max Refit Time Penalty 30%->35%
+- Carriers docked at now lose a set amount of their replacement rate
+- Reversed LPC removal from vanilla factions
+- Adjusted CR bar color to match UI
+- Added combat UI notification on CR loss for strikecraft when CR reaches 40%
+
+
+-Einhänder:
+-DP: 8->12
+-Removed Phase Field Hullmod
+
+-Aleste:
+-DP: 5->7
+
 V1.4.8
 --------
 -Added Overload FX + SFX for Strikecraft
@@ -5,7 +22,8 @@ V1.4.8
 Aleste:
 -Increased LS-99 Turn Rate
 -Added missing desc for microburn
--Fixed aleste's microburn having 2 charges when it should have 5
+-Fixed aleste's microburn having 2 charges when it should have 3
+- Added FX + SFX for Aleste's microburn
 
 V1.4.7
 ---------

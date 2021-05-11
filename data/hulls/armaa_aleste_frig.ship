@@ -38,8 +38,8 @@
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead"
-   # "H_GLOW": "armaa_alesteHeadGlow"
+    "E_HEAD": "armaa_alesteHead",
+    "H_GLOW": "armaa_landingBeacon"
   },
   "center": [
     9,
@@ -237,13 +237,13 @@
       "arc": 135,
       "id": "H_GLOW",
       "locations": [
-        3,
+        5,
         -0
       ],
       "mount": "TURRET",
       "renderOrderMod":101,
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "BUILT_IN"
     }
   ],
   "width": 18
