@@ -1,15 +1,16 @@
 V1.4.8RC2
 --------------
 - Added more details on what fighter-related skills affect Strikecraft to Strikecraft hmod
+- Strikecraft will no longer kill themselves if the carrier they are on retreats
 - Max Refit Time Penalty 30%->35%
-- Carriers docked at now lose a set amount of their replacement rate
+- Refitting at carrier now reduces that carriers replacement rate.
 - Reversed LPC removal from vanilla factions
-- Adjusted CR bar color to match UI
+- Adjusted CR bar color to match native UI
 - Added combat UI notification on CR loss for strikecraft when CR reaches 40%
-
+- 
 
 -Einhänder:
--DP: 8->12
+-DP: 8->11
 -Removed Phase Field Hullmod
 
 -Aleste:
