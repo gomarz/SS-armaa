@@ -1,63 +1,56 @@
 {
+  "id": "armaa_aleste_blade_LeftArm",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
   "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "coreColor": [
-    92,
-    197,
-    250,
-    255
-  ],
-  "fireSoundTwo": "phase_beam_loop",
-  "fringeColor": [
-    0,
-    100,
-    255,
-    255
-  ],
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArm_blade.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
   "glowColor": [
     255,
     255,
     255,
     255
   ],
-#"fringeColor":[125,0,205,255],
-  "hardpointAngleOffsets": [
+  "hitGlowRadius": 10,
+  "turretOffsets": [
+    21,
+    18
+  ],
+  "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
     0,
     0
   ],
-  "hardpointSprite": "",
-  "hitGlowRadius": 10,
-  "id": "armaa_aleste_blade_LeftArm",
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    0,
+    100,
+    255,
+    255
+  ],
+  "coreColor": [
+    92,
+    197,
+    250,
+    255
+  ],
+  "width": 20,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 2000,
+  "pixelsPerTexel": 10,
   "pierceSet": [
     PROJECTILE_FF,
     PROJECTILE_NO_FF,
     PROJECTILE_FIGHTER
   ],
-  "pixelsPerTexel": 10,
-  "renderAboveAllWeapons": 0,
-  "showDamageWhenDecorative": true,
-"interruptibleBurst": true,
-"beamFireOnlyOnFullCharge": true,
-"unaffectedByBeamRangeBonuses": true,
-  "size": "SMALL",
-  "specClass": "beam",
-  "textureScrollSpeed": 2000,
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretOffsets": [
-    19,
-    18
-  ],
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArm_blade.png",
-  "type": "ENERGY",
-  "width": 20
+  "fireSoundTwo": "phase_beam_loop"
 }

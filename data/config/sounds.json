@@ -58,19 +58,19 @@
 
         ],
 	"armaa_chaingun_fire":[ 
-		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":1,"volume":0.65},
-		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":1.03,"volume":0.66},
-		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":.97,"volume":0.64},
-		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":1,"volume":0.65},
-		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":1.03,"volume":0.66},
-		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":.97,"volume":0.64}
+		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":1,"volume":0.85},
+		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":1.03,"volume":0.86},
+		{"file":"sounds/armaa/armaa_chaingun_02.ogg","pitch":.97,"volume":0.84},
+		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":1,"volume":0.85},
+		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":1.03,"volume":0.86},
+		{"file":"sounds/armaa/armaa_chaingun_01.ogg","pitch":.97,"volume":0.84}
 	],
 
 	"armaa_stake_shot":[ 
-		{"file":"sounds/armaa/stake_shot.ogg","pitch":.9,"volume":0.6},
+		{"file":"sounds/armaa/stake_shot.ogg","pitch":1,"volume":0.8},
 	],
 	"armaa_stake_empty":[ 
-		{"file":"sounds/armaa/armaa_spike_empty01.ogg","pitch":1,"volume":0.65},
+		{"file":"sounds/armaa/armaa_spike_empty01.ogg","pitch":1,"volume":0.85},
 	],
 	"rynex_fire":
 	[
@@ -94,9 +94,9 @@
 		{"file":"sounds/armaa/shotgun_cock.ogg","pitch":1.4,"volume":0.5},
 	],
 	
-	"homing_fire":[							{"file":"sounds/armaa/Fire3.ogg","pitch":1,"volume":0.4},
-{"file":"sounds/armaa/Fire3.ogg","pitch":1.03,"volume":0.43},
-{"file":"sounds/armaa/Fire3.ogg","pitch":.97,"volume":0.37},
+	"homing_fire":[							{"file":"sounds/armaa/Fire3.ogg","pitch":1,"volume":0.6},
+{"file":"sounds/armaa/Fire3.ogg","pitch":1.03,"volume":0.63},
+{"file":"sounds/armaa/Fire3.ogg","pitch":.97,"volume":0.67},
 	],
 	"carbinecharge":[							{"file":"sounds/armaa/SND.DAT_00121slo.ogg","pitch":1,"volume":0.5},
 {"file":"sounds/armaa/SND.DAT_00121slo.ogg","pitch":1.03,"volume":0.53},
@@ -120,9 +120,9 @@
 	"beamfireM":[							
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
 	],
-	"carbine2":[							{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1,"volume":0.35},
-{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1.03,"volume":0.38},
-{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":.97,"volume":0.32},
+	"carbine2":[							{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1,"volume":0.55},
+{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1.03,"volume":0.58},
+{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":.97,"volume":0.52},
 	],
 	"launch":[
 {"file":"sounds/armaa/emp_emitter_activate.ogg","pitch":1,"volume":0.5},
