@@ -18,6 +18,7 @@
 		"MERCANTILE":2,
 		"SPACE":2,
 		"GENERAL":2,
+		"armaa":3,
 	},
 	"description":"One of the premier developers of heavy weapons in the vast galactic polity that had once been called the Domain. The Collapse and two wars, brought about the apparent demise of that golden age, along with the majority of the companies infrastructure.",
 	"names":{
@@ -31,8 +32,9 @@
 			{
 				"armaa_altagrave":0.6,
 				"armaa_altagrave_c":0.3,
+				"armaa_einhander":0.5,
 				"armaa_altagrave_g":0.6,
-				"armaa_garegga":1.1,
+				"armaa_garegga":1,
 				"armaa_aleste_frig":1.2,	
 			},
 			"fighters":{

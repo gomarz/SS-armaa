@@ -4,6 +4,7 @@ V1.4.8RC2
 - Strikecraft will no longer kill themselves if the carrier they are on retreats
 	- will retreat as well
 - Max Refit Time Penalty 30%->35%
+- Minimum Refit Rate 30%->20%
 - Refitting at carrier now reduces that carriers replacement rate
 - Reversed LPC removal from vanilla factions
 - Adjusted CR bar color to match native UI
@@ -11,12 +12,15 @@ V1.4.8RC2
 - adjusted starship legends hull damage impact on rating for aleste & einhander to account for regening hull
 
 -Einhänder:
--DP: 8->11; superfrig-esque but not quite hyperion-tier
+-DP: 8->11
+
 -Removed Phase Field Hullmod
 -Fixed bug where permanent time dilation would be applied when player-piloted einhander was destroyed in certain scenarios
 
 -Aleste:
 -DP: 5->6
+-Ground Support Bonus: 25->15
+-Made Stake Driver proj a bit more visually prominent
 
 V1.4.8
 --------
