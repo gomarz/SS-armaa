@@ -1,26 +1,35 @@
 V1.4.8RC2
 --------------
+- Stopped recordbreaker from appearing every time on the title screen
 - Added more details on what fighter-related skills affect Strikecraft to Strikecraft hmod
 - Strikecraft will no longer kill themselves if the carrier they are on retreats
 	- will retreat as well
-- Max Refit Time Penalty 30%->35%
-- Minimum Refit Rate 30%->20%
+- Max Refit Time Penalty (w/ missiles equipped) 30%->35%
 - Refitting at carrier now reduces that carriers replacement rate
-- Reversed LPC removal from vanilla factions
+- Reversed LPC removal from indies/persean/pirates
 - Adjusted CR bar color to match native UI
 - Added combat UI notification on CR loss for strikecraft when CR reaches 40%
-- adjusted starship legends hull damage impact on rating for aleste & einhander to account for regening hull
+- adjusted starship legends hull damage impact on rating for aleste & einhander to account for repairs to hull
 
 -Einhänder:
 -DP: 8->11
-
--Removed Phase Field Hullmod
+-Phase Cost & Upkeep: 0.08->0.1
+-Phase Damper Cooldown: 2->3
+-Cr/Deployment ->40%
 -Fixed bug where permanent time dilation would be applied when player-piloted einhander was destroyed in certain scenarios
+
+-Garegga:
+-DP: 8->9
+
+-Garegga(TT):
+-System: Plasma Jets -> Silversword
 
 -Aleste:
 -DP: 5->6
 -Ground Support Bonus: 25->15
--Made Stake Driver proj a bit more visually prominent
+-Stake Driver:
+-Stake Driver proj is now bit more visually prominent
+-
 
 V1.4.8
 --------

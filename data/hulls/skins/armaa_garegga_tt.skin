@@ -9,23 +9,22 @@
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["rare_bp"],
-	"systemId":"plasmajets",
+	#"systemId":"plasmajets",
     "tech":"Tri-Tachyon",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-    "removeBuiltInMods":["armaa_SeraphTargetingSoftware"], 		# hullmod ids
     "removeBuiltInWeapons":[],
     "weaponSlotChanges":{
 	   "WS 005":{
 		  "angle": 0,
-		  "arc": 5,
+		 # "arc": 5,
 		  #"mount": "TURRET",
 		  #"size": "SMALL",
 		  "type": "SYNERGY"
 	   },
 	   "WS 006":{
 		 "angle": 0,
-		 "arc": 5,
+		 #"arc": 5,
 		  #"mount": "TURRET",
 		  #"size": "SMALL",
 		  "type": "SYNERGY"

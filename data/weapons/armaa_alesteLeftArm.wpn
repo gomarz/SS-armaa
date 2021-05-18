@@ -13,7 +13,7 @@
   ],
   "hardpointSprite": "",
   "id": "armaa_alesteLeftArm",
-  #"interruptibleBurst": true,
+  "interruptibleBurst": true,
   "muzzleFlashSpec": {
     "length": 10,
     "particleColor": [

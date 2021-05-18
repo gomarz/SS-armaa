@@ -1,6 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
+"everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect2",
   "fireSoundTwo": "plasma_cannon_fire",
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -48,4 +49,5 @@
   ],
   "turretSprite": "graphics/armaa/weapons/armaa_heavyjavelin_turret.png",
   "type": "ENERGY",
+"visualRecoil": 7
 }

@@ -1,6 +1,6 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,isPhaseCloak,tags,icon
 Offense Mode,armaa_energysurge,,,0.02,,,,,,,0.5,6,1,12,FALSE,,TRUE,TRUE,,,,,,FALSE,,,graphics/icons/hullsys/infernium_injector.png
-Phase Damper Field,armaa_pdamper,,,,,,,,,,0.25,,0.25,2,TRUE,FALSE,TRUE,TRUE,FALSE,,,,TRUE,TRUE,FALSE,,graphics/icons/hullsys/damper_field.png
+Phase Damper Field,armaa_pdamper,,,,,,,,,,0.25,,0.4,3,TRUE,FALSE,TRUE,TRUE,FALSE,,,,TRUE,TRUE,FALSE,,graphics/icons/hullsys/damper_field.png
 Offense Mode(ftr),armaa_energysurge2,,,0.02,,,,,,,0.5,6,1,10,FALSE,,TRUE,TRUE,,,,,,FALSE,,,graphics/icons/hullsys/infernium_injector.png
 GU-14 Firebolt Feeder,armaa_fireboltfeed,,,,,,,,,,1,5,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Phase Damper Field (Production Ver.),armaa_mpdamper,,,,,,,,2,0.05,0.5,3.5,2,2,FALSE,FALSE,TRUE,TRUE,FALSE,,,,,TRUE,FALSE,,graphics/icons/hullsys/damper_field.png

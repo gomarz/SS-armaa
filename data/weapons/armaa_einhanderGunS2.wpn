@@ -1,0 +1,38 @@
+{
+  "animationType": "NONE",
+  "turretSprite":"",
+  "hardpointSprite":"",
+  "barrelMode": "ALTERNATING",
+  "hardpointAngleOffsets": [],
+  "hardpointOffsets": [],
+  "id": "armaa_einhanderGunS2",
+  "interruptibleBurst": true,
+  "autocharge": true,
+  "projectileSpecId": "armaa_shotgun_shot2",
+  "size": "SMALL",
+  "muzzleFlashSpec": {
+    "length": 10,
+    "particleColor": [
+      128,
+      55,
+      55,
+      200
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.02,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "spread": 10
+  },
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0.5
+  ],
+  "turretOffsets": [
+    30,
+    -15
+  ],
+  "type": "ENERGY",
+  "visualRecoil": 0
+}
