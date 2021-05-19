@@ -38,7 +38,7 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0
+    -1
   ],
   "turretGunSprite": "graphics/armaa/ships/garegga/leftArm.png",
   "turretOffsets": [

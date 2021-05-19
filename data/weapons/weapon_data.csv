@@ -14,7 +14,8 @@ Juno Mk. I (FP),armaa_einhanderGun2,,,4500,600,,170,150,20,20,42,,,,ENERGY,110,,
 Juno Mk. I (S),armaa_einhanderGunS,,,4500,800,,57,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,1100,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
 Styx Mk. I Shot,armaa_einhanderGunS2,,,4500,600,,50,,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,900,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
 AS Glaive,armaa_heavyJavelin,3,0.3,2000,550,,500,300,50,20,42,10,,,HIGH_EXPLOSIVE,575,,0,5,1,,0,10,2,5,,700,,,30,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Anti Armor,,,,,,,%s: Ammo can be replenished by returning to a carrier.,Combat Resupply,,
-Styx Mk. I,armaa_einhanderSyrinx,2,,1600,600,,285,,4,20,42,4,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,900,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
+Styx Mk. I,armaa_einhanderSyrinx,2,,1600,600,,285,,4,20,42,4,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,900,500,4,50,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
+Styx Mk. I,armaa_einhanderSyrinx_copy,2,,1600,600,,285,,4,20,42,4,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,900,500,2,50,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
 AMWS,armaa_einhanderBeam,2,,400,500,150,,,0,45,5,1,0.5,3,ENERGY,,,,,,0.015,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
 #RECORD,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Seeker Flares,armaa_record_torso,,,,800,,10,400,,,,3,0.1,,ENERGY,0,0,0,5,3,0.1,90,90,0,0,,400,200,7,1,"SYSTEM,PD_ONLY,DO_NOT_CONSERVE,DO_NOT_AIM",,,,,,,,,,,,,,,
@@ -75,7 +76,7 @@ Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,30,,,4,10,0.
 ,armaa_aleste_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,18,,,FRAGMENTATION,100,,0.25,4,6,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines. Can fire up to 6 spikes in a burst.","Remote Detonation|50 High Explosive, 250 EMP",,,,
-LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,65,600,,600,20,80,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
+LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,600,,600,20,80,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
 Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
 Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
 Plasma Flamer,armaa_aleste_flamer_right,3,,1000,450,,37.5,,3,60,0,200,4,40,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,

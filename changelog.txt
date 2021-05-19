@@ -1,15 +1,17 @@
 V1.4.8RC2
 --------------
-- Stopped recordbreaker from appearing every time on the title screen
-- Added more details on what fighter-related skills affect Strikecraft to Strikecraft hmod
+- Stopped recordbreaker from always being in the title screen battles
+- Added more details on what fighter-related skills apply to Strikecraft to Strikecraft hmod desc
 - Strikecraft will no longer kill themselves if the carrier they are on retreats
 	- will retreat as well
+- Refit rate should be properly clamped and no longer go below 30% 
 - Max Refit Time Penalty (w/ missiles equipped) 30%->35%
 - Refitting at carrier now reduces that carriers replacement rate
 - Reversed LPC removal from indies/persean/pirates
 - Adjusted CR bar color to match native UI
-- Added combat UI notification on CR loss for strikecraft when CR reaches 40%
+- Added combat UI notification on CR loss for strikecraft when CR <= 40%
 - adjusted starship legends hull damage impact on rating for aleste & einhander to account for repairs to hull
+-added minor turret angle offsets to all weapons - should improve accuracy esp. against smaller objects like fighters and missiles
 
 -Einhänder:
 -DP: 8->11
@@ -23,13 +25,16 @@ V1.4.8RC2
 
 -Garegga(TT):
 -System: Plasma Jets -> Silversword
+-Fixed incorrect turret arcs
 
 -Aleste:
 -DP: 5->6
 -Ground Support Bonus: 25->15
 -Stake Driver:
+-Burst Size: 2->6
+-Ammo: I forgot->18
 -Stake Driver proj is now bit more visually prominent
--
+-Minor fx/sfx tweaks to Laser Blade
 
 V1.4.8
 --------

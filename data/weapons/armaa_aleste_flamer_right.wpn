@@ -14,11 +14,11 @@
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    48,
-    -12.5
+    45,
+    -6.5
   ],
   "turretAngleOffsets": [
-    0
+    0.5
   ],
   "hardpointOffsets": [
     17,
@@ -26,12 +26,6 @@
   ],
   "hardpointAngleOffsets": [
     0
-  ],
-  "glowColor": [
-    255,
-    142,
-    50,
-    255
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",

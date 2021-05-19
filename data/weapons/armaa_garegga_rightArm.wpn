@@ -39,7 +39,7 @@
   "interruptibleBurst":true,
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0
+    1
   ],
   "turretGunSprite": "graphics/armaa/ships/garegga/rightArm_00.png",
   "turretOffsets": [

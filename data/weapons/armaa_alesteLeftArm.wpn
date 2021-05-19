@@ -41,7 +41,7 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0
+    -1
   ],
   "turretGunSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArmB.png",
   "turretOffsets": [

@@ -44,7 +44,7 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0
+    1
   ],
   "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_righthandb_glow.png",
   "turretGunSprite": "graphics/armaa/ships/proto/armaa_altagrave_righthandb.png",
