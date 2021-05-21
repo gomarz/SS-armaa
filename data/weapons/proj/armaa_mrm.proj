@@ -1,9 +1,7 @@
 {
 	"id":"armaa_mrm",
 	"specClass":"missile",	
-	"onHitEffect":"data.scripts.weapons.armaa_BoomerangShieldEffect",
 	"missileType":"MISSILE",
-	#"sprite":"graphics/armaa/weapons/armaa_beamChakram.png",
 	"sprite":"graphics/missiles/missile_harpoon.png",
 	"size":[10,22],	
 	"center":[5,12],

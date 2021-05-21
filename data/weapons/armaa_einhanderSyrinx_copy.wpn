@@ -33,7 +33,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_mrm2",
+  "projectileSpecId": "armaa_bounce_laser2",
   "renderAboveAllWeapons": 0,
   "size": "MEDIUM",
   "glowColor":[50,175,250,255],

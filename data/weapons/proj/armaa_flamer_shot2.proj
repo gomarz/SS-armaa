@@ -1,19 +1,19 @@
 {
-	"id":"armaa_flamer_shot",
+	"id":"armaa_flamer_shot2",
 	"specClass":"projectile",
-	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
-	
+	#"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
+	"onHitEffect":"data.scripts.weapons.armaa_BoomerangShieldEffect",	
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":80.0,
-	"width":25.0,
+	"width":20.0,
 	"hitGlowRadius":0,
 	"fadeTime":0.25,
-	"fringeColor":[255,0,50,100],
+	"fringeColor":[255,0,000,100],
 	"coreColor":[250,197,92,100],
 	#"coreColor":[255,255,255,50],
-	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureType":"SMOOTH",  # only needed for BEAM spawnType
 	"textureScrollSpeed":-256,
 	"pixelsPerTexel":5.0
 	

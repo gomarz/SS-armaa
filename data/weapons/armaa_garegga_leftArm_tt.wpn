@@ -1,5 +1,5 @@
 {
-  "animationType": "MUZZLE_FLASH",
+  "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "pulse_laser_fire",
   "hardpointAngleOffsets": [
@@ -8,6 +8,12 @@
   "hardpointOffsets": [
     0,
     0
+  ],
+  "glowColor": [
+    160,
+    255,
+    160,
+    220
   ],
   "hardpointSprite": "",
   "id": "armaa_garegga_leftArm_tt",
@@ -38,9 +44,10 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0
+    -1
   ],
   "turretGunSprite": "graphics/armaa/ships/garegga/armaa_gareggaleftArm_tt.png",
+  "turretGlowSprite": "graphics/armaa/ships/garegga/armaa_garegga_leftArm_tt_glow.png",
   "turretOffsets": [
     55.5,
     12

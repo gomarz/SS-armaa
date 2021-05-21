@@ -24,10 +24,12 @@ V1.4.8RC2
 -DP: 8->9
 
 -Garegga(TT):
+-Added glow sprite to pulse lasers
 -System: Plasma Jets -> Silversword
 -Fixed incorrect turret arcs
 
 -Aleste:
+-Added glow sprite to Rynex Pulse Rifle
 -DP: 5->6
 -Ground Support Bonus: 25->15
 -Stake Driver:

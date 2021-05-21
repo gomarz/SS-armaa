@@ -1,5 +1,5 @@
 {
-	"id":"armaa_flamer_shot",
+	"id":"armaa_flamer_shot3",
 	"specClass":"projectile",
 	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
 	
@@ -7,12 +7,12 @@
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":80.0,
-	"width":25.0,
+	"width":30.0,
 	"hitGlowRadius":0,
 	"fadeTime":0.25,
-	"fringeColor":[255,0,50,100],
-	"coreColor":[250,197,92,100],
-	#"coreColor":[255,255,255,50],
+	"fringeColor":[0,100,255,255],
+	"coreColor":[255,255,255,100],
+	#"coreColor":[255,255,255,255],
 	"textureType":"ROUGH",  # only needed for BEAM spawnType
 	"textureScrollSpeed":-256,
 	"pixelsPerTexel":5.0

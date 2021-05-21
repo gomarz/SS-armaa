@@ -1,6 +1,6 @@
 {
   "animationType": "NONE",
-  "barrelMode": "ALTERNATING",
+  "barrelMode": "LINKED",
  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffect",
   #"everyFrameEffect": "data.scripts.weapons.armaa_PlasmaFlameEveryFrameEffect",
   "fireSoundOne": "burst_pd_fire",

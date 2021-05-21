@@ -1,0 +1,47 @@
+{
+	"id":"armaa_bounce_laser3",
+	"specClass":"missile",	
+	"missileType":"MISSILE",
+	"sprite":"",
+	#"armingTime":1.2,
+	#"sprite":"graphics/missiles/missile_harpoon.png",
+	"size":[4,4],
+	"behaviorSpec":{"behavior":"CUSTOM",
+					"effectRange":100,
+					"effectChance":0.3,
+				   },	
+	"center":[2,2],
+	"collisionRadius":11,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[100,100,255,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":50, # purely visual
+	"engineSpec":{"turnAcc":50,
+				  "turnRate":100,
+				  "acc":450,
+				  "dec":1000},
+#	"engineSpec":{"turnAcc":100,
+#				  "turnRate":80,
+#				  "acc":100,
+#				  "dec":150},
+	"engineSlots":[
+					{"id":"ES1",
+					"loc":[0, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"engineColor":[250,100,55,255],
+						"contrailParticleSizeMult":15,
+						"contrailParticleDuration":2,
+						"contrailDuration":4,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":8, # min segment length, in 
+						"contrailMaxSpeedMult":-0.1,
+						"contrailAngularVelocityMult":0f,
+						"contrailColor":[149,206,255,35],
+						"type":"GLOW" # GLOW or SMOKE
+					},
+				    "width":5.0,
+				    "length":25.0,
+				    "angle":180.0},
+				   ]
+}

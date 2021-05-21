@@ -1,24 +1,24 @@
 {
-  "id": "armaa_aleste_rightArm",
+  "id": "armaa_aleste_flamer_right_copy",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_rynex_shot",
+  "projectileSpecId": "armaa_flamer_shot3",
   "type": "ENERGY",
   "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_curvyLaserEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_alestechainGunBarrel.png",
-  "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_alesteflamerGunBarrel.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 3,
+  "visualRecoil": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    44.5,
-    -12.5
+    45,
+    -6.5
   ],
   "turretAngleOffsets": [
-    1
+    0.5
   ],
   "hardpointOffsets": [
     17,
@@ -27,27 +27,23 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "glowColor": [
-    255,
-    0,
-    0,
-    255
-  ],
   "barrelMode": "ALTERNATING",
-  "animationType": "GLOW_AND_FLASH",
+  "animationType": "MUZZLE_FLASH",
+  "autocharge": true,
   "muzzleFlashSpec": {
-    "length": 20,
-    "spread": 10,
-    "particleSizeMin": 18,
-    "particleSizeRange": 24,
-    "particleDuration": 0.1,
+    "length": 30,
+    "spread": 30,
+    "particleSizeMin": 16,
+    "particleSizeRange": 22,
+    "particleDuration": 0.02,
     "particleCount": 11,
     "particleColor": [
       255,
+      180,
       100,
-      0,
       200
     ]
   },
-  "fireSoundTwo": "rynex_fire"
+  "mountTypeOverride": "HYBRID",
+  "unaffectedByProjectileSpeedBonuses": true
 }
