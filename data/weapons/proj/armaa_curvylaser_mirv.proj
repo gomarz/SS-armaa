@@ -1,0 +1,69 @@
+{
+	"id":"armaa_curvylaser_mirv",
+	"specClass":"missile",	
+	"missileType":"MIRV",
+	"sprite":"graphics/missiles/missile_sabot.png",
+	"size":[9,18],	
+	"center":[4.5,9],
+	"armingTime":4,
+	"collisionRadius":16,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,165,0,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":125, # purely visual
+	"engineSpec":{"turnAcc":600,
+				  "turnRate":150,
+				  "acc":100,
+				  "dec":100},
+	"engineSlots":[
+					{"id":"ES1",
+					"loc":[0, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"engineColor":[53,176,252,255],
+						"contrailParticleSizeMult":15,
+						"contrailParticleDuration":2,
+						"contrailDuration":4,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":8, # min segment length, in 
+						"contrailMaxSpeedMult":-0.1,
+						"contrailAngularVelocityMult":1f,
+						"contrailColor":[100,59,255,15],
+						"type":"GLOW" # GLOW or SMOKE
+					},
+				    "width":10.0,
+				    "length":10.0,
+				    "angle":180.0},
+				   ],
+	"behaviorSpec":{"behavior":"MIRV",
+					"splitRange":400,
+					"splitRangeRange":100,
+					"minTimeToSplit":2,
+					"canSplitEarly":true,
+					"splitSound":"sabot_srm_split",
+					"numShots":10,
+					"damage":200,
+					"emp":400,
+					"damageType":KINETIC,
+					"hitpoints":500,
+					"evenSpread":true,
+					"arc":20,
+					"spreadInaccuracy":5,
+					#"spreadSpeed":300,
+					"spreadSpeed":1000,
+					"spreadSpeedRange":500,
+					"projectileRange":600, # only needed if not a missile
+					"projectileSpec":"armaa_flamer_shot",
+					"smokeSpec":{"particleSizeMin":20.0,
+								 "particleSizeRange":20.0,
+								 "cloudParticleCount":11,
+								 "cloudDuration":1.0,
+								 "cloudRadius":20.0,
+								 "blowbackParticleCount":0,
+								 "blowbackDuration":0,
+								 "blowbackLength":0,
+								 "blowbackSpread":0,
+								 "particleColor":[100,100,100,200]}
+					}				    
+}
+

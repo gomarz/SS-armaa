@@ -4,6 +4,8 @@ V1.4.8RC2
 - Added more details on what fighter-related skills apply to Strikecraft to Strikecraft hmod desc
 - Strikecraft will no longer kill themselves if the carrier they are on retreats
 	- will retreat as well
+- Fixed crash caused by Strikecraft retreating while on carrier
+
 - Refit rate should be properly clamped and no longer go below 30% 
 - Max Refit Time Penalty (w/ missiles equipped) 30%->35%
 - Refitting at carrier now reduces that carriers replacement rate

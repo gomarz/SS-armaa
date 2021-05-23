@@ -19,7 +19,7 @@
 	"engineSpec":{"turnAcc":50,
 				  "turnRate":50,
 				  "acc":1000,
-				  "dec":1050},
+				  "dec":5},
 	"engineSlots":[
 					{"id":"ES1",
 					"loc":[0, 0],
