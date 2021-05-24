@@ -3,7 +3,7 @@ Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"Th
 
 It's relatively small size allow it to %s, but %s. Additionally, the unit's smaller engines yield %s.
 
-Combat readiness decays %s faster than normal ships. Can return to friendly carriers to refit, recovering %s CR and replenishing armor, hull, and ammo by %s. Refit time increases based on the total amount of damage the craft has taken, and the type of weapons equipped.
+Combat readiness decays %s faster than normal ships. Can return to friendly carriers to refit, recovering %s CR and replenishing armor, hull, and ammo by %s. Refit time increases based on the total amount of damage the craft has taken, the type of weapons equipped, and the refit rate of the chosen carrier.
 
 The refit process, especially unassisted by any natively installed LPCs for replacement parts, cuts directly into the carriers ability to service its other craft; the servicing fighter bay's replacement rate will be decreased by %s.
 
