@@ -1,3 +1,8 @@
+V1.4.8RC3
+--------------
+-Added landing beacon to Einhander
+-Fixed alternating weapon bug with Garegga's Pulse laser
+
 V1.4.8RC2
 --------------
 - Stopped recordbreaker from always being in the title screen battles

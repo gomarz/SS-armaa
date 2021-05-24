@@ -41,6 +41,7 @@
     "D_PAULDRONL": "armaa_sprigganleftPauldron",
     "D_PAULDRONR": "armaa_sprigganrightPauldron",
     "E_HEAD": "armaa_sprigganHead",
+    "H_GLOW": "armaa_landingBeacon",
     "WS0001": "armaa_heavyJavelin"
   },
   "center": [
@@ -223,6 +224,19 @@
       "mount": "HIDDEN",
       "size": "SMALL",
       "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "H_GLOW",
+      "locations": [
+        5,
+        -0
+      ],
+      "mount": "TURRET",
+      "renderOrderMod":101,
+      "size": "SMALL",
+      "type": "BUILT_IN"
     }
   ],
   "width": 18

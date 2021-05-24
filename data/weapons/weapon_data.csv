@@ -87,7 +87,7 @@ Dispersal Grenade,armaa_aleste_grenade_left,2,,2500,600,,200,,5,40,0,50,,,HIGH_E
 ,armaa_pikeSecondary,1,,100,100,,50,250,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,
 Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,100,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,75,,3,60,0,200,8,80,FRAGMENTATION,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
+Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,75,,3,60,0,200,8,80,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #ALTAGRAVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Vajra,armaa_altagrave_rightArm,2,,2500,600,,135,,10,15,69,25,2.5,8,ENERGY,110,,0,0.12,,0.12,0,5,2,9,,1000,1000,0.6,450,"SYSTEM,GUIDED_POOR",,,Arma Armatura,,Assault,,,,,"%s: Projectiles have some homing capability:  Can be intercepted by flares and PD, and be fired over friendly ships - but projectiles detonating over a friendly target will still damage it. In terms of enhancement bonuses, this weapon is considered a %s weapon.",Pseudomissile|PROJECTILE,,,TRUE,22.25
@@ -126,8 +126,8 @@ Ion Buster,armaa_ionBuster,3,0.7,500,500,,300,1850,0,40,6,,,,ENERGY,540,,0.55,5,
 #GAREGGA TT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_garegga_rightPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_garegga_leftPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Pulse Laser,armaa_garegga_leftArm_tt,2,,1200,600,,100,,1,20,42,,,,ENERGY,80,,0.33,0,,,,,,,,1000,,,30,SYSTEM,,,,,General,,,,,,,,,,4.5
-Pulse Laser,armaa_garegga_rightArm_tt,2,,1000,600,,100,,1,20,42,,,,ENERGY,80,,0.33,0,,,,,,,,1000,,,30,"SYSTEM,PD_ALSO,PD",,,,,General,,,,,,,,,,4.5
+Pulse Laser,armaa_garegga_leftArm_tt,2,,1200,600,,100,,1,20,42,,,,ENERGY,80,,0,0.33,,,,,,,,1000,,,30,SYSTEM,,,,,General,,,,,,,,,,4.5
+Pulse Laser,armaa_garegga_rightArm_tt,2,,1000,600,,100,,1,20,42,,,,ENERGY,80,,,0.33,,,,,,,,1000,,,30,"SYSTEM,PD_ALSO,PD",,,,,General,,,,,,,,,,4.5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #,armaa_altagrave_head_glow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 #,armaa_altagrave_head_glow_c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
