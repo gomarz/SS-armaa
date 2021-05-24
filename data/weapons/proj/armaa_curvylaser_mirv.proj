@@ -41,8 +41,8 @@
 					"minTimeToSplit":2,
 					"canSplitEarly":true,
 					"splitSound":"sabot_srm_split",
-					"numShots":10,
-					"damage":200,
+					"numShots":120,
+					"damage":37.5,
 					"emp":400,
 					"damageType":KINETIC,
 					"hitpoints":500,
@@ -52,7 +52,7 @@
 					#"spreadSpeed":300,
 					"spreadSpeed":1000,
 					"spreadSpeedRange":500,
-					"projectileRange":600, # only needed if not a missile
+					"projectileRange":1000, # only needed if not a missile
 					"projectileSpec":"armaa_flamer_shot",
 					"smokeSpec":{"particleSizeMin":20.0,
 								 "particleSizeRange":20.0,
