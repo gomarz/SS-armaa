@@ -1,6 +1,6 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
 Juno Mk. III,armaa_fluxcannon,4,,4600,900,850,,,20,10,16,,,,KINETIC,,620,1.5,0.5,1.5,3,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES","energy20, beam15, LR, rare_bp, hist1t, merc",,Arma Armatura,,Fire Support,,,,,,,,,,15.6
-Curvy Laser,armaa_curvyLaser,3,,1000,1000,,1,,3,60,0,1,,,ENERGY,25,,,10,,,0,0,0,0,,300,100,8,300,,,,Arma Armatura,,General,,,,,,,,,,
+Curvy Laser,armaa_curvyLaser,3,,1000,1000,,500,,3,60,0,1,,,HIGH_EXPLOSIVE,25,,,10,,,0,0,0,0,,300,50,8,100,,,,Arma Armatura,,General,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #EINHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_sprigganleftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
@@ -87,7 +87,7 @@ Dispersal Grenade,armaa_aleste_grenade_left,2,,2500,600,,200,,5,40,0,50,,,HIGH_E
 ,armaa_pikeSecondary,1,,100,100,,50,250,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,
 Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,100,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Plasma Flamer,armaa_aleste_flamer_right_copy,3,,1000,2000,,37.5,,3,60,0,200,8,80,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
+Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,75,,3,60,0,200,8,80,FRAGMENTATION,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #ALTAGRAVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Vajra,armaa_altagrave_rightArm,2,,2500,600,,135,,10,15,69,25,2.5,8,ENERGY,110,,0,0.12,,0.12,0,5,2,9,,1000,1000,0.6,450,"SYSTEM,GUIDED_POOR",,,Arma Armatura,,Assault,,,,,"%s: Projectiles have some homing capability:  Can be intercepted by flares and PD, and be fired over friendly ships - but projectiles detonating over a friendly target will still damage it. In terms of enhancement bonuses, this weapon is considered a %s weapon.",Pseudomissile|PROJECTILE,,,TRUE,22.25
