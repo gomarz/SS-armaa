@@ -54,5 +54,5 @@
   ],
   "turretSprite": "graphics/armaa/ships/garegga/leftArm0.png",
   "type": "ENERGY",
-  "visualRecoil": 2
+  "visualRecoil": 1
 }

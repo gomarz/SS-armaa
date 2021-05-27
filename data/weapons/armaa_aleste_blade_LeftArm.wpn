@@ -43,8 +43,23 @@
     250,
     255
   ],
+  #"fringeColor": [
+  #  255,
+  #  100,
+  #  55,
+  #  255
+  #],
+  #"coreColor": [
+  #  255,
+  #  200,
+  #  100,
+  #  255
+  #],
   "width": 25,
-  "textureType": ROUGH,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_parax_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_ppa_beam_core.png"
+  ],
   "textureScrollSpeed": 300,
   "pixelsPerTexel": 3,
   "pierceSet": [
@@ -52,5 +67,6 @@
     PROJECTILE_NO_FF,
     PROJECTILE_FIGHTER
   ],
-  "fireSoundTwo": "high_intensity_laser_loop"
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "armaa_saber_loop"
 }

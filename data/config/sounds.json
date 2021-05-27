@@ -9,6 +9,16 @@
 		{"file":"sounds/armaa/mechmove.ogg","pitch":1.03,"volume":0.68},
 		{"file":"sounds/armaa/mechmove.ogg","pitch":.97,"volume":0.62},
 	],
+	"armaa_saber_slash":[ 
+		{"file":"sounds/sfx_impacts/beam_hit_01.ogg","pitch":1.03,"volume":1.03},
+		{"file":"sounds/sfx_impacts/beam_hit_01.ogg","pitch":1,"volume":1},
+		{"file":"sounds/sfx_impacts/beam_hit_01.ogg","pitch":.97,"volume":.97},
+	],
+	"armaa_saber_loop":[ 
+		{"file":"sounds/armaa/armaa_lasersword_loop.ogg","pitch":1.03,"volume":1.03},
+		{"file":"sounds/armaa/armaa_lasersword_loop.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/armaa_lasersword_loop.ogg","pitch":.97,"volume":.97},
+	],
 	"armaa_mb_start":[ 
 		{"file":"sounds/armaa/armaa_mb_start.ogg","pitch":1,"volume":0.9},
 	],
