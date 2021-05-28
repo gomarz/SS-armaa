@@ -141,8 +141,8 @@
       "type": "DECORATIVE"
     },
     {
-      "angle": 0,
-      "arc": 360,
+      "angle": 15,
+      "arc": 90,
       "id": "C_ARML",
       "locations": [
         3,

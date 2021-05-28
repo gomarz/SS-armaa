@@ -14,7 +14,8 @@
             },
 		"fx":{
 			#these are DME trails, thanks harmful mechanic!
-			"beam_trail_smooth":"graphics/armaa/fx/armaa_projectile_contrail_smooth.png",
+"armaa_parax_fringe":"graphics/armaa/fx/armaa_parax_beam_fringe.png",
+"armaa_ppa_core":"graphics/armaa/fx/armaa_ppa_beam_core.png",			"beam_trail_smooth":"graphics/armaa/fx/armaa_projectile_contrail_smooth.png",
 			#mine
 			"beam_trail_cel":"graphics/armaa/fx/armaa_projectile_cel.png",
 			"beam_trail_helix":"graphics/armaa/fx/armaa_projectile_contrail_helix.png",

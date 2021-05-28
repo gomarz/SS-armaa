@@ -2,6 +2,13 @@ V1.4.8RC3
 --------------
 -Added landing beacon to Einhander
 -Fixed alternating weapon bug with Garegga's Pulse laser
+- Aleste:
+	-Laser Blade:
+		-Laser Blade attacks are now swings instead of stabs; should generally be easier to connect with
+		-First strike with Laser Blade now slightly knocks back the user 
+		-Added Hit and swing fx
+		- Burst Damage is dealt on first strike
+	 
 
 V1.4.8RC2
 --------------

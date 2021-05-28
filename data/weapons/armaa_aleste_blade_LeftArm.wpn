@@ -57,8 +57,8 @@
   #],
   "width": 25,
   "textureType": [
-    "graphics/tahlan/fx/tahlan_parax_beam_fringe.png",
-    "graphics/tahlan/fx/tahlan_ppa_beam_core.png"
+    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
+    "graphics/armaa/fx/armaa_ppa_beam_core.png"
   ],
   "textureScrollSpeed": 300,
   "pixelsPerTexel": 3,

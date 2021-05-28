@@ -1,6 +1,6 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
 Juno Mk. III,armaa_fluxcannon,4,,4600,900,850,,,20,10,16,,,,KINETIC,,620,1.5,0.5,1.5,3,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES","energy20, beam15, LR, rare_bp, hist1t, merc",,Arma Armatura,,Fire Support,,,,,,,,,,15.6
-Curvy Laser,armaa_curvyLaser,3,,1000,1000,,500,,3,60,0,,,,HIGH_EXPLOSIVE,25,,,10,,,0,0,0,0,,300,50,8,100,,,,Arma Armatura,,General,,,,,,,,,,
+Curvy Laser,armaa_curvyLaser,3,,1000,1000,,500,,3,60,0,,,,HIGH_EXPLOSIVE,25,,,10,,,0,0,0,0,,300,50,10,300,,,,Arma Armatura,,General,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #EINHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_sprigganleftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
@@ -41,7 +41,7 @@ Vulcan Cannon,armaa_valkenxHead,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1
 ,armaa_valkenx_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_valkenx_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Assault Chaingun(F),armaa_chaingun,1,,1000,450,,60,,3,30,42,,,,HIGH_EXPLOSIVE,,,0,1,5,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
-LS-20  Blade,armaa_valkenxLeftArm,,,,45,125,,50,20,,,,,,ENERGY,,,0.33,0.33,,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
+LS-20  Blade,armaa_valkenxLeftArm,,,,45,125,,50,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #BIHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Micro Rail Rifle,armaa_lightmg,2,0.5,600,700,,100,,10,90,7,,,,KINETIC,,,,1,1,0.2,,,,,,1000,,,50,SYSTEM,,,,,Anti Shield,,,,,,,,,,0.5
@@ -77,7 +77,7 @@ Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,30,,,4,10,0.
 ,armaa_aleste_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,18,,,FRAGMENTATION,100,,0.25,4,6,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines. Can fire up to 6 spikes in a burst.","Remote Detonation|50 High Explosive, 250 EMP",,,,
-LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,600,,600,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,,,,,,999
+LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,600,,600,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,%s: Deals burst damage immediately on contact.,The Sanctioned Action Is To Cut,,,,999
 Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
 Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
 Plasma Flamer,armaa_aleste_flamer_right,3,,1000,450,,37.5,,3,60,0,200,8,80,ENERGY,25,,,,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
