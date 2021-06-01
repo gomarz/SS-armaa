@@ -1,3 +1,8 @@
+V1.4.9
+--------------
+-Fixed Laser Blade not doing additional emp damage on hit
+-Fixed Laser Blade damage not scaling with energy weapon mastery
+
 V1.4.8RC3
 --------------
 -Added landing beacon to Einhander
