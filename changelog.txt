@@ -1,7 +1,12 @@
 V1.4.9
 --------------
+-Added Laser Blade as an option for right arm
 -Fixed Laser Blade not doing additional emp damage on hit
 -Fixed Laser Blade damage not scaling with energy weapon mastery
+-Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
+-Removed ECCM from Ilorin
+
+
 
 V1.4.8RC3
 --------------

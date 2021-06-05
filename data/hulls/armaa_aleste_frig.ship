@@ -32,7 +32,7 @@
     "armaa_melee"
   ],
   "builtInWeapons": {
-   # "A_GUN": "armaa_aleste_rightArm",
+    #"A_GUN": "armaa_aleste_blade_RightArm",
     "B_TORSO": "armaa_aleste_torso_ace",
    # "C_ARML": "armaa_alesteLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
@@ -110,7 +110,7 @@
   "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": -15,
+      "angle": -10,
       "arc": 90,
       "id": "A_GUN",
       "locations": [
@@ -160,7 +160,7 @@
       "type": "UNIVERSAL"
     },
     {
-      "angle": 15,
+      "angle": 10,
       "arc": 90,
       "id": "C_ARML",
       "locations": [
@@ -172,7 +172,7 @@
       "type": "BUILT_IN"
     },
     {
-      "angle": -15,
+      "angle": -10,
       "arc": 360,
       "id": "C_ARMR",
       "locations": [
@@ -184,7 +184,7 @@
       "type": "DECORATIVE"
     },
     {
-      "angle": 0,
+      "angle": 10,
       "arc": 360,
       "id": "D_PAULDRONL",
       "locations": [
@@ -196,7 +196,7 @@
       "type": "DECORATIVE"
     },
     {
-      "angle": -15,
+      "angle": -10,
       "arc": 360,
       "id": "D_PAULDRONR",
       "locations": [

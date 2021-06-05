@@ -1,24 +1,24 @@
 {
-  "id": "armaa_aleste_blade_LeftArm",
+  "id": "armaa_aleste_blade_RightArm",
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
   "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArm_blade.png",
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteRightArm_blade.png",
   "hardpointSprite": "",
   "showDamageWhenDecorative": true,
   "glowColor": [
     255,
-    0,
+    255,
     255,
     255
   ],
   "hitGlowRadius": 10,
   "turretOffsets": [
-    21,
-    20
+    8,
+    -18
   ],
   "turretAngleOffsets": [
     0
@@ -32,15 +32,15 @@
   ],
   "beamFireOnlyOnFullCharge": true,
   "fringeColor": [
-    255,
-    100,
     55,
+    100,
+    255,
     255
   ],
   "coreColor": [
-    255,
-    200,
     100,
+    200,
+    255,
     255
   ],
   "width": 25,

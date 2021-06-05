@@ -83,4 +83,11 @@ R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,,,,,TRUE,,0,0,0,0,data.hullmods.ar
 The %s is a short-range energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge and relatively flux-intensive with sustained use. Lacks automatic PD targeting software.
 
 %s",,graphics/armaa/hullmods/hand_r.png
+R ARM: LASER BLADE,armaa_selector_blade_right,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s deals immense amounts of damage, but has extremely short range.
+
+%s 
+
+%s",,graphics/armaa/hullmods/hand_l.png
 Melee,armaa_melee,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png
