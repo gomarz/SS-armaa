@@ -25,9 +25,7 @@
     15,
     4.5
   ],
-  "builtInMods": [
-    "eccm",
-  ],
+  "builtInMods": [],
   "builtInWeapons": {
     "A_GUN": "armaa_ilorin_rocket",
     "B_TORSO": "armaa_ilorin_torso",
