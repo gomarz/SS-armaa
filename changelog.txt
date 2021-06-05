@@ -6,6 +6,8 @@ V1.4.9
 -Fixed Laser Blade damage not scaling with energy weapon mastery
 -Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
 -Removed ECCM from Ilorin
+-Ilorin Rocket Speed: 150->50
+-Burst Size: 4->8 (now fires entire clip immediately)
 
 
 V1.4.8RC3
