@@ -1,0 +1,35 @@
+{	
+	"companies":{
+
+		"crimsonComet":{
+			"name":"The Crimson Comet",
+			"desc":"A solitary mercenary who earned their moniker during the Battle of Meshan during c. 94. No one has ever seen their face.",
+			"feeUpfront":115000,
+			"feeMonthly":2800,
+			"faction":"armaarmatura",
+			"minRep":"NEUTRAL",
+			"minLevel":7,
+			"ships":[
+				["armaa_altagrave_r_standard"],
+			],
+			"officers":[
+				{
+					"firstName":"Crimson",
+					"lastName":"Comet",
+					"gender":"f",
+					"portrait":"graphics/armaa/portraits/armaa_crimson.png",
+					"level":6,
+					"rankId":"spaceCommander",
+					"voice":"pw_crimson1",
+					"persistentId":"armaa_crimson",
+					"averageSMods":2,
+				},
+			],
+			"averageSMods":2,
+			"miscData":{
+				"angeredByInsults":true,
+			},
+		},
+		
+	}
+}

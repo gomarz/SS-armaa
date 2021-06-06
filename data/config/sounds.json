@@ -97,11 +97,11 @@
 	],
 	"armaa_shotgun_fire":
 	[
-		{"file":"sounds/armaa/shotgun_shot.ogg","pitch":1,"volume":0.8},
+		{"file":"sounds/armaa/shotgun_shot.ogg","pitch":1,"volume":0.5},
 	],
 	"armaa_shotgun_cock":
 	[
-		{"file":"sounds/armaa/shotgun_cock.ogg","pitch":1.4,"volume":0.5},
+		{"file":"sounds/armaa/shotgun_cock.ogg","pitch":1,"volume":1},
 	],
 	
 	"homing_fire":[							{"file":"sounds/armaa/Fire3.ogg","pitch":1,"volume":0.6},

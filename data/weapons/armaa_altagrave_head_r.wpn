@@ -1,0 +1,57 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "convergeOnPoint": true,
+  "coreColor": [
+    255,
+    255,
+    200,
+    255
+  ],
+  "fireSoundTwo": "high_intensity_laser_loop",
+  "fringeColor": [
+    255,
+    255,
+    100,
+    200
+  ],
+  "glowColor": [
+    0,
+    150,
+    150,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "armaa_altagrave_head_r",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 256,
+    "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_rabbit_glow.png",
+  "turretOffsets": [
+    4,
+    7
+  ],
+  "turretSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_rabbit_red.png",
+  "type": "ENERGY",
+  "width": 12
+}

@@ -35,9 +35,9 @@ armaa_syrinx,armaa_mrm,beam_trail_helix,10,0,0.2,0.4,20,30,"[44,188,245]","[0,0,
 armaa_syrinx2,armaa_mrm,base_trail_zap,10,0,0.2,0.7,12,8,"[0,0,255]","[0,0,255]",1,200,-3000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 armaa_syrinx3,armaa_mrm,beam_trail_smooth,10,0,1,0.5,20,20,"[44,188,245]","[0,0,255]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_shotgun_shot,armaa_shotgun_shot,base_trail_mild,10,0,0.1,0.2,10,10,"[245,188,44]","[50,50,155]",0.5,400,-256,0,10,1,TRUE,FALSE,TRUE,150,0,0,180,150,0,TRUE,FALSE
-armaa_shotgun_shot2,armaa_shotgun_shot,base_trail_zap,10,0,0.1,0.1,6,2,"[255,200,200]","[50,50,155]",0.5,200,-3000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
-armaa_shotgun_shot3,armaa_shotgun_shot,beam_trail_smooth,10,0,0.1,0.1,10,10,"[255,0,0]","[50,50,155]",0.5,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_chain_trail2,armaa_chaingun_shot2,base_trail_heavyBurn,10,0.1,0.1,0.5,6,12,"[255,150,100]","[128,128,128]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE

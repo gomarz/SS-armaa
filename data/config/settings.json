@@ -25,6 +25,7 @@
 		"portraits":{
 			"armaa_portrait_shard":"graphics/armaa/portraits/armaa_ai.png",
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
+			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 		},	
     }
 }

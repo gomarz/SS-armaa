@@ -1,0 +1,61 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "armaa_shotgun_fire",
+"everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffectCrimson",
+  "glowColor": [
+    50,
+    142,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_altagrave_shotgun_red",
+  "muzzleFlashSpec": {
+    "length": 60,
+    "particleColor": [
+      250,
+      100,
+      50,
+      255
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.2,
+    "particleSizeMin": 15,
+    "particleSizeRange": 50,
+    "spread": 20
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_hominglaser2",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "showDamageWhenDecorative": true,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "",
+  "turretGunSprite": "graphics/armaa/ships/proto/armaa_altagrave_shotgun_red.png",
+  "turretOffsets": [
+    63,
+    -16,
+    63,
+    -9
+  ],
+  "turretSprite": "",
+  "type": "BALLISTIC",
+  "visualRecoil": 5
+}

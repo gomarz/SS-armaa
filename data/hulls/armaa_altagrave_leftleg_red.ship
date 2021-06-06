@@ -1,0 +1,79 @@
+{
+  "bounds": [
+    14,
+    -18,
+    -52.5,
+    18,
+    -49,
+    34.5,
+    -15,
+    26,
+    19.5,
+    15.5,
+    12,
+    4
+  ],
+  "builtInMods": [
+    "armaa_legmodule",
+    "reduced_explosion",
+    "always_detaches",
+    "novent",
+    "leg_engine"
+  ],
+  "center": [
+    41,
+    79
+  ],
+  "collisionRadius": 60,
+  "engineSlots": [
+    {
+      "angle": 161,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -18,
+        2
+      ],
+      "style": "MechaTrailZ",
+      "width": 10
+    },
+    {
+      "angle": 161,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -2,
+        -5
+      ],
+      "style": "MechaTrailZ",
+      "width": 10
+    }
+  ],
+  "height": 192,
+  "hullId": "armaa_altagrave_leftleg_red",
+  "hullName": "New Hull",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    -18,
+    6
+  ],
+  "shieldRadius": 44,
+  "spriteName": "graphics/armaa/ships/proto/armaa_altagrave_leg_l_red.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 119.5,
+      "arc": 360,
+      "id": "WS0001",
+      "locations": [
+        21.5,
+        11
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "MISSILE"
+    }
+  ],
+  "width": 128
+}
