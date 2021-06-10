@@ -18,7 +18,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "B_TORSO": "armaa_sprigganTorso",
+        "B_TORSO": "armaa_record_torso",
       }
     },
     {

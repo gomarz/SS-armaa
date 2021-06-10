@@ -1,18 +1,24 @@
 {
   "hullName": "record",
-  "hullId": "armaa_record",
-  "hullSize": "FIGHTER",
+  "hullId": "armaa_record_frig",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
-  "style": "HIGH_TECH",
+  "style": "MIDLINE",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
-  "collisionRadius": 18,
+  "collisionRadius": 58.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 32,
+  "shieldRadius": 58.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "cataphract",
+    "strikeCraft",
+    "armaa_melee"
+  ],
   "builtInWeapons": {
-    "A_GUN": "armaa_aleste_rightArm",
+    "A_GUN": "armaa_hyllos_autocannon_right",
+    "B_TORSO": "armaa_record_torso",
     "C_ARML": "armaa_recordLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_record_leftPauldron",
@@ -26,14 +32,14 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 90,
-      "angle": 0,
-      "locations": [3, -3]
+      "arc": 80,
+      "angle": -10,
+      "locations": [3, -4]
     },
     {
       "id": "B_TORSO",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
@@ -45,8 +51,8 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
-      "locations": [3, 3]
+      "angle": 10,
+      "locations": [3, 4]
     },
     {
       "id": "C_ARMR",
@@ -54,8 +60,8 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
-      "locations": [3, -3]
+      "angle": -10,
+      "locations": [3, -4]
     },
     {
       "id": "D_PAULDRONL",
@@ -63,8 +69,8 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
-      "locations": [3, 3]
+      "angle": 10,
+      "locations": [3, 4]
     },
     {
       "id": "D_PAULDRONR",
@@ -72,8 +78,8 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
-      "locations": [3, -3]
+      "angle": -10,
+      "locations": [3, -4]
     },
     {
       "id": "E_HEAD",
@@ -101,6 +107,26 @@
       "arc": 0,
       "angle": 0,
       "locations": [10, -4]
+    },
+    {
+      "id": "WS002",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-17, -13],
+      "renderOrderMod": 99999
+    },
+    {
+      "id": "WS003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-17, 13],
+      "renderOrderMod": 99999
     }
   ],
   "engineSlots": [
@@ -110,7 +136,23 @@
       "width": 8,
       "angle": 180,
       "contrailSize": 10,
-      "style": "HIGH_TECH"
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-14, -0],
+      "length": 26.5,
+      "width": 8,
+      "angle": 165.5,
+      "contrailSize": 10,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-14, -0],
+      "length": 26.5,
+      "width": 8,
+      "angle": -165,
+      "contrailSize": 10,
+      "style": "MIDLINE"
     }
   ],
   "bounds": [

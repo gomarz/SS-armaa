@@ -1,12 +1,13 @@
 {
   "collisionClass": "RAY",
+  "beamEffect":"com.fs.starfarer.api.impl.combat.PaladinEffect",
   "collisionClassByFighter": "RAY_FIGHTER",
   "convergeOnPoint": true;
-  "coreColor": [155,155,255,255],
+  "coreColor": [255,155,155,255],
   #"fireSoundOne": "high_intensity_laser_intro",
   "fireSoundTwo": "high_intensity_laser_loop",
-  "fringeColor": [0,100,255,255],
-  "glowColor": [55,255,255,255],
+  "fringeColor": [255,100,0,255],
+  "glowColor": [255,55,55,255],
   "hardpointAngleOffsets": [0],
   "hardpointOffsets": [4,0],
   "hardpointSprite": "",
@@ -19,7 +20,10 @@
   "size": "SMALL",
   "specClass": "beam",
   "textureScrollSpeed": 135.0,
-  "textureType": ROUGH,
+  "textureType": [
+    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
+    "graphics/armaa/fx/armaa_ppa_beam_core.png"
+  ],
   "turretAngleOffsets": [0],
   "pierceSet": [PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
   "turretGlowSprite": "graphics/armaa/ships/recordbreaker/armaa_recordheadglow.png",

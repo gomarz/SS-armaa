@@ -1,0 +1,52 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect2",
+  "fireSoundTwo": "armaa_rifle_shot",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "id": "armaa_hyllos_autocannon_right",
+  "muzzleFlashSpec": {
+    "length": 20,
+    "particleColor": [
+      255,
+      200,
+      165,
+      200
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.02,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 25
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_autocannon_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    1
+  ],
+  "turretGunSprite": "graphics/armaa/weapons/armaa_hyllos_heavyrifle.png",
+  "turretOffsets": [
+    48.5,
+    -12.5
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 2
+}

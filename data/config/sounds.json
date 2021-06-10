@@ -99,6 +99,14 @@
 	[
 		{"file":"sounds/armaa/shotgun_shot.ogg","pitch":1,"volume":0.5},
 	],
+	"armaa_shotgun_fire_small":
+	[
+		{"file":"sounds/armaa/shotgun_shot_small.ogg","pitch":1,"volume":0.5},
+	],
+	"armaa_rifle_shot":
+	[
+		{"file":"sounds/armaa/armaa_rifle_shot.ogg","pitch":1,"volume":0.5},
+	],
 	"armaa_shotgun_cock":
 	[
 		{"file":"sounds/armaa/shotgun_cock.ogg","pitch":1,"volume":1},

@@ -2,6 +2,7 @@
   "animationType": "SMOKE",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
+"everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
   "fireSoundTwo": "system_flare_launcher_active",
   "hardpointAngleOffsets": [
     -45,
