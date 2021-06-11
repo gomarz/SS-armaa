@@ -12,7 +12,7 @@
     0
   ],
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_hyllos_heavyrifle_right",
+  "id": "armaa_leynos_shotgun_right",
   "muzzleFlashSpec": {
     "length": 20,
     "particleColor": [

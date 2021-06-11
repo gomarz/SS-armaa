@@ -91,3 +91,20 @@ R ARM: LASER BLADE,armaa_selector_blade_right,,,,,,,,TRUE,,0,0,0,0,data.hullmods
 
 %s",,graphics/armaa/hullmods/hand_l.png
 Melee,armaa_melee,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,
+#LEYNOS WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_leynosWeaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
+R ARM:SHOTGUN,armaa_selector_shotgun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s fires a burst of projectiles in a tight cone that can chew through armor.
+
+%s",,graphics/armaa/hullmods/hand_r.png
+R ARM:MINIGUN,armaa_selector_minigun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s has an unparalleled fire rate, easily shredding lightly armored targets. It cannot easily defeat armor or shielding on its own and is best paired with weapon that can.
+%s",,graphics/armaa/hullmods/hand_r.png
+R ARM:AUTOCANNON,armaa_selector_ac,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_ac,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s is a standard use autocannon.
+
+%s",,graphics/armaa/hullmods/hand_r.png

@@ -2,7 +2,7 @@
   "hullName": "record",
   "hullId": "armaa_record_frig",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
+  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
   "style": "MIDLINE",
   "height": 26,
   "width": 18,
@@ -14,12 +14,10 @@
   "builtInMods": [
     "cataphract",
     "strikeCraft",
-    "armaa_melee"
+    "armaa_leynosWeaponSwap"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_hyllos_autocannon_right",
     "B_TORSO": "armaa_record_torso",
-    "C_ARML": "armaa_recordLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_record_leftPauldron",
     "D_PAULDRONR": "armaa_record_rightPauldron",
@@ -32,7 +30,7 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 80,
+      "arc": 90,
       "angle": -10,
       "locations": [3, -4]
     },
@@ -48,9 +46,9 @@
     {
       "id": "C_ARML",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 90,
       "angle": 10,
       "locations": [3, 4]
     },
@@ -100,7 +98,7 @@
       "locations": [1, -0]
     },
     {
-      "id": "WS0001",
+      "id": "WS001",
       "size": "SMALL",
       "type": "SYSTEM",
       "mount": "HIDDEN",
@@ -131,27 +129,27 @@
   ],
   "engineSlots": [
     {
-      "location": [-13.5, -0],
-      "length": 26.5,
-      "width": 8,
+      "location": [-13.5, 0.5],
+      "length": 16.5,
+      "width": 6,
       "angle": 180,
-      "contrailSize": 10,
+      "contrailSize": 6,
       "style": "MIDLINE"
     },
     {
-      "location": [-14, -0],
-      "length": 26.5,
-      "width": 8,
-      "angle": 165.5,
-      "contrailSize": 10,
+      "location": [-14, 3],
+      "length": 11.667831,
+      "width": 6.359791,
+      "angle": 151.5,
+      "contrailSize": 6.359791,
       "style": "MIDLINE"
     },
     {
-      "location": [-14, -0],
-      "length": 26.5,
-      "width": 8,
+      "location": [-14, -3],
+      "length": 11.082763,
+      "width": 5.448803,
       "angle": -165,
-      "contrailSize": 10,
+      "contrailSize": 5.448803,
       "style": "MIDLINE"
     }
   ],

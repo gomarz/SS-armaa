@@ -1,0 +1,48 @@
+{
+  "id": "armaa_leynos_minigun_right",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_minigun_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_minigunEveryFrameEffect",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_hyllos_heavyrifle.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    48.5,
+    -13.5
+  ],
+  "turretAngleOffsets": [
+    1
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 40,
+    "spread": 30,
+    "particleSizeMin": 20,
+    "particleSizeRange": 10,
+    "particleDuration": 0.02,
+    "particleCount": 20,
+    "particleColor": [
+      255,
+      205,
+      100,
+      200
+    ]
+  },
+  "fireSoundTwo": "armaa_minigun_fire"
+}

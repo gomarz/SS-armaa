@@ -107,6 +107,14 @@
 	[
 		{"file":"sounds/armaa/armaa_rifle_shot.ogg","pitch":1,"volume":0.5},
 	],
+	"armaa_minigun_fire":
+	[
+		{"file":"sounds/armaa/armaa_minigun_shot.ogg","pitch":1,"volume":0.5},
+	],
+	"armaa_minigun_windup":
+	[
+		{"file":"sounds/armaa/armaa_minigun_chargeup.ogg","pitch":1,"volume":0.5},
+	],
 	"armaa_shotgun_cock":
 	[
 		{"file":"sounds/armaa/shotgun_cock.ogg","pitch":1,"volume":1},
