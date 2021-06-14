@@ -9,7 +9,7 @@
   "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow_left.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 3,
+  "visualRecoil": 2,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],

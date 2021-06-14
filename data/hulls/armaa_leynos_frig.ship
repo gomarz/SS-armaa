@@ -1,6 +1,6 @@
 {
-  "hullName": "record",
-  "hullId": "armaa_record_frig",
+  "hullName": "leynos",
+  "hullId": "armaa_leynos_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
   "style": "MIDLINE",
@@ -14,7 +14,9 @@
   "builtInMods": [
     "cataphract",
     "strikeCraft",
-    "armaa_leynosWeaponSwap"
+    "armaa_wingCommander",
+    "armaa_leynosWeaponSwap",
+    "reduced_explosion"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_record_torso",

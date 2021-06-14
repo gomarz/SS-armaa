@@ -39,7 +39,7 @@
     "particleCount": 20,
     "particleColor": [
       255,
-      205,
+      100,
       100,
       200
     ]

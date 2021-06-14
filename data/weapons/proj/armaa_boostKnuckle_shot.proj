@@ -1,0 +1,15 @@
+{
+	"id":"armaa_boostKnuckle_shot",
+	"specClass":"projectile",
+        "onHitEffect":"data.scripts.weapons.armaa_hammerEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+    	"bulletSprite":"graphics/armaa/weapons/armaa_leynos_rocketPunch.png",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":5.0,
+	"width":16.0,
+	"fadeTime":0.2,
+	"hitGlowRadius":40,
+	"fringeColor":[255,165,90,55]
+	#"coreColor":[255,255,255,255]
+}

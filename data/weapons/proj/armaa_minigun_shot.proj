@@ -1,7 +1,7 @@
 {
 	"id":"armaa_minigun_shot",
 	"specClass":"projectile",
-	#"onHitEffect":"data.scripts.weapons.magellan_BonecrusherOnHit",
+	"onHitEffect":"data.scripts.weapons.armaa_minigunEveryFrameEffect",
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",

@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-#"everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect2",
+  #"onHitEffect":"data.scripts.weapons.armaa_hammerEffect"
   "fireSoundTwo": "plasma_cannon_fire",
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -15,7 +15,7 @@
     0
   ],
   "hardpointSprite": "graphics/weapons/assault_chaingun_hardpoint_base.png",
-  "id": "armaa_einhanderSyrinx_copy",
+  "id": "armaa_leynosBoostKnuckle_return",
   "muzzleFlashSpec": {
     "length": 40,
     "particleColor": [
@@ -33,7 +33,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_bounce_laser",
+  "projectileSpecId": "armaa_boostKnuckle_missile_returning",
   "renderAboveAllWeapons": 0,
   "size": "MEDIUM",
   "glowColor":[50,175,250,255],

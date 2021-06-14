@@ -60,3 +60,8 @@ armaa_bounce_laser3,armaa_bounce_laser,beam_trail_smooth,10,0,1,0.5,20,20,"[53,1
 armaa_bounce_laserc2,armaa_bounce_laser2,beam_trail_smooth,10,0,0.5,0.5,20,20,"[55,100,250]","[25,25,55]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,15,45,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bounce_laserc3,armaa_bounce_laser3,beam_trail_smooth,10,0,0.25,0.1,10,5,"[250,100,55]","[1,1,1]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_knuckle_trail,armaa_boostKnuckle_shot,base_trail_heavyBurn,10,0.1,0.05,0.25,20,15,"[255,0,0]","[100,50,0]",0.5,300,-1024,0,1,1,FALSE,FALSE,TRUE,150,75,1,180,360,20,TRUE,TRUE
+armaa_knuckle_trail2,armaa_boostKnuckle_shot,beam_trail_helix,10,0.05,0.05,0.25,16,12,"[225,100,50]","[125,40,0]",0.5,300,-1024,0,2,1,FALSE,FALSE,TRUE,100,50,0.75,180,360,15,TRUE,TRUE
+armaa_knuckle_trail3,armaa_boostKnuckle_shot,base_trail_zap,10,0.15,0.05,0.15,10,6,"[245,188,44]","[100,30,10]",0.5,300,-1024,0,3,1,FALSE,FALSE,TRUE,70,10,0.5,180,360,10,TRUE,TRUE
+armaa_knuckle_trail4,armaa_boostKnuckle_shot,base_trail_zap,10,0.05,0.05,0.25,15,5,"[255,0,0]","[145,188,44]",0.5,300,-1024,0,1,1,FALSE,FALSE,TRUE,50,10,0.25,180,360,5,TRUE,TRUE

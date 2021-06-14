@@ -3,7 +3,7 @@
   "fluxCapacitors": 10,
   "goalVariant": true,
   "fluxVents": 10,
-  "hullId": "armaa_record_frig",
+  "hullId": "armaa_leynos_frig",
   "hullMods": ["armaa_selector_stake","armaa_selector_lrifle","reinforcedhull"],
   "variantId": "armaa_leynos_standard",
   "weaponGroups": [
