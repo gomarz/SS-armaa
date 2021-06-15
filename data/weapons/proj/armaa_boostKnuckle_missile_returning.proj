@@ -16,7 +16,7 @@
 #				  "acc":1000,
 #				  "dec":500},
 	"engineSpec":{"turnAcc":500,
-				  "turnRate":400,
+				  "turnRate":500,
 				  "acc":500,
 				  "dec":500},
 	"engineSlots":[
