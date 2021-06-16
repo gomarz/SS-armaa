@@ -42,7 +42,7 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-Wing Commander,armaa_wingCommander,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"This craft is outfitted with a suite of additional sensors and enhanced communications capabilities designed to coordinate the manuevers of a squadron of strikecraft under it's direct command.
+Wing Commander,armaa_wingCommander,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"This craft is outfitted with a suite of additional sensors and enhanced communication capabilities designed to coordinate the manuevers of a squadron of strikecraft under it's direct command.
 
 Compact comm systems are not as effective as those housed on larger vessels, reducing fighter engagement range by %s. 
 
