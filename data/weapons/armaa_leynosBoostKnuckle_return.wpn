@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  #"onHitEffect":"data.scripts.weapons.armaa_hammerEffect"
+  #"onHitEffect":"data.scripts.weapons.armaa_knuckleEffect"
   "fireSoundTwo": "plasma_cannon_fire",
   "renderHints": [
     RENDER_BARREL_BELOW

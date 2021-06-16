@@ -1,11 +1,11 @@
 {
 	"id":"armaa_boostKnuckle_missile_returning",
 	"specClass":"missile",	
-    "onHitEffect":"data.scripts.weapons.armaa_hammerEffect",
+        "onHitEffect":"data.scripts.weapons.armaa_knuckleEffect",
 	"missileType":"ROCKET",
 	"sprite":"graphics/armaa/weapons/armaa_leynos_rocketPunch.png",
 	"size":[16,29],	
-        "armingTime":4,
+        "armingTime":1,
 	"center":[9,14],
 	"collisionRadius":10,
 	"collisionClass":"MISSILE_NO_FF",
@@ -24,7 +24,7 @@
 					"loc":[-13, 0],
 				    "style":"CUSTOM",
 					"styleSpec":{
-						"engineColor":[53,176,252,255],
+						"engineColor":[252,176,53,255],
 						"contrailParticleSizeMult":15,
 						"contrailParticleDuration":2,
 						"contrailDuration":4,
@@ -36,8 +36,8 @@
 						"contrailColor":[100,59,255,15],
 						"type":"GLOW" # GLOW or SMOKE
 					},
-				    "width":20.0,
-				    "length":20.0,
+				    "width":10.0,
+				    "length":25.0,
 				    "angle":180.0},
 {"id":"ES2",
 					"loc":[-15, 0],
@@ -46,13 +46,13 @@
 					"styleSpec":{
 						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
 						"engineColor":[255,145,75,200],
-						"contrailDuration":4,
+						"contrailDuration":1,
 						"contrailWidthMult":2,
 						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
 						"contrailMinSeg":8, # min segment length, in pixels
 						"contrailMaxSpeedMult":0.1f,
 						"contrailAngularVelocityMult":0.1f,
-						"contrailColor":[255,255,200,100],
+						"contrailColor":[255,140,100,100],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
 				    "width":3.0,

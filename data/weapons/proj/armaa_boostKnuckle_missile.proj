@@ -1,7 +1,7 @@
 {
 	"id":"armaa_boostKnuckle_missile",
 	"specClass":"missile",	
-        "onHitEffect":"data.scripts.weapons.armaa_hammerEffect",
+        "onHitEffect":"data.scripts.weapons.armaa_knuckleEffect",
 	"missileType":"MISSILE",
 	"sprite":"graphics/armaa/weapons/armaa_leynos_rocketPunch.png",
 	"size":[16,29],	

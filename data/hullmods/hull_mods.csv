@@ -44,7 +44,9 @@ This system is equipped with a manual safety override that can be tripped to for
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
 Wing Commander,armaa_wingCommander,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"This craft is outfitted with a suite of additional sensors and enhanced communications capabilities designed to coordinate the manuevers of a squadron of strikecraft under it's direct command.
 
-Any strikecraft with engagement ranges greater than %s SU will be reduced to this range. If necessary, %s. Should any be shot down in combat, %s to reinforce the squadron.
+Compact comm systems are not as effective as those housed on larger vessels, reducing fighter engagement range by %s. 
+
+If necessary, %s. Should any be shot down in combat, %s to reinforce the squadron.
 
 The most capable pilots in the fleet are chosen to fly under these squadrons: Strikecraft piloted by these personnel have %s greater reaction time than the norm.
 

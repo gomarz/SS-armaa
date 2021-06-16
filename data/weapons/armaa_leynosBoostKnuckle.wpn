@@ -4,7 +4,7 @@
   "projectileSpecId": "armaa_boostKnuckle_missile",
   "type": "MISSILE",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_hammerEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_knuckleEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle.png",
   "hardpointSprite": "graphics/weapons/assault_chaingun_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
