@@ -1,0 +1,46 @@
+{
+  "id": "armaa_leynos_machineGun",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_leynos_railgun_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow_left.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_rifle_left.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "visualRecoil": 1,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    44.5,
+    12.5
+  ],
+  "turretAngleOffsets": [
+    -1
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+	"animationType":"GLOW_AND_FLASH",
+	"muzzleFlashSpec":{"length":50.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":5.0,
+					   "particleSizeMin":20.0,
+					   "particleSizeRange":20.0,
+					   "particleDuration":0.25,
+					   "particleCount":25,
+					   "particleColor":[00,255,100,255]},	
+  "fireSoundTwo": "railgun_fire"
+}

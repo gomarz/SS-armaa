@@ -9,7 +9,7 @@
   "turretGunSprite": "graphics/armaa/weapons/armaa_hyllos_heavyrifle.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 2,
+  "visualRecoil": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],

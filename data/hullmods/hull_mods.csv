@@ -116,3 +116,9 @@ R ARM:AUTOCANNON,armaa_selector_ac,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_sele
 The %s is a standard use autocannon.
 
 %s",,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,
+L ARM: RAILGUN,armaa_selector_railgun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_railgun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
+
+%s",,graphics/armaa/hullmods/hand_l.png
