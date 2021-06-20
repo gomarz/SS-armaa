@@ -1,5 +1,5 @@
 {
-  "id": "armaa_leynos_machineGun",
+  "id": "armaa_leynos_railgun",
   "specClass": "projectile",
   "projectileSpecId": "armaa_leynos_railgun_shot",
   "type": "ENERGY",
@@ -35,12 +35,12 @@
   ],
   "barrelMode": "ALTERNATING",
 	"animationType":"GLOW_AND_FLASH",
-	"muzzleFlashSpec":{"length":50.0,   # only used if animationType = MUZZLE_FLASH
+	"muzzleFlashSpec":{"length":80.0,   # only used if animationType = MUZZLE_FLASH
 					   "spread":5.0,
-					   "particleSizeMin":20.0,
-					   "particleSizeRange":20.0,
-					   "particleDuration":0.25,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":15.0,
+					   "particleDuration":0.1,
 					   "particleCount":25,
-					   "particleColor":[00,255,100,255]},	
+					   "particleColor":[100,155,200,200]},	
   "fireSoundTwo": "railgun_fire"
 }

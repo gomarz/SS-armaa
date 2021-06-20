@@ -5,13 +5,13 @@
 	"statsScript":"data.scripts.shipsystems.armaa_damperFieldStats",
 	"aiScript":"data.scripts.shipsystems.ai.armaa_damperAI",
 	
-	"jitterUnderColor":[255,165,90,155],
+	"jitterUnderColor":[165,255,90,155],
 	"jitterUnderCopies":25,
 	"jitterUnderMinRange":0,
 	"jitterUnderRange":7,
 	"jitterUnderRangeRadiusFraction":0,
 	
-	"jitterColor":[255,165,90,55],
+	"jitterColor":[165,255,90,55],
 	"jitterCopies":2,
 	"jitterMinRange":0,
 	"jitterRange":7,

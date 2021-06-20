@@ -55,11 +55,11 @@ The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct
 
 armaa_gallant,SHIP,"Slow and unwieldy strikecraft fitted with a Juno Mk. III beam cannon. Can overwhelms shields and vaporize hull, but are effectively helpless while firing. Best utilized in combination with other bombers, where it can soften shields prior to their strike.",,,
 
-armaa_leynos_frig,SHIP,"The Leynos pushes the concept of strikecraft survivability to the max with impressive structural integrity and thick armor rivaling the venerable Warthog. Lacking a shield generator, it relies on an integrated Damper Field and deft manuvering to see it through the flames of battle.
+armaa_leynos_frig,SHIP,"Thick armor rivaling that of smaller frigates and larger housing for additional equipment sees the Leynos often serving as wing leader for small strikecraft squadrons. Lacking a shield generator, it relies on an integrated Damper Field and it's wingmen to see it through the flames of battle.
 
-Originally dubbed the Valken-R - or R-Type, the Leynos was initially intended to be a potential successor to the original Valken as part of an internal ArmaA initiative dubbed 'Project VALHAWK', where it competed against three other in-house designs developed by several executives; one of them being the Valken-X. However, it's large size, low manuverability, and overburdened power core saw it suffer a string of embarassing defeats in combat simulations in almost every scenario.
+Originally devised as the Valken R-Type, this craft was initially intended to be a potential successor to the original Valken as part of an internal ArmaA bid dubbed 'Project VALHAWK', where it competed against several other in-house designs vying for a lucrative contract. However, it's large size, low manuverability, and overburdened power core saw it suffer abysmal performance during combat simulations.
 
-The R-Type was left to languish in an unmarked hangar for some time until an enterprising Operations Manager took interest in it, removing the shield generator and replacing it with a dampening field generator and advanced ammo delivery system. The newly christened Leynos was put into service shortly thereafter for use by decorated pilots and wing commanders.",,,
+The R-Type was left to languish in an unmarked hangar for some time until an enterprising Operations Manager took interest in it, revamping the designs capability and rebranding it as a specialized command unit for squadron leaders.",,,
 
 armaa_aleste_frig,SHIP,"The Aleste Type-S has been further optimized for anti-ship assault, with the original built-in drone bay repurposed to accomodate two hardpoints. While it can only operate independently for short periods of time, an Aleste attached to a carrier can bring a significant number of strike options to the table for fleet commanders.
 

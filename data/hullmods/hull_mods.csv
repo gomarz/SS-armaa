@@ -13,7 +13,7 @@ Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Tor
 The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
 
 The reactor and its shield are affected by the Torment captain's skills, but not by any hullmods applied to the Torment itself.",Severe reduction in combat capability if generator is destroyed.,graphics/armaa/hullmods/cataphract.png
-Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract-class mechs are durable machines with reinforced internals and triple redundant systems - they're %s more resistant to EMP effects while weapons and engines are %s less likely to fail. The relatively small frame means that %s. Finally, these units are capable of deploying to support planetary operations, increasing their effective strength by %s, (up to the total number of marines in the fleet), at the cost of %s combat readiness.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
+Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract-class mechs are %s more resistant to EMP effects while weapons and engines are %s less likely to fail. Their relatively small size means that %s. These units will deploy in support  of planetary operations, increasing their effective strength by %s, (up to the total number of marines in the fleet), at the cost of %s combat readiness.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
 Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
 
 Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.
@@ -42,15 +42,13 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-Wing Commander,armaa_wingCommander,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"This craft is outfitted with a suite of additional sensors and enhanced communication capabilities designed to coordinate the manuevers of a squadron of strikecraft under it's direct command.
+WINGCOM Suite,armaa_wingCommander,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing.
 
-Compact comm systems are not as effective as those housed on larger vessels, reducing fighter engagement range by %s. 
+Compact and simplified comm systems reduce fighter engagement range by %s. 
 
-If necessary, %s. Should any be shot down in combat, %s to reinforce the squadron.
+%s, and %s. Strikecraft operating under this unit have %s greater reaction time than the norm.
 
-The most capable pilots in the fleet are chosen to fly under these squadrons: Strikecraft piloted by these personnel have %s greater reaction time than the norm.
-
-%s cannot be assigned to pilots of the wing.",,graphics/icons/markets/headquarters.png
+%s cannot be assigned to pilots of the wing, and refit time is increased by %s",,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png

@@ -1,9 +1,20 @@
 V1.4.9
 --------------
--Added Laser Blade as an option for right arm
--Laser Blade trails reduced to a more reasonable width/length
--Fixed Laser Blade not doing additional emp damage on hit
--Fixed Laser Blade damage not scaling with energy weapon mastery
+//todo//
+Strikecraft Hullmod:
+-Add 50% Missile fire rate penalty
+
+New Ship: Leynos - 6DP
+-Slower than Aleste, but more durable
+-Damper Field in lieu of standard shield
+- 5 new toggleable built-ins
+	- Autocannon
+	- Minigun
+	- Shotgun
+	- Boost Knuckle
+	- Railgun
+-WINGCOM Suite:
+
 -Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
 
 Ilorin:
@@ -13,10 +24,12 @@ Ilorin:
 
 Aleste:
 -HP: 1250->1000
--Flux Capacity: 1000>1500
-
-
-
+-Flux Capacity: 1000>1800
+-Added Laser Blade as an option for right arm
+-Laser Blade trails reduced to a more reasonable width/length
+-Fixed Laser Blade not doing additional emp damage on hit
+-Fixed Laser Blade damage not scaling with energy weapon mastery
+-Fixed bug where laser blade trails from different ships would merge into eldritch map spanning megatrails 
 
 V1.4.8RC3
 --------------

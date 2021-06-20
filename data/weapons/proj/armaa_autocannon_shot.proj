@@ -16,21 +16,5 @@
 	"textureType":"SMOOTH",
 	"textureScrollSpeed":-256.0,
 	"pixelsPerTexel":1.0,
-	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
-					"shotRangeVariance":0.1,
- 					"range":0,
- 				    "vsMissileRange":10,
-					"explosionSpec":{"duration":0.05f,
-									 "radius":30,
-									 "coreRadius":15, # full damage within core radius - also equal to proximity fuse range
-									 "collisionClass":PROJECTILE_FF,
-									 "collisionClassByFighter":PROJECTILE_FIGHTER,
-									 "particleSizeMin":5.0,
-									 "particleSizeRange":2.5,
-									 "particleDuration":0.75,
-									 "particleCount":20,
-									 "particleColor":[255,235,200,255],
-									 "explosionColor":[255,235,200,100],
-									 "sound":"magellan_bonesaw_crit"},
-					}
+
 }

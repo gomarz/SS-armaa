@@ -67,5 +67,5 @@ armaa_knuckle_trail3,armaa_boostKnuckle_shot,base_trail_zap,10,0.15,0.05,0.15,10
 armaa_knuckle_trail4,armaa_boostKnuckle_shot,base_trail_zap,10,0.05,0.05,0.25,15,5,"[255,0,0]","[145,188,44]",0.5,300,-1024,0,1,1,FALSE,FALSE,TRUE,50,10,0.25,180,360,5,TRUE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_railgun,armaa_leynos_machineGun_shot,base_trail_zap,8,0,0.1,0.15,8,10,"[0,100,0]","[55,100,250]",0.8,128,10,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,FALSE
-armaa_railgun2,armaa_leynos_machineGun_shot,beam_trail_smooth,8,0,0.1,0.15,8,10,"[255,255,200]","[55,100,250]",0.8,129,10,20,0,1,TRUE,FALSE,FALSE,20,50,0.3,0,75,100,FALSE,FALSE
+armaa_railgun,armaa_leynos_railgun_shot,base_trail_zap,8,0,0.1,0.15,8,10,"[0,100,0]","[55,100,250]",0.8,128,10,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,FALSE
+armaa_railgun2,armaa_leynos_railgun_shot,beam_trail_smooth,8,0,0.1,0.15,8,10,"[255,255,200]","[55,100,250]",0.8,129,10,20,0,1,TRUE,FALSE,FALSE,20,50,0.3,0,75,100,FALSE,FALSE

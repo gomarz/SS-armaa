@@ -47,7 +47,7 @@
   "convergeOnPoint": true,
   "width": 6,
   "textureType": [
-    "graphics/tahlan/fx/tahlan_ppa_beam_fringe.png",
+    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
     "graphics/armaa/fx/armaa_ppa_beam_core.png"
   ],
   "textureScrollSpeed": 135,
