@@ -38,7 +38,7 @@ armaa_syrinx3,armaa_mrm,beam_trail_smooth,10,0,1,0.5,20,20,"[44,188,245]","[0,0,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_minigun_trail,armaa_minigun_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,4,"[255,100,50]","[50,50,50]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_chain_trail2,armaa_chaingun_shot2,base_trail_heavyBurn,10,0.1,0.1,0.5,6,12,"[255,150,100]","[128,128,128]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
 armaa_rrifle_trail2,armaa_rrifle_shot2,base_trail_heavyBurn,20,0.05,0.1,0.15,4,8,"[200,200,200]","[120,120,120]",0.75,32,512,35,0,1,TRUE,FALSE,TRUE,100,50,0.25,180,180,90,TRUE,
@@ -67,5 +67,12 @@ armaa_knuckle_trail3,armaa_boostKnuckle_shot,base_trail_zap,10,0.15,0.05,0.15,10
 armaa_knuckle_trail4,armaa_boostKnuckle_shot,base_trail_zap,10,0.05,0.05,0.25,15,5,"[255,0,0]","[145,188,44]",0.5,300,-1024,0,1,1,FALSE,FALSE,TRUE,50,10,0.25,180,360,5,TRUE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_railgun,armaa_leynos_railgun_shot,base_trail_zap,8,0,0.1,0.15,8,10,"[0,100,0]","[55,100,250]",0.8,128,10,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,FALSE
-armaa_railgun2,armaa_leynos_railgun_shot,beam_trail_smooth,8,0,0.1,0.15,8,10,"[255,255,200]","[55,100,250]",0.8,129,10,20,0,1,TRUE,FALSE,FALSE,20,50,0.3,0,75,100,FALSE,FALSE
+armaa_railgun,armaa_leynos_railgun_shot,base_trail_zap,8,0,0.1,0.15,8,10,"[0,100,0]","[55,100,250]",0.8,128,10,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+armaa_railgun2,armaa_leynos_railgun_shot,beam_trail_smooth,8,0,0.1,0.15,8,10,"[255,255,200]","[55,100,250]",0.8,129,10,20,0,1,TRUE,FALSE,TRUE,20,50,0.3,0,75,100,FALSE,FALSE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_autocannon_trail,armaa_autocannon_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,10,"[255,100,50]","[100,50,50]",0.8,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_minigun_trail,armaa_minigun_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,4,"[255,100,50]","[50,50,50]",0.7,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_shotgun_trail,armaa_shotgun_shot2,beam_trail_smooth,10,0.1,0.04,0.25,6,4,"[255,100,50]","[50,50,50]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,TRUE
