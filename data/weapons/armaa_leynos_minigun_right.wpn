@@ -5,17 +5,19 @@
   "type": "BALLISTIC",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_minigunEveryFrameEffect",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_hyllos_heavyrifle.png",
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "turretSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
+ # "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
+  "numFrames":5,	
+  "frameRate":30,
+  "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 1,
+  #"visualRecoil": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    48.5,
-    -13.5
+    51,
+    -13
   ],
   "turretAngleOffsets": [
     1

@@ -55,6 +55,10 @@ The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct
 
 armaa_gallant,SHIP,"Slow and unwieldy strikecraft fitted with a Juno Mk. III beam cannon. Can overwhelms shields and vaporize hull, but are effectively helpless while firing. Best utilized in combination with other bombers, where it can soften shields prior to their strike.",,,
 
+armaa_xyphos,SHIP,"Modified to carry an Ion Pulser for greater offensive power, at it's heart this alteration of the Xyphos is still best suited for supporting other ships in combat, and is of little threat on its own. 
+
+These Xyphos were captured from Tri-Tachyon during the First AI War and altered with a red paintjob to be more easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they do serve as adequate support for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space has garnered them significant use by the more unscrupulous powers in the sector. ",,,
+
 armaa_leynos_frig,SHIP,"Thick armor rivaling that of smaller frigates and larger housing for additional equipment sees the Leynos often serving as wing leader for small strikecraft squadrons. Lacking a shield generator, it relies on an integrated Damper Field and it's wingmen to see it through the flames of battle.
 
 Originally devised as the Valken R-Type, this craft was initially intended to be a potential successor to the original Valken as part of an internal ArmaA bid dubbed 'Project VALHAWK', where it competed against several other in-house designs vying for a lucrative contract. However, it's large size, low manuverability, and overburdened power core saw it suffer abysmal performance during combat simulations.

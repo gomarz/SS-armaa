@@ -39,9 +39,9 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    1
+    0.5
   ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_hyllos_heavyrifle.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_shotgun.png",
   "turretOffsets": [
     48.5,
     -12.5

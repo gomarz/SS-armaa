@@ -1,46 +1,50 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "id": "armaa_valkenxHead",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "fireSoundTwo": "vulcan_cannon_fire",
-  "hardpointAngleOffsets": [
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    0.5,
+    3.5
+  ],
+  "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
     4,
     0
   ],
-  "hardpointSprite": "",
-  "id": "armaa_valkenxHead",
-  "muzzleFlashSpec": {
-    "length": 5,
-    "particleColor": [
-      255,
-      240,
-      165,
-      200
-    ],
-    "particleCount": 7,
-    "particleDuration": 0.15,
-    "particleSizeMin": 6,
-    "particleSizeRange": 8,
-    "spread": 6
-  },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "vulcan_shot",
-  "renderAboveAllWeapons": 0,
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
+  "hardpointAngleOffsets": [
     0
   ],
-  "turretOffsets": [
+  "fringeColor": [
     0,
-    4
+    255,
+    255,
+    200
   ],
-  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
-  "type": "BALLISTIC"
+  "coreColor": [
+    0,
+    255,
+    0,
+    155
+  ],
+  "darkCore": true,
+  "convergeOnPoint": true,
+  "width": 2,
+  "textureType": SMOOTH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
 }

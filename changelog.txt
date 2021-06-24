@@ -1,9 +1,5 @@
 V1.4.9
 --------------
-//todo//
-Strikecraft Hullmod:
--Add 50% Missile fire rate penalty
-
 New Ship: Leynos - 6DP
 -Slower than Aleste, but more durable
 -Damper Field in lieu of standard shield
@@ -13,17 +9,34 @@ New Ship: Leynos - 6DP
 	- Shotgun
 	- Boost Knuckle
 	- Railgun
+
+New Ship: Xyphos(AA) - 3DP
+-Xyphos with a different paintjob...and an Ion Pulser!!!
+- fragile, flux starved, and not particularly effective alone, but in fleet combat...
+
+
 -WINGCOM Suite:
 
 -Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
 
+Strikecraft:
+-Fixed bug where game would crash if player took control of enemy strikecraft and then retreated with it (.....somehow)
+
+-Altagrave's will purge all their modules once the core ship's HP passes below 50%
+	- This is actually a buff (for AI)
+
 Ilorin:
 -Removed ECCM from Ilorin
 -Ilorin Rocket Speed: 150->50
--Burst Size: 4->8 (now fires entire clip immediately)
+-Burst Size: 4->8 (now fires entire clip at once)
+
+Valken X:
+- Removed Vulcan Cannon
+- Laser Blade DMG: 125->150
+
 
 Aleste:
--HP: 1250->1000
+- Changed name to Aleste(S) to better distinguish player and LPC version
 -Flux Capacity: 1000>1800
 -Added Laser Blade as an option for right arm
 -Laser Blade trails reduced to a more reasonable width/length

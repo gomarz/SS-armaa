@@ -18,11 +18,11 @@ Styx Mk. I Shot,armaa_altagrave_shotgun_pellet,,,4500,800,,45,10,4,20,42,,,,HIGH
 Styx Mk. I Shot,armaa_einhanderGunS,,,4500,800,,57,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,1100,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
 Styx Mk. I Shot,armaa_einhanderGunS2,,,4500,600,,25,,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,800,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
 AS Glaive,armaa_heavyJavelin,3,0.3,2000,550,,500,300,50,20,42,10,,,HIGH_EXPLOSIVE,575,,0,5,1,,0,10,2,5,,700,,,30,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Anti Armor,,,,,,,%s: Ammo can be replenished by returning to a carrier.,Combat Resupply,,
-Hunter Laser,armaa_einhanderSyrinx,2,,1600,600,,285,,4,20,,10,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,700,400,4,75,,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
-Hunter Laser,armaa_einhanderSyrinx_copy,2,,1600,600,,285,,4,20,,4,0.6,3,HIGH_EXPLOSIVE,285,,0.5,0.5,,,15,15,0,0,,500,800,6,50,,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
+Hunter Laser,armaa_einhanderSyrinx,2,,1600,600,,285,,4,20,,10,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,700,400,4,75,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
+Hunter Laser,armaa_einhanderSyrinx_copy,2,,1600,600,,285,,4,20,,4,0.6,3,HIGH_EXPLOSIVE,285,,0.5,0.5,,,15,15,0,0,,500,800,6,50,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
 AMWS,armaa_einhanderBeam,2,,400,500,150,,,0,45,5,1,0.5,3,ENERGY,,,,,,0.015,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
 #RECORD,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Seeker Flares,armaa_record_torso,,,,800,,10,400,,,,3,0.1,,ENERGY,0,0,0,5,3,0.1,90,90,0,0,,400,200,7,1,"SYSTEM,PD_ONLY,DO_NOT_CONSERVE,DO_NOT_AIM",,,,,,,,,,,,,,,
+,armaa_record_torso,,,,1,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
 ,armaa_record_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_record_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 AMWS,armaa_record_head,2,,600,500,350,,,0,100,7,3,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,10000,,,,,"PD,SYSTEM,ANTI_FTR,PD_ALSO",,,,,Point Defense,,,,,,,,,,
@@ -45,11 +45,11 @@ IR Pulse Laser,armaa_laser,1,,250,500,,50,,0,50,5,,,,ENERGY,50,,,0.33,,,,,,,,900
 #VALKEN-X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_valkenx_torso_vernier,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 Ion Cannon (High Delay),armaa_valkenx_torso,2,,500,500,,25,400,0,40,6,,,,ENERGY,30,,0.5,0.5,,,,,,,,1000,,,,SYSTEM,energy8,,,,Suppression,,,,,,,,,,19.1
-Vulcan Cannon,armaa_valkenxHead,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
+Target Painter,armaa_valkenxHead,,,,500,0,,,,80,4,,,,ENERGY,,,0.33,0.33,,,0,,,,,800,,,10,SYSTEM,,,,,Point Defense,,,,,,,,,,
 ,armaa_valkenx_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,armaa_valkenx_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Assault Chaingun(F),armaa_chaingun,1,,1000,450,,60,,3,30,42,,,,HIGH_EXPLOSIVE,,,0,1,5,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
-LS-20  Blade,armaa_valkenxLeftArm,,,,45,125,,50,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
+Assault Chaingun(F),armaa_chaingun,1,,1000,450,,50,,3,30,42,,,,HIGH_EXPLOSIVE,,,0,1,5,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
+LS-20  Blade,armaa_valkenxLeftArm,,,,45,150,,50,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #BIHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Micro Rail Rifle,armaa_lightmg,2,0.5,600,700,,100,,10,90,7,,,,KINETIC,,,,1,1,0.2,,,,,,1000,,,50,SYSTEM,,,,,Anti Shield,,,,,,,,,,0.5
