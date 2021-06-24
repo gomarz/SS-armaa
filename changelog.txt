@@ -11,7 +11,7 @@ New Ship: Leynos - 6DP
 	- Railgun
 
 New Ship: Xyphos(AA) - 3DP
--Xyphos with a different paintjob...and an Ion Pulser!!!
+- Xyphos with a different paintjob...and an Ion Pulser!!!
 - fragile, flux starved, and not particularly effective alone, but in fleet combat...
 
 
@@ -20,7 +20,8 @@ New Ship: Xyphos(AA) - 3DP
 -Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
 
 Strikecraft:
--Fixed bug where game would crash if player took control of enemy strikecraft and then retreated with it (.....somehow)
+- Fixed bug where game would crash if player took control of enemy strikecraft and then retreated with it (.....somehow)
+- Fixed bug where landing ship would only choose bay 0 to land at
 
 -Altagrave's will purge all their modules once the core ship's HP passes below 50%
 	- This is actually a buff (for AI)

@@ -120,3 +120,8 @@ L ARM: RAILGUN,armaa_selector_railgun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_s
 %s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
 
 %s",,graphics/armaa/hullmods/hand_l.png
+L ARM: POWERFIST,armaa_selector_fist,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_fist,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
+
+%s ",,graphics/armaa/hullmods/hand_l.png
