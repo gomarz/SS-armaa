@@ -1,0 +1,99 @@
+{
+    "bounds": [
+        28,
+        -3,
+        -1,
+        10,
+        -9,
+        -7
+    ],
+"builtInMods": ["armaa_wingCommander","strikeCraft"],
+"builtInWings": ["thunder_wing"],
+  "builtInWeapons": {
+    "WS 001":"armaa_ilorin_torso",
+    "WS 002":"railgun",
+    "WS 003":"swarmer_fighter",
+
+  },
+    "center": [
+        13,
+        13
+    ],
+    "collisionRadius": 35,
+    "coversColor": "",
+    "engineSlots": [
+        {
+            "angle": 180,
+            "contrailSize": 64,
+            "length": 64,
+            "location": [
+                -12,
+                7
+            ],
+            "style": "MIDLINE",
+            "width": 14
+        },
+        {
+            "angle": 180,
+            "contrailSize": 64,
+            "length": 64,
+            "location": [
+                -12,
+                -6
+            ],
+            "style": "MIDLINE",
+            "width": 14
+        }
+    ],
+    "height": 43,
+    "hullId": "armaa_thunder",
+    "hullName": "Thunder(AA)",
+    "hullSize": "FRIGATE",
+    "shieldCenter": [
+        8,
+        0
+    ],
+    "shieldRadius": 28,
+    "spriteName": "graphics/armaa/ships/armaa_thunder.png",
+    "style": "MIDLINE",
+    "viewOffset": 0,
+    "weaponSlots": [
+        {
+            "angle": 0,
+            "arc": 15,
+            "id": "WS 001",
+            "locations": [
+                20,
+                6
+            ],
+            "mount": "HIDDEN",
+            "size": "SMALL",
+            "type": "MISSILE"
+        },
+        {
+            "angle": 0,
+            "arc": 15,
+            "id": "WS 002",
+            "locations": [
+                20,
+                -5
+            ],
+            "mount": "HIDDEN",
+            "size": "SMALL",
+            "type": "BUILT_IN"
+        },
+        {
+            "angle": 0,
+            "arc": 120,
+            "id": "WS 003",
+            "locations": [
+                15,
+                0
+            ],
+            "mount": "HIDDEN",
+            "size": "SMALL",
+            "type": "BUILT_IN"
+        }
+    ],
+    "width": 26
+}

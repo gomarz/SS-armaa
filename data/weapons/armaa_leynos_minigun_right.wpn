@@ -7,7 +7,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_minigunEveryFrameEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
  # "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
-  "numFrames":5,	
+  "numFrames":7,	
   "frameRate":30,
   "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",

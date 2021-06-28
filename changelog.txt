@@ -14,6 +14,10 @@ New Ship: Xyphos(AA) - 3DP
 - Xyphos with a different paintjob...and an Ion Pulser!!!
 - fragile, flux starved, and not particularly effective alone, but in fleet combat...
 
+New Ship: Thunder(AA) - 2DP
+- The other blue blur
+- fragile, flux starved, and not particularly effective alone, but in fleet combat...
+
 
 -WINGCOM Suite:
 

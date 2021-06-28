@@ -42,13 +42,13 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-WINGCOM Suite,armaa_wingCommander,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing.
+WINGCOM SUITE,armaa_wingCommander,,,,"special, non_phase",Fighters,,,TRUE,,0,0,0,0,data.hullmods.armaa_wingCommander,"An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing.
 
 Compact and simplified comm systems reduce fighter engagement range by %s. 
 
-%s, and %s. Strikecraft operating under this unit have %s greater reaction time than the norm.
+%s, and %s. Pilots assigned to this unit, through natural talent or augmentation,react %s faster in combat.
 
-%s cannot be assigned to pilots of the wing, and refit time is increased by %s",,graphics/icons/markets/headquarters.png
+%s cannot be assigned to pilots of the wing, and replacement time decreases %s faster.",,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
@@ -121,6 +121,11 @@ L ARM: RAILGUN,armaa_selector_railgun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_s
 
 %s",,graphics/armaa/hullmods/hand_l.png
 L ARM: POWERFIST,armaa_selector_fist,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_fist,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
+
+%s ",,graphics/armaa/hullmods/hand_l.png
+L ARM: POWERFIST,alwaysburn,,,,,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4_HM_alwaysBurn,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
 
