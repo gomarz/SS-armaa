@@ -1,0 +1,30 @@
+{
+	"id":"armaa_plasmaJets",
+	"type":"ENGINE_MOD",
+	"aiType":"CUSTOM",
+	#"aiType":"MANEUVERING_JETS",	
+        "aiScript":"data.scripts.shipsystems.ai.armaa_evasionAI",	
+	"statsScript":"data.scripts.shipsystems.armaa_PlasmaJetsStats",
+	
+	"engineGlowColor":[255,138,216,255],
+	#"engineGlowContrailColor":[100,165,255,25],
+	"engineGlowLengthMult":3,
+	"engineGlowWidthMult":1.5,
+	"engineGlowGlowMult":2,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":false,
+
+	"useSound":"armaa_mb_start",
+	"loopSound":"armaa_mb_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		#"activeSpeedIncrease":0,
+		"burstMovementPotential":450,
+		"averageSpeedIncrease":70,
+	}
+}

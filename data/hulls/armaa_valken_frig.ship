@@ -26,14 +26,14 @@
     4.5
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_laser",
+    "A_GUN": "armaa_valken_gun",
     "B_TORSO": "armaa_valken_torso_gunmetal",
     "C_ARML": "armaa_valkenLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valken_leftPauldron_gunmetal",
     "D_PAULDRONR": "armaa_valken_rightPauldron_gunmetal",
     "E_HEAD": "armaa_valkenHead_gunmetal",
-    "H_GLOW": "shredder"
+    "MISSILE": "armaa_ilorin_torso"
   },
 "builtInMods": ["armaa_wingCommander","strikeCraft"],
 "builtInWings": ["armaa_valkenmp_wing"],
@@ -51,8 +51,9 @@
         -13.5,
         -0
       ],
-      "style": "MIDLINE",
-      "width": 8
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE",
+      "width": 10
     }
   ],
   "height": 26,
@@ -166,13 +167,13 @@
     },
     {
       "angle": 0,
-      "arc": 135,
-      "id": "H_GLOW",
+      "arc": 0,
+      "id": "MISSILE",
       "locations": [
-        -10,
-        -0
+        -6,
+        0
       ],
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "size": "SMALL",
       "type": "BUILT_IN"
     }

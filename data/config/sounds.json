@@ -20,10 +20,10 @@
 		{"file":"sounds/armaa/armaa_lasersword_loop.ogg","pitch":.97,"volume":.97},
 	],
 	"armaa_mb_start":[ 
-		{"file":"sounds/armaa/armaa_mb_start.ogg","pitch":1,"volume":0.9},
+		{"file":"sounds/armaa/armaa_mb_start.ogg","pitch":1,"volume":0.7},
 	],
 	"armaa_mb_loop":[ 
-		{"file":"sounds/armaa/armaa_mb_loop.ogg","pitch":1,"volume":0.9},
+		{"file":"sounds/armaa/armaa_mb_loop.ogg","pitch":1,"volume":0.7},
 	],
 	"armaa_grenade_fire":[ 
 		{"file":"sounds/armaa/armaa_grenade_fire.ogg","pitch":1,"volume":0.95},
