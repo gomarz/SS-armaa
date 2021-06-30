@@ -1,160 +1,164 @@
-name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
-Juno Mk. III,armaa_fluxcannon,4,,4600,900,850,,,20,10,16,,,,KINETIC,,620,1.5,0.5,1.5,3,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES","energy20, beam15, LR, rare_bp, hist1t, merc",,Arma Armatura,,Fire Support,,,,,,,,,,15.6
-Curvy Laser,armaa_curvyLaser,3,,1000,1000,,500,,3,60,0,,,,HIGH_EXPLOSIVE,25,,,10,,,0,0,0,0,,200,50,10,500,,,,Arma Armatura,,General,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#EINHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_sprigganleftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_sprigganrightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_sprigganRightArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_einhanderLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_sprigganLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Vulcan Cannon,armaa_sprigganHead,,,,250,,25,,,75,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,1000,,,10,"PD,SYSTEM",,,,,Point Defense,,,,,,,,,,
-,armaa_sprigganHeadGlow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Homing Laser,armaa_sprigganTorso,5,,5500,700,,50,0,10,0,42,144,0.35,16,ENERGY,55,,,10,14,0.15,,,,,,800,75,5,50,"DO_NOT_AIM,SYSTEM,ANTI_FTR,PD_ALSO",,,Arma Armatura,,Pressure,Fast,Good,Great,Great,%s:  %s chance for an additional %s-%s points of %s damage when striking hull or armor.,Volatile|25%|5|30|High Explosive,,,,12.95
-Homing Laser2,armaa_sprigganTorsoB,5,,5500,700,,50,0,10,0,42,144,0.35,16,ENERGY,55,,,10,14,0.15,,,,,,800,75,5,50,"DO_NOT_AIM,SYSTEM,ANTI_FTR,PD_ALSO",,,Arma Armatura,,Pressure,Fast,Good,Great,Great,%s:  %s chance for an additional %s-%s points of %s damage when striking hull or armor.,Volatile|25%|5|30|High Explosive,,,,12.95
-Juno Mk. I,armaa_einhanderGun,,,4500,600,,85,0,5,20,42,,,,ENERGY,80,,0.525,1,10,0.1,0,10,1,5,,950,,,70,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Hull,,,,,%s Inflicts %s pts %s damage alongside %s pts of %s damage per shot when ship system is activate.,Safety Release:|170|ENERGY|100|EMP,%s %s chance to generate EMP arcs on hull impact.,Safety Release:|25%|140|ENERGY|150|EMP,,
-Juno Mk. I (FP),armaa_einhanderGun2,,,4500,600,,170,150,20,20,42,,,,ENERGY,110,,1.05,1,8,0.1,0,15,1,6,,750,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
-Styx Mk. I Shot,armaa_altagrave_shotgun_pellet,,,4500,800,,45,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,750,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
-Styx Mk. I Shot,armaa_einhanderGunS,,,4500,800,,57,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,1100,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
-Styx Mk. I Shot,armaa_einhanderGunS2,,,4500,600,,25,,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,800,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,
-AS Glaive,armaa_heavyJavelin,3,0.3,2000,550,,500,300,50,20,42,10,,,HIGH_EXPLOSIVE,575,,0,5,1,,0,10,2,5,,700,,,30,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Anti Armor,,,,,,,%s: Ammo can be replenished by returning to a carrier.,Combat Resupply,,
-Hunter Laser,armaa_einhanderSyrinx,2,,1600,600,,285,,4,20,,10,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,700,400,4,75,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
-Hunter Laser,armaa_einhanderSyrinx_copy,2,,1600,600,,285,,4,20,,4,0.6,3,HIGH_EXPLOSIVE,285,,0.5,0.5,,,15,15,0,0,,500,800,6,50,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
-AMWS,armaa_einhanderBeam,2,,400,500,150,,,0,45,5,1,0.5,3,ENERGY,,,,,,0.015,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-#RECORD,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_record_torso,,,,1,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
-,armaa_record_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_record_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-AMWS,armaa_record_head,2,,600,500,350,,,0,100,7,3,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,10000,,,,,"PD,SYSTEM,ANTI_FTR,PD_ALSO",,,,,Point Defense,,,,,,,,,,
-,armaa_recordLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-SPLTR-07 Shotgun,armaa_leynos_shotgun_right,2,,2500,500,,200,,0,35,0,4,1,4,HIGH_EXPLOSIVE,160,,0,0.3,1,0.2,20,20,0.4,0.4,,800,,,,SYSTEM,,,Arma Armatura,,General,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,5,,,FALSE,22.25
-KENG-44 Autocannon,armaa_leynos_autocannon_right,2,0.5,3200,700,,150,100,15,25,0,,,,FRAGMENTATION,80,,0.1,1,4,0.16,2,12,2,5,,750,,,100,SYSTEM,,,Arma Armatura,,General,,General,,,,,,,,1.4
-SCTR-25 Minigun,armaa_leynos_minigun_right,2,,1000,600,,60,,5,15,,100,5,50,FRAGMENTATION,27.06,,0.35,0.35,9999,0.08,1,5,1,6,,1350,,,30,"SYSTEM,PD_ALSO,PD,FIRE_WHEN_INEFFICIENT",,,Arma Armatura,,Anti Hull,,,,,"Projectiles break into submunitions on contact, causing %s extra HE damage on hits to armor or hull.",0-10,,,FALSE,4.5
-Boost Knuckle,armaa_leynosBoostKnuckle_return,2,,1600,600,,300,,4,30,,4,0.6,3,KINETIC,285,,0.5,0.5,,,15,15,0,0,,500,150,6,500,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135
-Boost Knuckle,armaa_leynosBoostKnuckle,2,,1600,800,,300,350,50,30,,1,,,KINETIC,210,,0.4,1,,,15,15,0,0,,500,150,6,500,SYSTEM,,,Arma Armatura,,Strike,,,,,"%s: Launches arm at target. On impact, it will return to the host ship. If the arm cannot return succesfully, this weapon becomes unusable.",I Cast Fist,,,TRUE,15135
-RVNG-23 EM Railgun,armaa_leynos_railgun,2,,1200,700,,100,100,3,25,0,,,,KINETIC,,225,0.33,0.33,1,,0,0,0,0,,700,,,30,SYSTEM,,,,,Point Defense,,,,,,,,,,3.85
-PPC-79 Overcharged Particle Cannon,armaa_leynos_ppc,2,,2500,500,,1400,600,0,10,0,10,,,ENERGY,1500,,1,10,,,,,,,,1500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
-KENG-44 Autocannon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#VALKEN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Vulcan Cannon,armaa_valkenHead,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
-Light Mortar,armaa_valken_torso,0,,75,600,,75,,4,0,2,15,,,HIGH_EXPLOSIVE,50,,0,1,1,,0,15,3,10,,500,,,10,SYSTEM,,,,,Anti Armor,Fast,Good,Great,Great,,,,,,12.95
-,armaa_valken_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_valken_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_valkenLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-IR Pulse Laser,armaa_laser,1,,250,500,,50,,0,50,5,,,,ENERGY,50,,,0.33,,,,,,,,900,,,,SYSTEM,,,,,General,,,,,,,,,,19.3
-#VALKEN-X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_valkenx_torso_vernier,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Ion Cannon (High Delay),armaa_valkenx_torso,2,,500,500,,25,400,0,40,6,,,,ENERGY,30,,0.5,0.5,,,,,,,,1000,,,,SYSTEM,energy8,,,,Suppression,,,,,,,,,,19.1
-Target Painter,armaa_valkenxHead,,,,500,0,,,,80,4,,,,ENERGY,,,0.33,0.33,,,0,,,,,800,,,10,SYSTEM,,,,,Point Defense,,,,,,,,,,
-,armaa_valkenx_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_valkenx_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Assault Chaingun(F),armaa_chaingun,1,,1000,450,,50,,3,30,42,,,,HIGH_EXPLOSIVE,,,0,1,5,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
-LS-20  Blade,armaa_valkenxLeftArm,,,,45,150,,50,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#BIHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Micro Rail Rifle,armaa_lightmg,2,0.5,600,700,,100,,10,90,7,,,,KINETIC,,,,1,1,0.2,,,,,,1000,,,50,SYSTEM,,,,,Anti Shield,,,,,,,,,,0.5
-Juno Mk. II,armaa_javelin,2,,0,500,1050,,,50,0,3,3,,,ENERGY,,350,1.05,0.5,1,3,,,,,10000,,,,,"SYSTEM,STRIKE,USE_VS_FRIGATES",,,,,Strike,,,,,,,,,,15.6
-Vulcan Cannon,armaa_sprigganHeadmk3,,,,250,,25,,,40,4,,,,FRAGMENTATION,1.3,,0,0.3,1,,0,12,1,20,,1000,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
-Homing Laser,armaa_sprigganTorsomk3,5,,5500,700,,50,0,10,0,42,72,0.175,8,ENERGY,55,,,10,1,0.2,,,,,,400,75,5,70,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,,Fast,Good,Great,Great,,,,,,12.95
-,armaa_sprigganmk3leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_sprigganmk3rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-#KOUTO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-AMWS,armaa_kouto_head,2,,600,500,350,,,0,100,7,3,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,10000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-Seeker Flares,armaa_kouto_torso,,,,800,,10,400,,,,1,0.1,,ENERGY,0,0,0,5,2,0.1,90,90,0,0,,400,200,7,1,"SYSTEM,PD_ONLY,DO_NOT_CONSERVE,DO_NOT_AIM",,,,,,,,,,,,,,,
-,armaa_kouto_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_kouto_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Blazer Rifle,armaa_taclaser,2,,600,250,350,,,0,100,7,3,0.05,,ENERGY,,,0.1,0.1,0.3,0.1,,,,,10000,,,,,"ANTI_FTR,SYSTEM",,,,,Anti Fighter,,,,,,,,,,15.6
-DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.1,0,0,0,0,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352
-,armaa_koutoLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#ILORIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Micro Missile Pod,armaa_ilorin_torso,5,,2250,900,,45,0,10,0,10,,,,HIGH_EXPLOSIVE,,,0,35,6,0.1,,10,5,1,,700,50,10,25,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE, GROUP_LINKED, SYSTEM,ANTI_FTR",,,,,,Fast,Good,Great,Great,,,,,,12.95
-Vulcan Cannon,armaa_ilorin_head,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.2,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,
-,armaa_ilorin_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_ilorin_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-SOL Pattern Rocket Pod,armaa_ilorin_rocket,0,,150,1100,,200,,5,30,6,8,,,HIGH_EXPLOSIVE,,,0,1,8,0.2,0,20,5,9,,400,50,3.75,50,SYSTEM,,,,,Anti Armor,Fast,None,,,,,,,,11.1
-LUNA Pattern Autocannon,armaa_ilorin_ac,3,0.3,2000,700,,100,,10,20,12,10,,,HIGH_EXPLOSIVE,,,0.25,0.5,,,0,10,2,3,,700,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.75
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Juno Mk. III (Ftr),armaa_fluxcannon_ftr,2,,4600,900,850,,,20,10,16,1,,,KINETIC,,,1.5,0.5,1.5,3,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Fire Support,,,,,,,,,,15.6
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#ALESTE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_alesteHeadGlow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_aleste_torso_ace,,,,500,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_aleste_torso,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,40,,,4,10,0.05,0,15,0.66,5,,1000,,,10,SYSTEM,,,,,Anti Shield,,,,,,,,,,
-,armaa_aleste_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,18,,,FRAGMENTATION,100,,0.25,4,6,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines. Can fire up to 6 spikes in a burst.","Remote Detonation|50 High Explosive, 250 EMP",,,,
-LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,750,,450,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999
-LS-99 MOONLIGHT,armaa_aleste_blade_RightArm,,,,60,750,,450,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999
-Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25
-Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
-Plasma Flamer,armaa_aleste_flamer_right,3,,1000,450,,37.5,,3,60,0,200,8,80,ENERGY,25,,,,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
-Rynex Pulse Rifle,armaa_aleste_rifle_left,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5
-Dispersal Grenade,armaa_aleste_grenade_left,2,,2500,600,,200,,5,40,0,50,,,HIGH_EXPLOSIVE,120,,0,4,6,0.15,0,10,5,9,,,450,4,225,"SYSTEM, DO_NOT_CONSERVE, ANTI_FTR",,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25
-#,armaa_alesteBunker,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,Arma Armatura,,,,,,,,,,,,999
-,armaa_pikeSecondary,1,,100,100,,50,250,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,
-Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,100,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,45,,3,60,0,200,8,80,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#ALTAGRAVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Vajra,armaa_altagrave_rightArm,2,,2500,600,,135,,10,15,69,25,2.5,8,ENERGY,110,,0,0.12,,0.12,0,5,2,9,,1000,1000,0.6,450,"SYSTEM,GUIDED_POOR",,,Arma Armatura,,Assault,,,,,"%s: Projectiles have some homing capability:  Can be intercepted by flares and PD, and be fired over friendly ships - but projectiles detonating over a friendly target will still damage it. In terms of enhancement bonuses, this weapon is considered a %s weapon.",Pseudomissile|PROJECTILE,,,TRUE,22.25
-AMWS,armaa_altagrave_head,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-AMWS-C,armaa_altagrave_head_c,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-AMWS-G,armaa_altagrave_head_g,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-AMWS-EX,armaa_altagrave_head_ex,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-AMWS-R,armaa_altagrave_head_r,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,
-Exceliza Grenade Launcher,armaa_altagrave_exceliza,2,,2500,600,,500,,40,15,69,,,,HIGH_EXPLOSIVE,500,,0,5,3,0.3,5,15,2,9,,,550,4,300,SYSTEM,,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25
-Styx Shotgun,armaa_altagrave_shotgun,2,,1600,800,,1750,,4,15,12,1,0.6,1,HIGH_EXPLOSIVE,1175,,0.3,1,,,15,15,0,0,,1200,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,35,,,TRUE,15135
-Styx Shotgun,armaa_altagrave_shotgun_red,2,,1140,800,,900,,4,15,12,4,0.6,4,HIGH_EXPLOSIVE,912,,0.2,1,,,15,15,0,0,,1200,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,20,,,TRUE,15135
-Syrinx MRM,armaa_altagrave_syrinx,5,,5500,1500,,275,0,10,15,42,144,0.35,16,HIGH_EXPLOSIVE,55,,,10,12,0.1,,,,,,400,70,5,100,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM",,,Arma Armatura,,Pressure,,,,,,,,,,12.95
-Syrinx MRM,armaa_altagrave_syrinx_left,5,,5500,1500,,275,0,10,15,42,144,0.35,16,HIGH_EXPLOSIVE,55,,,10,12,0.1,,,,,,400,70,5,100,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM",,,Arma Armatura,,Pressure,,,,,,,,,,12.95
-Degraded Juno Mk. III,armaa_altagrave_fluxcannon,2,,4600,800,850,,,20,20,16,,,,KINETIC,,450,1.5,0.5,1.5,8,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Fire Support,,,,,,,,,,15.6
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#ALTAGRAVE DECO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_altagrave_rightPauldron_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_leftPauldron_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_rightPauldron_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_leftPauldron_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_leftArm,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_leftArm_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_head_glow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_head_glow_c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_head_glow_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_cover_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_altagrave_cover_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-#GAREGGA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_garegga_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_garegga_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Heavy Machine Gun,heavymg,2,,1200,450,,40,,3,40,10,,,,KINETIC,15,,0,0.2,4,0.1,0,5,1,15,,700,,,30,PD,"kinetic11, pd10, SR, midline_bp",,,,Point Defense,,,,,,,,,,3.85
-Mutilator-K,armaa_garegga_leftArm,2,,1200,450,,52,,3,40,42,,,,KINETIC,20.9,,0,0.2,4,0.1,0,5,1,15,,700,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
-Mutilator,armaa_garegga_rightArm,2,,1000,450,,82,,5,40,42,,,,HIGH_EXPLOSIVE,55.25,,0,0.14,1,,0,20,0.9,10,,850,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5
-Ion Buster,armaa_ionBuster,3,0.7,500,500,,275,1250,0,40,6,,,,ENERGY,540,,0.55,5,,,,,,,,800,,,,"STRIKE, USE_VS_FRIGATES","energy8,rare_bp, hist1t, merc",,Arma Armatura,,Suppression(Strike),,,,,"Hits on hull or armor arc to weapons and engines, dealing extra damage equal to the original hit. May generate shield-piercing EMP arcs, depending on the target's flux level.",25%,,,,19
-,,,,,,,1.133333333,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#GAREGGA TT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,armaa_garegga_rightPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,armaa_garegga_leftPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-Pulse Laser,armaa_garegga_leftArm_tt,2,,1200,600,,100,,1,20,42,,,,ENERGY,80,,0,0.33,,,,,,,,1000,,,30,SYSTEM,,,,,General,,,,,,,,,,4.5
-Pulse Laser,armaa_garegga_rightArm_tt,2,,1000,600,,100,,1,20,42,,,,ENERGY,80,,,0.33,,,,,,,,1000,,,30,"SYSTEM,PD_ALSO,PD",,,,,General,,,,,,,,,,4.5
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#,armaa_altagrave_head_glow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-#,armaa_altagrave_head_glow_c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-#,armaa_altagrave_head_glow_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-#,armaa_altagrave_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-#,armaa_altagrave_cover_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#ALTAGRAVE SYSTEM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Adharma Seeker,armaa_karma,,,,1000,50,150,400,25,,,3,0.1,,KINETIC,0,0,0,5,3,0.1,90,90,0,0,,1500,1000,10,150,SYSTEM,,,,,,,,,,,,,,,
-,armaa_karmicburst,,,,320,,300,0,40,80,0,,,,ENERGY,200,,0.4,2,1,,,,,,,600,,,100,"SYSTEM, PD",energy20,,,,Point Defense,,,,,,,,,,8.018
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#Strikecraft Misc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Landing Override ,armaa_landingBeacon,,,,,1,,,,,,1,,,OTHER,,,,,,,,,,,,0,0,0,0,SYSTEM,,,Arma Armatura,,,,,,,,,Only usable by flagship.,,,
+name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number,,
+Juno Mk. III,armaa_fluxcannon,4,,4600,900,850,,,20,10,16,,,,KINETIC,,620,1.5,0.5,1.5,3,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES","energy20, beam15, LR, rare_bp, hist1t, merc",,Arma Armatura,,Fire Support,,,,,,,,,,15.6,,
+Curvy Laser,armaa_curvyLaser,3,,1000,1000,,500,,3,60,0,,,,HIGH_EXPLOSIVE,25,,,10,,,0,0,0,0,,200,50,10,500,,,,Arma Armatura,,General,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#EINHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_sprigganleftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_sprigganrightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_sprigganRightArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_einhanderLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_sprigganLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Vulcan Cannon,armaa_sprigganHead,,,,250,,25,,,75,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,1000,,,10,"PD,SYSTEM",,,,,Point Defense,,,,,,,,,,,,
+,armaa_sprigganHeadGlow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Homing Laser,armaa_sprigganTorso,5,,5500,700,,50,0,10,0,42,144,0.35,16,ENERGY,55,,,10,14,0.15,,,,,,800,75,5,50,"DO_NOT_AIM,SYSTEM,ANTI_FTR,PD_ALSO",,,Arma Armatura,,Pressure,Fast,Good,Great,Great,%s:  %s chance for an additional %s-%s points of %s damage when striking hull or armor.,Volatile|25%|5|30|High Explosive,,,,12.95,,
+Homing Laser2,armaa_sprigganTorsoB,5,,5500,700,,50,0,10,0,42,144,0.35,16,ENERGY,55,,,10,14,0.15,,,,,,800,75,5,50,"DO_NOT_AIM,SYSTEM,ANTI_FTR,PD_ALSO",,,Arma Armatura,,Pressure,Fast,Good,Great,Great,%s:  %s chance for an additional %s-%s points of %s damage when striking hull or armor.,Volatile|25%|5|30|High Explosive,,,,12.95,,
+Juno Mk. I,armaa_einhanderGun,,,4500,600,,85,0,5,20,42,,,,ENERGY,80,,0.525,1,10,0.1,0,10,1,5,,950,,,70,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Hull,,,,,%s Inflicts %s pts %s damage alongside %s pts of %s damage per shot when ship system is activate.,Safety Release:|170|ENERGY|100|EMP,%s %s chance to generate EMP arcs on hull impact.,Safety Release:|25%|140|ENERGY|150|EMP,,,,
+Juno Mk. I (FP),armaa_einhanderGun2,,,4500,600,,170,150,20,20,42,,,,ENERGY,110,,1.05,1,8,0.1,0,15,1,6,,750,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,,,
+Styx Mk. I Shot,armaa_altagrave_shotgun_pellet,,,4500,800,,45,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,750,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,,,
+Styx Mk. I Shot,armaa_einhanderGunS,,,4500,800,,57,10,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,1100,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,,,
+Styx Mk. I Shot,armaa_einhanderGunS2,,,4500,600,,25,,4,20,42,,,,HIGH_EXPLOSIVE,55,,1.05,1.6,8,0.1,0,15,1,6,,800,,,70,SYSTEM,,,Arma Armatura,,Anti Hull,,,,,,,,,,,,
+AS Glaive,armaa_heavyJavelin,3,0.3,2000,550,,500,300,50,20,42,10,,,HIGH_EXPLOSIVE,575,,0,5,1,,0,10,2,5,,700,,,30,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Anti Armor,,,,,,,%s: Ammo can be replenished by returning to a carrier.,Combat Resupply,,,,
+Hunter Laser,armaa_einhanderSyrinx,2,,1600,600,,285,,4,20,,10,0.6,3,HIGH_EXPLOSIVE,285,,,0.15,,,15,15,0,0,,700,400,4,75,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135,,
+Hunter Laser,armaa_einhanderSyrinx_copy,2,,1600,600,,285,,4,20,,4,0.6,3,HIGH_EXPLOSIVE,285,,0.5,0.5,,,15,15,0,0,,500,800,6,50,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135,,
+AMWS,armaa_einhanderBeam,2,,400,500,150,,,0,45,5,1,0.5,3,ENERGY,,,,,,0.015,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+#RECORD,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_record_torso,,,,1,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,,,
+,armaa_record_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_record_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+AMWS,armaa_record_head,2,,600,500,350,,,0,100,7,3,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,10000,,,,,"PD,SYSTEM,ANTI_FTR,PD_ALSO",,,,,Point Defense,,,,,,,,,,,,
+,armaa_recordLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+SPLTR-07 Shotgun,armaa_leynos_shotgun_right,2,,2500,500,,200,,0,35,0,4,1,4,HIGH_EXPLOSIVE,160,,0,0.3,1,0.2,20,20,0.4,0.4,,800,,,,SYSTEM,,,Arma Armatura,,General,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,5,,,FALSE,22.25,,
+KENG-44 Autocannon,armaa_leynos_autocannon_right,2,0.5,3200,700,,150,100,15,25,0,,,,FRAGMENTATION,52.5,,0.1,1,4,0.16,2,12,2,5,,750,,,100,SYSTEM,,,Arma Armatura,,General,,General,,,,,,,,1.4,,
+SCTR-25 Minigun,armaa_leynos_minigun_right,2,,1000,600,,60,,5,15,,100,5,50,FRAGMENTATION,27.06,,0.35,0.35,9999,0.08,1,5,1,6,,1350,,,30,"SYSTEM,PD_ALSO,PD,FIRE_WHEN_INEFFICIENT",,,Arma Armatura,,Anti Hull,,,,,"Projectiles break into submunitions on contact, causing %s extra HE damage on hits to armor or hull.",0-10,,,FALSE,4.5,,
+Boost Knuckle,armaa_leynosBoostKnuckle_return,2,,1600,600,,300,,4,30,,4,0.6,3,KINETIC,285,,0.5,0.5,,,15,15,0,0,,500,150,6,500,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,10,,,TRUE,15135,,
+Boost Knuckle,armaa_leynosBoostKnuckle,2,,1600,800,,300,350,50,30,,1,,,KINETIC,210,,0.4,1,,,15,15,0,0,,500,150,6,500,SYSTEM,,,Arma Armatura,,Strike,,,,,"%s: Launches arm at target. On impact, it will return to the host ship. If the arm cannot return succesfully, this weapon becomes unusable.",I Cast Fist,,,TRUE,15135,,
+RVNG-23 EM Railgun,armaa_leynos_railgun,2,,1200,700,,100,100,3,25,0,,,,KINETIC,,225,0.33,0.33,1,,0,0,0,0,,1000,,,30,SYSTEM,,,,,Point Defense,,,,,,,,,,3.85,,
+PPC-79 Overcharged Particle Cannon,armaa_leynos_ppc,2,,2500,500,,1400,600,0,10,0,10,,,ENERGY,1500,,1,10,,,,,,,,700,,,100,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25,,
+KENG-44 Autocannon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#VALKEN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Vulcan Cannon,armaa_valkenHead,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,,,
+Light Mortar,armaa_valken_torso,0,,75,600,,75,,4,0,2,15,,,HIGH_EXPLOSIVE,50,,0,1,1,,0,15,3,10,,500,,,10,SYSTEM,,,,,Anti Armor,Fast,Good,Great,Great,,,,,,12.95,,
+,armaa_valken_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_valken_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_valkenLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+IR Pulse Laser,armaa_laser,1,,250,500,,50,,0,50,5,,,,ENERGY,50,,,0.33,,,,,,,,900,,,,SYSTEM,,,,,General,,,,,,,,,,19.3,,
+Vulcan Cannon,armaa_valkenHead_gunmetal,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,,,
+Light Assault Gun,armaa_valken_torso_gunmetal,0,,300,700,,40,,3,40,5,,,,HIGH_EXPLOSIVE,40,,0,0.25,1,,0,5,1,5,,800,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,,,3
+,armaa_valken_leftPauldron_gunmetal,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_valken_rightPauldron_gunmetal,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#VALKEN-X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_valkenx_torso_vernier,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Ion Cannon (High Delay),armaa_valkenx_torso,2,,500,500,,25,400,0,40,6,,,,ENERGY,30,,0.5,0.5,,,,,,,,1000,,,,SYSTEM,energy8,,,,Suppression,,,,,,,,,,19.1,,
+Target Painter,armaa_valkenxHead,,,,500,0,,,,80,4,,,,ENERGY,,,0.33,0.33,,,0,,,,,800,,,10,SYSTEM,,,,,Point Defense,,,,,,,,,,,,
+,armaa_valkenx_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_valkenx_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Assault Chaingun(F),armaa_chaingun,1,,1000,450,,50,,3,30,42,,,,HIGH_EXPLOSIVE,,,0,1,5,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5,,
+LS-20  Blade,armaa_valkenxLeftArm,,,,45,150,,50,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#BIHANDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Micro Rail Rifle,armaa_lightmg,2,0.5,600,700,,100,,10,90,7,,,,KINETIC,,,,1,1,0.2,,,,,,1000,,,50,SYSTEM,,,,,Anti Shield,,,,,,,,,,0.5,,
+Juno Mk. II,armaa_javelin,2,,0,500,1050,,,50,0,3,3,,,ENERGY,,350,1.05,0.5,1,3,,,,,10000,,,,,"SYSTEM,STRIKE,USE_VS_FRIGATES",,,,,Strike,,,,,,,,,,15.6,,
+Vulcan Cannon,armaa_sprigganHeadmk3,,,,250,,25,,,40,4,,,,FRAGMENTATION,1.3,,0,0.3,1,,0,12,1,20,,1000,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,,,
+Homing Laser,armaa_sprigganTorsomk3,5,,5500,700,,50,0,10,0,42,72,0.175,8,ENERGY,55,,,10,1,0.2,,,,,,400,75,5,70,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,,Fast,Good,Great,Great,,,,,,12.95,,
+,armaa_sprigganmk3leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_sprigganmk3rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#KOUTO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+AMWS,armaa_kouto_head,2,,600,500,350,,,0,100,7,3,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,10000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+Seeker Flares,armaa_kouto_torso,,,,800,,10,400,,,,1,0.1,,ENERGY,0,0,0,5,2,0.1,90,90,0,0,,400,200,7,1,"SYSTEM,PD_ONLY,DO_NOT_CONSERVE,DO_NOT_AIM",,,,,,,,,,,,,,,,,
+,armaa_kouto_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_kouto_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Blazer Rifle,armaa_taclaser,2,,600,250,350,,,0,100,7,3,0.05,,ENERGY,,,0.1,0.1,0.3,0.1,,,,,10000,,,,,"ANTI_FTR,SYSTEM",,,,,Anti Fighter,,,,,,,,,,15.6,,
+DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.1,0,0,0,0,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352,,
+,armaa_koutoLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#ILORIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Micro Missile Pod,armaa_ilorin_torso,5,,2250,900,,45,0,10,0,10,,,,HIGH_EXPLOSIVE,,,0,35,6,0.1,,10,5,1,,700,50,10,25,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE, GROUP_LINKED, SYSTEM,ANTI_FTR",,,,,,Fast,Good,Great,Great,,,,,,12.95,,
+Vulcan Cannon,armaa_ilorin_head,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.2,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,,,
+,armaa_ilorin_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_ilorin_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+SOL Pattern Rocket Pod,armaa_ilorin_rocket,0,,150,1100,,200,,5,30,6,8,,,HIGH_EXPLOSIVE,,,0,1,8,0.2,0,20,5,9,,400,50,3.75,50,SYSTEM,,,,,Anti Armor,Fast,None,,,,,,,,11.1,,
+LUNA Pattern Autocannon,armaa_ilorin_ac,3,0.3,2000,700,,100,,10,20,12,10,,,HIGH_EXPLOSIVE,,,0.25,0.5,,,0,10,2,3,,700,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.75,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Juno Mk. III (Ftr),armaa_fluxcannon_ftr,2,,4600,900,850,,,20,10,16,1,,,KINETIC,,,1.5,0.5,1.5,3,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Fire Support,,,,,,,,,,15.6,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#ALESTE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_alesteHeadGlow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_aleste_torso_ace,,,,500,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_aleste_torso,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Micro Needler,armaa_alesteHead,3,0.3,800,650,,50,,1,20,9,,,,KINETIC,40,,,4,10,0.05,0,15,0.66,5,,1000,,,10,SYSTEM,,,,,Anti Shield,,,,,,,,,,,,
+,armaa_aleste_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_aleste_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,18,,,FRAGMENTATION,100,,0.25,4,6,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines. Can fire up to 6 spikes in a burst.","Remote Detonation|50 High Explosive, 250 EMP",,,,,,
+LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,60,750,,450,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+LS-99 MOONLIGHT,armaa_aleste_blade_RightArm,,,,60,750,,450,20,80,,,,,ENERGY,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,22.25,,
+Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5,,
+Plasma Flamer,armaa_aleste_flamer_right,3,,1000,450,,37.5,,3,60,0,200,8,80,ENERGY,25,,,,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,,,
+Rynex Pulse Rifle,armaa_aleste_rifle_left,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO",,,Arma Armatura,,General,,,,,,,,,,4.5,,
+Dispersal Grenade,armaa_aleste_grenade_left,2,,2500,600,,200,,5,40,0,50,,,HIGH_EXPLOSIVE,120,,0,4,6,0.15,0,10,5,9,,,450,4,225,"SYSTEM, DO_NOT_CONSERVE, ANTI_FTR",,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25,,
+#,armaa_alesteBunker,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,Arma Armatura,,,,,,,,,,,,999,,
+,armaa_pikeSecondary,1,,100,100,,50,250,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,,,
+Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,100,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,45,,3,60,0,200,8,80,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,500,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#ALTAGRAVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Vajra,armaa_altagrave_rightArm,2,,2500,600,,135,,10,15,69,25,2.5,8,ENERGY,110,,0,0.12,,0.12,0,5,2,9,,1000,1000,0.6,450,"SYSTEM,GUIDED_POOR",,,Arma Armatura,,Assault,,,,,"%s: Projectiles have some homing capability:  Can be intercepted by flares and PD, and be fired over friendly ships - but projectiles detonating over a friendly target will still damage it. In terms of enhancement bonuses, this weapon is considered a %s weapon.",Pseudomissile|PROJECTILE,,,TRUE,22.25,,
+AMWS,armaa_altagrave_head,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+AMWS-C,armaa_altagrave_head_c,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+AMWS-G,armaa_altagrave_head_g,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+AMWS-EX,armaa_altagrave_head_ex,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+AMWS-R,armaa_altagrave_head_r,,,600,600,350,,,0,100,7,5,0.5,,ENERGY,,300,0.1,0.1,0.3,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+Exceliza Grenade Launcher,armaa_altagrave_exceliza,2,,2500,600,,500,,40,15,69,,,,HIGH_EXPLOSIVE,500,,0,5,3,0.3,5,15,2,9,,,550,4,300,SYSTEM,,,Arma Armatura,,Assault,,,,,,,,,FALSE,22.25,,
+Styx Shotgun,armaa_altagrave_shotgun,2,,1600,800,,1750,,4,15,12,1,0.6,1,HIGH_EXPLOSIVE,1175,,0.3,1,,,15,15,0,0,,1200,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,35,,,TRUE,15135,,
+Styx Shotgun,armaa_altagrave_shotgun_red,2,,1140,800,,900,,4,15,12,4,0.6,4,HIGH_EXPLOSIVE,912,,0.2,1,,,15,15,0,0,,1200,,,,SYSTEM,,,Arma Armatura,,Strike,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,20,,,TRUE,15135,,
+Syrinx MRM,armaa_altagrave_syrinx,5,,5500,1500,,275,0,10,15,42,144,0.35,16,HIGH_EXPLOSIVE,55,,,10,12,0.1,,,,,,400,70,5,100,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM",,,Arma Armatura,,Pressure,,,,,,,,,,12.95,,
+Syrinx MRM,armaa_altagrave_syrinx_left,5,,5500,1500,,275,0,10,15,42,144,0.35,16,HIGH_EXPLOSIVE,55,,,10,12,0.1,,,,,,400,70,5,100,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM",,,Arma Armatura,,Pressure,,,,,,,,,,12.95,,
+Degraded Juno Mk. III,armaa_altagrave_fluxcannon,2,,4600,800,850,,,20,20,16,,,,KINETIC,,450,1.5,0.5,1.5,8,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Fire Support,,,,,,,,,,15.6,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#ALTAGRAVE DECO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_altagrave_rightPauldron_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_leftPauldron_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_rightPauldron_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_leftPauldron_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_leftArm,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_leftArm_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_head_glow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_head_glow_c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_head_glow_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_cover_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_altagrave_cover_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#GAREGGA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_garegga_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_garegga_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Heavy Machine Gun,heavymg,2,,1200,450,,40,,3,40,10,,,,KINETIC,15,,0,0.2,4,0.1,0,5,1,15,,700,,,30,PD,"kinetic11, pd10, SR, midline_bp",,,,Point Defense,,,,,,,,,,3.85,,
+Mutilator-K,armaa_garegga_leftArm,2,,1200,450,,52,,3,40,42,,,,KINETIC,20.9,,0,0.2,4,0.1,0,5,1,15,,700,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5,,
+Mutilator,armaa_garegga_rightArm,2,,1000,450,,82,,5,40,42,,,,HIGH_EXPLOSIVE,55.25,,0,0.14,1,,0,20,0.9,10,,850,,,30,"SYSTEM,PD_ALSO,PD",,,Arma Armatura,,Anti Armor,,,,,,,,,,4.5,,
+Ion Buster,armaa_ionBuster,3,0.7,500,500,,275,1250,0,40,6,,,,ENERGY,540,,0.55,5,,,,,,,,800,,,,"STRIKE, USE_VS_FRIGATES","energy8,rare_bp, hist1t, merc",,Arma Armatura,,Suppression(Strike),,,,,"Hits on hull or armor arc to weapons and engines, dealing extra damage equal to the original hit. May generate shield-piercing EMP arcs, depending on the target's flux level.",25%,,,,19,,
+,,,,,,,1.133333333,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#GAREGGA TT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,armaa_garegga_rightPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,armaa_garegga_leftPauldron_tt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+Pulse Laser,armaa_garegga_leftArm_tt,2,,1200,600,,100,,1,20,42,,,,ENERGY,80,,0,0.33,,,,,,,,1000,,,30,SYSTEM,,,,,General,,,,,,,,,,4.5,,
+Pulse Laser,armaa_garegga_rightArm_tt,2,,1000,600,,100,,1,20,42,,,,ENERGY,80,,,0.33,,,,,,,,1000,,,30,"SYSTEM,PD_ALSO,PD",,,,,General,,,,,,,,,,4.5,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#,armaa_altagrave_head_glow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#,armaa_altagrave_head_glow_c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#,armaa_altagrave_head_glow_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#,armaa_altagrave_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+#,armaa_altagrave_cover_ex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#ALTAGRAVE SYSTEM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Adharma Seeker,armaa_karma,,,,1000,50,150,400,25,,,3,0.1,,KINETIC,0,0,0,5,3,0.1,90,90,0,0,,1500,1000,10,150,SYSTEM,,,,,,,,,,,,,,,,,
+,armaa_karmicburst,,,,320,,300,0,40,80,0,,,,ENERGY,200,,0.4,2,1,,,,,,,600,,,100,"SYSTEM, PD",energy20,,,,Point Defense,,,,,,,,,,8.018,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Strikecraft Misc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Landing Override ,armaa_landingBeacon,,,,,1,,,,,,1,,,OTHER,,,,,,,,,,,,0,0,0,0,SYSTEM,,,Arma Armatura,,,,,,,,,Only usable by flagship.,,,,,

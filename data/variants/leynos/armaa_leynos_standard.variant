@@ -1,24 +1,24 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 10,
+  "fluxCapacitors": 7,
   "goalVariant": true,
   "fluxVents": 10,
   "hullId": "armaa_leynos_frig",
-  "hullMods": ["armaa_selector_stake","armaa_selector_lrifle","reinforcedhull"],
+  "hullMods": ["armaa_selector_fist","armaa_selector_ac"],
   "variantId": "armaa_leynos_standard",
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_aleste_rightArm",
+        "A_GUN": "armaa_leynos_autocannon_right",
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_alesteLeftArm",
+        "C_ARML": "armaa_leynosBoostKnuckle",
       }
     },
     {
@@ -32,9 +32,10 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS002": "lightag",
-        "WS003": "lightdualac",
+        "WS002": "railgun",
+        "WS003": "breach",
       }
     },
-  ]
+  ],
+ "wings": ["armaa_valkenmp_wing"]
 }
