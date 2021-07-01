@@ -6,7 +6,7 @@
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_ppcEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_rifle_left.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_ppc.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "visualRecoil": 3,
