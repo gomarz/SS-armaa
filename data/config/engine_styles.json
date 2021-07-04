@@ -24,12 +24,12 @@
 "DRONE_ENGINE":{        
         "mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
         "contrailDuration":1.5,
-        "contrailWidthMult":.67,
-	"contrailAngularVelocityMult":0f,
+        "contrailWidthMult":1.5,
+	"contrailAngularVelocityMult":1f,
         "contrailWidthAddedFractionAtEnd":-1f,  # can be negative. makes trail spread out/narrow at the end
         "contrailMinSeg":5, # min segment length, in pixels
         "contrailMaxSpeedMult":1f,
-        "contrailColor":[33,103,120,75],
+        "contrailColor":[120,103,33,75],
         "type":"GLOW", # GLOW or SMOKE; additive or regular blend mode
                         
         "glowSprite":"graphics/fx/engineglow32b.png",
@@ -37,8 +37,8 @@
         "omegaMode":true,
         "glowSizeMult":1,
 	"engineGlowGlowMult":1.45,
-        "glowAlternateColor":[255,100,10,255],
-        "engineColor":[100,165,255,120],
+        "engineColor":[255,100,10,255],
+        "glowAlternateColor":[255,165,100,220],
 },
 	
 		

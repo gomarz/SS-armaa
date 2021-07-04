@@ -1,0 +1,25 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 3,
+  "goalVariant": true,
+  "fluxVents": 4,
+  "hullId": "armaa_valken_frig",
+  "hullMods": ["heavyarmor"],
+  "variantId": "armaa_hazard_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "armaa_valken_gun",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_valkenHead_gunmetal",
+      }
+    },
+  ],
+}

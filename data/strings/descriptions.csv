@@ -55,7 +55,9 @@ The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct
 
 armaa_gallant,SHIP,"Slow and unwieldy strikecraft fitted with a Juno Mk. III beam cannon. Can overwhelms shields and vaporize hull, but are effectively helpless while firing. Best utilized in combination with other bombers, where it can soften shields prior to their strike.",,,
 
-armaa_valken_frig,SHIP,"Clearly a Valken-derivative, the G-Hazard was renamed to avoid confusion with consumers. Dramatically enhanced weaponry and mobility differentiates it from its cousin, but it remains as fragile as the original, making it an even greater glass cannon. G-Hazard's come equipped with additional software that allows them to command a small Cataphract lance.",,,
+armaa_valken_frig,SHIP,"A fool would say that Gunhazard's are marginally enhanced recreations of the Valken, but they'd be wrong: These craft sacrifice any kind of meaningful armor for ludicrous manuverability and a whirlwind of projectiles. Effective skirmishers, G-Hazard's also come equipped with additional software that allows them to command a small Cataphract Lance.
+
+It has been stated that the equipment and weaponry used by the G-Hazard ended up being more expensive than the Cataphract itself, and certainly its pilot - the story goes that assignments to one during the First AI War was often seen as a death sentence itself as pilots frequently met their end in the cockpit due to the immense pressures exerted on their fragile bodies during combat. This was mostly alleviated with the introduction of powerful inertial negators and a padded harness, but the 'endearing' nickname of Hazard stuck.",,,
 
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Despite this, its still best suited for symbiotically supporting other ships in combat; Offering additional point defenses while being afforded the distraction needed to unleash its full firepower.
 

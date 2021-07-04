@@ -3,6 +3,7 @@
   "collisionClassByFighter": "RAY_FIGHTER",
   "convergeOnPoint": true;
   "coreColor": [155,155,255,255],
+  "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
   #"fireSoundOne": "high_intensity_laser_intro",
   "fireSoundTwo": "high_intensity_laser_loop",
   "fringeColor": [0,100,255,255],

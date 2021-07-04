@@ -1,8 +1,22 @@
 {
-  "barrelMode": "ALTERNATING",
-  "hardpointAngleOffsets": [
-    -45,
-    45
+  "id": "armaa_valken_torso_gunmetal",
+  "specClass": "projectile",
+  "projectileSpecId": "lightag_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenBody_gunmetal.png",
+  "turretGunSprite": "graphics/armaa/ships/valken/armaa_valkenBodyBarrel.png",
+  "hardpointSprite": "",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    20,
+    0.5
+  ],
+  "turretAngleOffsets": [
+    0
   ],
   "hardpointOffsets": [
     -5,
@@ -10,43 +24,26 @@
     -5,
     5
   ],
-  "hardpointSprite": "",
-  "id": "armaa_valken_torso_gunmetal",
-  "animationType":"MUZZLE_FLASH",  # NONE, GLOW, MUZZLE_FLASH, SMOKE
-  "muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":16.0,
-					   "particleSizeMin":8.0,
-					   "particleSizeRange":10.0,
-					   "particleDuration":0.35,
-					   "particleCount":12,
-					  "particleColor":[255,155,105,185]},
-    "projectileSpecId":"lightag_shot",  # projectile that will be fired 
-    "fireSoundTwo":"light_assault_gun_fire",
-    "particleCount": 12,
-    "particleDuration": 0.2,
-    "particleSizeMin": 5,
-    "particleSizeRange": 10,
-    "spread": 10,
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
+  "hardpointAngleOffsets": [
+    -45,
+    45
   ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
   "requiresFullCharge": false,
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretGunSprite": "graphics/armaa/ships/valken/armaa_valkenBodyBarrel.png",
-  "turretOffsets": [
-    18,
-    0
-  ],
-  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenBody_gunmetal.png",
-  "type": "BALLISTIC",
-  "visualRecoil": 3
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 16,
+    "particleSizeMin": 8,
+    "particleSizeRange": 10,
+    "particleDuration": 0.35,
+    "particleCount": 12,
+    "particleColor": [
+      255,
+      155,
+      105,
+      185
+    ]
+  },
+  "fireSoundTwo": "light_assault_gun_fire"
 }

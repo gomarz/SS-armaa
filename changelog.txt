@@ -18,6 +18,10 @@ New Ship: Thunder(AA) - 2DP
 - The other blue blur
 - fragile, flux starved, and not particularly effective alone, but in fleet combat...
 
+New Ship: G-Hazard - 2DP
+- Live fast, die faster
+
+
 
 -WINGCOM Suite:
 

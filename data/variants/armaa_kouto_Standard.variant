@@ -18,6 +18,13 @@
     },
     {
       "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "C_ARML": "armaa_taclaser",
+      }
+    },
+    {
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "B_TORSO": "armaa_sprigganTorso",

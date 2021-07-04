@@ -4,12 +4,13 @@
   "projectileSpecId": "armaa_rrifle_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_hazardEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_valkencustomgun.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "visualRecoil": 1,
+  "fireSoundTwo": "railgun_fire",
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
@@ -18,7 +19,7 @@
     -15
   ],
   "turretAngleOffsets": [
-    0
+    0.5
   ],
   "hardpointOffsets": [
     17,
@@ -29,19 +30,12 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
-  "muzzleFlashSpec": {
-    "length": 20,
-    "spread": 3,
-    "particleSizeMin": 5,
-    "particleSizeRange": 12,
-    "particleDuration": 0.12,
-    "particleCount": 12,
-    "particleColor": [
-      100,
-      100,
-      100,
-      255
-    ]
-  },
-  "fireSoundTwo": "ir_pulse_laser_fire"
+	"muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":5.0,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":15.0,
+					   "particleDuration":0.1,
+					   "particleCount":25,
+					   "particleColor":[100,200,255,205]},	
+},
 }

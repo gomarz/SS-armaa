@@ -29,9 +29,9 @@
     "cataphract"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_flamer",
+    "A_GUN": "armaa_kouto_minigun_right",
     "B_TORSO": "armaa_kouto_torso",
-    "C_ARML": "armaa_koutoLeftArm",
+    "C_ARML": "armaa_kouto_minigun_left",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_kouto_leftPauldron",
     "D_PAULDRONR": "armaa_kouto_rightPauldron",
@@ -70,7 +70,7 @@
   "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 0,
+      "angle": -10,
       "arc": 90,
       "id": "A_GUN",
       "locations": [
@@ -94,8 +94,8 @@
       "type": "MISSILE"
     },
     {
-      "angle": 0,
-      "arc": 360,
+      "angle": 10,
+      "arc": 90,
       "id": "C_ARML",
       "locations": [
         2,
@@ -103,7 +103,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "BUILT_IN"
     },
     {
       "angle": -0,
