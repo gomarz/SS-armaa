@@ -1,7 +1,7 @@
 {
   "animationType": "SMOKE",
   "autocharge": true,
- "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk2",
+ "everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "system_flare_launcher_active",
   "hardpointAngleOffsets": [

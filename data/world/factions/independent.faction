@@ -5,7 +5,11 @@
 			"armaa_altagrave_c":0.5,
 			"armaa_altagrave_g":0.8,
 			"armaa_garegga":0.8,
-			"armaa_einhander":0.3,	
+			"armaa_einhander":0.3,
+			"armaa_aleste_frig":0.9,
+			"armaa_leynos_frig":0.9,
+			"armaa_hazard_frig":0.9,
+			"armaa_xyphos_frig":0.9,	
 		},
 	},
 	"shipsWhenImporting":{
@@ -18,6 +22,10 @@
 				"armaa_einhander",
 				"armaa_altagrave",
 				"armaa_garegga",
+				"armaa_aleste_frig",
+				"armaa_leynos_frig",
+				"armaa_hazard_frig",
+				"armaa_xyphos",
 			],
 	},
 	"knownFighters":{

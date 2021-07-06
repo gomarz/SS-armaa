@@ -13,10 +13,22 @@
     "armaa_altagrave_c_Standard":0.8,
     "armaa_altagrave_g_Standard":0.8,
   },
-  "phaseSmall": {
-    "armaa_einhander_Strike": 1,
-    "armaa_einhander_Overclocked": 0.5,
-  },
+	# carriers
+	"carrierSmall":{
+	    "armaa_aleste_standard_f":.8,
+	    "armaa_hazard_standard":.8,
+	    "armaa_xyphos_standard":.9
+	},
+	"carrierMedium":{
+	    "armaa_aleste_standard_f":.8,
+	    "armaa_hazard_standard":.8,
+            "armaa_leynos_standard":.7,
+	},
+	"carrierLarge":{
+	    "armaa_aleste_standard_f":.8,
+	    "armaa_hazard_standard":.8,
+            "armaa_einhander_Overclocked": 0.5,
+	},
   "phaseMedium": {
   },
   "phaseLarge": {

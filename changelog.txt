@@ -3,34 +3,28 @@ V1.4.9
 New Ship: Leynos - 6DP
 -Slower than Aleste, but more durable
 -Damper Field in lieu of standard shield
-- 5 new toggleable built-ins
-	- Autocannon
-	- Minigun
-	- Shotgun
-	- Boost Knuckle
-	- Railgun
 
-New Ship: Xyphos(AA) - 3DP
-- Xyphos with a different paintjob...and an Ion Pulser!!!
-- fragile, flux starved, and not particularly effective alone, but in fleet combat...
+New Ship: Xyphos(AA) - 4DP
+- Effectively a more offensively tuned Xyphos
+- Still works best paired with another ship
 
-New Ship: Thunder(AA) - 2DP
-- The other blue blur
-- fragile, flux starved, and not particularly effective alone, but in fleet combat...
-
-New Ship: G-Hazard - 2DP
+New Ship: G-Hazard - 3DP
 - Live fast, die faster
 
+-Added Strikecraft to carrier default roles and removed them from combat roles to ensure they spawn with carriers
 
+-Only Einhander,Garegga, and altagrave were known to indies + PL, added remaining hulls at low occurence rate
 
 -WINGCOM Suite:
+- Hullmod that grants strikecraft a wing with multiple penalties
+- Has some dumb campaign-layer integration/effects
 
 -Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
 
 Strikecraft:
 - Fixed bug where game would crash if player took control of enemy strikecraft and then retreated with it (.....somehow)
 - Fixed bug where landing ship would only choose bay 0 to land at
-
+- Replacement Time reduction when refitting now occurs during refit time instead of after
 -Altagrave's will purge all their modules once the core ship's HP passes below 50%
 	- This is actually a buff (for AI)
 
@@ -43,14 +37,21 @@ Valken X:
 - Removed Vulcan Cannon
 - Laser Blade DMG: 125->150
 
+-Valken:
+- swapped light mortar for light assault gun
+- System now affects all weapons
+
+-Kouto
+- Changed to support wing
+
 
 Aleste:
-- Changed name to Aleste(S) to better distinguish player and LPC version
+- Changed name to Aleste(S) to better distinguish playable and LPC version
 -Flux Capacity: 1000>1800
 -Added Laser Blade as an option for right arm
 -Laser Blade trails reduced to a more reasonable width/length
 -Fixed Laser Blade not doing additional emp damage on hit
--Fixed Laser Blade damage not scaling with energy weapon mastery
+-Fixed Laser Blade damage not scaling with energy weapon mastery bonus
 -Fixed bug where laser blade trails from different ships would merge into eldritch map spanning megatrails 
 
 V1.4.8RC3

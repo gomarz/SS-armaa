@@ -3,7 +3,7 @@
   "fluxCapacitors": 3,
   "goalVariant": true,
   "fluxVents": 4,
-  "hullId": "armaa_valken_frig",
+  "hullId": "armaa_hazard_frig",
   "hullMods": ["heavyarmor"],
   "variantId": "armaa_hazard_standard",
   "weaponGroups": [

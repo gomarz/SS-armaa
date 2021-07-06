@@ -7,4 +7,10 @@
 			"armaa_ilorin_wing",
 		],
 	},
+	"knownShips":{
+		"hulls":[	
+
+				"armaa_xyphos",
+			],
 },	
+}

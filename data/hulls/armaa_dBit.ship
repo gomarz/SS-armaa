@@ -10,11 +10,14 @@
     6
   ],
   "builtInMods": [
-    "variawep",
+    #"variawep",
     "reduced_explosion",
     "always_detaches",
     "pointdefenseai"
   ],
+  "builtInWeapons": {
+    "DECO": "armaa_dummyBit"
+  },
   "center": [
     6,
     10.5
@@ -41,6 +44,18 @@
       "locations": [
         7.5,
         -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "DECO",
+      "locations": [
+        10,
+        -5
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
