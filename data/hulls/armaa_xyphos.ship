@@ -15,7 +15,8 @@
         -3,
         10
     ],
-    "builtInMods": ["advancedoptics","strikeCraft"],
+    "builtInMods": ["advancedoptics","strikeCraft","armaa_wingCommander"],
+   "builtInWings": ["xyphos_wing"],
   "builtInWeapons": {
     "WS 001":"ionpulser",
     "WS 002":"pdburst",
@@ -88,7 +89,7 @@
             ],
             "mount": "HIDDEN",
             "size": "SMALL",
-            "type": "ENERGY"
+            "type": "BUILT_IN"
         },
         {
             "angle": 180,

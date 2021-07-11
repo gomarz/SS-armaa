@@ -1,7 +1,7 @@
 {
   "animationType": "SMOKE",
   "autocharge": true,
- "everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
+ "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk2",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "system_flare_launcher_active",
   "hardpointAngleOffsets": [
@@ -19,7 +19,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "flare_seeker",
+  "projectileSpecId": "armaa_karma_seeker",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "smokeSpec": {

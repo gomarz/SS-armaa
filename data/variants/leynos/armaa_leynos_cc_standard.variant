@@ -1,0 +1,41 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 7,
+  "goalVariant": false,
+  "fluxVents": 10,
+  "hullId": "armaa_leynos_frig_comet",
+  "hullMods": ["armaa_selector_stake","armaa_selector_shotgun","heavyarmor"],
+  "variantId": "armaa_leynos_cc_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "armaa_leynos_autocannon_right",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "C_ARML": "armaa_leynosBoostKnuckle",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead",
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS002": "railgun",
+        "WS003": "breach",
+      }
+    },
+  ],
+ "wings": ["armaa_valkenmp_wing"]
+}

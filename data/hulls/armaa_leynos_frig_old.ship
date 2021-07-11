@@ -1,6 +1,6 @@
 {
   "hullName": "leynos",
-  "hullId": "armaa_leynos_frig",
+  "hullId": "armaa_leynos_frig_comet",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
   "style": "MIDLINE",
@@ -19,11 +19,11 @@
     "reduced_explosion"
   ],
   "builtInWeapons": {
-    "B_TORSO": "armaa_record_torso",
+    "B_TORSO": "armaa_leynos_torso_comet",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_record_leftPauldron",
-    "D_PAULDRONR": "armaa_record_rightPauldron",
-    "E_HEAD": "armaa_record_head",
+    "D_PAULDRONL": "armaa_leynos_leftPauldron_comet",
+    "D_PAULDRONR": "armaa_leynos_rightPauldron_comet",
+    "E_HEAD": "armaa_leynos_head_comet",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [

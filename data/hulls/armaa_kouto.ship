@@ -122,8 +122,8 @@
       "arc": 360,
       "id": "D_PAULDRONL",
       "locations": [
-        0,
-        2
+        3,
+        3
       ],
       "mount": "TURRET",
       "size": "SMALL",
@@ -134,8 +134,8 @@
       "arc": 360,
       "id": "D_PAULDRONR",
       "locations": [
-        0,
-        -2
+        3,
+        -3
       ],
       "mount": "TURRET",
       "size": "SMALL",

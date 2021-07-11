@@ -2,7 +2,7 @@
   "id": "armaa_leynos_ppc",
   "specClass": "projectile",
   "projectileSpecId": "armaa_ppc_shot",
-  "type": "BALLISTIC",
+  "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_ppcEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",

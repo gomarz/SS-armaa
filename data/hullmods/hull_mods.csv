@@ -46,80 +46,85 @@ WINGCOM SUITE,armaa_wingCommander,,,,"special, non_phase",Fighters,,,TRUE,,0,0,0
 ,,,,,,,,,,,,,,,,,,
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-L ARM: LASER BLADE,armaa_selector_blade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: LASER BLADE,armaa_selector_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s deals immense amounts of damage, but has extremely short range.
 
 %s 
 
 %s",,graphics/armaa/hullmods/hand_l.png
-L ARM: STAKE DRIVER,armaa_selector_stake,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: STAKE DRIVER,armaa_selector_stake,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires large spikes that explodes after a few seconds, but has limited ammo.
 
 %s""",,graphics/armaa/hullmods/hand_l.png
-L ARM: DISPERSAL GRENADE,armaa_selector_grenade,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_grenade,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: DISPERSAL GRENADE,armaa_selector_grenade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_grenade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires six explosive submunitions per shot to saturate an area with firepower. Wildly inaccurate, but effective vs fighter formations and larger ships.
 
 %s",,graphics/armaa/hullmods/hand_l.png
-L ARM: LASER RIFLE,armaa_selector_lrifle_left,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: LASER RIFLE,armaa_selector_lrifle_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a general-purpose, rapid firing energy weapon, but is flux intensive.
 
 %s",,graphics/armaa/hullmods/hand_l.png
-R ARM:HEAVY RIFLE,armaa_selector_heavyrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_heavyrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM:HEAVY RIFLE,armaa_selector_heavyrifle,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_heavyrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s has significant damage per shot and range, but poor sustained firepower and flux efficiency.
 
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM: LASER RIFLE,armaa_selector_lrifle,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM: LASER RIFLE,armaa_selector_lrifle,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a general-purpose, rapid firing energy weapon, with no major strengths or weaknesses.
 
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_flamer,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_flamer,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a short-range energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge and relatively flux-intensive with sustained use. Lacks automatic PD targeting software.
 
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM: LASER BLADE,armaa_selector_blade_right,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM: LASER BLADE,armaa_selector_blade_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s deals immense amounts of damage, but has extremely short range.
 
 %s 
 
 %s",,graphics/armaa/hullmods/hand_l.png
-Melee,armaa_melee,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png
+Melee,armaa_melee,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png
 ,,,,,,,,,,,,,,,,,,
-#LEYNOS WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
-Versatile Frame,armaa_leynosWeaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-R ARM:SHOTGUN,armaa_selector_shotgun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
+#LEYNOS WEAPON SELECTOR,,,,,no_build_in,,,,,,,,,,,,,
+Versatile Frame,armaa_leynosWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
+R ARM:SHOTGUN,armaa_selector_shotgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a burst of projectiles in a tight cone that can chew through armor.
 
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM:MINIGUN,armaa_selector_minigun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM:MINIGUN,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s has an unparalleled fire rate, easily shredding lightly armored targets. It cannot easily defeat armor or shielding on its own and is best paired with weapon that can.
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM:AUTOCANNON,armaa_selector_ac,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_ac,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM:AUTOCANNON,armaa_selector_ac,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_ac,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a standard use autocannon.
 
 %s",,graphics/armaa/hullmods/hand_r.png
 ,,,,,,,,,,,,,,,,,,
-L ARM: RAILGUN,armaa_selector_railgun,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_railgun,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: RAILGUN,armaa_selector_railgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_railgun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
 
 %s",,graphics/armaa/hullmods/hand_l.png
-L ARM: POWERFIST,armaa_selector_fist,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_fist,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: POWERFIST,armaa_selector_fist,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_fist,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
 
 %s ",,graphics/armaa/hullmods/hand_l.png
-L ARM: POWERFIST,alwaysburn,,,,,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4_HM_alwaysBurn,"HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: PPC,armaa_selector_ppc,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_ppc,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s fires an immensely powerful energy weapon that also inflict EMP Damage. Low Ammo and fairly ineffective against armor and shields.
+
+%s""",,graphics/armaa/hullmods/hand_l.png
+L ARM: POWERFIST,alwaysburn,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4_HM_alwaysBurn,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
 

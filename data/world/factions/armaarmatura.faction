@@ -35,7 +35,10 @@
 				"armaa_einhander":0.5,
 				"armaa_altagrave_g":0.6,
 				"armaa_garegga":1,
-				"armaa_aleste_frig":1.2,	
+				"armaa_aleste_frig":1,
+				"armaa_leynos_frig":0.8,
+				"armaa_hazard_frig":1,
+				"armaa_xyphos":0.8,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.1,
@@ -110,6 +113,9 @@
             "armaa_garegga",
 	    "armaa_einhander",
 	    "armaa_aleste_frig",
+	    "armaa_leynos_frig",
+	    "armaa_hazard_frig",
+	    "armaa_xyphos",
         ],
     },
 	"knownHullMods":{
