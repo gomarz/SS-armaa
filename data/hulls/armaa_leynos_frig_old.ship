@@ -110,22 +110,12 @@
     },
     {
       "id": "WS002",
-      "size": "SMALL",
-      "type": "UNIVERSAL",
-      "mount": "HARDPOINT",
-      "arc": 5,
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 15,
       "angle": 0,
       "locations": [-17, -13],
-      "renderOrderMod": 99999
-    },
-    {
-      "id": "WS003",
-      "size": "SMALL",
-      "type": "UNIVERSAL",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [-17, 13],
       "renderOrderMod": 99999
     }
   ],

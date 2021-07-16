@@ -1,8 +1,9 @@
 {
   "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "armaa_shotgun_fire",
-"everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffectCrimson",
+  "fireSoundOne": "armaa_buster_charge",
+  "fireSoundTwo": "armaa_buster_fire",
+"everyFrameEffect": "data.scripts.weapons.armaa_ppcEffect",
   "glowColor": [
     50,
     142,
@@ -17,7 +18,7 @@
     0
   ],
   "hardpointSprite": "",
-  "id": "armaa_altagrave_shotgun_red",
+  "id": "armaa_altagrave_ppc",
   "muzzleFlashSpec": {
     "length": 60,
     "particleColor": [
@@ -35,7 +36,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_hominglaser2",
+  "projectileSpecId": "armaa_ppc_shot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -45,9 +46,10 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0
+    1
   ],
   "turretGlowSprite": "",
+ # "turretSprite": "graphics/armaa/ships/proto/armaa_altagrave_shotgun_red.png",
   "turretGunSprite": "graphics/armaa/ships/proto/armaa_altagrave_shotgun_red.png",
   "turretOffsets": [
     63,

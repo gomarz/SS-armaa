@@ -2,6 +2,7 @@
   "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "plasma_cannon_fire",
+  "everyFrameEffect": "data.scripts.weapons.armaa_VajraEveryFrameEffect",
   "glowColor": [
     50,
     142,
@@ -18,7 +19,7 @@
   "hardpointSprite": "",
   "id": "armaa_altagrave_rightArm",
   "muzzleFlashSpec": {
-    "length": 20,
+    "length": 30,
     "particleColor": [
       250,
       192,

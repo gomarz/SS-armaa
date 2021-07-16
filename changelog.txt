@@ -11,7 +11,9 @@ New Ship: Xyphos(AA) - 4DP
 New Ship: G-Hazard - 3DP
 - Live fast, die faster
 
--Added Strikecraft to carrier default roles and removed them from combat roles to ensure they spawn with carriers
+New Ship: Altagrave(RS)
+
+-Added Nex Mercenary company
 
 -Only Einhander,Garegga, and altagrave were known to indies + PL, added remaining hulls at low occurence rate
 
@@ -19,14 +21,22 @@ New Ship: G-Hazard - 3DP
 - Hullmod that grants strikecraft a wing with multiple penalties
 - Has some dumb campaign-layer integration/effects
 
--Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus
+-Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus by checking base hull instead
 
 Strikecraft:
 - Fixed bug where game would crash if player took control of enemy strikecraft and then retreated with it (.....somehow)
 - Fixed bug where landing ship would only choose bay 0 to land at
 - Replacement Time reduction when refitting now occurs during refit time instead of after
+- Fixed bug where combat would not end if an allied / enemy strikecraft were on the field after full retreat
+- Trimmed description to be more concise and less fluffly
+
 -Altagrave's will purge all their modules once the core ship's HP passes below 50%
 	- This is actually a buff (for AI)
+	- AMWS for all head variants DMG: 350->400, IGNORES_FLARES
+	- Karma ship system now benefits for Systems Expertise
+	- Karma Seekers: 
+		-Launch Speed: 1500-> 800
+		-Proj Speed: 1000->700
 
 Ilorin:
 -Removed ECCM from Ilorin
@@ -40,10 +50,10 @@ Valken X:
 -Valken:
 - swapped light mortar for light assault gun
 - System now affects all weapons
+- adjusted sprite yet again
 
 -Kouto
-- Changed to support wing
-
+- Changed to support wing, completely revised weapon loadout
 
 Aleste:
 - Changed name to Aleste(S) to better distinguish playable and LPC version

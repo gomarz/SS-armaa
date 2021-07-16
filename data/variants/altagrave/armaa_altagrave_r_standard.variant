@@ -27,17 +27,17 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {"WS0004": "ionpulser"}
+      "weapons": {"WS0004": "typhoon"}
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {"WS0003": "lightac"}
+      "weapons": {"WS0003": "typhoon"}
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {"WS0006": "armaa_ionBuster"}
+      "weapons": {"WS0006": "lightag"}
     },
     {
       "autofire": true,

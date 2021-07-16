@@ -23,16 +23,15 @@
   ],
   "builtInMods": [
 "armaa_legmodule",
-"armaa_karma",
-"operations_center",
-"armaa_ma"
+"armaa_ma",
+"armaa_karma"
   ],
   "builtInWeapons": {
     "E_HEAD": "armaa_altagrave_head_r",
     "E_HEAD_GLOW": "armaa_altagrave_head_glow_c",
     "E_LARM": "armaa_altagrave_leftArm_red",
     "E_LSHOULDER": "armaa_altagrave_leftPauldron_red",
-    "E_RARM": "armaa_altagrave_shotgun_red",
+    "E_RARM": "armaa_altagrave_ppc",
     "E_RSHOULDER": "armaa_altagrave_rightPauldron_red",
     "COVER": "armaa_altagrave_cover_red"
   },
@@ -280,29 +279,29 @@
     },
     {
       "angle": 0,
-      "arc": 5,
+      "arc": 15,
       "id": "WS0004",
       "locations": [
         2,
         21
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
      "renderOrderMod": 4,
       "size": "MEDIUM",
       "type": "SYNERGY"
     },
     {
       "angle": 0,
-      "arc": 5,
+      "arc": 15,
       "id": "WS0003",
       "locations": [
         3,
         -19
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
      "renderOrderMod": 4,
-      "size": "SMALL",
-      "type": "UNIVERSAL"
+      "size": "MEDIUM",
+      "type": "SYNERGY"
     },
 {
       "angle": 0,

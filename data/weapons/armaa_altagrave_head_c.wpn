@@ -1,6 +1,7 @@
 {
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
+  "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
   "convergeOnPoint": true,
   "coreColor": [
     255,

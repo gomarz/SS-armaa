@@ -1,13 +1,5 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
-Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel.
-
-It's relatively small size allow it to %s, but %s. Additionally, the unit's smaller engines yield %s.
-
-Combat readiness decays %s faster than normal ships. Can return to friendly carriers to refit, recovering %s CR and replenishing armor, hull, and ammo by %s. Refit time increases based on the total amount of damage the craft has taken, the type of weapons equipped, and the refit rate of the chosen carrier.
-
-The refit process, especially unassisted by any natively installed LPCs for replacement parts, cuts directly into the carriers ability to service its other craft; the servicing fighter bay's replacement rate will be decreased by %s.
-
-In terms of skill-based modifiers, receives the same benefits of a frigate. Attacks on this craft from captains with the %s skill receive the full damage bonus that would affect other fighters.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
+Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
 Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Torment has an auxiliary reactor that grants an additional shield, but can be attacked and destroyed during combat, which shuts down the secondary shield and reduces flux dissipation and capacity by %s percent.
 
 The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
