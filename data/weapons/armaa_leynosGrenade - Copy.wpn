@@ -1,0 +1,53 @@
+{
+  "id": "armaa_leynosCorkScrew_kin",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_hominglaser2_kin",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_leynos_grenade.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle_00.png",
+  "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
+  "specialWeaponGlowHeight": 1,
+  "specialWeaponGlowWidth": 1,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    49,
+    14,
+    49,
+    10.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    26,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "LINKED",
+  "animationType": "SMOKE",
+  "autocharge": true,
+  "smokeSpec": {
+    "particleSizeMin": 20,
+    "particleSizeRange": 10,
+    "cloudParticleCount": 8,
+    "cloudDuration": 1,
+    "cloudRadius": 20,
+    "blowbackParticleCount": 8,
+    "blowbackDuration": 2,
+    "blowbackLength": 20,
+    "blowbackSpread": 20,
+    "particleColor": [
+      155,
+      155,
+      155,
+      155
+    ]
+  },
+  "fireSoundTwo": "harpoon_fire"
+}

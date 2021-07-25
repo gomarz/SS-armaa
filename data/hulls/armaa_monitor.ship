@@ -1,0 +1,160 @@
+{
+  "hullName": "Monitor",
+  "hullId": "armaa_monitor",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/monitor_ff2.png",
+  "style": "MIDLINE",
+  "height": 70,
+  "width": 110,
+  "center": [55, 30],
+  "collisionRadius": 104.5,
+  "shieldCenter": [-1, 0],
+  "shieldRadius": 102,
+  "viewOffset": 0,
+  "builtInMods": [
+    "fluxshunt"
+  ],
+  "builtInWeapons": {
+    "E_LARM": "armaa_monitor_leftArm",
+    "E_LSHOULDER": "armaa_monitor_leftPauldron",
+    "E_RARM": "armaa_monitor_rightArm",
+    "E_RSHOULDER": "armaa_monitor_rightPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -45,
+      "locations": [12, -21]
+    },
+
+    {
+      "id": "E_LSHOULDER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 55,
+      "angle": 30,
+      "locations": [4, 40]
+    },
+    {
+      "id": "E_LARM",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 65,
+      "angle": 30,
+      "locations": [9, 52],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 55,
+      "angle": -30,
+      "locations": [4, -40]
+    },
+    {
+      "id": "E_RARM",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 65,
+      "angle": -30,
+      "locations": [9, -52],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [39, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-27, 45],
+      "length": 24,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-29, 39],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-29, 33],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-28, 28],
+      "length": 24,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-28, -27],
+      "length": 24,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-29, -32],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-29, -38],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-27, -44],
+      "length": 24,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    5, 54,
+    33, 0,
+    4, -53,
+    -23, -46,
+    -26, -27,
+    -19, -24,
+    -18, 0,
+    -19, 23,
+    -27, 25,
+    -24, 46
+  ]
+}

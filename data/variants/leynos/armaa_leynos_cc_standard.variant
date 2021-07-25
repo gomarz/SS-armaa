@@ -33,7 +33,6 @@
       "mode": "ALTERNATING",
       "weapons": {
         "WS002": "railgun",
-        "WS003": "breach",
       }
     },
   ],

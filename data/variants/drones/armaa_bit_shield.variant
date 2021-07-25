@@ -1,0 +1,16 @@
+{
+    "displayName": "UWS",
+    "fluxCapacitors": 0,
+    "fluxVents": 5,
+    "hullId": "armaa_bit",
+    "goalVariant": true,
+    "hullMods": ["terminator_core"],
+    "permaMods": [],
+    "variantId": "armaa_bit_std",
+    "weaponGroups": [{
+      #  "autofire": true,
+        "mode": "LINKED",
+        "weapons": {"WS0001": "taclaser"}
+
+    }]
+}

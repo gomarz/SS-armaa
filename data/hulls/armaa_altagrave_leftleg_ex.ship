@@ -17,8 +17,7 @@
     "armaa_legmodule",
     "reduced_explosion",
     "always_detaches",
-    "novent",
-    "leg_engine"
+    "novent"
   ],
   "center": [
     41,

@@ -1,0 +1,27 @@
+{
+  "variantId": "armaa_monitor_variant",
+  "hullId": "armaa_monitor",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "E_LARM": "armaa_monitor_leftArm",
+        "E_RARM": "armaa_monitor_rightArm"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "WS0002": "armaa_monitor_armor_standard"
+    }
+  ],
+  "wings": []
+}

@@ -5,7 +5,7 @@
     },
     "hullFrequency":{
         "hulls":{
-            "armaa_garegga_tt":1,
+            "armaa_garegga_tt":1.2,
         },
     },
     "knownShips":{

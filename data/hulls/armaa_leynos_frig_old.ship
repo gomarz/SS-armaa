@@ -14,9 +14,9 @@
   "builtInMods": [
     "cataphract",
     "strikeCraft",
-    "armaa_wingCommander",
     "armaa_leynosWeaponSwap",
-    "reduced_explosion"
+    "reduced_explosion",
+    "armaa_wingCommander"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_leynos_torso_comet",

@@ -15,8 +15,7 @@
     "armaa_legmodule",
     "always_detaches",
     "reduced_explosion",
-    "novent",
-    "leg_engine"
+    "novent"
   ],
   "builtInWeapons": {
     "MISSILE": "armaa_valken_missile"

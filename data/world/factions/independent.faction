@@ -1,11 +1,11 @@
 {
 	"hullFrequency":{
 		"hulls":{
-			"armaa_altagrave":0.8,
-			"armaa_altagrave_c":0.5,
+			"armaa_altagrave":0.9,
+			"armaa_altagrave_c":0.8,
 			"armaa_altagrave_g":0.8,
-			"armaa_garegga":0.8,
-			"armaa_einhander":0.3,
+			"armaa_garegga":1,
+			"armaa_einhander":0.35,
 			"armaa_aleste_frig":1,
 			"armaa_leynos_frig":1,
 			"armaa_hazard_frig":1,

@@ -5,7 +5,7 @@ Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Tor
 The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
 
 The reactor and its shield are affected by the Torment captain's skills, but not by any hullmods applied to the Torment itself.",Severe reduction in combat capability if generator is destroyed.,graphics/armaa/hullmods/cataphract.png
-Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract-class mechs are %s more resistant to EMP effects while weapons and engines are %s less likely to fail. Their relatively small size means that %s. These units will deploy in support  of planetary operations, increasing their effective strength by %s, (up to the total number of marines in the fleet), at the cost of %s combat readiness.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
+Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
 Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
 
 Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.

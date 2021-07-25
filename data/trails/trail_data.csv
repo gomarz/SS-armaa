@@ -15,6 +15,9 @@ armaa_hominglaser2_trail,armaa_hominglaser2,beam_trail_smooth,8,0,0.1,0.5,8,12,"
 armaa_hominglaser2_trail2,armaa_hominglaser2,base_trail_smooth,18,0,0.1,0.5,22,16,"[255,0,0]","[250,0,0]",0.7,300,500,13,0,1,FALSE,FALSE,TRUE,10,30,0,0,20,0,TRUE,
 armaa_hominglaser2_trail3,armaa_hominglaser2,beam_trail_smooth,14,0,0.1,0.5,8,12,"[250,197,92]","[250,197,92]",1,300,500,13,0,1,FALSE,FALSE,TRUE,15,45,0,0,20,0,TRUE,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_hominglaserkin_trail,armaa_hominglaser2_kin,beam_trail_smooth,8,0,0.1,0.5,8,12,"[92,197,250]","[92,197,250]",0.9,300,500,13,0,1,FALSE,FALSE,TRUE,0,0,0,0,20,0,TRUE,
+armaa_hominglaserkin_trail2,armaa_hominglaser2_kin,base_trail_smooth,18,0,0.1,0.5,22,16,"[0,0,255]","[0,0,250]",0.7,300,500,13,0,1,FALSE,FALSE,TRUE,10,30,0,0,20,0,TRUE,
+armaa_hominglaserkin_trail3,armaa_hominglaser2_kin,beam_trail_smooth,14,0,0.1,0.5,8,12,"[92,197,250]","[92,197,250]",1,300,500,13,0,1,FALSE,FALSE,TRUE,15,45,0,0,20,0,TRUE,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_seeker_trail,armaa_karma_seeker,beam_trail_smooth,10,0,0.1,0.1,10,5,"[149,206,240]","[0,0,250]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

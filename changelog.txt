@@ -1,12 +1,12 @@
-V1.4.9
+V1.5
 --------------
 New Ship: Leynos - 6DP
--Slower than Aleste, but more durable
+-Slower than Aleste, but more durable + heavier weapons
 -Damper Field in lieu of standard shield
 
 New Ship: Xyphos(AA) - 4DP
-- Effectively a more offensively tuned Xyphos
-- Still works best paired with another ship
+- more offensively tuned Xyphos with an attached Xyphos wing
+- Effectively a mobile support wing
 
 New Ship: G-Hazard - 3DP
 - Live fast, die faster
@@ -17,24 +17,24 @@ New Ship: Altagrave(RS)
 
 -Only Einhander,Garegga, and altagrave were known to indies + PL, added remaining hulls at low occurence rate
 
--WINGCOM Suite:
-- Hullmod that grants strikecraft a wing with multiple penalties
-- Has some dumb campaign-layer integration/effects
-
--Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus by checking base hull instead
+	-Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus by checking base hull instead
 
 Strikecraft:
+- Damage dealt popup/numbers should now properly display when taking damage
 - Fixed bug where game would crash if player took control of enemy strikecraft and then retreated with it (.....somehow)
+- Strikecraft will now always be disabled/destroyed after combat if hull is fully depleted, instead of a 50% chance of not needing to be recovered
 - Fixed bug where landing ship would only choose bay 0 to land at
 - Replacement Time reduction when refitting now occurs during refit time instead of after
-- Fixed bug where combat would not end if an allied / enemy strikecraft were on the field after full retreat
+- Fixed bug where combat would not end if an allied / enemy strikecraft were on the field after full retreat on the player's side
 - Trimmed description to be more concise and less fluffly
+- Strikecraft will (should?) no longer attempt to fly directly through enemy fleet to reach a carrier
 
--Altagrave's will purge all their modules once the core ship's HP passes below 50%
-	- This is actually a buff (for AI)
+-Altagrave's will purge all modules once the core ship's HP decreases below 55%
+	- This is a (AI) buff
 	- AMWS for all head variants DMG: 350->400, IGNORES_FLARES
-	- Karma ship system now benefits for Systems Expertise
+	- Karma ship system now benefits from Systems Expertise
 	- Karma Seekers: 
+		- Reduced number of projectiles generated
 		-Launch Speed: 1500-> 800
 		-Proj Speed: 1000->700
 
@@ -45,7 +45,7 @@ Ilorin:
 
 Valken X:
 - Removed Vulcan Cannon
-- Laser Blade DMG: 125->150
+- Laser Blade DMG: 125->200
 
 -Valken:
 - swapped light mortar for light assault gun
@@ -58,6 +58,8 @@ Valken X:
 Aleste:
 - Changed name to Aleste(S) to better distinguish playable and LPC version
 -Flux Capacity: 1000>1800
+-Heavy Rynex Laser will no longer target fighters
+-Dispersal Mortar will immediately detonate in close proximity to enemies
 -Added Laser Blade as an option for right arm
 -Laser Blade trails reduced to a more reasonable width/length
 -Fixed Laser Blade not doing additional emp damage on hit

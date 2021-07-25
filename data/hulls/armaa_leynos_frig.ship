@@ -110,22 +110,12 @@
     },
     {
       "id": "WS002",
-      "size": "SMALL",
-      "type": "SYNERGY",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
-      "arc": 5,
+      "arc": 10,
       "angle": 0,
-      "locations": [-17, -13],
-      "renderOrderMod": 99999
-    },
-    {
-      "id": "WS003",
-      "size": "SMALL",
-      "type": "HYBRID",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [-17, 13],
+      "locations": [-13, -14],
       "renderOrderMod": 99999
     }
   ],
