@@ -1,10 +1,10 @@
 {
-	"id":"armaa_leynos_leftPauldron_comet",  # this id must match what's in the spreadsheet
+	"id":"armaa_leynos_rightPauldron",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/leynos/armaa_leynosLeftShoulder_comet.png",
+	"turretSprite":"graphics/armaa/ships/leynos/armaa_leynosRightShoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,
@@ -20,5 +20,5 @@
 	"width":1.0,
 	"textureType":ROUGH,
 	"textureScrollSpeed":1.0,
-	"pixelsPerTexel":1.0,	
+	"pixelsPerTexel":1.0,
 }

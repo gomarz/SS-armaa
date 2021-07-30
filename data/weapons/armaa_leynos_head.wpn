@@ -1,12 +1,12 @@
 {
-  "id": "armaa_leynos_head_comet",
+  "id": "armaa_leynos_head",
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
   "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/leynos/armaa_leynosHead_comet.png",
+  "turretSprite": "graphics/armaa/ships/leynos/armaa_leynosHead.png",
   "turretGlowSprite": "graphics/armaa/ships/leynos/armaa_leynosheadglow.png",
   "hardpointSprite": "",
   "glowColor": [

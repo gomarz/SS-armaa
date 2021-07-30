@@ -46,7 +46,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordLeftArm.png",
+  "turretSprite": "graphics/armaa/ships/leynos/armaa_leynosLeftArm.png",
   "type": "DECORATIVE",
   "width": 1
 }

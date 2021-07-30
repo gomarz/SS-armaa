@@ -1,0 +1,19 @@
+{
+	"id":"armaa_siegeMode",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+        "aiScript":"data.scripts.shipsystems.ai.armaa_siegeAI",	
+	
+	"statsScript":"data.scripts.shipsystems.armaa_siegeModeStats",
+	
+	#"weaponGlowColor":[255,200,0,155],
+	"weaponGlowColor":[205,50,20,155],
+	"weaponTypes":[BALLISTIC,ENERGY],
+	"shieldRingColor":[255,66,255,255],
+	"shieldInnerColor":[255,15,100,75],
+	"shieldThicknessMult":1.1,
+	"shieldFluctuationMult":1.5,
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

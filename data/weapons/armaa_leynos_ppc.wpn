@@ -36,5 +36,5 @@
 					   "particleDuration":0.135,
 					   "particleCount":16,
 					   "particleColor":[100,110,255,255]},
-  "fireSoundTwo": "heavy_rynex_fire"
+  "fireSoundTwo": "armaa_buster_fire"
 }

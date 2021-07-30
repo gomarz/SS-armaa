@@ -5,7 +5,7 @@
 	"missileType":"ROCKET",
 	"sprite":"graphics/armaa/weapons/armaa_leynos_rocketPunch.png",
 	"size":[16,29],	
-        #"armingTime":1,
+        "armingTime":0.8,
 	"center":[9,14],
 	"collisionRadius":10,
 	"collisionClass":"MISSILE_NO_FF",

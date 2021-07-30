@@ -2,7 +2,7 @@
   "hullName": "leynos",
   "hullId": "armaa_leynos_frig",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/recordbreaker/armaa_leynos_hips.png",
+  "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
   "style": "MIDLINE",
   "height": 30,
   "width": 22,
@@ -19,11 +19,11 @@
     "reduced_explosion"
   ],
   "builtInWeapons": {
-    "B_TORSO": "armaa_record_torso",
+    "B_TORSO": "armaa_leynos_torso",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_record_leftPauldron",
-    "D_PAULDRONR": "armaa_record_rightPauldron",
-    "E_HEAD": "armaa_record_head",
+    "D_PAULDRONL": "armaa_leynos_leftPauldron",
+    "D_PAULDRONR": "armaa_leynos_rightPauldron",
+    "E_HEAD": "armaa_leynos_head",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [

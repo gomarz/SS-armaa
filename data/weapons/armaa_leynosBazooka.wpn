@@ -1,25 +1,23 @@
 {
-  "id": "armaa_leynosCorkScrew_kin",
+  "id": "armaa_leynosBazooka",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_hominglaser2_kin",
-  "type": "ENERGY",
+  "projectileSpecId": "armaa_smartbazooka_shot",
+  "type": "MISSILE",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/weapons/armaa_leynos_grenade.png",
+  "turretSprite": "graphics/armaa/weapons/armaa_leynos_grenade_00.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle_00.png",
   "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
+  "renderAboveAllWeapons": true,
   "specialWeaponGlowHeight": 1,
   "specialWeaponGlowWidth": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    49,
-    14,
-    49,
-    10.5
+    44,
+    12
   ],
   "turretAngleOffsets": [
-    0,
     0
   ],
   "hardpointOffsets": [
@@ -31,21 +29,23 @@
   ],
   "barrelMode": "LINKED",
   "animationType": "SMOKE",
+  "numFrames": 2,
+  "frameRate": 0,
   "autocharge": true,
   "smokeSpec": {
-    "particleSizeMin": 20,
+    "particleSizeMin": 15,
     "particleSizeRange": 10,
-    "cloudParticleCount": 8,
-    "cloudDuration": 1,
+    "cloudParticleCount": 6,
+    "cloudDuration": 1.1,
     "cloudRadius": 20,
-    "blowbackParticleCount": 8,
-    "blowbackDuration": 2,
+    "blowbackParticleCount": 6,
+    "blowbackDuration": 1,
     "blowbackLength": 20,
     "blowbackSpread": 20,
     "particleColor": [
-      155,
-      155,
-      155,
+      255,
+      255,
+      255,
       155
     ]
   },

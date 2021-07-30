@@ -1,61 +1,30 @@
 {
-  "id": "armaa_record_head",
-  "specClass": "beam",
-  "type": "ENERGY",
-  "size": "SMALL",
-  "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordHead.png",
-  "turretGlowSprite": "graphics/armaa/ships/recordbreaker/armaa_recordheadglow.png",
+  "convergeOnPoint": true;
+  "coreColor": [155,155,255,255],
+  #"fireSoundOne": "high_intensity_laser_intro",
+  "fireSoundTwo": "high_intensity_laser_loop",
+  "fringeColor": [0,100,255,255],
+  "glowColor": [55,255,255,255],
+  "hardpointAngleOffsets": [0],
+  "hardpointOffsets": [4,0],
   "hardpointSprite": "",
-  "glowColor": [
-    255,
-    55,
-    55,
-    255
-  ],
-  "hitGlowRadius": 0,
-  "turretOffsets": [
-    3.5,
-    -2.5,
-    3.5,
-    2.5
-  ],
-  "turretAngleOffsets": [
-    0
-  ],
-  "hardpointOffsets": [
-    4,
-    0
-  ],
-  "hardpointAngleOffsets": [
-    0
-  ],
-  "fringeColor": [
-    255,
-    100,
-    0,
-    255
-  ],
-  "coreColor": [
-    255,
-    155,
-    155,
-    255
-  ],
-  "convergeOnPoint": true,
-  "width": 6,
-  "textureType": [
-    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
-    "graphics/armaa/fx/armaa_ppa_beam_core.png"
-  ],
-  "textureScrollSpeed": 135,
-  "pixelsPerTexel": 5,
-  "pierceSet": [
-    PROJECTILE_FF,
-    PROJECTILE_NO_FF,
-    PROJECTILE_FIGHTER
-  ],
-  "fireSoundTwo": "high_intensity_laser_loop"
+  "id": "armaa_record_head",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5.0,
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 135.0,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [0],
+  "pierceSet": [PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
+  "turretGlowSprite": "graphics/armaa/ships/recordbreaker/armaa_recordheadglow.png",
+  "turretOffsets": [2.5,-2.5,2.5,2.5],
+  "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordHead.png",
+  "type": "ENERGY",
+  "width": 5.0,
 }

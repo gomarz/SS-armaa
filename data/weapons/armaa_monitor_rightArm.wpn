@@ -1,11 +1,11 @@
 {
-  "id": "armaa_monitor_leftArm",
+  "id": "armaa_monitor_rightArm",
   "specClass": "projectile",
   "projectileSpecId": "hellbore_shot",
   "type": "BALLISTIC",
   "size": "MEDIUM",
-  "turretSprite": "graphics/armaa/ships/garegga/leftArm0.png",
-  "turretGunSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_leftArm.png",
+  "turretSprite": "graphics/armaa/ships/garegga/00.png",
+  "turretGunSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_rightArm.png",
   "hardpointSprite": "",
   "showDamageWhenDecorative": true,
   "visualRecoil": 2,
@@ -14,10 +14,10 @@
   ],
   "turretOffsets": [
     66,
-    8
+    -8
   ],
   "turretAngleOffsets": [
-    -1
+    1
   ],
   "hardpointOffsets": [
     0,
@@ -28,6 +28,7 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
   "muzzleFlashSpec": {
     "length": 65,
     "spread": 15,

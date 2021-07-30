@@ -36,12 +36,10 @@
   "turretAngleOffsets": [
     0
   ],
-  "turretGunSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
   "turretOffsets": [
     18,
     0
   ],
-  "turretSprite": "",
   "type": "ENERGY",
-  "visualRecoil": 1
 }

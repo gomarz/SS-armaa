@@ -4,7 +4,7 @@
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/recordbreaker/armaa_recordRightShoulder_comet.png",
+	"turretSprite":"graphics/armaa/ships/leynos/armaa_leynosRightShoulder_comet.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

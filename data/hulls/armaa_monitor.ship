@@ -1,20 +1,23 @@
 {
   "hullName": "Monitor",
   "hullId": "armaa_monitor",
-  "hullSize": "FRIGATE",
-  "spriteName": "graphics/ships/monitor_ff2.png",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/mechamonitor/armaa_monitor.png",
   "style": "MIDLINE",
-  "height": 70,
+  "height": 85,
   "width": 110,
-  "center": [55, 30],
+  "center": [55, 47.5],
   "collisionRadius": 104.5,
-  "shieldCenter": [-1, 0],
+  "shieldCenter": [0, -0],
   "shieldRadius": 102,
   "viewOffset": 0,
   "builtInMods": [
     "fluxshunt"
   ],
   "builtInWeapons": {
+    "E_DECO": "armaa_monitor_deco",
+    "E_DECO_R": "armaa_monitor_deco_right",
+    "E_GLOW": "armaa_monitor_glow",
     "E_LARM": "armaa_monitor_leftArm",
     "E_LSHOULDER": "armaa_monitor_leftPauldron",
     "E_RARM": "armaa_monitor_rightArm",
@@ -22,32 +25,51 @@
   },
   "weaponSlots": [
     {
-      "id": "WS 004",
+      "id": "E_GLOW",
       "size": "SMALL",
-      "type": "UNIVERSAL",
+      "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
-      "angle": -45,
-      "locations": [12, -21]
+      "arc": 0,
+      "angle": 0,
+      "locations": [-5, -0]
     },
-
     {
       "id": "E_LSHOULDER",
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 55,
+      "arc": 65,
       "angle": 30,
-      "locations": [4, 40]
+      "locations": [-11, 40]
+    },
+    {
+      "id": "E_DECO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [17, 22],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "E_DECO_R",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [17, -22],
+      "renderOrderMod": 1000
     },
     {
       "id": "E_LARM",
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 65,
+      "arc": 70,
       "angle": 30,
-      "locations": [9, 52],
+      "locations": [-6, 50],
       "renderOrderMod": -99998
     },
     {
@@ -55,33 +77,42 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 55,
+      "arc": 65,
       "angle": -30,
-      "locations": [4, -40]
+      "locations": [-11, -40]
     },
     {
       "id": "E_RARM",
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 65,
+      "arc": 70,
       "angle": -30,
-      "locations": [9, -52],
+      "locations": [-6, -50],
       "renderOrderMod": -99998
     },
     {
-      "id": "WS0002",
-      "size": "LARGE",
-      "type": "STATION_MODULE",
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 30,
       "angle": 0,
-      "locations": [39, -0]
+      "locations": [17, 22]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": -0,
+      "locations": [17, -22]
     }
   ],
   "engineSlots": [
     {
-      "location": [-27, 45],
+      "location": [-44.5, 45],
       "length": 24,
       "width": 8,
       "angle": 180,
@@ -89,7 +120,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-29, 39],
+      "location": [-46.5, 39],
       "length": 32,
       "width": 12,
       "angle": 180,
@@ -97,7 +128,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-29, 33],
+      "location": [-46.5, 33],
       "length": 32,
       "width": 12,
       "angle": 180,
@@ -105,7 +136,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-28, 28],
+      "location": [-45.5, 28],
       "length": 24,
       "width": 8,
       "angle": 180,
@@ -113,7 +144,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-28, -27],
+      "location": [-45.5, -27],
       "length": 24,
       "width": 8,
       "angle": 180,
@@ -121,7 +152,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-29, -32],
+      "location": [-46.5, -32],
       "length": 32,
       "width": 12,
       "angle": 180,
@@ -129,7 +160,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-29, -38],
+      "location": [-46.5, -38],
       "length": 32,
       "width": 12,
       "angle": 180,
@@ -137,7 +168,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-27, -44],
+      "location": [-44.5, -44],
       "length": 24,
       "width": 8,
       "angle": 180,
@@ -146,15 +177,17 @@
     }
   ],
   "bounds": [
-    5, 54,
-    33, 0,
-    4, -53,
-    -23, -46,
-    -26, -27,
-    -19, -24,
-    -18, 0,
-    -19, 23,
-    -27, 25,
-    -24, 46
+    -12.5, 54,
+    31.5, 20,
+    37, 0,
+    32, -20,
+    -13.5, -53,
+    -40.5, -46,
+    -43.5, -27,
+    -36.5, -24,
+    -35.5, 0,
+    -36.5, 23,
+    -44.5, 25,
+    -41.5, 46
   ]
 }
