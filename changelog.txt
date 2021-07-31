@@ -2,7 +2,7 @@ V1.5
 --------------
 New Ship: Leynos - 6DP
 -Slower than Aleste, but more durable + heavier weapons
--Damper Field in lieu of standard shield
+-Damper Field in lieu of standard shield.
 
 New Ship: Xyphos(AA) - 4DP
 - more offensively tuned Xyphos with an attached Xyphos wing
