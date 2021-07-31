@@ -3,7 +3,7 @@
   "specClass": "projectile",
   "projectileSpecId": "hellbore_shot",
   "type": "BALLISTIC",
-  "size": "MEDIUM",
+  "size": "LARGE",
   "turretSprite": "graphics/armaa/ships/garegga/leftArm0.png",
   "turretGunSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_leftArm.png",
   "hardpointSprite": "",

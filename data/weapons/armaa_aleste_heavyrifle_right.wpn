@@ -47,6 +47,6 @@
     -12.5
   ],
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "type": "BALLISTIC",
+  "type": "ENERGY",
   "visualRecoil": 5
 }
