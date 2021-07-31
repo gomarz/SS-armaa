@@ -38,7 +38,7 @@ Strikecraft:
 		- Reduced number of projectiles generated
 		-Launch Speed: 1500-> 800
 		-Proj Speed: 1000->700
-
+        - Fixed Ear killing shotgun sound used by altagrave ex
 Ilorin:
 -Removed ECCM from Ilorin
 -Ilorin Rocket Speed: 150->50
