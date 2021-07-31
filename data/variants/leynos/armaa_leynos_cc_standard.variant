@@ -1,40 +1,45 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 7,
-  "goalVariant": false,
-  "fluxVents": 10,
-  "hullId": "armaa_leynos_frig_comet",
-  "hullMods": ["armaa_selector_stake","armaa_selector_shotgun","heavyarmor"],
   "variantId": "armaa_leynos_cc_standard",
+  "hullId": "armaa_leynos_frig_comet",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 7,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armaa_selector_stake",
+    "armaa_selector_shotgun",
+    "heavyarmor"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_leynos_autocannon_right",
+        "WS002": "hveldriver"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "C_ARML": "armaa_leynosBoostKnuckle",
-      }
+      "weapons": {}
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_sprigganHead",
+        "E_HEAD": "armaa_leynos_head_comet"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS002": "railgun",
-      }
-    },
+      "weapons": {}
+    }
   ],
- "wings": ["armaa_valkenmp_wing"]
+  "modules": [],
+  "wings": [
+    "armaa_valkenmp_wing"
+  ]
 }

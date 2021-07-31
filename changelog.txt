@@ -11,7 +11,8 @@ New Ship: Xyphos(AA) - 4DP
 New Ship: G-Hazard - 3DP
 - Live fast, die faster
 
-New Ship: Altagrave(RS)
+New Ship: Watchdog - 10DP
+- Fire Support Mobile Armor
 
 -Added Nex Mercenary company
 

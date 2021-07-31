@@ -21,6 +21,9 @@
 			"beam_trail_helix":"graphics/armaa/fx/armaa_projectile_contrail_helix.png",
 			#vayra helix trail
 			"glaive_trail_helix":"graphics/armaa/fx/trails_doublehelix.png",
+			"nottahlan_trail_dhelix":"graphics/armaa/fx/armaa_trails_dhelix.png",
+			"nottahlan_trail_zappy":"graphics/armaa/fx/armaa_trails_zappy.png",
+			"nottahlan_trail_fuzzy":"graphics/armaa/fx/armaa_trails_fuzzy.png",
 		},
 		"portraits":{
 			"armaa_portrait_shard":"graphics/armaa/portraits/armaa_ai.png",

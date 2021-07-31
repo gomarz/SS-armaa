@@ -1,0 +1,25 @@
+{
+  "variantId": "armaa_monitor_standard",
+  "hullId": "armaa_monitor",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "E_LARM": "armaa_monitor_leftArm",
+        "E_RARM": "armaa_monitor_rightArm",
+        "WS0001": "heavymauler",
+        "WS0003": "hveldriver"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

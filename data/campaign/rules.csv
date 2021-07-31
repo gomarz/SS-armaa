@@ -5,31 +5,31 @@ $faction.id == independent
 $market.id == armaa_meshanii_market","AddText ""One of the crewmembers aboard the shuttle with you note that several prominently placed, futuristic billboards starkly contrast with the decidely archaiac  architecture of several buildings you've seen as your shuttle makes it's way to the landing zone. When ArmaA gained rights to administer this colony, it seems to have produced a peculiar melting pot of consumerism in excess with the more subdued and traditional sensibilities of the colonies original denizens. As if on cue, two security officers in bizzarely ornate power armor meander into view, ostensibly to deal with some kind of ruckus."" marketFlavorTextColor
 AddText ""The haze of pollution hangs thick above you, but the people here seem to be getting along well enough - or at least what qualifies as 'well enough' in the Sector, these days."" marketFlavorTextColor",,,
 ,,,,,,
-nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == crimsonComet,,"A featureless armored faceplate stares back at you. 
+nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == rocketStars,,"A featureless armored faceplate stares back at you. 
 
-She doesn't speak.",,
-nex_mercMeetBlurbCrimsonInsulted,Nex_MercMeetBlurb,"$nex_mercCompanyId == crimsonComet
+""Ah, hello there! Are you in need of the skills of mercenaries with -real- talent?""",,
+nex_mercMeetBlurbCrimsonInsulted,Nex_MercMeetBlurb,"$nex_mercCompanyId == rocketStars
 $nex_mercInsulted score:5",SetEnabled nex_mercHire false,"Much like your last encounter, the faceplate of the $nex_mercRank greets you. This time, however, $nex_mercHisOrHer voice cuts the silence first.
 
 ""I have no business with you.""",,
-nex_mercHireBlurbCrimson,Nex_MercHireBlurb,$nex_mercCompanyId == crimsonComet,,"""Affirmative. Let me gather my things.""
+nex_mercHireBlurbCrimson,Nex_MercHireBlurb,$nex_mercCompanyId == rocketStars,,"""Affirmative. Let me gather my things.""
 
-A red-hued mobile armor joins  up with your $shipOrFleet a short period later.",,
+A small band of warcraft join up with your $shipOrFleet a short period later.",,
 ,,,,,,
-nex_mercLeaving_letGoBlurbGeneric,Nex_MercLetGoBlurb,$nex_mercCompanyId == crimsonComet,AdjustRepActivePerson COOPERATIVE 3,"""It's been....a pleasure. Farewell.""
+nex_mercLeaving_letGoBlurbGeneric,Nex_MercLetGoBlurb,$nex_mercCompanyId == rocketStars,AdjustRepActivePerson COOPERATIVE 3,"""It's been....a pleasure. Farewell.""
 
 You accept $hisOrHer decision professionally and, after exchanging a few pleasantries, cut the comm link.",,
 ,,,,,,
 ,,,,,,
 ,,,,,,
 nex_mercLeaving_checkCrimsonDebt,Nex_MercsLeavingGreeting,"$player.inDebt score:5
-$nex_mercCompanyId == crimsonComet","ShowPersonVisual 
+$nex_mercCompanyId == rocketStars","ShowPersonVisual 
 FireBest Nex_MercLeavingOptions","I don't do charity work, Commander. Find me when your finances are in order.",,
 nex_mercLeaving_letGoBlurbJerkCrimson,Nex_MercLetGoBlurb,"$nex_mercLetGoType == jerk score:5
-$nex_mercCompanyId == crimsonComet",AdjustRepActivePerson INHOSPITABLE -5,"Crimson allows you to finish your tirade. There is a brief silence before they chuckle creepily, cutting the comm.",,
+$nex_mercCompanyId == rocketStars",AdjustRepActivePerson INHOSPITABLE -5,"Crimson allows you to finish your tirade. There is a brief silence before they chuckle creepily, cutting the comm.",,
 ,,,,,,
 nex_mercLeaving_letGoBlurbRefusePayCrimson,Nex_MercLetGoBlurb,"$nex_mercLetGoType == refusePay score:5
-$nex_mercCompanyId == crimsonComet",AdjustRepActivePerson INHOSPITABLE -5,"The $personRank stares at you, faceplate masking their true reaction.
+$nex_mercCompanyId == rocketStars",AdjustRepActivePerson INHOSPITABLE -5,"The $personRank stares at you, faceplate masking their true reaction.
 
 ""Word about people like you spreads fast, $playerName. I'll see you very soon..heh heh heh.""
 
