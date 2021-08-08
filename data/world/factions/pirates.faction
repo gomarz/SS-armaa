@@ -4,13 +4,12 @@
 		"fighters":
 		[
 			"armaa_valkenmp_wing",
-			"armaa_ilorin_wing",
 		],
 	},
 	"knownShips":{
 		"hulls":[	
-
 				"armaa_xyphos",
+				"armaa_hazard_frig",
 			],
 },	
 }

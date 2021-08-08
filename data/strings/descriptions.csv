@@ -8,6 +8,11 @@ In its final iteration, the Einhänder came with capabilities matching that of t
 Unfortunately, the massive costs and logistical requirements for a single strikecraft, no matter how effective, could not be justified to the supervisory board, and LPC production allegedly never commenced. Years later, a number of these were delivered to the ArmaA R&D division located in the Persean Sector prior to the Collapse for undisclosed purposes.
 
 The units that survived the ensuing crises that engulfed the sector are by and large a rarity - some remain in storage, according to official ArmaA Corporation statements, while others became heirlooms passed throughout the generations.",,,
+
+armaa_monitor,SHIP,"Destroyer-grade platform that emphasizes long-range fire support as opposed to head on confrontation. While especially effective against larger, slower targets, low flux capacity and manuverability can lead to it being easily overwhelmed without a covering force to support it.
+
+Some cycles before the First AI War, the discovery of a peculiar machine sparked a new branch in weapons development for the ArmaA corp. The Garegga was born as an evolutionary bridge of sorts between ArmaA's own technological base and the fairly complex one discovered, but many aspects of the vessel could not be replicated. To that end, an even larger design was developed to further iterate upon the concept. A deal was brokered between Ko Combine and ArmaA that granted them access to a number of Monitor-class frigates and limited production rights to several of its key components, which were used as the core for the Watchdog series.",,,
+
 armaa_valkenmp,SHIP,"Generally considered no better than a Talon, the Valken series trades quantity and speed for enhanced offensive capability against larger ships. The greatest caveat to this boon is that they are only somewhat better protected than it's comparate, meaning few pilots live long enough to fully utilize this potential without additional assistance. 
 
 The premiere Cataphract-class design, the Valken won out over its competitor concepts with the rationalization that high-performance strikecraft were wasted on pilots whose average life expectancy could be highballed in minutes. In order to offset the expensive hardware necessary to develop a combat-viable machine that could operate effectively in space and land, sweeping cuts were made in as many aspects as possible, especially anything deemed non-vital to performance. The artificial muscles utilized by the unit enable locomotion via a cost efficient fluid, which coincidentally had the unfortunate characteristic of being highly flammable. In short, a critical strike to the torso generally resulted in an explosion when the internal ammo storage for the built-in mortar was breached, which conveniently rested directly below the cockpit. If by some miracle the pilot survived, they would be summarily cooked alive. 
@@ -99,6 +104,8 @@ armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' 
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 
+armaa_curvyLaser,WEAPON,"""... the energy mass pulses and undulates as if it were alive. I almost feel bad watching it expend its energy before self-terminating.""",- Chief Mechanic,,
+
 armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
@@ -133,7 +140,10 @@ armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like
 
 In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,
 armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
-armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",
+armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
+armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,
+armaa_siegeMode,SHIP_SYSTEM,"Halves top speed and turn rate, while increasing weapon range by the same level, and increasing shield efficiency.",,,
+armaa_plasmaJets,SHIP_SYSTEM,"Grants an tremendous speed boost in the given direction briefly.",,,
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,
 armaa_pdamper,SHIP_SYSTEM,"Decreases damage taken by 40%, with 60% time dilation effect.",,,
 armaa_mpdamper,SHIP_SYSTEM,"Speeds up timeflow by 30%, reduces damage by 20%.",,,

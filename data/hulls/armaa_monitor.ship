@@ -69,7 +69,7 @@
       "mount": "TURRET",
       "arc": 70,
       "angle": 30,
-      "locations": [-6, 50],
+      "locations": [-6, 47],
       "renderOrderMod": -99998
     },
     {
@@ -88,7 +88,7 @@
       "mount": "TURRET",
       "arc": 70,
       "angle": -30,
-      "locations": [-6, -50],
+      "locations": [-6, -47],
       "renderOrderMod": -99998
     },
     {
@@ -108,6 +108,26 @@
       "arc": 30,
       "angle": -0,
       "locations": [17, -22]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 65,
+      "angle": -40,
+      "locations": [-8, -21],
+      "renderOrderMod": 1001
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 65,
+      "angle": 40,
+      "locations": [-8, 21],
+      "renderOrderMod": 1001
     }
   ],
   "engineSlots": [
