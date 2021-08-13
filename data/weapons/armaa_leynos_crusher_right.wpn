@@ -1,0 +1,43 @@
+{
+  "id": "armaa_leynos_crusher_right",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_leynos_crusher_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_crusherEffect",
+  "turretSprite": "graphics/armaa/weapons/armaa_leynos_buster.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_buster.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+	"fireSoundTwo":"heavy_blaster_fire",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    49,
+    -16,
+    49,
+    -8
+  ],
+  "turretAngleOffsets": [
+    0.5,
+    0
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "interruptibleBurst": true,
+  "animationType": "MUZZLE_FLASH",
+	"muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":5.0,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":15.0,
+					   "particleDuration":0.15,
+					   "particleCount":25,
+					   "particleColor":[100,255,200,205]}	
+}

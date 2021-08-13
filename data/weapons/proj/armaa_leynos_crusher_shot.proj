@@ -1,0 +1,22 @@
+{
+	"id":"armaa_leynos_crusher_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+        "onHitEffect":"data.scripts.weapons.armaa_crusherEffect",
+	"length":30.0,
+	"width":15,
+	"fadeTime":0.3,
+	"darkCore": false,
+	"fringeColor":[0,255,125,200],
+	"coreColor":[200,255,255,210],
+	"glowColor":[00,180,120,100],
+	"glowRadius":60,
+	"hitGlowRadius":50,	
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":64.0,
+
+	"pixelsPerTexel":1.0
+
+}

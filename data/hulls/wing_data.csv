@@ -1,5 +1,5 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number,,,,,,,,,,,,,,,,,,
-armaa_kouto_wing,armaa_kouto_Standard,"support2, support, high, armaa_cataphract_bp,cataphract,rare_bp",2,0.3,5,13,DIAMOND,2000,550,-300,1,SUPPORT,Heavy Cataphract,15,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_kouto_wing,armaa_kouto_Standard,"fighter2, fighter, high, armaa_cataphract_bp,cataphract,rare_bp",2,0.3,5,13,DIAMOND,4000,550,-300,1,FIGHTER,Heavy Cataphract,15,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t",3,0.4,4,10,V,4000,550,0,2,FIGHTER,Close Combat,15,6500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_valkencannon_wing,armaa_valkencannon_Standard,"bomber3,bomber,armaa_advcataphract_bp,cataphract,merc,rare_bp",3,0.2,5,16,BOX,4000,1000,100,1,BOMBER,Adv. Strike Cataphract,25,14000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_ilorin_wing,armaa_ilorin_standard,"bomber3,bomber,armaa_cataphract_bp,cataphract,rare_bp",2,0.3,4,15,BOX,4000,1200,,2,BOMBER,Assault Mech,15,10000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,

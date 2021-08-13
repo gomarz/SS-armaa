@@ -91,9 +91,9 @@ R ARM:SHOTGUN,armaa_selector_shotgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmo
 The %s fires a burst of projectiles in a tight cone that can chew through armor.
 
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM:MINIGUN,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM:CRUSHER,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-The %s has an unparalleled fire rate, easily shredding lightly armored targets. It cannot easily defeat armor or shielding on its own and is best paired with weapon that can.
+The %s fires a two-round burst of anti-armor bolts. Has the greatest range of all weapons that can be fitted to the HAND units.
 %s",,graphics/armaa/hullmods/hand_r.png
 R ARM:AUTOCANNON,armaa_selector_ac,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_ac,"HAND weapons can be changed to better suit the pilot's preferences. 
 

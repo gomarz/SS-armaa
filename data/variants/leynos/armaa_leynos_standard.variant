@@ -4,7 +4,7 @@
   "goalVariant": true,
   "fluxVents": 10,
   "hullId": "armaa_leynos_frig",
-  "hullMods": ["armaa_selector_fist","armaa_selector_ac"],
+  "hullMods": ["armaa_selector_fist","armaa_selector_minigun"],
   "variantId": "armaa_leynos_standard",
   "weaponGroups": [
     {
