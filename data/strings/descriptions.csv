@@ -110,6 +110,37 @@ armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords'
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 
+armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath it's oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces.","",,
+
+armaa_leynos_autocannon_right,WEAPON,"A dependable and trustworthy autocannon. It's destructive potential is well known planetside, although it does not fair quite as well against the heavier armor of many starship-grade vessels.","",,
+
+armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by a minor damper field. The launched appendage handily stresses shield generators and has enough force behind it deal some damage to armor and hull, but can be handily intercepted by point defenses.","",,
+
+armaa_leynos_ppc,WEAPON,"A devastating energy weapon that inflicts damage near-instantaneously. Starship-grade shielding and armor can easily dissipate the majority of the energy output by this weapon, but a direct shot without concern for these factors have been known to severely cripple - if not outright obliterate - even destroyer-grade ships.","",,
+
+armaa_leynosBazooka,WEAPON,"Fires a tight cluster of rocket-mines that activate on proximity to hostile forces. Best employed where point-defenses are minimal, and and effective weapon against clusters of strikecraft in a pinch.","",,
+
+armaa_leynos_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
+
+armaa_leynos_head_comet,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
+
+armaa_valken_torso_gunmetal,WEAPON,"A small caliber cannon designed for close-range fights, excellent versus armor and with a superb fire rate.
+Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.","",,
+
+
+armaa_valken_gun,WEAPON,"A variant of the sector-standard railgun that fires a burst of slugs instead of a singular round.","",,
+
+armaa_valken_missile,WEAPON,"Miniature missiles. Easily intercepted, they are generally fired in large quantities to ensure at least a few breach point defense fields.","",,
+
+armaa_valkenx_torso,WEAPON,"A medium range energy cannon that delivers an electro-magnetic pulse (EMP) and can quickly disable enemy systems/engines.","",,
+
+armaa_chaingun,WEAPON,"The Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel..","",,
+
+armaa_valkenxLeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
+
+Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
+
+
 armaa_aleste_flamer_right,WEAPON,"Evolution of the DR-79 plasma gatling. Rather short-ranged, but deadly in close-quarters combat.",,,
 armaa_altagrave_rightArm,WEAPON,"Fires nanomachines encased in a plasma sheathe shaped by the device's electromagnetic field. The resulting smart projectile produces a brilliant trail of energy while launched and has limited homing capability, although it fares rather poorly against small targets. Precise shots on the drone itself is enough to disrupt and destroy these projectiles.",,,
 armaa_altagrave_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
