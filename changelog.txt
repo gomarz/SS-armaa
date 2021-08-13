@@ -1,5 +1,5 @@
 V1.5
--------------------------------
+------------------------------------
 New Ship: Leynos - 6DP
 -Slower than Aleste, but more durable + heavier weapons
 -Damper Field in lieu of standard shield.
