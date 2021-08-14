@@ -1,40 +1,45 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 7,
-  "goalVariant": true,
-  "fluxVents": 10,
-  "hullId": "armaa_leynos_frig",
-  "hullMods": ["armaa_selector_fist","armaa_selector_minigun"],
   "variantId": "armaa_leynos_standard",
+  "hullId": "armaa_leynos_frig",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 6,
+  "fluxVents": 8,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armaa_selector_fist",
+    "armaa_selector_minigun",
+    "heavyarmor"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_leynos_autocannon_right",
+        "WS002": "heavyac"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "C_ARML": "armaa_leynosBoostKnuckle",
-      }
+      "weapons": {}
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_sprigganHead",
+        "E_HEAD": "armaa_leynos_head"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS002": "railgun",
-      }
-    },
+      "weapons": {}
+    }
   ],
- "wings": ["armaa_valkenmp_wing"]
+  "modules": [],
+  "wings": [
+    "armaa_valkenmp_wing"
+  ]
 }

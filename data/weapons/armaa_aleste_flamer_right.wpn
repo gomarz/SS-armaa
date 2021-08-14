@@ -2,11 +2,9 @@
   "id": "armaa_aleste_flamer_right",
   "specClass": "projectile",
   "projectileSpecId": "armaa_flamer_shot",
-  #"projectileSpecId": "armaa_curvylaser_mirv",
   "type": "ENERGY",
   "size": "SMALL",
- "everyFrameEffect": "data.scripts.weapons.armaa_flamerEffect",
- # "everyFrameEffect": "data.scripts.weapons.armaa_curvyLaserMirvEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_flamerEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_alesteflamerGunBarrel.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
@@ -16,8 +14,8 @@
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    45,
-    -6.5
+    46,
+    -13.5
   ],
   "turretAngleOffsets": [
     0.5
@@ -47,5 +45,5 @@
     ]
   },
   "mountTypeOverride": "HYBRID",
-  "unaffectedByProjectileSpeedBonuses": true,
+  "unaffectedByProjectileSpeedBonuses": true
 }

@@ -2,8 +2,8 @@ name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating
 Einhänder,armaa_einhander,Cataphract,Arma Armatura,armaa_energysurge,11,750,275,1000,,200,30,1,170,200,200,130,180,60,PHASE,armaa_pdamper,,,,0.1,0.1,2,0,0,0,0.5,,11,40000,8,40,100,0.25,11,11,"SHIP_WITH_MODULES, PHASE","rare_bp,fake_fighter,independent_of_carrier,merc",0.25,0.5,8,8,1,,,,,,,
 Einhänder,armaa_einhander_ftr,Cataphract,Arma Armatura,armaa_energysurge2,,750,300,1000,,200,,,170,200,200,130,180,60,PHASE,phasecloak,,,,0.08,0.08,2,0,0,0,0.5,,11,14000,25,20,,,1,1,,,0.7,0.5,8,8,1,,,,,,,
 Valken,armaa_valkenmp,Fodder Cataphract,Arma Armatura,armaa_fireboltfeed,,400,30,150,,50,,,275,325,250,100,100,50,NONE,,,,,,,1,1,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
-Gunhazard,armaa_hazard_frig,Cataphract,Arma Armatura,ammofeed,3,425,100,800,,125,15,,280,330,275,180,250,50,PHASE,armaa_plasmaJets,360,,0.95,,,1,0,0,0,0.5,,11,15000,10,5,100,0.25,3,3,,armaa_cataphract_bp,0.6,1,3,5,2,,,,,,,
-Valken-X,armaa_valkenx,Gen. Purpose Cataphract,Arma Armatura,,,750,100,550,,100,,,180,200,200,100,100,60,PHASE,armaa_oboost2,,,1,0.05,0.05,2,2,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
+Gunhazard,armaa_hazard_frig,Cataphract,Arma Armatura,ammofeed,3,425,100,800,,125,15,,280,330,275,180,250,50,PHASE,armaa_plasmaJets,360,,0.95,,,1,0,0,0,0.5,,11,15000,10,5,100,0.25,3,3,,armaa_cataphract_bp,0.2,1,3,5,2,,,,,,,
+Valken-X,armaa_valkenx,Gen. Purpose Cataphract,Arma Armatura,,,800,125,550,,100,,,180,200,200,100,100,60,PHASE,armaa_oboost2,,,1,0.05,0.05,2,2,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
 Kouto,armaa_kouto,Vanguard Cataphract,Arma Armatura,armaa_overshield,,700,55,2000,,125,,,130,150,150,90,90,60,OMNI,,540,,1,,,1,1,0,0,0.5,,1,25000,25,25,,,1,1,,,0.5,1,3,5,3,,,,,,,
 Bihänder,armaa_valkencannon,Anti-Ship Cataphract,Arma Armatura,,,700,200,1000,,150,,,155,200,170,120,180,55,NONE,,,,1,,,2,2,0,0,0.5,,1,25000,25,1,,,1,1,,,0.7,1,3,5,4,,,,,,,
 Ilorin,armaa_ilorin,Assault Cataphract,Arma Armatura,,,1250,100,150,,20,,,140,110,110,65,65,70,NONE,,,,,,,3,3,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
@@ -12,9 +12,9 @@ Leynos,armaa_leynos_frig,Heavy Cataphract,Arma Armatura,armaa_amalgamatefeed,6,1
 Leynos (RS),armaa_leynos_frig_comet,Heavy Cataphract,Arma Armatura,temporalshell,11,1400,300,1500,,175,45,,120,130,130,90,90,80,PHASE,armaa_damper,60,,0.9,,,1,0,0,0,0.5,,11,30000,10,15,150,0.25,11,11,,"fake_fighter,independent_of_carrier,merc",0.5,1,3,5,3,,,,,,,
 Aleste,armaa_aleste,Gen. Purpose Cataphract,Arma Armatura,armaa_claw,,1250,150,2000,,200,,,165,165,165,115,115,65,NONE,,75,,1,,,3,5,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
 Aleste (S),armaa_aleste_frig,Cataphract,Arma Armatura,armaa_mb,6,1250,150,2500,,200,35,,165,165,165,115,115,70,OMNI,NONE,120,0.4,0.85,,,1,0,0,0,0.5,,11,30000,8,25,110,0.25,6,6,,"rare_bp,fake_fighter,independent_of_carrier, hist1t,armaa_advcataphract_bp",0.5,0.1,1,5,2,,,,,,,
-Gallant,armaa_gallant,Beam Bomber,Arma Armatura,,,500,30,500,,50,,,160,200,200,90,120,50,OMNI,,145,,1,,,2,2,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
-Xyphos (AA),armaa_xyphos,Fighter,Arma Armatura,drone_sensor,5,450,75,1000,,50,30,,175,300,250,180,180,30,OMNI,,160,0.1,0.8,,,2,0,0,0,0.5,,11,25000,10,20,120,0.25,5,5,,"rare_bp,fake_fighter,independent_of_carrier, hist1t,CARRIER, COMBAT, NO_AUTO_ESCORT,merc",0.8,1,1,1,,,,0,,,,103
-Thunder (AA),armaa_thunder,,Arma Armatura,displacer,2,500,75,750,,100,30,,450,600,500,150,300,30,NONE,,0,0,0,,,1,0,0,0,0.5,,11,18000,8,15,155,0.25,2,2,,"rare_bp,fake_fighter,independent_of_carrier, hist1t",0.5,1,1,1,,,,0,,,,111
+Gallant,armaa_gallant,Beam Bomber,Arma Armatura,,,500,15,500,,100,,,160,200,200,90,120,50,OMNI,,145,,1,,,2,2,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,1,3,5,2,,,,,,,
+Xyphos (AA),armaa_xyphos,Fighter,Arma Armatura,drone_sensor,5,450,75,1000,,50,30,,175,300,250,180,180,30,OMNI,,160,0.1,0.8,,,2,0,0,0,0.5,,11,25000,10,20,120,0.25,5,5,,"rare_bp,fake_fighter,independent_of_carrier, hist1t,CARRIER, COMBAT, NO_AUTO_ESCORT,merc",0.8,0.5,1,1,,,,0,,,,103
+Thunder (AA),armaa_thunder,,Arma Armatura,displacer,2,500,75,750,,100,30,,450,600,500,150,300,30,NONE,,0,0,0,,,1,0,0,0,0.5,,11,18000,8,15,155,0.25,2,2,,"rare_bp,fake_fighter,independent_of_carrier, hist1t",0.5,0.5,1,1,,,,0,,,,111
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Seperate hulls instead of skins since they don�t properly spawn in markets for some reason,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #MA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -27,7 +27,7 @@ Altagrave[RS],armaa_altagrave_r,Mobile Armor,Arma Armatura,armaa_karma,20,3000,4
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Garegga,armaa_garegga,Cataphract ASM,Arma Armatura,armaa_silverSword,9,2000,300,2750,6667,295,45,,120,150,150,85,190,180,FRONT,,270,0.25,0.8,,,5,0,0,10,1,20,9,42000,8,20,300,0.25,9,9,,"rare_bp, hist1t",0.7,0.4,2,4,309,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Watchdog,armaa_monitor,Mobile Armor,Midline,armaa_siegeMode,10,4500,800,5000,1500,210,85,,65,50,45,35,40,200,FRONT,,140,1,1,,,15,30,30,20,1,20,10,25000,5,10,400,0.25,10,10,,,0.5,2,2,,214,,,,,,,
+Watchdog,armaa_monitor,Mobile Armor,Arma Armatura,armaa_siegeMode,10,4500,800,5000,1500,210,85,,65,50,45,35,40,200,FRONT,,140,1,1,,,45,90,90,90,1,20,9,46000,5,10,400,0.25,10,10,,"rare_bp, hist1t,merc,armaa_mobilearmo",0.5,2,2,,214,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Front Armor ,armaa_monitor_armor,Module,,forgevats_station,,1000,300,2400,,500,30,,250,400,300,60,90,200,NONE,,120,0,1,,,0,0,,,,,,,,,,,,,,,,,,,,,,0.4,2,2,,7
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

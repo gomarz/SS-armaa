@@ -3,7 +3,7 @@
   "hullId": "armaa_leynos_frig_comet",
   "displayName": "Standard",
   "goalVariant": false,
-  "fluxCapacitors": 7,
+  "fluxCapacitors": 8,
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],

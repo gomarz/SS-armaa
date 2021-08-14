@@ -119,6 +119,13 @@ Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 
 armaa_curvyLaser,WEAPON,"""... the energy mass pulses and undulates as if it were alive. I almost feel bad watching it expend its energy before self-terminating.""",- Chief Mechanic,,
 
+armaa_monitor_leftArm,WEAPON,"Huge cannon, which fires slow-moving plasma-charged projectiles. Rounds are highly effective versus armor, and obliterate any hull structure left underneath.
+A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.","",,
+
+armaa_monitor_rightArm,WEAPON,"Huge cannon, which fires slow-moving plasma-charged projectiles. Rounds are highly effective versus armor, and obliterate any hull structure left underneath.
+A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.","",,
+
+
 armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
