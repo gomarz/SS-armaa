@@ -72,7 +72,7 @@
   "weaponSlots": [
     {
       "angle": 0,
-      "arc": 15,
+      "arc": 25,
       "id": "WS0001",
       "locations": [
         17,

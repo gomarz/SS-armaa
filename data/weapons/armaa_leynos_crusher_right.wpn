@@ -2,14 +2,14 @@
   "id": "armaa_leynos_crusher_right",
   "specClass": "projectile",
   "projectileSpecId": "armaa_leynos_crusher_shot",
-  "type": "BALLISTIC",
+  "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_crusherEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_leynos_buster.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_buster.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-	"fireSoundTwo":"heavy_blaster_fire",
+  "fireSoundTwo":"armaa_crusher_fire",
   "renderHints": [
     RENDER_BARREL_BELOW
   ],

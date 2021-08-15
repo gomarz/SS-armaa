@@ -34,7 +34,7 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,10000,,,,15,9999,9999,9999,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing.,,graphics/icons/markets/headquarters.png
+WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,10000,,,,15,9999,9999,9999,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft.,,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png

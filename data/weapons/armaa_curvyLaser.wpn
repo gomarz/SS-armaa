@@ -6,7 +6,7 @@
   "size": "LARGE",
   "everyFrameEffect": "data.scripts.weapons.armaa_curvyEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_curvyLaser.png",
-  "hardpointSprite": "graphics/armaa/weapons/armaa_curvyLaser.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_curvyLaser_hardpoint.png",
   "fireSoundTwo":"amsrm_fire",
   "renderHints": [
     RENDER_BARREL_BELOW

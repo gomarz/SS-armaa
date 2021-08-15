@@ -58,6 +58,12 @@
         {"file":"sounds/armaa/armaa_buster_fire.ogg","pitch":1.03,"volume":1.01},
 
         ],
+        "armaa_crusher_fire":[
+        {"file":"sounds/armaa/armaa_crusher_fire.ogg","pitch":0.97,"volume":0.99},
+        {"file":"sounds/armaa/armaa_crusher_fire.ogg","pitch":1.00,"volume":1.00},
+        {"file":"sounds/armaa/armaa_crusher_fire.ogg","pitch":1.03,"volume":1.01},
+
+        ],
         "armaa_buster_hit":[
         {"file":"sounds/armaa/armaa_buster_impact_1.ogg","pitch":1.07,"volume":0.99},
         {"file":"sounds/armaa/armaa_buster_impact_1.ogg","pitch":1.1,"volume":1.00},
