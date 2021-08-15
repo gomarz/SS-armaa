@@ -37,7 +37,7 @@
 				"armaa_garegga":1,
 				"armaa_aleste_frig":1,
 				"armaa_leynos_frig":0.8,
-				"armaa_hazard_frig":1,
+				"armaa_hazard_frig":1.5,
 				"armaa_xyphos":0.8,
 				"armaa_monitor":0.6,	
 			},
