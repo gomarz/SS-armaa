@@ -111,7 +111,7 @@
     {
       "id": "WS002",
       "size": "MEDIUM",
-      "type": "SYNERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 15,
       "angle": 0,
