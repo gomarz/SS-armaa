@@ -12,11 +12,12 @@ New Ship: G-Hazard - 3DP
 - Live fast, die faster
 
 New Ship: Watchdog - 10DP
-- Fire Support Mobile Armor
+- Fire Support; slow with poor flux stats but enhanced range
 
 -Added Nex Mercenary company
 
--Only Einhander,Garegga, and altagrave were known to indies + PL, added remaining hulls at low occurence rate
+-Only Einhander,Garegga, and altagrave were known to indies + PL, added remaining hulls
+-Slightly bumped up frequency so they show up ocassionaly instead of once every 5 cycles
 
 	-Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus by checking base hull instead
 
@@ -32,7 +33,7 @@ Strikecraft:
 
 -Altagrave's will purge all modules once the core ship's HP decreases below 55%
 	- This is a (AI) buff
-	- AMWS for all head variants DMG: 350->400, IGNORES_FLARES
+	- AMWS for all head variants DMG: 350->400, IGNORES_FLARES, adjusted offset for better accuracy
 	- Karma ship system now benefits from Systems Expertise
 	- Karma Seekers: 
 		- Reduced number of projectiles generated
@@ -58,10 +59,11 @@ Valken X:
 
 Aleste:
 - Changed name to Aleste(S) to better distinguish playable and LPC version
--Flux Capacity: 1000>1800
+- increased flux capacity
 -Heavy Rynex Laser will no longer target fighters
 -Dispersal Mortar will immediately detonate in close proximity to enemies
 -Added Laser Blade as an option for right arm
+-Added SCTR-40 as an option for right arm
 -Laser Blade trails reduced to a more reasonable width/length
 -Fixed Laser Blade not doing additional emp damage on hit
 -Fixed Laser Blade damage not scaling with energy weapon mastery bonus
