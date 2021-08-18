@@ -1,7 +1,6 @@
 {
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "convergeOnPoint": true,
   "coreColor": [
     255,
     255,
@@ -44,7 +43,7 @@
     "graphics/fx/beamcorec.png"
   ],
   "turretAngleOffsets": [
-    0
+    1
   ],
   "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_glow.png",
   "turretOffsets": [

@@ -35,7 +35,7 @@
     "E_HEAD": "armaa_valkenHead_gunmetal",
     "MISSILE": "armaa_valken_missile"
   },
-"builtInMods": ["armaa_wingCommander","strikeCraft","beamcoat"],
+"builtInMods": ["armaa_wingCommander","strikeCraft","beamCoatType2"],
 "builtInWings": ["armaa_valkenmp_wing"],
   "center": [
     9,
