@@ -143,6 +143,14 @@ armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by
 
 armaa_leynos_ppc,WEAPON,"A devastating energy weapon that inflicts damage near-instantaneously. Starship-grade shielding and armor can easily dissipate the majority of the energy output by this weapon, but a direct shot without concern for these factors have been known to severely cripple - if not outright obliterate - even destroyer-grade ships.","",,
 
+armaa_armaa_valkenHead_gunmetal,WEAPON,"A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.","",,
+
+armaa_armaa_valkenHead,WEAPON,"A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.","",,
+
+armaa_leynos_railgun,WEAPON,"A high-tech improvement of the Autocannon, railguns fires accurate, medium-range slugs. This version of the weapon is slightly weaker, but utilizes rounds that can have a more profound effect on ship systems and weaponry.","",,
+
+armaa_altagrave_ppc,WEAPON,"A devastating energy weapon that inflicts damage near-instantaneously. Starship-grade shielding and armor can easily dissipate the majority of the energy output by this weapon, but a direct shot without concern for these factors have been known to severely cripple - if not outright obliterate - even destroyer-grade ships.","",,
+
 armaa_leynosBazooka,WEAPON,"Fires a tight cluster of rocket-mines that activate on proximity to hostile forces. Best employed where point-defenses are minimal, and and effective weapon against clusters of strikecraft in a pinch.","",,
 
 armaa_leynos_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
@@ -172,6 +180,9 @@ armaa_aleste_flamer_right,WEAPON,"Evolution of the DR-79 plasma gatling. Rather 
 armaa_altagrave_rightArm,WEAPON,"Fires nanomachines encased in a plasma sheathe shaped by the device's electromagnetic field. The resulting smart projectile produces a brilliant trail of energy while launched and has limited homing capability, although it fares rather poorly against small targets. Precise shots on the drone itself is enough to disrupt and destroy these projectiles.",,,
 armaa_altagrave_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
 armaa_altagrave_head_c,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
+armaa_altagrave_head_g,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
+armaa_altagrave_head_ex,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
+armaa_altagrave_head_r,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
 armaa_sprigganHead,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,
 armaa_einhanderGun,WEAPON,"Progenitor of the Juno-class beam weapon series. It lacks the specialization and raw power of later models due to several defects and the lack of practical knowledge regarding the partial output of energy in p-space. As a result, the pulses it does fire are generally less effective than a standard Pulse Laser; the flip side is that safety limiters on the weapon can be disabled for output far exceeding baseline performance.",,,
 armaa_sprigganTorso,WEAPON,"Launches a barrage of phased psuedo-projectiles. Extremely effective against fighters. This weapon is fueled directly by the unit's own power core, and the requisite energy required will gradually replenish itself over time.",,,
@@ -200,7 +211,7 @@ In the past, this weapon was actually the standard-issue head unit for Garegga. 
 armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,
-armaa_siegeMode,SHIP_SYSTEM,"Halves top speed and turn rate, while increasing weapon range by the same level, and increasing shield efficiency.",,,
+armaa_siegeMode,SHIP_SYSTEM,"Top speed, maneuverability, and damage taken by shields is reduced by 50%, while weapon and sensor range is increased by the same amount",,,
 armaa_plasmaJets,SHIP_SYSTEM,"Grants an tremendous speed boost in the given direction briefly.",,,
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,
 armaa_pdamper,SHIP_SYSTEM,"Decreases damage taken by 40%, with 60% time dilation effect.",,,
