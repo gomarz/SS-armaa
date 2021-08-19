@@ -48,6 +48,8 @@ Strikecraft:
 		-Proj Speed: 1000->700
         - Fixed Ear killing shotgun sound used by altagrave ex
 	- Default Altagrave's main weapon can no longer be intercepted by PD
+		- Chargedown: 0.12 -> 0.2
+		- Adjusted firing FX
 Ilorin:
 -Removed ECCM from Ilorin
 -Ilorin Rocket Speed: 150->50
