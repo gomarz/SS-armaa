@@ -1,23 +1,30 @@
 V1.5
 ------------------------------------
 New Ship: Leynos - 6DP
--Slower than Aleste, but more durable + heavier weapons
--Damper Field in lieu of standard shield.
+-Same schtick as the Aleste, but more durable + heavier weapons
+-Damper Field in lieu of standard shield
 
 New Ship: Xyphos(AA) - 4DP
 - more offensively tuned Xyphos with an attached Xyphos wing
 - Effectively a mobile support wing
 
-New Ship: G-Hazard - 3DP
+New Ship: Gunhazard - 3DP
 - Live fast, die faster
+- Very mobile with good armor rating, but extremely low HP 
 
 New Ship: Watchdog - 10DP
-- Fire Support; slow with poor flux stats but enhanced range
+- Fire Support; poor mobility and flux stats but enhanced range and firepower for its class
+
+New Hullmod: WINGCOM Suite
+- Adds fighter bay with 70% range reduction, increased replacement rate of 70%,and increased refit time of 25%
+- Instead of launching from the host ship, new fighters either arrive from the deployment zone or from nearby carrier    returned to for refit
+- If piloted by officer, winning battles improves effectiveness of the wing, while being disabled, destroyed, or losing has chance to reduce it
+- Wing members have a small chance to be promoted, akin to vanilla officer promotion event
 
 -Added Nex Mercenary company
 
 -Only Einhander,Garegga, and altagrave were known to indies + PL, added remaining hulls
--Slightly bumped up frequency so they show up ocassionaly instead of once every 5 cycles
+-Slightly bumped up frequency so they show up ocassionaly instead of once every few cycles
 
 	-Fixed issue that caused custom Aleste/Einhander .skins to crash due to invalid ground support bonus by checking base hull instead
 
@@ -28,11 +35,11 @@ Strikecraft:
 - Fixed bug where landing ship would only choose bay 0 to land at
 - Replacement Time reduction when refitting now occurs during refit time instead of after
 - Fixed bug where combat would not end if an allied / enemy strikecraft were on the field after full retreat on the player's side
-- Trimmed description to be more concise and less fluffly
+- Trimmed description to be more concise and less fluffy
 - Strikecraft will (should?) no longer attempt to fly directly through enemy fleet to reach a carrier
 
 -Altagrave's will purge all modules once the core ship's HP decreases below 55%
-	- This is a (AI) buff
+	- This is a (AI) buff and should improve survivability somewhat
 	- AMWS for all head variants DMG: 350->400, IGNORES_FLARES, adjusted offset for better accuracy
 	- Karma ship system now benefits from Systems Expertise
 	- Karma Seekers: 
@@ -40,6 +47,7 @@ Strikecraft:
 		-Launch Speed: 1500-> 800
 		-Proj Speed: 1000->700
         - Fixed Ear killing shotgun sound used by altagrave ex
+	- Default Altagrave's main weapon can no longer be intercepted by PD
 Ilorin:
 -Removed ECCM from Ilorin
 -Ilorin Rocket Speed: 150->50
@@ -52,18 +60,20 @@ Valken X:
 -Valken:
 - swapped light mortar for light assault gun
 - System now affects all weapons
+- armor: whatever it was before -> 25
 - adjusted sprite yet again
 
 -Kouto
-- Changed to support wing, completely revised weapon loadout
+- Revised weapon loadout
+- Wing Size: 2->1
 
 Aleste:
-- Changed name to Aleste(S) to better distinguish playable and LPC version
+- Changed name of playable version to Aleste(S) to better distinguish playable and LPC version
 - increased flux capacity
 -Heavy Rynex Laser will no longer target fighters
 -Dispersal Mortar will immediately detonate in close proximity to enemies
 -Added Laser Blade as an option for right arm
--Added SCTR-40 as an option for right arm
+-Added SCTR-40 Minigun as an option for right arm
 -Laser Blade trails reduced to a more reasonable width/length
 -Fixed Laser Blade not doing additional emp damage on hit
 -Fixed Laser Blade damage not scaling with energy weapon mastery bonus

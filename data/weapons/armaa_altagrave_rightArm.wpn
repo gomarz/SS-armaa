@@ -1,7 +1,7 @@
 {
   "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "plasma_cannon_fire",
+  "fireSoundTwo": "vajra_fire",
   "everyFrameEffect": "data.scripts.weapons.armaa_VajraEveryFrameEffect",
   "glowColor": [
     50,
@@ -19,18 +19,18 @@
   "hardpointSprite": "",
   "id": "armaa_altagrave_rightArm",
   "muzzleFlashSpec": {
-    "length": 30,
+    "length": 50,
     "particleColor": [
       250,
-      192,
+      102,
       92,
       255
     ],
-    "particleCount": 22,
-    "particleDuration": 0.35,
-    "particleSizeMin": 15,
+    "particleCount": 25,
+    "particleDuration": 0.15,
+    "particleSizeMin": 20,
     "particleSizeRange": 30,
-    "spread": 20
+    "spread": 10
   },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,

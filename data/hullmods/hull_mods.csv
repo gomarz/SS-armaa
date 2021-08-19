@@ -86,8 +86,13 @@ R ARM: LASER BLADE,armaa_selector_blade_right,,,,no_build_in,,,,TRUE,,0,0,0,0,da
 
 %s 
 
-%s",,graphics/armaa/hullmods/hand_l.png
+%s",,graphics/armaa/hullmods/hand_r.png
+R ARM:MINIGUN,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s fires a barrage of energy bolts with minor anti-armor capabilities.
+%s",,graphics/armaa/hullmods/hand_r.png
 Melee,armaa_melee,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 #LEYNOS WEAPON SELECTOR,,,,,no_build_in,,,,,,,,,,,,,
 Versatile Frame,armaa_leynosWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
@@ -96,7 +101,7 @@ R ARM:SHOTGUN,armaa_selector_shotgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmo
 The %s fires a burst of projectiles in a tight cone that can chew through armor.
 
 %s",,graphics/armaa/hullmods/hand_r.png
-R ARM:CRUSHER,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
+R ARM:CRUSHER,armaa_selector_crusher,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_crusher,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a two-round burst of anti-armor bolts. Has the greatest range of all weapons that can be fitted to the HAND units.
 %s",,graphics/armaa/hullmods/hand_r.png
