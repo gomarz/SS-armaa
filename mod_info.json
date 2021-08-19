@@ -2,7 +2,7 @@
 	"id":"armaa",
 	"name":"Arma Armatura",
 	"author":"shoi",
-	"version":"1.4.8RC3",
+	"version":"1.5",
 	"description":"Mechs. Requires LazyLib + MagicLib.",
 	"gameVersion":"0.95a-RC15",
 	"jars":["jars/armaa.jar"],
@@ -15,6 +15,11 @@
         {
             "id": "MagicLib",
             "name": "MagicLib",
+            #"version": "0.32rc2" # If a specific version is NOT required, comment out this line
+        },
+        {
+            "id": "shaderLib",
+            "name": "GraphicsLib",
             #"version": "0.32rc2" # If a specific version is NOT required, comment out this line
         }
     ],
