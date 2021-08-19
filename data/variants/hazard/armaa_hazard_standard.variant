@@ -1,10 +1,10 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 3,
+  "fluxCapacitors": 4,
   "goalVariant": true,
-  "fluxVents": 4,
+  "fluxVents": 7,
   "hullId": "armaa_hazard_frig",
-  "hullMods": ["heavyarmor"],
+  "hullMods": ["targetingunit"],
   "variantId": "armaa_hazard_standard",
   "weaponGroups": [
     {
