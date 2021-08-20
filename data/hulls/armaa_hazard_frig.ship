@@ -83,7 +83,7 @@
     },
     {
       "angle": 0,
-      "arc": 360,
+      "arc": 0,
       "id": "B_TORSO",
       "locations": [
         0,

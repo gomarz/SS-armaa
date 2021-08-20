@@ -70,19 +70,19 @@ The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct
 
 armaa_gallant,SHIP,"Slow and unwieldy strikecraft fitted with a Juno Mk. III beam cannon. Can overwhelms shields and vaporize hull, but are effectively helpless while firing. Best utilized in combination with other bombers, where it can soften shields prior to their strike.",,,
 
-armaa_hazard_frig,SHIP,"These craft sacrifice durability for ludicrous manuverability and greater firepower. Effective in small skirmishes and harassing ships, G-Hazard's also come equipped with additional software that allows them to command a small Cataphract Lance, making them cheap and disposable support units.
+armaa_hazard_frig,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverability and greater firepower. Extremely effective in small skirmishes and at harassing spaceships, G-Hazard comes with command suite, that allows its pilot to command a small Cataphract Lance, making it a cheap and disposable support unit in middle of combat.
 
-Clearly a Valken derivative, their designation was altered to reduce consumer confusion, although the official name has since been lost to time. It has been stated that the equipment and weaponry used by the G-Hazard ended up being more expensive than the Cataphract itself, and certainly its pilot - the story goes that assignments to one during the First AI War was often seen as a marginally more hopeful death sentence than to a Valken or Talon, as pilots frequently met their end in the cockpit due to the immense pressures exerted on their fragile bodies during combat. This was mostly alleviated with the introduction of powerful inertial negators and a padded harness, but the 'endearing' nickname of Hazard stuck.",,,
+Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,
 
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Eequipped with additional software that allows the pilot to properly coordinate an additional Xyphos wing, making them effective support units.
 
 The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,
 
-armaa_leynos_frig,SHIP,"Thick armor rivaling that of smaller frigates and larger housing for additional equipment sees the Leynos often serving as wing leader for small strikecraft squadrons. Lacking a shield generator, it relies on an integrated Damper Field and it's wingmen to see it through the flames of battle.
+armaa_leynos_frig,SHIP,"Thick armor rivaling that of some frigates and medium mounting for additional weaponry sees the Leynos serving as wing leader for strike craft squadrons. As it lacks a shield generator, it relies on an integrated Damper Field and its wingmen to see it through the flames of battle.
 
-Originally devised as the Valken R-Type, this craft was initially intended to be a potential successor to the original Valken as part of an internal ArmaA bid dubbed 'Project VALHAWK', where it competed against several other in-house designs vying for a lucrative contract. However, it's large size, low manuverability, and overburdened power core saw it suffer abysmal performance during combat simulations.
+Originally devised as Valken R-Type model, this craft was created as part of internal ArmaA bid for potential successor of the Valken Cataphract where it competed against several other designs created in-house, all vying for lucrative official contract. Entire venture was referred to as Project VALHAWK. Unfortunately for its creators large size of Leynos, its low maneuverability and overburdened power core all lead to disappointing results during combat simulations.
 
-The R-Type was left to languish in an unmarked hangar for some time until an enterprising Operations Manager took interest in it, revamping the designs capability and rebranding it as a specialized command unit for squadron leaders.",,,
+For years, In an unmarked hangar, R-Type was left to languish and gather dust for years, until an enterprising Operations Manager took an interest in the design, revamping it and rebranding it as specialised command unit for squadron leaders.",,,
 
 armaa_leynos_frig_comet,SHIP,"Thick armor rivaling that of smaller frigates and larger housing for additional equipment sees the Leynos often serving as wing leader for small strikecraft squadrons. This particular model of the Leynos is allegedly three times faster than the original, and bears the paint scheme of the Rocket Stars.
 
@@ -135,23 +135,23 @@ armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords'
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 
-armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath it's oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces.","",,
+armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath it's oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces. ArmaA Corporation denies any and all allegations regarding supposedly using materials forbidden by the Domain (and by extension) Hegemony Law, Section Regarding Restricted Weaponry.","",,
 
-armaa_leynos_autocannon_right,WEAPON,"A dependable and trustworthy autocannon. It's destructive potential is well known planetside, although it does not fair quite as well against the heavier armor of many starship-grade vessels.","",,
+armaa_leynos_autocannon_right,WEAPON,"Trustworthy and dependable autocannon mostly used in planetside warfare, where its destructive potential is widely known by armed forces and civilians alike. Unfortunately, It does not fare quite as well against spaceship-grade armor and shielding, but exposed hull is extremely vulnerable to its destructive shells.","",,
 
 armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by a minor damper field. The launched appendage handily stresses shield generators and has enough force behind it deal some damage to armor and hull, but can be handily intercepted by point defenses.","",,
 
-armaa_leynos_ppc,WEAPON,"A devastating energy weapon that inflicts damage near-instantaneously. Starship-grade shielding and armor can easily dissipate the majority of the energy output by this weapon, but a direct shot without concern for these factors have been known to severely cripple - if not outright obliterate - even destroyer-grade ships.","",,
+armaa_leynos_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.","",,
 
 armaa_armaa_valkenHead_gunmetal,WEAPON,"A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.","",,
 
 armaa_armaa_valkenHead,WEAPON,"A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.","",,
 
-armaa_leynos_railgun,WEAPON,"A high-tech improvement of the Autocannon, railguns fires accurate, medium-range slugs. This version of the weapon is slightly weaker, but utilizes rounds that can have a more profound effect on ship systems and weaponry.","",,
+armaa_leynos_railgun,WEAPON,"An improvement over the autocannon design, the Railgun accurately fires slugs at medium range. This version of the weapon fires smaller, weaker slugs covered in electromagnetic coating. Rounds cause disruptions in weaponry and auxiliary systems.","",,
 
-armaa_altagrave_ppc,WEAPON,"A devastating energy weapon that inflicts damage near-instantaneously. Starship-grade shielding and armor can easily dissipate the majority of the energy output by this weapon, but a direct shot without concern for these factors have been known to severely cripple - if not outright obliterate - even destroyer-grade ships.","",,
+armaa_altagrave_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.","",,
 
-armaa_leynosBazooka,WEAPON,"Fires a tight cluster of rocket-mines that activate on proximity to hostile forces. Best employed where point-defenses are minimal, and and effective weapon against clusters of strikecraft in a pinch.","",,
+armaa_leynosBazooka,WEAPON,"Fires a small tight cluster of rocket-mines which activate and explode in proximity of enemy forces. Easily stopped by point defense weaponry. Official weapon manual recommends using them in close range if point defences are present as well as mentioning of its efficacy against clustered strike craft.","",,
 
 armaa_leynos_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
 
@@ -160,10 +160,10 @@ armaa_leynos_head_comet,WEAPON,The head-mounted Anti Missile Weapon System is a 
 armaa_valken_torso_gunmetal,WEAPON,"A small caliber cannon designed for close-range fights, excellent versus armor and with a superb fire rate.
 Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.","",,
 
-armaa_leynos_crusher_right,WEAPON,"Fires energized bolts that sear armor.","",,
+armaa_leynos_crusher_right,WEAPON,"Dual-barreled energy weapon firing plasma projectiles which explode on contact with stable matter, such as spaceship armor or shielding. The delay between shots has to be accounted for when firing.","",,
 
 
-armaa_valken_gun,WEAPON,"A variant of the sector-standard railgun that fires a burst of slugs instead of a singular round.","",,
+armaa_valken_gun,WEAPON,"A variant of the sector-standard railgun that fires a burst of smaller slugs instead of a singular round.","",,
 
 armaa_valken_missile,WEAPON,"Miniature missiles. Easily intercepted, they are generally fired in large quantities to ensure at least a few breach point defense fields.","",,
 

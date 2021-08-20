@@ -121,7 +121,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-14, 5.5],
+      "location": [-14, 7],
       "length": 11.667831,
       "width": 6.359791,
       "angle": 151.5,
@@ -129,7 +129,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-14, -5.5],
+      "location": [-14, -7],
       "length": 11.082763,
       "width": 5.448803,
       "angle": -151.5,
