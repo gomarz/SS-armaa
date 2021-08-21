@@ -7,11 +7,7 @@
   "fluxVents": 8,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [
-    "armaa_selector_fist",
-    "armaa_selector_crusher",
-    "heavyarmor"
-  ],
+  "hullMods": ["armaa_selector_fist","armaa_selector_crusher","heavyarmor"],
   "weaponGroups": [
     {
       "autofire": true,
@@ -23,7 +19,14 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {"A_GUN": "armaa_leynos_crusher_right"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "C_ARML": "armaa_leynosBoostKnuckle",
+      }
     },
     {
       "autofire": true,
