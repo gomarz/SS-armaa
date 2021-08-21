@@ -16,7 +16,7 @@ Anti-Beam Plating ,beamCoatType2,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods
 Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.
 
 This type of coating can only be applied to specialized forms of armor, thereby making it incompatible with %s.",Reduces beam damage by %s .,graphics/hullmods/solar_shielding.png
-Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by %s (Up to the number of marines in the fleet)",,graphics/armaa/hullmods/cataphracts.png
+Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by a value up to the number of marines in the fleet.",,graphics/armaa/hullmods/cataphracts.png
 Variable Weaponry,variawep,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_bitWeaponAssignment2,This drone can be equipped with a selection of different weaponry.,,graphics/icons/hullsys/drone_sensor.png
 No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables active venting,,graphics/hullmods/vast_bulk.png
 Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,graphics/hullmods/reduced_explosion.png
