@@ -24,7 +24,8 @@
     "D_PAULDRONL": "armaa_leynos_leftPauldron",
     "D_PAULDRONR": "armaa_leynos_rightPauldron",
     "E_HEAD": "armaa_leynos_head",
-    "H_GLOW": "armaa_sprigganHeadGlow"
+    "H_GLOW": "armaa_sprigganHeadGlow",
+    "BEACON": "armaa_landingBeacon"
   },
   "weaponSlots": [
     {
@@ -117,6 +118,19 @@
       "angle": 0,
       "locations": [-13, -14],
       "renderOrderMod": 99999
+    },
+ {
+      "angle": 0,
+      "arc": 135,
+      "id": "BEACON",
+      "locations": [
+        5,
+        -0
+      ],
+      "mount": "TURRET",
+      "renderOrderMod":101,
+      "size": "SMALL",
+      "type": "BUILT_IN"
     }
   ],
   "engineSlots": [

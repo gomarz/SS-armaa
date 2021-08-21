@@ -116,7 +116,7 @@ armaa_aleste_grenade_left,WEAPON,"Fires a burst of high-explosive grenades. Effe
 
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
 
-armaa_landingBeacon,WEAPON,"Bypasses the standard restrictions and regulations of refit procedure standard pilots follow to land immediately.","",,
+armaa_landingBeacon,WEAPON,"Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.","",,
 
 armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 

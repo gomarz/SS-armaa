@@ -20,6 +20,7 @@
   "builtInWeapons": {
     "WS 001":"ionpulser",
     "WS 002":"pdburst",
+    "BEACON":"armaa_landingBeacon"
 
   },
     "center": [
@@ -102,7 +103,20 @@
             "mount": "HIDDEN",
             "size": "SMALL",
             "type": "ENERGY"
-        }
+        },
+ {
+      "angle": 0,
+      "arc": 135,
+      "id": "BEACON",
+      "locations": [
+        5,
+        -0
+      ],
+      "mount": "TURRET",
+      "renderOrderMod":101,
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    }
     ],
     "width": 38
 }
