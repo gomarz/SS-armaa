@@ -5,11 +5,13 @@
   "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_ppcEffect",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_ppc.png",
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 3,
+  "turretSprite": "graphics/armaa/weapons/armaa_leynos_ppc_00.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_ppc_00.png",
+  "numFrames":2,	
+  "frameRate":0,
+  "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_ppc_00.png",
+  "hardpointGunSprite": "graphics/armaa/weapons/armaa_leynos_ppc_00.png",
+  #"visualRecoil": 3,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
