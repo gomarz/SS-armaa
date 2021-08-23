@@ -5,10 +5,12 @@
   "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_crusherEffect",
-  "turretSprite": "graphics/armaa/weapons/armaa_leynos_buster.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_buster.png",
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "turretSprite": "graphics/armaa/weapons/armaa_leynos_buster_00.png",
+  #"turretGunSprite": "graphics/armaa/weapons/armaa_leynos_buster_00.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_buster_00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "numFrames":2,	
+  "frameRate":0,
   "fireSoundTwo":"armaa_crusher_fire",
   "renderHints": [
     RENDER_BARREL_BELOW

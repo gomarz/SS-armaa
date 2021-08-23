@@ -16,11 +16,6 @@
             "id": "MagicLib",
             "name": "MagicLib",
             #"version": "0.32rc2" # If a specific version is NOT required, comment out this line
-        },
-        {
-            "id": "shaderLib",
-            "name": "GraphicsLib",
-            #"version": "0.32rc2" # If a specific version is NOT required, comment out this line
         }
     ],
 	"modPlugin":"data.scripts.MechaModPlugin"

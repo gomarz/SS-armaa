@@ -8,7 +8,7 @@
   "visualRecoil": 2,
   "everyFrameEffect": "data.scripts.weapons.armaa_minigunEveryFrameEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_kouto_minigun_right.png",
-  "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_minigun_00.png",
+  "hardpointSprite": "",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "renderHints": [
     RENDER_BARREL_BELOW
