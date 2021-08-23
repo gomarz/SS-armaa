@@ -2,19 +2,21 @@
   "variantId": "armaa_xyphos_standard",
   "hullId": "armaa_xyphos",
   "displayName": "Standard",
-  "goalVariant": false,
-  "fluxCapacitors": 7,
+  "goalVariant": true,
+  "fluxCapacitors": 9,
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "hardenedshieldemitter"
+    "hardenedshieldemitter",
+    "blast_doors"
   ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
+        "BEACON": "armaa_landingBeacon",
         "WS 001": "ionpulser"
       }
     },
@@ -24,7 +26,7 @@
       "weapons": {
         "WS 002": "pdburst"
       }
-    },
+    }
   ],
   "modules": [],
   "wings": []

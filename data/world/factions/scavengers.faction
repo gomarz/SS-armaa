@@ -3,7 +3,7 @@
     "hullFrequency":{
         "hulls":{
             "armaa_altagrave":1,
-	    "armaa_garegga": 1.2,
+	    "armaa_garegga": 1.4,
         },
     },
 "knownShips":{

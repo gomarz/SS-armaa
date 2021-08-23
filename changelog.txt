@@ -1,6 +1,6 @@
 V1.5
 ------------------------------------
-New Ship: Leynos - 6DP
+New Ship: Leynos - 6DP / Leynos(RS) - 10DP
 -Same schtick as the Aleste, but more durable + heavier weapons
 -Damper Field in lieu of standard shield
 

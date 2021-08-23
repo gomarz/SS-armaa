@@ -1,122 +1,86 @@
 {
-    "bounds": [
-        10,
-        17,
-        15,
-        -4,
-        5,
-        -15,
-        -15,
-        -9,
-        -8,
-        1,
-        -15,
-        10,
-        -3,
-        10
-    ],
-    "builtInMods": ["advancedoptics","strikeCraft","armaa_wingCommander"],
-   "builtInWings": ["xyphos_wing"],
+  "hullName": "Xyphos",
+  "hullId": "armaa_xyphos",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/armaa_xyphos.png",
+  "style": "HIGH_TECH",
+  "height": 38,
+  "width": 38,
+  "center": [19, 17],
+  "collisionRadius": 30,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 30,
+  "viewOffset": 0,
+  "builtInMods": [
+    "advancedoptics",
+    "strikeCraft",
+    "armaa_wingCommander"
+  ],
+  "builtInWings": [
+    "xyphos_wing"
+  ],
   "builtInWeapons": {
-    "WS 001":"ionpulser",
-    "WS 002":"pdburst",
-    "BEACON":"armaa_landingBeacon"
-
+    "BEACON": "armaa_landingBeacon",
+    "WS 001": "ionpulser",
+    "WS 002": "pdburst"
   },
-    "center": [
-        19,
-        17
-    ],
-    "collisionRadius": 30,
-    "coversColor": "",
-    "engineSlots": [
-        {
-            "angle": 180,
-            "contrailSize": 64,
-            "length": 32,
-            "location": [
-                -16,
-                8
-            ],
-      "style": "CUSTOM",
-      "styleId": "DRONE_ENGINE",
-            "width": 12
-        },
-        {
-            "angle": 180,
-            "contrailSize": 64,
-            "length": 32,
-            "location": [
-                -16,
-                -7
-            ],
-      "style": "CUSTOM",
-      "styleId": "DRONE_ENGINE",
-            "width": 12
-        }
-    ],
-    "height": 38,
-    "hullId": "armaa_xyphos",
-    "hullName": "Xyphos",
-    "hullSize": "FRIGATE",
-    "shieldCenter": [
-        0,
-        0
-    ],
-    "shieldRadius": 30,
-    "spriteName": "graphics/armaa/ships/armaa_xyphos.png",
-    "style": "HIGH_TECH",
-    "viewOffset": 0,
-    "weaponSlots": [
-        {
-            "angle": 0,
-            "arc": 5,
-            "id": "WS 001",
-            "locations": [
-                3,
-                7
-            ],
-            "mount": "HIDDEN",
-            "size": "MEDIUM",
-            "type": "BUILT_IN"
-        },
-        {
-            "angle": 0,
-            "arc": 360,
-            "id": "WS 002",
-            "locations": [
-                2,
-                0
-            ],
-            "mount": "HIDDEN",
-            "size": "SMALL",
-            "type": "BUILT_IN"
-        },
-        {
-            "angle": 180,
-            "arc": 180,
-            "id": "WS 003",
-            "locations": [
-                -1,
-                1
-            ],
-            "mount": "HIDDEN",
-            "size": "SMALL",
-            "type": "ENERGY"
-        },
- {
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
       "angle": 0,
-      "arc": 135,
-      "id": "BEACON",
-      "locations": [
-        5,
-        -0
-      ],
-      "mount": "TURRET",
-      "renderOrderMod":101,
+      "locations": [3, 7]
+    },
+    {
+      "id": "WS 002",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [2, 0]
+    },
+    {
+      "id": "BEACON",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [5, -0],
+      "renderOrderMod": 101
     }
-    ],
-    "width": 38
+  ],
+  "engineSlots": [
+    {
+      "location": [-16, 8],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE"
+    },
+    {
+      "location": [-16, -7],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE"
+    }
+  ],
+  "bounds": [
+    10, 17,
+    15, -4,
+    5, -15,
+    -15, -9,
+    -8, 1,
+    -15, 10,
+    -3, 10
+  ]
 }
