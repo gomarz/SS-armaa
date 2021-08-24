@@ -1,3 +1,9 @@
+V1.5.2
+--------------------
+- Valkyrie(AA) design is now known by ArmaA and Independents
+- Gave Valkyrie Recall Device Shipsystem
+	- Teleports Strikecraft in need of refit to random location around ship
+
 V1.5
 ------------------------------------
 New Ship: Leynos - 6DP / Leynos(RS) - 10DP
