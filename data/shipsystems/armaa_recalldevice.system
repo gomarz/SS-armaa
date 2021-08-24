@@ -1,0 +1,18 @@
+{
+	"id":"armaa_recalldevice",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+        "aiScript":"data.scripts.shipsystems.ai.armaa_recallAI",	
+	
+	"statsScript":"data.scripts.shipsystems.armaa_RecallDeviceStats",
+	
+	"useSound":"system_recall_device",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+

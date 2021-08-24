@@ -59,6 +59,7 @@
 				"armaa_hazard_frig",
 				"armaa_xyphos",
 				"armaa_monitor",
+				"armaa_valkyrie",
 			],
 	},
 	"shipsWhenImporting":{
@@ -118,7 +119,8 @@
 	    "armaa_leynos_frig",
 	    "armaa_hazard_frig",
 	    "armaa_xyphos",
-	    "armaa_monitor"
+	    "armaa_monitor",
+            "armaa_valkyrie",	
         ],
     },
 	"knownHullMods":{

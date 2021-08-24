@@ -3,14 +3,14 @@
     "skinHullId":"armaa_valkyrie",
     "hullName":"Valkyrie(CV)",
     "descriptionId":"valkyrie",
-    "descriptionPrefix":"The ubiquitous Valkyrie-class hull, converted for use as comparatively cheaper carrier platform. The combination of large capacity for troops and enough housing for a lance of Cataphracts made it an ideal addition to Arma Armatura's 'Asset Acquisitions' department.",
+    "descriptionPrefix":"The ubiquitous Valkyrie-class hull, converted for use as comparatively cheaper carrier platform. The combination of large capacity for troops, housing for a lance of Cataphracts, and the capability to rapidly recall strikecraft operating independently of a carrier made it an ideal addition to Arma Armatura's 'Asset Acquisitions' department.",
     "spriteName":"graphics/armaa/ships/armaa_valkyrie_ca.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "fighterbays":1,
     "addHints":[],
     "tags":["rare_bp"],
-	"systemId":"",
+	"systemId":"armaa_recalldevice",
     "tech":"Arma Armatura",
     "removeWeaponSlots":["WS 006"], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file

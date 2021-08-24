@@ -212,6 +212,7 @@ armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary 
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,
 armaa_siegeMode,SHIP_SYSTEM,"Top speed, maneuverability, and damage taken by shields is reduced by 50%, while weapon and sensor range is increased by the same amount",,,
+armaa_recalldevice,SHIP_SYSTEM,"Teleports a single vessel in need (with the Strikecraft hullmod) back to the carrier, allowing them to be quickly refitted and relaunched.",,,
 armaa_plasmaJets,SHIP_SYSTEM,"Grants an tremendous speed boost in the given direction briefly.",,,
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,
 armaa_pdamper,SHIP_SYSTEM,"Decreases damage taken by 40%, with 60% time dilation effect.",,,
