@@ -1,6 +1,7 @@
 V1.5.2b
 --------------------
 - Fixed bug that made strikecraft unable to attack if they were teleported by Valkyrie(AA)
+- Curvy Laser: Projectile HP 450->600
 
 V1.5.2
 --------------------
