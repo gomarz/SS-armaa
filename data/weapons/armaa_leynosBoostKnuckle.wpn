@@ -6,6 +6,7 @@
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_knuckleEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle_00.png",
+  "turretGlowSprite": "graphics/armaa/weapons/armaa_leynos_rocketPunch_glow.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle_00.png",
   "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
   "specialWeaponGlowHeight": 1,
@@ -29,6 +30,12 @@
   ],
   "hardpointAngleOffsets": [
     0
+  ],
+  "glowColor": [
+    255,
+    155,
+    0,
+    255
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "SMOKE",
