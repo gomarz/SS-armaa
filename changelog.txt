@@ -1,10 +1,14 @@
+V1.5.2b
+--------------------
+- Fixed bug that made strikecraft unable to attack if they were teleported by Valkyrie(AA)
+
 V1.5.2
 --------------------
 - Valkyrie(AA) design is now known by ArmaA and Independents
 - Gave Valkyrie Recall Device Shipsystem
 	- Teleports Strikecraft in need of refit to random location around ship
 
-V1.5
+V1.5.1
 ------------------------------------
 New Ship: Leynos - 6DP / Leynos(RS) - 10DP
 -Same schtick as the Aleste, but more durable + heavier weapons
