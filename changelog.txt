@@ -1,5 +1,7 @@
 V1.5.2c
 -------------------
+-Added additional Nex starts
+
 WINGCOM SUITE:
 	- Minor adjustments to text colors used w/ WINGCOM Suite
 	- Squadron details for wing size > 4 will now automatically be hidden but can be expanded
@@ -8,7 +10,6 @@ WINGCOM SUITE:
 	-Maximum Offense/Defense bonus applied to fighters increased
 		-Defensive: 50%->75%
 		-Offensive: 25%->37.5% 
-
 
 - Armaa submarket hulls stock should be less top-heavy and feature more ships
 
@@ -20,7 +21,6 @@ WINGCOM SUITE:
  	- Increased recharge rate of Microburn
  	- AIleste with melee weapons will refrain from rushing enemies when at high flux/low hp
  	- LS-99 will now properly deal hard flux if High Scatter Amp is equipped
-
 
 V1.5.2b
 --------------------
