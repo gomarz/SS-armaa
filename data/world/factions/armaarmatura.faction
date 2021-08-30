@@ -40,7 +40,7 @@
 				"armaa_hazard_frig":1.5,
 				"armaa_xyphos":0.8,
 				"armaa_monitor":0.6,
-				"armaa_valkyrie":0.5,	
+				"armaa_valkyrie":0.8,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.2,

@@ -5,7 +5,7 @@
 	"missileType":"ROCKET",
 	"sprite":"graphics/armaa/weapons/armaa_leynos_rocketPunch.png",
 	"size":[16,29],	
-        "armingTime":0.8,
+        "armingTime":0.5,
 	"center":[9,14],
 	"collisionRadius":10,
 	"collisionClass":"MISSILE_NO_FF",
@@ -15,10 +15,10 @@
 #				  "turnRate":35,
 #				  "acc":1000,
 #				  "dec":500},
-	"engineSpec":{"turnAcc":500,
-				  "turnRate":500,
-				  "acc":500,
-				  "dec":500},
+	"engineSpec":{"turnAcc":5,
+				  "turnRate":10,
+				  "acc":100,
+				  "dec":0},
 	"engineSlots":[
 					{"id":"ES1",
 					"loc":[-13, 0],
@@ -33,7 +33,7 @@
 						"contrailMinSeg":8, # min segment length, in 
 						"contrailMaxSpeedMult":-0.1,
 						"contrailAngularVelocityMult":1f,
-						"contrailColor":[100,59,255,15],
+						"contrailColor":[100,100,59,15],
 						"type":"GLOW" # GLOW or SMOKE
 					},
 				    "width":10.0,
