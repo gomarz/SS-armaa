@@ -1,16 +1,25 @@
 V1.5.2c
 -------------------
-- Minor adjustments to text color used w/ WINGCOM Suite
+WINGCOM SUITE:
+	- Minor adjustments to text colors used w/ WINGCOM Suite
+	- Squadron details for wing size > 4 will now automatically be hidden but can be expanded
+	- Squad members elected for promotion can no longer receive another event while one already exists
+	- Squad member will no longer immediately lose rep with the player when promotion event occurs
+	-Maximum Offense/Defense bonus applied to fighters increased
+		-Defensive: 50%->75%
+		-Offensive: 25%->37.5% 
+
+
 - Armaa submarket hulls stock should be less top-heavy and feature more ships
 
 - Minor adjustment to powerfist FX
-- Minor adjustment to Leynos Sprite
+- Minor adjustment to Leynos sprite
 - Aleste(S)
- - Increased LS-99 Damage, removed Avanced Optics hullmod restriction
-	- Equipping AO will replace it with one with 50% of the bonus (+100 range instead of +200)
- - Increased recharge rate of Microburn
- - AIleste will refrain from rushing enemies when at high flux/low hp
- - should make melee build in general and for AI use more viable
+ 	- Increased LS-99 Damage, removed Avanced Optics hullmod restriction
+		- Equipping AO will replace it with a version that has 50% of the bonus (+100 range instead of +200)
+ 	- Increased recharge rate of Microburn
+ 	- AIleste with melee weapons will refrain from rushing enemies when at high flux/low hp
+ 	- LS-99 will now properly deal hard flux if High Scatter Amp is equipped
 
 
 V1.5.2b
