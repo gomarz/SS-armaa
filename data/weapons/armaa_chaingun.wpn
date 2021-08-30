@@ -13,24 +13,17 @@
   ],
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "id": "armaa_chaingun",
-  "muzzleFlashSpec": {
-    "length": 30,
-    "particleColor": [
-      255,
-      120,
-      165,
-      200
-    ],
-    "particleCount": 11,
-    "particleDuration": 0.02,
-    "particleSizeMin": 16,
-    "particleSizeRange": 22,
-    "spread": 10
-  },
+	"muzzleFlashSpec":{"length":50.0, 
+                        "spread":15.0,
+                        "particleSizeMin":14.0,
+                        "particleSizeRange":20.0,
+                        "particleDuration":0.05,
+                        "particleCount":10,
+					    "particleColor":[255,200,115,200]},	
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_chaingun_shot",
+  "projectileSpecId": "chaingun_shot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW

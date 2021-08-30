@@ -1,0 +1,24 @@
+{
+    "displayName": "Raider",
+    "fluxCapacitors": 12,
+    "fluxVents": 15,
+    "goalVariant": true,
+    "hullId": "armaa_valkyrie",
+    "hullMods": [],
+    "permaMods": [],
+    "quality": 0.5,
+    "variantId": "armaa_valkyrie_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "lightdualmg",
+                "WS 002": "lightdualmg",
+                "WS 003": "lightdualmg",
+                "WS 004": "lightdualmg"
+            }
+        }
+    ],
+    "wings": ["wasp_wing"]
+}

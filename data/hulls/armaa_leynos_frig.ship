@@ -19,13 +19,13 @@
     "reduced_explosion"
   ],
   "builtInWeapons": {
+    "BEACON": "armaa_landingBeacon",
     "B_TORSO": "armaa_leynos_torso",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_leynos_leftPauldron",
     "D_PAULDRONR": "armaa_leynos_rightPauldron",
     "E_HEAD": "armaa_leynos_head",
-    "H_GLOW": "armaa_sprigganHeadGlow",
-    "BEACON": "armaa_landingBeacon"
+    "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [
     {
@@ -119,51 +119,24 @@
       "locations": [-13, -14],
       "renderOrderMod": 99999
     },
- {
-      "angle": 0,
-      "arc": 135,
+    {
       "id": "BEACON",
-      "locations": [
-        5,
-        -0
-      ],
-      "mount": "TURRET",
-      "renderOrderMod":101,
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [5, -0],
+      "renderOrderMod": 101
     }
   ],
   "engineSlots": [
     {
-      "location": [-14, 7],
-      "length": 11.667831,
-      "width": 6.359791,
-      "angle": 151.5,
-      "contrailSize": 6.359791,
-      "style": "MIDLINE"
-    },
-    {
-      "location": [-14, -7],
-      "length": 11.082763,
-      "width": 5.448803,
-      "angle": -151.5,
-      "contrailSize": 5.448803,
-      "style": "MIDLINE"
-    },
-    {
-      "location": [-14, 5.5],
-      "length": 16.5,
-      "width": 6,
+      "location": [-15, -0],
+      "length": 21.5,
+      "width": 12,
       "angle": 180,
-      "contrailSize": 6,
-      "style": "MIDLINE"
-    },
-    {
-      "location": [-14, -5.5],
-      "length": 16.5,
-      "width": 6,
-      "angle": -180,
-      "contrailSize": 6,
+      "contrailSize": 12,
       "style": "MIDLINE"
     }
   ],

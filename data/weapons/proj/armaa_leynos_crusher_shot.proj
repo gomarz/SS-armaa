@@ -11,7 +11,7 @@
 	"darkCore": false,
 	"fringeColor":[0,255,125,200],
 	"coreColor":[200,255,255,210],
-	"glowColor":[00,180,120,100],
+	"glowColor":[00,180,75,100],
 	"glowRadius":60,
 	"hitGlowRadius":50,	
 	"textureType":"ROUGH",  # only needed for BEAM spawnType

@@ -6,7 +6,7 @@
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_hazardEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_valkencustomgun.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valken_custom_gun.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "visualRecoil": 1,

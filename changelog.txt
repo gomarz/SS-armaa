@@ -1,3 +1,18 @@
+V1.5.2c
+-------------------
+- Minor adjustments to text color used w/ WINGCOM Suite
+- Armaa submarket hulls stock should be less top-heavy and feature more ships
+
+- Minor adjustment to powerfist FX
+- Minor adjustment to Leynos Sprite
+- Aleste(S)
+ - Increased LS-99 Damage, removed Avanced Optics hullmod restriction
+	- Equipping AO will replace it with one with 50% of the bonus (+100 range instead of +200)
+ - Increased recharge rate of Microburn
+ - AIleste will refrain from rushing enemies when at high flux/low hp
+ - should make melee build in general and for AI use more viable
+
+
 V1.5.2b
 --------------------
 - Fixed bug that made strikecraft unable to attack if they were teleported by Valkyrie(AA)

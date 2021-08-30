@@ -135,11 +135,11 @@ armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords'
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 
-armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath it's oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces. ArmaA Corporation denies any and all allegations regarding supposedly using materials forbidden by the Domain (and by extension) Hegemony Law, Section Regarding Restricted Weaponry.","",,
+armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath its oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces. ArmaA Corporation denies any and all allegations regarding supposedly using materials forbidden by the Domain (and by extension) Hegemony Law, Section Regarding Restricted Weaponry.","",,
 
 armaa_leynos_autocannon_right,WEAPON,"Trustworthy and dependable autocannon mostly used in planetside warfare, where its destructive potential is widely known by armed forces and civilians alike. Unfortunately, It does not fare quite as well against spaceship-grade armor and shielding, but exposed hull is extremely vulnerable to its destructive shells.","",,
 
-armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by a minor damper field. The launched appendage handily stresses shield generators and has enough force behind it deal some damage to armor and hull, but can be handily intercepted by point defenses.","",,
+armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by a minor damper field. The launched appendage 'handily' stresses shield generators and has enough kinetic force behind it deal some damage to armor and hull, but is vulnerable to interception via point defenses.","",,
 
 armaa_leynos_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.","",,
 
