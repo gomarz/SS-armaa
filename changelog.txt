@@ -15,7 +15,8 @@ WINGCOM SUITE:
 
 - Minor adjustment to powerfist FX
 - Minor adjustment to Leynos sprite
-- Added Landing Beacon to Leynos(RS)
+- fixed case sensitivity issue with some gfx filenames (again)
+
 - Aleste(S)
  	- Increased LS-99 Damage, removed Avanced Optics hullmod restriction
 		- Equipping AO will replace it with a version that has 50% of the bonus (+100 range instead of +200)
