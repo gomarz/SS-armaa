@@ -19,6 +19,7 @@
     "armaa_wingCommander"
   ],
   "builtInWeapons": {
+    "BEACON": "armaa_landingBeacon",
     "B_TORSO": "armaa_leynos_torso_comet",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_leynos_leftPauldron_comet",
@@ -117,6 +118,16 @@
       "angle": 0,
       "locations": [-17, -13],
       "renderOrderMod": 99999
+    },
+    {
+      "id": "BEACON",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [5, -0],
+      "renderOrderMod": 101
     }
   ],
   "engineSlots": [
