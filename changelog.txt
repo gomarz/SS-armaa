@@ -2,6 +2,13 @@ V1.5.2d
 -------------------
 -Cataphract LPC Ground Bonus now applies to ships immediately instead of when docking at market(s)
 - Adjusted Gallant
+	- Removed shields
+	- Reduced Ammo to 1
+	- Added High Scatter Amp
+	- Added Advanced Optics
+	- Reduced Attack Run Range to 800
+	- Increased HP to 450, Armor to 20
+	- Increased turn speed
 
 V1.5.2c
 -------------------
