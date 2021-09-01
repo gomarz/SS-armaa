@@ -4,9 +4,7 @@
   "fluxVents": 0,
   "goalVariant": true,
   "hullId": "armaa_gallant",
-  "hullMods": [
-"no_weapon_flux"
-],
+  "hullMods": ["no_weapon_flux","high_scatter_amp","advancedoptics"],
   "modules": [],
   "permaMods": [],
   "quality": 0,

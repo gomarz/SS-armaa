@@ -1,0 +1,17 @@
+{
+	"id":"armaa_cataphract",
+	"governingAptitude":"leadership",
+	"compressHullmods":false,
+	"scopeStr":"all ships carrying cataphracts",
+	"scope":"CUSTOM",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":0,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_cataphract$Level1"},
+			]
+		},
+
+	],
+}

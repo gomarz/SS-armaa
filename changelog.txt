@@ -1,3 +1,8 @@
+V1.5.2d
+-------------------
+-Cataphract LPC Ground Bonus now applies to ships immediately instead of when docking at market(s)
+- Adjusted Gallant
+
 V1.5.2c
 -------------------
 -Added additional Nex starts
