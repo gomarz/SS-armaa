@@ -1,6 +1,6 @@
 {
 	"id":"armaa_cataphract",
-	"governingAptitude":"leadership",
+	"governingAptitude":"combat",
 	"compressHullmods":false,
 	"scopeStr":"all ships carrying cataphracts",
 	"scope":"CUSTOM",
