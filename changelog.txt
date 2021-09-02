@@ -2,7 +2,7 @@ V1.5.2d
 -------------------
 - Cataphract LPC Ground Bonus now applies to ships immediately instead of when docking at market(s)
 - WINGCOM SUITE:
-	- it turns out the math was backwards and this progressively weakened fighter offensive ability as relationship increased. This has been corrected, OOOOPS.
+	- it turns out the math was backwards and progressively weakened fighter offensive ability as relationship increased. This has been corrected, OOOOPS.
 - Adjusted Gallant
 	- Removed shields
 	- Reduced Ammo to 1

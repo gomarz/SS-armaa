@@ -7,9 +7,9 @@
   "height": 30,
   "width": 22,
   "center": [9, 16.5],
-  "collisionRadius": 45,
+  "collisionRadius": 59.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 44,
+  "shieldRadius": 60,
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",

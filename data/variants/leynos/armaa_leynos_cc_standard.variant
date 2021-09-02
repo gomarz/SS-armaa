@@ -2,15 +2,17 @@
   "variantId": "armaa_leynos_cc_standard",
   "hullId": "armaa_leynos_frig_comet",
   "displayName": "Standard",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 8,
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "armaa_selector_fist",
-    "armaa_selector_shotgun",
-    "heavyarmor"
+    "armaa_selector_ppc",
+    "armaa_selector_crusher",
+    "heavyarmor",
+    "fluxdistributor",
+    "reinforcedhull"
   ],
   "weaponGroups": [
     {
