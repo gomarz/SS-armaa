@@ -30,6 +30,8 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
+        "specialWeaponGlowWidth":10,
+        "specialWeaponGlowHeight":20,
   "interruptibleBurst":true,
   "projectileSpecId": "heavymg_shot",
   "renderAboveAllWeapons": 0,

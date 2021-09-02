@@ -10,11 +10,13 @@
   "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_buster_00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "numFrames":2,
+        "specialWeaponGlowWidth":10,
+        "specialWeaponGlowHeight":20,
   "glowColor": [
     0,
     255,
     125,
-    255
+    155
   ],	
   "frameRate":0,
   "fireSoundTwo":"armaa_crusher_fire",

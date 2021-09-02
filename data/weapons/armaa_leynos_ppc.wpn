@@ -12,6 +12,8 @@
   "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_ppc_00.png",
   "hardpointGunSprite": "graphics/armaa/weapons/armaa_leynos_ppc_00.png",
   #"visualRecoil": 3,
+   "specialWeaponGlowWidth":10,
+   "specialWeaponGlowHeight":20,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
