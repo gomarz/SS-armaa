@@ -1,4 +1,3 @@
 id,name,order,tier,description,author,combat officer,admiral,admin,tags,icon
 # LEADERSHIP,,,,,,,,,,
 armaa_cataphract,Cataphract Command,10001,0,Morning! How's it feel to be strapped to a walking metal coffin at six AM? Bet you wish you studied harder in school! Heh heh heh... Hit that throttle. We're going to be killing people before breakfast today.,"Savarin Johnson, pilot",,,,"npc_only,dummy",graphics/icons/skills/phase_corps.png
-armaa_cataphract2,Cataphract Command,10001,0,Morning! How's it feel to be strapped to a walking metal coffin at six AM? Bet you wish you studied harder in school! Heh heh heh... Hit that throttle. We're going to be killing people before breakfast today.,"Savarin Johnson, pilot",,,,"npc_only,dummy",graphics/icons/skills/phase_corps.png
