@@ -279,26 +279,26 @@
     },
     {
       "angle": 0,
-      "arc": 5,
+      "arc": 25,
       "id": "WS0004",
       "locations": [
         2,
         21
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "renderOrderMod": 2,
       "size": "MEDIUM",
       "type": "SYNERGY"
     },
     {
       "angle": 0,
-      "arc": 5,
+      "arc": 25,
       "id": "WS0003",
       "locations": [
         2,
         -19
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "renderOrderMod": 4,
       "size": "SMALL",
       "type": "UNIVERSAL"

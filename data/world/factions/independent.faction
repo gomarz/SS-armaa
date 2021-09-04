@@ -9,7 +9,7 @@
 			"armaa_aleste_frig":1.2,
 			"armaa_leynos_frig":1.2,
 			"armaa_hazard_frig":1.2,
-			"armaa_xyphos_frig":1.4,	
+			"armaa_xyphos":1.4,	
 		},
 	},
 	"shipsWhenImporting":{
@@ -18,7 +18,7 @@
 	    "armaa_aleste_frig",
 	    "armaa_leynos_frig",
 	    "armaa_hazard_frig",
-	    "armaa_xyphos_frig",		
+	    "armaa_xyphos",		
 		],
 	},
 	"knownShips":{

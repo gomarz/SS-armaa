@@ -1,11 +1,10 @@
 {
-	"id":"armaa_altagrave_leftArm",  # this id must match what's in the spreadsheet
-  	"everyFrameEffect": "data.scripts.weapons.armaa_KarmaEffect",
+	"id":"armaa_valkazard_rightshoulder",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
 	"type":"DECORATIVE",
-	"size":"SMALL",
+	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/proto/armaa_altagrave_gun.png",
+	"turretSprite":"graphics/armaa/ships/valkazard/armaa_valkazard_rightshoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

@@ -2,13 +2,15 @@
 "combatSmallForSmallFleet":{
 "armaa_garegga_tt_standard":2,
 "armaa_garegga_tt_assault":2,
+"armaa_hazard_standard":3,
+"armaa_xyphos_standard":3,
 },
   "combatSmall": {
     "armaa_garegga_tt_standard":2,
     "armaa_garegga_standard":2,
 	"armaa_aleste_standard_f":2,
-	"armaa_hazard_standard":2,
-	"armaa_xyphos_standard":2,
+	"armaa_hazard_standard":4,
+	"armaa_xyphos_standard":4,
 	"armaa_leynos_standard":2,
 	"armaa_einhander_Overclocked": 0.9,
   },

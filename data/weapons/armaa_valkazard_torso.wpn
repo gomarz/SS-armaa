@@ -1,0 +1,51 @@
+{
+  "id": "armaa_valkazard_torso",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_flamer_shot_valkazard",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_blunderbuss_effect",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
+  "hardpointSprite": "",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "autocharge": true,
+  "requiresFullCharge": false,
+  "muzzleFlashSpec": {
+    "length": 20,
+    "spread": 25,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "particleDuration": 0.02,
+    "particleCount": 20,
+    "particleColor": [
+      255,
+      200,
+      165,
+      200
+    ]
+  },
+  "fireSoundTwo": "armaa_shotgun_fire_small"
+}

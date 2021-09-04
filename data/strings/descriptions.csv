@@ -208,7 +208,9 @@ armaa_altagrave_exceliza,WEAPON,"A grenade launcher. Explodes after a brief dela
 armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like it's cousin, the Ion Buster fires bolts of ionized baryonic matter; it differs in design by focusing significantly more power into individual shots instead of providing a steady stream of fire. While the weapon takes far longer to charge and cannot fire as rapidly, the effects are significantly more devastating and can pierce strained shield generators.
 
 In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,
+armaa_valkazard_torso,WEAPON,"some kind of anti-fighter/close range flak shotgun IDK IF FRAG OR HE",,,
 armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
+armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,
 armaa_siegeMode,SHIP_SYSTEM,"Top speed, maneuverability, and damage taken by shields is reduced by 50%, while weapon and sensor range is increased by the same amount",,,

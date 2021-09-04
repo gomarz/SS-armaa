@@ -12,6 +12,18 @@ V1.5.2d
 	- Increased HP to 450, Armor to 20
 	- Increased turn speed
 
+-fixed bug that would cause piloted strikecraft to lock up if switched command to another ship just as it landed
+
+Altagrave:
+- Vajra:
+	-Damage: 125->175
+	-Projectile Speed: 700->725
+	-Flux/S: 130->192
+	-Ammo/Sec: 2.5->5
+	-Reload Size: 8->15
+-Karma:
+	-grants minor flat speed + accel boost, up to 50 
+
 V1.5.2c
 -------------------
 -Added additional Nex starts

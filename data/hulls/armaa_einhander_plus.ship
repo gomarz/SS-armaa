@@ -25,7 +25,7 @@
     15,
     6
   ],
-  "builtInWings": ["armaa_bit_wing"],
+  "builtInWings": ["armaa_bit_wing","armaa_bit_wing"],
   "builtInMods": [
     "phasefield",
     "strikeCraft",
@@ -35,7 +35,7 @@
   "builtInWeapons": {
     "A_GUN": "armaa_einhanderGun",
     "B_TORSO": "armaa_sprigganTorso",
-    "C_ARML": "armaa_einhanderLeftArm",
+    "C_ARML": "armaa_einhander_hig",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_sprigganleftPauldron",
     "D_PAULDRONR": "armaa_sprigganrightPauldron",
@@ -88,8 +88,8 @@
     }
   ],
   "height": 26,
-  "hullId": "armaa_einhander",
-  "hullName": "Einhander",
+  "hullId": "armaa_einhander_plus",
+  "hullName": "Einhander+",
   "hullSize": "FRIGATE",
   "shieldCenter": [
     0,
@@ -134,7 +134,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "BUILT_IN"
     },
     {
       "angle": -15,
