@@ -74,6 +74,10 @@ armaa_hazard_frig,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverab
 
 Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,
 
+armaa_valkazard,SHIP,"A heavily customized Cataphract specializing in close quarters engagement. Boasts dizzying offensive capabilities and manuverability for its class..at the cost of reliability.
+
+Originally an ordinary Valken-X employed by a band of adventurers and undesirables, the Valkazard was born as the result of numerous modifications and stopgap measures using components sourced from various other designs, most notable being the Gunhazard series. This mishmash of parts produced a brand new unit that was fairly mediocore — roughly equating to the average of its peers in all aspects — but distinguished itself via with enhanced manuverability via additional verniers along the hips and upsized mounts capable of supporting midsized weaponry. While these additions left the machine susceptible to spontaneously failures, they functioned well enough to stage several effective convoy raids and warrant expanded production. Many wonder what the purpose of renovating the head unit into it's contemporary skullesque appearance was, but its generally agreed that this was purely done as an intimidation tactic. Indeed, the approaching visage of a Valkazard burning bright is a sight not many poorly equipped merchants look forward to seeing.",,,
+
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Equipped with additional software that allows the pilot to properly coordinate an additional Xyphos wing, making them effective support units.
 
 The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,
@@ -113,6 +117,10 @@ armaa_aleste_rifle_left,WEAPON,"General purpose energy weapon. No major strength
 armaa_aleste_heavyrifle_right,WEAPON,"Enhanced Rynex Pulse Rifle. Fires a significantly stronger laser, but capacitors can only last long enough to fire a few shots.",,,
 
 armaa_aleste_grenade_left,WEAPON,"Fires a burst of high-explosive grenades. Effective in target rich enviroments or versus slower enemies. ",,,
+
+armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament to pirate ingenuity. While near useless against shields, the projectile making contact with hull produces a near constant cascading EMP effect that will rapidly disable weapons and other vital systems.",,,
+
+armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,
 
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
 
@@ -208,7 +216,7 @@ armaa_altagrave_exceliza,WEAPON,"A grenade launcher. Explodes after a brief dela
 armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like it's cousin, the Ion Buster fires bolts of ionized baryonic matter; it differs in design by focusing significantly more power into individual shots instead of providing a steady stream of fire. While the weapon takes far longer to charge and cannot fire as rapidly, the effects are significantly more devastating and can pierce strained shield generators.
 
 In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,
-armaa_valkazard_torso,WEAPON,"some kind of anti-fighter/close range flak shotgun IDK IF FRAG OR HE",,,
+
 armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
 armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,

@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.armaa_valkenXEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazardEffect",
   "fireSoundTwo": "chaingun_fire",
   "hardpointAngleOffsets": [
     0

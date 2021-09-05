@@ -5,9 +5,9 @@
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"length":100.0,
+	"length":80.0,
 	"hitGlowRadius":15,
-	"width":5.5,
+	"width":5,
 	"fadeTime":0.20,
 	"explosionColor":[250,0,250,75],
 	"fringeColor":[245,150,100,255],
@@ -21,15 +21,15 @@
  				    "vsMissileRange":10,
 					"explosionSpec":{"duration":0.05f,
 									 "radius":30,
-									 "coreRadius":15, # full damage within core radius - also equal to proximity fuse range
+									 "coreRadius":20, # full damage within core radius - also equal to proximity fuse range
 									 "collisionClass":PROJECTILE_FF,
 									 "collisionClassByFighter":PROJECTILE_FIGHTER,
 									 "particleSizeMin":5.0,
 									 "particleSizeRange":1.5,
-									 "particleDuration":1,
+									 "particleDuration":2,
 									 "particleCount":5,
-									 "particleColor":[255,100,50,255],
-									 "explosionColor":[255,100,50,100]},
+									 "particleColor":[255,125,50,255],
+									 "explosionColor":[245,150,100,100]},
 					}
 
 }

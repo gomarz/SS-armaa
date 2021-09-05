@@ -20,12 +20,12 @@
     "A_GUN": "armaa_valkazard_chaingun",
     "B_TORSO": "armaa_valkazard_torso",
     "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
-    "C_ARML": "armaa_valkenxLeftArm",
+    "C_ARML": "armaa_valkazard_harpoon",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
     "D_PAULDRONR": "armaa_valkazard_rightshoulder",
     "E_HEAD": "armaa_valkazard_head",
-    "H_GLOW": "armaa_sprigganHeadGlow"
+    "H_GLOW": "armaa_valkazard_head_glow"
   },
   "weaponSlots": [
     {

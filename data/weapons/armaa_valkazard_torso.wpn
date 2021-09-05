@@ -31,7 +31,7 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
-  "autocharge": true,
+  "interruptibleBurst":true,
   "requiresFullCharge": false,
   "muzzleFlashSpec": {
     "length": 20,
