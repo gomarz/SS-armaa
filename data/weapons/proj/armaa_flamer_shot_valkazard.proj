@@ -1,0 +1,21 @@
+{
+	"id":"armaa_flamer_shot_valkazard",
+	"specClass":"projectile",
+	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
+	#"onHitEffect": "data.scripts.weapons.armaa_curvyLaserEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":80.0,
+	"width":20.0,
+	"hitGlowRadius":0,
+	"fadeTime":0.25,
+	"darkCore":true,
+	"fringeColor":[100,150,00,100],
+	"coreColor":[0,50,0,100],
+	#"coreColor":[255,255,255,50],
+	"textureType":"SMOOTH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256,
+	"pixelsPerTexel":5.0
+	
+}
