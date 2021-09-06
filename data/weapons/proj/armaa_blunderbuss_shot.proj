@@ -5,7 +5,7 @@
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"length":80.0,
+	"length":100.0,
 	"hitGlowRadius":15,
 	"width":5,
 	"fadeTime":0.20,
@@ -16,20 +16,21 @@
 	"glowRadius":0,
 	"bulletSprite":"graphics/missiles/flechette_med.png",
 	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
-					"shotRangeVariance":0.1,
+					"shotRangeVariance":0.3,
  					"range":0,
  				    "vsMissileRange":10,
-					"explosionSpec":{"duration":0.05f,
-									 "radius":30,
-									 "coreRadius":20, # full damage within core radius - also equal to proximity fuse range
+					"explosionSpec":{"duration":0.1f,
+									 "radius":20,
+									 "coreRadius":10, # full damage within core radius - also equal to proximity fuse range
 									 "collisionClass":PROJECTILE_FF,
 									 "collisionClassByFighter":PROJECTILE_FIGHTER,
 									 "particleSizeMin":5.0,
-									 "particleSizeRange":1.5,
-									 "particleDuration":2,
+									 "particleSizeRange":5,
+									 "particleDuration":.1,
 									 "particleCount":5,
-									 "particleColor":[255,125,50,255],
-									 "explosionColor":[245,150,100,100]},
+									 "particleColor":[250,250,250,155],
+									 "explosionColor":[255,75,5,100],
+									 "sound":"explosion_flak"},
 					}
 
 }

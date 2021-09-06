@@ -35,14 +35,14 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [0, -5]
+      "locations": [0, -7]
     },
     {
       "id": "B_TORSO",
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 5,
       "angle": 0,
       "locations": [-1, 0]
     },
@@ -62,7 +62,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 15,
-      "locations": [3, 5]
+      "locations": [3, 8]
     },
     {
       "id": "C_ARMR",
@@ -80,7 +80,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 5]
+      "locations": [0, 8]
     },
     {
       "id": "D_PAULDRONR",
@@ -89,7 +89,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -5]
+      "locations": [0, -8]
     },
     {
       "id": "E_HEAD",
@@ -125,7 +125,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [-14, 16],
+      "locations": [-17, 16],
       "renderOrderMod": 100
     },
     {
@@ -135,7 +135,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [-14, -16],
+      "locations": [-17, -16],
       "renderOrderMod": 100
     }
   ],
