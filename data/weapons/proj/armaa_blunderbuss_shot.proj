@@ -24,10 +24,10 @@
 									 "coreRadius":10, # full damage within core radius - also equal to proximity fuse range
 									 "collisionClass":PROJECTILE_FF,
 									 "collisionClassByFighter":PROJECTILE_FIGHTER,
-									 "particleSizeMin":5.0,
+									 "particleSizeMin":25.0,
 									 "particleSizeRange":5,
-									 "particleDuration":.1,
-									 "particleCount":5,
+									 "particleDuration":.5,
+									 "particleCount":1,
 									 "particleColor":[250,250,250,155],
 									 "explosionColor":[255,75,5,100],
 									 "sound":"explosion_flak"},

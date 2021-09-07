@@ -1,54 +1,47 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "autocharge": false,
-  "barrelMode": "ALTERNATING",
+  "id": "armaa_valkazard_harpoon",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_harpoon_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_harpoonThrowerEffect",
-  "fireSoundTwo": "armaa_stake_shot",
-  "hardpointAngleOffsets": [
-    0
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_harpoon.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_harpoon_recoil.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    12.5,
+    18.5
+  ],
+  "turretAngleOffsets": [
+    -1
   ],
   "hardpointOffsets": [
     0,
     0
   ],
-  "hardpointSprite": "",
-  "id": "armaa_valkazard_harpoon",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  #"animationType": "MUZZLE_FLASH",
   "interruptibleBurst": true,
-  "muzzleFlashSpec": {
-    "length": 10,
-    "particleColor": [
-      255,
-      235,
-      150,
-      235
-    ],
-    "particleCount": 20,
-    "particleDuration": 0.03,
-    "particleSizeMin": 11,
-    "particleSizeRange": 5,
-    "spread": 10
-  },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_harpoon_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
-  ],
-  "showDamageWhenDecorative": true,
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    -1
-  ],
-  "turretGunSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArmB.png",
-  "turretOffsets": [
-    22,
-    18.5
-  ],
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArm.png",
-  "type": "BALLISTIC",
-  "visualRecoil": 5
+	"animationType":"SMOKE",
+	"smokeSpec":{
+            "particleSizeMin":8.0,
+            "particleSizeRange":12.0,
+            "cloudParticleCount":5,
+            "cloudDuration":1,
+            "cloudRadius":10.0,
+            "blowbackParticleCount":15,
+            "blowbackDuration":1.5,
+            "blowbackLength":-20.0,
+            "blowbackSpread":10.0,
+            "particleColor":[75,75,75,150]
+        },
+  "fireSoundTwo": "armaa_stake_shot"
 }

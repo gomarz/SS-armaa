@@ -62,7 +62,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 15,
-      "locations": [3, 8]
+      "locations": [0, 7]
     },
     {
       "id": "C_ARMR",
@@ -80,7 +80,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 8]
+      "locations": [0, 7]
     },
     {
       "id": "D_PAULDRONR",
@@ -89,7 +89,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -8]
+      "locations": [0, -7]
     },
     {
       "id": "E_HEAD",
@@ -125,7 +125,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [-17, 16],
+      "locations": [-18, 16],
       "renderOrderMod": 100
     },
     {
@@ -135,7 +135,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [-17, -16],
+      "locations": [-18, -16],
       "renderOrderMod": 100
     }
   ],

@@ -86,3 +86,5 @@ armaa_ppc2,armaa_ppc_shot,nottahlan_trail_zappy,5,0.1,0.4,0.1,30,40,"[150,100,25
 armaa_ppc3,armaa_ppc_shot,nottahlan_trail_zappy,5,0.1,0.4,0.1,9,9,"[100,200,255]","[100,200,255]",1,300,-256,0,0,1,TRUE,FALSE,TRUE,0,0,0,360,0,0,TRUE,FALSE
 armaa_ppc_4,armaa_ppc_shot,nottahlan_trail_dhelix,5,0.1,0.4,0.1,15,14,"[50,150,255]","[50,150,255]",0.8,300,-1024,0,0,1,TRUE,FALSE,TRUE,150,150,0,360,25,25,TRUE,FALSE
 armaa_ppc_5,armaa_ppc_shot,nottahlan_trail_fuzzy,5,0.1,0.4,0.1,11,11,"[138,200,255]","[138,200,255]",0.7,300,-1024,0,0,1,TRUE,FALSE,TRUE,150,150,0,360,25,25,TRUE,FALSE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_harpoon,armaa_harpoon_shot,beam_trail_smooth,10,0.1,1,0.1,10,8,"[200,200,200]","[200,200,200]",0.8,400,-1024,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,25,0,TRUE,FALSE

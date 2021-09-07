@@ -1,0 +1,24 @@
+{
+    "baseHullId":"armaa_xyphos",
+    "skinHullId":"armaa_xyphos_ke",
+    "hullName":"Xyphos Type-2 (AA)",
+    "descriptionId":"armaa_xyphos",
+    "descriptionPrefix":"This modified Xyphos has been fitted with a Heavy Machine Gun.",
+    #"spriteName":"graphics/armaa/ships/armaa_valkyrie_ca.png",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "fighterbays":1,
+    "addHints":[],
+    "tags":["rare_bp"],
+#	"systemId":"armaa_recalldevice",
+    "tech":"Arma Armatura",
+#    "removeWeaponSlots":["WS 006"], 		# ids
+#    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+#    "removeBuiltInMods":[], 		# hullmod ids
+#    "removeBuiltInWeapons":[],
+    "builtInWeapons":{
+		"WS 001": "heavymg",
+		"WS 002": "irpulse",
+    },
+    #"builtInMods":["converted_hangar"],
+}
