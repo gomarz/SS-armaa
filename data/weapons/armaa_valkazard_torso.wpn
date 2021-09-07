@@ -30,22 +30,21 @@
     45
   ],
   "barrelMode": "ALTERNATING",
-  "animationType": "MUZZLE_FLASH",
+  #"animationType": "MUZZLE_FLASH",
   "interruptibleBurst":true,
   "requiresFullCharge": false,
-  "muzzleFlashSpec": {
-    "length": 20,
-    "spread": 25,
-    "particleSizeMin": 10,
-    "particleSizeRange": 10,
-    "particleDuration": 0.02,
-    "particleCount": 20,
-    "particleColor": [
-      255,
-      200,
-      165,
-      200
-    ]
-  },
+	"animationType":"SMOKE",
+	"smokeSpec":{
+            "particleSizeMin":10.0,
+            "particleSizeRange":15.0,
+            "cloudParticleCount":5,
+            "cloudDuration":1,
+            "cloudRadius":10.0,
+            "blowbackParticleCount":15,
+            "blowbackDuration":1.5,
+            "blowbackLength":-20.0,
+            "blowbackSpread":10.0,
+            "particleColor":[45,45,45,150]
+        },
   "fireSoundTwo": "armaa_shotgun_fire_small"
 }
