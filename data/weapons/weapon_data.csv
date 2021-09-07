@@ -86,7 +86,7 @@ TB-11 Harpoon,armaa_valkazard_harpoon,1,0.25,5500,500,,350,,50,60,0,20,,,FRAGMEN
 ,armaa_harpoonSecondary,1,,100,100,,50,25,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,,,
 ,armaa_valkazard_leftshoulder,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkazard_rightshoulder,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
-Assault Chaingun(F),armaa_valkazard_chaingun,1,,1000,450,,65,,3,30,42,50,5,15,HIGH_EXPLOSIVE,45,,0,0.14,1,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5,,
+Assault Chaingun(F),armaa_valkazard_chaingun,1,,1000,450,,50,,3,30,42,50,5,15,HIGH_EXPLOSIVE,45,,0,0.14,1,0.12,0,15,1,5,,925,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5,,
 ,armaa_valkazard_head_glow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 Recoilless Rifle,armaa_valkazard_rcl,1,0.5,5000,900,,255,,10,15,42,,,,HIGH_EXPLOSIVE,280,,0,1,,,0,4,1,1,,700,,,30,SYSTEM,,,Arma Armatura,,Anti Armor,,,,,,,,,,,,
 EM Grenade,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
