@@ -2,16 +2,16 @@ V1.5.2e
 -------------------
 - New Ship, Valkazard
 
--Orders given to strikecraft to capture or assault objectives will now be immediately cancelled with a warning.
-
+- Orders given to strikecraft to capture or assault objectives will now be immediately cancelled with a warning.
+- fixed built-ins sometimes appearing in cargo after battles
 - Cataphract LPC Ground Bonus now applies to ships immediately instead of when docking at market(s)
+
 - WINGCOM SUITE:
-	- it turns out the math was backwards and progressively weakened fighter offensive ability as relationship increased. This has been corrected, OOOOPS.
+	- fixed fighters performing worse as relationship increased. oops
+
 - Adjusted Gallant
 	- Removed shields
 	- Reduced Ammo to 1
-	- Added High Scatter Amp
-	- Added Advanced Optics
 	- Reduced Attack Run Range to 800
 	- Increased HP to 450, Armor to 20
 	- Increased turn speed

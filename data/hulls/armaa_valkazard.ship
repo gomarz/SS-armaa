@@ -13,8 +13,9 @@
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",
+    "strikeCraft",
     "armaa_ill_advised",
-    "strikeCraft"
+    "armaa_rofmalus"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_valkazard_chaingun",
@@ -71,7 +72,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [3, -3]
+      "locations": [0, -7]
     },
     {
       "id": "D_PAULDRONL",
