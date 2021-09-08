@@ -1,4 +1,7 @@
 hull_id,damage_counted_per_damage_sustained
-armaa_einhander,0.3
+armaa_einhander,0.4
 armaa_aleste_frig,0.3
 armaa_leynos_frig,0.3
+armaa_valkazard,0.4
+armaa_xyphos,0.3
+armaa_hazard_frig,0.2

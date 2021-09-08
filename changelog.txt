@@ -3,7 +3,7 @@ V1.5.2e
 - New Ship, Valkazard
 
 - Orders given to strikecraft to capture or assault objectives will now be immediately cancelled with a warning.
-- fixed built-ins sometimes appearing in cargo after battles
+- fixed built-ins sometimes appearing in cargo after destroying ships that had swappable weapons
 - Cataphract LPC Ground Bonus now applies to ships immediately instead of when docking at market(s)
 
 - WINGCOM SUITE:
@@ -32,9 +32,6 @@ Altagrave:
 Einhander:
 - Replaced Phase Damper with standard phase cloak. Buff for AI since it would think it was invincible while using Damper
 - todo: rewrite codex entry
-
-Leynos(RS):
-- Replaced Damper Field for omni shields
 
 V1.5.2c
 -------------------

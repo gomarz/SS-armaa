@@ -1,0 +1,88 @@
+{
+  "hullName": "Peacekeeper (XIV)",
+  "hullId": "eis_peacekeeper",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/eis_peacekeeper.png",
+  "style": "MIDLINE",
+  "height": 48,
+  "width": 42,
+  "center": [21, 23],
+  "collisionRadius": 27.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 25.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux",
+	"eis_peacekeepercore"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [21, 3.5]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [2, 11]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [2, -11]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-22, -4.5],
+      "length": 11.5,
+      "width": 5,
+      "angle": -170.5,
+      "contrailSize": 5,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-22, 4.5],
+      "length": 11.5,
+      "width": 5,
+      "angle": 170.5,
+      "contrailSize": 5,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-18, 2],
+      "length": 17.530422,
+      "width": 5.170795,
+      "angle": 180,
+      "contrailSize": 5.170795,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-18, -2],
+      "length": 17.530422,
+      "width": 5.170795,
+      "angle": -180,
+      "contrailSize": 5.170795,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -1, -18,
+    -22, -6.5,
+    -22, 6.5,
+    -1, 18,
+    23, -0
+  ]
+}
