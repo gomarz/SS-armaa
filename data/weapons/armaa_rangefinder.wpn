@@ -22,7 +22,7 @@
 					   "particleDuration":0,
 					   "particleCount":0,
 					   "particleColor":[0,0,0,0]},
-	"projectileSpecId":"chaingun_shot",  # projectile that will be fired
+	"projectileSpecId":"armaa_as_sword_shot",  # projectile that will be fired
 	#"fireSoundOne":"light_machinegun_intro",
 	#"fireSoundTwo":"al_bulldog_fire",
 }

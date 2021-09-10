@@ -74,7 +74,7 @@ Light Assault Gun,armaa_valken_torso_black,0,,300,500,,40,,3,40,0,100,,,HIGH_EXP
 ,armaa_valken_rightPauldron_black,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkenLeftArm_black,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 Anti Ship Sword,armaa_valken_gun_black,2,0.5,600,80,,300,50,10,60,7,5,,,HIGH_EXPLOSIVE,55,,0.5,1,,,1,15,1,6,,2000,,,50,"SYSTEM,STRIKE, USE_VS_FRIGATES",,,,,Anti Shield,,,,,,,,,,0.5,,
-Breach SRM(Ftr),armaa_breach_ftr,1,,200,1200,,150,,15,10,3,3,0.25,1,HIGH_EXPLOSIVE,0,,0,9,1,0.5,0,0,0,,,400,50,4.5,450,SYSTEM,,"DO_NOT_AIM, CONSERVE_ALL, CONSERVE_FOR_ANTI_ARMOR, DIRECT_AIM, MISSILE_SPREAD",,,,,Anti Armor,Medium,Good,,,Each missile deals an additional %s damage to armor. This damage is not reduced by armor.,200,,,TRUE,11.7
+#Breach SRM(Ftr),armaa_breach_ftr,1,,200,1200,,150,,15,10,3,3,0.25,1,HIGH_EXPLOSIVE,0,,0,9,1,0.5,0,0,0,,,400,50,4.5,450,SYSTEM,,"DO_NOT_AIM, CONSERVE_ALL, CONSERVE_FOR_ANTI_ARMOR, DIRECT_AIM, MISSILE_SPREAD",,,,,Anti Armor,Medium,Good,,,Each missile deals an additional %s damage to armor. This damage is not reduced by armor.,200,,,TRUE,11.7
 #VALKEN-X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_valkenx_torso_vernier,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 Ion Cannon (High Delay),armaa_valkenx_torso,2,,500,500,,25,400,0,40,6,,,,ENERGY,30,,0.8,0.7,,,,,,,,1000,,,,SYSTEM,energy8,,,,Suppression,,,,,,,,,,19.1,,
