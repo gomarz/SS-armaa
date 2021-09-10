@@ -35,7 +35,7 @@
       "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 0,
+      "angle": -10,
       "locations": [0, -7]
     },
     {

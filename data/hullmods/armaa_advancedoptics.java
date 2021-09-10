@@ -3,6 +3,7 @@ package data.hullmods;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.Global;
 
 public class armaa_advancedoptics extends BaseHullMod {
 
@@ -14,6 +15,8 @@ public class armaa_advancedoptics extends BaseHullMod {
 		stats.getBeamWeaponRangeBonus().modifyFlat(id, BEAM_RANGE_BONUS);
 		//stats.getBeamWeaponDamageMult().modifyPercent(id, -BEAM_DAMAGE_PENALTY);
 		stats.getBeamWeaponTurnRateBonus().modifyMult(id, 1f - BEAM_TURN_PENALTY * 0.01f);
+		if(Global.getSector().getCharacterData().knowsHullMod("advancedoptics"))
+			Global.getSector().getCharacterData().addHullMod("armaa_advancedoptics");
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
@@ -22,6 +25,4 @@ public class armaa_advancedoptics extends BaseHullMod {
 		if (index == 1) return "" + (int) BEAM_TURN_PENALTY + "%";
 		return null;
 	}
-
-
 }

@@ -1,0 +1,144 @@
+{
+  "hullName": "Valken",
+  "hullId": "armaa_valken_black",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
+  "style": "armaa_TECH",
+  "height": 26,
+  "width": 18,
+  "center": [9, 16.5],
+  "collisionRadius": 18,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 36,
+  "viewOffset": 0,
+  #"builtInMods": ["armaa_ill_advised"],
+  "builtInWeapons": {
+    "A_GUN": "armaa_valken_gun_black",
+    "B_TORSO": "armaa_valken_torso_black",
+    "C_ARML": "armaa_valkenLeftArm_black",
+    "C_ARMR": "armaa_valkazard_rightarm",
+    "D_PAULDRONL": "armaa_valken_leftPauldron_black",
+    "D_PAULDRONR": "armaa_valken_rightPauldron_black",
+    "E_HEAD": "armaa_valkenHead_black",
+    "H_GLOW": "armaa_sprigganHeadGlow"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -25,
+      "renderOrderMod": 100,
+      "locations": [-4, -7]
+    },
+    {
+      "id": "B_TORSO",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, 0]
+    },
+    {
+      "id": "C_ARML",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [2, 2]
+    },
+    {
+      "id": "C_ARMR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [2, -2]
+    },
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, 2]
+    },
+    {
+      "id": "D_PAULDRONR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [0, -2]
+    },
+    {
+      "id": "E_HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [1, -0]
+    },
+    {
+      "id": "F_GLOW",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "H_GLOW",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [1, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-10, 13],
+      "renderOrderMod": 120
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-13.5, -0],
+      "length": 19.5,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE"
+    }
+  ],
+  "bounds": [
+    15, -4.5,
+    6, -8,
+    3, -13.5,
+    -1, -13.5,
+    -3, -6.5,
+    -13, -5.5,
+    -13, 5.5,
+    -3, 6.5,
+    -1, 13.5,
+    3, 13.5,
+    6, 8,
+    15, 4.5
+  ]
+}

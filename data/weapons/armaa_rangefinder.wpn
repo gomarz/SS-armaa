@@ -1,0 +1,28 @@
+{
+	"id":"armaa_rangefinder",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"BALLISTIC",
+	"size":"SMALL",
+	"displayArcRadius":250,
+	"turretSprite":"",
+	"hardpointSprite":"",
+	"visualRecoil":0.0,  # the gun sprites are only used if this is non-0
+	"turretOffsets":[0, 0],
+	"turretAngleOffsets":[],
+	"hardpointOffsets":[0, 0],
+	"hardpointAngleOffsets":[],
+	"renderHints":[RENDER_BARREL_BELOW],
+	"barrelMode":"LINKED", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"MUZZLE_FLASH",
+	"interruptibleBurst":false,
+	"muzzleFlashSpec":{"length":0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":0.0,
+					   "particleSizeMin":0,
+					   "particleSizeRange":0,
+					   "particleDuration":0,
+					   "particleCount":0,
+					   "particleColor":[0,0,0,0]},
+	"projectileSpecId":"chaingun_shot",  # projectile that will be fired
+	#"fireSoundOne":"light_machinegun_intro",
+	#"fireSoundTwo":"al_bulldog_fire",
+}

@@ -1,0 +1,49 @@
+{
+  "id": "armaa_valken_torso_black",
+  "specClass": "projectile",
+  "projectileSpecId": "lightag_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenBody_p.png",
+  "turretGunSprite": "graphics/armaa/ships/valken/armaa_valkenBodyBarrel.png",
+  "hardpointSprite": "",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    20,
+    0.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "requiresFullCharge": false,
+  "muzzleFlashSpec": {
+    "length": 20,
+    "spread": 16,
+    "particleSizeMin": 8,
+    "particleSizeRange": 10,
+    "particleDuration": 0.35,
+    "particleCount": 12,
+    "particleColor": [
+      255,
+      155,
+      105,
+      185
+    ]
+  },
+  "fireSoundTwo": "light_assault_gun_fire"
+}
