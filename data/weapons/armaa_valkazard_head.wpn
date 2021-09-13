@@ -3,6 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
+  "showDamageWhenDecorative":true,
   "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",

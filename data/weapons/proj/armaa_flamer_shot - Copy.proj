@@ -4,7 +4,7 @@
 	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
 	
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"collisionClass":"RAY",
+	"collisionClass":"RAY_FIGHTER",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":80.0,
 	"width":30.0,

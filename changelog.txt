@@ -6,6 +6,8 @@ V1.5.2e
 - fixed built-ins sometimes appearing in cargo after destroying ships that had swappable weapons
 - Cataphract LPC Ground Bonus now applies to ships immediately instead of when docking at market(s)
 
+-Fixed Curvy Laser projectiles striking friendly ships
+
 - WINGCOM SUITE:
 	- fixed fighters performing worse as relationship increased. oops
 

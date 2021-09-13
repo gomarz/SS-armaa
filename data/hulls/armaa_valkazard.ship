@@ -14,18 +14,18 @@
   "builtInMods": [
     "cataphract",
     "strikeCraft",
-    "armaa_ill_advised",
-    "armaa_rofmalus"
+    "armaa_ill_advised"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_valkazard_chaingun",
     "B_TORSO": "armaa_valkazard_torso",
     "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
-    "C_ARML": "armaa_valkazard_harpoon",
+    "C_ARML": "armaa_einhander_emp_smg",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
     "D_PAULDRONR": "armaa_valkazard_rightshoulder",
     "E_HEAD": "armaa_valkazard_head",
+    "F_LEGS": "armaa_valkazard_legs",
     "H_GLOW": "armaa_valkazard_head_glow"
   },
   "weaponSlots": [
@@ -36,7 +36,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-      "locations": [0, -7]
+      "locations": [0, -5]
     },
     {
       "id": "B_TORSO",
@@ -45,7 +45,17 @@
       "mount": "TURRET",
       "arc": 5,
       "angle": 0,
-      "locations": [-1, 0]
+      "locations": [0, -0]
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-8, -0],
+      "renderOrderMod": -1000
     },
     {
       "id": "B_TORSO_VERNIER",
@@ -54,7 +64,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [-4, 0]
+      "locations": [-4, -0]
     },
     {
       "id": "C_ARML",
@@ -63,7 +73,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 15,
-      "locations": [0, 7]
+      "locations": [0, 5]
     },
     {
       "id": "C_ARMR",
@@ -72,7 +82,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -7]
+      "locations": [0, -5]
     },
     {
       "id": "D_PAULDRONL",
@@ -81,7 +91,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 7]
+      "locations": [0, 5]
     },
     {
       "id": "D_PAULDRONR",
@@ -90,16 +100,16 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -7]
+      "locations": [0, -5]
     },
     {
       "id": "E_HEAD",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [-1, 0]
+      "locations": [0, -0]
     },
     {
       "id": "F_GLOW",
@@ -108,7 +118,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, -3]
+      "locations": [0.5, -3]
     },
     {
       "id": "H_GLOW",
@@ -117,7 +127,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [-1, 0]
+      "locations": [0, -0]
     },
     {
       "id": "WS0001",
@@ -131,7 +141,7 @@
     },
     {
       "id": "WS0002",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "HYBRID",
       "mount": "HARDPOINT",
       "arc": 5,

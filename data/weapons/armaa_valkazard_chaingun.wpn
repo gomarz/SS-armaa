@@ -11,8 +11,8 @@
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "visualRecoil": 1,
   "turretOffsets": [
-    35,
-    -12
+    31,
+    -14.5
   ],
   "turretAngleOffsets": [
     0
@@ -26,8 +26,6 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
- # "numFrames": 4,
- # "frameRate": 30,
   "interruptibleBurst": true,
   "autocharge": true,
   "muzzleFlashSpec": {
