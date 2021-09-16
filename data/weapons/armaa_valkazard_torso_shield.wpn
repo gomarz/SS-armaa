@@ -1,0 +1,50 @@
+{
+  "id": "armaa_valkazard_torso_shield",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_flamer_shot_valkazard",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_counterShieldEffect",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
+  "hardpointSprite": "",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  #"animationType": "MUZZLE_FLASH",
+  "interruptibleBurst":true,
+  "requiresFullCharge": false,
+	"animationType":"SMOKE",
+	"smokeSpec":{
+            "particleSizeMin":10.0,
+            "particleSizeRange":15.0,
+            "cloudParticleCount":5,
+            "cloudDuration":1,
+            "cloudRadius":10.0,
+            "blowbackParticleCount":15,
+            "blowbackDuration":1.5,
+            "blowbackLength":-20.0,
+            "blowbackSpread":10.0,
+            "particleColor":[45,45,45,150]
+        },
+  "fireSoundTwo": "armaa_shotgun_fire_small"
+}

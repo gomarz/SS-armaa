@@ -1,0 +1,59 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "vajra_fire",
+  "everyFrameEffect": "data.scripts.weapons.armaa_counterShieldScript",
+  "glowColor": [
+    50,
+    142,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_valkazard_countershield_secondary",
+  "muzzleFlashSpec": {
+    "length": 50,
+    "particleColor": [
+      250,
+      102,
+      92,
+      255
+    ],
+    "particleCount": 25,
+    "particleDuration": 0.15,
+    "particleSizeMin": 20,
+    "particleSizeRange": 30,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_hominglaser2",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "showDamageWhenDecorative": true,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    1
+  ],
+  "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_righthandb_glow.png",
+  "turretGunSprite": "graphics/armaa/ships/proto/armaa_altagrave_righthandb.png",
+  "turretOffsets": [
+    60,
+    -12
+  ],
+  "turretSprite": "",
+  "type": "ENERGY",
+  "visualRecoil": 2
+}

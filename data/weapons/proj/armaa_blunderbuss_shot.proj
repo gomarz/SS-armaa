@@ -28,7 +28,7 @@
 									 "particleSizeRange":5,
 									 "particleDuration":.5,
 									 "particleCount":1,
-									 "particleColor":[250,25,25,155],
+									 "particleColor":[255,125,25,155],
 									 "explosionColor":[255,75,5,100],
 									 "sound":"explosion_flak"},
 					}

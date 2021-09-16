@@ -18,7 +18,8 @@
 	    "armaa_aleste_frig",
 	    "armaa_leynos_frig",
 	    "armaa_hazard_frig",
-	    "armaa_xyphos",		
+	    "armaa_xyphos",
+	    "armaa_watchdog",		
 		],
 	},
 	"knownShips":{

@@ -140,3 +140,10 @@ L ARM: POWERFIST,alwaysburn,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4
 %s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
 
 %s ",,graphics/armaa/hullmods/hand_l.png
+,,,,,,,,,,,,,,,,,,
+#VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,
+CORE: COUNTER SHIELD,armaa_selector_counter_shield,,,,no_build_in,,,TRUE,,,0,0,0,0,data.hullmods.armaa_selector_counter_shield,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
+
+%s",,graphics/armaa/hullmods/hand_l.png
