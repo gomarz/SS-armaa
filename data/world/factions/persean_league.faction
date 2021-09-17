@@ -19,7 +19,7 @@
 	    "armaa_leynos_frig",
 	    "armaa_hazard_frig",
 	    "armaa_xyphos",
-	    "armaa_watchdog",			
+	    "armaa_monitor",			
 		],
 	},
 	"knownShips":{
