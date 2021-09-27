@@ -14,13 +14,14 @@
   "builtInMods": [
     "cataphract",
     "strikeCraft",
-    "armaa_ill_advised"
+    "armaa_ill_advised",
+    "armaa_valkazardWeaponSwap"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_valkazard_chaingun",
-    "B_TORSO": "armaa_valkazard_torso_shield",
+    #"A_GUN": "armaa_valkazard_chaingun",
+    #"B_TORSO": "armaa_valkazard_torso_shield",
     "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
-    "C_ARML": "armaa_einhander_emp_smg",
+    #"C_ARML": "armaa_einhander_emp_smg",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
     "D_PAULDRONR": "armaa_valkazard_rightshoulder",
@@ -142,7 +143,7 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "MISSILE",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,

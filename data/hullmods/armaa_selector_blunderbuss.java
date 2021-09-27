@@ -8,12 +8,13 @@ import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShieldAPI.ShieldType;
 
-public class armaa_selector_counter_shield extends BaseHullMod {
-
-	private static final float SHIELD_MALUS = -50f;
-	public static final float SHIELD_BONUS_TURN = 100f;
-	public static final float SHIELD_BONUS_UNFOLD = 100f;
-
+public class armaa_selector_blunderbuss extends BaseHullMod {
+	
+	private static final float ARMOR_BONUS_MULT = 1.1f;
+	private static final float SHIELD_MALUS = -75f;
+	private static final float CAPACITY_MULT = 1.2f;
+	private static final float DISSIPATION_MULT = 1.2f;
+	private static final float HANDLING_MULT = 1.2f;
 	
 	  @Override
     	  public int getDisplaySortOrder() 
@@ -26,25 +27,17 @@ public class armaa_selector_counter_shield extends BaseHullMod {
 	  {
 		return 3;
     	  }
-
+	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
-		stats.getShieldArcBonus().modifyPercent(id, SHIELD_MALUS);
-		stats.getShieldTurnRateMult().modifyPercent(id, SHIELD_BONUS_TURN);
-		stats.getShieldUnfoldRateMult().modifyPercent(id, SHIELD_BONUS_UNFOLD);
+	
 		
 	}
 	
-	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-		ShieldAPI shield = ship.getShield();
-		if (shield != null) {
-			shield.setType(ShieldType.OMNI);
-		}
-	}
-	
+
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "XCS-03 Counter Shield";
+ 		if (index == 0) return "Blunderbuss";
 		if (index == 1) return "Remove this hullmod to cycle between cores.";
         return null;    
     }

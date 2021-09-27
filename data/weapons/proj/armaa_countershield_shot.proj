@@ -1,0 +1,15 @@
+{
+	"id":"armaa_countershield_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":60.0,
+	"hitGlowRadius":50,
+	"width":5,
+	"fadeTime":0.2,
+	"fringeColor":[146,250,0,255],
+	"coreColor":[0,255,0,255],
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,	
+}

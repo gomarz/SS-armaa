@@ -142,8 +142,40 @@ L ARM: POWERFIST,alwaysburn,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4
 %s ",,graphics/armaa/hullmods/hand_l.png
 ,,,,,,,,,,,,,,,,,,
 #VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,
-CORE: COUNTER SHIELD,armaa_selector_counter_shield,,,,no_build_in,,,TRUE,,,0,0,0,0,data.hullmods.armaa_selector_counter_shield,"HAND weapons can be changed to better suit the pilot's preferences. 
+Versatile Frame,armaa_valkazardWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardweaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
+CORE: COUNTER SHIELD,armaa_selector_counter_shield,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_counter_shield,"Core units are the heart of the machine, storing vital components such as the cockpit. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
+
+The %s utilizies a specialized omnidirectional shield emitter that accumulates energy from any attacks against it while deployed. Capacity scales with the units flux reserves, and will be discharged once that threshold is met, or it overloads.  
+
+%s",,graphics/armaa/hullmods/hand_l.png
+CORE: BLUNDERBUSS,armaa_selector_blunderbuss,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blunderbuss,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
 
 %s",,graphics/armaa/hullmods/hand_l.png
+CORE: HANGAR,armaa_selector_hangar,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_hangar,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
+
+%s",,graphics/armaa/hullmods/hand_l.png
+,,,,,,,,,,,,,,,,,,
+R ARM:CRUSHER,armaa_selector_rcl,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_rcl,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s fires a two-round burst of anti-armor bolts. Has the greatest range of all weapons that can be fitted to the HAND units.
+%s",,graphics/armaa/hullmods/hand_r.png
+R ARM:AUTOCANNON,armaa_selector_chaingun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_chaingun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s is a standard use autocannon.
+
+%s",,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,
+L ARM: RAILGUN,armaa_selector_micropulser,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_micropulser,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
+
+%s",,graphics/armaa/hullmods/hand_l.png
+L ARM: POWERFIST,armaa_selector_harpoon,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+%s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
+
+%s ",,graphics/armaa/hullmods/hand_l.png

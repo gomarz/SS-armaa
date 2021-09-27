@@ -1,14 +1,14 @@
 {
-  "id": "armaa_valkazard_torso_shield",
+  "id": "armaa_valkazard_torso_hangar",
   "specClass": "projectile",
   "projectileSpecId": "armaa_flamer_shot_valkazard",
   "type": "ENERGY",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_counterShieldEffect",
-  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_shield.png",
-  #"turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
+  "everyFrameEffect": "data.scripts.weapons.armaa_hangerCoreEffect",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
   "hardpointSprite": "",
-  #"visualRecoil": 3,
+  "visualRecoil": 3,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],

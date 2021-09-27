@@ -1,0 +1,15 @@
+{
+    "displayName": "UWS",
+    "fluxCapacitors": 0,
+    "fluxVents": 5,
+    "hullId": "armaa_bit",
+    "goalVariant": true,
+    "permaMods": ["no_weapon_flux"],
+    "variantId": "armaa_bit_alta",
+    "weaponGroups": [{
+      #  "autofire": true,
+        "mode": "LINKED",
+        "weapons": {"WS0001": "pulselaser"}
+
+    }]
+}
