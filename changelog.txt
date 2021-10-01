@@ -1,3 +1,8 @@
+V1.5.3
+--------------------
+- WINGCOM SUITE:
+	- added dialog lines for remaining vanilla fighters
+	- 
 V1.5.2e
 -------------------
 - New Ship, Valkazard
@@ -10,6 +15,7 @@ V1.5.2e
 
 - WINGCOM SUITE:
 	- fixed fighters performing worse as relationship increased. oops
+	
 
 - Adjusted Gallant
 	- Removed shields
