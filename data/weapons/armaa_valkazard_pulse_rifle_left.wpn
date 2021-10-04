@@ -1,0 +1,52 @@
+{
+  "barrelMode": "ALTERNATING",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
+"fireSoundTwo": "pulse_laser_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "id": "armaa_valkazard_pulse_rifle_left",
+	"animationType":"MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      255,
+      68,
+      204,
+      220
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.04,
+    "particleSizeMin": 18,
+    "particleSizeRange": 23,
+    "spread": 12
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_pulselaser_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    -1
+  ],
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_emp_smg.png",
+  "turretOffsets": [
+    27,
+    -14.5
+  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "type": "ENERGY",
+  "visualRecoil": 3
+}

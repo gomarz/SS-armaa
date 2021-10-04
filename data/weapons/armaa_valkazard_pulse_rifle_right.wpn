@@ -1,8 +1,8 @@
 {
   #"animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
-  "fireSoundTwo": "chaingun_fire",
+ # "everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
+"fireSoundTwo": "pulse_laser_fire",
   "hardpointAngleOffsets": [
     0
   ],
@@ -12,24 +12,26 @@
     0
   ],
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_valkazard_rcl",
-	"animationType":"SMOKE",
-	"smokeSpec":{
-            "particleSizeMin":10.0,
-            "particleSizeRange":15.0,
-            "cloudParticleCount":5,
-            "cloudDuration":1,
-            "cloudRadius":10.0,
-            "blowbackParticleCount":15,
-            "blowbackDuration":1.5,
-            "blowbackLength":-20.0,
-            "blowbackSpread":10.0,
-            "particleColor":[45,45,45,150]
-        },
+  "id": "armaa_valkazard_pulse_rifle_right",
+	"animationType":"MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      255,
+      68,
+      204,
+      220
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.04,
+    "particleSizeMin": 18,
+    "particleSizeRange": 23,
+    "spread": 12
+  },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "heavymauler_shot",
+  "projectileSpecId": "armaa_pulselaser_shot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -46,6 +48,6 @@
     -14.5
   ],
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "type": "BALLISTIC",
+  "type": "ENERGY",
   "visualRecoil": 3
 }

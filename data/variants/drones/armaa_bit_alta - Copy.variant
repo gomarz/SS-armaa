@@ -2,10 +2,10 @@
     "displayName": "UWS",
     "fluxCapacitors": 0,
     "fluxVents": 5,
-    "hullId": "armaa_bit",
+    "hullId": "armaa_bit_valkazard",
     "goalVariant": true,
-    "permaMods": ["no_weapon_flux"],
-    "variantId": "armaa_bit_alta",
+    "permaMods": [],
+    "variantId": "armaa_bit_hangar",
     "weaponGroups": [{
       #  "autofire": true,
         "mode": "LINKED",
