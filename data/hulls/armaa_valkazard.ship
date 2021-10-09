@@ -132,8 +132,8 @@
     },
     {
       "id": "WS0001",
-      "size": "MEDIUM",
-      "type": "HYBRID",
+      "size": "SMALL",
+      "type": "MISSILE",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,

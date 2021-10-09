@@ -1,0 +1,18 @@
+{
+	"id":"armaa_shinespark_shot",
+	"onHitEffect":"data.scripts.weapons.armaa_shineCoreEffect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":100.0,
+	"hitGlowRadius":15,
+	"width":5,
+	"fadeTime":0.20,
+	"explosionColor":[250,0,250,75],
+	"fringeColor":[245,150,100,255],
+	"coreColor":[225,150,150,255],
+	"glowColor":[245,188,10,150],
+	"glowRadius":0,
+	"bulletSprite":"graphics/missiles/flechette_med.png",
+}

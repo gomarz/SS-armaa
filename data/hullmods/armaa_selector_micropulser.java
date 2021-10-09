@@ -17,7 +17,7 @@ public class armaa_selector_micropulser extends BaseHullMod {
     	  }     
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
-		if (index == 0) return "Boost Knuckle";
+		if (index == 0) return "Micro Ion Pulser";
 		if (index == 1) return "Remove this hullmod to cycle between weapons.";
         return null;
     }

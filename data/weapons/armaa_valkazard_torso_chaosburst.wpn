@@ -1,14 +1,22 @@
 {
   "id": "armaa_valkazard_torso_chaosburst",
-  "specClass": "projectile",
-  "projectileSpecId": "armaa_flamer_shot_valkazard",
+  "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_blunderbuss_effect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_shineCoreEveryFrameEffect",
+  "beamEffect": "data.scripts.weapons.armaa_shineCoreEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body.png",
   "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
   "hardpointSprite": "",
-  "visualRecoil": 3,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
@@ -29,22 +37,22 @@
     -45,
     45
   ],
-  "barrelMode": "ALTERNATING",
-  #"animationType": "MUZZLE_FLASH",
-  "interruptibleBurst":true,
-  "requiresFullCharge": false,
-	"animationType":"SMOKE",
-	"smokeSpec":{
-            "particleSizeMin":10.0,
-            "particleSizeRange":15.0,
-            "cloudParticleCount":5,
-            "cloudDuration":1,
-            "cloudRadius":10.0,
-            "blowbackParticleCount":15,
-            "blowbackDuration":1.5,
-            "blowbackLength":-20.0,
-            "blowbackSpread":10.0,
-            "particleColor":[45,45,45,150]
-        },
-  "fireSoundTwo": "armaa_shotgun_fire_small"
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "darkCore": true,
+  "width": 20,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
 }

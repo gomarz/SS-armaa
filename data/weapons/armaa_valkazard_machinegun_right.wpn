@@ -1,8 +1,8 @@
 {
-  "id": "armaa_valkazard_pulse_rifle_left",
+  "id": "armaa_valkazard_machinegun_right",
   "specClass": "projectile",
   "projectileSpecId": "armaa_pulselaser_shot",
-  "type": "ENERGY",
+  "type": "BALLISTIC",
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_emp_smg.png",
