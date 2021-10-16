@@ -1,0 +1,77 @@
+{
+  "hullName": "Gallant",
+  "hullId": "armaa_gallant_frig",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/ortype_2.png",
+  "style": "HIGH_TECH",
+  "height": 64,
+  "width": 64,
+  "center": [31.5, 22],
+  "collisionRadius": 40,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 40,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0002": "armaa_gallant_cover"
+},
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "renderOrderMod":1000,
+      "locations": [0, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-19, 5.5],
+      "length": 15,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE"
+    },
+    {
+      "location": [-19, -0],
+      "length": 25,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE"
+    },
+    {
+      "location": [-19, -5.5],
+      "length": 15.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "CUSTOM",
+      "styleId": "DRONE_ENGINE"
+    }
+  ],
+  "bounds": [
+    22.5, -2.5,
+    3, -10.5,
+    -9.5, -17.5,
+    -17, -9,
+    -17, 9,
+    -9.5, 17.5,
+    3, 10.5,
+    22.5, 2.5
+  ]
+}

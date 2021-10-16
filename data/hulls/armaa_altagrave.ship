@@ -24,14 +24,15 @@
   "builtInMods": [
 "armaa_legmodule",
 "armaa_karma",
-"armaa_ma"
+"armaa_ma",
+"armaa_altagraveWeaponSwap"
   ],
   "builtInWeapons": {
     "E_HEAD": "armaa_altagrave_head",
     "E_HEAD_GLOW": "armaa_altagrave_head_glow",
     "E_LARM": "armaa_altagrave_leftArm",
     "E_LSHOULDER": "armaa_altagrave_leftPauldron",
-    "E_RARM": "armaa_altagrave_rightArm",
+    #"E_RARM": "armaa_altagrave_rightArm",
     "E_RSHOULDER": "armaa_altagrave_rightPauldron",
     "COVER": "armaa_altagrave_cover"
   },

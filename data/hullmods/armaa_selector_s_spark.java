@@ -43,10 +43,7 @@ import java.awt.Color;
 		}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-		ShieldAPI shield = ship.getShield();
-		if (shield != null) {
-			shield.setType(ShieldType.OMNI);
-		}
+
 	}
 	
     @Override

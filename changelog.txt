@@ -1,11 +1,30 @@
-V1.5.3
+V1.6
 --------------------
+- New Ship, Valkazard
+- New Ship, Broadsword Isiliva
+- Altagrave can now swap between Vajra and Grenade Launcher
+- Watchdog can now swap between Hellbore and Gauss Cannon
+
+- New fighter, Valken(P)
+	- Carries Anti-Ship Sword, HE weapon with limited uses
+
 - WINGCOM SUITE:
+	- Removed glow/jitter effect
+	- wingmen will now use different dialog based on the character's 'voice'
 	- added dialog lines for remaining vanilla fighters
+	- added dialog lines for a few mod fighters
+	- wingmen will occasionally appear in battle as a pilot of fighter
+	- Adjusted font colors for more uniformity with normal hullmods
+	- In smaller battles where ships deploy closer to the center of the map, wingmen will now spawn a few thousand SU away instead of from deployment zone
+- Strikecraft:
+	- Increased minimum range before strikecraft switched to landing AI (500->1500 su)
+	- Fixed Strikecraft changing to Frigate HullSize if they took damage that frame
+		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
+	- Fixed shield damage not being displayed
+	- Slightly increased retreat area 2000->2050 in attempt to fix retreat CTD caused by AI attempting to retreat while fighter hullsize
 	- 
 V1.5.2e
 -------------------
-- New Ship, Valkazard
 
 - Orders given to strikecraft to capture or assault objectives will now be immediately cancelled with a warning.
 - fixed built-ins sometimes appearing in cargo after destroying ships that had swappable weapons

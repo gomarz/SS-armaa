@@ -1,0 +1,67 @@
+{
+    "playableFaction":false,
+	"startingFaction":true,
+    "corvusCompatible":true,
+    "freeStart":true,
+	"spawnAsFactionId":"player",
+    "noRandomizeRelations":true,
+	# transfer to this faction at start (after new game time pass)
+    "ngcTooltip":"This is the story of a pilot who wanted to become ...",
+	
+    "factionsLiked":[
+		"pirates",
+    ],
+    "factionsDisliked":[
+		"luddic_path",
+		"luddic_church",
+		"independent",
+		"hegemony",
+		"tritachyon",
+		"persean",
+		"sindrian_diktat",
+		"remnant",
+		"blackrock_driveyards",
+		"magellan_protectorate",
+		"exigency",
+		"tiandong",
+		"diableavionics",
+		"SCY",
+		"sylphon",
+		"nullorder",
+		"fob",
+		"Coalition",
+		"neutrinocorp",
+		"interstellarimperium",
+		"syndicate_asp",
+		"pack",
+		"crystanite",
+		"vass_shipyards",
+		"fringe_defence_syndicate",
+		"nomads",
+		"junk_pirates",
+		"sad",
+		"new_galactic_order"
+    ],
+
+    "startRelationships":{
+    		"hegemony": 0.25, #render unto Caesar, after you skim the cream
+    		"luddic_path": -0.9, #you gonna get wrecked jesus boy
+    		"tiandong": 0.25, #like bros in a wuxia flick
+    		"blackrock_driveyards": -0.3, #blue vs green style aggro
+    		"shadow_industry": 0.25, #so green, so cuddly - SRA ship plushies sell out fast
+    		"diableavionics": -0.5, #the whole 'planet full of slaves' is kind of a dealbreaker
+    		"sylphon": 0.25, #I like you okay, bud
+    		"mayorate": -0.8, #I don't like the look of your face
+    		"magellan_protectorate": -0.3, #the whole 'massive pointy social pyramid' thing is a hard no
+    		"communist_clouds": -0.1, #not our favorite people, not by a long shot
+    		"new_galactic_order": -1.0 }, #you know why you don't get invited to the good parties
+
+	"startShipsSuper":
+	[
+		["armaa_valkazard_standard", "colossus3_Pirate","monitor_Escort"]
+	],
+	"startSpecialItems":[
+		[["armaa_cataphract_package",""]],
+		[["armaa_advcataphract_package",""]],
+	],
+}

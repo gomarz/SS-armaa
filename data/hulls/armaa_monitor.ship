@@ -12,15 +12,16 @@
   "shieldRadius": 102,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxshunt"
+    "fluxshunt",
+    "armaa_weaponSwap_monitor"
   ],
   "builtInWeapons": {
     "E_DECO": "armaa_monitor_deco",
     "E_DECO_R": "armaa_monitor_deco_right",
     "E_GLOW": "armaa_monitor_glow",
-    "E_LARM": "armaa_monitor_leftArm",
+    #"E_LARM": "armaa_monitor_leftArm",
     "E_LSHOULDER": "armaa_monitor_leftPauldron",
-    "E_RARM": "armaa_monitor_rightArm",
+    #"E_RARM": "armaa_monitor_rightArm",
     "E_RSHOULDER": "armaa_monitor_rightPauldron"
   },
   "weaponSlots": [

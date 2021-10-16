@@ -1,20 +1,21 @@
 {
   "id": "armaa_valkazard_machinegun_right",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_pulselaser_shot",
+  "projectileSpecId": "heavymg_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazard_machinegunEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_emp_smg.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_mg_right_00.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 3,
+  "visualRecoil": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    29,
-    14.5
+    31,
+    -14
   ],
   "turretAngleOffsets": [
     -1
@@ -29,18 +30,18 @@
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
-    "length": 25,
-    "spread": 12,
-    "particleSizeMin": 18,
-    "particleSizeRange": 23,
-    "particleDuration": 0.04,
-    "particleCount": 12,
+    "length": 30,
+    "spread": 6,
+    "particleSizeMin": 7,
+    "particleSizeRange": 9,
+    "particleDuration": 0.15,
+    "particleCount": 11,
     "particleColor": [
       255,
-      68,
-      204,
-      220
+      120,
+      105,
+      250
     ]
   },
-  "fireSoundTwo": "pulse_laser_fire"
+  "fireSoundTwo": "heavy_machinegun_fire"
 }

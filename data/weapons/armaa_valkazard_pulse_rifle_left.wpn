@@ -5,16 +5,16 @@
   "type": "ENERGY",
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_emp_smg.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_laser_left_00.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 3,
+  "visualRecoil": 1,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    29,
-    14.5
+    30.5,
+    14
   ],
   "turretAngleOffsets": [
     -1

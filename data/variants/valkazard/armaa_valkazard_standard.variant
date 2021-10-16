@@ -1,0 +1,47 @@
+{
+  "variantId": "armaa_valkazard_standard",
+  "hullId": "armaa_valkazard",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": ["armaa_selector_machinegun_left","armaa_selector_pulse_rifle_right","armaa_selector_boson","heavyarmor","missleracks","hardenedshieldemitter"],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+	"WS0001": "reaper",
+        "WS0002": "reaper"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+	"B_TORSO": "armaa_valkazard_torso_boson"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"A_GUN": "armaa_valkazard_pulse_rifle_right"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "C_ARML": "armaa_valkazard_machinegun_left"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

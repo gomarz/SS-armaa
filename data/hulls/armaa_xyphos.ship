@@ -14,7 +14,8 @@
   "builtInMods": [
     "advancedoptics",
     "strikeCraft",
-    "armaa_wingCommander"
+    "armaa_wingCommander",
+	"reduced_explosion"
   ],
   "builtInWings": [
     "xyphos_wing"

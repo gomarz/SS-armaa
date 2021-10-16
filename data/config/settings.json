@@ -14,8 +14,7 @@
             },
 		"fx":{
 			#these are DME trails, thanks harmful mechanic!
-"armaa_parax_fringe":"graphics/armaa/fx/armaa_parax_beam_fringe.png",
-"armaa_ppa_core":"graphics/armaa/fx/armaa_ppa_beam_core.png",			"beam_trail_smooth":"graphics/armaa/fx/armaa_projectile_contrail_smooth.png",
+			"beam_trail_smooth":"graphics/armaa/fx/armaa_projectile_contrail_smooth.png",
 			#mine
 			"beam_trail_cel":"graphics/armaa/fx/armaa_projectile_cel.png",
 			"beam_trail_helix":"graphics/armaa/fx/armaa_projectile_contrail_helix.png",
@@ -24,6 +23,8 @@
 			"nottahlan_trail_dhelix":"graphics/armaa/fx/armaa_trails_dhelix.png",
 			"nottahlan_trail_zappy":"graphics/armaa/fx/armaa_trails_zappy.png",
 			"nottahlan_trail_fuzzy":"graphics/armaa/fx/armaa_trails_fuzzy.png",
+			"armaa_parax_fringe":"graphics/armaa/fx/armaa_parax_beam_fringe.png",
+			"armaa_ppa_core":"graphics/armaa/fx/armaa_ppa_beam_core.png",	
 		},
 		"portraits":{
 			"armaa_portrait_shard":"graphics/armaa/portraits/armaa_ai.png",
@@ -31,7 +32,23 @@
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 		},
 		"misc":{
-			"sfxkarma":"graphics/armaa/fx/armaa_karma.png"
+			"sfxkarma":"graphics/armaa/fx/armaa_karma.png",
+			"legs_10":"graphics/armaa/ships/valkazard/armaa_valkazard_legs1.png",
+			"legs_11":"graphics/armaa/ships/valkazard/armaa_valkazard_legs2.png",
+			"legs_12":"graphics/armaa/ships/valkazard/armaa_valkazard_legs3.png",
+			"legs_13":"graphics/armaa/ships/valkazard/armaa_valkazard_legs4.png",
+			"legs_14":"graphics/armaa/ships/valkazard/armaa_valkazard_legs5.png",
+			"legs_15":"graphics/armaa/ships/valkazard/armaa_valkazard_legs6.png",
+			"legs_16":"graphics/armaa/ships/valkazard/armaa_valkazard_legs7.png",
+			"legs_17":"graphics/armaa/ships/valkazard/armaa_valkazard_legs8.png",
+			"legs_18":"graphics/armaa/ships/valkazard/armaa_valkazard_legs9.png",
+			"legs_19":"graphics/armaa/ships/valkazard/armaa_valkazard_legs10.png",
+			"legs_20":"graphics/armaa/ships/valkazard/armaa_valkazard_legs11.png",
+			"legs_21":"graphics/armaa/ships/valkazard/armaa_valkazard_legs12.png",
+			"legs_22":"graphics/armaa/ships/valkazard/armaa_valkazard_legs13.png",
+			"legs_23":"graphics/armaa/ships/valkazard/armaa_valkazard_legs14.png",
+			"legs_24":"graphics/armaa/ships/valkazard/armaa_valkazard_legs15.png",
+			"legs_25":"graphics/armaa/ships/valkazard/armaa_valkazard_legs16.png"
 		},	
     }
 }

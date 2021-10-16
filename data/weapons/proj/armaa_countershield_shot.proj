@@ -11,8 +11,8 @@
 	"width":5,
 	"darkCore":true,
 	"fadeTime":0.2,
-	"fringeColor":[96,250,190,255],
-	"coreColor":[200,255,200,255],
+	"fringeColor":[255,68,204,0],
+	"coreColor":[200,255,200,0],
 	"textureScrollSpeed":64.0,
 	"pixelsPerTexel":5.0,	
 }

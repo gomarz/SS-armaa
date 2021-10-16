@@ -1,0 +1,44 @@
+{
+  "id": "armaa_valkazard_torso_boson",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_hig_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_higEffect2",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_boson.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil_boson.png",
+  "hardpointSprite": "",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  "interruptibleBurst":true,
+  "requiresFullCharge": false,
+  "animationType": "MUZZLE_FLASH",
+  "fireSoundTwo": "armaa_crusher_fire",
+	"muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":5.0,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":15.0,
+					   "particleDuration":0.15,
+					   "particleCount":25,
+					   "particleColor":[200,55,200,205]}	
+}

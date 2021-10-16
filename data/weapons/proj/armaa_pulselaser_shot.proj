@@ -1,5 +1,6 @@
 {
 	"id":"armaa_pulselaser_shot",
+"onHitEffect":"data.scripts.weapons.valkenGunEffect",
 	"specClass":"projectile",
 	#"spawnType":"BEAM",
 	"spawnType":"BALLISTIC_AS_BEAM",

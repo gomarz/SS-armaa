@@ -7,7 +7,7 @@
   "beamEffect": "data.scripts.weapons.armaa_shineCoreEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body.png",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_spark.png",
   "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
   "hardpointSprite": "",
   "glowColor": [

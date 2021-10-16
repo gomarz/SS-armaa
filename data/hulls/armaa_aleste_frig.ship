@@ -29,7 +29,8 @@
     "cataphract",
     "strikeCraft",
     "armaa_weaponSwap",
-    "armaa_melee"
+    "armaa_melee",
+    "reduced_explosion"
   ],
   "builtInWeapons": {
     #"A_GUN": "armaa_aleste_blade_RightArm",
