@@ -19,6 +19,7 @@ V1.6
 
 -Laser Blade(s)
 	- Increased on-hit knockback
+	- Reduced damage by 17%
 
 - Aleste(S)
 	- Shield Efficiency: 0.8->0.9
