@@ -18,7 +18,7 @@ public class armaa_selector_chaingun extends BaseHullMod {
     	  }   
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "KENG-44 Autocannon";
+ 		if (index == 0) return "Chaingun";
 		if (index == 1) return "Remove this hullmod to cycle between weapons.";
         return null;    
     }

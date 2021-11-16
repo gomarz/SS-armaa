@@ -12,7 +12,7 @@
   "shieldRadius": 43.5,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract",
+    "cataphract2",
     "strikeCraft",
     "reduced_explosion",
     "armaa_valkazardWeaponSwap"

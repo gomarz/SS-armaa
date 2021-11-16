@@ -1,12 +1,99 @@
 {
 	"armaarmatura":{
-		"missile_resist_karma":[
-			"ora_echoesS",
-			"ora_invocationS",
-			"ora_callingS",
-			"SCY_phasedS",
-			"SKR_can",
-			"SKR_drill_shot",
+		"special_wing_lines":
+		{
+			"talon":"\"Sir, You might as well send us out there in metal coffins if these things are what we're flying.\"",
+					
+			"broadsword":"\"Broadswords, eh? I guess we'll be on escort duty, then?\"",
+			
+			"warthog":"\"Even though they fly like bricks, Warthogs are hardy and pack a punch. We never know what we could run into out here, so i'm a little more at ease with that knowledge.\"",
+			
+			"claw":"\"Feels like i'm flying an Ion Cannon with engines.\"",
+			
+			"gladius":"\"From what I gather, the Gladius is one of the more overlooked strikecraft. They're pretty fast for a standard fighter - well armed too.\"",
+			
+			"thunder":"\"Thunder's are probably some of the most nimble strikecraft around. Who needs a heavy armament when you can leave a destroyer floating adrift in moments?\"",
+			
+			"armaa_valkenx":"\"Check it out! They gave me a robot!\"",
+			
+			"armaa_valkenmp":"\"Sir, You might as well send us out there in metal coffins if these things are what we're flying.\"",
+			
+			"armaa_kouto":"\"Check it out! They gave me a robot!\"",
+			
+			"xyphos":"\"Sweet Ludd, we're riding in Xyphos?! Those are top of the line fighters!\"",
+			
+			"tahlan_eisenflug":"\"Apparently the machines we're using were made by an order that died out cycles ago.\"",
+			
+			"armaa_aleste":"\"Check it out! They gave me a robot!\"",
+			
+			"eis_peacekeeper":"\"The Peacekeeper is a phenomenal spacecraft, don't you think? The naysayers about the AI interface just don't realize what kind of edge it grants! By the way, why won't the deck crew let me near the hangar during downtime? I just want to sit in the cockpit for a few minutes. Make sure everything is...how it should be. Honest.\"",			
+		},
+		"strikecraft_squad_chatter":[
+			"\"Maybe being a farmer on Gilead wasn't a bad career choice after all...\"",
+			"\"As long as you keep payin' my tab, I'll follow you anywhere.\"",
+			"\"I only wish I could live out my life in peace.\"",
+			"\"I knew this guy who was a real pain..wouldn't stop questioning every decision I made! Got sucked out a ruptured bulkhead a while back. He would have been a fine officer, I bet.\"",
+			"\"All we need to do is the job we're given, right?\"",
+			"\"When are we heading out?\"",
+			"\"You know, I don't get it. I'm a great person, you know? I'm the best pilot in the fleet. People look up to me. So tell me this. Why is it I can never get a date? I mean, do some folks have all the luck? Or is it just me?\"",
+			"\"Let us be blessed with glory as we pass through the gates of hell!\"",
+			"\"Corrupted polities and tainted planets are no longer worth fighting to protect. There's only one thing left worth protecting - and that's the future!\"",
+			"\"This is gonna be a long day...\"",
+			"\"Your orders, Commander?\"",
+			
+			"\"The price of freedom is eternal vigilance.\"",
+			"\"My friends thought I was crazy to take this gig. As if life in the hive-cities were any better.\"",
+			"\"Today just isn't my day...\"",
+			"\"Anyone else know how to fly this thing? ....No? I'll wing it.\"",
+			"\"What's with all these blinky lights?\"",
+			"\"Ah, it's happy hour. Wonderful!\"",
+			"\"Gettin' fired up here, boss.\"",
+			"\"Channel's clear, boss.\"",
+			"\"So about that binding contract that allows you to eject me out of the airlock in a cryopod....\"",
+			"\"Ready for dust-off.\"",
+			"\"I'm the best pilot in all the Persean Sector! Oh yeah!\"",
+			
+			"\"Standing by.\"",
+			"\"Reporting in.\"",
+			"\"Awaiting orders.\"",
+			"\"Go ahead, Commander.\"",
+			"\"There is no greater void than the one between my ribs...\"",
+			"\"Ready to roll.\"",
+			"\"Need help, Commander?\"",
+			"\"I'm reading you.\"",
+			"\"I'll make it happen.\"",
+			"\"Receiving.\"",
+			"\"Hey, I'm not expendable!\"",
+			"\"By your command.\"",
+			"\"I'm dead either way.\"",
+			"\"Okay, hear me out. What if Onslaughts really were made to fight aliens, and they shut down the gates?\"",
+			"\"Okay, hear me out. What if Artemesia Sun is actually an AI Core?\"",
+			"\"Ten credits is ten credits.\"",
+			"\"It's our sector now.\"",
+			"\"Hey, commander. Gonna get some new augs soon - mind if I go over some of my options with you later?\"",
+			
+			"\"I saw some weirdo screaming about pushing Jangala into the sun a while back. Shows how bad things have gotten lately.\"",
+			"\"Another drill?\"",
+			"\"Yeah?\"",
+			"\"Why did we attack the Lightspeed? Why did we destroy that cargo? I can live with being a pawn if the game makes sense!\"",
+			"\"Most pilots fly only one suicide mission. And then there's me.\"",	
+			
+		],
+		"strikecraft_squad_chatter_soldier":[
+			"\"I'll always fulfill my mission.\"",
+			"\"Now back to my mission.. you'll back me up, right?\"",
+			"\"You need more training. That's all I got to say.\"",
+			"\"How about a little martial arts drill?\"",
+			"\"There's no mercy in war. People live and people die. That's all there is to it.\"",
+			"\"Grow. Work. Get back up when you fall... That's life.\"",
+			"\"Hmm. I'm getting a little rusty. Should I be working harder?\"",
+			"\"Being on a team's a subtle balance of trust and leadership.\"",
+			"\"Learn from your losses. Otherwise, you'll never improve.\"",
+			"\"Did you come just to mingle? Why don't you tell me what you're up to?\"",
+			"\"Only warriors deserve the honor of fair combat. I eliminate the rest.\"",
+			"\"I guess it's hard for folks like us to die, see? The good ones always get scratched first, but people like me? We live the rest of our lives in this hell. ...then again, being alive is proof that i'm talented.\"",
+			"\"In all likelihood you're going to die out there. Hell, we're all probably going to die out there, but none of us needs to be reminded of that. So if anyone dies, they never existed. Understand?\"",
+			"\"Our rides are ready, sir. I made sure of that.\"",
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",
@@ -89,5 +176,13 @@
 			"Black Hounds",
 			"Canyon Crows",
         ],
+		"missile_resist_karma":[
+			"ora_echoesS",
+			"ora_invocationS",
+			"ora_callingS",
+			"SCY_phasedS",
+			"SKR_can",
+			"SKR_drill_shot",
+		],
 	},
 }

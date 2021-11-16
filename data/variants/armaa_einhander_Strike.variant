@@ -8,7 +8,6 @@
 	"eccm",
 	"hardened_subsystems"
   ],
-  "modules": [{"MODULAR": "armaa_bit_faux"}],
   "permaMods": [],
   "quality": 0,
   "variantId": "armaa_einhander_Strike",

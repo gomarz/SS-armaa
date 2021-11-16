@@ -9,7 +9,6 @@
 	"hardened_subsystems",
 	"safetyoverrides"
   ],
-  "modules": [{"MODULAR": "armaa_bit_faux"}],
   "permaMods": [],
   "quality": 0,
   "variantId": "armaa_einhander_Overclocked",

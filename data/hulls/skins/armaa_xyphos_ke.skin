@@ -14,7 +14,7 @@
     "tech":"Arma Armatura",
 #    "removeWeaponSlots":["WS 006"], 		# ids
 #    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-#    "removeBuiltInMods":[], 		# hullmod ids
+    "removeBuiltInMods":["advancedoptics"], 		# hullmod ids
 #    "removeBuiltInWeapons":[],
     "builtInWeapons":{
 		"WS 001": "heavymg",

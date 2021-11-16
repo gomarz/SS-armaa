@@ -3,7 +3,7 @@
 	"specClass":"beam",
         "type":"DECORATIVE",
         "size":"SMALL",
-	"everyFrameEffect": "data.scripts.weapons.armaa_bitWeaponAssignment2",
+	"everyFrameEffect": "data.scripts.weapons.armaa_bitWeaponAssignment3",
         "showDamageWhenDecorative":true,
 	"turretSprite":"",
 	"hardpointSprite":"",
