@@ -2,6 +2,7 @@ V1.6
 --------------------
 - New Ship, Caymon
 - New Ship, Valkazard
+	- Added new start for starting w/ (ArmaA(Pirates))
 - New Ship, Broadsword Isiliva
 
 - Altagrave can now swap between Vajra and Grenade Launcher
