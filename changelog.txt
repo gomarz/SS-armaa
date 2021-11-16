@@ -42,7 +42,13 @@ V1.6
 		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
 	- Fixed shield damage not being displayed
 	- Slightly increased retreat area 2000->2050 in attempt to fix retreat CTD caused by AI attempting to retreat while fighter hullsize
-	- 
+	-
+
+
+- Einhander:
+	- Drone weapon is now equipped directly on the main ship
+
+ 
 V1.5.2e
 -------------------
 
