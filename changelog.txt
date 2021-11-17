@@ -47,6 +47,7 @@ V1.6
 
 - Einhander:
 	- Drone weapon is now equipped directly on the main ship
+	- Increased OP: 30->39
 
  
 V1.5.2e
