@@ -1,7 +1,7 @@
 {
 	"id":"armaa_valkenx_torso_vernier",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
-	"type":"DECORATIVE",
+	"type":"SYSTEM",
 	"size":"SMALL",
 	"turretSprite":"graphics/armaa/weapons/thrusters/TADA_vernier00.png",
 	"hardpointSprite":"graphics/armaa/weapons/thrusters/TADA_vernier00.png",

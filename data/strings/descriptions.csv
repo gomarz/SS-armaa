@@ -82,6 +82,8 @@ Other historians insist that the Valkazard was developed by a branch of ArmaA Co
 
 armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Isiliva has been upgraded with an inefficient shield generator as well as software to coordinate a Broadsword wing. It's secret weapon lies in the installation of the very same SILVERSWORD system utilized by Garegga-class mechs, allowing it to perform at levels far beyond that of a normal starfighter.",,, 
 
+armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,, 
+
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Equipped with additional software that allows the pilot to properly coordinate an additional Xyphos wing, making them effective support units.
 
 The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,
@@ -222,6 +224,7 @@ armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like
 In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,
 
 armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
+armaa_tshell,SHIP_SYSTEM,"Speeds up the flow of time on board the ship. Half as effective as the version featured on larger ships. Generates a significant amount of flux when used.",,,
 armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,

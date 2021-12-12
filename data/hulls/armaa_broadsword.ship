@@ -56,8 +56,8 @@
     "broadsword_wing"
   ],
   "builtInWeapons": {
-    "WS 003": "annihilator",
-    "WS 004": "annihilator"
+    "WS 003": "swarmer",
+    "WS 004": "swarmer"
   },
     "shieldCenter": [
         1,

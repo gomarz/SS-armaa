@@ -1,7 +1,7 @@
 {
 	"id":"armaa_phaseteleporter",
 	"type":"TELEPORTER",
-	"aiType":"PHASE_TELEPORTER",
+	"aiType":"PHASE_TELEPORTER_2",
 	
 	"jitterColor":[255,255,200,150],
 	#"jitterColor":[255,100,255,150],
@@ -20,9 +20,9 @@
 	"engineGlowGlowMult":0,
 	
 	"range":800,
-	"randomRange":50,
+	"randomRange":0,
 	
-	"vulnerableChargeup":false,
+	"vulnerableChargeup":true,
 	"vulnerableChargedown":false,
 	"renderCopyDuringTeleport":true,
 	
@@ -36,6 +36,6 @@
 	"aiHints":{
 		"activeSpeedIncrease":0,
 		"burstMovementPotential":900,
-		"averageSpeedIncrease":700,
+		"averageSpeedIncrease":350,
 	}
 }

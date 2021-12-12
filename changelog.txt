@@ -21,9 +21,16 @@ V1.6
 -Laser Blade(s)
 	- Increased on-hit knockback
 	- Reduced damage by 17%
+	- No longer deals EMP damage
+	- Increase Flux Cost: 350 f/s
 
 - Aleste(S)
 	- Shield Efficiency: 0.8->0.9
+	- DP: 6->7
+- Xyphos(AA)
+	- DP: 5->7
+- Leynos
+	- DP: 6->7
 
 - WINGCOM SUITE:
 	- Externalized strings to modSettings
@@ -38,6 +45,8 @@ V1.6
 
 - Strikecraft:
 	- Increased minimum range before strikecraft switched to landing AI (500->1500 su)
+	- Strikecraft can no longer land in a fighter bay that another strikecraft is currently rearming at
+	- Doubled carrier replacement rate decrease while rearming
 	- Fixed Strikecraft changing to Frigate HullSize if they took damage that frame
 		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
 	- Fixed shield damage not being displayed

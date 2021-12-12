@@ -14,36 +14,13 @@
   "viewOffset": 0,
   "weaponSlots": [
     {
-      "id": "WS 004",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
-      "mount": "TURRET",
-      "arc": 180,
-      "angle": 0,
-      "locations": [122, -0.5]
-    },
-    {
       "id": "WS 005",
       "size": "MEDIUM",
-      "type": "HYBRID",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 180,
-      "angle": -90,
+      "arc": 245,
+      "angle": -30,
       "locations": [88, -15]
-    },
-    {
-      "id": "WS 007",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 5,
-      "angle": 0,
-      "locations": [
-        92, 39,
-        75, 33,
-        68, 20,
-        91, 21
-      ]
     },
     {
       "id": "WS 008",
@@ -78,15 +55,6 @@
       "locations": [-63, -29]
     },
     {
-      "id": "WS 010",
-      "size": "SMALL",
-      "type": "SYSTEM",
-      "mount": "TURRET",
-      "arc": 5,
-      "angle": 0,
-      "locations": [29, 37]
-    },
-    {
       "id": "WS 011",
       "size": "SMALL",
       "type": "SYSTEM",
@@ -98,11 +66,11 @@
     {
       "id": "WS0001",
       "size": "MEDIUM",
-      "type": "HYBRID",
+      "type": "SYNERGY",
       "mount": "TURRET",
-      "arc": 180,
-      "angle": 90,
-      "locations": [88, 14]
+      "arc": 245,
+      "angle": 100.5,
+      "locations": [37, 36]
     },
     {
       "id": "WS0002",
@@ -111,7 +79,7 @@
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
-      "locations": [117, 26]
+      "locations": [117, 27]
     },
     {
       "id": "WS0003",
