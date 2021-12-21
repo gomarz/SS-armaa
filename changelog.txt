@@ -3,10 +3,12 @@ V1.6
 - New Ship, Caymon
 - New Ship, Valkazard
 	- Added new start for starting w/ (ArmaA(Pirates))
+	- Can be found via exploration otherwise
 - New Ship, Broadsword(AA)
 - New Ship, Warthog(AA)
 
 - Altagrave can now swap between Vajra and Grenade Launcher
+	- Also overcompensates with a large laser blade, may remove before actual release tho
 - Watchdog can now swap between Hellbore and Gauss Cannon
 	- Siege Mode: Shield Damage Reduction: 50%->10%
 
@@ -20,10 +22,11 @@ V1.6
 - Removed debug text that appeared when using Curvy Laser
 
 -Laser Blade(s)
-	- Increased on-hit knockback. Knockback effect is produced so long as blades are in contact with objects (so spamming blades on top of things should push you further back than just hitting a ship with the end of the blade)
-	- Reduced damage by 17%
-	- No longer deals EMP damage
-	- Increase Flux Cost: 350 f/s
+	- Increased on-hit knockback. Knockback effect is produced so long as blades are in contact with objects (so spamming blades on top of things should push you further back than just hitting a ship with the end of the blade. Hitting small objects such as fighters and missiles should produce no knockback, usually)
+	- Aleste
+		- Reduced damage by 17%
+		- No longer deals EMP damage
+		- Increase Flux Cost: 350 f/s
 
 - Aleste(S)
 	- Shield Efficiency: 0.8->0.9
@@ -45,15 +48,15 @@ V1.6
 		- Additional lines can be added with magiclibs modsettings by using "special_wing_lines" map (look at armaa's mod settings for an example)
 	- Removed glow/jitter effect
 	- wingmen will now use different dialog based on the character's 'voice'
-	- wingmen will occasionally appear in battle as a pilot of fighter
+	- wingmen will appear in battle as a pilot of their respective fighter
 	- Adjusted font colors for more uniformity with normal hullmods
 	- In smaller battles where ships deploy closer to the center of the map, wingmen will now spawn a few thousand SU away instead of from deployment zone if no carrier is present
-        - Max bonus conferred by relationship reduced to 30% (was 75% for defensive and 37 for offensive)
+        - Max stat bonus conferred by relationship reduced to 30% (was 75% for defensive and 37% for offensive)
 
 - Strikecraft:
 	- AI navigating back to carrier has been improved
-	- Strikecraft can no longer land in a fighter bay that another strikecraft is currently rearming at (Ex. A condor can resupply only two strikecraft at once, as opposed to an unlimited number)
-	- Doubled carrier replacement rate decrease while rearming
+	- Carriers can only supply as many Strikecraft as the number of fighter bays they possess (I.E. a Condor can resupply only two strikecraft at once, as opposed to an unlimited number)
+	- Doubled carrier replacement rate decrease while rearming.
 	- Fixed Strikecraft changing to Frigate HullSize if they took damage that frame
 		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
 	- Fixed shield damage not being displayed
