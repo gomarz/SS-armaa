@@ -30,7 +30,7 @@
     "autorepair"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_lightmg",
+    "A_GUN": "armaa_einhanderGun",
     "B_TORSO": "armaa_sprigganTorsomk3",
     "C_ARML": "armaa_sprigganLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
@@ -38,7 +38,7 @@
     "D_PAULDRONR": "armaa_sprigganmk3rightPauldron",
     "E_HEAD": "armaa_sprigganHeadmk3",
     "F_GLOW": "armaa_sprigganHeadGlow",
-    "WS0001": "armaa_javelin"
+    "WS0001": "armaa_einhanderSyrinx"
   },
   "center": [
     9,

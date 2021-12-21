@@ -2,7 +2,7 @@
     "id":"armaa_silverSwordV",
     "type":"STAT_MOD",
     "aiType":"CUSTOM",
-    "aiScript":"data.scripts.shipsystems.ai.armaa_SilverSwordAI",
+    "aiScript":"data.scripts.shipsystems.ai.armaa_SilverSwordAIValkazard",
 
     "statsScript":"data.scripts.shipsystems.armaa_SilverSysStatsValkazard",
     "runScriptWhilePaused":true, # only for the player's ship

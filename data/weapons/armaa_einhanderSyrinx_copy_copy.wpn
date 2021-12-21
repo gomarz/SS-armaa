@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-"everyFrameEffect": "data.scripts.weapons.armaa_BoomerangShieldEffect",
+ #"everyFrameEffect": "data.scripts.weapons.armaa_BoomerangShieldEffect",
   "fireSoundTwo": "plasma_cannon_fire",
   "renderHints": [
     RENDER_BARREL_BELOW

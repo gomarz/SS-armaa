@@ -5,7 +5,7 @@
   "hullId": "armaa_kouto",
   "hullMods": [
     "cataphract",
-    "autorepair"
+    "no_weapon_flux"
   ],
   "variantId": "armaa_kouto_Standard",
   "weaponGroups": [

@@ -34,3 +34,22 @@ $nex_mercCompanyId == rocketStars",AdjustRepActivePerson INHOSPITABLE -5,"The $p
 ""Word about people like you spreads fast, $playerName. I'll see you very soon..heh heh heh.""
 
 The comm link is cut before you have a chance to respond.",,
+,,,,,,
+armaa_valkazardWreckOpen,OpenInteractionDialog,"$customType == wreck
+$valkazard score:1000","$canNotSalvage = true 0
+ShowDefaultVisual
+SalvageGenFromSeed
+FireBest ShowSalvageEntityDetails
+FireBest SalvageCheckHostile","The battered mech drifts near your $shipOrFleet, Bizzarely, it appears to be in relatively good condition. Such a small vessel usually wouldn't be worth investigating, but the sensor pings are akin to that of a fully fledged frigate, indicating what could be something unusual. Your tactical officer brings your attention to it's unsecured cockpit, as if the 'mech was hastily abandoned.",,
+armaa_valkazardWreckOpen1,ShipRecoveryCustomText,"$customType == wreck
+$valkazard score:1000
+!$foundStuff","AddCommodity organs 2
+$foundStuff = true","A small salvage team is deployed, almost immediately finding what's left of the pilot. He is quite deceased, and has been for some time.
+
+The dispatched crew what they can of value from the derelict. The law of salvage rules, even here.",,
+armaa_valkazardWreckOpen2,ShipRecoveryCustomText,"$customType == wreck
+$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.
+
+You recall that Callisto Ibrahim mentioned an affinity for the Hamatsu. If you returned this leaky tomb of a hull to her, you could expect a reward. Ship captains sometimes get funny ideas about their first real command, but if Ibrahim is willing to pay...",,
+armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
+$valkazard score:1000",ShowDefaultVisual,,,

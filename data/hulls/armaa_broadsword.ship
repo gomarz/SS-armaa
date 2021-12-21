@@ -49,7 +49,6 @@
     "strikeCraft",
     "armaa_wingCommander",
     "frontshield",
-    "armaa_SeraphTargetingSoftware",
     "reduced_explosion"
   ],
   "builtInWings": [
@@ -102,7 +101,7 @@
             ],
             "mount": "HIDDEN",
             "size": "SMALL",
-            "type": "MISSILE"
+            "type": "BUILT_IN"
         },
         {
             "angle": 0,
@@ -114,7 +113,7 @@
             ],
             "mount": "HIDDEN",
             "size": "SMALL",
-            "type": "MISSILE"
+            "type": "BUILT_IN"
         },
         {
             "angle": 180,

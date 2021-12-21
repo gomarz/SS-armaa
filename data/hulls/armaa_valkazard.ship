@@ -15,7 +15,8 @@
     "cataphract2",
     "strikeCraft",
     "reduced_explosion",
-    "armaa_valkazardWeaponSwap"
+    "armaa_valkazardWeaponSwap",
+    "armaa_SilverSwordHM"
   ],
   "builtInWeapons": {
     #"A_GUN": "armaa_valkazard_chaingun",

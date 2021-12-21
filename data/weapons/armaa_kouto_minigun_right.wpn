@@ -1,21 +1,19 @@
 {
   "id": "armaa_kouto_minigun_right",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_minigun_shot",
+  "projectileSpecId": "armaa_minigun_energy_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "autoCharge": true,
-  "visualRecoil": 2,
   "everyFrameEffect": "data.scripts.weapons.armaa_minigunEveryFrameEffect",
-  "turretSprite": "graphics/armaa/weapons/armaa_kouto_minigun_right.png",
-  "hardpointSprite": "",
+  "turretSprite": "graphics/armaa/weapons/armaa_aleste_minigun_00.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_aleste_minigun_00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    40,
-    -14.5
+    46,
+    -13
   ],
   "turretAngleOffsets": [
     1
@@ -29,6 +27,8 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
+  "numFrames": 9,
+  "frameRate": 20,
   "interruptibleBurst": true,
   "muzzleFlashSpec": {
     "length": 40,
@@ -40,7 +40,7 @@
     "particleColor": [
       255,
       100,
-      100,
+      200,
       200
     ]
   },

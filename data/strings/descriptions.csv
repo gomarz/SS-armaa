@@ -74,13 +74,11 @@ armaa_hazard_frig,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverab
 
 Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,
 
-armaa_valkazard,SHIP,"Advanced Series-II 'mech that boasts a versatile weapons loadout. While it's small stature is a great boon, it also means the machine is rather flimsy. 
+armaa_valkazard,SHIP,"Advanced Series-II 'mech that boasts a versatile weapons loadout. Nimble, yet rather flimsy. 
 
-The origin of the Valkazard is hotly contested. Some theorize that it is simply a custom model  using various parts from other stock models; others rebut that the design is in stark contrast to the more straightforward functionality of its sister mechs (Even for ArmaA Corp, which says a lot), meaning that it must have been designed with those features in mind.
+From testimonials and what little evidence remains, it's inferred that prior to the Collapse a sole unit was transferred via gate network to the Persean Sector for 'cold storage', before its unfortunate disappearance during the destruction of old Meshan, circa c.94.",,,
 
-Other historians insist that the Valkazard was developed by a branch of ArmaA Corp in a far-away sector for use in a failed entertainment venture. From testimonials and what little evidence remains, they infer that prior to the Collapse a sole unit was transferred via gate network to the Persean Sector for 'cold storage', before its unfortunate disappearance during the destruction of old Meshan circa c.94.",,,
-
-armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Isiliva has been upgraded with an inefficient shield generator as well as software to coordinate a Broadsword wing. It's secret weapon lies in the installation of the very same SILVERSWORD system utilized by Garegga-class mechs, allowing it to perform at levels far beyond that of a normal starfighter.",,, 
+armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Silvia has been 'upgraded' with an inefficient shield generator as well as software to coordinate a Broadsword wing. It mounts additional hardpoints over the standard chassis, as well as an enhanced maneuvering system.",,, 
 
 armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,, 
 
@@ -133,6 +131,10 @@ armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that 
 armaa_landingBeacon,WEAPON,"Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.","",,
 
 armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
+
+Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
+
+armaa_valkazard_blade,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
 
@@ -238,9 +240,16 @@ armaa_overshield,SHIP_SYSTEM,Shields absorb 5x damage. Disables weapons.,,,
 armaa_karma,SHIP_SYSTEM,"Projectiles within 600 SU are absorbed on activation, Hostile tracking missiles that can be hacked will target enemies. On standard Altagrave models, absorbed projectiles grant a scaling weapon RoF/Flux reduction up to 30%, while the [C]ommand variant grants a scaling time dilation bonus up to 15% for all friendlies within 1000 of the unit.",,,
 armaa_lowgradeemp,SHIP_SYSTEM,"Activates a weak EMP generator. Nearby missiles, fighters, weapon emplacements and engines of enemy ships are all targeted.",,,
 armaa_oboost,SHIP_SYSTEM,"Dramatically increases speed, and moderately increases manuverability for one second. ",,,
+armaa_oboost2,SHIP_SYSTEM,"Greatly increases speed while steadily increasing flux.",,,
 armaa_claw,SHIP_SYSTEM,"Autonomous hunter-killer drones that frequently sheathe themselves in lesser temporal shells for higher performance. Two can be launched simultaneously, and carries 6 in total.",,,
 armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
+
 #CAMPAIGN STUFF,,,,,
 armaa_homeworld,CUSTOM,"A formerly unremarkable planet, it's fortune reversed when Arma Armatura received rights to the planet via corporate charter following the Second AI War. 
 
 The colony has enjoyed rapid growth, housing one of the most well-trained conglomoration of independent mercenaries and fortune seekers in the region. ArmaA has apparently left the population to self-govern for the most part, and New Meshan is outwardly a constitutional monarchy. Those ""in the know"", however, maintain that the supervisory board covertly calls the shots.",,,
+
+armaa_station_exsedol,CUSTOM,"A vast orbital station built around the core of an old Expansion-era Sporeship buried under a forest of modular hangars, industrial pods, and hab rings. This station was once the staging area for Arma Armatura's security forces. It is now completely dead.",,"The primary reactors and all valuable industrial components have been stripped - and hastily, judging by the extensive secondary damage. Passive back-up systems were crippled by the process and the station too far from the primary to receive enough energy to maintain life support.",,,	
+
+armaa_meshan,CUSTOM,"The original base of operations of the Arma Armatura Corporation, long dead since it's annihilation at the hands of forbidden planet-cracker weapons. The culprit was never discovered - a concession made during peace talks after the First AI War.",,,		
+

@@ -36,7 +36,7 @@
     "MISSILE": "armaa_valken_missile",
     "BEACON": "armaa_landingBeacon"
   },
-"builtInMods": ["armaa_wingCommander","strikeCraft","beamCoatType2"],
+"builtInMods": ["armaa_wingCommander","strikeCraft","beamCoatType2","rugged"],
 "builtInWings": ["armaa_valkenmp_wing"],
   "center": [
     9,

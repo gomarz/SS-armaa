@@ -21,7 +21,7 @@
     "COVER": "armaa_altagrave_cover",
     "E_HEAD": "armaa_altagrave_head",
     "E_HEAD_GLOW": "armaa_altagrave_head_glow",
-    "E_LARM": "armaa_altagrave_leftArm",
+    "E_LARM": "armaa_altagrave_blade",
     "E_LSHOULDER": "armaa_altagrave_leftPauldron",
     "E_RSHOULDER": "armaa_altagrave_rightPauldron"
   },
@@ -38,8 +38,8 @@
     },
     {
       "id": "E_LARM",
-      "size": "SMALL",
-      "type": "DECORATIVE",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 70,
       "angle": 15,

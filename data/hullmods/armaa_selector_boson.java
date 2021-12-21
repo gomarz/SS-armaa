@@ -34,12 +34,7 @@ public class armaa_selector_boson extends BaseHullMod
 
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
-		stats.getDynamic().getMod(Stats.PD_IGNORES_FLARES).modifyFlat(id, 1f);
-		stats.getDynamic().getMod(Stats.PD_BEST_TARGET_LEADING).modifyFlat(id, 1f);
-		stats.getAutofireAimAccuracy().modifyMult(id, 1.5f);
-		stats.getDamageToMissiles().modifyPercent(id, DAMAGE_BONUS);
-		//fuck fighters
-		stats.getDamageToFighters().modifyPercent(id, DAMAGE_BONUS);		
+		
 	}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) 
@@ -67,8 +62,7 @@ public class armaa_selector_boson extends BaseHullMod
 		Color[] arrB ={Misc.getHighlightColor(),F,F};
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
-		tooltip.addPara("%s " + "Missile and fighter damage increased by %s.", pad,arr2, "-", (int)(DAMAGE_BONUS)+"%");
-		tooltip.addPara("%s " + "Target leading is %s.", padS, arr, "-", "enhanced.");		
+		tooltip.addPara("%s " + "No particular strengths or weaknesses.", pad,arr2, "-");	
 	}
 
 
