@@ -166,14 +166,6 @@
 	"launch":[
 {"file":"sounds/armaa/emp_emitter_activate.ogg","pitch":1,"volume":0.5},
 	],
-	"armaa_repair":[
-{"file":"sounds/armaa/drone_repair.ogg","pitch":.8,"volume":0.5},
-	],
-	"reloaddrone":[
-{"file":"sounds/armaa/reloaddrone.ogg","pitch":1,"volume":0.15},
-	],
-		
-	
 }
 
 
