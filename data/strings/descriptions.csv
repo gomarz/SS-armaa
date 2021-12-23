@@ -126,6 +126,22 @@ armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament t
 
 armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,
 
+armaa_valkazard_torso_chaosburst,WEAPON,"An extremely long-range, high damage energy beam cannon. Generates additional explosions around the beam when fired.",,,
+
+armaa_valkazard_torso_shield,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,
+
+armaa_valkazard_machinegun_left,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,
+
+armaa_valkazard_machinegun_right,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,
+
+armaa_valkazard_chaingun,WEAPON,"A 'melee' captain's favorite tool, the Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel.",,,
+
+armaa_valkazard_pulse_rifle_left,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,
+
+armaa_valkazard_pulse_rifle_right,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,
+
+
+
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
 
 armaa_landingBeacon,WEAPON,"Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.","",,
@@ -251,5 +267,6 @@ The colony has enjoyed rapid growth, housing one of the most well-trained conglo
 
 armaa_station_exsedol,CUSTOM,"A vast orbital station built around the core of an old Expansion-era Sporeship buried under a forest of modular hangars, industrial pods, and hab rings. This station was once the staging area for Arma Armatura's security forces. It is now completely dead.",,"The primary reactors and all valuable industrial components have been stripped - and hastily, judging by the extensive secondary damage. Passive back-up systems were crippled by the process and the station too far from the primary to receive enough energy to maintain life support.",,,	
 
-armaa_meshan,CUSTOM,"The original base of operations of the Arma Armatura Corporation, long dead since it's annihilation at the hands of forbidden planet-cracker weapons. The culprit was never discovered - a concession made during peace talks after the First AI War.",,,		
+armaa_station_research,CUSTOM,"An abandoned research station, built either to study some interesting local phenomenon or to study that which is best kept far, far away from inhabited worlds. A cursory scan indicates that the majority of the station has been cold and dead for tens of cycles at the very least, possibly hundreds.",,"Upon closer inspection, sensors indicate that a storage section on the port side of the station was recently brought back online, and currently has active power.",,,	
 
+armaa_meshan,CUSTOM,"Originally the headquarters of the Arma Armatura megacorp in the Persean Sector, rendered unhabitable after being annihilated at the hands of forbidden planet-cracker weapons. Any hopes of the culprit ever being discovered and brought to justice have long since been dashed - a concession made among the polities during peace talks after the First AI War.",,"Over a hundred cycles ago, it was said that Meshan was promising and lush world, near fully terraformed. Now it is little more than a picked carcass and gravesite for the millions who perished when a planet-cracker was deployed upon it during cycle 94. A handful of survivors insisted that Tri-Tachyon was behind the atrocity, but such claims were easily quelled by the megacorps legal team, which summarily followed up with a defamation suit.",,

@@ -33,6 +33,7 @@ V1.6
 	- DP: 6->7
 - Xyphos(AA)
 	- DP: 5->7
+
 - Leynos
 	- DP: 6->7
 	- Added Rugged Construction Hullmod

@@ -1,6 +1,7 @@
 {
   "id": "armaa_valkazard_pulse_rifle_left",
   "specClass": "projectile",
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazardGunEffect",
   "projectileSpecId": "armaa_pulselaser_shot",
   "type": "ENERGY",
   "size": "SMALL",
@@ -42,5 +43,5 @@
       220
     ]
   },
-  "fireSoundTwo": "pulse_laser_fire"
+  "fireSoundTwo": "rynex_fire"
 }

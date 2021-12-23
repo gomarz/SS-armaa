@@ -4,7 +4,7 @@
   "fluxVents": 0,
   "goalVariant": true,
   "hullId": "armaa_valkencannon",
-  "hullMods": [],
+  "hullMods": ["no_weapon_flux"],
   "modules": [],
   "permaMods": [],
   "quality": 0,

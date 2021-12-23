@@ -48,7 +48,7 @@ import java.awt.Color;
 	
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "XSS-04 S. Spark";
+ 		if (index == 0) return "XCB-04 Chaos Burst";
 		if (index == 1) return "Remove this hullmod to cycle between cores.";
         return null;    
     }

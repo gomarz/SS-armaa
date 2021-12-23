@@ -2,6 +2,7 @@
   "id": "armaa_valkazard_pulse_rifle_right",
   "specClass": "projectile",
   "projectileSpecId": "armaa_pulselaser_shot",
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazardGunEffect",
   "type": "ENERGY",
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
@@ -42,5 +43,5 @@
       220
     ]
   },
-  "fireSoundTwo": "pulse_laser_fire"
+  "fireSoundTwo": "rynex_fire"
 }

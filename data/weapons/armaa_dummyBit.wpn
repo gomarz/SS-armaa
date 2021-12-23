@@ -6,7 +6,7 @@
 	"everyFrameEffect": "data.scripts.weapons.armaa_bitWeaponAssignment3",
         "showDamageWhenDecorative":true,
 	"turretSprite":"",
-	"hardpointSprite":"",
+	"hardpointSprite":"graphics/armaa/ships/armaa_bit.png",
 	"renderBelowAllWeapons":"false",
         "turretOffsets":[0, 0],
         "turretAngleOffsets":[0],

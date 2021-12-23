@@ -58,7 +58,7 @@
 
 	"startShipsSuper":
 	[
-		["armaa_valkazard_standard", "colossus3_Pirate","monitor_Escort"]
+		["armaa_valkazard_standard", "armaa_caymon_standard"]
 	],
 	"startSpecialItems":[
 		[["armaa_cataphract_package",""]],

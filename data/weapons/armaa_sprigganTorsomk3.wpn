@@ -19,7 +19,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_karma_seeker",
+  "projectileSpecId": "armaa_hominglaser",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "smokeSpec": {

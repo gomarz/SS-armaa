@@ -4,7 +4,16 @@ flavorTextMarketMeshan,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == independent
 $market.id == armaa_meshanii_market","AddText ""One of the crewmembers aboard the shuttle with you note that several prominently placed, futuristic billboards starkly contrast with the decidely archaiac  architecture of several buildings you've seen as your shuttle makes it's way to the landing zone. When ArmaA gained rights to administer this colony, it seems to have produced a peculiar melting pot of consumerism in excess with the more subdued and traditional sensibilities of the colonies original denizens. As if on cue, two security officers in bizzarely ornate power armor meander into view, ostensibly to deal with some kind of ruckus."" marketFlavorTextColor
 AddText ""The haze of pollution hangs thick above you, but the people here seem to be getting along well enough - or at least what qualifies as 'well enough' in the Sector, these days."" marketFlavorTextColor",,,
-,,,,,,
+flavorTextMarketAbandonedStation,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$abandonedStation == true score:100
+$market.id == armaa_research_station score: 1000","AddText ""A small shuttle is easily able to navigate about the station and land at one of the functional hangars. Notably, another shuttle is here as well - the owner appears to have made this a temporary base of operations for some reason, although it appears they are not present currently. From what they have left behind, you are able to ascertain that they are in the system in search of something."" marketFlavorTextColor
+AddText ""It appears that an area used to store smaller strikecraft was uncompletely undisturbed, and there may be something remaining still worth taking."" marketFlavorTextColor",,,
+armaa_resStationOption,PopulateOptions,"$market.id == armaa_research_station 
+!$armaa_searchStation",$armaa_searchStation = true,,9:armaa_stationInspect:Order a more detailed investigation,
+armaa_resStationOption2,DialogOptionSelected,$option == armaa_stationInspect,,"Your fleet fruitlessly attempts to raise the station, and predictably receive's no response.
+A team is deployed to the station as a secondary measure. You watch from the feeds of the crew as the proceed to comb throughout the station for anything useful.
+
+A few hours pass before you receive a new report, indicating hardly anything valuable could be found; the station indeed had been rather thoroughly combed through. The only standout mention was the indication that someone had been staying on the station until recently, and all indications pointed to them departing to the planet ____ in search of something.",,
 nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == rocketStars,,"A featureless armored faceplate stares back at you. 
 
 ""Ah, hello there! Are you in need of the skills of mercenaries with -real- talent?""",,
@@ -40,16 +49,22 @@ $valkazard score:1000","$canNotSalvage = true 0
 ShowDefaultVisual
 SalvageGenFromSeed
 FireBest ShowSalvageEntityDetails
-FireBest SalvageCheckHostile","The battered mech drifts near your $shipOrFleet, Bizzarely, it appears to be in relatively good condition. Such a small vessel usually wouldn't be worth investigating, but the sensor pings are akin to that of a fully fledged frigate, indicating what could be something unusual. Your tactical officer brings your attention to it's unsecured cockpit, as if the 'mech was hastily abandoned.",,
+FireBest SalvageCheckHostile","A battered mech drifts near your $shipOrFleet. Such a small vessel usually wouldn't be worth investigating, but the sensor pings are akin to that of a fully fledged starship, indicating what could be something unusual. 
+
+The bridge display of your flagship filters through various sensors as data is collated before settling on an enhanced image that allows you to get a better look at the derelict. It's clear that it was damaged, and recently; your trained eye quickly identifies notable sections of the hull bearing the telltale burn marks of energy weapons.",,
 armaa_valkazardWreckOpen1,ShipRecoveryCustomText,"$customType == wreck
 $valkazard score:1000
 !$foundStuff","AddCommodity organs 2
-$foundStuff = true","A small salvage team is deployed, almost immediately finding what's left of the pilot. He is quite deceased, and has been for some time.
+$foundStuff = true","You receive the first report shortly after a small salvor team is dispatched to the vessel, indicating they have located the pilot of the derelict. She's dead.
 
-The dispatched crew what they can of value from the derelict. The law of salvage rules, even here.",,
+Only a minute number of megacorporations deal with vehicles like this. It may be worth checking up on them to see if they have any information on the vessel, and possibly even have a reward for the return of this machine...
+
+While scarred, the salvor crew discover that many essential systems are mostly intact. The mech could be restored to basic functionality. 
+
+The dispatched crew recover what they can of value. The law of salvage rules, even here.",,
 armaa_valkazardWreckOpen2,ShipRecoveryCustomText,"$customType == wreck
-$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.
+$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"While scarred, the salvor crew discover that many essential systems and cockpit is mostly intact.The mech could be restored to basic functionality without much hassle..
 
-You recall that Callisto Ibrahim mentioned an affinity for the Hamatsu. If you returned this leaky tomb of a hull to her, you could expect a reward. Ship captains sometimes get funny ideas about their first real command, but if Ibrahim is willing to pay...",,
+Only a minute number of megacorporations deal with vehicles like this. It may be worth checking up on them to see if they have any information on the vessel, and possibly even have a reward for the return of this machine...",,
 armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $valkazard score:1000",ShowDefaultVisual,,,

@@ -1,7 +1,6 @@
 {
   "beamEffect": "data.scripts.weapons.armaa_fluxBeam",
-   # "everyFrameEffect": "data.scripts.weapons.armaa_ortypeEffect",
-   "beamFireOnlyOnFullCharge": true,
+  "beamFireOnlyOnFullCharge": true,
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "coreColor": [
@@ -10,11 +9,11 @@
     0,
     255
   ],
-  "everyFrameEffect": "data.scripts.weapons.armaa_ortypeEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_fluxBeamEffect",
   "fireSoundOne": "beambangM",
   "fireSoundTwo": "beamfireM",
   "fringeColor": [
-    150,
+    200,
     0,
     200,
     200
@@ -34,7 +33,7 @@
   ],
   "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
   "hitGlowRadius": 0,
-  "id": "armaa_fluxcannon_ftr",
+  "id": "armaa_fluxcannon2",
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,

@@ -12,6 +12,12 @@
   "shieldCenter": [35, 0],
   "shieldRadius": 160,
   "viewOffset": 0,
+  "builtInWings": [
+    "armaa_valkencannon_wing"
+  ],
+  "builtInMods": [
+    "armaa_wingCommander"
+  ],
   "weaponSlots": [
     {
       "id": "WS 005",

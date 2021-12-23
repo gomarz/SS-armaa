@@ -161,14 +161,14 @@ BODY: BLUNDERBUSS,armaa_selector_blunderbuss,,,,"no_build_in,req_spaceport",Requ
 The %s is a relatively standard core unit, featuring a built-in weapon that can effectively eliminate small targets within its meagre firing arc, as well as doubling as a close-range assault weapon. While it lacks any kind of gimmick like other torsos, extra space that would be reserved for those systems is used for additional ammo storage and a slightly enhanced central thruster.
 
 %s",,graphics/armaa/hullmods/body.png
-BODY: BOSON,armaa_selector_boson,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_boson,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
+BODY: HVY BLASTER,armaa_selector_boson,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_boson,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
 
 The %s possesses an extremely powerful yet flux hungry built-in particle cannon with limited ammo.
 
 %s",,graphics/armaa/hullmods/body.png
-BODY: SPARK,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_s_spark,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+BODY: HE BEAM,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_s_spark,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
-The %s possesses the capability to sheath the unit in a field of plasma, which can be employed in a powerful close-range ramming attack.
+The %s possesses the capability to fire a long range beam that generates a random number of additonal explosions in it's wake.
 
 %s",,graphics/armaa/hullmods/body.png
 ,,,,,,,,,,,,,,,,,,
