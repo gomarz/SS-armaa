@@ -10,8 +10,6 @@ armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataph
 armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,0,2,BOMBER,Lancer,16,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_einhander_wing,armaa_einhander_ftr_std,"fighter5,fighter,cataphract,no_sell,no_drop,independent_of_carrier",5,0.9,6,25,BOX,4000,1000,0,1,FIGHTER,Experimental Cataphract,35,26000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_repairdrone_wing,armaa_repairdrone_standard,"no_drop, no_sell",3,1,2,8,DIAMOND,2500,400,600,1,SUPPORT,Repair Drone,10,10000,,,,,,,,,,,,,6,,,,,,,,,,,,,,,,,,
-armaa_reloaddrone_wing,armaa_reloaddrone_standard,"no_drop, no_sell",3,1,2,8,DIAMOND,2500,400,600,1,SUPPORT,Resupply Drone,10,10000,,,,,,,,,,,,,6,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,

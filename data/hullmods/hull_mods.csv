@@ -1,11 +1,6 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,graphics/icons/markets/arms_tradeshow.png
 Advanced Optics(AA),armaa_advancedoptics,,,Arma Armatura,,,,,TRUE,,3,10,15,25,data.hullmods.armaa_advancedoptics,"Extends the range of beam weapons by %s, but reduces their turn rate by %s. Cumulative with Integrated Targeting Unit. Cannot be built-in.",Increases beam weapon range.,graphics/hullmods/advanced_optics.png
-Booster Unit,boosterUnit,,,,,,,,TRUE,,0,0,0,0,data.hullmods.boosterUnit,"The Torment has an auxiliary reactor that grants an additional shield, but can be attacked and destroyed during combat, which shuts down the secondary shield and reduces flux dissipation and capacity by %s percent.
-
-The secondary shield has %s capacity, %s dissipation and has a %s efficiency.
-
-The reactor and its shield are affected by the Torment captain's skills, but not by any hullmods applied to the Torment itself.",Severe reduction in combat capability if generator is destroyed.,graphics/armaa/hullmods/cataphract.png
 Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
 Cataphract S-II,cataphract2,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract2,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
 Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
@@ -19,7 +14,6 @@ Several layers of this semi-transparent coating protect from beam weapons by ref
 
 This type of coating can only be applied to specialized forms of armor, thereby making it incompatible with %s.",Reduces beam damage by %s .,graphics/hullmods/solar_shielding.png
 Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by a value up to the number of marines in the fleet.",,graphics/armaa/hullmods/cataphracts.png
-Variable Weaponry,variawep,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_bitWeaponAssignment2,This drone can be equipped with a selection of different weaponry.,,graphics/icons/hullsys/drone_sensor.png
 No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables active venting,,graphics/hullmods/vast_bulk.png
 Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,graphics/hullmods/reduced_explosion.png
 Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,graphics/hullmods/vast_bulk.png
@@ -47,10 +41,7 @@ This system is equipped with a manual safety override that can be tripped to for
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
 WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,10000,,,,15,9999,9999,9999,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft.,,graphics/icons/markets/headquarters.png
-[Core Type]: [Insert Name],eis_copilot,3,,,"special, non_phase",Fighters,10000,,,,15,9999,9999,9999,data.hullmods.eis_copilot,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft.,,graphics/icons/markets/headquarters.png
-Ill-Advised Modifications (AA),armaa_ill_advised,,,,dmod,,,,TRUE,,0,0,0,0,data.hullmods.armaa_IllAdvised,"This hull's systems have been drastically modified from spec, likely without certified engineering oversight. Its systems appear to work correctly under routine conditions, but have a significant chance of critical malfunction when stressed.",,graphics/hullmods/illadvised.png
 ,,,,,,,,,,,,,,,,,,
-Undersized Modular Mounts,armaa_rofmalus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_crampedFiring,Fire rate of all modular mounts is reduced by %s.,,graphics/hullmods/illadvised.png
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
