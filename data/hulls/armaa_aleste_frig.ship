@@ -40,6 +40,7 @@
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
     "E_HEAD": "armaa_alesteHead",
+    "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_landingBeacon"
   },
   "center": [
@@ -220,6 +221,16 @@
       "mount": "TURRET",
       "size": "SMALL",
       "type": "BUILT_IN"
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-8, -0],
+      "renderOrderMod": -1000
     },
     {
       "angle": 0,

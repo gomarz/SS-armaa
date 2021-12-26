@@ -1,5 +1,10 @@
-V1.6
+V1.6RC3
 --------------------
+- added legs to Aleste, Kouto, Valken-X
+- Fixed torso tracking problem with valkazard
+-fixed missing description for valkazard system
+- fixed outdated description for kouto
+
 - New Ship, Caymon
 - New Ship, Valkazard
 	- Added new start for starting w/ (ArmaA(Pirates))

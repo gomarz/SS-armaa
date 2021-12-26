@@ -48,7 +48,23 @@
 			"legs_22":"graphics/armaa/ships/valkazard/armaa_valkazard_legs13.png",
 			"legs_23":"graphics/armaa/ships/valkazard/armaa_valkazard_legs14.png",
 			"legs_24":"graphics/armaa/ships/valkazard/armaa_valkazard_legs15.png",
-			"legs_25":"graphics/armaa/ships/valkazard/armaa_valkazard_legs16.png"
+			"legs_25":"graphics/armaa/ships/valkazard/armaa_valkazard_legs16.png",
+			"ht_legs_10":"graphics/armaa/ships/legs/armaa_ht_legs01.png",
+			"ht_legs_11":"graphics/armaa/ships/legs/armaa_ht_legs02.png",
+			"ht_legs_12":"graphics/armaa/ships/legs/armaa_ht_legs03.png",
+			"ht_legs_13":"graphics/armaa/ships/legs/armaa_ht_legs04.png",
+			"ht_legs_14":"graphics/armaa/ships/legs/armaa_ht_legs05.png",
+			"ht_legs_15":"graphics/armaa/ships/legs/armaa_ht_legs06.png",
+			"ht_legs_16":"graphics/armaa/ships/legs/armaa_ht_legs07.png",
+			"ht_legs_17":"graphics/armaa/ships/legs/armaa_ht_legs08.png",
+			"ht_legs_18":"graphics/armaa/ships/legs/armaa_ht_legs09.png",
+			"ht_legs_19":"graphics/armaa/ships/legs/armaa_ht_legs10.png",
+			"ht_legs_20":"graphics/armaa/ships/legs/armaa_ht_legs11.png",
+			"ht_legs_21":"graphics/armaa/ships/legs/armaa_ht_legs12.png",
+			"ht_legs_22":"graphics/armaa/ships/legs/armaa_ht_legs13.png",
+			"ht_legs_23":"graphics/armaa/ships/legs/armaa_ht_legs14.png",
+			"ht_legs_24":"graphics/armaa/ships/legs/armaa_ht_legs15.png",
+			"ht_legs_25":"graphics/armaa/ships/legs/armaa_ht_legs16.png"
 		},	
     }
 }

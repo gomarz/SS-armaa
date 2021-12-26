@@ -184,5 +184,12 @@
 			"SKR_can",
 			"SKR_drill_shot",
 		],
+		"hullmod_refit_custom":{
+		"missleracks":0.25,
+		
+		},
+		"missile_refit_custom":{
+		"reaper":0.25,
+		},
 	},
 }

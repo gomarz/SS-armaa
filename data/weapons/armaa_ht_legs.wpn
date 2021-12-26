@@ -1,15 +1,15 @@
 {
-	"id":"armaa_valkazard_legs",  # this id must match what's in the spreadsheet
+	"id":"armaa_ht_legs",  # this id must match what's in the spreadsheet
         "everyFrameEffect": "data.scripts.weapons.armaa_legAnim",
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"SMALL",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/valkazard/armaa_valkazard_legs00.png",
+	"turretSprite":"graphics/armaa/ships/legs/armaa_ht_legs00.png",
         "numFrames": 17,
         "frameRate": 1,
 	"alwaysAnimate":"false",
-	"hardpointSprite":"graphics/armaa/ships/valkazard/armaa_valkazard_legs00.png",
+	"hardpointSprite":"graphics/armaa/ships/legs/armaa_ht_legs00.png",
 	#"numFrames":2,
 	#"frameRate":0,
 	#"alwaysAnimate":"false",
