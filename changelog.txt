@@ -4,6 +4,7 @@ V1.6RC3
 - Fixed torso tracking problem with valkazard
 -fixed missing description for valkazard system
 - fixed outdated description for kouto
+- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods
 
 - New Ship, Caymon
 - New Ship, Valkazard
