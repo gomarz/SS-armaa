@@ -14,7 +14,7 @@ armaa_resStationOption2,DialogOptionSelected,$option == armaa_stationInspect,"$a
 AddTextSmall ""Discovered something of value may be in the system"" highlight","Your fleet fruitlessly attempts to raise the station, and predictably receive's no response.
 A team is deployed to the station as a secondary measure. You watch from the feeds of the crew as the proceed to comb throughout the station for anything useful.
 
-A few hours pass before you receive a new report, indicating hardly anything valuable could be found; the station indeed had been rather thoroughly combed through. The only standout mention was the indication that someone had been staying on the station until recently, and all indications pointed to them departing to the planet ____ in search of something.",defaultLeave:Leave,
+A few hours pass before you receive a new report, indicating hardly anything valuable could be found; the station indeed had been rather thoroughly combed through. The only standout mention was the indication that someone had been staying on the station until recently, and all indications pointed to them departing towards the gas giant Raven in search of something.",defaultLeave:Leave,
 ,,,,,,
 nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == rocketStars,,"A featureless armored faceplate stares back at you. 
 
