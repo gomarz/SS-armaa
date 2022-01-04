@@ -1,23 +1,26 @@
 {
   "id": "armaa_valkazard_machinegun_left",
   "specClass": "projectile",
-  "projectileSpecId": "heavymg_shot",
+  "projectileSpecId": "armaa_mag47_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_valkazard_machinegunEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_mg_left_00.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "visualRecoil": 1,
+  "visualRecoil": 2,
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazard_machinegunEffect",
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    31,
-    14.5
+    32,
+    9,
+    32,
+    15
   ],
   "turretAngleOffsets": [
+    -1,
     -1
   ],
   "hardpointOffsets": [
@@ -27,19 +30,20 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "barrelMode": "ALTERNATING",
+  "barrelMode": "LINKED",
+"separateRecoilForLinkedBarrels":"TRUE",
   "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
     "length": 30,
-    "spread": 6,
-    "particleSizeMin": 7,
+    "spread": 15,
+    "particleSizeMin": 12,
     "particleSizeRange": 9,
-    "particleDuration": 0.15,
-    "particleCount": 11,
+    "particleDuration": 0.04,
+    "particleCount": 13,
     "particleColor": [
+      100,
       255,
-      120,
-      105,
+      150,
       250
     ]
   },

@@ -32,6 +32,7 @@
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 		},
 		"misc":{
+			"neuro":"graphics/armaa/icons/hullsys/armaa_neural_piloting_interface.png",
 			"sfxkarma":"graphics/armaa/fx/armaa_karma.png",
 			"legs_10":"graphics/armaa/ships/valkazard/armaa_valkazard_legs01.png",
 			"legs_11":"graphics/armaa/ships/valkazard/armaa_valkazard_legs02.png",

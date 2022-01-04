@@ -22,7 +22,7 @@ armaa_hominglaserkin_trail3,armaa_hominglaser2_kin,beam_trail_smooth,14,0,0.1,0.
 armaa_seeker_trail,armaa_karma_seeker,beam_trail_smooth,10,0,0.1,0.1,10,5,"[149,206,240]","[0,0,250]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_spike_shot,armaa_spike_shot,base_trail_mild,10,0.1,0.1,1,10,5,"[225,200,200]","[225,100,200]",0.5,256,-256,0,0,1,FALSE,FALSE,TRUE,50,0,0,180,45,0,TRUE,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_sniper_shot,armaa_sniper_shot,base_trail_mild,10,0.1,0.1,1,5,1,"[150,150,150]","[50,50,50]",0.5,256,-256,0,0,1,FALSE,FALSE,TRUE,50,0,0,180,45,0,TRUE,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_seeker_trail,armaa_mrm3,beam_trail_smooth,10,0,0.1,0.1,10,5,"[149,206,240]","[0,0,250]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -78,8 +78,9 @@ armaa_autocannon_trail,armaa_autocannon_shot,beam_trail_smooth,10,0.1,0.05,0.25,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_minigun_trail,armaa_minigun_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,4,"[255,100,50]","[50,50,50]",0.7,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
 armaa_minigun_trail_beam,armaa_minigun_energy_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,4,"[255,100,250]","[50,50,50]",0.7,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
+armaa_pulselaser_trail,armaa_pulselaser_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,4,"[255,68,204]","[155,68,104]",0.7,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
 armaa_shotgun_trail,armaa_shotgun_shot2,beam_trail_smooth,10,0.1,0.04,0.25,6,4,"[255,100,50]","[50,50,50]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,TRUE
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_mag_trail_beam,armaa_mag47_shot,beam_trail_smooth,10,0.1,0.05,0.25,6,4,"[100,255,200]","[25,75,50]",0.7,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_ppc,armaa_ppc_shot,nottahlan_trail_dhelix,5,0.1,0.4,0.1,15,14,"[50,150,255]","[50,150,255]",0.8,400,-1024,0,0,1,TRUE,FALSE,TRUE,150,150,0,180,25,25,TRUE,FALSE
 armaa_ppc2,armaa_ppc_shot,nottahlan_trail_zappy,5,0.1,0.4,0.1,30,40,"[150,100,255]","[150,100,255]",0.5,400,-1024,0,0,1,TRUE,FALSE,TRUE,150,150,0,180,15,15,TRUE,FALSE

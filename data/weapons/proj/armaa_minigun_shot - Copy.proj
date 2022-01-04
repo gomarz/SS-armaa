@@ -28,6 +28,6 @@
 									 "particleDuration":1,
 									 "particleCount":5,
 									 "particleColor":[255,100,50,255],
-									 "explosionColor":[255,100,50,100]},
+									 "explosionColor":[255,100,250,200]},
 					}
 }

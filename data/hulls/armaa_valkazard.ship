@@ -19,10 +19,7 @@
     "armaa_SilverSwordHM"
   ],
   "builtInWeapons": {
-    #"A_GUN": "armaa_valkazard_chaingun",
-    #"B_TORSO": "armaa_valkazard_torso_shield",
     "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
-    #"C_ARML": "armaa_einhander_emp_smg",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
     "D_PAULDRONR": "armaa_valkazard_rightshoulder",
@@ -154,25 +151,25 @@
   ],
   "engineSlots": [
     {
-      "location": [-12.5, -6],
-      "length": 11,
+      "location": [-14, -6],
+      "length": 18,
       "width": 8,
       "angle": 180,
-      "contrailSize": 5,
+      "contrailSize": 8,
       "style": "CUSTOM",
-      "styleId": "DRONE_ENGINE"
+      "styleId": "VALKAZARD_ENGINE"
     },
     {
-      "location": [-12.5, 6],
-      "length": 11,
+      "location": [-14, 6],
+      "length": 18,
       "width": 8,
       "angle": 180,
-      "contrailSize": 5,
+      "contrailSize": 8,
       "style": "CUSTOM",
-      "styleId": "DRONE_ENGINE"
+      "styleId": "VALKAZARD_ENGINE"
     },
     {
-      "location": [-10, -11],
+      "location": [-11.5, -11],
       "length": 11,
       "width": 8,
       "angle": -148,
@@ -180,7 +177,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-10, 11],
+      "location": [-11.5, 11],
       "length": 11,
       "width": 8,
       "angle": 148,

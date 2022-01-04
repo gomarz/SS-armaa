@@ -1,0 +1,20 @@
+{
+	"id":"armaa_mag47_shot",
+	"everyFrameEffect": "data.scripts.weapons.armaa_valkazard_machinegunEffect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":55.0,
+	"hitGlowRadius":8,
+	"width":5,
+	"fadeTime":0.25,
+	"fringeColor":[115,255,150,225],
+	"coreColor":[255,255,255,255],
+	"textureScrollSpeed":32.0,
+	#"glowColor": [100,235,105,20],
+	"glowColor": [255,235,255,20],
+	"glowRadius":15,
+	"pixelsPerTexel":10.0,
+	"bulletSprite":"graphics/missiles/shell_small.png"
+}

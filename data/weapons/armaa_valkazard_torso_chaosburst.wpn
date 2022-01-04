@@ -42,9 +42,9 @@
   "beamFireOnlyOnFullCharge": true,
   
   "fringeColor": [
-    247,
-    176,
-    52,
+    255,
+    170,
+    127,
     255
   ],
   "coreColor": [

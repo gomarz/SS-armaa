@@ -2,7 +2,7 @@
   #"animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   "everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
-  "fireSoundTwo": "armaa_rcl_fire",
+  "fireSoundTwo": "chaingun_fire",
   "hardpointAngleOffsets": [
     0
   ],
@@ -12,7 +12,7 @@
     0
   ],
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_valkazard_rcl",
+  "id": "armaa_valkazard_sniper",
 	"animationType":"SMOKE",
 	"smokeSpec":{
             "particleSizeMin":10.0,
@@ -24,12 +24,12 @@
             "blowbackDuration":1.5,
             "blowbackLength":-20.0,
             "blowbackSpread":10.0,
-            "particleColor":[190,190,190,100]
+            "particleColor":[45,45,45,150]
         },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_rcl_shot",
+  "projectileSpecId": "armaa_sniper_shot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW

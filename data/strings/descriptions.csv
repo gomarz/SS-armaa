@@ -42,7 +42,7 @@ armaa_altagrave,SHIP,"What this design lacks in weapon slot quantity is made up 
 
 Created during the First AI War at a period where the local ArmaA branch was considered to be at the peak of its power, this design can be partially attributed to reverse-engineered, borrowed, and outright stolen technologies of various origin. R&D of the accumulated tech base resulted in creation of the Kinetic Automated Range Missile Assimilator. With the aid of a delta-level AI, KARMA autonomously tags and identifies dangerous projectiles, intercepts them, and stores the acquired kinetic energy for later use. In the case of guided missiles, malicious code is injected that spoofs IFFs and renders the original signal unrecognizable, effectively hijacking them. This allows an Altagrave to screen ships against particularly thick hails of ordinance in a pinch, among other things. 
 
-While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,
+While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - An enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, but generous projections on the outcome are the resulting strain would leave them with bits of brain leaking out of their ears.",,,
 
 armaa_altagrave_r,SHIP,"An upgunned variant of the Altagrave employed by the Rocket Stars; At its heart lies the KARMA system which posseses a variety of applications on the battlespace.
 
@@ -74,7 +74,7 @@ armaa_hazard_frig,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverab
 
 Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,
 
-armaa_valkazard,SHIP,"Advanced Series-II 'mech that boasts a versatile weapons loadout. Nimble, yet rather flimsy. 
+armaa_valkazard,SHIP,"Advanced Series-II 'mech boasting a versatile weapons loadout and equipped with an outmoded variant of the SILVERSWORD system utilized by the GAREGGA. Nimble, deadly, and flimsy. 
 
 From testimonials and what little evidence remains, it's inferred that prior to the Collapse a sole unit was transferred via gate network to the Persean Sector for 'cold storage', before its unfortunate disappearance during the destruction of old Meshan, circa c.94.",,,
 
@@ -142,7 +142,7 @@ armaa_valkazard_pulse_rifle_left,WEAPON,"Fires repeating bolts of energy, favori
 
 armaa_valkazard_pulse_rifle_right,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,
 
-
+armaa_valkazard_rcl,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,
 
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
 

@@ -1,5 +1,14 @@
 V1.6RC3
 --------------------
+- Will now check for hullId first before resorting to baseHullId (for fighter skins)
+- Buffed Recoilless Rifle sfx
+ 	- Damage: 255->400
+	- Flux Cost: iforgot->532
+	- Projectile Speed: 700->600
+	- Chargedown: 1->1.1
+- Buffed MAG47 sfx
+	
+
 - added legs to Aleste, Kouto, Valken-X
 - Fixed torso tracking problem with valkazard
 -fixed missing description for valkazard system
