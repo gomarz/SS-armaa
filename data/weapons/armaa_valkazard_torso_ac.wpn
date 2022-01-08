@@ -1,0 +1,50 @@
+{
+  "id": "armaa_valkazard_torso_ac",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_ac_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_ac.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_ac_recoil.png",
+  "hardpointSprite": "",
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    -7
+  ],
+  "turretAngleOffsets": [
+    0.5
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
+  "requiresFullCharge": false,
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 20,
+    "particleSizeMin": 12,
+    "particleSizeRange": 32,
+    "particleDuration": 0.10,
+    "particleCount": 25,
+    "particleColor": [
+      165,
+      225,
+      185,
+      175
+    ]
+  },
+  "fireSoundTwo": "autocannon_fire"
+}

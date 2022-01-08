@@ -26,7 +26,8 @@
     "D_PAULDRONL": "armaa_leynos_leftPauldron",
     "D_PAULDRONR": "armaa_leynos_rightPauldron",
     "E_HEAD": "armaa_leynos_head",
-    "H_GLOW": "armaa_sprigganHeadGlow"
+    "H_GLOW": "armaa_sprigganHeadGlow",
+    "F_LEGS": "armaa_ht_legs"
   },
   "weaponSlots": [
     {
@@ -100,6 +101,16 @@
       "arc": 135,
       "angle": 0,
       "locations": [1, 0]
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-4, -0],
+      "renderOrderMod": -1000
     },
     {
       "id": "WS001",

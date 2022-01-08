@@ -1,4 +1,4 @@
-V1.6RC3
+V1.6RC5
 --------------------
 - Will now check for hullId first before resorting to baseHullId (for fighter skins)
 - Buffed Recoilless Rifle sfx
@@ -7,8 +7,15 @@ V1.6RC3
 	- Projectile Speed: 700->600
 	- Chargedown: 1->1.1
 - Buffed MAG47 sfx
-	
+- Updated Valken-X Sprite
+- Valken-X
+	- Removed Ion Cannon (High Delay)
+	- Chaingun: chargedown:1->0.8
+	- Laser Blade: Damage: 350->400
+		- Range: 45->60
 
+V1.6RC3
+--------------------
 - added legs to Aleste, Kouto, Valken-X
 - Fixed torso tracking problem with valkazard
 -fixed missing description for valkazard system

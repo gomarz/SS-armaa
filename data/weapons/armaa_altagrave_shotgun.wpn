@@ -1,7 +1,7 @@
 {
   "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "armaa_shotgun_fire_small",
+  "fireSoundTwo": "armaa_shotgun_fire",
 "everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect",
   "glowColor": [
     50,

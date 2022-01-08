@@ -21,7 +21,8 @@
         -11,
         -0
       ],
-      "style": "HIGH_TECH",
+      "style": "CUSTOM",
+      "styleId": "VALKAZARD_ENGINE",
       "width": 9
     },
     {

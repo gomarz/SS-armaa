@@ -35,9 +35,8 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,"A specialized combat support suite combining a experimental piloting system with the processing power of an AI core.
-",,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,10000,,,,15,9999,9999,9999,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft.,,graphics/icons/markets/headquarters.png
+SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite combining a experimental piloting system with the processing power of an AI core.,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
+WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,10000,,,,10,15,20,25,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft.,,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
@@ -139,27 +138,31 @@ L ARM: POWERFIST,alwaysburn,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4
 ,,,,,,,,,,,,,,,,,,
 #VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_valkazardWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardweaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-BODY: COUNTER SHIELD,armaa_selector_counter_shield,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_counter_shield,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+BODY: COUNTER SHIELD,armaa_selector_counter_shield,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_counter_shield,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s utilizes a specialized omnidirectional shield emitter that accumulates energy from any attacks against it while deployed. Capacity scales with the units flux reserves, and can readily be weaponized in suitable circumstances.
 
 %s",,graphics/armaa/hullmods/body.png
-BODY: BLUNDERBUSS,armaa_selector_blunderbuss,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blunderbuss,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+BODY: FRAG SHOTGUN,armaa_selector_blunderbuss,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_blunderbuss,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
-The %s is a relatively standard core unit, featuring a built-in weapon that can effectively eliminate small targets within its meagre firing arc, as well as doubling as a close-range assault weapon. While it lacks any kind of gimmick like other torsos, extra space that would be reserved for those systems is used for additional ammo storage and a slightly enhanced central thruster.
+The %s is a relatively standard core unit, featuring a built-in weapon that can effectively eliminate small targets within its meagre firing arc, as well as doubling as a close-range assault weapon. While it lacks any kind of gimmick like other Cores, extra space that would be reserved for those systems is used for additional ammo storage and a slightly enhanced central thruster.
 
 %s",,graphics/armaa/hullmods/body.png
-BODY: HVY BLASTER,armaa_selector_boson,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_boson,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
+BODY: ENERGY BLASTER,armaa_selector_boson,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_boson,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
 
 The %s possesses an extremely powerful yet flux hungry built-in particle cannon with limited ammo.
 
 %s",,graphics/armaa/hullmods/body.png
-BODY: HE BEAM,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_s_spark,"Torso modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Torsos can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+BODY: HE BEAM,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_s_spark,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s possesses the capability to fire a long range beam that generates a random number of additonal explosions in it's wake.
 
 %s",,graphics/armaa/hullmods/body.png
-,,,,,,,,,,,,,,,,,,
+BODY: KE AUTOCANNON,armaa_selector_ac20,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_s_spark,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+
+The %s features a built-in autocannon.
+
+%s",,graphics/armaa/hullmods/body.png
 ,,,,,,,,,,,,,,,,,,
 R ARM: R. RIFLE,armaa_selector_rcl,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_rcl,"HAND weapons can be changed to better suit the pilot's preferences. 
 
@@ -179,11 +182,11 @@ R ARM: MACHINEGUN,armaa_selector_machinegun_right,,,,no_build_in,,,,TRUE,,0,0,0,
 
 A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_r.png
 ,,,,,,,,,,,,,,,,,,
-L ARM: M. PULSER,armaa_selector_micropulser,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_micropulser,"""HAND weapons can be changed to better suit the pilot's preferences. 
+L ARM: M. PULSER,armaa_selector_micropulser,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_micropulser,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a hand-held variant of the Ion Pulser. A few seconds of concentrated fire is usually enough to effectively handicap the enemies offensive capabilities.
 
-%s""",,graphics/armaa/hullmods/hand_l.png
+%s",,graphics/armaa/hullmods/hand_l.png
 L ARM: HARPOON,armaa_selector_harpoon,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s launches a rod that, should it connect with hull, fires constant EMP pulses throughout the enemy ship. Tethers the ship and the weapons user together, and smaller targets can be pulled or towed to some degree. 
@@ -197,3 +200,7 @@ L ARM: LASER,armaa_selector_pulse_rifle_left,,,,no_build_in,,,,TRUE,,0,0,0,0,dat
 L ARM: MACHINEGUN,armaa_selector_machinegun_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_l.png
+L  ARM: R. RIFLE,armaa_selector_rcl_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_rcl,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s is suited for cracking heavy armor. Fairly slow.
+%s",,graphics/armaa/hullmods/hand_l.png

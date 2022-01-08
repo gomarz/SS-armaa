@@ -1,5 +1,6 @@
 {
 	"id":"armaa_rcl_shot",
+	"onHitEffect":"data.scripts.weapons.armaa_rcl_effect",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",

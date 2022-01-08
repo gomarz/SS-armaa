@@ -62,7 +62,8 @@ While adopting fighting tactics more akin to a spaceship, operationally they beh
 armaa_altagrave_ex,SHIP,"The core of this aged machine is clearly an Altagrave-class, but detailed scans detect part of automated vessels in its superstructure. This casts an uncertainty on its point of origin: these automated components definitely aren't legal due to potential threat of delta+ AI possession, yet this vessel still contains human interface, control consoles and even cramped crew quarters. Perhaps this specimen was once captured by someone or something during the span of the First AI War and then was refurbished to different spec?
 
 Truth may have been lost in  the annals of time, but what can't be disputed is its efficiency - it outperforms other mobile armors that are part of Altagrave series to this day.",,,
-armaa_valkenx,SHIP,"Enhanced model of the Valken introduced in the late Expansion era, the Valken eXpansion-type possesses generally improved performance and staying power over its progenitor, swapping out the chest mounted mortar with an ion Cannon. A high-intensity Plasma Blade built into the forearm ensures these Cataphracts remain a cut above the rest in close quarters combat, but not as easy to maintain and replace.",,,
+
+armaa_valkenx,SHIP,"The eXpansion-type sacrifices the firepower a full Valken lance offers for far greater survivability. The close quarters chaingun and blade combination can rapidly rend apart armor and disable electronic systems, but they're fairly ineffective against well-shielded opponents and optical weapons.",,,
 
 armaa_aleste,SHIP,"Exceptional durability combined with a diverse loadout. The arm-mounted Stake Driver is effective against stripped hull - however, these spikes also detonate shortly after embedding themselves within a ship, creating a localized magnetic field that plays havoc with all manner of electronics. These capabilities are rounded out by two CLAW bits, flimsy yet nimble drones that serve as effective threat multipliers.
 
@@ -128,7 +129,7 @@ armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament t
 
 armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,
 
-armaa_valkazard_torso_chaosburst,WEAPON,"An extremely long-range, high damage energy beam cannon. Generates additional explosions around the beam when fired.",,,
+armaa_valkazard_torso_chaosburst,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,
 
 armaa_valkazard_torso_shield,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,
 

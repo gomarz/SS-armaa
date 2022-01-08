@@ -19,13 +19,6 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "B_TORSO": "armaa_sprigganTorso",
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
         "C_ARML": "armaa_valkenxLeftArm",
       }
     },

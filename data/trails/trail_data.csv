@@ -6,8 +6,8 @@ armaa_glaive_trail1,armaa_mauler_shot,base_trail_zapWithCore,10,0,0.5,0.2,15,5,"
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_glaive_trail3,armaa_mauler_shot,glaive_trail_helix,10,0,0.5,0.2,40,15,"[80,180,255]","[0,10,150]",0.9,300,1000,5,0,1,FALSE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+trails_heavyac_rem,armaa_ac_shot,glaive_trail_helix,8,0,0.1,0.5,4,30,"[225,255,200]","[125,150,125]",0.3,-1,0,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,TRUE
+trails_heavyac_rem2,armaa_ac_shot,base_trail_zap,8,0,0.1,0.5,4,20,"[225,255,200]","[125,150,125]",0.3,128,10,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_chain_trail,armaa_chaingun_shot,base_trail_smooth,10,0,0.1,0.2,6,3,"[255,100,100]","[200,0,0]",0.5,400,128,13,0,1,TRUE,TRUE,TRUE,5,0,0,0,3,5,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

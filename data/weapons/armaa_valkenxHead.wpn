@@ -39,10 +39,10 @@
     0,
     255,
     0,
-    155
+    255
   ],
   "darkCore": true,
-  "convergeOnPoint": true,
+  #"convergeOnPoint": true,
   "width": 2,
   "textureType": SMOOTH,
   "textureScrollSpeed": 64,

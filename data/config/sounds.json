@@ -115,7 +115,9 @@
 	],
 	"armaa_shotgun_fire":
 	[
-		{"file":"sounds/armaa/shotgun_shot.ogg","pitch":1,"volume":0.5},
+		{"file":"sounds/armaa/shotgun_blast.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/shotgun_blast.ogg","pitch":1.03,"volume":1.03},
+		{"file":"sounds/armaa/shotgun_blast.ogg","pitch":.97,"volume":.97},
 	],
 	"armaa_shotgun_fire_small":
 	[

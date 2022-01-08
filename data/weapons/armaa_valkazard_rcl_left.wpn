@@ -1,18 +1,33 @@
 {
-  #"animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "id": "armaa_valkazard_rcl_left",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_rcl_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
-  "fireSoundTwo": "chaingun_fire",
-  "hardpointAngleOffsets": [
-    0
-  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_rcl_left_00.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    31,
+    14
+  ],
+  "turretAngleOffsets": [
+    1
+  ],
   "hardpointOffsets": [
     17,
     0
   ],
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_valkazard_rcl_left",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
 	"animationType":"SMOKE",
 	"smokeSpec":{
             "particleSizeMin":10.0,
@@ -24,28 +39,7 @@
             "blowbackDuration":1.5,
             "blowbackLength":-20.0,
             "blowbackSpread":10.0,
-            "particleColor":[45,45,45,150]
+            "particleColor":[190,190,190,100]
         },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "heavymauler_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
-  ],
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    1
-  ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_rcl_00.png",
-  "turretOffsets": [
-    27,
-    -14.5
-  ],
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "type": "BALLISTIC",
-  "visualRecoil": 3
+  "fireSoundTwo": "armaa_rcl_fire"
 }

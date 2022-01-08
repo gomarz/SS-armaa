@@ -1,10 +1,28 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "ion_cannon_fire",
-  "hardpointAngleOffsets": [
-    -45,
-    45
+  "id": "armaa_valkenx_torso",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    18,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
   ],
   "hardpointOffsets": [
     -5,
@@ -12,34 +30,24 @@
     -5,
     5
   ],
-  "hardpointSprite": "",
-  "id": "armaa_valkenx_torso",
-  "muzzleFlashSpec":{"length":33.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":15.0,
-					   "particleSizeMin":10.0,
-					   "particleSizeRange":12.0,
-					   "particleDuration":0.12,
-					   "particleCount":17,
-					   "particleColor":[100,200,255,255]},	
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "ioncannon_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
+  "hardpointAngleOffsets": [
+    -45,
+    45
   ],
-  "requiresFullCharge": false,
-  "size": "SMALL",
-  "specClass": "projectile",
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 10,
   "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
-  "turretOffsets": [
-    18,
-    0
-  ],
-  "type": "ENERGY",
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
 }

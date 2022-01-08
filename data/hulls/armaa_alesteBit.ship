@@ -34,7 +34,8 @@
         -8,
         0
       ],
-      "style": "LOW_TECH",
+      "style": "CUSTOM",
+      "styleId": "VALKAZARD_ENGINE",
       "width": 4
     }
   ],
@@ -53,7 +54,7 @@
   "weaponSlots": [
     {
       "angle": 0,
-      "arc": 15,
+      "arc": 360,
       "id": "WS0001",
       "locations": [
         0,

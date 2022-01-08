@@ -32,7 +32,7 @@
   "builtInWeapons": {
     "A_GUN": "armaa_aleste_rightArm",
     "B_TORSO": "armaa_aleste_torso",
-    "C_ARML": "armaa_alesteLeftArm",
+    "C_ARML": "armaa_aleste_rifle_left",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
@@ -195,7 +195,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-9, -0],
+      "locations": [-8, -0],
       "renderOrderMod": -1000
     },
     {
