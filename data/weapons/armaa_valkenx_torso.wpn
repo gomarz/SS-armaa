@@ -4,6 +4,7 @@
   "type": "DECORATIVE",
   "size": "SMALL",
   "collisionClass": "RAY",
+  "showDamageWhenDecorative":true,
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
   "hardpointSprite": "",

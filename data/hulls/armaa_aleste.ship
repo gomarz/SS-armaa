@@ -54,7 +54,7 @@
         -14,
         -5
       ],
-      "style": "MIDLINE",
+      "style": "HIGH_TECH",
       "width": 8
     },
     {
@@ -65,7 +65,7 @@
         -14,
         5
       ],
-      "style": "MIDLINE",
+      "style": "HIGH_TECH",
       "width": 8
     },
     {
@@ -76,7 +76,7 @@
         -14,
         6
       ],
-      "style": "MIDLINE",
+      "style": "HIGH_TECH",
       "width": 5
     },
     {
@@ -87,7 +87,7 @@
         -14,
         -6
       ],
-      "style": "MIDLINE",
+      "style": "HIGH_TECH",
       "width": 5
     }
   ],

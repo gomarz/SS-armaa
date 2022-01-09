@@ -14,6 +14,9 @@ V1.6RC5
 	- Laser Blade: Damage: 350->400
 		- Range: 45->60
 
+-Altagrave
+	-Corrected negative modifyPercent for Weapon Flux Cost Mod
+
 V1.6RC3
 --------------------
 - added legs to Aleste, Kouto, Valken-X
