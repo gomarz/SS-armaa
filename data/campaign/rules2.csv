@@ -70,13 +70,3 @@ $valkazard score:1000,Salvage crews boarding the wreck discover that many essent
 Only a minute number of megacorporations deal with vehicles like this. It may be worth checking up on them to see if they have any information on the vessel, and possibly even have a reward for the return of this machine...",,
 armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $valkazard score:1000",ShowDefaultVisual,,,
-,,,,,,
-arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
-!$armaarmatura_pirates_ChangeMind","AddText ""Due to the outcome of numerous failed business ventures, crippling debt, and an uncanny knack for making enemies in high places, you have found yourself an outcast among most of civilized space-faring society. Your luck has seemingly changed for the better after a chance discovery in a dead system, rendered uninhabitable during one of the AI Wars. Armed with this machine, a small crew of individuals looking to make something of themselves, you set your eyes to the stars...""
-$armaarmatura_pirates_ChangeMind = true 0",,,
-armaa_seggs,ExerelinNGCStep4Plus,"$playerFaction == armaarmatura_pirates
-$nex_lastSelectedFleetType == SUPER
-#maybe if you add more I actually do fancier rulecmd but im bored and sexless rn","AddText ""You pilot the Valkazard that can swap out various weapons depending on the circumstances, ranging from mundane chainguns and autocannons to more exotic weapons such as a long range anti-armor beam weapon and particle cannon.""
-SetTextHighlights Valkazard
-AddText ""The ship system Silversword can be used to dramatically increase the performance in short bursts when needed.""
-SetTextHighlights Silversword",,,
