@@ -83,10 +83,10 @@ Target Painter,armaa_valkenxHead,,,,500,0,,,,80,4,,,,ENERGY,,,,,0.1,,0,,,,,1200,
 ,armaa_valkenx_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkenx_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 Assault Chaingun(F),armaa_chaingun,1,,1000,450,,25,,3,30,42,350,,,HIGH_EXPLOSIVE,10,,0,0.5,6,0.1,0,20,1,10,,800,,,30,"SYSTEM,ANTI_FTR",,,,,Anti Armor,,,,,,,,,,4.5,,
-LS-20  Heat Blade,armaa_valkenxLeftArm,,,,60,300,,,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,Anti Armor,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,,999,,
+LS-20  Heat Blade,armaa_valkenxLeftArm,,,,60,400,,,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,Anti Armor,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,,999,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Valkazard,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Autocannon,armaa_valkazard_torso_ac,1,,1000,800,,125,100,10,7,0,,,,KINETIC,145,,0,1.25,2,0.2,0,15.84,2.64,8.8,,888,,,30,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Anti Shield,,,,,,,,,,,,5
+Autocannon,armaa_valkazard_torso_ac,1,,1000,800,,125,75,10,7,0,,,,KINETIC,145,,0,1.25,2,0.2,0,15.84,2.64,8.8,,888,,,30,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Anti Shield,,,,,,,"Hits on hull or armor arc to weapons and engines, dealing %s %s damage. These arcs are capable of piercing shields, depending on the target's flux level.",75|EMP,,,,5
 Blunderbuss(Actual),armaa_blunderbuss,,,4500,500,,75,,4,20,0,,,,FRAGMENTATION,55,,1.05,1.6,8,0.1,0,15,1,6,,1200,,,70,"SYSTEM,PD_ALSO,PD","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Anti Hull,,,,,,,,,,,,
 Counter Shield,armaa_valkazard_countershield_secondary,2,,2500,1800,,150,,10,15,0,25,3,15,ENERGY,192.5,,0,0.15,,0.1,5,20,2,9,,650,600,0.6,450,"SYSTEM,GUIDED_POOR","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Assault,,,,,"%s: Projectiles have some homing capability:  Can be intercepted by flares and PD, and be fired over friendly ships - but projectiles detonating over a friendly target will still damage it. In terms of enhancement bonuses, this weapon is considered a %s weapon.",Pseudomissile|PROJECTILE,,,TRUE,22.25,,
 Counter Shield,armaa_valkazard_torso_shield,,,4500,600,,1,,4,20,0,0,0.01,9999,ENERGY,55,,,,,,,,,,,700,,,70,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Anti Hull,,,,,,,,,,,,

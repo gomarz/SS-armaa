@@ -145,6 +145,10 @@ armaa_valkazard_pulse_rifle_right,WEAPON,"Fires repeating bolts of energy, favor
 
 armaa_valkazard_rcl,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,
 
+armaa_valkazard_rcl_left,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,
+
+armaa_valkazard_torso_ac,WEAPON,"A torso-mounted cannon that fires a duo of ionized shells capable of overloading and disabling enemy electronics at medium range.  It is most effective versus enemy shields.",,,
+
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
 
 armaa_landingBeacon,WEAPON,"Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.","",,

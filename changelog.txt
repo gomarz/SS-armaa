@@ -1,6 +1,28 @@
 V1.6RC5
 --------------------
-- Will now check for hullId first before resorting to baseHullId (for fighter skins)
+TODO:
+Fix/Remove partially implemented kinetic right arm weapon for valkazard
+Replace Ion Pulser with something more interesting
+???
+Expand on quest hook if finding valkazard/starting with it
+
+-Add super cool special snowflake nex start text with valkazard by tim! wowee
+
+Valkazard:
+	- Hullmod: Silversword-> Silversword [Type A]
+		- Direct Neural Interface: +10% Time Dilation, +10% Hull Damage Received
+		- Integrated AI: +33% auto-aim, +100% missile/fighter dmg
+	- Removed PD tag from all weapons save for MAG47
+	- Add weapon Desc for RCL-48
+	- Add RCL-48 for left arm
+	- Added Autocannon for Torso
+	- Fixed bug CTD caused by adding Shield Shunt while using Counter Shield
+	- Fixed bug where initially expending missile ammo would cause racks to disappear and never show up again
+
+WINGCOM:
+	- Wingcom will now check for hullId first before resorting to baseHullId (for fighter skins)
+	- Added support for multiple wings
+
 - Buffed Recoilless Rifle sfx
  	- Damage: 255->400
 	- Flux Cost: iforgot->532
@@ -8,14 +30,23 @@ V1.6RC5
 	- Chargedown: 1->1.1
 - Buffed MAG47 sfx
 - Updated Valken-X Sprite
-- Valken-X
+- Valken-eX
+	- Replacement Time: 10->13
+	- OP: 10->11
 	- Removed Ion Cannon (High Delay)
-	- Chaingun: chargedown:1->0.8
-	- Laser Blade: Damage: 350->400
+	- Chaingun: chargedown:1->0.5
+		-Damage: 50->25
+		-Flux/Shot: 0->10
+		-Burst Size: 5->6
+	- Laser Blade: 
+		-Damage: 350->400
 		- Range: 45->60
+	System (Right Click): Overboost -> Havoc Drive
 
 -Altagrave
 	-Corrected negative modifyPercent for Weapon Flux Cost Mod
+	- Replaced ear killing shotgun sound for Altagrave Ex
+	- Altagrave Ex: Plasma Jets -> Havoc Drive
 
 V1.6RC3
 --------------------
@@ -78,6 +109,7 @@ V1.6RC3
 	- Adjusted font colors for more uniformity with normal hullmods
 	- In smaller battles where ships deploy closer to the center of the map, wingmen will now spawn a few thousand SU away instead of from deployment zone if no carrier is present
         - Max stat bonus conferred by relationship reduced to 30% (was 75% for defensive and 37% for offensive)
+	- Added support for multiple wings
 
 - Strikecraft:
 	- AI navigating back to carrier has been improved
