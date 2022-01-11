@@ -204,3 +204,13 @@ L  ARM: R. RIFLE,armaa_selector_rcl_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hu
 
 The %s is suited for cracking heavy armor. Fairly slow.
 %s",,graphics/armaa/hullmods/hand_l.png
+,,,,,,,,,,,,,,,,,,
+R ARM: GRENADE LAUNCHER,armaa_selector_exceliza,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_exceliza,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s fires a slow projectile that explodes and damages everything within a moderate radius. Fairly slow.
+%s",,graphics/armaa/hullmods/hand_r.png
+R ARM: VAJRA,armaa_selector_vajra,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_vajra,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s is flux intensive energy weapon with high burst damage.
+
+%s",,graphics/armaa/hullmods/hand_r.png
