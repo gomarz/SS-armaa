@@ -5,6 +5,7 @@ Fix/Remove partially implemented kinetic right arm weapon for valkazard
 Replace Ion Pulser with something more interesting
 ???
 Expand on quest hook if finding valkazard/starting with it
+Make diff. set of legs for Leynos since it looks like she skips leg day rn
 
 -Add super cool special snowflake nex start text with valkazard by tim! wowee
 
