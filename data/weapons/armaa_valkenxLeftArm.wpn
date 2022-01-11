@@ -8,11 +8,12 @@
     92,
     255
   ],
-  "fireSoundTwo": "phase_beam_loop",
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "armaa_saber_loop",
   "fringeColor": [
-    255,
-    0,
-    0,
+    245,
+    157,
+    24,
     255
   ],
   "glowColor": [

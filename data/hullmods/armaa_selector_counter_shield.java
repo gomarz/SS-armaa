@@ -51,6 +51,7 @@ public class armaa_selector_counter_shield extends BaseHullMod {
 		if (shield != null) {
 			shield.setType(ShieldType.OMNI);
 		}
+
 	}
 	
     @Override

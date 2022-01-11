@@ -46,7 +46,7 @@
 					"effectChance":0.3,
 					"range":70,
 					"slowToMaxSpeed":true,
-					"delay":0.7,
+					"delay":0.2,
 					"pingSound":"mine_ping",
 					"pingColor":[255,255,255,155],
 					"pingRadius":170,
