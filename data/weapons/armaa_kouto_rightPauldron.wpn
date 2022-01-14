@@ -4,6 +4,7 @@
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
+        "everyFrameEffect": "data.scripts.weapons.armaa_shoulderColor",
 	"turretSprite":"graphics/armaa/ships/kouto/armaa_koutoRightShoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,

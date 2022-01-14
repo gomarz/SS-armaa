@@ -158,7 +158,7 @@ BODY: HE BEAM,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,
 The %s possesses the capability to fire a long range beam that generates a random number of additonal explosions in it's wake.
 
 %s",,graphics/armaa/hullmods/body.png
-BODY: KE AUTOCANNON,armaa_selector_ac20,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_s_spark,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+BODY: KE AUTOCANNON,armaa_selector_ac20,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_ac20,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s features a built-in autocannon.
 

@@ -19,9 +19,6 @@ import java.awt.Color;
 	{
 
 		private static final float ARMOR_BONUS = 50f;
-		private static final float CAPACITY_MULT = 1.05f;
-		private static final float DISSIPATION_MULT = 1.05f;
-
 	
 		@Override
 		public int getDisplaySortOrder() 
@@ -38,8 +35,6 @@ import java.awt.Color;
 		public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 		{
 			stats.getArmorBonus().modifyFlat(id, (Float) ARMOR_BONUS);	
-			stats.getFluxCapacity().modifyMult(id, CAPACITY_MULT);
-			stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);
 		}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
@@ -67,8 +62,6 @@ import java.awt.Color;
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
 		tooltip.addPara("%s " + "Armor increased by %s.", pad, arr, "-", (int) Math.round(ARMOR_BONUS) + " standard units");
-		tooltip.addPara("%s " + "Flux Capacity increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");
-		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");	
 	}
 
 

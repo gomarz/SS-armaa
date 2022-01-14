@@ -1,3 +1,7 @@
+Armor: 300->250
+Max Flux Cap: 3000->2750
+Reduced value of Cataphract & Advanced Cataphract BP package
+
 V1.6RC5
 --------------------
 TODO:

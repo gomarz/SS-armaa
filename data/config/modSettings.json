@@ -81,7 +81,7 @@
 		],
 		"strikecraft_squad_chatter_soldier":[
 			"\"I'll always fulfill my mission.\"",
-			"\"Now back to my mission.. you'll back me up, right?\"",
+			"\"You'll back me up, right?\"",
 			"\"You need more training. That's all I got to say.\"",
 			"\"How about a little martial arts drill?\"",
 			"\"There's no mercy in war. People live and people die. That's all there is to it.\"",
@@ -93,7 +93,21 @@
 			"\"Only warriors deserve the honor of fair combat. I eliminate the rest.\"",
 			"\"I guess it's hard for folks like us to die, see? The good ones always get scratched first, but people like me? We live the rest of our lives in this hell. ...then again, being alive is proof that i'm talented.\"",
 			"\"In all likelihood you're going to die out there. Hell, we're all probably going to die out there, but none of us needs to be reminded of that. So if anyone dies, they never existed. Understand?\"",
-			"\"Our rides are ready, sir. I made sure of that.\"",
+			"\"Our rides are ready. I made sure of that.\"",
+			"\"When you see the face of hell, it'll squeeze your heart dry.\"",
+			"\"Fighting on seems so pointless now.\"",
+			"\"At first, I fought earnestly to protect my homeworld. But this strife has dragged on with no end in sight. I'm so tired. Everyone is so tired.\"",
+			"\"I read you.\"",
+			"\"Always remember that your destiny is in your own hands. Never forget that. You must decide what is right. Do you understand?\"",
+			"\"I despise war. I've always believed that to take the life of another, for whatever reason, was wrong. Yet I became a pilot, and took many lives. Did I do the right thing? Perhaps I should have stayed in that village, drinking my idle moments away, until my death...\"",
+			
+			
+		],
+		"strikecraft_squad_chatter_combat":
+		[
+			"\"After this sortie, I'll finally propose to her!\"",
+			"\"After this sortie, I'll finally propose to him!\"",
+			"\"Hit your burners, pilot! Dive! Dive!\"",
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",

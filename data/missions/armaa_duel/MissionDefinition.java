@@ -52,7 +52,8 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		
 		// Set up the player's fleet
 		api.addToFleet(FleetSide.PLAYER, "armaa_aleste_standard",FleetMemberType.SHIP,"AASV Chimera",true);
-		FleetMemberAPI oddy =	api.addToFleet(FleetSide.PLAYER, "odyssey_Balanced", FleetMemberType.SHIP,"AASV Grapefruit", false);
+		FleetMemberAPI oddy =	api.addToFleet(FleetSide.PLAYER, "armaa_condor_Strike", FleetMemberType.SHIP,"AASV Grapefruit", false);
+		FleetMemberAPI oddy2 =	api.addToFleet(FleetSide.PLAYER, "armaa_condor_Strike", FleetMemberType.SHIP,"AASV Grapefruit", false);
 		
 		// Mark a ship as essential, if you want
 		api.defeatOnShipLoss("AASV Chimera");
@@ -62,6 +63,9 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		// Set up the enemy fleet
 
 		api.addToFleet(FleetSide.ENEMY, "condor_Support", FleetMemberType.SHIP, false).getCaptain().setPersonality("aggressive");
+		api.addToFleet(FleetSide.ENEMY, "condor_Strike", FleetMemberType.SHIP, false).getCaptain().setPersonality("aggressive");
+		api.addToFleet(FleetSide.ENEMY, "drover_Starting", FleetMemberType.SHIP, false).getCaptain().setPersonality("aggressive");
+
 
 		
 		// Set up the map.
@@ -223,7 +227,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
             if (TIMER.intervalElapsed()) {
                 wave++;
                 Vector2f botMid = new Vector2f(0f, -(engine.getMapHeight() / 2f));
-				if(wave < 8)
+				if(wave < 2)
 				for(int i = 0; i < 3; i++)
 				{
 					Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);
