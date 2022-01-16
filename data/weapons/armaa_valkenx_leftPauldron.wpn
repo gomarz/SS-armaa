@@ -3,7 +3,7 @@
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
-        "everyFrameEffect": "data.scripts.weapons.armaa_shoulderColor",
+        #"everyFrameEffect": "data.scripts.weapons.armaa_shoulderColor",
 	"showDamageWhenDecorative":true,
 	"turretSprite":"graphics/armaa/ships/valkenx/armaa_valkenxLeftShoulder.png",
 	"hardpointSprite":"",

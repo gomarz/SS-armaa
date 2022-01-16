@@ -267,7 +267,7 @@ armaa_oboost2,SHIP_SYSTEM,"Greatly increases speed while steadily increasing flu
 armaa_claw,SHIP_SYSTEM,"Autonomous hunter-killer drones that frequently sheathe themselves in lesser temporal shells for higher performance. Two can be launched simultaneously, and carries 6 in total.",,,
 armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
 
-armaa_silverSwordV,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity and tripling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
+armaa_silverSwordV,SHIP_SYSTEM,"Increases manuverability, non-missile rate of fire, as well as flux dissipation and capacity, tripling CR degradation. Draining the gauge will overload and damage the ship. Effects of the system increase as the gauge nears zero. Best used in short bursts.",,,
 
 #CAMPAIGN STUFF,,,,,
 armaa_homeworld,CUSTOM,"A formerly unremarkable planet, it's fortune reversed when Arma Armatura received rights to the planet via corporate charter following the Second AI War. 

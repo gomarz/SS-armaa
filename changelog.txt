@@ -1,6 +1,15 @@
-Armor: 300->250
-Max Flux Cap: 3000->2750
+WINGCOM:
+	-Implemented GUI for changing squad name/callsigns
+Direct Neural Interface: 
+	- +10% -> +15% Time Dilation, 
+	- +10% Hull Damage -> +25% Hull/ Shield Damage
+	- Bullet Time(Slowdown) effect only applied near enemies/enemy projectiles
+
 Reduced value of Cataphract & Advanced Cataphract BP package
+-Fixed leg rendering while game is paused
+-Can abort refit at carriers
+	- HP and Armor replenish over time in carrier, so not an all or nothing decision
+	- PPT and Ammo only restored if full refit time is spent
 
 V1.6RC5
 --------------------
