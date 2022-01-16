@@ -1,15 +1,31 @@
 WINGCOM:
-	-Implemented GUI for changing squad name/callsigns
-Direct Neural Interface: 
-	- +10% -> +15% Time Dilation, 
-	- +10% Hull Damage -> +25% Hull/ Shield Damage
-	- Bullet Time(Slowdown) effect only applied near enemies/enemy projectiles
+	- Implemented GUI for changing squad name/callsigns. Heavily based off of a butchered carcass of Nexerelin's Insurance GUI. Thanks, Histi!
+	- Added random little blurbs that squadrons will blather on deployment
+	- Fixed ships with WINGCOM being considered for relationship modifiers even if they did not participate in combat
+	- Fixed retreated ships with WINGCOM not being considered for relationship modifiers
+	- TODO: Pilots will always appear, adjust so that their assignment can randomly occur thoroughout the battle
+
+-adjust  laser blade knockback. scales based off the targets mass, with max forceapplied capping at ~300. Should feel less wonky (especially in aim @ mouse piloting mode) more predictable as far as where you can expect to end up after attacking.
+
+-Removed BUGGY color changing scripts from some stuff. rip
+- small tweak to valk-x shoulder sprite
+
+Valkazard:
+	Silversword Type A:
+	Direct Neural Interface: 
+	- +10% -> +15% Time Dilation.
+	- Bullet Time(Slowdown) effect only applied near enemies/enemy projectiles.
+	- +10% Hull Damage -> +25% Hull/ Shield Damage.
+		- idea is to promote evasion over shield tanking without reducing flux pool and 		  leaving ship flux starved
+		- Thought about adding something that gives a 'Daredevil' bonus for near misses
+		  while shields are down, but might be something for another ship? Will mess around
 
 Reduced value of Cataphract & Advanced Cataphract BP package
--Fixed leg rendering while game is paused
--Can abort refit at carriers
+- Fixed leg rendering while game is paused
+- Carrier Refit can now be cancelled at any time
 	- HP and Armor replenish over time in carrier, so not an all or nothing decision
-	- PPT and Ammo only restored if full refit time is spent
+	- PPT and Ammo are only restored if full refit time is spent
+		- Maybe implement hard limit to missile reloads based off of refit penalty %?
 
 V1.6RC5
 --------------------
