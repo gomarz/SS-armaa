@@ -108,17 +108,19 @@
 			"\"We're forgotten in times of peace. But, when war looms, people remember we exist.\"",
 			"\"I despise war. I've always believed that to take the life of another, for whatever reason, was wrong. Yet I became a pilot, and took many lives. Did I do the right thing? Perhaps I should have stayed in that village, drinking my idle moments away, until my death...\"",
 			"\"...I don't mind if people keep dogs on the ship, but please ask them to feed and walk them in a timely fashion.\"",
-			"\"The real world is complex. It's not black and white anymore.\"",			
+			"\"The real world is complex. It's not black and white anymore.\"",
+			"\"True loyalty is being able to speak what you think is right and what you think is wrong.\"",
 		],
+		
 		"strikecraft_squad_chatter_combat":
 		[
 			"\"Let's give them hell!\"",
-			"\"Hit your burners, pilot! Dive! Dive!\"",
+			"\"Hit your burners, pilots! Dive! Dive!\"",
 			"\"Pah! There's nothing to be scared of with me around!\"",
 			"\"Well, a contract is a contract.\"",
 			"\"If I'm here you have the strength of a hundred pilots. Don't worry anymore.\"",
 			"\"Got to keep your head cool when you're in a fight, y'know.\"",
-			"\"If we lose, we lose everything. All of those lives... maybe we should just surrender quietly?\"",
+			"\"If we lose, we lose everything. All of those lives... maybe we should just surrender to $factionnamearticle quietly?\"",
 			"\"There's nothing you gain from war. we fight so we don't lose what's dear to us.\"",
 			"\"My feet are tingling...Command, leave this to me.\"",
 			"\"I won't have my blood spilled so easily.\"",
@@ -129,7 +131,7 @@
 			"\"Why do you hurry into death?! Surely living is better!\"",
 			"\"For the memory of Opis! For the people of Hanan Pacha!\"",
 			"\"I've spent more time in the cockpit than on the ground!\"",
-			"\"Let me tell you something. There are the weak and the strong. The strong take everything and the weak die. Let me show you how it works, weaklings!\"",
+			"\"Let me tell you something. There's the weak and the strong. The strong take everything and the weak die. Let me show you how it works, weaklings!\"",
 			"\"Did you really believe you could defeat the best pilot in the Persean Sector? Ha ha ha.\"",
 			"\"Quit screwing around. This is the real deal! The enemy's all over and they're gonna eat you alive!\"",
 			"\"Can you see any borders from here? What has borders given us?\"",
@@ -145,6 +147,19 @@
 			"\"Maintain speed.\"",			
 			"\"Master arm is on. Good spin and good tone for weapons.\"",			
 			"\"Make sure your craft is in optimal condition.\"",
+			"\"Listen! $factionnamearticle don't respect us. Sometimes respect can be a little word. But sometimes respect is a Plasma Cannon to the face! Now, let's get 'em!\"",
+			"\"Meeting $factionnamearticle on the battlefield... Toe-to-toe, eye-to-eye, fleet-to-fleet... It feels like my birthday! Ga ha ha!\"",
+			"\"All craft, get ready to kick some $factionname ass! I dunno where they came from, but I know where they're goin'!!\"",
+			"\"$squadronname! The time has come! The end is near for $factionnamearticle! Think of your friends. Think of your families. And fight for them!\"",
+			"\"The planet quakes with the anger of her people. Their cries echo in the stars. Now is the time for this to end.\"",
+			"\"This is a gamble. And since we are risking everything, it's a big gamble. But if we don't risk our lives, we can't win this battle.\"",
+			"\"Employers change, borders change, polities change, but money? Money is a constant. In fact, nothing better for business than a good war.\"",
+			"\"It would be a massive loss to the world if I were to die.\"",
+			"\"I'm the leader of this party, and I say we go fight. Just shut up and follow me, you cowards.\"",
+			"\"By the honor of the $squadronname.\"",
+			"\"Do you have any idea what $factionnamearticle is really doing? Are you willing to ignore the truth despite all you see and hear?\"",
+
+			
 			
 		],
 		"strikecraft_squad_names":[

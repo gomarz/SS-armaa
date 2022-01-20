@@ -9,7 +9,13 @@ public class armaa_selector_bazooka extends BaseHullMod {
 		public int getDisplaySortOrder() 
 		{
 			return 2000;
-		}    
+		}
+
+		@Override
+		public int getDisplayCategoryIndex() 
+		{
+			return 3;
+		}
     
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {

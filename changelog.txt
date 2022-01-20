@@ -1,3 +1,34 @@
+RC7
+--------
+-Increased Valkazard's PPT by 30% to account for time boosting / PPT eating system
+	- 200-> 260 secs
+	- Added EMR back to blocked hullmods
+		- small profile/fairly mobile with a mobility system makes it kind of cheesy being able to dump 4 reapers into the back of basically any low tech ship with almost no impunity, supership be damned
+		- You can reload anyway
+	- fixed Valkazard afterimage not matching mechs actual loadout
+	- fixed Counter Shield projectiles not properly tracking targets
+	- fixed Y-L Rifle appearing in research stations/production event
+	- SILVERSWORD[Type A]
+		- New Effect: C-Stim Delivery System
+			- Narrowly dodging projectiles/missiles dealing at least 40 damage with shields down grants additional 200% time dilation bonus, +10% Energy/Ballistic Damage
+			- can be exploited for quick repositioning, comboed with system for ultra burst window, etc
+			- Full effect is granted as soon as the conditions are met, but rapidly decays over 2s
+			- After effect ends, can't trigger again for 5s
+			- Maybe it should scale or something instead of flat bonus based off what you dodge, idk thats what u guys are here to tell me 
+
+-fixed crash when entering battle against pirates fielding Valken eX
+- Changed fighter wing Aleste's paint scheme to further distinguish from pilotable version
+	- Might change it again, not settled on the current iteration.
+
+TODO:
+- Energy Shotgun
+- Remove YL Rifle
+- Portrait picker with 2 columns?
+- Remove HUD CR bar so other system things can go there instead
+- Fix personality picker only generating spacers and soldiers
+
+RC6
+----
 WINGCOM:
 	- Implemented GUI for changing squad name/callsigns. Heavily based off of a butchered carcass of Nexerelin's Insurance GUI. Thanks, Histi!
 	- Added random little blurbs that squadrons will blather on deployment

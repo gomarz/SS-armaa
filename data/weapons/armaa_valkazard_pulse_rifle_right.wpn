@@ -7,7 +7,7 @@
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_laser_right_00.png",
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkazard_laser_right_00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "visualRecoil": 1,
   "renderHints": [

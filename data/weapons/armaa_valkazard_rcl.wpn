@@ -11,7 +11,7 @@
     17,
     0
   ],
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkazard_rcl_00.png",
   "id": "armaa_valkazard_rcl",
 	"animationType":"SMOKE",
 	"smokeSpec":{

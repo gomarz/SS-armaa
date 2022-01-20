@@ -33,6 +33,8 @@
 		},
 		"misc":{
 			"neuro":"graphics/armaa/icons/hullsys/armaa_neural_piloting_interface.png",
+			"ai":"graphics/icons/skills/computer_systems.png",
+			"drugs":"graphics/icons/skills/power_grid_manipulation.png",
 			"sfxkarma":"graphics/armaa/fx/armaa_karma.png",
 			"legs_10":"graphics/armaa/ships/valkazard/armaa_valkazard_legs01.png",
 			"legs_11":"graphics/armaa/ships/valkazard/armaa_valkazard_legs02.png",

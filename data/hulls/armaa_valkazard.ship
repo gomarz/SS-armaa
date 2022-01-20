@@ -3,11 +3,11 @@
   "hullId": "armaa_valkazard",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
-  "style": "armaa_TECH",
+  "style": "armaa_valkazard",
   "height": 30,
   "width": 22,
   "center": [11, 16.5],
-  "collisionRadius": 38.5,
+  "collisionRadius": 44.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 43.5,
   "viewOffset": 0,
@@ -174,7 +174,7 @@
       "width": 8,
       "angle": -148,
       "contrailSize": 128,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-11.5, 11],
@@ -182,21 +182,21 @@
       "width": 8,
       "angle": 148,
       "contrailSize": 128,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [
     14, -4.5,
-    5, -8,
+    6, -9,
     2, -13.5,
     -2, -13.5,
-    -4, -6.5,
+    -5, -8,
     -14, -5.5,
     -14, 5.5,
-    -4, 6.5,
+    -5, 8,
     -2, 13.5,
     2, 13.5,
-    5, 8,
+    6, 9,
     14, 4.5
   ]
 }
