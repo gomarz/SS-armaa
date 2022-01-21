@@ -10,20 +10,6 @@
   "weaponGroups": [
     {
       "autofire": true,
-      "mode": "ALTERNATING",
-      "weapons": {
-        "A_GUN": "armaa_einhanderGun",
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "ALTERNATING",
-      "weapons": {
-        "C_ARML": "armaa_einhanderGun",
-      }
-    },
-    {
-      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "B_TORSO": "armaa_sprigganTorso",
