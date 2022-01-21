@@ -14,7 +14,7 @@
   "builtInWeapons": {
     "B_TORSO": "armaa_ilorin_torso",
     "F_LEGS": "armaa_ht_legs",
-    "WS0001": "annihilator_fighter"
+    "WS0001": "armaa_valken_missile"
   },
   "weaponSlots": [
     {
@@ -24,7 +24,7 @@
       "mount": "TURRET",
       "arc": 180,
       "angle": 0,
-      "locations": [0, -0]
+      "locations": [-1, -0]
     },
     {
       "id": "C_ARMR",
@@ -42,7 +42,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [0, -0]
     },
     {
       "id": "F_GLOW",
@@ -60,7 +60,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [0, -0]
     },
     {
       "id": "F_LEGS",
@@ -69,7 +69,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-15, -0.5],
+      "locations": [-8, -0.5],
       "renderOrderMod": -1000
     },
     {
