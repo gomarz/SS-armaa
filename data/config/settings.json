@@ -33,6 +33,7 @@
 		},
 		"misc":{
 			"neuro":"graphics/armaa/icons/hullsys/armaa_neural_piloting_interface.png",
+		       "neuro2":"graphics/armaa/icons/hullsys/armaa_neural_piloting_interface2.png",
 			"ai":"graphics/icons/skills/computer_systems.png",
 			"drugs":"graphics/icons/skills/power_grid_manipulation.png",
 			"sfxkarma":"graphics/armaa/fx/armaa_karma.png",
