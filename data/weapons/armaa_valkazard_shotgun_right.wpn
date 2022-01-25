@@ -1,0 +1,66 @@
+{
+  "id": "armaa_valkazard_shotgun_right",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_energyshotgun_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_shotgun.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkazard_shotgun.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "specialWeaponGlowHeight": 20,
+  "specialWeaponGlowWidth": 10,
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazard_shotgunEffect",
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23.5,
+    -11.5,
+    31,
+    -17,
+    23.5,
+    -13.5,
+    22.5,
+    -12.5,
+    29,
+    -17
+  ],
+  "turretAngleOffsets": [
+    5,
+    0,
+    -3,
+    3,
+    -3
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "LINKED",
+  "animationType": "SMOKE",
+  "separateRecoilForLinkedBarrels":"TRUE",
+  "interruptibleBurst": true,
+  "smokeSpec": {
+    "particleSizeMin": 5,
+    "particleSizeRange": 10,
+    "cloudParticleCount": 1,
+    "cloudDuration": 1,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 1.5,
+    "blowbackLength": -20,
+    "blowbackSpread": 10,
+    "particleColor": [
+      190,
+      190,
+      190,
+      100
+    ]
+  },
+  "fireSoundTwo": "armaa_energyshotgun_fire"
+}

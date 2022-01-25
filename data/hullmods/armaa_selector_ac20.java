@@ -17,7 +17,7 @@ import java.awt.Color;
 
 	public class armaa_selector_ac20 extends BaseHullMod 
 	{
-
+		private static final float DISSIPATION_MULT = 1.05f;
 		private static final float ARMOR_BONUS = 50f;
 	
 		@Override
@@ -34,7 +34,8 @@ import java.awt.Color;
 
 		public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 		{
-			stats.getArmorBonus().modifyFlat(id, (Float) ARMOR_BONUS);	
+			stats.getArmorBonus().modifyFlat(id, (Float) ARMOR_BONUS);
+			stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);	
 		}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
@@ -62,6 +63,7 @@ import java.awt.Color;
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
 		tooltip.addPara("%s " + "Armor increased by %s.", pad, arr, "-", (int) Math.round(ARMOR_BONUS) + " standard units");
+		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((DISSIPATION_MULT - 1f) * 100f) + "%");	
 	}
 
 

@@ -123,6 +123,12 @@
 	[
 		{"file":"sounds/armaa/shotgun_shot_small.ogg","pitch":1,"volume":0.5},
 	],
+	"armaa_energyshotgun_fire":
+	[
+		{"file":"sounds/armaa/armaa_energyshotgun_fire.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/armaa_energyshotgun_fire.ogg","pitch":1.03,"volume":1.03},
+		{"file":"sounds/armaa/armaa_energyshotgun_fire.ogg","pitch":.97,"volume":.97},
+	],
 	"armaa_rifle_shot":
 	[
 		{"file":"sounds/armaa/armaa_rifle_shot.ogg","pitch":1,"volume":0.5},

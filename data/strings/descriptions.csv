@@ -127,6 +127,8 @@ armaa_aleste_grenade_left,WEAPON,"Fires a burst of high-explosive grenades. Effe
 
 armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament to pirate ingenuity. While near useless against shields, the projectile making contact with hull produces a near constant cascading EMP effect that will rapidly disable weapons and other vital systems.",,,
 
+armaa_valkazard_shotgun_right,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has greater range and burst potential but weapon spread combined with reduced flux-efficiency and capacity limits its effectiveness.",,,
+
 armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,
 
 armaa_valkazard_torso_chaosburst,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,

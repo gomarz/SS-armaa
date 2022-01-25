@@ -35,7 +35,7 @@ SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite combining a experimental piloting system with the processing power of an AI core.,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
+SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
 WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,10000,,,,10,15,20,25,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft.,,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
@@ -179,6 +179,9 @@ R ARM: LASER,armaa_selector_pulse_rifle_right,,,,no_build_in,,,,TRUE,,0,0,0,0,da
 
 %s ",,graphics/armaa/hullmods/hand_r.png
 R ARM: MACHINEGUN,armaa_selector_machinegun_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_r.png
+R ARM: EN SHOTGUN,armaa_selector_shotgun_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_r.png
 ,,,,,,,,,,,,,,,,,,

@@ -19,6 +19,8 @@ public class armaa_selector_boson extends BaseHullMod
 {
 
 	public static final float DAMAGE_BONUS = 50f;
+	private static final float CAPACITY_MULT = 1.1f;
+	private static final float DISSIPATION_MULT = 1.1f;
 	
 	  @Override
     	  public int getDisplaySortOrder() 
@@ -34,7 +36,8 @@ public class armaa_selector_boson extends BaseHullMod
 
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
-		
+		stats.getFluxCapacity().modifyMult(id, CAPACITY_MULT);
+		stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);		
 	}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) 
@@ -62,7 +65,8 @@ public class armaa_selector_boson extends BaseHullMod
 		Color[] arrB ={Misc.getHighlightColor(),F,F};
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
-		tooltip.addPara("%s " + "No particular strengths or weaknesses.", pad,arr2, "-");	
+		tooltip.addPara("%s " + "Flux Capacity increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");
+		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");		
 	}
 
 

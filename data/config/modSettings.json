@@ -1,4 +1,18 @@
 {
+	"MagicLib":{
+		"interferences_weapons":
+		{
+			# List weapons that can "interfere" with each-other reducing the ship's dissipation when several are mounted on the same hull.
+			# "id" : "intensity",
+			# id = weapon.csv id
+			# intensity = interferences_rates id in MagicLib's settings. By default it can be WEAK MILD STRONG.
+			# "sample_weapon1":"WEAK",
+			# "sample_weapon2":"MILD",
+			# "sample_weapon3":"STRONG",
+			# To prevent breaking other mods these weapons are temporarily added to the default list
+			"armaa_curvyLaser":"MILD",
+		},
+	},
 	"armaarmatura":{
 		"special_wing_lines":
 		{
@@ -84,6 +98,7 @@
 			"\"You need more training. That's all I got to say.\"",
 			"\"How about a little martial arts drill?\"",
 			"\"There's no mercy in war. People live and people die. That's all there is to it.\"",
+			
 			"\"Grow. Work. Get back up when you fall... That's life.\"",
 			"\"Hmm. I'm getting a little rusty. Should I be working harder?\"",
 			"\"Being on a team's a subtle balance of trust and leadership.\"",
@@ -119,9 +134,10 @@
 			"\"Why me, Ludd? I been good. Why do I have to meet up with all the screwballs?\"",
 			"\"The war is over when we say it's over.\"",			
 			"\"So. You want to live happily ever after?\"",
-			"\"The sector can be a tough place sometimes. Sweet Ludd, can it ever. But if I'm here with these guys... there's no other place I'd rather be.\"",
+			"\"The sector can be a tough place sometimes. Sweet Ludd, can it ever. But if I'm here with these guys? There's no other place I'd rather be.\"",
+			"\"Why am I so negative? There's a lotta bad things in the sector. Being aware of it just makes me a realist.\"",
 			"\"Violence is on the rise -- and therefore so are our opportunities.\"",
-			"\"I know how to make things disappear. Evidence. My past. People. I've filled some holes on the deserts of Chicomoztoc. Experience was my only teacher. Poverty, my motivation. Hunger, my companion. And fear, first my enemy and then my friend. You must make a friend with horror. It must be your ally. Because it is a deadly foe.\"",
+			"\"I know how to make things disappear. Evidence. My past. People. I've filled some holes on the deserts of Chicomoztoc. Experience was my only teacher. Poverty, my motivation. And fear, first my enemy and then my friend. It's good to befriend your dread, because it's a deadly foe.\"",
 			"\"I'm not a soldier. I'm a thief. Born a thief. Raised a thief. Will die a thief.\"",
 			"\"My bad luck powers... they're gone!!\"",
 			"\"'Probability' is just a five centicredit word for 'luck'. And I'm nothing but bad luck.\"",
@@ -132,14 +148,26 @@
 			"\"Tell me, in your profession, is there a story if no one lives to tell it?\"",
 			"\"Good guys. Bad guys. Here's what they don't understand: this is not a world of absolutes. This is a world of confusion and of death and of misery.\"",
 			"\"There is something I want to discuss with you. Expansion.\"",
-			"\"When you get down to it, it’s just work. Everyone’s got to work, right? You got to eat, got to put a roof over your head…and these ships don’t come cheap. Throw some underlings in the mix and buddy, you can’t afford to take it easy. So you do dirty deeds for dirtier dollars. Industrial espionage, bounty hunting, bodyguarding… … War crimes… Hell, even the lowest of the low… … Golf.\"",
-			"\"How could such a beautiful sector be ruled by such corruption? Simple: Water takes the path of least resistance. Makes for crooked streams and crooked names.\"",
+			"\"When you get down to it, it’s just work. Everyone’s got to work, aye? You got to eat, got to put a roof over your head…and these ships don’t come cheap. Throw some underlings in the mix and buddy, you can’t afford to take it easy. So you do dirty deeds for dirtier dollars. Assassination, bounty hunting, blackmail… … War crimes… Hell, even the lowest of the low… … lobster smuggling.\"",
+			"\"How could such a beautiful sector be ruled by such corruption? Simple: Water takes the path of least resistance. Makes for crooked slipstreams and crooked men.\"",
 			"\"Let me tell you a thing about me. People who love me suffer and die. I never want to be loved. That's why I always win.\"",
-			"\"Maybe the dream is dead. Maybe we should all stop pretendin' it ain't -- and accept the fact we're livin' in a nightmare.\"",
+			"\"Maybe the dream is dead. Maybe we should all stop pretending it ain't -- and accept the fact we're livin' in a nightmare.\"",
 			"\"The only thing you should feel when you shoot someone...is the recoil.\"",
-			"\"I didn't receive the death sentence in two star systems for my conversation skills.\"",
+			"\"I didn't receive the death sentence in two star systems for my conversational skills.\"",
 			"\"Have you no shame? Good! Neither do I!\"",
 			"\"Ten credits is ten credits.\"",
+			"\"Hello? Uh, you know, never mind. Wrong comms-ID.\"",
+		],
+
+		"strikecraft_squad_chatter_faithful":[
+			"\"When I do good, I feel good. And bad? Why, should I commit such a debacle, i'd fell terrible. Such is the way.\"",
+			"\"The key players of the Sector have learned nothing from humanities past. They simply commit the same mistakes that lead to the desolation of Old Earth.\"",
+			"\"Blessings of Ludd upon you, captain.\"",
+			"\"Though the righteous suffer the lash, our reward will be everlasting grace.\"",
+			"\"Providence provides. What may I offer you this day?\"",
+			"\"Hello? Uh, you know, never mind. Wrong comms-ID.\"",
+			
+			
 		],
 		
 		"strikecraft_squad_chatter_combat":
@@ -148,10 +176,10 @@
 			"\"Hit your burners, pilots! Dive! Dive!\"",
 			"\"Pah! There's nothing to be scared of with me around!\"",
 			"\"Well, a contract is a contract.\"",
-			"\"If I'm here you have the strength of a hundred pilots. Don't worry anymore.\"",
+			"\"If we're here you have the strength of a hundred pilots. Don't worry anymore.\"",
 			"\"Got to keep your head cool when you're in a fight, y'know.\"",
 			"\"If we lose, we lose everything. All of those lives... maybe we should just surrender to $factionnamearticle quietly?\"",
-			"\"There's nothing you gain from war. we fight so we don't lose what's dear to us.\"",
+			"\"My greatest flaw. I surround myself with idiots.\"",
 			"\"My feet are tingling...Command, leave this to me.\"",
 			"\"I won't have my blood spilled so easily.\"",
 			"\"Just doing my job as a pilot. Got a problem?\"",
@@ -188,9 +216,8 @@
 			"\"I'm the leader of this party, and I say we go fight. Just shut up and follow me, you cowards!\"",
 			"\"By the honor of the $squadronname.\"",
 			"\"Do you have any idea what $factionnamearticle is really doing? Are you willing to ignore the truth despite all you see and hear?!\"",
-
-			
-			
+			"\"I don't know what's goin' on here, $factionname -- but it stops right now! Even if it means I gotta take you out to do it!\"",
+			"\"Okay, let's review. Your fleet is toast. We're the $squadronname. You're dead. Allow me to demonstrate.\"",
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",

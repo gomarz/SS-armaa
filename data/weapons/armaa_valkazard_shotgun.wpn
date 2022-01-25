@@ -1,0 +1,60 @@
+{
+  "id": "armaa_valkazard_shotgun",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_energyshotgun_shot",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_valkazardShotgunEveryFrameEffect",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_shotgun.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "specialWeaponGlowHeight": 20,
+  "specialWeaponGlowWidth": 10,
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    48.5,
+    -12.5,
+    48.5,
+    -12.5,
+    48.5,
+    -12.5,
+    48.5,
+    -12.5
+  ],
+  "turretAngleOffsets": [
+    0.5,
+    5.5,
+    0,
+    -5.5
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "LINKED",
+"separateRecoilForLinkedBarrels":"TRUE",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 20,
+    "spread": 25,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "particleDuration": 0.02,
+    "particleCount": 20,
+    "particleColor": [
+      255,
+      200,
+      165,
+      200
+    ]
+  },
+  "fireSoundTwo": "armaa_shotgun_fire_small"
+}
