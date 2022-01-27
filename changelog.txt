@@ -1,3 +1,18 @@
+RC8
+--------
+-Remove YL Rifle
+- Portrait Picker now generates 10 columns instead of 1 for faster browsing
+- Removed HUD CR bar from strikecraft
+- adjusted personality weights for WINGCOM
+- added villain persona
+- added nrg shotgun to valkazard, removed ion pulser
+- add desc for valken(p)
+
+TODO:
+valken (p) rebalans
+ilorin balans
+sprite tweakan
+
 RC7
 --------
 -Increased Valkazard's PPT by 30% to account for time boosting / PPT eating system
