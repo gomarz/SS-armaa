@@ -207,6 +207,9 @@ L  ARM: R. RIFLE,armaa_selector_rcl_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hu
 
 The %s is suited for cracking heavy armor. Fairly slow.
 %s",,graphics/armaa/hullmods/hand_l.png
+L ARM: EN SHOTGUN,armaa_selector_shotgun_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_l.png
 ,,,,,,,,,,,,,,,,,,
 R ARM: GRENADE LAUNCHER,armaa_selector_exceliza,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_selector_exceliza,"HAND weapons can be changed to better suit the pilot's preferences. 
 
