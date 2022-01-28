@@ -9,9 +9,10 @@ RC8
 - add desc for valken(p)
 
 TODO:
-valken (p) rebalans
 ilorin balans
 sprite tweakan
+Silversword AI use adjustment
+fix missions
 
 RC7
 --------
