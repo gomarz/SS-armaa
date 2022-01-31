@@ -158,6 +158,7 @@
 			"\"Ten credits is ten credits.\"",
 			"\"Hello? Uh, you know, never mind. Wrong comms-ID.\"",
 			"\"Remember that our contract does include post-combat recovery of myself and other pilots. Breaking it will send your sensitive information to... certain parties that would love to get their hands on it.\"",
+			"\"Oh, I was just congratulating my lessers for successfully demonstrating the ability to do what I tell them to. I like that. My dog does what I tell her to. I like my dog. I should introduce them to each other. Remind me to do that.\"",
 		],
 
 		"strikecraft_squad_chatter_faithful":[
@@ -218,8 +219,7 @@
 			"\"By the honor of the $squadronname.\"",
 			"\"Do you have any idea what $factionnamearticle is really doing? Are you willing to ignore the truth despite all you see and hear?!\"",
 			"\"I don't know what's goin' on here, $factionname -- but it stops right now! Even if it means I gotta take you out to do it!\"",
-			"\"Okay, let's review. Your fleet is toast. We're the $squadronname. You're dead. Allow me to demonstrate.\"",
-			"\"Congratulations pilot, you have successfully demonstrated the ability to do what I tell you to. I like that. My dog does what I tell her to. I like my dog. I should introduce you to each other. Remind me to do that.\"",
+			"\"Okay, let's review. We're the $squadronname. You're dead. Allow me to demonstrate.\"",
 			"\"Remember: aim for the cockpit. Kill the meat, save the metal.\"",
 			
 		],

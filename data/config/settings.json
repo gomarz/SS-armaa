@@ -1,7 +1,7 @@
 {
     "plugins":{
             "armaa_EinhanderPlugin":"data.scripts.plugins.armaa_EinhanderHaxPlugin",
-            "armaa_FighterPlugin":"data.scripts.plugins.armaa_FighterHaxPlugin",
+            #"armaa_FighterPlugin":"data.scripts.plugins.armaa_FighterHaxPlugin",
     },
     "designTypeColors":{
         "Arma Armatura":[152,171,75,255],
@@ -34,7 +34,7 @@
 		},
 		"misc":{
 			"neuro":"graphics/armaa/icons/hullsys/armaa_neural_piloting_interface.png",
-		       "neuro2":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",
+		    "neuro2":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",
 			"drugs":"graphics/armaa/icons/hullsys/armaa_drugs_icon.png",
 			"ai":"graphics/armaa/icons/hullsys/armaa_ai_core.png",
 			"sfxkarma":"graphics/armaa/fx/armaa_karma.png",
@@ -69,7 +69,24 @@
 			"ht_legs_22":"graphics/armaa/ships/legs/armaa_ht_legs13.png",
 			"ht_legs_23":"graphics/armaa/ships/legs/armaa_ht_legs14.png",
 			"ht_legs_24":"graphics/armaa/ships/legs/armaa_ht_legs15.png",
-			"ht_legs_25":"graphics/armaa/ships/legs/armaa_ht_legs16.png"
+			"ht_legs_25":"graphics/armaa/ships/legs/armaa_ht_legs16.png",
+			
+			"ml_legs_10":"graphics/armaa/ships/legs/armaa_ml_legs01.png",
+			"ml_legs_11":"graphics/armaa/ships/legs/armaa_ml_legs02.png",
+			"ml_legs_12":"graphics/armaa/ships/legs/armaa_ml_legs03.png",
+			"ml_legs_13":"graphics/armaa/ships/legs/armaa_ml_legs04.png",
+			"ml_legs_14":"graphics/armaa/ships/legs/armaa_ml_legs05.png",
+			"ml_legs_15":"graphics/armaa/ships/legs/armaa_ml_legs06.png",
+			"ml_legs_16":"graphics/armaa/ships/legs/armaa_ml_legs07.png",
+			"ml_legs_17":"graphics/armaa/ships/legs/armaa_ml_legs08.png",
+			"ml_legs_18":"graphics/armaa/ships/legs/armaa_ml_legs09.png",
+			"ml_legs_19":"graphics/armaa/ships/legs/armaa_ml_legs10.png",
+			"ml_legs_20":"graphics/armaa/ships/legs/armaa_ml_legs11.png",
+			"ml_legs_21":"graphics/armaa/ships/legs/armaa_ml_legs12.png",
+			"ml_legs_22":"graphics/armaa/ships/legs/armaa_ml_legs13.png",
+			"ml_legs_23":"graphics/armaa/ships/legs/armaa_ml_legs14.png",
+			"ml_legs_24":"graphics/armaa/ships/legs/armaa_ml_legs15.png",
+			"ml_legs_25":"graphics/armaa/ships/legs/armaa_ml_legs16.png",
 		},	
     }
 }

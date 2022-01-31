@@ -43,7 +43,7 @@ Pila-X,armaa_bit_ex,UWS,Arma Armatura,temporalshell,,,100,100,1500,,150,,,350,40
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_altagrave_rightleg,Leg Module (R),,,,1,1050,450,500,,20,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.3,1,2,2,,,,,,,
 ,armaa_altagrave_leftleg,Leg Module (L),,,,1,1050,450,500,,20,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.3,1,2,2,,,,,,,
-,armaa_altagrave_bp,Backpack Module,,armaa_piladrone_alta,,1,1050,450,500,,40,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable,module_refit_bright,no_autofit",0.3,0.3,1,2,2,,,,,,,
+Backpack Module,armaa_altagrave_bp,,,armaa_piladrone_alta,,1,1050,450,500,,40,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable,module_refit_bright,no_autofit",0.3,0.3,1,2,2,,,,,,,
 ,armaa_altagrave_c_bp,Backpack Module[C],,armaa_piladrone_alta,,1,1050,450,500,,40,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable,module_refit_bright,no_autofit",0.3,0.3,1,2,2,,,,,,,
 ,armaa_altagrave_r_bp,Backpack Module[R],,armaa_piladrone_alta,,1,1050,450,500,,40,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable,module_refit_bright,no_autofit",0.3,0.3,1,2,2,,,,,,,
 ,armaa_altagrave_g_bp,Backpack Module[EX],,armaa_piladrone_ex,,1,1050,450,1000,,40,100,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable,module_refit_bright,no_autofit",0.3,0.3,1,2,2,,,,,,,
