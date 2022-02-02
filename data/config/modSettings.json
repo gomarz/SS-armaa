@@ -159,6 +159,12 @@
 			"\"Hello? Uh, you know, never mind. Wrong comms-ID.\"",
 			"\"Remember that our contract does include post-combat recovery of myself and other pilots. Breaking it will send your sensitive information to... certain parties that would love to get their hands on it.\"",
 			"\"Oh, I was just congratulating my lessers for successfully demonstrating the ability to do what I tell them to. I like that. My dog does what I tell her to. I like my dog. I should introduce them to each other. Remind me to do that.\"",
+			"\"So there I was, between rock and a hard place, when suddenly I thought, what am I doing on this side of the rock?\"",
+			"\"I've heard it said that specialization is for insects. In my view, insects have done pretty well.\"",
+			"\"Sir, you'll never guess what we turned up during inventory...\"",
+			"\"You can't always get what you want, but if you know the right people, you just might get what you need.\"",
+			"\"Whoever said might doesn't make right, was obviously on the losing side!\"",
+			
 		],
 
 		"strikecraft_squad_chatter_faithful":[
@@ -221,10 +227,16 @@
 			"\"I don't know what's goin' on here, $factionname -- but it stops right now! Even if it means I gotta take you out to do it!\"",
 			"\"Okay, let's review. We're the $squadronname. You're dead. Allow me to demonstrate.\"",
 			"\"Remember: aim for the cockpit. Kill the meat, save the metal.\"",
-			
+			"\"You tag 'em, we frag 'em.\"",
+			"\"Reactor online. Sensors online. Weapons systems online. All functioning systems... phenomenal.\"",
+			"\"All $factionnamearticle had to do to win was leave us alone with each other.\"",
+			"\"Just think of it like brain surgery, but you want the patient to die.\"",
+			"\"Peace of Ludd, indeed. Come on in boys. We'll dispense all the peace you want. No waiting.\"",
+			"\"$factionnamearticle. A vile dark plague that spread from the undergrowth of Moloch's black teachings.\"",
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",
+			"Avanti's Angels",
 			"Emerald Squadron",
 			"Viridian Squadron",
 			"Diamond Squadron",

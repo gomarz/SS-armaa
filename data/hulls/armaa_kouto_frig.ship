@@ -1,29 +1,30 @@
 {
-  "hullName": "Valken",
-  "hullId": "armaa_valkenx",
-  "hullSize": "FIGHTER",
-  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "armaa_TECH",
+  "hullName": "kouto",
+  "hullId": "armaa_kouto_frig",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
+  "style": "HIGH_TECH",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
   "collisionRadius": 18,
-  "shieldCenter": [0, -0],
-  "shieldRadius": 35,
+  "shieldCenter": [5, -0],
+  "shieldRadius": 43,
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",
-    "autorepair"
+    "reduced_explosion",
+    "strikeCraft",
+    "armaa_leynosWeaponSwap",    
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_chaingun",
-    "B_TORSO": "armaa_valkenx_torso",
-    "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
-    "C_ARML": "armaa_valkenxLeftArm",
+    #"A_GUN": "armaa_kouto_minigun_right",
+    "B_TORSO": "armaa_kouto_torso",
+    #"C_ARML": "armaa_koutoBazooka",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_valkenx_leftPauldron",
-    "D_PAULDRONR": "armaa_valkenx_rightPauldron",
-    "E_HEAD": "armaa_valkenxHead",
+    "D_PAULDRONL": "armaa_kouto_leftPauldron",
+    "D_PAULDRONR": "armaa_kouto_rightPauldron",
+    "E_HEAD": "armaa_kouto_head",
     "H_GLOW": "armaa_sprigganHeadGlow",
     "F_LEGS": "armaa_ht_legs"
   },
@@ -34,26 +35,29 @@
       "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 0,
-      "locations": [0, -3]
+      "angle": -10,
+      "locations": [0, -2]
     },
     {
       "id": "B_TORSO",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "MISSILE",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 0]
+      "locations": [0, -0]
     },
-    {
-      "id": "B_TORSO_VERNIER",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 360,
+  {
       "angle": 0,
-      "locations": [-4, 0]
+      "arc": 360,
+      "id": "B_TORSO",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "MISSILE"
     },
     {
       "id": "C_ARML",
@@ -61,8 +65,8 @@
       "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 15,
-      "locations": [3, 3]
+      "angle": 10,
+      "locations": [2, 2]
     },
     {
       "id": "C_ARMR",
@@ -71,7 +75,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [3, -3]
+      "locations": [0, -0]
     },
     {
       "id": "D_PAULDRONL",
@@ -80,7 +84,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 3]
+      "locations": [3, 3]
     },
     {
       "id": "D_PAULDRONR",
@@ -89,7 +93,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -3]
+      "locations": [3, -3]
     },
     {
       "id": "E_HEAD",
@@ -99,15 +103,6 @@
       "arc": 135,
       "angle": 0,
       "locations": [1, -0]
-    },
-    {
-      "id": "F_GLOW",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 360,
-      "angle": 0,
-      "locations": [0, -3]
     },
     {
       "id": "F_LEGS",
@@ -127,43 +122,25 @@
       "arc": 135,
       "angle": 0,
       "locations": [1, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [3.5, 5]
     }
   ],
   "engineSlots": [
     {
-      "location": [-14, -5],
-      "length": 18,
+      "location": [-13.5, -0],
+      "length": 19.5,
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "CUSTOM",
-      "styleId": "MIDLINE"
-    },
-    {
-      "location": [-14, 5],
-      "length": 18,
-      "width": 8,
-      "angle": 180,
-      "contrailSize": 8,
-      "style": "CUSTOM",
-      "styleId": "MIDLINE"
-    },
-    {
-      "location": [-14, 6],
-      "length": 16.5,
-      "width": 5,
-      "angle": 141.5,
-      "contrailSize": 5,
-      "style": "CUSTOM",
-      "styleId": "MIDLINE"
-    },
-    {
-      "location": [-14, -6],
-      "length": 16.5,
-      "width": 5,
-      "angle": -141.5,
-      "contrailSize": 5,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [
