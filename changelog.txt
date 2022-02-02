@@ -1,3 +1,12 @@
+RC9
+-------
+- Fixed(?) bug with strikecraft remaining invisible after launching from carrier
+- Added some randomization to carrier and bay that strikecraft launch from
+- Strikecraft should now only launch from player-owned carriers instead of allied carriers
+- Added some more chatter lines + WINGCOM fluff lines
+- Revised Kouto Sprite, again
+- Added another IR Pulse Laser(Fighter) to Aleste(Fighter Wing)'s drones
+
 RC8
 --------
 -Remove YL Rifle

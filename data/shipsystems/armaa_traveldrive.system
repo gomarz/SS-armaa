@@ -13,7 +13,7 @@
 	#"jitterRangeRadiusFraction":0,
 	
 	"engineActivateHiddenNozzles":false,
-	"engineGlowColor":[255,255,255,255],
+	"engineGlowColor":[0,0,0,0],
 	"engineGlowContrailColor":[0,0,0,0],
 	"engineGlowMaxBlend":0.25,
 	"engineGlowLengthMult":4,
