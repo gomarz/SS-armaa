@@ -14,13 +14,12 @@
   "builtInMods": [
     "cataphract",
     "reduced_explosion",
-    "strikeCraft",
-    "armaa_leynosWeaponSwap",    
+    "strikeCraft"    
   ],
   "builtInWeapons": {
-    #"A_GUN": "armaa_kouto_minigun_right",
+    "A_GUN": "armaa_kouto_variablerifle",
     "B_TORSO": "armaa_kouto_torso",
-    #"C_ARML": "armaa_koutoBazooka",
+    "C_ARML": "armaa_koutoBazooka",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_kouto_leftPauldron",
     "D_PAULDRONR": "armaa_kouto_rightPauldron",
@@ -32,7 +31,16 @@
     {
       "id": "A_GUN",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -10,
+      "locations": [0, -2]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
