@@ -30,15 +30,15 @@
 	"hullFrequency":{
 			"hulls":
 			{
-				"armaa_altagrave":0.5,
-				"armaa_altagrave_c":0.5,
-				"armaa_einhander":0.4,
+				"armaa_altagrave":0.3,
+				"armaa_altagrave_c":0.3,
+				"armaa_einhander":0.3,
 				"armaa_garegga":1,
 				"armaa_aleste_frig":1,
 				"armaa_leynos_frig":1,
 				"armaa_hazard_frig":1,
 				"armaa_xyphos":1,
-				"armaa_monitor":1,
+				"armaa_monitor":0.1,
 				"armaa_valkyrie":1,	
 			},
 			"fighters":{
@@ -58,7 +58,6 @@
 				"armaa_leynos_frig",
 				"armaa_hazard_frig",
 				"armaa_xyphos",
-				"armaa_monitor",
 				"armaa_valkyrie",
 			],
 	},
