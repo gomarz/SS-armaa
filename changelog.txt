@@ -1,3 +1,9 @@
+RC10
+-------
+- small revision to squadron UI
+- fixed bug where player was not properly refererd to using gender appropriate title when landing
+- fixed crashed caused by destroying altagrave module with no weapons assigned 
+
 RC9
 -------
 - Fixed(?) bug with strikecraft remaining invisible after launching from carrier
