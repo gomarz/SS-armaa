@@ -1,9 +1,27 @@
 RC10
 -------
-- small revision to squadron UI
-- fixed bug where player was not properly refererd to using gender appropriate title when landing
-- fixed crashed caused by destroying altagrave module with no weapons assigned 
+- small revision/additions to squadron intel page
+- fixed bug where player was not properly referred to using gender appropriate title(based on portrait) when landing
+- fixed crashed caused by destroying altagrave module with no weapons assigned
+- fixed squadron members not being generated unless wingcom hullmod was moused over
 
+- Removed jitter effect used to indicate ships with PD skill with new indicator
+
+- Laser Blade(s)
+	- Max knockback: 250->300
+	- force applied is either the mass of the target or max knockback, whichever is smaller
+
+- Valkazard
+	- Particle Cannon
+		- DMG: 550ish-> 355
+		- Cooldown reduced by 30%
+		- Flux cost reduced by 30%
+	- Accel: 200->225
+	- Decel :168->175 (ocd moment)
+	- Laser Blade
+		- EMP: 312 -> 0
+		- Flux/sec: 350->600
+		- added DANGEROUS tag (idk what this even does)
 RC9
 -------
 - Fixed(?) bug with strikecraft remaining invisible after launching from carrier

@@ -1,0 +1,25 @@
+{
+  "displayName": "Battle Armor",
+  "fluxCapacitors": 0,
+  "goalVariant": true,
+  "fluxVents": 0,
+  "hullId": "armaa_prodromos",
+  "hullMods": [],
+  "variantId": "armaa_prodromos_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "lightmg",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "C_ARMR": "lightmg",
+      }
+    }
+  ]
+}

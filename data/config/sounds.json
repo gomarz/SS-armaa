@@ -172,6 +172,10 @@
 	"beamfireM":[							
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
 	],
+	"armaa_crewDeath":[							
+			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},
+			{"file":"sounds/armaa/armaa_death.ogg","pitch":.5,"volume":0.2},
+	],
 	"carbine2":[							{"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1,"volume":0.55},
 {"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":1.03,"volume":0.58},
 {"file":"sounds/armaa/SND.DAT_00137lo.ogg","pitch":.97,"volume":0.52},

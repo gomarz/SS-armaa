@@ -82,9 +82,15 @@ armaa_hazard_frig,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverab
 
 Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,
 
-armaa_valkazard,SHIP,"Advanced Series-II 'mech boasting a versatile weapons loadout and equipped with an outmoded variant of the SILVERSWORD system utilized by the GAREGGA. Nimble, deadly, and flimsy. 
+armaa_valkazard,SHIP,"Advanced Series-II 'mech boasting a versatile weapons loadout and equipped with an outmoded variant of the same SILVERSWORD system utilized by the GAREGGA. Nimble, deadly, and flimsy. 
 
 From testimonials and what little evidence remains, it's inferred that prior to the Collapse a sole unit was transferred via gate network to the Persean Sector for 'cold storage', before its unfortunate disappearance during the destruction of old Meshan, circa c.94.",,,
+
+armaa_prodromos,SHIP,"Assault-class powered exoskeletons that excel at intercepting enemy fighter formations and general point defense. While considered incredibly durable in comparison to conventional infantry, this quality is moot when facing weapons rated effective for space combat. 
+
+Prodromos-class battle armors are considered by Arma Armatura as one of their greatest creations. The missing link between power armor clad infantry and full scale mechs, executives envisioned the design as completely upending current traditional strategic marine applications - soldiers nestled within these machines could easily deploy from friendly ships for 'breach and board' operations independently, simultaneously eliminating the risk of losing boarding ships to an errant boardee's decision to scuttle their vessel and take their aggressors along with them instead.",,,
+
+
 
 armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Silvia has been 'upgraded' with an inefficient shield generator as well as software to coordinate a Broadsword wing. It mounts additional hardpoints over the standard chassis, as well as an enhanced maneuvering system.",,, 
 
@@ -141,6 +147,9 @@ armaa_valkazard_shotgun_left,WEAPON,"A close-quarters energy shotgun. Compared t
 armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,
 
 armaa_valkazard_torso_chaosburst,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,
+
+armaa_valkazard_torso_boson,WEAPON,"Akin to the Sector-standard Heavy Blaster - fires bolts of energy at enemy targets, but up to a burst of three. With high damage and flux costs, the particle cannon is one of the most damaging weapons that can be mounted on a Cataphract.",,,
+
 
 armaa_valkazard_torso_shield,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,
 

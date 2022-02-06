@@ -1,0 +1,42 @@
+{
+  "hullName": "Crew",
+  "hullId": "armaa_crew",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/armaa_crew.png",
+  "style": "armaa_meatbag",
+  "height": 36,
+  "width": 34,
+  "center": [16, 17],
+  "collisionRadius": 18,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 21.5,
+  "viewOffset": 0,
+  "builtInMods": ["reduced_explosion"],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [3, -1.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-7.5, 0],
+      "length": 6.5,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -6, -4,
+    -6, 4,
+    4, 4.5,
+    5, -5
+  ]
+}

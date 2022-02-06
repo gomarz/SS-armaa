@@ -1,0 +1,20 @@
+{
+	"id":"armaa_pa_autocannon_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":20.0,
+	"width":5,
+	"fadeTime":0.5,
+	"fringeColor":[255,155,0,200],
+	#"fringeColor":[255,255,150,200],
+	"coreColor":[255,100,100,255],
+	#"glowColor":[255,155,50,75],
+	#"glowRadius":5,
+	#"hitGlowRadius":15,
+	"textureType":"SMOOTH",
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0,
+
+}

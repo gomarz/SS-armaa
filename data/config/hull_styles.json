@@ -39,6 +39,43 @@
 		"dHullOverlayMedium":"graphics/damage/dmod_overlay_hightech_medium.png",
 		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_hightech_heavy.png",
 	},
+"armaa_meatbag":{
+		"hyperspaceJitterColor":[33,106,109,200],
+		"baseCampaignExplosionColor":[55,146,240,255],
+		"baseCombatExplosionColor":[175,0,0,25],
+		"fighterRepairFlickerColor":[150,0,0,100],
+		"fighterChipIconColor":[152,152,152,255],
+		"weaponDisabledExplosionColor":[0,0,0,0],
+		"shieldRingColor":[255,255,255,200],
+		"shieldInnerColor":[125,125,255,75],
+		"fluxVentCoreColor":[255,255,255,255],
+		"fluxVentFringeColor":[125,0,155,255],
+		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
+		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
+		"empLoopSet":"emp_loop",						# id of entry in sounds.json
+		"fluxLoopSet":"flux_loop",						# id of entry in sounds.json
+		"ventFluxSet":"vent_flux",						# id of entry in sounds.json
+		"shieldBurnoutSet":"shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"armaa_crewDeath",			# id of entry in sounds.json
+		"damageDecalSheet":"",
+		"damageDecalGlowSheet":"",
+		
+		#"colorShiftCovers":true,
+		"coversColorShiftAmount":1,  # 0 to 1
+		"coversMatchShipBrightness":false,
+		"slotCoverSmallTurret":"",
+		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_midline_small.png",
+		"slotCoverMediumTurret":"",
+		"slotCoverMediumHardpoint":"",
+		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_midline_large.png",
+		"slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_midline_large.png",
+		
+		"dHullOverlayLight":"",
+		"dHullOverlayMedium":"",
+		"dHullOverlayHeavy":"",
+	},
 "armaa_valkazard":{
 		"hyperspaceJitterColor":[33,106,109,200],
 		"baseCampaignExplosionColor":[55,146,240,255],

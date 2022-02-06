@@ -1,0 +1,69 @@
+{
+  "hullName": "Prodromos",
+  "hullId": "armaa_prodromos",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/pa/armaa_pa_pilot.png",
+  "style": "HIGH_TECH",
+  "height": 36,
+  "width": 34,
+  "center": [17, 18],
+  "collisionRadius": 18,
+  "shieldCenter": [0, 0.5],
+  "shieldRadius": 21.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_prodromos_leftArm",
+    "B_TORSO": "armaa_prodromos_torso",
+    "C_ARMR": "armaa_prodromos_rightArm"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 50,
+      "angle": 10,
+      "renderOrderMod": 99999,
+      "locations": [0, 4]
+    },
+    {
+      "id": "B_TORSO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "C_ARMR",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 50,
+      "angle": -10,
+      "renderOrderMod": 99999,
+      "locations": [0, -3]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-6.5, 0.5],
+      "length": 6.5,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -9, -5.5,
+    -9, 7,
+    3, 7,
+    3, -6
+  ]
+}

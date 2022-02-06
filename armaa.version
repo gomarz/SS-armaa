@@ -1,0 +1,13 @@
+{
+	"masterVersionFile":"https://raw.githubusercontent.com/gomarz/ss-armaa/master/armaa.version",
+	"modName":"Arma Armatura",
+	"modThreadId":18751,
+	"modVersion":
+	{
+		"major":1,
+		"minor":1,
+		"patch":1,
+	},
+	"starsectorVersion":"0.95.1a-RC6",
+	"directDownloadURL":"https://github.com/TechpriestEnginseer/solid-winner4/releases/download/1.11/Iron.Shell.zip",
+}

@@ -1,0 +1,18 @@
+{
+  "displayName": "Crew",
+  "fluxCapacitors": 0,
+  "goalVariant": true,
+  "fluxVents": 0,
+  "hullId": "armaa_crew",
+  "hullMods": ["no_weapon_flux"],
+  "variantId": "armaa_crew_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "lightmg",
+      }
+    }
+  ]
+}

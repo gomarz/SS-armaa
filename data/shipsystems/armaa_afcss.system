@@ -5,13 +5,13 @@
 	
 	"statsScript":"data.scripts.shipsystems.armaa_AFCSStats",
 	
-	"jitterUnderColor":[255,165,90,155],
+	"jitterUnderColor":[90,165,255,155],
 	"jitterUnderCopies":20,
 	"jitterUnderMinRange":0,
 	"jitterUnderRange":20,
 	"jitterUnderRangeRadiusFraction":0,
 	
-	"jitterColor":[255,165,90,55],
+	"jitterColor":[90,165,255,55],
 	"jitterCopies":3,
 	"jitterMinRange":0,
 	"jitterRange":7,
@@ -22,8 +22,8 @@
 	#"deactivateSound":"system_burn_drive_deactivate",
 	#"outOfUsesSound":"engine_disabled",
 	
-	"useSound":"armaa_mb_start",
-	"loopSound":"armaa_mb_loop",
+	"useSound":"ui_remote_survey_on",
+	"loopSound":"world_interdict_loop",
 	"outOfUsesSound":"engine_disabled",
 	
 	"aiHints":{

@@ -1,0 +1,27 @@
+{
+  "id": "armaa_prodromos_torso",
+  "specClass": "projectile",
+  "projectileSpecId": "flare_seeker",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/ships/pa/armaa_pa_torso.png",
+  "turretGlowSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso_glow.png",
+  "hardpointSprite": "",
+  "turretOffsets": [],
+  "turretAngleOffsets": [],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "autocharge": true,
+  "fireSoundOne": "launch",
+  "fireSoundTwo": "homing_fire"
+}
