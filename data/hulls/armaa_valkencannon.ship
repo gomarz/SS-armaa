@@ -38,7 +38,7 @@
     "D_PAULDRONR": "armaa_sprigganmk3rightPauldron",
     "E_HEAD": "armaa_sprigganHeadmk3",
     "F_GLOW": "armaa_sprigganHeadGlow",
-    "WS0001": "armaa_einhanderSyrinx"
+    "WS0001": "armaa_javelin"
   },
   "center": [
     9,
@@ -213,6 +213,19 @@
       "mount": "TURRET",
       "size": "MEDIUM",
       "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0002",
+      "renderOrderMod": 999999, 
+      "locations": [
+        7,
+        9
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "ENERGY"
     }
   ],
   "width": 18

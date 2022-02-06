@@ -1,7 +1,7 @@
 {
   "collisionClass": "RAY", 
-"beamEffect":"com.fs.starfarer.api.impl.combat.TachyonLanceEffect",
-"everyFrameEffect": "data.scripts.weapons.armaa_javelinBeamEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_chaosBurstEffect",
+  "beamEffect": "data.scripts.weapons.armaa_chaosBurstBeam",
   "collisionClassByFighter": "RAY_FIGHTER",
   "coreColor": [
     255,
@@ -9,12 +9,12 @@
     0,
     255
   ],
-  "fireSoundOne": "beambang",
-  "fireSoundTwo": "beamfire",
+  "fireSoundOne": "beambangM",
+  "fireSoundTwo": "beamfireM",
   "fringeColor": [
-    200,
-    0,
-    200,
+    50,
+    150,
+    255,
     200
   ],
   "glowColor": [

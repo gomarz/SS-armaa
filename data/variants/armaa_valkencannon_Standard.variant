@@ -35,7 +35,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "armaa_javelin"
+        "WS0001": "armaa_javelin",
+	"WS0002": "armaa_rangefinder"
       }
     }
   ],

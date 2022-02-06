@@ -1,148 +1,42 @@
-RC10
--------
-- small revision/additions to squadron intel page
-- fixed bug where player was not properly referred to using gender appropriate title(based on portrait) when landing
-- fixed crashed caused by destroying altagrave module with no weapons assigned
-- fixed squadron members not being generated unless wingcom hullmod was moused over
+V2.0
+--------------------
 
-- Removed jitter effect used to indicate ships with PD skill with new indicator
+- Revised wings so each LPC has more clearly defined role
+	- Valken-X: HE Fighter
+	- Kouto: KE Fighter
+	- Aleste: Obligatory Superfighter
+	- Bihander: Obligatory Superfighter^2
+	- Valken: Fodder
+	- Prodromos: Interceptor
+	- Gallant: KE Bomber
+	- Ilorin: HE Bomber
 
-- Laser Blade(s)
-	- Max knockback: 250->300
-	- force applied is either the mass of the target or max knockback, whichever is smaller
+- added legs decos to Aleste, Kouto, Valken-X, Leynos,Valken
 
-- Valkazard
-	- Particle Cannon
-		- DMG: 550ish-> 355
-		- Cooldown reduced by 30%
-		- Flux cost reduced by 30%
-	- Accel: 200->225
-	- Decel :168->175 (ocd moment)
-	- Laser Blade
-		- EMP: 312 -> 0
-		- Flux/sec: 350->600
-		- added DANGEROUS tag (idk what this even does)
-RC9
--------
-- Fixed(?) bug with strikecraft remaining invisible after launching from carrier
-- Added some randomization to carrier and bay that strikecraft launch from
-- Strikecraft should now only launch from player-owned carriers instead of allied carriers
-- Added some more chatter lines + WINGCOM fluff lines
-- Revised Kouto Sprite, again
-- Added another IR Pulse Laser(Fighter) to Aleste(Fighter Wing)'s drones
+- Fixed torso tracking problem with valkazard
+
+- fixed missing description for valkazard system
+
+- Revised Sprite for Kouto, Valken X
+
+- Reduced value of Cataphract & Advanced Cataphract BP package
+
 - Removed submarket rep/transponder requirement for gamlin
 
-- Ilorin might be busto, haven't tested it much
-- all other feedback welcom
-RC8
---------
--Remove YL Rifle
-- Portrait Picker now generates 10 columns instead of 1 for faster browsing
-- Removed HUD CR bar from strikecraft
-- adjusted personality weights for WINGCOM
-- added villain persona
-- added nrg shotgun to valkazard, removed ion pulser
-- add desc for valken(p)
+- fixed bug where player was not properly referred to using gender appropriate title(based on portrait) when landing
 
-TODO:
-ilorin balans
-sprite tweakan
-Silversword AI use adjustment
-fix missions
+- fixed crashed caused by destroying altagrave module with no weapons assigned
 
-RC7
---------
--Increased Valkazard's PPT by 30% to account for time boosting / PPT eating system
-	- 200-> 260 secs
-	- Added EMR back to blocked hullmods
-		- small profile/fairly mobile with a mobility system makes it kind of cheesy being able to dump 4 reapers into the back of basically any low tech ship with almost no impunity, supership be damned
-		- You can reload anyway
-	- fixed Valkazard afterimage not matching mechs actual loadout
-	- fixed Counter Shield projectiles not properly tracking targets
-	- fixed Y-L Rifle appearing in research stations/production event
-	- SILVERSWORD[Type A]
-		- New Effect: C-Stim Delivery System
-			- Narrowly dodging projectiles/missiles dealing at least 40 damage with shields down grants additional 200% time dilation bonus, +10% Energy/Ballistic Damage
-			- can be exploited for quick repositioning, comboed with system for ultra burst window, etc
-			- Full effect is granted as soon as the conditions are met, but rapidly decays over 2s
-			- After effect ends, can't trigger again for 5s
-			- Maybe it should scale or something instead of flat bonus based off what you dodge, idk thats what u guys are here to tell me 
+- fixed squadron members not being generated unless wingcom hullmod was moused over
 
--fixed crash when entering battle against pirates fielding Valken eX
-- Changed fighter wing Aleste's paint scheme to further distinguish from pilotable version
-	- Might change it again, not settled on the current iteration.
+-Altagrave
+	-Corrected negative modifyPercent for Weapon Flux Cost Mod
+	- Replaced ear killing shotgun sound for Altagrave Ex
+	- Altagrave Ex: Plasma Jets -> Havoc Drive
+	- Deco Left Arm: -> Laser Blade XL
+	- Added two small missile mounts
+		- Mounts will be destroyed/rendered unusable if backpack module is lost
 
-TODO:
-- Energy Shotgun
-- Remove YL Rifle
-- Portrait picker with 2 columns?
-- Remove HUD CR bar so other system things can go there instead
-- Fix personality picker only generating spacers and soldiers
-
-RC6
-----
-WINGCOM:
-	- Implemented GUI for changing squad name/callsigns. Heavily based off of a butchered carcass of Nexerelin's Insurance GUI. Thanks, Histi!
-	- Added random little blurbs that squadrons will blather on deployment
-	- Fixed ships with WINGCOM being considered for relationship modifiers even if they did not participate in combat
-	- Fixed retreated ships with WINGCOM not being considered for relationship modifiers
-	- TODO: Pilots will always appear, adjust so that their assignment can randomly occur thoroughout the battle
-
--adjust  laser blade knockback. scales based off the targets mass, with max forceapplied capping at ~300. Should feel less wonky (especially in aim @ mouse piloting mode) more predictable as far as where you can expect to end up after attacking.
-
--Removed BUGGY color changing scripts from some stuff. rip
-- small tweak to valk-x shoulder sprite
-
-Valkazard:
-	Silversword Type A:
-	Direct Neural Interface: 
-	- +10% -> +15% Time Dilation.
-	- Bullet Time(Slowdown) effect only applied near enemies/enemy projectiles.
-	- +10% Hull Damage -> +25% Hull/ Shield Damage.
-		- idea is to promote evasion over shield tanking without reducing flux pool and 		  leaving ship flux starved
-		- Thought about adding something that gives a 'Daredevil' bonus for near misses
-		  while shields are down, but might be something for another ship? Will mess around
-
-Reduced value of Cataphract & Advanced Cataphract BP package
-- Fixed leg rendering while game is paused
-- Carrier Refit can now be cancelled at any time
-	- HP and Armor replenish over time in carrier, so not an all or nothing decision
-	- PPT and Ammo are only restored if full refit time is spent
-		- Maybe implement hard limit to missile reloads based off of refit penalty %?
-
-V1.6RC5
---------------------
-TODO:
-Fix/Remove partially implemented kinetic right arm weapon for valkazard
-Replace Ion Pulser with something more interesting
-???
-Expand on quest hook if finding valkazard/starting with it
-Make diff. set of legs for Leynos since it looks like she skips leg day rn
-
--Add super cool special snowflake nex start text with valkazard by tim! wowee
-
-Valkazard:
-	- Hullmod: Silversword-> Silversword [Type A]
-		- Direct Neural Interface: +10% Time Dilation, +10% Hull Damage Received
-		- Integrated AI: +33% auto-aim, +100% missile/fighter dmg
-	- Removed PD tag from all weapons save for MAG47
-	- Add weapon Desc for RCL-48
-	- Add RCL-48 for left arm
-	- Added Autocannon for Torso
-	- Fixed bug CTD caused by adding Shield Shunt while using Counter Shield
-	- Fixed bug where initially expending missile ammo would cause racks to disappear and never show up again
-
-WINGCOM:
-	- Wingcom will now check for hullId first before resorting to baseHullId (for fighter skins)
-	- Added support for multiple wings
-
-- Buffed Recoilless Rifle sfx
- 	- Damage: 255->400
-	- Flux Cost: iforgot->532
-	- Projectile Speed: 700->600
-	- Chargedown: 1->1.1
-- Buffed MAG47 sfx
-- Updated Valken-X Sprite
 - Valken-eX
 	- Replacement Time: 10->13
 	- OP: 10->11
@@ -156,25 +50,28 @@ WINGCOM:
 		- Range: 45->60
 	System (Right Click): Overboost -> Havoc Drive
 
--Altagrave
-	-Corrected negative modifyPercent for Weapon Flux Cost Mod
-	- Replaced ear killing shotgun sound for Altagrave Ex
-	- Altagrave Ex: Plasma Jets -> Havoc Drive
+- Kouto
+	- Revised loadout for anti-shield role
 
-V1.6RC3
---------------------
-- added legs to Aleste, Kouto, Valken-X
-- Fixed torso tracking problem with valkazard
--fixed missing description for valkazard system
+- Aleste
+	- Replaced Stake Driver with Rynex Pulse Rifle
+	- CLAW Drone: Increased arc to 360 deg, Ship System: Temporal Shell
+
+-Pila Drone(Built-in)
+	- Removed Phase Damper special system
+	- New System: Temporal Shell
+
+
+
 - fixed outdated description for kouto
-- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods
+- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods, and squadron chatter
 
-- New Ship, Caymon
 - New Ship, Valkazard
-	- Added new start for starting w/ (ArmaA(Pirates))
+	- Added new start for starting w/ (ArmaA(Pirates)) (w/ super cool special snowflake nex start text by timid! wowee)
 	- Can be found via exploration otherwise
 - New Ship, Broadsword(AA)
 - New Ship, Warthog(AA)
+- New Ship, Kouto(Pilotable)
 
 - Altagrave can now swap between Vajra and Grenade Launcher
 	- Also overcompensates with a large laser blade, may remove before actual release tho
@@ -183,6 +80,8 @@ V1.6RC3
 
 - New fighter, Valken(P)
 	- Carries Anti-Ship Sword, HE weapon with limited uses
+- New Fighter, Prodromos Battle Armor
+	- Fragile but effective anti-fighter/PD unit
 
 - Advanced Optics(AA)
 	- Can no longer be built in
@@ -198,7 +97,7 @@ V1.6RC3
 		- Increase Flux Cost: 350 f/s
 
 - Aleste(S)
-	- Shield Efficiency: 0.8->0.9
+	- Shield Efficiency: 0.8->1
 	- DP: 6->7
 - Xyphos(AA)
 	- DP: 5->7
@@ -223,6 +122,13 @@ V1.6RC3
 	- In smaller battles where ships deploy closer to the center of the map, wingmen will now spawn a few thousand SU away instead of from deployment zone if no carrier is present
         - Max stat bonus conferred by relationship reduced to 30% (was 75% for defensive and 37% for offensive)
 	- Added support for multiple wings
+	- Implemented GUI for changing squad name/callsigns. Heavily based off of a butchered carcass of Nexerelin's Insurance GUI. Thanks, Histi!
+	- Added random little blurbs that squadrons will blather on deployment
+	- Fixed ships with WINGCOM being considered for relationship modifiers even if they did not participate in combat
+	- Fixed retreated ships with WINGCOM not being considered for relationship modifiers
+	- Added fluff text for characters with 'villain' voice
+	- Added fluff text for characters with 'soldier' voice
+	- Wingcom will now check for hullId first before resorting to baseHullId (for fighter skins)
 
 - Strikecraft:
 	- AI navigating back to carrier has been improved
@@ -232,6 +138,10 @@ V1.6RC3
 		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
 	- Fixed shield damage not being displayed
 	- Slightly increased retreat area 2000->2050 in attempt to fix retreat CTD caused by AI attempting to retreat while fighter hullsize
+	- Hull and armor now gradually restore over time on carrier
+	- Carrier Refit can now be cancelled at any time
+		- HP and Armor replenish over time in carrier, so not an all or nothing decision
+		- PPT and Ammo are only restored if full refit time is spent
 
 - Einhander:
 	- Drone weapon is now equipped directly on the main ship
