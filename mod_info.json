@@ -2,7 +2,7 @@
 	"id":"armaa",
 	"name":"Arma Armatura",
 	"author":"shoi",
-	"version":"1.5",
+	"version":"1.6",
 	"description":"Mechs. Requires LazyLib + MagicLib.",
 	"gameVersion":"0.95a-RC15",
 	"jars":["jars/armaa.jar"],
