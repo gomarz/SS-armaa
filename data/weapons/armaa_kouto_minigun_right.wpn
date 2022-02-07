@@ -1,7 +1,7 @@
 {
   "id": "armaa_kouto_minigun_right",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_minigun_energy_shot",
+  "projectileSpecId": "armaa_koutominigun_energy_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_minigunEveryFrameEffect",
@@ -38,9 +38,9 @@
     "particleDuration": 0.02,
     "particleCount": 20,
     "particleColor": [
-      255,
-      100,
       200,
+      200,
+      255,
       200
     ]
   },

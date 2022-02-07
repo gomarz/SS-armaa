@@ -1,0 +1,17 @@
+{
+	"id":"armaa_koutominigun_energy_shot",
+	"specClass":"projectile",
+	"onHitEffect":"data.scripts.weapons.armaa_minigunEveryFrameEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY_FIGHTER",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":60.0,
+	#"hitGlowRadius":25,
+	"width":4.0,
+	"fadeTime":0.2,
+	#"explosionColor":[125,0,155,75],
+	"fringeColor":[200,200,255,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[15,0,0,100],
+	"glowRadius":0
+}
