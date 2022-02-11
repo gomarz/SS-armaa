@@ -26,7 +26,8 @@
     "D_PAULDRONR": "armaa_kouto_rightPauldron",
     "E_HEAD": "armaa_kouto_head",
     "H_GLOW": "armaa_sprigganHeadGlow",
-    "F_LEGS": "armaa_ht_legs"
+    "F_LEGS": "armaa_ht_legs",
+    "G_RADAR": "armaa_kouto_radardish"
   },
   "weaponSlots": [
     {
@@ -140,6 +141,16 @@
       "arc": 0,
       "angle": 0,
       "locations": [3.5, 5]
+    },
+    {
+      "id": "G_RADAR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "renderOrderMod":1000,
+      "arc": 360,
+      "angle": 0,
+      "locations": [-14,0]
     }
   ],
   "engineSlots": [

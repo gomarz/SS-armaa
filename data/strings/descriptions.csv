@@ -43,6 +43,7 @@ armaa_ilorin,SHIP,"Heavily armed and armored, these ponderous monstrosities are 
 Created in a bygone era, some speculate the Ilorin as one of the ArmaA Corporations oldest designs due to its sheer simplicity and brutal effectiveness. Bristling with weapons and protected with thick armor, the iron shell of the Ilorin made it a popular frontline unit and favourite of anti-rebellion units, snugly fitting into the combat doctrine at the time.
 
 Barely space-worthy, extra verniers installed alongside the units antiquated jumpjets were intended only for brief use during deployments to breach carrier decks. To that end, they manuever through the vacuum with the grace of a bull passing through a china shop: Ilorin pilots are heavily discouraged from straying too far from their parent ship and instead specialize in striking large, easy to hit targets and lending support during planetary operations.",,,
+
 armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,
 
 armaa_altagrave,SHIP,"What this design lacks in weapon slot quantity is made up for via versatility; At its heart lies the KARMA system which posseses a variety of applications on the battlespace. Additional modular components grant impressive agility and speed, but are vulnerable to small strikecraft and flanking attacks. 
@@ -86,7 +87,7 @@ armaa_valkazard,SHIP,"Advanced Series-II 'mech boasting a versatile weapons load
 
 From testimonials and what little evidence remains, it's inferred that prior to the Collapse a sole unit was transferred via gate network to the Persean Sector for 'cold storage', before its unfortunate disappearance during the destruction of old Meshan, circa c.94.",,,
 
-armaa_prodromos,SHIP,"Assault-class powered exoskeletons that excel at intercepting enemy fighter formations and general point defense. While considered incredibly durable in comparison to conventional infantry, this quality is moot when facing weapons rated effective for space combat. 
+armaa_prodromos,SHIP,"Excels at intercepting fighter formations and missiles. While considered incredibly durable compared conventional infantry, the quality is moot versus weapons deployed for space combat. The key distinction between itself and it's closest comparate the Wasp is a matter of effectiveness versus minimal loss of pilots. 
 
 Prodromos-class battle armors are considered by Arma Armatura as one of their greatest creations. The missing link between power armor clad infantry and full scale mechs, executives envisioned the design as completely upending current traditional strategic marine applications - soldiers nestled within these machines could easily deploy from friendly ships for 'breach and board' operations independently, simultaneously eliminating the risk of losing boarding ships to an errant boardee's decision to scuttle their vessel and take their aggressors along with them instead.",,,
 
@@ -186,9 +187,14 @@ armaa_curvyLaser,WEAPON,"""... the energy mass pulses and undulates as if it wer
 armaa_monitor_leftArm,WEAPON,"Huge cannon, which fires slow-moving plasma-charged projectiles. Rounds are highly effective versus armor, and obliterate any hull structure left underneath.
 A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.","",,
 
+armaa_monitor_leftArm_gauss,WEAPON,"A long range weapon designed to overload the target's shields. The heavy kinetic slug it fires is also effective against all but the heaviest armor.
+Uses magnetic coils to accelerate a 300mm caseless ultraheavy elemental slug to relativistic speeds. Usually rated at the hundreds of giga-amperes range, rarely exceeding one tera-ampere. Unlike most ballistic weapons, has a very high flux load when fired. Turrets mounted with this system have an extremely poor turn rate.","",,
+
 armaa_monitor_rightArm,WEAPON,"Huge cannon, which fires slow-moving plasma-charged projectiles. Rounds are highly effective versus armor, and obliterate any hull structure left underneath.
 A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.","",,
 
+armaa_monitor_rightArm_gauss,WEAPON,"A long range weapon designed to overload the target's shields. The heavy kinetic slug it fires is also effective against all but the heaviest armor.
+Uses magnetic coils to accelerate a 300mm caseless ultraheavy elemental slug to relativistic speeds. Usually rated at the hundreds of giga-amperes range, rarely exceeding one tera-ampere. Unlike most ballistic weapons, has a very high flux load when fired. Turrets mounted with this system have an extremely poor turn rate.","",,
 
 armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
@@ -288,6 +294,9 @@ armaa_claw,SHIP_SYSTEM,"Autonomous hunter-killer drones that frequently sheathe 
 armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
 
 armaa_silverSwordV,SHIP_SYSTEM,"Increases manuverability, non-missile rate of fire, as well as flux dissipation and capacity, tripling CR degradation. Draining the gauge will overload and damage the ship. Effects of the system increase as the gauge nears zero. Best used in short bursts.",,,
+
+armaa_afcss,SHIP_SYSTEM,"Increases damage dealt to a number of enemies within 2500 SU by 25% based on the combined ECM rating of nearby allies versus that of the enemy. The probability of individual ships being affected is further modified by their own ECCM rating. While the effect does not stack, successive attempts can affect enemies that resisted previous uses.",,,
+
 
 #CAMPAIGN STUFF,,,,,
 armaa_homeworld,CUSTOM,"A formerly unremarkable planet, it's fortune reversed when Arma Armatura received rights to the planet via corporate charter following the Second AI War. 

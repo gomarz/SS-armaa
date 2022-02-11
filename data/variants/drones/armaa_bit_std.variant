@@ -8,7 +8,7 @@
     "permaMods": [],
     "variantId": "armaa_bit_std",
     "weaponGroups": [{
-      #  "autofire": true,
+        "autofire": true,
         "mode": "LINKED",
         "weapons": {"WS0001": "taclaser"}
 

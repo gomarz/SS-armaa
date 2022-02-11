@@ -1,6 +1,7 @@
 V2.0
 --------------------
 
+
 - Revised wings so each LPC has more clearly defined role
 	- Valken-X: HE Fighter
 	- Kouto: KE Fighter
@@ -29,6 +30,9 @@ V2.0
 
 - fixed squadron members not being generated unless wingcom hullmod was moused over
 
+juno. mk iii
+	- dmg/s: 900->800
+	- chargedown: 0.5s -> 1s
 -Altagrave
 	-Corrected negative modifyPercent for Weapon Flux Cost Mod
 	- Replaced ear killing shotgun sound for Altagrave Ex
@@ -64,7 +68,7 @@ V2.0
 
 
 - fixed outdated description for kouto
-- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods, and squadron chatter
+
 
 - New Ship, Valkazard
 	- Added new start for starting w/ (ArmaA(Pirates)) (w/ super cool special snowflake nex start text by timid! wowee)
@@ -142,7 +146,7 @@ V2.0
 	- Carrier Refit can now be cancelled at any time
 		- HP and Armor replenish over time in carrier, so not an all or nothing decision
 		- PPT and Ammo are only restored if full refit time is spent
-
+	- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods, and squadron chatter
 - Einhander:
 	- Drone weapon is now equipped directly on the main ship
 	- Increased OP: 30->39

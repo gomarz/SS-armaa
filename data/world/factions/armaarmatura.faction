@@ -59,6 +59,9 @@
 				"armaa_hazard_frig",
 				"armaa_xyphos",
 				"armaa_valkyrie",
+				"armaa_broadsword",
+				"armaa_warthog",
+				"armaa_kouto_frig",
 			],
 	},
 	"shipsWhenImporting":{
@@ -69,6 +72,8 @@
 		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
 			"fighters":[
 			"armaa_gallant_wing",
+			"armaa_prodromos_wing",
+			"armaa_valken_black_wing",
 			],
 	},
 	"knownWeapons":{

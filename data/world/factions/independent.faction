@@ -32,6 +32,8 @@
 				"armaa_hazard_frig",
 				"armaa_xyphos",
 				"armaa_valkyrie",
+				"armaa_broadsword",
+				"armaa_warthog",
 			],
 	},
 	"knownFighters":{

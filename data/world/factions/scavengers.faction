@@ -10,7 +10,9 @@
         "hulls":[
             "armaa_altagrave",
 	    "armaa_garegga",
-	    "armaa_monitor",	
+	    "armaa_monitor",
+	"armaa_broadsword",
+	"armaa_warthog",	
 
         ],
     },
