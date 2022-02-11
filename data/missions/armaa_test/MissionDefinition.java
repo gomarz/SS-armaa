@@ -25,8 +25,8 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		
 		// Set a small blurb for each fleet that shows up on the mission detail and
 		// mission results screens to identify each side.
-		api.setFleetTagline(FleetSide.PLAYER, "Arma Armatura fleet portfolio");
-		api.setFleetTagline(FleetSide.ENEMY, "Space Junk");
+		api.setFleetTagline(FleetSide.PLAYER, "Arma Armatura");
+		api.setFleetTagline(FleetSide.ENEMY, "Simulation Fleet");
 		
 		// These show up as items in the bulleted list under 
 		// "Tactical Objectives" on the mission detail screen

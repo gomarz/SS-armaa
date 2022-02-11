@@ -65,9 +65,7 @@ While scarred, the salvor crew discover that many essential systems are mostly i
 
 The dispatched crew recover what they can of value. The law of salvage rules, even here.",,
 armaa_valkazardWreckOpen2,ShipRecoveryCustomText,"$customType == wreck
-$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"While scarred, the salvor crew discover that many essential systems and cockpit is mostly intact.The mech could be restored to basic functionality without much hassle..
-
-Only a minute number of megacorporations deal with vehicles like this. It may be worth checking up on them to see if they have any information on the vessel, and possibly even have a reward for the return of this machine...",,
+$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"While scarred, the salvor crew discover that many essential systems and cockpit is mostly intact.The mech could be restored to basic functionality without much hassle.",,
 armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $valkazard score:1000",ShowDefaultVisual,,,
 ,,,,,,
