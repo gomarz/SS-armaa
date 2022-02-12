@@ -1,0 +1,27 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 17,
+    "fluxVents": 17,
+    "goalVariant": true,
+    "hullId": "gemini",
+    "hullMods": [],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "armaa_gemini_Standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {"WS 003": "typhoon"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "heavyac",
+                "WS 002": "heavyac"
+            }
+        }
+    ],
+    "wings": ["armaa_valkenx_wing"]
+}

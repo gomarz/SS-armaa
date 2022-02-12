@@ -45,7 +45,7 @@
 
 	"startShipsSuper":
 	[
-		["armaa_valkazard_standard", "buffalo2_Fighter_Support"]
+		["armaa_valkazard_standard", "armaa_gemini_Standard"]
 	],
 	"startSpecialItems":[
 		[["armaa_cataphract_package",""]],

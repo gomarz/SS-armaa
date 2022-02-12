@@ -7,7 +7,7 @@
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
-  "hullMods": ["armaa_selector_machinegun_left","armaa_selector_pulse_rifle_right","armaa_selector_boson","heavyarmor","missleracks","hardenedshieldemitter"],
+  "hullMods": ["armaa_selector_machinegun_left","armaa_selector_pulse_rifle_right","armaa_selector_boson","heavyarmor","hardened_subsystems","hardenedshieldemitter","armoredweapons"],
   "weaponGroups": [
     {
       "autofire": false,
