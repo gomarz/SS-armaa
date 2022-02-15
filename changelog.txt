@@ -1,3 +1,23 @@
+-Valkazard
+	- Gauge Drain Speed reduced slightly
+	- HP:1000->950
+	- Removed some redundant hullmod text
+	- Combat Stim hullmod ability now requires >= 1 unit of Recreational Drugs to trigger
+		- Consumes 1 unit per battle (I.E. multiple deployments from retreats/whatnot will still only consume 1)
+	- Increased HE beam cooldown from 7.5s -> 8.5s
+	- SFX revisions for counter shield + torso sprite revision
+
+-Ilorin
+	-Support->Bomber
+	-Reduced RCL Ammo: 8->3
+		-Cooldown: 2.3s -> 1s
+-Add wing: Prodromos
+	- 4 OP, 4 wing interceptor
+	- Frag armament with 1x Active Flare Launcher	
+
+	- Removed bugged/wip missions
+	- Added sandbox mission with all ships
+	- Slight revision to Aleste sprite
 V2.0
 --------------------
 
