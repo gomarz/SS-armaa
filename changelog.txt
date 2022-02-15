@@ -18,6 +18,15 @@
 	- Removed bugged/wip missions
 	- Added sandbox mission with all ships
 	- Slight revision to Aleste sprite
+
+Kouto E-Type
+	- 8 DP
+	- fleet support, grants damage buff to random number of enemy ships based on ECM rating
+	- Gun is modular, but since I can't alter weapon muzzle effects done """incorrectly""" it can only use weapons on a whitelist
+		- if you want to slap whatever you want on it, can edit this in modsettings by adding "ALL" to the whitelist
+	
+-Warthog, Broadsword,Kouto E-Type all have variants and have been added to appropriate factions
+
 V2.0
 --------------------
 

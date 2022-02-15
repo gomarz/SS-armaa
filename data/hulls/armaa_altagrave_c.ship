@@ -25,7 +25,8 @@
 "armaa_legmodule",
 "armaa_karmaC",
 "operations_center",
-"armaa_ma"
+"armaa_ma",
+   "armaa_wingCommander"
   ],
   "builtInWeapons": {
     "E_HEAD": "armaa_altagrave_head_c",
