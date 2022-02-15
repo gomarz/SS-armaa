@@ -6,7 +6,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_rotationEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/weapons/covers/cover_turret_hightech_medium.png",
+  "turretSprite": "graphics/armaa/ships/kouto/armaa_koutoRadome.png",
   "hardpointSprite": "",
   "glowColor": [
     255,
