@@ -1,4 +1,4 @@
-package data.hullmods;
+package data.hullmods.selector;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.Global;
@@ -15,24 +15,10 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import java.awt.Color;
 
-import java.util.HashMap;
-import java.util.Map;
-
-	public class armaa_selector_blunderbuss extends BaseHullMod 
+	public class armaa_selector_ac20 extends BaseHullMod 
 	{
-
-		public static final float AMMO_BONUS = 50f;
-		private static final float CAPACITY_MULT = 1.05f;
 		private static final float DISSIPATION_MULT = 1.05f;
-
-		private static Map mag = new HashMap();
-		static 
-		{
-			mag.put(HullSize.FRIGATE, 15f);
-			mag.put(HullSize.DESTROYER, 20f);
-			mag.put(HullSize.CRUISER, 15f);
-			mag.put(HullSize.CAPITAL_SHIP, 15f);
-		}
+		private static final float ARMOR_BONUS = 50f;
 	
 		@Override
 		public int getDisplaySortOrder() 
@@ -48,10 +34,8 @@ import java.util.Map;
 
 		public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 		{
-			stats.getBallisticAmmoBonus().modifyPercent(id, AMMO_BONUS);
-			stats.getEnergyAmmoBonus().modifyPercent(id, AMMO_BONUS);
-			stats.getMissileAmmoBonus().modifyPercent(id, AMMO_BONUS);
-			stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
+			stats.getArmorBonus().modifyFlat(id, (Float) ARMOR_BONUS);
+			stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);	
 		}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
@@ -60,7 +44,7 @@ import java.util.Map;
 	
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "XBB-01 Shrike";
+ 		if (index == 0) return "KO-AC20 Autocannon";
 		if (index == 1) return "Remove this hullmod to cycle between cores.";
         return null;    
     }
@@ -78,8 +62,8 @@ import java.util.Map;
 		Color[] arrB ={Misc.getHighlightColor(),F,F};
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
-		tooltip.addPara("%s " + "All ammo increased by %s.", pad, arr, "-", (int) Math.round(AMMO_BONUS) + "%");
-		tooltip.addPara("%s " + "Max speed increased by %s.", padS, arr, "-", (int) Math.round((1f-.75f) * 100f)+"");
+		tooltip.addPara("%s " + "Armor increased by %s.", pad, arr, "-", (int) Math.round(ARMOR_BONUS) + " standard units");
+		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((DISSIPATION_MULT - 1f) * 100f) + "%");	
 	}
 
 

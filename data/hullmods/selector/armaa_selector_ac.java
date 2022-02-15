@@ -1,9 +1,10 @@
-package data.hullmods;
+package data.hullmods.selector;
 
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 
-public class armaa_selector_heavyrifle extends BaseHullMod {    
+public class armaa_selector_ac extends BaseHullMod {
+
 		@Override
 		public int getDisplaySortOrder() 
 		{
@@ -15,9 +16,10 @@ public class armaa_selector_heavyrifle extends BaseHullMod {
 		{
 			return 3;
 		}
+    
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "Heavy Pulse Rifle";
+ 		if (index == 0) return "KENG-44 Autocannon";
 		if (index == 1) return "Remove this hullmod to cycle between weapons.";
         return null;    
     }

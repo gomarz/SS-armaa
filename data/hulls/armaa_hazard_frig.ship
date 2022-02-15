@@ -34,7 +34,8 @@
     "D_PAULDRONR": "armaa_valken_rightPauldron_gunmetal",
     "E_HEAD": "armaa_valkenHead_gunmetal",
     "MISSILE": "armaa_valken_missile",
-    "BEACON": "armaa_landingBeacon"
+    "BEACON": "armaa_landingBeacon",
+    "F_LEGS": "armaa_ht_legs"
   },
 "builtInMods": ["armaa_wingCommander","strikeCraft","beamCoatType2","rugged"],
 "builtInWings": ["armaa_valkenmp_wing"],
@@ -177,6 +178,16 @@
       "mount": "HARDPOINT",
       "size": "SMALL",
       "type": "BUILT_IN"
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-8, -0],
+      "renderOrderMod": -1000
     },
  {
       "angle": 0,

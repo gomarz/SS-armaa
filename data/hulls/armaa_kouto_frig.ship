@@ -15,7 +15,8 @@
     "cataphract",
     "reduced_explosion",
     "strikeCraft",
-    "ecm"    
+    "ecm" ,
+    "armaa_variableRifle"   
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kouto_variablerifle",

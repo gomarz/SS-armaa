@@ -1,4 +1,4 @@
-package data.hullmods;
+package data.hullmods.selector;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.Global;
@@ -15,36 +15,39 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import java.awt.Color;
 
-	public class armaa_selector_ac20 extends BaseHullMod 
+public class armaa_selector_boson extends BaseHullMod 
+{
+
+	public static final float DAMAGE_BONUS = 50f;
+	private static final float CAPACITY_MULT = 1.1f;
+	private static final float DISSIPATION_MULT = 1.1f;
+	
+	  @Override
+    	  public int getDisplaySortOrder() 
+	  {
+        	return 2000;
+    	  }
+
+  	  @Override
+  	  public int getDisplayCategoryIndex() 
+	  {
+		return 3;
+    	  }
+
+	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
-		private static final float DISSIPATION_MULT = 1.05f;
-		private static final float ARMOR_BONUS = 50f;
+		stats.getFluxCapacity().modifyMult(id, CAPACITY_MULT);
+		stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);		
+	}
 	
-		@Override
-		public int getDisplaySortOrder() 
-		{
-			return 2000;
-		}
-
-		@Override
-		public int getDisplayCategoryIndex() 
-		{
-			return 3;
-		}
-
-		public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
-		{
-			stats.getArmorBonus().modifyFlat(id, (Float) ARMOR_BONUS);
-			stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);	
-		}
-	
-	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) 
+	{
 
 	}
 	
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "KO-AC20 Autocannon";
+ 		if (index == 0) return "HPC-02S Zenith";
 		if (index == 1) return "Remove this hullmod to cycle between cores.";
         return null;    
     }
@@ -62,8 +65,8 @@ import java.awt.Color;
 		Color[] arrB ={Misc.getHighlightColor(),F,F};
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
-		tooltip.addPara("%s " + "Armor increased by %s.", pad, arr, "-", (int) Math.round(ARMOR_BONUS) + " standard units");
-		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((DISSIPATION_MULT - 1f) * 100f) + "%");	
+		tooltip.addPara("%s " + "Flux Capacity increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");
+		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");		
 	}
 
 

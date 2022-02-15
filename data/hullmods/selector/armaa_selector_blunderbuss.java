@@ -1,4 +1,4 @@
-package data.hullmods;
+package data.hullmods.selector;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.Global;
@@ -15,39 +15,52 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import java.awt.Color;
 
-public class armaa_selector_boson extends BaseHullMod 
-{
+import java.util.HashMap;
+import java.util.Map;
 
-	public static final float DAMAGE_BONUS = 50f;
-	private static final float CAPACITY_MULT = 1.1f;
-	private static final float DISSIPATION_MULT = 1.1f;
-	
-	  @Override
-    	  public int getDisplaySortOrder() 
-	  {
-        	return 2000;
-    	  }
-
-  	  @Override
-  	  public int getDisplayCategoryIndex() 
-	  {
-		return 3;
-    	  }
-
-	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
+	public class armaa_selector_blunderbuss extends BaseHullMod 
 	{
-		stats.getFluxCapacity().modifyMult(id, CAPACITY_MULT);
-		stats.getFluxDissipation().modifyMult(id, DISSIPATION_MULT);		
-	}
+
+		public static final float AMMO_BONUS = 50f;
+		private static final float CAPACITY_MULT = 1.05f;
+		private static final float DISSIPATION_MULT = 1.05f;
+
+		private static Map mag = new HashMap();
+		static 
+		{
+			mag.put(HullSize.FRIGATE, 15f);
+			mag.put(HullSize.DESTROYER, 20f);
+			mag.put(HullSize.CRUISER, 15f);
+			mag.put(HullSize.CAPITAL_SHIP, 15f);
+		}
 	
-	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) 
-	{
+		@Override
+		public int getDisplaySortOrder() 
+		{
+			return 2000;
+		}
+
+		@Override
+		public int getDisplayCategoryIndex() 
+		{
+			return 3;
+		}
+
+		public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
+		{
+			stats.getBallisticAmmoBonus().modifyPercent(id, AMMO_BONUS);
+			stats.getEnergyAmmoBonus().modifyPercent(id, AMMO_BONUS);
+			stats.getMissileAmmoBonus().modifyPercent(id, AMMO_BONUS);
+			stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
+		}
+	
+	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 
 	}
 	
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "HPC-02S Zenith";
+ 		if (index == 0) return "XBB-01 Shrike";
 		if (index == 1) return "Remove this hullmod to cycle between cores.";
         return null;    
     }
@@ -65,8 +78,8 @@ public class armaa_selector_boson extends BaseHullMod
 		Color[] arrB ={Misc.getHighlightColor(),F,F};
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
-		tooltip.addPara("%s " + "Flux Capacity increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");
-		tooltip.addPara("%s " + "Flux Dissipation increased by %s.", padS, arr, "-", (int) Math.round((CAPACITY_MULT - 1f) * 100f) + "%");		
+		tooltip.addPara("%s " + "All ammo increased by %s.", pad, arr, "-", (int) Math.round(AMMO_BONUS) + "%");
+		tooltip.addPara("%s " + "Max speed increased by %s.", padS, arr, "-", (int) Math.round((1f-.75f) * 100f)+"");
 	}
 
 
