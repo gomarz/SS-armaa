@@ -15,20 +15,19 @@
     "cataphract",
     "reduced_explosion",
     "strikeCraft",
-    "ecm" ,
-    "armaa_variableRifle"   
+    "ecm",
+    "armaa_variableRifle"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kouto_variablerifle",
-    "B_TORSO": "armaa_kouto_torso",
     "C_ARML": "armaa_koutoBazooka",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_kouto_leftPauldron",
     "D_PAULDRONR": "armaa_kouto_rightPauldron",
     "E_HEAD": "armaa_kouto_head",
-    "H_GLOW": "armaa_sprigganHeadGlow",
     "F_LEGS": "armaa_ht_legs",
-    "G_RADAR": "armaa_kouto_radardish"
+    "G_RADAR": "armaa_kouto_radardish",
+    "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [
     {
@@ -58,17 +57,14 @@
       "angle": 0,
       "locations": [0, -0]
     },
-  {
-      "angle": 0,
-      "arc": 360,
+    {
       "id": "B_TORSO",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "MISSILE"
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
     },
     {
       "id": "C_ARML",
@@ -148,10 +144,10 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "renderOrderMod":1000,
       "arc": 360,
       "angle": 0,
-      "locations": [-14,0]
+      "locations": [-17, -0],
+      "renderOrderMod": 1000
     }
   ],
   "engineSlots": [
