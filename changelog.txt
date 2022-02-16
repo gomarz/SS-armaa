@@ -1,3 +1,8 @@
+-WINGCOM
+	- Can now be used on standard carriers
+	- Ships that shouldn't be able to equip, but somehow have it anyway, will have their fighters launched from offscreen/other carriers as other wingcom units do
+	- optimized code a bit
+
 -Valkazard
 	- Gauge Drain Speed reduced slightly
 	- HP:1000->950
