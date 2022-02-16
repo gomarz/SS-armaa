@@ -27,7 +27,7 @@ Plasma Jets,armaa_plasmaJets,,,,,,,,5,0.2,0.2,0.5,0.3,0.15,,,,,,,,,,,,,graphics/
 Havoc Drive,armaa_havocDrive,,,,,,,,2,0.15,1,0.5,0.5,0.1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Siege Mode,armaa_siegeMode,,,0.03,,,,,,,1,,1,1,TRUE,,,TRUE,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Recall Device,armaa_recalldevice,,,,,,0.5,,,,0.5,,0.5,30,,,,,,,,,,,,,graphics/icons/hullsys/recall_device.png
-Full Burn,armaa_traveldrive,1,,,,,,,,,2,3.5,2,0,FALSE,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
+Full Burn,armaa_traveldrive,1,,,,,,,,,2,3.5,2,2,FALSE,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
 Adv. Fire Control System,armaa_afcss,,,,,,,,,,1,5,1,20,,,,,,,,,,,,,
 Active Flare Launcher,armaa_flarelauncher_active,,,,,,0.1,,,,,,,10,,,,,,,,,,,,,graphics/icons/hullsys/active_flare_launcher.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
