@@ -2,7 +2,7 @@
   "variantId": "armaa_kouto_frig_standard",
   "hullId": "armaa_kouto_frig",
   "displayName": "Standard",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 10,
   "fluxVents": 10,
   "quality": 1,
