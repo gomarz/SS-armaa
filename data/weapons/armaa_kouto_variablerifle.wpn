@@ -9,8 +9,6 @@
   "hardpointSprite": "graphics/armaa/weapons/armaa_kouto_variablerifle_00.png",
   "specialWeaponGlowHeight": 20,
   "specialWeaponGlowWidth": 10,
-  "numFrames": 2,
-  "frameRate": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
@@ -18,10 +16,13 @@
     49,
     -15.5,
     49,
-    -8.5
+    -8.5,
+    49,
+    -13.5
   ],
   "turretAngleOffsets": [
     0.6,
+    0,
     0
   ],
   "hardpointOffsets": [
@@ -33,6 +34,8 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
+  "numFrames": 2,
+  "frameRate": 0,
   "muzzleFlashSpec": {
     "length": 50,
     "spread": 20,
