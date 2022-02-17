@@ -44,18 +44,6 @@
       "angle": 0,
       "locations": [0, -0]
     },
-  {
-      "angle": 0,
-      "arc": 360,
-      "id": "B_TORSO",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "MISSILE"
-    },
     {
       "id": "C_ARML",
       "size": "SMALL",

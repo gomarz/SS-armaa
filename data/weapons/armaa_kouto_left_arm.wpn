@@ -1,0 +1,57 @@
+{
+  "id": "armaa_kouto_left_arm",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_knuckleEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/kouto/armaa_koutoLeftArm.png",
+  "turretGlowSprite": "graphics/armaa/weapons/armaa_leynos_rocketPunch_glow.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle_00.png",
+  "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    255,
+    155,
+    0,
+    255
+  ],
+  "specialWeaponGlowHeight": 1,
+  "specialWeaponGlowWidth": 1,
+  "hitGlowRadius": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    14
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    26,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 10,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1,
+  "fireSoundTwo": "harpoon_fire"
+}

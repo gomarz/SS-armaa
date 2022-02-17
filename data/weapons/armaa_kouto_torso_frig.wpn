@@ -1,0 +1,56 @@
+{
+  "animationType": "SMOKE",
+  "autocharge": true,
+ "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "system_flare_launcher_active",
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_kouto_torso_frig",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_karma_seeker",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "smokeSpec": {
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackParticleCount": 0,
+    "blowbackSpread": 10,
+    "cloudDuration": 1,
+    "cloudParticleCount": 5,
+    "cloudRadius": 7,
+    "particleColor": [
+      100,
+      155,
+      255,
+      50
+    ],
+    "particleSizeMin": 7,
+    "particleSizeRange": 7
+  },
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    -112,
+    108.5
+  ],
+  "turretOffsets": [
+    -7.5,
+    -4,
+    -7.5,
+    5
+  ],
+  "turretSprite": "graphics/armaa/ships/kouto/armaa_koutoBody.png",
+  "type": "MISSILE"
+}
