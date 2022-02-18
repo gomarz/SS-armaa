@@ -2,7 +2,6 @@
   "animationType": "SMOKE",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
-  #"fireSoundOne": "istl_hitech_arm",
   "fireSoundTwo": "swarmer_fire",
   "hardpointAngleOffsets": [
     -45,

@@ -73,7 +73,7 @@ Truth may have been lost in  the annals of time, but what can't be disputed is i
 
 armaa_valkenx,SHIP,"The eXpansion-type sacrifices the firepower a full Valken lance offers for far greater survivability. The close quarters chaingun and blade combination can rapidly rend apart armor and disable electronic systems, but they're fairly ineffective against well-shielded opponents and optical weapons.",,,
 
-armaa_aleste,SHIP,"Exceptional durability combined with a diverse loadout. The arm-mounted Stake Driver is effective against stripped hull - however, these spikes also detonate shortly after embedding themselves within a ship, creating a localized magnetic field that plays havoc with all manner of electronics. These capabilities are rounded out by two CLAW bits, flimsy yet nimble drones that serve as effective threat multipliers.
+armaa_aleste,SHIP,"Elite Cataphracts that boast exceptional durability and versatility. Their capabilities are rounded out by two CLAW bits, flimsy yet nimble drones that serve as effective threat multipliers.
 
 The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
 
@@ -129,8 +129,9 @@ armaa_valken_gun_black,WEAPON,"The bulky and cumbersome cousin to ArmaA's Laser 
 
 armaa_alesteHead,WEAPON,"Fires bursts of small flechettes at a high rate of fire. The volume of fire can quickly overwhelm shield projectors, but is generally ineffective against armor.",,,
 
-armaa_leynos_minigun_right,WEAPON,"Minigun with a high rate of fire. This latest iteration is renowned for its advanced energized projectiles, effectively nullifying the drawback of limited ammo earlier versions of the weapon had.",,,
-
+armaa_kouto_minigun_right,WEAPON,"Minigun with a high rate of fire. This latest iteration is employs high-velocity slugs adept at overloading shields.",,,
+armaa_koutoBazooka,WEAPON,"Anti-shield weapon. Launched projectiles detonate on proximity.",,,
+armaa_kouto_head,WEAPON,"A basic point defense weapon.",,,
 armaa_aleste_rightArm,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
 
 armaa_aleste_rifle_left,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,

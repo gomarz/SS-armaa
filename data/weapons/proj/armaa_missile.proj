@@ -4,7 +4,7 @@
 	"missileType":"MISSILE",
 	"sprite":"graphics/armaa/weapons/beermissile.png",
 	"size":[7,12],
-	"armingTime":0.5,	
+	"armingTime":0.1,	
 	"noEngineGlowTime":0, # time spent without the engine glow being rendered
 	"center":[3,6],
 	"flameoutTime":1, # total time from flameout to full fadeout
@@ -27,14 +27,14 @@
 						"contrailDuration":4,
 						"contrailWidthMult":1,
 						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
-						"contrailMinSeg":8, # min segment length, in pixels
+						"contrailMinSeg":1, # min segment length, in pixels
 						"contrailMaxSpeedMult":0.1f,
 						"contrailAngularVelocityMult":0.1f,
-						"contrailColor":[155,155,125,100],
+						"contrailColor":[200,200,200,150],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
 				    "width":5.0,
-				    "length":10.0,
+				    "length":40.0,
 				    "angle":180.0},
 				    ]
 }
