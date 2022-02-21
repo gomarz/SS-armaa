@@ -3,7 +3,6 @@
   "specClass": "beam",
   "type": "DECORATIVE",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_knuckleEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/kouto/armaa_koutoLeftArm.png",
@@ -52,6 +51,5 @@
   "width": 10,
   "textureType": ROUGH,
   "textureScrollSpeed": 64,
-  "pixelsPerTexel": 1,
-  "fireSoundTwo": "harpoon_fire"
+  "pixelsPerTexel": 1
 }

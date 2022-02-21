@@ -9,19 +9,19 @@
   "hardpointSprite": "",
   "turretOffsets": [
     -8,
-    -11.5,
     -8,
-    11.5,
+    -8,
+    8,
     -9,
     5,
     -9,
     -5
   ],
   "turretAngleOffsets": [
-    -33.5,
-    33.5,
-    0,
-    0
+    -135,
+    135,
+    180,
+    -180
   ],
   "hardpointOffsets": [
     -5,

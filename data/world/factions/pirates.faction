@@ -35,7 +35,7 @@
 	
 	"knownFighters":{
 		#"tags":[],
-		"fighters":["armaa_valkenmp_wing","armaa_valkenx_wing","armaa_valken_black_wing"],
+		"fighters":["armaa_valkenmp_wing","armaa_valken_black_wing"],
 	},
 	
 	"priorityFighters":{

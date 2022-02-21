@@ -1,26 +1,32 @@
 {
   "id": "armaa_valken_gun_black",
-  "specClass": "projectile",
-  "projectileSpecId": "armaa_as_sword_shot",
+  "specClass": "beam",
   "type": "BALLISTIC",
   "size": "SMALL",
+  #"fireSoundOne": "mechmove",
+  "beamEffect": "data.scripts.weapons.armaa_valkenBladePhys",
   "everyFrameEffect": "data.scripts.weapons.armaa_valkenBEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/weapons/armaa_valken_cutlass.png",
- # "turretGunSprite": "graphics/armaa/weapons/armaa_valken_cutlass.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  #"visualRecoil": 1,
-   "autocharge":true,
-  "fireSoundTwo": "railgun_fire",
+  "glowColor": [
+    255,
+    255,
+    0,
+    0
+  ],
+  "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    25.5,
-    -15
+    21,
+    -9.5
   ],
   "turretAngleOffsets": [
-    0.5
+    -90
   ],
   "hardpointOffsets": [
     17,
@@ -29,14 +35,21 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "barrelMode": "ALTERNATING",
-  "animationType": "MUZZLE_FLASH",
-	"muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":5.0,
-					   "particleSizeMin":15.0,
-					   "particleSizeRange":15.0,
-					   "particleDuration":0.1,
-					   "particleCount":25,
-					   "particleColor":[100,200,255,205]},	
-},
+  "fringeColor": [
+    255,
+    0,
+    0,
+    0
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "darkCore": true,
+  "width": 30,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
 }
