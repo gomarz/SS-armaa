@@ -239,7 +239,6 @@
 			"\"We die for nothing if we do not win the day!\"",
 			"\"They've sent in every damn fighter and bomber in $factionnamearticle armada!\"",
 			"\"Evade, evade, evade! Get outta there! Get outta there!\"",
-			"\"Sheep are to be protected, and yet wolves like you have to be fed. Do you see the problem here? We are the sheepdogs.\"",
 			"\"Come back here. You've made this personal.\"",
 			"\"$squadronname, get into firing patterns! We need to deal with this before $squadleader gets here or we’ll be in trouble!\"",
 			"\"What?! Here?! Protect the flanks!\"",
@@ -297,7 +296,6 @@
 			"\"Follow my orders and we can defeat $factionnamearticle. Don't and you're dead. If you want to win, don't question me again.\"",
 			"\"Back me up!\"",
 			"\"We didn't come this far to not see things through to the end!\"",
-			"\"$squadmember, how many times do I have to tell you to CUT THE CHATTER?!\"",
 			"\"All strikecraft follow $squadleader!\"",
 			"\"Those who survive a long time on the battlefield start to think they're invincible...I bet you do too, $squadmember.\"",
 		],
@@ -353,6 +351,7 @@
 			"\"Roger, tally ho. Let’s chase these dogs off.\"",
 			"\"(sighs) Ludd damn it.\"",
 			"\"You don’t know that! Engage!\"",
+			"\"$squadmember, how many times do I have to tell you to cut the chatter?!\"",
 		],
 		
 		"strikecraft_squad_chatter_intro":

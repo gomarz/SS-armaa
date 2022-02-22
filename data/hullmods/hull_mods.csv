@@ -130,11 +130,6 @@ L ARM: BAZOOKA,armaa_selector_bazooka,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullm
 %s fires three explosive rounds that detonate by proximity trigger.
 
 %s",,graphics/armaa/hullmods/hand_l.png
-L ARM: POWERFIST,alwaysburn,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.TFD3C4_HM_alwaysBurn,"HAND weapons can be changed to better suit the pilot's preferences. 
-
-%s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
-
-%s ",,graphics/armaa/hullmods/hand_l.png
 ,,,,,,,,,,,,,,,,,,
 #VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_valkazardWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardweaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
