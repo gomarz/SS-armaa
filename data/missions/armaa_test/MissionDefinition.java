@@ -9,6 +9,7 @@ import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.mission.MissionDefinitionAPI;
 import com.fs.starfarer.api.mission.MissionDefinitionPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipHullSpecAPI.ShipTypeHints;
 
 public class MissionDefinition implements MissionDefinitionPlugin {
 
@@ -38,7 +39,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 
 		boolean isFlagship = true;
 		for (String testID : Global.getSettings().getAllVariantIds()) {
-			if (testID.contains("armaa_") && Global.getSettings().getVariant(testID).getSource() == VariantSource.HULL && !Global.getSettings().getVariant(testID).getHullSize().equals(ShipAPI.HullSize.FIGHTER) && !Global.getSettings().getVariant(testID).getHullSpec().getTags().contains("module_unselectable")){
+			if (testID.contains("armaa_") && Global.getSettings().getVariant(testID).getSource() == VariantSource.HULL && !Global.getSettings().getVariant(testID).getHullSize().equals(ShipAPI.HullSize.FIGHTER) && !Global.getSettings().getVariant(testID).getHullSpec().getTags().contains("module_unselectable")  && !Global.getSettings().getVariant(testID).getHullSpec().getHints().contains(ShipTypeHints.HIDE_IN_CODEX)){
 				api.addToFleet(FleetSide.PLAYER, testID, FleetMemberType.SHIP, isFlagship);
 				isFlagship = false;
 			}

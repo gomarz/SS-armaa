@@ -52,7 +52,7 @@
 			"\"All we need to do is the job we're given, right?\"",
 			"\"When are we heading out?\"",
 			"\"Let us be blessed with glory as we pass through the gates of hell!\"",
-			"\"Corrupted polities and tainted planets are no longer worth fighting to protect. There's only one thing left worth protecting - and that's the future!\"",
+			"\"Corrupted polities and tainted planets are no longer worth fighting to protect. There's only one thing left worth protecting now. And that's the future.\"",
 			"\"This is gonna be a long day...\"",
 			"\"Your orders, Commander?\"",
 			"\"Aye, what's your business?\"",
@@ -184,6 +184,16 @@
 			"\"Intercept those bandits!\"",
 			"\"Unsurprising. They always return to the scene of the crime.\"",
 			"\"Keep 'em off $squadleader!\"",
+			"\"All those fancy maneuvers won't help you in hell. Time to end this!\"",
+			"\"Help is on the way. Hold out till I get there.\"",
+			"\"Gotcha!\"",
+			"\"Die!\"",
+			"\"Fire away, coward!\"",
+			"\"Oh yeah, 'just weave through the missiles.' What are you, nuts?\"",
+			"\"I will be the one to finish this.\"",
+			"\"They've actually got me on the defensive.\"",
+			"\"Too slow... Gotcha!\"",
+			"\"Enemy detected. They're closing in.\"",
 			"\"Going defensive!\"",
 			"\"On the defensive!\"",
 			"\"I've engaged defensive!\"",
@@ -248,10 +258,10 @@
 		"strikecraft_squad_chatter_intersquad_statement":
 		[
 			"\"Meeting $factionnamearticle on the battlefield... Toe-to-toe, eye-to-eye, wing-to-wing... It feels like my birthday! Ga ha ha!\"",
+			"\"Ready to go yet? Don't get too nervous now. I'm not babysitting you on this operation.\"",
 			"\"It's unwise to take foolish risks. Better conserve your strength until it's needed.\"",
 			"\"One mission. One battle. That's all you ever need to live a comfortable life. I know how the pay works.\"",
 			"\"$squadronname, keep it simple. They’re not worth the effort.\"",
-			"\"$squadronname, engage. Avenge our allies.\"",
 			"\"$squadronname, focus on the enemy IFFs. They’re the backbone of $factionnamearticle force.\"",
 			"\"If you’re unable to fight, disengage. I don’t need $factionname trash getting a lucky shot off.\"",
 			"\"...Listen, I've got an idea for a weapon to use against $factionarticle. If we repack our missiles with a double load of antimatter…\"",
@@ -287,7 +297,9 @@
 			"\"Follow my orders and we can defeat $factionnamearticle. Don't and you're dead. If you want to win, don't question me again.\"",
 			"\"Back me up!\"",
 			"\"We didn't come this far to not see things through to the end!\"",
-			"\"$factionnamearticle. A vile dark plague that spread from the undergrowth of Moloch's black teachings.\"",
+			"\"$squadmember, how many times do I have to tell you to CUT THE CHATTER?!\"",
+			"\"All strikecraft follow $squadleader!\"",
+			"\"Those who survive a long time on the battlefield start to think they're invincible...I bet you do too, $squadmember.\"",
 		],
 		
 		"strikecraft_squad_chatter_intersquad_response":
@@ -306,6 +318,7 @@
 			"\"Perhaps. Stay focused.\"",
 			"\"What was that?\"",
 			"\"Negative!\"",
+			"\"Sorry. In the end, I always rely on you.\"",
 			"\"Got it.\"",
 			"\"Uh-huh.\"",
 			"\"Uh...sure?\"",
@@ -344,6 +357,9 @@
 		
 		"strikecraft_squad_chatter_intro":
 		[
+			"\"$factionnamearticle. A vile dark plague that spread from the undergrowth of Moloch's black teachings.\"",
+			"\"$squadronname, engage. Avenge our allies.\"",
+			"\"$squadronname, entering the AO.\"",
 			"\"Looks like we’ve been noticed. $factionname attack group on incoming vector.\"",
 			"\"Confirmed $factionname forces crossing into combat range.\"",
 			"\"We got an alert we had $factionname crossing the combat zone. This must be that wolf pack.\"",
