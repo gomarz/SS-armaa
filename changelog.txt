@@ -1,40 +1,88 @@
--WINGCOM
-	- Can now be used on standard carriers
-	- Ships that shouldn't be able to equip, but somehow have it anyway, will have their fighters launched from offscreen/other carriers as other wingcom units do
-	- optimized code a bit
-
--Valkazard
-	- Gauge Drain Speed reduced slightly
-	- HP:1000->900
-	- Removed some redundant hullmod text
-	- Combat Stim hullmod ability now requires >= 1 unit of Recreational Drugs to trigger
-		- Consumes 1 unit per battle (I.E. multiple deployments from retreats/whatnot will still only consume 1)
-	- Increased HE beam cooldown from 7.5s -> 8.5s
-	- SFX revisions for counter shield + torso sprite revision
-
--Ilorin
-	-Support->Bomber
-	-Reduced RCL Ammo: 8->3
-		-Cooldown: 2.3s -> 1s
--Add wing: Prodromos
-	- 4 OP, 4 wing interceptor
-	- Frag armament with 1x Active Flare Launcher	
-
-	- Removed bugged/wip missions
-	- Added sandbox mission with all ships
-	- Slight revision to Aleste sprite
-
-Kouto E-Type
+V2.0
+--------------------
+- New Ship, Valkazard
+	- Added new start for starting w/ (ArmaA(Pirates)) (w/ super cool special snowflake nex start text by timid! wowee)
+	- Can be found via exploration otherwise
+- New Ship, Broadsword(AA)
+- New Ship, Warthog(AA)
+- New Ship, Kouto E-Type
 	- 8 DP
 	- fleet support, grants damage buff to random number of enemy ships based on ECM rating
 	- Gun is modular hybrid slot, but since I can't alter weapon muzzle effects done """incorrectly""" it only use weapons on a whitelist by default
 		- if you want to slap anything you want on it, can edit this in modsettings by adding "ALL" to the whitelist
-	
--Warthog, Broadsword,Kouto E-Type variants implemented and have been added to appropriate factions
 
-V2.0
---------------------
+- New fighter, Valken(P)
+	- Carries Anti-Ship Sword, HE weapon with limited uses
+- New Fighter, Prodromos Battle Armor
+	- Fragile but effective anti-fighter/PD unit
 
+- Advanced Optics(AA)
+	- Can no longer be built in
+	- Reduced Range: 100->50
+	- OP: 5-> 3
+- Removed debug text that appeared when using Curvy Laser
+
+-Laser Blade(s)
+	- Increased on-hit knockback. Knockback effect is produced so long as blades are in contact with objects (so spamming blades on top of things should push you further back than just hitting a ship with the end of the blade. Hitting small objects such as fighters and missiles should produce no knockback, usually)
+
+- WINGCOM SUITE:
+	- Can now be used on standard carriers
+	- Ships that shouldn't be able to equip, but somehow have it anyway, will have their fighters launched from offscreen/other carriers as other wingcom units do
+		- This is determined based on weither the ship inherently has fighter bays or not
+	- optimized code a bit
+	- Externalized strings to modSettings
+	- added dialog lines for remaining vanilla fighters
+	- added dialog lines for a few mod fighters
+		- Additional lines can be added with magiclibs modsettings by using "special_wing_lines" map (look at armaa's mod settings for an example)
+	- Removed glow/jitter effect
+	- wingmen will now use different dialog based on the character's 'voice'
+	- wingmen will appear in battle as a pilot of their respective fighter
+		- can also gain new skills over time and level up
+	- Adjusted font colors for more uniformity with normal hullmods
+	- In smaller battles where ships deploy closer to the center of the map, wingmen will now spawn a few thousand SU away instead of from deployment zone if no carrier is present
+        - Max stat bonus conferred by relationship reduced to 30% (was 75% for defensive and 37% for offensive)
+	- Added support for multiple wings
+	- Implemented GUI for changing squad name/callsigns. Heavily based off of a butchered carcass of Nexerelin's Insurance GUI. Thanks, Histi!
+	- Added random little blurbs that squadrons will blather on deployment
+	- Fixed ships with WINGCOM being considered for relationship modifiers even if they did not participate in combat
+	- Fixed retreated ships with WINGCOM not being considered for relationship modifiers
+	- Added fluff text for characters with 'villain' voice
+	- Added fluff text for characters with 'soldier' voice
+	- Wingcom will now check for hullId first before resorting to baseHullId (for fighter skins)
+
+- Strikecraft:
+	- AI navigating back to carrier has been improved
+	- Will now launch from valid carriers (if any) on deployment
+	- Carriers can only supply as many Strikecraft as the number of fighter bays they possess (I.E. a Condor can resupply only two strikecraft at once, as opposed to an unlimited number)
+	- Doubled carrier replacement rate decrease while rearming.
+	- Fixed Strikecraft changing to Frigate HullSize if they took damage that frame
+		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
+	- Fixed shield damage not being displayed
+	- Slightly increased retreat area 2000->2050 in attempt to fix retreat CTD caused by AI attempting to retreat while fighter hullsize
+	- Hull and armor now gradually restore over time on carrier
+	- Carrier Refit can now be cancelled at any time
+		- HP and Armor replenish over time in carrier, so not an all or nothing decision
+		- PPT and Ammo are only restored if full refit time is spent
+	- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods, and squadron chatter
+
+	- Aleste
+		- Reduced damage by 17%
+		- No longer deals EMP damage
+		- Increase Flux Cost: 350 f/s
+
+- Aleste(S)
+	- Shield Efficiency: 0.8->1
+	- DP: 6->7
+- Xyphos(AA)
+	- DP: 5->7
+
+- Leynos
+	- DP: 6->7
+	- Added Rugged Construction Hullmod
+	- Now uses the better(?) Vanilla Damper AI implementation
+- Gunhazard
+	- DP: 3->4
+	- Added Rugged Construction Hullmod
 
 - Revised wings so each LPC has more clearly defined role
 	- Valken-X: HE Fighter
@@ -99,88 +147,13 @@ juno. mk iii
 	- Removed Phase Damper special system
 	- New System: Temporal Shell
 
-
-
 - fixed outdated description for kouto
-
-
-- New Ship, Valkazard
-	- Added new start for starting w/ (ArmaA(Pirates)) (w/ super cool special snowflake nex start text by timid! wowee)
-	- Can be found via exploration otherwise
-- New Ship, Broadsword(AA)
-- New Ship, Warthog(AA)
-- New Ship, Kouto(Pilotable)
 
 - Altagrave can now swap between Vajra and Grenade Launcher
 	- Also overcompensates with a large laser blade, may remove before actual release tho
 - Watchdog can now swap between Hellbore and Gauss Cannon
 	- Siege Mode: Shield Damage Reduction: 50%->10%
 
-- New fighter, Valken(P)
-	- Carries Anti-Ship Sword, HE weapon with limited uses
-- New Fighter, Prodromos Battle Armor
-	- Fragile but effective anti-fighter/PD unit
-
-- Advanced Optics(AA)
-	- Can no longer be built in
-	- Reduced Range: 100->50
-	- OP: 5-> 3
-- Removed debug text that appeared when using Curvy Laser
-
--Laser Blade(s)
-	- Increased on-hit knockback. Knockback effect is produced so long as blades are in contact with objects (so spamming blades on top of things should push you further back than just hitting a ship with the end of the blade. Hitting small objects such as fighters and missiles should produce no knockback, usually)
-	- Aleste
-		- Reduced damage by 17%
-		- No longer deals EMP damage
-		- Increase Flux Cost: 350 f/s
-
-- Aleste(S)
-	- Shield Efficiency: 0.8->1
-	- DP: 6->7
-- Xyphos(AA)
-	- DP: 5->7
-
-- Leynos
-	- DP: 6->7
-	- Added Rugged Construction Hullmod
-	- Now uses the better(?) Vanilla Damper AI implementation
-- Gunhazard
-	- DP: 3->4
-	- Added Rugged Construction Hullmod
-
-- WINGCOM SUITE:
-	- Externalized strings to modSettings
-	- added dialog lines for remaining vanilla fighters
-	- added dialog lines for a few mod fighters
-		- Additional lines can be added with magiclibs modsettings by using "special_wing_lines" map (look at armaa's mod settings for an example)
-	- Removed glow/jitter effect
-	- wingmen will now use different dialog based on the character's 'voice'
-	- wingmen will appear in battle as a pilot of their respective fighter
-	- Adjusted font colors for more uniformity with normal hullmods
-	- In smaller battles where ships deploy closer to the center of the map, wingmen will now spawn a few thousand SU away instead of from deployment zone if no carrier is present
-        - Max stat bonus conferred by relationship reduced to 30% (was 75% for defensive and 37% for offensive)
-	- Added support for multiple wings
-	- Implemented GUI for changing squad name/callsigns. Heavily based off of a butchered carcass of Nexerelin's Insurance GUI. Thanks, Histi!
-	- Added random little blurbs that squadrons will blather on deployment
-	- Fixed ships with WINGCOM being considered for relationship modifiers even if they did not participate in combat
-	- Fixed retreated ships with WINGCOM not being considered for relationship modifiers
-	- Added fluff text for characters with 'villain' voice
-	- Added fluff text for characters with 'soldier' voice
-	- Wingcom will now check for hullId first before resorting to baseHullId (for fighter skins)
-
-- Strikecraft:
-	- AI navigating back to carrier has been improved
-	- Carriers can only supply as many Strikecraft as the number of fighter bays they possess (I.E. a Condor can resupply only two strikecraft at once, as opposed to an unlimited number)
-	- Doubled carrier replacement rate decrease while rearming.
-	- Fixed Strikecraft changing to Frigate HullSize if they took damage that frame
-		- Should fix inconsistency with some onhit effects that used hullsize, fighter damage bonuses from skills, etc
-	- Fixed shield damage not being displayed
-	- Slightly increased retreat area 2000->2050 in attempt to fix retreat CTD caused by AI attempting to retreat while fighter hullsize
-	- Hull and armor now gradually restore over time on carrier
-	- Carrier Refit can now be cancelled at any time
-		- HP and Armor replenish over time in carrier, so not an all or nothing decision
-		- PPT and Ammo are only restored if full refit time is spent
-	- added modSettings for custom configuration of refit penalties for (ideally) mod weapons and hullmods, and squadron chatter
 - Einhander:
 	- Drone weapon is now equipped directly on the main ship
 	- Increased OP: 30->39
