@@ -184,9 +184,9 @@
 {"file":"sounds/armaa/emp_emitter_activate.ogg","pitch":1,"volume":0.5},
 	],
 	"armaa_sword_strike":[
-		{"file":"sounds/armaa/armaa_sword_impact.ogg","pitch":1,"volume":0.3},
-		{"file":"sounds/armaa/armaa_sword_impact.ogg","pitch":1.1,"volume":0.3},
-		{"file":"sounds/armaa/armaa_sword_impact.ogg","pitch":0.9,"volume":0.3},
+		{"file":"sounds/armaa/armaa_sword_impact.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/armaa_sword_impact.ogg","pitch":1.03,"volume":1.03},
+		{"file":"sounds/armaa/armaa_sword_impact.ogg","pitch":0.97,"volume":.97},
 	],	
 }
 

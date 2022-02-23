@@ -3,7 +3,7 @@
 	"type":"DRONE_LAUNCHER",
 	"aiType":"DRONE_LAUNCHER_PD",
 	
-	"droneVariant":"armaa_bit_sys_ex",
+	"droneVariant":"spark_Interceptor",
 	
 	"allowFreeRoam":true,
 	
