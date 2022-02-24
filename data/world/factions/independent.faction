@@ -16,10 +16,10 @@
 		"hulls":[
             "armaa_garegga",
 	    "armaa_aleste_frig",
-	    "armaa_leynos_frig",
 	    "armaa_hazard_frig",
 	    "armaa_xyphos",
-	    "armaa_monitor",		
+	    "armaa_broadsword",
+	    "armaa_warthog",	
 		],
 	},
 	"knownShips":{

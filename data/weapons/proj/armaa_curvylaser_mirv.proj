@@ -51,7 +51,7 @@
 					"minTimeToSplit":2,
 					"canSplitEarly":true,
 					"splitSound":"sabot_srm_split",
-					"numShots":116,
+					"numShots":58,
 					"damage":50,
 					"emp":50,
 					"damageType":ENERGY,

@@ -166,7 +166,7 @@ Dispersal Grenade,armaa_aleste_grenade_left,2,,2500,600,,200,,5,40,0,50,,,HIGH_E
 ,armaa_pikeSecondary,1,,100,100,,50,25,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,,,
 Rynex Laser Rifle,armaa_pila_rynex,1,,1000,600,,100,,3,30,75,,,,ENERGY,,,0.25,0.25,1,,0,0,0,0,,1500,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,50,60,3,60,0,30,8,80,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,525,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,,,
+Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,50,60,3,60,0,30,8,80,ENERGY,25,,,0.05,2,0.05,0,0,0,0,,650,,,,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Prodromos,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_prodromos_torso,,,,500,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
