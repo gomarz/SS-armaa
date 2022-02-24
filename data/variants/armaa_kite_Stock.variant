@@ -1,0 +1,14 @@
+{
+    "displayName": "Stock",
+    "fluxCapacitors": 10,
+    "fluxVents": 5,
+    "hullId": "kite_original",
+    "hullMods": [
+        "expanded_cargo_holds",
+        "additional_berthing"
+    ],
+    "permaMods": ["shielded_holds"],
+    "quality": 0.75,
+    "variantId": "armaa_kite_Stock",
+    "weaponGroups": []
+}

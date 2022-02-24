@@ -45,10 +45,9 @@
 
 	"startShipsSuper":
 	[
-		["armaa_valkazard_standard", "kite_original_Stock"]
+		["armaa_valkazard_standard", "mudskipper2_CS"]
 	],
 	"startSpecialItems":[
-		[["armaa_cataphract_package",""]],
 		[["cryoarithmetic_engine",""]],
 	],
 }

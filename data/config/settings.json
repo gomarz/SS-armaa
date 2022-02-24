@@ -34,6 +34,7 @@
 		},
 		"misc":{
                         "armaa_target":"graphics/warroom/taskicons/just_kill_it.png",
+			"armaa_neurohelmet":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",
 			"drugs":"graphics/armaa/icons/hullsys/armaa_drugs_icon.png",
 			"ai":"graphics/armaa/icons/hullsys/armaa_ai_core.png",
 			"armaa_sfxpulse":"graphics/armaa/fx/armaa_pulse.png",

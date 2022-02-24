@@ -30,16 +30,16 @@
 	"hullFrequency":{
 			"hulls":
 			{
-				"armaa_altagrave":0.3,
-				"armaa_altagrave_c":0.3,
-				"armaa_einhander":0.3,
-				"armaa_garegga":1,
+				"armaa_altagrave":1.1,
+				"armaa_einhander":0.8,
+				"armaa_garegga":1.1,
 				"armaa_aleste_frig":1,
-				"armaa_leynos_frig":1,
-				"armaa_hazard_frig":1,
-				"armaa_xyphos":1,
-				"armaa_monitor":0.1,
-				"armaa_valkyrie":1,	
+				"armaa_leynos_frig":0.9,
+				"armaa_hazard_frig":1.2,
+				"armaa_xyphos":1.2,
+				"armaa_broadsword":1.2,
+				"armaa_monitor":0.5,
+				"armaa_valkyrie":1.1,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.2,
@@ -115,10 +115,9 @@
     "priorityShips":{
         #"tags":[],
         "hulls":[
-            "armaa_altagrave",
-            "armaa_altagrave_c",
             "armaa_garegga",
-	    "armaa_einhander",
+	    "armaa_broadsword",
+	    "armaa_warthog",
 	    "armaa_aleste_frig",
 	    "armaa_leynos_frig",
 	    "armaa_hazard_frig",

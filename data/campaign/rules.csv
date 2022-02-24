@@ -91,15 +91,18 @@ AddText""111 years later, circa c.205...""
 SetTextHighlights 111 years
 AddText""""
 AddText""""
-AddText""What happens next is a blur. You found yourself face down in the hold, disoriented and enervated. With near herculean effort you manage to make your way further into the soundless station, far worse for wear than you remember. Power to the majority of the station failed, and it seemed only through sheer chance was the section containing your cryopod spared...""
+AddText""What happens next is a blur. You found yourself face down in the hold, disoriented and enervated. Making your way further into the soundless station you discover power to the majority of the station failed - through sheer chance was the section containing your cryopod spared.""
 SetTextHighlights sheer chance
 AddText""Several months later...""
 SetTextHighlights Several months later
 
-AddText ""You pilot the VALKAZARD. This craft can swap out various weapons depending on the circumstances, ranging from mundane chainguns and autocannons to more exotic weapons such as a long range anti-armor beam weapon and particle cannon.""
+AddText ""You pilot the VALKAZARD. Located during your flight from the Nekki System, it can swap out various weapons depending on the circumstances.""
 SetTextHighlights VALKAZARD
 
-AddText ""To reach its full potential, the experimental piloting system aboard the craft requires a steady supply of <RECREATIONAL DRUGS> which are consumed during engagements.""
+AddText ""The craft requires RECREATIONAL DRUGS to unlock its full potential, which are consumed during engagements. Acquire some as soon as possible.""
 SetTextHighlights RECREATIONAL DRUGS
 AddText ""The ship system SILVERSWORD can be used to dramatically increase performance when needed.""
-SetTextHighlights SILVERSWORD",,,
+SetTextHighlights SILVERSWORD
+
+AddText ""There are few you can call a friend. However, you possess a Cryoarithmetic Engine as a starting bonus.""
+SetTextHighlights Cryoarithmetic Engine",,,
