@@ -166,7 +166,7 @@
 			"\"Sir, you'll never guess what we turned up during inventory...\"",
 			"\"You can't always get what you want, but if you know the right people, you just might get what you need.\"",
 			"\"Whoever said might doesn't make right, was obviously on the losing side!\"",
-			"\"When I make Lieutenant, heads will ROLL!\"",
+			"\"When I make Lieutenant, heads will roll.\"",
 		],
 
 		"strikecraft_squad_chatter_faithful":[
@@ -180,6 +180,7 @@
 			
 		],
 
+		#Plays when fighters in range of their target
 		"strikecraft_squad_chatter_combat":
 		[
 			"\"Intercept those bandits!\"",
@@ -268,7 +269,8 @@
 			
 			
 		],
-
+		
+		#plays when source ship is destroyed
 		"strikecraft_squad_chatter_leader_lost":
 		[
 			"\"$squadleader, please respond!\"",
@@ -276,6 +278,7 @@
 			
 		],
 
+	
 		"strikecraft_squad_chatter_intersquad_statement":
 		[
 			"\"Understand them? The $factionnamearticle? How could we understand them?\"",
@@ -388,6 +391,7 @@
 			"\"I can't believe how many I've taken out... Why don't they see the futility of this?\"",
 		],
 		
+		#plays at battle start
 		"strikecraft_squad_chatter_intro":
 		[
 			"\"Oh, it looks like we've got a couple of rats with bad eyesight. Don't you know east from north?\"",
@@ -439,6 +443,19 @@
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",
+			"Reapers",
+			"Flying Panthers",
+			"Jokers",
+			"Cutthroats",
+			"Hammerheads",
+			"Black Knights",
+			"Predators",
+			"Flaming Skulls",
+			"Scorpions",
+			"Skulls",
+			"",
+			"Wulong",
+			"Centipede",
 			"Avanti's Angels",
 			"Emerald Squadron",
 			"Viridian Squadron",
@@ -464,6 +481,8 @@
 			"Monarch Wing",
 			"Alpha Wing",
 			"Beta Wing",
+			"Kappa Wing",
+			"Gamma Wing",
 			"Delta Wing",
 			"Yellow Squadron",
 			"Silver Lynxes",
