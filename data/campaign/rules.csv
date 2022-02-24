@@ -70,11 +70,36 @@ armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $valkazard score:1000",ShowDefaultVisual,,,
 ,,,,,,
 arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
-!$armaarmatura_pirates_ChangeMind","AddText ""Due to the outcome of numerous failed business ventures, crippling debt, and an uncanny knack for making enemies in high places, you have found yourself an outcast among most of civilized space-faring society. Your luck has seemingly changed for the better after a chance discovery in a dead system, rendered uninhabitable during one of the AI Wars. Armed with this machine, a small crew of individuals looking to make something of themselves, you set your eyes to the stars...""
+!$armaarmatura_pirates_ChangeMind","AddText ""c+94 - First AI War""
+SetTextHighlights c+94 - First AI War
+AddText ""Above the molten rock that was once Meshan, home of the ArmaA Corporation, the panicked shrieks of crewmembers and pilots alike eventually fade into nothingness. With your carrier gone, escape was hopeless - all you could manage was to power down all non-essential systems of your Valken and hide yourself away from the consolidated strength of Tri-Tachyon's AI warfleets. Seconds turn into minutes, minutes into hours. The vessels remain, as if keeping vigil. Finally they depart.""
+SetTextHighlights AI warfleets
+
+AddText""With little time and lesser fuel, you scramble to find refuge. Broken remnants of ArmaA's security forces are encountered; together you retreat to an abandoned research station. Restoring basic power is a straightforward task, and with the issue of immediate survival resolved, debate soon breaks out on what to do next. One man suggest surrender. 'This war could drag on for cycles.', he says. A bandage woman glares at him, before retorting angrily:""
+SetTextHighlights This war could drag on for cycles
+
+AddText"" 'Take a look at Meshan, friend. Does that look like the handiwork of someone willin' to take prisoners?'"",
+SetTextHighlights Meshan
+
+AddText""Already weary from the days events, you retire from the argument to a cryopod set up in storage to recuperate. Supplies were scarce, and the timetable was nebulous - better to simply wait this mess out. Surely help would arrive soon.""
+SetTextHighlights cryopod
 $armaarmatura_pirates_ChangeMind = true 0",,,
 armaa_seggs,ExerelinNGCStep4Plus,"$playerFaction == armaarmatura_pirates
 $nex_lastSelectedFleetType == SUPER
-#maybe if you add more I actually do fancier rulecmd but im bored and sexless rn","AddText ""You pilot the Valkazard that can swap out various weapons depending on the circumstances, ranging from mundane chainguns and autocannons to more exotic weapons such as a long range anti-armor beam weapon and particle cannon.""
-SetTextHighlights Valkazard
-AddText ""The ship system Silversword can be used to dramatically increase the performance in short bursts when needed.""
-SetTextHighlights Silversword",,,
+#maybe if you add more I actually do fancier rulecmd but im bored and sexless rn","AddText""""
+AddText""111 years later, circa c.205...""
+SetTextHighlights 111 years
+AddText""""
+AddText""""
+AddText""What happens next is a blur. You found yourself face down in the hold, disoriented and enervated. With near herculean effort you manage to make your way further into the soundless station, far worse for wear than you remember. Power to the majority of the station failed, and it seemed only through sheer chance was the section containing your cryopod spared...""
+SetTextHighlights sheer chance
+AddText""Several months later...""
+SetTextHighlights Several months later
+
+AddText ""You pilot the VALKAZARD. This craft can swap out various weapons depending on the circumstances, ranging from mundane chainguns and autocannons to more exotic weapons such as a long range anti-armor beam weapon and particle cannon.""
+SetTextHighlights VALKAZARD
+
+AddText ""To reach its full potential, the experimental piloting system aboard the craft requires a steady supply of <RECREATIONAL DRUGS> which are consumed during engagements.""
+SetTextHighlights RECREATIONAL DRUGS
+AddText ""The ship system SILVERSWORD can be used to dramatically increase performance when needed.""
+SetTextHighlights SILVERSWORD",,,

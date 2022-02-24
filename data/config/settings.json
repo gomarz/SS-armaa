@@ -28,17 +28,14 @@
 			"armaa_ppa_core":"graphics/armaa/fx/armaa_ppa_beam_core.png",	
 		},
 		"portraits":{
-			"armaa_portrait_shard":"graphics/armaa/portraits/armaa_ai.png",
+			"armaa_portrait_shard":"graphics/portraits/portrait_ai1.png",
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 		},
 		"misc":{
-			"neuro":"graphics/armaa/icons/hullsys/armaa_neural_piloting_interface.png",
-		        "neuro2":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",
                         "armaa_target":"graphics/warroom/taskicons/just_kill_it.png",
 			"drugs":"graphics/armaa/icons/hullsys/armaa_drugs_icon.png",
 			"ai":"graphics/armaa/icons/hullsys/armaa_ai_core.png",
-			"sfxkarma":"graphics/armaa/fx/armaa_karma.png",
 			"armaa_sfxpulse":"graphics/armaa/fx/armaa_pulse.png",
 			"armaa_pdWarning":"graphics/armaa/icons/hullsys/armaa_pdWarning.png",
 			"legs_10":"graphics/armaa/ships/valkazard/armaa_valkazard_legs01.png",

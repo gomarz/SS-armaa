@@ -45,10 +45,10 @@
 
 	"startShipsSuper":
 	[
-		["armaa_valkazard_standard", "armaa_gemini_Standard"]
+		["armaa_valkazard_standard", "kite_original_Stock"]
 	],
 	"startSpecialItems":[
 		[["armaa_cataphract_package",""]],
-		[["armaa_advcataphract_package",""]],
+		[["cryoarithmetic_engine",""]],
 	],
 }
