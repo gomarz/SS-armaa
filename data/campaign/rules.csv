@@ -2,15 +2,17 @@ id,trigger,conditions,script,text,options,notes
 # Market descriptions,,,,,,
 flavorTextMarketMeshan,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == independent
-$market.id == armaa_meshanii_market","AddText ""One of the crewmembers aboard the shuttle with you note that several prominently placed, futuristic billboards starkly contrast with the decidely archaiac  architecture of several buildings you've seen as your shuttle makes it's way to the landing zone. When ArmaA gained rights to administer this colony, it seems to have produced a peculiar melting pot of consumerism in excess with the more subdued and traditional sensibilities of the colonies original denizens. As if on cue, two security officers in bizzarely ornate power armor meander into view, ostensibly to deal with some kind of ruckus."" marketFlavorTextColor
+$market.id == armaa_meshanii_market","AddText ""On the shuttle ride into civilization proper, one of your bodyguards note that the decidely archaic architecture of most buildings gradually gives way to starkly contrasting billboards advertising all manners of goods and services developed by the corpos who call this planet home."" 
+AddText ""You vaguely recall learning that this peculiar melting pot of consumerism in excess combined with subdued and traditional sensibilities came about as a result of one of the megacorporations taking up the task of 'recivilizing' planet succeeding the chaos of the AI Wars. Two security officers in rather gaudy attire meander by, ostensibly to deal with some kind of ruckus."" marketFlavorTextColor
 AddText ""The haze of pollution hangs thick above you, but the people here seem to be getting along well enough - or at least what qualifies as 'well enough' in the Sector, these days."" marketFlavorTextColor",,,
 flavorTextMarketAbandonedStation,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $abandonedStation == true score:100
-$market.id == armaa_research_station score: 1000","AddText ""A small shuttle is easily able to navigate about the station and land at one of the functional hangars. Notably, another shuttle is here as well - the owner appears to have made this a temporary base of operations for some reason, although it appears they are not present currently. From what they have left behind, you are able to ascertain that they are in the system in search of something."" marketFlavorTextColor
+$market.id == armaa_research_station score: 1000","AddText ""A small shuttle is easily able to navigate about the station and land at one of the functional hangars. Notably, a powered down craft is here as well - there is no sign of the whomever left it here."" marketFlavorTextColor
 AddText ""It appears that an area used to store smaller strikecraft was uncompletely undisturbed, and there may be something remaining still worth taking."" marketFlavorTextColor",,,
 armaa_resStationOption,PopulateOptions,"$market.id == armaa_research_station 
-!$armaa_searchStation",,,9:armaa_stationInspect:Order a more detailed investigation,
-armaa_resStationOption2,DialogOptionSelected,$option == armaa_stationInspect,"$armaa_searchStation = true
+!$armaa_searchStation
+!$global.hasValk",,,9:armaa_stationInspect:Order a more detailed investigation,
+armaa_resStationOption2,DialogOptionSelected,$option == armaa_stationInspect,"$armaa_searchStation = true 
 AddTextSmall ""Discovered something of value may be in the system"" highlight","Your fleet fruitlessly attempts to raise the station, and predictably receive's no response.
 A team is deployed to the station as a secondary measure. You watch from the feeds of the crew as the proceed to comb throughout the station for anything useful.
 
@@ -72,16 +74,13 @@ $valkazard score:1000",ShowDefaultVisual,,,
 arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
 !$armaarmatura_pirates_ChangeMind","AddText ""c+94 - First AI War""
 SetTextHighlights c+94 - First AI War
-AddText ""Above the molten rock that was once Meshan, home of the ArmaA Corporation, the panicked shrieks of crewmembers and pilots alike eventually fade into nothingness. With your carrier gone, escape was hopeless - all you could manage was to power down all non-essential systems of your Valken and hide yourself away from the consolidated strength of Tri-Tachyon's AI warfleets. Seconds turn into minutes, minutes into hours. The vessels remain, as if keeping vigil. Finally they depart.""
+AddText ""You are one of the few survivors following the annihilation of Meshan. While escaping the system was hopeless, you could power down all nonessential systems aboard your craft to evade detection.""
 SetTextHighlights AI warfleets
 
-AddText""With little time and lesser fuel, you scramble to find refuge. Broken remnants of ArmaA's security forces are encountered; together you retreat to an abandoned research station. Restoring basic power is a straightforward task, and with the issue of immediate survival resolved, debate soon breaks out on what to do next. One man suggest surrender. 'This war could drag on for cycles.', he says. A bandage woman glares at him, before retorting angrily:""
+AddText""With little time and lesser supplies, you and your compatriots scrambled to survive. The plan was simply to punch a distress signal into hyperspace, and wait things out - however long that may take.""
 SetTextHighlights This war could drag on for cycles
 
-AddText"" 'Take a look at Meshan, friend. Does that look like the handiwork of someone willin' to take prisoners?'"",
-SetTextHighlights Meshan
-
-AddText""Already weary from the days events, you retire from the argument to a cryopod set up in storage to recuperate. Supplies were scarce, and the timetable was nebulous - better to simply wait this mess out. Surely help would arrive soon.""
+AddText""Run ragged from recent events, you retired to a recently set up cryopod. With any luck, you would awake to a more peaceful sector.""
 SetTextHighlights cryopod
 $armaarmatura_pirates_ChangeMind = true 0",,,
 armaa_seggs,ExerelinNGCStep4Plus,"$playerFaction == armaarmatura_pirates
@@ -104,5 +103,5 @@ SetTextHighlights RECREATIONAL DRUGS
 AddText ""The ship system SILVERSWORD can be used to dramatically increase performance when needed.""
 SetTextHighlights SILVERSWORD
 
-AddText ""There are few you can call a friend. However, you possess a Cryoarithmetic Engine as a starting bonus.""
-SetTextHighlights Cryoarithmetic Engine",,,
+AddText ""There are few you can call a friend. However, you possess an illicitly acquired Combat Drone Replicator as a starting bonus.""
+SetTextHighlights Combat Drone Replicator",,,

@@ -18,8 +18,8 @@
   ],
   "hitGlowRadius": 0,
   "turretOffsets": [
-    32,
-    24.5
+    28,
+    27
   ],
   "turretAngleOffsets": [
     0
@@ -43,11 +43,8 @@
     255,
     255
   ],
-  "width": 50,
-  "textureType": [
-    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
-    "graphics/armaa/fx/armaa_ppa_beam_core.png"
-  ],
+  "width": 40,
+  "textureType": ROUGH,
   "textureScrollSpeed": 300,
   "pixelsPerTexel": 3,
   "pierceSet": [

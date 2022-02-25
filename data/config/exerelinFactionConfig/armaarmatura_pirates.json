@@ -46,9 +46,9 @@
 
 	"startShipsSuper":
 	[
-		["armaa_valkazard_standard", "mudskipper2_CS"]
+		["armaa_valkazard_standard", "hermes_Standard"]
 	],
 	"startSpecialItems":[
-		[["cryoarithmetic_engine",""]],
+		[["drone_replicator",""]],
 	],
 }
