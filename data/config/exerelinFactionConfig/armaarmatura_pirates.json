@@ -5,6 +5,7 @@
     "freeStart":true,
 	"spawnAsFactionId":"player",
     "noRandomizeRelations":true,
+    "difficultyString":"hard",
 	# transfer to this faction at start (after new game time pass)
     "ngcTooltip":"This is the story of a pilot who wanted to become ...",
 	

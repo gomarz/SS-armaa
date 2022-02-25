@@ -1,15 +1,15 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number,,,,,,,,,,,,,,,,,,
-armaa_kouto_wing,armaa_kouto_Standard,"fighter2, fighter, high, armaa_advcataphract_bp,cataphract,rare_bp,leader_no_swarm,attack_at_an_angle,rapid_reform",3,0.3,5,14,DIAMOND,3000,600,,1,FIGHTER,Hvy Fighter (Kinetic),20,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
-armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t,attack_at_an_angle",2,0.4,4,11,V,4000,600,0,2,FIGHTER,Close Combat(HE),14,6500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_valkencannon_wing,armaa_valkencannon_Standard,"bomber3,bomber,armaa_advcataphract_bp,cataphract,merc,rare_bp,no_sell",3,0.2,5,25,BOX,4000,600,100,1,FIGHTER,Strike (ENERGY),25,14000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_ilorin_wing,armaa_ilorin_standard,"bomber2,bomber,armaa_cataphract_bp,cataphract,rare_bp,leader_no_swarm,rapid_reform,wingman_no_swarm,match_leader_facing",2,0.3,4,15,BOX,4000,700,,2,BOMBER,Support (HE),15,10000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_record_wing,armaa_record_Standard,"interceptor3, interceptor,cataphract,no_sell,no_drop",2,0.55,4,8,CLAW,6500,550,0,2,INTERCEPTOR,Interceptor,15,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
-armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor2,interceptor,armaa_cataphract_bp,cataphract,rare_bp",0,0.1,3,6,CLAW,4000,600,,3,INTERCEPTOR,Interceptor/Coffin,9,4250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_kouto_wing,armaa_kouto_Standard,"fighter3, fighter, high, armaa_advcataphract_bp,cataphract,rare_bp,leader_no_swarm,attack_at_an_angle,rapid_reform",3,0.3,5,14,DIAMOND,3000,600,,1,FIGHTER,Hvy Fighter (Kinetic),20,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t,attack_at_an_angle",2,0.4,4,11,V,4000,600,,2,FIGHTER,Close Combat(HE),14,6500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_valkencannon_wing,armaa_valkencannon_Standard,"bomber3,bomber,armaa_advcataphract_bp,cataphract,merc,rare_bp,no_sell, rd_no_extra_craft",3,0.2,5,25,BOX,4000,600,,1,FIGHTER,Strike (ENERGY),30,14000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_ilorin_wing,armaa_ilorin_standard,"bomber3,bomber,armaa_cataphract_bp,cataphract,rare_bp,leader_no_swarm,rapid_reform,wingman_no_swarm,match_leader_facing",2,0.3,4,15,BOX,4000,700,,2,BOMBER,Support (HE),15,10000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_record_wing,armaa_record_Standard,"interceptor3, interceptor,cataphract,no_sell,no_drop",2,0.55,4,8,CLAW,6500,550,,2,INTERCEPTOR,Interceptor,15,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cataphract_bp,cataphract,rare_bp",0,0.1,3,6,CLAW,4000,600,,3,INTERCEPTOR,Interceptor/Coffin,9,4250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract,rare_bp,attack_at_an_angle",0,0.1,3,5,CLAW,4000,600,,4,FIGHTER,Kinetic,8,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t,leader_no_swarm,rapid_reform,attack_at_an_angle",3,0.3,5,20,BOX,4000,600,-50,1,FIGHTER,General Purpose,25,12000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,0,2,BOMBER,Lancer,15,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t,leader_no_swarm,rapid_reform,attack_at_an_angle, rd_no_extra_craft",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,12000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,,2,BOMBER,Lancer,15,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_einhander_wing,armaa_einhander_ftr_std,"fighter5,fighter,cataphract,no_sell,no_drop,independent_of_carrier",5,0.9,6,25,BOX,4000,1000,0,1,FIGHTER,Experimental Cataphract,35,26000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_einhander_wing,armaa_einhander_ftr_std,"fighter3,fighter,cataphract,no_sell,no_drop,independent_of_carrier",5,0.9,6,25,BOX,4000,1000,,1,FIGHTER,Experimental Cataphract,35,26000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,

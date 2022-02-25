@@ -23,19 +23,19 @@
 
 	"startShipsCarrierSmall":
 	[
-		["armaa_aleste_as_f", "armaa_valkyrie_standard","armaa_aleste_swordsman"],
-		["armaa_leynos_standard","armaa_hazard_standard","armaa_hazard_standard","armaa_condor_Support"],
-		["armaa_xyphos_standard","armaa_xyphos_standard","condor_Support"]
+		["armaa_aleste_as_f", "armaa_valkyrie_standard","armaa_hazard_standard"],
+		["armaa_warthog_standard","armaa_broadsword_standard","armaa_condor_Support"],
+		["armaa_leynos_standard","condor_Support"]
 	],
 
-    "startShipsCarrierLarge":[["mora_Assault", "armaa_xyphos_standard", "armaa_hazard_standard","armaa_monitor_standard","armaa_hazard_standard"]],
+    "startShipsCarrierLarge":[["mora_Assault", "armaa_xyphos_standard", "armaa_broadsword_standard","armaa_hazard_standard","armaa_warthog_standard"]],
 	
 	"startShipsCombatSmall":
 	[
 		["armaa_monitor_standard", "armaa_garegga_standard","wayfarer_Standard"],
 		["armaa_garegga_standard","armaa_garegga_tt_assault","buffalo_Standard"]
 	],
-	"startShipsSuper":[["armaa_altagrave_c_Standard","wayfarer_Standard"],["armaa_altagrave_standard","wayfarer_Standard"],["armaa_garegga_standard","wayfarer_Standard"],
+	"startShipsSuper":[["armaa_altagrave_c_Standard","wayfarer_Standard"],["armaa_altagrave_standard","wayfarer_Standard"],
 ["armaa_einhander_Strike", "armaa_condor_Support"],],
 	"startSpecialItems":[
 		[["armaa_cataphract_package",""]],
