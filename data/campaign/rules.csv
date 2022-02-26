@@ -74,13 +74,13 @@ $valkazard score:1000",ShowDefaultVisual,,,
 arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
 !$armaarmatura_pirates_ChangeMind","AddText ""c+94 - First AI War""
 SetTextHighlights c+94 - First AI War
-AddText ""You are one of the few survivors following the annihilation of Meshan. While escaping the system was hopeless, you could power down all nonessential systems aboard your craft to evade detection.""
+AddText ""You are one of the few survivors following the annihilation of Meshan by AI warfleets. While escaping the system was hopeless, you could power down all nonessential systems aboard your craft to evade detection.""
 SetTextHighlights AI warfleets
 
-AddText""With little time and lesser supplies, you and your compatriots scrambled to survive. The plan was simply to punch a distress signal into hyperspace, and wait things out - however long that may take.""
-SetTextHighlights This war could drag on for cycles
+AddText""With little supplies and less fuel, you and your compatriots scrambled to survive. The plan was simply to punch a distress signal into hyperspace and wait things out in cryosleep aboard a research station far from the center of the system.""
+SetTextHighlights research station
 
-AddText""Run ragged from recent events, you retired to a recently set up cryopod. With any luck, you would awake to a more peaceful sector.""
+AddText""Run ragged from recent events, you retired to a recently set up cryopod. With any luck, you would awake to better times.""
 SetTextHighlights cryopod
 $armaarmatura_pirates_ChangeMind = true 0",,,
 armaa_seggs,ExerelinNGCStep4Plus,"$playerFaction == armaarmatura_pirates
@@ -88,20 +88,17 @@ $nex_lastSelectedFleetType == SUPER
 #maybe if you add more I actually do fancier rulecmd but im bored and sexless rn","AddText""""
 AddText""111 years later, circa c.205...""
 SetTextHighlights 111 years
-AddText""""
-AddText""""
-AddText""What happens next is a blur. You found yourself face down in the hold, disoriented and enervated. Making your way further into the soundless station you discover power to the majority of the station failed - through sheer chance was the section containing your cryopod spared.""
-SetTextHighlights sheer chance
-AddText""Several months later...""
-SetTextHighlights Several months later
 
-AddText ""You pilot the VALKAZARD. Located during your flight from the Nekki System, it can swap out various weapons depending on the circumstances.""
+AddText""Inceremoniously roused from your slumber, a panicked crewmember gives the sitrep: someone is approaching, but the IFFs aren't friendly. As the only capable pilot left, you are rushed into the only craft capable of defense...""
+SetTextHighlights sheer chance
+
+AddText ""You pilot the VALKAZARD. It can swap between various weapons.""
 SetTextHighlights VALKAZARD
 
-AddText ""The craft requires RECREATIONAL DRUGS to unlock its full potential, which are consumed during engagements. Acquire some as soon as possible.""
+AddText ""The craft requires RECREATIONAL DRUGS to unlock its full potential. Acquire some as soon as possible.""
 SetTextHighlights RECREATIONAL DRUGS
 AddText ""The ship system SILVERSWORD can be used to dramatically increase performance when needed.""
 SetTextHighlights SILVERSWORD
 
-AddText ""There are few you can call a friend. However, you possess an illicitly acquired Combat Drone Replicator as a starting bonus.""
-SetTextHighlights Combat Drone Replicator",,,
+AddText""The enemy is nearby. You will likely be attacked immediately.""
+SetTextHighlights You will likely be attacked immediately",,,
