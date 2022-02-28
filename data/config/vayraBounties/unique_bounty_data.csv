@@ -1,5 +1,5 @@
 bounty_id,level,rank,firstName,lastName,captainPersonality,fleetName,flagshipName,gender,faction,portrait,greetingText,suppressIntel,postedByFaction,creditReward,repReward,intelText,flagshipVariantId,fleetVariantIds,minimumFleetFP,playerFPScalingFactor,chanceToAutoRecover,specialItemRewards,neverSpawnUnlessBountiesCompleted,neverSpawnWhenFactionHostile,neverSpawnWhenFactionNonHostile,neverSpawnBeforeCycle,neverSpawnBeforeLevel,neverSpawnBeforeFleetPoints
-armaa_bounty_altagrave_x,30,spaceCommander,Gamma,9B,steady,White Fang,HS-ONE,FEMALE,hvb_hostile,graphics/armaa/portraits/armaa_ai.png,"Arrival: Successful. Troop Survival: 100%.
+armaa_bounty_altagrave_x,30,spaceCommander,Gamma,9B,steady,White Fang,HS-ONE,FEMALE,hvb_hostile,graphics/portraits/portrait_ai1.png,"Arrival: Successful. Troop Survival: 100%.
 Initiating: Battle-State Behavior over-ride.
 Target Acquired: Starfarer.
 Annihilation: Commences
