@@ -4,6 +4,7 @@ V2.01
 - Fixed crash from mousing over Silversword
 - Fixed crash caused by enemy fleet having a null faction(fleet commander?) or something
 - Fixed crash for nonexistent portrait for hvb
+- Fixed case sensitivity issue with a sprite
 V2.0
 --------------------
 

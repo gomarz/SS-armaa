@@ -4,7 +4,7 @@
         "type":"DECORATIVE",
         "size":"SMALL",
         "showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/valkazard/armaa_valkazard_armr.png",
+	"turretSprite":"graphics/armaa/ships/valkazard/armaa_valkazard_armR.png",
 	"hardpointSprite":"",
 	"renderBelowAllWeapons":"false",
         "turretOffsets":[0, 0],
