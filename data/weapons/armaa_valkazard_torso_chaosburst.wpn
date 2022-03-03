@@ -10,8 +10,8 @@
   "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_buster.png",
   #"turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
   "hardpointSprite": "",
-  "fireSoundOne": "beambangM",
-  "fireSoundTwo": "beamfireM",
+  "fireSoundOne": "beambangMeso",
+  "fireSoundTwo": "beamfireMeso",
   "glowColor": [
     255,
     0,

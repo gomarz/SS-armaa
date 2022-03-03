@@ -177,6 +177,18 @@
 	"beamfireM":[							
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
 	],
+	"beamchargeMeso":[							
+			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":1,"volume":0.95},
+	],
+	"beambangMeso":[							
+			{"file":"sounds/armaa/armaa_beam_fire.ogg","pitch":1,"volume":0.95},
+	],
+	"beamfireMeso":[							
+			{"file":"sounds/armaa/armaa_beam_loop.ogg","pitch":1,"volume":0.95},
+	],
+
+
+
 	"armaa_crewDeath":[							
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.5,"volume":0.2},
