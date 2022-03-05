@@ -556,7 +556,7 @@
 		"variablerifle_whitelist":[
 		# If you want to enable the variablerifle working for any weapon, uncomment "ALL" otherwise add individual IDs as you see fit.
 		# Don't complain to me or any other modders if you experience any weirdly offset muzzle effects by doing this
-		#"ALL",
+		"ALL",
 		"armaa_fluxcannon",
 		"tahlan_velvet",
 		"tahlan_taffeta",

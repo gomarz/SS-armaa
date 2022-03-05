@@ -17,7 +17,7 @@ import java.awt.Color;
 
 public class armaa_selector_counter_shield extends BaseHullMod {
 
-	private static final float SHIELD_MALUS = -50f;
+	private static final float SHIELD_MALUS = 0.5f;
 	public static final float SHIELD_BONUS_TURN = 100f;
 	public static final float SHIELD_BONUS_UNFOLD = 100f;
         public static float SHIELD_BONUS = 10f;
@@ -38,20 +38,19 @@ public class armaa_selector_counter_shield extends BaseHullMod {
 
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
-		stats.getShieldArcBonus().modifyPercent(id, SHIELD_MALUS);
+		stats.getShieldArcBonus().modifyMult(id, 1f-SHIELD_MALUS);
 		stats.getShieldTurnRateMult().modifyPercent(id, SHIELD_BONUS_TURN);
 		stats.getShieldUnfoldRateMult().modifyPercent(id, SHIELD_BONUS_UNFOLD);
 		stats.getShieldUnfoldRateMult().modifyPercent(id, SHIELD_BONUS_UNFOLD);
 		stats.getShieldDamageTakenMult().modifyMult(id, 1f - SHIELD_BONUS * 0.01f);
-		stats.getDynamic().getStat(Stats.SHIELD_PIERCED_MULT).modifyMult(id, PIERCE_MULT);		
+		stats.getDynamic().getStat(Stats.SHIELD_PIERCED_MULT).modifyMult(id, PIERCE_MULT);
 	}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 		ShieldAPI shield = ship.getShield();
 		if (shield != null) {
 			shield.setType(ShieldType.OMNI);
-		}
-
+		}		
 	}
 	
     @Override

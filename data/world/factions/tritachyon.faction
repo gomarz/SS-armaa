@@ -11,6 +11,7 @@
     "knownShips":{
         "hulls":[
             "armaa_garegga_tt",
+	    "armaa_kouto_frig",
         ],
     },
 
