@@ -1,242 +1,213 @@
 {
-"bounds": [
-    15,
-    -6,
-    5,
-    -6.5,
-    3,
-    -13.5,
-    -1,
-    -13.5,
-    -3,
-    -6.5,
-    -13,
-    -5.5,
-    -13,
-    5.5,
-    -3,
-    6.5,
-    -1,
-    13.5,
-    3,
-    13.5,
-    5,
-    6.5,
-    15,
-    6
-  ],
-  "builtInWings": ["armaa_bit_wing","armaa_bit_wing"],
+  "hullName": "Einhander+",
+  "hullId": "armaa_einhander_plus",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/einhander/armaa_einhander_body.png",
+  "style": "armaa_valkazard",
+  "height": 26,
+  "width": 18,
+  "center": [9, 16.5],
+  "collisionRadius": 18,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 45.5,
+  "viewOffset": 0,
   "builtInMods": [
     "phasefield",
-    "strikeCraft",
     "cataphract",
-    "high_maintenance"
+    "strikeCraft",
+    "armaa_strikeCraftFrig"
+  ],
+  "builtInWings": [
+    "armaa_bit_wing",
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_einhanderGun",
-    "B_TORSO": "armaa_sprigganTorso",
-    "C_ARML": "armaa_einhander_hig",
+    "A_GUN": "armaa_einhander_variablerifle",
+    "B_TORSO": "armaa_einhander_plus_torso",
+    "C_ARML": "armaa_valkazard_blade",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_sprigganleftPauldron",
-    "D_PAULDRONR": "armaa_sprigganrightPauldron",
-    "E_HEAD": "armaa_sprigganHead",
-    "H_GLOW": "armaa_landingBeacon",
-    "WS0001": "armaa_heavyJavelin"
+    "D_PAULDRONL": "armaa_valkazard_leftshoulder",
+    "D_PAULDRONR": "armaa_einhander_plus_rightPauldron",
+    "E_HEAD": "armaa_einhander_plus_head",
+    "F_LEGS": "armaa_valkazard_legs"
+   # "H_GLOW": "armaa_landingBeacon"
   },
-  "center": [
-    9,
-    16.5
-  ],
-  "collisionRadius": 18,
-  "renderOrderMod": 999998,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 8,
-      "length": 19.5,
-      "location": [
-        -13.5,
-        -0
-      ],
-      "style": "CUSTOM",
-      "styleId": "MechaTrail",
-      "width": 8
-    },
-    {
-      "angle": -148,
-      "contrailSize": 6.786158,
-      "length": 11.553657,
-      "location": [
-        -14,
-        -5.5
-      ],
-      "style": "CUSTOM",
-      "styleId": "MechaTrail",
-      "width": 6.786158
-    },
-    {
-      "angle": 148,
-      "contrailSize": 6.786158,
-      "length": 11.553657,
-      "location": [
-        -14,
-        5.5
-      ],
-      "style": "CUSTOM",
-      "styleId": "MechaTrail",
-      "width": 6.786158
-    }
-  ],
-  "height": 26,
-  "hullId": "armaa_einhander_plus",
-  "hullName": "Einhander+",
-  "hullSize": "FRIGATE",
-  "shieldCenter": [
-    0,
-    -0
-  ],
-  "shieldRadius": 45.5,
-  "spriteName": "graphics/armaa/ships/einhander/armaa_einhander_body.png",
-  "style": "armaa_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": -15,
-      "arc": 90,
       "id": "A_GUN",
-      "locations": [
-        1,
-        -3
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -15,
+      "locations": [0, -3]
     },
     {
-      "angle": 0,
-      "arc": 360,
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -10,
+      "locations": [0, -3]
+    },
+    {
       "id": "B_TORSO",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
     },
     {
-      "angle": 15,
-      "arc": 360,
       "id": "C_ARML",
-      "locations": [
-        1,
-        3
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "BUILT_IN"
-    },
-    {
-      "angle": -15,
+      "type": "DECORATIVE",
+      "mount": "TURRET",
       "arc": 360,
-      "id": "C_ARMR",
-      "renderOrderMod": -1,
-      "locations": [
-        1,
-        -3
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
       "angle": 15,
-      "arc": 360,
-      "id": "D_PAULDRONL",
-      "locations": [
-        0,
-        3
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
+      "locations": [3, 2],
+      "renderOrderMod": -900
     },
     {
+      "id": "C_ARMR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
       "angle": -15,
+      "locations": [0, -3],
+      "renderOrderMod": -1
+    },
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
       "arc": 360,
+      "angle": 15,
+      "locations": [1, 2]
+    },
+    {
       "id": "D_PAULDRONR",
-      "locations": [
-        0,
-        -3
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -15,
+      "locations": [0, -4]
     },
     {
-      "angle": 0,
-      "arc": 135,
       "id": "E_HEAD",
-      "locations": [
-        1,
-        -0
-      ],
+      "size": "SMALL",
+      "type": "BUILT_IN",
       "mount": "TURRET",
-      "size": "SMALL",
-      "type": "BUILT_IN"
-    },
-    {
-      "angle": 0,
-      "arc": 0,
-      "id": "WS0001",
-      "renderOrderMod": 999998,
-      "locations": [
-        7,
-        10
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "BUILT_IN"
-    },
-    {
-      "angle": 0,
-      "arc": 360,
-      "id": "MODULAR",
-      "locations": [
-        2,
-        38
-      ],
-      "mount": "HARDPOINT",
-      "size": "SMALL",
-      "type": "STATION_MODULE"
-    },
-    {
-      "angle": 0,
-      "arc": 360,
-      "id": "LB 1",
-      "locations": [
-        -8,
-        5,
-	-8,
-	-5
-      ],
-      "mount": "HIDDEN",
-      "size": "SMALL",
-      "type": "LAUNCH_BAY"
-    },
-    {
-      "angle": 0,
       "arc": 135,
-      "id": "H_GLOW",
-      "locations": [
-        5,
-        -0
-      ],
-      "mount": "TURRET",
-      "renderOrderMod":101,
+      "angle": 0,
+      "locations": [1, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-13, 14],
+      "renderOrderMod": 999998
+    },
+    {
+      "id": "F_LEGS",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-7, -0],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "MODULAR",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "HARDPOINT",
+      "arc": 360,
+      "angle": 0,
+      "locations": [2, 38]
+    },
+    {
+      "id": "LB 1",
+      "size": "SMALL",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -8, 5,
+        -8, -5
+      ]
+    },
+    {
+      "id": "H_GLOW",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [5, -0],
+      "renderOrderMod": 101
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-9, -0]
     }
   ],
-  "width": 18
+  "engineSlots": [
+    {
+      "location": [-13.5, -0],
+      "length": 19.5,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "MechaTrail"
+    },
+    {
+      "location": [-14, -5.5],
+      "length": 11.553657,
+      "width": 6.786158,
+      "angle": -148,
+      "contrailSize": 6.786158,
+      "style": "CUSTOM",
+      "styleId": "MechaTrail"
+    },
+    {
+      "location": [-14, 5.5],
+      "length": 11.553657,
+      "width": 6.786158,
+      "angle": 148,
+      "contrailSize": 6.786158,
+      "style": "CUSTOM",
+      "styleId": "MechaTrail"
+    }
+  ],
+  "bounds": [
+    15, -6,
+    12, -9.5,
+    3, -13.5,
+    -1, -13.5,
+    -3, -6.5,
+    -13, -5.5,
+    -13, 5.5,
+    -3, 6.5,
+    -1, 13.5,
+    3, 13.5,
+    12, 9.5,
+    15, 6
+  ]
 }

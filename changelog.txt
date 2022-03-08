@@ -1,3 +1,12 @@
+V2.02
+--------------------
+- Blocked Front Shield Emitter from being installed on Valkazard's Counter Shield Torso
+- Fixed invisible launch bug, probably
+- Strikecraft will now only launch from bays other strikecraft have not launched from
+	- If every bay has been used, then they will deploy normally
+- Fixed laser blade not factoring bonus beam/energy weapon damage into damage dealt
+
+
 V2.01
 --------------------
 - Fixed crash form mousing over wingcom

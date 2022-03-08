@@ -9,6 +9,12 @@ Unfortunately, the massive costs and logistical requirements for a single strike
 
 The units that survived the ensuing crises that engulfed the sector are by and large a rarity - some remain in storage, according to official ArmaA Corporation statements, while others became heirlooms passed throughout the generations.",,,
 
+armaa_einhander_plus,SHIP,"Exceptionally armed strikecraft with an equally steep logistical profile. A monstrous weapon in the hands of skilled pilots.
+
+These variants of the Einhänder - commonly referred to as Einhänder (P)lus - are generally salvaged wrecks which were repaired and refurbished with other Cataphract components that are more easily sourced. The torso and oversized powercore it houses were preserved, but the majority of the originals costly systems have been removed at a significant logistical curtailment.
+
+While the loss in speed and raw power is noticeable, additional free space allows it to field a variety of weapons and addons far larger in scope than the base model. This advantage means that the possibility remains for this variant to match and even surpass the performance of the original, if properly equipped.",,,
+
 armaa_monitor,SHIP,"Destroyer-grade platform that emphasizes long-range fire support as opposed to head on confrontation. While especially effective against larger, slower targets, low flux capacity and manuverability can lead to it being easily overwhelmed without a covering force to support it.
 
 Some cycles before the First AI War, corp techminers recovered databanks from a red-eyed vessel called a "Mobile Armor". Keen on replicating some aspects of this technology, particuarly the advanced neural interface, the Garegga was born as an initial effort to replicate the technology at a larger scale, but dwindling resources in the sector made this a herculean task, especially without the aid of AI banned under Domain laws. 
@@ -226,6 +232,9 @@ armaa_leynos_head,WEAPON,The head-mounted Anti Missile Weapon System is a combin
 armaa_leynos_head_comet,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
 
 armaa_valken_torso_gunmetal,WEAPON,"A small caliber cannon designed for close-range fights, excellent versus armor and with a superb fire rate.
+Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.","",,
+
+armaa_valken_torso_black,WEAPON,"A small caliber cannon designed for close-range fights, excellent versus armor and with a superb fire rate.
 Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.","",,
 
 armaa_leynos_crusher_right,WEAPON,"Dual-barreled energy weapon firing plasma projectiles which explode on contact with stable matter, such as spaceship armor or shielding. The delay between shots has to be accounted for when firing.","",,

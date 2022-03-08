@@ -44,13 +44,15 @@ public class armaa_selector_counter_shield extends BaseHullMod {
 		stats.getShieldUnfoldRateMult().modifyPercent(id, SHIELD_BONUS_UNFOLD);
 		stats.getShieldDamageTakenMult().modifyMult(id, 1f - SHIELD_BONUS * 0.01f);
 		stats.getDynamic().getStat(Stats.SHIELD_PIERCED_MULT).modifyMult(id, PIERCE_MULT);
+		
 	}
 	
 	public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 		ShieldAPI shield = ship.getShield();
 		if (shield != null) {
 			shield.setType(ShieldType.OMNI);
-		}		
+		}
+
 	}
 	
     @Override
