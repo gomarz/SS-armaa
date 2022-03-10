@@ -1,0 +1,8 @@
+{
+	"id":"armaa_blade",
+	"type":"WEAPON",
+	"aiType":"CANISTER_FLAK",
+	
+	"weaponDataId":"armaa_valkazard_blade",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

@@ -553,6 +553,9 @@
 		"missile_refit_custom":{
 		"reaper":0.25,
 		},
+		"ground_support_custom":{
+		"armaa_einhander_plus":9.0,
+		},
 		"variablerifle_whitelist":[
 		# If you want to enable the variablerifle working for any weapon, uncomment "ALL" otherwise add individual IDs as you see fit.
 		# Don't complain to me or any other modders if you experience any weirdly offset muzzle effects by doing this

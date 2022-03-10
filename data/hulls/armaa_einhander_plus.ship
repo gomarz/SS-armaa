@@ -17,19 +17,15 @@
     "strikeCraft",
     "armaa_strikeCraftFrig"
   ],
-  "builtInWings": [
-    "armaa_bit_wing",
-  ],
   "builtInWeapons": {
     "A_GUN": "armaa_einhander_variablerifle",
     "B_TORSO": "armaa_einhander_plus_torso",
-    "C_ARML": "armaa_valkazard_blade",
+    "C_ARML": "armaa_einhander_plus_leftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
     "D_PAULDRONR": "armaa_einhander_plus_rightPauldron",
     "E_HEAD": "armaa_einhander_plus_head",
     "F_LEGS": "armaa_valkazard_legs"
-   # "H_GLOW": "armaa_landingBeacon"
   },
   "weaponSlots": [
     {
@@ -66,7 +62,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 15,
-      "locations": [3, 2],
+      "locations": [1, 2],
       "renderOrderMod": -900
     },
     {
@@ -113,7 +109,7 @@
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
-      "locations": [-13, 14],
+      "locations": [-13, 15],
       "renderOrderMod": 999998
     },
     {
@@ -158,13 +154,49 @@
       "renderOrderMod": 101
     },
     {
-      "id": "WS0002",
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -90,
+      "locations": [-5, -5.5]
+    },
+    {
+      "id": "WS0005",
       "size": "SMALL",
       "type": "MISSILE",
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": 180,
       "locations": [-9, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 90,
+      "locations": [-9, 5.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -90,
+      "locations": [-9, -5.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 90,
+      "locations": [-5.5, 5.5]
     }
   ],
   "engineSlots": [

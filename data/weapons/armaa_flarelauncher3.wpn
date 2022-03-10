@@ -21,7 +21,7 @@
 				 "blowbackDuration":2.0,
 				 "blowbackLength":30.0,
 				 "blowbackSpread":10.0,
-				 "particleColor":[100,255,100,50]},
+				 "particleColor":[255,255,100,50]},
 	#"animationType":"MUZZLE_FLASH",
 	#"muzzleFlashSpec":{"length":15.0,   # only used if animationType = MUZZLE_FLASH
 	#				   "spread":45.0,
@@ -29,7 +29,7 @@
 	#				   "particleSizeRange":5.0,
 	#				   "particleDuration":0.25,
 	#				   "particleCount":15,
-	#				   "particleColor":[100,255,100,55]},				 
-	"projectileSpecId":"flare_seeker",
+	#				   "particleColor":[150,155,150,55]},				 
+	"projectileSpecId":"armaa_flare_seeker",
 	"fireSoundTwo":"system_flare_launcher_active",
 }

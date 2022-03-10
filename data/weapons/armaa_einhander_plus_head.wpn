@@ -41,6 +41,12 @@
     0,
     4
   ],
+  "glowColor": [
+    255,
+    25,
+    155,
+    255
+  ],
   "turretSprite": "graphics/armaa/ships/einhander/armaa_einhanderhead2.png",
-  "type": "BALLISTIC"
+  "type": "ENERGY"
 }
