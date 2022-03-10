@@ -2,7 +2,7 @@ V2.02
 --------------------
 - Blocked Front Shield Emitter from being installed on Valkazard's Counter Shield Torso
 - Fixed invisible launch bug, probably
-	- strikecraft should properly mirror the angle of the bay instead of always launching with facing of 90 degrees
+	- strikecraft should properly mirror the angle of the bay launched from instead of always launching at 90 degrees
 - Strikecraft distribution should be a bit less heavily weighted on a single carrier on deploy
 - Fixed laser blade not properly accounting for bonus beam/energy weapon damage outside of EWM
 - Can now dock at carriers by targetting them and activating autopilot
@@ -21,9 +21,6 @@ V2.02
 - Cataphracts can be damaged during raid deployments
 	- Base chance to incur damage scales by ratio of attacker vs defender strength
 	- Higher attack strength and pilot level reduces actual damage received, while higher defender strength increases it
-
-- New Ship: Einhänder plus
-- New Ship: Gladius(AA)
 
 V2.01
 --------------------
