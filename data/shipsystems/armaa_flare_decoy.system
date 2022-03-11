@@ -1,0 +1,7 @@
+{
+	"id":"armaa_flare_decoy",
+	"type":"WEAPON",
+	"aiType":"FLARE_JAMMER",
+	"weaponDataId":"armaa_flarelauncher2",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

@@ -316,6 +316,8 @@ armaa_silverSwordV,SHIP_SYSTEM,"Increases manuverability, non-missile rate of fi
 
 armaa_afcss,SHIP_SYSTEM,"Increases damage dealt to a number of enemies within 2500 SU by 25% based on the combined ECM rating of nearby allies versus that of the enemy. The probability of individual ships being affected is further modified by their own ECCM rating. While the effect does not stack, successive attempts can affect enemies that resisted previous uses.",,,
 
+armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,
+
 
 #CAMPAIGN STUFF,,,,,
 armaa_homeworld,CUSTOM,"One of many planets devastated during the AI Wars, 'New Meshan' has come a long way to recapturing its former grandeur after Arma Armatura received rights to the planet via corporate charter following the Second AI War a dozen or so cycles ago. 
