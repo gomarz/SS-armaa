@@ -21,7 +21,7 @@
 				 "blowbackDuration":2.0,
 				 "blowbackLength":10.0,
 				 "blowbackSpread":10.0,
-				 "particleColor":[150,150,150,150]},
-	"projectileSpecId":"flare_fighter",
+				 "particleColor":[50,50,50,150]},
+	"projectileSpecId":"armaa_flare_decoy",
 	"fireSoundTwo":"launch_flare_1",
 }

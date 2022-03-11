@@ -20,7 +20,7 @@
 				  "turnRate":400,
 				  #"maxSpeed":150,
 				  "acc":750,
-				  "dec":650},
+				  "dec":50},
 	"engineSlots":[
 					{"id":"ES1",
 					"loc":[0, 0],
@@ -28,12 +28,12 @@
 					"styleSpec":{
 						#"engineColor":[255,50,50,255],
 						"engineColor":[255,125,25,255],
-						"contrailParticleSizeMult":8,
+						"contrailParticleSizeMult":4,
 						"contrailParticleDuration":2,
 						"contrailParticleFinalSizeMult":0.5,
 						"contrailMaxSpeedMult":0.1f,
 						"contrailAngularVelocityMult":0f,
-						"contrailColor":[155,155,155,100],
+						"contrailColor":[55,55,55,100],
 						
 						"type":"SMOKE" # GLOW or SMOKE
 					},

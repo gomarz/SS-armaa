@@ -178,7 +178,7 @@ Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,50,60,3,60,0,30,
 Micro Autocannon,armaa_prodromos_leftArm,2,0.5,3200,400,,60,10,5,35,0,,,,FRAGMENTATION,,,,0.5,4,0.13,2,12,2,5,,1000,,,100,"SYSTEM,PD,PD_ALSO,IGNORES_FLARES",,,Arma Armatura,,General,,,,,,,,,,1.4,,
 Burst Frag Laser (High Delay),armaa_prodromos_rightArm,2,,600,500,410,,,0,100,7,2,0.5,,FRAGMENTATION,,205,0.1,0.1,0.8,0.1,,,,,10000,,,,,"SYSTEM,PD_ONLY,ANTI_FTR,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Seeker Flare Launcher,armaa_flarelauncher3,,,,500,,10,400,,,,,0,,ENERGY,0,0,0,0.1,1,0.4,90,90,0,0,,400,200,7,1,,,SYSTEM,,,,,,,,,,,,,,,38
-Decoy Flare Launcher,armaa_flarelauncher2,,,,500,,10,350,,,,,0,,ENERGY,0,0,0,0.1,1,0.4,30,30,0,0,,300,150,5,500,,,SYSTEM,,,,,,,,,,,,,,,37
+Decoy Flare Launcher,armaa_flarelauncher2,,,,500,,10,350,,,,,0,,ENERGY,0,0,0,AA,2,0.4,30,30,0,0,,200,100,5,500,,,SYSTEM,,,,,,,,,,,,,,,37
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #ALTAGRAVE,,,,,,,,,,,,,,3.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Vajra,armaa_altagrave_rightArm,2,,2500,600,,175,,10,15,0,25,3,15,ENERGY,192.5,,0,0.15,,0.1,5,20,2,9,,725,800,0.6,450,"SYSTEM,GUIDED_POOR",,,Arma Armatura,,Assault,,,,,"%s: Projectiles have some homing capability:  Can be intercepted by flares and PD, and be fired over friendly ships - but projectiles detonating over a friendly target will still damage it. In terms of enhancement bonuses, this weapon is considered a %s weapon.",Pseudomissile|PROJECTILE,,,FALSE,22.25,,
