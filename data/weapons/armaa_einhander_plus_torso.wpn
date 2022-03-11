@@ -3,6 +3,7 @@
   "specClass": "projectile",
   "projectileSpecId": "armaa_hominglaser",
   "type": "ENERGY",
+  "showDamageWhenDecorative": true,
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_einhanderPEffect",
   "turretSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso2.png",
