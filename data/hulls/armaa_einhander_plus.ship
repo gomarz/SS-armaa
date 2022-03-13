@@ -107,7 +107,7 @@
       "size": "MEDIUM",
       "type": "ENERGY",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 5,
       "angle": 0,
       "locations": [-13, 15],
       "renderOrderMod": 999998

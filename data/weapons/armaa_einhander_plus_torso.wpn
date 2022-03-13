@@ -3,20 +3,25 @@
   "specClass": "projectile",
   "projectileSpecId": "armaa_hominglaser",
   "type": "ENERGY",
-  "showDamageWhenDecorative": true,
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_einhanderPEffect",
   "turretSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso2.png",
   "turretGlowSprite": "graphics/armaa/ships/einhander/armaa_einhanderTorso2_glow.png",
   "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
   "glowColor": [
     255,
     25,
     155,
     255
   ],
-  "turretOffsets": [],
-  "turretAngleOffsets": [],
+  "turretOffsets": [
+    12,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
   "hardpointOffsets": [
     -5,
     -5,
