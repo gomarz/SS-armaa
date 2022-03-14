@@ -1,0 +1,45 @@
+{
+  "variantId": "armaa_einhander_plus_subprime",
+  "hullId": "armaa_einhander_plus",
+  "displayName": "Undergunned",
+  "goalVariant": false,
+  "fluxCapacitors": 8,
+  "fluxVents": 9,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "phase_anchor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "sabot"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "amblaster"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "chaingun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_einhander_plus_head"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

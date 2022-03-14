@@ -23,9 +23,10 @@
 
 	"startShipsCarrierSmall":
 	[
-		["armaa_aleste_as_f", "armaa_valkyrie_standard","armaa_hazard_standard"],
+		["armaa_aleste_as_f", "armaa_valkyrie_standard"],
 		["armaa_warthog_standard","armaa_broadsword_standard","armaa_condor_Support"],
-		["armaa_leynos_standard","condor_Support"]
+		["armaa_leynos_standard","condor_Support"],
+		["armaa_einhander_plus_subprime","condor_Support"],
 	],
 
     "startShipsCarrierLarge":[["mora_Assault", "armaa_xyphos_standard", "armaa_broadsword_standard","armaa_hazard_standard","armaa_warthog_standard"]],

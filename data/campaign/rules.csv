@@ -102,3 +102,25 @@ SetTextHighlights SILVERSWORD
 
 AddText""The enemy is nearby. You will likely be attacked immediately.""
 SetTextHighlights You will likely be attacked immediately",,,
+armaa_seggs2,ExerelinNGCStep4Plus,"$playerFaction == armaarmatura_pirates
+$nex_lastSelectedFleetType == CARRIER_SMALL
+#maybe if you add more I actually do fancier rulecmd but im bored and sexless rn","AddText""""
+AddText""111 years later, circa c.205...""
+SetTextHighlights 111 years
+
+AddText""Inceremoniously roused from your slumber, a panicked crewmember gives the sitrep: someone is approaching, but the IFFs aren't friendly. As the only capable pilot left, you are rushed into the only craft capable of defense...""
+SetTextHighlights sheer chance
+
+AddText ""You pilot the VALKAZARD. It can swap between various weapons.""
+SetTextHighlights VALKAZARD
+
+AddText ""The craft requires RECREATIONAL DRUGS to unlock its full potential. Acquire some as soon as possible.""
+SetTextHighlights RECREATIONAL DRUGS
+AddText ""The ship system SILVERSWORD can be used to dramatically increase performance when needed.""
+SetTextHighlights SILVERSWORD
+
+AddText""The enemy is nearby. You will likely be attacked immediately.""
+SetTextHighlights You will likely be attacked immediately",,,
+
+
+

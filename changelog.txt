@@ -1,9 +1,9 @@
 V2.03
 --------------------
-- fixed various NPEs that would lead to a crash
+- fixed various crash inducing NPEs
 - fixed strikecraft instantly repairing hull and armor by docking and immediately undocking
-- new ship: Einhänder Plus
-	- Einhänder with almost all built-ins removed for modular slots
+- new ship: Einhänder Plus (technically already released, but now with an actual desc.)
+	- Einhänder with almost all built-ins removed in favor of modular slots
 
 V2.02
 --------------------
