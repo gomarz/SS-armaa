@@ -1,5 +1,6 @@
 V2.03
 --------------------
+- fixed crash with null carrier
 - fixed various crash inducing NPEs
 - fixed strikecraft instantly repairing hull and armor by docking and immediately undocking
 - new ship: Einhänder Plus (technically already released, but now with an actual desc.)
