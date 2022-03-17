@@ -6,6 +6,8 @@ V2.03
 - new ship: Einhänder Plus (technically already released, but now with an actual desc.)
 	- Einhänder with almost all built-ins removed in favor of modular slots
 
+- fixed einhander crash with dummy weapon
+
 V2.02
 --------------------
 - Blocked Front Shield Emitter from being installed on Valkazard's Counter Shield Torso
