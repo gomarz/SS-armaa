@@ -28,8 +28,8 @@
 		#"colorShiftCovers":true,
 		"coversColorShiftAmount":1,  # 0 to 1
 		"coversMatchShipBrightness":false,
-		"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_midline_small.png",
-		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_midline_small.png",
+		"slotCoverSmallTurret":"",
+		"slotCoverSmallHardpoint":"",
 		"slotCoverMediumTurret":"",
 		"slotCoverMediumHardpoint":"",
 		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_midline_large.png",
@@ -102,8 +102,8 @@
 		#"colorShiftCovers":true,
 		"coversColorShiftAmount":1,  # 0 to 1
 		"coversMatchShipBrightness":false,
-		"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_midline_small.png",
-		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_midline_small.png",
+		"slotCoverSmallTurret":"",
+		"slotCoverSmallHardpoint":"",
 		"slotCoverMediumTurret":"",
 		"slotCoverMediumHardpoint":"",
 		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_midline_large.png",
@@ -139,8 +139,8 @@
 		#"colorShiftCovers":true,
 		"coversColorShiftAmount":1,  # 0 to 1
 		"coversMatchShipBrightness":true,
-		"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_hightech_small.png",
-		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_small.png",
+		"slotCoverSmallTurret":"",
+		"slotCoverSmallHardpoint":"",
 		"slotCoverMediumTurret":"graphics/weapons/covers/cover_turret_hightech_medium.png",
 		"slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_medium.png",
 		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_hightech_large.png",
