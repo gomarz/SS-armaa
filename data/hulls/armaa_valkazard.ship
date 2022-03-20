@@ -16,7 +16,8 @@
     "strikeCraft",
     "reduced_explosion",
     "armaa_valkazardWeaponSwap",
-    "armaa_SilverSwordHM"
+    "armaa_SilverSwordHM",
+    "armaa_strikeCraftFrig"
   ],
   "builtInWeapons": {
     "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",

@@ -1,3 +1,10 @@
+V2.04
+--------------------
+- fixed crash by transferring command into ship with a wingcom officer
+- raised threat level for: einhander, einhander P, valkazard
+	- einhander, einhander P, valkazard can now capture points
+
+
 V2.03
 --------------------
 - fixed crash with null carrier

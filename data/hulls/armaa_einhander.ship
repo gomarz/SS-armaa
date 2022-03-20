@@ -14,7 +14,8 @@
   "builtInMods": [
     "phasefield",
     "strikeCraft",
-    "cataphract"
+    "cataphract",
+    "armaa_strikeCraftFrig"
   ],
   "builtInWings": [
     "armaa_bit_wing"
