@@ -137,7 +137,7 @@
 		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
 		
 		#"colorShiftCovers":true,
-		"coversColorShiftAmount":1,  # 0 to 1
+		#"coversColorShiftAmount":1,  # 0 to 1
 		"coversMatchShipBrightness":true,
 		"slotCoverSmallTurret":"",
 		"slotCoverSmallHardpoint":"",

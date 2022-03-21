@@ -1,4 +1,4 @@
-V 2.04
+v2.04
 --------------------
 
 - fixed crash by transferring command into ship with a wingcom officer
@@ -7,7 +7,7 @@ V 2.04
 	- einhander, einhander P, valkazard can now capture points
 - Fixed bug with AI strikecraft locking up if carrier was destroyed just before it finished landing
 
-V2.03
+v2.03
 --------------------
 - fixed crash with null carrier
 - fixed various crash inducing NPEs
@@ -17,7 +17,7 @@ V2.03
 
 - fixed einhander crash with dummy weapon
 
-V2.02
+v2.02
 --------------------
 - Blocked Front Shield Emitter from being installed on Valkazard's Counter Shield Torso
 - Fixed invisible launch bug, probably
