@@ -1,10 +1,11 @@
 V 2.04
 --------------------
+
 - fixed crash by transferring command into ship with a wingcom officer
 - Lowered valkazard CR Deployment cost to 30%
 - raised threat level for: einhander, einhander P, valkazard
 	- einhander, einhander P, valkazard can now capture points
-
+- Fixed bug with AI strikecraft locking up if carrier was destroyed just before it finished landing
 
 V2.03
 --------------------
