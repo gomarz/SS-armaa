@@ -160,7 +160,7 @@
   ],
   "shieldRadius": 120,
   "spriteName": "graphics/armaa/ships/proto/armaa_altagrave_red.png",
-  "style": "armaa_HIGH_TECH",
+  "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {
