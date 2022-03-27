@@ -1,4 +1,4 @@
-v2.042
+v2.05
 -------------------
 
 - fix special strings (such as faction names) not properly appearing during chatter
@@ -11,7 +11,7 @@ v2.042
 
 
 
-v2.041
+v2.04.1
 --------------------
 -fix damage crash
 
