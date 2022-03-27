@@ -5,7 +5,7 @@ v2.042
 
 - Added clarification that wingcom needs crewed fighters to function
 
-- Added info for if player has no squadrons
+- Added info for if player has no squadrons on intel screen
 
 - added null checks for every dumb thing possible
 
