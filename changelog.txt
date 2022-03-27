@@ -1,3 +1,16 @@
+v2.042
+-------------------
+
+- fix special strings (such as faction names) not properly appearing during chatter
+
+- Added clarification that wingcom needs crewed fighters to function
+
+- Added info for if player has no squadrons
+
+- added null checks for every dumb thing possible
+
+
+
 v2.041
 --------------------
 -fix damage crash
