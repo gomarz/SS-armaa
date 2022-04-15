@@ -1,3 +1,21 @@
+v2.06
+-------------------
+- Fixed another potential crash caused by carriers that somehow don't have launchbays
+- fixed crash caused by transferring command to wingcom ship using officer that never was assigned a wingcom ship before
+- Added some more dialogue text
+- Fix bug with aleste swordsman variant
+- Fix bug with hullmod order on Leynos
+- Leynos Railgun Flux Cost: 225->90 (2.25 ->.9)
+	- EMP Damage: 100-> 175
+- fixed typo with mobile armor tag
+- fixed watchdog weapon swapping
+- adjusted watchdog system AI
+	- Should be a bit smarter with using it
+- Fixed incorrect display of elite skills for wingcom pilots
+- Added small chance for wingcom hullmod to appear for sale on submarket @ meshan
+- Increased base value of wingcom for sale purpose: 10000->75000
+- Increased Engagement Range reduction for wingcom by 10% for all hullsizes
+
 v2.05
 -------------------
 

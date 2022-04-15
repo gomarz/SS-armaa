@@ -5,7 +5,6 @@
   "fluxVents": 0,
   "hullId": "armaa_aleste_frig",
   "hullMods": ["armaa_selector_blade","armaa_selector_blade_right","safetyoverrides","advancedoptics"],
-  "permaMods": ["hardened_subsystems"],
   "variantId": "armaa_aleste_swordsman",
   "weaponGroups": [
     {

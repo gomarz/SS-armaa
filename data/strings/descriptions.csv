@@ -142,6 +142,7 @@ armaa_alesteHead,WEAPON,"Fires bursts of small flechettes at a high rate of fire
 armaa_kouto_minigun_right,WEAPON,"Minigun with a high rate of fire. This latest iteration is employs high-velocity slugs adept at overloading shields.",,,
 armaa_koutoBazooka,WEAPON,"Anti-shield weapon. Launched projectiles detonate on proximity.",,,
 armaa_kouto_head,WEAPON,"A basic point defense weapon.",,,
+armaa_kouto_torso_frig,WEAPON,"Fires a barrage of homing missiles.",,,
 armaa_aleste_rightArm,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
 
 armaa_aleste_rifle_left,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
@@ -149,6 +150,8 @@ armaa_aleste_rifle_left,WEAPON,"General purpose energy weapon. No major strength
 armaa_aleste_heavyrifle_right,WEAPON,"Enhanced Rynex Pulse Rifle. Fires a significantly stronger laser, but capacitors can only last long enough to fire a few shots.",,,
 
 armaa_aleste_grenade_left,WEAPON,"Fires a burst of high-explosive grenades. Effective in target rich enviroments or versus slower enemies. ",,,
+
+armaa_altagrave_syrinx,WEAPON,"Long range, homing missile. ",,,
 
 armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament to pirate ingenuity. While near useless against shields, the projectile making contact with hull produces a near constant cascading EMP effect that will rapidly disable weapons and other vital systems.",,,
 
@@ -188,6 +191,12 @@ armaa_landingBeacon,WEAPON,"Bypasses the restrictions and regulations of landing
 armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
+
+armaa_altagrave_blade,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
+
+Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
+
+
 
 armaa_valkazard_blade,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
@@ -263,6 +272,9 @@ armaa_altagrave_head_g,WEAPON,The head-mounted Anti Missile Weapon System is a c
 armaa_altagrave_head_ex,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
 armaa_altagrave_head_r,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
 armaa_sprigganHead,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,
+armaa_einhander_plus_head,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,
+armaa_leynos_minigun_right,WEAPON,Energy based minigun. Effecive versus a variety of targets..,,,
+
 armaa_einhanderGun,WEAPON,"Progenitor of the Juno-class beam weapon series. It lacks the specialization and raw power of later models due to several defects and the lack of practical knowledge regarding the partial output of energy in p-space. As a result, the pulses it does fire are generally less effective than a standard Pulse Laser; the flip side is that safety limiters on the weapon can be disabled for output far exceeding baseline performance.",,,
 armaa_sprigganTorso,WEAPON,"Launches a barrage of phased psuedo-projectiles. Extremely effective against fighters. This weapon is fueled directly by the unit's own power core, and the requisite energy required will gradually replenish itself over time.",,,
 armaa_heavyJavelin,WEAPON,"Heavy artillery developed to defeat extremely thick armor. Limited ammo, slow rate of fire and travel speed means making each shot count is vital.",,,

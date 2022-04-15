@@ -224,6 +224,7 @@
 			"\"Evade, full throttle!\"",
 			"\"On my six!\"",
 			"\"That's not good! Breaking!\"",
+			"\"Now you know it's not the craft that matters, but the pilot inside!\"",
 			"\"Breaking!\"",
 			"\"On me!\"",
 			"\"Fire! Fire!\"",
@@ -250,6 +251,7 @@
 			"\"It'll take more than that!\"",
 			"\"Looks like there's a problem pilot to deal with.\"",
 			"\"Their defenses are shot! Take them down!\"",
+			"\"I… I am losing? Impossible! I’m burning! $squadleader!\"",
 			"\"Am I in over my head?\"",
 			"\"I can read you like a book.\"",
 			"\"Why you!\"",
@@ -281,7 +283,9 @@
 	
 		"strikecraft_squad_chatter_intersquad_statement":
 		[
-			"\"Understand them? The $factionnamearticle? How could we understand them?\"",
+			"\"Understand them? $factionnamearticle? How could we understand them?!\"",
+			"\"I LOVE EVERYONE!\"",
+			"\"$factionnamearticle seek a world filled with endless war and destruction. On that we can agree.\"",
 			"\"I could be dead by morning. Should've changed my underwear.\"",
 			"\"$squadmember, lets do this!\"",
 			"\"Excellent work, $squadmember. You did well.\"",
@@ -332,11 +336,11 @@
 		[
 			"\"If you don't stay focused, I'll shoot you down myself!\"",
 			"\"Real heroes always make it back.\"",
+			"\"Call me sentimental, but I wish we'd met under different circumstances.\"",
 			"\"Are you trying to kill me? Fine, I see how things are.\"",
 			"\"I hope you aren't having second thoughts. Crossing me would be a big mistake.\"",
 			"\"Not bad, $squadmember. But I can do better.\"",
 			"\"Not bad at all, $squadmember.\"",
-			"\"Now you know it's not the craft that matters, but the pilot inside!\"",
 			"\"Human wisdom can go beyond these problems.\"",
 			"\"I can almost taste the hate out there. This is going to be a real bloodbath.\"",
 			"\"Stick with $squadleader and you’ll make it!\"",
@@ -348,6 +352,7 @@
 			"\"Roger, Roger.\"",
 			"\"Copy.\"",
 			"\"Affirmative.\"",
+			"\"I'm a pilot. This is my job.\"",
 			"\"Yep.\"",
 			"\"Perhaps. Stay focused.\"",
 			"\"What was that?\"",
@@ -394,6 +399,16 @@
 		#plays at battle start
 		"strikecraft_squad_chatter_intro":
 		[
+			"\"Well, it is what it is. Your actions were clearly deliberate. There's no point in trying to reason with you.\"",
+			"\"$factionname dogs. Can they even understand what we're saying?\"",
+			"\"How you get there is unimportant. It's who stands last that matters!\"",
+			"\"Let's see what the enemy is made of.\"",
+			
+			
+			"\"By the way, did we have a strategy? ... what do you mean, 'do we need one?!'\"",
+			"\"To treasure a life... is that something to laugh at? Everything is twisted... you, this Sector, all of it...\"",
+			"\"The true strength of $factionnamearticle can't be gauged from this...\"",
+			"\"We will defeat you! We will defeat $factionnamearticle! We will conquer everything!\"",
 			"\"Oh, it looks like we've got a couple of rats with bad eyesight. Don't you know east from north?\"",
 			"\"We're going in as well. What is the enemy's status?\"",
 			"\"You've become a threat. That is why I must kill you.\"",
