@@ -1,8 +1,8 @@
 v2.06
 -------------------
+- Added some more dialogue text
 - Fixed another potential crash caused by carriers that somehow don't have launchbays
 - fixed crash caused by transferring command to wingcom ship using officer that never was assigned a wingcom ship before
-- Added some more dialogue text
 - Fix bug with aleste swordsman variant
 - Fix bug with hullmod order on Leynos
 - Leynos Railgun Flux Cost: 225->90 (2.25 ->.9)
@@ -13,8 +13,9 @@ v2.06
 	- Should be a bit smarter with using it
 - Fixed incorrect display of elite skills for wingcom pilots
 - Added small chance for wingcom hullmod to appear for sale on submarket @ meshan
-- Increased base value of wingcom for sale purpose: 10000->75000
-- Increased Engagement Range reduction for wingcom by 10% for all hullsizes
+- Increased engagement range reduction for wingcom by 10% for all hullsizes
+- Strikecraft can no longer use fighter clamps from Roider Union
+- Enemy ships with WINGCOM hullmod that have a squadron will now use the correct colors to identify them instead of friendly/player colors (this case shouldn't happen in normal gameplay outside of mod shenanigans / traitor command ... for now)
 
 v2.05
 -------------------
