@@ -6,8 +6,8 @@
 	{
 		"major":2,
 		"minor":0,
-		"patch":5,
+		"patch":6,
 	},
 	"starsectorVersion":"0.95.1a-RC6",
-	"directDownloadURL":"https://github.com/gomarz/SS-armaa/archive/refs/tags/v2.05.zip",
+	"directDownloadURL":"https://github.com/gomarz/SS-armaa/archive/refs/tags/v2.06.zip",
 }
