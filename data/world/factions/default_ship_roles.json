@@ -64,4 +64,7 @@
   },
   "battlestationLowTech": {
   },
+	"combatCapital":{
+		"armaa_radiant_Standard":1,
+	},
 }
