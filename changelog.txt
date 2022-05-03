@@ -13,6 +13,7 @@ v2.07
 	- High Intensity Beam
 	- Max Ammo: 8
 	- Ammo/Sec : 0.13->0
+	- Burst Delay : 4->20
 v2.06
 -------------------
 - Added some more dialogue text
