@@ -8,7 +8,11 @@ v2.07
 	- Previously, fighters with wingcom installed on parent ship would get increased RoF + damage bonus. the damage bonus has been removed.
 
 - Fixed huge supply consumption by salvage gunhazard 
-
+- Fixed description bug with valkazard
+- Valkazard
+	- High Intensity Beam
+	- Max Ammo: 8
+	- Ammo/Sec : 0.13->0
 v2.06
 -------------------
 - Added some more dialogue text

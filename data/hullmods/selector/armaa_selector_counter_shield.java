@@ -75,7 +75,7 @@ public class armaa_selector_counter_shield extends BaseHullMod {
 		Color[] arrB ={Misc.getHighlightColor(),F,F};
 		Color[] arr2 ={Misc.getHighlightColor(),E};
 		tooltip.addSectionHeading("Details" ,Alignment.MID, 10);
-		tooltip.addPara("%s " + "Shield arc decreased by %s.", pad,arr2, "-", (int)(SHIELD_MALUS)+"%");
+		tooltip.addPara("%s " + "Shield arc decreased by %s.", pad,arr2, "-", (int)(SHIELD_MALUS*100f)+"%");
 		tooltip.addPara("%s " + "Shield deployment and turn rate increased by %s.", padS, arr, "-", (int) Math.round(SHIELD_BONUS_UNFOLD) + "%");
 		tooltip.addPara("%s " + "Shield damage absorption increased by %s.", padS, arr, "-", (int) Math.round(SHIELD_BONUS) + "%");
 		tooltip.addPara("%s " + "Shield pierce resistance +%s ", padS, arr, "-",(int)(PIERCE_MULT * 100f) + "%");	
