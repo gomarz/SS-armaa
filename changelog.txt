@@ -1,3 +1,14 @@
+v2.07
+-------------------
+- fixed flickering arrow bug on command ui for strikecraft
+- restricted curvy laser use for remnant to a specific variant that appears infrequently
+- Misc changes/fixes
+- Fixed crash caused by carriers that somehow dont have launchbays, for real this time
+- WINGCOM
+	- Previously, fighters with wingcom installed on parent ship would get increased RoF + damage bonus. the damage bonus has been removed.
+
+- Fixed huge supply consumption by salvage gunhazard 
+
 v2.06
 -------------------
 - Added some more dialogue text

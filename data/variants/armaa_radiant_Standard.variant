@@ -26,7 +26,7 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS 002": "armaa_curvyLaser",
+                "WS 002": "cyclone",
                 "WS 004": "cyclone"
             }
         },
@@ -59,7 +59,7 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS 003": "guardian"}
+            "weapons": {"WS 003": "armaa_curvyLaser"}
         },
         {
             "autofire": true,
