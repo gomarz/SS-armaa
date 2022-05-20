@@ -1,3 +1,14 @@
+v2.08
+-------------------
+- AI strikecraft should launch from their own carriers properly
+- Fixed pilotable kouto never appearing for sale
+- AI strikecraft with WINGCOM and an officer will now have pilots assigned to their wingmen
+	- Level varies based on the strikecraft pilots level + a bit of rng
+- Watchdog sprite touched up by Selkie
+- Garegga sprite touched up by Selkie
+
+
+
 v2.07
 -------------------
 - fixed flickering arrow bug on command ui for strikecraft

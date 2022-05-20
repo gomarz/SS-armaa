@@ -2,7 +2,6 @@
 "combatSmallForSmallFleet":{
 "armaa_garegga_tt_standard":2,
 "armaa_garegga_tt_assault":2,
-"armaa_hazard_standard":3,
 "armaa_xyphos_standard":3,
 "armaa_warthog_standard":3,
 "armaa_broadsword_standard":3,
@@ -17,12 +16,13 @@
 	"armaa_einhander_Overclocked": 0.9,
 	"armaa_warthog_standard":4,
 	"armaa_broadsword_standard":4,
+	"armaa_kouto_frig_standard":1,
   },
   "combatMedium": {
     "armaa_altagrave_standard":2,
     "armaa_altagrave_c_Standard":2,
     "armaa_altagrave_g_Standard":2,
-    "armaa_monitor_standard":2,
+    "armaa_monitor_standard":0.5,
   },
   "phaseMedium": {
   },
