@@ -1,5 +1,5 @@
 {
-	"id":"armaa_flamer_shot31",
+	"id":"armaa_flamer_shot32",
 	"specClass":"projectile",
 	"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
 	
