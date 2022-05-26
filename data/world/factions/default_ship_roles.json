@@ -24,46 +24,9 @@
     "armaa_altagrave_g_Standard":2,
     "armaa_monitor_standard":0.5,
   },
-  "phaseMedium": {
-  },
-  "phaseLarge": {
-  },
-  "phaseCapital": {
-  },
-  "freighterSmall": {
-  },
-  "freighterMedium": {
-  },
-  "freighterLarge": {
-  },
-  "tankerSmall": {
-  },
-  "tankerMedium": { 
-  },
-  "tankerLarge": {
-  },
-  "personnelSmall": {
-  },
-  "personnelMedium": {
-  },
-  "personnelLarge": {
-  },
-  "linerSmall": {
-  },
-  "linerMedium": {
-  },
-  "linerLarge": {
-  },
-  "tug": {
-  },
-  "crig": {
-  },
-  "utility": {
-  },
-  "orbitalStationLowTech": {
-  },
-  "battlestationLowTech": {
-  },
+	"carrierLarge":{
+		"armaa_astral_Elite":1,
+	},
 	"combatCapital":{
 		"armaa_radiant_Standard":1,
 	},
