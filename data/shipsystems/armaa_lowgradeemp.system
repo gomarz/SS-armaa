@@ -3,17 +3,28 @@
 	"type":"EMP",
 	"aiType":"EMP",
 	
-	"range":450,
+	"range":500,
 	
 	"empDamage":100,
-	"damage":40,
+	"damage":80,
 	"damageType":ENERGY,
 	
 	#"effectColor1":[150,150,255,200],
 	#"effectColor2":[175,175,255,255],
-	"effectColor1":[200,200,200,200],
-	"effectColor2":[255,175,255,255],
+	"effectColor1":[50,255,255,200],
+	"effectColor2":[200,200,255,255],
 
+	#"jitterUnderColor":[244,80,144,155],
+	#"jitterUnderCopies":5,
+	#"jitterUnderMinRange":2,
+	#"jitterUnderRange":6,
+	#"jitterUnderRangeRadiusFraction":0,
+	
+	"jitterColor":[244,80,144,100],
+	"jitterCopies":1,
+	"jitterMinRange":1,
+	"jitterRange":25,
+	"jitterRangeRadiusFraction":0,
 
 	"useSound":"system_emp_emitter_activate",
 	"loopSound":"system_emp_emitter_loop",
@@ -22,7 +33,7 @@
 	
 	"aiHints":{
 		"threatRange":500,
-		"threatAmount":4,
+		"threatAmount":6,
 		"threatAngle":0,
 		"threatArc":360,
 	}

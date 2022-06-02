@@ -8,7 +8,8 @@ Overshield,armaa_overshield,,,,,,,,,,,,,5,TRUE,,,,TRUE,,,,,,,,graphics/icons/hul
 K.A.R.M.A.,armaa_karma,,,,,,0.1,,2,0.08,,,0.25,2,FALSE,,,TRUE,,,,,,,,,graphics/icons/hullsys/damper_field.png
 Overboost,armaa_oboost,,,,,,,,3,0.1,0.5,1,0.5,1.5,,,,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 Overboost,armaa_oboost2,,,0.02,,,,,3,0.1,0.25,,0.25,2,TRUE,,TRUE,TRUE,,,,,TRUE,,,,graphics/icons/hullsys/infernium_injector.png
-Low-Grade EMP Emitter,armaa_lowgradeemp,1,,,,,0.5,,,,0.4,2,0.5,7,,,,,TRUE,,,,,,,,graphics/icons/hullsys/emp_emitter.png
+Low-Grade EMP Emitter,armaa_lowgradeemp,1,,0.02,,,,,,,0.15,2.5,0.15,2,,,,,FALSE,,,,,,,,graphics/icons/hullsys/emp_emitter.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Phase Teleporter(Fighter),armaa_phaseteleporter,,,,,,0.2,,3,0.1,0.3,0,0.3,0.5,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
 Pila,armaa_piladrone,,,,,,0.2,,6,0.1,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 CLAW Bits[FTR],armaa_claw,,,,,,,,6,,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
