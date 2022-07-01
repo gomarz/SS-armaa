@@ -58,9 +58,10 @@ armaa_einhanderS2,armaa_valkengun_shot2,base_trail_zap,10,0,0.2,0.7,12,8,"[200,0
 armaa_einhanderS3,armaa_valkengun_shot2,beam_trail_smooth,10,0,0.2,0.5,20,20,"[245,245,0]","[0,0,200]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_curvylaser,armaa_flamer_shot3,beam_trail_smooth,10,0,0.1,1,20,20,"[53,176,252]","[55,100,250]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+armaa_curvylaser2,armaa_flamer_shot3,beam_trail_smooth,10,0,0.1,1,20,20,"[253,255,255]","[253,255,255]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bounce_laser3,armaa_bounce_laser,beam_trail_smooth,10,0,1,0.5,20,20,"[53,176,252]","[55,100,250]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
-armaa_bounce_laserc2,armaa_bounce_laser2,beam_trail_smooth,10,0,0.5,0.5,20,20,"[55,100,250]","[25,25,55]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,15,45,0,0,0,0,FALSE,FALSE
+armaa_bounce_laserc2,armaa_bounce_laser2,beam_trail_smooth,10,0,0.5,0.5,15,15,"[55,100,250]","[25,25,55]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,15,45,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bounce_laserc3,armaa_bounce_laser3,beam_trail_smooth,10,0,0.25,0.1,10,5,"[250,100,55]","[1,1,1]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

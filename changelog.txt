@@ -1,24 +1,39 @@
 v2.08
 -------------------
 = New Features =
-- AI strikecraft(enemies and allies) with WINGCOM and an officer will now have pilots assigned to their wingmen, like the player
-	- Level varies based on the strikecraft pilots level + a bit of rng
-	- Squad names are just (parent ship name) + Squadron
+- AI strikecraft(enemies and NPC allies) with WINGCOM and an officer piloting will have pilots assigned to their fighters like the player
+	- Level varies based on the officers level + a bit of rng
+	- Squad names are (currently) just (parent ship name) + Squadron
+
+- New ship, VX Custom
+
+- Added two tags: strikecraft_medium and strikecraft_large
+	- ships with strikecraft_medium can only land on cruisers and capitals
+	- ships with strikecraft_large can only land on capitals
 
 = Bugfixes / QoL =
 - AI strikecraft should launch from their own carriers properly
-- Further reduced likelihood for most strikecraft to all choose a single carrier to deploy from
+
+- Strikecraft should no longer 'clown car' from carriers
+	- Basically, the number of strikecraft that can deploy from carriers is equal to the number valid launch bays on the field at time of deployment
+	- Once all slots are taken remaining strikecraft will from edge like normal ships
+
 - Fixed pilotable kouto never appearing for sale
 - Fixed strikecraft not being affected by CR Reduction / Reduced PPT in coronas/event horizon
+- Fixed visual bug with Valkazard Combat Stims appearing disabled on hullmod, even when recreational drugs present
+- Fixed bug where WINGCOM fighters would land on parent ship with no native bays if no other carriers were present instead of retreating
+- Fixed strikecraft being locked in an invisible/uncontrollable state if player tried ordering one while docked 
 
 Watchdog
-- Watchdog sprite touched up by Selkie
+- Watchdog sprite revised by Selkie
 	- Removed 2 medium turrets
 	- Added WINGCOM
+	- Adjusted AI to better attempt to keep distance
 
-- Garegga sprite touched up by Selkie
+- Garegga sprite revised by Selkie
 
-- Curvy Laser subprojectiles are now interceptable (vs only the parent projectile being interceptable)
+- Curvy Laser subprojectiles are now interceptable targets (versus only the parent projectile being interceptable)
+	- fixed outdated description text stating impact damage was 4500, should be 3000
 
 v2.07
 -------------------

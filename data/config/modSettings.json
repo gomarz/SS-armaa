@@ -95,6 +95,7 @@
 		"strikecraft_squad_chatter_soldier":[
 			"\"Channel clear, go ahead.\"",
 			"\"You employed me as a mercenary. I'll give you your money's worth!...No. It means more than that... To my last breath, I will do all that I can to ensure your dream.\"",
+			"\"The stronger your will, the more trials you face. Although you can choose to avoid them, these are the key to conquering yourself.\"",
 			"\"The life of a soldier is the only one I know. That's why I can never settle down.\"",
 			"\"Most pilots fly only one suicide mission. And then there's me.\"",				
 			"\"I'll always fulfill my mission.\"",
@@ -132,6 +133,7 @@
 		"strikecraft_squad_chatter_villain":[
 			"\"The one thing I've always had going for me was people's low expectations. Nobody ever expects a whole hell of a lot from me.\"",
 			"\"You know, I don't get it. I'm a great person, you know? I'm the best pilot in the fleet. People look up to me. So tell me this. Why is it I can never get a date? I mean, do some folks have all the luck? Or is it just me?\"",
+			"\"Unfortunately, killing is one of those things that gets easier the more you do it.\"",
 			"\"You pay me to work -- I like to earn my pay.\"",
 			"\"Violence is sometimes it's own reward.\"",
 			"\"Why me, Ludd? I been good. Why do I have to meet up with all the screwballs?\"",
@@ -185,6 +187,10 @@
 		"strikecraft_squad_chatter_combat":
 		[
 			"\"Intercept those bandits!\"",
+			"\"I didn't expect to encounter someone like you... How fortunate.\"",
+			"\"Now, you will die together... How joyous...\"",
+			"\"I have no time for this. To your grave!\"",
+			"\"I told you that if you fled, I would not chase you. But it seems you wish to die..\"",
 			"\"Unsurprising. They always return to the scene of the crime.\"",
 			"\"Eh, whatever. If I use this weapon well enough, it'll all work out, right?\"",
 			"\"Give it everything, and you might live a little longer.\"",
@@ -236,6 +242,8 @@
 			"\"Did you really believe you could defeat the best pilot in the Persean Sector? Ha ha ha.\"",
 			"\"Not reading anything on sensors!\"",
 			"\"WOOOO -- HOOOOOO!!!!\"",
+			"\"I ain't dyin' til I achieve something. Even if my ideals are high, I'll never give in. I won't leave this life with regrets!\"",
+			
 			"\"Ha ha ha ha ha! Kill! Burn!!! Die you spineless worms!!!\"",
 			"\"I don't know what's goin' on here, $factionname -- but it stops right now! Even if it means I gotta take you out to do it!\"",
 			"\"Watch your fire!!\"",
@@ -335,6 +343,7 @@
 			"\"We didn't come this far to not see things through to the end!\"",
 			"\"All strikecraft follow $squadleader!\"",
 			"\"Those who survive a long time on the battlefield start to think they're invincible...I bet you do too, $squadmember.\"",
+			"\"Between the two of us, we've got this covered.\"",
 		],
 		
 		"strikecraft_squad_chatter_intersquad_response":
@@ -404,6 +413,10 @@
 		#plays at battle start
 		"strikecraft_squad_chatter_intro":
 		[
+			"\"We have our own reasons for not giving up. And the less I speak of it, the better...\"",
+			"\"They're not taking this from us!\"",
+			"\"Pitiful. Mere prey to be hunted. Now run like the frightened rodent you are.\"",
+			"\"Fate is unkind. There will be no resolution today... Flee, and I will not give chase.\"",			
 			"\"Well, it is what it is. Your actions were clearly deliberate. There's no point in trying to reason with you.\"",
 			"\"$factionname dogs. Can they even understand what we're saying?\"",
 			"\"How you get there is unimportant. It's who stands last that matters!\"",

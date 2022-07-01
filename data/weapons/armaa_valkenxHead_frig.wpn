@@ -1,5 +1,5 @@
 {
-  "id": "armaa_valkenxHead",
+  "id": "armaa_valkenxHead_frig",
   "specClass": "beam",
   "type": "DECORATIVE",
   "size": "SMALL",
@@ -7,7 +7,7 @@
   #"everyFrameEffect": "data.scripts.weapons.armaa_torsoSwapper", 
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead_ace.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
   "glowColor": [
     255,

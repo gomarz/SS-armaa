@@ -1,14 +1,14 @@
 {
-  "id": "armaa_valkenxHead",
+  "id": "armaa_valkenx_torso_frig",
   "specClass": "beam",
   "type": "DECORATIVE",
   "size": "SMALL",
   "collisionClass": "RAY",
-  #"everyFrameEffect": "data.scripts.weapons.armaa_torsoSwapper", 
+  "showDamageWhenDecorative":true,
   "collisionClassByFighter": "RAY_FIGHTER",
-  "displayArcRadius": 250,
-  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
-  "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody_ace.png",
+  "everyFrameEffect": "data.scripts.weapons.armaa_VXEffect",  
+  "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
   "glowColor": [
     255,
     255,
@@ -16,36 +16,40 @@
     255
   ],
   "hitGlowRadius": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
   "turretOffsets": [
-    0.5,
-    3.5
+    18,
+    0
   ],
   "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
-    4,
-    0
+    -5,
+    -5,
+    -5,
+    5
   ],
   "hardpointAngleOffsets": [
-    0
+    -45,
+    45
   ],
   "fringeColor": [
     255,
-    0,
-    0,
+    255,
+    255,
     255
   ],
   "coreColor": [
     255,
-    0,
-    0,
+    255,
+    255,
     255
   ],
-  "darkCore": true,
-  #"convergeOnPoint": true,
-  "width": 2,
-  "textureType": SMOOTH,
+  "width": 10,
+  "textureType": ROUGH,
   "textureScrollSpeed": 64,
   "pixelsPerTexel": 1
 }

@@ -1,13 +1,13 @@
 {
-  "id": "armaa_kouto_variablerifle",
+  "id": "armaa_valkenx_frig_variablerifle",
   "specClass": "beam",
   "type": "DECORATIVE",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoDummyWeapon",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/weapons/armaa_kouto_variablerifle_00.png",
-  "hardpointSprite": "graphics/armaa/weapons/armaa_kouto_variablerifle_00.png",
+  "turretSprite": "graphics/armaa/weapons/armaa_revx_variablerifle_00.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_revx_variablerifle_00.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
     255,
@@ -32,7 +32,7 @@
   "turretAngleOffsets": [
     1,
     1,
-    0
+    1
   ],
   "hardpointOffsets": [
     17,
@@ -41,7 +41,7 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "numFrames": 2,
+  #"numFrames": 2,
   "frameRate": 0,
   "fringeColor": [
     255,

@@ -1,13 +1,14 @@
 {
-  "id": "armaa_valkenx_torso",
+  "id": "armaa_valkenx_frig_leftArm",
   "specClass": "beam",
   "type": "DECORATIVE",
   "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",
   "collisionClass": "RAY",
-  "showDamageWhenDecorative":true,
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
-  "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenx_frig_armL.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
   "glowColor": [
     255,
     255,
@@ -15,25 +16,25 @@
     255
   ],
   "hitGlowRadius": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
-  ],
   "turretOffsets": [
-    18,
-    0
+    13,
+    15,
+    13,
+    15,
+    13,
+    15
   ],
   "turretAngleOffsets": [
+    -1,
+    0,
     0
   ],
   "hardpointOffsets": [
-    -5,
-    -5,
-    -5,
-    5
+    0,
+    0
   ],
   "hardpointAngleOffsets": [
-    -45,
-    45
+    0
   ],
   "fringeColor": [
     255,
@@ -47,8 +48,8 @@
     255,
     255
   ],
-  "width": 10,
+  "width": 1,
   "textureType": ROUGH,
-  "textureScrollSpeed": 64,
-  "pixelsPerTexel": 1
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 5
 }
