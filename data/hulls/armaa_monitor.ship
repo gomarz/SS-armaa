@@ -92,6 +92,24 @@
       "renderOrderMod": -99998
     },
     {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": 0,
+      "locations": [17, 22]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": -0,
+      "locations": [17, -22]
+    },
+    {
       "id": "WS0002",
       "size": "SMALL",
       "type": "UNIVERSAL",

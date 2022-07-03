@@ -35,8 +35,6 @@
 		},
 		"misc":{
                         "armaa_target":"graphics/warroom/taskicons/just_kill_it.png",
-			"eis_ceylonrad":"graphics/armaa/fx/eis_ceylonrad.png",
-			"eis_ceylontarget":"graphics/armaa/fx/eis_ceylontarget.png",
 			"armaa_neurohelmet":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",
 			"drugs":"graphics/armaa/icons/hullsys/armaa_drugs_icon.png",
 			"ai":"graphics/armaa/icons/hullsys/armaa_ai_core.png",
