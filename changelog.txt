@@ -16,7 +16,7 @@ v2.08
 
 - Strikecraft should no longer 'clown car' from carriers
 	- Basically, the number of strikecraft that can deploy from carriers is equal to the number valid launch bays on the field at time of deployment
-	- Once all slots are taken remaining strikecraft will from edge like normal ships
+	- Once all slots are taken remaining strikecraft will deploy from edge like normal ships
 
 - Fixed pilotable kouto never appearing for sale
 - Fixed strikecraft not being affected by CR Reduction / Reduced PPT in coronas/event horizon
