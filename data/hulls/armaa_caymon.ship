@@ -19,7 +19,7 @@
     "armaa_valkencannon_wing"
   ],
   "builtInWeapons": {
-    "AWACS": "starfall_awacsSuite"
+    #"AWACS": "starfall_awacsSuite"
   },
   "weaponSlots": [
     {

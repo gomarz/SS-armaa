@@ -25,7 +25,7 @@ Broadsword (AA),armaa_broadsword,Heavy Fighter,Low Tech,maneuveringjets,armaa_tr
 Warthog (AA),armaa_warthog,Assault Fighter,Midline,ammofeed,armaa_traveldrive,6,800,225,1250,,75,30,,130,180,150,100,200,40,NONE,,0,0,0,,,2,0,0,0,0.5,,11,15000,8,10,250,0.25,6,6,PLAY_FIGHTER_OVERLOAD_SOUNDS,fake_fighter,0.5,0.7,,,,,,0,,,,110
 Gladius(AA),armaa_gladius,Interceptor,Midline,flarelauncher_single,,5,500,75,1000,,50,30,,300,400,300,150,300,40,NONE,,0,0,0,,,2,0,0,0,0.5,,11,15000,8,10,225,0.25,5,5,PLAY_FIGHTER_OVERLOAD_SOUNDS,"fake_fighter,independent_of_carrier,merc",0.5,0.7,,,,,,,,,,
 ,,,,,,,,,,,,,,300,400,300,150,300,40,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Caymon,armaa_caymon,Fast Carrier,Midline,starfall_awacs,,14,6000,750,5000,6000,300,100,2,80,60,40,20,25,800,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,20,20,"HIDE_IN_CODEX,CARRIER,COMBAT,NO_AUTO_ESCORT",,,,,,,,,0.5,2,3,,407
+Caymon,armaa_caymon,Fast Carrier,Midline,,,14,6000,750,5000,6000,300,100,2,80,60,40,20,25,800,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,20,20,"HIDE_IN_CODEX,CARRIER,COMBAT,NO_AUTO_ESCORT",,,,,,,,,0.5,2,3,,407
 #Seperate hulls instead of skins since they don’t properly spawn in markets for some reason,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #MA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Altagrave,armaa_altagrave,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,375,5800,,400,80,,110,110,80,95,100,250,FRONT,,140,0.4,0.65,,,15,15,10,10,1,15,10,130000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,"armaa_mobilearmor,rare_bp,rare_bp, merc, hist1t",0.5,0.3,2,4,2,,,,,,,
