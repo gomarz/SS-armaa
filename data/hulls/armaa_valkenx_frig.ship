@@ -8,7 +8,7 @@
   "width": 18,
   "center": [9, 16.5],
   "collisionRadius": 24,
-  "shieldCenter": [0, -0],
+  "shieldCenter": [2, -0],
   "shieldRadius": 54,
   "viewOffset": 0,
   "builtInMods": [
@@ -24,7 +24,6 @@
   "builtInWeapons": {
     "A_GUN": "armaa_valkenx_frig_variablerifle",
     "B_TORSO": "armaa_valkenx_torso_frig",
-    "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
     "C_ARML": "armaa_valkenx_frig_leftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkenx_leftPauldron_frig",
@@ -60,7 +59,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 0]
+      "locations": [0, -0]
     },
     {
       "id": "B_TORSO_VERNIER",
@@ -77,7 +76,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 15,
+      "angle": 10,
       "locations": [3, 3]
     },
     {
@@ -151,13 +150,13 @@
       "mount": "TURRET",
       "arc": 5,
       "angle": 0,
-      "locations": [0, -0],
+      "locations": [7, -0],
       "renderOrderMod": -900
     },
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 90,
       "angle": -15,

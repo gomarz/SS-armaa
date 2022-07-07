@@ -94,7 +94,7 @@
     {
       "id": "WS0001",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 30,
       "angle": 0,
@@ -103,7 +103,7 @@
     {
       "id": "WS0003",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 30,
       "angle": -0,
