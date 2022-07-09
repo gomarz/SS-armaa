@@ -1,4 +1,4 @@
-v2.08
+v2.083
 -------------------
 = New Features =
 - AI strikecraft(enemies and NPC allies) with WINGCOM and an officer piloting will have pilots assigned to their fighters like the player
