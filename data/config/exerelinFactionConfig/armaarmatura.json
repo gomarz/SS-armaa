@@ -24,7 +24,7 @@
 	"startShipsCarrierSmall":
 	[
 		["armaa_aleste_as_f", "armaa_valkyrie_standard"],
-		["armaa_warthog_standard","armaa_broadsword_standard","armaa_condor_Support"],
+		["armaa_valkenx_frig_standard","gemini_Standard"],
 		["armaa_leynos_standard","condor_Support"],
 		["armaa_einhander_plus_subprime","condor_Support"],
 	],
