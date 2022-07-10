@@ -1,5 +1,6 @@
 {
- # "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",  
+ # "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",
+  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",  
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "coreColor": [
