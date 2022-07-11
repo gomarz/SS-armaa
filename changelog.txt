@@ -2,6 +2,8 @@ v2.084
 -------------------
 - Fixed Valkazard being locked in an invisible/uncontrollable state if docking while under player control
 
+- Adusted refit logic so that ships with an entirely ammo based loadout will immediately attempt to resupply instead of flying around uselessly
+
 v2.083
 -------------------
 = New Features =

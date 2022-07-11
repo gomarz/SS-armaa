@@ -12,7 +12,7 @@
   "shieldRadius": 54,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract",
+    "cataphract2",
     "strikeCraft",
     "autorepair",
     "reduced_explosion",
@@ -38,7 +38,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 70,
       "angle": -10,
       "locations": [0, -3]
     },
@@ -47,7 +47,7 @@
       "size": "MEDIUM",
       "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 70,
       "angle": -10,
       "locations": [0, -3],
       "renderOrderMod": -900
@@ -75,7 +75,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 70,
       "angle": 10,
       "locations": [3, 3]
     },
@@ -191,7 +191,7 @@
       "angle": 180,
       "contrailSize": 8,
       "style": "CUSTOM",
-      "styleId": "MIDLINE"
+      "styleId": "MechaTrail"
     },
     {
       "location": [-14, 5],
@@ -200,7 +200,7 @@
       "angle": 180,
       "contrailSize": 8,
       "style": "CUSTOM",
-      "styleId": "MIDLINE"
+      "styleId": "MechaTrail"
     },
     {
       "location": [-14, 6],
@@ -208,16 +208,16 @@
       "width": 5,
       "angle": 141.5,
       "contrailSize": 5,
-      "style": "CUSTOM",
-      "styleId": "MIDLINE"
+            "style": "CUSTOM",
+      "styleId": "MechaTrail"
     },
     {
       "location": [-14, -6],
       "length": 16.5,
       "width": 5,
       "angle": -141.5,
-      "contrailSize": 5,
-      "style": "MIDLINE"
+      "style": "CUSTOM",
+      "styleId": "MechaTrail"
     }
   ],
   "bounds": [
