@@ -7,11 +7,13 @@
   "height": 36,
   "width": 34,
   "center": [16, 17],
-  "collisionRadius": 18,
+  "collisionRadius": 11,
   "shieldCenter": [0, -0],
-  "shieldRadius": 21.5,
+  "shieldRadius": 11,
   "viewOffset": 0,
-  "builtInMods": ["reduced_explosion"],
+  "builtInMods": [
+    "reduced_explosion"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -37,6 +39,6 @@
     -6, -4,
     -6, 4,
     4, 4.5,
-    5, -5
+    2.5, -4
   ]
 }

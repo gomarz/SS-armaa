@@ -1,3 +1,9 @@
+v2.085
+------------------
+- Slight tweaks to VX Custom sprite, added arm recoil anim(s)
+- balance tweaks
+- Refactored launch script
+
 v2.084
 -------------------
 - Fixed Valkazard being locked in an invisible/uncontrollable state if docking while under player control
@@ -7,6 +13,10 @@ v2.084
 - Fixed ships with strikecraft_large && strikecraft_medium still being able to land on banned ship sizes
 
 - Fixed some weirdness with the takeoff script
+
+- Fixed debug text appearing when AI strikecraft land
+
+- Fixed bug where AI would linger over carrier instead of docking (?)
 
 v2.083
 -------------------

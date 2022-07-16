@@ -1,18 +1,19 @@
 {
   "id": "armaa_valkenxHead_frig",
   "specClass": "beam",
-  "type": "DECORATIVE",
+  "type": "ENERGY",
   "size": "SMALL",
   "collisionClass": "RAY",
-  #"everyFrameEffect": "data.scripts.weapons.armaa_torsoSwapper", 
+  "beamEffect": "data.scripts.weapons.armaa_targetPainter_BeamEffect", 
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
   "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead_ace.png",
+  "turretGlowSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead_ace_glow.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
   "glowColor": [
     255,
-    255,
-    255,
+    0,
+    0,
     255
   ],
   "hitGlowRadius": 0,
@@ -21,7 +22,7 @@
     3.5
   ],
   "turretAngleOffsets": [
-    0
+    -0.5
   ],
   "hardpointOffsets": [
     4,
@@ -37,10 +38,10 @@
     255
   ],
   "coreColor": [
-    255,
+    190,
     0,
     0,
-    255
+    196
   ],
   "darkCore": true,
   #"convergeOnPoint": true,
