@@ -34,7 +34,7 @@
 				"armaa_einhander":2,
 				"armaa_garegga":4,
 				"armaa_aleste_frig":1,
-				"armaa_leynos_frig":1,
+				"armaa_leynos_frig":.8,
 				"armaa_hazard_frig":1,
 				"armaa_xyphos":1.2,
 				"armaa_broadsword":1.2,
