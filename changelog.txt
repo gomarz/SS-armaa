@@ -1,7 +1,10 @@
-v2.085
+v2.09
 ------------------
 - Slight tweaks to VX Custom sprite, added arm recoil anim(s)
 - balance tweaks
+	- reduced HP and flux stats slightly for all mechs
+	- switched hullsize to frigate
+	- removed expanded magazine/misslerack restriction
 - Refactored launch script
 
 v2.084

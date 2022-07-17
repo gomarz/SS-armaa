@@ -243,7 +243,8 @@
 			"\"Not reading anything on sensors!\"",
 			"\"WOOOO -- HOOOOOO!!!!\"",
 			"\"I ain't dyin' til I achieve something. Even if my ideals are high, I'll never give in. I won't leave this life with regrets!\"",
-			
+			"\"Does it make you feel good, to use all those big words to tell me I'm going to die?\"",
+			"\"My engine blocks are angry at me.\"",
 			"\"Ha ha ha ha ha! Kill! Burn!!! Die you spineless worms!!!\"",
 			"\"I don't know what's goin' on here, $factionname -- but it stops right now! Even if it means I gotta take you out to do it!\"",
 			"\"Watch your fire!!\"",
@@ -279,6 +280,9 @@
 			"\"I see them! I can see $factionnamearticle!\"",
 			"\"I'm not playin' around!\"",
 			"\"I'm going in. Follow me!\"",
+			"\"Did you think I'd let you?\"",
+			"\"It seems we underestimated their ability.\"",		
+			"\"You can still fight when you're drunk!\"",
 			"\"Little mice. Scurrying everywhere.\"",
 			"\"So much for the small fry. Now, you're next.\"",
 			
@@ -296,11 +300,15 @@
 	
 		"strikecraft_squad_chatter_intersquad_statement":
 		[
+			"\"Damn it, $squadmember, take the shot!\"",
+			"\"I'm going on ahead, $squadmember. Don't start crying again because you can't see me.\"",
 			"\"Understand them? $factionnamearticle? How could we understand them?!\"",
 			"\"I LOVE EVERYONE!\"",
+			"\"Life without pain isn't real life\"",
 			"\"$factionnamearticle seek a world filled with endless war and destruction. On that we can agree.\"",
 			"\"I could be dead by morning. Should've changed my underwear.\"",
 			"\"$squadmember, lets do this!\"",
+			"\"Listen to my song!\"",
 			"\"Excellent work, $squadmember. You did well.\"",
 			"\"$squadmember, i'm your backup! Just hang on!\"",
 			"\"I can almost taste the hate out there. This is going to be a real bloodbath.\"",
@@ -344,12 +352,14 @@
 			"\"All strikecraft follow $squadleader!\"",
 			"\"Those who survive a long time on the battlefield start to think they're invincible...I bet you do too, $squadmember.\"",
 			"\"Between the two of us, we've got this covered.\"",
+			"\"That's what the last 6 pilots said.\"",
+
 		],
 		
 		"strikecraft_squad_chatter_intersquad_response":
 		[
 			"\"If you don't stay focused, I'll shoot you down myself!\"",
-			"\"Real heroes always make it back.\"",
+			"\"You change subjects like an acrobat.\"",
 			"\"Call me sentimental, but I wish we'd met under different circumstances.\"",
 			"\"Are you trying to kill me? Fine, I see how things are.\"",
 			"\"I hope you aren't having second thoughts. Crossing me would be a big mistake.\"",
@@ -399,7 +409,6 @@
 			"\"Do you know who I am?\"",	
 			"\"I'm only here to laugh at you.\"",
 			"\"$squadmember. It's sad, isn't it?\"",
-			"\"I've spent more time in the cockpit than on the ground!\"",
 			"\"All $factionnamearticle had to do to win was leave us alone with each other.\"",
 			"\"Kill the chatter and focus on the mission.\"",
 			"\"Not now! Focus!\"",
@@ -414,6 +423,7 @@
 		"strikecraft_squad_chatter_intro":
 		[
 			"\"We have our own reasons for not giving up. And the less I speak of it, the better...\"",
+			"\"If missiles don't work, use your guns! As long as we're alive, we'll keep on fighting!\"",
 			"\"They're not taking this from us!\"",
 			"\"Pitiful. Mere prey to be hunted. Now run like the frightened rodent you are.\"",
 			"\"Fate is unkind. There will be no resolution today... Flee, and I will not give chase.\"",			

@@ -301,6 +301,8 @@ armaa_prodromos_rightArm,WEAPON,"Features a built-in capacitor that lets the wea
 
 armaa_prodromos_leftArm,WEAPON,"Fearsome in its own right, this low-grade autocannon is only marginally effective against space vehicles. It's more than sufficient for clipping the wings of enemy strikecraft, however.",,,
 
+armaa_valkenxHead_frig,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,
+
 armaa_altagrave_exceliza,WEAPON,"A grenade launcher. Explodes after a brief delay, dealing considerable damage to anything in the explosions radius.",,,
 armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like it's cousin, the Ion Buster fires bolts of ionized baryonic matter; it differs in design by focusing significantly more power into individual shots instead of providing a steady stream of fire. While the weapon takes far longer to charge and cannot fire as rapidly, the effects are significantly more devastating and can pierce strained shield generators.
 

@@ -17,7 +17,8 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "reduced_explosion",
-    "armaa_wingCommander"
+    "armaa_wingCommander",
+    "armaa_variableRifle"
   ],
   "builtInWings": [
     "armaa_valkenx_wing"
