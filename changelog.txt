@@ -3,7 +3,7 @@ v2.09
 - Slight tweaks to VX Custom sprite, added arm recoil anim(s)
 - balance tweaks
 	- reduced HP and flux stats slightly for all mechs
-	- switched hullsize to frigate
+	- switched hullsize to frigate (except for gunhaz)
 	- removed expanded magazine/misslerack restriction
 - Refactored launch script
 
