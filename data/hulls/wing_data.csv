@@ -9,7 +9,7 @@ armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract
 armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t,leader_no_swarm,rapid_reform,attack_at_an_angle, rd_no_extra_craft",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,12000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,,2,BOMBER,Lancer,15,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_einhander_wing,armaa_einhander_ftr_std,"fighter3,fighter,cataphract,no_sell,no_drop,independent_of_carrier",5,0.9,6,25,BOX,4000,1000,,1,FIGHTER,Experimental Cataphract,35,26000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_einhander_wing,armaa_einhander_ftr_std,"fighter3,fighter,no_sell,no_drop,independent_of_carrier",5,0.9,6,25,BOX,4000,1000,,1,FIGHTER,Experimental Cataphract,35,26000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
