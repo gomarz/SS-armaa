@@ -1,3 +1,9 @@
+v2.1
+------------------
+- Added null checks to prevent some crashes
+- Revised strikecraft hullmod text 
+
+
 v2.09
 ------------------
 - Slight tweaks to VX Custom sprite, added arm recoil anim(s)

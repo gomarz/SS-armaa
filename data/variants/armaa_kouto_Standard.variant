@@ -1,34 +1,39 @@
 {
+  "variantId": "armaa_kouto_Standard",
+  "hullId": "armaa_kouto",
   "displayName": "Heavy Cataphract",
+  "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
-  "hullId": "armaa_kouto",
+  "quality": 1,
+  "permaMods": [],
   "hullMods": [
     "cataphract",
     "no_weapon_flux"
   ],
-  "variantId": "armaa_kouto_Standard",
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_taclaser",
+        "A_GUN": "armaa_kouto_minigun_right"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "B_TORSO": "armaa_sprigganTorso",
+        "C_ARML": "armaa_koutoBazooka"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_sprigganHead",
+        "E_HEAD": "armaa_kouto_head"
       }
     }
-  ]
+  ],
+  "modules": [],
+  "wings": []
 }
