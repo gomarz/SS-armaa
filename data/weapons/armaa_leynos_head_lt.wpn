@@ -1,0 +1,61 @@
+{
+  "id": "armaa_leynos_head_lt",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/leynos/armaa_leynosHead_lt.png",
+  "turretGlowSprite": "graphics/armaa/ships/leynos/armaa_leynosheadglow.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    55,
+    55,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    3.5,
+    -2.5,
+    3.5,
+    2.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    100,
+    0,
+    255
+  ],
+  "coreColor": [
+    255,
+    155,
+    155,
+    255
+  ],
+  "convergeOnPoint": true,
+  "width": 6,
+  "textureType": [
+    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
+    "graphics/armaa/fx/armaa_ppa_beam_core.png"
+  ],
+  "textureScrollSpeed": 135,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

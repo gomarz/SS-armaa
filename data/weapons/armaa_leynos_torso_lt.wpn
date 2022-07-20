@@ -1,0 +1,48 @@
+{
+  "id": "armaa_leynos_torso_lt",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_leynosEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/leynos/armaa_leynosBody_lt.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "specialWeaponGlowWidth":1,
+  "specialWeaponGlowHeight":1,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "turretOffsets": [],
+  "turretAngleOffsets": [],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 10,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 1
+}

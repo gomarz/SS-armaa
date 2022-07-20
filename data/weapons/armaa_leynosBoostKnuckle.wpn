@@ -11,7 +11,7 @@
   "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",
   "specialWeaponGlowHeight": 1,
   "specialWeaponGlowWidth": 1,
-"numFrames":2,	
+"numFrames":3,	
 "frameRate":0,
 "autocharge": true,
   "renderHints": [

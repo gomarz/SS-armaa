@@ -4,7 +4,7 @@
   "goalVariant": true,
   "fluxVents": 0,
   "hullId": "armaa_aleste",
-  "hullMods": ["no_weapon_flux"],
+  "hullMods": [],
   "variantId": "armaa_aleste_standard",
   "weaponGroups": [
     {
