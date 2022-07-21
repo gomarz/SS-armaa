@@ -2,6 +2,8 @@ v2.1
 ------------------
 - Added null checks to prevent some crashes
 - Revised strikecraft hullmod text 
+- Tweaked arma submarket hull frequency once again
+- Stock is halved but the rarer hulls should appear more often
 
 
 v2.09
