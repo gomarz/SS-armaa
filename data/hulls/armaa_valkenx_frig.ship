@@ -7,7 +7,7 @@
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
-  "collisionRadius": 24,
+  "collisionRadius": 45,
   "shieldCenter": [2, -0],
   "shieldRadius": 54,
   "viewOffset": 0,
@@ -210,7 +210,7 @@
       "width": 5,
       "angle": 141.5,
       "contrailSize": 5,
-            "style": "CUSTOM",
+      "style": "CUSTOM",
       "styleId": "MechaTrail"
     },
     {
@@ -218,6 +218,7 @@
       "length": 16.5,
       "width": 5,
       "angle": -141.5,
+      "contrailSize": 30,
       "style": "CUSTOM",
       "styleId": "MechaTrail"
     }
@@ -225,14 +226,10 @@
   "bounds": [
     15, -4.5,
     12.5, -11.5,
-    3, -13.5,
-    -1, -13.5,
-    -3, -6.5,
+    -8.5, -10.5,
     -13, -5.5,
     -13, 5.5,
-    -3, 6.5,
-    -1, 13.5,
-    3, 13.5,
+    -8.5, 10.5,
     12.5, 11.5,
     15, 4.5
   ]
