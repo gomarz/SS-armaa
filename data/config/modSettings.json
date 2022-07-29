@@ -14,6 +14,74 @@
 		},
 	},
 	"armaarmatura":{
+	"missile_resist_karma":[
+			"ora_echoesS",
+			"ora_invocationS",
+			"ora_callingS",
+			"SCY_phasedS",
+			"SKR_can",
+			"SKR_drill_shot",
+		],
+		"hullmod_refit_custom":{
+		"missleracks":0.25,
+		
+		},
+		"missile_refit_custom":{
+		"reaper":0.25,
+		},
+		"ground_support_custom":{
+		"armaa_einhander_plus":9.0,
+		},
+		"variablerifle_whitelist":[
+		# If you want to enable the variablerifle working for any weapon, uncomment "ALL" otherwise add individual IDs as you see fit.
+		# Don't complain to me or any other modders if you experience any weirdly offset muzzle effects by doing this
+		"ALL",
+		"armaa_fluxcannon",
+		"tahlan_velvet",
+		"tahlan_taffeta",
+		"tahlan_porph",
+		"tahlan_pastel",
+		"tahlan_tethra",
+		"tahlan_magaera",
+		"tahlan_baste",
+		"tahlan_mezoa",
+		"tahlan_tousle",
+		"tahlan_sturmkanone_m2",
+		"tahlan_aetnos",
+		"tahlan_praxus",
+		"tahlan_stitchette",
+		"tahlan_lace",
+		"eis_dualrailgun",
+		"prv_heavyspattergun",
+		"prv_akers",
+		"prv_heavyakers",
+		"tahlan_strass",
+		"prv_akers_nova",
+		"prv_akers_denova",
+		"arbalest",
+		"chaingun",
+		"flak",
+		"dualflak",
+		"heavyac",
+		"heavymg",
+		"heavymortar",
+		"heavymauler",
+		"heavyneedler",
+		"hveldriver",
+		"shredder",
+		"gravitonbeam",
+		"heavyblaster",
+		"heavyburst",
+		"ionbeam",
+		"ionpulser",
+		"miningblaster",
+		"phasebeam",
+		"pulselaser",
+		"cryoblaster",
+		"cryoflux",
+		"disintegrator",
+		"riftbeam",
+		],
 		"special_wing_lines":
 		{
 			"talon":"\"Sir, You might as well send us out there in metal coffins if these things are what we're flying.\"",
@@ -153,7 +221,7 @@
 			"\"Tell me, in your profession, is there a story if no one lives to tell it?\"",
 			"\"Good guys. Bad guys. Here's what they don't understand: this is not a world of absolutes. This is a world of confusion and of death and of misery.\"",
 			"\"There is something I want to discuss with you. Expansion.\"",
-			"\"When you get down to it, it’s just work. Everyone’s got to work, aye? You got to eat, got to put a roof over your head…and these ships don’t come cheap. Throw some underlings in the mix and buddy, you can’t afford to take it easy. So you do dirty deeds for dirtier dollars. Assassination, bounty hunting, blackmail… … War crimes… Hell, even the lowest of the low… … lobster smuggling.\"",
+			"\"When you get down to it, it’s just work. Everyone’s got to work, aye? You got to eat, got to put a roof over your head…and these ships don’t come cheap. Throw some underlings in the mix and buddy, you can’t afford to take it easy. So you do dirty deeds for dirtier credits. Assassination, bounty hunting, blackmail… … War crimes… Hell, even the lowest of the low… … lobster smuggling.\"",
 			"\"How could such a beautiful sector be ruled by such corruption? Simple: Water takes the path of least resistance. Makes for crooked slipstreams and crooked men.\"",
 			"\"Let me tell you a thing about me. People who love me suffer and die. I never want to be loved. That's why I always win.\"",
 			"\"Maybe the dream is dead. Maybe we should all stop pretending it ain't -- and accept the fact we're livin' in a nightmare.\"",
@@ -199,6 +267,8 @@
 			"\"Help is on the way. Hold out till I get there.\"",
 			"\"Gotcha!\"",
 			"\"Die!\"",
+			"\"Tracking targets like this, I swear to Ludd, I’ll throw my neck out!\"",
+			"\"Come closer, you rad-addled bastard! Bigger target for me!\"",
 			"\"Fire away, coward!\"",
 			"\"Oh yeah, 'just weave through the missiles.' What are you, nuts?\"",
 			"\"I will be the one to finish this.\"",
@@ -290,6 +360,7 @@
 		],
 		
 		#plays when source ship is destroyed
+		#Not used atm
 		"strikecraft_squad_chatter_leader_lost":
 		[
 			"\"$squadleader, please respond!\"",
@@ -297,10 +368,11 @@
 			
 		],
 
-	
+		#banter between squadmembers
 		"strikecraft_squad_chatter_intersquad_statement":
 		[
 			"\"Damn it, $squadmember! Take the shot!\"",
+			"\"All I need is ten minutes with you, $squadmember, and I'm in the black for the week. Let’s make the credits flow.\"",
 			"\"I'm going on ahead, $squadmember. Don't start crying again because you can't see me.\"",
 			"\"Understand them? $factionnamearticle? How could we understand them?!\"",
 			"\"I LOVE EVERYONE!\"",
@@ -403,13 +475,12 @@
 			"\"Hmm... My professional opinion? Let's run.\"",
 			"\"Hmmm. An interesting story.\"",
 			"\"Oh well, a promise is a promise.\"",
-			"\"You will find it is not easy to extinguish the flames of war..\"",
+			"\"You will find it is not easy to extinguish the flames of war.\"",
 			"\"It would be a massive loss to the world if I were to die.\"",	
 			"\"Nobody's listening.\"",
 			"\"Do you know who I am?\"",	
 			"\"I'm only here to laugh at you.\"",
 			"\"$squadmember. It's sad, isn't it?\"",
-			"\"All $factionnamearticle had to do to win was leave us alone with each other.\"",
 			"\"Kill the chatter and focus on the mission.\"",
 			"\"Not now! Focus!\"",
 			"\"Roger, tally ho. Let’s chase these dogs off.\"",
@@ -425,17 +496,18 @@
 			"\"We have our own reasons for not giving up. And the less I speak of it, the better...\"",
 			"\"If missiles don't work, use your guns! As long as we're alive, we'll keep on fighting!\"",
 			"\"They're not taking this from us!\"",
+			"\"Here we go! $squadronname, engaging!\"",
+			"\"$squadleader, are you sure we can keep the IFF connection stable in all this?\"",
 			"\"Pitiful. Mere prey to be hunted. Now run like the frightened rodent you are.\"",
 			"\"Fate is unkind. There will be no resolution today... Flee, and I will not give chase.\"",			
-			"\"Well, it is what it is. Your actions were clearly deliberate. There's no point in trying to reason with you.\"",
 			"\"$factionname dogs. Can they even understand what we're saying?\"",
 			"\"How you get there is unimportant. It's who stands last that matters!\"",
 			"\"Hmm... You waste your last breath on insults, and feeble ones at that. Die then, fools of $factionnamearticle.\"",
 			"\"Let's see what the enemy is made of.\"",
 			"\"We will not be bound!\"",
+			"\"This is $squadronname. We’re Tiger for new tasking. Redirecting for area saturation at Phase Line Yellow.\"",
 			"\"A battle? No... This will be a massacre!\"",
 			"\"It doesn't matter how we die! One ancient monster is as good as another!\"",
-			"\"Look at yourselves: the aloof and mighty $factionname! Slaughtering the people who ask for your help!\"",
 			"\"Just die. And if you won't die, just go away!!\"",
 			"\"Stupid $factionname! It's not YOU I want! Just your POWER!!\"",
 			"\"Tonight we dine on $factionname soup!\"",
@@ -494,6 +566,32 @@
 			"\"Reactor online. Sensors online. Weapons systems online. All functioning systems... phenomenal.\"",
 			"\"$factionnamearticle are testing us. Don't show any fear!\"",
 			"\"Peace of Ludd, indeed. Come on in boys. We'll dispense all the peace you want. No waiting.\"",
+		],
+		"$atrocities":
+		[
+			"\"Look at yourself: the aloof and mighty $factionname! Slaughtering the people who ask for your mercy!\"",
+			"\"Well, it is what it is. The atrocities you've commited were clearly deliberate. There's no point in trying to reason with you.\"",
+			"\"You think you can get away with whatever you want without consequence? This is for all the people you've murdered!\"",
+			
+			
+		],
+		"$gatesActive":
+		[
+			"\"We'll be taking that Janus Device of yours..\"",
+		],
+		"$gaTJ_completed":
+		[
+			"\"It's that fleet that jumps without jump points -- stay on your toes!\"",
+			"\"It's $factionnamearticle. This may be the one associated with those anamalous hyperspace maneuvers, look out.\"",
+			"\"Those fancy hyperspace manuevers can't save you now.\"",
+			"\"Word is that $factionnamearticle have managed a technique to enter hyperspace without engagement with a Durand-Patel conjunction.\"",
+			
+		],
+		"$metBaird":
+		[
+			"\"What's a lapdog of the Galatian Academy doing out here?\"",
+			"\"Intel says this is the fleet thats been undertaking work for the Provost from the Galatian Academy. Standby for threat assessment.\"",
+			
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",
@@ -594,73 +692,6 @@
 			"Black Hounds",
 			"Canyon Crows",
         ],
-		"missile_resist_karma":[
-			"ora_echoesS",
-			"ora_invocationS",
-			"ora_callingS",
-			"SCY_phasedS",
-			"SKR_can",
-			"SKR_drill_shot",
-		],
-		"hullmod_refit_custom":{
-		"missleracks":0.25,
-		
-		},
-		"missile_refit_custom":{
-		"reaper":0.25,
-		},
-		"ground_support_custom":{
-		"armaa_einhander_plus":9.0,
-		},
-		"variablerifle_whitelist":[
-		# If you want to enable the variablerifle working for any weapon, uncomment "ALL" otherwise add individual IDs as you see fit.
-		# Don't complain to me or any other modders if you experience any weirdly offset muzzle effects by doing this
-		"ALL",
-		"armaa_fluxcannon",
-		"tahlan_velvet",
-		"tahlan_taffeta",
-		"tahlan_porph",
-		"tahlan_pastel",
-		"tahlan_tethra",
-		"tahlan_magaera",
-		"tahlan_baste",
-		"tahlan_mezoa",
-		"tahlan_tousle",
-		"tahlan_sturmkanone_m2",
-		"tahlan_aetnos",
-		"tahlan_praxus",
-		"tahlan_stitchette",
-		"tahlan_lace",
-		"eis_dualrailgun",
-		"prv_heavyspattergun",
-		"prv_akers",
-		"prv_heavyakers",
-		"tahlan_strass",
-		"prv_akers_nova",
-		"prv_akers_denova",
-		"arbalest",
-		"chaingun",
-		"flak",
-		"dualflak",
-		"heavyac",
-		"heavymg",
-		"heavymortar",
-		"heavymauler",
-		"heavyneedler",
-		"hveldriver",
-		"shredder",
-		"gravitonbeam",
-		"heavyblaster",
-		"heavyburst",
-		"ionbeam",
-		"ionpulser",
-		"miningblaster",
-		"phasebeam",
-		"pulselaser",
-		"cryoblaster",
-		"cryoflux",
-		"disintegrator",
-		"riftbeam",
-		],
+		#####END CHATTER############
 	},
 }

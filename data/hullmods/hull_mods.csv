@@ -220,3 +220,7 @@ HELLBORE,armaa_selector_hellbore,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.s
 ,,,,,,,,,,,,,,,,,,
 L ARM: GAUSS,armaa_selector_gauss_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_gauss_l,,,graphics/icons/hullsys/drone_sensor.png
 L ARM: HELLBORE,armaa_selector_hellbore_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_hellbore_l,,,graphics/icons/hullsys/drone_sensor.png
+,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_vxSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_vxSkinSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
+PAINT: AASV,armaa_vxSkin_AASV,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,,,graphics/armaa/hullmods/armaa_paint.png
+PAINT: COMET,armaa_vxSkin_rocketStars,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_rocketStars,,,graphics/armaa/hullmods/armaa_paint.png

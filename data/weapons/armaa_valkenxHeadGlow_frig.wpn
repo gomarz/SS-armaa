@@ -8,7 +8,7 @@
 	#"turretSprite":"",
         "renderHints":["RENDER_ADDITIVE"],
 	"showDamageWhenDecorative":false,
-         "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead_ace_glow.png",
+         "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXHead_ace_glow.png",
   "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_glow.png",
 	"hardpointSprite":"",
 	"hardpointGlowSprite":"",	

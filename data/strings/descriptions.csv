@@ -81,7 +81,7 @@ Truth may have been lost in  the annals of time, but what can't be disputed is i
 
 armaa_valkenx,SHIP,"The eXpansion-type sacrifices the firepower a full Valken lance offers for far greater survivability. The close quarters chaingun and blade combination can rapidly rend apart armor and disable electronic systems, but they're fairly ineffective against well-shielded opponents and optical weapons.",,,
 
-armaa_valkenx_frig,SHIP,"An upgraded variant of the Valken X. Improvements to armor and manuverability are moderate - however, it boasts miniaturized near frigate-grade power core which is 3.5 times as powerful as the original. The main vernier housed in the centre of the Valken X was removed to accomodate for the extra space necessary for the installation of a shield emitter, making utilization of the originals iconic Havoc Evasion Drive impossible.  ",,,
+armaa_valkenx_frig,SHIP,"An upgraded variant of the Valken X. Improvements to armor and manuverability are minor, but it boasts a miniaturized near frigate-grade power core which is 3 times as powerful as the original. The main vernier housed in the centre of the Valken X was removed to accomodate for the extra space necessary for the installation of a shield emitter, making utilization of the originals iconic Havoc Evasion Drive impossible.  ",,,
 
 armaa_caymon,SHIP,"You shouldn't be able to see mee",,,
 
@@ -101,7 +101,9 @@ From testimonials and what little evidence remains, it's inferred that prior to 
 
 armaa_prodromos,SHIP,"Excels at intercepting fighter formations and missiles. While considered incredibly durable compared to conventional infantry, most space-grade weapons will vaporize the user. The key distinction between itself and it's closest comparate the Wasp is a matter of effectiveness versus minimal loss of pilots. 
 
-Prodromos-class battle armors are considered by Arma Armatura as one of their greatest creations. The missing link between power armor clad infantry and full scale mechs, executives envisioned the design as completely upending current traditional strategic marine applications - soldiers nestled within these machines could easily deploy from friendly ships for 'breach and board' operations independently, simultaneously eliminating the risk of losing boarding ships to an errant boardee's decision to scuttle their vessel and take their aggressors along with them instead. These ambitions never came to pass, as even the lowly Talon is better protected than these hardsuits, while combat drones can readily fill their intended niche in land battles.",,,
+Prodromos-class battle armors are considered by Arma Armatura as one of their greatest creations. The missing link between power armor clad infantry and full scale mechs, executives envisioned the design as completely upending current traditional strategic marine applications - soldiers nestled within these machines could easily deploy from friendly ships for 'breach and board' operations independently, simultaneously eliminating the risk of losing boarding ships to an errant boardee's decision to scuttle their vessel and take their aggressors along with them instead. These ambitions never came to pass as even the lowly Talon is better protected than these hardsuits, while combat drones can readily fill their intended niche in land battles. 
+
+After witnessing the high speed manuevers these suits can perform, many spacers are shocked to find them inadequate for land use - jump jets can be reconfigured for space use, but much like its larger brethern, these verniers are not as effective under the pressure of gravity.",,,
 
 armaa_kouto_frig,SHIP,"The Kouto Electronic Type, or E-Type for short, is designed for electronic warfare and to gather intelligence on enemy forces in order to lend allied forces the combat advantage. A large radome is mounted on the back, granting it enhanced ECM capabilities. By piggybacking off of additionally equipped ECM ships, the E-Type can launch coordinated electronic warfare attacks on enemy, rendering them vulnerable.",,,
 
@@ -113,7 +115,7 @@ armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this 
 
 The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,
 
-armaa_leynos_frig,SHIP,"Thick armor rivaling that of some frigates and midsized mounting for additional ballistic weaponry sees the Leynos serving as wing leader for strike craft squadrons. As it lacks a shield generator, it relies on an integrated Damper Field and its wingmen to see it through the flames of battle.
+armaa_leynos_frig,SHIP,"Thick armor rivaling that of some frigates and midsized mounting for additional ballistic weaponry sees the Leynos serving as wing leader for strike craft squadrons.
 
 Initially unveiled as as the Valken R-Type, this craft was created as part of an internal ArmaA bid among executives for a lucrative official contract that would determine the successor to the standard Valken model. The entire venture was referred to as Project VALHAWK - unfortunately the R-Type's large size, low maneuverability and overburdened power core all lead to disappointing results during combat simulations, and it was passed over in favor of the Valken X.
 

@@ -1,3 +1,24 @@
+v2.1.1
+--------
+
+- uncommented loc that prevented weapons from being pruned on arma market (oops)
+- removed debug text that appeared when allied strikecraft were landing
+- added skin swap for vx custom since I can't decide if the high-techy blue or red is better
+- replaced references of dollars to credits in some dialogue lines
+
+- Added "strikecraft_with_bays" tag
+	- if wingcom is equipped fighters will launch directly from the ship
+
+- Added combat dialogue for enemy wingcom squads relevant to players acheivements/actions during the run
+	- used transverse jump
+	- war crimes
+	- Janus device
+	- working/worked w/ baird
+-Valkazard
+	- SILVERSWORD
+	- System now increases ammo regen of clip based weapons
+
+
 v2.1
 ------------------
 - Added null checks to prevent some crashes

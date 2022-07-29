@@ -10,10 +10,10 @@
   "hardpointSprite": "graphics/armaa/weapons/armaa_revx_variablerifle_00.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
-    255,
-    255,
-    255,
-    255
+    0,
+    0,
+    0,
+    0
   ],
   "specialWeaponGlowHeight": 20,
   "specialWeaponGlowWidth": 10,

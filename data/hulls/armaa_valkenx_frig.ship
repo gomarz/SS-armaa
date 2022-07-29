@@ -3,7 +3,7 @@
   "hullId": "armaa_valkenx_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "armaa_TECH",
+  "style": "HIGH_TECH",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
@@ -17,6 +17,7 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "reduced_explosion",
+    "armaa_vxSkinSwap",
     "armaa_wingCommander",
     "armaa_variableRifle"
   ],
@@ -24,7 +25,6 @@
     "armaa_valkenx_wing"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_valkenx_frig_variablerifle",
     "B_TORSO": "armaa_valkenx_torso_frig",
     "C_ARML": "armaa_valkenx_frig_leftArm",
     "C_ARMR": "armaa_sprigganRightArm",
@@ -225,12 +225,12 @@
   ],
   "bounds": [
     15, -4.5,
-    12.5, -11.5,
+    9, -6,
     -8.5, -10.5,
-    -13, -5.5,
-    -13, 5.5,
+    -12, -4.5,
+    -12, 4.5,
     -8.5, 10.5,
-    12.5, 11.5,
+    9, 6,
     15, 4.5
   ]
 }
