@@ -34,18 +34,18 @@
     0
   ],
   "fringeColor": [
-    255,
-    50,
-    0,
+    52,
+    235,
+    125,
     255
   ],
   "coreColor": [
-    255,
     155,
-    0,
+    255,
+    100,
     255
   ],
-  #"darkCore": true,
+  "darkCore": true,
   #"convergeOnPoint": true,
   "width": 4,
   "textureType": ROUGH,

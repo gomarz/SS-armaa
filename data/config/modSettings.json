@@ -573,7 +573,6 @@
 			"\"Well, it is what it is. The atrocities you've commited were clearly deliberate. There's no point in trying to reason with you.\"",
 			"\"You think you can get away with whatever you want without consequence? This is for all the people you've murdered!\"",
 			
-			
 		],
 		"$gatesActive":
 		[
@@ -591,7 +590,10 @@
 		[
 			"\"What's a lapdog of the Galatian Academy doing out here?\"",
 			"\"Intel says this is the fleet thats been undertaking work for the Provost from the Galatian Academy. Standby for threat assessment.\"",
-			
+		],
+		"$defeatedZiggurat":
+		[
+			"\"I heard these guys took out some sort of TT superweapon. Just rumors, but... be careful.\"",
 		],
 		"strikecraft_squad_names":[
             "Emerald Sabers",

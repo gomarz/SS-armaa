@@ -13,13 +13,13 @@
   "shieldRadius": 160,
   "viewOffset": 0,
   "builtInMods": [
-    "armaa_wingCommander"
+    "armaa_wingCommander",
+
   ],
   "builtInWings": [
-    "armaa_valkencannon_wing"
+    #"starfall_ceylon_drone_wing"
   ],
   "builtInWeapons": {
-    #"AWACS": "starfall_awacsSuite"
   },
   "weaponSlots": [
     {

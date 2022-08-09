@@ -1,3 +1,14 @@
+v2.1.2
+-------
+- Fixed bug that could sometimes prevent pilots from gaining rep/ levelling up
+- Fixed bug where pilot would level up when upgrading a skill to elite (they should only level when gaining a new skill)
+- Max level pilots can now continue gaining elite skills, if they still have slots for them remaining
+- VX Custom  
+  - reduced shield arc from 140 -> 90
+  - Fixed bug that would cause arms to disappear
+  - Added Weapon Swap to Altagrave G, readded to market
+- 
+
 v2.1.1
 --------
 
