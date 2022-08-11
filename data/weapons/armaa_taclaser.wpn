@@ -1,5 +1,7 @@
 {
   "collisionClass": "RAY",
+  #"beamEffect": "data.scripts.weapons.armaa_fluxBeam",
+  "beamFireOnlyOnFullCharge": true,
   "collisionClassByFighter": "RAY_FIGHTER",
   "convergeOnPoint": true,
   "coreColor": [
@@ -8,18 +10,18 @@
     255,
     255
   ],
-  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffect",
-  "fireSoundOne": "burst_pd_fire",
-  "fireSoundTwo": "laser_loop",
+  #"everyFrameEffect":    "data.scripts.weapons.armaa_fluxBeamEffect",
+  "fireSoundOne": "beambangMeso",
+  "fireSoundTwo": "beamfireMeso",
   "fringeColor": [
-    235,
     55,
+    235,
     143,
     255
   ],
   "glowColor": [
-    255,
     155,
+    255,
     100,
     255
   ],

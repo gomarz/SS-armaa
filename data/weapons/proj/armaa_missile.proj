@@ -4,7 +4,7 @@
 	"missileType":"MISSILE",
 	"sprite":"graphics/missiles/missile_locust.png",
 	"size":[8,14],
-	"armingTime":0.05,	
+	"armingTime":0.02,	
 	"noEngineGlowTime":0, # time spent without the engine glow being rendered
 	"center":[3,6],
 	"flameoutTime":1, # total time from flameout to full fadeout
@@ -13,7 +13,7 @@
 	"collisionClass":"MISSILE_NO_FF",
 	"explosionColor":[255,165,50,255],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":50, # purely visual
-	"engineSpec":{"turnAcc":600,
+	"engineSpec":{"turnAcc":1600,
 				  "turnRate":1000,
 				  "acc":800,
 				  "dec":400},
@@ -31,7 +31,7 @@
 						"contrailMaxSpeedMult":0.1f,
 						"contrailAngularVelocityMult":0.1f,
 						"contrailSpawnDistMult":.5, # how far away from engine it starts
-						"contrailColor":[200,200,200,150],
+						"contrailColor":[200,200,200,70],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
 				    "width":4.0,

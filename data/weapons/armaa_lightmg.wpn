@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.armaa_bihanderPlusEffect",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_bihanderPlusEffect",
   "fireSoundTwo":"railgun_fire",
   "hardpointAngleOffsets": [
     0

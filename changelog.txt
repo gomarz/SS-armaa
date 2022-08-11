@@ -7,7 +7,7 @@ v2.1.2
   - reduced shield arc from 140 -> 90
   - Fixed bug that would cause arms to disappear
   - Added Weapon Swap to Altagrave G, readded to market
-- 
+- Reduced Altagrave Vajra's f/s from 1.1->.8
 
 v2.1.1
 --------
