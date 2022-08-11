@@ -35,7 +35,7 @@ HIG-S Particle Ejector,armaa_einhander_hig,2,0.6,2250,650,,50,,0,20,42,24,,,ENER
 M3 Pod,armaa_record_torso,5,,2250,1000,,80,0,10,0,10,,,,HIGH_EXPLOSIVE,,,0,4,4,0.1,,20,5,1,,400,400,10,25,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE, GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,Anti Fighter,,,,,,,,,,12.95,,
 ,armaa_record_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_record_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
-AMWS,armaa_record_head,2,,400,500,150,,,0,45,5,4,0.5,3,ENERGY,,,0,0,0.48,0.015,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+AMWS,armaa_record_head,2,,400,500,150,,,0,45,5,4,0.5,3,ENERGY,,,0,0,0.48,0.015,,,,,1000000,,,,,"PD,SYSTEM,PD_ONLY",,,,,Point Defense,,,,,,,,,,,,
 ,armaa_recordLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 #LEYNOS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 SPLTR-07 Shotgun,armaa_leynos_shotgun_right,2,,,600,,360,,0,90,0,6,0.8,4,HIGH_EXPLOSIVE,196,,0,0.1,9999,0.5,20,20,0.4,0.4,,800,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,General,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,8,"While ammo is available, can be fired as rapidly as the trigger can be pulled.",Semi-Automatic,FALSE,22.25,,

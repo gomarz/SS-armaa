@@ -1,32 +1,46 @@
 {
+  "variantId": "armaa_record_Standard",
+  "hullId": "armaa_record",
   "displayName": "Support Cataphract",
+  "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
-  "hullId": "armaa_record",
-  "hullMods": ["no_weapon_flux"
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "no_weapon_flux"
   ],
-  "variantId": "armaa_record_Standard",
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_taclaser",
+        "TRUE_GUN": "shredder"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "B_TORSO": "armaa_record_torso",
+        "WS0002": "breach",
+        "WS0003": "breach"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_sprigganHead",
+        "E_HEAD": "armaa_record_head"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_record_torso"
       }
     }
-  ]
+  ],
+  "modules": [],
+  "wings": []
 }
