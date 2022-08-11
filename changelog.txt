@@ -8,6 +8,7 @@ v2.1.2
   - Fixed bug that would cause arms to disappear
   - Added Weapon Swap to Altagrave G, readded to market
 - Reduced Altagrave Vajra's f/s from 1.1->.8
+- Fixed nullpointer that could occur during landing caused by edge cases
 
 v2.1.1
 --------
