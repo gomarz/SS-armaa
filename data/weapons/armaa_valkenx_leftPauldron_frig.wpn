@@ -5,7 +5,7 @@
 	"size":"MEDIUM",
         "everyFrameEffect": "data.scripts.weapons.armaa_torsoDummyWeapon",
 	"showDamageWhenDecorative":true,
-  	"numFrames": 2,
+  	"numFrames": 3,
   	"frameRate": 0,
 	"turretSprite":"graphics/armaa/ships/valkenx/playable/armaa_valkenxLeftShoulder_ace_00.png",
 	"hardpointSprite":"graphics/armaa/ships/valkenx/playable/armaa_valkenxLeftShoulder_ace_00.png",

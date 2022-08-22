@@ -6,7 +6,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "numFrames": 2,
+  "numFrames": 3,
   "frameRate": 0,
   "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenx_frig_armL_00.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenx_frig_armL_00.png",

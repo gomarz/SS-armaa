@@ -2,13 +2,13 @@
   "hullName": "Valken",
   "hullId": "armaa_valkenx_frig",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
+  "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
   "style": "HIGH_TECH",
-  "height": 26,
-  "width": 18,
-  "center": [9, 16.5],
+  "height": 30,
+  "width": 22,
+  "center": [11, 16],
   "collisionRadius": 45,
-  "shieldCenter": [2, -0],
+  "shieldCenter": [0, -0],
   "shieldRadius": 54,
   "viewOffset": 0,
   "builtInMods": [
@@ -31,7 +31,7 @@
     "D_PAULDRONL": "armaa_valkenx_leftPauldron_frig",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron_frig",
     "E_HEAD": "armaa_valkenxHead_frig",
-    "F_LEGS": "armaa_ht_legs",
+    #"F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_valkenxHeadGlow_frig"
   },
   "weaponSlots": [
@@ -61,7 +61,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, -0]
+      "locations": [0, 0]
     },
     {
       "id": "B_TORSO_VERNIER",
@@ -115,7 +115,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [1, 0]
     },
     {
       "id": "F_GLOW",
@@ -133,7 +133,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6, -0],
+      "locations": [-6, 0],
       "renderOrderMod": -1000
     },
     {
@@ -143,7 +143,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [1, 0]
     },
     {
       "id": "WS0001",
@@ -152,7 +152,7 @@
       "mount": "TURRET",
       "arc": 5,
       "angle": 0,
-      "locations": [7, -0],
+      "locations": [7, 0],
       "renderOrderMod": -900
     },
     {
@@ -187,7 +187,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-14, -5],
+      "location": [-13, -5],
       "length": 18,
       "width": 8,
       "angle": 180,
@@ -196,7 +196,7 @@
       "styleId": "MechaTrail"
     },
     {
-      "location": [-14, 5],
+      "location": [-13, 5],
       "length": 18,
       "width": 8,
       "angle": 180,
@@ -205,7 +205,7 @@
       "styleId": "MechaTrail"
     },
     {
-      "location": [-14, 6],
+      "location": [-13, 6],
       "length": 16.5,
       "width": 5,
       "angle": 141.5,
@@ -214,7 +214,7 @@
       "styleId": "MechaTrail"
     },
     {
-      "location": [-14, -6],
+      "location": [-13, -6],
       "length": 16.5,
       "width": 5,
       "angle": -141.5,
@@ -224,13 +224,13 @@
     }
   ],
   "bounds": [
-    14, -4.5,
-    13, -10.5,
-    -8.5, -10.5,
-    -12, -4.5,
-    -12, 4.5,
-    -8.5, 10.5,
-    13, 10.5,
-    14, 4.5
+    14.5, -2.5,
+    13.5, -8.5,
+    -5.5, -9,
+    -11, -6.5,
+    -11, 6.5,
+    -5.5, 9,
+    12, 8.5,
+    14.5, 6.5
   ]
 }

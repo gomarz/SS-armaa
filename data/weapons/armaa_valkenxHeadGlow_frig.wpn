@@ -7,7 +7,7 @@
 	"collisionClassByFighter":"RAY_FIGHTER",
         "renderHints":["RENDER_ADDITIVE"],
 	"showDamageWhenDecorative":false,
-  "numFrames": 2,
+  "numFrames": 3,
   "frameRate": 0,
          "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXHead_ace_glow_00.png",
   "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_glow.png",

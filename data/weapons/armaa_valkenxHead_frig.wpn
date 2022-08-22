@@ -7,7 +7,7 @@
   "beamEffect":   "data.scripts.weapons.armaa_targetPainter_BeamEffect", 
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "numFrames": 2,
+  "numFrames": 3,
   "frameRate": 0,
   "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXHead_ace_00.png",
   #"turretGlowSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead_ace_glow.png",

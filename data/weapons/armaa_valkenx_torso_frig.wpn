@@ -6,7 +6,7 @@
   "collisionClass": "RAY",
   "showDamageWhenDecorative":true,
   "collisionClassByFighter": "RAY_FIGHTER",
-  "numFrames": 2,
+  "numFrames": 3,
   "frameRate": 0,
   "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXBody_ace_00.png",
   "everyFrameEffect": "data.scripts.weapons.armaa_VXEffect",  

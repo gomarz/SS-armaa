@@ -1,3 +1,9 @@
+v2.1.2b
+-------
+- fixed bug that would cause wingcom pilots to be extremely chatty
+
+- added another skin for vx custom
+
 v2.1.2
 -------
 - Fixed bug that could sometimes prevent pilots from gaining rep/ levelling up
