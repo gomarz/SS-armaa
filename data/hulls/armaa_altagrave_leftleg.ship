@@ -60,19 +60,5 @@
   "spriteName": "graphics/armaa/ships/proto/armaa_altagrave_leg_l.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
-  "weaponSlots": [
-    {
-      "angle": 119.5,
-      "arc": 360,
-      "id": "WS0001",
-      "locations": [
-        21.5,
-        11
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "MISSILE"
-    }
-  ],
   "width": 128
 }

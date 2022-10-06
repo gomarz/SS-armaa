@@ -4,7 +4,7 @@
 	"author":"shoi",
 	"version":"2.1.2b",
 	"description":"Mechs n Fighters. Requires LazyLib + MagicLib.",
-	"gameVersion":"0.95.1a-RC15",
+	"gameVersion":"0.95.1a",
 	"jars":["jars/armaa.jar"],
     "dependencies": [
         {

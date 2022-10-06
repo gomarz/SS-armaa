@@ -22,9 +22,7 @@
 			"SKR_can",
 			"SKR_drill_shot",
 		],
-		"wingcom_chatter":{
-		"enabled":true,
-		},
+		"wingcom_chatter": true,
 		"hullmod_refit_custom":{
 		"missleracks":0.25,
 		

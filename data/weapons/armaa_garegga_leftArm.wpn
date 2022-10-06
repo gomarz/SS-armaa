@@ -9,7 +9,7 @@
     0,
     0
   ],
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/armaa/ships/garegga/leftArm.png",
   "id": "armaa_garegga_leftArm",
   "muzzleFlashSpec": {
     "length": 25,

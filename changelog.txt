@@ -1,3 +1,36 @@
+v2.1.2c
+--------
+- Fixed Altagrave EX doing inordinate amounts of damage while ship system was active
+
+- Fixed crash caused by Einhander/Einhander P having fighter hullSize while retreating
+
+- Fixed crash caused by accessing WINGCOM Squad Manager when no relevant key for the captain existed (by assigning to WINGCOM ship via fleet menu)
+
+- Fixed some typos for Valkazard's SILVERSWORD hullmod
+	- Silversword regen rate increased by 25%
+
+- Garegga's Silversword now properly shows afterimages for all parts of ship
+
+- WINGCOM chatter disable config option actually works now
+
+- Further reduced chatter probability
+	- the chatter chance further decreases as wing size increases
+
+- Revised "midline" skin for VX Custom
+
+- New Hullmod: SD-VISTA
+	- Standalone version of Valkazard's Sy-Ko Combat Stims
+
+-Strikecraft no longer can travel on campaign layer without carrier present (I.E. in the instance where a strikecraft is the only ship in fleet, its burn rate will be reduced to 0)
+
+-WINGCOM range penalty for destroyers, cruisers, and capital ships reduced (was: 60%/50%/40% now: 40%/30%/20%)
+
+-Altagrave
+	-Top Speed:110 ->120
+	-Shield Efficiency: .65->.6
+
+
+==========
 v2.1.2b
 -------
 - fixed bug that would cause wingcom pilots to be extremely chatty
