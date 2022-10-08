@@ -25,7 +25,8 @@
 "armaa_legmodule",
 "armaa_legmodule",
 "armaa_ma",
-"armaa_altagraveWeaponSwap"
+"armaa_altagraveWeaponSwap",
+    "armoredweapons"
 
   ],
   "builtInWeapons": {

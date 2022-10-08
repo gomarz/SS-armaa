@@ -37,8 +37,8 @@ This system is equipped with a manual safety override that can be tripped to for
 
 Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
 SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-Syko,armaa_sykoStims,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_sykoStims,A specialized combat support suite featuring an experimental piloting system.,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-WINGCOM SUITE,armaa_wingCommander,3,,,"special, non_phase",Fighters,75000,,,,10,15,20,25,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,graphics/icons/markets/headquarters.png
+C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot.,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
+WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters,75000,,,,10,10,15,20,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,graphics/icons/markets/rogue_ai.png

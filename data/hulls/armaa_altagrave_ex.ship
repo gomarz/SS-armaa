@@ -24,7 +24,8 @@
   "builtInMods": [
 "seraph",
 "armaa_ma",
-"armaa_legmodule"
+"armaa_legmodule",
+    "armoredweapons"
   ],
   "builtInWeapons": {
     "E_HEAD": "armaa_altagrave_head_ex",

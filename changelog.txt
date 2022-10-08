@@ -1,5 +1,9 @@
 v2.1.2c
 --------
+- Modules fitted with WINGCOM should now work properly
+
+- Fixed Strikecraf not properly receiving carrier bonus
+
 - Fixed Altagrave EX doing inordinate amounts of damage while ship system was active
 
 - Fixed crash caused by Einhander/Einhander P having fighter hullSize while retreating
@@ -20,8 +24,10 @@ v2.1.2c
 
 - New Hullmod: SD-VISTA
 	- Standalone version of Valkazard's Sy-Ko Combat Stims
+	- Increases refit time by 20%
 
--Strikecraft no longer can travel on campaign layer without carrier present (I.E. in the instance where a strikecraft is the only ship in fleet, its burn rate will be reduced to 0)
+-Strikecraft no longer can travel on campaign layer without a larger ship present (I.E. in the instance where a strikecraft is the only ship in fleet, its burn rate will be reduced to 0)
+	- this behavior can be ignored with independent_of_carrier tag
 
 -WINGCOM range penalty for destroyers, cruisers, and capital ships reduced (was: 60%/50%/40% now: 40%/30%/20%)
 

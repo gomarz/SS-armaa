@@ -15,7 +15,8 @@
     "armaa_legmodule",
     "armaa_karma",
     "armaa_ma",
-    "armaa_altagraveWeaponSwap"
+    "armaa_altagraveWeaponSwap",
+    "armoredweapons"
   ],
   "builtInWeapons": {
     "COVER": "armaa_altagrave_cover",

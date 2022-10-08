@@ -25,6 +25,7 @@
 		"wingcom_chatter": true,
 		"hullmod_refit_custom":{
 		"missleracks":0.25,
+		"armaa_sykoStims":0.20,
 		
 		},
 		"missile_refit_custom":{

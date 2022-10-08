@@ -7,7 +7,7 @@
 	
 	#"weaponGlowColor":[255,200,0,155],
 	"weaponGlowColor":[205,50,20,155],
-	"weaponTypes":[BALLISTIC,ENERGY],
+	"weaponTypes":[BALLISTIC,ENERGY,MISSILE],
 
 	"useSound":"system_ammo_feeder",
 	"outOfUsesSound":"gun_out_of_ammo",
