@@ -8,7 +8,7 @@ v2.1.2c
 
 - Fixed crash caused by Einhander/Einhander P having fighter hullSize while retreating
 
-- Fixed crash caused by accessing WINGCOM Squad Manager when no relevant key for the captain existed (by assigning to WINGCOM ship via fleet menu)
+- Fixed crash caused by accessing WINGCOM Squad Manager when no key for the captain existed
 
 - Fixed some typos for Valkazard's SILVERSWORD hullmod
 	- Silversword regen rate increased by 25%
@@ -22,11 +22,9 @@ v2.1.2c
 
 - Revised "midline" skin for VX Custom
 
-- New Hullmod: C-Stim Dispatcher
-	- Standalone version of Valkazard's Sy-Ko Combat Stims
-	- Increases refit time by 20%
+- Added new strikecraft oriented hullmod that can be found via exploration
 
--Strikecraft no longer can travel on campaign layer without a larger ship present (I.E. in the instance where a strikecraft is the only ship in fleet, its burn rate will be reduced to 0)
+-Strikecraft burn speed is now reduced to 0 if there are no larger ships in the fleet
 	- this behavior can be ignored with independent_of_carrier tag
 
 -WINGCOM range penalty for destroyers, cruisers, and capital ships reduced (was: 70%/60%/50%/40% now: 70%/40%/30%/20%)
