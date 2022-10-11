@@ -2,7 +2,7 @@ v2.1.2c
 --------
 - Modules fitted with WINGCOM should now work properly
 
-- Fixed Strikecraf not properly receiving carrier bonus
+- Fixed Strikecraft not properly receiving carrier bonus
 
 - Fixed Altagrave EX doing inordinate amounts of damage while ship system was active
 
@@ -22,18 +22,21 @@ v2.1.2c
 
 - Revised "midline" skin for VX Custom
 
-- New Hullmod: SD-VISTA
+- New Hullmod: C-Stim Dispatcher
 	- Standalone version of Valkazard's Sy-Ko Combat Stims
 	- Increases refit time by 20%
 
 -Strikecraft no longer can travel on campaign layer without a larger ship present (I.E. in the instance where a strikecraft is the only ship in fleet, its burn rate will be reduced to 0)
 	- this behavior can be ignored with independent_of_carrier tag
 
--WINGCOM range penalty for destroyers, cruisers, and capital ships reduced (was: 60%/50%/40% now: 40%/30%/20%)
+-WINGCOM range penalty for destroyers, cruisers, and capital ships reduced (was: 70%/60%/50%/40% now: 70%/40%/30%/20%)
 
 -Altagrave
 	-Top Speed:110 ->120
 	-Shield Efficiency: .65->.6
+	-KARMA
+		- No longer resets to zero when maxed
+		- Slowly decreases while above zero
 
 
 ==========

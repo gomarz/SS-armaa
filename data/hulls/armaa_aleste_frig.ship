@@ -25,8 +25,7 @@
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
     "E_HEAD": "armaa_alesteHead",
-    "F_LEGS": "armaa_ht_legs",
-    "H_GLOW": "armaa_landingBeacon"
+    "F_LEGS": "armaa_ht_legs"
   },
   "weaponSlots": [
     {
@@ -141,6 +140,15 @@
       "angle": 0,
       "locations": [5, -0],
       "renderOrderMod": 101
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-19, -0]
     }
   ],
   "engineSlots": [

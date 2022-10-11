@@ -2,7 +2,7 @@
   "id": "armaa_landingBeacon",
   "specClass": "projectile",
   "projectileSpecId": "armaa_karma_pulse",
-  #"everyFrameEffect": "data.scripts.weapons.armaa_hangerCoreEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_weaponsPack",
   "type": "BALLISTIC",
   "size": "SMALL",
   "turretSprite": "",
