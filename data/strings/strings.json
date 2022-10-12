@@ -1,0 +1,10 @@
+{
+	"timid_tmi":{
+		"cataphract":"Land-space 'mech", #detect bugs or whatever
+		"armaa_mobilearmor":"Large spacecraft derivative of Regalia",
+		"armaa_advcataphract_bp":"Part of the blueprint for advanced cataphract designs",
+		"armaa_cataphract_bp":"Part of the blueprint for cataphract designs",
+		"fake_fighter":"Used distinguishing playable fighters from fighter wings",
+		"no_wingcom_docking":"Ship's fighters will not land on the ship for resupply, but seek other carriers",
+	},
+}
