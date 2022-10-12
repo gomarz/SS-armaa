@@ -38,6 +38,7 @@ v2.1.2c
 		- No longer resets to zero when maxed
 		- Slowly decreases while above zero
 
+- Added some cross mod compat
 
 ==========
 v2.1.2b
