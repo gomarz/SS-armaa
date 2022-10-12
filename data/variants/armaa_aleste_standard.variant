@@ -11,14 +11,14 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_einhanderGun",
+        "A_GUN": "armaa_aleste_rightArm",
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_valkenxLeftArm",
+        "C_ARML": "armaa_alesteLeftArm",
       }
     },
     {
