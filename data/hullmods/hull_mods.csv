@@ -226,4 +226,4 @@ L ARM: HELLBORE,armaa_selector_hellbore_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.h
 Versatile Frame,armaa_vxSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_vxSkinSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
 PAINT: AASV,armaa_vxSkin_AASV,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,,,graphics/armaa/hullmods/armaa_paint.png
 PAINT: COMET,armaa_vxSkin_rocketStars,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_rocketStars,,,graphics/armaa/hullmods/armaa_paint.png
-PAINT: MIDLINE,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,,,graphics/armaa/hullmods/armaa_paint.png
+PAINT: POST-COLLAPSE,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,,,graphics/armaa/hullmods/armaa_paint.png
