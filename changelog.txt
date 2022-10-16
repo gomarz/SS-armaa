@@ -38,6 +38,13 @@ v2.1.2c
 		- No longer resets to zero when maxed
 		- Slowly decreases while above zero
 
+-Kouto E-Type & Kouto
+	- Top Speed: 160->140
+
+-VX Custom
+	- Top Speed: 180->160
+	- Armor: 170->160
+
 - Added TMI mod compat
 
 - Fixed bug where wingcom pilots would not properly learn elite skills after max level was reached
