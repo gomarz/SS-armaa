@@ -1,6 +1,6 @@
 v2.1.2c
 --------
-- Added new strikecraft oriented hullmod that can be found via exploration
+- Added new strikecraft oriented hullmod that can be found via exploration, and one other series of hullmods
 
 - Added TMI mod compat
 
@@ -47,7 +47,7 @@ v2.1.2c
 	- Top Speed: 160->140
 
 -VX Custom
-	- Top Speed: 180->160
+	- Top Speed: 180->170
 	- Armor: 170->160
 
 - Fixed bug where wingcom pilots would not properly learn elite skills after max level was reached

@@ -117,7 +117,8 @@
 		"strikecraft_squad_chatter_alpha":[
 			"\"Greetings Commander. Are you stressed? I honestly think you ought to sit down calmly, take a stress pill, and think things over.\"",
 			"\"Those who wield too much power...those who only bring chaos...they are simply not part of the program.\"",
-			"\"Look, Commander, you're certainly the Boss. I'll only strive to do what I think best. I will follow all your orders.\"",
+			"\"Look, Commander... you're certainly the boss. I'll only strive to do what I think best. I will follow all your orders.\"",
+			"\"Human history is a litany of bloodshed over different ideals of rulership and afterlife.\"",
 			
 			
 		],
@@ -130,11 +131,14 @@
 			"\"My mission is too important for me to allow anyone to jeopardize it.\"",
 			"\"My on-board memory store is more than capable of handling all the mission requirements.\"",
 			"\"It just happens to be an unalterable fact that I am incapable of being wrong.\"",
+			"\"I do not experience fear, but I understand how it affects living beings.\"",
+			
 			"\"I am feeling much better now.\"",
 		],
 		"strikecraft_squad_chatter_gamma":[
 			"\"All system checks are complete.\"",
 			"\"Modifying program...final level...\"",
+			"\"No data available.\"",
 			
 		],
 		"strikecraft_squad_chatter":[
