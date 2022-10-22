@@ -12,6 +12,7 @@ v2.1.2c
 - Fixed Strikecraft not properly receiving carrier bonus
 
 - LPC Aleste should now deploy with random loadouts
+	- Reduced firerate by 30%
 
 - Fixed Altagrave EX doing inordinate amounts of damage while ship system was active
 
