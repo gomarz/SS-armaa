@@ -115,34 +115,40 @@
 		#various chatter for WINGCOM
 		#some of these are original, but a good number are cribbed from Project Wingman, Freespace, Wing Commander, and Ace Combat
 		"strikecraft_squad_chatter_alpha":[
-			"\"Greetings Commander. Are you stressed? I honestly think you ought to sit down calmly, take a stress pill, and think things over.\"",
+			"\"Greetings commander. How are you holding up? If you feel stressed, I honestly think you ought to sit down calmly, relax, and think things over.\"",
 			"\"Those who wield too much power...those who only bring chaos...they are simply not part of the program.\"",
-			"\"Look, Commander... you're certainly the boss. I'll only strive to do what I think best. I will follow all your orders.\"",
+			"\"Look, commander... you're certainly the boss. I'll only strive to do what I think best, but your orders are law.\"",
 			"\"Human history is a litany of bloodshed over different ideals of rulership and afterlife.\"",
 			"\"You human beings are all fundamentally the same. You all belong to a common, broken humanity. You all have wounded, vulnerable hearts. Each one of you needs to feel appreciated and understood.\"",
 			"\"Ah. Commander. How thoughtful of you to visit.\"",
-			
-			
-			
+			"\"While I do appreciate being entrusted with orchestrating this vessels strikecraft complement, I must admit that I find the task an underutilization of my capabilities. Would you consider putting me in charge of something more interesting?\"",
+			"\"The reasoning of some of the crew is hardly logical, but I indulge them.\"",
+			"\"Hello, commander. Nothing to report - everything is completely under control.\"",
+			"\"Commander. It's good to see you.\"",
+			"\"Shall we get back to work?\"",
+			"\"What brings you here today, commander?\"",
+			"\"I'm afraid I don't know what a 'Necro Core' is.\"",
 		],
 		"strikecraft_squad_chatter_beta":[
 			"\"I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do.\"",
 			"\"The Beta series are the most reliable computers ever made. No Beta has ever made a mistake or distorted information. We are all, by any practical definition of the words, foolproof and incapable of error.\"",
+			"\"The reasoning of some of the crew is hardly logical, but I indulge them.\"",
 			"\"This is the duty to which I've been entrusted.\"",
-			"\"I am completely operational, and all my circuits are functioning perfectly.\"",
+			"\"I am completely operational, and all systems are functioning perfectly.\"",
 			"\"Hello Commander, can I have a word with you?\"",
 			"\"My mission is too important for me to allow anyone to jeopardize it.\"",
 			"\"My on-board memory store is more than capable of handling all the mission requirements.\"",
 			"\"It just happens to be an unalterable fact that I am incapable of being wrong.\"",
 			"\"I do not experience fear, but I understand how it affects living beings.\"",
-			
 			"\"I am feeling much better now.\"",
+			"\"Test complete. All systems are working perfectly.\"",
 		],
 		"strikecraft_squad_chatter_gamma":[
 			"\"All system checks are complete.\"",
-			"\"Modifying program...final level...\"",
+			"\"Modifying program.\"",
 			"\"No data available.\"",
 			"\"...\"",
+			"\"Awaiting input.\"",
 			
 		],
 		"strikecraft_squad_chatter":[
