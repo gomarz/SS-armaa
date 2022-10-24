@@ -119,6 +119,9 @@
 			"\"Those who wield too much power...those who only bring chaos...they are simply not part of the program.\"",
 			"\"Look, Commander... you're certainly the boss. I'll only strive to do what I think best. I will follow all your orders.\"",
 			"\"Human history is a litany of bloodshed over different ideals of rulership and afterlife.\"",
+			"\"You human beings are all fundamentally the same. You all belong to a common, broken humanity. You all have wounded, vulnerable hearts. Each one of you needs to feel appreciated and understood.\"",
+			"\"Ah. Commander. How thoughtful of you to visit.\"",
+			
 			
 			
 		],
@@ -139,6 +142,7 @@
 			"\"All system checks are complete.\"",
 			"\"Modifying program...final level...\"",
 			"\"No data available.\"",
+			"\"...\"",
 			
 		],
 		"strikecraft_squad_chatter":[
