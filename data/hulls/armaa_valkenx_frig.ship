@@ -31,7 +31,6 @@
     "D_PAULDRONL": "armaa_valkenx_leftPauldron_frig",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron_frig",
     "E_HEAD": "armaa_valkenxHead_frig",
-    #"F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_valkenxHeadGlow_frig"
   },
   "weaponSlots": [
