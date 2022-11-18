@@ -1,7 +1,7 @@
 {
 	"id":"armaa_tshell",
 	"type":"STAT_MOD",
-	"aiType":"TEMPORAL_SHELL",
+	"aiType":"WEAPON_BOOST",
 	
 	"statsScript":"data.scripts.shipsystems.armaa_tshellStats",
 	
@@ -27,7 +27,7 @@
 	"soundFilterType":"LOWPASS",
 	"soundFilterGain":0.75,
 	"soundFilterGainHF":0.5,
-
+	"weaponTypes":[BALLISTIC,ENERGY,MISSILE],
 	"fadeActivationSoundOnChargedown":true,
 	"useSound":"system_temporalshell",
 	"loopSound":"system_temporalshell_loop",
