@@ -15,15 +15,7 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN": "shredder"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0002": "breach",
-        "WS0003": "breach"
+        "TRUE_GUN": "armaa_ilorin_torso"
       }
     },
     {

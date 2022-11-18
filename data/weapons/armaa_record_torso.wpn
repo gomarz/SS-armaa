@@ -45,5 +45,5 @@
     5
   ],
   "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordBody2.png",
-  "type": "MISSILE"
+  "type": "DECORATIVE"
 }

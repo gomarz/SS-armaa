@@ -35,7 +35,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_hominglaser2",
+  "projectileSpecId": "armaa_valkengun_scattershot",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
