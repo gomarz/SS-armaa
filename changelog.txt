@@ -1,12 +1,3 @@
-v2.2
---------
-Valkazard
-	- DP: 15->20
-- Fixed slowdown that can occur if using wingcom hullmod on ship with all AI fighters that previously only used manned fighters
-- Fixed yet another altagrave ex shotgun bug
-- Fixed docking timeout (if ship cannot dock after a certain period of time, the process will abort)
-
-
 v2.1.3
 --------
 - Added new strikecraft oriented hullmod that can be found via exploration, and one other series of hullmods

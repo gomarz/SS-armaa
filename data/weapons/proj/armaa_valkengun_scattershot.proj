@@ -3,7 +3,6 @@
 	"specClass":"projectile",
 	"spawnType":"PLASMA",
 	"collisionClass":"PROJECTILE_FF",
-        "onFireEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	#"width":45.0,
 	"width":20.0,

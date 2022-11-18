@@ -9,7 +9,7 @@
   "variantId": "armaa_ilorin_standard",
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "B_TORSO": "armaa_sprigganTorso",
