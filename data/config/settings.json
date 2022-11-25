@@ -33,6 +33,9 @@
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 		},
+		"nex_groundbattle":{
+			"icon_cataphract":"graphics/armaa/icons/groundbattle/cataphractstrike.png",
+		},
 		"misc":{
                         "armaa_target":"graphics/warroom/taskicons/just_kill_it.png",
 			"armaa_neurohelmet":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",

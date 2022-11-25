@@ -1,5 +1,7 @@
 {
-
+	"mechmove2":[
+		{"file":"sounds/nexerelin/sfx_interface/combat.wav","pitch":0.8,"volume":0.8},
+	],
 # collapseclose
 
 #collapseopen SYSTEMS	

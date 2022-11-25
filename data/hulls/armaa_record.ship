@@ -3,7 +3,7 @@
   "hullId": "armaa_record",
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
-  "style": "HIGH_TECH",
+  "style": "MIDLINE",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
@@ -12,13 +12,13 @@
   "shieldRadius": 32,
   "viewOffset": 0,
   "builtInWeapons": {
-    "A_GUN": "armaa_einhander_variablerifle",
-    "C_ARML": "armaa_einhander_plus_leftArm",
+    "A_GUN": "armaa_valkenx_frig_ml_variablerifle",
+    "C_ARML": "armaa_valkenLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valken_leftPauldron",
     "D_PAULDRONR": "armaa_valken_rightPauldron",
     "E_HEAD": "armaa_record_head",
-    "F_LEGS": "armaa_valkazard_legs",
+    "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [
@@ -103,7 +103,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [2, -0]
     },
     {
       "id": "H_GLOW",
@@ -149,7 +149,7 @@
       "width": 8,
       "angle": 180,
       "contrailSize": 10,
-      "style": "HIGH_TECH"
+      "style": "MIDLINE"
     }
   ],
   "bounds": [

@@ -14,7 +14,7 @@ Kouto,armaa_kouto,Vanguard Cataphract,Arma Armatura,,,,800,200,1000,,150,,,140,1
 Kouto E-Type,armaa_kouto_frig,Support Cataphract,Arma Armatura,armaa_afcss,armaa_traveldrive,8,800,125,1250,,150,40,,140,160,150,90,150,60,FRONT,,360,0.1,0.8,,,1,1,0,0,0.5,,11,30000,10,20,225,0.25,8,8,PLAY_FIGHTER_OVERLOAD_SOUNDS,"rare_bp,fake_fighter,hist1t,merc",0.5,0.7,3,5,3,,,,,,,
 Bih√§nder,armaa_valkencannon,Anti-Ship Cataphract,Arma Armatura,maneuveringjets,,,700,200,1000,,200,,,155,200,170,120,180,55,PHASE,phasecloak,,,,0.05,0.05,2,2,0,0,0.5,,1,25000,25,1,,,1,1,,,0.7,0.7,3,5,4,,,,,,,
 Ilorin,armaa_ilorin,Assault Cataphract,Arma Armatura,,,,1000,100,150,,20,,,145,110,110,65,65,70,NONE,,,,,,,3,3,0,0,0.5,,1,25000,25,25,,,1,1,,,0.3,0.7,3,5,2,,,,,,,
-Recordbreaker,armaa_record,Frankenphract,Arma Armatura,displacer,,,700,100,300,,70,,,140,200,200,150,225,55,NONE,,,,,,,1,1,0,0,1,,1,25000,25,25,,,1,1,,,0.5,0.7,3,5,3,,,,,,,
+Spriggan,armaa_record,Anti-Ship Cataphract,Arma Armatura,,,,700,100,300,,70,,,150,200,150,110,150,60,NONE,,,,,,,1,1,0,0,1,,1,25000,25,25,,,1,1,,,0.5,0.7,3,5,3,,,,,,,
 Leynos,armaa_leynos_frig_lt,Heavy Cataphract,Arma Armatura,ammofeed,armaa_traveldrive,8,1250,300,1500,,225,40,,120,180,150,100,150,100,PHASE,damper,,,,,,1,0,0,0,0.5,,11,30000,10,15,200,0.25,8,8,PLAY_FIGHTER_OVERLOAD_SOUNDS,"rare_bp,fake_fighter,independent_of_carrier, hist1t,armaa_advcataphract_bp,merc",0.7,0.7,3,5,3,,,,,,,
 Leynos,armaa_leynos_frig,Heavy Cataphract,Arma Armatura,armaa_tshell,armaa_traveldrive,8,1500,300,1500,,225,40,,120,180,150,100,150,100,PHASE,damper,,,,,,2,0,0,0,0.5,,11,30000,10,15,200,0.25,8,8,PLAY_FIGHTER_OVERLOAD_SOUNDS,"rare_bp,fake_fighter,independent_of_carrier, hist1t,armaa_advcataphract_bp,merc",0.7,0.7,3,5,3,,,,,,,
 Leynos (RS),armaa_leynos_frig_comet,Heavy Cataphract,Arma Armatura,temporalshell,armaa_traveldrive,10,1250,350,2000,,225,45,,140,130,130,90,90,100,OMNI,,360,0.1,1,,,2,0,0,0,0.5,,11,22000,10,15,200,0.25,10,10,PLAY_FIGHTER_OVERLOAD_SOUNDS,"fake_fighter,independent_of_carrier,merc,no_sell,no_dealer,restricted",0.5,0.7,3,5,3,,,,,,,
@@ -26,8 +26,7 @@ Broadsword (AA),armaa_broadsword,Heavy Fighter,Low Tech,maneuveringjets,armaa_tr
 Warthog (AA),armaa_warthog,Assault Fighter,Midline,ammofeed,armaa_traveldrive,6,800,225,1250,,75,30,,130,180,150,100,200,40,NONE,,0,0,0,,,2,0,0,0,0.5,,11,15000,8,10,250,0.25,6,6,PLAY_FIGHTER_OVERLOAD_SOUNDS,fake_fighter,0.5,0.7,,,,,,0,,,,110
 Gladius(AA),armaa_gladius,Interceptor,Midline,flarelauncher_single,,5,500,75,1000,,50,30,,300,400,300,150,300,40,NONE,,0,0,0,,,2,0,0,0,0.5,,11,15000,8,10,225,0.25,5,5,PLAY_FIGHTER_OVERLOAD_SOUNDS,"fake_fighter,independent_of_carrier,merc",0.5,0.7,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Caymon,armaa_whitebase,Fast Carrier,Midline,armaa_amalgamatefeed,,20,8000,1000,3125,5000,250,115,3,60,40,25,15,18,1400,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,20,20,"HIDE_IN_CODEX,CARRIER,COMBAT,NO_AUTO_ESCORT",,,,,,,,,0.5,2,3,,407
+Caymon,armaa_whitebase,Fast Carrier,Midline,armaa_amalgamatefeed,,20,8000,1000,3125,4000,250,115,3,60,30,15,15,18,1500,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,20,20,"HIDE_IN_CODEX,CARRIER,COMBAT,NO_AUTO_ESCORT",,,,,,,,,0.5,2,3,,407
 Caymon,armaa_caymon,Fast Carrier,Midline,armaa_recalldevice,,14,6000,750,5000,6000,300,100,2,80,60,40,20,25,800,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,20,20,"HIDE_IN_CODEX,CARRIER,COMBAT,NO_AUTO_ESCORT",,,,,,,,,0.5,2,3,,407
 #Seperate hulls instead of skins since they donít properly spawn in markets for some reason,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #MA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
