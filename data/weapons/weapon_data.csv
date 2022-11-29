@@ -35,7 +35,7 @@ HIG-S Particle Ejector,armaa_einhander_hig,2,0.6,2250,650,,50,,0,20,42,24,,,ENER
 Breach SRM,armaa_record_torso,1,,200,1500,,150,,15,10,3,4,,,HIGH_EXPLOSIVE,0,,0,1.5,2,0.5,0,0,0,,,400,50,5,450,"DO_NOT_AIM, CONSERVE_ALL, CONSERVE_FOR_ANTI_ARMOR, DIRECT_AIM, MISSILE_SPREAD,SYSTEM,STRIKE,USE_VS_FRIGATES","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Anti Armor,Medium,Good,,,,,Each missile deals an additional %s damage to armor. This damage is not reduced by armor.,250,TRUE,11.7,,
 ,armaa_record_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_record_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
-AMWS,armaa_record_head,2,,400,500,150,,,0,45,5,4,0.5,3,ENERGY,,,0,0,0.48,0.015,,,,,1000000,,,,,"PD,SYSTEM,PD_ONLY",,,,,Point Defense,,,,,,,,,,,,
+AMWS,armaa_record_head,2,,,800,0,,,,80,4,,,,ENERGY,,,,,0.1,,0,,,,,1200,,,10,SYSTEM,,,,,Point Defense,,,,,,,,,,,,
 ,armaa_recordLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 #LEYNOS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 SPLTR-07 Shotgun,armaa_leynos_shotgun_right,2,,,600,,360,,0,90,0,6,0.8,4,HIGH_EXPLOSIVE,196,,0,0.1,9999,0.5,20,20,0.4,0.4,,800,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,General,,,,,Fires a blast of %s projectiles with a semi-random spread pattern in a relatively tight cone.,8,"While ammo is available, can be fired as rapidly as the trigger can be pulled.",Semi-Automatic,FALSE,22.25,,

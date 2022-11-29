@@ -7,7 +7,7 @@
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
-  "collisionRadius": 18,
+  "collisionRadius": 38.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 45.5,
   "viewOffset": 0,
@@ -44,8 +44,8 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-     "renderOrderMod": -900,
-      "locations": [0, -3]
+      "locations": [0, -3],
+      "renderOrderMod": -900
     },
     {
       "id": "B_TORSO",

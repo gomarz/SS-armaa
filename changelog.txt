@@ -1,10 +1,40 @@
 v2.2
 --------
+-balans-
 Valkazard
 	- DP: 15->20
+Leynos
+	- removed WINGCOM
+	- shield -> damper field
+	- System:
+		Amalgamate Feed -> Temporal Blink
+			- Dramatically increase dilation by 10x for 1 second, reduces weapon cooldown time
+
+Ilorin
+	- removed from spawn pool
+
+-bugfix-
 - Fixed slowdown that can occur if using wingcom hullmod on ship with all AI fighters that previously only used manned fighters
 - Fixed yet another altagrave ex shotgun bug
-- Fixed docking timeout (if ship cannot dock after a certain period of time, the process will abort)
+- Added docking timeout (if ship cannot dock after a certain period of time, the process will abort)
+- Fixed ships being locked in unplayable state due to AI being reset while docked
+
+-new feature-
+
+- Trojan Horse
+	- Cataphract Carrier
+	- 50% Strikecraft refit bonus
+	- Enables Cataphract Strike ability during Nex invasions 
+
+- Nexerelin Ground Battle Ability: Cataphract Strike
+	- Attack an industry with chosen unit
+	- Damage is altered based off various statistics such as pilot level, CR, etc
+
+- Spriggan, 18 OP Bomber
+	- Fills same role as Ilorin
+	- 1x Recoilless Rifle, 2 Breach Missiles
+
+
 
 
 v2.1.3

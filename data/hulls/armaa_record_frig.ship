@@ -1,16 +1,27 @@
 {
   "hullName": "record",
-  "hullId": "armaa_record",
-  "hullSize": "FIGHTER",
+  "hullId": "armaa_record_frig",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
   "style": "MIDLINE",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
-  "collisionRadius": 18,
+  "collisionRadius": 34.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 32,
+  "shieldRadius": 34,
   "viewOffset": 0,
+  "builtInMods": [
+    "cataphract",
+    "strikeCraft",
+    "armaa_strikeCraftFrig",
+    "autorepair",
+    "reduced_explosion",
+    "armaa_wingCommander"
+  ],
+  "builtInWings": [
+    "armaa_record_wing"
+  ],
   "builtInWeapons": {
     "A_GUN": "armaa_valkenx_frig_ml_variablerifle",
     "C_ARML": "armaa_valkenLeftArm",
@@ -30,7 +41,7 @@
       "arc": 0,
       "angle": 0,
       "locations": [-7, -0],
-      "renderOrderMod": -1000
+      "renderOrderMod": -5000
     },
     {
       "id": "A_GUN",
@@ -129,8 +140,8 @@
       "type": "MISSILE",
       "mount": "HIDDEN",
       "arc": 0,
-      "angle": 135,
-      "locations": [-7, 2]
+      "angle": 90,
+      "locations": [-7, 1]
     },
     {
       "id": "WS0003",
@@ -138,8 +149,8 @@
       "type": "MISSILE",
       "mount": "HIDDEN",
       "arc": 0,
-      "angle": -135,
-      "locations": [-7, -2]
+      "angle": -90,
+      "locations": [-7, -1]
     }
   ],
   "engineSlots": [
@@ -163,7 +174,7 @@
     -3, 6.5,
     -1, 13.5,
     3, 13.5,
-    6, 8,
+    7, 7,
     15, 4.5
   ]
 }
