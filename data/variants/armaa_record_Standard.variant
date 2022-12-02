@@ -26,7 +26,7 @@
       }
     },
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "LINKED",
       "weapons": {
         "B_TORSO": "armaa_record_torso"

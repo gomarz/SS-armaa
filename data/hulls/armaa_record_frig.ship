@@ -24,6 +24,8 @@
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_valkenx_frig_ml_variablerifle",
+    "B_TORSO": "armaa_record_torso",
+    "TRUE_GUN": "armaa_ilorin_torso",
     "C_ARML": "armaa_valkenLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valken_leftPauldron",
@@ -138,19 +140,10 @@
       "id": "WS0002",
       "size": "SMALL",
       "type": "MISSILE",
-      "mount": "HIDDEN",
+      "mount": "TURRET",
       "arc": 0,
-      "angle": 90,
-      "locations": [-7, 1]
-    },
-    {
-      "id": "WS0003",
-      "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HIDDEN",
-      "arc": 0,
-      "angle": -90,
-      "locations": [-7, -1]
+      "angle": 180,
+      "locations": [-14, -0]
     }
   ],
   "engineSlots": [

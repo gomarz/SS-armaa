@@ -2,7 +2,7 @@
   "animationType": "SMOKE",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.armaa_einhanderPEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
   "fireSoundTwo": "breach_fire",
    "turretOffsets": [
     -7.5,

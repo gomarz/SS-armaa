@@ -1,7 +1,7 @@
 {
 	"id":"armaa_amalgamatefeed",
 	"type":"STAT_MOD",
-	"aiType":"WEAPON_BOOST",
+	"aiType":"TARGETING_FEED",
 	
 	"statsScript":"data.scripts.shipsystems.armaa_amalgamateFeedStats",
 	
