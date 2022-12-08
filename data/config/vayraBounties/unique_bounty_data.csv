@@ -4,7 +4,11 @@ Initiating: Battle-State Behavior over-ride.
 Target Acquired: Starfarer.
 Annihilation: Commences
 Destroy: Opposition",FALSE,independent,500000,10,"One of the fleets comms officers has alerted you to a priority communique, addressed -specifically- to you. It appears your reputation precedes you, and a band of mercenaries have called you out. You recall this particular group of individuals were wanted for the use of illegal autonomous weapons - might be worth checking out what they want, or at the very least collecting the bounty on their heads.",armaa_altagrave_ex_Standard,,250,1.2,1,armaa_advcataphract_package,,FALSE,FALSE,206,30,100
-,,,,,,,,,,graphics/portraits/portrait_ai2b.png,,,,,,,,,,,,,,,,,,
+armaa_bounty_ceylon,30,spaceCommander,Gamma,9B,steady,White Fang,HS-ONE,FEMALE,armaarmatura,graphics/portraits/portrait_ai2b.png,"Arrival: Successful. Troop Survival: 100%.
+Initiating: Battle-State Behavior over-ride.
+Target Acquired: Starfarer.
+Annihilation: Commences
+Destroy: Opposition",FALSE,independent,500000,10,"One of the fleets comms officers has alerted you to a priority communique, addressed -specifically- to you. It appears your reputation precedes you, and a band of mercenaries have called you out. You recall this particular group of individuals were wanted for the use of illegal autonomous weapons - might be worth checking out what they want, or at the very least collecting the bounty on their heads.",eis_ceylon_standard,,250,1.2,1,armaa_advcataphract_package,,FALSE,FALSE,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,

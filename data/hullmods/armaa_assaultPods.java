@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
-public class armaa_serviceBays extends BaseHullMod {
+public class armaa_assaultPods extends BaseHullMod {
 
 
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -13,7 +13,7 @@ public class armaa_serviceBays extends BaseHullMod {
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "Strikecraft";
+		if (index == 0) return "CATAPHRACT STRIKE";
 		if (index == 1) return "50%";
 		return null;
 	}

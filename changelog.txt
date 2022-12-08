@@ -32,7 +32,7 @@ Recordbreaker -> Spriggan
 
 -new feature-
 
-- Trojan Horse
+- Fenris
 	- Cataphract Carrier
 	- 50% Strikecraft refit bonus
 	- Enables Cataphract Strike ability during Nex invasions 
