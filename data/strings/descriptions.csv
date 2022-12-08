@@ -131,7 +131,9 @@ The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct
 
 armaa_record,SHIP,"Equipped with a recoilless rifle and four breach missiles, the Spriggan is intended to provide the punch that other baseline Cataphract models lack. Unfortunately, it needs to get relatively close to a target to unleash its full payload.",,,
 
-armaa_whitebase,SHIP,"Designed specifically as a Cataphract carrier, the _____ posseses the capability to support the operation of both space and land battles.",,,
+armaa_whitebase,SHIP,"The Fenris appropriately possesses the capability to support the operation of both space and land battles. While poorly suited for direct confrontation, its cavernous hangar bays allow it to field a multitude of strikecraft.
+
+As an atmosphere-capable vessel, the Fenris was designed specifically as a Cataphract carrier, offering the means to rapidly dispatch them to ground targets. To this end the Fenris is equipped with several armored pods that Cataphracts are loaded into before being launched towards the surface like missiles. So long as the Fenris is nearby, it can then easily recall deployed Cataphracts back to the ship when necessary.",,,
 
 armaa_garegga_tt,SHIP,"When Tri-Tachyon eliminated ArmaA's security forces during the Battle of Meshan in cycle 94, they seized the majority of the corporations infrastructure and most of their assets. These revamped RA-96 were christened 'Tri-hander', a play on the companies moniker and the infamous Einhander. While not a mainstay of their navy by any means, these units served alongside other refurbished vessels following the First AI War when the corporation was still in disarray.",,,
 armaa_garegga,SHIP,"The RA-96 GAREGGA stands first-class amongst craft that excel in close-quarters combat. Dual G-1001 assault weapons capable of decimating entire strikecraft formations and pounding larger ships into scrap are only hindered by their meagre engagement range.

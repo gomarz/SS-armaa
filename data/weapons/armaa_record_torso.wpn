@@ -29,7 +29,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-	"projectileSpecId":"breach_srm",
+  "projectileSpecId":"armaa_sabot_srm",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "smokeSpec":{"particleSizeMin":10.0,

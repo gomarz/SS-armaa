@@ -1,7 +1,7 @@
 {
     "plugins":{
             "armaa_EinhanderPlugin":"data.scripts.plugins.armaa_EinhanderHaxPlugin",
-            #"armaa_FighterPlugin":"data.scripts.plugins.armaa_FighterHaxPlugin",
+#"armaa_FighterPlugin":"data.scripts.plugins.armaa_FighterHaxPlugin",
     },
     "designTypeColors":{
         "Arma Armatura":[152,171,75,255],

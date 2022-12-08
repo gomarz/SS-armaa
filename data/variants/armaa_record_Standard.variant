@@ -1,7 +1,7 @@
 {
   "variantId": "armaa_record_Standard",
   "hullId": "armaa_record",
-  "displayName": "Support Cataphract",
+  "displayName": "Anti-Ship Cataphract",
   "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
@@ -12,7 +12,7 @@
   ],
   "weaponGroups": [
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
         "TRUE_GUN": "armaa_ilorin_torso"
@@ -26,7 +26,7 @@
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "B_TORSO": "armaa_record_torso"

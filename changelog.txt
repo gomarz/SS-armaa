@@ -4,19 +4,30 @@ v2.2
 Valkazard
 	- DP: 15->20
 Leynos
-	- removed WINGCOM
+	- removed WINGCOM ;(
 	- shield -> damper field
 	- System:
-		Amalgamate Feed -> Temporal Blink
+		Amalgamate Feed -> Blink
 			- Dramatically increase dilation by 10x for 1 second, reduces weapon cooldown time
 
 Ilorin
 	- removed from spawn pool
 
+Recordbreaker -> Spriggan
+	- Same weapon as Ilorin w/ increased ammo
+	- 6x Breach Missiles
+	- 18 OP
+	- Revised sprite
+
 -bugfix-
+- Fixed Watchdog randomly turning system on and off under certain conditions
+
 - Fixed slowdown that can occur if using wingcom hullmod on ship with all AI fighters that previously only used manned fighters
+
 - Fixed yet another altagrave ex shotgun bug
+
 - Added docking timeout (if ship cannot dock after a certain period of time, the process will abort)
+
 - Fixed ships being locked in unplayable state due to AI being reset while docked
 
 -new feature-
@@ -28,11 +39,11 @@ Ilorin
 
 - Nexerelin Ground Battle Ability: Cataphract Strike
 	- Attack an industry with chosen unit
-	- Damage is altered based off various statistics such as pilot level, CR, etc
+	- Damage is altered based off of various statistics such as pilot level, CR, etc
 
 - Spriggan, 18 OP Bomber
 	- Fills same role as Ilorin
-	- 1x Recoilless Rifle, 2 Breach Missiles
+	- 1x Recoilless Rifle, 6 Breach Missiles
 
 
 

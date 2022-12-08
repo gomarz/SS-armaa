@@ -13,6 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "armaa_serviceBays",
+    "armaa_assaultPods",
     "ground_support"
   ],
   "builtInWeapons": {
