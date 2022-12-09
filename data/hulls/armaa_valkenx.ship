@@ -24,8 +24,8 @@
     "D_PAULDRONL": "armaa_valkenx_leftPauldron",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron",
     "E_HEAD": "armaa_valkenxHead",
-    "H_GLOW": "armaa_sprigganHeadGlow",
-    "F_LEGS": "armaa_ht_legs"
+    "F_LEGS": "armaa_ht_legs",
+    "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [
     {
@@ -35,7 +35,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [0, -3]
+      "locations": [0, -4]
     },
     {
       "id": "B_TORSO",
@@ -89,7 +89,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -3]
+      "locations": [0, -4]
     },
     {
       "id": "E_HEAD",
@@ -116,7 +116,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6, -0],
+      "locations": [-5, -0],
       "renderOrderMod": -1000
     },
     {
