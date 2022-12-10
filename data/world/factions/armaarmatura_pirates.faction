@@ -30,51 +30,69 @@
 	"hullFrequency":{
 			"hulls":
 			{
+				"csp_battlephantom":0,
+				"csp_shadow":0,
+				"revenant":0,
 				"armaa_altagrave":1,
-				"armaa_altagrave_c":1,
-				"armaa_einhander":1,
+				"armaa_altagrave_c":1.5,
+				"armaa_einhander_plus":3,
+				"armaa_einhander":3,
 				"armaa_altagrave_g":1,
-				"armaa_garegga":1,
-				"armaa_aleste_frig":1,
-				"armaa_leynos_frig":1,
-				"armaa_hazard_frig":1,
-				"armaa_xyphos":1,
+				"armaa_garegga":3,
+				"armaa_valkenx_frig":3,
+				"armaa_aleste_frig":3,
+				"armaa_leynos_frig":3,
+				"armaa_xyphos":3,
 				"armaa_monitor":1,
-				"armaa_valkyrie":1,	
+				"armaa_whitebase":3,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.2,
-			"armaa_valkenx_wing":1.2,
-			"armaa_kouto_wing":1.2,
-			"armaa_ilorin_wing":1.1,
+			"armaa_valkenx_wing":3,
+			"armaa_kouto_wing":3,
+			"armaa_record_wing":3,
+			"armaa_prodromos_wing":3,
 		},
 	},
+	"priorityFighters":{
+		"tags":[],
+		"fighters":[
+			"armaa_valkenx_wing",
+			"armaa_kouto_wing",
+			"armaa_record_wing",
+			"armaa_prodromos_wing",
+		],
+	},
 	"knownShips":{
-		"tags":["armaa_cataphract_bp","armaa_mobilearmor","midline_bp", "hightech_bp"],
+		"tags":["armaa_cataphract_bp","armaa_mobilearmor","merc"],
 		"hulls":[	
 				"armaa_einhander",
+				"armaa_einhander_plus",
+				"armaa_valkenx_frig",
 				"armaa_altagrave",
 				"armaa_garegga",
 				"armaa_aleste_frig",
 				"armaa_leynos_frig",
-				"armaa_hazard_frig",
 				"armaa_xyphos",
 				"armaa_monitor",
-				"armaa_valkyrie",
+				"armaa_whitebase",
+				"armaa_kouto_frig",
 			],
 	},
 	"shipsWhenImporting":{
-		"tags":["ha_pulse_bp","ha_special"],
+		"tags":["ha_pulse_bp","ha_special","merc"],
 		"hulls":[],
 	},
 	"knownFighters":{
-		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
+		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp","merc"],
 			"fighters":[
 			"armaa_gallant_wing",
+			"armaa_prodromos_wing",
+			"armaa_valken_black_wing",
 			],
 	},
 	"knownWeapons":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp"],
+		"tags":["merc"],
 		"weapons":[
 			"lightneedler",
 			"hveldriver",
@@ -101,23 +119,8 @@
 			"armaa_ionBuster",
 		],
 	},
-
-	"priorityWeapons":{
-		#"tags":[],
-		"weapons":[
-		"armaa_fluxcannon",
-		"armaa_ionBuster",
-		],
-	},
-    "priorityShips":{
-        #"tags":[],
-        "hulls":[
-            "armaa_garegga",
-	    "armaa_leynos_frig",
-        ],
-    },
 	"knownHullMods":{
-		"tags":["base_bp"],
+		"tags":["merc"],
 		"hullMods":[
 			"advancedshieldemitter", # accelerated
 			"advancedoptics",
@@ -145,17 +148,17 @@
 		],
 	},
 	"factionDoctrine":{
-		"warships":3,
-		"carriers":1,
-		"phaseShips":1,
+		"warships":5,
+		"carriers":4,
+		"phaseShips":4,
 
-		"officerQuality":4,
+		"officerQuality":5,
 		"shipQuality":3,
-		"numShips":2,
+		"numShips":5,
 
 		"shipSize":3,
 
-		"aggression":3,
+		"aggression":4,
 
 		"combatFreighterProbability":0,     				# instead of some portion of the freighters in a fleet
 		"combatFreighterCombatUseFraction":0,  				# as part of the normal combat lineup

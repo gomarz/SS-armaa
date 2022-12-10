@@ -47,7 +47,7 @@
     0,
     255
   ],
-  "darkCore": true,
+  "darkCore": false,
   "width": 4,
   "textureType": [
     "graphics/prv/fx/prv_beam_interrupted_fringe.png",

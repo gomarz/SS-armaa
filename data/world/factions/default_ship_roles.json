@@ -3,12 +3,12 @@
 "armaa_garegga_tt_standard":2,
 "armaa_garegga_tt_assault":2,
 "armaa_warthog_standard":3,
-"armaa_broadsword_standard":3,
 },
   "combatSmall": {
     "armaa_garegga_tt_standard":2,
     "armaa_garegga_standard":2,
 	"armaa_aleste_standard_f":1,
+	"armaa_aleste_swordsman":1,
         "armaa_valkenx_frig_standard":2,
 	"armaa_hazard_standard":1,
 	"armaa_xyphos_standard":1,
@@ -24,7 +24,11 @@
     "armaa_altagrave_c_Standard":2,
     "armaa_altagrave_g_Standard":2,
     "armaa_monitor_standard":.8,
+   
   },
+	"carrierMedium":{
+		"armaa_whitebase_standard":3,
+	},
 	"carrierLarge":{
 		"armaa_astral_Elite":1,
 	},

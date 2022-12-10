@@ -66,7 +66,7 @@
     {
       "id": "B_TORSO",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
@@ -137,12 +137,13 @@
     },
     {
       "id": "WS0002",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 0,
+      "arc": 193,
       "angle": 180,
-      "locations": [-14, -0]
+      "locations": [-23, -0],
+      "renderOrderMod": -9999
     }
   ],
   "engineSlots": [
