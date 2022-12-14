@@ -16,6 +16,7 @@ CLAW Bits[FTR],armaa_claw,,,,,,,,2,,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/dr
 Valken,armaa_valken_defender,,,,,,,,2,,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Pila Ex,armaa_piladrone_ex,,,,,,0.2,,6,0.1,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Pila,armaa_piladrone_alta,,,,,,0.2,,2,0.05,0,,0,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
+Pila,armaa_piladrone_spriggan,,,,,,0.2,,4,0.05,0,,0,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Pila,armaa_piladrone_shield,,,,,,0.2,,2,0.05,0,,0,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Temporal Shell,armaa_tshell,1,,,,,0.25,,2,0.05,0.1,1,0.1,,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 Fuller Auto,armaa_fullerAuto,,,,,,,,,,1,5,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png

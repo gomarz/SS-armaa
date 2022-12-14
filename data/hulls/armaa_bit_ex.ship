@@ -46,7 +46,7 @@
     0
   ],
   "shieldRadius": 14.5,
-  "spriteName": "graphics/armaa/ships/armaa_bit.png",
+  "spriteName": "graphics/armaa/ships/armaa_bit2.png",
   "style": "armaa_TECH",
   "viewOffset": 0,
   "weaponSlots": [

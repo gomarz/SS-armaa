@@ -129,7 +129,11 @@ armaa_aleste_frig,SHIP,"The Aleste Type-S has been further optimized for anti-sh
 
 The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
 
-armaa_record,SHIP,"Equipped with a recoilless rifle and four breach missiles, the Spriggan is intended to provide the punch that other baseline Cataphract models lack. Unfortunately, it needs to get relatively close to a target to unleash its full payload.",,,
+armaa_record,SHIP,"Equipped with a recoilless rifle and four breach missiles, the Spriggan is intended to provide the punch that other baseline Cataphract models lack. Unfortunately, it needs to get relatively close to a target to unleash its full payload.
+
+An intermediate design unveiled some time after the Valken but before the Valken EX, the Spriggan was developed as a platform that could support heavier weaponry alongside enhanced survivability. While these two goals were achieved, it was at the cost of a significant reduction in manuverability and speed. Combined with heightened production costs and weight-balancing issues during atmo operations, it never took off and was quickly overshadowed by the Valken's successor for general-purpose use.",,,
+
+armaa_record_frig,SHIP,"The Spriggan Powered is a slightly improved Spriggan-class Cataphract equipped with a shield and heavy weapons pack, enabling it to utilize missile weapons far larger than other Cataphract types. It pays the price for this in reduced manuverability and a significantly weaker power core compared to other S-IIs.",,,
 
 armaa_whitebase,SHIP,"The Fenris appropriately possesses the capability to support the operation of both space and land battles. While poorly suited for direct confrontation, its cavernous hangar bays allow it to field a multitude of strikecraft.
 

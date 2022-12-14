@@ -17,10 +17,10 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "reduced_explosion",
-    "armaa_wingCommander"
+    "rugged"
   ],
   "builtInWings": [
-    "armaa_record_wing"
+    "armaa_bit_spriggan"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_valkenx_frig_ml_variablerifle",
@@ -59,8 +59,8 @@
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -10,
-      "locations": [0, -3],
+      "angle": 0,
+      "locations": [1, -1],
       "renderOrderMod": -900
     },
     {
@@ -141,9 +141,27 @@
       "type": "MISSILE",
       "mount": "TURRET",
       "arc": 193,
-      "angle": 180,
-      "locations": [-23, -0],
-      "renderOrderMod": -9999
+      "angle": 0,
+      "locations": [-22, -0],
+      "renderOrderMod": 9999
+    },
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-22, -0]
+    },
+    {
+      "id": "SHIELD",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [2, 1]
     }
   ],
   "engineSlots": [

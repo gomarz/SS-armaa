@@ -1,93 +1,60 @@
 {
-  "bounds": [
-    6,
-    -6,
-    -6,
-    -6,
-    -6,
-    7,
-    6,
-    7
-  ],
-  "center": [
-    9,
-    10.5
-  ],
-  "collisionRadius": 11,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 7,
-      "length": 8,
-      "location": [
-        -8,
-        0
-      ],
-      "style": "LOW_TECH",
-      "width": 7
-    },
-    {
-      "angle": 180,
-      "contrailSize": 4,
-      "length": 17,
-      "location": [
-        -8,
-        0
-      ],
-      "style": "CUSTOM",
-      "styleId": "VALKAZARD_ENGINE",
-      "width": 4
-    }
-  ],
-  "height": 22,
-  "hullId": "armaa_alesteBit",
   "hullName": "Bit",
+  "hullId": "armaa_alesteBit",
   "hullSize": "FIGHTER",
-  "shieldCenter": [
-    0,
-    -0
-  ],
-  "shieldRadius": 14.5,
   "spriteName": "graphics/armaa/ships/armaa_bit2.png",
-  "style": "armaa_TECH",
+  "style": "MIDLINE",
+  "height": 21,
+  "width": 12,
+  "center": [6, 11],
+  "collisionRadius": 11,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 14.5,
   "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 360,
       "id": "WS0001",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "HIDDEN",
       "size": "SMALL",
-      "type": "HYBRID"
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 118,
+      "angle": 0,
+      "locations": [1, 0.5]
     },
     {
-      "angle": 0,
-      "arc": 360,
       "id": "WS0002",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "HIDDEN",
       "size": "SMALL",
-      "type": "HYBRID"
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 118,
+      "angle": 0,
+      "locations": [1, -0.5]
     },
     {
-      "angle": 0,
-      "arc": 360,
       "id": "WS0003",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "HIDDEN",
       "size": "SMALL",
-      "type": "HYBRID"
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [6, -0]
     }
   ],
-  "width": 18
+  "engineSlots": [
+    {
+      "location": [-9, -0],
+      "length": 17,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "CUSTOM",
+      "styleId": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    4, -3,
+    -8, -3,
+    -8, 3,
+    4, 3
+  ]
 }

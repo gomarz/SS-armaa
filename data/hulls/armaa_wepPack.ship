@@ -1,0 +1,39 @@
+{
+  "hullName": "Weapon Pack",
+  "hullId": "armaa_wepPack",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/armaa_sprigganWepPack.png",
+  "style": "MIDLINE",
+  "height": 44,
+  "width": 44,
+  "center": [22, 22],
+  "collisionRadius": 20,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 20,
+  "viewOffset": 0,
+  "builtInMods": [
+    "armaa_moduleRepair"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-4, -0]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    6.5, 12.5,
+    15.5, 7,
+    3.5, -0,
+    14.5, -5,
+    13.5, -12,
+    -12, -12,
+    -17, -8,
+    -17.5, 8
+  ]
+}
