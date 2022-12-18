@@ -1,0 +1,24 @@
+{
+  "variantId": "armaa_alesteBit_adv",
+  "hullId": "armaa_alesteBit",
+  "displayName": "Bit",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "pointdefenseai"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "irpulse_fighter"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

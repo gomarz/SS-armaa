@@ -19,6 +19,14 @@ Recordbreaker -> Spriggan
 	- 18 OP
 	- Revised sprite
 
+Aleste(S) -> Aleste(S-II)
+	- HP: 1000->900
+	- Every Aleste now carries left arm laser blade in addition to the selectable left arm weapon
+	- System: Microburn -> Lunge
+		- Charges directly at target, attacking with melee weapon once in range
+
+Fixed Bihander dropping/appearing in blueprint package
+
 -bugfix-
 - Fixed Watchdog randomly turning system on and off under certain conditions
 
@@ -30,7 +38,9 @@ Recordbreaker -> Spriggan
 
 - Fixed ships being locked in unplayable state due to AI being reset while docked
 
--new feature-
+- fixed perf hit due to logging that wasnt disabled
+
+-new features-
 
 - Fenris
 	- Cataphract Carrier
@@ -44,6 +54,11 @@ Recordbreaker -> Spriggan
 - Spriggan, 18 OP Bomber
 	- Fills same role as Ilorin
 	- 1x Recoilless Rifle, 6 Breach Missiles
+- Spriggan Powered, 7 DP
+	- 1 Med Ballistic, 1 Med Missile
+	- Uses physical shield for defense
+- Ceylon
+	- HVB support carrier
 
 
 

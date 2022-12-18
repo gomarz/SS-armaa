@@ -26,7 +26,9 @@
 			"nottahlan_trail_zappy":"graphics/armaa/fx/armaa_trails_zappy.png",
 			"nottahlan_trail_fuzzy":"graphics/armaa/fx/armaa_trails_fuzzy.png",
 			"armaa_parax_fringe":"graphics/armaa/fx/armaa_parax_beam_fringe.png",
-			"armaa_ppa_core":"graphics/armaa/fx/armaa_ppa_beam_core.png",	
+			"armaa_ppa_core":"graphics/armaa/fx/armaa_ppa_beam_core.png",
+			"armaa_beaminterrupted_fringe":"graphics/armaa/fx/armaa_beamcore_interrupted.png",
+			"armaa_beaminterrupted_core":"graphics/armaa/fx/armaa_beamfringe_interrupted.png",		
 		},
 		"portraits":{
 			"armaa_portrait_shard":"graphics/portraits/portrait_ai1.png",
@@ -36,6 +38,10 @@
 		"nex_groundbattle":{
 			"icon_cataphract":"graphics/armaa/icons/groundbattle/cataphractstrike.png",
 		},
+		"ceylon":{
+			"armaa_ceylonrad":"graphics/armaa/fx/armaa_ceylonrad.png",
+			"armaa_ceylontarget":"graphics/armaa/fx/armaa_ceylontarget.png",
+		},	
 		"misc":{
                         "armaa_target":"graphics/warroom/taskicons/just_kill_it.png",
 			"armaa_neurohelmet":"graphics/armaa/icons/hullsys/armaa_pilot_icon.png",

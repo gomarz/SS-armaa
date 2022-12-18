@@ -1,0 +1,54 @@
+{
+  "id": "armaa_record_frig_head",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "data.scripts.weapons.armaa_targetPainter_BeamEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordHead.png",
+  "turretGlowSprite": "graphics/armaa/ships/recordbreaker/armaa_recordheadglow.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    255,
+    155,
+    155
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    2,
+    1.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    0,
+    0,
+    200
+  ],
+  "coreColor": [
+    255,
+    150,
+    150,
+    200
+  ],
+  "darkCore": false,
+  "width": 3,
+  "textureType": [
+    "graphics/armaa/fx/armaa_beamfringe_interrupted.png",
+    "graphics/armaa/fx/armaa_beamcore_interrupted.png"
+  ],
+  "textureScrollSpeed": 0,
+  "pixelsPerTexel": 1,
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

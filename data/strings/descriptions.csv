@@ -1,4 +1,4 @@
-id,type,text1,text2,text3,notes
+id,type,text1,text2,text3,text4,notes
 armaa_einhander,SHIP,"Exceptionally armed strikecraft with an equally steep logistical profile. While fragile and highly susceptible to point defenses, it's a monstrous weapon in the hands of skilled pilots.
 
 A scrapped concept resurrected via the generous funding of an enigmatic venture capitalist. The original mission profile it was designed for has been lost to time, but records still expound that development proved to be an exhaustive and expensive task - decades of corporate espionage, fatal phase-related incidents, and technological hurdles were endured before the first functional unit rolled off the production lines. 
@@ -52,6 +52,8 @@ Barely space-worthy, extra verniers installed alongside the units antiquated jum
 
 armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,
 
+armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,
+
 armaa_altagrave,SHIP,"What this design lacks in weapon slot quantity is made up for via versatility; At its heart lies the KARMA system which posseses a variety of applications on the battlespace. Additional modular components grant impressive agility and speed, but are vulnerable to small strikecraft and flanking attacks. 
 
 Created during the First AI War at a period where the local ArmaA branch was considered to be at the peak of its power, this design can be partially attributed to reverse-engineered, borrowed, and outright stolen technologies of various origin. R&D of the accumulated tech base resulted in creation of the Kinetic Automated Range Missile Assimilator. With the aid of a delta-level AI, KARMA autonomously tags and identifies dangerous projectiles, intercepts them, and stores the acquired kinetic energy for later use. In the case of guided missiles, malicious code is injected that spoofs IFFs and renders the original signal unrecognizable, effectively hijacking them. This allows an Altagrave to screen ships against particularly thick hails of ordinance in a pinch, among other things. 
@@ -83,7 +85,7 @@ armaa_valkenx_frig,SHIP,"An upgraded variant of the Valken X. Improvements to ar
 
 armaa_caymon,SHIP,"You shouldn't be able to see mee",,,
 
-armaa_aleste,SHIP,"Elite Cataphracts that boast exceptional durability and versatility. Their capabilities are rounded out by two CLAW bits, flimsy yet nimble drones that serve as effective threat multipliers.
+armaa_aleste,SHIP,"Elite Cataphracts that boast exceptional durability and versatility. Their capabilities are rounded out by two Jinete bits, flimsy yet nimble drones that serve as effective threat multipliers.
 
 The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
 
@@ -113,11 +115,11 @@ armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this 
 
 The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,
 
-armaa_leynos_frig,SHIP,"Thick armor rivaling that of some frigates and midsized mounting for additional ballistic weaponry sees the Leynos serving as wing leader for strike craft squadrons.
+armaa_leynos_frig,SHIP,"Thick armor rivaling that of some frigates and midsized mounting for additional ballistic weaponry makes the Leynos the premiere assault Cataphract. The lack of any contemporary shielding system is mitigated by an integrated Damper Field and high burst damage potential.
 
-Initially unveiled as as the Valken R-Type, this craft was created as part of an internal ArmaA bid among executives for a lucrative official contract that would determine the successor to the standard Valken model. The entire venture was referred to as Project VALHAWK - unfortunately the R-Type's large size, low maneuverability and overburdened power core all lead to disappointing results during combat simulations, and it was passed over in favor of the Valken X.
+Initially unveiled as as the Valken R-Type, this craft was created as part of an internal ArmaA bid among executives for a lucrative official contract that would determine the successor to the standard Valken model. Unfortunately the R-Type's large size, low maneuverability and overburdened power core all lead to disappointing results during combat simulations, and it was passed over in favor of the Valken X.
 
-Relegated to an unmarked hangar, the singular prototype was left to languish and gather dust for years until an enterprising Operations Manager took an interest in the design, revamping it and rebranding it as specialised command unit for squadron leaders.",,,
+Relegated to an unmarked hangar, the singular prototype was left to languish and gather dust for years until an enterprising Operations Manager took an interest in the design, pooling an untold number of credits into rebranding and revamping the design to match S-II standards.",,,
 
 armaa_leynos_frig_comet,SHIP,"Thick armor rivaling that of smaller frigates and larger housing for additional equipment sees the Leynos often serving as wing leader for small strikecraft squadrons. This particular model of the Leynos is allegedly three times faster than the original, and bears the paint scheme of the Rocket Stars.
 
@@ -125,15 +127,17 @@ Originally devised as the Valken R-Type, this craft was initially intended to be
 
 The R-Type was left to languish in an unmarked hangar for some time until an enterprising Operations Manager took interest in it, revamping the designs capability and rebranding it as a specialized command unit for squadron leaders.",,,
 
-armaa_aleste_frig,SHIP,"The Aleste Type-S has been further optimized for anti-ship assault. The backpack has been redesigned, allowing the user to select and load equipment into a multi-connector pod connected via a drum frame mounted on the abdomen. While it can only operate independently for short periods of time, an Aleste attached to a carrier can bring a significant number of strike options to the table for fleet commanders.
+armaa_aleste_frig,SHIP,"The Aleste S-II is an upgraded variant of the Aleste designed for officer use. The backpack has been redesigned, allowing the user to select and load equipment into a multi-connector pod connected via a drum frame mounted on the abdomen. It's generalist nature makes it rather unremarkable compared to other S-II's but allow it to fit a variety of fleet roles.
 
 The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
 
-armaa_record,SHIP,"Equipped with a recoilless rifle and four breach missiles, the Spriggan is intended to provide the punch that other baseline Cataphract models lack. Unfortunately, it needs to get relatively close to a target to unleash its full payload.
+armaa_record,SHIP,"Equipped with a recoilless rifle and a scaled down Sabot SRM, the Spriggan is intended to provide the punch that other baseline Cataphract models lack. Unfortunately, it needs to get relatively close to a target to unleash its full payload.
 
 An intermediate design unveiled some time after the Valken but before the Valken EX, the Spriggan was developed as a platform that could support heavier weaponry alongside enhanced survivability. While these two goals were achieved, it was at the cost of a significant reduction in manuverability and speed. Combined with heightened production costs and weight-balancing issues during atmo operations, it never took off and was quickly overshadowed by the Valken's successor for general-purpose use.",,,
 
-armaa_record_frig,SHIP,"The Spriggan Powered is a slightly improved Spriggan-class Cataphract equipped with a shield and heavy weapons pack, enabling it to utilize missile weapons far larger than other Cataphract types. It pays the price for this in reduced manuverability and a significantly weaker power core compared to other S-IIs.",,,
+armaa_record_frig,SHIP,"An improved Spriggan-class Cataphract equipped with a shield, four drones, and a heavy weapons pack that enables it to utilize missile weapons far larger than other Cataphract types. Reduced manuverability and an overtaxed power core compared to other S-IIs make it more suitable as a fleet support unit.
+
+Even though the Spriggan Powered is almost identical to the standard version, the conversion process is relatively expensive. The downscaled Sabot generally carried in the torso is removed and armor is consequentially reinforced and even further improved via the use of costlier materials. The large shield it carries is armored similarly, and the Weapons Pack housing the necessary ammo storage and systems allowing the pilot to directly control it further raise the bill. Several considerations were made to upgrade the standard-issue Spriggans in service to a modified Powered spec suitable for mass production, but the negative effect such an increase in weight had for atmospheric operations ensured the proposal never got far.",,,
 
 armaa_whitebase,SHIP,"The Fenris appropriately possesses the capability to support the operation of both space and land battles. While poorly suited for direct confrontation, its cavernous hangar bays allow it to field a multitude of strikecraft.
 
@@ -145,6 +149,9 @@ armaa_garegga,SHIP,"The RA-96 GAREGGA stands first-class amongst craft that exce
 Following the uneasy tension that befell the Sector following the events of Mairaath, the Garegga represented a shift in ArmaA priorities as the corporation was spurred into developing larger and more powerful machines to supplement their embryonic navy. Derived as a testbed for adapting technology behind cataphract-type mechs to a platform optimized for space combat, the Garegga is significantly larger to accomodate a greater power core and ship-grade weaponry, but lacks any ground combat capability. 
 
 The combination neural and targeting interface SILVERSWORD establishes a raw, semi-invasive connection between the pilots brain and an AI core adjunct to the machine itself, and safety limiters can be disabled in order to bring out its maximum potential. Sadly, sustained use resulted in catastrophic brain injury in 96.875% of all trial runs as the human component's mental bandwith was overwhelmed by the exponentially increasing information load fed into it. It was for this reason that an additional emergency stop circuit was introduced shortly thereafter, which automatically halts the system, violently shunting excess flux into the void. This method of interfacing would eventually be discarded in favor of a system that distributed the mental strain across multiple crewmembers.",,,
+
+armaa_ceylon,SHIP,"A carrier equipped with an AWACS system designed to exploit weaknesses in enemy ships while supporting it's own fleet. It's heavily reliant on a trio of support drones that constantly feed the bridge crew combat data to administer these effects, which become less effective if they are disabled.",,,
+armaa_awacs,SHIP_SYSTEM,"Marks selected object as a priority target while analyzing it for potential vulnerabilities. The target takes +25% damage for 7 seconds. Base range is 500 SU, which scales with each deployed drone (up to a maximum range of 2000 SU)",,,
 
 armaa_valken_gun_black,WEAPON,"The bulky and cumbersome cousin to ArmaA's Laser Blades, Anti-Ship swords fell out of favor over the formers lightweightedness and ease of use. Despite this, these blades are extremely devastating.  The most important factor behind the design of anti-ship swords is raw power. As Laser Blades have little to no mass, the force of the impact is extremely weak. A standard Laser Blade relies entirely on the intense output of its beam to inflict damage - this is not so with anti-ship swords. With an anti-ship sword, it is tremendous mass that imparts devastating amounts of force onto whatever it impacts.",,,
 
@@ -312,6 +319,8 @@ armaa_prodromos_leftArm,WEAPON,"Fearsome in its own right, this low-grade autoca
 
 armaa_valkenxHead_frig,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,
 
+armaa_record_frig_head,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,
+
 armaa_altagrave_exceliza,WEAPON,"A grenade launcher. Explodes after a brief delay, dealing considerable damage to anything in the explosions radius.",,,
 armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like it's cousin, the Ion Buster fires bolts of ionized baryonic matter; it differs in design by focusing significantly more power into individual shots instead of providing a steady stream of fire. While the weapon takes far longer to charge and cannot fire as rapidly, the effects are significantly more devastating and can pierce strained shield generators.
 
@@ -334,15 +343,16 @@ armaa_karma,SHIP_SYSTEM,"Projectiles within 600 SU are absorbed on activation, H
 armaa_lowgradeemp,SHIP_SYSTEM,"Activates a weak EMP generator. Nearby missiles, fighters, weapon emplacements and engines of enemy ships are all targeted.",,,
 armaa_oboost,SHIP_SYSTEM,"Dramatically increases speed, and moderately increases manuverability for one second. ",,,
 armaa_oboost2,SHIP_SYSTEM,"Greatly increases speed while steadily increasing flux.",,,
-armaa_claw,SHIP_SYSTEM,"Autonomous hunter-killer drones that frequently sheathe themselves in lesser temporal shells for higher performance. Two can be launched simultaneously, and carries 6 in total.",,,
+armaa_claw,SHIP_SYSTEM,"Autonomous interceptor drones. Two can be launched simultaneously, and carries 6 in total.",,,
 armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
 
 armaa_silverSwordV,SHIP_SYSTEM,"Increases manuverability, non-missile rate of fire, as well as flux dissipation and capacity, tripling CR degradation. Draining the gauge will overload and damage the ship. Effects of the system increase as the gauge nears zero. Best used in short bursts.",,,
 
 armaa_afcss,SHIP_SYSTEM,"Increases damage dealt to a number of enemies within 2500 SU by 25% based on the combined ECM rating of nearby allies versus that of the enemy. The probability of individual ships being affected is further modified by their own ECCM rating. While the effect does not stack, successive attempts can affect enemies that resisted previous uses.",,,
 
-armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,
+armaa_drone_strike,SHIP_SYSTEM,"Supercharges one of the UWS drones with a brief energy transfer. The drone tracks a nearby target like a missile, dealing damage on impact.",Offensive,"Supercharges one of the UWS drones and sends it after a target. The drone deals 600 Energy damage and 300 EMP damage on impact.",600 Energy | 300 EMP,
 
+armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,
 
 #CAMPAIGN STUFF,,,,,
 armaa_homeworld,CUSTOM,"One of many planets devastated during the AI Wars, 'New Meshan' has come a long way to recapturing its former grandeur after Arma Armatura received rights to the planet via corporate charter following the Second AI War a dozen or so cycles ago. 

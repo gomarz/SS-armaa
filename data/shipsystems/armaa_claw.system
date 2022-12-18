@@ -3,7 +3,7 @@
 	"type":"DRONE_LAUNCHER",
 	"aiType":"DRONE_LAUNCHER_PD",
 	
-	"droneVariant":"armaa_alesteBit_std",
+	"droneVariant":"armaa_alesteBit_adv",
 	
 	"allowFreeRoam":true,
 	

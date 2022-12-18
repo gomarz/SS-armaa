@@ -1,0 +1,29 @@
+{
+	"id":"armaa_meleeAttack",
+	"type":"ENGINE_MOD",
+	"aiType":"CUSTOM",
+    "aiScript":"data.scripts.shipsystems.ai.armaa_meleeAttackAI",
+	
+	"statsScript":"data.scripts.shipsystems.armaa_meleeAttackStats",
+	
+	"engineGlowLengthMult":2.5,
+	"engineGlowWidthMult":3,
+	"engineGlowGlowMult":2,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+	
+	"useSound":"system_burn_drive_activate",
+	"loopSound":"system_burn_drive_loop",
+	"deactivateSound":"system_burn_drive_deactivate",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":300,
+		"burstMovementPotential":1000,
+		"averageSpeedIncrease":300,
+	}
+}

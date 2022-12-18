@@ -26,9 +26,9 @@
       "size": "SMALL",
       "type": "HYBRID",
       "mount": "HIDDEN",
-      "arc": 118,
+      "arc": 10,
       "angle": 0,
-      "locations": [1, -0.5]
+      "locations": [-4, -0]
     },
     {
       "id": "WS0003",

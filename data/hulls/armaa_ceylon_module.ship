@@ -1,0 +1,92 @@
+{
+  "hullName": "Sensor Module",
+  "hullId": "armaa_ceylon_module",
+  "hullSize": "FRIGATE",
+  "spriteName": "",
+  "style": "MIDLINE",
+  "coversColor": "255,255,255,255",
+  "height": 64,
+  "width": 64,
+  "center": [32, 32],
+  "collisionRadius": 23,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 20,
+  "viewOffset": 0,
+  "builtInMods": [
+    "armaa_AWACS",
+    "vastbulk"
+  ],
+  "builtInWeapons": {
+    "AWACS": "armaa_awacsSuite"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 008",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [
+        172, -75,
+        183.5, -75,
+        149.5, -75,
+        161.5, -75
+      ]
+    },
+    {
+      "id": "AWACS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "LAUNCH_BAY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 180,
+      "locations": [
+        151.5, -119,
+        159.5, -118.5,
+        167, -118.5,
+        180, -117.5
+      ]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "LAUNCH_BAY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 180,
+      "locations": [
+        96, -118,
+        103, -118.5
+      ]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        96, -73.5,
+        102.5, -73
+      ]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    8, 9.5,
+    9.5, -8.5,
+    -10.5, -9.5,
+    -10.5, 10.5
+  ]
+}

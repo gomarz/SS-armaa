@@ -48,10 +48,10 @@
     255
   ],
   "darkCore": false,
-  "width": 4,
+  "width": 3,
   "textureType": [
-    "graphics/prv/fx/prv_beam_interrupted_fringe.png",
-    "graphics/prv/fx/prv_beam_interrupted_core.png"
+    "graphics/armaa/fx/armaa_beamfringe_interrupted.png",
+    "graphics/armaa/fx/armaa_beamcore_interrupted.png"
   ],
   "textureScrollSpeed": 0,
   "pixelsPerTexel": 1

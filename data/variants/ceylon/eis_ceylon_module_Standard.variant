@@ -1,0 +1,14 @@
+{
+  "variantId": "armaa_ceylon_module_Standard",
+  "hullId": "armaa_ceylon_module",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

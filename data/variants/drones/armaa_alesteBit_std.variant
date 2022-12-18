@@ -8,14 +8,16 @@
   "quality": 0,
   "permaMods": [],
   "hullMods": [
-    "pointdefenseai"
+    "pointdefenseai",
+    "advancedoptics"
   ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "irpulse_fighter"
+        "WS0002": "pdlaser",
+        "WS0003": "armaa_prodromos_leftArm"
       }
     }
   ],

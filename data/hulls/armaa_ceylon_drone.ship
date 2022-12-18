@@ -1,0 +1,79 @@
+{
+  "hullName": "Drone",
+  "hullId": "armaa_ceylon_drone",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/armaa_ceylon_drone.png",
+  "style": "MIDLINE",
+  "height": 64,
+  "width": 75,
+  "center": [38, 24],
+  "collisionRadius": 39.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 39,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "armaa_emthrust_s",
+    "WS0002": "armaa_emthrust_s",
+    "WS0003": "armaa_emthrust_s"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 20,
+      "angle": 127,
+      "locations": [-18, 15]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 20,
+      "angle": -127,
+      "locations": [-18, -15]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -41,
+      "locations": [14, -14]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-21, 7.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-21, -7.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -19.5, -12,
+    -5.5, -36.5,
+    8, -11,
+    28, -6,
+    19, -2.5,
+    18.5, 1,
+    35, 5.5,
+    17, 9,
+    5, 18,
+    -5.5, 37.5,
+    -19.5, 13
+  ]
+}
