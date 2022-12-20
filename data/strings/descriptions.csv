@@ -35,24 +35,12 @@ The premiere Cataphract-class design, the Valken won out over its competitor con
 
 Despite being objectively inferior to dedicated land or space vehicles in their respective roles, its ability to fill both on demand at a low (economical) impact ensured it had a niche to carve out and enjoy some degree of success. It is the ArmA Corporation's good fortune that this stands even moreso in the grim reality of the Persean Sector post-Collapse, where the value of a human life has seen a steady decline, and the profession of enterprising raider or revolutionary has become commonplace. ",,,
 
-armaa_valkencannon,SHIP,"The successor to the Einhander fulfills the anti-ship niche must like its older brother. Equipped with a Phase Dampening Field, its signature weapon is the shoulder-mounted Juno Mk. II beam cannon. While extremely potent, the main cannon takes time to charge and can only be fired a few times without comprimising structural integrity. These offensive capabilites are rounded out with a miniature railgun and an all-range homing beam attack. Capable of engaging enemy strikecraft, but it is not recommended.
-
-Despite the high performance of the Einhander, shareholders of ArmaA quickly pointed out the exorbitant cost to simply field one. To that end, the Bihander was created as an effort to create a more economical version of its older brother. The internal frame is almost identical,  but expensive components were generally replaced with cheaper alternatives. The exception to this is the Juno Mk. II, a perfected and far more destructive version of the Einhander's main weapon.
-
-The improved GTV-9A �Juno� system was significantly scaled down from its ultimate operational role in order to collect live data for use in improving the system prior to naval adoption.",,,
+armaa_valkencannon,SHIP,"Shouldn't be obtainable.",,,
 
 armaa_kouto,SHIP,"The suit of armor for modern-day knights of the Sector, the Kouto's primary role is to draw fire while applying unrelenting pressure on enemy targets via a kinetic energy bazooka and accompanying SCTR-20 Minigun. Less than ideal manuverability and ineffectiveness against armored targets has given it somewhat of a bad reputation among pilots.
 
 Conceived as the cutting edge showcase of the Land-Space Cataphract concept, the Kouto boasted a bevy of high-performance (and expensive) features, such as the implementation of revolutionarily compact yet powerful artificial muscles and a hybrid neurophysical piloting interface that allowed it to execute extremely precise maneuvers. Unfortunately, the development of the Kouto came about during a schism in the supervisory board; one side doggedly insistent on creating the most advanced and flashy hardware possible, while the other eschewed the importance of an cheap, easy to maintain, and comparatively effective platform - a debate that the champions of the Kouto ended up losing. The partially completed design was shelved in favor of the development of its far cheaper cousin, the Valken. Following an internal power struggle that saw company priorities shift once more, a retrofitted version of this unit was put into service.",,,
-armaa_ilorin,SHIP,"Heavily armed and armored, these ponderous monstrosities are barely capable of defending themselves from fast targets or even striking them; their ordinance barrages become downright lethal should they manage to close the distance with their prey, however.
-
-Created in a bygone era, some speculate the Ilorin as one of the ArmaA Corporations oldest designs due to its sheer simplicity and brutal effectiveness. Bristling with weapons and protected with thick armor, the iron shell of the Ilorin made it a popular frontline unit and favourite of anti-rebellion units, snugly fitting into the combat doctrine at the time.
-
-Barely space-worthy, extra verniers installed alongside the units antiquated jumpjets were intended only for brief use during deployments to breach carrier decks. To that end, they manuever through the vacuum with the grace of a bull passing through a china shop: Ilorin pilots are heavily discouraged from straying too far from their parent ship and instead specialize in striking large, easy to hit targets and lending support during planetary operations.",,,
-
-armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,
-
-armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,
+armaa_ilorin,SHIP,"Shouldn't be obtainable.",,,
 
 armaa_altagrave,SHIP,"What this design lacks in weapon slot quantity is made up for via versatility; At its heart lies the KARMA system which posseses a variety of applications on the battlespace. Additional modular components grant impressive agility and speed, but are vulnerable to small strikecraft and flanking attacks. 
 

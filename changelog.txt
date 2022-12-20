@@ -9,14 +9,14 @@ Leynos
 	- front shield -> damper field
 	- System:
 		Amalgamate Feed -> Blink
-			- Dramatically increase dilation by 10x for 1 second, reduces weapon cooldown time
+			- Dramatically increase time dilation for 1 second, reduces weapon cooldown time
 
 Ilorin
 	- removed from spawn pool
 
 Recordbreaker -> Spriggan
 	- Same weapon as Ilorin w/ increased ammo
-	- 6x Breach Missiles
+	- 1x Compact Sabot (2 sub projectiles vs 5,  no emp )
 	- 18 OP
 	- Revised sprite
 
@@ -43,7 +43,7 @@ Fixed Bihander dropping/appearing in blueprint package
 
 - fixed massively inflated squad sizes that could occur if using drone wings with WINGCOM
 
-- fixed overabundance of skyMind refs being saved in persistent data; fleetmember used as key instead of PersonAPI
+- fixed overabundance of skyMind refs being saved in persistent data; fleetmember used as key instead of captain of ship
 
 -new features-
 
@@ -62,10 +62,10 @@ Fixed Bihander dropping/appearing in blueprint package
 
 - Spriggan, 18 OP Bomber
 	- Fills same role as Ilorin
-	- 1x Recoilless Rifle, 6 Breach Missiles
 - Spriggan Powered, 7 DP
 	- 1 Med Ballistic, 1 Med Missile
 	- Uses physical shield for defense
+	- Destruction of back module disables missile weapon
 - Ceylon
 	- HVB support carrier
 

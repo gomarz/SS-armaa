@@ -2,7 +2,7 @@
   "variantId": "armaa_einhander_plus_subprime",
   "hullId": "armaa_einhander_plus",
   "displayName": "Undergunned",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 8,
   "fluxVents": 9,
   "quality": 1,

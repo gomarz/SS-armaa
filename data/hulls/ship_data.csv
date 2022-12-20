@@ -47,7 +47,7 @@ Watchdog,armaa_monitor,Mobile Armor,Arma Armatura,armaa_siegeMode,,10,4500,800,7
 Brawler(AA),armaa_brawler,Gunship,Midline,,,7,2000,450,3000,3125,250,50,,100,180,120,60,120,250,FRONT,,90,0.4,0.8,,,15,30,40,20,1,20,9,12000,8,10,300,0.25,5,5,HIDE_IN_CODEX,no_wingcom_docking,0.4,2,2,,207,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Drones,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Jinete,armaa_alesteBit,UWS,Arma Armatura,,,,150,100,1000,,150,,,350,500,500,500,500,10,PHASE,armaa_havocDrive,,,,,,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
+Jinete,armaa_alesteBit,UWS,Arma Armatura,armaa_silverSword,,,150,100,1000,,150,,,350,500,500,500,500,10,NONE,,,,,,,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 Pila,armaa_bit,UWS,Arma Armatura,temporalshell,,,200,100,1000,,150,,,350,400,400,500,500,10,NONE,,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 Pila-X,armaa_bit_ex,UWS,Arma Armatura,temporalshell,,,200,100,1500,,150,,,350,400,400,300,300,10,PHASE,,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
