@@ -22,8 +22,8 @@
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kouto_variablerifle",
-    "C_ARML": "armaa_kouto_left_arm",
     "B_TORSO": "armaa_kouto_torso_frig",
+    "C_ARML": "armaa_kouto_left_arm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_kouto_leftPauldron",
     "D_PAULDRONR": "armaa_kouto_rightPauldron",
@@ -49,8 +49,8 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-     "renderOrderMod": -900,
-      "locations": [0, -2]
+      "locations": [0, -2],
+      "renderOrderMod": -900
     },
     {
       "id": "B_TORSO",
@@ -67,9 +67,9 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "renderOrderMod":-1000,
       "angle": 10,
-      "locations": [2, 2]
+      "locations": [2, 2],
+      "renderOrderMod": -1000
     },
     {
       "id": "C_ARMR",
@@ -114,7 +114,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6, -0],
+      "locations": [-5, -0],
       "renderOrderMod": -1000
     },
     {

@@ -1,11 +1,12 @@
 v2.2
 --------
 -balans-
+- Increased DP value of Valkazard derelict defenders from range of (75-150) to (300-400)
 Valkazard
 	- DP: 15->20
 Leynos
 	- removed WINGCOM ;(
-	- shield -> damper field
+	- front shield -> damper field
 	- System:
 		Amalgamate Feed -> Blink
 			- Dramatically increase dilation by 10x for 1 second, reduces weapon cooldown time
@@ -40,7 +41,15 @@ Fixed Bihander dropping/appearing in blueprint package
 
 - fixed perf hit due to logging that wasnt disabled
 
+- fixed massively inflated squad sizes that could occur if using drone wings with WINGCOM
+
+- fixed overabundance of skyMind refs being saved in persistent data; fleetmember used as key instead of PersonAPI
+
 -new features-
+
+- WINGCOM
+	- Pilots have a small chance to level past threshold for max officer level, up to level 12
+	- Level up chance increases as number of engagements (consecutive battles before victory/retreat) ship is involved in increases
 
 - Fenris
 	- Cataphract Carrier
