@@ -3,14 +3,11 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
+  "beamEffect": "data.scripts.weapons.armaa_targetPainter_BeamEffect",
   "collisionClass": "RAY",
-  "beamEffect":   "data.scripts.weapons.armaa_targetPainter_BeamEffect", 
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "numFrames": 3,
-  "frameRate": 0,
   "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXHead_ace_00.png",
-  #"turretGlowSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead_ace_glow.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXHead_ace_00.png",
   "glowColor": [
     255,
@@ -20,11 +17,14 @@
   ],
   "hitGlowRadius": 0,
   "turretOffsets": [
-    0.5,
-    3.5
+    0,
+    3,
+    0,
+    -3
   ],
   "turretAngleOffsets": [
-    -0.5
+    0,
+    0
   ],
   "hardpointOffsets": [
     4,
@@ -33,22 +33,26 @@
   "hardpointAngleOffsets": [
     0
   ],
+  "numFrames": 3,
+  "frameRate": 0,
   "fringeColor": [
-    52,
-    235,
-    125,
+    255,
+    100,
+    0,
     255
   ],
   "coreColor": [
-    155,
     255,
-    100,
+    0,
+    0,
     255
   ],
-  "darkCore": true,
-  #"convergeOnPoint": true,
-  "width": 4,
-  "textureType": ROUGH,
-  "textureScrollSpeed": 135,
+  "darkCore": false,
+  "width": 3,
+  "textureType": [
+    "graphics/armaa/fx/armaa_beamfringe_interrupted.png",
+    "graphics/armaa/fx/armaa_beamcore_interrupted.png"
+  ],
+  "textureScrollSpeed": 0,
   "pixelsPerTexel": 1
 }

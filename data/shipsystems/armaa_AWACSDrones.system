@@ -1,0 +1,34 @@
+{
+	"id":"armaa_AWACSDrones",
+	"type":"DRONE_LAUNCHER",
+	"aiType":"DRONE_LAUNCHER_PD",
+	
+	"droneVariant":"armaa_ceylon_drone_Standard",
+	
+	"allowFreeRoam":true,
+	
+	"launchSpeed":100,
+	"launchDelay":1,
+	"maxDrones":3,
+	"droneBehavior":[
+		{"droneIndex":[0,1,2,3,4,5,6,7,8,9],
+		 "defaultFacing":AWAY_FROM_SHIP,
+		 "faceEnemy":false,
+		 "holdRoamRange":150,
+		 "freeRoamRange":300,
+		 "targetPriority":[MISSILE, FIGHTER, SHIP_TARGET, SHIP],
+		 "initialOrbitAngle":0,
+		 "orbitRadius":200, 				# plus ship radius
+		 "orbitDir":1, 					# -1 or 1
+		 "orbitSpeed":100, 				# pixels/second
+		},
+	],
+	
+	"useSound":"drone_launch",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+
+	}
+}
+

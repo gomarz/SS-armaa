@@ -1,0 +1,38 @@
+{
+  "hullName": "Shield",
+  "hullId": "armaa_shield",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/recordbreaker/armaa_spriggan_shield.png",
+  "style": "MIDLINE",
+  "height": 98,
+  "width": 44,
+  "center": [23, 58],
+  "collisionRadius": 42.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 42,
+  "viewOffset": 0,
+  "builtInMods": [
+    "armaa_moduleRepair",
+    "heavyarmor"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [17, 19]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -3, 22,
+    13, 22,
+    36, 21,
+    36, 17,
+    13.5, 16,
+    -11, 16.5
+  ]
+}

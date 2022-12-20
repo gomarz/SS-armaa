@@ -1,0 +1,52 @@
+{
+  "variantId": "armaa_record_frig_standard",
+  "hullId": "armaa_record_frig",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 4,
+  "fluxVents": 4,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "hardened_subsystems"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "heavymauler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_record_frig_head"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_record_torso"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "MODULE": "armaa_wepPack_variant"
+    },
+    {
+      "SHIELD": "armaa_shield_variant"
+    }
+  ],
+  "wings": []
+}

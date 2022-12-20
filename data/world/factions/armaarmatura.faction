@@ -43,7 +43,8 @@
 				"armaa_valkyrie":10,
 				"armaa_kouto_frig":1,
 				"armaa_valkenx_frig":2,
-				"armaa_einhander_plus":1,	
+				"armaa_einhander_plus":1,
+				"armaa_whitebase":3,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.2,
@@ -69,6 +70,8 @@
 				"armaa_kouto_frig",
 				"armaa_einhander_plus",
 				"armaa_valkenx_frig",
+				"armaa_whitebase",
+				"armaa_record_frig",
 			],
 	},
 	"shipsWhenImporting":{

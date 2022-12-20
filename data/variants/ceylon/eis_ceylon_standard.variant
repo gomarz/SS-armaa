@@ -1,0 +1,52 @@
+{
+  "variantId": "armaa_ceylon_standard",
+  "hullId": "armaa_ceylon",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 5,
+  "fluxVents": 4,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "ecm",
+    "eccm"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "harpoon",
+        "WS0006": "harpoon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "vulcan",
+        "WS0003": "vulcan",
+        "WS0004": "vulcan",
+        "WS0005": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "dualflak"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "AWACS": "armaa_ceylon_module_Standard"
+    }
+  ],
+  "wings": [
+    "broadsword_wing",
+    "broadsword_wing",
+    "armaa_record_wing",
+    "armaa_record_wing"
+  ]
+}

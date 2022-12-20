@@ -1,0 +1,25 @@
+{
+	"id":"armaa_drone_strike",
+	"type":"STAT_MOD",
+	"aiType":"DRONE_STRIKE",
+	
+	"statsScript":"data.scripts.shipsystems.armaa_drone_strike",
+	
+	"canNotCauseOverload":true,
+	"runScriptWhileIdle":true,  # this means unapply() never gets called
+	
+	"fadeActivationSoundOnChargedown":false,
+	"useSound":"system_termination_sequence",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"threatRange":1000,
+		"threatAmount":8,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}
+
+
+
+

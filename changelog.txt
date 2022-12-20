@@ -1,3 +1,77 @@
+v2.2
+--------
+-balans-
+- Increased DP value of Valkazard derelict defenders from range of (75-150) to (300-400)
+Valkazard
+	- DP: 15->20
+Leynos
+	- removed WINGCOM ;(
+	- front shield -> damper field
+	- System:
+		Amalgamate Feed -> Blink
+			- Dramatically increase time dilation for 1 second, reduces weapon cooldown time
+
+Ilorin
+	- removed from spawn pool
+
+Recordbreaker -> Spriggan
+	- Same weapon as Ilorin w/ increased ammo
+	- 1x Compact Sabot (2 sub projectiles vs 5,  no emp )
+	- 18 OP
+	- Revised sprite
+
+Aleste(S) -> Aleste(S-II)
+	- HP: 1000->900
+	- Every Aleste now carries left arm laser blade in addition to the selectable left arm weapon
+	- System: Microburn -> Lunge
+		- Charges directly at target, attacking with melee weapon once in range
+
+Fixed Bihander dropping/appearing in blueprint package
+
+-bugfix-
+- Fixed Watchdog randomly turning system on and off under certain conditions
+
+- Fixed slowdown that can occur if using wingcom hullmod on ship with all AI fighters that previously only used manned fighters
+
+- Fixed yet another altagrave ex shotgun bug
+
+- Added docking timeout (if ship cannot dock after a certain period of time, the process will abort)
+
+- Fixed ships being locked in unplayable state due to AI being reset while docked
+
+- fixed perf hit due to logging that wasnt disabled
+
+- fixed massively inflated squad sizes that could occur if using drone wings with WINGCOM
+
+- fixed overabundance of skyMind refs being saved in persistent data; fleetmember used as key instead of captain of ship
+
+-new features-
+
+- WINGCOM
+	- Pilots have a small chance to level past threshold for max officer level, up to level 12
+	- Level up chance increases as number of engagements (consecutive battles before victory/retreat) ship is involved in increases
+
+- Fenris
+	- Cataphract Carrier
+	- 50% Strikecraft refit bonus
+	- Enables Cataphract Strike ability during Nex invasions 
+
+- Nexerelin Ground Battle Ability: Cataphract Strike
+	- Attack an industry with chosen unit
+	- Damage is altered based off of various statistics such as pilot level, CR, etc
+
+- Spriggan, 18 OP Bomber
+	- Fills same role as Ilorin
+- Spriggan Powered, 7 DP
+	- 1 Med Ballistic, 1 Med Missile
+	- Uses physical shield for defense
+	- Destruction of back module disables missile weapon
+- Ceylon
+	- HVB support carrier
+
+
+
+
 v2.1.3
 --------
 - Added new strikecraft oriented hullmod that can be found via exploration, and one other series of hullmods

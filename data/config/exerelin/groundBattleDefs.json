@@ -1,0 +1,14 @@
+{
+	"abilities":{
+		"cataphractStrike":{
+			"name":"Cataphract Strike",
+			"icon":"graphics/armaa/icons/groundbattle/cataphractstrike.png",
+			"plugin":"exerelin.campaign.intel.groundbattle.plugins.CataphractStrikeAbilityPlugin",
+			"sound":"cataphractStrike",
+			"cooldown":2,
+			"cooldownGlobal":1,
+			"color":[152,171,75,255],
+			"order":5,
+		},
+	},
+}

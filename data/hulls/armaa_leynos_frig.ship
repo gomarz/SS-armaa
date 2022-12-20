@@ -12,10 +12,9 @@
   "shieldRadius": 41,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract",
+    "cataphract2",
     "strikeCraft",
     "armaa_strikeCraftFrig",
-    "armaa_wingCommander",
     "armaa_leynosWeaponSwap",
     "rugged",
     "reduced_explosion"

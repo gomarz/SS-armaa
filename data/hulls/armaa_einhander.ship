@@ -7,7 +7,7 @@
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
-  "collisionRadius": 18,
+  "collisionRadius": 28.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 45.5,
   "viewOffset": 0,
@@ -25,12 +25,12 @@
     "B_TORSO": "armaa_sprigganTorso",
     "C_ARML": "armaa_einhanderLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
+    "DUMMYDECO": "armaa_dummyBit",
     "D_PAULDRONL": "armaa_sprigganleftPauldron",
     "D_PAULDRONR": "armaa_sprigganrightPauldron",
     "E_HEAD": "armaa_sprigganHead",
     "H_GLOW": "armaa_landingBeacon",
-    "WS0001": "armaa_heavyJavelin",
-    "DUMMYDECO": "armaa_dummyBit"
+    "WS0001": "armaa_heavyJavelin"
   },
   "weaponSlots": [
     {

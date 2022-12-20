@@ -1,16 +1,25 @@
 {
-    "displayName": "UWS",
-    "fluxCapacitors": 0,
-    "fluxVents": 5,
-    "hullId": "armaa_bit_ex",
-    "goalVariant": true,
-    "hullMods": ["terminator_core","pointdefenseai"],
-    "permaMods": [],
-    "variantId": "armaa_bit_sys_ex",
-    "weaponGroups": [{
-      #  "autofire": true,
-        "mode": "LINKED",
-        "weapons": {"WS0001": "irpulse_fighter"}
-
-    }]
+  "variantId": "armaa_bit_sys_ex",
+  "hullId": "armaa_bit_ex",
+  "displayName": "UWS",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 5,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "terminator_core",
+    "pointdefenseai"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "irpulse_fighter"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
 }

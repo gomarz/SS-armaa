@@ -2,11 +2,17 @@
   "animationType": "SMOKE",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.armaa_einhanderPEffect",
-  "fireSoundTwo": "swarmer_fire",
-  "hardpointAngleOffsets": [
-    -45,
-    45
+  "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
+  "fireSoundTwo": "breach_fire",
+   "turretOffsets": [
+    -7.5,
+    -4,
+    -7.5,
+    5
+  ],
+  "turretAngleOffsets": [
+    -112,
+    108.5
   ],
   "hardpointOffsets": [
     -5,
@@ -14,36 +20,30 @@
     -5,
     5
   ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
   "hardpointSprite": "",
   "id": "armaa_record_torso",
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "type_1_srm",
+  "projectileSpecId":"armaa_sabot_srm",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "smokeSpec":{"particleSizeMin":10.0,
-				 "particleSizeRange":16.0,
-				 "cloudParticleCount":3,
-				 "cloudDuration":0.9,
-				 "cloudRadius":8.0,
-				 "blowbackParticleCount":4,
-				 "blowbackDuration":1.1,
-				 "blowbackLength":20.0,
-				 "blowbackSpread":10.0,
-				 "particleColor":[170,160,150,130]},
+							 "particleSizeRange":14.0,
+							 "cloudParticleCount":3,
+							 "cloudDuration":1.5,
+							 "cloudRadius":12.0;
+							 "blowbackParticleCount":3,
+							 "blowbackDuration":0.45,
+							 "blowbackLength":20.0,
+							 "blowbackSpread":6.0,
+							 "particleColor":[190,180,160,95]},
   "specClass": "projectile",
   "textureType": ROUGH,
-  "turretAngleOffsets": [
-    -112,
-    108.5
-  ],
-  "turretOffsets": [
-    -7.5,
-    -4,
-    -7.5,
-    5
-  ],
   "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordBody2.png",
-  "type": "MISSILE"
+  "type": "DECORATIVE"
 }

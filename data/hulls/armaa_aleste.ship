@@ -27,8 +27,7 @@
   ],
   "builtInMods": [
     "cataphract",
-    "autorepair",
-    "no_weapon_flux"
+    "autorepair"
   ],
   "builtInWeapons": {
     #"A_GUN": "armaa_aleste_rightArm",

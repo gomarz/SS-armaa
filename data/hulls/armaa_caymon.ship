@@ -13,22 +13,16 @@
   "shieldRadius": 160,
   "viewOffset": 0,
   "builtInMods": [
-    "armaa_wingCommander",
-
+    "armaa_wingCommander"
   ],
-  "builtInWings": [
-    #"starfall_ceylon_drone_wing"
-  ],
-  "builtInWeapons": {
-  },
   "weaponSlots": [
     {
       "id": "WS 005",
       "size": "MEDIUM",
       "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 245,
-      "angle": -30,
+      "arc": 190,
+      "angle": 0,
       "locations": [88, -15]
     },
     {
@@ -77,8 +71,8 @@
       "size": "MEDIUM",
       "type": "SYNERGY",
       "mount": "TURRET",
-      "arc": 245,
-      "angle": 100.5,
+      "arc": 180,
+      "angle": 90,
       "locations": [37, 36]
     },
     {
@@ -100,13 +94,13 @@
       "locations": [117, -27]
     },
     {
-      "id": "AWACS",
+      "id": "WS0004",
       "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "HARDPOINT",
-      "arc": 5,
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 190,
       "angle": 0,
-      "locations": [-10.5, -2]
+      "locations": [68, 31.5]
     }
   ],
   "engineSlots": [
