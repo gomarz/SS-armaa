@@ -34,6 +34,7 @@ HIG-S Particle Ejector,armaa_einhander_hig,2,0.6,2250,650,,50,,0,20,42,24,,,ENER
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #RECORD/SPRIGGAN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Compact Sabot,armaa_record_torso,1,,100,800,,150,,15,30,1,1,,,KINETIC,0,,0,10,1,0.25,0,0,0,0,,300,100,8,150,"GUIDED_POOR, SYSTEM,STRIKE,USE_VS_FRIGATES",,,,,Anti Shield,Slow,Poor,,,"Submunition hits on hull or armor have a %s chance to arc to weapons and engines, dealing %s EMP damage.",25% | 200,,,TRUE,11.85,,
+,armaa_record_torso_frig,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_record_leftPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_record_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 Target Painter,armaa_record_head,2,,,500,0,,,,80,4,,,,ENERGY,,,,,0.1,,0,,,,,1200,,,10,SYSTEM,,,,,Point Defense,,,,,,,,,,,,
