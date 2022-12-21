@@ -134,8 +134,8 @@
 	    "armaa_valkenx_frig",
 	    "armaa_garegga",
 	    "armaa_garegga_tt",
-            "armaa_valkyrie",
-	    "armaa_hazard_frig",
+            "armaa_whitebase",
+	    "armaa_record_frig",
         ],
     },
 	"knownHullMods":{

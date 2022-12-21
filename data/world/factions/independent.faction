@@ -34,6 +34,8 @@
 				"armaa_valkyrie",
 				"armaa_broadsword",
 				"armaa_warthog",
+				"armaa_whitebase",
+				"armaa_record_frig",
 			],
 	},
 	"knownFighters":{
