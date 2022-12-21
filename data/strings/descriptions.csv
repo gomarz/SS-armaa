@@ -99,9 +99,9 @@ armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsw
 
 armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,,
 
-armaa_alesteBit,SHIP,"Small scale, autonomous drones small enough to be utilized by Cataphract-sized vehicles. Good for point defense, but not much else.",,, 
+armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,
 
-armaa_bit,SHIP,"Small scale, autonomous drones small enough to be utilized by Cataphract-sized vehicles.",,, 
+armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,
 
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Equipped with additional software that allows the pilot to properly coordinate an additional Xyphos wing, making them effective support units.
 
