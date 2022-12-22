@@ -17,7 +17,9 @@
     "ground_support"
   ],
   "builtInWeapons": {
-    "CATA": "armaa_catapultLander"
+    "CATA": "armaa_catapultLander",
+    "LB 1": "armaa_catapultLauncher",
+    "LB 2": "armaa_catapultLauncher"
   },
   "weaponSlots": [
     {

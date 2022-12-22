@@ -2,7 +2,7 @@
   "variantId": "armaa_record_frig_standard",
   "hullId": "armaa_record_frig",
   "displayName": "Standard",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 4,
   "fluxVents": 4,
   "quality": 1,
