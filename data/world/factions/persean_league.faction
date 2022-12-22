@@ -33,6 +33,8 @@
 				"armaa_broadsword",
 				"armaa_warthog",
 				"armaa_kouto_frig",
+				"armaa_whitebase",
+				"armaa_record_frig",
 			],
 	},
 	"knownFighters":{
