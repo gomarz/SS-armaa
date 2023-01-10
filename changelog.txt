@@ -1,6 +1,7 @@
 v2.2.1
 -------
 - minor bugfix / tweaks
+- fixed aleste bazooka hullmod weapon select being labeled "BLADE"
 - fixed some bad Unapplicable text for overlord suite
 - added hard limit to # of times squad members can banter amongst each other per engagement
 - fixed squad chatter dialogue order
