@@ -1,3 +1,12 @@
+v2.2.1
+-------
+- minor bugfix / tweaks
+- fixed some bad Unapplicable text for overlord suite
+- added hard limit to # of times squad members can banter amongst each other per engagement
+- fixed squad chatter dialogue order
+- added faction specific intro text for wingcom
+- fixed strikecraft sometimes not dying with carrier if it was destroyed
+- fixed strikecraft not returning to carrier if they had an active target
 v2.2
 --------
 -balans-
