@@ -7,6 +7,7 @@ v2.2.1
 - added faction specific intro text for wingcom
 - fixed strikecraft sometimes not dying with carrier if it was destroyed
 - fixed strikecraft not returning to carrier if they had an active target
+-fixed incorrect tags on ceylon decos
 v2.2
 --------
 -balans-
