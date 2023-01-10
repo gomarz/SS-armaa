@@ -22,7 +22,7 @@
 			"SKR_can",
 			"SKR_drill_shot",
 		],
-		"wingcom_chatter": false,
+		"wingcom_chatter": true,
 		"hullmod_refit_custom":{
 		"missleracks":0.25,
 		"armaa_sykoStims":0.20,
@@ -393,6 +393,8 @@
 			"\"You can still fight when you're drunk!\"",
 			"\"Little mice. Scurrying everywhere.\"",
 			"\"So much for the small fry. Now, you're next.\"",
+			"\"Where did that missile come from?!\"",
+			"\"I'm coming to cover you, hold on. Can you make it back to the carrier?\"",
 			
 			
 		],
@@ -410,6 +412,7 @@
 		"strikecraft_squad_chatter_intersquad_statement":
 		[
 			"\"Damn it, $squadmember! Take the shot!\"",
+			"\"I can't believe we're really going to do this.\"",
 			"\"All I need is ten minutes with you, $squadmember, and I'm in the black for the week. Let’s make the credits flow.\"",
 			"\"I'm going on ahead, $squadmember. Don't start crying again because you can't see me.\"",
 			"\"Understand them? $factionnamearticle? How could we understand them?!\"",
@@ -462,23 +465,24 @@
 			"\"All strikecraft follow $squadleader!\"",
 			"\"Those who survive a long time on the battlefield start to think they're invincible...I bet you do too, $squadmember.\"",
 			"\"Between the two of us, we've got this covered.\"",
-			"\"That's what the last 6 pilots said.\"",
+			"\"I hope our training pays off out there.\"",
+			"\"Watch out, friendly on your left!\"",
 
 		],
 		
 		"strikecraft_squad_chatter_intersquad_response":
 		[
-			"\"If you don't stay focused, I'll shoot you down myself!\"",
-			"\"You change subjects like an acrobat.\"",
+			"\"That's what the last six pilots said.\"",
+			"\"Copy that, taking evasive action. Thanks for the heads up.\"",
 			"\"Call me sentimental, but I wish we'd met under different circumstances.\"",
 			"\"Are you trying to kill me? Fine, I see how things are.\"",
 			"\"I hope you aren't having second thoughts. Crossing me would be a big mistake.\"",
 			"\"Not bad, $squadmember. But I can do better.\"",
 			"\"Not bad at all, $squadmember.\"",
-			"\"Human wisdom can go beyond these problems.\"",
+			"\"I know, it's crazy. But we trained for this. We've got this.\"",
 			"\"I can almost taste the hate out there. This is going to be a real bloodbath.\"",
 			"\"Stick with $squadleader and you’ll make it!\"",
-			"\"You trying to get out of the action, $squadmember? Get back here.\"",
+			"\"Yeah, you're right. Let's go out there and give it our all.\"",
 			"\"It ain’t over till it’s over!\"",
 			"\"And then we can go on leave. It's perfect!\"",
 			"\"Hatred calls forth nothing but more hatred, and this is the result. Is there nothing we can do?\"",
@@ -589,11 +593,12 @@
 			"\"Watch for enemy radar spikes.\"",			
 			"\"Maintain bearing.\"",			
 			"\"Maintain speed.\"",			
+			"\"We knew the risks when we signed up. Now it's time to show them what we're made of. Power up the engines and charge the weapons. \n We'll send those rustbuckets straight to the scrap heap.\"",
 			"\"Master arm is on. Good spin and good tone for weapons.\"",
 			"\"ALERT! ALERT! We’ve got tracks inbound. Multiple!\"",
 			"\"Listen! $factionnamearticle don't respect us. Sometimes respect can be a little word. But sometimes respect is a Plasma Cannon to the face! Now, let's get 'em!\"",
 			"\"All craft, get ready to kick some $factionname keister! I dunno where they came from, but I know where they're goin'!!\"",
-			"\"$squadronname! The time has come! The end is near for $factionnamearticle! Think of your friends. Think of your families. And fight for them!\"",
+			"\"$squadronname! The end is near for $factionnamearticle! Think of your friends. Think of your families. And fight for them!\"",
 			"\"The planet quakes with the anger of her people. Their cries echo in the stars. Now is the time for this to end.\"",
 			"\"This is a gamble. And since we are risking everything, it's a big gamble. But if we don't risk our lives, we can't win this battle.\"",
 			"\"Employers change, territories change, polities change, but credits? Credits are a constant. In fact, nothing better for business than a good war.\"",
@@ -605,6 +610,73 @@
 			"\"$factionnamearticle are testing us. Don't show any fear!\"",
 			"\"Peace of Ludd, indeed. Come on in boys. We'll dispense all the peace you want. No waiting.\"",
 		],
+		
+		#Intro chatter, but specific to factions. Added to the list of generic lines.
+		"hegemony":
+		[
+			"\"The domain is dead. If you ask me, these fools are just pretenders.\"",
+			"\"This is for those ridiculous taxes!\"",
+			"\"I worry about the future of our own forces if the Hegemony continues to expand its power and influence. \n We have to find a way to keep up.\"",
+			"\"The Hegemony's military dominance is - or was - unprecedented. Some say they have the best trained fleet in the Sector.\"",
+		],
+		"tritachyon":
+		[
+			"\"I'm going to enjoy this, corporate scum.\"",
+			"\"Tri-tachyon's force is no match for our superior training. Push them back and establish air superiority.\"",
+			"\"Looks like we've got another case of corporate greed trying to bully its way around. Time to teach them a lesson.\"",
+			"\"These suits think they can buy their way out of anything? Time to show them the error of their ways.\"",
+			"\"I may not have their resources, but I've got something they'll never have - integrity. Let's go take them down a peg or two.\"",
+			"\"I knew taking on this contract wouldn't be easy, but I never expected to be going up against a megacorporation. \n No matter. I'll take them down and expose their corruption.\"",
+			"\"I may not be able to take on their entire fleet alone, but I've got a few tricks up my sleeve. Let's show them that \n you can't always win with just money and power.\"",			
+			
+		],
+		"pirates":
+		[
+			"\"It's time to put an end to these scoundrels' reign of terror. Let's show them the meaning of justice.\"",
+			"\"These pirates think they can just take whatever they want? Time to teach them a lesson.\"",
+			"\"I've had enough of these looters and thieves. It's time to send them back to the scrap heap where they belong.\"",
+			"\"I'll be damned if I let these crooks get away with their crimes. Let's do this.\"",
+			"\"Kanta's dogs, incoming! Let's show them whose really in charge.\"",
+			"\"Those pirates think they can just waltz in here and plunder our cargo ships? They've got another thing coming.\"",
+		],
+		"luddicpath":
+		[
+			"\"Don't show these zealots any mercy.\"",
+			"\"Alright, let's go show these fanatics the true meaning of heaven - a giant explosion!\"",
+			"\"These zealots think they're fighting for their god? Let's show them who's really in charge up here.\"",
+			"\"I may not agree with their ideology, but I'll always defend their right to believe it. That being said, \n they're not taking me down without a fight.\"",
+			"\"These guys may think they have a divine mission, but I have a mission of my own. Let's do this.\"",			
+			"\"Pathers. All they're working with is glorified space debris - don't get surrounded.\"",
+		],
+		"persean":
+		[
+			"\"It's the League. Let's show these lapdogs of Kazeron what for!\"",
+		],
+		"remnant":
+		[
+			"\"Remnants from 'tachie autonomous fleets. Guess they weren't all wiped outr after all.\"",		
+			"\"Drones. I hate drones.\"",
+			"\"I'm not afraid of some rogue AI. We'll take them down just like any other threat.\"",
+		],
+		"omega":
+		[
+			"\"Unidentified contacts burning in fast. What the hell are these things?\"",
+			"\"I've never seen ships like these before. They must be some kind of advanced AI...?\"",
+			"\"These ships may be artificial, but I gotta feeling they're gonna give me a real challenge. Let's do this!\"",
+			"\"I don't know what those are, but they're not here to make friends. Let's take them down.\"",
+			"\"I've faced a lot of challenges in my time, but this one takes the cake. Let's show these things what we're made of.\"",
+			"\"Even if we're outgunned and outmatched, we ain't goin' down without a fight!\"",
+			"\"These things aren't to be taken lightly. Engage with caution!\"",			
+		],
+
+		"tahlan_legioinfernalis":
+		[
+			"\"These aren't any regular pirates. What's going on here?\"",
+			"\"Listen up! We've got an enemy fleet dead ahead, and word is they've got some kind of illegal AI backing them up. \n We've faced worse and come out on top. Suit up, check your weapons, and get ready to show these scallywags who's boss.\"",
+			"\"We've taken down our fair share of pirates, but these guys are a cut above the rest. Time to show them what we're really made of.\"",
+		],
+		
+		#Intro lines based off of actions player has done		
 		"$atrocities":
 		[
 			"\"Look at yourself: the aloof and mighty $factionname! Slaughtering the people who ask for your mercy!\"",
@@ -619,7 +691,7 @@
 		"$gaTJ_completed":
 		[
 			"\"It's that fleet that jumps without jump points -- stay on your toes!\"",
-			"\"It's $factionnamearticle. This may be the one associated with those anamalous hyperspace maneuvers, look out.\"",
+			"\"It's $factionnamearticle. This may be the one associated with those anamalous hyperspace maneuvers.\"",
 			"\"Those fancy hyperspace manuevers can't save you now.\"",
 			"\"Word is that $factionnamearticle have managed a technique to enter hyperspace without engagement with a Durand-Patel conjunction.\"",
 			

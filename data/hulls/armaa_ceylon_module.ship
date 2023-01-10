@@ -2,7 +2,7 @@
   "hullName": "Sensor Module",
   "hullId": "armaa_ceylon_module",
   "hullSize": "FRIGATE",
-  "spriteName": "",
+  "spriteName": "graphics/armaa/weapons/killme/armaa_emthrust_00.png",
   "style": "MIDLINE",
   "coversColor": "255,255,255,255",
   "height": 64,

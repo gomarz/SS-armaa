@@ -3,7 +3,7 @@ armaa_kouto_wing,armaa_kouto_Standard,"fighter3, fighter, high, armaa_advcataphr
 armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t,attack_at_an_angle",2,0.4,4,11,V,4000,600,,2,FIGHTER,Close Combat(HE),14,6500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_valkencannon_wing,armaa_valkencannon_Standard,"no_sell,no_drop,rd_no_extra_craft",3,0.2,5,25,BOX,4000,600,,1,FIGHTER,Strike (ENERGY),30,14000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_ilorin_wing,armaa_ilorin_standard,"no_sell,no_drop,rd_no_extra_craft",2,0.3,4,15,BOX,4000,700,,2,BOMBER,Support (HE),15,10000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_record_wing,armaa_record_Standard,"bomber3, bomber,cataphract,no_sell,no_drop,leader_no_swarm,wingman_no_swarm,attack_at_an_angle",3,0.25,4,18,V,4000,1000,-100,2,BOMBER,Bomber,20,14000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_record_wing,armaa_record_Standard,"bomber3, bomber,cataphract,no_sell,no_drop,leader_no_swarm,wingman_no_swarm,attack_at_an_angle,merc",3,0.25,4,18,V,4000,1000,-100,2,BOMBER,Bomber,20,14000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cataphract_bp,cataphract,leader_no_swarm,attack_at_an_angle,rapid_reform",0,0.1,3,6,CLAW,4000,600,,3,INTERCEPTOR,Interceptor/Coffin,9,4250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract,attack_at_an_angle",0,0.1,3,5,CLAW,4000,600,,4,FIGHTER,Kinetic,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t,leader_no_swarm,rapid_reform,attack_at_an_angle,rd_no_extra_craft",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,12000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
@@ -14,7 +14,7 @@ armaa_einhander_wing,armaa_einhander_ftr_std,"fighter3,fighter,no_sell,no_drop,i
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit2_wing,armaa_bit_alta,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,6,0,BOX,0,500,,1,SUPPORT,Fire Support,20,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
-armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm",3,,6,0,DIAMOND,1000,500,,4,INTERCEPTOR,Fire Support,10,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
+armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm",3,,6,0,DIAMOND,1000,500,,4,INTERCEPTOR,Fire Support,8,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #why?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_crew_wing,armaa_crew_standard,"interceptor1, interceptor,no_drop,no_sell",0,0.3,1,0,BOX,2000,599,,6,INTERCEPTOR,Crew,1,10,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10

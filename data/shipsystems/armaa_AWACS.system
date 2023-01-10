@@ -6,7 +6,7 @@
 	"statsScript":"data.scripts.shipsystems.armaa_AWACSSys",
 
 	#"runScriptWhilePaused":true, # only for the player's ship
-	"runScriptWhileIdle":true, # unapply() never gets called
+	#"runScriptWhileIdle":true, # unapply() never gets called
 		
 	"fadeActivationSoundOnChargedown":true,
 	"useSound":"system_entropy",

@@ -97,7 +97,11 @@ armaa_kouto_frig,SHIP,"The Kouto Electronic Type, or E-Type for short, is design
 
 armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Silvia has been 'upgraded' with an inefficient shield generator as well as software to coordinate a Broadsword wing. It mounts additional hardpoints over the standard chassis, as well as an enhanced maneuvering system.",,, 
 
-armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,, 
+armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,,
+
+armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,
+
+armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,
 
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Equipped with additional software that allows the pilot to properly coordinate an additional Xyphos wing, making them effective support units.
 

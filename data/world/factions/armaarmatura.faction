@@ -168,7 +168,7 @@
 	},
 	"factionDoctrine":{
 		"warships":3,
-		"carriers":1,
+		"carriers":2,
 		"phaseShips":1,
 
 		"officerQuality":4,
@@ -267,6 +267,8 @@
 	},	
 	"custom":{
 		"offersCommissions":false,
+		"decentralized":false,
+		"allowsTransponderOffTrade":true,
 		"engagesInHostilities":false,
 		"buysAICores":true,
 		"AICoreValueMult":2,
@@ -282,7 +284,7 @@
 	},
 	"fleetTypeNames":{
 		"trade":"Corporate Trader",
-		"tradeLiner":"Pulse Spaceline Flight",
+		"tradeLiner":"Spaceline Flight",
 		"tradeSmuggler":"Expedited Trader",
 		"smallTrader":"Distribution Convoy",
 
@@ -297,4 +299,3 @@
 
 	}
 },
-z
