@@ -20,6 +20,13 @@
     },
     {
       "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "C_ARML": "armaa_laser"
+      }
+    },
+    {
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "B_TORSO": "armaa_valken_torso_black"

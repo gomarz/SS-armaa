@@ -28,7 +28,7 @@ Damper Field,armaa_damper,1,,,,,,,3,0.1,0.5,3,0.5,0,,,,,TRUE,,,,TRUE,TRUE,,,grap
 Amalgamate Feed,armaa_amalgamatefeed,,,,,,0.5,,,,0.5,20,0.5,20,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Plasma Jets,armaa_plasmaJets,,,,,,,,5,0.2,0.2,0.5,0.3,0.15,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Havoc Drive,armaa_havocDrive,,,,,,,,2,0.15,1,0.5,0.5,0.1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Siege Mode,armaa_siegeMode,,,0.03,,,,,,,1,,1,1,TRUE,,,FALSE,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Siege Mode,armaa_siegeMode,,,,,,,,,,1,,1,1,TRUE,,,FALSE,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Recall Device,armaa_recalldevice,,,,,,0.5,,2,0.05,0.5,,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/recall_device.png
 Takeoff,armaa_traveldrive,1,,,,,,,,,2,2,2,0,TRUE,,,,TRUE,FALSE,TRUE,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
 Adv. Fire Control System,armaa_afcss,,,,,,,,,,1,5,1,20,,,,,,,,,,,,,

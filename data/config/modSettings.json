@@ -127,6 +127,8 @@
 			"\"Shall we get back to work?\"",
 			"\"What brings you here today, commander?\"",
 			"\"I'm afraid I don't know what a 'Necro Core' is.\"",
+			"\"Greetings Captain, all functions are operating within normal parameters and the crew is ready for your instructions.\"",
+			
 		],
 		"strikecraft_squad_chatter_beta":[
 			"\"I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do.\"",
@@ -141,6 +143,7 @@
 			"\"I do not experience fear, but I understand how it affects living beings.\"",
 			"\"No issues to report regarding my duties.\"",
 			"\"Test complete. All systems are working perfectly.\"",
+			"\"Welcome aboard Captain, I am ready to assist with any tasks or queries.\"",
 		],
 		"strikecraft_squad_chatter_gamma":[
 			"\"All system checks are complete.\"",
@@ -394,6 +397,7 @@
 			"\"Little mice. Scurrying everywhere.\"",
 			"\"So much for the small fry. Now, you're next.\"",
 			"\"Where did that missile come from?!\"",
+			"\"Targeting the enemy's weak point. Focus fire on the bridge.\"",
 			"\"I'm coming to cover you, hold on. Can you make it back to the carrier?\"",
 			
 			
@@ -609,15 +613,24 @@
 			"\"Reactor online. Sensors online. Weapons systems online. All functioning systems... phenomenal.\"",
 			"\"$factionnamearticle are testing us. Don't show any fear!\"",
 			"\"Peace of Ludd, indeed. Come on in boys. We'll dispense all the peace you want. No waiting.\"",
+			"\"We've flown against better, and we'll fly against worse. This is just another day at the office.\"",
+			"\"The objective is clear. Let's get to it.\"",
+			"\"I'll be analyzing the battlefield and adjusting our tactics as necessary, stay on my wing.\"",
+			"\"Looks like the party's getting started. Engage at will, pilots. And try not to make too big a mess, we want to give them something to remember us by.\"",
+			"\"Control, this is $squadronname Lead, we are weapons hot and inbound to the target area. Requesting clearance for engagement.\"",
+			"\"In position and awaiting orders to engage the enemy fleet.\"",
+			"\"$squadronname, entering the fight. All weapons armed and ready to engage.\"",
 		],
 		
-		#Intro chatter, but specific to factions. Added to the list of generic lines.
+		#Intro chatter specific to factions. Added to the list of generic lines.
 		"hegemony":
 		[
 			"\"The domain is dead. If you ask me, these fools are just pretenders.\"",
 			"\"This is for those ridiculous taxes!\"",
-			"\"I worry about the future of our own forces if the Hegemony continues to expand its power and influence. \n We have to find a way to keep up.\"",
+			"\"I worry about the future of our own forces if the Hegemony continues to expand its power and influence.\"",
 			"\"The Hegemony's military dominance is - or was - unprecedented. Some say they have the best trained fleet in the Sector.\"",
+			"\"I know these ships and I know their weaknesses! I'll make sure Daud knows what he's lost!\"",
+			
 		],
 		"tritachyon":
 		[
@@ -639,6 +652,16 @@
 			"\"Kanta's dogs, incoming! Let's show them whose really in charge.\"",
 			"\"Those pirates think they can just waltz in here and plunder our cargo ships? They've got another thing coming.\"",
 		],
+		"agni":
+		[
+			"\"Command, what the hell are we fighting? Are those...eyes?\"",
+			"\"I can't believe we're actually going to engage in combat with aliens.\"",
+			"\"These things are 'ganic, and every creature has a weakness! Don't let up!\"",
+			"\"I ain't skeered of a few bleeding space whales! We'll follow protocol and take 'em out.\"",
+			"\"Is this first contact? Well, guess they ain't the friendly type!\"",
+			"\"Looks like we can't understand each other. You know what that means.\"",
+			"\"Watch out for their teeth! They're like knives.\"",
+		],
 		"luddicpath":
 		[
 			"\"Don't show these zealots any mercy.\"",
@@ -648,25 +671,110 @@
 			"\"These guys may think they have a divine mission, but I have a mission of my own. Let's do this.\"",			
 			"\"Pathers. All they're working with is glorified space debris - don't get surrounded.\"",
 		],
-		"persean":
+		"expsp_asdf1_frig":
 		[
-			"\"It's the League. Let's show these lapdogs of Kazeron what for!\"",
+			"\"We've completed analysis of the enemy craft. Designation: ASDF-03. It's protected by an EMP flare system. \n You'll have to attack from head-on. $squadronname, I pray for your success.\"",
 		],
+		"tahlan_Nightingale":
+		[
+			"\"We've completed analysis of the enemy ship. Designation: Songbird. That beast rains missiles. That's some serious shit.\"",		
+		],
+		
+		"guardian":
+		[
+			"\"Flight, you're clear to engage. Remember, that cryosleeper's got millions of lives on the line, so don't hold back.\"",
+			"\"Let's show this automated trash what happens when they mess with human lives. We've got a cryosleeper to secure and we're going to do it by any means necessary.\"",
+			"\"That automated capital ship is all that's standing between us and the cryosleeper. Let's take it down and save those lives.\"",
+			"\"What's this thing doing out here? It's almost like it's defending the cryosleeper - but from what?\"",
+		],
+		
+		"ziggurat":
+		[
+			"\"This is Delta Leader, we're arriving on the battlefield now. Holy hell, that's one massive bogey. Looks like it's swarming with..fighters? \n All units, spread out and evade those motes of light.\"",
+			"\"$squadronname, on station - That's one hell of a capital ship. Keep your wits about you, it looks like it can phase.\"",
+		],
+				
 		"remnant":
 		[
-			"\"Remnants from 'tachie autonomous fleets. Guess they weren't all wiped outr after all.\"",		
-			"\"Drones. I hate drones.\"",
+		
+			"\"Remnants from the AI Wars? I thought they were all wiped out?!\"",		
+			"\"$squadronname, incoming to the battlefield. Can't believe these things are still putting up a fight, but I'm ready to take them out.\"",
+			"\"Entering the fight. These ghosts from the AI Wars are going to regret coming back to haunt us.\"",
 			"\"I'm not afraid of some rogue AI. We'll take them down just like any other threat.\"",
+			"\"$squadleader, I've got multiple bogeys on my radar, and they're not responding to hails. They look like drones, but they're not transmitting any identification.\"",
+			"\"I always knew it was a bad idea to trust machines with so much power.\"",
+		],
+		"uaf":
+		[
+			"\"Looks like the Queen of Aurora sent her toy fleet to play with the big boys. Let's show 'em how it's done.\"",		
+			"\"These dimension-hoppers think they can take us with their fancy tricks? They've got another thing coming.\"",
+			"\"Queen of Aurora? More like Queen of Losers. Let's send 'em back to her in pieces.\"",
+			"\"I ain't believin' them stories 'bout another universe, but we can kill 'em just the same.\"",
+			"\"They say these Aurorans got some kind of magical powers. Don't touch 'em unless you want to be drained of all your precious fluids.\"",
+			"\"Rumor has it that the Aurorans have some kind of special pastries. Five credits to anyone who brings me one.\"",
+			"\"I'm not one to believe in fanciful stories. I'll reserve judgment on their origin until after they're dead.\"",
+			"\"Don't matter if they's from another universe or not, they still gotta deal with me!\"",
+			"\"This is it, folks. We're going up against a fleet from another reality. They don't play by our rules, so be extra careful out there.\"",
+			"\"So what if they're actually from a parallel universe? That tech of theirs still looks ancient. We've got this!\"",
+			"\"Don't let their strange appearance fool you! They're here to fight, and they fight dirty. Stay on guard and watch your six.\"",
+			"\"Those Semibreves pack a punch like you wouldn't believe. Stay clear of the blast radius or there won't be anything left to send back to your kin.\"",
+			"\"These guys don't fight like anything we've ever seen before. But we've got a few tricks of our own.\"",
+			"\"We'll be facing off against the UAF's elite fighters. Stay sharp and be ready for anything.\"",
+			"\"What the hell? These guys aren't from around here.. Auroran tech - must be that Queen's navy.\"",
+			
+		],
+		"sindrian_diktat":
+		[
+			"\"These are not just enemy ships - they are the instruments of oppression! Disable as many as possible and send them running back to their 'great leader'!\"",		
+			"\"They believe that they are above us. They're wrong. Follow my lead!\"",
+			"\"We're not just fighting against a fleet, we're fighting against the ego of their dictator. Let's show him that he's not invincible.\"",
+			"\"Worried about these lobster eaters? I'm more worried about running out of ammo before I take them all down.\"",
+			"\"Their fervor for Andrada is no match for my piloting abilities. Let's show 'em how it's done.\"",
+			"\"They call themselves the 'Sindrian Elite'? Ha! They're not elite, they're just a bunch of rad-addled thugs with a leader who's got a god complex.\"",
+			"\"The battle is on! Let's show them what we're made of and send them running back to their great leader.\"",
+			
+			
+		],
+		"sindrian_diktat_pagsm":
+		[
+			"\"These are not just enemy ships - they are the instruments of fuel monopolists! Disable as many as possible and send them running back to their 'Supreme Chief Overlord'!\"",	
+			"\"We're not just fighting against a fleet, we're fighting against the ego of the Magnanimous, Excellent, Glorious and Auspicious Supreme Chief \n Overlord President Executive Gas Station Manager. Let's show him that he's not invincible.\"",
+			"\"Worried about these antimatter monopolists? I'm more worried about running out of ammo before I take them all down.\"",
+			"\"Their fervor for Andrada is no match for my piloting abilities. Let's show 'em how it's done.\"",
+			"\"They call themselves the 'Sindrian Elite'? Ha! They're not elite, they're just a bunch of fume sniffing thugs with a leader who's got a god complex.\"",
+			"\"The battle is on! Let's show them what we're made of and send them running back to The Magnanimous, Excellent, Glorious and Auspicious Supreme Chief \n Overlord President Executive Gas Station Manager.\"",
+			"\"Anyone else here hungry for lobster? Just me?\"",
+			"\"The only thing these fuel peddlers got going for them is their sunglasses!\"",
+			"\"They might be stylish, but style doesn't substitue skill!\"",
+			"\"Shut these living advertisements up already! I'm getting sick of all their spouting 'Sindrian Fuel' this, 'Best Antimatter fuel that!'\"",
+			"\"I hear that their Supreme Chief Overlord Executive Gas Station Manager owns an antimatter fuel bodypillow. What kind of gossiping is that!?\"",
+			"\"Let's show these fuel-addled idiots how real pilots fly!\"",
 		],
 		"omega":
 		[
 			"\"Unidentified contacts burning in fast. What the hell are these things?\"",
-			"\"I've never seen ships like these before. They must be some kind of advanced AI...?\"",
+			"\"I knew it! Aliens ARE real!!\"",
+			"\"I've never seen ships like these before. Command, what are we dealing with here?\"",
 			"\"These ships may be artificial, but I gotta feeling they're gonna give me a real challenge. Let's do this!\"",
 			"\"I don't know what those are, but they're not here to make friends. Let's take them down.\"",
-			"\"I've faced a lot of challenges in my time, but this one takes the cake. Let's show these things what we're made of.\"",
+			"\"I done had a buncha trouble in my life but this one's the worst. We gonna show 'em we ain't nothin' to mess with.\"",
 			"\"Even if we're outgunned and outmatched, we ain't goin' down without a fight!\"",
 			"\"These things aren't to be taken lightly. Engage with caution!\"",			
+		],
+		
+		"famous_bounty":
+		[
+			"\"Looks like we've hit the jackpot. Time to collect that bounty.\"",
+			"\"Don't make us blast our way through your fleet. Surrender now and save us all some trouble.\"",
+			"\"They've been running for a while, eh? Looks like their luck just ran out.\"",
+			"\"There's a substantial reward for your destruction. It would be in your best interest to surrender peacefully.\"",
+			"\"Society don't want ya. Any resistance and yer dead.\"",
+			"\"You all marked for death. Ain't no talkin your way outta this one.\"",
+			"\"We've got intel on a high-value enemy fleet, let's move in for the kill.\"",
+			"\"Enemy fleet in sight! Target their flagship for the big payout.\"",
+			"\"All units, form up and prepare to engage the enemy fleet. That bounty won't collect itself.\"",
+			
+			
 		],
 
 		"tahlan_legioinfernalis":
@@ -717,7 +825,6 @@
 			"Flaming Skulls",
 			"Scorpions",
 			"Skulls",
-			"",
 			"Wulong",
 			"Centipede",
 			"Avanti's Angels",

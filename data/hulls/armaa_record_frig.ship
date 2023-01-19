@@ -3,7 +3,7 @@
   "hullId": "armaa_record_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valken/armaa_valkenHips.png",
-  "style": "MIDLINE",
+  "style": "armaa_valkazard",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],

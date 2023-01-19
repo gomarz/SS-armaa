@@ -50,5 +50,5 @@
   ],
   "textureScrollSpeed": 0,
   "pixelsPerTexel": 1,
-  "fireSoundTwo": "high_intensity_laser_loop"
+  "fireSoundTwo": "pd_laser_loop"
 }

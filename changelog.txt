@@ -1,3 +1,34 @@
+v2.2.2
+------
+
+- Spriggan Powered
+	- Armor: 225->200
+	- Top Speed: 150->140
+	- Drone Count: 4->3
+		- Engagement Range: 1000->500
+		- Replacement Rate: 8->10
+	- Shield Module
+		- HP: 500->800
+		- Armor:800->500
+
+- Wingcom
+	- Added encounter dialogue for:
+		-Factions:
+			- Agni
+			- Sindrian Diktat
+			- Sindrian Fuel Company (PAGSM)
+			- UAF
+			- Wanted
+		-Ships:
+			- Ziggurat
+			- Guardian
+			- Songbird
+			- ASDF-03
+
+- Fixed Valkazard body mods not being removed 
+- Fixed Valkazard Laser Blade Hullmod being listed as bazooka
+- Fixed cores not actually being removed if ship with overlord suite is destroyed
+
 v2.2.1
 -------
 - minor bugfix / tweaks

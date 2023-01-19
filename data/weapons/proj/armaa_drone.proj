@@ -15,15 +15,15 @@
 	"flameoutTime":0.5,
 	"noEngineGlowTime":0.5,
 	"fadeTime":0.5,
-	"explosionSpec":{"duration":0.1f, # not visual
+	"explosionSpec":{"duration":0.15f, # not visual
 					 "radius":100,
 					 "coreRadius":65, # full damage within core radius
 					 "collisionClass":HITS_SHIPS_AND_ASTEROIDS,
 					 "collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
-					 "particleCount":25,
+					 "particleCount":35,
 					 "particleSizeMin":5.0,
 					 "particleSizeRange":3.0,
-					 "particleDuration":0.5,
+					 "particleDuration":1,
 					 "particleColor":[255,130,100,255],
 					 },
 	"engineSpec":{"turnAcc":400,
