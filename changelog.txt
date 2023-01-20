@@ -29,6 +29,7 @@ v2.2.2
 - Fixed Valkazard Laser Blade Hullmod being listed as bazooka
 - Fixed cores not actually being removed if ship with overlord suite is destroyed
 
+- Fixed strikecraft never refitting because game considered them to be retreating(?????????)
 v2.2.1
 -------
 - minor bugfix / tweaks

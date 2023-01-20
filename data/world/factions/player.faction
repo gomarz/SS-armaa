@@ -1,0 +1,12 @@
+{
+	"knownHullMods":{
+		"tags":["base_bp"],
+		"hullMods":[
+			armaa_skyMindGamma,
+			armaa_skyMindBeta,
+			armaa_skyMindAlpha,
+		],
+	},
+}
+
+
