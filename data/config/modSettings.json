@@ -755,7 +755,6 @@
 			"\"Unidentified contacts burning in fast. What the hell are these things?\"",
 			"\"I knew it! Aliens ARE real!!\"",
 			"\"I've never seen ships like these before. Command, what are we dealing with here?\"",
-			"\"These ships may be artificial, but I gotta feeling they're gonna give me a real challenge. Let's do this!\"",
 			"\"I don't know what those are, but they're not here to make friends. Let's take them down.\"",
 			"\"I done had a buncha trouble in my life but this one's the worst. We gonna show 'em we ain't nothin' to mess with.\"",
 			"\"Even if we're outgunned and outmatched, we ain't goin' down without a fight!\"",
@@ -783,6 +782,17 @@
 			"\"Listen up! We've got an enemy fleet dead ahead, and word is they've got some kind of illegal AI backing them up. \n We've faced worse and come out on top. Suit up, check your weapons, and get ready to show these scallywags who's boss.\"",
 			"\"We've taken down our fair share of pirates, but these guys are a cut above the rest. Time to show them what we're really made of.\"",
 		],
+		
+		#Intro lines for specific characters encountered
+		"eiskimquy":
+		[
+			"\"Mommy\"",
+		],
+
+		"eisava":
+		[
+		
+		],		
 		
 		#Intro lines based off of actions player has done		
 		"$atrocities":

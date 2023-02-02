@@ -14,7 +14,7 @@ armaa_einhander_wing,armaa_einhander_ftr_std,"fighter3,fighter,no_sell,no_drop,i
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit2_wing,armaa_bit_alta,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,4,0,BOX,0,500,,1,SUPPORT,Fire Support,20,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
-armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm",3,,4,0,DIAMOND,0,500,,2,SUPPORT,Fire Support,15,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
+armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm",3,,4,0,DIAMOND,1000,500,,2,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #why?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_crew_wing,armaa_crew_standard,"interceptor1, interceptor,no_drop,no_sell",0,0.3,1,0,BOX,2000,599,,6,INTERCEPTOR,Crew,1,10,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10

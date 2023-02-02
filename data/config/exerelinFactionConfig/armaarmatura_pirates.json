@@ -50,5 +50,7 @@
 	],
 	"startSpecialItems":[
 		[["drone_replicator",""]],
+		[["armaa_cataphract_package",""]],
+		[["armaa_advcataphract_package",""]],
 	],
 }

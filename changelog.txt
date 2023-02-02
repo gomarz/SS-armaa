@@ -1,3 +1,10 @@
+v2.2.3
+------
+- fixed spriggan lpc not being sold
+- fixed valken(p) not being sold
+- added spriggan to cataphract bp
+- added cataphract bps to arma sleeper start
+- misc other changes
 v2.2.2
 ------
 
