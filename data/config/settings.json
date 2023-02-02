@@ -35,9 +35,6 @@
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 		},
-		"illustrations":{
-			"armaa_newmeshan_illus":"graphics/armaa/illustrations/armaa_newmeshan.jpg",
-		},
 		"nex_groundbattle":{
 			"icon_cataphract":"graphics/armaa/icons/groundbattle/cataphractstrike.png",
 		},

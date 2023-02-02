@@ -344,7 +344,9 @@ armaa_afcss,SHIP_SYSTEM,"Increases damage dealt to a number of enemies within 25
 
 armaa_meleeAttack,SHIP_SYSTEM,"Charges forward at targeted enemy at high speeds.",,,
 
-armaa_drone_strike,SHIP_SYSTEM,"Supercharges one of the UWS drones with a brief energy transfer. The drone tracks a nearby target like a missile, dealing damage on impact.",Offensive,"Supercharges one of the UWS drones and sends it after a target. The drone deals 600 Energy damage and 300 EMP damage on impact.",600 Energy | 300 EMP,
+armaa_drone_strike,SHIP_SYSTEM,"Supercharges one of the UWS drones with a brief energy transfer. The drone tracks a nearby target like a missile, dealing damage on impact.",Offensive,"Supercharges one of the UWS drones and sends it after a target. The drone deals 400 High Explosive damage and 400 EMP damage on impact.",400 High Explosive | 400 EMP,
+
+armaa_jauntbooster,SHIP_SYSTEM,"Greatly boosts speed and acceleration for a short moment. More effective for lateral movement.",Movement,,
 
 armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,
 
