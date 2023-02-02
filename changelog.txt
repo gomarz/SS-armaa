@@ -1,6 +1,7 @@
 v2.2.2
 ------
 
+
 - Spriggan Powered
 	- Armor: 225->200
 	- Top Speed: 150->140
@@ -10,6 +11,8 @@ v2.2.2
 	- Shield Module
 		- HP: 500->800
 		- Armor:800->500
+	- Weapons Pack
+		- Armor: 200->150
 
 - Wingcom
 	- Added encounter dialogue for:

@@ -36,6 +36,7 @@ Active Flare Launcher,armaa_flarelauncher_active,,,,,,0.1,,,,,,,10,,,,,,,,,,,,,g
 Decoy Flare Launcher,armaa_flare_decoy,,,,,,,,1,0.05,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/flare_launcher.png
 BLADE,armaa_blade,,,,,,,,,,0.33,0.66,0.33,10,,,,,TRUE,,,,TRUE,,,,graphics/icons/hullsys/active_flare_launcher.png
 UWS Strike,armaa_drone_strike,,,,,,0.45,,,,0,0.05,0.2,0,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
+Booster,armaa_jauntbooster,,,,,,,,2,0.1,0.3,0.3,1,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 AWACS,armaa_awacs,,,,,,0.2,,,,0.5,7,1,10,,,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png

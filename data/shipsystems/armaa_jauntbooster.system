@@ -1,0 +1,21 @@
+{
+    "id":"armaa_jauntbooster",
+    "type":"STAT_MOD",
+    "aiType":"CUSTOM",
+    "aiScript":"data.scripts.shipsystems.ai.armaa_JauntBoosterAI",
+
+    "statsScript":"data.scripts.shipsystems.armaa_JauntBoosterStats",
+    "runScriptWhilePaused":true, # only for the player's ship
+
+    "engineGlowLengthMult":1.2,
+
+    "flameoutOnImpactChance":0,
+
+    "outOfUsesSound":"engine_disabled",
+
+    "aiHints":{
+        "activeSpeedIncrease":0,
+        "burstMovementPotential":200,
+        "averageSpeedIncrease":25
+    }
+}
