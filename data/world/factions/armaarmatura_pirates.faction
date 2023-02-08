@@ -64,7 +64,7 @@
 		],
 	},
 	"knownShips":{
-		"tags":["armaa_cataphract_bp","armaa_mobilearmor","merc"],
+		"tags":["armaa_cataphract_bp","armaa_mobilearmor"],
 		"hulls":[	
 				"armaa_einhander",
 				"armaa_einhander_plus",
@@ -80,11 +80,11 @@
 			],
 	},
 	"shipsWhenImporting":{
-		"tags":["ha_pulse_bp","ha_special","merc"],
+		"tags":[],
 		"hulls":[],
 	},
 	"knownFighters":{
-		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp","merc"],
+		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
 			"fighters":[
 			"armaa_gallant_wing",
 			"armaa_prodromos_wing",

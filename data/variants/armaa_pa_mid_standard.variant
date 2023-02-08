@@ -1,0 +1,29 @@
+{
+  "variantId": "armaa_pa_mid_standard",
+  "hullId": "armaa_pa_mid",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "A_GUN": "lightmg",
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "C_ARMR": "lightmg",
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,9 +1,16 @@
 v2.2.3
 ------
+- added illustration for new meshan
+- added new hullmod icon for wingcom
+- fixed buggy wing
+- revised valken sprite, again
 - fixed spriggan lpc not being sold
 - fixed valken(p) not being sold
 - added spriggan to cataphract bp
 - added cataphract bps to arma sleeper start
+- garegga dp: 10->9
+- watchdog dp: 10->11
+- fixed log clutter while iterating through keys in modSettings
 - misc other changes
 v2.2.2
 ------

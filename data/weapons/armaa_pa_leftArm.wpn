@@ -1,0 +1,50 @@
+{
+  "id": "armaa_pa_leftArm",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_pa_autocannon_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_prodromosEffect",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow.png",
+  "turretGunSprite": "graphics/armaa/ships/pa/armaa_pa_leftArm.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "visualRecoil": 1,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    11,
+    5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+        "specialWeaponGlowWidth":3,
+        "specialWeaponGlowHeight":5,
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 15,
+    "particleSizeMin": 7,
+    "particleSizeRange": 10,
+    "particleDuration": 0.05,
+    "particleCount": 10,
+    "particleColor": [
+      255,
+      200,
+      155,
+      200
+    ]
+  },
+  "fireSoundTwo": "autocannon_fire"
+}
