@@ -1,8 +1,12 @@
 v2.2.3
 ------
+- Kouto
+	-Minigun firerate has been lowered considerably
+
 - added illustration for new meshan
+- fix bad portrait name for Ceylon HVB
 - added new hullmod icon for wingcom
-- fixed buggy wing
+- fixed buggy spriggan wing
 - revised valken sprite, again
 - fixed spriggan lpc not being sold
 - fixed valken(p) not being sold
@@ -10,8 +14,10 @@ v2.2.3
 - added cataphract bps to arma sleeper start
 - garegga dp: 10->9
 - watchdog dp: 10->11
-- fixed log clutter while iterating through keys in modSettings
-- misc other changes
+- fixed log clutter while iterating through dialogue keys
+- fixed CTD that could occur due to misnamed deco weapon
+- made initial encounter in valkazard start more FUN
+
 v2.2.2
 ------
 

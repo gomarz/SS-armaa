@@ -1,6 +1,9 @@
 {
   "id": "armaa_pa_mid_rightArm",
   "specClass": "beam",
+  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
+  "everyFrameEffect": "data.scripts.weapons.armaa_paEffect",
+"beamFireOnlyOnFullCharge": true,
   "type": "ENERGY",
   "size": "SMALL",
   "collisionClass": "RAY",

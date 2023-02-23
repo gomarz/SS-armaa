@@ -37,6 +37,10 @@ Despite being objectively inferior to dedicated land or space vehicles in their 
 
 armaa_valkencannon,SHIP,"Shouldn't be obtainable.",,,
 
+armaa_assaultPod_hull,SHIP,"Shouldn't be obtainable.",,,
+
+armaa_pa_mid,SHIP,"Shouldn't be obtainable.",,,
+
 armaa_kouto,SHIP,"The suit of armor for modern-day knights of the Sector, the Kouto's primary role is to draw fire while applying unrelenting pressure on enemy targets via a kinetic energy bazooka and accompanying SCTR-20 Minigun. Less than ideal manuverability and ineffectiveness against armored targets has given it somewhat of a bad reputation among pilots.
 
 Conceived as the cutting edge showcase of the Land-Space Cataphract concept, the Kouto boasted a bevy of high-performance (and expensive) features, such as the implementation of revolutionarily compact yet powerful artificial muscles and a hybrid neurophysical piloting interface that allowed it to execute extremely precise maneuvers. Unfortunately, the development of the Kouto came about during a schism in the supervisory board; one side doggedly insistent on creating the most advanced and flashy hardware possible, while the other eschewed the importance of an cheap, easy to maintain, and comparatively effective platform - a debate that the champions of the Kouto ended up losing. The partially completed design was shelved in favor of the development of its far cheaper cousin, the Valken. Following an internal power struggle that saw company priorities shift once more, a retrofitted version of this unit was put into service.",,,
