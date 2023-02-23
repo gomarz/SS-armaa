@@ -1,7 +1,7 @@
 {
   "variantId": "armaa_shield_variant",
   "hullId": "armaa_shield",
-  "displayName": "New Variant",
+  "displayName": "",
   "goalVariant": true,
   "fluxCapacitors": 0,
   "fluxVents": 0,

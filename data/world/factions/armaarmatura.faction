@@ -5,6 +5,9 @@
 	"displayNameWithArticle":"The ArmaA",
 	"displayNameLong":"Arma Armatura Corporation",
 	"displayNameLongWithArticle":"The Arma Armatura Corporation",
+	"entityNamePrefix":"",
+	"personNamePrefix":"mercenary",
+	"personNamePrefixAOrAn":"an",
 	"logo":"graphics/armaa/factions/armaa_logo00_flag.png",
 	"crest":"graphics/armaa/factions/armaa_logo00_crest.png",
 	"shipNamePrefix":"AASV",
@@ -17,7 +20,7 @@
 		"BEASTS":3,
 		"MERCANTILE":2,
 		"SPACE":2,
-		"GENERAL":2,
+		"GENERAL":1,
 		"armaa":3,
 	},
 	"description":"One of the premier developers of heavy weapons in the vast galactic polity that had once been called the Domain. The Collapse and two wars, brought about the apparent demise of that golden age, along with the majority of the companies infrastructure.",
@@ -44,12 +47,16 @@
 				"armaa_kouto_frig":1,
 				"armaa_valkenx_frig":2,
 				"armaa_einhander_plus":1,
-				"armaa_whitebase":3,	
+				"armaa_whitebase":3,
+				"buffalo2":0,
+				"gremlin":0,
+				"venture":0,	
 			},
 			"fighters":{
 			"armaa_valkencannon_wing":1.2,
 			"armaa_valkenx_wing":1.2,
 			"armaa_kouto_wing":1.2,
+			"armaa_record_wing":1.5,
 		},
 	},
 	"knownShips":{
@@ -75,15 +82,18 @@
 			],
 	},
 	"shipsWhenImporting":{
-		"tags":["ha_pulse_bp","ha_special"],
-		"hulls":[],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "independent"],
+		"hulls":[
+			"apogee",
+		],
 	},
 	"knownFighters":{
 		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
 			"fighters":[
 			"armaa_gallant_wing",
 			"armaa_prodromos_wing",
-			"armaa_valken_black_wing",
+			"armaa_valkenmp_wing",
+			"armaa_record_wing",
 			],
 	},
 	"knownWeapons":{
@@ -116,14 +126,14 @@
 	},
 
 	"priorityWeapons":{
-		#"tags":[],
+		"tags":[],
 		"weapons":[
 		"armaa_fluxcannon",
 		"armaa_ionBuster",
 		],
 	},
     "priorityShips":{
-        #"tags":[],
+        "tags":[],
         "hulls":[
 	    "armaa_aleste_frig",
 	    "armaa_leynos_frig",
@@ -167,29 +177,33 @@
 		],
 	},
 	"factionDoctrine":{
-		"warships":3,
-		"carriers":2,
+		"warships":4,
+		"carriers":3,
 		"phaseShips":1,
 
-		"officerQuality":4,
-		"shipQuality":3,
+		"officerQuality":2,
+		"shipQuality":2,
 		"numShips":3,
 
 		"shipSize":3,
 
-		"aggression":3,
+		"aggression":4,
 
-		"combatFreighterProbability":0,     				# instead of some portion of the freighters in a fleet
+		"combatFreighterProbability":0.5,     				# instead of some portion of the freighters in a fleet
 		"combatFreighterCombatUseFraction":0,  				# as part of the normal combat lineup
 		"combatFreighterCombatUseFractionWhenPriority":0.33,# as part of normal combat lineup, when marked as priority ship
-		"autofitRandomizeProbability":0.1,
+		"autofitRandomizeProbability":0.25,
 
 		"commanderSkillsShuffleProbability":1,
 		"commanderSkills":[
-			"electronic_warfare",
-			"fighter_doctrine",
-			"officer_management",
 			"coordinated_maneuvers",
+			"electronic_warfare",
+			"fighter_uplink",
+			"carrier_group",
+			"flux_regulation",
+			"cybernetic_augmentation",
+			"wolfpack_tactics"
+
 		],
 	},
 	"illegalCommodities":[

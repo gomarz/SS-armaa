@@ -2,6 +2,7 @@
 	"id":"armaa_drone",
 	"specClass":"missile",	
 	"missileType":"MISSILE",
+	"onHitEffect":"com.fs.starfarer.api.impl.combat.PilumOnHitEffect",
 	"sprite":"graphics/missiles/low_tech_torpedo.png",
 	"size":[32,26],	
 	"center":[16,13],
@@ -15,14 +16,14 @@
 	"flameoutTime":0.5,
 	"noEngineGlowTime":0.5,
 	"fadeTime":0.5,
-	"explosionSpec":{"duration":0.1f, # not visual
+	"explosionSpec":{"duration":0.15f, # not visual
 					 "radius":100,
 					 "coreRadius":65, # full damage within core radius
 					 "collisionClass":HITS_SHIPS_AND_ASTEROIDS,
 					 "collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
-					 "particleCount":25,
-					 "particleSizeMin":5.0,
-					 "particleSizeRange":3.0,
+					 "particleCount":50,
+					 "particleSizeMin":2.0,
+					 "particleSizeRange":5.0,
 					 "particleDuration":0.5,
 					 "particleColor":[255,130,100,255],
 					 },

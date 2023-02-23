@@ -1,0 +1,45 @@
+{
+  "variantId": "armaa_record_frig_support",
+  "hullId": "armaa_record_frig",
+  "displayName": "Support",
+  "goalVariant": true,
+  "fluxCapacitors": 2,
+  "fluxVents": 6,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "harpoonpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_record_frig_head"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "MODULE": "armaa_wepPack_variant"
+    },
+    {
+      "SHIELD": "armaa_shield_variant"
+    }
+  ],
+  "wings": []
+}

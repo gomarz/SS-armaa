@@ -1,6 +1,62 @@
+v2.2.3
+------
+- Kouto
+	-Minigun firerate has been lowered considerably
+
+- added illustration for new meshan
+- fix bad portrait name for Ceylon HVB
+- added new hullmod icon for wingcom
+- fixed buggy spriggan wing
+- revised valken sprite, again
+- fixed spriggan lpc not being sold
+- fixed valken(p) not being sold
+- added spriggan to cataphract bp
+- added cataphract bps to arma sleeper start
+- garegga dp: 10->9
+- watchdog dp: 10->11
+- fixed log clutter while iterating through dialogue keys
+- fixed CTD that could occur due to misnamed deco weapon
+- made initial encounter in valkazard start more FUN
+
+v2.2.2
+------
+
+
+- Spriggan Powered
+	- Armor: 225->200
+	- Top Speed: 150->140
+	- Drone Count: 4->3
+		- Engagement Range: 1000->500
+		- Replacement Rate: 8->10
+	- Shield Module
+		- HP: 500->800
+		- Armor:800->500
+	- Weapons Pack
+		- Armor: 200->150
+
+- Wingcom
+	- Added encounter dialogue for:
+		-Factions:
+			- Agni
+			- Sindrian Diktat
+			- Sindrian Fuel Company (PAGSM)
+			- UAF
+			- Wanted
+		-Ships:
+			- Ziggurat
+			- Guardian
+			- Songbird
+			- ASDF-03
+
+- Fixed Valkazard body mods not being removed 
+- Fixed Valkazard Laser Blade Hullmod being listed as bazooka
+- Fixed cores not actually being removed if ship with overlord suite is destroyed
+
+- Fixed strikecraft never refitting because game considered them to be retreating(?????????)
 v2.2.1
 -------
 - minor bugfix / tweaks
+- fixed aleste bazooka hullmod weapon select being labeled "BLADE"
 - fixed some bad Unapplicable text for overlord suite
 - added hard limit to # of times squad members can banter amongst each other per engagement
 - fixed squad chatter dialogue order

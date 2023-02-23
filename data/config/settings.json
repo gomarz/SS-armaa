@@ -34,6 +34,10 @@
 			"armaa_portrait_shard":"graphics/portraits/portrait_ai1.png",
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
+			"armaa_portrait_christine":"graphics/armaa/portraits/armaa_christine.png",
+		},
+		"illustrations":{
+			"armaa_newmeshan_illus":"graphics/armaa/illustrations/newmeshanii.jpg",
 		},
 		"nex_groundbattle":{
 			"icon_cataphract":"graphics/armaa/icons/groundbattle/cataphractstrike.png",

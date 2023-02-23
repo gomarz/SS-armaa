@@ -3,8 +3,8 @@
   "hullId": "armaa_whitebase",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 5,
-  "fluxVents": 10,
+  "fluxCapacitors": 0,
+  "fluxVents": 8,
   "quality": 1,
   "permaMods": [],
   "hullMods": [],
@@ -14,17 +14,18 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "pilum",
-        "WS0002": "pilum",
-        "WS0003": "taclaser",
-        "WS0004": "taclaser",
-        "WS0005": "taclaser",
-        "WS0006": "taclaser"
+        "WS0002": "pilum"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0003": "taclaser",
+        "WS0004": "taclaser",
+        "WS0005": "taclaser",
+        "WS0006": "taclaser"
+      }
     },
     {
       "autofire": false,
