@@ -1,0 +1,51 @@
+{
+	"id":"armaa_magnabeam_minelayer_mine",
+	"specClass":"missile",	
+	"missileType":"PHASE_MINE",
+	"sprite":"",
+	"glowSprite":"",
+	"glowColor":[222,15,49,255], # also used for the NegativeExplosionVisual effect color
+	#"glowColor":[100,60,255,255], # also used for the NegativeExplosionVisual effect color
+	"size":[96,96],	
+	"center":[48,48],	
+	"collisionRadius":20,
+	"collisionClass":"NONE",
+	"collisionClassAfterFlameout":"NONE",
+	"flameoutTime":0.1, # total time from flameout to full fadeout
+	"fadeTime":0.1, # fadeout duration
+	"noEngineGlowTime":0.05, # time spent without the engine glow being rendered
+	"explosionColor":[222,15,49,255],  # unused
+	"explosionRadius":100, # purely visual	
+	"renderTargetIndicator":false, # no target diamond in combat view, not targeted by flares
+	"engineSpec":{"turnAcc":500,
+				  "turnRate":150,
+				  "acc":500,
+				  "dec":500},
+	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+					#"onExplosionEffect":"com.fs.starfarer.api.impl.combat.RiftBeamMineExplosion",
+"onExplosionEffect":"data.scripts.weapons.armaa_magnaBeamMineExplosion",
+					"range":0,
+					"slowToMaxSpeed":true,
+					"delay":0.5,
+					#"pingSound":"launch_flare_1",
+					"pingColor":[222,49,158,255],
+					"mineHasNoSprite":true,
+					"flashRateMult":0.25,
+					"pingRadius":100,
+					"pingDuration":0.25,
+					#"windupSound":"mine_windup_heavy",
+					#"windupDelay":1,
+					"explosionSpec":{"duration":0.1f,
+									 "radius":100,
+									 "coreRadius":50, # full damage within core radius
+									 "collisionClass":PROJECTILE_NO_FF,
+									 "collisionClassByFighter":PROJECTILE_NO_FF,
+									 "particleDuration":1,
+									 "particleCount":0,
+									 "particleColor":[0,0,0,0],
+									 "explosionColor":[0,0,0,0],
+									 "sound":"riftbeam_rift"},
+					}	
+}
+
+

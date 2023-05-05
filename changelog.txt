@@ -1,3 +1,23 @@
+v2.3
+------
+- Fixed Einhander (P) missing variable rifle hullmod
+- Fixed Spriggan Powered missing variable rifle hullmod
+- Valkazard now has innate +30% refit rate penalty
+- fixed typo in specialized service bays hullmod desc
+- remove ilorin wing
+- remove bihander wing
+- remove einhander wing
+- tweaked valkenx sprite for the 18907401th time
+-
+
+- Watchdog:
+	- Removed one large ( ); )
+	- Speed: 60->80
+	- OP: 85->70
+	- Flux Capacity: 7500->5000
+
+
+
 v2.2.3
 ------
 - Kouto

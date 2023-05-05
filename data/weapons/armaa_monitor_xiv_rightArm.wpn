@@ -1,0 +1,47 @@
+{
+  "id": "armaa_monitor_xiv_rightArm",
+  "specClass": "projectile",
+  "projectileSpecId": "hellbore_shot",
+  "type": "BALLISTIC",
+  "size": "LARGE",
+  "turretSprite": "graphics/armaa/ships/garegga/00.png",
+  "turretGunSprite": "graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv_rightArm.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    105,
+    -21
+  ],
+  "turretAngleOffsets": [
+    1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 65,
+    "spread": 15,
+    "particleSizeMin": 10,
+    "particleSizeRange": 35,
+    "particleDuration": 0.75,
+    "particleCount": 50,
+    "particleColor": [
+      255,
+      120,
+      50,
+      245
+    ]
+  },
+  "fireSoundTwo": "hellbore_fire"
+}

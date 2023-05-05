@@ -1,7 +1,7 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,graphics/armaa/hullmods/armaa_strikecraft.png
-Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s that dock aboard this vessel refit %s faster.,,graphics/icons/markets/shipbreaking.png
+Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,graphics/armaa/hullmods/armaa_serviceBays.png
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,graphics/icons/markets/shipbreaking.png
 Versatile Frame,armaa_fighterSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.shenanigans_kaplanFighterSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
 Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,graphics/armaa/hullmods/armaa_assaultpods.png

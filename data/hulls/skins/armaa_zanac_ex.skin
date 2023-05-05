@@ -1,0 +1,38 @@
+{
+    "baseHullId":"armaa_zanac",
+    "skinHullId":"armaa_zanac_ex",
+    "hullName":"Trihänder",
+    "descriptionId":"armaa_zanac_ex",
+    "descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "spriteName":"graphics/armaa/ships/zanac/zanac_lowerBody.png",
+    "baseValueMult":1.2,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["rare_bp"],
+    "systemId":"armaa_silverSword",
+    "tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],
+    "builtInMods":["fourteenth"],
+    "weaponSlotChanges":{
+	   "A_GUN2":{
+		  "angle": 0,
+		 # "arc": 5,
+		  #"mount": "TURRET",
+		  "size": "LARGE",
+		  "type": "ENERGY"
+	   },
+	   "TRUE_GUN2":{
+		 #"angle": 0,
+		 #"arc": 5,
+		  #"mount": "TURRET",
+		  #"size": "SMALL",
+		  "type": "DECORATIVE"
+	   },
+},
+    "builtInWeapons":{
+		"A_GUN2": "armaa_zanac_rightArm",
+		"WS0006": "armaa_zanac_head_ex",
+    },
+}

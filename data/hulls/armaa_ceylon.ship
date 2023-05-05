@@ -19,22 +19,6 @@
     "SFC_LIGHTS": "armaa_deco_ceylon_lights",
     "SFC_SPINNY": "armaa_deco_ceylon_spinny",
     "SFC_STAB": "armaa_deco_ceylon_stab",
-    #"WS0010": "armaa_blinker_white",
-    #"WS0011": "armaa_blinker_white",
-    #"WS0012": "armaa_blinker_white",
-    #"WS0013": "armaa_blinker_white",
-    #"WS0014": "armaa_blinker_white30",
-    #"WS0015": "armaa_blinker_white30",
-    #"WS0016": "armaa_blinker_white30",
-    #"WS0017": "armaa_blinker_white30",
-    #"WS0018": "armaa_blinker_red",
-    #"WS0019": "armaa_blinker_green",
-    #"WS0020": "armaa_blinker_white",
-    #"WS0021": "armaa_blinker_white",
-    #"WS0022": "armaa_blinker_white",
-    #"WS0023": "armaa_blinker_white",
-    #"WS0024": "armaa_blinker_white30",
-    #"WS0025": "armaa_blinker_white30",
     "WS0026": "armaa_emthrust_s",
     "WS0027": "armaa_emthrust_s"
   },
@@ -376,7 +360,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-50, 109],
+      "location": [-51, 108],
       "length": 53,
       "width": 10,
       "angle": 176,
@@ -384,7 +368,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-50, -107],
+      "location": [-51, -108],
       "length": 53,
       "width": 10,
       "angle": -176,
@@ -392,7 +376,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-51, 97],
+      "location": [-52, 96],
       "length": 70.115532,
       "width": 18.364294,
       "angle": 176.5,
@@ -400,7 +384,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-51, -95],
+      "location": [-51, -96],
       "length": 70.115532,
       "width": 18.364294,
       "angle": -176.5,
@@ -408,7 +392,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-62, 12],
+      "location": [-64, 10],
       "length": 103,
       "width": 19,
       "angle": 180,
@@ -416,7 +400,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-62, -10],
+      "location": [-64, -10],
       "length": 103,
       "width": 19,
       "angle": -180,

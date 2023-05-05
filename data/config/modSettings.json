@@ -26,10 +26,11 @@
 		"hullmod_refit_custom":{
 		"missleracks":0.25,
 		"armaa_sykoStims":0.20,
+		"armaa_SilverSwordHM":0.3,
 		
 		},
 		"missile_refit_custom":{
-		"reaper":0.25,
+		"reaper":0.3,
 		},
 		"ground_support_custom":{
 		"armaa_einhander_plus":9.0,

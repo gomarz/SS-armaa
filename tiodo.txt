@@ -1,0 +1,24 @@
+TODO:
+Watchdog: 
+2 Large-> 1 Large
+Adjust stats to compensate
+
+Watchdog XIV:
+Ship system: perfect reload
+Weapon: Some type of sniper
+
+Corsair(XIV):
+Play w/ stats
+
+Garegga(XIV): ???
+
+Sylpheed : Done?
+
+Kshatriya:
+Make melee weapon a bullet or something
+tweak modules
+
+Specialized Service Bays Type
+Silver Sword Type A Typo
+
+fix all strikecraft receiving halved supply costs

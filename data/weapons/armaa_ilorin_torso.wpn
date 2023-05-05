@@ -5,7 +5,7 @@
   "projectileSpecId": "armaa_rcl_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/ships/ilorin/armaa_ilorinBody.png",
+  "turretSprite": "",
   "hardpointSprite": "",
   "visualRecoil": 1,
   "turretOffsets": [

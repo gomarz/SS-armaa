@@ -15,7 +15,8 @@
     "phasefield",
     "cataphract",
     "strikeCraft",
-    "armaa_strikeCraftFrig"
+    "armaa_strikeCraftFrig",
+    "armaa_variableRifle"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_einhander_variablerifle",

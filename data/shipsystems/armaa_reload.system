@@ -1,0 +1,44 @@
+{
+	"id":"armaa_reload",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+        "aiScript":"data.scripts.shipsystems.ai.armaa_reloadAI",		
+	"statsScript":"data.scripts.shipsystems.armaa_reload",
+	
+	# handled in the script instead of here
+	#"jitterUnderColor":[90,165,255,155],
+	#"jitterUnderCopies":25,
+	#"jitterUnderMinRange":0,
+	#"jitterUnderRange":7,
+	#"jitterUnderRangeRadiusFraction":0,
+	
+	#"jitterColor":[90,165,255,55],
+	#"jitterCopies":3,
+	#"jitterMinRange":0,
+	#"jitterRange":0,
+	#"jitterRangeRadiusFraction":0,
+	
+	#"engineGlowColor":[255,175,125,255],
+	#"engineGlowContrailColor":[100,165,255,25],
+	#"engineGlowLengthMult":0.5,
+	#"engineGlowWidthMult":0.7,
+	#"engineGlowGlowMult":0.5,
+	
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.75,
+	"soundFilterGainHF":0.5,
+	"weaponTypes":[BALLISTIC,ENERGY,MISSILE],
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_temporalshell",
+	"loopSound":"system_temporalshell_loop",
+	"deactivateSound":"system_temporalshell_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+
+	}
+}
+
+
+
+

@@ -1,0 +1,57 @@
+{
+    "baseHullId":"armaa_garegga",
+    "skinHullId":"armaa_garegga_xiv",
+    "hullName":"Trihänder",
+    "descriptionId":"armaa_garegga_xiv",
+    "descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "spriteName":"graphics/armaa/ships/garegga/xiv/armaa_garegga_body_xiv.png",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["rare_bp"],
+    "systemId":"armaa_silverSwordV",
+    "tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],
+    "weaponSlotChanges":{
+	   "WS 005":{
+		  "angle": 0,
+		 # "arc": 5,
+		  #"mount": "TURRET",
+		  #"size": "SMALL",
+		  "type": "SYNERGY"
+	   },
+	   "WS 006":{
+		 "angle": 0,
+		 #"arc": 5,
+		  #"mount": "TURRET",
+		  #"size": "SMALL",
+		  "type": "SYNERGY"
+	   },
+	   "WS 001":{
+		 # "angle": 0,
+		  #"arc": 5,
+		  #"mount": "TURRET",
+		  "size": "SMALL",
+		  "type": "ENERGY",
+	   },
+},
+    "builtInMods":["fourteenth"],
+    "builtInWeapons":{
+		"E_RARM": "armaa_garegga_rightArm_tt",
+		"E_LARM": "armaa_garegga_leftArm_tt",
+		"E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
+		"E_RSHOULDER": "armaa_garegga_xiv_rightPauldron",
+    },
+	"engineSlotChanges":{
+		"0":{
+			#"width": 0,
+          	#"length": 210,
+          	#"angle": 210,
+          	"style": "LOW_TECH",
+		},
+		"1":{"style":"LOW_TECH"},
+		"2":{"style":"LOW_TECH"},
+	},  
+}

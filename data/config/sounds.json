@@ -180,16 +180,23 @@
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
 	],
 	"beamchargeMeso":[							
-			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":1,"volume":0.95},
+			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":1,"volume":1},
+			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":1.03,"volume":1.03},
+			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":.97,"volume":0.97}
 	],
 	"beambangMeso":[							
 			{"file":"sounds/armaa/armaa_beam_fire.ogg","pitch":1,"volume":0.95},
 	],
 	"beamfireMeso":[							
-			{"file":"sounds/armaa/armaa_beam_loop.ogg","pitch":1,"volume":0.95},
+			{"file":"sounds/armaa/armaa_beam_loop.ogg","pitch":1,"volume":1},
 	],
 
-
+	"armaa_monoeye_move":
+	[
+		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":1.03,"volume":1.03},
+		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":.97,"volume":.97},
+	],
 
 	"armaa_crewDeath":[							
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},

@@ -1,0 +1,52 @@
+{
+  "collisionClass": "RAY",
+  "everyFrameEffect": "data.scripts.weapons.armaa_corsairDummyWeapon2",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "glowColor": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "armaa_corsair_rightArm",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    -18,
+    -29
+  ],
+  "turretSprite": "graphics/armaa/ships/corsair/armaa_corsair_rightGun.png",
+  "type": "DECORATIVE",
+  "width": 10
+}

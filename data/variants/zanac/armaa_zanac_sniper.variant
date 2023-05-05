@@ -1,0 +1,39 @@
+{
+  "variantId": "armaa_zanac_sniper",
+  "hullId": "armaa_zanac",
+  "displayName": "Sniper",
+  "goalVariant": true,
+  "fluxCapacitors": 13,
+  "fluxVents": 15,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "tachyonlance"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "atropos",
+        "WS0005": "atropos"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN2": "hveldriver"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

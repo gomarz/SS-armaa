@@ -1,0 +1,55 @@
+{
+  "id": "armaa_zanac_head_ex",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
+  "collisionClass": "RAY_FIGHTER",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/zanac/ex/armaa_zanac_head_ex.png",
+  "hardpointSprite": "graphics/armaa/ships/zanac/zanac_head_00.png",
+  "glowColor": [
+    255,
+    255,
+    50,
+    100
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    15,
+    -1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": false,
+  "fringeColor": [
+    255,
+    255,
+    100,
+    200
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "darkCore": false,
+  "convergeOnPoint": false,
+  "width": 12,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 5,
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

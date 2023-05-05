@@ -17,7 +17,8 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "reduced_explosion",
-    "rugged"
+    "rugged",
+    "armaa_variableRifle"
   ],
   "builtInWings": [
     "armaa_bit_spriggan"
