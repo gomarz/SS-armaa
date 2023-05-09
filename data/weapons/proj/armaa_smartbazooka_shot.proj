@@ -1,7 +1,7 @@
 {
 	"id":"armaa_smartbazooka_shot",
 	"specClass":"missile",
-	"missileType":"PHASE_MINE",
+	"missileType":"PHASE_CHARGE",
 	"sprite":"graphics/armaa/weapons/armaa_smartrocket_shot.png",
 	"glowSprite":"graphics/armaa/weapons/armaa_smartrocket_shot_glow.png",
 	"glowColor":[255,100,0,255],
