@@ -151,7 +151,7 @@ Blazer Rifle,armaa_taclaser,2,,600,250,350,,,0,30,7,3,0.05,,ENERGY,,,1.5,1,1.5,3
 DR-79 Plasma Gatling,armaa_flamer,1,,1000,600,,30,,0,5,99,400,,,FRAGMENTATION,1,,0,1,100,0.1,0,0,0,0,,600,,,10000,"DO_NOT_CONSERVE,SYSTEM",,,,,General,,,,,,,,,,4352,,
 SCTR-20 Minigun,armaa_kouto_minigun_right,2,,1000,500,,30,,5,20,,10,7.5,10,KINETIC,,,0.25,0.25,9999,0.08,1,15,1,8,,1000,,,30,"SYSTEM,FIRE_WHEN_INEFFICIENT",,,Arma Armatura,,Anti Hull,,,,,"Projectiles break into submunitions on contact, causing %s extra HE damage on hits to armor or hull.",0-10,,,FALSE,4.5,,
 SCTR-20 Minigun,armaa_kouto_minigun_left,2,,1000,600,,45,,5,30,,150,,,FRAGMENTATION,,,,,9999,0.12,1,15,1,6,,1000,,,30,"SYSTEM,PD_ALSO,PD,FIRE_WHEN_INEFFICIENT",,,Arma Armatura,,Anti Hull,,,,,"Projectiles break into submunitions on contact, causing %s extra HE damage on hits to armor or hull.",0-10,,,FALSE,4.5,,
-BS-13 Energen Bazooka,armaa_koutoBazooka,2,,1350,700,,200,,0,20,0,10,,,KINETIC,,,,3,1,0.2,3,5,1,10,,300,500,1.5,150,"SYSTEM,STRIKE, USE_VS_FRIGATES, GROUP_LINKED","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,,,,,,19,,
+BS-13 Energen Bazooka,armaa_koutoBazooka,2,,1350,700,,200,,0,20,0,10,,,KINETIC,,,,3,1,0.2,3,5,1,10,,300,300,1.5,150,"SYSTEM,STRIKE, USE_VS_FRIGATES, GROUP_LINKED","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,,,,,,19,,
 ,armaa_kouto_left_arm,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 #ILORIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 RCL-48 Recoilless Rifle,armaa_ilorin_torso,1,0.5,5000,600,,400,,20,45,0,6,,,HIGH_EXPLOSIVE,,,0,2.8,3,0.5,0,1,1,1,,600,,,30,"SYSTEM,STRIKE,USE_VS_FRIGATES,DIRECT_AIM",,,Arma Armatura,,Anti Armor,,,,,,,,,,,,

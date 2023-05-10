@@ -1,14 +1,14 @@
 {
   "id": "armaa_barretta",
   "specClass": "projectile",
-  "projectileSpecId": "eis_barretta_shot",
+  "projectileSpecId": "chaingun_shot",
   "type": "BALLISTIC",
   "size": "LARGE",
-  "everyFrameEffect": "data.scripts.weapons.eis_BarrettaOnFireEffect",
+  #"everyFrameEffect": "data.scripts.weapons.eis_BarrettaOnFireEffect",
   "turretSprite": "graphics/armaa/ships/garegga/00.png",
   "turretGunSprite": "graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv_rightArm.png",
-  "hardpointSprite": "graphics/weapons/eis_barretta_hardpoint_base.png",
-  "hardpointGunSprite": "graphics/weapons/eis_barretta_hardpoint_recoil.png",
+  "hardpointSprite": "",
+  "hardpointGunSprite": "",
   "visualRecoil": 10,
   "renderHints": [
     "RENDER_BARREL_BELOW"

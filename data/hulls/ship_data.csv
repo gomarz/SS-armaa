@@ -46,7 +46,7 @@ Garegga,armaa_garegga,Mobile Armor,Arma Armatura,armaa_silverSword,,9,2000,300,3
 Corsair (XIV),armaa_corsair_xiv,Mobile Armor,Arma Armatura,ammofeed,,9,3250,800,5000,6667,250,90,,90,90,60,50,50,400,FRONT,,270,0.25,0.8,,,5,0,0,10,1,20,9,42000,8,20,300,0.25,9,9,,"rare_bp, hist1t",0.7,0.4,2,4,309,,,,,,,
 Watchdog,armaa_monitor,Mobile Armor,Arma Armatura,armaa_siegeMode,,11,4500,750,5000,1500,300,70,,80,50,45,35,40,200,FRONT,,140,1,1,,,45,90,90,90,1,20,9,46000,5,10,400,0.25,11,11,,"rare_bp, hist1t,merc,armaa_mobilearmor,no_wingcom_docking",0.5,2,2,,214,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kshatriya,armaa_kshatriya,Mobile Armor,Arma Armatura,eis_rampagedrive,,18,5000,500,5800,,400,90,1,100,100,100,50,50,375,OMNI,,360,0.4,0.6,,,15,15,10,10,1,15,10,130000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,,0.5,0.3,2,4,2,,,,,,,
+Kshatriya,armaa_kshatriya,Mobile Armor,Arma Armatura,,,18,5000,500,5800,,400,90,1,100,100,100,50,50,375,OMNI,,360,0.4,0.6,,,15,15,10,10,1,15,10,130000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,,0.5,0.3,2,4,2,,,,,,,
 Kshatriya,armaa_kshatriya_binder,Mobile Armor,Arma Armatura,armaa_piladrone_spriggan,,,1000,200,100,,400,,,1,110,110,1,1,250,NONE,,,,,,,,,,,,,,,,,,,,,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.5,0.3,2,4,2,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Zanac,armaa_zanac,Mobile Armor,Arma Armatura,armaa_jauntbooster,,12,4000,450,6000,,450,80,,90,70,70,40,40,400,FRONT,,150,0.35,1,,,20,20,30,30,1,15,9,130000,5,15,300,0.25,12,12,,"armaa_mobilearmor,rare_bp,merc, hist1t",0.5,0.3,2,6,2,,,,,,,

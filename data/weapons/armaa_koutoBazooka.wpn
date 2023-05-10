@@ -2,7 +2,7 @@
   "id": "armaa_koutoBazooka",
   "specClass": "projectile",
   "projectileSpecId": "armaa_smartbazooka_shot_kinetic",
-  "type": "MISSILE",
+  "type": "BALLISTIC",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_kineticGrenadeEF",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
