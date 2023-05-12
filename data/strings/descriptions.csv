@@ -354,6 +354,8 @@ armaa_drone_strike,SHIP_SYSTEM,"Supercharges one of the UWS drones with a brief 
 ,,,,,,,
 armaa_jauntbooster,SHIP_SYSTEM,Greatly boosts speed and acceleration for a short moment. More effective for lateral movement.,Movement,,,,
 ,,,,,,,
+armaa_reload,SHIP_SYSTEM,Press the System Activation key at the right time to fire a powered up shot.,Movement,,,,
+,,,,,,,
 armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,,,
 ,,,,,,,
 #CAMPAIGN STUFF,,,,,,,

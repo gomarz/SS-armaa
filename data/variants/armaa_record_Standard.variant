@@ -24,13 +24,6 @@
       "weapons": {
         "E_HEAD": "armaa_record_head"
       }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "B_TORSO": "armaa_record_torso"
-      }
     }
   ],
   "modules": [],

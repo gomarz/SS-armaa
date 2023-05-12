@@ -12,11 +12,26 @@ v2.3
 
 - Watchdog:
 	- Removed one large ( ); )
+	- TODO: Make large modular
 	- Speed: 60->80
 	- OP: 85->70
 	- Flux Capacity: 7500->5000
 
+- Spriggan(LPC):
+	- Ship System: Flare Launcher -> Booster
+	- RCL-48 Recoilless Rifle
+		- Range: 600->500
+		- Burst Size: 3->2
+		- Chargedown: 2.8->2.6
+- Aleste (TODO)
 
+New Ship: Zanac (TODO)
+
+New Ship: NotKshatriya (TODO)
+
+New Ship: Corsair(TODO)
+
+New Ship: Watchdog(XIV) (TODO)
 
 v2.2.3
 ------

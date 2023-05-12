@@ -16,13 +16,13 @@
     200,
     0,
     200,
-    200
+    255
   ],
   "glowColor": [
     255,
     255,
     0,
-    140
+    255
   ],
   "hardpointAngleOffsets": [
     0

@@ -40,6 +40,7 @@
   "requiresFullCharge": false,
   "size": "SMALL",
   "specClass": "projectile",
+  "showDamageWhenDecorative":true,
   "textureType": ROUGH,
   "turretAngleOffsets": [
     0
@@ -49,7 +50,7 @@
     18,
     0
   ],
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_torso_c.png",
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_torso.png",
   "type": "DECORATIVE",
   "visualRecoil": 3
 }
