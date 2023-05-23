@@ -2,13 +2,13 @@ id,trigger,conditions,script,text,options,notes
 # Market descriptions,,,,,,
 flavorTextMarketMeshan,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == independent
-$market.id == armaa_meshanii_market","AddText ""On the shuttle ride into civilization proper, one of your bodyguards note that the decidely archaic architecture of most buildings gradually gives way to starkly contrasting billboards advertising all manners of goods and services developed by the corpos who call this planet home."" 
-AddText ""You vaguely recall learning that this peculiar melting pot of consumerism in excess combined with subdued and traditional sensibilities came about as a result of one of the megacorporations taking up the task of 'recivilizing' planet succeeding the chaos of the AI Wars. Two security officers in rather gaudy attire meander by, ostensibly to deal with some kind of ruckus."" marketFlavorTextColor
-AddText ""The haze of pollution hangs thick above you, but the people here seem to be getting along well enough - or at least what qualifies as 'well enough' in the Sector, these days."" marketFlavorTextColor",,,
+$market.id == armaa_meshanii_market","AddText ""As you approach the heart of civilization, your bodyguard points out the gradual transition from outdated architectural styles to striking billboards that proudly display a plethora of goods and services created by the planet's resident corporations."" 
+AddText ""You vaguely remember hearing about how this unique blend of excessive consumerism and underlying traditional values emerged after one of the mega-corporations took on the task of ""rehabilitating"" the planet following the tumultuous AI Wars. As you observe the scene around you, you notice a pair of security officers in flashy outfits walking past, likely responding to some disturbance."" marketFlavorTextColor
+AddText ""Despite the thick pollution in the air, the inhabitants of this planet seem to be managing well enough, by the standards of the Sector at least."" marketFlavorTextColor",,,
 flavorTextMarketAbandonedStation,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $abandonedStation == true score:100
-$market.id == armaa_research_station score: 1000","AddText ""A small shuttle is easily able to navigate about the station and land at one of the functional hangars. Notably, a powered down craft is here as well - there is no sign of the whomever left it here."" marketFlavorTextColor
-AddText ""It appears that an area used to store smaller strikecraft was uncompletely undisturbed, and there may be something remaining still worth taking."" marketFlavorTextColor",,,
+$market.id == armaa_research_station score: 1000","AddText ""The compact shuttle effortlessly maneuvers through the station, smoothly touching down at one of the operational hangars. Curiously, an inactive spacecraft occupies the space too, devoid of any indication of its owner or crew."" marketFlavorTextColor
+AddText ""Upon inspection, it becomes evident that an area designated for storing smaller strikecraft has been left mostly undisturbed, suggesting the possibility of something valuable yet unclaimed within."" marketFlavorTextColor",,,
 armaa_resStationOption,PopulateOptions,"$market.id == armaa_research_station 
 !$armaa_searchStation
 !$global.hasValk",,,9:armaa_stationInspect:Order a more detailed investigation,
@@ -67,20 +67,20 @@ While scarred, the salvor crew discover that many essential systems are mostly i
 
 The dispatched crew recover what they can of value. The law of salvage rules, even here.",,
 armaa_valkazardWreckOpen2,ShipRecoveryCustomText,"$customType == wreck
-$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"While scarred, the salvor crew discover that many essential systems and cockpit is mostly intact.The mech could be restored to basic functionality without much hassle.",,
+$valkazard score:1000,Salvage crews boarding the wreck discover that many essential systems are undamaged and the ship could be restored to basic functionality.",,"Despite bearing noticeable scars, the salvor crew makes an encouraging discovery—most of the essential systems and the cockpit of the mech remain intact. Restoring the mech to a basic functional state should be a relatively straightforward task, requiring minimal effort.",,
 armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $valkazard score:1000",ShowDefaultVisual,,,
 ,,,,,,
 arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
 !$armaarmatura_pirates_ChangeMind","AddText ""c+94 - First AI War""
 SetTextHighlights c+94 - First AI War
-AddText ""You are one of the few survivors following the annihilation of Meshan by AI warfleets. While escaping the system was hopeless, you could power down all nonessential systems aboard your craft to evade detection.""
+AddText ""Amidst the ruins of Meshan, a planet devastated by AI warfleets, you stand as one of the scarce survivors. Fleeing the system seems futile, but you manage to shut down all nonessential systems on your vessel, employing a desperate measure to elude detection.""
 SetTextHighlights AI warfleets
 
-AddText""With little supplies and less fuel, you and your compatriots scrambled to survive. The plan was simply to punch a distress signal into hyperspace and wait things out in cryosleep aboard a research station far from the center of the system.""
+AddText""Struggling with scarce supplies and dwindling fuel, you and your fellow survivors strive to endure. The plan is straightforward: activate a distress signal in hyperspace and enter cryosleep aboard a research station located far from the system's core, where you hope to weather the storm.""
 SetTextHighlights research station
 
-AddText""Run ragged from recent events, you retired to a recently set up cryopod. With any luck, you would awake to better times.""
+AddText""Exhausted from the recent tumultuous events, you find solace in a newly established cryopod. Hoping for a stroke of fortune, you surrender to sleep, yearning to awaken to a brighter future.""
 SetTextHighlights cryopod
 $armaarmatura_pirates_ChangeMind = true 0",,,
 armaa_seggs,ExerelinNGCStep4Plus,"$playerFaction == armaarmatura_pirates
@@ -89,8 +89,8 @@ $nex_lastSelectedFleetType == SUPER
 AddText""111 years later, circa c.205...""
 SetTextHighlights 111 years
 
-AddText""Inceremoniously roused from your slumber, a panicked crewmember gives the sitrep: someone is approaching, but the IFFs aren't friendly. As the only capable pilot left, you are rushed into the only craft capable of defense...""
-SetTextHighlights sheer chance
+AddText""Abruptly awakened from your sleep, a frantic crew member delivers a distressing update: an unknown entity is approaching, and their IFF (Identification Friend or Foe) signals are not indicating them as allies. As the sole proficient pilot remaining, you are hastily ushered into the only available defensive craft...""
+SetTextHighlights unknown entity
 
 AddText ""You pilot the VALKAZARD. It can swap between various weapons.""
 SetTextHighlights VALKAZARD
@@ -121,6 +121,6 @@ SetTextHighlights SILVERSWORD
 
 AddText""The enemy is nearby. You will likely be attacked immediately.""
 SetTextHighlights You will likely be attacked immediately",,,
-
-
-
+,,,,,,
+,,,,,,
+,,,,,,

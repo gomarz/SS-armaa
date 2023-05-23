@@ -1,6 +1,7 @@
 v2.3
 ------
 - Fixed Einhander (P) missing variable rifle hullmod
+- Fixed Einhander having no legs
 - Fixed Spriggan Powered missing variable rifle hullmod
 - Valkazard now has innate +30% refit rate penalty
 - fixed typo in specialized service bays hullmod desc
@@ -8,7 +9,12 @@ v2.3
 - remove bihander wing
 - remove einhander wing
 - tweaked valkenx sprite for the 18907401th time
--
+- tweaked Aleste(LPC) sprite
+- tweaked Aleste(S-II) sprite
+- tweaked Einhander & Einhander+ sprite
+- tweaked laser blade visuals
+- laser blades are now range-locked
+	- max range increase caps out at base range * 2
 
 - Watchdog:
 	- Removed one large ( ); )
@@ -19,10 +25,12 @@ v2.3
 
 - Spriggan(LPC):
 	- Ship System: Flare Launcher -> Booster
+	- Armor: 100->50
 	- RCL-48 Recoilless Rifle
 		- Range: 600->500
 		- Burst Size: 3->2
-		- Chargedown: 2.8->2.6
+		- Ammo: 6->4
+		- Chargedown: 2.8->2.25
 - Aleste (TODO)
 
 New Ship: Zanac (TODO)

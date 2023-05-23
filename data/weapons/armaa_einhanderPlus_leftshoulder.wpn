@@ -1,10 +1,10 @@
 {
-	"id":"armaa_einhander_plus_rightPauldron",  # this id must match what's in the spreadsheet
+	"id":"armaa_einhanderPlus_leftshoulder",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/einhander/armaa_einhanderPlus_rightshoulder.png",
+	"turretSprite":"graphics/armaa/ships/einhander/armaa_einhanderPlus_leftshoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

@@ -1,7 +1,7 @@
 {
     "baseHullId":"armaa_monitor",
     "skinHullId":"armaa_monitor_xiv",
-    "hullName":"Trihänder",
+    "hullName":"Watchdog (XIV)",
     "descriptionId":"armaa_monitor_xiv",
     "descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
     "spriteName":"graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv.png",
@@ -10,7 +10,7 @@
     "addHints":[],
     "tags":["rare_bp"],
     "systemId":"armaa_reload",
-    "tech":"Tri-Tachyon",
+    "tech":"Arma Armatura (Modified)",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":[],

@@ -15,9 +15,9 @@
     255,
     255
   ],
-  "hitGlowRadius": 10,
+  "hitGlowRadius": 20,
   "turretOffsets": [
-    19,
+    26,
     15
   ],
   "turretAngleOffsets": [
@@ -33,18 +33,18 @@
   "beamFireOnlyOnFullCharge": true,
   "fringeColor": [
     245,
-    157,
+    127,
     24,
     255
   ],
   "coreColor": [
     250,
-    197,
+    157,
     92,
     255
   ],
-  "width": 20,
-  "textureType": ROUGH,
+  "width": 10,
+  "textureType": LASER,
   "textureScrollSpeed": 2000,
   "pixelsPerTexel": 10,
   "pierceSet": [

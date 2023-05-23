@@ -1,7 +1,7 @@
 {
   "hullName": "Kshatriya Binder",
   "hullId": "armaa_kshatriya_binder",
-  "hullSize": "FIGHTER",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
   "style": "armaa_valkazard",
   "height": 150,
@@ -13,34 +13,13 @@
   "viewOffset": 0,
   "builtInMods": [
     "auxiliarythrusters",
-   "always_detaches"
+    "always_detaches"
   ],
-  "builtInWeapons": {
-
-  },
   "weaponSlots": [
-    {
-      "id": "VERNIER_1",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": 90,
-      "locations": [54, 15]
-    },
-    {
-      "id": "VERNIER_2",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": -90,
-      "locations": [54, -15]
-    },
     {
       "id": "RETRO_2",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "SYNERGY",
       "mount": "TURRET",
       "arc": 180,
       "angle": -90,
@@ -49,7 +28,7 @@
     {
       "id": "RETRO_1",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "SYNERGY",
       "mount": "TURRET",
       "arc": 180,
       "angle": 90,

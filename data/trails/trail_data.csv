@@ -1,7 +1,7 @@
 trail,projectile,sprite,minLength,fadeIn,duration,fadeOut,sizeIn,sizeOut,colorIn,colorOut,opacity,textLength,textScroll,distance,dispersion,drift,fadeOnFadeOut,angleAdjustment,additive,velocityIn,velocityOut,randomVelocity,angle,rotationIn,rotationOut,randomRotation,renderBelowExplosions
-armaa_hominglaser_trail,armaa_hominglaser,beam_trail_smooth,8,0,0.1,0.5,9,6,"[23,25,255]","[0,10,150]",0.9,300,500,13,0,1,FALSE,FALSE,TRUE,0,0,0,0,0,0,FALSE,
-armaa_hominglaser_trail2,armaa_hominglaser,base_trail_smooth,18,0,0.1,0.5,16,6,"[155,20,255]","[50,10,155]",0.7,300,500,13,0,1,FALSE,FALSE,TRUE,10,30,0,0,0,0,FALSE,
-armaa_hominglaser_trail3,armaa_hominglaser,beam_trail_smooth,14,0,0.1,0.5,9,6,"[255,255,255]","[0,0,50]",1,300,500,13,0,1,FALSE,FALSE,TRUE,15,45,0,0,0,0,FALSE,
+armaa_hominglaser_trail,armaa_hominglaser,beam_trail_smooth,8,0,0.1,0.5,9,6,"[23,25,255]","[0,10,150]",0.9,300,500,13,0,0,true,FALSE,TRUE,0,0,0,0,0,0,FALSE,
+armaa_hominglaser_trail2,armaa_hominglaser,base_trail_smooth,8,0,0.1,0.5,16,6,"[155,20,255]","[50,10,155]",0.7,300,500,13,0,0,true,FALSE,TRUE,10,30,0,0,0,0,FALSE,
+armaa_hominglaser_trail3,armaa_hominglaser,beam_trail_smooth,8,0,0.1,0.5,9,6,"[255,255,255]","[0,0,50]",1,300,500,13,0,0,true,FALSE,TRUE,15,45,0,0,0,0,FALSE,
 armaa_glaive_trail1,armaa_mauler_shot,base_trail_zapWithCore,10,0,0.5,0.2,15,5,"[50,175,255]","[0,10,150]",0.9,300,100,5,0,1,FALSE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_glaive_trail3,armaa_mauler_shot,glaive_trail_helix,10,0,0.5,0.2,40,15,"[80,180,255]","[0,10,150]",0.9,300,1000,5,0,1,FALSE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE

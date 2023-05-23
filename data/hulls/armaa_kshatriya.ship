@@ -20,11 +20,7 @@
     "LSHOULDER": "armaa_kshatriya_leftPauldron",
     "WS0003": "armaa_dd_legs",
     "WS0006": "armaa_kshatriya_head",
-    "WS0007": "armaa_kshatriya_rightPauldron",
-    "RETRO_1": "armaa_retrothruster",
-    "RETRO_2": "armaa_retrothruster",
-    "VERNIER_1": "armaa_emthrust_s",
-    "VERNIER_2": "armaa_emthrust_s"
+    "WS0007": "armaa_kshatriya_rightPauldron"
   },
   "weaponSlots": [
     {
@@ -66,42 +62,6 @@
       "locations": [-4, -0]
     },
     {
-      "id": "VERNIER_1",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": 180,
-      "locations": [-23, 24]
-    },
-    {
-      "id": "VERNIER_2",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": -180,
-      "locations": [-23, -24]
-    },
-    {
-      "id": "RETRO_2",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 180,
-      "angle": -180,
-      "locations": [-20, -23]
-    },
-    {
-      "id": "RETRO_1",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 180,
-      "angle": 180,
-      "locations": [-20, 23]
-    },
-    {
       "id": "TRUE_GUN",
       "size": "LARGE",
       "type": "HYBRID",
@@ -137,7 +97,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -80.5,
-      "locations": [-4, -46]
+      "locations": [-4, -63]
     },
     {
       "id": "BINDER_02",
@@ -146,7 +106,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 140,
-      "locations": [-34, 46]
+      "locations": [-34, 61]
     },
     {
       "id": "BINDER_03",
@@ -155,7 +115,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -140,
-      "locations": [-34, -46]
+      "locations": [-34, -61]
     },
     {
       "id": "BINDER_04",
@@ -164,7 +124,25 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 80.5,
-      "locations": [-4, 46]
+      "locations": [-4, 63]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 140,
+      "locations": [-21, 23]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -140,
+      "locations": [-21, -23]
     }
   ],
   "engineSlots": [

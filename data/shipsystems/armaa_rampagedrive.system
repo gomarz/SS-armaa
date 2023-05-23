@@ -1,0 +1,44 @@
+{
+	"id":"armaa_rampagedrive",
+	"type":"ENGINE_MOD",
+    "aiType":"CUSTOM",
+    "aiScript":"data.scripts.shipsystems.ai.armaa_ironrampage",
+	
+	"statsScript":"data.scripts.shipsystems.armaa_rampagedrive",
+	
+	"engineGlowLengthMult":2,
+	"engineGlowWidthMult":1.7,
+	"engineGlowGlowMult":1.35,
+	
+	"jitterUnderColor":[255,237,171,135],
+	"jitterUnderCopies":25,
+	"jitterUnderMinRange":0,
+	"jitterUnderRange":6,
+	"jitterUnderRangeRadiusFraction":0,
+	
+	"jitterColor":[255,165,90,55],
+	"jitterCopies":2,
+	"jitterMinRange":0,
+	"jitterRange":5,
+	"jitterRangeRadiusFraction":0,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+	
+	"useSound":"system_plasma_burn",
+	"loopSound":"system_plasma_burn_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":200,
+		"burstMovementPotential":1000,
+		"averageSpeedIncrease":200,
+		"threatRange":700,
+		"threatAmount":8,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}

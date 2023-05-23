@@ -4,7 +4,7 @@ armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_b
 armaa_record_wing,armaa_record_Standard,"bomber3, bomber,cataphract,merc, armaa_cataphract_bp",3,0.25,4,18,V,4000,1000,-100,2,BOMBER,Bomber,20,14000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cataphract_bp,cataphract,leader_no_swarm",0,0.1,3,6,CLAW,4000,500,,3,INTERCEPTOR,Interceptor/Coffin,9,4250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract,attack_at_an_angle",0,0.1,3,5,CLAW,4000,600,,4,FIGHTER,Kinetic,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t,leader_no_swarm,rapid_reform,attack_at_an_angle,rd_no_extra_craft",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,12000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_aleste_wing,armaa_aleste_standard,"fighter3, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t,attack_at_an_angle,rd_no_extra_craft",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,12000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,,2,BOMBER,Lancer,15,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
@@ -14,7 +14,7 @@ armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman
 #why?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_crew_wing,armaa_crew_standard,"interceptor1, interceptor,no_drop,no_sell",0,0.3,1,0,BOX,2000,599,,6,INTERCEPTOR,Crew,1,10,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_prodromos_wing,armaa_prodromos_standard,"interceptor1, interceptor,rare_bp,merc",0,0.3,3,4,DIAMOND,6000,600,,4,INTERCEPTOR,Battle Armor,4,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
-armaa_pa_mid_wing,armaa_pa_mid_standard,"interceptor1, interceptor,rare_bp,merc,no_drop,no_sell,independent_of_carrier",0,0.3,3,4,DIAMOND,100000,600,,4,INTERCEPTOR,Battle Armor,4,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_pa_mid_wing,armaa_pa_mid_standard,"interceptor1, interceptor,rare_bp,merc,no_drop,no_sell,independent_of_carrier",0,0.3,3,4,DIAMOND,100000,600,,2,INTERCEPTOR,Battle Armor,4,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_spriggan_wing,armaa_record_Standard,"bomber3, bomber,cataphract,no_sell,no_drop,merc",3,0.25,4,18,V,4000,1000,-100,2,FIGHTER,Bomber,20,14000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

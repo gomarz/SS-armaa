@@ -8,7 +8,16 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [],
-  "weaponGroups": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "RETRO_1": "armaa_kouto_head",
+        "RETRO_2": "armaa_leynos_head"
+      }
+    }
+  ],
   "modules": [],
   "wings": []
 }

@@ -33,6 +33,9 @@ On standard models, The backpack modules house %s.
 Modules %s, and %s.
 
 %s, where applicable.",,graphics/icons/hullsys/drone_sensor.png
+Targeting Core,armaa_targetingCore,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_targetingCore,"Extends the range of ballistic and energy weapons by %s. The range of point-defense weapons is only extended by %s.
+
+Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,
 SERAPH,seraph,,,????,,,,,TRUE,TRUE,-6,-12,-18,-30,data.hullmods.seraph,"Armor is increased by %s standard units, and %s increase in speed and maneuverability. Exceptionally well-tuned energy systems increase flux throughput and capacity by %s over standard examples of this hull.",,graphics/icons/markets/rogue_ai.png
 SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SeraphTargetingSoftware,"A specialized combat support suite governed by an (allegedly) delta-level AI core which excels in precision strikes. Small non-missile weapons automatically target missiles and ignore flares, and damage against missiles and fighters is increased by %s.
 
