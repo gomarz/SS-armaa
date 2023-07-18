@@ -13,7 +13,7 @@
     255,
     170,
     127,
-    255
+    155
   ],
   "hitGlowRadius": 0,
   "turretOffsets": [
@@ -36,18 +36,18 @@
   "numFrames": 3,
   "frameRate": 0,
   "fringeColor": [
-    255,
-    100,
+    155,
+    250,
     0,
-    255
+    155
   ],
   "coreColor": [
+    155,
     255,
     0,
-    0,
-    255
+    155
   ],
-  "darkCore": false,
+  "darkCore": true,
   "width": 3,
   "textureType": [
     "graphics/armaa/fx/armaa_beamfringe_interrupted.png",

@@ -33,6 +33,7 @@
 		"portraits":{
 			"armaa_portrait_shard":"graphics/portraits/portrait_ai1.png",
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
+			"armaa_portrait_leos":"graphics/armaa/portraits/armaa_leos.png",
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
 			"armaa_portrait_christine":"graphics/armaa/portraits/armaa_christine.png",
 		},

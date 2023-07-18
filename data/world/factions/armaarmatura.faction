@@ -287,7 +287,7 @@
 		"buysAICores":true,
 		"AICoreValueMult":2,
 		"AICoreRepMult":1,
-		"buysSurveyData":false,
+		"buysSurveyData":true,
 		"hostilityImpactOnGrowth":false,
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,

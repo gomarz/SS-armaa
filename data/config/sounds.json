@@ -1,6 +1,6 @@
 {
 	"cataphractStrike":[
-		{"file":"sounds/sfx_interface/ui_colony_raid_event_01.ogg","pitch":0.8,"volume":0.8},
+		{"file":"sounds/sfx_interface/neural_link_transfer_complete.ogg","pitch":0.8,"volume":0.8},
 	],
 # collapseclose
 

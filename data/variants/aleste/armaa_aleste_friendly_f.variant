@@ -1,40 +1,46 @@
 {
-  "displayName": "Friendly",
-  "fluxCapacitors": 9,
-  "goalVariant": true,
-  "fluxVents": 10,
-  "hullId": "armaa_aleste_frig",
-  "hullMods": ["armaa_selector_lrifle_left","armaa_selector_lrifle","heavyarmor"],
   "variantId": "armaa_aleste_friendly_f",
+  "hullId": "armaa_aleste_frig",
+  "displayName": "Friendly",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armaa_selector_lrifle_left",
+    "armaa_selector_lrifle"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_aleste_rightArm",
+        "TRUE_GUN": "heavyblaster",
+        "WS001": "sabot",
+        "WS002": "sabot"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_aleste_rifle_left",
+        "C_ARML": "armaa_aleste_blade_LeftArm"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_sprigganHead",
+        "E_HEAD": "armaa_alesteHead"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS001": "reaper",
-        "WS002": "reaper",
-      }
-    },
-  ]
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
 }

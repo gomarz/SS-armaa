@@ -1,0 +1,313 @@
+{
+  "hullName": "New Hull",
+  "hullId": "armaa_legioMech",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/legioMech/armaa_legioMech_body.png",
+  "style": "armaa_valkazard",
+  "height": 112,
+  "width": 136,
+  "center": [68, 56],
+  "collisionRadius": 66.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 66,
+  "viewOffset": 0,
+  "builtInMods": [
+    "auxiliarythrusters",
+    "tahlan_daemoncore",
+    "tahlan_daemonarmor"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_legioMech_leftArm",
+    "A_GUN2": "armaa_legioMech_rightArm",
+    "LCOVER": "armaa_legioMech_leftArm_cover",
+    "RCOVER": "armaa_legioMech_rightArm_cover",
+    "WS0001": "armaa_legioMech_lights",
+    "WS0003": "armaa_dd_legs",
+    "WS0006": "armaa_legioMech_head"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 20,
+      "locations": [35, 39],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -20,
+      "locations": [35, -39],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [3, -2.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 0,
+      "locations": [18, -38],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [18, 38],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "LCOVER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 20,
+      "locations": [35, 39],
+      "renderOrderMod": 900
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [5, 1]
+    },
+    {
+      "id": "VERNIER_1",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 180,
+      "locations": [-16, 23]
+    },
+    {
+      "id": "VERNIER_2",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -180,
+      "locations": [-16, -23]
+    },
+    {
+      "id": "RETRO_2",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -180,
+      "locations": [-16, -23]
+    },
+    {
+      "id": "RETRO_1",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 180,
+      "locations": [-16, 23]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 20,
+      "locations": [35, 39]
+    },
+    {
+      "id": "RCOVER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -20,
+      "locations": [35, -39],
+      "renderOrderMod": 999
+    },
+    {
+      "id": "A_GUN2",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -20,
+      "locations": [35, -39],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [5, 1],
+      "renderOrderMod": 999
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-39.5, 24],
+      "length": 68.15416,
+      "width": 12.650782,
+      "angle": 180,
+      "contrailSize": 12.650782,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, -24],
+      "length": 68,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, 24],
+      "length": 68,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, -24],
+      "length": 68,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, 24],
+      "length": 22.5,
+      "width": 8,
+      "angle": 169.5,
+      "contrailSize": 8,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, 24],
+      "length": 22.5,
+      "width": 8,
+      "angle": -169.5,
+      "contrailSize": 8,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, 24],
+      "length": 37.81089,
+      "width": 9.019238,
+      "angle": 155,
+      "contrailSize": 9.019238,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, -24],
+      "length": 37.001061,
+      "width": 9.627361,
+      "angle": -155,
+      "contrailSize": 9.627361,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, 23.5],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": -155,
+      "contrailSize": 8.992697,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, -24],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": 155,
+      "contrailSize": 8.992697,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-40, 14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": -178.5,
+      "contrailSize": 8.992697,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-40, -14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": 178.5,
+      "contrailSize": 8.992697,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-40.5, 14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": -168.5,
+      "contrailSize": 8.992697,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-40.5, -14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": 168.5,
+      "contrailSize": 8.992697,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -25, -2.5,
+    -38, -8,
+    -38, -29.5,
+    -7.5, -34.5,
+    -13.5, -42.5,
+    -6.5, -51.5,
+    11.5, -45,
+    14.5, -38,
+    18, -28,
+    21.5, -26,
+    27.5, -21.5,
+    40.5, -7.5,
+    40.5, 7.5,
+    27.5, 21.5,
+    21.5, 26,
+    18, 28,
+    14.5, 38,
+    11.5, 45,
+    -6.5, 51.5,
+    -13.5, 42.5,
+    -7.5, 34.5,
+    -38, 29.5,
+    -38, 8,
+    -25, 2.5
+  ]
+}

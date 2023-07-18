@@ -30,13 +30,14 @@ Plasma Jets,armaa_plasmaJets,,,,,,,,5,0.2,0.2,0.5,0.3,0.15,,,,,,,,,,,,,graphics/
 Havoc Drive,armaa_havocDrive,,,,,,,,2,0.15,1,0.5,0.5,0.1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Siege Mode,armaa_siegeMode,,,0.04,,,,,,,1,,1,10,TRUE,,,TRUE,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Recall Device,armaa_recalldevice,,,,,,0.5,,2,0.05,0.5,,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/recall_device.png
-Takeoff,armaa_traveldrive,1,,,,,,,,,2,2,2,0,TRUE,,,,TRUE,FALSE,TRUE,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
+Takeoff,armaa_traveldrive,1,,,,,,,,,2,2,2,10,TRUE,,,,TRUE,FALSE,TRUE,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
 Adv. Fire Control System,armaa_afcss,,,,,,,,,,1,5,1,20,,,,,,,,,,,,,
 Active Flare Launcher,armaa_flarelauncher_active,,,,,,0.1,,,,,,,10,,,,,,,,,,,,,graphics/icons/hullsys/active_flare_launcher.png
 Decoy Flare Launcher,armaa_flare_decoy,,,,,,,,1,0.05,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/flare_launcher.png
 BLADE,armaa_blade,,,,,,,,,,0.33,0.66,0.33,10,,,,,TRUE,,,,TRUE,,,,graphics/icons/hullsys/active_flare_launcher.png
-UWS Strike,armaa_drone_strike,,,,,,0.45,,,,0,0.05,0.2,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Booster,armaa_jauntbooster,,,,,,-0.05,,2,0.1,0.3,0.3,1,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
+UWS Strike,armaa_drone_strike,,,,,,0.45,,,,0,0.05,0.2,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
+Booster,armaa_jauntbooster,,,,,,,,2,0.1,0.3,0.3,1,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
+Chain Booster,armaa_jauntbooster2,,,,,,-0.05,,3,0.1,0.3,0.3,0.05,,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 AWACS,armaa_awacs,,,,,,0.2,,,,0.5,7,1,10,,,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png

@@ -1,0 +1,36 @@
+{
+  "hullName": "New Hull",
+  "hullId": "armaa_legioMech_leftShoulder",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/legioMech/armaa_legioMech_leftShoulder.png",
+  "style": "armaa_valkazard",
+  "height": 112,
+  "width": 136,
+  "center": [68, 56],
+  "collisionRadius": 37.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 43.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "auxiliarythrusters"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-4, -3]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    8.5, 12,
+    -15, 31,
+    -35, 1,
+    -14, -14.5,
+    18, -16.5
+  ]
+}

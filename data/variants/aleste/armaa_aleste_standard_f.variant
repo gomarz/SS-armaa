@@ -1,7 +1,7 @@
 {
   "displayName": "Standard",
   "fluxCapacitors": 10,
-  "goalVariant": true,
+  "goalVariant": false,
   "fluxVents": 10,
   "hullId": "armaa_aleste_frig",
   "hullMods": ["armaa_selector_stake","armaa_selector_lrifle","reinforcedhull"],

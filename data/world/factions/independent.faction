@@ -1,15 +1,15 @@
 {
 	"hullFrequency":{
 		"hulls":{
-			"armaa_altagrave":1.2,
+			"armaa_altagrave":1,
 			"armaa_altagrave_c":1,
-			"armaa_altagrave_g":1.2,
-			"armaa_garegga":1.2,
+			"armaa_altagrave_g":1,
+			"armaa_garegga":1,
 			"armaa_einhander":0.35,
-			"armaa_aleste_frig":1.2,
-			"armaa_leynos_frig":1.2,
-			"armaa_hazard_frig":1.2,
-			"armaa_xyphos":1.4,	
+			"armaa_aleste_frig":1,
+			"armaa_leynos_frig":1,
+			"armaa_hazard_frig":1,
+			"armaa_xyphos":1,	
 		},
 	},
 	"shipsWhenImporting":{

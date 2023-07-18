@@ -1,0 +1,52 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "everyFrameEffect": "data.scripts.weapons.armaa_corsairDummyWeapon2",
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "glowColor": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "armaa_legioMech_rightArm_cover",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    -18,
+    -29
+  ],
+  "turretSprite": "graphics/armaa/ships/legioMech/armaa_legioMech_rightGun_top.png",
+  "type": "DECORATIVE",
+  "width": 10
+}

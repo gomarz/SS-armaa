@@ -39,7 +39,8 @@ armaa_syrinx2,armaa_mrm,base_trail_zap,10,0,0.2,0.7,12,8,"[0,0,255]","[0,0,255]"
 armaa_syrinx3,armaa_mrm,beam_trail_smooth,10,0,1,0.5,20,20,"[44,188,245]","[0,0,255]",1,200,-2000,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+trails_barretta,armaa_barretta_shot,nottahlan_trail_dhelix,8,0,0.1,0.5,4,30,"[200,200,200]","[125,125,125]",1,256,0,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,TRUE
+trails_barretta2,armaa_barretta_shot,beam_trail_smooth,8,0,0.1,0.5,4,20,"[255,200,200]","[200,125,125]",1,128,10,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

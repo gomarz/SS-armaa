@@ -2,6 +2,7 @@
   "animationType": "SMOKE",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
+  "showDamageWhenDecorative": true,
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
   "fireSoundTwo": "breach_fire",
    "turretOffsets": [

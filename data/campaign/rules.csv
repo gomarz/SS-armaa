@@ -3,7 +3,7 @@ id,trigger,conditions,script,text,options,notes
 flavorTextMarketMeshan,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == independent
 $market.id == armaa_meshanii_market","AddText ""As you approach the heart of civilization, your bodyguard points out the gradual transition from outdated architectural styles to striking billboards that proudly display a plethora of goods and services created by the planet's resident corporations."" 
-AddText ""You vaguely remember hearing about how this unique blend of excessive consumerism and underlying traditional values emerged after one of the mega-corporations took on the task of ""rehabilitating"" the planet following the tumultuous AI Wars. As you observe the scene around you, you notice a pair of security officers in flashy outfits walking past, likely responding to some disturbance."" marketFlavorTextColor
+AddText ""You vaguely remember hearing about how this unique blend of excessive consumerism and underlying traditional values emerged after one of the mega-corporations took on the task of 'rehabilitating' the planet following the tumultuous AI Wars. As you observe the scene around you, you notice a pair of security officers in flashy outfits walking past, likely responding to some disturbance."" marketFlavorTextColor
 AddText ""Despite the thick pollution in the air, the inhabitants of this planet seem to be managing well enough, by the standards of the Sector at least."" marketFlavorTextColor",,,
 flavorTextMarketAbandonedStation,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $abandonedStation == true score:100
@@ -122,5 +122,136 @@ SetTextHighlights SILVERSWORD
 AddText""The enemy is nearby. You will likely be attacked immediately.""
 SetTextHighlights You will likely be attacked immediately",,,
 ,,,,,,
+armaa_aiCores_turnInOptionSelMeshan,DialogOptionSelected,"$option == aiCores_startTurnIn
+$id == armaa_seraph","FireAll PopulateCoresTurnInOptions
+SetTextHighlights Arma Armatura","A cunning smile curves her lips. ""Rest assured, my friend,"" she purrs, ""Arma Armatura shall be your steadfast ally. By placing these assets in our capable hands, you'll not only receive generous remuneration but also liberate yourself from their burdensome risks.""",,
+armaa_aiCores_turnInResponseMeshan,AICoresTurnedIn,$id == armaa_seraph,FireAll PopulateOptions,"""Marvelous. You've made a wise decision, Captain $player.lastName."" Her smile widens.",,
+armaa_valkazard,PopulateOptions,"armaa_Hikaru_Utada findValk
+$player.numShips > 1
+$postId == administrator
+$market.id == armaa_meshanii_market",SetOptionColor armaa_valkazard highlight,,"armaa_valkazard:""I found this Valkazard-class cataphract outside of the core worlds. One of yours?""",
+armaa_valkazardSel,DialogOptionSelected,$option == armaa_valkazard,FireAll armaa_valkazardHubOptions,"A flicker of surprise crosses $personName's face.
+
+""... Based on our historical records, the Valkazard vanished without a trace over a century ago. The circumstances surrounding its disappearance remain shrouded in mystery.""
+
+Her voice resonated with a blend of curiosity and skepticism. She pauses a moment, as if contemplating the implications.
+
+""Captain $playerName, I would like to send some staff over to verify these claims.""","armaa_valkazardSelReward:""Let's talk about a reward.""
+armaa_valkazardSelAgree:""Sure.""",
+armaa_valkazardSelReward,armaa_valkazardHubOptions,!$armaa_askedReward,,,armaa_valkazardSelReward2:Continue,
+armaa_valkazardSelReward2,DialogOptionSelected,$option == armaa_valkazardSelReward2,"$armaa_askedReward = true 1
+SetTextHighlights 100,000","""I fully appreciate the significance of this discovery and the role it can play in our endeavours."" she continued, as her eyes flit to something offscreen. ""As a gesture of our gratitude, Arma Armatura is prepared to offer a substantial reward for this remarkable discovery...say, 100,000 credits?""
+
+A sly grin plays across her lips as she leans back in her chair once more, her words carefully chosen.
+
+""Allow yourself to bask in the glory of not only reaping this reward, but also becoming an esteemed partner in this grand endeavor,"" she declared, ""Your collaboration will prove indispensable as we embark on a journey to unravel the secrets surrounding this enigma.""","armaa_valkazardSelReward3:""That's all?""
+armaa_valkazardSelAgree2:""It's a deal.""
+armaa_valkazardDeny:""No Deal.""",
+armaa_valkazardSelReward3,DialogOptionSelected,"$option == armaa_valkazardSelReward3
+!$chargeMoreValkazard ","$chargeMoreValkazard = true 1
+$global.armaa_chargeMoreValkazard = true
+SetTextHighlights 200,000
+AdjustRepActivePerson VENGEFUL -1
+FireAll armaa_valkazardHubOptions
+RemoveOption armaa_valkazardSelReward3","$personName's expression shifts subtly, betraying a hint of amusement mixed with a touch of annoyance. After a brief pause, she leans forward.
+
+""$playerName, your eagerness to negotiate is commendable,"" she began, her tone tinged with a blend of feigned surprise, subtle condescension, and controlled authority. ""However, it seems you may have misunderstood the extent of our offer. The reward we initially proposed is already substantial, reflecting the value we place on your contribution.""
+
+Her words hold an underlying message: challenging her generosity may not be wise. 
+
+""That being said,"" she continued, smiling slightly, ""I understand your desire for greater compensation. Rest assured, we are appreciative of your efforts. 200,000 credits should suffice.""","armaa_valkazardDeny:""No Deal.""",
+armaa_valkazardSelAgree,armaa_valkazardHubOptions,!$armaa_madeOffer,FireAll armaa_valkazardHubOptions,,#kpLeaveProt:Continue,
+armaa_valkazardSelAgree2,DialogOptionSelected,$option == armaa_valkazardSelAgree2,"
+SetEnabled kpZiggurat false
+#RemoveOption kpZiggurat
+#RemoveShipWithBaseHull ziggurat","$personName's smile widens, a glimmer of triumph flashing in her eyes.
+
+""Excellent,"" she purrs, her voice laced with satisfaction. ""Your decision to cooperate with us demonstrates your astuteness and vision, Captain.""
+
+""I trust you will provide our team with full access and cooperation during their examination.""
+
+Her tone remained firm yet confident, leaving no room for doubt or hesitation. With a gesture, the comms ends.",armaa_valkazardSelAgree3:Continue,
+armaa_valkazardSelAgree3,DialogOptionSelected,$option == armaa_valkazardSelAgree3,ShowLargePlanet,"Shortly after ending the conversation, your second in command approaches and informs you that the dispatched team is preparing to board and initiate their analysis.
+
+You acknowledge the report with a nod as you proceed to the designated meeting area. The assembled team, carrying specialized equipment, piques the interest of some crewmembers, who observe with detached interest.
+
+The team's leader steps forward, exuding an air of calculated confidence; Their illuminated faceplate reveals them to be none other than $personName. You exchange a perfunctory handshake.",armaa_valkazardSelAgree5:Continue,
+armaa_valkazardSelAgree4,DialogOptionSelected,$option == armaa_valkazardSelAgree4,ShowLargePlanet,"Shortly after ending the conversation, your second in command approaches and informs you that the dispatched team is preparing to board and initiate their analysis.
+
+You acknowledge the report with a nod as you proceed to the designated meeting area. The assembled team, carrying specialized equipment, piques the interest of some crewmembers, who observe with detached interest.
+
+The team's leader steps forward, exuding an air of calculated confidence; Their illuminated faceplate reveals them to be none other than $personName. You exchange a perfunctory handshake.",armaa_valkazardSelAgree5:Continue,
+armaa_valkazardSelAgree5,DialogOptionSelected,"$option == armaa_valkazardSelAgree5
+!$chargeMoreValkazard ","AddCredits 100000
+AddStoryPoints 4
+AdjustRepActivePerson FRIENDLY 10
+RemoveShipWithId $foundValkId
+AddPotentialContact
+EndConversation DO_NOT_FIRE
+ShowDefaultVisual","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
+
+""As we depart, we plan to transport Valkazard to our planetside installation for further research and analysis.""
+
+Her eyes bore into yours, a mix of ambition and calculated determination shining through her expression. There was no doubt that her intentions were to ensnare you in whatever her grand design entailed.
+
+""I could use someone like you. Should you find yourself intrigued by this prospect, simply contact me at your convenience. Our lines of communication will remain open.""
+
+She gestures to one of her underlings, who fiddles with a TriPad.",cutCommLink:See them off,
+armaa_valkazardSelAgree5b,DialogOptionSelected,"$option == armaa_valkazardSelAgree5
+$chargeMoreValkazard ","AddCredits 200000
+AddStoryPoints 4
+RemoveShipWithId $foundValkId
+EndConversation DO_NOT_FIRE
+ShowDefaultVisual","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
+
+Her eyes gleam, their underlying agenda shrouded beneath a veneer of reassurance. She gestures to one of her underlings, who fiddles with a TriPad.
+
+""As we depart, we plan to transport Valkazard to our planetside installation for further research and analysis.""",cutCommLink:See them off,
+armaa_valkazardDeny,armaa_valkazardHubOptions,!$armaa_madeOffer,,,"cutCommLink:""Allow me to think on this.""",
 ,,,,,,
-,,,,,,
+armaa_contactGreetingOfficial,PickGreeting,"MissionHubCMD hasHub
+$voice == official
+$id == armaa_seraph","ShowPersonVisual
+FireAll PopulateOptions","""Ah, captain,"" says $personName, a glint in her eyes as she delicately retrieves a datapad. ""Allow me to access my agenda, and we shall proceed accordingly.""",,
+armaa_CBRemnant,CBRemnantOfferDesc,$id == armaa_seraph,Highlight $bcb_dist $bcb_reward $bcb_days,"""This one requires some discretion."" You note the glow of REDACTED blocks peppered across the briefing as $personName scrolls through details. ""A fleet of Remnant drone warships was spotted in the $bcb_systemName, only $bcb_dist light-years from here.""
+
+""These are likely from the First AI War, a conflict that saw Arma Armatura's original headquarters and home planet obliterated,"" $HeOrShe shares with a hint of bitterness. ""Our corporation suffered greatly at the hands of these machines. It seems that even after all this time, they continue to pose a threat.""
+
+""Whatever they're up to, some important people will sleep better if it's stopped. The reward is $bcb_reward credits - higher than normal, both for the hazard and for your discretion. Get it done within $bcb_days days.""",,
+armaa_mcbBlurb,mcb_blurb,$id == armaa_seraph,,"""I have a few targets that need to be eliminated,"" $heOrShe says with a grin. ""Care to take a look?""",,
+armaa_mcbOfferTextContact,DialogOptionSelected,$option == armaa_mcb_start,"$missionId = mcb
+$option = mcb_showOptions 0
+FireBest DialogOptionSelected","""We've got a few options here."" $Post $personLastName pulls up a shared display with a table of intel reports. ""I have an HK flotilla on standby to eliminate these targets, but here's the delightful twist, my dear: it's your choice. You can have your pick of the bunch, and they'll handle whatever you don't. What type of job do you believe you can handle?""",,
+armaa_CBPirate,CBPirateOfferDesc,$id == armaa_seraph,Highlight $bcb_dist $bcb_reward $bcb_days,"$HeOrShe casually taps on one of the entries, enlarging the report with an air of indifference. The holo-display flickers to life, revealing the unimpressive visage of a scowling face from an arrest record.
+
+""Well, look who we've got here,"" $HeOrShe remarks dryly,
+""A charming pirate, hiding away in the distant $bcb_systemName, a whole $bcb_dist light-years from civilization. Apparently, they had a little falling out with an associate who just couldn't keep their mouth shut. How convenient for us.""
+
+""Tthe reward, you ask? It's a grand sum of $bcb_reward credits, meant to entice someone with nothing better to do. And to add a touch of excitement, we'll generously grant you $bcb_days to carry out this oh-so-thrilling job. So, are you up for the challenge?""",,
+armaa_CBEnemyStation,CBEnemyStationOfferDesc,$id == armaa_seraph,Highlight $bcb_reward $bcb_dist $bcb_days,"""We find ourselves in need of a particular service,"" $personName muses, $heOrShe finger tapping gracefully on the surface of $heOrShe datapad. ""An enemy station, you see, requires elimination. A rather sizable undertaking, I must admit.""
+
+Her voice remains steady, exuding an air of confidence as she continues, ""But fear not, for such a grand endeavor comes with a reward worthy of its scale. A handsome sum of $bcb_reward credits awaits those who prove themselves capable of achieving success."" $heOrShe lips curl into a knowing smile.
+
+With calculated precision, $heOrShe presents a holographic display showcasing the target, $bcb_fleetName; situated in the $bcb_systemName. ""You'll find the target approximately $bcb_dist light-years away. The operation must be completed within $bcb_days days, as other... arrangements eagerly await their fulfillment.""
+
+$heOrShe voice lowers, each word imbued with a subtle magnetism. ""Focus solely on the task at hand, and the promised compensation will be yours. Leave the rest to us.""",,
+armaa_contactPrintAcceptTextOfficial,ContactPrintAcceptText,"$voice == official
+$id == armaa_seraph",,"""Ah, good. Well then, if you'll excuse me...""
+OR
+""Can I help you with anything else?"" $heOrShe asks smoothly, her voice laced with a subtle, almost imperceptible undertone of calculated curiosity. It's as if she already knows the answer but wants to see if you reveal anything of value.
+OR
+""Then it is agreed and done,"" $heOrShe nods.
+OR
+""Good,"" $heOrShe says, ""All parties confirmed.""",,
+armaa_extrBlurb1,extr_blurb,$extr_variation == COLONY,,"""I've got a rather unconventional extraction mission. We can't afford to act directly lest we upset the delicate situation the company finds itself in - therefore, this task demands the expertise of a versatile independent unit such as yours.""",,
+armaa_extrOfferTextContact1,DialogOptionSelected,"$option == extr_start
+$extr_variation == COLONY
+$id == armaa_seraph","$missionId = extr
+SetTextHighlightColors h $extr_factionColor h
+Highlight $extr_reward $extr_marketFaction $extr_marines
+Call $extr_ref showMap ""Target: $extr_marketName""","""As I previously mentioned, the extraction of the agent from $extr_marketName is an endeavor of great significance. However, it is imperative to be mindful of the opposition's capabilities. They may be expecting your arrival, considering it's a $extr_marketFactionArticle $extr_marketFaction colony. The situation is already quite tumultuous, and we wouldn't want to exacerbate the chaos, would we?""
+
+A brief pause lingers in the air; a fleeting moment before she smoothly continues, her fingers dancing across her datapad to transfer a datafile your way. ""I have intel regarding their defensive capabilities,"" she reveals, her voice a captivating melody. ""Have your people take a look at it.""
+
+You quickly review the contents and estimate that you'd need around $extr_marines marines to carry off the operation.","contact_accept:Accept
+contact_decline:Decline",

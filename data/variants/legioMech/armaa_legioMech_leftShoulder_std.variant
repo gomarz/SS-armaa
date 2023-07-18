@@ -1,0 +1,15 @@
+{
+  "variantId": "armaa_legioMech_leftShoulder_std",
+  "hullId": "armaa_legioMech_leftShoulder",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+  ],
+  "modules": [],
+  "wings": []
+}

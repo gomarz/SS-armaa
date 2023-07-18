@@ -2,6 +2,7 @@
   "id": "armaa_record_torso_frig",
   "specClass": "beam",
   "type": "DECORATIVE",
+  "showDamageWhenDecorative": true,
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
   "collisionClass": "RAY",

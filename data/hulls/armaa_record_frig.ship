@@ -56,8 +56,8 @@
     },
     {
       "id": "TRUE_GUN",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "size": "SMALL",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,

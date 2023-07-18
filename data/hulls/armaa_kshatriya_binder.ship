@@ -15,6 +15,9 @@
     "auxiliarythrusters",
     "always_detaches"
   ],
+  "builtInWings": [
+    "armaa_bit2_wing"
+  ],
   "weaponSlots": [
     {
       "id": "RETRO_2",

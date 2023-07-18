@@ -17,12 +17,14 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "reduced_explosion",
+    "armaa_wingClipper",
     "armaa_vxSkinSwap",
-    "armaa_wingCommander",
+    "operations_center",
+    #"armaa_wingCommander",
     "armaa_variableRifle"
   ],
   "builtInWings": [
-    "armaa_valkenx_wing"
+   # "armaa_valkenx_wing"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_valkenx_torso_frig",
@@ -167,10 +169,10 @@
       "id": "WS0003",
       "size": "SMALL",
       "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 0,
-      "angle": 0,
-      "locations": [-13, 17],
+      "mount": "TURRET",
+      "arc": 25,
+      "angle": 36,
+      "locations": [-13, 18],
       "renderOrderMod": 200
     },
     {
