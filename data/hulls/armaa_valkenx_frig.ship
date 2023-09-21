@@ -3,7 +3,7 @@
   "hullId": "armaa_valkenx_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
-  "style": "HIGH_TECH",
+  "style": "armaa_valkazard",
   "height": 30,
   "width": 22,
   "center": [11, 16],
@@ -19,7 +19,6 @@
     "reduced_explosion",
     "armaa_wingClipper",
     "armaa_vxSkinSwap",
-    "operations_center",
     #"armaa_wingCommander",
     "armaa_variableRifle"
   ],
@@ -32,8 +31,8 @@
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkenx_leftPauldron_frig",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron_frig",
-    "E_HEAD": "armaa_valkenxHead_frig",
-    "H_GLOW": "armaa_valkenxHeadGlow_frig"
+    "E_HEAD": "armaa_valkenxHead_frig"
+    #"H_GLOW": "armaa_valkenxHeadGlow_frig"
   },
   "weaponSlots": [
     {
@@ -193,7 +192,7 @@
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "CUSTOM",
+      "style": "MIDLINE",
       "styleId": "MechaTrail"
     },
     {
@@ -202,7 +201,7 @@
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "CUSTOM",
+      "style": "MIDLINE",
       "styleId": "MechaTrail"
     },
     {
@@ -211,7 +210,7 @@
       "width": 5,
       "angle": 141.5,
       "contrailSize": 5,
-      "style": "CUSTOM",
+      "style": "MIDLINE",
       "styleId": "MechaTrail"
     },
     {
@@ -220,7 +219,7 @@
       "width": 5,
       "angle": -141.5,
       "contrailSize": 30,
-      "style": "CUSTOM",
+      "style": "MIDLINE",
       "styleId": "MechaTrail"
     }
   ],

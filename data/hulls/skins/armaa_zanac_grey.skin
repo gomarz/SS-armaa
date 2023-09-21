@@ -1,0 +1,31 @@
+{
+    "baseHullId":"armaa_zanac",
+    "skinHullId":"armaa_zanac_grey",
+    "hullName":"Zanac",
+    #"descriptionId":"armaa_zanac_ex",
+    #"descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "spriteName":"graphics/armaa/ships/zanac/grey/zanac_lowerBody.png",
+    "baseValueMult":1.0,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    #"tags":["rare_bp"],
+    #"systemId":"highenergyfocus",
+    "tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],
+   # "builtInMods":["fourteenth"],
+    "weaponSlotChanges":{},
+    "builtInWeapons":{
+    "A_GUN": "armaa_zanac_leftArm_grey",
+    "A_GUN2": "armaa_zanac_rightArm_grey_deco",
+    "LSHOULDER": "armaa_zanac_leftPauldron_grey",
+    "RETRO_1": "armaa_retrothruster",
+    "RETRO_2": "armaa_retrothruster",
+    "VERNIER_1": "armaa_emthrust_s",
+    "VERNIER_2": "armaa_emthrust_s",
+    "WS0003": "armaa_dd_legs",
+    #"WS0006": "armaa_zanac_head",
+    "WS0007": "armaa_zanac_rightPauldron_grey"
+    },
+}

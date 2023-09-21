@@ -32,9 +32,16 @@
 		  "size": "MEDIUM",
 		  "type": "COMPOSITE"
 	   },
+	   "A_GUN2":{
+		  #"angle": 0,
+		  #"arc": 5,
+		  "mount": "TURRET",
+		  "size": "LARGE",
+		  "type": "BUILT_IN"
+	   },
 },
     "builtInWeapons":{
-		"E_RARM": "armaa_barretta",
+		"A_GUN2": "armaa_barretta",
 		"E_LARM": "armaa_monitor_xiv_leftArm",
     		"E_GLOW": "armaa_monitor_xiv_head",
 		"E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",

@@ -32,15 +32,15 @@
   ],
   "beamFireOnlyOnFullCharge": true,
   "fringeColor": [
-    245,
-    127,
+    255,
+    0,
     24,
     255
   ],
   "coreColor": [
-    250,
-    157,
-    92,
+    255,
+    200,
+    200,
     255
   ],
   "width": 10,

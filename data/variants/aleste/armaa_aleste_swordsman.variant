@@ -11,7 +11,7 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN": "heavymauler",
+        "TRUE_GUN": "heavyneedler",
       }
     },
     {

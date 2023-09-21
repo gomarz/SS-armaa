@@ -1,11 +1,23 @@
 {
-    "playableFaction":false,
+    "playableFaction":true,
 	"startingFaction":true,
     "corvusCompatible":true,
     "freeStart":true,
 	"spawnAsFactionId":"player",
     "noRandomizeRelations":true,
     "difficultyString":"hard",
+    "pirateFaction":true,
+    "alignments":{
+        "hierarchical":-1,
+        "ideological":0.5,
+    },
+    "diplomacyTraits":["neutralist", "anarchist"],
+    "morality":"evil",
+    "vengeanceFleetNames":["Enforcers", "Hit-Fleet", "Horde"],
+    "vengeanceFleetNamesSingle":["an Enforcer fleet", "a Hit-Fleet", "a Horde"],
+    
+    "specialForcesMaxFleets":1,
+
 	# transfer to this faction at start (after new game time pass)
     "ngcTooltip":"This is the story of a pilot who wanted to become ...",
 	

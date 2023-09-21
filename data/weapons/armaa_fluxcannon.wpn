@@ -1,42 +1,55 @@
 {
+  "id": "armaa_fluxcannon",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
   "beamEffect": "data.scripts.weapons.armaa_fluxBeam",
-  "beamFireOnlyOnFullCharge": true,
+  "everyFrameEffect": "data.scripts.weapons.armaa_fluxBeamEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "coreColor": [
-    255,
-    255,
-    0,
-    255
-  ],
-  "everyFrameEffect": "data.scripts.weapons.armaa_fluxBeamEffect",
-  "fireSoundOne": "beambangM",
-  "fireSoundTwo": "beamfireM",
-  "fringeColor": [
-    200,
-    0,
-    200,
-    255
-  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_fluxcannon_turret_base.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
   "glowColor": [
     255,
     255,
     0,
     255
   ],
-  "hardpointAngleOffsets": [
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    29,
+    0
+  ],
+  "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
     47.5,
     0
   ],
-  "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
-  "hitGlowRadius": 0,
-  "id": "armaa_fluxcannon",
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    200,
+    0,
+    200,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    0,
+    255
+  ],
+  "width": 25,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 5,
   "pierceSet": [
     PROJECTILE_FF,
     PROJECTILE_NO_FF,
@@ -44,23 +57,6 @@
     MISSILE_FF,
     MISSILE_NO_FF
   ],
-  "pixelsPerTexel": 5,
-  "renderAboveAllWeapons": 0,
-  "size": "MEDIUM",
-  "specClass": "beam",
-  "textureScrollSpeed": 256,
-  "textureType": [
-    "graphics/fx/beam_laser_fringe.png",
-    "graphics/fx/beamcorec.png"
-  ],
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretOffsets": [
-    18,
-    0
-  ],
-  "turretSprite": "graphics/armaa/weapons/armaa_fluxcannon_turret_base.png",
-  "type": "ENERGY",
-  "width": 25
+  "fireSoundOne": "beambangM",
+  "fireSoundTwo": "beamfireM"
 }

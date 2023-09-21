@@ -12,16 +12,15 @@
   "shieldRadius": 102,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxshunt",
-    "armaa_weaponSwap_monitor",
-    "armaa_wingCommander"
+    "fluxshunt"
   ],
   "builtInWeapons": {
+    "A_GUN2": "armaa_monitor_rightArm",
     "E_DECO": "armaa_monitor_deco",
     "E_DECO_R": "armaa_monitor_deco_right",
     "E_GLOW": "armaa_monitor_glow",
-    "E_LSHOULDER": "armaa_monitor_leftPauldron",
     "E_LARM": "armaa_monitor_leftArm_deco",
+    "E_LSHOULDER": "armaa_monitor_leftPauldron",
     "E_RSHOULDER": "armaa_monitor_rightPauldron"
   },
   "weaponSlots": [
@@ -30,7 +29,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 200,
       "angle": 0,
       "locations": [-4, -1]
     },
@@ -70,7 +69,7 @@
       "mount": "TURRET",
       "arc": 70,
       "angle": 30,
-      "locations": [-6, 47],
+      "locations": [-4, 47],
       "renderOrderMod": -99998
     },
     {
@@ -83,13 +82,13 @@
       "locations": [-11, -40]
     },
     {
-      "id": "E_RARM",
+      "id": "A_GUN2",
       "size": "MEDIUM",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 70,
+      "arc": 90,
       "angle": -30,
-      "locations": [-6, -47],
+      "locations": [0, -50],
       "renderOrderMod": -99998
     },
     {
@@ -129,6 +128,24 @@
       "angle": 40,
       "locations": [-3, 20],
       "renderOrderMod": 1000
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -30,
+      "locations": [0, -50]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": 30,
+      "locations": [-4, 47]
     }
   ],
   "engineSlots": [

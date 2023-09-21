@@ -1,14 +1,34 @@
 {
-  "variantId": "armaa_legioMech_variant",
+  "variantId": "armaa_legioMech_standard",
   "hullId": "armaa_legioMech",
   "displayName": "New Variant",
   "goalVariant": false,
-  "fluxCapacitors": 0,
-  "fluxVents": 0,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "targetingunit",
+    "turretgyros"
+  ],
   "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "autopulse",
+        "TRUE_GUN2": "autopulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "RETRO_1": "vulcan",
+        "RETRO_2": "vulcan"
+      }
+    },
     {
       "autofire": false,
       "mode": "LINKED",

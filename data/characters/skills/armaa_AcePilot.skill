@@ -1,0 +1,27 @@
+{
+	"id":"armaa_AcePilot",
+	"governingAptitude":"combat",
+	"compressHullmods":false,
+	"elite":true,
+	"scope":"PILOTED_SHIP",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_AcePilot$Level1"},
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_AcePilot$Level2"},
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_AcePilot$Level3"},
+			]
+		},
+		{
+			"name":"Elite",
+			"requiredSkillLevel":2,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_AcePilot$Level4"},
+			]
+		},
+	],
+}
+

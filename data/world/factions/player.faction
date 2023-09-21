@@ -1,0 +1,19 @@
+{
+	"portraits":{
+		"standard_male":[
+			"graphics/armaa/portraits/armaa_portrait03.png",
+			"graphics/armaa/portraits/armaa_portrait04.png",
+			"graphics/armaa/portraits/armaa_portrait05.png",
+			"graphics/armaa/portraits/armaa_portrait06.png",
+			"graphics/armaa/portraits/armaa_portrait07.png",
+		],
+		"standard_female":[
+			"graphics/armaa/portraits/armaa_portrait00.png",
+			"graphics/armaa/portraits/armaa_portrait01.png",
+			"graphics/armaa/portraits/armaa_portrait02.png",
+			"graphics/armaa/portraits/armaa_portrait08.png",
+		],
+	},
+}
+
+

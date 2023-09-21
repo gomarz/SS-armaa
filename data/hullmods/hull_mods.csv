@@ -1,29 +1,30 @@
-name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
-Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,graphics/armaa/hullmods/armaa_strikecraft.png
-Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,graphics/armaa/hullmods/armaa_strikecraft.png
-Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,graphics/armaa/hullmods/armaa_serviceBays.png
-Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,graphics/icons/markets/shipbreaking.png
-Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,graphics/armaa/hullmods/armaa_assaultpods.png
-Advanced Optics(AA),armaa_advancedoptics,,,Arma Armatura,,,,,TRUE,,3,10,15,25,data.hullmods.armaa_advancedoptics,"Extends the range of beam weapons by %s, but reduces their turn rate by %s. Cumulative with Integrated Targeting Unit. Cannot be built-in.",Increases beam weapon range.,graphics/hullmods/advanced_optics.png
-Cataphract LSM,cataphract,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
-Cataphract S-II,cataphract2,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.cataphract2,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",graphics/armaa/hullmods/cataphract.png
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
+Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
+Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
+Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
+Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
+Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,,graphics/armaa/hullmods/armaa_assaultpods.png
+Assault Pod Killer,armaa_assaultPodKiller,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPodKiller,Shouldn't be visible. Kills BA Pods at end of combat.,,,graphics/armaa/hullmods/armaa_assaultpods.png
+Advanced Optics(AA),armaa_advancedoptics,,,Arma Armatura,,,,,TRUE,,3,10,15,25,data.hullmods.armaa_advancedoptics,"Extends the range of beam weapons by %s, but reduces their turn rate by %s. Cumulative with Integrated Targeting Unit. Cannot be built-in.",Increases beam weapon range.,,graphics/hullmods/advanced_optics.png
+Cataphract LSM,cataphract,,,Arma Armatura,special,,,,TRUE,,0,0,0,0,data.hullmods.cataphract,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",,graphics/armaa/hullmods/cataphract.png
+Cataphract S-II,cataphract2,,,Arma Armatura,special,,,,FALSE,,0,0,0,0,data.hullmods.cataphract2,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .","Increases flux dissipation, turning rate, and autofire accuracy by %s per pilot level. The current increase is %s.",graphics/armaa/hullmods/cataphract.png
 Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
 
 Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.
 
-While the Phase Damper Field is active, effect is augmented to provide a %s reduction.",Reduces beam damage by %s .,graphics/hullmods/solar_shielding.png
+While the Phase Damper Field is active, effect is augmented to provide a %s reduction.",Reduces beam damage by %s .,,graphics/hullmods/solar_shielding.png
 Anti-Beam Plating ,beamCoatType2,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_beamCoatType2,"Obsolete defensive measure against beam weaponry.
 
 Several layers of this semi-transparent coating protect from beam weapons by reflecting certain wavelengths of light, effectively reducing beam damage by %s.
 
-This type of coating can only be applied to specialized forms of armor, thereby making it incompatible with %s.",Reduces beam damage by %s .,graphics/hullmods/solar_shielding.png
-Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by a value up to the number of marines in the fleet.",,graphics/armaa/hullmods/cataphracts.png
-No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables active venting,,graphics/hullmods/vast_bulk.png
-Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,graphics/hullmods/reduced_explosion.png
-Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,graphics/hullmods/vast_bulk.png
-Karma Counter,armaa_karma,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod,Counts Karma for ship system,,graphics/hullmods/vast_bulk.png
-Karma Counter [C],armaa_karmaC,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod_Command,Counts Karma for ship system,,graphics/hullmods/vast_bulk.png
-Greater Reduced Explosion,explosionredux,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.greaterReducedExplosion,Counts Karma for ship system,,graphics/hullmods/vast_bulk.png
+This type of coating can only be applied to specialized forms of armor, thereby making it incompatible with %s.",Reduces beam damage by %s .,,graphics/hullmods/solar_shielding.png
+Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by a value up to the number of marines in the fleet.",,,graphics/armaa/hullmods/cataphracts.png
+No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables active venting,,,graphics/hullmods/vast_bulk.png
+Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,,graphics/hullmods/reduced_explosion.png
+Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,,graphics/hullmods/vast_bulk.png
+Karma Counter,armaa_karma,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
+Karma Counter [C],armaa_karmaC,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod_Command,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
+Greater Reduced Explosion,explosionredux,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.greaterReducedExplosion,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Modular Mobile Armor,armaa_ma,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_ma,"This vessel is modular in nature; the core unit houses the pilot and support staff and is equipped with additional modules that grant bonuses during battle.
 
 Leg modules area equipped with %s suited for point-defense. 
@@ -32,212 +33,254 @@ On standard models, The backpack modules house %s.
 
 Modules %s, and %s.
 
-%s, where applicable.",,graphics/icons/hullsys/drone_sensor.png
+%s, where applicable.",,,graphics/icons/hullsys/drone_sensor.png
 Targeting Core,armaa_targetingCore,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_targetingCore,"Extends the range of ballistic and energy weapons by %s. The range of point-defense weapons is only extended by %s.
 
-Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,
-SERAPH,seraph,,,????,,,,,TRUE,TRUE,-6,-12,-18,-30,data.hullmods.seraph,"Armor is increased by %s standard units, and %s increase in speed and maneuverability. Exceptionally well-tuned energy systems increase flux throughput and capacity by %s over standard examples of this hull.",,graphics/icons/markets/rogue_ai.png
+Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,,
+SERAPH,seraph,,,????,,,,,TRUE,TRUE,-6,-12,-18,-30,data.hullmods.seraph,"Armor is increased by %s standard units, and %s increase in speed and maneuverability. Exceptionally well-tuned energy systems increase flux throughput and capacity by %s over standard examples of this hull.",,,graphics/icons/markets/rogue_ai.png
 SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SeraphTargetingSoftware,"A specialized combat support suite governed by an (allegedly) delta-level AI core which excels in precision strikes. Small non-missile weapons automatically target missiles and ignore flares, and damage against missiles and fighters is increased by %s.
 
 This system is equipped with a manual safety override that can be tripped to forcibly disable all limiters during combat - the hull is %s
 
-Due to limited space, %s.",,graphics/armaa/hullmods/armaa_seraph_targeting.png
-SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot.,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
-Wingclipper,armaa_wingClipper,,,Arma Armatura,,,,,,,0,0,0,0,data.hullmods.eis_wingClipper,,,
-WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters,40000,,,,10,10,15,20,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,graphics/armaa/hullmods/armaa_wingcom.png
-OVERLORD SUITE[ALPHA],armaa_skyMindAlpha,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteAlpha,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,graphics/hullmods/advanced_targeting_core.png
-OVERLORD SUITE[BETA],armaa_skyMindBeta,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteBeta,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,graphics/hullmods/targeting_core.png
-OVERLORD SUITE[GAMMA],armaa_skyMindGamma,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteGamma,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,graphics/hullmods/automated.png
-AI Core Utility Script,armaa_aicoreutilityscript,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_aicoreutilityscript,This should not be visible.,Spaghetti scripts.,graphics/icons/markets/headquarters.png
-,,,,,,,,,,,,,,,,,,
-Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-# ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,
-Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-L ARM: BLADE,armaa_selector_blade_VAL,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade_VAL,HAND weapons can be changed to better suit the pilot's preferences. ,,graphics/armaa/hullmods/hand_l.png
+Due to limited space, %s.",,,graphics/armaa/hullmods/armaa_seraph_targeting.png
+SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
+C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot.,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
+Wingclipper,armaa_wingClipper,,,Arma Armatura,,,,,,,0,0,0,0,data.hullmods.eis_wingClipper,,,,
+WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters,40000,,,,10,10,15,20,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/armaa/hullmods/armaa_wingcom.png
+OVERLORD SUITE[ALPHA],armaa_skyMindAlpha,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteAlpha,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/advanced_targeting_core.png
+OVERLORD SUITE[BETA],armaa_skyMindBeta,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteBeta,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/targeting_core.png
+OVERLORD SUITE[GAMMA],armaa_skyMindGamma,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteGamma,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/automated.png
+AI Core Utility Script,armaa_aicoreutilityscript,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_aicoreutilityscript,This should not be visible.,Spaghetti scripts.,,graphics/icons/markets/headquarters.png
+,,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+# ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+L ARM: BLADE,armaa_selector_blade_VAL,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade_VAL,HAND weapons can be changed to better suit the pilot's preferences. ,,,graphics/armaa/hullmods/hand_l.png
 L ARM: KINETIC BAZOOKA,armaa_selector_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is geared specifically to deal with shields, but has very low ammo.
 
 %s 
 
-%s",,graphics/armaa/hullmods/hand_l.png
+%s",,,graphics/armaa/hullmods/hand_l.png
 L ARM: STAKE DRIVER,armaa_selector_stake,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires large spikes that explodes after a few seconds, but has limited ammo.
 
-%s""",,graphics/armaa/hullmods/hand_l.png
+%s""",,,graphics/armaa/hullmods/hand_l.png
 L ARM: DISPERSAL GRENADE,armaa_selector_grenade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_grenade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires six explosive submunitions per shot to saturate an area with firepower. Wildly inaccurate, but effective vs fighter formations and larger ships.
 
-%s",,graphics/armaa/hullmods/hand_l.png
+%s",,,graphics/armaa/hullmods/hand_l.png
 L ARM: LASER RIFLE,armaa_selector_lrifle_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a general-purpose, rapid firing energy weapon, but is flux intensive.
 
-%s",,graphics/armaa/hullmods/hand_l.png
+%s",,,graphics/armaa/hullmods/hand_l.png
 R ARM:HEAVY RIFLE,armaa_selector_heavyrifle,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_heavyrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s has significant damage per shot and range, but poor sustained firepower and flux efficiency.
 
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM: LASER RIFLE,armaa_selector_lrifle,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a general-purpose, rapid firing energy weapon, with no major strengths or weaknesses.
 
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM: PLASMA FLAMER,armaa_selector_flamer,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_flamer,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a short-range energy weapon. Greater damage potential compared to other general purpose options, but has limited charges that gradually recharge and relatively flux-intensive with sustained use. Lacks automatic PD targeting software.
 
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM: LASER BLADE,armaa_selector_blade_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s deals immense amounts of damage, but has extremely short range.
 
 %s 
 
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM:MINIGUN,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_minigun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a barrage of energy bolts with minor anti-armor capabilities.
-%s",,graphics/armaa/hullmods/hand_r.png
-Melee,armaa_melee,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,graphics/armaa/hullmods/hand_r.png
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-#LEYNOS WEAPON SELECTOR,,,,,no_build_in,,,,,,,,,,,,,
-Versatile Frame,armaa_leynosWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
+%s",,,graphics/armaa/hullmods/hand_r.png
+Melee,armaa_melee,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+#LEYNOS WEAPON SELECTOR,,,,,no_build_in,,,,,,,,,,,,,,
+Versatile Frame,armaa_leynosWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 R ARM:SHOTGUN,armaa_selector_shotgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a burst of projectiles in a tight cone that can chew through armor.
 
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM:CRUSHER,armaa_selector_crusher,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_crusher,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a two-round burst of anti-armor bolts. Has the greatest range of all weapons that can be fitted to the HAND units.
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM:AUTOCANNON,armaa_selector_ac,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_ac,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a standard use autocannon.
 
-%s",,graphics/armaa/hullmods/hand_r.png
-,,,,,,,,,,,,,,,,,,
+%s",,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,,
 L ARM: RAILGUN,armaa_selector_railgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_railgun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires accurate, medium-range slugs. Excels at overwhelming enemy shield generators.
 
-%s",,graphics/armaa/hullmods/hand_l.png
+%s",,,graphics/armaa/hullmods/hand_l.png
 L ARM: POWERFIST,armaa_selector_fist,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_fist,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is a specialized fist that generates a Damper Field around itself, drastically enhancing its durability. Extremely potent kinetic weapon, but can be destroyed mid launch. 
 
-%s ",,graphics/armaa/hullmods/hand_l.png
+%s ",,,graphics/armaa/hullmods/hand_l.png
 L ARM: PPC,armaa_selector_ppc,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_ppc,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires an immensely powerful energy weapon that also inflict EMP Damage. Low Ammo and fairly ineffective against armor and shields.
 
-%s""",,graphics/armaa/hullmods/hand_l.png
+%s""",,,graphics/armaa/hullmods/hand_l.png
 L ARM: BAZOOKA,armaa_selector_bazooka,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_bazooka,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires three explosive rounds that detonate by proximity trigger.
 
-%s",,graphics/armaa/hullmods/hand_l.png
-,,,,,,,,,,,,,,,,,,
-#VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,
-Versatile Frame,armaa_valkazardWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardweaponSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
+%s",,,graphics/armaa/hullmods/hand_l.png
+,,,,,,,,,,,,,,,,,,,
+#VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_valkazardWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardweaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 BODY: COUNTER SHIELD,armaa_selector_counter_shield,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_counter_shield,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s utilizes a specialized omnidirectional shield emitter that accumulates energy from any attacks against it while deployed. Capacity scales with the units flux reserves, and can readily be weaponized in suitable circumstances.
 
-%s",,graphics/armaa/hullmods/body.png
+%s",,,graphics/armaa/hullmods/body.png
 BODY: FRAG SHOTGUN,armaa_selector_blunderbuss,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blunderbuss,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s is a relatively standard core unit, featuring a built-in weapon that can effectively eliminate small targets within its meagre firing arc, as well as doubling as a close-range assault weapon. While it lacks any kind of gimmick like other Cores, extra space that would be reserved for those systems is used for additional ammo storage and a slightly enhanced central thruster.
 
-%s",,graphics/armaa/hullmods/body.png
+%s",,,graphics/armaa/hullmods/body.png
 BODY: ENERGY BLASTER,armaa_selector_boson,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_boson,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
 
 The %s possesses an extremely powerful yet flux hungry built-in particle cannon with limited ammo.
 
-%s",,graphics/armaa/hullmods/body.png
+%s",,,graphics/armaa/hullmods/body.png
 BODY: HE BEAM,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_s_spark,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s possesses the capability to fire a long range beam that generates a random number of additonal explosions in it's wake.
 
-%s",,graphics/armaa/hullmods/body.png
+%s",,,graphics/armaa/hullmods/body.png
 BODY: KE AUTOCANNON,armaa_selector_ac20,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_ac20,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s features a built-in autocannon.
 
-%s",,graphics/armaa/hullmods/body.png
-,,,,,,,,,,,,,,,,,,
+%s",,,graphics/armaa/hullmods/body.png
+,,,,,,,,,,,,,,,,,,,
 R ARM: R. RIFLE,armaa_selector_rcl,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_rcl,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is suited for cracking heavy armor. Fairly slow.
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM: CHAINGUN,armaa_selector_chaingun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_chaingun,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is mostly identical to the sector-standard chaingun.
 
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM: LASER,armaa_selector_pulse_rifle_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is effectively a more efficient pulse laser with slightly higher rate of fire and slightly lower damage per shot. A general purpose weapon.
 
-%s ",,graphics/armaa/hullmods/hand_r.png
+%s ",,,graphics/armaa/hullmods/hand_r.png
 R ARM: MACHINEGUN,armaa_selector_machinegun_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_r.png
-R ARM: EN SHOTGUN,armaa_selector_shotgun_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,HAND weapons can be changed to better suit the pilot's preferences. ,,graphics/armaa/hullmods/hand_r.png
-,,,,,,,,,,,,,,,,,,
+A fairly unremarkable forearm mounted machinegun has been equipped.",,,graphics/armaa/hullmods/hand_r.png
+R ARM: EN SHOTGUN,armaa_selector_shotgun_right,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,HAND weapons can be changed to better suit the pilot's preferences. ,,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,,
 L ARM: M. PULSER,armaa_selector_micropulser,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_micropulser,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is a hand-held variant of the Ion Pulser. A few seconds of concentrated fire is usually enough to effectively handicap the enemies offensive capabilities.
 
-%s",,graphics/armaa/hullmods/hand_l.png
+%s",,,graphics/armaa/hullmods/hand_l.png
 L ARM: HARPOON,armaa_selector_harpoon,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s launches a rod that, should it connect with hull, fires constant EMP pulses throughout the enemy ship. Tethers the ship and the weapons user together, and smaller targets can be pulled or towed to some degree. 
 
-%s ",,graphics/armaa/hullmods/hand_l.png
+%s ",,,graphics/armaa/hullmods/hand_l.png
 L ARM: LASER,armaa_selector_pulse_rifle_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_lrifle,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s is effectively a more efficient pulse laser with slightly higher rate of fire and slightly lower damage per shot. A general purpose weapon.
 
-%s ",,graphics/armaa/hullmods/hand_l.png
+%s ",,,graphics/armaa/hullmods/hand_l.png
 L ARM: MACHINEGUN,armaa_selector_machinegun_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_harpoon,"HAND weapons can be changed to better suit the pilot's preferences. 
 
-A fairly unremarkable forearm mounted machinegun has been equipped.",,graphics/armaa/hullmods/hand_l.png
+A fairly unremarkable forearm mounted machinegun has been equipped.",,,graphics/armaa/hullmods/hand_l.png
 L  ARM: R. RIFLE,armaa_selector_rcl_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_rcl,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is suited for cracking heavy armor. Fairly slow.
-%s",,graphics/armaa/hullmods/hand_l.png
-L ARM: EN SHOTGUN,armaa_selector_shotgun_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,HAND weapons can be changed to better suit the pilot's preferences. ,,graphics/armaa/hullmods/hand_l.png
-,,,,,,,,,,,,,,,,,,
+%s",,,graphics/armaa/hullmods/hand_l.png
+L ARM: EN SHOTGUN,armaa_selector_shotgun_left,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,HAND weapons can be changed to better suit the pilot's preferences. ,,,graphics/armaa/hullmods/hand_l.png
+,,,,,,,,,,,,,,,,,,,
 R ARM: GRENADE LAUNCHER,armaa_selector_exceliza,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_exceliza,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a slow projectile that explodes and damages everything within a moderate radius. Fairly slow.
-%s",,graphics/armaa/hullmods/hand_r.png
+%s",,,graphics/armaa/hullmods/hand_r.png
 R ARM: VAJRA,armaa_selector_vajra,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_vajra,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s is flux intensive energy weapon with high burst damage.
 
-%s",,graphics/armaa/hullmods/hand_r.png
-,,,,,,,,,,,,,,,,,,
-Variable Rifle,armaa_variableRifle,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_variableRifle,,,graphics/icons/hullsys/drone_sensor.png
-,,,,,,,,,,,,,,,,,,
-R ARM: GAUSS,armaa_selector_gauss,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_gauss,,,graphics/icons/hullsys/drone_sensor.png
-R ARM: HELLBORE,armaa_selector_hellbore,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_hellbore,,,graphics/icons/hullsys/drone_sensor.png
-,,,,,,,,,,,,,,,,,,
-L ARM: GAUSS,armaa_selector_gauss_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_gauss_l,,,graphics/icons/hullsys/drone_sensor.png
-L ARM: HELLBORE,armaa_selector_hellbore_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_hellbore_l,,,graphics/icons/hullsys/drone_sensor.png
-,,,,,,,,,,,,,,,,,,
-Versatile Frame,armaa_vxSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_vxSkinSwap,This machine can be customized.,,graphics/icons/markets/rogue_ai.png
-PAINT: AASV,armaa_vxSkin_AASV,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,Standard High-Tech appearance with blue accents,Standard High-Tech appearance with blue accents,graphics/armaa/hullmods/armaa_paint.png
-PAINT: COMET,armaa_vxSkin_rocketStars,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_rocketStars,Color Scheme of the 'Rocket Stars' mercenary outfit,Color Scheme of the 'Rocket Stars' mercenary outfit,graphics/armaa/hullmods/armaa_paint.png
-PAINT: POST-COLLAPSE,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,Reconstruction of Pre-Collapse VX units using more easily sourced components.,Reconstruction of Pre-Collapse VX units using more easily sourced components.,graphics/armaa/hullmods/armaa_paint.png
-,,,,,,,,,,,,,,,,,,
-#CEYLON,,,,,,,,,,,,,,,,,,
-AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,
+%s",,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,,
+Variable Rifle,armaa_variableRifle,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_variableRifle,,,,graphics/icons/hullsys/drone_sensor.png
+,,,,,,,,,,,,,,,,,,,
+R ARM: GAUSS,armaa_selector_gauss,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_gauss,,,,graphics/icons/hullsys/drone_sensor.png
+R ARM: HELLBORE,armaa_selector_hellbore,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_hellbore,,,,graphics/icons/hullsys/drone_sensor.png
+,,,,,,,,,,,,,,,,,,,
+L ARM: GAUSS,armaa_selector_gauss_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_gauss_l,,,,graphics/icons/hullsys/drone_sensor.png
+L ARM: HELLBORE,armaa_selector_hellbore_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_hellbore_l,,,,graphics/icons/hullsys/drone_sensor.png
+,,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_vxSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_vxSkinSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+PAINT: AASV,armaa_vxSkin_AASV,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,Standard High-Tech appearance with blue accents,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
+PAINT: COMET,armaa_vxSkin_rocketStars,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_rocketStars,Color Scheme of the 'Rocket Stars' mercenary outfit,Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
+PAINT: POST-COLLAPSE,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,Reconstruction of Pre-Collapse VX units using more easily sourced components.,Reconstruction of Pre-Collapse VX units using more easily sourced components.,,graphics/armaa/hullmods/armaa_paint.png
+,,,,,,,,,,,,,,,,,,,
+#CEYLON,,,,,,,,,,,,,,,,,,,
+AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,

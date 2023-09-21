@@ -1,0 +1,18 @@
+{
+    "baseHullId":"armaa_valkenx_frig",
+    "skinHullId":"armaa_vx_silversword",
+    "hullName":"VX Custom [Silversword]",
+    "descriptionId":"armaa_valkenx_frig",
+    "baseValueMult":1.2,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    #"tags":["rare_bp"],
+    "systemId":"armaa_silverSwordV",
+    #"tech":"Tri-Tachyon",
+    #"removeWeaponSlots":[], 		# ids
+    #"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    #"removeBuiltInWeapons":["C_ARML","A_GUN",],
+    #"builtInMods":["armaa_weaponSwap"],
+    #"weaponSlotChanges":{},
+    #"builtInWeapons":{},
+}

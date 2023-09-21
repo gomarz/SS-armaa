@@ -7,6 +7,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
+  #"turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXBody_ace_02.png",
   "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordBody2.png",
   "hardpointSprite": "",
   "glowColor": [

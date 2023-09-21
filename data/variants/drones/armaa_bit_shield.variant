@@ -4,13 +4,13 @@
     "fluxVents": 5,
     "hullId": "armaa_bit",
     "goalVariant": true,
-    "hullMods": ["terminator_core"],
+    "hullMods": ["terminator_core","frontshield"],
     "permaMods": [],
-    "variantId": "armaa_bit_std",
+    "variantId": "armaa_bit_shield",
     "weaponGroups": [{
       #  "autofire": true,
         "mode": "LINKED",
-        "weapons": {"WS0001": "taclaser"}
+        "weapons": {"WS0001": "irpulse_fighter"}
 
     }]
 }

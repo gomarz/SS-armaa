@@ -9,6 +9,9 @@
 		"music_armaa_market_neutral":[
 			{"file":"O3D001.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
+		"music_armaa_pirate_market_neutral":[
+			{"file":"O3D001_2.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+		],
 
 	},	
 	"mechmove":[ 
@@ -197,7 +200,11 @@
 		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":1.03,"volume":1.03},
 		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":.97,"volume":.97},
 	],
-
+	"armaa_dawn_intro":
+	[
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1,"volume":1},
+	],
 	"armaa_crewDeath":[							
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.5,"volume":0.2},

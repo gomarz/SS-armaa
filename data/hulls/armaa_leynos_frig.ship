@@ -26,8 +26,8 @@
     "D_PAULDRONL": "armaa_leynos_leftPauldron",
     "D_PAULDRONR": "armaa_leynos_rightPauldron",
     "E_HEAD": "armaa_leynos_head",
-    "H_GLOW": "armaa_sprigganHeadGlow",
-    "F_LEGS": "armaa_ht_legs"
+    "F_LEGS": "armaa_ht_legs",
+    "H_GLOW": "armaa_sprigganHeadGlow"
   },
   "weaponSlots": [
     {
@@ -109,7 +109,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-3	, -0],
+      "locations": [-3, -0],
       "renderOrderMod": -1000
     },
     {
@@ -126,8 +126,8 @@
       "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "HARDPOINT",
-      "arc": 10,
-      "angle": 0,
+      "arc": 60,
+      "angle": -25,
       "locations": [-13, -14],
       "renderOrderMod": 99999
     },
@@ -140,6 +140,16 @@
       "angle": 0,
       "locations": [5, -0],
       "renderOrderMod": 101
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 60,
+      "angle": 25,
+      "renderOrderMod": 99999,
+      "locations": [-13, 14]
     }
   ],
   "engineSlots": [

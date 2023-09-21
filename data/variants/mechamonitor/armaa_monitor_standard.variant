@@ -8,16 +8,22 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit",
-    "missleracks"
+    "targetingunit"
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "harpoon",
-        "WS0004": "harpoon"
+        "TRUE_GUN2": "mjolnir"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "vulcan",
+        "WS0004": "vulcan"
       }
     }
   ],

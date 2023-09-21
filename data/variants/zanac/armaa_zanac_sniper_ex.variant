@@ -3,12 +3,13 @@
   "hullId": "armaa_zanac_ex",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 13,
-  "fluxVents": 15,
+  "fluxCapacitors": 16,
+  "fluxVents": 20,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit"
+    "targetingunit",
+    "advancedoptics"
   ],
   "weaponGroups": [
     {
@@ -19,11 +20,11 @@
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0004": "atropos",
-        "WS0005": "atropos"
+        "WS0004": "taclaser",
+        "WS0005": "taclaser"
       }
     },
     {

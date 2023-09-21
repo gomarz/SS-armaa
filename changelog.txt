@@ -1,5 +1,28 @@
 v2.3
 ------
+==New Features / Content==
+
+- Valkazard can finally be returned
+
+- Characters now begin with low-importance contact on nex armaa start (also changes some dialogue)
+
+- Added planet & bar flavor text to New Meshan
+
+New Ship: Zanac
+	- Fast-attack Destroyer
+	- 1x Large Energy, 1x Medium Hybrid, 2x Small Universals
+
+New Ship: NotKshatriya (TODO)
+
+New Ship: Corsair(TODO)
+
+New Ship: Watchdog(XIV) (TODO)
+
+==Tweaks / Balance Changes==
+- Dance Party on New Meshan has ended (market music has been replaced with something a bit more chill)
+- Fixed Nex ability CTD
+- Fixed small fleets (Academy Shuttle services, mercenary patrols) always using armaa stuff
+- Fixed potential slowdown that could occur when command UI was open
 - Fixed Einhander (P) missing variable rifle hullmod
 - Fixed Einhander having no legs
 - Fixed Spriggan Powered missing variable rifle hullmod
@@ -13,12 +36,37 @@ v2.3
 - tweaked Aleste(S-II) sprite
 - tweaked Einhander & Einhander+ sprite
 - tweaked laser blade visuals
-- laser blades are now range-locked
-	- max range increase caps out at base range * 2
+- fixed phased strikecraft taking damage while phased if they flame out
+- only one raid capable unit is deployed instead of every single one (this should reduce the message spam post raid, and the large supply cost hit if fielding many)
+- fixed hullmod conflict appearing for conflict with built-in hmods
+- removed range restriction on laser blade 
+	- damage remains the same up until beam length is > base range * 1.5. from this point on, damage is gradually reduced (up to a 50% penalty)
+	- even if range is extended, full damage is still dealt so long as the attack connects below this threshold
+
+- Aleste
+	- Left arm is now locked to Laser Blade
+	- Right arm is now a modular hybrid turret
+	- Ship System: Lunge
+		- Disables shields and charges towards target. If colliding with target, deals HE damage on contact
+
+- Spriggan Powered:
+	- Drones: 2->3
+		- Refit Time: 15->10
+		- Support Range: 1500->2000
+		- Armor: 150-> 50
+	- Medium Ballistic -> Small Hybrid
+	- Shield durability is increased
+
+- VX Custom:
+	- Removed WINGCOM
+		- Ship System: Phase Skimmer -> Manuvering Jets
+		- Air Superiority: destroying enemy fighters provides time dilation buff(FP/wingsize), up to 10%
+		- Increased flux dissipation 
+		- Shield Arc: 90->180
 
 - Watchdog:
 	- Removed one large ( ); )
-	- TODO: Make large modular
+	- Remaining large is now a modular hybrid
 	- Speed: 60->80
 	- OP: 85->70
 	- Flux Capacity: 7500->5000
@@ -28,18 +76,16 @@ v2.3
 	- Armor: 100->50
 	- RCL-48 Recoilless Rifle
 		- Range: 600->500
+		- Damage: 400->350
 		- Burst Size: 3->2
 		- Ammo: 6->4
-		- Chargedown: 2.8->2.25
-- Aleste (TODO)
+		- Chargedown: 2.8->2.5
 
-New Ship: Zanac (TODO)
+- BA Assault Pod
+	- Fixed preventing combat from ending
 
-New Ship: NotKshatriya (TODO)
-
-New Ship: Corsair(TODO)
-
-New Ship: Watchdog(XIV) (TODO)
+- Valken(P)
+	- Reduced manuverability somewhat
 
 v2.2.3
 ------

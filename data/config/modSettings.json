@@ -633,15 +633,36 @@
 			"\"I know these ships and I know their weaknesses! I'll make sure Daud knows what he's lost!\"",
 			
 		],
+		"luddic_church":
+		[
+			"\"It's just another fight, people. No matter how much they believe in their cause, we're not backing down.\"",
+			"\"Approaching the Luddic fleet... Let's hope this doesn't turn into a needless bloodbath. Their beliefs drive them as much as our mission drives us.\"",
+			"\"You won't believe this one: there are rumors that the Luddic Church has connections with some AI faction. Imagine the irony of tech-hating zealots mingling with machines.\"",
+			"\"They say the Luddic Church's leaders have access to an ancient prophecy, one that foretells the downfall of their enemies. Like something out of a holo-drama.\"",
+			"\"Ludd, the man who started it all, the one who planted the seeds of this zealous faith. They say he vanished mysteriously, leaving behind a legacy that spans generations.\"",	
+		],
+		"persean_league":
+		[
+			"\"There's whispers about Kazeron's true intentions in the Sector. Some think they're just using the Persean League as a front for their own interests.\"",
+			"\"Let's finish this and head back to base. I don't have the energy to worry about the details.\"",
+			"\"Stay focused, pilots. The League's admirals are cunning strategists. Expect the unexpected.\"",
+			"\"Alright, team, let's not get bogged down in the politics. The Persean League may be on some power trip, but we're just here to follow orders.\"",			
+			"\"Watch those League carriers, folks. Shoot down their fighters and protect our own. We won't let 'em dictate this dance.\"",
+			"\"The League may act all righteous, but they're just protecting their own interests. They don't give a damn about the free peoples in the Sector!\"",
+			"\"Listen up. We've got a date with the Persean League, and I don't really care about their political mumbo jumbo. Let's get the job done.\"",		
+		],
 		"tritachyon":
 		[
-			"\"I'm going to enjoy this, corporate scum.\"",
-			"\"Tri-tachyon's force is no match for our superior training. Push them back and establish air superiority.\"",
-			"\"Looks like we've got another case of corporate greed trying to bully its way around. Time to teach them a lesson.\"",
-			"\"These suits think they can buy their way out of anything? Time to show them the error of their ways.\"",
-			"\"I may not have their resources, but I've got something they'll never have - integrity. Let's go take them down a peg or two.\"",
-			"\"I knew taking on this contract wouldn't be easy, but I never expected to be going up against a megacorporation. \n No matter. I'll take them down and expose their corruption.\"",
-			"\"I may not be able to take on their entire fleet alone, but I've got a few tricks up my sleeve. Let's show them that \n you can't always win with just money and power.\"",			
+			"\"They've got eyes everywhere, you know? Cross Tri-Tachyon, and you'll have a target on your back for life.\"",
+			"\"You mess with Tri-Tachyon, and you're playing with fire. They don't take kindly to threats to their bottom line.\"",
+			"\"Those guys at Tri-Tachyon? They're always on the lookout for the next big profit. It's like money runs through their veins.\"",
+			"\"Don't let their polished image fool ya; Tri-Tachyon's got claws, and they ain't afraid to use 'em.\"",
+			"\"Some say Tri-Tachyon's got its own private fleet of experimental ships. Wouldn't want to be on the wrong side of that firepower.\"",
+			"\"I knew taking on this contract wouldn't be easy, but I never expected to be going up against a megacorporation.\"",
+			"\"Tri-Tachyon's got deep pockets and deeper secrets. You never know what they're planning behind closed doors.\"",		
+			"\"Tri-Tachyon's got spies and rats all over this place. You never know who's sharin' info with 'em.\"",
+			"\"If you see a Paragon, proceed with caution. Tri-Tachyon's big boys are no joke.\"",
+			"\"Artemesia Sun's got the reputation of a genius. Whether she's an AI runnin' the show or not, she's got the brains to back it up.\"",
 			
 		],
 		"pirates":
@@ -731,6 +752,7 @@
 			"\"We're not just fighting against a fleet, we're fighting against the ego of their dictator. Let's show him that he's not invincible.\"",
 			"\"Worried about these lobster eaters? I'm more worried about running out of ammo before I take them all down.\"",
 			"\"Their fervor for Andrada is no match for my piloting abilities. Let's show 'em how it's done.\"",
+			"\"Some call 'em oppressive, others say they just keep their people in line. All I know is, you better play by their rules.\"",
 			"\"They call themselves the 'Sindrian Elite'? Ha! They're not elite, they're just a bunch of rad-addled thugs with a leader who's got a god complex.\"",
 			"\"The battle is on! Let's show them what we're made of and send them running back to their great leader.\"",
 			

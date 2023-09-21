@@ -1,41 +1,29 @@
 {
 	"hullFrequency":{
 		"hulls":{
-			"armaa_altagrave":1,
-			"armaa_altagrave_c":1,
-			"armaa_altagrave_g":1,
-			"armaa_garegga":1,
+			"armaa_altagrave":0.4,
 			"armaa_einhander":0.35,
-			"armaa_aleste_frig":1,
-			"armaa_leynos_frig":1,
-			"armaa_hazard_frig":1,
-			"armaa_xyphos":1,	
+			"armaa_zanac":0.35,
+			"armaa_aleste_frig":0.4,
+			"armaa_leynos_frig":0.4,
+			"armaa_record_frig":0.7,
+			"armaa_xyphos":0.5,	
 		},
 	},
 	"shipsWhenImporting":{
 		"hulls":[
-            "armaa_garegga",
-	    "armaa_aleste_frig",
-	    "armaa_kouto_frig",
-	    "armaa_xyphos",
-	    "armaa_broadsword",
-	    "armaa_warthog",	
 		],
 	},
 	"knownShips":{
 		"hulls":[	
 				"armaa_einhander",
 				"armaa_altagrave",
-				"armaa_garegga",
 				"armaa_aleste_frig",
 				"armaa_leynos_frig",
-				"armaa_hazard_frig",
 				"armaa_xyphos",
-				"armaa_valkyrie",
-				"armaa_broadsword",
-				"armaa_warthog",
 				"armaa_whitebase",
 				"armaa_record_frig",
+				"armaa_zanac",
 			],
 	},
 	"knownFighters":{

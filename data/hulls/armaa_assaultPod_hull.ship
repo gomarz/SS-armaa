@@ -13,6 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
         "axialrotation",
+	"armaa_assaultPodKiller"
   ],
   "weaponSlots": [],
   "engineSlots": [],

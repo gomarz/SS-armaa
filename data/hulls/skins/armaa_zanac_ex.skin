@@ -9,7 +9,7 @@
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["rare_bp"],
-    "systemId":"armaa_silverSword",
+    "systemId":"highenergyfocus",
     "tech":"Tri-Tachyon",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
@@ -17,11 +17,11 @@
     "builtInMods":["fourteenth"],
     "weaponSlotChanges":{
 	   "A_GUN2":{
-		  "angle": 0,
+		 # "angle": 0,
 		 # "arc": 5,
-		  #"mount": "TURRET",
+		  "mount": "TURRET",
 		  "size": "LARGE",
-		  "type": "ENERGY"
+		  "type": "BUILT_IN"
 	   },
 	   "TRUE_GUN2":{
 		 #"angle": 0,

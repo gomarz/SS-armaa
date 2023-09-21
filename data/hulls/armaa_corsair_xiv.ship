@@ -18,8 +18,8 @@
   "builtInWeapons": {
     "A_GUN": "armaa_corsair_leftArm",
     "A_GUN2": "armaa_corsair_rightArm",
-    "LPAULDRON": "armaa_garegga_xiv_leftPauldron",
-    "RPAULDRON": "armaa_garegga_xiv_rightPauldron",
+    #"LPAULDRON": "armaa_garegga_xiv_leftPauldron",
+    #"RPAULDRON": "armaa_garegga_xiv_rightPauldron",
     "WS0001": "armaa_corsair_leftShoulder",
     "WS0003": "armaa_corsair_rightShoulder",
     "WS0005": "armaa_corsair_leftArm_cover",
@@ -32,7 +32,7 @@
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": 0,
       "locations": [28, 38]
     },
@@ -41,7 +41,7 @@
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": -0,
       "locations": [28, -38]
     },
@@ -90,7 +90,7 @@
       "size": "LARGE",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": 0,
       "locations": [28, 38]
     },
@@ -99,7 +99,7 @@
       "size": "LARGE",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": 0,
       "locations": [28, -38]
     },

@@ -9,20 +9,33 @@
   "center": [68, 56],
   "collisionRadius": 35,
   "shieldCenter": [0, 0],
-  "shieldRadius": 42,
+  "shieldRadius": 75,
   "viewOffset": 0,
   "builtInMods": [
     "auxiliarythrusters"
   ],
+  "builtInWeapons": {
+    "WS0001": "pdburst",
+    "WS0002": "armaa_barretta2"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
-      "size": "MEDIUM",
-      "type": "ENERGY",
+      "size": "SMALL",
+      "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 0,
-      "angle": 0,
-      "locations": [-3, 3]
+      "arc": 300,
+      "angle": 180,
+      "locations": [-4, 3]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 300,
+      "angle": -1.5,
+      "locations": [-9, -22]
     }
   ],
   "engineSlots": [],

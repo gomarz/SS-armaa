@@ -7,14 +7,13 @@
   "height": 112,
   "width": 136,
   "center": [68, 56],
-  "collisionRadius": 66.5,
+  "collisionRadius": 84,
   "shieldCenter": [0, 0],
-  "shieldRadius": 66,
+  "shieldRadius": 84.5,
   "viewOffset": 0,
   "builtInMods": [
     "auxiliarythrusters",
-    "tahlan_daemoncore",
-    "tahlan_daemonarmor"
+    "automated"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_legioMech_leftArm",
@@ -31,19 +30,19 @@
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": 20,
-      "locations": [35, 39],
+      "locations": [37, 38],
       "renderOrderMod": -9999
     },
     {
       "id": "TRUE_GUN2",
       "size": "LARGE",
-      "type": "COMPOSITE",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": -20,
-      "locations": [35, -39],
+      "locations": [37, -38],
       "renderOrderMod": -9999
     },
     {
@@ -80,9 +79,9 @@
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": 20,
-      "locations": [35, 39],
+      "locations": [37, 38],
       "renderOrderMod": 900
     },
     {
@@ -101,7 +100,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 180,
-      "locations": [-16, 23]
+      "locations": [-27.5, 18.5]
     },
     {
       "id": "VERNIER_2",
@@ -110,43 +109,43 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -180,
-      "locations": [-16, -23]
+      "locations": [-27.5, -18.5]
     },
     {
       "id": "RETRO_2",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 180,
+      "arc": 360,
       "angle": -180,
       "locations": [-16, -23]
     },
     {
       "id": "RETRO_1",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 180,
+      "arc": 360,
       "angle": 180,
       "locations": [-16, 23]
     },
     {
       "id": "TRUE_GUN",
       "size": "LARGE",
-      "type": "COMPOSITE",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": 20,
-      "locations": [35, 39]
+      "locations": [37, 38]
     },
     {
       "id": "RCOVER",
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": -20,
-      "locations": [35, -39],
+      "locations": [37, -38],
       "renderOrderMod": 999
     },
     {
@@ -154,9 +153,9 @@
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 60,
       "angle": -20,
-      "locations": [35, -39],
+      "locations": [37, -38],
       "renderOrderMod": -9999
     },
     {

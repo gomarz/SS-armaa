@@ -17,7 +17,7 @@
     33,
     -12
   ],
-  "hardpointSprite": "graphics/armaa/weapons/armaa_valkenGun.png",
+  "hardpointSprite": "",
   "id": "armaa_einhanderGun",
   "interruptibleBurst": true,
   "autocharge": true,

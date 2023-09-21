@@ -1,22 +1,32 @@
 {
   "id": "armaa_monitor_rightArm",
-  "specClass": "projectile",
-  "projectileSpecId": "hellbore_shot",
-  "type": "BALLISTIC",
-  "size": "LARGE",
-  "turretSprite": "graphics/armaa/ships/garegga/00.png",
-  "turretGunSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_rightArm.png",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_zanacDummyWeapon2",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_rightArm.png",
   "hardpointSprite": "",
   "showDamageWhenDecorative": true,
-  "visualRecoil": 2,
-  "renderHints": [
-    RENDER_BARREL_BELOW
+  "glowColor": [
+    255,
+    0,
+    255,
+    255
   ],
+  "hitGlowRadius": 0,
   "turretOffsets": [
-    66,
-    -8
+    71,
+    -24,
+    71,
+    -19,
+    64,
+    -21
   ],
   "turretAngleOffsets": [
+    1,
+    1,
     1
   ],
   "hardpointOffsets": [
@@ -26,22 +36,26 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "barrelMode": "ALTERNATING",
-  "animationType": "MUZZLE_FLASH",
-  "interruptibleBurst": true,
-  "muzzleFlashSpec": {
-    "length": 65,
-    "spread": 15,
-    "particleSizeMin": 10,
-    "particleSizeRange": 35,
-    "particleDuration": 0.75,
-    "particleCount": 50,
-    "particleColor": [
-      255,
-      120,
-      50,
-      245
-    ]
-  },
-  "fireSoundTwo": "hellbore_fire"
+  "fringeColor": [
+    100,
+    0,
+    100,
+    255
+  ],
+  "coreColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "darkCore": true,
+  "width": 1,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 400,
+  "pixelsPerTexel": 3,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ]
 }

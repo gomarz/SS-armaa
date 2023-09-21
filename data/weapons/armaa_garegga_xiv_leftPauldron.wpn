@@ -5,7 +5,7 @@
     255,
     0
   ],
-  "everyFrameEffect": "data.scripts.weapons.armaa_watchdogEffect",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_watchdogEffect",
   "fringeColor": [
     255,
     255,
