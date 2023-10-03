@@ -2,19 +2,19 @@
     "baseHullId":"armaa_zanac",
     "skinHullId":"armaa_zanac_ex",
     "hullName":"Zanac EX",
-    "descriptionId":"armaa_zanac_ex",
-    #"descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "descriptionId":"armaa_zanac",
+    #"descriptionPrefix":"A modified version of the Zanac that prioritizes offensive power over mobility.",
     "spriteName":"graphics/armaa/ships/zanac/zanac_lowerBody.png",
     "baseValueMult":1.2,
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["rare_bp"],
     "systemId":"highenergyfocus",
-    "tech":"Tri-Tachyon",
+    "tech":"armaarmatura",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":[],
-    "builtInMods":["fourteenth"],
+    "builtInMods":["targetingunit"],
     "weaponSlotChanges":{
 	   "A_GUN2":{
 		 # "angle": 0,

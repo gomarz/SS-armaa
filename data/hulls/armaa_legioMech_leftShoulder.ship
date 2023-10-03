@@ -9,14 +9,14 @@
   "center": [68, 56],
   "collisionRadius": 37.5,
   "shieldCenter": [0, 0],
-  "shieldRadius": 74,
+  "shieldRadius": 146,
   "viewOffset": 0,
   "builtInMods": [
-    "auxiliarythrusters"
+    "reduced_explosion",
+    "fluxshunt"
   ],
   "builtInWeapons": {
-    "WS0001": "pdburst",
-    "WS0002": "armaa_barretta2"
+    "WS0001": "pdburst"
   },
   "weaponSlots": [
     {

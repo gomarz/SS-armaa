@@ -8,15 +8,30 @@ v2.3
 
 - Added planet & bar flavor text to New Meshan
 
+- Added some characters to New Meshan
+
+- Added some portraits to Nex Rocket Stars mercenary group
+
+New Hullmod: somethingsomething booster
+	- TODO (it's basically AC6 Quickboost/Assault Boost)
+
 New Ship: Zanac
 	- Fast-attack Destroyer
 	- 1x Large Energy, 1x Medium Hybrid, 2x Small Universals
 
 New Ship: NotKshatriya (TODO)
-
-New Ship: Corsair(TODO)
-
+		
 New Ship: Watchdog(XIV) (TODO)
+
+New Bounties: 
+	-Corsair(XIV)
+		- SO bait
+	-Watchdog(XIV)
+		- more frontline-oriented version of base Watchdog
+	-Hel Corsair
+		- TODO
+	-Zanac
+		- TODO
 
 ==Tweaks / Balance Changes==
 - Dance Party on New Meshan has ended (market music has been replaced with something a bit more chill)
@@ -40,8 +55,8 @@ New Ship: Watchdog(XIV) (TODO)
 - only one raid capable unit is deployed instead of every single one (this should reduce the message spam post raid, and the large supply cost hit if fielding many)
 - fixed hullmod conflict appearing for conflict with built-in hmods
 - removed range restriction on laser blade 
-	- damage remains the same up until beam length is > base range * 1.5. from this point on, damage is gradually reduced (up to a 50% penalty)
-	- even if range is extended, full damage is still dealt so long as the attack connects below this threshold
+	- damage remains the same up until beam length is >= base range * 1.5. from this point on, damage is gradually reduced (up to a 50% penalty)
+	- damage is determined by the length of beam on impact, so attacking up close still confers full damage, even with range increased.
 
 - Aleste
 	- Left arm is now locked to Laser Blade
@@ -66,10 +81,12 @@ New Ship: Watchdog(XIV) (TODO)
 
 - Watchdog:
 	- Removed one large ( ); )
-	- Remaining large is now a modular hybrid
+	- Remaining large is now a hybrid turret
 	- Speed: 60->80
 	- OP: 85->70
-	- Flux Capacity: 7500->5000
+	- Ship System: Guardian Protocol
+		- Increases range, disables shields and movement
+		- Nearby ships shield strength increased by 10%
 
 - Spriggan(LPC):
 	- Ship System: Flare Launcher -> Booster

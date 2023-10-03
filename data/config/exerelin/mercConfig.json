@@ -3,16 +3,16 @@
 
 		"rocketStars":{
 			"name":"The Rocket Stars",
-			"desc":"A mercenary organization that earned notoriety at the Battle of Meshan during c. 94.",
-			"feeUpfront":95000,
+			"desc":"A mercenary organization that earned notoriety at the Battle of Meshan during c. 94. Extensive cybernetic augmentation has (allegedly) rendered them unstable outside of combat scenarios ",
+			"feeUpfront":85000,
 			"feeMonthly":2800,
 			"faction":"armaarmatura",
 			"minRep":"NEUTRAL",
 			"minLevel":5,
 			"ships":[
 				["armaa_zanac_sniper_ex"],
-				["armaa_zanac_assault"],
-				["armaa_zanac_support"],
+				["armaa_valkenx_ss_assault"],
+				["armaa_aleste_swordsman"],
 			],
 			"officers":[
 				{
@@ -29,15 +29,15 @@
 					"firstName":"Wiseman",
 					"gender":"m",
 					"portrait":"graphics/armaa/portraits/armaa_sarge.png",
-					"level":5,
-					"averageSMods":1,
+					"level":7,
+					"averageSMods":3,
 				},
 				{
 					"firstName":"Pariah",
 					"gender":"m",
 					"portrait":"graphics/armaa/portraits/armaa_pariah.png",
-					"level":4,
-					"averageSMods":1,
+					"level":6,
+					"averageSMods":3,
 				},
 			],
 			"averageSMods":2,

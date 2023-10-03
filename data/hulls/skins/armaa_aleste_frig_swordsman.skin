@@ -11,8 +11,7 @@
     #"tech":"Tri-Tachyon",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-    "removeBuiltInWeapons":["C_ARML","A_GUN",],
-    "builtInMods":["armaa_weaponSwap"],
+    "removeBuiltInWeapons":["C_ARML",],
     "weaponSlotChanges":{
 	   "C_ARML":{
 		 # "angle": 0,
@@ -30,6 +29,7 @@
 	   },
 },
     "builtInWeapons":{
-		"C_ARML2": "armaa_aleste_blade_LeftArm",
+		"C_ARML": "armaa_aleste_blade_LeftArm",
+		"A_GUN": "armaa_aleste_blade_RightArm",
     },
 }

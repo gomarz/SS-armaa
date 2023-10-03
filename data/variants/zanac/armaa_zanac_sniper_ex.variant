@@ -8,12 +8,13 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit",
-    "advancedoptics"
+    "heavyarmor",
+    "advancedoptics",
+    "hardenedshieldemitter"
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "TRUE_GUN": "tachyonlance"
@@ -23,8 +24,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0004": "taclaser",
-        "WS0005": "taclaser"
+        "WS0004": "ioncannon",
+        "WS0005": "ioncannon"
       }
     },
     {

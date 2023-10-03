@@ -7,12 +7,17 @@
 #collapseopen SYSTEMS	
 "music":{
 		"music_armaa_market_neutral":[
-			{"file":"O3D001.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"old_city.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_pirate_market_neutral":[
-			{"file":"O3D001_2.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"light_in_the_depths.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
-
+		"music_armaa_legioMech_bounty":[
+			{"file":"revenge.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
+		],
+		"music_armaa_seraph":[
+			{"file":"recollective_mind.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
+		],
 	},	
 	"mechmove":[ 
 		{"file":"sounds/armaa/mechmove.ogg","pitch":1,"volume":0.65},

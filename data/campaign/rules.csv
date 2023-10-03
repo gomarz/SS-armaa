@@ -540,7 +540,10 @@ armaa_vxGift3,DialogOptionSelected,$option == armaa_vxGift3,FireAll armaa_vxGift
 ""A lance of pilots with adequate expertise combined with this new system should be a formidable force on the battlefield. And that, my dear, is a win-win for both of us."" 
 
 You can't help but wonder if there's more to this seemingly generous gesture, knowing how corporate dealings usually work.","armaa_vxGift4:""I'm sold.""",
-,,,,,,
+armaa_HCFollowUp,PopulateOptions,"$armaa_legioMechToldBounty
+$id == armaa_seraph
+
+",,,"armaa_HCFollowUp:""Going to explain what the deal was with that Legio Fleet?""",
 armaa_vxGift4b,armaa_vxGiftQuestionsFinal,"
 !$armaa_vxGiftQuestionIntent",$armaa_vxGiftQuestionIntent = true,,"armaa_vxGift4bResp:""What's your true endgame in all of this?""
 ",
@@ -570,6 +573,51 @@ $givenZanacBP = true","After a short wait, your connection request is accepted.
 She smirks slyly.
 
 ""Well, regardless of whose achievements they are, the point is that a promotion is well within my grasp if we continue on this trajectory. A token for your efforts.""",,
+,,,,,,
+armaa_HCEncounter,OpenCommLink,$entity.HVB_armaa_bounty_legiomech2 score:100,"FireAll PopulateOptions
+armaa_Hikaru_Utada playMusic music_armaa_seraph
+$entity.ignorePlayerCommRequests = true","The connection flickers in and out, before resolving.
+
+Something is wrong with the comms-unit, though. The image is unstable, audio marred with artifacts.
+
+""Well, I can't say I expected you to start a conversation. I imagine you're here to be a nuisance, correct?""
+
+A pause. ""Good. You're the lynchpin I need to sell this. What better demonstration than trial by fire? Well then, I won't keep you. Do try to make it entertaining. Ta-ta!""",,
+armaa_HCEncounterKnown,OpenCommLink,"$entity.HVB_armaa_bounty_legiomech2 score:101
+armaa_Hikaru_Utada getSeraphRel armaa_seraph score:100","FireAll armaa_seraphBountyTalk
+armaa_Hikaru_Utada playMusic music_armaa_seraph","The connection flickers in and out, before resolving.
+
+Something is wrong with the comms-unit, though. The image is broken and marred with artifacts.
+
+""Well, I can't say I expec- ...hold, $playerName? What are you doing here?""",,
+armaa_HCEncounterWhoYou,armaa_seraphBountyTalk,"!$armaa_legioMechToldBounty
+!$armaa_legioMechAskedWho",$armaa_legioMechAskedWho = true,,"armaa_HCEncounterWhoYouResp:""Do I know you?""",
+armaa_HCEncounterBounty,armaa_seraphBountyTalk,!$armaa_legioMechToldBounty,,,"armaa_HCEncounterBountyResp:""I've come to collect on a bounty.""",
+armaa_HCEncounterWhoYouResp,DialogOptionSelected,$option == armaa_HCEncounterWhoYouResp,"$armaa_legioMechAskedWho = true
+FireAll armaa_seraphBountyTalk","""You know, you really should recognize the sound of my voice by now, Commander. It's Sera, from New Meshan. We're just out here testing some hardware with the Legio Infernalis, if you're wondering. Quite an interesting bunch.""",,
+armaa_HCEncounterBountyResp,DialogOptionSelected,"$option == armaa_HCEncounterBountyResp
+!$armaa_legioMechToldBounty ","Highlight HEL CORSAIR
+$armaa_legioMechToldBounty = true
+FireAll armaa_seraphBountyTalk","""Ah, they never learn, do they? It's as if they've forgotten who they're dealing with. They'll soon remember, though.""
+
+Her tone darkened, a palpable sense of foreboding creeping into her words.
+
+""The HEL CORSAIR is more formidable than ever. We've honed its power to perfection, and it hungers for the chaos of battle.""
+
+""But you, you don't exactly know what we're capable of, do you? This secret weapon will not disappoint. Together, let's show them what true power looks like.""",,
+armaa_HCEncounterInquire,armaa_seraphBountyTalk,"$armaa_legioMechToldBounty
+!$armaa_legioMechInquired",,,"armaa_HCEncounterInquireResp:""Who is 'they'?""",
+armaa_HCEncounterDiplomaticApproach,armaa_seraphBountyTalk,$armaa_legioMechToldBounty,,,"armaa_HCEncounterDiplomaticResp:""Perhaps we can solve this peacefully?""",
+armaa_HCEncounterInquireResp,DialogOptionSelected,$option == armaa_HCEncounterInquireResp,"$armaa_legioMechInquired = true
+FireAll armaa_seraphBountyTalk
+","""The ones who've always sought to control, to dominate,"" she replied cryptically. ""Those who fear progress and the unknown. Those who want to silence innovation and bend it to their own purposes.""
+
+",,
+armaa_HCEncounterDiplomaticResp,DialogOptionSelected,$option == armaa_HCEncounterDiplomaticResp,"AdjustRepPerson armaa_seraph FAVORABLE 1
+$entity.ignorePlayerCommRequests = true
+FireAll PopulateOptions","""A Peaceful resolution."" she mused, her voice softening. ""A noble thought, my friend. I suppose we could provide your employers with doctored logs, videos.""
+
+""But what better a demonstration than trial by fire? Yours is the perfect fleet to test our design against. No hard feelings, okay? Come see me in New Meshan after this. I'll make it up to you.""",,
 ,,,,,,
 armaa_contactGreetingOfficial2,PickGreeting,"!MissionHubCMD hasHub
 
@@ -691,3 +739,81 @@ FireAll PopulateOptions","The comms connection flickers, then resolves.
 ""In the name of the Askonia Revolutionary Council, we greet you. We were in the middle of a wealth redistribution operation when we received a high-priority alert from our comrades on Umbra. It seems that a mercenary working for the Sindrian exploiters has been causing trouble.""
 
 ""I'm sure I can count on you to inform us if your sensors find anything."" $HeOrShe glances at another screen, impatient, but friendly. ""We've got to get back to it. Bright burns.""",,
+armaa_GreetingA,OpenCommLink,"$faction.id == armaarmatura
+!$contact_printedFirstReturnGreeting
+RepLTE armaarmatura NEUTRAL","$contact_printedFirstReturnGreeting = true 0
+ShowPersonVisual
+FireAll PopulateOptions
+FireAll mrcOptions","""Transmission established. Bright burns, captain. Is there something you need?""
+
+OR
+
+The comms connection flickers, then resolves.
+
+""We are the voices of the voiceless, the swords that pierce the hearts of tyrants. The Meshan Reprisal Coalition shall strike fear into the hearts of the wicked.""
+
+OR
+
+The comms connection flickers, then resolves.
+
+""Do not mistake us for mere rebels. We are an unwavering force, united to put an end to the reign of despots. Our determined retaliation will be the vehicle of their destruction.""",,
+# armaa,,,,,,
+armaa_GreetingA2,OpenCommLink,"$faction.id == armaarmatura
+!$contact_printedFirstReturnGreeting
+RepGTE armaarmatura FAVORABLE","$contact_printedFirstReturnGreeting = true 0
+ShowPersonVisual
+FireAll PopulateOptions
+FireAll armaaOptions","The comms connection flickers, then resolves.
+
+""Bright burns, $personName. Is there a problem?""
+
+OR
+
+The comms connection resolves to show you $personName, who gives you a little nod.
+
+""Not a lot of pickings out here, eh?""
+
+OR
+
+""I've seen my fair share of allies come and go, but you're different. You got grit, and you got heart. That means somethin' in this line of work.""
+
+OR
+
+""Seen any good marks out there, $player.lastName? For the greater good, of course."" $heOrShe smirks. ",,
+armaa_WhatDoing,armaaOptions,,,,"armaa_WhatDoingResp:""What are you doing?""",
+armaa_hireMerc,armaaOptions,armaa_Hikaru_Utada getHireCost,,,"armaa_hireResp:""I could use extra manpower.""",
+armaa_hireResp,DialogOptionSelected,$option == armaa_hireResp,Highlight $armaa_mercCost,"""We're actually available - we'll tag along for $armaa_mercCost credits.""","armaa_hireSel: Agree to the terms
+armaa_hireDeny: ""Actually, nevermind""",
+armaa_hireSel,DialogOptionSelected,$option == armaa_hireSel,"AddRemoveCommodity credits -$armaa_mercCost true
+FireAll PopulateOptions
+armaa_Hikaru_Utada followMe
+$isHired = true","""ounds good blala.""",,
+armaa_WhatDoingResp,DialogOptionSelected,$option == armaa_WhatDoingResp,Highlight $armaa_fleetObjective,"""We're $armaa_fleetObjective in support of an operation.""",,
+#sdtuARCfleetGreetingB,OpenCommLink,"$faction.id == pirates
+!$contact_printedFirstReturnGreeting
+$entity.sdtu_antisRevengeFleet score:5","$contact_printedFirstReturnGreeting = true 0
+ShowPersonVisual
+FireAll PopulateOptions","The comms connection flickers, then resolves.
+
+""In the name of the Askonia Revolutionary Council, you are to face justice for your service to Sindrian Diktat imperialism and exploiters generally!""
+
+""Lower your shields! Peaceful cooperation with the redistribution of exploited wealth shall be taken into account when you face the revolutionary tribunal.""",,
+#sdtuARCfleetGreetingB2,OpenCommLink,"$faction.id == pirates
+!$contact_printedFirstReturnGreeting
+$entity.sdtu_antisRevengeFleet score:5
+RepGTE pirates FAVORABLE","$contact_printedFirstReturnGreeting = true 0
+MakeOtherFleetNonHostile sdtu true
+MakeOtherFleetGoAway true
+$entity.ignorePlayerCommRequests = true
+ShowPersonVisual
+FireAll PopulateOptions","The comms connection flickers, then resolves.
+
+""In the name of the Askonia Revolutionary Council, we greet you. We were in the middle of a wealth redistribution operation when we received a high-priority alert from our comrades on Umbra. It seems that a mercenary working for the Sindrian exploiters has been causing trouble.""
+
+""I'm sure I can count on you to inform us if your sensors find anything."" $HeOrShe glances at another screen, impatient, but friendly. ""We've got to get back to it. Bright burns.""",,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

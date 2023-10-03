@@ -3,7 +3,7 @@
   "hullId": "armaa_valkenx_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
-  "style": "armaa_valkazard",
+  "style": "armaa_TECH",
   "height": 30,
   "width": 22,
   "center": [11, 16],
@@ -16,10 +16,8 @@
     "strikeCraft",
     "armaa_strikeCraftFrig",
     "autorepair",
-    "reduced_explosion",
     "armaa_wingClipper",
     "armaa_vxSkinSwap",
-    #"armaa_wingCommander",
     "armaa_variableRifle"
   ],
   "builtInWings": [

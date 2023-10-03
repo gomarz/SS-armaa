@@ -33,6 +33,7 @@
 		"portraits":{
 			"armaa_portrait_shard":"graphics/armaa/portraits/armaa_robot.png",
 			"armaa_portrait_puppet":"graphics/armaa/portraits/armaa_seraph.png",
+			"armaa_portrait_puppet2":"graphics/armaa/portraits/armaa_seraph2.png",
 			"armaa_portrait_leos":"graphics/armaa/portraits/armaa_leos.png",
 			"armaa_portrait_meat":"graphics/armaa/portraits/armaa_mrcguy.png",
 			"armaa_portrait_crimson":"graphics/armaa/portraits/armaa_crimson.png",
@@ -40,6 +41,7 @@
 			"armaa_portrait_dawn":"graphics/armaa/portraits/armaa_dawn.png",
 			"armaa_portrait_sarge":"graphics/armaa/portraits/armaa_sarge.png",
 			"armaa_portrait_pariah":"graphics/armaa/portraits/armaa_pariah.png",
+			"armaa_portrait_legioMechPilot":"graphics/armaa/portraits/armaa_legioMechPilot.png",
 		},
 		"illustrations":{
 			"armaa_newmeshan_illus":"graphics/armaa/illustrations/newmeshanii.jpg",

@@ -3,7 +3,7 @@
   "fluxCapacitors": 8,
   "goalVariant": false,
   "fluxVents": 0,
-  "hullId": "armaa_aleste_frig",
+  "hullId": "armaa_aleste_frig_swordsman",
   "hullMods": ["safetyoverrides","advancedoptics"],
   "variantId": "armaa_aleste_swordsman",
   "weaponGroups": [

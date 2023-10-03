@@ -2,7 +2,7 @@
     "baseHullId":"armaa_zanac",
     "skinHullId":"armaa_zanac_grey",
     "hullName":"Zanac",
-    #"descriptionId":"armaa_zanac_ex",
+    "descriptionId":"armaa_zanac",
     #"descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
     "spriteName":"graphics/armaa/ships/zanac/grey/zanac_lowerBody.png",
     "baseValueMult":1.0,
@@ -25,7 +25,7 @@
     "VERNIER_1": "armaa_emthrust_s",
     "VERNIER_2": "armaa_emthrust_s",
     "WS0003": "armaa_dd_legs",
-    #"WS0006": "armaa_zanac_head",
+    "WS0006": "armaa_zanac_head_grey",
     "WS0007": "armaa_zanac_rightPauldron_grey"
     },
 }

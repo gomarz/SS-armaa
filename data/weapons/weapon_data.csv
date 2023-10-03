@@ -220,6 +220,7 @@ AMWS-K,armaa_kshatriya_head,,,600,800,400,,,20,50,99,,,,ENERGY,,350,0.3,0.3,1,0.
 ,armaa_zanac_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_zanac_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 AMWS-Z,armaa_zanac_head,,,600,800,200,,,40,50,99,,,,ENERGY,,150,0.3,0.3,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
+AMWS-Z,armaa_zanac_head_grey,,,600,800,200,,,40,50,99,,,,ENERGY,,150,0.3,0.3,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 AMWS-T,armaa_zanac_head_ex,,,600,800,400,,,20,50,99,,,,ENERGY,,150,0.3,0.3,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 ,armaa_zanac_leftArm,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 ,armaa_zanac_rightArm_deco,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
