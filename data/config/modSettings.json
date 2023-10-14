@@ -157,6 +157,7 @@
 		"strikecraft_squad_chatter":[
 			"\"Maybe being a farmer on Gilead wasn't a bad career choice after all...\"",
 			"\"As long as you keep payin' my tab, I'll follow you anywhere.\"",
+			"\"The universe has a funny way of testing your resolve, doesn't it?\"",			
 			"\"I only wish I could live out my life in peace.\"",
 			"\"I knew this guy who was a real pain..wouldn't stop questioning every decision I made! Got sucked out a ruptured bulkhead a while back. He would have been a fine officer, I bet.\"",
 			"\"All we need to do is the job we're given, right?\"",
@@ -210,6 +211,8 @@
 			"\"Most pilots fly only one suicide mission. And then there's me.\"",				
 			"\"I'll always fulfill my mission.\"",
 			"\"You'll back me up, right?\"",
+			"\"In the end, all we have are our principles, and we must stand by them, even in the face of adversity.\"",
+			"\"The scars on the heart are often deeper than those on the body.\"",
 			"\"You need more training. That's all I got to say.\"",
 			"\"How about a little martial arts drill?\"",
 			"\"There's no mercy in war. People live and people die. That's all there is to it.\"",	
@@ -277,6 +280,9 @@
 			"\"So there I was, between rock and a hard place, when suddenly I thought, what am I doing on this side of the rock?\"",
 			"\"I've heard it said that specialization is for insects. In my view, insects have done pretty well.\"",
 			"\"Sir, you'll never guess what we turned up during inventory...\"",
+			"\"You know, people underestimate the power of a well-placed bluff.\"",
+			"\"In this business, it's not about being right; it's about getting it done.\"",
+			"\"Every day is a new opportunity to make a bad decision.\"",			
 			"\"You can't always get what you want, but if you know the right people, you just might get what you need.\"",
 			"\"Whoever said might doesn't make right, was obviously on the losing side!\"",
 			"\"When I make Lieutenant, heads will roll.\"",
@@ -296,10 +302,15 @@
 		#Plays when fighters in range of their target
 		"strikecraft_squad_chatter_combat":
 		[
+			"\"They should've never let you out here, rookie!\"",
+
 			"\"Intercept those bandits!\"",
-			"\"I didn't expect to encounter someone like you... How fortunate.\"",
-			"\"Now, you will die together... How joyous...\"",
+			"\"You're just a pawn in a game you don't understand.\"",
 			"\"I have no time for this. To your grave!\"",
+			"\"I've got you in my sights!\"",
+			"\"There's no escaping justice!\"",
+			"\"I've got you cornered now!\"",
+			"\"Their shields are down! Target the engines!\"",
 			"\"I told you that if you fled, I would not chase you. But it seems you wish to die..\"",
 			"\"Unsurprising. They always return to the scene of the crime.\"",
 			"\"Eh, whatever. If I use this weapon well enough, it'll all work out, right?\"",
@@ -540,20 +551,24 @@
 		#plays at battle start
 		"strikecraft_squad_chatter_intro":
 		[
-			"\"We have our own reasons for not giving up. And the less I speak of it, the better...\"",
+			"\"We have our own reasons for not giving up. And the less I speak of it, the better.\"",
 			"\"If missiles don't work, use your guns! As long as we're alive, we'll keep on fighting!\"",
-			"\"They're not taking this from us!\"",
-			"\"Here we go! $squadronname, engaging!\"",
+			"\"They're not taking this from us.\"",
+			"\"Here we go. $squadronname, engaging.\"",
+			"\"This war has taken everything from us. Our homes, our loved ones. But it will not take our spirit. Not today.\"",
+			"\"We're not here to negotiate. We're here to win, at any cost.\"",
+			"\"This isn't a battle, it's a reckoning. And they're the ones who'll pay the price.\"",
+			"\"This is the crucible of our strength. Let's prove our mettle.\"",
 			"\"$squadleader, are you sure we can keep the IFF connection stable in all this?\"",
 			"\"Pitiful. Mere prey to be hunted. Now run like the frightened rodent you are.\"",
-			"\"Fate is unkind. There will be no resolution today... Flee, and I will not give chase.\"",			
+			"\"Fate is unkind. There will be no resolution today. Flee, and I will not give chase.\"",			
 			"\"$factionname dogs. Can they even understand what we're saying?\"",
-			"\"How you get there is unimportant. It's who stands last that matters!\"",
-			"\"Hmm... You waste your last breath on insults, and feeble ones at that. Die then, fools of $factionnamearticle.\"",
+			"\"How you get there is unimportant. It's who stands last that matters.\"",
+			"\"You waste your last breath on insults, and feeble ones at that. Die then, fools of $factionnamearticle.\"",
 			"\"Let's see what the enemy is made of.\"",
 			"\"We will not be bound!\"",
 			"\"This is $squadronname. We’re Tiger for new tasking. Redirecting for area saturation at Phase Line Yellow.\"",
-			"\"A battle? No... This will be a massacre!\"",
+			"\"A battle? No. This will be a massacre!\"",
 			"\"It doesn't matter how we die! One ancient monster is as good as another!\"",
 			"\"Just die. And if you won't die, just go away!!\"",
 			"\"Stupid $factionname! It's not YOU I want! Just your POWER!!\"",
@@ -704,6 +719,9 @@
 		
 		"guardian":
 		[
+			"\"I can't make sense of those designs. It's as if some madman designed that ship.\"",
+			"\"Who in their right mind would build such a thing? It's like a nightmare come to life.\"",
+			"\"I've seen my fair share of war drones, but that... that is something else entirely.\"",
 			"\"Flight, you're clear to engage. Remember, that cryosleeper's got millions of lives on the line, so don't hold back.\"",
 			"\"Let's show this automated trash what happens when they mess with human lives. We've got a cryosleeper to secure and we're going to do it by any means necessary.\"",
 			"\"That automated capital ship is all that's standing between us and the cryosleeper. Let's take it down and save those lives.\"",

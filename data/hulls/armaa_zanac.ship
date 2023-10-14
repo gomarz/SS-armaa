@@ -157,6 +157,16 @@
       "angle": -20,
       "locations": [18, -35],
       "renderOrderMod": -9999
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "renderOrderMod": 100,
+      "locations": [5, 1]
     }
   ],
   "engineSlots": [

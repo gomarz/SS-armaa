@@ -9,7 +9,7 @@
   "center": [68, 56],
   "collisionRadius": 37.5,
   "shieldCenter": [0, 0],
-  "shieldRadius": 146,
+  "shieldRadius": 185,
   "viewOffset": 0,
   "builtInMods": [
     "reduced_explosion",

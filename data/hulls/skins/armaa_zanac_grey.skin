@@ -26,6 +26,7 @@
     "VERNIER_2": "armaa_emthrust_s",
     "WS0003": "armaa_dd_legs",
     "WS0006": "armaa_zanac_head_grey",
+    "LIGHTS": "armaa_zanac_lights",
     "WS0007": "armaa_zanac_rightPauldron_grey"
     },
 }

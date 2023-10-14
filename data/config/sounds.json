@@ -10,13 +10,16 @@
 			{"file":"old_city.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_pirate_market_neutral":[
-			{"file":"light_in_the_depths.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"revenge.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_legioMech_bounty":[
 			{"file":"revenge.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
 		],
 		"music_armaa_seraph":[
 			{"file":"recollective_mind.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
+		],
+		"music_armaa_ax_bounty":[
+			{"file":"elimination.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
 		],
 	},	
 	"mechmove":[ 
@@ -26,7 +29,7 @@
 	],
 	"armaa_saber_slash":[ 
 		{"file":"sounds/sfx_impacts/beam_hit_01.ogg","pitch":1.03,"volume":1.03},
-		{"file":"sounds/sfx_impacts/beam_hit_01.ogg","pitch":1,"volume":1},
+		{"file":"sounds/sfx_impacts/beam_hit_02.ogg","pitch":1,"volume":1},
 		{"file":"sounds/sfx_impacts/beam_hit_01.ogg","pitch":.97,"volume":.97},
 	],
 	"armaa_saber_loop":[ 
@@ -207,8 +210,12 @@
 	],
 	"armaa_dawn_intro":
 	[
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1,"volume":1},
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro2.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro3.ogg","pitch":1.0,"volume":1.2},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro4.ogg","pitch":1.0,"volume":1.2},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro5.ogg","pitch":1.0,"volume":1.2},
 	],
 	"armaa_crewDeath":[							
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},

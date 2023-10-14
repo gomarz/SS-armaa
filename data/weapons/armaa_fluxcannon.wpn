@@ -12,10 +12,12 @@
   "glowColor": [
     255,
     255,
-    0,
+    255,
     255
   ],
-  "hitGlowRadius": 0,
+   "hitGlowBrightenDuration":0,
+   "hitGlowRadius":75,
+
   "turretOffsets": [
     29,
     0
@@ -33,17 +35,17 @@
   "beamFireOnlyOnFullCharge": true,
   "fringeColor": [
     200,
-    0,
+    200,
     200,
     255
   ],
   "coreColor": [
-    255,
-    255,
-    0,
+    200,
+    200,
+    200,
     255
   ],
-  "width": 25,
+  "width": 35,
   "textureType": [
     "graphics/fx/beam_laser_fringe.png",
     "graphics/fx/beamcorec.png"

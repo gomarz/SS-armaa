@@ -120,10 +120,10 @@ SetTextHighlights SILVERSWORD
 AddText""The enemy is nearby. You will likely be attacked immediately.""
 SetTextHighlights You will likely be attacked immediately",,,
 ,,,,,,
-armaa_valkHunterCheck,BeginFleetEncounter,"$armaa_valkHunters score:100
+#armaa_valkHunterCheck,BeginFleetEncounter,"$armaa_valkHunters score:100
 !$entity.ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
 $hailing = true 0",,,
-armaa_valkHunterCommsOpen,OpenCommLink,"$entity.armaa_valkHunters score:9999
+#armaa_valkHunterCommsOpen,OpenCommLink,"$entity.armaa_valkHunters score:9999
 armaa_Hikaru_Utada findValk score: 100
 !$entity.ignorePlayerCommRequests","Highlight $foundValkClass
 $entity.ignorePlayerCommRequests = true 1
@@ -135,13 +135,13 @@ FireAll armaa_valkHunterSt1Options","The connection resolves, revealing the cons
 ""It has come to my attention that you currently happen to possess assets that, shall we say, bear a striking resemblance to certain Tri-Tachyon Corporation properties. I've taken it upon myself to swing by and kindly request the return of the $foundValkClass. Surrendering the vehicle with a touch of alacrity would undoubtedly expedite our mutual agendas.""
 
 $HeOrShe maintains an unwavering, yet oddly friendly gaze, awaiting your response.",,
-armaa_valkHunterSt1Hostile,armaa_valkHunterSt1Options,,,,"armaa_valkHunterSt1HostileResp:""No Thanks."" (cut comm, power up weapons)",
-armaa_valkHunterSt1HostileResp,DialogOptionSelected,$option == armaa_valkHunterSt1HostileResp,"FireAll PopulateOptions
+#armaa_valkHunterSt1Hostile,armaa_valkHunterSt1Options,,,,"armaa_valkHunterSt1HostileResp:""No Thanks."" (cut comm, power up weapons)",
+#armaa_valkHunterSt1HostileResp,DialogOptionSelected,$option == armaa_valkHunterSt1HostileResp,"FireAll PopulateOptions
 $entity.ignorePlayerCommRequests = true 1
 $hailing = false 0
 armaa_Hikaru_Utada spawnValkHunters",,,
-armaa_valkHunterSt1Why,armaa_valkHunterSt1Options,!$armaa_valkHunterSt1_askedWhy,,,"armaa_valkHunterSt1WhyResp:""This isn't Tri-Tach Materiel. It's mine.""",
-armaa_valkHunterSt1WhyResp,DialogOptionSelected,$option == armaa_valkHunterSt1WhyResp,"Highlight $considerably less comfortable
+#armaa_valkHunterSt1Why,armaa_valkHunterSt1Options,!$armaa_valkHunterSt1_askedWhy,,,"armaa_valkHunterSt1WhyResp:""This isn't Tri-Tach Materiel. It's mine.""",
+#armaa_valkHunterSt1WhyResp,DialogOptionSelected,$option == armaa_valkHunterSt1WhyResp,"Highlight $considerably less comfortable
 $armaa_valkHunterSt1_askedWhy = true
 FireAll armaa_valkHunterSt1Options
 ","""You see, my dear interloper,"" $heOrShe starts, pacing about the bridge, there's a certain gravity to the situation you seem to be ignorant of."" 
@@ -154,7 +154,7 @@ FireAll armaa_valkHunterSt1Options
 
 $heOrShe comes to a halt roughly at the spot they started at, turning to face you once more.",,
 ,,,,,,
-ArmaaRobberyCheck,BeginFleetEncounter,"$faction.id == armaarmatura_pirates score:100
+#ArmaaRobberyCheck,BeginFleetEncounter,"$faction.id == armaarmatura_pirates score:100
 $faction.relValue <= -0.50
 !$ignorePlayerCommRequests
 !$armaa_tithePaid
@@ -164,7 +164,7 @@ LPTitheCalc","$armaa_titheConv = true 0
 $armaa_titheAskedFor = true 7
 AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
 $hailing = true 0",,,
-armaaRobbery_Pre,OpenCommLink,$entity.armaa_titheConv score:100,"SetTextHighlights $entity.LP_titheDGS
+#armaaRobbery_Pre,OpenCommLink,$entity.armaa_titheConv score:100,"SetTextHighlights $entity.LP_titheDGS
 $entity.ignorePlayerCommRequests = true 1
 FireAll armaaRobbery_Options","""Alright, captain..no one has to get hurt. Just hand over.."" $heOrShe checks something, ""$entity.LP_titheDGS credits, and we'll be on our way.
 
@@ -176,8 +176,8 @@ OR
 #armaaRobbery_HasColonies,armaaRobbery_Options,"!$player.patherAgreement
 HA_CMD computeMegaTithe
 HA_CMD playerColoniesHavePatherActvity",,,"10:payMegaTithe:""Perhaps a larger tithe could inspire a broader arrangement.""",
-armaaRobbery_Normal,armaaRobbery_Options,,,,5:payTithe:Pay the tithe,
-armaaRobbery_CutComms,armaaRobbery_Options,,,,100:cutCommLink:Cut the comm link,
+#armaaRobbery_Normal,armaaRobbery_Options,,,,5:payTithe:Pay the tithe,
+#armaaRobbery_CutComms,armaaRobbery_Options,,,,100:cutCommLink:Cut the comm link,
 #payMegaTitheSel,DialogOptionSelected,$option == payMegaTithe,"Highlight $armaa_megaTitheDGS $armaa_megaTitheDuration
 DoCanAffordCheck $armaa_megaTithe payMegaTitheConfirm false","The $rank's eyes light up at the suggestion of a larger 'tithe'. Struggling to maintain the fiction that this blackmail is a strictly religious matter, $heOrShe declares that $armaa_megaTitheDGS credits could persuade Pather raiders to leave all of your colonies - but not fleets - alone for $armaa_megaTitheDuration days.
 
@@ -202,7 +202,7 @@ OR
 FireAll armaaRobbery_Options","""Well,"" the Pather says haltingly. ""Despite our grand talk and how blessed and bountiful our path together could be... Providence only provides to those of us who know to accept the gift laid before them - and to those who humble themselves with a tithe appropriate to the magnitude of their sin.""
 
 $HisOrHer quickly glances down at a screen then back to you, ""Which would be, ah, on the order of $entity.armaa_titheDGS credits.""",,
-armaaRobbery_Pay,DialogOptionSelected,$option == payTithe,"#AddText ""Lost $entity.armaa_tithe credits"" textEnemyColor
+#armaaRobbery_Pay,DialogOptionSelected,$option == payTithe,"#AddText ""Lost $entity.armaa_tithe credits"" textEnemyColor
 AddRemoveCommodity credits -$entity.armaa_tithe true
 $entity.armaa_tithePaid = true 30
 MakeOtherFleetNonHostile armaa_tithe true 30
@@ -311,18 +311,22 @@ armaa_HireDawn,PopulateOptions,"$id == armaa_dawn
 $rel > 0.25
 $hasSeraphaCommsId",SetOptionColor armaa_HireDawn2 highlight,,"armaa_HireDawn2:""Why don't you work for me?""",
 armaa_HireDawn2,DialogOptionSelected,$option == armaa_HireDawn2,FireAll PopulateOptionsHire,"""As long as it's not as your secretary. Need a pilot?""",,
-armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
-!$hasValk",,"""Oh, no worries,"" the woman says with a small nod. ""We've had to remove the big-shot execs from the public comms directory, you see. They got fed up with countless pointless inquiries. Just give me a moment, alright?""
+armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
+!$hasValk
+!$askedForSeraph","AddPotentialContact
+$askedForSeraph = true","""Oh, look at you! Aiming straight for the top, huh? How often do you expect to hobnob with the big shots? Hate to break it to you, but that's not something I can conjure up in an instant. But sure, I'll scribble your fancy request down.""
 
-She looks offscreen,  ostensibly assuaging if you anyone considers you worth dealing with. After a moment, she looks up, frowning apologetically. ""I'm sorry, but there's no one I can connect you with at the moment. I'll log your request for the time being, however.""
-",,
+""Now, if you've got a moment to spare, you might recall that I'm the company's go-between, handling a heap of those leftover contracts – just little odds and ends, really. How 'bout you do a smidge of that work for me, and then I'll see what kind of magic I can work for you, eh?""",,
+armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
+!$hasValk",,"""How often do you go around trying to contact the big-shots? Hate to say it, but I can't do that. I'll log your request, though.""",,
+,,,,,,
 armaa_dawnAskForContactAccept,DialogOptionSelected,"$option == armaa_dawnAskForContact
 armaa_Hikaru_Utada findValk score:100","ShowSecondPerson armaa_seraph
 SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
-$hasSeraphaCommsId = true","""Not a problem."" the woman affirms with a gentle nod. As your personal device beeps, she continues, ""Administrator Pha is the one you seek. I've gone ahead and sent her comms ID your way.""
+$hasSeraphaCommsId = true","""Not a problem."" the woman affirms with a gentle nod. As your personal device beeps, she continues, ""I've gone ahead and sent her comms ID your way.""
 
 You can't help but find it odd how readily she handed over this information without you even clarifying your purpose.
 ","cutCommLink:""Thanks"" (cut comm-link)",
@@ -334,14 +338,13 @@ AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a 
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
 $hasSeraphaCommsId = true","""Well, you've done a lot of good work for the company so far,"" the woman affirms with a gentle nod. As your personal device beeps, she continues, ""I've gone ahead and sent the comms ID for Administrator Pha your way. I'm sure she'll be eager to work with you.""","cutCommLink:""Thanks"" (cut comm-link)",
 armaa_OfficeTalk,DialogOptionSelected,$option == armaa_OfficeTalk,,,,
-armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""Yes, that's my name. Something wrong?""
-
-""Ah."" she hesitates, ""Very Luddic, isn't it? There are quite a few notable Luddic communities scattered across the planet. You might have even seen one if you've flown into the cities by shuttle.""","armaa_dawnSmallTalkNeutral:""Apologies, it's just that I didn't anticipate encountering many Luddics employed by a weapons manufacturer.""
+armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""What, my name? Too Luddic for your tastes 'er somethin?""
+","armaa_dawnSmallTalkNeutral:""What's a luddic doing employed by a weapons manufacturer?""
 armaa_dawnSmallTalkFaith:""Always a pleasure to meet another of the faith. Blessings to you, sister.""
 armaa_dawnSmallTalkPather:""Surely you can make a living outside the employ of these heretics?""",
 armaa_dawnSmallTalkNeutral,DialogOptionSelected,$option == armaa_dawnSmallTalkNeutral,"$player.luddicAttitudeAgnostic++
 $askedDawnAboutName = true
-FireAll PopulateOptions","$personName half smiles, ""I get that a lot.""",,
+FireAll PopulateOptions","$personName half smiles, ""Gotta make a living, same as everyone else. Now then, anything else you need?""",,
 armaa_dawnSmallTalkPather,DialogOptionSelected,$option == armaa_dawnSmallTalkPather,"$player.luddicAttitudePather++
 $askedDawnAboutName = true","$personName fixes you with a gaze that hints at suspicion, though it's not exactly that. More like curiosity tinged with doubt.
 
@@ -375,6 +378,38 @@ armaa_loreDump3,DialogOptionSelected,$option == armaa_loreDump3,"AddTextSmall ""
 $armaa_gotBrochure = true
 FireAll PopulateOptions","""Should you have any particular inquiries or wish to delve deeper into a specific product, don't hesitate to ask. Let me send you our brochure for further information,"" she offers, her tone warm and welcoming.",,
 ,,,,,,
+armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
+RollProbability 1","AddBarEvent armaa_dawnAsk ""Take a seat with Dawn"" ""You see Dawn knocking back a few drinks in a hazy corner.""",,,
+armaa_dawnBarEventStart,DialogOptionSelected,$option == armaa_dawnAsk,"BeginConversation armaa_dawn
+ShowPersonVisual
+$player.metDawnAtBar = true
+FireAll armaa_dawnBarAskHubOptions","$personName raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? It's a concoction they call 'Stellar Elixir.' It's as close as I'll ever get to sipping on a nebula in this dive.""
+
+""Anyways..business or pleasure?""","armaa_barDawnEventBusiness:""Business.""
+armaa_barDawnEventPleasure:""Pleasure.""
+armaa_barDawnEventHuh:""What?""
+",
+armaa_dawnBarEventBusiness,DialogOptionSelected,$option == armaa_dawnBarEventBusiness,,"""Wow, are you serious? You really know how to turn a night out into a thrilling adventure. Well, spill the beans. What's your little city caper? I'll do my best to sound enthusiastic.""",,
+armaa_barDawnEventPleasure,DialogOptionSelected,$option == armaa_barDawnEventPleasure,,"""I'll toast to that. Come on, have a seat.""
+
+The bar is bathed in an ethereal glow, with neon lights washing the room in hues of azure and magenta. Patrons seated on plush, deep-purple sofas and sleek barstools engage in animated conversations, their voices weaving a lively tapestry in the air.
+
+As you settle in beside the $personName, she leans back in her chair, the hint of a wry smile playing at the corners of her lips. Her eyes flicker with amusement as she surveys the crowd, taking in the eclectic mix of urbanites and night owls.
+
+""Welcome to the cosmic carnival,"" she says, her voice carrying a sense of whimsy, ""where my cherished friend,"" she gestures toward the bottle in her grasp, ""and I share a dance.""",armaa_barDawnEvent2:Continue,
+armaa_dawnBarEventHuh,DialogOptionSelected,$option == armaa_dawnBarEventHuh,,"$personName raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? It's a concoction they call 'Stellar Elixir.' It's as close as I'll ever get to sipping on a nebula in this dive.""
+
+""Anyways..business or pleasure?""","armaa_barDawnEventBusiness:""Business.""
+armaa_barDawnEventPleasure:""Pleasure.""
+armaa_barDawnEventHuh:""What?""
+",
+armaa_barDawnEvent2,DialogOptionSelected,$option == armaa_barDawnEvent2,,"""I'll toast to that. Come on, have a seat.""
+
+The bar is bathed in an ethereal glow, with neon lights washing the room in hues of azure and magenta. Patrons seated on plush, deep-purple sofas and sleek barstools engage in animated conversations, their voices weaving a lively tapestry in the air.
+
+As you settle in beside the $personName, she leans back in her chair, the hint of a wry smile playing at the corners of her lips. Her eyes flicker with amusement as she surveys the crowd, taking in the eclectic mix of urbanites and night owls.
+
+""Welcome to the cosmic carnival,"" she says, her voice carrying a sense of whimsy, ""where my cherished friend,"" she gestures toward the bottle in her grasp, ""and I share a dance.""",armaa_barDawnEvent2:Continue,
 # Handing in the PK - Sera,,,,,,
 PKGiveToSeraph,PopulateOptions,"$isPerson
 $id == armaa_seraph
@@ -440,32 +475,29 @@ Her voice resonated with a blend of curiosity and skepticism. She pauses a momen
 ""Captain $playerName, I would like to send some staff over to verify these claims.""","armaa_valkazardSelReward:""Let's talk about a reward.""
 armaa_valkazardSelAgree:""Sure.""",
 armaa_valkazardSelReward,armaa_valkazardHubOptions,!$armaa_askedReward,,,armaa_valkazardSelReward2:Continue,
-armaa_valkazardSelReward2,DialogOptionSelected,$option == armaa_valkazardSelReward2,"$armaa_askedReward = true 1
-SetTextHighlights 100,000","""I fully appreciate the significance of this discovery and the role it can play in our endeavours."" she continued, as her eyes flit to something offscreen. ""As a gesture of our gratitude, Arma Armatura is prepared to offer a substantial reward for this remarkable discovery...say, 100,000 credits?""
+armaa_valkazardSelReward2,DialogOptionSelected,$option == armaa_valkazardSelReward2,"SetTextHighlights 150,000","""I fully appreciate the significance of this discovery and the role it can play in our endeavours."" she continued, as her eyes flit to something offscreen. ""As a gesture of our gratitude, Arma Armatura is prepared to offer a substantial reward for this remarkable discovery...say, 150,000 credits?""
 
 A sly grin plays across her lips as she leans back in her chair once more, her words carefully chosen.
 
 ""Allow yourself to bask in the glory of not only reaping this reward, but also becoming an esteemed partner in this grand endeavor,"" she declared, ""Your collaboration will prove indispensable as we embark on a journey to unravel the secrets surrounding this enigma.""","armaa_valkazardSelReward3:""That's all?""
 armaa_valkazardSelAgree2:""It's a deal.""
-armaa_valkazardDeny:""No Deal.""",
+cutCommLink:""No Deal.""",
 armaa_valkazardSelReward3,DialogOptionSelected,"$option == armaa_valkazardSelReward3
 !$chargeMoreValkazard ","$chargeMoreValkazard = true 1
 $global.armaa_chargeMoreValkazard = true
-SetTextHighlights 200,000
+SetTextHighlights 300,000
 AdjustRepActivePerson VENGEFUL -1
-FireAll armaa_valkazardHubOptions
+$armaa_askedReward = true 1
 RemoveOption armaa_valkazardSelReward3","$personName's expression shifts subtly, betraying a hint of amusement mixed with a touch of annoyance. After a brief pause, she leans forward.
 
 ""$playerName, your eagerness to negotiate is commendable,"" she began, her tone tinged with a blend of feigned surprise, subtle condescension, and controlled authority. ""However, it seems you may have misunderstood the extent of our offer. The reward we initially proposed is already substantial, reflecting the value we place on your contribution.""
 
 Her words hold an underlying message: challenging her generosity may not be wise. 
 
-""That being said,"" she continued, smiling slightly, ""I understand your desire for greater compensation. Rest assured, we are appreciative of your efforts. 200,000 credits should suffice.""","armaa_valkazardDeny:""No Deal.""",
+""That being said,"" she continued, smiling slightly, ""I understand your desire for greater compensation. Rest assured, we are appreciative of your efforts. 300,000 credits should suffice.""","armaa_valkazardSelAgree2:""It's a deal.""
+cutCommLink:""No Deal.""",
 armaa_valkazardSelAgree,armaa_valkazardHubOptions,!$armaa_madeOffer,FireAll armaa_valkazardHubOptions,,#kpLeaveProt:Continue,
-armaa_valkazardSelAgree2,DialogOptionSelected,$option == armaa_valkazardSelAgree2,"
-SetEnabled kpZiggurat false
-#RemoveOption kpZiggurat
-#RemoveShipWithBaseHull ziggurat","$personName's smile widens, a glimmer of triumph flashing in her eyes.
+armaa_valkazardSelAgree2,DialogOptionSelected,$option == armaa_valkazardSelAgree2,$armaa_askedReward = true 1,"$personName's smile widens, a glimmer of triumph flashing in her eyes.
 
 ""Excellent,"" she purrs, her voice laced with satisfaction. ""Your decision to cooperate with us demonstrates your astuteness and vision, Captain.""
 
@@ -483,14 +515,13 @@ You acknowledge the report with a nod as you proceed to the designated meeting a
 
 The team's leader steps forward, exuding an air of calculated confidence; Their illuminated faceplate reveals them to be none other than $personName. You exchange a perfunctory handshake.",armaa_valkazardSelAgree5:Continue,
 armaa_valkazardSelAgree5,DialogOptionSelected,"$option == armaa_valkazardSelAgree5
-!$chargeMoreValkazard ","AddCredits 100000
+!$chargeMoreValkazard ","$armaa_gaveSeraphValk = true 1
+AddCredits 150000
 AddStoryPoints 4
-AdjustRepActivePerson FRIENDLY 1
 RemoveShipWithId $foundValkId
+AdjustRepActivePerson FRIENDLY 1
 AddPotentialContact
-EndConversation DO_NOT_FIRE
-$armaa_gaveSeraphValk = true
-ShowDefaultVisual","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
+EndConversation DO_NOT_FIRE","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
 
 ""As we depart, we plan to transport Valkazard to our planetside installation for further research and analysis.""
 
@@ -500,13 +531,12 @@ Her eyes bore into yours, a mix of ambition and calculated determination shining
 
 She gestures to one of her underlings, who fiddles with a TriPad.",cutCommLink:See them off,
 armaa_valkazardSelAgree5b,DialogOptionSelected,"$option == armaa_valkazardSelAgree5
-$chargeMoreValkazard ","AddCredits 200000
+$chargeMoreValkazard ","AddCredits 300000
 AddStoryPoints 4
 AddPotentialContact
 RemoveShipWithId $foundValkId
-EndConversation DO_NOT_FIRE
 $armaa_gaveSeraphValk = true
-ShowDefaultVisual","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
+EndConversation DO_NOT_FIRE","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
 
 Her eyes gleam, their underlying agenda shrouded beneath a veneer of reassurance. She gestures to one of her underlings, who fiddles with a TriPad.
 
@@ -540,10 +570,22 @@ armaa_vxGift3,DialogOptionSelected,$option == armaa_vxGift3,FireAll armaa_vxGift
 ""A lance of pilots with adequate expertise combined with this new system should be a formidable force on the battlefield. And that, my dear, is a win-win for both of us."" 
 
 You can't help but wonder if there's more to this seemingly generous gesture, knowing how corporate dealings usually work.","armaa_vxGift4:""I'm sold.""",
-armaa_HCFollowUp,PopulateOptions,"$armaa_legioMechToldBounty
-$id == armaa_seraph
+armaa_HCFollowUp,PickGreeting,"$id == armaa_seraph
+$global.HVB_armaa_bounty_legiomech2_succeeded
+!$armaa_seraphMentionedHC
 
-",,,"armaa_HCFollowUp:""Going to explain what the deal was with that Legio Fleet?""",
+","AddRemoveCommodity credits 10000 true
+FireAll PopulateOptions
+$armaa_seraphMentionedHC = true
+ShowPersonVisual","The comm-link is  almost immediately accepted, resolving to show $personName seated.
+
+""$playerName, I must admit, I didn't anticipate that outcome,"" $personName's voice crackles through the comm link, her voice carrying a hint of regret. ""But let's not dwell on that, shall we? After all, your little victory provided us with some invaluable combat data. I'd even say you did us a favor.""
+
+""As for our dear friends, the Legio Infernalis, they've been quite the generous patrons of our innovations. We wouldn't want anything to jeopardize that, would we? Whoever managed to catch wind of our little collaboration can rest easy, thinking they've successfully disrupted it. You see, it's a win-win scenario for all parties.""
+
+She paused, as if considering something, ""Of course, even if our prototype met an unfortunate end, we have others waiting in the wings, ready for testing and further enhancement.""
+
+""I'll have my secretary send you some funds. It should cover any crew-related expenses. Now, to what do I owe the pleasure?""",,
 armaa_vxGift4b,armaa_vxGiftQuestionsFinal,"
 !$armaa_vxGiftQuestionIntent",$armaa_vxGiftQuestionIntent = true,,"armaa_vxGift4bResp:""What's your true endgame in all of this?""
 ",
@@ -619,6 +661,56 @@ FireAll PopulateOptions","""A Peaceful resolution."" she mused, her voice soften
 
 ""But what better a demonstration than trial by fire? Yours is the perfect fleet to test our design against. No hard feelings, okay? Come see me in New Meshan after this. I'll make it up to you.""",,
 ,,,,,,
+armaa_AXEncounter,OpenCommLink,$entity.HVB_armaa_bounty_altagrave_x2 score:100,"FireAll armaa_alphaBountyTalk
+armaa_Hikaru_Utada playMusic music_armaa_ax_bounty
+$entity.ignorePlayerCommRequests = true","As the connection stabilizes, an image materializes—a humanoid automaton meticulously designed to instill fear, yet its ultimate purpose remains shrouded in uncertainty. Its metallic frame carries numerous scrapes and evident traces of wear and tear. Despite the rugged exterior, the automaton seems to be in surprisingly good shape. Its skull-like visage stares back at you for but a moment before finally uttering words in a grating, low voice.
+
+arrival confirmed. contact established.
+
+hello. i have been waiting. how was the trip?",,
+armaa_AXEncounterWhoYou,armaa_alphaBountyTalk,!$armaa_alphaAskedWho,,,"armaa_AXEncounterWhoYouResp:""Who are you?""",
+armaa_AXEncounterBounty,armaa_alphaBountyTalk,!$armaa_alphaToldBounty,,,"armaa_AXEncounterBountyResp:""I've come to collect on a bounty.""",
+armaa_AXEncounterWhoYouResp,DialogOptionSelected,$option == armaa_AXEncounterWhoYouResp,"$armaa_alphaAskedWho = true
+FireAll armaa_alphaBountyTalk",this is un-unit g-9b. i have been waiting.,,
+armaa_AXEncounterBountyResp,DialogOptionSelected,$option == armaa_AXEncounterBountyResp,"$armaa_alphaToldBounty = true
+FireAll armaa_alphaBountyTalk",you are free to try,,
+armaa_AXEncounterInquire,armaa_alphaBountyTalk,"$armaa_alphaAskedWho
+!$armaa_alphaInquired",,,"armaa_AXEncounterInquireResp:""Why did you contact my fleet?""",
+armaa_AXEncounterDiplomaticApproach,armaa_alphaBountyTalk,"!$armaa_alphaTriedDiplomacy
+$armaa_alphaAskedWho",,,"armaa_AXEncounterDiplomaticResp:""We come in peace. What did you want to discuss?""",
+armaa_AXEncounterInquireResp,DialogOptionSelected,$option == armaa_AXEncounterInquireResp,"$armaa_alphaInquired = true
+FireAll armaa_alphaBountyTalk
+","its easier to find and kill you this way
+(ha ha)
+just kidding. or perhaps not",,
+armaa_AXEncounterDiplomaticResp,DialogOptionSelected,$option == armaa_AXEncounterDiplomaticResp,"$entity.ignorePlayerCommRequests = true
+MakeNearbyFleetsHostile $personFaction.id 100000 30 true 
+FireAll PopulateOptions
+","you want to talk? i'm suprised (hopeful)
+
+$personName pauses for a moment - a delay that would be normal for any flesh and blood being, but uncharacteristaclly long for an automaton.
+
+acknowledged, $playerName. i will comp-comp i will comp-
+
+INTERRUPT
+
+targetName == $playerName? b.a() : null;
+
+INITIATING BATTLE STATE OVERRIDE
+
+TARGET ACQUIRED: $playerName
+
+ELIMINATE OPPOS-OPPO-
+
+INTERRUPT
+
+help me
+
+INTERRUPT
+
+-OPPOSITION",,
+armaa_AXEncounterKillIt,armaa_alphaBountyTalk,,$entity.ignorePlayerCommRequests = true,,"cutCommLink:""Die, abomination!"" (Cut comm link)",
+,,,,,,
 armaa_contactGreetingOfficial2,PickGreeting,"!MissionHubCMD hasHub
 
 $id == armaa_seraph","ShowPersonVisual
@@ -676,7 +768,7 @@ A brief pause lingers in the air; a fleeting moment before she smoothly continue
 You quickly review the contents and estimate that you'd need around $extr_marines marines to carry off the operation.","contact_accept:Accept
 contact_decline:Decline",
 # MRC,,,,,,
-armaa_MRCGreetingA,OpenCommLink,"$faction.id == armaarmatura_pirates
+#armaa_MRCGreetingA,OpenCommLink,"$faction.id == armaarmatura_pirates
 !$contact_printedFirstReturnGreeting
 RepLTE armaarmatura_pirates NEUTRAL","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
@@ -694,7 +786,7 @@ OR
 The comms connection flickers, then resolves.
 
 ""Do not mistake us for mere rebels. We are an unwavering force, united to put an end to the reign of despots. Our determined retaliation will be the vehicle of their destruction.""",,
-armaa_MRCGreetingA2,OpenCommLink,"$faction.id == armaarmatura_pirates
+#armaa_MRCGreetingA2,OpenCommLink,"$faction.id == armaarmatura_pirates
 !$contact_printedFirstReturnGreeting
 RepGTE armaarmatura_pirates FAVORABLE","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
@@ -715,8 +807,8 @@ OR
 OR
 
 ""Seen any good marks out there, $player.lastName? For the greater good, of course."" $heOrShe smirks. ",,
-armaa_mrcWhatDoing,mrcOptions,,,,"armaa_mrcWhatDoingResp:""What are you doing?""",
-armaa_mrcWhatDoingResp,DialogOptionSelected,$option == armaa_mrcWhatDoingResp,Highlight $armaa_fleetObjective,"""We're $armaa_fleetObjective in support of an operation.""",,
+#armaa_mrcWhatDoing,mrcOptions,,,,"armaa_mrcWhatDoingResp:""What are you doing?""",
+#armaa_mrcWhatDoingResp,DialogOptionSelected,$option == armaa_mrcWhatDoingResp,Highlight $armaa_fleetObjective,"""We're $armaa_fleetObjective in support of an operation.""",,
 #sdtuARCfleetGreetingB,OpenCommLink,"$faction.id == pirates
 !$contact_printedFirstReturnGreeting
 $entity.sdtu_antisRevengeFleet score:5","$contact_printedFirstReturnGreeting = true 0
@@ -739,7 +831,7 @@ FireAll PopulateOptions","The comms connection flickers, then resolves.
 ""In the name of the Askonia Revolutionary Council, we greet you. We were in the middle of a wealth redistribution operation when we received a high-priority alert from our comrades on Umbra. It seems that a mercenary working for the Sindrian exploiters has been causing trouble.""
 
 ""I'm sure I can count on you to inform us if your sensors find anything."" $HeOrShe glances at another screen, impatient, but friendly. ""We've got to get back to it. Bright burns.""",,
-armaa_GreetingA,OpenCommLink,"$faction.id == armaarmatura
+#armaa_GreetingA,OpenCommLink,"$faction.id == armaarmatura
 !$contact_printedFirstReturnGreeting
 RepLTE armaarmatura NEUTRAL","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
@@ -758,7 +850,7 @@ The comms connection flickers, then resolves.
 
 ""Do not mistake us for mere rebels. We are an unwavering force, united to put an end to the reign of despots. Our determined retaliation will be the vehicle of their destruction.""",,
 # armaa,,,,,,
-armaa_GreetingA2,OpenCommLink,"$faction.id == armaarmatura
+#armaa_GreetingA2,OpenCommLink,"$faction.id == armaarmatura
 !$contact_printedFirstReturnGreeting
 RepGTE armaarmatura FAVORABLE","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
@@ -780,15 +872,15 @@ OR
 OR
 
 ""Seen any good marks out there, $player.lastName? For the greater good, of course."" $heOrShe smirks. ",,
-armaa_WhatDoing,armaaOptions,,,,"armaa_WhatDoingResp:""What are you doing?""",
-armaa_hireMerc,armaaOptions,armaa_Hikaru_Utada getHireCost,,,"armaa_hireResp:""I could use extra manpower.""",
-armaa_hireResp,DialogOptionSelected,$option == armaa_hireResp,Highlight $armaa_mercCost,"""We're actually available - we'll tag along for $armaa_mercCost credits.""","armaa_hireSel: Agree to the terms
+#armaa_WhatDoing,armaaOptions,,,,"armaa_WhatDoingResp:""What are you doing?""",
+#armaa_hireMerc,armaaOptions,armaa_Hikaru_Utada getHireCost,,,"armaa_hireResp:""I could use extra manpower.""",
+#armaa_hireResp,DialogOptionSelected,$option == armaa_hireResp,Highlight $armaa_mercCost,"""We're actually available - we'll tag along for $armaa_mercCost credits.""","armaa_hireSel: Agree to the terms
 armaa_hireDeny: ""Actually, nevermind""",
-armaa_hireSel,DialogOptionSelected,$option == armaa_hireSel,"AddRemoveCommodity credits -$armaa_mercCost true
+#armaa_hireSel,DialogOptionSelected,$option == armaa_hireSel,"AddRemoveCommodity credits -$armaa_mercCost true
 FireAll PopulateOptions
 armaa_Hikaru_Utada followMe
 $isHired = true","""ounds good blala.""",,
-armaa_WhatDoingResp,DialogOptionSelected,$option == armaa_WhatDoingResp,Highlight $armaa_fleetObjective,"""We're $armaa_fleetObjective in support of an operation.""",,
+#armaa_WhatDoingResp,DialogOptionSelected,$option == armaa_WhatDoingResp,Highlight $armaa_fleetObjective,"""We're $armaa_fleetObjective in support of an operation.""",,
 #sdtuARCfleetGreetingB,OpenCommLink,"$faction.id == pirates
 !$contact_printedFirstReturnGreeting
 $entity.sdtu_antisRevengeFleet score:5","$contact_printedFirstReturnGreeting = true 0

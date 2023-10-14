@@ -1,7 +1,7 @@
 {
   "hullName": "Kshatriya Binder",
   "hullId": "armaa_kshatriya_binder",
-  "hullSize": "FRIGATE",
+  "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
   "style": "armaa_valkazard",
   "height": 150,
