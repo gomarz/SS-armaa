@@ -7,23 +7,23 @@
   "coreColor": [
     255,
     255,
-    0,
+    255,
     255
   ],
   "everyFrameEffect": "data.scripts.weapons.armaa_ortypeEffect",
   "fireSoundOne": "beambangM",
   "fireSoundTwo": "beamfireM",
   "fringeColor": [
-    150,
-    0,
     200,
-    200
+    200,
+    200,
+    255
   ],
   "glowColor": [
     255,
     255,
-    0,
-    140
+    255,
+    255
   ],
   "hardpointAngleOffsets": [
     0
@@ -32,8 +32,9 @@
     47.5,
     0
   ],
+   "hitGlowBrightenDuration":0,
+   "hitGlowRadius":75,
   "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
-  "hitGlowRadius": 0,
   "id": "armaa_fluxcannon_ftr",
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,

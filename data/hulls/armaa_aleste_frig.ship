@@ -63,7 +63,7 @@
       "size": "SMALL",
       "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 25,
+      "arc": 90,
       "angle": -45,
       "locations": [-15, -11],
       "renderOrderMod": 99999
@@ -73,7 +73,7 @@
       "size": "SMALL",
       "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 25,
+      "arc": 90,
       "angle": 45,
       "locations": [-15, 11],
       "renderOrderMod": 99999

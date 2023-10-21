@@ -3,7 +3,7 @@
 
 		"rocketStars":{
 			"name":"The Rocket Stars",
-			"desc":"The "Rocket Stars" are a notorious mercenary organization that gained infamy during the Battle of Meshan. What set them apart from other mercenary groups was their extensive use of cybernetic augmentation, which allegedly made them highly formidable in combat but unstable in non-combat situations.",
+			"desc":"The 'Rocket Stars' are a notorious mercenary organization that gained infamy during the Battle of Meshan. What set them apart from other mercenary groups was their extensive use of cybernetic augmentation, which allegedly made them highly formidable in combat but unstable in non-combat situations.",
 			"feeUpfront":85000,
 			"feeMonthly":2800,
 			"faction":"armaarmatura",

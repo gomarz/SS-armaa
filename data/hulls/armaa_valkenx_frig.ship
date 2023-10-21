@@ -20,9 +20,6 @@
     "armaa_vxSkinSwap",
     "armaa_variableRifle"
   ],
-  "builtInWings": [
-   # "armaa_valkenx_wing"
-  ],
   "builtInWeapons": {
     "B_TORSO": "armaa_valkenx_torso_frig",
     "C_ARML": "armaa_valkenx_frig_leftArm",
@@ -30,7 +27,6 @@
     "D_PAULDRONL": "armaa_valkenx_leftPauldron_frig",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron_frig",
     "E_HEAD": "armaa_valkenxHead_frig"
-    #"H_GLOW": "armaa_valkenxHeadGlow_frig"
   },
   "weaponSlots": [
     {
@@ -165,11 +161,11 @@
     {
       "id": "WS0003",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 25,
-      "angle": 36,
-      "locations": [-13, 18],
+      "arc": 90,
+      "angle": 45,
+      "locations": [-12, 16],
       "renderOrderMod": 200
     },
     {
@@ -190,8 +186,7 @@
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "MIDLINE",
-      "styleId": "MechaTrail"
+      "style": "MIDLINE"
     },
     {
       "location": [-13, 5],
@@ -199,8 +194,7 @@
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "MIDLINE",
-      "styleId": "MechaTrail"
+      "style": "MIDLINE"
     },
     {
       "location": [-13, 6],
@@ -208,8 +202,7 @@
       "width": 5,
       "angle": 141.5,
       "contrailSize": 5,
-      "style": "MIDLINE",
-      "styleId": "MechaTrail"
+      "style": "MIDLINE"
     },
     {
       "location": [-13, -6],
@@ -217,8 +210,7 @@
       "width": 5,
       "angle": -141.5,
       "contrailSize": 30,
-      "style": "MIDLINE",
-      "styleId": "MechaTrail"
+      "style": "MIDLINE"
     }
   ],
   "bounds": [

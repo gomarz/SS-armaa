@@ -10,9 +10,9 @@
   "turretSprite": "graphics/armaa/weapons/armaa_fluxcannon_turret_base.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
   "glowColor": [
-    255,
-    255,
-    255,
+    200,
+    200,
+    200,
     255
   ],
    "hitGlowBrightenDuration":0,
@@ -40,9 +40,9 @@
     255
   ],
   "coreColor": [
-    200,
-    200,
-    200,
+    100,
+    100,
+    100,
     255
   ],
   "width": 35,

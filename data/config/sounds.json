@@ -211,11 +211,15 @@
 	"armaa_dawn_intro":
 	[
 		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1.0,"volume":1},
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1.0,"volume":1},
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro2.ogg","pitch":1.0,"volume":1},
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro3.ogg","pitch":1.0,"volume":1.2},
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro4.ogg","pitch":1.0,"volume":1.2},
-		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro5.ogg","pitch":1.0,"volume":1.2},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro2.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro3.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro4.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro5.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro6.ogg","pitch":1.0,"volume":1},
+	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro7.ogg","pitch":1.0,"volume":.97},
+
 	],
 	"armaa_crewDeath":[							
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},

@@ -3,7 +3,7 @@
   "hullId": "armaa_legioMech_leftShoulder",
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/legioMech/armaa_legioMech_leftShoulder.png",
-  "style": "armaa_valkazard",
+  "style": "armaa_DAEMON",
   "height": 112,
   "width": 136,
   "center": [68, 56],
@@ -12,8 +12,7 @@
   "shieldRadius": 185,
   "viewOffset": 0,
   "builtInMods": [
-    "reduced_explosion",
-    "fluxshunt"
+    "reduced_explosion"
   ],
   "builtInWeapons": {
     "WS0001": "pdburst"

@@ -241,7 +241,7 @@ L ARM: HELLBORE,armaa_selector_hellbore_l,,,,no_build_in,,,,TRUE,,0,0,0,0,data.h
 Versatile Frame,armaa_vxSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_vxSkinSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 PAINT: STANDARD,armaa_vxSkin_AASV,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,Standard midline finish.,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
 PAINT: RED,armaa_vxSkin_rocketStars,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_rocketStars,Color Scheme of the 'Rocket Stars' mercenary outfit,Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
-PAINT: BLUE,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,Standard High-Tech appearance with blue accents,Reconstruction of Pre-Collapse VX units using more easily sourced components.,,graphics/armaa/hullmods/armaa_paint.png
+PAINT: HI-TECH,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,Standard High-Tech appearance with blue accents,Reconstruction of Pre-Collapse VX units using more easily sourced components.,,graphics/armaa/hullmods/armaa_paint.png
 ,,,,,,,,,,,,,,,,,,,
 #CEYLON,,,,,,,,,,,,,,,,,,,
 AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,

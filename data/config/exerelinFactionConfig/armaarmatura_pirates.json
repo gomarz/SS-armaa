@@ -10,6 +10,7 @@
     "dispositions":{
         "tritachyon": -50,
         "sindrian_diktat": -50,
+	"persean": -50,
     },
     "alignments":{
         "technocratic":-0.5,
@@ -22,8 +23,8 @@
     "freemarket":true,
     "morality":"neutral",
     "diplomacyNegativeChance":{ "tritachyon":2.0, "sindrian_diktat":2.0 },
-    "vengeanceFleetNames":["Liberators", "Hit-Fleet", "Horde"],
-    "vengeanceFleetNamesSingle":["an Liberation fleet", "a Hit-Fleet", "a Horde"],
+    "vengeanceFleetNames":["Liberators", "HK Flotilla", "Armada"],
+    "vengeanceFleetNamesSingle":["an Liberation fleet", "a HK Flotilla", "a Armada"],
      # chance of the faction being picked to send a colony expedition. Default 0 (disabled)
     "colonyExpeditionChance":1,	# baseline expansion behaviour
     "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",   
