@@ -126,7 +126,7 @@
       "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "HARDPOINT",
-      "arc": 60,
+      "arc": 360,
       "angle": -25,
       "locations": [-13, -14],
       "renderOrderMod": 99999
@@ -140,16 +140,6 @@
       "angle": 0,
       "locations": [5, -0],
       "renderOrderMod": 101
-    },
-    {
-      "id": "WS0001",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
-      "mount": "HARDPOINT",
-      "arc": 60,
-      "angle": 25,
-      "renderOrderMod": 99999,
-      "locations": [-13, 14]
     }
   ],
   "engineSlots": [

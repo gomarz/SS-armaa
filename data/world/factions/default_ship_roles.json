@@ -24,10 +24,11 @@
     "armaa_altagrave_standard":.8,
     "armaa_altagrave_c_Standard":.5,
     "armaa_monitor_standard":.8,
-    "armaa_zanac_overdriven":1,
-    "armaa_zanac_sniper":0.8,
+    "armaa_corsair_p_standard":1,
+    "armaa_zanac_overdriven":0.8,
+    "armaa_zanac_sniper":1,
     "armaa_zanac_sniper_grey":0.8,
-    "armaa_zanac_support":0.8,
+    "armaa_zanac_support":1,
    
   },
 	"carrierMedium":{

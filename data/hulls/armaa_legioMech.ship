@@ -1,5 +1,5 @@
 {
-  "hullName": "New Hull",
+  "hullName": "Hel Corsair",
   "hullId": "armaa_legioMech",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/legioMech/armaa_legioMech_body.png",
@@ -178,7 +178,7 @@
       "width": 12.650782,
       "angle": 180,
       "contrailSize": 12.650782,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, -24],
@@ -186,7 +186,7 @@
       "width": 12,
       "angle": 180,
       "contrailSize": 12,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, 24],
@@ -194,7 +194,7 @@
       "width": 12,
       "angle": 180,
       "contrailSize": 12,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, -24],
@@ -202,7 +202,7 @@
       "width": 12,
       "angle": -180,
       "contrailSize": 12,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, 24],
@@ -210,7 +210,7 @@
       "width": 8,
       "angle": 169.5,
       "contrailSize": 8,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, 24],
@@ -218,7 +218,7 @@
       "width": 8,
       "angle": -169.5,
       "contrailSize": 8,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, 24],
@@ -226,7 +226,7 @@
       "width": 9.019238,
       "angle": 155,
       "contrailSize": 9.019238,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, -24],
@@ -234,7 +234,7 @@
       "width": 9.627361,
       "angle": -155,
       "contrailSize": 9.627361,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, 23.5],
@@ -242,7 +242,7 @@
       "width": 8.992697,
       "angle": -155,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50, -24],
@@ -250,7 +250,7 @@
       "width": 8.992697,
       "angle": 155,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50.5, 14],
@@ -258,7 +258,7 @@
       "width": 8.992697,
       "angle": -178.5,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-50.5, -14],
@@ -266,7 +266,7 @@
       "width": 8.992697,
       "angle": 178.5,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-51, 14],
@@ -274,7 +274,7 @@
       "width": 8.992697,
       "angle": -168.5,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     },
     {
       "location": [-51, -14],
@@ -282,7 +282,7 @@
       "width": 8.992697,
       "angle": 168.5,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "armaa_legioMech_engine"
     }
   ],
   "bounds": [

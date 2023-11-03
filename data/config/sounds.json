@@ -10,7 +10,10 @@
 			{"file":"old_city.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_pirate_market_neutral":[
-			{"file":"revenge.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"teleportation.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+		],
+		"music_armaa_pirate_encounter_neutral":[
+			{"file":"madman.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_legioMech_bounty":[
 			{"file":"revenge.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
@@ -19,7 +22,7 @@
 			{"file":"recollective_mind.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
 		],
 		"music_armaa_ax_bounty":[
-			{"file":"elimination.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
+			{"file":"showdown.ogg","source":"sounds/armaa/music/factions","volume":0.30,"randomStart":true},
 		],
 	},	
 	"mechmove":[ 

@@ -1,7 +1,7 @@
 {
   "hullName": "Corsair",
   "hullId": "armaa_corsair_xiv",
-  "hullSize": "FRIGATE",
+  "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/corsair/armaa_corsair_xiv.png",
   "style": "MIDLINE",
   "height": 66,
@@ -12,7 +12,8 @@
   "shieldRadius": 102,
   "viewOffset": 0,
   "builtInMods": [
-    "fourteenth"
+    "fourteenth",
+"ballistic_rangefinder"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_corsair_leftArm",
@@ -68,7 +69,7 @@
       "type": "HYBRID",
       "mount": "TURRET",
       "arc": 180,
-      "angle": -140,
+      "angle": -90,
       "locations": [-5, -29.5],
       "renderOrderMod": 1000
     },
@@ -78,7 +79,7 @@
       "type": "HYBRID",
       "mount": "TURRET",
       "arc": 180,
-      "angle": 140,
+      "angle": 90,
       "locations": [-5, 28],
       "renderOrderMod": 1000
     },
