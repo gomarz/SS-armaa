@@ -33,8 +33,8 @@
 		"contrailColor":[255,0,0,70],
 		"contrailCampaignColor":[255,0,0,80],
 		"glowAlternateColor":[255,90,20,235],
-		"glowSprite":"graphics/tahlan/fx/tahlan_daemon_engine_scroll.png",
-		"glowOutline":"graphics/tahlan/fx/tahlan_daemon_engine_outline.png",
+		"glowSprite":"graphics/fx/engineglow32b.png",
+		"glowOutline":"graphics/fx/engineflame32b.png",
 		"type":"SMOKE"
 	},
 "DRONE_ENGINE":{        
