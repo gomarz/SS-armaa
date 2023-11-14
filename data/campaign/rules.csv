@@ -154,8 +154,9 @@ FireAll armaa_valkHunterSt1Options
 
 $heOrShe comes to a halt roughly at the spot they started at, turning to face you once more.",,
 ,,,,,,
-#ArmaaRobberyCheck,BeginFleetEncounter,"$faction.id == armaarmatura_pirates score:100
+ArmaaRobberyCheck,BeginFleetEncounter,"$faction.id == armaarmatura_pirates score:100
 $faction.relValue <= -0.50
+$faction.relValue >= -0.80
 !$ignorePlayerCommRequests
 !$armaa_tithePaid
 !$armaa_titheAskedFor
@@ -164,20 +165,17 @@ LPTitheCalc","$armaa_titheConv = true 0
 $armaa_titheAskedFor = true 7
 AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
 $hailing = true 0",,,
-#armaaRobbery_Pre,OpenCommLink,$entity.armaa_titheConv score:100,"SetTextHighlights $entity.LP_titheDGS
+armaaRobbery_Pre,OpenCommLink,$entity.armaa_titheConv score:100,"SetTextHighlights $entity.LP_titheDGS
 $entity.ignorePlayerCommRequests = true 1
-FireAll armaaRobbery_Options","""Alright, captain..no one has to get hurt. Just hand over.."" $heOrShe checks something, ""$entity.LP_titheDGS credits, and we'll be on our way.
+FireAll armaaRobbery_Options","""Alright, captain..no one has to get hurt. With a small contribution, we'll let you pass.."" $heOrShe checks something,  ""$entity.LP_titheDGS credits, and we'll be on our way.
 
-Far more reasonable than the loss of lives, aye? I'd hate to have to escalate things.""
+Far more reasonable than the loss of lives, aye? I'd hate to have to acquire your contribution using...other means.""
 
 OR
 
 ""Face the consequences of your greed and exploitation! Your ill-gotten riches will be taken and redirected to fund the resistance against tyranny. $entity.LP_titheDGS will suffice.""",,
-#armaaRobbery_HasColonies,armaaRobbery_Options,"!$player.patherAgreement
-HA_CMD computeMegaTithe
-HA_CMD playerColoniesHavePatherActvity",,,"10:payMegaTithe:""Perhaps a larger tithe could inspire a broader arrangement.""",
-#armaaRobbery_Normal,armaaRobbery_Options,,,,5:payTithe:Pay the tithe,
-#armaaRobbery_CutComms,armaaRobbery_Options,,,,100:cutCommLink:Cut the comm link,
+armaaRobbery_Normal,armaaRobbery_Options,,,,5:payTithe:Pay the fee,
+armaaRobbery_CutComms,armaaRobbery_Options,,,,100:cutCommLink:Cut the comm link,
 #payMegaTitheSel,DialogOptionSelected,$option == payMegaTithe,"Highlight $armaa_megaTitheDGS $armaa_megaTitheDuration
 DoCanAffordCheck $armaa_megaTithe payMegaTitheConfirm false","The $rank's eyes light up at the suggestion of a larger 'tithe'. Struggling to maintain the fiction that this blackmail is a strictly religious matter, $heOrShe declares that $armaa_megaTitheDGS credits could persuade Pather raiders to leave all of your colonies - but not fleets - alone for $armaa_megaTitheDuration days.
 
@@ -202,15 +200,14 @@ OR
 FireAll armaaRobbery_Options","""Well,"" the Pather says haltingly. ""Despite our grand talk and how blessed and bountiful our path together could be... Providence only provides to those of us who know to accept the gift laid before them - and to those who humble themselves with a tithe appropriate to the magnitude of their sin.""
 
 $HisOrHer quickly glances down at a screen then back to you, ""Which would be, ah, on the order of $entity.armaa_titheDGS credits.""",,
-#armaaRobbery_Pay,DialogOptionSelected,$option == payTithe,"#AddText ""Lost $entity.armaa_tithe credits"" textEnemyColor
+armaaRobbery_Pay,DialogOptionSelected,"$option == payTithe
+$faction.id == armaarmatura_pirates score:100","#AddText ""Lost $entity.armaa_tithe credits"" textEnemyColor
 AddRemoveCommodity credits -$entity.armaa_tithe true
 $entity.armaa_tithePaid = true 30
 MakeOtherFleetNonHostile armaa_tithe true 30
 AddText ""The connection is cut before you have a chance to respond.""
 ShowDefaultVisual
-EndConversation","""Perhaps your soul is not yet lost to the machine.""
-OR
-""Truly, Ludd's hand has guided you.""",,
+EndConversation","""Smart. My thanks, $PlayerSirOrMadam.""",,
 ,,,,,,
 #armaaWFInteraction,OpenInteractionDialog,"$id == nekki1 score:1000
 !$hasMarket
@@ -602,6 +599,26 @@ Her eyes gleam, their underlying agenda shrouded beneath a veneer of reassurance
 ""As we depart, we plan to transport Valkazard to our planetside installation for further research and analysis.""",cutCommLink:See them off,
 armaa_valkazardDeny,armaa_valkazardHubOptions,!$armaa_madeOffer,,,"cutCommLink:""Allow me to think on this.""",
 ,,,,,,
+,,,,,,
+armaa_cataSMod,PickGreeting,"$id == armaa_seraph
+!$global.armaa_givenOSTuning
+$rel >= 0.25
+RollProbability 0.5
+","ShowPersonVisual
+$global.armaa_givenOSTuning
+FireAll PopulateOptions","As the connection is established, you are greeted by the smiling visage of Sera.
+
+""You've been making quite a name for yourself out there in the void, my favorite spacer. The higher-ups have taken notice of your exceptional skills. So, I've got a little surprise for you, a reward for your continued dedication and stellar performance.""
+
+She leans in, a glint in her eyes, ""I've just received authorization to share with you some cutting-edge, top secret data. The latest advancements in Cataphract upgrades that will elevate their performance to unprecedented levels.""
+
+Sera's grin widened, her excitement contagious, ""The upgraded units will effectively be made an extension of the pilot on the battlefield. And trust me, with these enhancements, they'll be pulling off maneuvers and strategies that will leave your adversaries in awe.""
+
+She gestured towards a holographic display, showcasing the intricate details of the upgrade process, ""Here's the blueprint for the modifications. It's not just about raw power; it's about finesse, adaptability, and pushing the boundaries of what's possible. I'll send it over to your people.""
+
+Sera's tone turned serious for a moment, ""These upgrades are a game-changer, but getting the materials together for the modification may be... somewhat complicated. It'll be up to you to figure out that part.""
+
+",,
 armaa_vxGift,PickGreeting,"$id == armaa_seraph
 !$givenCustomVXCustom
 $armaa_gaveSeraphValk
@@ -638,11 +655,11 @@ $global.HVB_armaa_bounty_legiomech_succeeded
 AddRemoveAnyItem SPECIAL modspec armaa_sykoStims 1
 FireAll PopulateOptions
 $armaa_seraphMentionedHC = true
-ShowPersonVisual","The comm-link is  almost immediately accepted, resolving to show $personName seated.
+ShowPersonVisual","The comm-link is accepted after a brief pause, resolving to show $personName seated.
 
 ""$playerName, I must admit, I didn't anticipate that outcome,"" $personName's voice crackles through the comm link, her voice carrying a hint of regret. ""But let's not dwell on that, shall we? After all, your little victory provided us with some invaluable combat data. I'd even say you did us a favor.""
 
-""As for our dear friends, the Legio Infernalis, they've been quite the generous patrons of our innovations. We wouldn't want anything to jeopardize that, would we? Whoever managed to catch wind of our little collaboration can rest easy, thinking they've successfully disrupted it. You see, it's a win-win scenario for all parties.""
+""As for my dear friends, they've been quite the generous patrons of our innovations. We wouldn't want anything to jeopardize that, would we? Whoever managed to catch wind of our little collaboration can rest easy, thinking they've successfully disrupted it. You see, it's a win-win scenario for all parties.""
 
 She paused, as if considering something, ""Of course, even if our prototype met an unfortunate end, we have others waiting in the wings, ready for testing and further enhancement.""
 
@@ -730,7 +747,7 @@ armaa_HCEncounterDiplomaticResp,DialogOptionSelected,$option == armaa_HCEncounte
 $entity.ignorePlayerCommRequests = true
 FireAll PopulateOptions","""A Peaceful resolution."" she mused, her voice softening. ""A noble thought, my friend. I suppose we could provide your employers with doctored logs, videos.""
 
-""But what better a demonstration than trial by fire? Yours is the perfect fleet to test our design against. No hard feelings, okay? Come see me in New Meshan after this. I'll make it up to you.""",,
+""But what better a demonstration than trial by fire? Yours is the perfect fleet to test our design against.""",,
 ,,,,,,
 armaa_AXEncounter,OpenCommLink,$entity.HVB_armaa_bounty_altagrave_x score:100,"FireAll armaa_alphaBountyTalk
 armaa_Hikaru_Utada playMusic music_armaa_ax_bounty

@@ -138,18 +138,30 @@ Despite being almost identical to the standard Spriggan, the conversion process 
 armaa_whitebase,SHIP,"The Fenris is well-equipped to support both space and land battles, though it is not particularly suited for direct confrontation. Its vast hangar bays, however, enable it to deploy a wide array of strikecraft.
 
 As an atmosphere-capable vessel, the Fenris was designed with the specific purpose of carrying Cataphracts and quickly deploying them to ground targets. The ship is outfitted with armored pods where the Cataphracts are loaded before being launched towards the surface like missiles. When the Fenris is within range, it can easily retrieve deployed Cataphracts and bring them back to the ship as needed.",,,,,
-armaa_zanac,SHIP,"The Zanac-class is a formidable bipedal mobile weapon that distinguishes itself with a primary emphasis on marrying high manuverability with offensive prowess rather than support capabilities. Renowned for its capacity to wield some of the largest and most devastating energy weapons found in the Sector, the Zanac stands as a symbol of unparalleled destructive power.
+armaa_zanac,SHIP,"Designed upon the concept of marrying high manuverability with offensive prowess. It can wield some of the largest energy weapons found in the Sector, but is lacking in an overall quantity of weapon mounts compared to most destroyers.
 
-This marvel of advanced engineering boasts immense firepower and exceptional mobility, making it a relentless force on the battlefield. Intriguingly, historical records fail to trace the Zanac's involvement during the First AI War, sparking speculation that it might have emerged within the past 40 cycles through collaboration with a third party due ArmaA lacking the resources and infrastructure to develop such a weapon on its own post Collapse. 
+Intriguingly, historical records fail to trace the Zanac's involvement during the First AI War, sparking speculation that it might have emerged within the past 40 cycles through collaboration with a third party due ArmaA lacking the resources and infrastructure to develop such a weapon on its own post Collapse. 
 
 Despite several inquiries regarding its origin, ArmaA has remained tight-lipped on the matter, choosing not to disclose any information.",,,,,
+armaa_legioMech,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> 2 Match(es) found.
+#> >> Corsair-class Destroyer : 30% match
+#> >> ERROR
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,,,
 armaa_garegga_tt,SHIP,"Following Tri-Tachyon's successful takeover of ArmaA's infrastructure and assets during the Battle of Meshan in cycle 94, they rebranded the revamped RA-96 as the ""Tri-hander"" in reference to both their own company name and the legendary Einhander. Although not a primary component of their naval forces, these units were utilized in conjunction with other refurbished ships during the tumultuous period following the First AI War, when ArmaA was still recovering.",,,,,
 armaa_garegga,SHIP,"The RA-96 GAREGGA stands first-class amongst craft that excel in close-quarters combat. Dual G-1001 assault weapons capable of decimating entire strikecraft formations and pounding larger ships into scrap are only hindered by their meagre engagement range.
 
 Following the uneasy tension that befell the Sector following the events of Mairaath, the Garegga represented a shift in ArmaA priorities as the corporation was spurred into developing larger and more powerful machines to supplement their embryonic navy. Derived as a testbed for adapting technology behind cataphract-type mechs to a platform optimized for space combat, the Garegga is significantly larger to accomodate a greater power core and ship-grade weaponry, but lacks any ground combat capability. 
 
 The combination neural and targeting interface SILVERSWORD establishes a raw, semi-invasive connection between the pilots brain and an AI core adjunct to the machine itself, and safety limiters can be disabled in order to bring out its maximum potential. Sadly, sustained use resulted in catastrophic brain injury in 96.875% of all trial runs as the human component's mental bandwith was overwhelmed by the exponentially increasing information load fed into it. It was for this reason that an additional emergency stop circuit was introduced shortly thereafter, which automatically halts the system, violently shunting excess flux into the void. This method of interfacing would eventually be discarded in favor of a system that distributed the mental strain across multiple crewmembers.",,,,,
-armaa_corsair_xiv,SHIP,"An absurdly overgunned craft, the Corsair possesses a massive amount of firepower for its size, but can't quite sustain the stress its armament puts on the crafts flux grid. Allegedly born from a pirate design that was overhauled to be more appealing to the houses of Eventide.",,,,,
+armaa_corsair_xiv,SHIP,"The Corsair possesses a massive amount of firepower for its size hindered by an archaic autoloading system that can't quite sustain the stress. The ammo feeder can be overriden to reach performance levels slightly above spec, but only for brief periods of time.",,,,,
 armaa_ceylon,SHIP,"The carrier is outfitted with an advanced airborne early warning and control (AWACS) system, which enables it to detect and exploit vulnerabilities in enemy vessels while bolstering its own fleet. The carrier relies heavily on three support drones that constantly relay combat information to the bridge crew, allowing them to administer these effects. However, if the support drones are disabled, the effectiveness of the carrier is significantly reduced.",,,,,
 armaa_awacs,SHIP_SYSTEM,"Marks selected object as a priority target while analyzing it for potential vulnerabilities. The target takes +25% damage for 7 seconds. Base range is 500 SU, which scales with each deployed drone (up to a maximum range of 2000 SU)",,,,,
 ,,,,,,,
@@ -282,6 +294,7 @@ armaa_valkenxLeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ
 
 Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,,,
 ,,,,,,,
+armaa_legioMech_head,WEAPON,"""Point defense Weapon.""",,,,,
 ,,,,,,,
 armaa_aleste_flamer_right,WEAPON,"Evolution of the DR-79 plasma gatling. Rather short-ranged, but deadly in close-quarters combat.",,,,,
 armaa_altagrave_rightArm,WEAPON,"Fires nanomachines encased in a plasma sheathe shaped by the device's electromagnetic field. The resulting smart projectile produces a brilliant trail of energy while launched and has limited homing capability, although it fares rather poorly against small targets. Precise shots on the drone itself is enough to disrupt and destroy these projectiles.",,,,,
