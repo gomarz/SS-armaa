@@ -14,7 +14,6 @@ armaa_bounty_legiomech,8,spaceCommander,Corsair,Pilot,aggressive,Pillager Fleet,
 We are committed to preventing these pirates from gaining any undue influence and destabilizing the region further.
 
 It falls upon you, brave mercenaries, to unleash the fiery wrath of the Sector upon this clandestine operation. The mission is clear: obliterate the entire fleet aligned with the Legio Infernalis, sending a resounding message that we will not bow to piracy. Let justice reign in the name of the Persean people!",armaa_legioMech_standard,,100,1.2,1,,,FALSE,FALSE,206,5,150
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # NOTES,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # bounty_id : line ID. Must be unique across all mods. I recommend a prefix,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # level : character level of bounty captain,,,,,,,,,,,,,,,,,,,,,,,,,,,,
