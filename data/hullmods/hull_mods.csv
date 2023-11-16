@@ -46,7 +46,7 @@ This system is equipped with a manual safety override that can be tripped to for
 
 Due to limited space, %s.",,,graphics/armaa/hullmods/armaa_seraph_targeting.png
 SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot.,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
+C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
 Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,special,,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
 
 When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,
