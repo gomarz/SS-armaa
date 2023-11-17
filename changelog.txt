@@ -17,7 +17,7 @@ v2.3
 
 - Cataphract SII hullmod can be S-Modded
 	- provides some scaling buff based on level of pilot
-	- TODO: Make "unlockable" s-mod?
+	- TODO: Make "unlockable" s-mod? (doesn't work)
 
 New Hullmod: HI-MAC Manuever System
 	- (it's basically AC6 Quickboost/Assault Boost)
@@ -45,7 +45,6 @@ New Bounties:
 	-Corsair(H)
 	-Watchdog(H)
 	-Hel Corsair
-		TODO: Copy Legio Engines?
 	-Zanac EX
 		- TODO: No Description...yet
 
@@ -61,6 +60,12 @@ New Bounties:
 - Fixed Spriggan Powered missing variable rifle hullmod
 - Valkazard now has innate +30% refit rate penalty
 - fixed typo in specialized service bays hullmod desc
+- Syko Stims
+	- consume 3 recreational drugs instead of 1
+	- The amount consumed over the entire fleet is reported instead of per fleet member now
+	- Increased Time Dilation amount to 3x, but reduced duration to 0.7s
+	- Increased cooldown: 5s -> 20s
+	- fixed potential memory leak
 - remove ilorin wing
 - remove bihander wing
 - remove einhander wing

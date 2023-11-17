@@ -267,11 +267,13 @@ $player.nex_startingFactionId == armaarmatura
 $ome_hireable score:200
 ","ShowPersonVisual
 FireAll PopulateOptions
+armaa_Hikaru_Utada playMusic music_armaa_seraph
 SetOptionColor armaa_HireDawn highlight","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
 
 ""Oh, hello $player.firstName! Is there something I can help you with?""",,
 armaa_defaultDawnGreeting,PickGreeting,"$id == armaa_dawn
 ","ShowPersonVisual
+armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions
 ","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
 
@@ -279,18 +281,21 @@ FireAll PopulateOptions
 armaa_recruitableDawnGreeting,PickGreeting,"$id == armaa_dawn
 $ome_hireable score:200
 ","ShowPersonVisual
+armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions
 ","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
 
 ""Hey, $personName. Got anything interesting going on?""",,
 armaa_FaithDawnGreeting,PickGreeting,"$id == armaa_dawn
 $greetedDawnAsALuddic","ShowPersonVisual
+armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions
 ","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing $personFirstName. She gives a small smile upon seeing you.
 
 ""Ah, $playerBrotherOrSister $player.lastName. Blessings of Ludd be upon you. How can I help you today?""",,
 armaa_PatherDawnGreeting,PickGreeting,"$id == armaa_dawn
 $greetedDawnAsALuddicMaybePather","ShowPersonVisual
+armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing $personFirstName. She smiles upon seeing you.
 
 ""Hello again, $playerSirOrMadam$ $player.lastName. How can I help you today?""",,
@@ -310,11 +315,11 @@ armaa_HireDawn2,DialogOptionSelected,$option == armaa_HireDawn2,FireAll Populate
 armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk
 !$askedForSeraph","AddPotentialContact
-$askedForSeraph = true","""Oh, look at you! Aiming straight for the top, huh? How often do you expect to hobnob with the big shots? Hate to break it to you, but that's not something I can conjure up in an instant. But sure, I'll scribble your fancy request down.""
+$askedForSeraph = true","""Oh, check you out! Shooting for the stars, huh? Gotta wonder, how often does that approach actually pan out for ya? Hate to burst your bubble, but I ain't some miracle worker who can whip that up on the fly. Still, I'll jot down your fancy request.""
 
-""Now, if you've got a moment to spare, you might recall that I'm the company's go-between, handling a heap of those leftover contracts – just little odds and ends, really. How 'bout you do a smidge of that work for me, and then I'll see what kind of magic I can work for you, eh?""",,
+""Now, if you've got a minute to spare, you might remember I'm the middleman around here, dealing with a bunch of those leftover contracts – just bits and bobs, really. How 'bout you tackle a bit of that grunt work for me, and then we'll see what kinda mojo I can muster up for ya, huh?""",,
 armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
-!$hasValk",,"""How often do you go around trying to contact the big-shots? Hate to say it, but I can't do that. I'll log your request, though.""",,
+!$hasValk",,"""Sorry, still can't do. I'll log your request, though.""",,
 ,,,,,,
 armaa_dawnAskForContactAccept,DialogOptionSelected,"$option == armaa_dawnAskForContact
 armaa_Hikaru_Utada findValk score:100","ShowSecondPerson armaa_seraph
@@ -322,7 +327,7 @@ SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
-$hasSeraphaCommsId = true","""Not a problem."" the woman affirms with a gentle nod. As your personal device beeps, she continues, ""I've gone ahead and sent her comms ID your way.""
+$hasSeraphaCommsId = true","""No sweat,"" the woman assures with a subtle nod. As your personal gadget beeps, she adds, ""I've thrown her comms ID your direction.""
 
 You can't help but find it odd how readily she handed over this information without you even clarifying your purpose.
 ","cutCommLink:""Thanks"" (cut comm-link)",
@@ -332,7 +337,7 @@ SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
-$hasSeraphaCommsId = true","""Well, you've done a lot of good work for the company so far,"" the woman affirms with a gentle nod. As your personal device beeps, she continues, ""I've gone ahead and sent the comms ID for Administrator Pha your way. I'm sure she'll be eager to work with you.""","cutCommLink:""Thanks"" (cut comm-link)",
+$hasSeraphaCommsId = true","""Well, you've pulled your weight around here,"" the woman acknowledges with a slight nod. As your personal gadget beeps, she adds, ""I've shot Administrator Pha's comms ID over to you. Bet she's itching to team up with someone like you.""","cutCommLink:""Thanks"" (cut comm-link)",
 armaa_OfficeTalk,DialogOptionSelected,$option == armaa_OfficeTalk,,,,
 armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""What, my name? Too Luddic for your tastes 'er somethin?""
 ","armaa_dawnSmallTalkNeutral:""What's a luddic doing employed by a weapons manufacturer?""
@@ -347,7 +352,7 @@ $askedDawnAboutName = true","$personName fixes you with a gaze that hints at sus
 ""There is a contradiction between my role and holding dear to the teachings of the Church of Galactic Redemption, I guess. Alas, life is not always a tale spun in perfection, and choices must be made to keep a roof above our heads and bread on the table.""
 
 ""Perhaps you can relate - considering your line of work, $playerSirOrMadam.""",armaa_dawnSmallTalkPather2:Continue,
-armaa_dawnSmallTalkPather2,DialogOptionSelected,$option == armaa_dawnSmallTalkPather2,,"""Oh, sure, I just dream about living in the middle of nowhere in some hovel, where the land kisses the sky, and the wind sings lullabies through the fields. But in this sprawling city of metal and mayhem, I must find my place and bloom where I'm planted, as they say.""
+armaa_dawnSmallTalkPather2,DialogOptionSelected,$option == armaa_dawnSmallTalkPather2,,"""Oh, sure - I dream about living in the middle of nowhere in some run down hovel, where the land kisses the sky, and the wind sings lullabies through the fields. But in this sprawling city of metal and mayhem, I must find my place and bloom where I'm planted, as they say.""
 
 ""Perhaps I will find a path that leads me back to the embrace of our more agrarian roots, but for now, I continue sowing the seeds of hope, wherever I am.""
 
@@ -356,23 +361,23 @@ armaa_dawnSmallTalkPather3,DialogOptionSelected,$option == armaa_dawnSmallTalkPa
 AdjustRepActivePerson FRIENDLY 5
 AdjustRep luddic_path FRIENDLY 2
 AdjustRep armaarmatura SUSPICIOUS -2
-$greetedDawnAsALuddicMaybePather = true","""As my mother says, 'The smallest of pebbles can create ripples in the biggest of ponds.' If I keep true to the faith, show kindness to them around me, and let my actions speak louder than words, perhaps I can make a small difference.""
+$greetedDawnAsALuddicMaybePather = true","""As my mother says, 'The smallest of pebbles can create ripples in the biggest of ponds.' So, if I stick to my guns, toss some kindness at the folks nearby, and let my moves do the talking, maybe I can stir up a bit of change, you know?""
 
-You can't tell if she's actually serious or sarcastic. Either way, you decide to move on to another topic.",,
+Hard to say if she's dead serious or sarcastic. Either way, you decide to move on to another topic.",,
 armaa_dawnSmallTalkFaith,DialogOptionSelected,$option == armaa_dawnSmallTalkFaith,"AdjustRepActivePerson FRIENDLY 2
 $player.luddicAttitudeFaithful++
 $askedDawnAboutName = true
 $greetedDawnAsALuddic = true
 FireAll PopulateOptions","$personName's expression holds a touch of disbelief as she looks at you.
 
-""Huh."" she says with a bemused smile, then continues, ""Well, thank you, $playerBrotherOrSister. May blessings shine upon your path too.""",,
+""Well, ain't that somethin',"" she remarks with a smirk, then adds, ""Thanks, $playerBrotherOrSister. May blessings shine upon your path too.""",,
 armaa_dawnSmallTalkFriendlyWithChurch,,RepGTE luddic_church FAVORABLE,,,,
 ,,,,,,
-armaa_loreDump1,DialogOptionSelected,$option == armaa_loreDump1,,"""Of course! I'd be happy to provide you with some information about the company.""",armaa_loreDump2: Continue,
-armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"As $personName delves into the intricate details of the company's dealings, you find yourself putting on a facade of interest. Within her chatter, you manage to catch snippets of information about Arma Armatura's vast array of products. From power armor to mechs, it seems they're deeply involved in the realm of military equipment. Yet, amidst the talk of such advanced technology, you also learn that they create more mundane designs, like construction vehicles, service drones, and sub-delta automatons, which find use in civil applications.",armaa_loreDump3: Continue,
+armaa_loreDump1,DialogOptionSelected,$option == armaa_loreDump1,,"""Yeah, um...where is that- ah!""",armaa_loreDump2: Continue,
+armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"As $personName delves into the details of the company's dealings, you faintly listen, only registering information that would be useful. Within her chatter, you manage to catch snippets of information about Arma Armatura's vast array of products. From power armor to mechs, it seems they're deeply involved in the realm of military equipment. Yet, amidst the talk of such advanced technology, you also learn that they create more mundane designs, like construction vehicles, service drones, and sub-delta automatons, which find use in civil applications.",armaa_loreDump3: Continue,
 armaa_loreDump3,DialogOptionSelected,$option == armaa_loreDump3,"AddTextSmall ""Received \""ArmaA Product Portfolio (c.200 Edition)\"""" highlight
 $armaa_gotBrochure = true
-FireAll PopulateOptions","""Should you have any particular inquiries or wish to delve deeper into a specific product, don't hesitate to ask. Let me send you our brochure for further information,"" she offers, her tone warm and welcoming.",,
+FireAll PopulateOptions","""Got any burning questions or wanna dig into a specific product? Don't hold back, just shoot. I'll toss you our brochure for the nitty-gritty details,"" she gruffly states.",,
 ,,,,,,
 armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
@@ -380,6 +385,7 @@ armaa_Hikaru_Utada hasOfficer armaa_dawn
 RollProbability 0.5
 ","AddBarEvent armaa_dawnAsk ""Take a seat with Dawn"" ""You see Dawn knocking back a few drinks in a hazy corner.""",,,
 armaa_dawnBarEventStart,DialogOptionSelected,$option == armaa_dawnAsk,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_armaa_seraph
 ShowPersonVisual
 $player.metDawnAtBar = true
 FireAll armaa_dawnBarAskHubOptions","$personName raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? It's a concoction they call 'Stellar Elixir.' It's as close as I'll ever get to sipping on a nebula in this dive.""
@@ -972,7 +978,35 @@ FireAll PopulateOptions","The comms connection flickers, then resolves.
 ""In the name of the Askonia Revolutionary Council, we greet you. We were in the middle of a wealth redistribution operation when we received a high-priority alert from our comrades on Umbra. It seems that a mercenary working for the Sindrian exploiters has been causing trouble.""
 
 ""I'm sure I can count on you to inform us if your sensors find anything."" $HeOrShe glances at another screen, impatient, but friendly. ""We've got to get back to it. Bright burns.""",,
-,,,,,,
+# Hegemony fleet greeting lines,,,,,,
+armaa_MRCGreetingFriendly,OpenCommLink,"$faction.id == armaarmatura_pirates
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Your defiance fuels the flames, comrade. Stay vigilant, the revolution thrives in the whispers of the stars.""
+OR
+$PersonRank $personName flashes you a warm smile. ""You're a ghost in the machine, $playerSirOrMadam. Press on, and may the corrupt tremble in your wake.""
+OR
+""Report, comrade. Is the rebellion's heartbeat steady? Excellent. Keep the resistance alive. Over and out.""",,
+armaa_MRCGreetingHostileWeaker,OpenCommLink,"$faction.id == armaarmatura_pirates
+$entity.isHostile
+$entity.relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""Oi, it's just me, $PersonRank $personName. Saw your fancy $shipOrFleet rollin' in, and, well, it's a bit much for our likin'. We ain't got the big guns like you, but we're fightin' for somethin' that matters, ya know? Just hopin' you might consider not turnin' this into a right mess.""
+OR
+""So, your big, fancy $shipOrFleet's here, huh? Well, let me tell you, we're not exactly the timid type. We're on a mission, and crossing paths with us might not go the way you think. Better think twice before you decide to dance.""",cutCommLink:Cut the comm link,
+armaa_MRCGreetingHostileWeakerDefiant,OpenCommLink,"$faction.id == armaarmatura_pirates
+$entity.isHostile
+$entity.relativeStrength < 0
+$entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"""Come here, you rad-addled bastard! This is what we live for. Bring it on!"" $HeOrShe pauses, a moment pregnant with unspoken determination, before severing the connection.
+OR
+""I see you've brought quite the show of force. Before we engage, know this: we're not here to cower.""",cutCommLink:Cut the comm link,
+armaa_MRCGreetingHostileStronger,OpenCommLink,"$faction.id == armaarmatura_pirates
+$entity.isHostile
+$entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""Attention, enemy $shipOrFleet. This is $PersonRank $personName. We've got you in our sights, and let's be real here — the odds aren't in your favor. You might want to power down and surrender peacefully. Saves us all a lot of trouble, you know?""
+OR
+""$PersonRank $personName addressing the enemy. We've got the upper hand here, and I suggest you consider your options. Surrender peacefully, and maybe we'll be generous. Resisting? Well, that's a path you might not want to take.""",cutCommLink:Cut the comm link,
+armaa_MRCGreetingNeutral,OpenCommLink,"$faction.id == armaarmatura_pirates
+$faction.neutralToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Hello there, fellow space traveler. $PersonRank $personName here. Looks like we've crossed paths in this vast expanse - no hostile intent on our end. Let's keep it peaceful, shall we?""
+OR
+""Attention. If your path aligns with our cause, we welcome you. If not, consider this a peaceful warning to stay clear of our $shipOrFleet.""",,
 ,,,,,,
 ,,,,,,
 ,,,,,,
