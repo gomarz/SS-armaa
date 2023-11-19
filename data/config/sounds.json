@@ -28,7 +28,7 @@
 			{"file":"elimination.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_seraph":[
-			{"file":"ice_wall.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":false},
+			{"file":"ice_wall.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_ax_bounty":[
 			{"file":"showdown.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
