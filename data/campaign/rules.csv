@@ -606,7 +606,7 @@ Her eyes gleam, their underlying agenda shrouded beneath a veneer of reassurance
 armaa_valkazardDeny,armaa_valkazardHubOptions,!$armaa_madeOffer,,,"cutCommLink:""Allow me to think on this.""",
 ,,,,,,
 ,,,,,,
-armaa_cataSMod,PickGreeting,"$id == armaa_seraph
+#armaa_cataSMod,PickGreeting,"$id == armaa_seraph
 !$global.armaa_givenOSTuning
 $rel >= 0.25
 RollProbability 0.5
