@@ -380,19 +380,20 @@ $armaa_gotBrochure = true
 FireAll PopulateOptions","""Got any burning questions or wanna dig into a specific product? Don't hold back, just shoot. I'll toss you our brochure for the nitty-gritty details,"" she gruffly states.",,
 ,,,,,,
 armaa_dawnBarMeetingEvent,AddBarEvents,"$market.id == armaa_meshanii_market
-!$player.armaa_metDawnInitial","AddBarEvent armaa_dawnMeeting ""Approach the rugged woman"" "" In one corner, a rugged figure nursing a tankard of ale catches your eye."" highlight",,,
+!$player.armaa_metDawnInitial
+!armaa_Hikaru_Utada hasOfficer armaa_dawn","AddBarEvent armaa_dawnMeeting ""Approach the rugged woman"" "" In one corner, a rugged figure nursing a tankard of ale catches your eye."" highlight",,,
 armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
 armaa_Hikaru_Utada playMusic music_armaa_seraph
 ShowPersonVisual
 $player.armaa_metDawnInitial = true
 SetPersonHidden armaa_dawn false
-AddPotentialContact armaa_dawn","Dawn watches you approach with mild interest. A crooked smile greets you as she acknowledges your presence.
+AddPotentialContact armaa_dawn","Dawn watches you approach with mild interest, crooked smile greeting you as she acknowledges your presence.
 
-She raises an eyebrow, her voice gravelly as she speaks, ""Well, look what the cat dragged in. Fancy a chat, do ya?"" You pull out a chair and take a seat, trying to match her casual demeanor.
+""Well, look what the cat dragged in. Fancy a chat, do ya?"" You pull out a chair and take a seat, trying to match her casual demeanor.
 
-You speak to the woman at length about a variety of topics. The scars on her face tell stories of battles fought, but specifics are left unspoken. She freely shares other snippets of her mercenary life, battles, and surviving against the odds, and you too offer a recounting of your own experiences.
+You speak to the woman at length about a variety of topics. The scars on her face tell stories of their own, but specifics are left unspoken. She freely shares other snippets of her mercenary life, battles, and surviving against the odds, and you too offer a recounting of your own experiences.
 
-""Hmm,"" she grunts, ""Sounds like a right mess you're in. If yer lookin' for a bit of advice or maybe some work, I might consider lendin' a hand.""
+""Hmm,"" she grunts, ""Sounds like a right mess you're in. If you're lookin' for a bit of advice or maybe some work, I might consider lending a hand.""
 
 ","armaa_dawn_barEvent1:""See you around.""
 armaa_dawn_barEvent2:""Thanks. I appreciate it.""
@@ -406,27 +407,13 @@ armaa_dawnMeeting3,DialogOptionSelected,$option == armaa_dawn_barEvent3,"$option
 FireBest DialogOptionSelected
 $player.ethosKnowledge++",,,
 armaa_dawnMeeting4,DialogOptionSelected,$option == armaa_dawn_barEvent4,"AdjustRepActivePerson COOPERATIVE 5
-BarCMD returnFromEvent true","
-Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
+BarCMD returnFromEvent true","Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
 
-""Reckon you've got yer own path to tread, and I've got mine. But should our trails cross again, mayhaps we'll find ourselves fightin' side by side.""
+""Reckon you've got your own path to tread, and I've got mine. But should our trails cross again, mayhaps we'll find ourselves fightin' side by side.""
 
 With a nod and a faint smile, she raised her tankard in a silent salute. ""May Ludd favor your journey, stranger. Until we meet again.""
 
-Dawn then excused herself with a gruff chuckle, signaling the end of the conversation. ""I've got more drinking to do and tales to drown. Safe travels, and may the stars guide you.""",,
-#armaa_dawnBarEventStart3,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
-armaa_Hikaru_Utada playMusic music_armaa_seraph
-ShowPersonVisual
-FireAll armaa_dawnBarMeetingAsk","$personName rather obviously continues to stare at you. ""Blah blah blah""","armaa_dawnBarEventBusiness:""Business.""
-armaa_barDawnEventPleasure:""Pleasure.""
-",
-#armaa_dawnBarEventStart4,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
-armaa_Hikaru_Utada playMusic music_armaa_seraph
-ShowPersonVisual
-FireAll armaa_dawnBarMeetingAsk","$personName rather obviously continues to stare at you. ""Blah blah blah""","armaa_dawnBarEventBusiness:""Business.""
-armaa_barDawnEventPleasure:""Pleasure.""
-",
-,,,,,,
+Dawn then excuses herself with a gruff chuckle, signaling the end of the conversation. ""I've got more drinking to do and tales to drown. Safe travels, and may the stars guide you.""",,
 ,,,,,,
 armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
@@ -837,6 +824,7 @@ armaa_AXEncounterKillIt,armaa_alphaBountyTalk,,$entity.ignorePlayerCommRequests 
 ,,,,,,
 armaa_seraphMusic,OpenCommLink,$id == armaa_seraph,armaa_Hikaru_Utada playMusic music_armaa_seraph,,,
 armaa_contactGreetingOfficial3,PickGreeting,"!$player.hasSeraphaCommsId score:1000
+!armaa_Hikaru_Utada hasOfficer armaa_dawn
 $id == armaa_seraph score:100",,The crest of Arma Armatura rotates in place a few times before your connection request is denied.,,
 armaa_contactGreetingOfficial2,PickGreeting,"!MissionHubCMD hasHub
 $id == armaa_seraph","ShowPersonVisual
