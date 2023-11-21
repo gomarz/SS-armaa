@@ -1,3 +1,13 @@
+v2.3 beta 2
+-----
+- fixed jarring music transition
+- fixed assault burn being broken if repeateadly double tapping W while already burning
+- fixed being able to assault burn, boost when flamed out
+- unhid meshan admin at start of the game
+	- starting comm-link just gives a generic request denial until unlocked
+- hid dawn at start of the game
+	- can now be met at the bar initially
+
 v2.3
 ------
 ==New Features / Content==

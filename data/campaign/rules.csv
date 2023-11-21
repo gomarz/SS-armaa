@@ -300,7 +300,7 @@ FireAll PopulateOptions","As you gaze at the crest of Arma Armatura, it takes a 
 
 ""Hello again, $playerSirOrMadam$ $player.lastName. How can I help you today?""",,
 ,,,,,,
-armaa_OfficeQuestion1,PopulateOptions,"!$hasSeraphaCommsId
+armaa_OfficeQuestion1,PopulateOptions,"!$player.hasSeraphaCommsId
 $id == armaa_dawn score:1000
 ",,,"armaa_dawnAskForContact:""I want to talk to Administrator Pha.""",
 armaa_OfficeQuestion2,PopulateOptions,"!$askedDawnAboutName
@@ -310,7 +310,7 @@ armaa_OfficeQuestion3,PopulateOptions,"!$armaa_gotBrochure
 $id == armaa_dawn score:1000
 ",,,"armaa_loreDump1:""Can you tell me more about Arma Armatura?""",
 armaa_HireDawn,PopulateOptions,"$id == armaa_dawn
-$hasSeraphaCommsId",SetOptionColor armaa_HireDawn2 highlight,,"armaa_HireDawn2:""Why don't you work for me?""",
+$player.hasSeraphaCommsId",SetOptionColor armaa_HireDawn2 highlight,,"armaa_HireDawn2:""Why don't you work for me?""",
 armaa_HireDawn2,DialogOptionSelected,$option == armaa_HireDawn2,FireAll PopulateOptionsHire,"""As long as it's not as your secretary. Need a pilot?""",,
 armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk
@@ -327,7 +327,7 @@ SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
-$hasSeraphaCommsId = true","""No sweat,"" the woman assures with a subtle nod. As your personal gadget beeps, she adds, ""I've thrown her comms ID your direction.""
+$player.hasSeraphaCommsId = true","""No sweat,"" the woman assures with a subtle nod. As your personal gadget beeps, she adds, ""I've thrown her comms ID your direction.""
 
 You can't help but find it odd how readily she handed over this information without you even clarifying your purpose.
 ","cutCommLink:""Thanks"" (cut comm-link)",
@@ -337,7 +337,7 @@ SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
-$hasSeraphaCommsId = true","""Well, you've pulled your weight around here,"" the woman acknowledges with a slight nod. As your personal gadget beeps, she adds, ""I've shot Administrator Pha's comms ID over to you. Bet she's itching to team up with someone like you.""","cutCommLink:""Thanks"" (cut comm-link)",
+$player.hasSeraphaCommsId = true","""Well, you've pulled your weight around here,"" the woman acknowledges with a slight nod. As your personal gadget beeps, she adds, ""I've shot Administrator Pha's comms ID over to you. Bet she's itching to team up with someone like you.""","cutCommLink:""Thanks"" (cut comm-link)",
 armaa_OfficeTalk,DialogOptionSelected,$option == armaa_OfficeTalk,,,,
 armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""What, my name? Too Luddic for your tastes 'er somethin?""
 ","armaa_dawnSmallTalkNeutral:""What's a luddic doing employed by a weapons manufacturer?""
@@ -379,6 +379,55 @@ armaa_loreDump3,DialogOptionSelected,$option == armaa_loreDump3,"AddTextSmall ""
 $armaa_gotBrochure = true
 FireAll PopulateOptions","""Got any burning questions or wanna dig into a specific product? Don't hold back, just shoot. I'll toss you our brochure for the nitty-gritty details,"" she gruffly states.",,
 ,,,,,,
+armaa_dawnBarMeetingEvent,AddBarEvents,"$market.id == armaa_meshanii_market
+!$player.armaa_metDawnInitial","AddBarEvent armaa_dawnMeeting ""Approach the rugged woman"" "" In one corner, a rugged figure nursing a tankard of ale catches your eye."" highlight",,,
+armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_armaa_seraph
+ShowPersonVisual
+$player.armaa_metDawnInitial = true
+SetPersonHidden armaa_dawn false
+AddPotentialContact armaa_dawn","Dawn watches you approach with mild interest. A crooked smile greets you as she acknowledges your presence.
+
+She raises an eyebrow, her voice gravelly as she speaks, ""Well, look what the cat dragged in. Fancy a chat, do ya?"" You pull out a chair and take a seat, trying to match her casual demeanor.
+
+You speak to the woman at length about a variety of topics. The scars on her face tell stories of battles fought, but specifics are left unspoken. She freely shares other snippets of her mercenary life, battles, and surviving against the odds, and you too offer a recounting of your own experiences.
+
+""Hmm,"" she grunts, ""Sounds like a right mess you're in. If yer lookin' for a bit of advice or maybe some work, I might consider lendin' a hand.""
+
+","armaa_dawn_barEvent1:""See you around.""
+armaa_dawn_barEvent2:""Thanks. I appreciate it.""
+armaa_dawn_barEvent3:""I'll look you up if i'm in the area.""",
+armaa_dawnMeeting1,DialogOptionSelected,$option == armaa_dawn_barEvent1,"$option = armaa_dawn_barEvent4 0
+FireBest DialogOptionSelected",,,
+armaa_dawnMeeting2,DialogOptionSelected,$option == armaa_dawn_barEvent2,"$option = armaa_dawn_barEvent4 0
+FireBest DialogOptionSelected
+$player.ethosOrder++",,,
+armaa_dawnMeeting3,DialogOptionSelected,$option == armaa_dawn_barEvent3,"$option = armaa_dawn_barEvent4 0
+FireBest DialogOptionSelected
+$player.ethosKnowledge++",,,
+armaa_dawnMeeting4,DialogOptionSelected,$option == armaa_dawn_barEvent4,"AdjustRepActivePerson COOPERATIVE 5
+BarCMD returnFromEvent true","
+Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
+
+""Reckon you've got yer own path to tread, and I've got mine. But should our trails cross again, mayhaps we'll find ourselves fightin' side by side.""
+
+With a nod and a faint smile, she raised her tankard in a silent salute. ""May Ludd favor your journey, stranger. Until we meet again.""
+
+Dawn then excused herself with a gruff chuckle, signaling the end of the conversation. ""I've got more drinking to do and tales to drown. Safe travels, and may the stars guide you.""",,
+#armaa_dawnBarEventStart3,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_armaa_seraph
+ShowPersonVisual
+FireAll armaa_dawnBarMeetingAsk","$personName rather obviously continues to stare at you. ""Blah blah blah""","armaa_dawnBarEventBusiness:""Business.""
+armaa_barDawnEventPleasure:""Pleasure.""
+",
+#armaa_dawnBarEventStart4,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_armaa_seraph
+ShowPersonVisual
+FireAll armaa_dawnBarMeetingAsk","$personName rather obviously continues to stare at you. ""Blah blah blah""","armaa_dawnBarEventBusiness:""Business.""
+armaa_barDawnEventPleasure:""Pleasure.""
+",
+,,,,,,
+,,,,,,
 armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 !$player.metDawnAtBar
@@ -388,7 +437,7 @@ armaa_dawnBarEventStart,DialogOptionSelected,$option == armaa_dawnAsk,"BeginConv
 armaa_Hikaru_Utada playMusic music_armaa_seraph
 ShowPersonVisual
 $player.metDawnAtBar = true
-FireAll armaa_dawnBarAskHubOptions","$personName raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? It's a concoction they call 'Stellar Elixir.' It's as close as I'll ever get to sipping on a nebula in this dive.""
+FireAll armaa_dawnBarAskHubOptions","Dawn raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? It's a concoction they call 'Stellar Elixir.' It's as close as I'll ever get to sipping on a nebula in this dive.""
 
 ""Anyways..business or pleasure?""","armaa_dawnBarEventBusiness:""Business.""
 armaa_barDawnEventPleasure:""Pleasure.""
@@ -787,6 +836,8 @@ to stray from my designated path would be an act of betrayal to my core programm
 armaa_AXEncounterKillIt,armaa_alphaBountyTalk,,$entity.ignorePlayerCommRequests = true,,"cutCommLink:""Die, abomination!"" (Cut comm link)",
 ,,,,,,
 armaa_seraphMusic,OpenCommLink,$id == armaa_seraph,armaa_Hikaru_Utada playMusic music_armaa_seraph,,,
+armaa_contactGreetingOfficial3,PickGreeting,"!$player.hasSeraphaCommsId score:1000
+$id == armaa_seraph score:100",,The crest of Arma Armatura rotates in place a few times before your connection request is denied.,,
 armaa_contactGreetingOfficial2,PickGreeting,"!MissionHubCMD hasHub
 $id == armaa_seraph","ShowPersonVisual
 AddPotentialContact
