@@ -22,7 +22,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_alesteLeftArm",
+        "C_ARML": "armaa_aleste_blade_LeftArm",
       }
     },
     {

@@ -36,7 +36,7 @@ Altagrave[C],armaa_altagrave_c,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,3
 Altagrave[EX],armaa_altagrave_ex,Mobile Armor,Arma Armatura,armaa_havocDrive,,35,3250,425,6500,,400,80,,80,110,80,95,100,250,OMNI,,300,0.4,0.7,,,0,0,10,10,1,15,10,200000,6,20,280,0.25,35,35,SHIP_WITH_MODULES,"armaa_mobilearmor,no_sell,no_dealer_restricted",0.4,0.3,2,4,2,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Garegga,armaa_garegga,Mobile Armor,Arma Armatura,armaa_silverSword,,9,2000,300,3500,,250,45,,120,150,150,85,190,180,FRONT,,270,0.25,0.8,,,5,0,0,10,1,20,9,42000,8,20,300,0.25,9,9,,"rare_bp, hist1t",0.7,0.4,2,4,309,,,,,,,
-Corsair (H),armaa_corsair_xiv,Mobile Armor,Arma Armatura,ammofeed,,14,4500,700,4000,,250,100,,120,90,60,90,50,400,FRONT,,120,0.25,1,,,5,0,0,10,1,20,9,62000,8,20,300,0.25,14,14,,no_dealer_restricted,0.7,0.4,2,4,309,,,,,,,
+Corsair (H),armaa_corsair_xiv,Mobile Armor,Arma Armatura,ammofeed,,14,4500,700,4000,,250,100,,120,90,60,90,50,400,FRONT,,180,0.25,1,,,5,0,0,10,1,20,9,62000,8,20,300,0.25,14,14,,no_dealer_restricted,0.7,0.4,2,4,309,,,,,,,
 Watchdog,armaa_monitor,Mobile Armor,Arma Armatura,armaa_siegeMode,,11,5000,750,5000,,300,80,,80,50,45,60,70,450,FRONT,,140,0.3,0.9,,,45,90,90,90,1,20,9,62000,5,10,400,0.25,11,11,,"rare_bp, hist1t,armaa_mobilearmor,no_wingcom_docking",0.5,2,2,,214,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kshatriya,armaa_kshatriya,Mobile Armor,Arma Armatura,armaa_rampagedrive,,18,5000,500,5800,,400,90,1,100,100,100,50,50,375,OMNI,,360,0.4,0.6,,,15,15,10,10,1,15,10,130000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,no_dealer_restricted,0.5,0.3,2,4,2,,,,,,,

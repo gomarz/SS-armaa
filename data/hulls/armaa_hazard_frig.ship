@@ -37,7 +37,7 @@
     "BEACON": "armaa_landingBeacon",
     "F_LEGS": "armaa_ht_legs"
   },
-"builtInMods": ["armaa_wingCommander","strikeCraft","beamCoatType2","rugged"],
+"builtInMods": ["armaa_wingCommander","strikeCraft","beamCoatType2","rugged","do_not_back_off"],
 "builtInWings": ["armaa_valkenmp_wing"],
   "center": [
     9,

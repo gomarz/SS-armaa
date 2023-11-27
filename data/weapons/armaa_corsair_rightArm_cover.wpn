@@ -31,6 +31,7 @@
   "hitGlowRadius": 0,
   "id": "armaa_corsair_rightArm_cover",
   "noImpactSounds": false,
+  "showDamageWhenDecorative": true,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
   "pixelsPerTexel": 5,

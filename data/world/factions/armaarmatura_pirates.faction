@@ -22,10 +22,11 @@
 	},
 	"description":"The Meshan Reprisal Coalition (MRC) is the evolution of an initially peaceful political movement aimed to hold accountable those responsible for the catastrophic misuse of Domain-era planetkillers throughout the AI Wars. However, over time, the organization took a dark turn, evolving into a radicalized paramilitary organization that operates on the fringes of civilized space today. Their motivations have become morally ambiguous, to say the least. \n The MRC maintains loose affiliations with a spectrum of factions; all of whom claim to champion 'noble' causes, such as the ARC. This ambiguous nobility often pits them against the established powers in the Sector, though they hold particular ire towards Tri-Tachyon, the Hegemony, and the Sindrian Diktat. \n Persistent rumors suggest that influential figures in the landscape tacitly endorse the MRC's actions and have been subtly employing them as a sort of proxy to satisfy their own interests. This theory is supported by the steady decrease in any kind of tangible demands for justice and a ramp up in raids and attacks in recent years. The motives behind these actions remain ambiguous, leaving observers to question where the line between righteousness and ruthlessness truly lies.",
 	"names":{
-		"modern":3,
+		"modern":1,
 		"world":1,
-		"fringe":4,
+		"fringe":1,
 		"myth":1,
+		"luddic":1,
 	},
 	"hullFrequency":{
 			"hulls":
@@ -175,7 +176,6 @@
 		"encounter_hostile":"music_armaa_pirate_encounter_hostile",
 		"encounter_friendly":"music_armaa_pirate_encounter_friendly",
 	},
-	"internalComms":"tritachyon_internal",
 	"portraits":{
 		"standard_male":[
 			"graphics/armaa/portraits/armaa_portrait03.png",
@@ -261,11 +261,11 @@
 	},
 	"ranks":{
 		"ranks":{
-			"spaceCommander":{"name":"Captain"},
+			"spaceCommander":{"name":"Doge"},
 		},
 		"posts":{
-			"patrolCommander":{"name":"Redistro Commander"},
-			"fleetCommander":{"name":"Admiral"},
+			"patrolCommander":{"name":"Captain"},
+			"fleetCommander":{"name":"Commando"},
 			"baseCommander":{"name":"Stronghold Boss"},
 			"stationCommander":{"name":"Freeport Captain"},
 			"portmaster":{"name":"Harbor Master"},
@@ -276,10 +276,13 @@
 		"LOW":{
 			"soldier":3,
 			"spacer":10,
+			"faithful":5,	
+		        "pather":2,	
 		},
 		"MEDIUM":{
 			"soldier":5,
 			"spacer":10,
+			"faithful":2,
 		},
 		"HIGH":{
 			"soldier":5,
@@ -298,18 +301,19 @@
 		"allowsTransponderOffTrade":true,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":true, # for fleet behavior
-		"makesPirateBases":false,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
-		"pirateBaseStationTypes":{
-			"orbitalstation":5,
-			"orbitalstation_mid":3,
-			"orbitalstation_high":2,
+		"patherBaseTypesSmall":{
+			"orbitalstation":10,
+		},
+		"patherBaseTypesLarge":{
+			"battlestation":10,
 		},
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,
 			"vsFreePort":false,
 			"canBombard":true,
 			"territorial":false,
+			"canSendWithoutMilitaryBase":true,
 		},
 	},
 	"fleetTypeNames":{

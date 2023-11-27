@@ -1,0 +1,56 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "light_mortar_fire",
+"everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_aleste_torso_ace_s",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      255,
+      125,
+      105,
+      255
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.2,
+    "particleSizeMin": 5,
+    "particleSizeRange": 10,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "lightmortar_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "requiresFullCharge": false,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "showDamageWhenDecorative":true,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+ # "turretGunSprite": "graphics/armaa/ships/valken/armaa_valkenBodyBarrel.png",
+  "turretOffsets": [
+    18,
+    0
+  ],
+  "turretSprite": "graphics/armaa/ships/aleste/bbplus/armaa_aleste_torso.png",
+  "type": "DECORATIVE",
+  "visualRecoil": 3
+}

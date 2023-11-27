@@ -9,7 +9,7 @@ armaa_glaive_trail3,armaa_mauler_shot,glaive_trail_helix,10,0,0.5,0.2,40,15,"[80
 trails_heavyac_rem,armaa_ac_shot,glaive_trail_helix,8,0,0.1,0.5,4,30,"[225,255,200]","[125,150,125]",0.3,-1,0,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,TRUE
 trails_heavyac_rem2,armaa_ac_shot,base_trail_zap,8,0,0.1,0.5,4,20,"[225,255,200]","[125,150,125]",0.3,128,10,20,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,FALSE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_chain_trail,armaa_chaingun_shot,base_trail_smooth,10,0,0.1,0.2,6,3,"[255,240,165]","[100,80,65]",0.1,400,128,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+armaa_chain_trail,armaa_chaingun_shot,base_trail_smooth,15,0,0.1,0.2,6,3,"[255,180,0]","[200,80,0]",0.3,400,128,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_hominglaser2_trail,armaa_hominglaser2,beam_trail_smooth,8,0,0.1,0.5,8,12,"[250,197,92]","[250,197,92]",0.9,300,500,13,0,1,FALSE,FALSE,TRUE,0,0,0,0,20,0,TRUE,
 armaa_hominglaser2_trail2,armaa_hominglaser2,base_trail_smooth,18,0,0.1,0.5,22,16,"[255,0,0]","[250,0,0]",0.7,300,500,13,0,1,FALSE,FALSE,TRUE,10,30,0,0,20,0,TRUE,

@@ -17,16 +17,17 @@
     "strikeCraft",
     "armaa_strikeCraftFrig",
     "armaa_melee",
+    "armaa_alesteSkinSwap",
     "reduced_explosion"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_aleste_variablerifle",
-    "B_TORSO": "armaa_aleste_torso_ace",
-    "C_ARML": "armaa_aleste_blade_LeftArm",
+    #"A_GUN": "armaa_aleste_variablerifle",
+    #"B_TORSO": "armaa_aleste_torso_ace",
+    #"C_ARML": "armaa_aleste_blade_LeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_aleste_leftPauldron",
-    "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead",
+    #"D_PAULDRONL": "armaa_aleste_leftPauldron",
+    #"D_PAULDRONR": "armaa_aleste_rightPauldron",
+    #"E_HEAD": "armaa_alesteHead",
     "F_LEGS": "armaa_ht_legs"
   },
   "weaponSlots": [
@@ -155,7 +156,7 @@
     {
       "id": "H_GLOW",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,

@@ -1,0 +1,46 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "displayArcRadius": 250,
+  "fireSoundTwo": "needler_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_alesteHead_s",
+  "muzzleFlashSpec": {
+    "length": 5,
+    "particleColor": [
+      255,
+      240,
+      165,
+      200
+    ],
+    "particleCount": 7,
+    "particleDuration": 0.15,
+    "particleSizeMin": 6,
+    "particleSizeRange": 8,
+    "spread": 6
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "lightneedler_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    4
+  ],
+  "turretSprite": "graphics/armaa/ships/aleste/bbplus/armaa_aleste_head.png",
+  "type": "BALLISTIC"
+}

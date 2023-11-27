@@ -5,11 +5,11 @@
   "type": "BALLISTIC",
   "size": "LARGE",
   "everyFrameEffect": "data.scripts.weapons.armaa_BarrettaOnFireEffect",
-  "turretSprite": "graphics/armaa/ships/garegga/00.png",
-  "turretGunSprite": "graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv_rightArm.png",
+  "turretSprite": "graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv_rightArm.png",
+  "turretGunSprite": "graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv_rightArm_recoil.png",
   "hardpointSprite": "",
   "hardpointGunSprite": "",
-  "visualRecoil": 10,
+  "visualRecoil": 20,
   "renderHints": [
     "RENDER_BARREL_BELOW"
   ],

@@ -7,7 +7,7 @@
 	"statsScript":"data.scripts.shipsystems.armaa_havocDrive",
 	
 	#"engineGlowColor":[255,138,216,255],
-	"engineGlowColor":[255,50,0,255],
+	"engineGlowColor":[100,165,255,120],
 	#"engineGlowContrailColor":[100,165,255,25],
 	"engineGlowLengthMult":3,
 	"engineGlowWidthMult":1.5,

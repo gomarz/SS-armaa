@@ -4,7 +4,7 @@
   "goalVariant": false,
   "fluxVents": 0,
   "hullId": "armaa_aleste_frig_swordsman",
-  "hullMods": ["safetyoverrides","advancedoptics"],
+  "hullMods": ["advancedoptics"],
   "variantId": "armaa_aleste_swordsman",
   "weaponGroups": [
     {
@@ -25,7 +25,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_sprigganHead",
+        "E_HEAD": "armaa_alesteHead",
       }
     },
     {

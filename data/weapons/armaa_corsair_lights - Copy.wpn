@@ -26,7 +26,7 @@
   ],
   "hardpointSprite": "",
   "hitGlowRadius": 0,
-  "id": "armaa_corsair_lights",
+  "id": "armaa_corsair_lights_p",
   "everyFrameEffect":"data.scripts.weapons.armaa_ceylonLights",
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
@@ -45,7 +45,7 @@
     -16,
     33
   ],
-  "turretSprite": "graphics/armaa/ships/corsair/armaa_corsair_xiv_lights.png",
+  "turretSprite": "graphics/armaa/ships/corsair/armaa_corsair_p_lights.png",
   "type": "DECORATIVE",
   "renderHints":["RENDER_ADDITIVE"],
   "width": 1

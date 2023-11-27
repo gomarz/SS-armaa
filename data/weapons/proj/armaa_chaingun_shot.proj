@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"length":16.0,
+	"length":20.0,
 	"width":4.0,
 	"fadeTime":0.2,
 	#"fringeColor":[255,125,125,255],

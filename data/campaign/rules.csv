@@ -724,7 +724,7 @@ armaa_zanacGift,PickGreeting,"$id == armaa_seraph
 !$givenZanacBP
 $faction.relValue >= 0.25
 ","ShowPersonVisual
-AddRemoveAnyItem SPECIAL ship_bp armaa_zanac 1
+AddRemoveAnyItem SPECIAL ship_bp armaa_zanac_grey 1
 FireAll PopulateOptions
 $givenZanacBP = true","After a short wait, your connection request is accepted.
 

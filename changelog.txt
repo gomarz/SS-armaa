@@ -1,3 +1,19 @@
+v2.3 beta 3
+-----
+- fixed rulecmd print debug message in campaign
+- removed empty built-in slot on pilotable aleste
+- fixed D-modded Hel Corsair losing its legio-specific hullmods
+	- tweaked shield usage on modules
+- sharpened exsedol illustration
+- fixed recoil sprite for watchdog(H)
+- corsair
+	- shield arc: 120->180
+- added bbplus skin for aleste
+- fixed particles effects from hi-mac not matching engine color if it was shifted
+- fixed bad rank id for sera
+- fixed memory leak with syko stim everyframe
+- fixed assault burn effects not ending if flamed out while active
+
 v2.3 beta 2
 -----
 - fixed jarring music transition
