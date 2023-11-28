@@ -1,0 +1,55 @@
+{
+  "id": "armaa_valkazard_torso_mp",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "showDamageWhenDecorative":true,
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/valkazard/mp/armaa_valkazard_torso_mp.png",
+  "everyFrameEffect": "data.scripts.weapons.armaa_VXEffect",  
+  "hardpointSprite": "graphics/armaa/ships/valkazard/mp/armaa_valkazard_torso_mp.png",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    18,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 10,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
+}

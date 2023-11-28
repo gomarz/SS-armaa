@@ -13,6 +13,7 @@ v2.3 beta 3
 - fixed bad rank id for sera
 - fixed memory leak with syko stim everyframe
 - fixed assault burn effects not ending if flamed out while active
+- added OP cost to HI-MAC
 
 v2.3 beta 2
 -----

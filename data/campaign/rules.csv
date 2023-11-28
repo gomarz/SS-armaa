@@ -407,13 +407,13 @@ armaa_dawnMeeting3,DialogOptionSelected,$option == armaa_dawn_barEvent3,"$option
 FireBest DialogOptionSelected
 $player.ethosKnowledge++",,,
 armaa_dawnMeeting4,DialogOptionSelected,$option == armaa_dawn_barEvent4,"AdjustRepActivePerson COOPERATIVE 5
-BarCMD returnFromEvent true","Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
+BarCMD returnFromEvent false","Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
 
 ""Reckon you've got your own path to tread, and I've got mine. But should our trails cross again, mayhaps we'll find ourselves fightin' side by side.""
 
 With a nod and a faint smile, she raised her tankard in a silent salute. ""May Ludd favor your journey, stranger. Until we meet again.""
 
-Dawn then excuses herself with a gruff chuckle, signaling the end of the conversation. ""I've got more drinking to do and tales to drown. Safe travels, and may the stars guide you.""",,
+Dawn then excuses herself with a gruff chuckle, signaling the end of the conversation. ""I've got more drinking to do and tales to drown. Safe travels, and may the stars guide you.""",backToBar:Take a look around the bar,
 ,,,,,,
 armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn

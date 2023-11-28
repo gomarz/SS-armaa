@@ -1,7 +1,7 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
-HI-MAC Manuever System,armaa_himac,6,0,,,,,TRUE,,,0,0,0,0,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
+HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop",,,,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
 Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
 Cramped Firing Solutions,armaa_crampedFiring,,,,,,,,,,0,0,0,0,data.hullmods.armaa_crampedFiring,Reduces fire rate by %s percent.,,,graphics/hullmods/targeting_core.png
@@ -47,7 +47,7 @@ This system is equipped with a manual safety override that can be tripped to for
 Due to limited space, %s.",,,graphics/armaa/hullmods/armaa_seraph_targeting.png
 SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
 C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
-Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,special,,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
+Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,"special,no_drop",,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
 
 When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,
 WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters,40000,,,,10,10,15,20,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/armaa/hullmods/armaa_wingcom.png
@@ -244,7 +244,7 @@ PAINT: STANDARD,armaa_vxSkin_AASV,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.
 PAINT: RED,armaa_vxSkin_rocketStars,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_rocketStars,Color Scheme of the 'Rocket Stars' mercenary outfit,Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
 PAINT: HI-TECH,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_midline,Standard High-Tech appearance with blue accents,Reconstruction of Pre-Collapse VX units using more easily sourced components.,,graphics/armaa/hullmods/armaa_paint.png
 ,,,,,,,,,,,,,,,,,,,
-Versatile Frame,armaa_alesteSkinSwap,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alesteSkinSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+Versatile Frame,armaa_alesteSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_alesteSkinSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 PAINT: STANDARD,armaa_alesteSkin_default,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,Standard,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
 PAINT: CONCLAVE,armaa_alesteSkin_bbplus,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alesteSkin_bbplus,Outcast from the broken blade.,Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
 #CEYLON,,,,,,,,,,,,,,,,,,,

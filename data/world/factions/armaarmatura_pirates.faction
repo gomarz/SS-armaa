@@ -48,7 +48,7 @@
 				"armaa_whitebase":0.4,
 				"monitor":0.25,
 				"brawler":0.25,
-				"armaa_corsair_p": 1.25,	
+				#"armaa_corsair_p": 1.25,	
 				"heron": 0.2,
 				"drover": 0.2,
 				"manticore_pirates": 0.8,
@@ -108,7 +108,7 @@
 				"heron",
 				"wolf_d_pirates",
 				"drover",
-				"armaa_corsair_p",	
+				#"armaa_corsair_p",	
 			],
 	},
 	"shipsWhenImporting":{

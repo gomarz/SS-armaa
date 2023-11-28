@@ -17,8 +17,7 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "armaa_vxSkinSwap",
-    "armaa_variableRifle",
-    "do_not_back_off"
+    "armaa_variableRifle"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_valkenx_torso_frig",
