@@ -1,3 +1,8 @@
+v2.3 beta 4
+------------
+- add faction start banners for nex (thx mayuyu)
+- changed bbplus aleste skin prefix from bbplus->sephira
+
 v2.3 beta 3
 -----
 - fixed rulecmd print debug message in campaign

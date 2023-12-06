@@ -1,10 +1,10 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
-HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop",,,,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
+HI-MAC Manuever System,armaa_himac,6,0,,special,,,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
 Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
-Cramped Firing Solutions,armaa_crampedFiring,,,,,,,,,,0,0,0,0,data.hullmods.armaa_crampedFiring,Reduces fire rate by %s percent.,,,graphics/hullmods/targeting_core.png
+Cramped Firing Solutions,armaa_crampedFiring,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_crampedFiring,Reduces fire rate by %s percent.,,,graphics/hullmods/targeting_core.png
 Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,,graphics/armaa/hullmods/armaa_assaultpods.png
 Assault Pod Killer,armaa_assaultPodKiller,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPodKiller,Shouldn't be visible. Kills BA Pods at end of combat.,,,graphics/armaa/hullmods/armaa_assaultpods.png
 Advanced Optics(AA),armaa_advancedoptics,,,Arma Armatura,,,,,TRUE,,3,10,15,25,data.hullmods.armaa_advancedoptics,"Extends the range of beam weapons by %s, but reduces their turn rate by %s. Cumulative with Integrated Targeting Unit. Cannot be built-in.",Increases beam weapon range.,,graphics/hullmods/advanced_optics.png
@@ -246,7 +246,7 @@ PAINT: HI-TECH,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmod
 ,,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_alesteSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_alesteSkinSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 PAINT: STANDARD,armaa_alesteSkin_default,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,Standard,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
-PAINT: CONCLAVE,armaa_alesteSkin_bbplus,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alesteSkin_bbplus,Outcast from the broken blade.,Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
+PAINT: SEPHIRAN,armaa_alesteSkin_sephira,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alesteSkin_sephira,[REDACTED],Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
 #CEYLON,,,,,,,,,,,,,,,,,,,
 AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,
 ,,,,,,,,,,,,,,,,,,,

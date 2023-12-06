@@ -25,20 +25,20 @@
 	[
 		["armaa_aleste_as_f", "armaa_valkyrie_standard"],
 		["armaa_valkenx_frig_assault","gemini_Standard"],
-		["armaa_leynos_standard","condor_Support"],
-		["armaa_record_frig_standard","armaa_condor_Support"],
+		["armaa_leynos_standard","armaa_condor_Support"],
+		["armaa_record_frig_standard","condor_Attack"],
 	],
 
 	"startShipsCombatSmall":
 	[
-		["armaa_monitor_standard", "wayfarer_Standard"],
-		["armaa_garegga_standard", "buffalo_Standard"],
+		["armaa_monitor_standard", "armaa_hazard_frig_standard", "armaa_valkenx_frig_assault"],
 	],
+        "startShipsTradeSmall":[["gemini_standard", "armaa_record_frig_standard"]],
+        "startShipsExplorerLarge":[["venture_Balanced", "armaa_valkenx_frig_assault"]],
 	"startShipsSuper":
 	[
 		["armaa_altagrave_c_Standard","wayfarer_Standard"],
-		["armaa_zanac_assault","wayfarer_Standard"],
-		["armaa_einhander_plus_subprime","condor_Support"],
+		["armaa_zanac_sniper_ex","wayfarer_Standard"],
 		["armaa_einhander_Strike", "armaa_condor_Support"],
 	],
 	"startSpecialItems":[

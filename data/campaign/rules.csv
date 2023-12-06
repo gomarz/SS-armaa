@@ -69,8 +69,26 @@ $valkazard score:1000,Salvage crews boarding the wreck discover that many essent
 armaa_valkazardWreckDetails,ShowSalvageEntityDetails,"$customType == wreck
 $valkazard score:1000",ShowDefaultVisual,,,
 ,,,,,,
+armaa_nex_NGCPickStartingShips_SC,ExerelinNGCStep3,"$playerFaction == armaarmatura
+!$armaa_ChangeMind
+$corvusMode","ARMAAMissionImage logo armaa_start
+AddText ""One of the many contractor-slash-mercenaries employed by the Arma Armatura corporation, you have in your possession one of the companies CATAPHRACT S-IIs. These machines grant bonuses toward raids and grant access to the CATAPHRACT-STRIKE ability during invasions. Due to their STRIKECRAFT hullmod, they can also land and resupply on carriers. Your ultimate fate, and the mark you leave on the sector, is entirely up to you.""
+SetTextHighlightColors hColor hColor hColor hColor
+SetTextHighlights CATAPHRACT S-IIs CATAPHRACT-STRIKE STRIKECRAFT
+
+AddText ""You will start in orbit of NEW MESHAN, the home of the corporation at the GAMLIN star system.""
+SetTextHighlightColors ""152,171,75,255"" ""152,171,75,255"" hColor
+SetTextHighlights NEW MESHAN GAMLIN
+
+$armaa_ChangeMind = true 0",,,
+bbp_nex_NGCPickStartingSuperShip_Seraph,ExerelinNGCStep4Plus,"$option == nex_NGCFleetSuper
+$playerFaction == sephira_conclave","AddText ""By choosing this option, you will assume the role of a test pilot for the Project: Seraph. It is highly advisable that you speak to Chief Researcher Gemie in the Starkeep's comm channel before you embark to your journey.""
+SetTextHighlightColors highlight highlight ""230,125,160,255"" ""230,125,160,255"" ""230,125,160,255""
+SetTextHighlights Project: Seraph Chief Researcher Gemie",,,
+#END Nex Blurb,,,,,,
 arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
-!$armaarmatura_pirates_ChangeMind","AddText ""c+94 - First AI War""
+!$armaarmatura_pirates_ChangeMind","ARMAAMissionImage logo mrc_start
+AddText ""c+94 - First AI War""
 SetTextHighlights c+94 - First AI War
 AddText ""Amidst the ruins of Meshan, a planet devastated by AI warfleets, you stand as one of the scarce survivors. Fleeing the system seems futile, but you manage to shut down all nonessential systems on your vessel, employing a desperate measure to elude detection.""
 SetTextHighlights AI warfleets
@@ -119,6 +137,7 @@ SetTextHighlights SILVERSWORD
 
 AddText""The enemy is nearby. You will likely be attacked immediately.""
 SetTextHighlights You will likely be attacked immediately",,,
+#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb
 ,,,,,,
 #armaa_valkHunterCheck,BeginFleetEncounter,"$armaa_valkHunters score:100
 !$entity.ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
@@ -1046,8 +1065,4 @@ $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Hello there, fellow space traveler. $PersonRank $personName here. Looks like we've crossed paths in this vast expanse - no hostile intent on our end. Let's keep it peaceful, shall we?""
 OR
 ""Attention. If your path aligns with our cause, we welcome you. If not, consider this a peaceful warning to stay clear of our $shipOrFleet.""",,
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
 ,,,,,,

@@ -54,6 +54,10 @@
 		"ceylon":{
 			"armaa_ceylonrad":"graphics/armaa/fx/armaa_ceylonrad.png",
 			"armaa_ceylontarget":"graphics/armaa/fx/armaa_ceylontarget.png",
+		},
+		"logo":{
+			"mrc_start": "graphics/armaa/factions/new_game_start_mrc.png",
+			"armaa_start": "graphics/armaa/factions/new_game_start_armaa.png",
 		},	
 		"misc":{
            		"armaa_target":"graphics/warroom/taskicons/just_kill_it.png",

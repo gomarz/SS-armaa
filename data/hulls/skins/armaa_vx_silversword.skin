@@ -24,6 +24,7 @@
 		"D_PAULDRONL": "armaa_valkenx_leftPauldron",
 		"D_PAULDRONR": "armaa_valkenx_rightPauldron",
                 "B_TORSO": "armaa_valkazard_torso_mp",
+		"C_ARML": "armaa_valkazard_machinegun_left_deco",
     		"E_HEAD": "armaa_valkazard_head_mp",
 		"F_LEGS": "armaa_valkazard_legs",
     },

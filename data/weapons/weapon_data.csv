@@ -84,7 +84,7 @@ Light Assault Gun,armaa_valken_torso_black,0,,300,500,,40,,3,40,0,100,,,HIGH_EXP
 ,armaa_valken_leftPauldron_black,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valken_rightPauldron_black,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkenLeftArm_black,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
-Anti Ship Sword,armaa_valken_gun_black,,,,30,300,,10,20,80,,,,,KINETIC,,,0.55,0.5,0.3,,,,,,700,,,,,SYSTEM,,,Arma Armatura,,Anti Shield,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back. Inflicts hard flux.",The Sanctioned Action Is To Cut,,,,999,,
+Anti Ship Sword,armaa_valken_gun_black,,,,30,300,,10,20,80,,,,,KINETIC,,,0.55,0.5,0.3,,,,,,700,,,,,SYSTEM,doNotModify,,Arma Armatura,,Anti Shield,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back. Inflicts hard flux.",The Sanctioned Action Is To Cut,,,,999,,
 #Breach SRM(Ftr),armaa_breach_ftr,1,,200,1200,,150,,15,10,3,3,0.25,1,HIGH_EXPLOSIVE,0,,0,9,1,0.5,0,0,0,,,400,50,4.5,450,SYSTEM,,"DO_NOT_AIM, CONSERVE_ALL, CONSERVE_FOR_ANTI_ARMOR, DIRECT_AIM, MISSILE_SPREAD",,,,,Anti Armor,Medium,Good,,,Each missile deals an additional %s damage to armor. This damage is not reduced by armor.,200,,,TRUE,11.7
 #VALKEN-X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_valkenx_torso,2,,,,,,,,,,0,0.000001,9999,,,DS,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,,,
@@ -100,7 +100,7 @@ IPD Laser,armaa_valkenxHead_frig,,,,500,75,,40,,80,4,,,,ENERGY,,40,0.1,0.1,,,0,,
 Variable Rifle,armaa_valkenx_frig_variablerifle,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,,,
 Variable Rifle,armaa_valkenx_frig_ml_variablerifle,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,,,
 Assault Chaingun(F),armaa_chaingun,1,,,450,,40,,3,50,42,,,,HIGH_EXPLOSIVE,40,,0,0.6,3,0.15,0,15,1,10,,800,,,30,"SYSTEM,ANTI_FTR,PD,PD_ALSO",,,,,Anti Armor,,,,,,,,,,4.5,,
-LS-20  Heat Blade,armaa_valkenxLeftArm,,,,80,400,,,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,,,,,Anti Armor,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back. Inflicts hard flux. Once beam length is greater than %s of the base, damage gradually decreases.",The Sanctioned Action Is To Cut | 1.5x,,,,999,,
+LS-20  Heat Blade,armaa_valkenxLeftArm,,,,80,400,,,20,80,,,,,HIGH_EXPLOSIVE,,,0.33,0.33,0.6,,,,,,700,,,,,SYSTEM,doNotModify,,,,Anti Armor,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back. Inflicts hard flux. Once beam length is greater than %s of the base, damage gradually decreases.",The Sanctioned Action Is To Cut | 1.5x,,,,999,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Valkazard,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Autocannon,armaa_valkazard_torso_ac,1,,1000,800,,150,75,10,7,0,,,,KINETIC,150,,0,1.25,2,0.2,0,15.84,2.64,8.8,,888,,,30,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Anti Shield,,,,,,,"Hits on hull or armor arc to weapons and engines, dealing %s %s damage. These arcs are capable of piercing shields, depending on the target's flux level.",75|EMP,,,,5
@@ -113,13 +113,14 @@ High Intensity Beam,armaa_valkazard_torso_chaosburst,2,,2500,800,800,,,0,5,0,8,,
 High Intensity Minelayer,armaa_valkazard_torso_chaosburst_minelayer,0,,,,,200,,25,,,,,,FRAGMENTATION,0,,,,1,,,,,0,0,20,1000,,,SYSTEM,,,,,Unknown,,,,,,,,,,,,38.5
 AMWS,armaa_valkazard_head,2,,600,500,350,,,0,100,0,3,0.5,,ENERGY,,300,0.1,0.1,0.15,0.05,,,,,10000,,,,,"PD,SYSTEM,ANTI_FTR,PD_ALSO","no_drop, no_sell, no_drop_salvage",,,,Point Defense,,,,,,,,,,,,
 TB-11 Harpoon,armaa_valkazard_harpoon,1,0.25,5500,500,,350,,50,60,0,1,0.125,1,FRAGMENTATION,,,0.25,1,1,,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM,CONSERVE_FOR_ANTI_ARMOR,CONSERVE_ALL","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,EMP,,,,,"%s:Embedded harpoon will continously deal EMP damage, so long as it connects with hull.","Remote Detonation|50 High Explosive, 25 EMP",,,,,,
-LS-99P MOONLIGHT+,armaa_valkazard_blade,,,,80,1000,,0,20,80,,,,,ENERGY,,600,0.33,0.33,0.6,,,,,,1000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT,PD_ALSO,PD","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+LS-99P MOONLIGHT+,armaa_valkazard_blade,,,,80,1000,,0,20,80,,,,,ENERGY,,600,0.33,0.33,0.6,,,,,,1000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT,PD_ALSO,PD","no_drop, no_sell, no_drop_salvage, doNotModify",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 ,armaa_harpoonSecondary,1,,100,80,,50,25,50,10,,,,,HIGH_EXPLOSIVE,,,0,1,,,,,,,,300,100,5,300,SYSTEM,,,Arma Armatura,,,,,,,,,,,,,,
 ,armaa_valkazard_leftshoulder,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkazard_rightshoulder,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkazard_rightarm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkazard_head_glow,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 MAG47 MG,armaa_valkazard_machinegun_left,2,,1200,450,,25,,3,30,0,54,8,32,KINETIC,17,,0,0.1,3,0.1,0,15,0.6,8,,700,,,30,"SYSTEM,PD,PD_ALSO,DO_NOT_CONSERVE",,,Arma Armatura,,Point Defense/Anti Shield,,,,,,,,,,4.5,,
+MAG47 MG,armaa_valkazard_machinegun_left_deco,2,,1200,450,,25,,3,30,0,54,8,32,KINETIC,17,,0,0.1,3,0.1,0,15,0.6,8,,700,,,30,"SYSTEM,PD,PD_ALSO,DO_NOT_CONSERVE",,,Arma Armatura,,Point Defense/Anti Shield,,,,,,,,,,4.5,,
 MAG47 MG,armaa_valkazard_machinegun_right,2,,1200,450,,25,,3,30,0,54,8,32,KINETIC,17,,0,0.1,3,0.1,0,15,0.6,8,,700,,,30,"SYSTEM,PD,PD_ALSO,DO_NOT_CONSERVE",,,Arma Armatura,,Point Defense/Anti Shield,,,,,,,,,,4.5,,
 Assault Chaingun(F),armaa_valkazard_chaingun,1,,1000,450,,50,,3,30,0,,,,HIGH_EXPLOSIVE,40,,0,0.1,,,0,20,1,10,,800,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,4.5,,
 Y-L Rifle,armaa_valkazard_sniper,3,0.3,2250,1000,,275,400,40,10,13,,,,KINETIC,350,,0,2,1,,,,,,,1000,,,300,SYSTEM,,,,,Anti Shield,,,,,,,,,,,,5.5
@@ -168,9 +169,9 @@ Micro Needler,armaa_alesteHead2,3,0.3,800,400,,50,,1,20,,,,,KINETIC,40,,,4,3,0.0
 ,armaa_aleste_leftPauldron_s,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,,,,,,,,,,,,,999,,
 ,armaa_aleste_rightPauldron_s,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,,,,,,,,,,,,,999,,
 Stake Driver,armaa_alesteLeftArm,1,0.25,5500,500,,200,,50,60,0,20,,,FRAGMENTATION,100,,0.25,4,5,0.2,5,10,1,5,,2000,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Finisher,,,,,"%s:Embedded spikes detonate for %s damage, with arcing to weapons and engines. Can fire up to 6 spikes in a burst.","Remote Detonation|50 High Explosive, 250 EMP",,,,,,
-LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,80,900,,,20,80,,,,,ENERGY,,1,0.33,0.33,0.6,,,,,,4000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT,DO_NOT_AIM,PD_ALSO","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm_s,,,,80,900,,,20,80,,,,,ENERGY,,1,0.33,0.33,0.6,,,,,,4000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT,DO_NOT_AIM,PD_ALSO","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-LS-99 MOONLIGHT,armaa_aleste_blade_RightArm,,,,80,900,,,20,80,,,,,ENERGY,,1,0.33,0.33,0.6,,,,,,5000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm,,,,80,900,,,20,80,,,,,ENERGY,,1,0.33,0.33,0.6,,,,,,4000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT,DO_NOT_AIM,PD_ALSO","no_drop, no_sell, no_drop_salvage, doNotModify",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+LS-99 MOONLIGHT,armaa_aleste_blade_LeftArm_s,,,,80,900,,,20,80,,,,,ENERGY,,1,0.33,0.33,0.6,,,,,,4000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT,DO_NOT_AIM,PD_ALSO","no_drop, no_sell, no_drop_salvage, doNotModify",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+LS-99 MOONLIGHT,armaa_aleste_blade_RightArm,,,,80,900,,,20,80,,,,,ENERGY,,1,0.33,0.33,0.6,,,,,,5000,,,,,"SYSTEM,DANGEROUS,FIRE_WHEN_INEFFICIENT","no_drop, no_sell, no_drop_salvage, doNotModify",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 Heavy Rynex Pulse Laser,armaa_aleste_heavyrifle_right,2,,2500,900,,700,,0,15,0,20,,,ENERGY,840,,,5,,,,,,,,1400,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,General,,,,,,,,,,22.25,,
 Rynex Pulse Rifle,armaa_aleste_rightArm,1,,1000,600,,125,,3,40,0,,,,ENERGY,100,,0.22,0.22,1,,0,5,1,10,,1100,,,30,"SYSTEM,PD,PD_ALSO","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,General,,,,,,,,,,4.5,,
 Plasma Flamer,armaa_aleste_flamer_right,3,,1000,450,,45,,3,60,0,200,10,100,ENERGY,25,,,,2,0.05,0,0,0,0,,500,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,General,,,,,,,,,,,,
@@ -188,8 +189,8 @@ Curvy Laser (Proj),armaa_aleste_flamer_right_copy,3,,1000,1250,,50,60,3,60,0,30,
 Micro Autocannon,armaa_prodromos_leftArm,2,0.5,3200,400,,60,10,5,35,0,,,,FRAGMENTATION,,,,0.5,4,0.13,2,12,2,5,,1000,,,100,"SYSTEM,PD,PD_ALSO,IGNORES_FLARES",,,Arma Armatura,,General,,,,,,,,,,1.4,,
 Burst Frag Laser (High Delay),armaa_prodromos_rightArm,2,,600,500,410,,,0,100,7,2,0.5,,FRAGMENTATION,,205,0.1,0.1,0.8,0.1,,,,,10000,,,,,"SYSTEM,PD_ONLY,ANTI_FTR,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Micro Ion Cannon,armaa_pa_mid_leftArm,2,0.5,3200,400,,10,100,0,35,0,,,,ENERGY,,,0.8,0.5,2,0.13,2,5,1,5,,1000,,,100,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,1.4,,
-LS-10 Laser Dagger,armaa_pa_mid_rightArm,2,,600,25,200,,,0,100,7,,,,ENERGY,,,0.33,0.33,0.6,0.1,,,,,10000,,,,,"SYSTEM,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
-LS-10 Laser Dagger,armaa_kshatriya_rightArm_melee,2,,600,300,2000,,,0,40,7,,,,HIGH_EXPLOSIVE,,,.2,.2,.3,0.1,,,,,10000,,,,,"SYSTEM,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
+LS-10 Laser Dagger,armaa_pa_mid_rightArm,2,,600,25,200,,,0,100,7,,,,ENERGY,,,0.33,0.33,0.6,0.1,,,,,10000,,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
+LS-10 Laser Dagger,armaa_kshatriya_rightArm_melee,2,,600,300,2000,,,0,40,7,,,,HIGH_EXPLOSIVE,,,.2,.2,.3,0.1,,,,,10000,,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Burst Frag Laser (High Delay),armaa_pa_mid_head,2,,600,500,410,,,0,100,7,2,0.5,,FRAGMENTATION,,205,0.1,0.1,0.8,0.1,,,,,10000,,,,,"SYSTEM,PD_ONLY,ANTI_FTR,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Seeker Flare Launcher,armaa_flarelauncher3,,,,500,,10,400,,,,,0,,ENERGY,0,0,0,0.1,1,0.4,90,90,0,0,,400,200,7,1,,,SYSTEM,,,,,,,,,,,,,,,38
 Decoy Flare Launcher,armaa_flarelauncher2,,,,500,,10,350,,,,,0,,ENERGY,0,0,0,AA,2,0.4,30,30,0,0,,200,100,5,500,,,SYSTEM,,,,,,,,,,,,,,,37
@@ -206,7 +207,7 @@ ER PPC,armaa_altagrave_ppc,2,,2500,800,,3000,600,0,10,0,,,,FRAGMENTATION,1375,,0
 Syrinx MRM,armaa_altagrave_syrinx,5,,5500,1500,,275,0,10,15,42,144,,,HIGH_EXPLOSIVE,55,,,10,8,0.12,,,,,,400,70,5,100,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM",,,Arma Armatura,,Pressure,,,,,,,,,,12.95,,
 Syrinx MRM,armaa_altagrave_syrinx_left,5,,5500,1500,,275,0,10,15,42,144,,,HIGH_EXPLOSIVE,55,,,10,8,0.12,,,,,,400,70,5,100,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM,GROUP_LINKED, SYSTEM",,,Arma Armatura,,Pressure,,,,,,,,,,12.95,,
 Degraded Juno Mk. III,armaa_altagrave_fluxcannon,2,,4600,800,850,,,20,20,16,,,,KINETIC,,450,1.5,0.5,1.5,8,,,,,7000,,,,,"STRIKE, USE_VS_FRIGATES,SYSTEM",,,Arma Armatura,,Fire Support,,,,,,,,,,15.6,,
-LS-99 MOONLIGHT++,armaa_altagrave_blade,,,,250,1000,,200,20,80,,,,,ENERGY,,,0.35,0.35,0.6,0.2,,,,,700,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+LS-99 MOONLIGHT++,armaa_altagrave_blade,,,,250,1000,,200,20,80,,,,,ENERGY,,,0.35,0.35,0.6,0.2,,,,,700,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage, doNotModify",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 #ALTAGRAVE DECO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_altagrave_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_altagrave_leftPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
