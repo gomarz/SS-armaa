@@ -1,30 +1,25 @@
 {
   "id": "armaa_kshatriya_rightArm_melee",
-  "specClass": "beam",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_axe_shot",
   "type": "ENERGY",
-  "size": "MEDIUM",
-  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
+  "size": "LARGE",
+  #"interruptibleBurst": true,
+  "autocharge": true,
   "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaMeleeEffect",
-  "collisionClass": "RAY",
-  "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
+  "turretSprite": "",
+  "visualRecoil": 10,
+  "turretGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
-  "glowColor": [
-    255,
-    100,
-    0,
-    0
-  ],
-  "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    90.5,
-    7,
-    58,
-    19
+    119.5,
+    2.5,
+    68,
+    -17
   ],
   "turretAngleOffsets": [
     6,
@@ -37,32 +32,8 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "beamFireOnlyOnFullCharge": true,
-  "fringeColor": [
-    255,
-    0,
-    0,
-    255
-  ],
-  "coreColor": [
-    255,
-    200,
-    180,
-    255
-  ],
-  "darkCore": true,
-  "width": 17,
-  "textureType": [
-    "graphics/armaa/fx/armaa_parax_beam_fringe.png",
-    "graphics/armaa/fx/armaa_ppa_beam_core.png"
-  ],
-  "textureScrollSpeed": 128,
-  "pixelsPerTexel": 5,
-  "pierceSet": [
-    PROJECTILE_FF,
-    PROJECTILE_NO_FF,
-    PROJECTILE_FIGHTER
-  ],
+  "barrelMode": "LINKED",
+  "animationType": "NONE",
   "fireSoundOne": "laser_intro",
   "fireSoundTwo": "pd_laser_loop"
 }

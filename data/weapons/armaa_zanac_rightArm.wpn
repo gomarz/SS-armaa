@@ -8,7 +8,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_magnaBurstEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/zanac/zanac_rightArm.png",
+  "turretSprite": "graphics/armaa/ships/zanac/ex/zanac_rightArm_ex.png",
   "hardpointSprite": "",
   "showDamageWhenDecorative": true,
   "glowColor": [

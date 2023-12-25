@@ -190,7 +190,6 @@ Micro Autocannon,armaa_prodromos_leftArm,2,0.5,3200,400,,60,10,5,35,0,,,,FRAGMEN
 Burst Frag Laser (High Delay),armaa_prodromos_rightArm,2,,600,500,410,,,0,100,7,2,0.5,,FRAGMENTATION,,205,0.1,0.1,0.8,0.1,,,,,10000,,,,,"SYSTEM,PD_ONLY,ANTI_FTR,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Micro Ion Cannon,armaa_pa_mid_leftArm,2,0.5,3200,400,,10,100,0,35,0,,,,ENERGY,,,0.8,0.5,2,0.13,2,5,1,5,,1000,,,100,SYSTEM,,,Arma Armatura,,General,,,,,,,,,,1.4,,
 LS-10 Laser Dagger,armaa_pa_mid_rightArm,2,,600,25,200,,,0,100,7,,,,ENERGY,,,0.33,0.33,0.6,0.1,,,,,10000,,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
-LS-10 Laser Dagger,armaa_kshatriya_rightArm_melee,2,,600,300,2000,,,0,40,7,,,,HIGH_EXPLOSIVE,,,.2,.2,.3,0.1,,,,,10000,,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Burst Frag Laser (High Delay),armaa_pa_mid_head,2,,600,500,410,,,0,100,7,2,0.5,,FRAGMENTATION,,205,0.1,0.1,0.8,0.1,,,,,10000,,,,,"SYSTEM,PD_ONLY,ANTI_FTR,IGNORES_FLARES",,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 Seeker Flare Launcher,armaa_flarelauncher3,,,,500,,10,400,,,,,0,,ENERGY,0,0,0,0.1,1,0.4,90,90,0,0,,400,200,7,1,,,SYSTEM,,,,,,,,,,,,,,,38
 Decoy Flare Launcher,armaa_flarelauncher2,,,,500,,10,350,,,,,0,,ENERGY,0,0,0,AA,2,0.4,30,30,0,0,,200,100,5,500,,,SYSTEM,,,,,,,,,,,,,,,37
@@ -224,6 +223,7 @@ LS-99 MOONLIGHT++,armaa_altagrave_blade,,,,250,1000,,200,20,80,,,,,ENERGY,,,0.35
 AMWS-K,armaa_kshatriya_head,,,600,800,400,,,20,50,99,,,,ENERGY,,350,0.3,0.3,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 ,armaa_kshatriya_leftArm,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 ,armaa_kshatriya_rightArm_deco,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+Power Axe,armaa_kshatriya_rightArm_melee,2,,600,100,,400,,50,20,99,,,,HIGH_EXPLOSIVE,,,.3,3,10,0.05,,,,,,100,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 ,armaa_zanac_rightPauldron_grey,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_zanac_leftPauldron_grey,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_zanac_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
@@ -232,10 +232,10 @@ AMWS-ZAN,armaa_zanac_head,,,600,600,200,,,40,50,99,,,,ENERGY,,100,0.3,0.1,,,,,,,
 AMWS-ZAN,armaa_zanac_head_grey,,,600,600,200,,,40,50,99,,,,ENERGY,,100,0.3,0.1,,,,,,,1000000,,,,,"PD_ONLY,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 ,armaa_zanac_lights,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 AMWS-T,armaa_zanac_head_ex,,,600,800,400,,,20,50,99,,,,ENERGY,,150,0.3,0.3,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
-,armaa_zanac_leftArm,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-,armaa_zanac_rightArm_deco,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-,armaa_zanac_leftArm_grey,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-,armaa_zanac_rightArm_grey_deco,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+,armaa_zanac_leftArm,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+,armaa_zanac_rightArm_deco,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+,armaa_zanac_leftArm_grey,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+,armaa_zanac_rightArm_grey_deco,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 Magna Beam,armaa_zanac_rightArm,,,,1000,1150,,0,100,10,,,,,ENERGY,,800,1.8,1,1.6,3,,,,,3000,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 High Intensity Minelayer,armaa_magnabeam_minelayer,0,,,,,100,,25,,,,,,HIGH_EXPLOSIVE,0,,,,1,,,,,0,0,20,1000,,,SYSTEM,,,,,Unknown,,,,,,,,,,,,38.5
 #GAREGGA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

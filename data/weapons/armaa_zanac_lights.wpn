@@ -1,7 +1,7 @@
 {
   "id": "armaa_zanac_lights",
   "specClass": "beam",
-  "type": "ENERGY",
+  "type": "DECORATIVE",
   "size": "MEDIUM",
   "everyFrameEffect": "data.scripts.weapons.armaa_lightTracker",  
 #"everyFrameEffect":"data.scripts.weapons.armaa_ceylonLights",

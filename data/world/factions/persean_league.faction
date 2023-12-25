@@ -8,7 +8,8 @@
 			"armaa_record_frig":1,
 			"armaa_leynos_frig":0.3,
 			"armaa_valkenx_frig":0.5,
-			"armaa_xyphos":0.5,	
+			"armaa_xyphos":0.5,
+			"armaa_zanac_grey": 0.5,
 		},
 	},
 	"shipsWhenImporting":{
@@ -27,6 +28,7 @@
 				"armaa_kouto_frig",
 				"armaa_whitebase",
 				"armaa_record_frig",
+				"armaa_zanac_grey",
 			],
 	},
 	"knownFighters":{

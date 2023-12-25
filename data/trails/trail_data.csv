@@ -101,3 +101,4 @@ armaa_boson_trail,armaa_hig_shot,base_trail_zap,10,0.1,0.05,0.25,15,10,"[255,0,0
 armaa_boson_trail2,armaa_hig_shot,beam_trail_helix,10,0.05,0.05,0.25,12,8,"[225,100,50]","[125,40,0]",0.5,300,-1024,0,2,1,FALSE,FALSE,TRUE,100,50,0.75,180,360,15,TRUE,TRUE
 armaa_boson_trail3,armaa_hig_shot,base_trail_zap,10,0.15,0.05,0.15,10,3.5,"[245,188,44]","[100,30,10]",0.5,300,-1024,0,3,1,FALSE,FALSE,TRUE,70,10,0.5,180,360,10,TRUE,TRUE
 armaa_boson_trail4,armaa_hig_shot,base_trail_zap,10,0.05,0.05,0.25,10,3.5,"[255,0,0]","[145,188,44]",0.5,300,-1024,0,1,1,FALSE,FALSE,TRUE,50,10,0.25,180,360,5,TRUE,TRUE
+,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -4,19 +4,18 @@
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
   "style": "armaa_valkazard",
-  "height": 150,
-  "width": 72,
+  "height": 154,
+  "width": 64,
   "center": [36, 16],
   "collisionRadius": 135.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 133.5,
   "viewOffset": 0,
   "builtInMods": [
-    "auxiliarythrusters",
     "always_detaches"
   ],
   "builtInWings": [
-    "armaa_bit2_wing"
+    "armaa_bit_spriggan"
   ],
   "weaponSlots": [
     {
@@ -36,6 +35,24 @@
       "arc": 180,
       "angle": 90,
       "locations": [54, 15]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [39.5, 18]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [39, -11]
     }
   ],
   "engineSlots": [],

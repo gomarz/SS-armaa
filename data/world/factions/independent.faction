@@ -4,6 +4,7 @@
 			"armaa_altagrave":0.4,
 			"armaa_einhander":0.35,
 			"armaa_zanac":0.35,
+			"armaa_zanac_grey":0.8,
 			"armaa_aleste_frig":0.4,
 			"armaa_leynos_frig":0.4,
 			"armaa_record_frig":0.7,
@@ -24,6 +25,7 @@
 				"armaa_whitebase",
 				"armaa_record_frig",
 				"armaa_zanac",
+				"armaa_zanac_grey",
 			],
 	},
 	"knownFighters":{

@@ -26,9 +26,11 @@
     "armaa_monitor_standard":.8,
     "armaa_corsair_p_standard":1,
     "armaa_zanac_overdriven":0.8,
-    "armaa_zanac_sniper":1,
+    "armaa_zanac_assault":0.8,
+    "armaa_zanac_assault_gry":0.8,
+    "armaa_zanac_sniper":0.7,
     "armaa_zanac_sniper_grey":0.8,
-    "armaa_zanac_support":1,
+    "armaa_zanac_support":0.7,
    
   },
 	"carrierMedium":{

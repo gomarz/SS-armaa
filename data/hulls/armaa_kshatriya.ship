@@ -75,8 +75,8 @@
       "size": "LARGE",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 90,
-      "angle": -45,
+      "arc": 86,
+      "angle": -16,
       "locations": [16, -38],
       "renderOrderMod": -9999
     },
@@ -96,8 +96,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 45,
-      "locations": [32, 58]
+      "angle": 125.5,
+      "locations": [0, 56]
     },
     {
       "id": "BINDER_02",
@@ -141,8 +141,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -45,
-      "locations": [32, -58]
+      "angle": -125.5,
+      "locations": [0, -56]
     }
   ],
   "engineSlots": [

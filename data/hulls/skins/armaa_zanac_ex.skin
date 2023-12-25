@@ -8,27 +8,36 @@
     "baseValueMult":1.2,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["rare_bp"],
+    #"tags":["rare_bp"],
     "systemId":"highenergyfocus",
     "tech":"armaarmatura",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-    "removeBuiltInWeapons":[],
+    "removeBuiltInWeapons":["RETRO_1","RETRO_2","VERNIER_1","VERNIER_2"],
+    "removeBuiltInMods":["auxiliarythrusters"],
+    "builtInWings":["armaa_bit_spriggan"],
     "builtInMods":["targetingunit"],
     "weaponSlotChanges":{
-	   "A_GUN2":{
-		 # "angle": 0,
+	   "RETRO_1":{
+		  "angle": 0,
 		 # "arc": 5,
+		  "mount": "TURRET",
+		  "size": "SMALL",
+		  "type": "HYBRID"
+	   },
+	   "RETRO_2":{
+		 "angle": 0,
+		 #"arc": 5,
+		  "mount": "TURRET",
+		  "size": "SMALL",
+		  "type": "HYBRID"
+	   },
+	   "A_GUN2":{
+		 #"angle": 0,
+		 #"arc": 5,
 		  "mount": "TURRET",
 		  "size": "LARGE",
 		  "type": "BUILT_IN"
-	   },
-	   "TRUE_GUN2":{
-		 #"angle": 0,
-		 #"arc": 5,
-		  #"mount": "TURRET",
-		  #"size": "SMALL",
-		  "type": "DECORATIVE"
 	   },
 },
     "builtInWeapons":{

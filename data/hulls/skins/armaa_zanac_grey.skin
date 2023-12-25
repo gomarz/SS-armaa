@@ -3,18 +3,18 @@
     "skinHullId":"armaa_zanac_grey",
     "hullName":"Zanac",
     "descriptionId":"armaa_zanac",
-    #"descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "descriptionPrefix":"General production version of the Zanac employed by the MRC.",
     "spriteName":"graphics/armaa/ships/zanac/grey/zanac_lowerBody.png",
     "baseValueMult":1.0,
     "restoreToBaseHull":false,
     "addHints":[],
     #"tags":["rare_bp"],
-    #"systemId":"highenergyfocus",
-    "tech":"Tri-Tachyon",
+    "systemId":"maneuveringjets",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":[],
-   # "builtInMods":["fourteenth"],
+    "removeBuiltInMods":["unstable_injector"],
+    "builtInMods":["auxiliarythrusters"], 
     "weaponSlotChanges":{},
     "builtInWeapons":{
     "A_GUN": "armaa_zanac_leftArm_grey",
@@ -29,4 +29,5 @@
     "LIGHTS": "armaa_zanac_lights",
     "WS0007": "armaa_zanac_rightPauldron_grey"
     },
+
 }
