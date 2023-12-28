@@ -81,10 +81,6 @@ SetTextHighlightColors ""152,171,75,255"" ""152,171,75,255"" hColor
 SetTextHighlights NEW MESHAN GAMLIN
 
 $armaa_ChangeMind = true 0",,,
-bbp_nex_NGCPickStartingSuperShip_Seraph,ExerelinNGCStep4Plus,"$option == nex_NGCFleetSuper
-$playerFaction == sephira_conclave","AddText ""By choosing this option, you will assume the role of a test pilot for the Project: Seraph. It is highly advisable that you speak to Chief Researcher Gemie in the Starkeep's comm channel before you embark to your journey.""
-SetTextHighlightColors highlight highlight ""230,125,160,255"" ""230,125,160,255"" ""230,125,160,255""
-SetTextHighlights Project: Seraph Chief Researcher Gemie",,,
 #END Nex Blurb,,,,,,
 arma_nex_NGCPickStartingShips,ExerelinNGCStep3,"$playerFaction == armaarmatura_pirates
 !$armaarmatura_pirates_ChangeMind","ARMAAMissionImage logo mrc_start
