@@ -96,7 +96,7 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 125.5,
+      "angle": 99,
       "locations": [0, 56]
     },
     {
@@ -106,7 +106,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 140,
-      "locations": [-35, 59]
+      "locations": [-35, 56]
     },
     {
       "id": "BINDER_03",
@@ -115,7 +115,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -140,
-      "locations": [-35, -59]
+      "locations": [-35, -56]
     },
     {
       "id": "WS0001",
@@ -141,7 +141,7 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -125.5,
+      "angle": -99,
       "locations": [0, -56]
     }
   ],

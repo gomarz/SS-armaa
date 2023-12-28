@@ -11,7 +11,7 @@
     #"tech":"Tri-Tachyon",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-    "removeBuiltInWeapons":["C_ARML",],
+    "removeBuiltInWeapons":["C_ARML","TRUE_GUN2"],
     "weaponSlotChanges":{
 	   "C_ARML":{
 		 # "angle": 0,

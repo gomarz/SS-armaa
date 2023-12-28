@@ -60,10 +60,10 @@
 				"falcon_p":0.25,
 			},
 			"fighters":{
-			"armaa_aleste_wing":0.25,
+			"armaa_aleste_wing":0.5,
 			"sarissa_wing":0,
-			"armaa_kouto_wing":1,
-			"armaa_valkenx_wing":1.5,
+			"armaa_kouto_wing":1.2,
+			"armaa_valkenx_wing":1.2,
 			"armaa_record_wing":1.5,
 
 		},
@@ -71,6 +71,8 @@
 	"priorityFighters":{
 		"tags":[],
 		"fighters":[
+"armaa_valkenx_wing",
+"armaa_kouto_wing",
 
 		],
 	},
@@ -127,6 +129,7 @@
 			"armaa_kouto_wing",
 			"broadsword_wing",
 			"perdition_wing",
+			"armaa_valkenmp_wing",
 			"warthog_wing",
 			"armaa_record_wing",
 			"armaa_valkenx_wing",
@@ -147,7 +150,7 @@
 	},
 	"factionDoctrine":{
 		"warships":4,
-		"carriers":3,
+		"carriers":2,
 		"phaseShips":2,
 
 		"officerQuality":2,

@@ -10,7 +10,6 @@
     "restoreToBaseHull":false,
     "fighterbays":1,
     "addHints":[],
-    #"tags":["rare_bp"],
     "tech":"Arma Armatura",
     #"removeWeaponSlots":["WS 006"], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file

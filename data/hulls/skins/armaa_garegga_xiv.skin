@@ -3,12 +3,11 @@
     "skinHullId":"armaa_garegga_xiv",
     "hullName":"Trihänder",
     "descriptionId":"armaa_garegga_xiv",
-    "descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "descriptionPrefix":"Shouldn't be obtainable.",
     "spriteName":"graphics/armaa/ships/garegga/xiv/armaa_garegga_body_xiv.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["rare_bp"],
     "systemId":"armaa_silverSwordV",
     "tech":"Tri-Tachyon",
     "removeWeaponSlots":[], 		# ids

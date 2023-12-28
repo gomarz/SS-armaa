@@ -6,7 +6,7 @@
   "style": "armaa_valkazard",
   "height": 154,
   "width": 64,
-  "center": [36, 16],
+  "center": [32, 15],
   "collisionRadius": 135.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 133.5,
@@ -25,7 +25,7 @@
       "mount": "TURRET",
       "arc": 180,
       "angle": -90,
-      "locations": [54, -15]
+      "locations": [55, -19]
     },
     {
       "id": "RETRO_1",
@@ -34,7 +34,7 @@
       "mount": "TURRET",
       "arc": 180,
       "angle": 90,
-      "locations": [54, 15]
+      "locations": [55, 11]
     },
     {
       "id": "LB 1",
@@ -43,7 +43,7 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [39.5, 18]
+      "locations": [40.5, 14]
     },
     {
       "id": "LB 2",
@@ -52,23 +52,23 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [39, -11]
+      "locations": [40, -15]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    4.5, -32,
-    41, -34.5,
-    64, -22,
-    131, -4,
-    131, 4,
-    63, 22.5,
-    34, 34,
-    2, 31,
-    -4.5, 17.5,
-    -16, 14.5,
-    0.5, 0,
-    -12.5, -14.5,
-    -1.5, -18.5
+    5.5, -36,
+    42, -38.5,
+    65, -26,
+    132, -8,
+    132, 0,
+    64, 18.5,
+    35, 30,
+    3, 27,
+    -3.5, 13.5,
+    -15, 10.5,
+    1.5, -4,
+    -11.5, -18.5,
+    -0.5, -22.5
   ]
 }
