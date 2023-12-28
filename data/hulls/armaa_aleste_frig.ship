@@ -21,13 +21,7 @@
     "reduced_explosion"
   ],
   "builtInWeapons": {
-    #"A_GUN": "armaa_aleste_variablerifle",
-    #"B_TORSO": "armaa_aleste_torso_ace",
-    #"C_ARML": "armaa_aleste_blade_LeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
-    #"D_PAULDRONL": "armaa_aleste_leftPauldron",
-    #"D_PAULDRONR": "armaa_aleste_rightPauldron",
-    #"E_HEAD": "armaa_alesteHead",
     "F_LEGS": "armaa_ht_legs"
   },
   "weaponSlots": [
@@ -65,7 +59,7 @@
       "type": "MISSILE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -45,
+      "angle": -26.5,
       "locations": [-15, -11],
       "renderOrderMod": 99999
     },
@@ -75,7 +69,7 @@
       "type": "MISSILE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 45,
+      "angle": 26.5,
       "locations": [-15, 11],
       "renderOrderMod": 99999
     },
