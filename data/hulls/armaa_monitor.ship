@@ -114,7 +114,7 @@
       "size": "SMALL",
       "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 65,
+      "arc": 200,
       "angle": -40,
       "locations": [-3, -22],
       "renderOrderMod": 1000
@@ -124,7 +124,7 @@
       "size": "SMALL",
       "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 65,
+      "arc": 200,
       "angle": 40,
       "locations": [-3, 20],
       "renderOrderMod": 1000
