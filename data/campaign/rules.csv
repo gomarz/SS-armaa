@@ -840,7 +840,7 @@ armaa_AXEncounterKillIt,armaa_alphaBountyTalk,,$entity.ignorePlayerCommRequests 
 armaa_seraphMusic,OpenCommLink,$id == armaa_seraph,armaa_Hikaru_Utada playMusic music_armaa_seraph,,,
 armaa_contactGreetingOfficial3,PickGreeting,"!$player.hasSeraphaCommsId score:1000
 !armaa_Hikaru_Utada hasOfficer armaa_dawn
-$id == armaa_seraph score:100",,The crest of Arma Armatura rotates in place a few times before your connection request is denied.,,
+$id == armaa_seraph score:100",,The crest of Arma Armatura rotates in place a few times before your connection request is denied.,0:cutCommLink:Cut the comm link,
 armaa_contactGreetingOfficial2,PickGreeting,"!MissionHubCMD hasHub
 $id == armaa_seraph","ShowPersonVisual
 AddPotentialContact
