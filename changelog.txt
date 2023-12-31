@@ -1,3 +1,14 @@
+v2.3.5
+------------
+- fixed crash that could occur from adding mod to game mid save
+- adjusted watchdog small turret arcs to converge
+- adjusted aleste small turret arcs to converge
+- removed medium hybrid from swordsman aleste variant
+- fixed crashed that could occur if player attempts to talk to sera before meeting dawn in bar
+- fixed crash that would occur if strikecraft were deployed without carriers
+- fixed MRC not being hostile to hegemony like their faction desc suggets
+- fixed crash caused by trying to build in cataphract2 hullmod using progressive s-mods
+
 v2.3.4
 ------------
 - add faction start banners for nex (thx mayuyu)
