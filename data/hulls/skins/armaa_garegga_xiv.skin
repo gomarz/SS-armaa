@@ -38,8 +38,8 @@
 },
     "builtInMods":["fourteenth"],
     "builtInWeapons":{
-		"E_RARM": "armaa_garegga_rightArm_tt",
-		"E_LARM": "armaa_garegga_leftArm_tt",
+		"E_RARM": "armaa_barretta",
+		"E_LARM": "armaa_monitor_xiv_leftArm",
 		"E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
 		"E_RSHOULDER": "armaa_garegga_xiv_rightPauldron",
     },
