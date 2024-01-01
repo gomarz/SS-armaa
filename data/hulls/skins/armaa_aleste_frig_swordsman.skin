@@ -27,7 +27,7 @@
 		  "size": "MEDIUM",
 		  "type": "BUILT_IN",
 	   },
-	   "TRUE_GUN2":{
+	   "TRUE_GUN":{
 		 # "angle": 0,
 		 # "arc": 90,
 		  "type": "DECORATIVE",

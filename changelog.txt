@@ -1,3 +1,8 @@
+v2.3.6
+------------
+- fixed forced burn effect occuring after deploying strikecraft from carrier
+- removed tag that prevented strikecraft from using CH watchdog for repairs
+- added some extra null checks
 v2.3.5
 ------------
 - fixed crash that could occur from adding mod to game mid save
