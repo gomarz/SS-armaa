@@ -216,8 +216,8 @@ FireAll armaaRobbery_Options","""Well,"" the Pather says haltingly. ""Despite ou
 
 $HisOrHer quickly glances down at a screen then back to you, ""Which would be, ah, on the order of $entity.armaa_titheDGS credits.""",,
 armaaRobbery_Pay,DialogOptionSelected,"$option == payTithe
-$faction.id == armaarmatura_pirates score:100","#AddText ""Lost $entity.armaa_tithe credits"" textEnemyColor
-AddRemoveCommodity credits -$entity.armaa_tithe true
+$faction.id == armaarmatura_pirates score:100","#AddText ""Lost $entity.LP_titheDGS"" textEnemyColor
+AddRemoveCommodity credits -$entity.LP_titheDGS true
 $entity.armaa_tithePaid = true 30
 MakeOtherFleetNonHostile armaa_tithe true 30
 AddText ""The connection is cut before you have a chance to respond.""

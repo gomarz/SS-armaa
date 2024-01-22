@@ -15,14 +15,13 @@
     "cataphract2",
     "autorepair",
     "strikeCraft",
-    "armaa_strikeCraftFrig",
-    "armaa_melee",
+    "armaa_alesteMeleeSwap",
     "armaa_alesteSkinSwap",
-    "reduced_explosion"
   ],
   "builtInWeapons": {
     "C_ARMR": "armaa_sprigganRightArm",
-    "F_LEGS": "armaa_ht_legs"
+    "F_LEGS": "armaa_ht_legs",
+    "HARPOON": "armaa_aleste_harpoon"
   },
   "weaponSlots": [
     {
@@ -51,6 +50,16 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
+      "locations": [0, 0]
+    },
+    {
+      "id": "HARPOON",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "renderOrderMod": -900,
       "locations": [0, 0]
     },
     {

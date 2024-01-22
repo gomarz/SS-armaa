@@ -36,33 +36,31 @@
 				"armaa_altagrave":0.25,
 				"armaa_altagrave_c":0.25,
 				"armaa_einhander_plus":0.25,
-				"armaa_monitor":1.1,
+				"armaa_monitor":1.2,
 				"armaa_einhander":0.1,
 				"armaa_garegga":0.25,
 				"armaa_zanac":0.7,
 				"armaa_zanac_grey":1.25,
 				"armaa_valkenx_frig":1.5,
-				"armaa_aleste_frig":1,
+				"armaa_aleste_frig":1.5,
 				"armaa_leynos_frig":1.5,
-				"armaa_record_frig":2,
+				"armaa_record_frig":1,
 				"armaa_hazard_frig":0.2,
 				"armaa_whitebase":0.5,
-				"monitor":0.1,
-				"brawler":0.1,
+				"monitor":0.25,
 				#"armaa_corsair_p": 1.25,	
-				"heron": 0.2,
-				"drover": 0.2,
-				"manticore_pirates": 0.8,
+				"heron": 0.5,
+				"drover": 0.5,
+				"manticore_pirates": 1,
 				"vanguard_pirates": 0.8,
-				"wolf_d_pirates": 0.3,
-				"mudskipper2": 0.5,	
-				"odyssey": 0.25,
+				"wolf": 0.3,
+				"mudskipper2": 0.25,	
+				"odyssey": 0.4,
 				"falcon_p":0.25,
 			},
 			"fighters":{
 			"armaa_aleste_wing":0.5,
 			"sarissa_wing":0,
-			"armaa_kouto_wing":1.2,
 			"armaa_valkenx_wing":1.2,
 			"armaa_record_wing":1.5,
 
@@ -71,9 +69,6 @@
 	"priorityFighters":{
 		"tags":[],
 		"fighters":[
-"armaa_valkenx_wing",
-"armaa_kouto_wing",
-
 		],
 	},
 	"knownShips":{
@@ -108,12 +103,12 @@
 			   	"eradicator_pirates",
 				"buffalo",
 				"nebula",
-			    	"sunder_d",
+			    	"sunder",
 			    	"vanguard_pirates",
 			    	"manticore_pirates",
 				"brawler",
 				"heron",
-				"wolf_d_pirates",
+				"wolf",
 				"drover",
 				#"armaa_corsair_p",	
 			],
@@ -125,12 +120,7 @@
 	"knownFighters":{
 		"tags":[],
 			"fighters":[
-			"armaa_valken_black_wing",
-			"armaa_kouto_wing",
 			"broadsword_wing",
-			"perdition_wing",
-			"armaa_valkenmp_wing",
-			"warthog_wing",
 			"armaa_record_wing",
 			"armaa_valkenx_wing",
 			"armaa_gallant_wing",
@@ -159,7 +149,7 @@
 
 		"shipSize":3,
 
-		"aggression":4,
+		"aggression":3,
 
 		"combatFreighterProbability":0.05,     				# instead of some portion of the freighters in a fleet
 		"combatFreighterCombatUseFraction":0.05,  				# as part of the normal combat lineup

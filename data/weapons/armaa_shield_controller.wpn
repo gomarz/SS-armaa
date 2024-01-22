@@ -1,0 +1,52 @@
+{
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "armaa_shield_controller",
+  "everyFrameEffect":"data.scripts.weapons.armaa_linkedSystems",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  "renderAboveAllWeapons": 0,
+  "showDamageWhenDecorative": false,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    -16,
+    33
+  ],
+  "turretSprite": "",
+  "type": "DECORATIVE",
+  "renderHints":["RENDER_ADDITIVE"],
+  "width": 1
+}

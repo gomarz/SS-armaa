@@ -5,7 +5,7 @@
   "type": "BALLISTIC",
   "size": "LARGE",
   "turretSprite": "graphics/armaa/ships/garegga/leftArm0.png",
-  "turretGunSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_leftArm.png",
+  "turretGunSprite": "graphics/armaa/ships/mechamonitor/armaa_monitor_leftArm_deco.png",
   "hardpointSprite": "",
   "showDamageWhenDecorative": true,
   "visualRecoil": 2,

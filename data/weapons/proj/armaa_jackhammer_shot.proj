@@ -1,0 +1,19 @@
+{
+	"id":"armaa_jackhammer_shot",
+	"specClass":"projectile",
+        "onHitEffect":"data.scripts.weapons.armaa_drillEffect",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":20.0,
+	"width":4.0,
+	"fadeTime":0.2,
+	#"fringeColor":[255,125,125,255],
+	#"coreColor":[255,200,200,150],
+	"fringeColor":[255,240,165,0],
+	"coreColor":[240,240,240,0],
+	"hitGlowRadius":15,	
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/shell_large_yellow.png"
+}

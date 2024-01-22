@@ -1,0 +1,30 @@
+{
+  "variantId": "armaa_hazard_standard",
+  "hullId": "armaa_hazard_frig",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 7,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "lightmortar",
+        "WS0002": "lightmortar"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

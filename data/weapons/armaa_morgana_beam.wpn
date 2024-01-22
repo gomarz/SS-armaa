@@ -1,0 +1,64 @@
+{
+  "id": "armaa_morgana_beam",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "beamEffect": "data.scripts.weapons.armaa_morganaBeam",
+  "everyFrameEffect": "data.scripts.weapons.armaa_fluxBeamEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/weapons/armaa_fluxcannon_turret_base.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_fluxcannon_hardpoint_base.png",
+  "glowColor": [
+    200,
+    200,
+    200,
+    255
+  ],
+   "hitGlowBrightenDuration":0,
+   "hitGlowRadius":75,
+
+  "turretOffsets": [
+    29,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    47.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    0,
+    255,
+    200,
+    255
+  ],
+  "coreColor": [
+    200,
+    200,
+    200,
+    255
+  ],
+  "width": 60,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
+  "fireSoundOne": "beambangM",
+  "fireSoundTwo": "beamfireM"
+}

@@ -247,11 +247,18 @@ PAINT: HI-TECH,armaa_vxSkin_midline,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmod
 Versatile Frame,armaa_alesteSkinSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_alesteSkinSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 PAINT: STANDARD,armaa_alesteSkin_default,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_vxSkin_AASV,Standard,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
 PAINT: SEPHIRAN,armaa_alesteSkin_sephira,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alesteSkin_sephira,[REDACTED],Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
+,,,,,,,,,,,,,,,,,,,
+Versatile Frame,armaa_alesteMeleeSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_alesteMeleeSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+L ARM: BLADE,armaa_aleste_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_aleste_blade,Standard,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
+L ARM: PILEBUNKER,armaa_alestePilebunker,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alestePilebunker,[REDACTED],Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
+,,,,,,,,,,,,,,,,,,,
 #CEYLON,,,,,,,,,,,,,,,,,,,
 AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,
 ,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
+#MORGANA,,,,,,,,,,,,,,,,,,,
+Thermoflux Drive,armaa_morganaBonus,,,Arma Armatura,"special,no_drop",,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_morganaBonus,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
+
+When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,

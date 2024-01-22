@@ -41,6 +41,6 @@
     0,
     4
   ],
-  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenHead_gunmetal.png",
+  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenHead.png",
   "type": "BALLISTIC"
 }

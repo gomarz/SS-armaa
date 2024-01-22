@@ -14,7 +14,7 @@
         "hegemony": -50,
     },
     "maxRelationships":{ "tritachyon":-0.51, "remnant":-0.51, "sindrian_diktat": -0.51 },
-    "startRelationships":{ "luddic_path":0.1, "tritachyon":-0.8, "pirates":-0.12, "cabal":-0.8, "sindrian_diktat": -0.51, "hegemony": -0.51, "luddic_church": 0.1, "persean_league":0.1 },
+    "startRelationships":{ "luddic_path":0.25, "tritachyon":-0.8, "pirates":0.4, "cabal":-0.8, "sindrian_diktat": -0.51, "hegemony": -0.51, "luddic_church": 0.1, "persean_league":0.1 },
     "alignments":{
         "technocratic":-0.5,
         "militarist":1,
@@ -26,11 +26,11 @@
     "freemarket":true,
     "morality":"neutral",
     "diplomacyNegativeChance":{ "tritachyon":2.0, "sindrian_diktat":2.0 },
-    "diplomacyPositiveChance":{ "legio_infernalis":1.5, "luddic_church":1.1,"luddic_path":1.5,"pirates":1.5 },
+    "diplomacyPositiveChance":{ "legio_infernalis":2, "luddic_church":1.1,"luddic_path":1.5,"pirates":1.5 },
     "vengeanceFleetNames":["Liberators", "HK Flotilla", "Armada"],
     "vengeanceFleetNamesSingle":["an Liberation fleet", "a HK Flotilla", "a Armada"],
      # chance of the faction being picked to send a colony expedition. Default 0 (disabled)
-    "colonyExpeditionChance":1,	# baseline expansion behaviour
+    "colonyExpeditionChance":0,	# baseline expansion behaviour
     "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",   
     "specialForcesMaxFleets":1,
 

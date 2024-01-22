@@ -15,7 +15,7 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN": "kineticblaster",
+        "TRUE_GUN": "chaingun",
       }
     },
     {
@@ -41,8 +41,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS001": "atropos",
-        "WS002": "atropos"
+        "WS001": "sabot",
+        "WS002": "sabot"
       }
     }
   ],

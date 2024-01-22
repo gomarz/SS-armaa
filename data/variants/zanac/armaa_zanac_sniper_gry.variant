@@ -25,6 +25,13 @@
         "WS0004": "atropos",
         "WS0005": "atropos"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN2": "hveldriver"
+      }
     }
   ],
   "modules": [],

@@ -16,7 +16,7 @@
     "removeBuiltInWeapons":[],
     "removeWings":1,
     "removeBuiltInMods":["armaa_weaponSwap_monitor","armaa_wingCommander"],
-    "builtInMods":["fourteenth"],
+    "builtInMods":["armoredweapons","fourteenth"],
   "weaponSlotChanges":{
 	   "WS0001":{
 		  "angle": 0,
@@ -44,8 +44,8 @@
 		"A_GUN2": "armaa_barretta",
 		"E_LARM": "armaa_monitor_xiv_leftArm",
     		"E_GLOW": "armaa_monitor_xiv_head",
-		"E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
-		"E_RSHOULDER": "armaa_garegga_xiv_rightPauldron",
+		"E_LSHOULDER": "armaa_monitor_xiv_leftPauldron",
+		"E_RSHOULDER": "armaa_monitor_xiv_rightPauldron",
     },
 	"engineSlotChanges":{
 		"0":{

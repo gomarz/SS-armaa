@@ -66,6 +66,7 @@
 			"ai":"graphics/armaa/icons/hullsys/armaa_ai_core.png",
 			"armaa_sfxpulse":"graphics/armaa/fx/armaa_pulse.png",
 			"armaa_monitorrad":"graphics/armaa/fx/armaa_monitorrad.png",
+			"armaa_jackhammerRecoil":"graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm_recoil.png",
 			"armaa_pdWarning":"graphics/armaa/icons/hullsys/armaa_pdWarning.png",
 			"dd_legs_10":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs01.png",
 			"dd_legs_11":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs02.png",

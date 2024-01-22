@@ -1,0 +1,14 @@
+{
+  "variantId": "armaa_shield_panther_standard",
+  "hullId": "armaa_shield_panther",
+  "displayName": "",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

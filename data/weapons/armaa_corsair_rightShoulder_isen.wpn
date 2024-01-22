@@ -1,0 +1,51 @@
+{
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "everyFrameEffect": "data.scripts.weapons.armaa_corsairDecoHider",
+  "id": "armaa_corsair_rightShoulder_isen",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 5,
+  #"renderAboveAllWeapons": 0,
+  "showDamageWhenDecorative": true,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    -16,
+    33
+  ],
+  "turretSprite": "graphics/armaa/ships/corsair/isen/armaa_corsair_isen_rightShoulder.png",
+  "type": "DECORATIVE",
+  "width": 1
+}

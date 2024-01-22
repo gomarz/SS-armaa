@@ -1,3 +1,46 @@
+v2.3.7
+------------
+
+- Zanac
+	-Firebolt Feeder
+		- weapon flux cost reduction: 10%->20%
+-Aleste S-II
+	- Add weapon: Pilebunker
+	- Add Weapon: Harpoon
+	- Armor: 250->300
+	- Reduced flux cap/diss somewhat (i dont remember what it was before whoopsie)
+	- Reduced top speed
+-Valken III
+	- added no_dealer, restricted tag
+
+-Valken X
+	- Wingsize: 2->3
+	- Refit Time: 13->11
+-Spriggan
+	- Wingsize: 2->3
+	- Ammo: 4->6
+	- Ship System: None-> Flare Launcher
+	
+-Watchdog
+	- Guardian Protocol
+		- Speed Reduction: 100%-> 50%
+		- Turn Rate Reduction: 30% -> 50%
+		- Add 1x Medium Missile
+		- OP: 80->85
+		- Shield Arc: 140->300
+
+- Increasing CR per deployment for some ships to reduce supply recovery cost
+- fixed MRC not actually taking the credits they want to rob you for (how nice)
+- fixed bug that made enemy alestes and watchdogs never use their ship system vs player allies (the yellow guys)
+- fixed bug that made aleste variable rifle glow white whenever a jitter effect was applied
+- fixed bug that would cause crash if fighter had a null wing and a wingcom pilot, somehow
+- fixed bug that would cause crash if DHull did not have a parent hull, somehow
+- fixed wingcom crash that would occur due to an outdated class path
+- fixed zanac ex having an inacessible hybrid mount directly below magna beam
+- fixed fenris carrier chain teleporting strikecraft (probably)
+- revised the hegemony bounty. Should now drop a BP with all the hegemony variants.
+- removed some unused weapons/sprites
+
 v2.3.6
 ------------
 - fixed forced burn effect occuring after deploying strikecraft from carrier

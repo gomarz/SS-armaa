@@ -1,16 +1,19 @@
 {
 	"hullFrequency":{
 		"hulls":{
-			"armaa_altagrave":1,
-			"armaa_garegga":1.1,
+			"armaa_altagrave":0.5,
+			"armaa_garegga":0.4,
 			"armaa_einhander":0.3,
 			"armaa_aleste_frig":0.3,
 			"armaa_record_frig":1,
-			"armaa_leynos_frig":0.3,
-			"armaa_valkenx_frig":0.5,
-			"armaa_xyphos":0.5,
+			"armaa_leynos_frig":0.4,
+			"armaa_valkenx_frig":0.4,
+			"armaa_xyphos":0.3,
 			"armaa_zanac_grey": 0.5,
 		},
+	},
+	"variantOverrides":{
+		"armaa_heron_Attack3":5,
 	},
 	"shipsWhenImporting":{
 		"hulls":[		

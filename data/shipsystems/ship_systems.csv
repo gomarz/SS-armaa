@@ -2,22 +2,15 @@ name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u 
 Offense Mode,armaa_energysurge,,,0.02,,,,,,,0.5,6,1,20,FALSE,,TRUE,TRUE,,,,,,FALSE,,,graphics/icons/hullsys/infernium_injector.png
 Phase Damper Field,armaa_pdamper,,,,,,,,,,0.25,,0.4,3,TRUE,FALSE,TRUE,TRUE,FALSE,,,,TRUE,TRUE,FALSE,,graphics/icons/hullsys/damper_field.png
 Offense Mode(ftr),armaa_energysurge2,,,0.02,,,,,,,0.5,6,1,10,FALSE,,TRUE,TRUE,,,,,,FALSE,,,graphics/icons/hullsys/infernium_injector.png
-GU-14 Firebolt Feeder,armaa_fireboltfeed,,,,,,,,,,1,5,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+GU-14 Firebolt Feeder,armaa_fireboltfeed,,,,,,,,,,1,6,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Phase Damper Field (Production Ver.),armaa_mpdamper,,,,,,,,2,0.05,0.5,3.5,2,5,FALSE,FALSE,TRUE,TRUE,FALSE,,,,,TRUE,FALSE,,graphics/icons/hullsys/damper_field.png
-Overshield,armaa_overshield,,,,,,,,,,,,,5,TRUE,,,,TRUE,,,,,,,,graphics/icons/hullsys/damper_field.png
 K.A.R.M.A.,armaa_karma,,,,,,0.1,,2,0.08,,,0.25,2,FALSE,,,TRUE,,,,,,,,,graphics/icons/hullsys/damper_field.png
-Overboost,armaa_oboost,,,,,,,,3,0.1,0.5,1,0.5,1.5,,,,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
-Overboost,armaa_oboost2,,,0.02,,,,,3,0.1,0.25,,0.25,2,TRUE,,TRUE,TRUE,,,,,TRUE,,,,graphics/icons/hullsys/infernium_injector.png
 Low-Grade EMP Emitter,armaa_lowgradeemp,1,,0.02,,,,,,,0.15,2.5,0.15,2,,,,,FALSE,,,,,,,,graphics/icons/hullsys/emp_emitter.png
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Phase Teleporter(Fighter),armaa_phaseteleporter,,,,,,0.2,,3,0.1,0.3,0,0.3,0.5,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
 Pila,armaa_piladrone,,,,,,0.2,,6,0.1,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 CLAW Bits[FTR],armaa_claw,,,,,,,,2,,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Valken,armaa_valken_defender,,,,,,,,2,,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Pila Ex,armaa_piladrone_ex,,,,,,0.2,,6,0.1,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Pila,armaa_piladrone_alta,,,,,,0.2,,2,0.05,0,,0,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Pila,armaa_piladrone_spriggan,,,,,,0.2,,4,0.05,0,,0,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Pila,armaa_piladrone_shield,,,,,,0.2,,2,0.05,0,,0,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Blink,armaa_tshell,1,,,,,0.25,,2,0.05,0.1,1,0.1,,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 Fuller Auto,armaa_fullerAuto,,,,,,,,,,1,5,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 SILVERSWORD,armaa_silverSword,,,,,,,,,,0.25,,0.5,0.25,TRUE,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
@@ -34,17 +27,15 @@ Takeoff,armaa_traveldrive,,,,,,,,,,2,,2,10,TRUE,,,,TRUE,FALSE,TRUE,TRUE,TRUE,,,,
 Adv. Fire Control System,armaa_afcss,,,,,,,,,,1,5,1,20,,,,,,,,,,,,,
 Active Flare Launcher,armaa_flarelauncher_active,,,,,,0.1,,,,,,,10,,,,,,,,,,,,,graphics/icons/hullsys/active_flare_launcher.png
 Decoy Flare Launcher,armaa_flare_decoy,,,,,,,,1,0.05,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/flare_launcher.png
-BLADE,armaa_blade,,,,,,,,,,0.33,0.66,0.33,10,,,,,TRUE,,,,TRUE,,,,graphics/icons/hullsys/active_flare_launcher.png
+Juno Mk. IV,armaa_morgana_beamSys,,,,,,,,,,1.5,,1,10,TRUE,,,,,,FALSE,TRUE,TRUE,,,,graphics/icons/hullsys/active_flare_launcher.png
 UWS Strike,armaa_drone_strike,,,,,,0.45,,,,0,0.05,0.2,,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Booster,armaa_jauntbooster,,,,,,,,2,0.1,0.3,0.3,1,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
-Chain Booster,armaa_jauntbooster2,,,,,,-0.05,,3,0.1,0.3,0.3,0.05,,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 AWACS,armaa_awacs,,,,,,0.2,,,,0.5,7,1,10,,,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Reload,armaa_reload,,,,,,,,,,0.5,1,,5,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Rampage Drive,armaa_rampagedrive,1,,,,,,,2,0.07,0.5,1.5,1.5,2.5,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rampage Drive,armaa_rampagedrive,1,,,,,,,1,0.07,0.5,1.5,1.5,2,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
