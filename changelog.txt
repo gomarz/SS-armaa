@@ -1,3 +1,7 @@
+v3.0.1
+------------
+- fixed missing .csv weapons
+- fixed version # in mod_info
 v3.0
 ------------
 - New ship: Garegga(H)
