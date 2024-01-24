@@ -6,7 +6,8 @@
     "baseValueMult":1.1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["rare_bp"],
+    "tags":["no_sell","no_dealer","restricted","no_drop"],
+    "removeBuiltInMods":["armaa_alesteMeleeSwap"],
     #"systemId":"highenergyfocus",
     #"tech":"Tri-Tachyon",
     "removeWeaponSlots":[], 		# ids
@@ -14,9 +15,9 @@
     "removeBuiltInWeapons":["C_ARML","TRUE_GUN2","TRUE_GUN"],
     "weaponSlotChanges":{
 	   "C_ARML":{
-		 # "angle": 0,
-		 # "arc": 5,
-		  "mount": "TURRET",
+		 #"angle": 0,
+		 #"arc": 5,
+		 "mount": "TURRET",
 		  "size": "MEDIUM",
 		  "type": "BUILT_IN",
 	   },

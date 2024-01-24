@@ -1,3 +1,11 @@
+v3.0.2
+------------
+- fixed bug with hel corsair right shoulder anim
+- fixed bug with hel corsair shipsystem being set to plasma jets
+	- should be weaponry overdrive if tahlan is enabled
+- Reduced Garegga(H) propensity to self-delete via enemy ship explosion
+- fixed swordsman aleste not having a left arm
+- added "no_sell","no_dealer","restricted","no_drop" tags to swordsman aleste, watchdog xiv
 v3.0.1
 ------------
 - fixed missing .csv weapons

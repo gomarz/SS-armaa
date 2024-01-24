@@ -8,7 +8,7 @@
     "baseValueMult":1.5,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["armaa_hegemony_bp"],
+    "tags":["no_sell","no_dealer","restricted","no_drop"],
     "systemId":"armaa_reload",
     "tech":"Arma Armatura (Modified)",
     "removeWeaponSlots":[], 		# ids
