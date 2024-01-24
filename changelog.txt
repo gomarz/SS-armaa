@@ -6,6 +6,7 @@ v3.0.2
 - Reduced Garegga(H) propensity to self-delete via enemy ship explosion
 - fixed swordsman aleste not having a left arm
 - added "no_sell","no_dealer","restricted","no_drop" tags to swordsman aleste, watchdog xiv
+- fixed crash when using karma system
 v3.0.1
 ------------
 - fixed missing .csv weapons
