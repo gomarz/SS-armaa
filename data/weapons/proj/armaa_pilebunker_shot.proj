@@ -7,7 +7,7 @@
 	"length":100.0,
 	"width":5.0,
 	"hitGlowRadius":15,
-	"fadeTime":0.15,
+	"fadeTime":0.1,
 	"fringeColor":[255,150,55,255],
 	"coreColor":[255,230,200,255],
 	"textureType":"ROUGH",  # only needed for BEAM spawnType

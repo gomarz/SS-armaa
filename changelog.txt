@@ -2,6 +2,11 @@ v3.0.1
 ------------
 - fixed missing .csv weapons
 - fixed version # in mod_info
+- fixed missing strings for armaa_rampagedrive
+- fixed bad filename that would cause crash for linux
+- fixed bug where Panther's shield collision class wouldn't match parent ships (caused explosions to destroy it/collide with other objects)
+- fixed bug that would cause wingcom info panel to appear blank
+- reduced visual recoil of pulverizer slightly
 v3.0
 ------------
 - New ship: Garegga(H)

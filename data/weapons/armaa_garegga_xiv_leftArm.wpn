@@ -9,6 +9,7 @@
   "turretGunSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm_recoil.png",
   "hardpointSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
   "showDamageWhenDecorative": true,
+  "renderBelowAllWeapons": true,
   "visualRecoil": 40,
   "renderHints": [
     "RENDER_BARREL_BELOW",

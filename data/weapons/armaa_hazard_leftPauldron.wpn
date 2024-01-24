@@ -4,7 +4,7 @@
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/hazard/armaa_hazardleftShoulder.png",
+	"turretSprite":"graphics/armaa/ships/hazard/armaa_hazardLeftShoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,
