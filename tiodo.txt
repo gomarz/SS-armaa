@@ -1,25 +1,3 @@
-Watchdog XIV:
-Ship system: perfect reload
-Weapon: Some type of sniper
-
-Corsair(XIV):
-Play w/ stats
-
-Garegga(XIV): ???
-
-Sylpheed : Done?
-
-Kshatriya:
-Make melee weapon a bullet or something
-tweak modules
-
-Specialized Service Bays Type
-Silver Sword Type A Typo
-
-fix all strikecraft receiving halved supply costs
-
-Fix legioBounty ids (remove the 2 and adjust to reflect in code)
-(Move boss script to its own and not in the hullmod)
-Remove fleet interaction in rules/ comment it out
-turn jenius back into a rock
-tweak the TT fleet stuff in sleeper start.
+-fix panther being able to attack while bakraid is venting
+-dawn volturn shrine
+-gunhazard revision
