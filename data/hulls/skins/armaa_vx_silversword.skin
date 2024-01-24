@@ -2,7 +2,7 @@
     "baseHullId":"armaa_valkenx_frig",
     "skinHullId":"armaa_vx_silversword",
     "hullName":"Valken III",
-    "tags":["no_dealer","restricted"],
+    "tags":["no_dealer","restricted","no_sell","no_drop"],
     "descriptionId":"armaa_valkenx_frig",
     "descriptionPrefix":"This VX has been modified and upgraded using data from the recently recovered Valkazard.",
     "baseValueMult":1.5,

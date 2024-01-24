@@ -1,7 +1,7 @@
 {
   "id": "armaa_garegga_xiv_rightArm",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_chaingun_shot2",
+  "projectileSpecId": "armaa_mjolnir_shot",
   "type": "BALLISTIC",
   "size": "MEDIUM",
   "everyFrameEffect": "data.scripts.weapons.armaa_zanacDummyWeapon2",
@@ -15,11 +15,11 @@
   ],
   "turretOffsets": [
     55,
-    -12,
+    -16,
     55,
-    -12,
+    -16,
     55,
-    -12
+    -16
   ],
   "turretAngleOffsets": [
     1,
@@ -50,5 +50,5 @@
       220
     ]
   },
-  "fireSoundTwo": "armaa_chaingun_fire"
+  "fireSoundTwo": "mjolnir_fire"
 }

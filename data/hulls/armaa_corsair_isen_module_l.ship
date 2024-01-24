@@ -14,7 +14,6 @@
   "builtInMods": [
     "fourteenth",
     "reduced_explosion"
-
   ],
   "weaponSlots": [
     {
@@ -26,6 +25,15 @@
       "angle": 90,
       "locations": [-13, -1],
       "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 36,
+      "locations": [13, 6]
     }
   ],
   "engineSlots": [],

@@ -22,7 +22,7 @@
     "A_GUN2": "armaa_garegga_xiv_rightArm",
     "E_LSHOULDER": "armaa_monitor_xiv_leftPauldron",
     "E_RSHOULDER": "armaa_monitor_xiv_rightPauldron",
-    "HEAD": "armaa_monitor_xiv_head"
+    "HEAD": "armaa_garegga_xiv_head"
   },
   "weaponSlots": [
     {
@@ -88,7 +88,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 180,
+      "arc": 200,
       "angle": 0,
       "locations": [-9, -0]
     },

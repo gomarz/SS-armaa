@@ -1,5 +1,16 @@
-v2.3.7
+v3.0
 ------------
+- New ship: Garegga(H)
+	-
+	-
+	-
+
+- New ship: Bakraid
+
+- New ship: Panther
+
+- New ship: Corsair(ISEN)
+
 
 - Zanac
 	-Firebolt Feeder
@@ -28,6 +39,10 @@ v2.3.7
 		- Add 1x Medium Missile
 		- OP: 80->85
 		- Shield Arc: 140->300
+-Watchdog XIV
+	- Increased size of shipsystem qte thing
+	- made fail state more clear
+	- fixed shipsystem increasing weapon flux cost by 2x when activated 
 
 - Increasing CR per deployment for some ships to reduce supply recovery cost
 - fixed MRC not actually taking the credits they want to rob you for (how nice)
@@ -35,10 +50,11 @@ v2.3.7
 - fixed bug that made aleste variable rifle glow white whenever a jitter effect was applied
 - fixed bug that would cause crash if fighter had a null wing and a wingcom pilot, somehow
 - fixed bug that would cause crash if DHull did not have a parent hull, somehow
-- fixed wingcom crash that would occur due to an outdated class path
-- fixed zanac ex having an inacessible hybrid mount directly below magna beam
+- fixed wingcom crash that would occur due to bad class path
+- fixed zanac ex having an inaccessible hybrid mount below magna beam
+- fixed watchdog xiv having an inaccessible hybrid mount below barretta
 - fixed fenris carrier chain teleporting strikecraft (probably)
-- revised the hegemony bounty. Should now drop a BP with all the hegemony variants.
+- revised the hegemony bounty. Should now drop properly drop BP with all the hegemony variants.
 - removed some unused weapons/sprites
 
 v2.3.6

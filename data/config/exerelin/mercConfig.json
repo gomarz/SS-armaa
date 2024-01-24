@@ -11,8 +11,8 @@
 			"minLevel":5,
 			"ships":[
 				["armaa_zanac_sniper_ex"],
-				["armaa_valkenx_ss_assault"],
-				["armaa_aleste_swordsman"],
+				["armaa_valkenx_frig_assault"],
+				["armaa_zanac_overdriven_gry"],
 			],
 			"officers":[
 				{
@@ -23,7 +23,7 @@
 					"rankId":"spaceCommander",
 					"voice":"pw_crimson1",
 					"persistentId":"armaa_crimson",
-					"averageSMods":2,
+					"averageSMods":3,
 				},
 				{
 					"firstName":"Wiseman",

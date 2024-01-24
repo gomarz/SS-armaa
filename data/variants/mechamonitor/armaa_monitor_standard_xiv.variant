@@ -24,8 +24,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "hammerrack",
-        "WS0001": "hammerrack"
+        "WS0003": "jackhammer",
+        "WS0001": "jackhammer"
 		}
 	}
   ]

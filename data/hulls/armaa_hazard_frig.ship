@@ -20,8 +20,11 @@
     "sarissa_wing"
   ],
   "builtInWeapons": {
+    "A_GUN": "armaa_hazard_rightArm",
     "D_PAULDRONL": "armaa_hazard_leftPauldron",
-    "D_PAULDRONR": "armaa_hazard_rightPauldron"
+    "D_PAULDRONR": "armaa_hazard_rightPauldron",
+    "WS0001": "armaa_hazard_leftArm",
+    "WS0003": "hammer_single"
   },
   "weaponSlots": [
     {
@@ -31,7 +34,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 4]
+      "locations": [1, 4]
     },
     {
       "id": "D_PAULDRONR",
@@ -40,25 +43,71 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -4]
+      "locations": [1, -4]
     },
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 80,
       "angle": 0,
-      "locations": [6, 18]
+      "locations": [2, 2]
+    },
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": -10,
+      "locations": [8, -19]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [10, 16],
+      "renderOrderMod": -300
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": -10,
+      "locations": [8, -19]
     },
     {
       "id": "WS0002",
       "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 176,
+      "locations": [-3.5, 6.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -176,
+      "locations": [-3.5, -6.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 80,
+      "arc": 360,
       "angle": 0,
-      "locations": [6, -18]
+      "locations": [-5, -0]
     }
   ],
   "engineSlots": [

@@ -12,8 +12,8 @@
   "shieldRadius": 87,
   "viewOffset": 50,
   "builtInMods": [
-    "armoredweapons",
-    "fourteenth"
+    "fourteenth",
+    "armaa_comboUnit"
   ],
   "builtInWeapons": {
     "E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",

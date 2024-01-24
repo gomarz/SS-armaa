@@ -510,6 +510,87 @@ armaa_barDawnEvent5DrinkMoreNo,DialogOptionSelected,$option == armaa_barDawnEven
 RestoreSavedVisual
 BarCMD showOptions",You politely excuse yourself.,,
 ,,,,,,
+"#Dawn, Luddic Church Shrines",,,,,,
+armaa_lppShrineKillaVisitOption,PopulateKillaOptions,"$id == killa
+$tag:luddic_shrine
+$global.lpp_inProgress
+!$global.lpp_visitedShrineKilla
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+!$player.takingDawnToKilla
+!$player.takenDawnToKilla",SetOptionColor armaa_lppKillaVisitStart highlight,,99:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppShrineKillaVisitOptionAgain,PopulateKillaOptions,"$id == killa
+$tag:luddic_shrine
+$global.lpp_visitedShrineKilla
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+!$player.takingDawnToKilla
+!$player.takenDawnToKilla",SetOptionColor armaa_lppKillaVisitStart highlight,,99:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppKillaVisitStart,DialogOptionSelected,$option == armaa_lppKillaVisitStart,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_armaa_seraph
+ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
+
+""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_killaVisitStartBringDawn:Agree
+armaa_lpp_killaVisitStartRefuseDawn:Refuse",
+armaa_lpp_killaVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_killaVisitStartBringDawn,"FireAll PopulateKillaOptions
+$player.takingDawnToKilla = true
+AdjustRepActivePerson 1
+AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",,
+armaa_lpp_killaVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_killaVisitStartRefuseDawn,FireAll PopulateKillaOptions,"You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
+armaa_lppKillaVisitStart2Follow,DialogOptionSelected,"$option == lpp_killaVisitStartFollow
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToKilla","HideVisual
+ShrineCMD playMusic
+$player.takenDawnToKilla
+$player.dawnVisitedShrines++","You follow the path laid by others to the airlock. The manual controls allow you to pull it open to reveal a yawning black hole. 
+
+Dawn trails not too far behind you, having stopped to observe something in the dust. She urges you to continue.",lpp_killaOssuary1:Step inside,
+,,,,,,
+#armaa_lppVolturnShrineOption,PopulateOptions,"$market.id == volturn
+$market.tag:luddic_shrine
+$menuState == main
+$faction.id == sindrian_diktat
+$global.lpp_inProgress
+!$market.didShrineIntro
+!$justVisitedShrine
+!$player.takingDawnToVolturn
+!$player.takenDawnToVolturn
+armaa_Hikaru_Utada hasOfficer armaa_dawn",,,4:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
+#armaa_lppVolturnShrineOptionAgain,PopulateOptions,"$market.id == volturn
+$market.tag:luddic_shrine
+$faction.id == sindrian_diktat
+$menuState == main
+$global.lpp_inProgress
+$market.didShrineIntro
+!$justVisitedShrine
+!$player.takingDawnToVolturn
+!$player.takenDawnToVolturn
+armaa_Hikaru_Utada hasOfficer armaa_dawn",,,4:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
+#armaa_lppVolturnShrineOptionPostLPP,PopulateOptions,"$market.id == volturn
+$market.tag:luddic_shrine
+$faction.id == sindrian_diktat
+$menuState == main
+$global.lpp_missionCompleted
+!$justVisitedShrine
+!$player.takingDawnToVolturn
+!$player.takenDawnToVolturn
+armaa_Hikaru_Utada hasOfficer armaa_dawn",,,4:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
+#armaa_lppVolturnVisitStart,DialogOptionSelected,$option == armaa_lppVolturnVisitStart,"BeginConversation armaa_dawn
+ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
+
+""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_VolturnVisitStartBringDawn:Agree
+armaa_lpp_VolturnVisitStartRefuseDawn:Refuse",
+#armaa_lpp_VolturnVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_VolturnVisitStartBringDawn,"$player.takingDawnToVolturn = true
+AdjustRepActivePerson 1
+AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight
+ShowDefaultVisual","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",0:cutCommLink:Cut the comm link,
+#armaa_lpp_VolturnVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_VolturnVisitStartRefuseDawn,"ShowDefaultVisual
+EndConversation
+
+","You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
+#armaa_lppVolturnOfficialDawnOption,LPPVolturnOfficialConvo,!$askedDawnVolturn,FireAll LPPVolturnOfficialConvo,,armaa_lppVolturnOfficialAskDawnResp: Ask Dawn for her thoughts,
+#armaa_lppVolturnOfficialAskDawnResp,DialogOptionSelected,$option == armaa_lppVolturnOfficialAskDawnResp,"ShowSecondPerson armaa_dawn
+$askedDawnVolturn = true","You ask the official to excuse you for a moment, stepping away and walking a short distance to Dawn, who has been observing the exchange from a distance.
+""Well? They givin' you the run around, hm? They're not exactly fond of the Luddic faithful around here."" She gestures at ______. ""Gets in the way of their hero worship, you know.""",,
+,,,,,,
 # Handing in the PK - Sera,,,,,,
 PKGiveToSeraph,PopulateOptions,"$isPerson
 $id == armaa_seraph

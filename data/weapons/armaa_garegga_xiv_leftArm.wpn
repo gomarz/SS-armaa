@@ -32,22 +32,22 @@
   "animationType": "SMOKE",
   "interruptibleBurst": true,
   "smokeSpec": {
-    "particleSizeMin": 10,
-    "particleSizeRange": 20,
+    "particleSizeMin": 5,
+    "particleSizeRange": 15,
     "cloudParticleCount": 6,
     "cloudDuration": 1,
     "cloudRadius": 20,
-    "blowbackParticleCount": 10,
-    "blowbackDuration": 1,
-    "blowbackLength": 25,
+    "blowbackParticleCount": 5,
+    "blowbackDuration": 0.5,
+    "blowbackLength": 15,
     "blowbackSpread": 30,
     "particleColor": [
-      100,
+      150,
       100,
       100,
       100
     ]
   },
-  "fireSoundTwo": "armaa_chaingun_fire",
+  "fireSoundTwo": "armaa_stake_shot",
   "unaffectedByProjectileSpeedBonuses": true
 }

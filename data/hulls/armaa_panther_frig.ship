@@ -21,7 +21,7 @@
     "A_GUN": "armaa_panther_variablerifle",
     "A_GUN2": "armaa_panther_missile_deco",
     "B_TORSO": "armaa_panther_torso",
-    "C_ARML": "armaa_valkenLeftArm",
+    "C_ARML": "armaa_pantherLeftArm",
     "D_PAULDRONL": "armaa_panther_leftPauldron",
     "D_PAULDRONR": "armaa_panther_rightPauldron",
     "E_HEAD": "armaa_pantherHead",
@@ -101,7 +101,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [1, 6]
+      "locations": [1, 5]
     },
     {
       "id": "D_PAULDRONR",
@@ -110,7 +110,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [1, -6]
+      "locations": [1, -5]
     },
     {
       "id": "E_HEAD",
