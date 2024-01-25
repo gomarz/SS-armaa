@@ -7,13 +7,42 @@
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "reinforcedhull",
+    "autorepair",
+    "blast_doors",
+    "auxiliarythrusters",
+    "solar_shielding",
+    "insulatedengine"
+  ],
   "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN": "armaa_garegga_xiv_leftArm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN2": "armaa_garegga_xiv_rightArm"
+      }
+    },
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS 001": "heavymg"
+        "WS0002": "reaper"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "reaper"
       }
     }
   ],
