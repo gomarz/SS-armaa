@@ -14,18 +14,25 @@
   ],
   "weaponGroups": [
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "E_HEAD": "armaa_pantherHead",
-        "TRUE_GUN": "heavymauler",
         "TRUE_GUN2": "jackhammer"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "TRUE_GUN": "heavymauler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_pantherHead"
+      }
     }
   ],
   "modules": [
