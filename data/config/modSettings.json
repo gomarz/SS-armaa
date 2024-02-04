@@ -13,6 +13,41 @@
 			"armaa_curvyLaser":"MILD",
 		},
 	},
+	"armaarmatura_notifications":
+	{
+		"mazalot":
+		[
+			"\"Sounds like Mazalot's got its fair share of challenges.\"",
+			"\"The League should be about freedom for everyone, not just the privileged few.\"",
+			"\"Typical League politics, huh? Probably just a bunch of empty rhetoric.\"",
+			"\"If the League won't act, maybe it's time someone did. The Luddics in Mazalot deserve justice, and we might be the ones to bring it to them.\"",
+		],
+		"cryosleeper":
+		[
+			"\"Hard to say what's the right call here.\"",
+			"\"Waking them up could bring fresh minds, new ideas.\"",
+			"\"We can't be sure they can adapt to a world that's changed beyond recognition.\"",
+			"\"We can't afford to wait for some ideal moment. If they can't handle state of things, well..\"",
+			
+		],
+		"jangala":
+		[
+			"\"Sure, it's a scenic view, but i'm more interested in what we can find up here.\"",
+			"\"I can see why the Luddic faithful hold it in high regard.\"",
+			"\"Venturing into the unknown might not be as fruitful as it seems. Let's focus on the practical side of our journey.\"",
+			"\"Jangala's beauty might be marred by Hegemony control. They've got their grip on it, but it won't last forever.\"",
+		
+		],
+		"station_galatia_academy":
+		[
+			"\"Let's keep an eye out.\"",
+			"\"Good point. These academic types sometimes forget that their experiments can have real-world consequences.\"",
+			"\"They're playing with fire. We might need to keep a closer watch on what these Galatia folks are up to.\"",
+			"\"Don't worry. I happen to be the legendary 'Savior of Galatia.' They'll be thrilled to have me drop by and share some wisdom with them.\"",
+		],
+		
+	
+	},
 	"armaarmatura":{
 	"missile_resist_karma":[
 			"ora_echoesS",
@@ -29,6 +64,7 @@
 		"armaa_SilverSwordHM":0.3,
 		
 		},
+		
 		"missile_refit_custom":{
 		"reaper":0.3,
 		},

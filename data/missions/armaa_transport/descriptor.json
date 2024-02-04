@@ -2,5 +2,5 @@
 	"title":"ARMAA - Last Dance",
 	"difficulty":"MEDIUM",
 	"icon":"armaa_icon.png",
-	"background":"graphics/backgrounds/background2.jpg"
+	"background":"data/missions/armaa_transport/background1.jpg"
 }

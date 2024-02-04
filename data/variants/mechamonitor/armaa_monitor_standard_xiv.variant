@@ -14,7 +14,7 @@
   "weaponGroups": [
     {
       "autofire": false,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
         "WS0002": "harpoon",
         "WS0004": "harpoon"
@@ -22,7 +22,7 @@
 	},
     {
       "autofire": false,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
         "WS0003": "jackhammer",
         "WS0001": "jackhammer"

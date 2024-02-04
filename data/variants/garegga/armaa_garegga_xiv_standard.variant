@@ -2,7 +2,7 @@
   "variantId": "armaa_garegga_xiv_standard",
   "hullId": "armaa_garegga_xiv",
   "displayName": "Standard",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 5,
   "fluxVents": 10,
   "quality": 1,

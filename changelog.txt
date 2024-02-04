@@ -1,3 +1,25 @@
+v3.0.3
+-----------
+- Dawn will now refuse to join the player if they are affiliated with the Diktat
+- add more campaign layer interaction events w/ Dawn
+- Fixed another NPE null fighter wing
+- swapped leynos & kouto bazooka weapons back to use phase_mine behavior
+- fixed malformed restricted/no_dealer tags
+- Can now only turn in a valkazard once
+- Fixed Panther CR not matching CR of Bakraid on seperation
+- Fixed detached player Panthers using wrong fleet commander for stats if ally fleet was larger than players
+- Lowered rep needed for alternative condition to be introduced to Sera by Dawn (50 rep -> 30)
+- Fixed bug where Dawn would sometimes not offer Sera's comms-id even when conditions were met
+- Increased Kouto LPCs bazooka projectile HP so they aren't instantly destroyed by PD
+- Kouto Bazooka dmg type: Kinetic-> Energy; ammo limit removed; burst size 1->3
+- Kouto shield type: NONE->OMNI
+- Strikecraft should be able to land on station modules with bays once more
+- Strikecraft should be able to land on carriers without any slotted LPCs
+- Simplified carrier landing AI logic
+- Fixed bug where strikecraft would try to repair at a carrier with 0 cr, and endlessly hover over it
+- Fixed UI issue where when wingcom pilots exceeded level cap(this isnt a bug), cap was still listed as level-1
+- fixed Fenris teleporting strikecraft between each other, for real this time (?)
+
 v3.0.2
 ------------
 - fixed bug with hel corsair right shoulder anim

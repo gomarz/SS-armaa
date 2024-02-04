@@ -81,7 +81,7 @@ Light Assault Gun,armaa_valken_torso_gunmetal,0,,300,700,,40,,3,40,0,400,,,HIGH_
 ,armaa_valken_rightPauldron_gunmetal,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 Blitz Railgun,armaa_valken_gun,2,0.5,600,700,,50,50,10,60,7,400,,,KINETIC,55,,0.4,1.2,5,0.1,1,15,1,6,,800,,,50,"SYSTEM,PD_ALSO,ANTI_FTR",,,,,Anti Shield,,,,,,,,,,0.5,,
 ,armaa_valkenLeftArm_gunmetal,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
-Micro Missile Pod,armaa_valken_missile,5,,2250,1000,,80,0,10,0,10,,,,HIGH_EXPLOSIVE,,,0,8,5,0.13,,20,5,1,,550,400,10,25,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE, GROUP_LINKED, SYSTEM,ANTI_FTR",,,Arma Armatura,,Anti Fighter,,,,,,,,,,12.95,,
+Micro Missile Pod,armaa_valken_missile,5,,2250,1000,,80,0,10,0,10,,,,HIGH_EXPLOSIVE,,,0,8,5,0.13,,20,5,1,,550,400,10,25,"STRIKE, USE_VS_FRIGATES, DO_NOT_AIM, DO_NOT_CONSERVE, GROUP_LINKED, SYSTEM,ANTI_FTR,MISSILE_SPREAD",,,Arma Armatura,,Anti Fighter,,,,,,,,,,12.95,,
 #VALKEN(P),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Vulcan Cannon,armaa_valkenHead_black,,,,250,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM",,,,,Point Defense,,,,,,,,,,,,
 Light Assault Gun,armaa_valken_torso_black,0,,300,500,,40,,3,40,0,100,,,HIGH_EXPLOSIVE,32,,0.1,0.25,1,,0,5,1,5,,1000,,,30,SYSTEM,,,,,Anti Armor,,,,,,,,,,,,3
@@ -144,8 +144,8 @@ M3 Pod,armaa_kouto_torso_frig,5,,2250,1000,,160,,10,0,10,,,,HIGH_EXPLOSIVE,,,0,8
 Variable Rifle,armaa_kouto_variablerifle,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,,,
 SCTR-20 Minigun,armaa_kouto_minigun_right,2,,1000,500,,30,,5,20,,10,7.5,10,KINETIC,,,0.25,0.25,9999,0.08,1,15,1,8,,1000,,,30,"SYSTEM,FIRE_WHEN_INEFFICIENT",,,Arma Armatura,,Anti Hull,,,,,"Projectiles break into submunitions on contact, causing %s extra HE damage on hits to armor or hull.",0-10,,,FALSE,4.5,,
 SCTR-20 Minigun,armaa_kouto_minigun_left,2,,1000,600,,45,,5,30,,150,,,FRAGMENTATION,,,,,9999,0.12,1,15,1,6,,1000,,,30,"SYSTEM,PD_ALSO,PD,FIRE_WHEN_INEFFICIENT",,,Arma Armatura,,Anti Hull,,,,,"Projectiles break into submunitions on contact, causing %s extra HE damage on hits to armor or hull.",0-10,,,FALSE,4.5,,
-BS-13 Energen Bazooka,armaa_koutoBazooka,2,,1350,700,,200,,0,20,0,10,,,KINETIC,,,,3,1,0.2,3,5,1,10,,300,300,1.5,150,"SYSTEM,STRIKE, USE_VS_FRIGATES, GROUP_LINKED","no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,,,,,,19,,
-,armaa_kouto_left_arm,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
+BS-13 Energen Bazooka,armaa_koutoBazooka,2,,1350,700,,200,,0,20,0,,,,ENERGY,,,,3,3,0.15,3,15,2,5,,300,300,1.5,500,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,,,,,,19,,
+,armaa_kouto_left_arm,,,,600,1,,,,,,,,,,,,,10,3,0.1,0,15,1,5,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 #ILORIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 RCL-48 Recoilless Rifle,armaa_ilorin_torso,1,0.5,5000,650,,350,,20,45,0,6,,,HIGH_EXPLOSIVE,,,0,2,2,0.5,0,1,1,1,,600,,,30,"SYSTEM,STRIKE,USE_VS_FRIGATES,DIRECT_AIM",,,Arma Armatura,,Anti Armor,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -221,7 +221,7 @@ LS-99 MOONLIGHT++,armaa_altagrave_blade,,,,250,1000,,200,20,80,,,,,ENERGY,,,0.35
 AMWS-K,armaa_kshatriya_head,,,600,800,400,,,20,50,99,,,,ENERGY,,350,0.3,0.3,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 ,armaa_kshatriya_leftArm,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 ,armaa_kshatriya_rightArm_deco,,,,600,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-Power Axe,armaa_kshatriya_rightArm_melee,2,,600,100,,400,,50,20,99,,,,HIGH_EXPLOSIVE,,,.3,3,10,0.05,,,,,,100,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
+Power Axe,armaa_kshatriya_rightArm_melee,2,,600,100,,300,,100,20,99,,,,HIGH_EXPLOSIVE,,,0.2,.8,10,.05,,,,,,100,,,,"SYSTEM,IGNORES_FLARES",doNotModify,"PD,ANTI_FTR,SYSTEM",Arma Armatura,,Point Defense,,,,,,,,,,,,19.7
 ,armaa_zanac_rightPauldron_grey,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_zanac_leftPauldron_grey,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_zanac_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,

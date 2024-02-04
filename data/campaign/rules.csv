@@ -326,7 +326,16 @@ $id == armaa_dawn score:1000
 ",,,"armaa_loreDump1:""Can you tell me more about Arma Armatura?""",
 armaa_HireDawn,PopulateOptions,"$id == armaa_dawn
 $player.hasSeraphaCommsId",SetOptionColor armaa_HireDawn2 highlight,,"armaa_HireDawn2:""Why don't you work for me?""",
-armaa_HireDawn2,DialogOptionSelected,$option == armaa_HireDawn2,FireAll PopulateOptionsHire,"""As long as it's not as your secretary. Need a pilot?""",,
+armaa_HireDawn2,DialogOptionSelected,"$option == armaa_HireDawn2
+$player.fcm_faction != sindrian_diktat",FireAll PopulateOptionsHire,"""As long as it's not as your secretary. Need a pilot?""",,
+armaa_HireDawn2SD,DialogOptionSelected,"$option == armaa_HireDawn2
+$player.fcm_faction == sindrian_diktat",FireAll PopulateOptions,"Dawn gives you a once-over before letting out a sigh.
+
+""You're on the payroll for the sindies, aren't ya?""
+
+""Well, i'm not the holiest gal in the congregation, but I still hitch my wagon to the Church of Galactic Redemption. Can't rightly tag along with you, considerin' what they've pulled. It's a bit like tryin' to mix oil and water, you see? Apologies.""
+
+She bows her head a notch. ""I reckon we're headed in different directions. Best of luck to you, though.""",,
 armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk
 !$askedForSeraph","AddPotentialContact
@@ -336,7 +345,7 @@ $askedForSeraph = true","""Oh, check you out! Shooting for the stars, huh? Gotta
 armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk",,"""Sorry, still can't do. I'll log your request, though.""",,
 ,,,,,,
-armaa_dawnAskForContactAccept,DialogOptionSelected,"$option == armaa_dawnAskForContact
+#armaa_dawnAskForContactAccept,DialogOptionSelected,"$option == armaa_dawnAskForContact
 armaa_Hikaru_Utada findValk score:100","ShowSecondPerson armaa_seraph
 SetPersonHidden armaa_seraph false
 AddText """"
@@ -347,12 +356,20 @@ $player.hasSeraphaCommsId = true","""No sweat,"" the woman assures with a subtle
 You can't help but find it odd how readily she handed over this information without you even clarifying your purpose.
 ","cutCommLink:""Thanks"" (cut comm-link)",
 armaa_dawnAskForContactAcceptAlt,DialogOptionSelected,"$option == armaa_dawnAskForContact
-$rel > 0.50","ShowSecondPerson armaa_seraph
+$rel > 0.25 score:1000","ShowSecondPerson armaa_seraph
 SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
 AddTextSmall ""--Received comms ID for Sera Pha--"" highlight
 $player.hasSeraphaCommsId = true","""Well, you've pulled your weight around here,"" the woman acknowledges with a slight nod. As your personal gadget beeps, she adds, ""I've shot Administrator Pha's comms ID over to you. Bet she's itching to team up with someone like you.""","cutCommLink:""Thanks"" (cut comm-link)",
+armaa_dawnRepReward,PickGreeting,"$id == armaa_dawn
+!$dawnContactGivenGoods score:1000
+$rel >= 0.25","$dawnContactGivenGoods = true
+AddRemoveAnyItem FIGHTER_CHIP armaa_aleste_wing 1
+ShowPersonVisual
+FireAll PopulateOptions","""$player.firstName, I've been noticin' the quality of the work you've been putting in. Those odd jobs and ends may seem trivial to some, but I reckon a reliable hand is worth its weight in volatiles in this sector. Keep it up, and I might just start thinkin' I can rely on you for the bigger tasks.""
+
+Dawn leans in slightly, a subtle nod of approval in her gaze. ""You've got a knack for getting things done without much fuss, and that's a rare trait in these parts. Here's a little somethin' for your efforts. It's not much, but consider it a token of appreciation. Just remember, there's always more to be done, so don't go slackin' on me now.""",,
 armaa_OfficeTalk,DialogOptionSelected,$option == armaa_OfficeTalk,,,,
 armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""What, my name? Too Luddic for your tastes 'er somethin?""
 ","armaa_dawnSmallTalkNeutral:""What's a luddic doing employed by a weapons manufacturer?""
@@ -533,18 +550,18 @@ armaa_lpp_killaVisitStartRefuseDawn:Refuse",
 armaa_lpp_killaVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_killaVisitStartBringDawn,"FireAll PopulateKillaOptions
 $player.takingDawnToKilla = true
 AdjustRepActivePerson 1
-AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",,
+AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",0:cutCommLink:Cut the comm link,
 armaa_lpp_killaVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_killaVisitStartRefuseDawn,FireAll PopulateKillaOptions,"You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
 armaa_lppKillaVisitStart2Follow,DialogOptionSelected,"$option == lpp_killaVisitStartFollow
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 $player.takingDawnToKilla","HideVisual
 ShrineCMD playMusic
-$player.takenDawnToKilla
+$player.takenDawnToKilla = true
 $player.dawnVisitedShrines++","You follow the path laid by others to the airlock. The manual controls allow you to pull it open to reveal a yawning black hole. 
 
 Dawn trails not too far behind you, having stopped to observe something in the dust. She urges you to continue.",lpp_killaOssuary1:Step inside,
 ,,,,,,
-#armaa_lppVolturnShrineOption,PopulateOptions,"$market.id == volturn
+armaa_lppVolturnShrineOption,PopulateOptions,"$market.id == volturn
 $market.tag:luddic_shrine
 $menuState == main
 $faction.id == sindrian_diktat
@@ -553,8 +570,9 @@ $global.lpp_inProgress
 !$justVisitedShrine
 !$player.takingDawnToVolturn
 !$player.takenDawnToVolturn
-armaa_Hikaru_Utada hasOfficer armaa_dawn",,,4:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
-#armaa_lppVolturnShrineOptionAgain,PopulateOptions,"$market.id == volturn
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppVolturnVisitStart highlight",,4:armaa_lppVolturnVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppVolturnShrineOptionAgain,PopulateOptions,"$market.id == volturn
 $market.tag:luddic_shrine
 $faction.id == sindrian_diktat
 $menuState == main
@@ -563,8 +581,9 @@ $market.didShrineIntro
 !$justVisitedShrine
 !$player.takingDawnToVolturn
 !$player.takenDawnToVolturn
-armaa_Hikaru_Utada hasOfficer armaa_dawn",,,4:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
-#armaa_lppVolturnShrineOptionPostLPP,PopulateOptions,"$market.id == volturn
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppVolturnVisitStart highlight",,4:armaa_lppVolturnVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppVolturnShrineOptionPostLPP,PopulateOptions,"$market.id == volturn
 $market.tag:luddic_shrine
 $faction.id == sindrian_diktat
 $menuState == main
@@ -572,24 +591,624 @@ $global.lpp_missionCompleted
 !$justVisitedShrine
 !$player.takingDawnToVolturn
 !$player.takenDawnToVolturn
-armaa_Hikaru_Utada hasOfficer armaa_dawn",,,4:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
-#armaa_lppVolturnVisitStart,DialogOptionSelected,$option == armaa_lppVolturnVisitStart,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppVolturnVisitStart highlight",,4:armaa_lppVolturnVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppVolturnVisitStart,DialogOptionSelected,$option == armaa_lppVolturnVisitStart,"BeginConversation armaa_dawn
 ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
 
 ""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_VolturnVisitStartBringDawn:Agree
 armaa_lpp_VolturnVisitStartRefuseDawn:Refuse",
-#armaa_lpp_VolturnVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_VolturnVisitStartBringDawn,"$player.takingDawnToVolturn = true
+armaa_lpp_VolturnVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_VolturnVisitStartBringDawn,"$player.takingDawnToVolturn = true
 AdjustRepActivePerson 1
 AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight
 ShowDefaultVisual","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",0:cutCommLink:Cut the comm link,
-#armaa_lpp_VolturnVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_VolturnVisitStartRefuseDawn,"ShowDefaultVisual
+armaa_lpp_VolturnVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_VolturnVisitStartRefuseDawn,"ShowDefaultVisual
 EndConversation
 
 ","You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
-#armaa_lppVolturnOfficialDawnOption,LPPVolturnOfficialConvo,!$askedDawnVolturn,FireAll LPPVolturnOfficialConvo,,armaa_lppVolturnOfficialAskDawnResp: Ask Dawn for her thoughts,
-#armaa_lppVolturnOfficialAskDawnResp,DialogOptionSelected,$option == armaa_lppVolturnOfficialAskDawnResp,"ShowSecondPerson armaa_dawn
-$askedDawnVolturn = true","You ask the official to excuse you for a moment, stepping away and walking a short distance to Dawn, who has been observing the exchange from a distance.
-""Well? They givin' you the run around, hm? They're not exactly fond of the Luddic faithful around here."" She gestures at ______. ""Gets in the way of their hero worship, you know.""",,
+armaa_lppVolturnOfficialDawnOption,LPPVolturnOfficialConvo,"!$player.askedDawnVolturn
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToVolturn","AddText ""Dawn scoffs, murmuring something under her breath before pacing a few steps away from you and the official, scanning the distance.""
+SetOptionColor armaa_lppVolturnOfficialAskDawnResp highlight",,2:armaa_lppVolturnOfficialAskDawnResp:Ask Dawn for her thoughts,
+armaa_lppVolturnOfficialAskDawnResp,DialogOptionSelected,$option == armaa_lppVolturnOfficialAskDawnResp,"BeginConversation armaa_dawn False False
+ShowPersonVisual
+$player.askedDawnVolturn = true","""What's the deal back there? They playin' coy with you? 'Round these parts, they're not too keen on the Luddic faithful. It's like tryin' to fit a square peg in a round hole."" She spits on the ground. A gesture of annoyance?
+
+Dawn leans in, her eyes sharp as an eagle scouting its prey. ""I'm sure you know the story behind this place. They'd dive into a black hole before giving the Luddic folk a fair shake.""
+
+She kicks a rock with the toe of her worn boot, mumbling, ""Might need to parlay a little to get through this one."" 
+
+""So what's the plan, 'Great Leader'?.""",armaa_lppVolturnOfficialAskDawnRespReturn: Consider your options,
+armaa_lppVolturnOfficialAskDawnRespReturn,DialogOptionSelected,$option == armaa_lppVolturnOfficialAskDawnRespReturn,"EndConversation
+ShowDefaultVisual
+FireAll LPPVolturnOfficialConvo",,,
+armaa_lppVolturnCurateAskPilgrim,DialogOptionSelected,"$option == lpp_volturnCurateAskPilgrim
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToVolturn","$player.luddicAttitudeFaithful++
+ShowSecondPerson armaa_dawn 
+","""Then,"" she says, ""I am here to show you to it."" 
+
+""Simon?"" she says to someone behind you, ""You may also stow your weapon.""
+
+You turn to look and Simon does as she asks, giving you an apologetic little half-salute. The curate smiles, and with open hands shows you the way to the inner shrine.
+
+Dawn exchanges a look with you, but otherwise says nothing.",lpp_volturnShrineFirstVisit4:Continue,
+armaa_lppVolturnCurateAskSeeShrine,DialogOptionSelected,"$option == lpp_volturnCurateAskSeeShrine
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToVolturn","$player.luddicAttitudeAgnostic++
+ShowSecondPerson armaa_dawn
+","""Then,"" she says, ""I am here to show you to it."" 
+
+""Simon?"" she says to someone behind you, ""You may also stow your weapon.""
+
+You turn to look and Simon does as she asks, giving you an apologetic little half-salute. The curate smiles, and with open hands shows you the way to the inner shrine.
+
+Dawn exchanges a look with you, but otherwise says nothing.",lpp_volturnShrineFirstVisit4:Continue,
+armaa_lppVolturnCurateNotJustCandle,DialogOptionSelected,"$option == lpp_volturnCurateNotJustCandle
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToVolturn","$notJustCandle = true 0
+$player.luddicAttitudeFaithful++
+AdjustRepPerson standfast FRIENDLY 5
+AdjustRepPerson armaa_dawn FRIENDLY 3
+ShowSecondPerson armaa_dawn
+AddText""Dawn approaches, examining the flickering flames. 'A symbol of the struggle, isn't it? Even here, the faith is strong.'""
+FireAll LPPVolturnCurateResponses2
+","""The Pneuma lives in these words.""
+
+She is staring sadly, you think, at the candles before you.",,
+armaa_lppVolturnCurateTroublingHeavier,DialogOptionSelected,"$option == lpp_volturnCurateTroubleHeavier
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToVolturn","$commentedOnWeapons = true 0
+$confirmedInsurgent = true 0
+AdjustRepPerson standfast FRIENDLY 1
+AdjustRepPerson armaa_dawn FRIENDLY 1
+FireAll LPPVolturnCurateResponses2","A smile doubles the wrinkles on her face. ""I believe we understand one another.""",,
+armaa_lppVolturnShrineFirstLeave1,DialogOptionSelected,"$option == lpp_volturnShrineFirstLeave1
+!$player.takenDawnToVolturn
+$player.takingDawnToVolturn","EndConversation DO_NOT_FIRE
+ShrineCMD setVisited
+$player.takenDawnToVolturn = true
+$player.takingDawnToVolturn = false
+$player.dawnVisitedShrines++
+FireAll LPPShrineVisitXP",,shrineDoLeave:Continue,
+armaa_lppVolturnShrineRevisit2,DialogOptionSelected,"$option == lpp_volturnShrineRevisit1
+!$player.takenDawnToVolturn
+$player.takingDawnToVolturn","$justVisitedShrine = true 0
+$player.dawnVisitedShrines++","Curate Sacraria Standfast greets Dawn and yourself with tea inside the echoing receiving hall before escorting you down to the inner shrine.
+
+You enter the creaking, humid inspection module at the end of a modified extraction stack where the shrine is housed, against all reason. Crates and racks of weapons and ammunition are piled high, crowding the pilgrims/insurgents. Their unwashed bodies smell of sweat and smoke. They speak and pray quietly. 
+
+The small shrine's centerpiece is set in an open space under a round diamond-matrix window holding back the crushing depths of the sea. A few candles flicker among the ranks of their dead comrades. As before, the curate sacraria re-lights a candle from one that is burning, and offers one for you to do the same.","lpp_volturnShrineRevisitCandle:Light a candle
+shrineDoLeave:Leave",
+armaa_lppVolturnShrineRevisitCandle,DialogOptionSelected,"$option == lpp_volturnShrineRevisitCandle
+!$player.takenDawnToVolturn
+$player.takingDawnToVolturn","$player.takenDawnToVolturn = true
+$player.takingDawnToVolturn = false
+$player.dawnVisitedShrines++
+BeginConversation armaa_dawn False False
+ShowPersonVisual
+EndConversation
+","You light the candle from one that still burns, bringing one of its companions back to life and carrying on its flame.
+
+Dawn approaches, examining the flickering flames. ""A symbol of the struggle, isn't it? Even here, the faith is strong.""",shrineDoLeave:Leave,
+,,,,,,
+armaa_lppHesperusShrineOption,PopulateOptions,"$market.id == hesperus
+$market.tag:luddic_shrine
+$menuState == main
+$global.lpp_inProgress
+$player.transponderOn
+!$global.lpp_visitedShrineHesperus
+!$player.takingDawnToHesperus
+!$player.takenDawnToHesperus
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppHesperusVisitStart highlight",,4:armaa_lppHesperusVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppHesperusShrineOptionRevisit,PopulateOptions,"$market.id == hesperus
+$market.tag:luddic_shrine
+$menuState == main
+$player.transponderOn
+$global.lpp_visitedShrineHesperus
+!$player.takingDawnToHesperus
+!$player.takenDawnToHesperus
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppHesperusVisitStart highlight",,4:armaa_lppHesperusVisitStart:Check your TriPad regarding a comms request from the fleet,
+armaa_lppHesperusVisitStart,DialogOptionSelected,$option == armaa_lppHesperusVisitStart,"BeginConversation armaa_dawn
+ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
+
+""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_HesperusVisitStartBringDawn:Agree
+armaa_lpp_HesperusVisitStartRefuseDawn:Refuse",
+armaa_lpp_HesperusVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_HesperusVisitStartBringDawn,"$player.takingDawnToHesperus = true
+AdjustRepActivePerson 1
+AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight
+ShowDefaultVisual","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",0:cutCommLink:Cut the comm link,
+armaa_lpp_HesperusVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_HesperusVisitStartRefuseDawn,"ShowDefaultVisual
+EndConversation
+
+","You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
+armaa_lppHesperusShrineVisit2,DialogOptionSelected,"$option == lpp_hesperusShrineVisit2
+$player.takingDawnToHesperus
+armaa_Hikaru_Utada hasOfficer armaa_dawn","BeginConversation initiate False False
+ShowSecondPerson armaa_dawn
+FireAll HesperusInitiateResponses","In the next niche over, a young knight-initiative gives you a challenging look. His head is freshly shaved; he must be very new to the order.
+
+""You're not a Knight,"" he says quietly, making a show of looking over your uniform. ""Nor one of us. Not really. Why are you here, spacer?""
+
+Dawn looks the man up and down before interjecting.
+
+""Well, sugar, reckon we're just taking a pit stop. Got questions need answerin', things need gazin' at. What about you, fresh-face? You interrogate everyone?""
+
+The initiate turns his attention briefly to your companion, folding his arms. 
+
+""Our presence here is steeped in devotion. As for myself, yes, it is imperative to scrutinize those who traverse our consecrated enclave. One must exercise caution to preserve the sanctity of this shrine. While you may be on a brief pause, we, in contrast, stand vigilant in safeguarding this sacred space."" 
+
+It almost sounds rehearsed.
+
+",,
+armaa_lppHesperusShrineWrapUp,DialogOptionSelected,"$option == lpp_hesperusShrineWrapUp
+$player.takingDawnToHesperus
+armaa_Hikaru_Utada hasOfficer armaa_dawn","ShrineCMD setVisited
+FireAll LPPShrineVisitXP
+unset $market.bribedIntoHesperus
+unset $global.lpp_hesperusWait
+$player.takenDawnToHesperus = true
+$player.takingDawnToHesperus = false
+$player.dawnVisitedShrines++","Subdued chanting, warped by the strange geometry of this cultic industrial space, blends with the air-cyclers. The candles burn clean and bright, gleaming off the multitude of bladed facets adorning every surface of the shrine's interior, a monument to sacral bloodshed.
+
+Dawn's eyes widen as she takes in the grandeur of the shrine, a mix of awe and somber reflection playing across her features.
+ 
+She moves closer, her boots echoing softly against the transformed industrial floor. Her gaze lingers on the solemn scene, her mind undoubtedly pondering the sacrifices and the tragic tale that unfolded in the name of devotion.
+
+""Their final resting place is like- like a mosaic"", she murmurs, a reverence in her voice. ""Would hate to go out like this.""",shrineDoLeave:Leave the shrine,
+armaa_lppHesperusShrineDoVisitAgain3,DialogOptionSelected,"$option == lpp_hesperusShrineAgain3
+$player.takingDawnToHesperus
+armaa_Hikaru_Utada hasOfficer armaa_dawn","$player.takenDawnToHesperus = true
+$player.takingDawnToHesperus = false
+$player.dawnVisitedShrines++","Subdued chanting, warped by the strange geometry of this cultic industrial space, blends with the air-cyclers. The candles burn clean and bright, gleaming off the multitude of bladed facets adorning every surface of the shrine's interior, a monument to sacral bloodshed.
+
+Dawn's eyes widen as she takes in the grandeur of the shrine, a mix of awe and somber reflection playing across her features.
+ 
+She moves closer, her boots echoing softly against the transformed industrial floor. Her gaze lingers on the solemn scene, her mind undoubtedly pondering the sacrifices and the tragic tale that unfolded in the name of devotion.
+
+""Their final resting place is like- like a mosaic"", she murmurs, a reverence in her voice. ""Would hate to go out like this.""
+
+You are left in a prayer-niche to contemplate the horror.",shrineDoLeave:Leave the shrine,
+,,,,,,
+armaa_lppJangalaVisitOptionCheckMission,PopulateOptions,"$market.id == jangala
+$menuState == main
+$global.lpp_inProgress
+!$global.lpp_missionCompleted
+!$global.lpp_didJangalaProtest
+!$justVisitedShrine
+!$player.takingDawnToJangala
+!$player.takenDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppJangalaVisitStart highlight",,4:armaa_lppJangalaVisitStart:Check your TriPad regarding a comms request from the fleet,# started mission to visit shrines
+armaa_lppJangalaVisitOptionCheckRevisit,PopulateOptions,"$market.id == jangala
+$menuState == main
+!$global.lpp_inProgress
+$global.lpp_missionCompleted
+!$global.lpp_didJangalaProtest
+!$justVisitedShrine
+!$player.takingDawnToJangala
+!$player.takenDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppJangalaVisitStart highlight",,4:armaa_lppJangalaVisitStart:Check your TriPad regarding a comms request from the fleet,# finished mission to visit shrines
+armaa_lppJangalaVisitOptionCheckProtest,PopulateOptions,"$market.id == jangala
+$menuState == main
+!$global.lpp_inProgress
+!$global.lpp_missionCompleted
+$global.lpp_didJangalaProtest
+!$justVisitedShrine
+!$player.takingDawnToJangala
+!$player.takenDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppJangalaVisitStart highlight",,4:armaa_lppJangalaVisitStart:Check your TriPad regarding a comms request from the fleet,"# Saw protest, haven't started mission OR completed mission"
+armaa_lppJangalaVisitOptionCheckProtest2,PopulateOptions,"$market.id == jangala
+$menuState == main
+$global.lpp_inProgress
+!$global.lpp_missionCompleted
+$global.lpp_didJangalaProtest
+!$justVisitedShrine
+!$player.takingDawnToJangala
+!$player.takenDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","AddText ""Your TriPad beeps. It seems that Dawn is contacting you.""
+SetOptionColor armaa_lppJangalaVisitStart highlight",,4:armaa_lppJangalaVisitStart:Check your TriPad regarding a comms request from the fleet,"# Saw protest, mission in progress"
+armaa_lppJangalaVisitStart,DialogOptionSelected,$option == armaa_lppJangalaVisitStart,"BeginConversation armaa_dawn
+ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
+
+""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_JangalaVisitStartBringDawn:Agree
+armaa_lpp_JangalaVisitStartRefuseDawn:Refuse",
+armaa_lpp_JangalaVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_JangalaVisitStartBringDawn,"$player.takingDawnToJangala = true
+AdjustRepActivePerson 1
+AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight
+ShowDefaultVisual","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",0:cutCommLink:Cut the comm link,
+armaa_lpp_JangalaVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_JangalaVisitStartRefuseDawn,"ShowDefaultVisual
+EndConversation
+","You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
+,,,,,,
+armaa_lppJangalaFirstVisit1,DialogOptionSelected,"$option == lpp_jangalaVisitStart
+$player.takingDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$global.lpp_inProgress
+!$global.lpp_visitedShrineJangala","$didFirstVisit = true
+ShowLargePlanet
+ShrineCMD playMusic
+ShowPersonVisual true armaa_dawn
+FireAll armaa_dawnJangalaConvo","The verdant continents of Jangala sprawl beneath you, crowned by huge weather systems churning lethargic and magisterial. 
+
+Searing lines of orbital burn lasers flick out from Jangala station, invisible until they cut slashes of plasma through the thick atmosphere. Burn-glow competes with rampaging electrical storms to illuminate the mountainous cloud formations from below.
+
+Dawn breaks the quiet hum of the shuttle's engines. 
+
+""The orbital burning - do you know what it's for? Hegemony thinks it's a must, and they might be right. A necessary evil, of sorts...""
+
+""Anyway, most of the faithful consider this planet to be sacred; exposing ourselves to that xenolife is a matter of honor for the devout. How do you see it?""",,
+armaa_lppJangalaVisitAgain,DialogOptionSelected,"$option == lpp_jangalaVisitStart
+$player.takingDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$didFirstVisit","ShowLargePlanet
+ShrineCMD playMusic
+BeginConversation armaa_dawn True True
+","Your shuttle descends toward verdant continents crowned by lethargically churning storm systems. The orbital burn lasers flicker from the spark of Jangala station, invisible until they cut lines of plasma through the atmosphere.
+
+You pass through blinding cloud cover, the light taking on a sickly hue of green. Your viewport is streaked with marching droplets of spore-laden water as the shuttle slows to drop softly onto the landing pad nearly lost in the overgrowth of Jangalan foliage.
+",lpp_JangalaEnter1:Enter the shrine complex,
+armaa_dawnJangalaConvoFaith,armaa_dawnJangalaConvo,,,,"armaa_dawnJangalaConvoRespFaith:""I believe in the sanctity of our faith. If exposing ourselves to xenolife is a testament to our devotion, then I'll gladly partake.""",
+armaa_dawnJangalaConvoCynical,armaa_dawnJangalaConvo,,,,"armaa_dawnJangalaConvoRespCynical:""Isn't exposure dangerous? Seems like a crazy thing to do.""",
+armaa_dawnJangalaConvoAgnostic,armaa_dawnJangalaConvo,,,,"armaa_dawnJangalaConvoRespAgnostic:""I get the need for safety, but I'm curious about this exposure. Maybe there's more to it than meets the eye.""",
+armaa_dawnJangalaConvoPather,armaa_dawnJangalaConvo,,,,"armaa_dawnJangalaConvoRespPather:""The very idea of harming the natural wonders of Jangala is sacrilege! Our faith should not tread upon the whims of man.""",
+armaa_dawnJangalaConvoRespFaith,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespFaith,$player.luddicAttitudeFaithful++,"""Well, ain't you a true believer. Warms my heart, it does,"" Dawn replies with a dry tone. 
+""Glad we're singing from the same hymn sheet, but honestly? Not so sure I'm eager to dive headfirst into that shrubbery.""",lpp_JangalaFirstVisit2:Continue,
+armaa_dawnJangalaConvoRespCynical,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespCynical,$player.luddicAttitudeCynical++,"Dawn squints, a subtle grin forming. ""You've got a knack for playing the skeptic, huh? I reckon, deep down, we both know that honoring our beliefs goes beyond a little risk. Whatever those may be.""",lpp_JangalaFirstVisit2:Continue,
+armaa_dawnJangalaConvoRespAgnostic,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespAgnostic,$player.luddicAttitudeAgnostic++,Dawn nods with approval.,lpp_JangalaFirstVisit2:Continue,
+armaa_dawnJangalaConvoRespPather,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespPather,$player.luddicAttitudePather++,"""I share your reverence for nature. Damaging the wonders of Jangala is a sin indeed, and those who tread upon this sacred ground with destructive intent should face the wrath of both Ludd and our devout kin.""
+
+""But that..that isn't really practical at this point, you see? How many folks do you reckon have settled here; four...five million? I wager the church does what it can. 'spose that's the best that anyone can do.""",lpp_JangalaFirstVisit2:Continue,
+,,,,,,
+armaa_lppJangalaFirstVisit2c,DialogOptionSelected,"$option == lpp_JangalaFirstVisit2c
+$player.takingDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn",,"-At least, judging by the holos available on the public infonet, which are indeed gruesome.
+
+A cynical part of you wonders if the authorities allow distribution of these graphic accounts to promote protocol compliance.
+
+Dawn's eyes narrow as she processes the information from the datapad. ""Well, ain't that a revelation,"" she mutters.
+
+""Seems like the Jangalan biosphere plays nice as long as you mind your safety steps. But those poor souls caught in the grip of abysmal weather without a backup plan? What a nightmare.""",lpp_JangalaFirstVisit3:Continue,
+armaa_lppJangalaVisitShrine2,DialogOptionSelected,"$option == lpp_jangalaVisitShrine2
+$player.takingDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","ShrineCMD setVisited
+FireAll LPPShrineVisitXP
+$player.takenDawnToJangala = true
+$player.takingDawnToJangala = false
+$player.dawnVisitedShrines++","At their feet, more forms come into focus; covered by a quilt of mosses and mycelium, or whatever alien equivalent, which obscures the feet of the statues. Bones. Or are they fallen branches and overgrown rocks? The final wish for some terminally-devoted fanatics, or your imagination set loose?
+
+The green churns not quite imperceptibly in the course of the minutes you watch, all-consuming, ferociously regenerative, a cycle of life that could be born of Earth or an alien world.",lpp_jangalaShrineLeave:Return to the reception hall,
+armaa_lppJangalaAttendantFoolish,DialogOptionSelected,$option == lpp_jangalaattendantFoolish,AdjustRepPerson armaa_dawn VENGEFUL -3,,,
+armaa_lppJangalaShrineVisitAgain,DialogOptionSelected,"$option == lpp_jangalaShrineVisitAgain
+$player.takingDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","ShowImageVisual jangala_shrine
+$player.takenDawnToJangala = true
+$player.takingDawnToJangala = false
+$player.dawnVisitedShrines++","You are led past heavy curtains which mute the murmur of pilgrims and shut out all artificial light. Pilgrims kneel in the shrine-chamber, silhouetted before the glowing panes to without lit by that sickly yellow-green cloudcover.
+
+Beyond, you see the statue garden. The forms blister with growths, crawling with tendrils, sprouting fruiting bodies of xenolife. Among them are pilgrims, exposed in only light robes. Easily overtaken by the overgrowth. At their feet, covered by a quilt of mosses and mycelium or alien equivalents, are bones. Or are they fallen branches, overgrown rocks? The final wish for terminally-devoted fanatics, or your imagination?
+
+The green churns not quite imperceptibly in the course of the minutes you watch, all-consuming, ferociously regenerative, a cycle of life that could be born of Earth or an alien world.",lpp_jangalaShrineLeave:Return to the reception hall,
+armaa_lppJangalaVisitOutside2,DialogOptionSelected,"$option == lpp_jangalaattendantVisitOutside2
+$player.takingDawnToJangala
+armaa_Hikaru_Utada hasOfficer armaa_dawn","ShowImageVisual jangala_shrine
+AdjustRepPerson armaa_dawn FRIENDLY 3","The air hits you in the environmental lock, warm and wet, like high-G shock foam. You step out alone, for this is how it is done.
+
+Oozing nets hang from the shrine complex; rhizomes sprouting luridly colored bulbs that glow in what passes for sunlight. Dust, or tiny bugs, or spores float about, moving in swirls against the heavy and languid air.","lpp_jangalaOutsideMaskOff:Take off your mask. Have faith.
+lpp_jangalaOutsideMaskOn:Keep it on, you're not an idiot.",
+armaa_lppJangalaOutsideMaskOn2,DialogOptionSelected,$option == lpp_jangalaOutsideMaskOn2,"ShrineCMD setVisited
+FireAll LPPShrineVisitXP
+$player.takenDawnToJangala = true
+$player.takingDawnToJangala = false
+$player.dawnVisitedShrines++","Beyond, you see the statue garden. The forms blister with growths, crawling with tendrils, sprouting fruiting bodies of xenolife. Among them are pilgrims, exposed in their light robes. Easily overtaken by the overgrowth. How long does it take- hours, days?
+
+At their feet, covered by a quilt of mosses and mycelium or alien equivalents, are bones. Or are they fallen branches, overgrown rocks? The final wish for terminally-devoted fanatics, or your imagination?",lpp_jangalaOutsideMaskOn3:Continue,
+,,,,,,
+armaa_lppGileadShrineVisitOption,PopulateOptions,"$market.id == gilead
+$faction.id == luddic_church
+$market.tag:luddic_shrine
+$menuState == main
+$player.transponderOn
+!$justVisitedShrine
+!$market.lpp_finishPilgrimage
+!$player.takingDawnToGilead
+!$player.takenDawnToGilead
+armaa_Hikaru_Utada hasOfficer armaa_dawn",SetOptionColor armaa_lppGileadVisitStart highlight,,4:armaa_lppGileadVisitStart:Check your TriPad regarding a comms request from the fleet,# available by default
+armaa_lppGileadVisitStart,DialogOptionSelected,$option == armaa_lppGileadVisitStart,"BeginConversation armaa_dawn
+ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
+
+""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_GileadVisitStartBringDawn:Agree
+armaa_lpp_GileadVisitStartRefuseDawn:Refuse",
+armaa_lpp_GileadVisitStartBringDawn,DialogOptionSelected,$option == armaa_lpp_GileadVisitStartBringDawn,"$player.takingDawnToGilead = true
+AdjustRepActivePerson 1
+AddTextSmall ""Dawn will now accompany when you descend to the surface"" highlight
+ShowDefaultVisual","""Great. If something else comes up, it's no big deal. Just let me know when you do decide to head down."" your officer replies without skipping a beat. She ends the connection.",0:cutCommLink:Cut the comm link,
+armaa_lpp_GileadVisitStartRefuseDawn,DialogOptionSelected,$option == armaa_lpp_GileadVisitStartRefuseDawn,"ShowDefaultVisual
+EndConversation
+","You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
+armaa_lppGileadShrineVisitStart,DialogOptionSelected,"$option == lpp_gileadShrineVisitStart2
+$player.takingDawnToGilead
+!$player.takenDawnToGilead
+armaa_Hikaru_Utada hasOfficer armaa_dawn","BeginConversation armaa_dawn True True
+$player.takingDawnToGilead = false
+$player.takenDawnToGilead = true
+$player.dawnVisitedShrines++","Dawn gazes out of the shuttle window, absorbing the spectacle of Gilead unfolding below.
+
+""Well, would you look at that,"" she muses. ""Gilead, shaped by the hands of believers. A garden-wilderness nurtured by those who tread lightly on the cosmic soil. Ludd's touch turned this place into what it is today, a testament to the believers' dedication. It's like a slice of paradise in this dump."" Her eyes linger for a moment. ""Sight to behold.""",lpp_gileadShrineVisitStart2:Continue,
+armaa_lppGileadShrineVisitAgain,DialogOptionSelected,"$option == lpp_gileadShrineVisitStart
+$global.lpp_visitedShrineGilead
+$player.takingDawnToGilead
+!$player.takenDawnToGilead
+armaa_Hikaru_Utada hasOfficer armaa_dawn",ShowLargePlanet,"Deorbiting to the surface of Gilead is overseen by the Knights of Ludd, and their traffic control is characteristically strict. Your shuttle queues behind a flotilla of lumbering transports and haulers.
+
+The face of Gilead is filled with green continents, seeded with Earth-life by sporeship and climate-stabilized by Eridani Utopia's vast terraforming machines. Then Ludd came and the Faithful turned the world into a garden-wilderness of astounding richness; it is a gem of the Persean Sector.
+
+Your shuttle receives a ping from traffic control: permission to descend.",armaa_lppGileadShrineVisitStart:Continue,
+armaa_lppEnding1,DialogOptionSelected,"$option == lpp_ending1
+armaa_Hikaru_Utada hasOfficer armaa_dawn",ShowPersonVisual True armaa_dawn,"At the landing pad, you are met by a solemn Luddic Knight. A Knight Initiate stands a few paces behind, trying to match the ease and calm of their superior.
+
+""Captain $PlayerName,"" the Knight says, ""Let me speak welcome on behalf of the Church of Galactic Redemption. I extend to you an invitation from the Reverend Archcurate Jaspis to meet and share refreshment.""
+
+The Knight stands aside, motioning with gauntlet to invite you to walk toward the administrative structures.
+
+However, the Knight's gaze shifts, noticing Dawn's presence beside you. There's a momentary pause before he adds, ""I must request that you come alone. The Reverend Archcurate will only receive individuals.""
+
+Dawn, catching wind of the situation, places a reassuring hand on your shoulder. ""Don't you worry none, Captain. I'll wait at the shuttle for your return. No sense fussing over formalities. You go ahead and share your piece with the Reverend Archcurate; I'll keep the shuttle engines humming in the meantime."" She offers you a reassuring smile, ready to hold down the fort should you choose to depart.","lpp_ending2:Walk with the Knight
+lpp_endingKnightWhat:""What's this about?""
+lpp_endingKnightAllowed:""Am I allowed to decline?""
+lpp_endingKnightDecline:""I decline the invitation.""",
+,,,,,,
+#armaa lke,,,,,,
+armaa_lkeDawnAssistOption,PopulateOptions,"$market.id == chalcedon
+Call $global.lke_ref updateData
+$lke_stage == GO_TO_CHALCEDON
+!$player.takingDawnToChalcedon
+!$player.takenDawnToChalcedon
+armaa_Hikaru_Utada hasOfficer armaa_dawn",SetOptionColor armaa_lkeChalcedonAssistStart highlight,,4:armaa_lkeChalcedonAssistStart:Check your TriPad regarding a comms request from the fleet,# available by default
+armaa_lkeDawnAssistOptionB,PopulateOptions,"$market.id == chalcedon
+Call $global.lke_ref updateData
+$lke_stage == CONTACT_RECRUITER
+!$player.takingDawnToChalcedon
+!$player.takenDawnToChalcedon
+armaa_Hikaru_Utada hasOfficer armaa_dawn",SetOptionColor armaa_lkeChalcedonAssistStart highlight,,4:armaa_lkeChalcedonAssistStart:Check your TriPad regarding a comms request from the fleet,# available by default
+armaa_lkeChalcedonAssistStart,DialogOptionSelected,$option == armaa_lkeChalcedonAssistStart,"BeginConversation armaa_dawn
+ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
+
+""What's this about you poking around with these Pathers? Well, you can fill me in later, but I think you need someone to watch your back. 'Sides, I'm sure I know more about these types than you. So whaddya say?""","armaa_lkeChalcedonAssistStartBringDawn:Agree
+armaa_lkeChalcedonAssistStartRefuseDawn:Refuse",
+armaa_lkeChalcedonAssistStartBringDawn,DialogOptionSelected,$option == armaa_lkeChalcedonAssistStartBringDawn,"$player.takingDawnToChalcedon = true
+AdjustRepActivePerson 1
+AddTextSmall ""Dawn will now accompany you to the surface, if the need arises"" highlight
+ShowDefaultVisual","""Right, ah- it goes without saying this is a little dangerous, right? Let's not do anything too crazy.""",0:cutCommLink:Cut the comm link,
+armaa_lkeChalcedonAssistStartRefuseDawn,DialogOptionSelected,$option == armaa_lkeChalcedonAssistStartRefuseDawn,"ShowDefaultVisual
+EndConversation
+","You don't go into specifics, but you explain to Dawn that you'd prefer not to. She takes it pretty well, and you exchange a few more pleasantries before ending the connection.",,
+armaa_lkeAskChalcedonBarStartB,DialogOptionSelected,"$option == LKEchalcedon_barEvent
+$market.lkeBuggedVIPs > 1
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToChalcedon",,"A simple, steaming cup of tea is placed before you with a subtle hint from the proprietor that you need but ask and something much stronger will arrive in a teapot.
+
+Dawn enters with a calm determination, finding her spot nearby. She holds her TriPad, seemingly engrossed in its digital depths as she establishes herself, acting as a silent guardian.
+
+Before you can make a proper assessment of the colorful figures who tend to populate this sort of establishment, a man sits next to you with casual self-assurance, takes your tea, and downs the entire cup in one go.","lke_chalcedonBarSedge1:Continue
+lke_chalcedonBarSedge1b:""Hey, that was my tea!""",
+armaa_lkeAskChalcedonBarStart,DialogOptionSelected,"$option == LKEchalcedon_barEvent
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToChalcedon",FireAll LKEchalcedonAskBarOpts,"You take your time, drinking tea and asking around, eventually finding yourself at a table with a 'Mammon's man'; a free agent who interfaces between Pathers and the outside world while despised by both.
+
+Dawn enters with a calm determination, finding her spot nearby. She holds her TriPad, seemingly engrossed in its digital depths as she establishes herself, acting as a silent guardian.
+
+Well aware that he will sell any useful information you let slip to Pathers or Pather-hunters, you say...",,
+armaa_lkeChalcedonBarSedge1,DialogOptionSelected,"$option == lke_chalcedonBarSedge1
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToChalcedon
+!$market.lkePlayerKidnapped","$global.lke_sedgeDrankYourTea = true
+BeginConversation sedge
+ShowSecondPerson armaa_dawn
+Call $global.lke_ref playMusicSedge
+FireAll LKEchalcedonBarSedgeOpts
+$market.talkingAtBar = true 0","Dawn enters with a calm determination, finding her spot nearby. She holds her TriPad, seemingly engrossed in its digital depths as she establishes herself, acting as a silent guardian.
+
+You would have thought the tea to be uncomfortably hot, but the man seems unfazed as he swishes it around his mouth and swallows.
+
+""Been told you've been asking questions,"" he says with a cheap smile. A tooth is missing, another cracked to a point. He smells of mildew, and sweat.
+
+""I'm Sedge,"" he says.",,
+,,,,,,
+armaa_lkeChalcedonBarDrinkLotsMore4,DialogOptionSelected,"$option == lke_barMammoniteDrink5
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToChalcedon","$market.lkePlayerKidnapped = true 0
+Call $global.lke_ref shootEm
+BeginConversation armaa_dawn
+ShowSecondPerson sedge","The muted conversations persist, followed by the abrupt eruption of gunshots and a distant yell. A commotion ensues, unseen but palpable, before a force jerks you to your feet. The hood shrouding your vision is yanked away.
+
+""This part of your brilliant plan too?"" Dawn's voice drips with sarcasm as she surveys you for injuries. Before you can formulate a response, a presence approaches—a shadow, a figure, a man. His hands are open and raised part-way.
+
+""We should speak, face to face. You—I mean no harm."" ",lke_barMammoniteDrink6:Continue,
+armaa_lkeSedgeEnd2Outside,DialogOptionSelected,"$option == lke_sedgeEnd2
+$market.talkingOutside
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToChalcedon","Call $global.lke_ref resumeMusic
+FireAll MostLuddicEthosRefresh
+FireBest LKEsedgeContactCheck
+$player.takingDawnToChalcedon = False
+$player.takenDawnToChalcedon = True","Sedge disappears down a side-alley. You are left in the dipping alley with Dawn, and corpses.
+
+And a lead: Mazalot.",lke_sedgeEndLeave:Leave,
+armaa_lkeChalcedonBarDrinkLotsMore5,DialogOptionSelected,"$option == lke_barMammoniteDrink6
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToChalcedon","BeginConversation sedge
+Call $global.lke_ref playMusicSedge
+$market.talkingOutside = true 0
+$global.lke_sedgeKilledMammonite = true 0
+ShowSecondPerson armaa_dawn
+FireAll LKEchalcedonBarSedgeOpts","""Been told you've been asking questions,"" the man says with a cheap smile. A tooth is missing, another cracked to a point. He smells of mildew, and sweat.
+
+""I'm Sedge."" He graciously waves a hand to show you the dismal alley you find yourself in, toward the slumped form sitting in a puddle of its own blood. ""Welcome to my Path.""",,
+,,,,,,
+,,,,,,
+,,,,,,
+armaa_dawnMazalot,PopulateOptions,$player.armaa_mazalot_event_id == true,"BeginConversation armaa_dawn
+ShowPersonVisual
+$player.armaa_mazalot_event_id = false","""Mazalot, the beating heart of the Zagan system. But don't let the title fool ya; it's a dump. Terraforming success? ...sure, but plagued by political instability and despots. Life here ain't an easy ride, especially if you're Luddic.""
+
+""The Persean League was — I guess — forged to stand against Hegemony influence, champion the freedom of its members, ya know? Fat lot of good it's done here.""
+
+""Here's the rub, $playerName. The League refuses to intervene in the internal matters of its members, and that principle has its costs. While the bigwigs stood by, preachin' about curbin' the tyranny of the Hegemon, those of the faith in Mazalot faced the bitter taste of second-class status. Even in the pursuit of 'freedom,' some folks still get the short end of the stick.""","armaa_dawnMazalotRespA:Sounds like Mazalot's got its fair share of challenges.
+armaa_dawnMazalotRespB:The League should be about freedom for everyone, not just the privileged few.
+armaa_dawnMazalotRespC:Typical League passivity, huh? That's nothing new.
+armaa_dawnMazalotRespD:If the League won't act, maybe it's time someone did. The Luddics in Mazalot deserve justice.",# available by default
+armaa_dawnMazalotRespA,DialogOptionSelected,$option == armaa_dawnMazalotRespA,,"""Challenges are part of the game, ain't they? Still. It's a shame. A damn shame.""",defaultLeave:Continue,
+armaa_dawnMazalotRespB,DialogOptionSelected,$option == armaa_dawnMazalotRespB,AdjustRepActivePerson 2,"""You've got a point there, $playerName. Freedom should be a universal song, not just a tune for the privileged.""",defaultLeave:Continue,
+armaa_dawnMazalotRespC,DialogOptionSelected,$option == armaa_dawnMazalotRespC,AdjustRepActivePerson 1,"Dawn nods in the affirmative.
+
+""The League couldn't care less about the plight of individual planets — long as they cough up their dues, all's well from their end. They could've aspired to something greater than what we're stuck with now.""
+
+She frowns. ""Ludd, how depressing. Where's my bottle...""",defaultLeave:Continue,
+armaa_dawnMazalotRespD,DialogOptionSelected,$option == armaa_dawnMazalotRespD,AdjustRepActivePerson 3,"""Y'know, the Faith guides us along a... trajectory of understanding and redemption. Choosin' a trajectory that aligns with it? Tougher than catching a damn Hyperion, but in the end, the waypoints justify the course, know what I mean?""
+
+She pauses.
+
+""All i'm saying is, another intervention from the Knights, or, or, the Church, wouldn't be so bad.""",defaultLeave:Continue,
+,,,,,,
+armaa_dawnCryosleeper,PopulateOptions,$player.armaa_cryosleeper_event_id == true,"BeginConversation armaa_dawn
+ShowPersonVisual
+$player.armaa_cryosleeper_event_id = false","""Well, I'll be. That's one of them Cryosleepers, ain't it?...Look at that, still holding onto a flicker of life after all these cycles.
+
+Makes a body wonder, don't it? Whether it's a blessing to wake 'em up in the midst of all this chaos or if it's kinder to let 'em keep snoozin' till things, hopefully, take a turn for the better. Reviving 'em could mean hope, but it might also mean introducing 'em to a world gone mad. Tough choice, no doubt about it.""","armaa_dawnCryosleeperRespA:""Hard to say what's the right call here.""
+armaa_dawnCryosleeperRespB:""Waking them up could bring fresh minds, new ideas.""
+armaa_dawnCryosleeperRespC:""We can't be sure they can adapt to a world that's changed beyond recognition.""
+armaa_dawnCryosleeperRespD:""We can't afford to wait for some ideal moment. If they can't handle the state of things, well..""",# available by default
+armaa_dawnCryosleeperRespA,DialogOptionSelected,$option == armaa_dawnCryosleeperRespA,AdjustRepActivePerson 1,"Dawn's brow furrows as she nods pensively, her eyes reflecting the weight of the decision. 
+
+""Hard choices often come with even harder consequences. Just gotta navigate 'em best you can,"" she says, her voice steady but tinged with a hint of solemnity.
+
+""Not like we need to be the ones to pull the trigger. Can alway's leave 'em be...assuming there's anyone left to leave.""
+",defaultLeave:Continue,
+armaa_dawnCryosleeperRespB,DialogOptionSelected,$option == armaa_dawnCryosleeperRespB,,"She pauses as she looks to the side, seemingly considering the notion. ""New ideas could be a boon, or they might find themselves at odds with this new reality. Nothing's ever that simple."" Her fingers trace a pattern on the armrest, a nervous tic that betrays the complexity of the decision. ""Who knows how how far back they're from.""",defaultLeave:Continue,
+armaa_dawnCryosleeperRespC,DialogOptionSelected,$option == armaa_dawnCryosleeperRespC,AdjustRepActivePerson 3,"Dawn agrees with a thoughtful expression, ""Adaptation might be a struggle. We can't predict how they'll cope with a world that's evolved without 'em."" 
+
+Her gaze drifts to the Cryosleeper on the sensors, a distant look in her eyes.",defaultLeave:Continue,
+armaa_dawnCryosleeperRespD,DialogOptionSelected,$option == armaa_dawnCryosleeperRespD,AdjustRepActivePerson -2,"Dawn squints thoughtfully. ""Rushing into things might mean jumpin' from one frying pan into another. These sleepers could be from an entirely different era of human development, for all we know."" 
+
+Her tone carries a note of caution..skepticism?
+
+""I ain't sayin' we shouldn't wake 'em up, but we've got to be prepared for the unknowns. What if their values, their understanding of the world, is drastically different from ours? We could inadvertently introduce a whole new set of challenges. It's a matter of treadin' carefully, $player.firstName, and considerin' the consequences before we go ahead with any hasty decisions."" She seems rather insistent on a thorough evaluation of the situation before making a potentially irreversible move.",defaultLeave:Continue,
+,,,,,,
+armaa_dawn_anhEvent,PopulateOptions,"$global.anh_inProgress
+$player.armaa_$anh_inProgress_event_id == true
+!$player.armaa_$anh_inProgress_event_fired","BeginConversation robed_man
+$player.armaa_$anh_inProgress_event_id = false
+$player.armaa_$anh_inProgress_event_fired = true
+Highlight A NEW HOPE","A NEW HOPE
+
+The briefing room exudes a muted ambiance, its lighting casting a soft glow. The robed man, the young boy, and the chunky robot gathered around you, deeply engrossed in discussions about their upcoming journey to Volturn.
+
+As you explained potential routes provided by navigation via a holographic star map, the old man chimed in with a few thoughtful remarks about what had been covered so far. You were navigating through the nuances of the plan when the door slid open.",armaa_dawn_anhEvent2:Continue,
+armaa_dawn_anhEvent2,DialogOptionSelected,$option == armaa_dawn_anhEvent2,"ShowSecondPerson armaa_dawn
+FireAll armaa_dawn_anhEventOptions","As Dawn strides into the room, her eyes zero in on the peculiar robot. Suspicion furrows her brow, and with a direct gaze, she questions, ""What's this hunk of metal doin' here?"" Her scrutiny lingers on the automaton.
+
+In a swift defense, the boy interjects, his voice charged with determination, ""Hey, leave 'em alone! He's not just a robot; he's our friend!""",,
+armaa_dawn_anhEventOptA,armaa_dawn_anhEventOptions,,,,"armaa_dawn_anhEventRespA:""It's just a companion, no harm in that, right?""",
+armaa_dawn_anhEventOptB,armaa_dawn_anhEventOptions,,,,"armaa_dawn_anhEventRespB:""Let's focus on the route. The robot's not an issue.""",
+armaa_dawn_anhEventOptC,armaa_dawn_anhEventOptions,,,,"armaa_dawn_anhEventRespC:""Maybe the robot's the secret to the best sand harvests. Ever think of that, Dawn?""",
+armaa_dawn_anhEventRespA,DialogOptionSelected,$option == armaa_dawn_anhEventRespA,"$option = armaa_dawn_anhEvent3 0
+FireBest DialogOptionSelected",,,
+armaa_dawn_anhEventRespB,DialogOptionSelected,$option == armaa_dawn_anhEventRespB,"$option = armaa_dawn_anhEvent3 0
+FireBest DialogOptionSelected",,,
+armaa_dawn_anhEventRespC,DialogOptionSelected,$option == armaa_dawn_anhEventRespC,"$option = armaa_dawn_anhEvent3 0
+FireBest DialogOptionSelected",,,
+armaa_dawn_anhEvent3,DialogOptionSelected,$option == armaa_dawn_anhEvent3,$player.dawnMetOldManANH = true,"Dawn, undeterred, raises an eyebrow, maintaining her scrutiny. The old man speaks up, his demeanor calm and composed.
+
+""Our friend here assists with heavy lifting,"" he explained, a gentle smile playing on his lips.
+
+Dawn's skepticism lingered. ""Travelers? With an iron man? What kind of 'tachie loving rad-snorter travels with a-""
+
+""Best not to ask too many questions, my dear. Life takes us on unexpected paths,"" the robed man replied, his smile deepening.
+
+Dawn's expression stiffened. ""I shouldn't ask too many questions."" Without further comment, she turned away, exiting the room quietly.
+
+The robed man shared a knowing look with the boy, his eyes glinting with subtle mystery.",defaultLeave:Continue,
+armaa_anhDiktatPatrolStall3,DialogOptionSelected,"$option == anh_diktatPatrolStall3
+$player.dawnMetOldManANH",ShowThirdPerson armaa_dawn,"""I told you something was off about that damn machine!"" Dawn grimaces.
+
+""Now there's a man I have not seen in a long, long time,"" he says quietly. ""By now, even I was starting to think he might be dead.""
+
+He looks to you now, a glimmer of that younger self appearing in his face. ""Give me over to them, captain. The boy must go to Volturn without me. He will be safe if they have me.""
+
+The kid is aghast. ""No!"" he shouts, ""They'll kill you!""","anh_diktatPatrolStall3No:""I'm not handing anyone to the Diktat.""
+anh_diktatPatrolStall3Yes:""As you wish.""
+anh_diktatPatrolStall3All:""No, this ends here. I'm handing you all over.""",
+armaa_anhDiktatPatrolStall3Yes,DialogOptionSelected,"$option == anh_diktatPatrolStall3Yes
+armaa_Hikaru_Utada hasOfficer armaa_dawn","$entity.anh_handOverMan = true 0
+AdjustRepPerson armaa_dawn -2","""What!?"" the kid shouts, ""You can't do that. You have to fight! You have a $shipOrFleet! You're just going to let those Diktat goons order you around?"" He lunges at you, and is bodily intercepted by the arm of one of your guards. After a yelp and a moment of struggle, the kid folds to an electrostun rod.
+
+The old man does not give the commotion even a glance. Instead, his eyes are steady on yours. Looking deeply for something.
+
+""He has so much to learn, $playerName."" He looks thoughtful, ""Fate may surprise us yet.""",anh_diktatPatrolStall4:Continue,
+armaa_anhDiktatPatrolStall3All,DialogOptionSelected,"$option == anh_diktatPatrolStall3All
+armaa_Hikaru_Utada hasOfficer armaa_dawn","$entity.anh_handOverBoth = true 0
+AdjustRepPerson armaa_dawn -15","""What!?"" the kid shouts, ""You can't do that! You're just-"" he lunges at you, and is bodily intercepted by the arm of one of your guards. After a yelp and a moment of struggle, the kid folds to an electrostun rod.
+
+The old man does not give the commotion even a glance. Instead, his eyes are steady on yours. Looking deeply for something.
+
+""So this is how you choose, $playerName."" He looks thoughtful, ""Fate may surprise us yet.""","anh_diktatPatrolStall4:""Take them away.""",
+,,,,,,
+armaa_dawnGalatia,PopulateOptions,$player.armaa_station_galatia_academy_event_id == true,"BeginConversation armaa_dawn
+ShowPersonVisual
+$player.armaa_station_galatia_academy_event_id = false
+FireAll armaa_dawnGalatiaQuestions","""The Galatian Academy,"" Dawn remarks, a skeptical edge in her tone, sounding a bit more serious than usual. She leans against the bulkhead, folding her arms as she gazes thoughtfully.
+
+""Prestigious, no doubt. I always had this wild dream of attending, y'know?"" A wistful smile briefly graces her face before fading. ""But reality has a funny way of bringing you back to Jangala."" She sighs. Was that a hint of disappointment in her voice?
+
+""Couldn't afford it, even if I wanted to."" Dawn pauses, her fingers tapping lightly on the console. ""And even if I could, my parents thought I'd be fed the 'lies of Moloch,' as they called it. Dangerous, they said."" She shakes her head.
+
+""The pursuit of knowledge, noble as it may be, comes with its pitfalls."" Dawn's gaze becomes distant, as if reflecting on missed opportunities. ""There's a thin line between enlightenment and meddlin' in forces beyond our understanding."" She straightens up, her features settling into a more resolute expression.",,# available by default
+armaa_dawnGalatiaDoRegret,armaa_dawnGalatiaQuestions,!$askedIfRegrets,,,"armaa_dawnGalatiaDoRegretResp:""Do you ever regret not going?""",
+armaa_dawnGalatiaDangersOutweighRisks,armaa_dawnGalatiaQuestions,!$askedIfRisksAreWorth,,,"armaa_dawnGalatiaDangerOutweighRisksResp:""Do you think the dangers of knowledge outweigh its benefits, considering your experiences?""",
+armaa_dawnGalatiaParentsFeelAboutJob,armaa_dawnGalatiaQuestions,!$howParentsFeel,,,"armaa_dawnGalatiaParentsFeelAboutJobResp:""How did your parents feel about you exploring the sector instead of following the 'lies of Moloch' at the Academy?""",
+armaa_dawnGalatiaA,armaa_dawnGalatiaQuestions,,,,"armaa_dawnGalatiaRespA:""You got a different kind of education out here in the sector. One that money can't buy.""",
+armaa_dawnGalatiaB,armaa_dawnGalatiaQuestions,,,,"armaa_dawnGalatiaRespB:""It's a shame you couldn't attend. The Academy might have been a better path for you.""",
+armaa_dawnGalatiaDoRegretResp,DialogOptionSelected,$option == armaa_dawnGalatiaDoRegretResp,"$askedIfRegrets = true
+FireAll armaa_dawnGalatiaQuestions","Dawn's eyes glint with a hint of introspection. ""Regret? Nah. Sure, there are moments when I wonder what it'd be like, but the path I chose out here, in the sector, has its own kind of richness. Can't say I'd trade it for the cloistered halls of an Academy.""",,
+armaa_dawnGalatiaDangerOutweighRisksResp,DialogOptionSelected,$option == armaa_dawnGalatiaDangerOutweighRisksResp,"$askedIfRisksAreWorth = true
+FireAll armaa_dawnGalatiaQuestions","Dawn's expression turns serious, her gaze fixated on some distant point in space. ""Knowledge is a double-edged sword, no doubt. But, Captain, it's how you wield it that matters. The dangers are there, sure, but the benefits? They can light the way through the darkest corners of space. It's a gamble, always has been.""",,
+armaa_dawnGalatiaParentsFeelAboutJobResp,DialogOptionSelected,$option == armaa_dawnGalatiaParentsFeelAboutJobResp,"$howParentsFeel = true
+FireAll armaa_dawnGalatiaQuestions","A flicker of emotion crosses Dawn's face, and she offers a small, wistful smile. ""My folks weren't thrilled, that's for sure. They believed the Church was the true path to enlightenment, but I had other ideas. In the end, I had to follow my own trajectory, even if it meant leavin' behind their expectations.""
+
+Dawn's gaze turns contemplative, and she replies with a measured tone, ""They probably wouldn't understand it much. The concept of servin' in a fleet, especially one like yours, ain't exactly what they'd consider an honorable pursuit.""",,
+armaa_dawnGalatiaRespA,DialogOptionSelected,$option == armaa_dawnGalatiaRespA,AdjustRepActivePerson 3,"Dawn chuckles, a wry smile crossing her face. ""You're damn right about that. No fancy academy can teach you the gritty lessons the sector has to offer. Out here, survival is the real education, and it comes at a price credits can't measure.""",defaultLeave:Continue,
+armaa_dawnGalatiaRespB,DialogOptionSelected,$option == armaa_dawnGalatiaRespB,,"Dawn's expression turns thoughtful, and she glances out into the expanse of space. ""Maybe it would've been a different life. Who knows? But the Academy and I, well, we ain't exactly a match made in heaven. I prefer the rough edges of reality over the polished illusions they might've fed me.""",defaultLeave:Continue,
+,,,,,,
+armaa_dawnVolturn,PopulateOptions,$player.armaa_volturn_event_id == true,"BeginConversation armaa_dawn
+ShowPersonVisual
+$player.armaa_volturn_event_id = false","Dawn leans against a nearby console, her expression shifting from a wistful nostalgia to a more somber reflection as she speaks about Volturn. 
+
+""Volturn, now that's a patchwork quilt of a planet if I ever saw one,"" she begins, her eyes glinting with a mix of memories and resignation. ""See, it was supposed to be this lush retreat, all agriculture and leisure to pamper the big shots on Opis before... you know, the Crisis.""
+
+""Fate had other plans, as it always does, and now? It's a tangled mess of floating habitats, makeshift homes, and a sea full of engineered critters."" She hand gestures to emphasize the chaotic nature of Volturn's current state.
+
+""When the crisis spilled refugees every which way,"" she continues, her eyes narrowing with a hint of concern, ""Volturn nearly burst at the seams. Sure, there's a strong industry churning out goods, but underneath the surface, it's a different story.""
+
+A shadow of frustration passes over her features. ""Diktat's got a grip, maintaining order—well, their version of it, at least."" 
+
+She scoffs softly, a wry smile tugging at the corner of her lips. ""Resistance movements, crime lords,... lobster smugglers, you name it, fester and grow where they don't got eyes.""","armaa_dawnVolturnRespA:""Sounds like Volturn's got its fair share of challenges.""
+armaa_dawnVolturnRespB:""Any particular groups making waves down there?""
+armaa_dawnVolturnRespC:""What about the Luddic sects? Still holding on despite Diktat's crackdown?""
+armaa_dawnVolturnRespD:""Any hope for things to improve, or is it a lost cause?""",# available by default
+armaa_dawnVolturnRespA,DialogOptionSelected,$option == armaa_dawnVolturnRespA,,"""Folks on Volturn are resilient. They've learned to adapt, find ways to make a living in the chaos. It's a tough life, but you'll find a mix of determination and grit among the locals.""",defaultLeave:Continue,
+armaa_dawnVolturnRespB,DialogOptionSelected,$option == armaa_dawnVolturnRespB,,"""Plenty going on, Captain. It's a powder keg waiting to blow, if you ask me..but for any groups specifically? I'm not sure.""",defaultLeave:Continue,
+armaa_dawnVolturnRespB2,DialogOptionSelected,"$option == armaa_dawnVolturnRespB
+$player.dawnMetOldManANH score:1000
+armaa_Hikaru_Utada hasOfficer armaa_dawn",,"""Plenty going on, Captain. It's a powder keg waiting to blow, if you ask me. I'm sure that old spacer and his weird robot belong to one of 'em.""",defaultLeave:Continue,
+armaa_dawnVolturnRespC,DialogOptionSelected,$option == armaa_dawnVolturnRespC,,"""Yeah, there's still a flame burning, though it flickers in the shadows. The Diktat's crackdown hasn't snuffed it out entirely. There are whispers of resistance, folks holding on despite the challenges.""",defaultLeave:Continue,
+armaa_dawnVolturnRespD,DialogOptionSelected,$option == armaa_dawnVolturnRespD,,"""Hope? Well, that's a scarce commodity these days. The situation's tough, and it's hard to see a way out. But who knows? Sometimes, change comes from unexpected places. Maybe you can be a catalyst for something better, $player.firstName.""",defaultLeave:Continue,
+,,,,,,
+,,,,,,
 ,,,,,,
 # Handing in the PK - Sera,,,,,,
 PKGiveToSeraph,PopulateOptions,"$isPerson
@@ -646,7 +1265,8 @@ armaa_aiCores_turnInResponseMeshan,AICoresTurnedIn,$id == armaa_seraph,FireAll P
 armaa_valkazard,PopulateOptions,"armaa_Hikaru_Utada findValk
 $player.numShips > 1
 $postId == administrator
-$market.id == armaa_meshanii_market",SetOptionColor armaa_valkazard highlight,,"armaa_valkazard:""I found this Valkazard-class cataphract outside of the core worlds. One of yours?""",
+$market.id == armaa_meshanii_market
+!$armaa_gaveSeraphValk",SetOptionColor armaa_valkazard highlight,,"armaa_valkazard:""I found this Valkazard-class cataphract outside of the core worlds. One of yours?""",
 armaa_valkazardSel,DialogOptionSelected,$option == armaa_valkazard,"FireAll armaa_valkazardHubOptions
 armaa_Hikaru_Utada playMusic music_armaa_seraph","In a brief, imperceptible instant, $personName's expression hinted at surprise, swiftly concealed.
 

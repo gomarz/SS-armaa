@@ -9,11 +9,8 @@
   "center": [68, 56],
   "collisionRadius": 124,
   "shieldCenter": [0, 0],
-  "shieldRadius": 181,
+  "shieldRadius": 124,
   "viewOffset": 0,
-  "builtInWings": [
-    "armaa_bit_wing"
-  ],
   "builtInWeapons": {
     "A_GUN": "armaa_kshatriya_leftArm",
     "A_GUN2": "armaa_kshatriya_rightArm_melee",
@@ -28,9 +25,9 @@
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 120,
       "angle": 20,
-      "locations": [16, 38],
+      "locations": [18, 40],
       "renderOrderMod": -9999
     },
     {
@@ -40,7 +37,7 @@
       "mount": "TURRET",
       "arc": 180,
       "angle": -0,
-      "locations": [7, -2.5]
+      "locations": [5, -2.5]
     },
     {
       "id": "LSHOULDER",
@@ -66,18 +63,18 @@
       "size": "LARGE",
       "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 120,
       "angle": 20,
-      "locations": [16, 38]
+      "locations": [18, 40]
     },
     {
       "id": "A_GUN2",
       "size": "LARGE",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 86,
-      "angle": -16,
-      "locations": [16, -38],
+      "arc": 120,
+      "angle": -20,
+      "locations": [18, -40],
       "renderOrderMod": -9999
     },
     {

@@ -7,4 +7,25 @@
 		"fake_fighter":"Used distinguishing playable fighters from fighter wings",
 		"no_wingcom_docking":"Ship's fighters will not land on the ship for resupply, but seek other carriers",
 	},
+	"armaa_notifications":{
+		"armaa_planet_approaching_text_jangala":"\"Ain't Jangala a beauty?\n\nThose megastorms might keep her secrets well-hidden, but underneath, there's a world teeming with bounty. Farms, seas..it's a place revered by the Luddic faithful.\n\nMakes you wonder about the mysteries hidden beneath those swirling storms, where folks can't venture.\"", #detect bugs or whatever
+		"armaa_planet_approaching_title_jangala":"Transmission from Dawn",
+		"armaa_planet_approaching_text_jangala_deciv": "\"Captain, just take a look at that, won't you? Jangala, once the pride of the Corvus system. Now, she's a testament to the ruin of this damned Sector. The scars are there, plain as day—the aftermath of something we can't undo. Farms, seas, and the vibrant bloom of life—all hushed beneath the echoes of destruction.\"\n\nDawn's usually strong tone wavers.\n\n \"There might still be folks down there, but I can't rightly figure how they'll weather the elements or tend to their survival gear in the midst of that chaos. People scrappin' for survival in a world turned topsy-turvy—it's downright heartbreakin'.\"",
+		"armaa_planet_approaching_title_jangala_deciv": "Transmission from Dawn",
+	
+		"armaa_planet_approaching_text_station_galatia_academy":"\"The Galatian Academy.\" Dawn remarks with a skeptical edge, sounding a bit more serious than usual.\n\n \"Prestigious, no doubt, but they dance on the edge of what some would call the acceptable path. The pursuit of knowledge? Noble cause, but sometimes, they push the boundaries a bit too far for my comfort.\"\n\n\"They claim to work for the greater good of the Persean Sector, and maybe they do, in their own way. But I've heard tales, Captain. One of their provosts caused a stir not too long ago, meddling with a jump point. Nearly caused a small crisis. Knowledge comes with its dangers, and these guys seem to be toeing that line.\"", #detect bugs or whatever
+		"armaa_planet_approaching_title_station_galatia_academy":"Transmission from Dawn",
+		
+		"armaa_planet_approaching_text_cryosleeper":"\"Well, I'll be. That's one of them Cryosleepers, ain't it?...Look at that, still holding onto a flicker of life after all these cycles.\"\n\n\"Makes a body wonder, don't it? Whether it's a blessing to wake 'em up in the midst of all this chaos or if it's kinder to let 'em keep snoozin' till things, hopefully, take a turn for the better. Reviving 'em could mean hope, but it might also mean introducing 'em to a world gone mad. Tough choice, no doubt about it.\"", #detect bugs or whatever
+		"armaa_planet_approaching_title_cryosleeper":"Transmission from Dawn",	
+
+		"armaa_planet_approaching_text_mazalot": "\"Mazalot, the beating heart of the Zagan system. But don't let the title fool ya; it's a dump. Terraforming success? ...sure, but plagued by political instability and despots. Life here ain't an easy ride, especially if you're Luddic.\"\n\n\"The Persean League was — I guess — forged to stand against Hegemony influence, champion the freedom of its members, ya know? Fat lot of good it's done here.\"\n\n\"Here's the rub, Captain. The League refuses to intervene in the internal matters of its members, and that principle has its costs. While the bigwigs stood by, preachin' about curbin' the tyranny of the Hegemon, those of the faith in Mazalot faced the bitter taste of second-class status. Even in the pursuit of 'freedom,' some folks still get the short end of the stick.\"",
+		"armaa_planet_approaching_title_mazalot":"Transmission from Dawn",	
+		
+		"armaa_advcataphract_bp":"Part of the blueprint for advanced cataphract designs",
+		"armaa_cataphract_bp":"Part of the blueprint for cataphract designs",
+		"fake_fighter":"Used distinguishing playable fighters from fighter wings",
+		"no_wingcom_docking":"Ship's fighters will not land on the ship for resupply, but seek other carriers",
+	},
+}
 }
