@@ -12,7 +12,7 @@
 			"ships":[
 				["armaa_zanac_sniper_ex"],
 				["armaa_valkenx_frig_assault"],
-				["armaa_zanac_overdriven_gry"],
+				["armaa_valkenx_frig_assault"],
 			],
 			"officers":[
 				{
@@ -34,7 +34,7 @@
 				},
 				{
 					"firstName":"Pariah",
-					"gender":"m",
+					"gender":"f",
 					"portrait":"graphics/armaa/portraits/armaa_pariah.png",
 					"level":6,
 					"averageSMods":3,
