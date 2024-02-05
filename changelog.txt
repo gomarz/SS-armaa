@@ -1,5 +1,7 @@
 v3.0.3
 -----------
+- fixed notifications around mazalot/galatia, etc not being flagged as already shown and appearing multiple times
+- fixed NPE if bakraid seperated when parent ship had no valid fleetdata
 - Dawn will now refuse to join the player if they are affiliated with the Diktat
 - add more campaign layer interaction events w/ Dawn
 - Fixed another NPE null fighter wing
