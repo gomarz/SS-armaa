@@ -73,7 +73,7 @@
       "mount": "TURRET",
       "arc": 5,
       "angle": 0,
-      "locations": [0, 4]
+      "locations": [1, 4]
     },
     {
       "id": "TRUE_GUN2",
@@ -82,7 +82,7 @@
       "mount": "TURRET",
       "arc": 5,
       "angle": 0,
-      "locations": [0, 4],
+      "locations": [1, 4],
       "renderOrderMod": -900
     },
     {
@@ -92,7 +92,8 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 15,
-      "locations": [3, 5]
+      "locations": [3, 5],
+      "renderOrderMod": -500
     },
     {
       "id": "D_PAULDRONL",
