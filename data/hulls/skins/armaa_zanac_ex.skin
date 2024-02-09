@@ -15,7 +15,6 @@
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":["RETRO_1","RETRO_2","VERNIER_1","VERNIER_2"],
     "removeBuiltInMods":["auxiliarythrusters"],
-    "builtInWings":["armaa_bit_spriggan"],
     "builtInMods":["targetingunit"],
     "weaponSlotChanges":{
 	   "RETRO_1":{

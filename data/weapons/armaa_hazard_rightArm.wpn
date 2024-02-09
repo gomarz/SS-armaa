@@ -17,12 +17,12 @@
   ],
   "hitGlowRadius": 0,
   "turretOffsets": [
-    10,
-    1,
-    10,
-    2,
-    10,
-    -1
+    14,
+    -8,
+    14,
+    -6,
+    14,
+    -7
   ],
   "turretAngleOffsets": [
     0,

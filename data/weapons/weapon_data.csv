@@ -75,7 +75,7 @@ Light Assault Gun,armaa_valken_torso,0,,300,500,,40,,3,40,0,100,,,HIGH_EXPLOSIVE
 ,armaa_valken_rightPauldron,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valkenLeftArm,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 IR Pulse Laser,armaa_laser,1,,250,500,,50,,0,50,5,,,,ENERGY,,,0.2,0.33,,,,,,,,900,,,,SYSTEM,,,,,General,,,,,,,,,,19.3,,
-Vulcan Cannon,armaa_valkenHead_gunmetal,,,,300,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
+Vulcan Cannon,armaa_hazardHead,,,,300,,25,,,80,4,,,,FRAGMENTATION,1.3,,0,0.05,1,,0,12,1,20,,800,,,10,"PD_ONLY,SYSTEM,ANTI_FTR",,,,,Point Defense,,,,,,,,,,,,
 Light Assault Gun,armaa_valken_torso_gunmetal,0,,300,700,,40,,3,40,0,400,,,HIGH_EXPLOSIVE,32,,0,0.25,1,,0,3,1,5,,800,,,30,"SYSTEM,DO_NOT_CONSERVE",,,,,Anti Armor,,,,,,,,,,,,3
 ,armaa_valken_leftPauldron_gunmetal,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_valken_rightPauldron_gunmetal,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
@@ -234,7 +234,7 @@ AMWS-T,armaa_zanac_head_ex,,,600,800,400,,,20,50,99,,,,ENERGY,,150,0.3,0.3,1,0.1
 ,armaa_zanac_rightArm_deco,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 ,armaa_zanac_leftArm_grey,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
 ,armaa_zanac_rightArm_grey_deco,,,,600,1,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
-Magna Beam,armaa_zanac_rightArm,,,,1000,1150,,0,100,10,,,,,ENERGY,,800,1.8,1,1.6,3,,,,,3000,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,"%s: Deals full damage immediately on contact, slightly pushing the user back.",The Sanctioned Action Is To Cut,,,TRUE,999,,
+Magna Beam,armaa_zanac_rightArm,,,,1000,1150,,0,100,10,,,,,ENERGY,,800,1.8,1,1.6,3,,,,,3000,,,,,SYSTEM,"no_drop, no_sell, no_drop_salvage",,Arma Armatura,,Strike,,,,,,,,,,999,,
 High Intensity Minelayer,armaa_magnabeam_minelayer,0,,,,,100,,25,,,,,,HIGH_EXPLOSIVE,0,,,,1,,,,,0,0,20,1000,,,SYSTEM,,,,,Unknown,,,,,,,,,,,,38.5
 #GAREGGA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_garegga_rightPauldron,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
@@ -295,7 +295,7 @@ Barretta Flechette Cannon,armaa_barretta2,3,0.2,6000,1000,,1200,,150,5,25,,,,ENE
 ,armaa_corsair_rightShoulder_p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_corsair_rightShoulder_isen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 #LEGIO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Daemon's Gaze,armaa_legioMech_head,,,600,800,50,,,20,50,99,,,,ENERGY,,38,,,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
+Daemon's Gaze,armaa_legioMech_head,,,600,800,50,,,20,50,99,,,,ENERGY,,35,,,1,0.1,,,,,1000000,,,,,"PD,SYSTEM,ANTI_FTR,IGNORES_FLARES",,,,,Point Defense,,,,,,,,,,,,
 ,armaa_legioMech_leftArm,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_legioMech_leftArm_cover,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
 ,armaa_legioMech_rightArm,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,999,,
