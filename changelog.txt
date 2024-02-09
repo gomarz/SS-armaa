@@ -5,6 +5,7 @@ v3.0.5
 - Zanac - increased turret arm arc from 90 -> 120
 - added desc for Zanac EX Magna Beam
 - actually lowered kouto armor val to 150 this time
+- fixed bug where panther would spawn using wrong fleetside (appear as an ally)
 
 v3.0.4
 ----------
