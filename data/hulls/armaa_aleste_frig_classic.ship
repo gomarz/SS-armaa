@@ -26,9 +26,13 @@
     4.5
   ],
   "builtInMods": [
-    "cataphract",
-    "autorepair",
-    "no_weapon_flux"
+    "cataphract2",
+    "strikeCraft",
+    "armaa_wingCommander",
+    "armaa_weaponSwap"
+  ],
+  "builtInWings": [
+    "armaa_valkenx_wing"
   ],
   "builtInWeapons": {
     #"A_GUN": "armaa_aleste_rightArm",
@@ -37,7 +41,7 @@
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead2",
+    "E_HEAD": "armaa_alesteHead",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
@@ -93,16 +97,16 @@
     }
   ],
   "height": 26,
-  "hullId": "armaa_aleste",
+  "hullId": "armaa_aleste_frig_classic",
   "hullName": "Aleste",
-  "hullSize": "FIGHTER",
+  "hullSize": "FRIGATE",
   "shieldCenter": [
     0,
     -0
   ],
   "shieldRadius": 35,
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "HIGH_TECH",
+  "style": "armaa_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

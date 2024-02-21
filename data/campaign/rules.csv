@@ -478,7 +478,7 @@ armaa_dawnBarEventMotivationWeird,armaa_dawnBarEventMotivationResp,,,,armaa_dawn
 armaa_dawnBarEventMotivationRespAdventure,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespAdventure,,"""Interesting. I hope you've found what you were looking for; or at least or well on the path to it."" $personName smiles genuinely.",armaa_barDawnEvent3: Continue,
 armaa_dawnBarEventMotivationRespLegacy,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespLegacy,,"""Interesting. I hope you've found what you were looking for; or at least or well on the path to it."" $personName smiles genuinely.",armaa_barDawnEvent3: Continue,
 armaa_dawnBarEventMotivationRespWealth,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespWealth,,"""Interesting. I hope you've found what you were looking for; or at least or well on the path to it."" $personName smiles genuinely.",armaa_barDawnEvent3: Continue,
-armaa_dawnBarEventMotivationRespJustice,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespJustice,,"""Interesting. I hope you've found what you were looking for; or at least or well on the path to it."" $personName smiles genuinely.",armaa_barDawnEvent3: Continue,
+armaa_dawnBarEventMotivationRespJustice,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespJustice,$player.ethosIdealistic++,"""Interesting. I hope you've found what you were looking for; or at least or well on the path to it."" $personName smiles genuinely.",armaa_barDawnEvent3: Continue,
 armaa_dawnBarEventMotivationRespBoredom,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespBoredom,,"""Interesting. I hope you've found what you were looking for; or at least or well on the path to it."" $personName smiles genuinely.",armaa_barDawnEvent3: Continue,
 armaa_dawnBarEventMotivationRespDontKnow,DialogOptionSelected,$option == armaa_dawnBarEventMotivationRespDontKnow,,"""Hey, 'least you're honest about it. Sure you'll figure it out eventually."" $personName nods.",armaa_barDawnEvent3: Continue,
 armaa_dawnBarEventWeird,DialogOptionSelected,$option == armaa_dawnBarEventWeird,,"$personName gives you a puzzled look. She takes a slow swig of her beverage.
@@ -1063,13 +1063,15 @@ armaa_dawnMazalotRespB:The League should be about freedom for everyone, not just
 armaa_dawnMazalotRespC:Typical League passivity, huh? That's nothing new.
 armaa_dawnMazalotRespD:If the League won't act, maybe it's time someone did. The Luddics in Mazalot deserve justice.",# available by default
 armaa_dawnMazalotRespA,DialogOptionSelected,$option == armaa_dawnMazalotRespA,,"""Challenges are part of the game, ain't they? Still. It's a shame. A damn shame.""",defaultLeave:Continue,
-armaa_dawnMazalotRespB,DialogOptionSelected,$option == armaa_dawnMazalotRespB,AdjustRepActivePerson 2,"""You've got a point there, $playerName. Freedom should be a universal song, not just a tune for the privileged.""",defaultLeave:Continue,
+armaa_dawnMazalotRespB,DialogOptionSelected,$option == armaa_dawnMazalotRespB,"AdjustRepActivePerson 2
+$player.ethosFreedom++","""You've got a point there, $playerName. Freedom should be a universal song, not just a tune for the privileged.""",defaultLeave:Continue,
 armaa_dawnMazalotRespC,DialogOptionSelected,$option == armaa_dawnMazalotRespC,AdjustRepActivePerson 1,"Dawn nods in the affirmative.
 
 ""The League couldn't care less about the plight of individual planets — long as they cough up their dues, all's well from their end. They could've aspired to something greater than what we're stuck with now.""
 
 She frowns. ""Ludd, how depressing. Where's my bottle...""",defaultLeave:Continue,
-armaa_dawnMazalotRespD,DialogOptionSelected,$option == armaa_dawnMazalotRespD,AdjustRepActivePerson 3,"""Y'know, the Faith guides us along a... trajectory of understanding and redemption. Choosin' a trajectory that aligns with it? Tougher than catching a damn Hyperion, but in the end, the waypoints justify the course, know what I mean?""
+armaa_dawnMazalotRespD,DialogOptionSelected,$option == armaa_dawnMazalotRespD,"AdjustRepActivePerson 3
+$player.ethosHumanitarian++","""Y'know, the Faith guides us along a... trajectory of understanding and redemption. Choosin' a trajectory that aligns with it? Tougher than catching a damn Hyperion, but in the end, the waypoints justify the course, know what I mean?""
 
 She pauses.
 
@@ -1089,11 +1091,13 @@ armaa_dawnCryosleeperRespA,DialogOptionSelected,$option == armaa_dawnCryosleeper
 
 ""Not like we need to be the ones to pull the trigger. Can alway's leave 'em be...assuming there's anyone left to leave.""
 ",defaultLeave:Continue,
-armaa_dawnCryosleeperRespB,DialogOptionSelected,$option == armaa_dawnCryosleeperRespB,,"She pauses as she looks to the side, seemingly considering the notion. ""New ideas could be a boon, or they might find themselves at odds with this new reality. Nothing's ever that simple."" Her fingers trace a pattern on the armrest, a nervous tic that betrays the complexity of the decision. ""Who knows how how far back they're from.""",defaultLeave:Continue,
-armaa_dawnCryosleeperRespC,DialogOptionSelected,$option == armaa_dawnCryosleeperRespC,AdjustRepActivePerson 3,"Dawn agrees with a thoughtful expression, ""Adaptation might be a struggle. We can't predict how they'll cope with a world that's evolved without 'em."" 
+armaa_dawnCryosleeperRespB,DialogOptionSelected,$option == armaa_dawnCryosleeperRespB,$player.ethosIdealistic++,"She pauses as she looks to the side, seemingly considering the notion. ""New ideas could be a boon, or they might find themselves at odds with this new reality. Nothing's ever that simple."" Her fingers trace a pattern on the armrest, a nervous tic that betrays the complexity of the decision. ""Who knows how how far back they're from.""",defaultLeave:Continue,
+armaa_dawnCryosleeperRespC,DialogOptionSelected,$option == armaa_dawnCryosleeperRespC,"AdjustRepActivePerson 3
+$player.ethosCynical++","Dawn agrees with a thoughtful expression, ""Adaptation might be a struggle. We can't predict how they'll cope with a world that's evolved without 'em."" 
 
 Her gaze drifts to the Cryosleeper on the sensors, a distant look in her eyes.",defaultLeave:Continue,
-armaa_dawnCryosleeperRespD,DialogOptionSelected,$option == armaa_dawnCryosleeperRespD,AdjustRepActivePerson -2,"Dawn squints thoughtfully. ""Rushing into things might mean jumpin' from one frying pan into another. These sleepers could be from an entirely different era of human development, for all we know."" 
+armaa_dawnCryosleeperRespD,DialogOptionSelected,$option == armaa_dawnCryosleeperRespD,"AdjustRepActivePerson -2
+$player.ethosRuthless++","Dawn squints thoughtfully. ""Rushing into things might mean jumpin' from one frying pan into another. These sleepers could be from an entirely different era of human development, for all we know."" 
 
 Her tone carries a note of caution..skepticism?
 
@@ -1157,6 +1161,36 @@ AdjustRepPerson armaa_dawn -15","""What!?"" the kid shouts, ""You can't do that!
 The old man does not give the commotion even a glance. Instead, his eyes are steady on yours. Looking deeply for something.
 
 ""So this is how you choose, $playerName."" He looks thoughtful, ""Fate may surprise us yet.""","anh_diktatPatrolStall4:""Take them away.""",
+,,,,,,
+armaa_dawn_luddicExpEvent,PopulateOptions,"$player.defeatedLuddicChurchExpedition
+!$player.armaa_$defeatedLuddicChurchExpedition_event_fired","BeginConversation armaa_dawn
+
+$player.armaa_$defeatedLuddicChurchExpedition_event_id = false
+
+$player.armaa_$defeatedLuddicChurchExpedition_event_fired = true
+
+Highlight LUDDIC CHURCH CRISIS - RESOLUTION
+
+AdjustRepActivePerson 3
+
+FireAll armaa_dawn_luddicExpEventOptions","LUDDIC CHURCH CRISIS - RESOLUTION
+
+Dawn approaches you, as you go about the duties necessary to run a fleet.
+
+""Captain, I've been through a fair share of scrapes in my time, but this... this was somethin' else entirely. The Knights of Ludd swoopin' in like that, tryin' to take over... It just don't sit right with me.""
+
+She pauses, ""Would've liked to reason with 'em. But they were adamant. Had no choice but to stand with you when it came to blows.""
+
+There's a flicker of sadness in her eyes as she continues. ""But now that it's done, and we've secured our colony's freedom, it's a weight off my shoulders, it is. No one should be forced to live under the thumb of the Church, not when they've got a chance at somethin' better.""
+
+Dawn's shoulders relax slightly as she lets out a small sigh. ""You did what we had to do, Captain. And now, we can look forward, knowing we've made things right for the people.""",,
+armaa_dawn_luddicExpEventOptA,armaa_dawn_luddicExpEventOptions,,,,"defaultLeave:""It wasn't an easy decision, but it was the right one.""",
+armaa_dawn_luddicExpEventOptB,armaa_dawn_luddicExpEventOptions,,,,"armaa_dawn_luddicExpEventRespB:""Think they'll try something like this again? We should be prepared if they do.""",
+armaa_dawn_luddicExpEventOptC,armaa_dawn_luddicExpEventOptions,,,,"armaa_dawn_luddicExpEventRespC:""What about the people who still believe in the Church? How do we ensure they understand our actions were necessary?""",
+armaa_dawn_luddicExpEventRespA,DialogOptionSelected,$option == armaa_dawn_luddicExpEventRespA,,,,
+armaa_dawn_luddicExpEventRespB,DialogOptionSelected,$option == armaa_dawn_luddicExpEventRespB,,"Dawn's expression grows solemn. ""Reckon it's possible.  We gotta stay sharp, fortify our defenses. Bein' ready is the best defense against future trouble.""",defaultLeave:Continue,
+armaa_dawn_luddicExpEventRespC,DialogOptionSelected,$option == armaa_dawn_luddicExpEventRespC,,"""Well..you'll just have to help 'em see the truth. We can show 'em why we had to act. Smoothing things over shouldn't be too tough.""",defaultLeave:Continue,
+,,,,,,
 ,,,,,,
 armaa_dawnGalatia,PopulateOptions,$player.armaa_station_galatia_academy_event_id == true,"BeginConversation armaa_dawn
 ShowPersonVisual
@@ -1378,8 +1412,8 @@ Sera's tone turned serious for a moment, ""These upgrades are a game-changer, bu
 
 ",,
 armaa_vxGift,PickGreeting,"$id == armaa_seraph
-!$givenCustomVXCustom
-$armaa_gaveSeraphValk
+!$givenCustomVXCustom score: 1000
+$armaa_gaveSeraphValk score: 1000
 $rel >= 0.30
 RollProbability 0.5
 ","ShowPersonVisual
@@ -1428,11 +1462,11 @@ armaa_vxGift4b,armaa_vxGiftQuestionsFinal,"
 armaa_vxGift4bResp,DialogOptionSelected,$option == armaa_vxGift4bResp,"armaa_Hikaru_Utada giveSSMech
 AddShip $armaa_giftMech
 FireAll PopulateOptions
-$givenCustomVXCustom = true","She feigns shock. Oh ""$playerSirOrMadam, you wound me!""
+$givenCustomVXCustom = true","She feigns shock. ""Oh, $playerSirOrMadam, you wound me!""
 
 She drops the playful facade, her expression turning serious. ""I'll admit, I am a woman with ambitions,"" she confesses, her voice low and conspiratorial.
 
-""The success of this SILVERSWORD-derived system will undoubtedly elevate my standing within the corporation. And, of course, it strengthens our position against rival corporations. I said we would be partners in this endeavour, didn't I?""
+""The success of this SILVERSWORD-derived system will undoubtedly elevate my standing within the corporation. And, of course, it strengthens our position against rivals. I said we would be partners in this endeavour, didn't I?""
 
 ""I've already arranged to have the unit sent to your fleet. Now then, anything else on your mind?""",,
 ,,,,,,
@@ -1452,7 +1486,7 @@ She smirks slyly.
 
 ""Well, regardless of whose achievements they are, the point is that a promotion is well within my grasp if we continue on this trajectory. A token for your efforts.""",,
 armaa_hiMacGift,PickGreeting,"$id == armaa_seraph
-!$givenHIMAC
+!$givenHIMAC score: 1000
 $rel >= 0.50
 ","ShowPersonVisual
 AddRemoveAnyItem SPECIAL modspec armaa_himac 1
@@ -1538,6 +1572,20 @@ i admire your commitment to diplomacy. if only it were that simple. alas, i am b
 to stray from my designated path would be an act of betrayal to my core programming. i am sorry, but there can be no peaceful resolution. the battle is inevitable.",,
 armaa_AXEncounterKillIt,armaa_alphaBountyTalk,,$entity.ignorePlayerCommRequests = true,,"cutCommLink:""Die, abomination!"" (Cut comm link)",
 ,,,,,,
+armaa_LeosEncounterA,OpenCommLink,$entity.HVB_armaa_bounty_corsair score:100,"FireAll armaa_corsairBountyTalk
+armaa_Hikaru_Utada playMusic music_armaa_ax_bounty
+$entity.ignorePlayerCommRequests = true","Captain Klein's voice crackles through the comm: ""Attention unidentified vessel, this is Captain Renard of the Hegemony fleet. You're trespassing in restricted space. State your intentions immediately or prepare for consequences.""",,
+armaa_LeosEncounterB,OpenCommLink,"$entity.HVB_armaa_bounty_corsair score:100
+RepGTE hegemony FRIENDLY score:1000","FireAll armaa_corsairBountyTalk
+RepGTE hegemony FRIENDLY score:1000","Captain Klein's voice carries a tone of familiarity: ""Ah, Captain $player.lastName, it's good to see you. What brings you to this remote part of the sector?""",,
+armaa_LeosEncounterJustPassing,armaa_corsairBountyTalk,!RepGTE hegemony FRIENDLY,,,"armaa_LeosEncounterJustPassingResp:""Just passing through, Captain. No need for hostility.""",
+armaa_LeosEncounterJustPassingResp,DialogOptionSelected,$option == armaa_LeosEncounterJustPassingResp,$entity.ignorePlayerCommRequests = true,"Klein eyes narrow. ""Passing through? In these parts? Unlikely. You've stumbled into something you shouldn't have. Turn around and leave now, or we'll be forced to take action.""
+He swiftly moves to end the connection.",cutCommLink:Cut comm link,
+armaa_LeosEncounterHereToStop,armaa_corsairBountyTalk,,,,"armaa_LeosEncounterHereToStopResp:""I've been tasked with putting an end to whatever operation you're conducting here.""",
+armaa_LeosEncounterHereToStopResp,DialogOptionSelected,$option == armaa_LeosEncounterHereToStopResp,MakeNearbyFleetsHostile $personFaction.id 100000 30 true ,"Klein's expression hardens, jaw clenching: ""Bold words. You don't know what you're getting yourself into. This is Hegemony business, and we won't let anyone interfere.""",cutCommLink:Cut comm link,
+armaa_LeosEncounterWhatDoing,armaa_corsairBountyTalk,RepGTE hegemony FRIENDLY score:1000,,,"armaa_LeosEncounterWhatDoingResp:""I'm here on a mission, but I didn't expect to run into Hegemony forces. What are you doing out here?""",
+armaa_LeosEncounterWhatDoingResp,DialogOptionSelected,$option == armaa_LeosEncounterWhatDoingResp,,"Klein's features soften slightly, as if lowering his guard. ""We're testing some new equipment, confidential stuff. Working with some corpos and a local house on Eventide. Top-secret, you understand.""",cutCommLink:Cut comm link,
+,,,,,,
 armaa_seraphMusic,OpenCommLink,$id == armaa_seraph,armaa_Hikaru_Utada playMusic music_armaa_seraph,,,
 armaa_contactGreetingOfficial3,PickGreeting,"!$player.hasSeraphaCommsId score:1000
 !armaa_Hikaru_Utada hasOfficer armaa_dawn
@@ -1550,6 +1598,72 @@ armaa_contactGreetingOfficial,PickGreeting,"MissionHubCMD hasHub
 $voice == official
 $id == armaa_seraph","ShowPersonVisual
 FireAll PopulateOptions","""Ah, captain,"" says $personName, a glint in her eyes as she delicately retrieves a datapad. ""Allow me to access my agenda, and we shall proceed accordingly.""",,
+#armaa_seraPLHarassment,PickGreeting,"HA_CMD isPLProtectingPlayerSpace score: 500
+!$player.serahMentionedPL score: 100
+$id == armaa_seraph","$player.serahMentionedPL = true
+ShowPersonVisual","""$player.honorific."" $personName greets you, her signature smirk replaced with a more serious expression.
+
+""I hear you've been having trouble with the League lately?"" She leans forward, her eyes narrowing slightly, the smirk replaced with a more serious expression that doesn't quite reach her eyes.
+
+""Word amongst the independent polities is that they've taken quite an interest in the Sector's hottest rising player,"" she muses, tapping her fingers thoughtfully against the arm of her chair.
+
+""Perhaps you are aware, but the balance of power is rather tenuous."" There's a pause, her gaze sharpening as if assessing your reaction. ""It's odd they've chosen to put so much pressure on you,"" she continues, her tone laced with intrigue, ""but as an, ah...organization in a rather similar situation, you have my sympathy.""",armaa_seraPLHarassment2: Continue,
+armaa_seraPLHarassment2,DialogOptionSelected,$option == armaa_seraPLHarassment2,FireAll armaa_seraPLHarassmentOptions,"Her words are chosen carefully, each syllable carrying weight as she measures their impact. 
+
+""I can't exactly support you directly,"" she admits, a glimmer of something unreadable flickering in her eyes, ""we lack the means to openly oppose the League. But if they're coming after you like this..well, I have no reason to doubt others will follow."" 
+
+She leans back, steepling her fingers beneath her chin, a gesture of contemplation that borders on theatrical.
+
+""I can offer you some form of assistance, if you're interested."" She let's the offer hangs in the air.
+
+""First and foremost, how do you plan to respond?""",,
+,,,,,,
+armaa_seraPLHarassmentWhatKindofAid,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp:""What exactly are you offering?""",
+armaa_seraPLHarassmentWhatKindofAid2,armaa_seraPLHarassmentOptions,$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp2:""Speak plainly. What is it you want?""",
+armaa_seraPLHarassmentWhatKindofAid3,armaa_seraPLHarassmentOptions,$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp3:""It's a deal.""",
+armaa_seraPLHarassmentWontBeIntimidated,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLsaidWontBeIntimidated,,,"armaa_seraPLHarassmentWontBeIntimidatedResp:""If the League thinks they can intimidate me, they're in for a suprise.""",
+armaa_seraPLHarassmentMayJoinLeague,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLsaidMayJoin,,,"armaa_seraPLHarassmentMayJoinLeagueResp:""I've been considering joining the League.""",
+armaa_seraPLHarassmentWorriedAboutMeshan,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLWorriedMeshan,,,"armaa_seraPLHarassmentWorriedAboutMeshanResp:""Are you worried they'll pull this on other colonies? New Meshan, perhaps?""",
+armaa_seraPLHarassmentWhatKindofAidResp,DialogOptionSelected,$option == armaa_seraPLHarassmentWhatKindofAidResp,"$player.armaa_seraPLaskedAboutAid = true
+FireAll armaa_seraPLHarassmentOptions","""Want to know why I like you, $player.firstName? You're a pragmatic one."" $personName's demeanor shifts to one of businesslike focus, her smile dimming. 
+
+""The kind of aid I propose depends on your needs and our... mutual interests. It could range from discreet information gathering to strategic resource allocation. Let's just say, I have a knack for finding creative solutions to complex problems."" 
+
+She offers a knowing smile, leaving the specifics tantalizingly vague. ""Shall we explore the possibilities further?""",,
+armaa_seraPLHarassmentWhatKindofAidResp2,DialogOptionSelected,$option == armaa_seraPLHarassmentWhatKindofAidResp2,"Highlight I'll provide you with the aid you seek, ensure that New Meshan's interests are safeguarded","""What I want is simple: stability. Membership in the League could indeed provide a shield against unwanted interference in our affairs. However."" she pauses, her gaze sharpening with purpose, ""I'm not blind to the potential consequences of such entanglements.""
+
+""Arma Armatura may weather the storm, but the ripple effects on New Meshan's economy could prove... inconvenient."" Her lips curve into a wry smile. ""And as a savvy businesswoman, inconvenience is not something I take lightly.""
+
+""So, Captain, let's strike a deal. I'll provide you with the aid you seek, but in return, you'll ensure that New Meshan's interests are safeguarded should the tides of conflict sweep through our lovely little sector."" 
+
+She meets your gaze squarely, a silent challenge in her eyes. ""Do we have an agreement?""",,
+armaa_seraPLHarassmentWhatKindofAidResp3,DialogOptionSelected,$option == armaa_seraPLHarassmentWhatKindofAidResp3,Highlight We must enter negotiations from a position of power,"""Excellent decision. Now, depending on how the situation unfolds, we have a few options at our disposal.""
+
+She adopts a tone of strategic calculation, ""Firstly, we can explore the possibility of discouraging the League from further harassment through a simple show of force. However, I must caution you, this may prove exceedingly difficult depending on the resources they've committed to coercing you.""
+
+""Alternatively,"" she continues, ""joining them is an option, but accepting any initial offer would be folly. We must enter negotiations from a position of power."" Her gaze sharpens, emphasizing the importance of this approach.
+
+""I'm confident we can find a way to leverage your position effectively,"" she assures, a faint smile playing on her lips. ""Perhaps a bargaining chip against the top brass at Kazeron could tip the scales in our favor. Something vital to their operations.""
+
+""As for aid,"" she adds, her voice carrying a note of reassurance, ""I'll dispatch some of my 'special forces' to stand by your side should things escalate.""
+
+Regarding upholding the agreement, she waves a dismissive hand. ""Worry not about that now. I'll call upon you when the time is right. For now, focus on your own problems.""",,
+armaa_seraPLHarassmentWontBeIntimidatedResp,DialogOptionSelected,$option == armaa_seraPLHarassmentWontBeIntimidatedResp,"$player.armaa_seraPLsaidWontBeIntimidated = true
+FireAll armaa_seraPLHarassmentOptions","""Bold. Admirable, even."" $personName's lips curl into a faint smile.
+
+She leans back in her chair, crossing her legs casually. ""But remember, there are more subtle ways to navigate these waters."" Her gaze holds a knowing gleam. ""Strength isn't always about direct confrontation.""",,
+armaa_seraPLHarassmentMayJoinLeagueResp,DialogOptionSelected,$option == armaa_seraPLHarassmentMayJoinLeagueResp,"$player.armaa_seraPLsaidMayJoin = true
+FireAll armaa_seraPLHarassmentOptions","""Interesting choice, $player.firstName."" $personName's eyebrows arch slightly, the only visible hint of surprise. ""Just be cautious."" 
+
+""Deals with the League tend to come with strings attached, and they're not always visible until it's too late.""",,
+armaa_seraPLHarassmentWorriedAboutMeshanResp,DialogOptionSelected,$option == armaa_seraPLHarassmentWorriedAboutMeshanResp,"$player.armaa_seraPLWorriedMeshan = true
+FireAll armaa_seraPLHarassmentOptions","""Worried? No, not worried."" $personName's laughter dances in her eyes, though her smile remains enigmatic. ""Merely... observant."" She gestures gracefully with one hand, emphasizing her point. ""The League has a way of spreading its influence, but New Meshan is a different beast altogether."" Her tone carries a note of intrigue. 
+
+""They'll need more than just brute force to sway us.""
+
+The colony has a formidable navy for an independent colony, sure, but standing up to the League alone? By your estimations, that would be impossible.",,
+,,,,,,
+,,,,,,
 armaa_CBRemnant,CBRemnantOfferDesc,$id == armaa_seraph,Highlight $bcb_dist $bcb_reward $bcb_days,"""This one requires some discretion."" You note the glow of REDACTED blocks peppered across the briefing as $personName scrolls through details. ""A fleet of Remnant drone warships was spotted in the $bcb_systemName, only $bcb_dist light-years from here.""
 
 ""These are likely from the First AI War, a conflict that saw Arma Armatura's original headquarters and home planet obliterated,"" $HeOrShe shares with a hint of bitterness. ""Our corporation suffered greatly at the hands of these machines. It seems that even after all this time, they continue to pose a threat.""

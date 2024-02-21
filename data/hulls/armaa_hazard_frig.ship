@@ -17,7 +17,7 @@
     "armaa_wingCommander"
   ],
   "builtInWings": [
-    "sarissa_wing"
+    "armaa_hazard_wing"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_hazard_rightArm",
@@ -34,7 +34,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [1, 4]
+      "locations": [1, 2]
     },
     {
       "id": "D_PAULDRONR",
@@ -43,12 +43,12 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [1, -4]
+      "locations": [1, -2]
     },
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 80,
       "angle": 0,
@@ -59,9 +59,9 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 70,
+      "arc": 100,
       "angle": -10,
-      "locations": [8, -19]
+      "locations": [3, -9]
     },
     {
       "id": "WS0003",
@@ -78,9 +78,9 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 70,
+      "arc": 100,
       "angle": -10,
-      "locations": [8, -19]
+      "locations": [3, -9]
     },
     {
       "id": "WS0002",
@@ -107,7 +107,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [-5, -0]
+      "locations": [0, -0]
     }
   ],
   "engineSlots": [

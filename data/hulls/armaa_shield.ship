@@ -12,7 +12,7 @@
   "shieldRadius": 42,
   "viewOffset": 0,
   "builtInMods": [
-    "armaa_moduleRepair",
+    #"armaa_moduleRepair",
     "heavyarmor"
   ],
   "weaponSlots": [

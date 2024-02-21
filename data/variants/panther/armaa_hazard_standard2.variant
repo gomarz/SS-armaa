@@ -1,7 +1,7 @@
 {
   "variantId": "armaa_hazard_standard2",
-  "hullId": "armaa_hazard",
-  "displayName": "New Variant",
+  "hullId": "armaa_hazard_frig",
+  "displayName": "Standard",
   "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
@@ -21,6 +21,13 @@
       "mode": "LINKED",
       "weapons": {
         "TRUE_GUN": "lightneedler"
+      },
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "armaa_hazardHead"
       }
     }
   ],

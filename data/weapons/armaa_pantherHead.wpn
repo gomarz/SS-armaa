@@ -6,6 +6,7 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
+  "everyFrameEffect": "data.scripts.weapons.armaa_headTrackerPanther",
   "turretSprite": "graphics/armaa/ships/panther/armaa_pantherHead.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
   "glowColor": [

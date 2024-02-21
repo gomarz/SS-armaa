@@ -1,28 +1,34 @@
 {
   "variantId": "armaa_hazard_standard",
-  "hullId": "armaa_hazard_frig",
-  "displayName": "Standard",
-  "goalVariant": true,
-  "fluxCapacitors": 4,
-  "fluxVents": 7,
+  "hullId": "armaa_hazard",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [
-    "targetingunit"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
-      "autofire": true,
-      "mode": "ALTERNATING",
+      "autofire": false,
+      "mode": "LINKED",
       "weapons": {
-        "WS0001": "lightmortar",
-        "WS0002": "lightmortar"
+        "WS0003": "hammer_single"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "TRUE_GUN": "lightneedler"
+      },
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "armaa_hazardHead"
+      }
     }
   ],
   "modules": [],

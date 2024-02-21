@@ -1,3 +1,14 @@
+v3.0.6
+---------
+=additions=
+- Sera will now offer some help to the player during PL Crisis
+- Added small post- LC crisis event if expedition fleet is defeated
+- added player ethos (humanitarian, freedom, cynical, etc) changes to some dialogue options
+=bug fix=
+- units with shields gain +25% speed/manuver bonus if it is destroyed
+- Fixed some inconsistent unit names
+- increased valkazard laser blade beam speed to be in line with other laser blades (1000->4000)
+- 
 v3.0.5
 ---------
 - removed some unused weapons/graphics
