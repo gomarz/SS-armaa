@@ -1,18 +1,19 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number,,,,,,,,,,,,,,,,,,
 armaa_kouto_wing,armaa_kouto_Standard,"fighter3, fighter, armaa_advcataphract_bp,cataphract,rare_bp,stay_in_front_of_ship",3,0.3,5,14,BOX,4000,600,,2,FIGHTER,Hvy Fighter (Kinetic),16,8500,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
-armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t",2,0.4,4,12,V,4000,500,,3,FIGHTER,Close Combat(HE),11,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t",2,0.4,4,12,V,4000,500,,3,FIGHTER,Close Combat(HE),10,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_record_wing,armaa_record_Standard,"bomber3, bomber,cataphract,armaa_cataphract_bp",3,0.25,4,18,V,4000,1000,-100,3,BOMBER,Bomber,15,10000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cataphract_bp,cataphract",0,0.1,3,6,CLAW,4000,500,,3,INTERCEPTOR,Interceptor/Coffin,9,4250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract",0,0.1,3,5,CLAW,4000,600,,4,FIGHTER,Kinetic,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_aleste_wing,armaa_aleste_standard,"fighter5, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,18000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,,2,BOMBER,Lancer,15,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_hazard_wing,armaa_hazard_standard2,"fighter1,fighter,cataphract",0,0.1,3,5,CLAW,4000,600,,3,BOMBER,Kinetic,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_hazard_wing,armaa_hazard_standard,"support1,support,stay_in_front_of_ship,wingmen_no_swarm,leader_no_swarm",0,0.1,3,8,CLAW,2000,500,,2,SUPPORT,Close Support,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_wing_shield,armaa_bit_shield,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,CLAW,1000,500,-100,4,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit2_wing,armaa_bit_alta,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,4,0,BOX,0,500,,1,SUPPORT,Fire Support,20,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm,stay_in_front_of_ship",3,,4,0,DIAMOND,2000,500,,2,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_spriggan_h,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm,stay_in_front_of_ship",3,,4,0,DIAMOND,2000,500,,2,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
+armaa_bit_wing3,armaa_bit_std3,"no_drop, no_sell,stay_in_front_of_ship",3,,3,4,DIAMOND,2000,400,,2,INTERCEPTOR,Fire Support,8,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #why?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_crew_wing,armaa_crew_standard,"interceptor1, interceptor,no_drop,no_sell",0,0.3,1,0,BOX,2000,599,,6,INTERCEPTOR,Crew,1,10,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10

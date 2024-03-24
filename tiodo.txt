@@ -1,4 +1,7 @@
--fix panther being able to attack while bakraid is venting
--dawn volturn shrine
--gunhazard revision
-computeDamageDealth probably is the damage after all the armor mitigation calculation
+- gunhazard revision
+- ArmaA partnership
+- ArmaA-PL Crisis intervention
+- Kshatriya
+- Dawn Skill Up
+- Morgana
+- MRC buff

@@ -947,7 +947,7 @@ armaa_Hikaru_Utada hasOfficer armaa_dawn",ShowLargePlanet,"Deorbiting to the sur
 
 The face of Gilead is filled with green continents, seeded with Earth-life by sporeship and climate-stabilized by Eridani Utopia's vast terraforming machines. Then Ludd came and the Faithful turned the world into a garden-wilderness of astounding richness; it is a gem of the Persean Sector.
 
-Your shuttle receives a ping from traffic control: permission to descend.",armaa_lppGileadShrineVisitStart:Continue,
+Your shuttle receives a ping from traffic control: permission to descend.",lpp_gileadShrineVisitStart2:Continue,
 armaa_lppEnding1,DialogOptionSelected,"$option == lpp_ending1
 armaa_Hikaru_Utada hasOfficer armaa_dawn",ShowPersonVisual True armaa_dawn,"At the landing pad, you are met by a solemn Luddic Knight. A Knight Initiate stands a few paces behind, trying to match the ease and calm of their superior.
 
@@ -1171,7 +1171,7 @@ $player.armaa_$defeatedLuddicChurchExpedition_event_fired = true
 
 Highlight LUDDIC CHURCH CRISIS - RESOLUTION
 
-AdjustRepActivePerson 3
+AdjustRepActivePerson 5
 
 FireAll armaa_dawn_luddicExpEventOptions","LUDDIC CHURCH CRISIS - RESOLUTION
 
@@ -1598,7 +1598,7 @@ armaa_contactGreetingOfficial,PickGreeting,"MissionHubCMD hasHub
 $voice == official
 $id == armaa_seraph","ShowPersonVisual
 FireAll PopulateOptions","""Ah, captain,"" says $personName, a glint in her eyes as she delicately retrieves a datapad. ""Allow me to access my agenda, and we shall proceed accordingly.""",,
-#armaa_seraPLHarassment,PickGreeting,"HA_CMD isPLProtectingPlayerSpace score: 500
+armaa_seraPLHarassment,PickGreeting,"HA_CMD isPLProtectingPlayerSpace score: 500
 !$player.serahMentionedPL score: 100
 $id == armaa_seraph","$player.serahMentionedPL = true
 ShowPersonVisual","""$player.honorific."" $personName greets you, her signature smirk replaced with a more serious expression.

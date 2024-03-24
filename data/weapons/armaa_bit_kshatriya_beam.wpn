@@ -1,0 +1,42 @@
+{
+  "id": "armaa_bit_kshatriya_beam",
+  "specClass": "projectile",
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazardGunEffect",
+  "projectileSpecId": "armaa_bit_kshatriya_beam_shot",
+  "fireSoundTwo": "rynex_fire",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/ships/kouto/armaa_koutoHead.png",
+  "turretGlowSprite": "graphics/armaa/ships/kouto/armaa_koutoheadglow.png",
+  "hardpointSprite": "",
+  "turretOffsets": [
+    3,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "spread": 12,
+    "particleSizeMin": 18,
+    "particleSizeRange": 23,
+    "particleDuration": 0.04,
+    "particleCount": 6,
+    "particleColor": [
+      61,
+      207,
+      202,
+      220
+    ]
+  },
+}

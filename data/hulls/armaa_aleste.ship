@@ -28,6 +28,7 @@
   "builtInMods": [
     "cataphract",
     "autorepair",
+    "armaa_fighterStrafe",
     "no_weapon_flux"
   ],
   "builtInWeapons": {

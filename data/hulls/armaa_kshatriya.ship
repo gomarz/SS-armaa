@@ -11,11 +11,16 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 124,
   "viewOffset": 0,
+  "builtInWings": [
+    "armaa_bit_wing3"
+  ],
   "builtInWeapons": {
     "A_GUN": "armaa_kshatriya_leftArm",
     "A_GUN2": "armaa_kshatriya_rightArm_melee",
     "LSHOULDER": "armaa_kshatriya_leftPauldron",
     "WS0003": "armaa_dd_legs",
+    "WS0004": "armaa_kshatriya_torso_chaosburst",
+    "WS0005": "armaa_kshatriya_torso_chaosburst",
     "WS0006": "armaa_kshatriya_head",
     "WS0007": "armaa_kshatriya_rightPauldron"
   },
@@ -94,7 +99,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 99,
-      "locations": [0, 56]
+      "locations": [7, 40]
     },
     {
       "id": "BINDER_02",
@@ -103,7 +108,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 140,
-      "locations": [-35, 56]
+      "locations": [-35, 40]
     },
     {
       "id": "BINDER_03",
@@ -112,24 +117,24 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -140,
-      "locations": [-35, -56]
+      "locations": [-35, -40]
     },
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "SYNERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 90,
-      "angle": 140,
+      "arc": 360,
+      "angle": 180,
       "locations": [-21, 23]
     },
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "SYNERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 90,
-      "angle": -140,
+      "arc": 360,
+      "angle": 180,
       "locations": [-21, -23]
     },
     {
@@ -139,7 +144,25 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -99,
-      "locations": [0, -56]
+      "locations": [7, -40]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 25,
+      "angle": -0,
+      "locations": [20, 14]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 25,
+      "angle": 0,
+      "locations": [20, -14]
     }
   ],
   "engineSlots": [
@@ -149,7 +172,7 @@
       "width": 12.650782,
       "angle": 180,
       "contrailSize": 12.650782,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, -33],
@@ -157,7 +180,7 @@
       "width": 12,
       "angle": 180,
       "contrailSize": 12,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, 22],
@@ -165,7 +188,7 @@
       "width": 12,
       "angle": 180,
       "contrailSize": 12,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, -22],
@@ -173,7 +196,7 @@
       "width": 12,
       "angle": -180,
       "contrailSize": 12,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-46, -15],
@@ -181,7 +204,7 @@
       "width": 8,
       "angle": 169.5,
       "contrailSize": 8,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-46, 15],
@@ -189,7 +212,7 @@
       "width": 8,
       "angle": -169.5,
       "contrailSize": 8,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, 33],
@@ -197,7 +220,7 @@
       "width": 9.019238,
       "angle": 155,
       "contrailSize": 9.019238,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, -33],
@@ -205,7 +228,7 @@
       "width": 9.627361,
       "angle": -155,
       "contrailSize": 9.627361,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, 22],
@@ -213,7 +236,7 @@
       "width": 8.992697,
       "angle": -155,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-54, -22],
@@ -221,7 +244,7 @@
       "width": 8.992697,
       "angle": 155,
       "contrailSize": 8.992697,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [

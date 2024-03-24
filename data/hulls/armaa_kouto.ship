@@ -12,7 +12,8 @@
   "shieldRadius": 43,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract"
+    "cataphract",
+    "armaa_fighterStrafe"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kouto_minigun_right",

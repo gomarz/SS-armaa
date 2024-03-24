@@ -54,7 +54,8 @@
       "mount": "TURRET",
       "arc": 180,
       "angle": -0,
-      "locations": [3, -2.5]
+      "locations": [3, -2.5],
+      "renderOrderMod": -1000
     },
     {
       "id": "WS0004",

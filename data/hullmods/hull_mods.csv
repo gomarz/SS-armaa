@@ -54,6 +54,7 @@ WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters
 OVERLORD SUITE[ALPHA],armaa_skyMindAlpha,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteAlpha,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/advanced_targeting_core.png
 OVERLORD SUITE[BETA],armaa_skyMindBeta,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteBeta,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/targeting_core.png
 OVERLORD SUITE[GAMMA],armaa_skyMindGamma,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteGamma,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/automated.png
+Fighter Strafing,armaa_fighterStrafe,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_fighterStrafe,,,,
 AI Core Utility Script,armaa_aicoreutilityscript,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_aicoreutilityscript,This should not be visible.,Spaghetti scripts.,,graphics/icons/markets/headquarters.png
 ,,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
@@ -110,8 +111,11 @@ R ARM:MINIGUN,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmo
 The %s fires a barrage of energy bolts with minor anti-armor capabilities.
 %s",,,graphics/armaa/hullmods/hand_r.png
 Melee,armaa_melee,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,,graphics/armaa/hullmods/hand_r.png
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
+Scav Unit,armaa_scavUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_scavUnit,"HAND weapons can be changed to better suit the pilot's preferences. 
+
+The %s fires a barrage of energy bolts with minor anti-armor capabilities.
+%s",,,graphics/armaa/hullmods/hand_r.png
+Safety Overrides(FTR),armaa_so_ftr,,,,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_so_ftr,,,,
 #LEYNOS WEAPON SELECTOR,,,,,no_build_in,,,,,,,,,,,,,,
 Versatile Frame,armaa_leynosWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 R ARM:SHOTGUN,armaa_selector_shotgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 

@@ -1,14 +1,46 @@
 v3.0.6
 ---------
 =additions=
+- Split off portraits to submod, armaa_anime
+- Added Kshatriya
+	-
+
+- Added some configurable options w/ LunaLib
+	- HI-MAC input delay
+	- Strikecraft repair threshold
+	- WINGCOM Chatter
+	- Dawn Voice Lines
 - Sera will now offer some help to the player during PL Crisis
-- Added small post- LC crisis event if expedition fleet is defeated
-- added player ethos (humanitarian, freedom, cynical, etc) changes to some dialogue options
+- added player ethos (humanitarian, freedom, cynical, etc) changes to some mod-added dialogue options
+- MRC
+	- Fort Exsedol
+		- Battlestation->Star Fortress
+		- Added Heavy Industry
+		- Added custom patrol
+		- Revised faction desc
+- added classic Aleste
+	- it's just the original aleste with the modular weapons
+	- not added anywhere atm, as it will likely change
+
+=balans=
+-Kouto
+	- Has strong shield, probably way too durable
+	- HP: 700-> 500
+	- Armor: 125-> 50
+	- EGN Mine Launcher
+		- Burst Size: 3->1
+		- Cooldown: 10->3
+-Valken X
+	- 2x the armor of broadsword is a bit excessive
+	- Armor: 200->100
+
 =bug fix=
 - units with shields gain +25% speed/manuver bonus if it is destroyed
 - Fixed some inconsistent unit names
 - increased valkazard laser blade beam speed to be in line with other laser blades (1000->4000)
-- 
+- added NEVER_RENDER_IN_CAMPAIGN hint to some deco weapons
+- fixed some spontaneous wingcom CTDs
+
 v3.0.5
 ---------
 - removed some unused weapons/graphics

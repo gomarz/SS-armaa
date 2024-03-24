@@ -3,7 +3,7 @@
   "hullId": "armaa_kshatriya_binder",
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
-  "style": "armaa_valkazard",
+  "style": "MIDLINE",
   "height": 154,
   "width": 64,
   "center": [32, 15],
@@ -11,11 +11,10 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 144.5,
   "viewOffset": 0,
-  "builtInMods": [
-    "always_detaches"
+  "builtInMods": ["fluxshunt"
   ],
   "builtInWings": [
-    "armaa_bit_spriggan"
+    "armaa_bit_wing3"
   ],
   "weaponSlots": [
     {

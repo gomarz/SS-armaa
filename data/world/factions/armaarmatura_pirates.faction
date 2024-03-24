@@ -176,24 +176,6 @@
 	},
 	"portraits":{
 		"standard_male":[
-			"graphics/armaa/portraits/armaa_portrait03.png",
-			"graphics/armaa/portraits/armaa_portrait04.png",
-			"graphics/armaa/portraits/armaa_portrait05.png",
-			"graphics/armaa/portraits/armaa_portrait06.png",
-			"graphics/armaa/portraits/armaa_portrait07.png",
-			"graphics/armaa/portraits/armaa_portrait11.png",
-			"graphics/armaa/portraits/armaa_portrait12.png",
-
-			"graphics/armaa/portraits/armaa_mrcguy01.png",
-			"graphics/armaa/portraits/armaa_mrcguy02.png",
-			"graphics/armaa/portraits/armaa_mrcguy03.png",
-			"graphics/armaa/portraits/armaa_mrcguy04.png",
-			"graphics/armaa/portraits/armaa_mrcguy05.png",
-			"graphics/armaa/portraits/armaa_mrcguy06.png",
-			"graphics/armaa/portraits/armaa_mrcguy07.png",
-			"graphics/armaa/portraits/armaa_mrcguy08.png",
-			"graphics/armaa/portraits/armaa_mrcguy09.png",
-
 			"graphics/portraits/portrait_pirate02.png",
 			"graphics/portraits/portrait_pirate03.png",
 			"graphics/portraits/portrait_pirate07.png",
@@ -216,25 +198,6 @@
 
 		],
 		"standard_female":[
-			"graphics/armaa/portraits/armaa_portrait00.png",
-			"graphics/armaa/portraits/armaa_portrait01.png",
-			"graphics/armaa/portraits/armaa_portrait02.png",
-			"graphics/armaa/portraits/armaa_portrait08.png",
-			"graphics/armaa/portraits/armaa_portrait10.png",
-			"graphics/armaa/portraits/armaa_portrait13.png",
-			"graphics/armaa/portraits/armaa_portrait14.png",
-
-			"graphics/armaa/portraits/armaa_mrcgirl00.png",
-			"graphics/armaa/portraits/armaa_mrcgirl01.png",
-			"graphics/armaa/portraits/armaa_mrcgirl02.png",
-			"graphics/armaa/portraits/armaa_mrcgirl03.png",
-			"graphics/armaa/portraits/armaa_mrcgirl04.png",
-			"graphics/armaa/portraits/armaa_mrcgirl05.png",
-			"graphics/armaa/portraits/armaa_mrcgirl06.png",
-			"graphics/armaa/portraits/armaa_mrcgirl07.png",
-			"graphics/armaa/portraits/armaa_mrcgirl08.png",
-			"graphics/armaa/portraits/armaa_mrcgirl09.png",
-
 			"graphics/portraits/portrait_pirate01.png",
 			"graphics/portraits/portrait_pirate04.png",
 			"graphics/portraits/portrait_pirate05.png",

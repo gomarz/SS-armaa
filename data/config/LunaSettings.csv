@@ -1,0 +1,9 @@
+fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
+luna_exampleHeader,Example Header,Header,Example Section,,,,,Examples
+luna_exampleText,Example Text Field,Text,"Any value below is merely an example for Modders. 
+None of the Settings here do anything.
+",,,,,Examples
+armaa_enableWingcom,Enable WINGCOM Chatter,Boolean,true,,Enable chatter from WINGCOM pilots.,,,Examples
+armaa_inputTime,HIMAC Input Delay(MS),Int,300,,"Double Tap time delay to Quick/Assault Boost. The lower the value, the shorter the input window.",100,400,Examples
+armaa_repairLevel,Repair Threshold,Double,0.5,,Determines when a Strikecraft will start returning to Carrier for repairs. Default is at half (0.5) hull.,0.3,0.8,Examples
+armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voicedchatter from Dawn.,,,Examples

@@ -14,6 +14,9 @@
 	#"frameRate":0,
 	#"alwaysAnimate":"false",
 	"renderBelowAllWeapons":"false",
+  "renderHints": [
+NEVER_RENDER_IN_CAMPAIGN
+  ],
 	"turretOffsets":[0, 0],
 	"turretAngleOffsets":[0],
 	"hardpointOffsets":[0, 0],

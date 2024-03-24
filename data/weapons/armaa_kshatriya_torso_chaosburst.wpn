@@ -1,8 +1,8 @@
 {
-  "id": "armaa_valkazard_torso_chaosburst",
+  "id": "armaa_kshatriya_torso_chaosburst",
   "specClass": "beam",
   "type": "ENERGY",
-  "size": "SMALL",
+  "size": "MEDIUM",
   "everyFrameEffect": "data.scripts.weapons.armaa_chaosBurstEffect",
   "beamEffect": "data.scripts.weapons.armaa_chaosBurstBeam",
   "collisionClass": "RAY",
@@ -14,11 +14,10 @@
   "fireSoundTwo": "beamfireMeso",
   "glowColor": [
     255,
-    0,
+    255,
     0,
     255
   ],
-  "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
@@ -39,21 +38,23 @@
   "beamFireOnlyOnFullCharge": true,
   
   "fringeColor": [
+    61,
+    155,
     255,
-    170,
-    127,
     255
   ],
   "coreColor": [
-    247,
-    226,
-    188,
+    200,
+    200,
+    255,
     255
   ],
+  "hitGlowBrightenDuration":0,
+  "hitGlowRadius":150,
   #"darkCore": true,
-  "width": 25,
+  "width": 30,
   "textureScrollSpeed": 64,
-  "pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER,MISSILE_FF,MISSILE_NO_FF],
+  "pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER,MISSILE_FF,MISSILE_NO_FF,ASTEROID],
   "textureType": [
     "graphics/fx/beam_laser_fringe.png",
     "graphics/fx/beamcorec.png"

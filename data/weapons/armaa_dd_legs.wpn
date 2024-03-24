@@ -9,10 +9,10 @@
         "numFrames": 12,
         "frameRate": 1,
 	"alwaysAnimate":"false",
+  "renderHints": [
+NEVER_RENDER_IN_CAMPAIGN
+  ],
 	"hardpointSprite":"graphics/armaa/ships/legs/armaa_ht_legs00.png",
-	#"numFrames":2,
-	#"frameRate":0,
-	#"alwaysAnimate":"false",
 	"renderBelowAllWeapons":"false",
 	"turretOffsets":[0, 0],
 	"turretAngleOffsets":[0],

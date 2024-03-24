@@ -9,7 +9,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaMeleeEffect",
   "turretSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
   #"visualRecoil": 10,
-  "turretGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
+  #"turretGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "renderHints": [

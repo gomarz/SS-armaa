@@ -3,7 +3,7 @@
   "hullId": "armaa_valkenx",
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "armaa_valkazard",
+  "style": "MIDLINE",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",
-    "autorepair"
+    "autorepair",
+    "armaa_fighterStrafe"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_chaingun",

@@ -12,14 +12,14 @@
   "shieldRadius": 20,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract"
+    "ill_advised",
+    "armaa_so_ftr"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_hazard_rightArm",
+    "A_GUN2": "armaa_hazard_leftArm",
     "D_PAULDRONL": "armaa_hazard_leftPauldron",
-    "D_PAULDRONR": "armaa_hazard_rightPauldron",
-    "WS0001": "armaa_hazard_leftArm",
-    "WS0003": "hammer_single"
+    "D_PAULDRONR": "armaa_hazard_rightPauldron"
   },
   "weaponSlots": [
     {
@@ -28,8 +28,8 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 0,
-      "locations": [1, 2]
+      "angle": 15.5,
+      "locations": [3, 1]
     },
     {
       "id": "D_PAULDRONR",
@@ -37,17 +37,26 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -0,
-      "locations": [1, -2]
+      "angle": -15.5,
+      "locations": [3, -1]
     },
     {
-      "id": "WS0001",
+      "id": "A_GUN2",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 80,
-      "angle": 0,
-      "locations": [2, 2]
+      "arc": 100,
+      "angle": 10,
+      "locations": [3, 9]
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 10,
+      "locations": [3, 9]
     },
     {
       "id": "A_GUN",
@@ -83,7 +92,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 176,
+      "angle": 78.5,
       "locations": [-3.5, 6.5]
     },
     {
@@ -92,7 +101,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -176,
+      "angle": -78.5,
       "locations": [-3.5, -6.5]
     },
     {
