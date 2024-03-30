@@ -6,7 +6,7 @@ armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cata
 armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract",0,0.1,3,5,CLAW,4000,600,,4,FIGHTER,Kinetic,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_aleste_wing,armaa_aleste_standard,"fighter5, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t",3,0.3,5,21,BOX,4000,600,,1,FIGHTER,General Purpose,25,18000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",3,0.3,4,13,V,4000,800,,2,BOMBER,Lancer,15,7500,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_hazard_wing,armaa_hazard_standard,"support1,support,stay_in_front_of_ship,wingmen_no_swarm,leader_no_swarm",0,0.1,3,8,CLAW,2000,500,,2,SUPPORT,Close Support,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_hazard_wing,armaa_hazard_standard,"support1,support,stay_in_front_of_ship,wingmen_no_swarm,leader_no_swarm",0,0.1,3,8,CLAW,2000,500,,2,FIGHTER,Close Support,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_wing_shield,armaa_bit_shield,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,CLAW,1000,500,-100,4,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,

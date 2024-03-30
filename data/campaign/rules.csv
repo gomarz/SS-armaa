@@ -1496,6 +1496,19 @@ $givenHIMAC = true","After a short wait, your connection request is accepted.
 ""Captain $player.lastName.""
 
 ""I believe you'll find this hullmod specification quite remarkable and perfectly suited to enhance your ship's maneuverability. Consider it a token of our partnership and your continued excellence in the field. It's an honor to provide this to someone of your caliber. Now then, what do you need?""",,
+armaa_kshatriyaGift,PickGreeting,"$id == armaa_seraph
+!$givenKshatriya score: 1000
+$rel >= 0.90
+","ShowPersonVisual
+AddRemoveAnyItem SPECIAL ship_bp armaa_kshatriya 1
+FireAll PopulateOptions
+$givenKshatriya = true","After a short wait, your connection request is accepted.
+
+""Captain $player.lastName, you must be feeling invincible after your stellar performance out there.""
+
+""But let's not kid ourselves, shall we? Your success, while impressive, owes a considerable debt to my guidance and oversight,"" she continues, a sly smirk playing on her lips.
+
+""Now, with that said, it's time for you to claim what's rightfully yours. Behold! The Rajanya — our most formidable design yet. Consider it a token of appreciation for your relentless efforts and undeniable skill. With this beauty at your command, there'll be no stopping you. Go forth, Captain, and make the Sector tremble in your wake.""",,
 armaa_HCEncounter,OpenCommLink,$entity.HVB_armaa_bounty_legiomech score:100,"FireAll PopulateOptions
 armaa_Hikaru_Utada playMusic music_armaa_seraph
 $entity.ignorePlayerCommRequests = true","The connection flickers in and out, before resolving.
@@ -1598,7 +1611,7 @@ armaa_contactGreetingOfficial,PickGreeting,"MissionHubCMD hasHub
 $voice == official
 $id == armaa_seraph","ShowPersonVisual
 FireAll PopulateOptions","""Ah, captain,"" says $personName, a glint in her eyes as she delicately retrieves a datapad. ""Allow me to access my agenda, and we shall proceed accordingly.""",,
-armaa_seraPLHarassment,PickGreeting,"HA_CMD isPLProtectingPlayerSpace score: 500
+#armaa_seraPLHarassment,PickGreeting,"HA_CMD isPLProtectingPlayerSpace score: 500
 !$player.serahMentionedPL score: 100
 $id == armaa_seraph","$player.serahMentionedPL = true
 ShowPersonVisual","""$player.honorific."" $personName greets you, her signature smirk replaced with a more serious expression.

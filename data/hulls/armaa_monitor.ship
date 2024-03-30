@@ -12,14 +12,15 @@
   "shieldRadius": 102,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxshunt"
+    "fluxshunt",
+    "escort_package"
   ],
   "builtInWeapons": {
+    "A_GUN": "armaa_monitor_leftArm",
     "A_GUN2": "armaa_monitor_rightArm",
     "E_DECO": "armaa_monitor_deco",
     "E_DECO_R": "armaa_monitor_deco_right",
     "E_GLOW": "armaa_monitor_glow",
-    "E_LARM": "armaa_monitor_leftArm_deco",
     "E_LSHOULDER": "armaa_monitor_leftPauldron",
     "E_RSHOULDER": "armaa_monitor_rightPauldron"
   },
@@ -92,6 +93,16 @@
       "renderOrderMod": -99998
     },
     {
+      "id": "A_GUN",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30,
+      "locations": [0, 50],
+      "renderOrderMod": -99998
+    },
+    {
       "id": "WS0001",
       "size": "MEDIUM",
       "type": "DECORATIVE",
@@ -128,6 +139,15 @@
       "angle": 40,
       "locations": [-3, 20],
       "renderOrderMod": 1000
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30,
+      "locations": [0, 50]
     },
     {
       "id": "TRUE_GUN2",

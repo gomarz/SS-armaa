@@ -2,7 +2,7 @@ v3.0.6
 ---------
 =additions=
 - Split off portraits to submod, armaa_anime
-- Added Kshatriya
+- Added Rajanya
 	-
 
 - Added some configurable options w/ LunaLib
@@ -18,9 +18,6 @@ v3.0.6
 		- Added Heavy Industry
 		- Added custom patrol
 		- Revised faction desc
-- added classic Aleste
-	- it's just the original aleste with the modular weapons
-	- not added anywhere atm, as it will likely change
 
 =balans=
 -Kouto
@@ -33,6 +30,22 @@ v3.0.6
 -Valken X
 	- 2x the armor of broadsword is a bit excessive
 	- Armor: 200->100
+
+-Aleste SII
+	- Ship System: Rampage Drive -> Microburn 
+		- not durable enough to benefit from damage res buff
+		- AI will charge into unfavorable situations
+		- Harpoon is enough to get into melee range, anyhow
+
+-Watchdog
+	- fixed variants missing weapons
+	- revised ship and system desc
+	- Added 1x med ballistic to left arm
+	- Shield Efficiency: 0.8->1.2
+	- Escort Package is now built-in
+	- Ship System:
+		- RoF Bonus: 1.25x -> 1.10x
+		- No longer increases recoil
 
 =bug fix=
 - units with shields gain +25% speed/manuver bonus if it is destroyed

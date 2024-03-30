@@ -1,10 +1,10 @@
 {
-  "variantId": "armaa_monitor_standard",
+  "variantId": "armaa_monitor_support",
   "hullId": "armaa_monitor",
-  "displayName": "Standard",
+  "displayName": "Long Support",
   "goalVariant": true,
-  "fluxCapacitors": 10,
-  "fluxVents": 19,
+  "fluxCapacitors": 11,
+  "fluxVents": 17,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
@@ -12,20 +12,21 @@
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "hveldriver",
-        "TRUE_GUN2": "hellbore",
-        "WS0002": "lightac",
-        "WS0004": "lightac",
-        "WS0006": "sabotpod"
+        "TRUE_GUN2": "tachyonlance",
+        "WS0002": "mininglaser",
+        "WS0004": "mininglaser",
+        "WS0006": "gazerpod"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "TRUE_GUN": "hveldriver"
+      }
     },
     {
       "autofire": true,

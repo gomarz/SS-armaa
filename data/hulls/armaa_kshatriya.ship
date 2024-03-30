@@ -106,7 +106,7 @@
       "size": "LARGE",
       "type": "STATION_MODULE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 360,
       "angle": 140,
       "locations": [-35, 40]
     },
@@ -115,7 +115,7 @@
       "size": "LARGE",
       "type": "STATION_MODULE",
       "mount": "TURRET",
-      "arc": 90,
+      "arc": 360,
       "angle": -140,
       "locations": [-35, -40]
     },

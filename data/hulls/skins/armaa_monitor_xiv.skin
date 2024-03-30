@@ -11,9 +11,9 @@
     "tags":["no_sell","no_dealer","restricted","no_drop"],
     "systemId":"armaa_reload",
     "tech":"Arma Armatura (Modified)",
-    "removeWeaponSlots":[], 		# ids
+    "removeWeaponSlots":["TRUE_GUN"], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-    "removeBuiltInWeapons":[],
+    "removeBuiltInWeapons":["A_GUN"],
     "removeWings":1,
     "removeBuiltInMods":["armaa_weaponSwap_monitor","armaa_wingCommander"],
     "builtInMods":["armoredweapons","fourteenth"],

@@ -3,7 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "beamEffect":"com.fs.starfarer.api.impl.combat.IonBeamEffect",
+  "beamEffect":"data.scripts.weapons.armaa_ionBeamEffect",
   "collisionClass": "RAY_FIGHTER",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/kshatriya/armaa_kshatriya_head.png",
@@ -14,7 +14,7 @@
     200,
     100
   ],
-  "hitGlowRadius": 0,
+  "hitGlowRadius": 50,
   "turretOffsets": [
     17,
     0
@@ -42,7 +42,7 @@
     255,
     255
   ],
-  "width": 14,
+  "width": 25,
   "textureType": [
     "graphics/fx/beam_laser_fringe.png",
     "graphics/fx/beamcorec.png"

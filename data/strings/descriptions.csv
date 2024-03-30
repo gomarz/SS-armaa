@@ -15,11 +15,13 @@ The Einhänder Plus is a mecha created by refurbishing and repairing the origina
 
 While the Plus has a slower speed, reduced durability, and less raw power compared to the Einhänder, its potential to match and even surpass the performance of the original can be realized with proper equipment. The Einhänder Plus has become a favorite among pilots who value versatility and customization in their mecha, despite its rarity due to the difficulty in acquiring and retrofitting the necessary parts.",,,,,
 ,,,,,,,
-armaa_monitor,SHIP,"Destroyer-grade platform that emphasizes long-range fire support as opposed to head on confrontation. While especially effective against larger, slower targets, low flux capacity and manuverability can lead to it being easily overwhelmed without a covering force to support it.
+armaa_monitor,SHIP,"The Watchdog emphasizes long-range fire support as opposed to head-on confrontation. While especially effective against larger targets, poor shield emitters and maneuverability can lead to it being easily overwhelmed without a covering force to protect it.
 
-Some cycles before the First AI War, corp techminers recovered databanks from a red-eyed vessel called a ""Mobile Armor"". Keen on replicating some aspects of this technology, particuarly the advanced neural interface, the Garegga was born as an initial effort to replicate the technology at a larger scale, but dwindling resources in the sector made this a herculean task, especially without the aid of AI banned under Domain laws. 
+Some cycles before the First AI War, corp tech miners recovered databanks from a red-eyed vessel called a ""Mobile Armor."" Keen on replicating some aspects of this technology, particularly the advanced neural interface, the GAREGGA was rolled out as an initial effort to replicate the technology at a larger scale. Unfortunately, dwindling resources and technical know-how in the sector made further development of the SILVERSWORD system a herculean task, especially without the aid of AI, banned under Domain laws, now even more stringently enforced by the Hegemony.
 
-Instead, two larger designs was developed to further iterate upon the concept. A deal was brokered between Ko Combine and ArmaA that granted them access to a number of Monitor-class frigates and limited production rights to several of its key components, which were used as the core for the Watchdog series. Unlike most ArmaA designs, this vessel lacks any kind of neural control interface, and is thus one of the rare few capable of hosting full crew accomodations, as well as meaningful cargo capacity.",,,,,
+Instead, two larger designs were developed to further iterate upon the concept. A deal was brokered between the Ko Combine and ArmaA that granted them access to a number of Monitor-class frigates and limited production rights to several of its key components, which were used as the core for the Watchdog series. Beneath the additional armor plating and hulking, servo-assisted arms, grizzled spacers can likely spot some - mostly aesthetic - similarities between the two, but the final product has diverged greatly from its ancestor.
+
+Unlike most ArmaA designs, this vessel lacks any kind of neural control interface, and is thus one of the rare few capable of hosting full crew accommodations, as well as meaningful cargo capacity.",,,,,
 ,,,,,,,
 armaa_valkenmp,SHIP,"The Valken series, while sacrificing quantity and speed, offers greater offensive capability against larger ships compared to its counterpart, the Talon. However, the tradeoff for this boon is that the Valken is only marginally better protected, resulting in few pilots surviving long enough to fully utilize its potential without additional support.
 
@@ -250,8 +252,6 @@ armaa_altagrave_blade,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no jo
 
 Hey boss, why ya starin' at me like that?""",- Chief Mechanic,,,,
 ,,,,,,,
-,,,,,,,
-,,,,,,,
 armaa_valkazard_blade,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no joke. They use the same damn principle as other beams with a hyperdimensional filter. And let me tell ya, any electronics that ain't straight up disintegrated will be so screwed up, it'll take a tech wizard to fix it. So if some idiot tries to use this thing and gets blasted to scrap by point defenses, at least they can take out their weapons and engines on the way down.
 
 Hey boss, why ya starin' at me like that?""",- Chief Mechanic,,,,
@@ -303,7 +303,6 @@ armaa_valken_torso_black,WEAPON,"A small caliber cannon designed for close-range
 Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.",,,,,
 ,,,,,,,
 armaa_leynos_crusher_right,WEAPON,"Dual-barreled energy weapon firing plasma projectiles which explode on contact with stable matter, such as spaceship armor or shielding. The delay between shots has to be accounted for when firing.",,,,,
-,,,,,,,
 ,,,,,,,
 armaa_valken_gun,WEAPON,A variant of the sector-standard railgun that fires a burst of smaller slugs instead of a singular round.,,,,,
 ,,,,,,,
@@ -370,7 +369,7 @@ armaa_flarelauncher_active,SHIP_SYSTEM,Launches flares to confuse the guidance s
 armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,,,
-armaa_siegeMode,SHIP_SYSTEM,"Diverts power from engines and shields, disabling them. Weapon and sensor range is doubled, while RoF and recoil is increased slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
+armaa_siegeMode,SHIP_SYSTEM,"Disables shields and diverts power from engines, doubling weapon and sensor range and increasing RoF slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
 armaa_recalldevice,SHIP_SYSTEM,"Teleports a single vessel in need (with the Strikecraft hullmod) back to the carrier, allowing them to be quickly refitted and relaunched.",,,,,
 armaa_plasmaJets,SHIP_SYSTEM,Grants an tremendous speed boost in the given direction briefly.,,,,,
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,,,
