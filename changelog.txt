@@ -53,6 +53,8 @@ v3.0.6
 - increased valkazard laser blade beam speed to be in line with other laser blades (1000->4000)
 - added NEVER_RENDER_IN_CAMPAIGN hint to some deco weapons
 - fixed some spontaneous wingcom CTDs
+- fixed recoilless rifles having recoil
+- fixed broken rules interaction if player went to gilead without dawn first, then returned with her
 
 v3.0.5
 ---------

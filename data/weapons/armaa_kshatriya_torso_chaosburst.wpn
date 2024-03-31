@@ -38,15 +38,15 @@
   "beamFireOnlyOnFullCharge": true,
   
   "fringeColor": [
-    61,
-    155,
     255,
+    170,
+    127,
     255
   ],
   "coreColor": [
-    200,
-    200,
-    255,
+    247,
+    226,
+    188,
     255
   ],
   "hitGlowBrightenDuration":0,
