@@ -55,7 +55,7 @@ Zanac (MRC),armaa_zanac,Mobile Armor,Arma Armatura,armaa_fireboltfeed,,11,3000,4
 #Drones,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Jinete,armaa_alesteBit,UWS,Arma Armatura,,,,150,50,1000,,150,,,350,500,500,500,500,10,NONE,,,,,,,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 Pila,armaa_bit,UWS,Arma Armatura,temporalshell,,,200,50,1000,,150,,,350,400,400,500,500,10,NONE,,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
-Pila Mk.II,armaa_bit_kshatriya,UWS,Arma Armatura,temporalshell,,,125,25,500,,25,,,350,350,350,800,800,10,PHASE,armaa_jauntbooster,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
+Pila Mk.II,armaa_bit_kshatriya,UWS,Arma Armatura,,,,125,25,500,,25,,,350,350,350,800,800,10,PHASE,armaa_jauntbooster,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 Pila-X,armaa_bit_ex,UWS,Arma Armatura,temporalshell,,,200,50,1500,,150,,,350,400,400,300,300,10,PHASE,,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_altagrave_rightleg,Leg Module (R),,armaa_lowgradeemp,,1,1050,450,,,,,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.3,1,2,2,,,,,,,
