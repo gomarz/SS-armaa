@@ -345,8 +345,8 @@ $askedForSeraph = true","""Oh, check you out! Shooting for the stars, huh? Gotta
 armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk",,"""Sorry, still can't do. I'll log your request, though.""",,
 ,,,,,,
-#armaa_dawnAskForContactAccept,DialogOptionSelected,"$option == armaa_dawnAskForContact
-armaa_Hikaru_Utada findValk score:100","ShowSecondPerson armaa_seraph
+armaa_dawnAskForContactAccept,DialogOptionSelected,"$option == armaa_dawnAskForContact
+armaa_Hikaru_Utada findValk score:1000","ShowSecondPerson armaa_seraph
 SetPersonHidden armaa_seraph false
 AddText """"
 AddTextSmall ""An executive of Arma Armatura. With unmatched intelligence and a mind for strategy, she seamlessly wove her way into the corporation's ranks with a background in business and management. Sera is unafraid to navigate the corporate landscape with calculated precision, treating her associates as chess pieces to secure her designs and goals. Yet, beneath her shrewd exterior, she possesses a moral compass that tempers her actions, allowing her to navigate a path that is not entirely devoid of ethics."" highlight
