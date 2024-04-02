@@ -49,6 +49,7 @@ v3.0.6
 
 =bug fix=
 - units with shields gain +25% speed/manuver bonus if it is destroyed
+- Dawn will be removed from contact list if recruited
 - Fixed some inconsistent unit names
 - increased valkazard laser blade beam speed to be in line with other laser blades (1000->4000)
 - added NEVER_RENDER_IN_CAMPAIGN hint to some deco weapons

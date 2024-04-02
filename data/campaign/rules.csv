@@ -1508,7 +1508,7 @@ $givenKshatriya = true","After a short wait, your connection request is accepted
 
 ""But let's not kid ourselves, shall we? Your success, while impressive, owes a considerable debt to my guidance and oversight,"" she continues, a sly smirk playing on her lips.
 
-""Now, with that said, it's time for you to claim what's rightfully yours. Behold! The Rajanya — our most formidable design yet. Consider it a token of appreciation for your relentless efforts and undeniable skill. With this beauty at your command, there'll be no stopping you. Go forth, Captain, and make the Sector tremble in your wake.""",,
+""Behold! The Rajanya — our latest design yet. Consider it a token of appreciation for your relentless efforts and undeniable skill.""",,
 armaa_HCEncounter,OpenCommLink,$entity.HVB_armaa_bounty_legiomech score:100,"FireAll PopulateOptions
 armaa_Hikaru_Utada playMusic music_armaa_seraph
 $entity.ignorePlayerCommRequests = true","The connection flickers in and out, before resolving.
