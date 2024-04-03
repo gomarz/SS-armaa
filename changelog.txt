@@ -1,3 +1,9 @@
+v3.0.6.1
+--------
+- removed fighter being spawned into fleet
+- aleste system: microburn->booster
+
+
 v3.0.6
 ---------
 =additions=
