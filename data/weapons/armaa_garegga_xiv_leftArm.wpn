@@ -1,0 +1,54 @@
+{
+  "id": "armaa_garegga_xiv_leftArm",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_jackhammer_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_drill",
+  "turretSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
+  "turretGunSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm_recoil.png",
+  "hardpointSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
+  "showDamageWhenDecorative": true,
+  "renderBelowAllWeapons": true,
+  "visualRecoil": 40,
+  "renderHints": [
+    "RENDER_BARREL_BELOW",
+    "SUSPEND_RECOIL"
+  ],
+  "turretOffsets": [
+    49,
+    15
+  ],
+  "turretAngleOffsets": [
+    -1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "interruptibleBurst": true,
+  "smokeSpec": {
+    "particleSizeMin": 5,
+    "particleSizeRange": 15,
+    "cloudParticleCount": 6,
+    "cloudDuration": 1,
+    "cloudRadius": 20,
+    "blowbackParticleCount": 5,
+    "blowbackDuration": 0.5,
+    "blowbackLength": 15,
+    "blowbackSpread": 30,
+    "particleColor": [
+      150,
+      100,
+      100,
+      100
+    ]
+  },
+  "fireSoundTwo": "armaa_stake_shot",
+  "unaffectedByProjectileSpeedBonuses": true
+}

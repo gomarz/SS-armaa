@@ -15,14 +15,15 @@
     "phasefield",
     "cataphract",
     "strikeCraft",
-    "armaa_strikeCraftFrig"
+    "armaa_strikeCraftFrig",
+    "armaa_variableRifle"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_einhander_variablerifle",
     "B_TORSO": "armaa_einhander_plus_torso",
     "C_ARML": "armaa_einhander_plus_leftArm",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_valkazard_leftshoulder",
+    "D_PAULDRONL": "armaa_einhanderPlus_leftshoulder",
     "D_PAULDRONR": "armaa_einhander_plus_rightPauldron",
     "E_HEAD": "armaa_einhander_plus_head",
     "F_LEGS": "armaa_valkazard_legs"

@@ -1,0 +1,38 @@
+{
+  "id": "armaa_aleste_variablerifle",
+  "specClass": "projectile",
+  "projectileSpecId": "lightmortar_shot",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_koutoDummyWeapon",
+  "turretSprite": "graphics/armaa/weapons/armaa_leynoslt_variablerifle_00.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_leynoslt_variablerifle_00.png",
+  "showDamageWhenDecorative": true,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    49,
+    -14,
+    49,
+    -8,
+    49,
+    -8
+  ],
+  "turretAngleOffsets": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "numFrames": 2,
+  "frameRate": 0
+}

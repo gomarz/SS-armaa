@@ -10,5 +10,5 @@
   "quality": 0,
   "variantId": "armaa_assaultPod_hull_pa",
   "weaponGroups": [],
-  "wings": ["armaa_pa_mid_wing","armaa_pa_mid_wing"],
+  "wings": ["armaa_pa_mid_wing","armaa_prodromos_wing"],
 }

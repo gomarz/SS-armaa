@@ -1,0 +1,54 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "autocharge": false,
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
+  "fireSoundTwo": "armaa_stake_shot",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "armaa_alestePilebunkerLeft_s",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 10,
+    "particleColor": [
+      255,
+      235,
+      150,
+      235
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.03,
+    "particleSizeMin": 11,
+    "particleSizeRange": 5,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_pilebunker_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "showDamageWhenDecorative": true,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    -1
+  ],
+  "turretGunSprite": "graphics/armaa/ships/aleste/armaa_alesteLeftArmB.png",
+  "turretOffsets": [
+    22,
+    18.5
+  ],
+  "turretSprite": "graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftArm.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 5
+}

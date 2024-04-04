@@ -1,0 +1,23 @@
+{
+  "variantId": "armaa_kshatriya_binder_variant",
+  "hullId": "armaa_kshatriya_binder",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "RETRO_1": "armaa_kouto_head",
+        "RETRO_2": "armaa_leynos_head"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

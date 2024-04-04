@@ -1,0 +1,74 @@
+{
+    "baseHullId":"armaa_monitor",
+    "skinHullId":"armaa_monitor_xiv",
+    "hullName":"Watchdog (XIV)",
+    "descriptionId":"armaa_monitor",
+    "descriptionPrefix":"Uparmored and repainted in livery akin to the specifications of the Fourteenth Battlegroup, this version of the Watchdog was developed through collaboration witha certain house on Eventide. It's all around better armed than the standard version and is more adequate for head on engagements, although this is at the cost of its support capabilities.",
+    "spriteName":"graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv.png",
+    "baseValueMult":1.5,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["no_sell","no_dealer","restricted","no_drop"],
+    "systemId":"armaa_reload",
+    "tech":"Arma Armatura (Modified)",
+    "removeWeaponSlots":["TRUE_GUN"], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":["A_GUN"],
+    "removeWings":1,
+    "removeBuiltInMods":["armaa_weaponSwap_monitor","armaa_wingCommander"],
+    "builtInMods":["armoredweapons","fourteenth"],
+  "weaponSlotChanges":{
+	   "WS0001":{
+		  "angle": 0,
+		  "arc": 5,
+		  "mount": "HARDPOINT",
+		  "size": "MEDIUM",
+		  "type": "COMPOSITE"
+	   },
+	   "WS0003":{
+		  "angle": 0,
+		  "arc": 5,
+		  "mount": "HARDPOINT",
+		  "size": "MEDIUM",
+		  "type": "COMPOSITE"
+	   },
+	   "WS0006":{
+		  "angle": 0,
+		  "arc": 5,
+		  "mount": "TURRET",
+		  "size": "MEDIUM",
+		  "type": "DECORATIVE"
+	   },
+	   "A_GUN2":{
+		  #"angle": 0,
+		  #"arc": 5,
+		  "mount": "TURRET",
+		  "size": "LARGE",
+		  "type": "BUILT_IN"
+	   },
+      "TRUE_GUN2":{
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -30
+    },
+},
+    "builtInWeapons":{
+		"A_GUN2": "armaa_barretta",
+		"E_LARM": "armaa_monitor_xiv_leftArm",
+    		"E_GLOW": "armaa_monitor_xiv_head",
+		"E_LSHOULDER": "armaa_monitor_xiv_leftPauldron",
+		"E_RSHOULDER": "armaa_monitor_xiv_rightPauldron",
+    },
+	"engineSlotChanges":{
+		"0":{
+			#"width": 0,
+          	#"length": 210,
+          	#"angle": 210,
+          	"style": "LOW_TECH",
+		},
+		"1":{"style":"LOW_TECH"},
+		"2":{"style":"LOW_TECH"},
+	},  
+}

@@ -13,10 +13,11 @@
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",
-    "autorepair"
+    "armaa_fighterStrafe"
   ],
   "builtInWeapons": {
-    "A_GUN": "armaa_valkenx_frig_ml_variablerifle",
+    "A_GUN": "armaa_spriggan_rrifle",
+    "B_TORSO": "armaa_record_torso_frig",
     "C_ARML": "armaa_valkenLeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valken_leftPauldron",

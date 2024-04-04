@@ -3,7 +3,6 @@
 	"specClass":"beam",
         "type":"DECORATIVE",
         "size":"SMALL",
-	"everyFrameEffect": "data.scripts.weapons.VassDirectedLandingBayScript",
         "showDamageWhenDecorative":true,
 	"turretSprite":"",
 	"hardpointSprite":"",

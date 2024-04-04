@@ -1,0 +1,189 @@
+{
+  "hullName": "Garegga",
+  "hullId": "armaa_garegga_xiv_carrier",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/garegga/xiv/armaa_garegga_xiv_body_carrier.png",
+  "style": "LOW_TECH",
+  "height": 132,
+  "width": 110,
+  "center": [55, 48],
+  "collisionRadius": 62.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 62.5,
+  "viewOffset": 50,
+  "builtInMods": [
+    "fourteenth",
+    "armaa_comboUnit"
+  ],
+  "builtInWeapons": {
+    "E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
+    "E_RSHOULDER": "armaa_garegga_xiv_rightPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "E_LSHOULDER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30,
+      "locations": [4, 20],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "A_GUN",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 10,
+      "locations": [9, 30],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 45,
+      "locations": [0, 45]
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [16, -34],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -30,
+      "locations": [4, -20],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "A_GUN2",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -10,
+      "locations": [9, -30],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "SYS1",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": -165,
+      "angle": 180,
+      "locations": [-19, -21]
+    },
+    {
+      "id": "SYS1",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": -165,
+      "angle": 180,
+      "locations": [-2, 10]
+    },
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [7, -0]
+    },
+    {
+      "id": "MAIN_GUN",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [16, 32],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -45,
+      "locations": [0, -45]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-25, 11],
+      "length": 32,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-25, -11],
+      "length": 32,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-32, -0],
+      "length": 43,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-25, 11],
+      "length": 13,
+      "width": 9,
+      "angle": 145,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-25, -11],
+      "length": 13,
+      "width": 9,
+      "angle": -145,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    19, -3,
+    22, -10,
+    18, -28,
+    8.5, -32,
+    -12, -16,
+    -22, -13.5,
+    -22.5, -5,
+    -30, -4,
+    -30, 4,
+    -22.5, 5,
+    -21.5, 15.5,
+    -12, 16,
+    8.5, 32,
+    18, 28,
+    22, 10,
+    18, 2.5
+  ]
+}

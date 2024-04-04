@@ -38,6 +38,7 @@
     RENDER_BARREL_BELOW
   ],
   "requiresFullCharge": false,
+  "showDamageWhenDecorative":true,
   "size": "SMALL",
   "specClass": "projectile",
   "textureType": ROUGH,
@@ -49,7 +50,7 @@
     18,
     0
   ],
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_torso.png",
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_torso2.png",
   "type": "DECORATIVE",
   "visualRecoil": 3
 }

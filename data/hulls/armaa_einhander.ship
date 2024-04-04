@@ -30,6 +30,7 @@
     "D_PAULDRONR": "armaa_sprigganrightPauldron",
     "E_HEAD": "armaa_sprigganHead",
     "H_GLOW": "armaa_landingBeacon",
+    "F_LEGS": "armaa_ht_legs",
     "WS0001": "armaa_heavyJavelin"
   },
   "weaponSlots": [
@@ -96,6 +97,16 @@
       "arc": 135,
       "angle": 0,
       "locations": [1, -0]
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-7, -0],
+      "renderOrderMod": -1000
     },
     {
       "id": "WS0001",

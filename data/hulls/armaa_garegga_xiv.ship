@@ -1,0 +1,154 @@
+{
+  "hullName": "Garegga(H)",
+  "hullId": "armaa_garegga_xiv",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/garegga/xiv/armaa_garegga_xiv_body.png",
+  "style": "MIDLINE",
+  "height": 132,
+  "width": 110,
+  "center": [55, 56],
+  "collisionRadius": 86,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 87,
+  "viewOffset": 50,
+  "builtInMods": [
+    "armoredweapons",
+    "armaa_himac",
+    "rugged",
+    "fourteenth"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_garegga_xiv_leftArm",
+    "A_GUN2": "armaa_garegga_xiv_rightArm",
+    "E_LSHOULDER": "armaa_monitor_xiv_leftPauldron",
+    "E_RSHOULDER": "armaa_monitor_xiv_rightPauldron",
+    "HEAD": "armaa_garegga_xiv_head"
+  },
+  "weaponSlots": [
+    {
+      "id": "E_LSHOULDER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 25,
+      "locations": [-5, 23],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "A_GUN",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 25,
+      "locations": [-1, 31],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -25,
+      "locations": [-5, -23],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "A_GUN2",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -25,
+      "locations": [-1, -31],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "SYS1",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": -165,
+      "angle": 180,
+      "locations": [-10, -10]
+    },
+    {
+      "id": "SYS1",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": -165,
+      "angle": 180,
+      "locations": [-10, 10]
+    },
+    {
+      "id": "HEAD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 0,
+      "locations": [-9, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [8, 21]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [8, -21]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-33, 11],
+      "length": 21,
+      "width": 13,
+      "angle": 161,
+      "contrailSize": 13,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-33, -11],
+      "length": 21,
+      "width": 13,
+      "angle": -161,
+      "contrailSize": 13,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-40, 0],
+      "length": 28,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    17.5, -3,
+    14, -10,
+    6, -36.5,
+    -13.5, -36.5,
+    -30, -13.5,
+    -38, -4,
+    -38, 4,
+    -29.5, 15.5,
+    -13.5, 36.5,
+    6, 36.5,
+    14, 10,
+    17.5, 3
+  ]
+}

@@ -1,0 +1,34 @@
+{
+	"specClass":"beam",
+	"id":"armaa_monitor_xiv_head",
+	"type":"DECORATIVE",
+	"size":"SMALL",
+        "everyFrameEffect": "data.scripts.weapons.armaa_headTracker",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	#"turretSprite":"",
+        #"renderHints":["RENDER_ADDITIVE"],
+	"showDamageWhenDecorative":TRUE,
+        "turretSprite": "graphics/armaa/ships/mechamonitor/xiv/armaa_monitor_xiv_head.png",
+ # "turretGlowSprite": "graphics/armaa/ships/proto/armaa_altagrave_head_glow.png",
+	"hardpointSprite":"",
+	"hardpointGlowSprite":"",	
+	"turretOffsets":[2, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[4, 0],
+	"hardpointAngleOffsets":[0],
+
+	"darkCore":true,
+	
+	"fringeColor":[155,155,15,255],
+	"coreColor":[238,255,239,255],
+	"glowColor":[155,155,15,255],
+
+	"width":16.0,
+
+	"textureType":ROUGH,
+	"textureScrollSpeed":128.0,
+	"pixelsPerTexel":5.0,
+	"pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
+
+}

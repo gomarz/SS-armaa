@@ -4,7 +4,7 @@
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/valkazard/armaa_valkazard_rightshoulder.png",
+	"turretSprite":"graphics/armaa/ships/einhander/armaa_einhanderPlus_rightshoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

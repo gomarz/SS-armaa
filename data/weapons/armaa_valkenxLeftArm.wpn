@@ -1,63 +1,57 @@
 {
- # "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",
-  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",  
+  "id": "armaa_valkenxLeftArm",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "coreColor": [
-    250,
-    197,
-    92,
-    255
-  ],
-  "fireSoundOne": "laser_intro",
-  "fireSoundTwo": "armaa_saber_loop",
-  "fringeColor": [
-    245,
-    157,
-    24,
-    255
-  ],
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenxLeftArm.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
   "glowColor": [
     255,
     255,
     255,
     255
   ],
-  "hardpointAngleOffsets": [
+  "hitGlowRadius": 20,
+  "turretOffsets": [
+    26,
+    15
+  ],
+  "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
     0,
     0
   ],
-  "hardpointSprite": "",
-  "hitGlowRadius": 10,
-  "id": "armaa_valkenxLeftArm",
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    255,
+    0,
+    24,
+    255
+  ],
+  "coreColor": [
+    255,
+    200,
+    200,
+    255
+  ],
+  "width": 10,
+  "textureType": LASER,
+  "textureScrollSpeed": 2000,
+  "pixelsPerTexel": 10,
   "pierceSet": [
     PROJECTILE_FF,
     PROJECTILE_NO_FF,
     PROJECTILE_FIGHTER
   ],
-  "pixelsPerTexel": 10,
-  "renderAboveAllWeapons": 0,
-  "showDamageWhenDecorative": true,
-"interruptibleBurst": true,
-"beamFireOnlyOnFullCharge": true,
-  "size": "SMALL",
-  "specClass": "beam",
-  "textureScrollSpeed": 2000,
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretOffsets": [
-    19,
-    18
-  ],
-  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenxLeftArm.png",
-  "type": "ENERGY",
-  "width": 20
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "armaa_saber_loop"
 }

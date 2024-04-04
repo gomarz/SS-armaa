@@ -1,0 +1,22 @@
+{
+  "variantId": "armaa_legioMech_rightShoulder_standard",
+  "hullId": "armaa_legioMech_rightShoulder",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

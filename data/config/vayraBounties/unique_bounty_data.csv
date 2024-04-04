@@ -1,23 +1,19 @@
 bounty_id,level,rank,firstName,lastName,captainPersonality,fleetName,flagshipName,gender,faction,portrait,greetingText,suppressIntel,postedByFaction,creditReward,repReward,intelText,flagshipVariantId,fleetVariantIds,minimumFleetFP,playerFPScalingFactor,chanceToAutoRecover,specialItemRewards,neverSpawnUnlessBountiesCompleted,neverSpawnWhenFactionHostile,neverSpawnWhenFactionNonHostile,neverSpawnBeforeCycle,neverSpawnBeforeLevel,neverSpawnBeforeFleetPoints
-armaa_bounty_altagrave_x,30,spaceCommander,Gamma,9B,steady,White Fang,HS-ONE,FEMALE,hvb_hostile,graphics/portraits/portrait_ai2b.png,"Arrival: Successful. Troop Survival: 100%.
-Initiating: Battle-State Behavior over-ride.
-Target Acquired: Starfarer.
-Annihilation: Commences
-Destroy: Opposition",FALSE,independent,500000,10,"One of the fleets comms officers has alerted you to a priority communique, addressed -specifically- to you. It appears your reputation precedes you, and a band of mercenaries have called you out. You recall this particular group of individuals were wanted for the use of illegal autonomous weapons - might be worth checking out what they want, or at the very least collecting the bounty on their heads.",armaa_altagrave_ex_Standard,,400,1.2,1,armaa_advcataphract_package,,FALSE,FALSE,206,30,100
-armaa_bounty_ceylon2,30,spaceCommander,Christine,Blair,steady,Mavericks,Tiger Claw,FEMALE,armaarmatura_pirates,graphics/armaa/portraits/armaa_christine.png,,FALSE,independent,500000,10,"One of the fleets comms officers has alerted you to a priority communique, addressed -specifically- to you. It appears your reputation precedes you, and a band of mercenaries have called you out. You recall this particular group of individuals were wanted for stealing a unique carrier - might be worth checking out what they want, or at the very least collecting the bounty on their heads.",armaa_ceylon_standard,armaa_whitebase_standard,500,1.2,1,,,FALSE,FALSE,206,1,1
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_bounty_altagrave_x,10,spaceCommander,ALPHA,9B,reckless,The Iron Legion,HS-ONE,FEMALE,remnant,graphics/armaa/portraits/armaa_robot.png,,FALSE,independent,500000,1,"One of the fleets comms officers has alerted you to a priority communique, addressed -specifically- to you. It appears your reputation precedes you, and a band of mercenaries have called you out. You recall this particular group of individuals were wanted for the use of illegal autonomous weapons - might be worth checking out what they want, or at the very least collecting the bounty on their heads.",armaa_altagrave_ex_Standard,,400,1,1,,,FALSE,FALSE,206,15,250
+armaa_bounty_ceylon,12,spaceCommander,Christine,Blair,steady,The Mavericks,Tiger Claw,FEMALE,armaarmatura_pirates,graphics/armaa/portraits/armaa_christine.png,,FALSE,tritachyon,350000,5,"For weeks on end, a menacing pirate armada under the command of an experimental carrier has relentlessly plagued Tri-Tachyon convoys. Their current whereabouts point to a specific star system, where they undoubtedly scheme their next assault.
+
+It falls to us to quell their privateering endeavors once and for all. Eradicate this pirate fleet with extreme prejudice, leaving no room for their nefarious activities to resurface. Permanently extinguish the threat they pose, and safeguard the peace of our trading operations.",armaa_ceylon_standard,armaa_whitebase_standard,350,1.1,1,,,FALSE,FALSE,206,12,150
+armaa_bounty_corsair,7,spaceCommander,Leos,Klein,aggressive,STTF OBSIDIAN,Corsair,MALE,hegemony,graphics/armaa/portraits/armaa_leos.png,,FALSE,independent,200000,1,"The Arma Armatura corporation has been collaborating with the Hegemony out in the fringes testing some kind of new weaponry. This undertaking has the backing of a certain house on Eventide, who we'd rather not see gain any kind of traction. Wipe out the fleet.",armaa_corsair_isen_standard,"onslaught_xiv_Elite,legion_xiv_Automated,armaa_monitor_standard_xiv,armaa_monitor_standard_xiv,armaa_monitor_standard_xiv,armaa_corsair_xiv_overdriven,armaa_corsair_xiv_overdriven,armaa_garegga_xiv_carrier_standard,armaa_garegga_xiv_carrier_standard,armaa_garegga_xiv_carrier_standard",200,1.1,1,armaa_hegemony_package,,FALSE,FALSE,206,1,50
+armaa_bounty_zanac,5,spaceCommander,Lord,Gigantus,aggressive,Cyclops,TM Vanguard,MALE,armaarmatura_pirates,graphics/armaa/portraits/armaa_mrcguy.png,,FALSE,independent,100000,5,"In the wake of brazen raids by a marauding pirate fleet that has struck at the very heart of the core worlds, the time has come to put an end to their reign of terror. This ruthless band of space brigands has plundered our homesteads, leaving chaos and despair in their wake.
+
+Recent intelligence reports have located the pirate fleet regrouping and refitting their vessels in the unforgiving fringes of the Sector. We cannot allow these rogues to continue their depredations unchecked.
+
+The mission is clear: Pursue these criminals and deliver justice swiftly and mercilessly.",armaa_zanac_sniper_ex,armaa_zanac_support,100,1.2,1,,,FALSE,FALSE,206,8,150
+armaa_bounty_legiomech,8,spaceCommander,Corsair,Pilot,aggressive,Pillager Fleet,HC Mk. I,FEMALE,tahlan_legioinfernalis,graphics/armaa/portraits/armaa_seraph2.png,,FALSE,independent,100000,3,"Several entities have caught wind that the notorious pirate faction known as the Legio Infernalis are undergoing some kind of operation on the fringes of the Sector. Rumor has it that they are experimenting with new weaponry; an undertaking that cannot be ignored.
+
+We are committed to preventing these pirates from gaining any undue influence and destabilizing the region further.
+
+It falls upon you, brave mercenaries, to unleash the fiery wrath of the Sector upon this clandestine operation. The mission is clear: obliterate the entire fleet aligned with the Legio Infernalis, sending a resounding message that we will not bow to piracy. Let justice reign in the name of the Persean people!",armaa_legioMech_standard,,100,1.2,1,,,FALSE,FALSE,206,5,150
 # NOTES,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # bounty_id : line ID. Must be unique across all mods. I recommend a prefix,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # level : character level of bounty captain,,,,,,,,,,,,,,,,,,,,,,,,,,,,

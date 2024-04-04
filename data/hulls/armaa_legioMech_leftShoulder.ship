@@ -1,0 +1,48 @@
+{
+  "hullName": "New Hull",
+  "hullId": "armaa_legioMech_leftShoulder",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/legioMech/armaa_legioMech_leftShoulder.png",
+  "style": "armaa_DAEMON",
+  "height": 112,
+  "width": 136,
+  "center": [68, 56],
+  "collisionRadius": 37.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 185,
+  "viewOffset": 0,
+  "builtInMods": [
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "WS0001": "pdburst"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 300,
+      "angle": 180,
+      "locations": [-4, -3]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 300,
+      "angle": 180,
+      "locations": [-17.5, 20]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    8.5, 12,
+    -15, 31,
+    -35, 1,
+    -14, -14.5,
+    18, -16.5
+  ]
+}

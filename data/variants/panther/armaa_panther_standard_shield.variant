@@ -1,0 +1,44 @@
+{
+  "variantId": "armaa_panther_standard_shield",
+  "hullId": "armaa_panther_frig",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 5,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "hardened_subsystems",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN2": "jackhammer"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "heavymauler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_pantherHead"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "SHIELD": "armaa_shield_panther_standard"
+    }
+  ],
+  "wings": []
+}

@@ -1,0 +1,45 @@
+{
+    "baseHullId":"armaa_aleste_frig",
+    "skinHullId":"armaa_aleste_frig_swordsman",
+    "hullName":"Aleste",
+    "descriptionId":"armaa_aleste_frig",
+    "baseValueMult":1.1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["no_sell","no_dealer","restricted","no_drop"],
+    "removeBuiltInMods":["armaa_alesteMeleeSwap"],
+    #"systemId":"highenergyfocus",
+    #"tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":["C_ARML","TRUE_GUN2","TRUE_GUN"],
+    "weaponSlotChanges":{
+	   "C_ARML":{
+		 #"angle": 0,
+		 #"arc": 5,
+		 "mount": "TURRET",
+		  "size": "MEDIUM",
+		  "type": "BUILT_IN",
+	   },
+	   "A_GUN":{
+		 # "angle": 0,
+		  "arc": 90,
+		  "mount": "TURRET",
+		  "size": "MEDIUM",
+		  "type": "BUILT_IN",
+	   },
+	   "TRUE_GUN":{
+		 # "angle": 0,
+		 # "arc": 90,
+		  "type": "DECORATIVE",
+	   },
+},
+    "builtInWeapons":{
+		"C_ARML": "armaa_aleste_blade_LeftArm",
+		"A_GUN": "armaa_aleste_blade_RightArm",
+    "B_TORSO": "armaa_aleste_torso_ace",
+    "E_HEAD": "armaa_alesteHead",
+    "D_PAULDRONL": "armaa_aleste_leftPauldron",
+    "D_PAULDRONR": "armaa_aleste_rightPauldron",
+    },
+}

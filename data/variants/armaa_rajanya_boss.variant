@@ -1,0 +1,64 @@
+{
+  "variantId": "armaa_kshatriya_boss",
+  "hullId": "armaa_kshatriya",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 15,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": ["heavyarmor","hardenedshieldemitter","advancedoptics"],
+  "sMods": ["heavyarmor","hardenedshieldemitter","advancedoptics"],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "autopulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN2": "armaa_kshatriya_rightArm_melee"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0004": "armaa_kshatriya_torso_chaosburst",
+        "WS0005": "armaa_kshatriya_torso_chaosburst"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "railgun",
+        "WS0002": "railgun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+    {
+      "BINDER_01": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_02": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_03": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_04": "armaa_kshatriya_binder_variant"
+    }
+  ],
+  "wings": []
+}

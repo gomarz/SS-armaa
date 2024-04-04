@@ -1,0 +1,69 @@
+{
+  "bounds": [
+    -6.5,
+    -4,
+    9.5,
+    -0,
+    -6.5,
+    4
+  ],
+  "center": [
+    6,
+    10.5
+  ],
+  "builtInMods": ["pointdefenseai","armaa_fighterStrafe"],
+  "collisionRadius": 16.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 14.5,
+      "location": [
+        -11,
+        -0
+      ],
+      "style": "CUSTOM",
+      "styleId": "MechaTrail",
+      "width": 9
+    },
+    {
+      "angle": 180,
+      "contrailSize": 6,
+      "length": 20.5,
+      "location": [
+        -11,
+        -0
+      ],
+      "style": "CUSTOM",
+      "styleId": "MechaTrail",
+      "width": 6
+    }
+  ],
+  "height": 21,
+  "hullId": "armaa_bit_kshatriya",
+  "hullName": "Bit",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 14.5,
+  "spriteName": "graphics/armaa/ships/armaa_bit3.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 10,
+      "id": "WS0001",
+      "locations": [
+        7.5,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    }
+  ],
+  "width": 12
+}

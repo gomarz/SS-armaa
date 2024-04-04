@@ -1,0 +1,52 @@
+{
+  "hullName": "Armor Module",
+  "hullId": "armaa_corsair_isen_module_l",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/corsair/isen/armaa_corsair_isen_module_l.png",
+  "style": "LOW_TECH",
+  "height": 61,
+  "width": 44,
+  "center": [24, 37],
+  "collisionRadius": 38,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 37.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "fourteenth",
+    "reduced_explosion"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-13, -1],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 36,
+      "locations": [13, 6]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -35.5, -0.5,
+    -22, -0,
+    -17.5, -8,
+    17.5, -19.5,
+    23, -12,
+    21.5, 5,
+    6.5, 22.5,
+    -0.5, 23,
+    -2, 15.5,
+    -20, 12
+  ]
+}

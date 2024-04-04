@@ -1,0 +1,51 @@
+{
+  "id": "armaa_aleste_harpoon",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_harpoon_shot",
+  "type": "BALLISTIC",
+  "everyFrameEffect": "data.scripts.weapons.armaa_harpoonThrowerEffect",
+  "size": "SMALL",
+  "turretSprite": "",
+  "turretGunSprite": "graphics/armaa/ships/aleste/armaa_aleste_harpoon_recoil.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 10,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    10,
+    7.5
+  ],
+  "turretAngleOffsets": [
+    -1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "interruptibleBurst": true,
+  "smokeSpec": {
+    "particleSizeMin": 8,
+    "particleSizeRange": 12,
+    "cloudParticleCount": 5,
+    "cloudDuration": 1,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 15,
+    "blowbackDuration": 1.5,
+    "blowbackLength": -20,
+    "blowbackSpread": 10,
+    "particleColor": [
+      75,
+      75,
+      75,
+      150
+    ]
+  },
+  "fireSoundTwo": "armaa_stake_shot"
+}

@@ -1,0 +1,20 @@
+{
+	"id":"armaa_bit_kshatriya_beam_shot",
+        "onHitEffect":"data.scripts.weapons.armaa_valkazardGunEffect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":300.0,
+	"width":12,
+	"fadeTime":0.3,
+	"fringeColor":[70,250,202,255],
+	"coreColor":[255,255,255,255],
+	#"glowColor":[255,100,0,75],
+	#"glowRadius":11,
+	"hitGlowRadius":15,	
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
+
+}

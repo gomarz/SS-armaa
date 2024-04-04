@@ -1,0 +1,47 @@
+{
+  "variantId": "armaa_zanac_overdriven",
+  "hullId": "armaa_zanac",
+  "displayName": "Overdriven",
+  "goalVariant": true,
+  "fluxCapacitors": 7,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "safetyoverrides",
+    "magazines",
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "autopulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN2": "miningblaster"
+      }
+	},
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "sabot",
+        "WS0005": "sabot"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "armaa_zanac_head",
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

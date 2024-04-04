@@ -1,2 +1,4 @@
 name,id,planetary,decivRemove,script,desc,icon,order
 Cataphract Defense Bases,armaa_mechbase,TRUE,TRUE,data.scripts.campaign.econ.armaa_cataphractDefenses,"Meshan is dotted with several military installations housing cataphract lances. On the off chance that heavy batteries fail to discourage any would-be attackers, these bases allow lances to rapidly take off and intercept hostile landing craft near orbit or otherwise.",graphics/icons/markets/military_base.png,9204
+Vice Demand,armaa_vice,TRUE,TRUE,data.scripts.campaign.econ.armaa_ViceDemand,Drigs,graphics/icons/markets/military_base.png,9206
+,,,,,,,

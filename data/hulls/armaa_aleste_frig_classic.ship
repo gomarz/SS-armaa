@@ -1,0 +1,232 @@
+{
+  "bounds": [
+    15,
+    -4.5,
+    6,
+    -8,
+    3,
+    -13.5,
+    -1,
+    -13.5,
+    -3,
+    -6.5,
+    -13,
+    -5.5,
+    -13,
+    5.5,
+    -3,
+    6.5,
+    -1,
+    13.5,
+    3,
+    13.5,
+    6,
+    8,
+    15,
+    4.5
+  ],
+  "builtInMods": [
+    "cataphract2",
+    "strikeCraft",
+    "armaa_wingCommander",
+    "armaa_weaponSwap"
+  ],
+  "builtInWings": [
+    "armaa_valkenx_wing"
+  ],
+  "builtInWeapons": {
+    #"A_GUN": "armaa_aleste_rightArm",
+    "B_TORSO": "armaa_aleste_torso_ace",
+    #"C_ARML": "armaa_aleste_blade_LeftArm",
+    "C_ARMR": "armaa_sprigganRightArm",
+    "D_PAULDRONL": "armaa_aleste_leftPauldron",
+    "D_PAULDRONR": "armaa_aleste_rightPauldron",
+    "E_HEAD": "armaa_alesteHead",
+    "F_LEGS": "armaa_ht_legs",
+    "H_GLOW": "armaa_sprigganHeadGlow"
+  },
+  "center": [
+    9,
+    16.5
+  ],
+  "collisionRadius": 18,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 18,
+      "location": [
+        -14,
+        -5
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 18,
+      "location": [
+        -14,
+        5
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 141.5,
+      "contrailSize": 5,
+      "length": 16.5,
+      "location": [
+        -14,
+        6
+      ],
+      "style": "HIGH_TECH",
+      "width": 5
+    },
+    {
+      "angle": -141.5,
+      "contrailSize": 5,
+      "length": 16.5,
+      "location": [
+        -14,
+        -6
+      ],
+      "style": "HIGH_TECH",
+      "width": 5
+    }
+  ],
+  "height": 26,
+  "hullId": "armaa_aleste_frig_classic",
+  "hullName": "Aleste",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 35,
+  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
+  "style": "armaa_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -15,
+      "arc": 90,
+      "id": "A_GUN",
+      "locations": [
+        0,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "UNIVERSAL"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "B_TORSO",
+      "locations": [
+        0,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 15,
+      "arc": 90,
+      "id": "C_ARML",
+      "locations": [
+        3,
+        3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "UNIVERSAL"
+    },
+    {
+      "angle": -15,
+      "arc": 360,
+      "id": "C_ARMR",
+      "locations": [
+        3,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "D_PAULDRONL",
+      "locations": [
+        0,
+        6
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "D_PAULDRONR",
+      "locations": [
+        0,
+        -6
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "E_HEAD",
+      "locations": [
+        3,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-7, -0],
+      "renderOrderMod": -1000
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "F_GLOW",
+      "locations": [
+        0,
+        -3
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 135,
+      "id": "H_GLOW",
+      "locations": [
+        1,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 18
+}

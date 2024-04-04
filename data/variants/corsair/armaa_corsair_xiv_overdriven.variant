@@ -1,0 +1,32 @@
+{
+  "variantId": "armaa_corsair_xiv_overdriven",
+  "hullId": "armaa_corsair_xiv",
+  "displayName": "Overdriven",
+  "goalVariant": true,
+  "fluxCapacitors": 11,
+  "fluxVents": 3,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "safetyoverrides"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "mjolnir",
+        "TRUE_GUN2": "mjolnir",
+        "WS0002": "pdlaser",
+        "WS0004": "pdlaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

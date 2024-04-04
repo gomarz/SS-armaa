@@ -1,47 +1,48 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "id": "armaa_chaingun",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_chaingun_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_valkenXEffect",
-  "fireSoundTwo": "chaingun_fire",
-  "hardpointAngleOffsets": [
-    0
-  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel00.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel00.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel00.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    31,
+    -14
+  ],
+  "turretAngleOffsets": [
+    1
+  ],
   "hardpointOffsets": [
     17,
     0
   ],
-  "hardpointSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel00.png",
-  "id": "armaa_chaingun",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
   "numFrames": 4,
   "frameRate": 20,
-	"muzzleFlashSpec":{"length":40.0, 
-                        "spread":15.0,
-                        "particleSizeMin":6.0,
-                        "particleSizeRange":14.0,
-                        "particleDuration":0.05,
-                        "particleCount":10,
-					    "particleColor":[255,240,165,200]},	
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "chaingun_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
-  ],
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    1
-  ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel00.png",
-  "turretOffsets": [
-    27,
-    -14.5
-  ],
-  "turretSprite": "graphics/armaa/weapons/armaa_valkenchainGunBarrel00.png",
-  "type": "BALLISTIC",
-  "visualRecoil": 0
+  "muzzleFlashSpec": {
+    "length": 40,
+    "spread": 15,
+    "particleSizeMin": 8,
+    "particleSizeRange": 24,
+    "particleDuration": 0.05,
+    "particleCount": 10,
+    "particleColor": [
+      255,
+      240,
+      165,
+      200
+    ]
+  },
+  "fireSoundTwo": "light_assault_gun_fire"
 }

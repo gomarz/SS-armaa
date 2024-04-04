@@ -1,0 +1,33 @@
+{
+  "variantId": "armaa_kshatriya_variant",
+  "hullId": "armaa_kshatriya",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+    {
+      "BINDER_01": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_02": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_03": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_04": "armaa_kshatriya_binder_variant"
+    }
+  ],
+  "wings": []
+}

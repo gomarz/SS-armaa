@@ -1,0 +1,32 @@
+{
+    "baseHullId":"armaa_valkenx_frig",
+    "skinHullId":"armaa_vx_silversword",
+    "hullName":"Valken III",
+    "tags":["no_dealer","restricted","no_sell","no_drop"],
+    "descriptionId":"armaa_valkenx_frig",
+    "descriptionPrefix":"This VX has been modified and upgraded using data from the recently recovered Valkazard.",
+    "baseValueMult":1.5,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "systemId":"armaa_silverSwordV",
+    #"tech":"Tri-Tachyon",
+    #"removeWeaponSlots":[], 		# ids
+    #"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    #"removeBuiltInWeapons":["C_ARML","A_GUN",],
+    "removeBuiltInMods":["armaa_vxSkinSwap"],
+    #"builtInMods":["armaa_weaponSwap"],
+    "weaponSlotChanges":{
+		"A_GUN":{"type": "DECORATIVE"},
+		#"C_ARML":{"type": "BUILT_IN"},
+		"F_LEGS":{"type": "DECORATIVE"},
+},
+    "builtInWeapons":{
+                "A_GUN": "armaa_einhander_variablerifle",
+		"D_PAULDRONL": "armaa_valkenx_leftPauldron",
+		"D_PAULDRONR": "armaa_valkenx_rightPauldron",
+                "B_TORSO": "armaa_valkazard_torso_mp",
+		"C_ARML": "armaa_valkazard_machinegun_left_deco",
+    		"E_HEAD": "armaa_valkazard_head_mp",
+		"F_LEGS": "armaa_valkazard_legs",
+    },
+}

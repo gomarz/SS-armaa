@@ -1,0 +1,205 @@
+{
+  "hullName": "Panther",
+  "hullId": "armaa_panther_frig",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/einhander/armaa_einhander_body.png",
+  "style": "LOW_TECH",
+  "height": 26,
+  "width": 18,
+  "center": [9, 16.5],
+  "collisionRadius": 18,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 35,
+  "viewOffset": 0,
+  "builtInMods": [
+    "cataphract2",
+    "strikeCraft",
+    "fourteenth",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_panther_variablerifle",
+    "A_GUN2": "armaa_panther_missile_deco",
+    "B_TORSO": "armaa_panther_torso",
+    "C_ARML": "armaa_pantherLeftArm",
+    "D_PAULDRONL": "armaa_panther_leftPauldron",
+    "D_PAULDRONR": "armaa_panther_rightPauldron",
+    "E_HEAD": "armaa_pantherHead",
+    "F_LEGS": "armaa_ht_legs",
+    "H_GLOW": "armaa_sprigganHeadGlow"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -15,
+      "locations": [3, -5]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -15,
+      "locations": [3, -5],
+      "renderOrderMod": -900
+    },
+    {
+      "id": "B_TORSO",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, 0]
+    },
+    {
+      "id": "SHIELD",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 15,
+      "locations": [3, 5]
+    },
+    {
+      "id": "A_GUN2",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [1, 4]
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [1, 4],
+      "renderOrderMod": -900
+    },
+    {
+      "id": "C_ARML",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 15,
+      "locations": [3, 5],
+      "renderOrderMod": -500
+    },
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [1, 5]
+    },
+    {
+      "id": "D_PAULDRONR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [1, -5]
+    },
+    {
+      "id": "E_HEAD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [1, -0]
+    },
+    {
+      "id": "F_GLOW",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [1, -3]
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-6, -0],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "H_GLOW",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [1, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-14, -5],
+      "length": 18,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    },
+    {
+      "location": [-14, 5],
+      "length": 18,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    },
+    {
+      "location": [-14, 6],
+      "length": 16.5,
+      "width": 5,
+      "angle": 141.5,
+      "contrailSize": 5,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    },
+    {
+      "location": [-14, -6],
+      "length": 16.5,
+      "width": 5,
+      "angle": -141.5,
+      "contrailSize": 5,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    14, -4.5,
+    6, -8,
+    3, -13.5,
+    -1, -13.5,
+    -3, -6.5,
+    -13, -5.5,
+    -13, 5.5,
+    -3, 6.5,
+    -1, 13.5,
+    3, 13.5,
+    6, 8,
+    14, 4.5
+  ]
+}

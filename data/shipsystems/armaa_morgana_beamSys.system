@@ -1,0 +1,9 @@
+{
+	"id":"armaa_morgana_beamSys",
+	"type":"WEAPON",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.armaa_morganaAI",
+	
+	"weaponDataId":"armaa_morgana_beam",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

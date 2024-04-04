@@ -1,0 +1,32 @@
+{
+  "variantId": "armaa_monitor_standard_xiv",
+  "hullId": "armaa_monitor_xiv",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0002": "harpoon",
+        "WS0004": "harpoon"
+		}
+	},
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "jackhammer",
+        "WS0001": "jackhammer"
+		}
+	}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "variantId": "armaa_zanac_sniper_ex",
+  "hullId": "armaa_zanac_ex",
+  "displayName": "Sniper",
+  "goalVariant": true,
+  "fluxCapacitors": 16,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": ["heavyarmor","hardenedshieldemitter","advancedoptics"],
+  "sMods": ["heavyarmor","hardenedshieldemitter","advancedoptics"],
+  "hullMods": [
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "tachyonlance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "ioncannon",
+        "WS0005": "ioncannon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN2": "hveldriver"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

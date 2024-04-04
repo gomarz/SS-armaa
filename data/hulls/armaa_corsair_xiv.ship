@@ -1,0 +1,204 @@
+{
+  "hullName": "Corsair",
+  "hullId": "armaa_corsair_xiv",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/corsair/armaa_corsair_xiv.png",
+  "style": "MIDLINE",
+  "height": 66,
+  "width": 106,
+  "center": [53, 33],
+  "collisionRadius": 104.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 102,
+  "viewOffset": 0,
+  "builtInMods": [
+    "fourteenth",
+"ballistic_rangefinder"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_corsair_leftArm",
+    "A_GUN2": "armaa_corsair_rightArm",
+    "WS0001": "armaa_corsair_leftShoulder",
+    "WS0003": "armaa_corsair_rightShoulder",
+    "WS0005": "armaa_corsair_leftArm_cover",
+    "WS0006": "armaa_corsair_lights",
+    "WS0007": "armaa_corsair_rightArm_cover"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 0,
+      "locations": [28, 38]
+    },
+    {
+      "id": "A_GUN2",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": -0,
+      "locations": [28, -38]
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": 0,
+      "locations": [17, 31],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": -0,
+      "locations": [17, -31],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [-5, -29.5],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-5, 28],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 0,
+      "locations": [28, 38]
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 0,
+      "locations": [28, -38]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [28, 38],
+      "renderOrderMod": 900
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [28, -38],
+      "renderOrderMod": 900
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": -0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "LPAULDRON",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": 0,
+      "locations": [5, 30],
+      "renderOrderMod": 1100
+    },
+    {
+      "id": "RPAULDRON",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": -0,
+      "locations": [5, -30],
+      "renderOrderMod": 1100
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-33, 10],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-33, -10],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-31, 20],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-31, -20],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    24.5, 37.5,
+    31, 18,
+    31, 18,
+    23, 6,
+    23, -8,
+    31, -18,
+    5.5, -43,
+    -27, -29.5,
+    -31, -5,
+    -22, -3,
+    -22.5, 3.5,
+    -31, 6,
+    -26.5, 31.5,
+    -4, 44
+  ]
+}

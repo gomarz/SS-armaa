@@ -1,0 +1,18 @@
+{
+	"id":"armaa_pilebunker_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":100.0,
+	"width":5.0,
+	"hitGlowRadius":15,
+	"fadeTime":0.1,
+	"fringeColor":[255,150,55,255],
+	"coreColor":[255,230,200,255],
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0,
+	"bulletSprite":"graphics/armaa/weapons/armaa_spikeP.png",
+	"onHitEffect":"data.scripts.weapons.armaa_rcl_effect",
+}

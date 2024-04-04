@@ -16,7 +16,6 @@
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_pa_mid_leftArm",
-    "B_TORSO": "armaa_pa_mid_head",
     "C_ARMR": "armaa_pa_mid_rightArm"
   },
   "weaponSlots": [
@@ -25,9 +24,9 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 160,
-      "angle": 0,
-      "locations": [-1, 4],
+      "arc": 70,
+      "angle": 20,
+      "locations": [-2, 4],
       "renderOrderMod": 99999
     },
     {
@@ -44,9 +43,9 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 160,
-      "angle": -0,
-      "locations": [-1, -3],
+      "arc": 70,
+      "angle": -20,
+      "locations": [-2, -4],
       "renderOrderMod": 99999
     },
     {
@@ -54,8 +53,8 @@
       "size": "SMALL",
       "type": "SYSTEM",
       "mount": "TURRET",
-      "arc": 188,
-      "angle": 10,
+      "arc": 90,
+      "angle": 0,
       "locations": [-5, 6]
     }
   ],

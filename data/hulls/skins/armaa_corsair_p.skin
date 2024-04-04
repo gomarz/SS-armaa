@@ -1,0 +1,26 @@
+{
+    "baseHullId":"armaa_corsair_xiv",
+    "skinHullId":"armaa_corsair_p",
+    "hullName":"Corsair(P)",
+    "descriptionId":"armaa_corsair_xiv",
+    #"descriptionPrefix":"",
+    "spriteName":"graphics/armaa/ships/corsair/armaa_corsair_p.png",
+    "baseValueMult":0.70,
+    "fpMod":0.70, # added to base hull's fleet points
+    "restoreToBaseHull":false,
+    "fighterbays":1,
+    "addHints":[],
+    "tech":"Arma Armatura",
+    #"removeWeaponSlots":["WS 006"], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":["fourteenth"], 		# hullmod ids
+    "removeBuiltInWeapons":[],
+    "builtInWeapons":{
+		"WS0001": "armaa_corsair_leftShoulder_p",
+		"WS0003": "armaa_corsair_rightShoulder_p",
+                "WS0006": "armaa_corsair_lights_p",
+    		"WS0005": "armaa_legioMech_leftArm_cover",
+    		"WS0007": "armaa_legioMech_rightArm_cover",
+    },
+    "builtInMods":["armaa_crampedFiring"],
+}

@@ -1,0 +1,75 @@
+{
+  "hullName": "Kshatriya Binder",
+  "hullId": "armaa_kshatriya_binder",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
+  "style": "MIDLINE",
+  "height": 154,
+  "width": 64,
+  "center": [32, 15],
+  "collisionRadius": 140.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 144.5,
+  "viewOffset": 0,
+  "builtInMods": ["fluxshunt"
+  ],
+  "builtInWings": [
+    "armaa_bit_wing3"
+  ],
+  "weaponSlots": [
+    {
+      "id": "RETRO_2",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [55, -19]
+    },
+    {
+      "id": "RETRO_1",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [55, 11]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [40.5, 14]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [40, -15]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    14, -27,
+    42, -30,
+    65, -26,
+    132, -8,
+    125.5, -0,
+    137, 8,
+    65, 22.5,
+    35, 30,
+    9.5, 25,
+    -3.5, 13.5,
+    -15, 10.5,
+    -12, 4.5,
+    -6, -0,
+    -12, -11.5,
+    -4.5, -15.5
+  ]
+}

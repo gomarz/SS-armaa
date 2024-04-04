@@ -4,7 +4,7 @@
 	"missileType":"MISSILE",
 	"sprite":"graphics/missiles/missile_locust.png",
 	"size":[8,14],
-	"armingTime":0.02,	
+	"armingTime":0.01,	
 	"noEngineGlowTime":0, # time spent without the engine glow being rendered
 	"center":[3,6],
 	"flameoutTime":1, # total time from flameout to full fadeout

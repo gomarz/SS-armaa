@@ -7,6 +7,7 @@
 	"size":[7,10],	
 	"center":[3.5,5],
 	"collisionRadius":9,
+	"armingTime":0.05,	
 	"collisionClass":"MISSILE_NO_FF",
 	"explosionColor":[250,146,0,25],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":50, # purely visual
@@ -20,10 +21,10 @@
 					 "particleDuration":3.2,
 					 "particleCount":7,
 					 "particleColor":[250,75,0,150]},
-	"engineSpec":{"turnAcc":600,
-				  "turnRate":140,
-				  "acc":1000,
-				  "dec":400},
+	"engineSpec":{"turnAcc":1000,
+				  "turnRate":1000,
+				  "acc":10000,
+				  "dec":300},
 	"engineSlots":[{"id":"ES1",
 					"loc":[0, 0],
 				    #"style":"MISSILE_MIDLINE",

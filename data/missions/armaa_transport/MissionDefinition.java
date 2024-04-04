@@ -29,7 +29,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		
 		// Set up the player's fleet
 		api.addToFleet(FleetSide.PLAYER, "armaa_einhander_Strike", FleetMemberType.SHIP, "Mobius-3", true);
-		api.addToFleet(FleetSide.PLAYER, "armaa_einhander_Overclocked", FleetMemberType.SHIP, "Mobius-1", false).getCaptain().setPersonality("aggressive");
+		api.addToFleet(FleetSide.PLAYER, "armaa_valkenx_frig_assault", FleetMemberType.SHIP, "Mobius-1", false).getCaptain().setPersonality("aggressive");
 		api.addToFleet(FleetSide.PLAYER, "condor_Strike", FleetMemberType.SHIP,"HSS Virtue", false).getCaptain().setPersonality("steady");
 		api.addToFleet(FleetSide.PLAYER, "enforcer_XIV_Elite", FleetMemberType.SHIP,"HSS Tortoise", false).getCaptain().setPersonality("aggressive");
 		api.addToFleet(FleetSide.PLAYER, "buffalo2_Fighter_Support", FleetMemberType.SHIP,"ISS Gibbon", false).getCaptain().setPersonality("steady");		

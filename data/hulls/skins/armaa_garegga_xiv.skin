@@ -1,0 +1,64 @@
+{
+    "baseHullId":"armaa_garegga",
+    "skinHullId":"armaa_garegga_xivS",
+    "hullName":"Trihänder",
+    "descriptionId":"armaa_garegga_xiv",
+    "descriptionPrefix":"Shouldn't be obtainable.",
+    "spriteName":"graphics/armaa/ships/garegga/xiv/armaa_garegga_xiv_body.png",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "systemId":"armaa_silverSwordV",
+    "tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":["E_LARM"],
+    "weaponSlotChanges":{
+	   "WS 005":{
+		  "angle": 0,
+		 # "arc": 5,
+		  #"mount": "TURRET",
+		  #"size": "SMALL",
+		  "type": "SYNERGY"
+	   },
+	   "WS 006":{
+		 "angle": 0,
+		 #"arc": 5,
+		  #"mount": "TURRET",
+		  #"size": "SMALL",
+		  "type": "SYNERGY"
+	   },
+	   "WS 001":{
+		 # "angle": 0,
+		  #"arc": 5,
+		  #"mount": "TURRET",
+		  "size": "SMALL",
+		  "type": "ENERGY",
+	   },
+	   "E_LARM":{
+		 # "angle": 0,
+		  #"arc": 5,
+		  #"mount": "TURRET",
+                  "locations": [-0, 25],
+		  "size": "MEDIUM",
+		  "type": "BALLISTIC",
+	   },
+},
+    "builtInMods":["fourteenth"],
+    "builtInWeapons":{
+		"E_RARM": "armaa_barretta",
+		#"E_LARM": "armaa_monitor_xiv_leftArm",
+		"E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
+		"E_RSHOULDER": "armaa_garegga_xiv_rightPauldron",
+    },
+	"engineSlotChanges":{
+		"0":{
+			#"width": 0,
+          	#"length": 210,
+          	#"angle": 210,
+          	"style": "LOW_TECH",
+		},
+		"1":{"style":"LOW_TECH"},
+		"2":{"style":"LOW_TECH"},
+	},  
+}

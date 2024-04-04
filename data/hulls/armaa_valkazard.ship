@@ -20,7 +20,6 @@
     "armaa_strikeCraftFrig"
   ],
   "builtInWeapons": {
-    "B_TORSO_VERNIER": "armaa_valkenx_torso_vernier",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
     "D_PAULDRONR": "armaa_valkazard_rightshoulder",
@@ -56,15 +55,6 @@
       "angle": 0,
       "locations": [-8, -0],
       "renderOrderMod": -1000
-    },
-    {
-      "id": "B_TORSO_VERNIER",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 360,
-      "angle": 0,
-      "locations": [-4, -0]
     },
     {
       "id": "C_ARML",

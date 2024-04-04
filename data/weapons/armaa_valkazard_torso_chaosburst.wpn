@@ -30,14 +30,11 @@
     0
   ],
   "hardpointOffsets": [
-    -5,
-    -5,
-    -5,
-    5
+    0,
+    0,
   ],
   "hardpointAngleOffsets": [
-    -45,
-    45
+    0
   ],
   "beamFireOnlyOnFullCharge": true,
   

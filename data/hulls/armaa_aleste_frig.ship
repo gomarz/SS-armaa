@@ -12,31 +12,36 @@
   "shieldRadius": 54.5,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract",
+    "cataphract2",
+    "autorepair",
     "strikeCraft",
-    "armaa_strikeCraftFrig",
-    "armaa_weaponSwap",
-    "armaa_melee",
-    "reduced_explosion"
+    "armaa_alesteMeleeSwap",
+    "armaa_alesteSkinSwap",
   ],
   "builtInWeapons": {
-    "B_TORSO": "armaa_aleste_torso_ace",
-    "C_ARML2": "armaa_aleste_blade_LeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_aleste_leftPauldron",
-    "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead",
-    "F_LEGS": "armaa_ht_legs"
+    "F_LEGS": "armaa_ht_legs",
+    "HARPOON": "armaa_aleste_harpoon"
   },
   "weaponSlots": [
     {
       "id": "A_GUN",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-      "locations": [4, -4]
+      "locations": [0, -6]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -10,
+      "locations": [0, -6],
+      "renderOrderMod": -900
     },
     {
       "id": "B_TORSO",
@@ -48,23 +53,33 @@
       "locations": [0, 0]
     },
     {
+      "id": "HARPOON",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "renderOrderMod": -900,
+      "locations": [0, 0]
+    },
+    {
       "id": "WS001",
       "size": "SMALL",
-      "type": "UNIVERSAL",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [-14, -12],
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -26.5,
+      "locations": [-15, -11],
       "renderOrderMod": 99999
     },
     {
       "id": "WS002",
       "size": "SMALL",
-      "type": "UNIVERSAL",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [-14, 12],
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 26.5,
+      "locations": [-15, 11],
       "renderOrderMod": 99999
     },
     {
@@ -92,7 +107,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -10,
-      "locations": [4, -4]
+      "locations": [0, -6]
     },
     {
       "id": "D_PAULDRONL",
@@ -101,7 +116,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 10,
-      "locations": [0, 4]
+      "locations": [0, 6]
     },
     {
       "id": "D_PAULDRONR",
@@ -110,7 +125,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -10,
-      "locations": [0, -4]
+      "locations": [0, -6]
     },
     {
       "id": "E_HEAD",
@@ -144,7 +159,7 @@
     {
       "id": "H_GLOW",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,

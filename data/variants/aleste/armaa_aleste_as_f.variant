@@ -4,28 +4,25 @@
   "displayName": "Anti-Ship",
   "goalVariant": true,
   "fluxCapacitors": 5,
-  "fluxVents": 10,
+  "fluxVents": 9,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "armaa_selector_stake",
-    "armaa_selector_lrifle",
-    "heavyarmor",
-    "targetingunit"
+    "heavyarmor"
   ],
   "weaponGroups": [
 	{
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "armaa_aleste_rightArm",
+        "TRUE_GUN": "chaingun",
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_alesteLeftArm",
+        "C_ARML": "armaa_aleste_blade_LeftArm",
       }
     },
     {
@@ -44,8 +41,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS001": "atropos",
-        "WS002": "atropos"
+        "WS001": "sabot",
+        "WS002": "sabot"
       }
     }
   ],

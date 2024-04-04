@@ -1,0 +1,48 @@
+{
+  "variantId": "armaa_zanac_assault_gry",
+  "hullId": "armaa_zanac_grey",
+  "displayName": "Assault",
+  "goalVariant": true,
+  "fluxCapacitors": 12,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "magazines",
+    "stabilizedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "autopulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN2": "heavyneedler"
+      }
+	},
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "railgun",
+        "WS0005": "railgun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "armaa_zanac_head",
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

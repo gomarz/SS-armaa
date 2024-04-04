@@ -13,10 +13,11 @@
   "viewOffset": 0,
   "builtInMods": [
     "fluxshunt",
-    "armaa_weaponSwap_monitor",
-    "armaa_wingCommander"
+    "escort_package"
   ],
   "builtInWeapons": {
+    "A_GUN": "armaa_monitor_leftArm",
+    "A_GUN2": "armaa_monitor_rightArm",
     "E_DECO": "armaa_monitor_deco",
     "E_DECO_R": "armaa_monitor_deco_right",
     "E_GLOW": "armaa_monitor_glow",
@@ -29,7 +30,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 200,
       "angle": 0,
       "locations": [-4, -1]
     },
@@ -65,11 +66,11 @@
     {
       "id": "E_LARM",
       "size": "MEDIUM",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 70,
       "angle": 30,
-      "locations": [-6, 47],
+      "locations": [-4, 47],
       "renderOrderMod": -99998
     },
     {
@@ -82,13 +83,23 @@
       "locations": [-11, -40]
     },
     {
-      "id": "E_RARM",
+      "id": "A_GUN2",
       "size": "MEDIUM",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 70,
+      "arc": 90,
       "angle": -30,
-      "locations": [-6, -47],
+      "locations": [0, -50],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "A_GUN",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30,
+      "locations": [0, 50],
       "renderOrderMod": -99998
     },
     {
@@ -114,7 +125,7 @@
       "size": "SMALL",
       "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 65,
+      "arc": 200,
       "angle": -40,
       "locations": [-3, -22],
       "renderOrderMod": 1000
@@ -124,10 +135,37 @@
       "size": "SMALL",
       "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 65,
+      "arc": 200,
       "angle": 40,
       "locations": [-3, 20],
       "renderOrderMod": 1000
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30,
+      "locations": [0, 50]
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -30,
+      "locations": [0, -50]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": 30,
+      "locations": [-4, 47]
     }
   ],
   "engineSlots": [

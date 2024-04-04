@@ -1,0 +1,176 @@
+{
+  "hullName": "Hazard",
+  "hullId": "armaa_hazard",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/hazard/armaa_hazardBody.png",
+  "style": "LOW_TECH",
+  "height": 36,
+  "width": 34,
+  "center": [17, 16],
+  "collisionRadius": 20,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 20,
+  "viewOffset": 0,
+  "builtInMods": [
+    "ill_advised",
+    "armaa_so_ftr"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_hazard_rightArm",
+    "A_GUN2": "armaa_hazard_leftArm",
+    "D_PAULDRONL": "armaa_hazard_leftPauldron",
+    "D_PAULDRONR": "armaa_hazard_rightPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 15.5,
+      "locations": [3, 1]
+    },
+    {
+      "id": "D_PAULDRONR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -15.5,
+      "locations": [3, -1]
+    },
+    {
+      "id": "A_GUN2",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 10,
+      "locations": [3, 9]
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 10,
+      "locations": [3, 9]
+    },
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -10,
+      "locations": [3, -9]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [10, 16],
+      "renderOrderMod": -300
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -10,
+      "locations": [3, -9]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 78.5,
+      "locations": [-3.5, 6.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -78.5,
+      "locations": [-3.5, -6.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-15, -0],
+      "length": 18,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    },
+    {
+      "location": [-13, 7],
+      "length": 18,
+      "width": 8,
+      "angle": 157,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    },
+    {
+      "location": [-15, -0],
+      "length": 16.5,
+      "width": 5,
+      "angle": 141.5,
+      "contrailSize": 5,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    },
+    {
+      "location": [-15, 0],
+      "length": 16.5,
+      "width": 5,
+      "angle": -141.5,
+      "contrailSize": 5,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-13, -7],
+      "length": 16.599014,
+      "width": 6.549121,
+      "angle": -157,
+      "contrailSize": 6.549121,
+      "style": "CUSTOM",
+      "styleId": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    15, -2.5,
+    11.5, -6,
+    6, -13.5,
+    -2, -12.5,
+    -10.5, -11,
+    -12.5, 2.5,
+    -10.5, 11,
+    -2.5, 14.5,
+    2.5, 15,
+    6.5, 13,
+    12, 7.5
+  ]
+}

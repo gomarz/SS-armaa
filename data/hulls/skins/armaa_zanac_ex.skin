@@ -1,0 +1,53 @@
+{
+    "baseHullId":"armaa_zanac",
+    "skinHullId":"armaa_zanac_ex",
+    "hullName":"Zanac EX",
+    "descriptionId":"armaa_zanac",
+    #"descriptionPrefix":"A modified version of the Zanac that prioritizes offensive power over mobility.",
+    "spriteName":"graphics/armaa/ships/zanac/zanac_lowerBody.png",
+    "baseValueMult":1.2,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    #"tags":["rare_bp"],
+    "systemId":"highenergyfocus",
+    "tech":"armaarmatura",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":["RETRO_1","RETRO_2","VERNIER_1","VERNIER_2"],
+    "removeBuiltInMods":["auxiliarythrusters"],
+    "builtInMods":["targetingunit"],
+    "weaponSlotChanges":{
+	   "RETRO_1":{
+		  "angle": 0,
+		 # "arc": 5,
+		  "mount": "TURRET",
+		  "size": "SMALL",
+		  "type": "HYBRID"
+	   },
+	   "RETRO_2":{
+		 "angle": 0,
+		 #"arc": 5,
+		  "mount": "TURRET",
+		  "size": "SMALL",
+		  "type": "HYBRID"
+	   },
+	   "A_GUN2":{
+		 #"angle": 0,
+		 #"arc": 5,
+		  "mount": "TURRET",
+		  "size": "LARGE",
+		  "type": "BUILT_IN"
+	   },
+	   "TRUE_GUN2":{
+		 #"angle": 0,
+		 #"arc": 5,
+		  "mount": "TURRET",
+		  "size": "LARGE",
+		  "type": "DECORATIVE"
+	   },
+},
+    "builtInWeapons":{
+		"A_GUN2": "armaa_zanac_rightArm",
+		"WS0006": "armaa_zanac_head_ex",
+    },
+}

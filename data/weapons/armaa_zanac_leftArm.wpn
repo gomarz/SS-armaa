@@ -1,0 +1,62 @@
+{
+  "id": "armaa_zanac_leftArm",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_zanacDummyWeapon",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/zanac/zanac_leftArm.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    255,
+    0,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    71,
+    25,
+    71,
+    17,
+    71,
+    21
+  ],
+  "turretAngleOffsets": [
+    -1,
+    -1,
+    -1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    55,
+    155,
+    255,
+    255
+  ],
+  "coreColor": [
+    100,
+    200,
+    255,
+    255
+  ],
+  "width": 40,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 300,
+  "pixelsPerTexel": 3,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "armaa_saber_loop"
+}

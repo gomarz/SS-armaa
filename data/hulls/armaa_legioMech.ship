@@ -1,0 +1,314 @@
+{
+  "hullName": "Hel Corsair",
+  "hullId": "armaa_legioMech",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/legioMech/armaa_legioMech_body.png",
+  "style": "armaa_DAEMON",
+  "height": 112,
+  "width": 136,
+  "center": [68, 66.5],
+  "collisionRadius": 102,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 102,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "armaa_himac"
+  ],
+  "builtInWings": [
+    "armaa_bit_spriggan_h"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_legioMech_leftArm",
+    "A_GUN2": "armaa_legioMech_rightArm",
+    "LCOVER": "armaa_legioMech_leftArm_cover",
+    "RCOVER": "armaa_legioMech_rightArm_cover",
+    "WS0001": "armaa_legioMech_lights",
+    "WS0006": "armaa_legioMech_head"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": 10,
+      "locations": [31.5, 45],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -10,
+      "locations": [31.5, -45],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [-7.5, -2.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -10,
+      "locations": [7.5, -40],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 10,
+      "locations": [7.5, 40],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "LCOVER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": 10,
+      "locations": [31.5, 45],
+      "renderOrderMod": 900
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [-5.5, 1]
+    },
+    {
+      "id": "VERNIER_1",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 180,
+      "locations": [-38, 18.5]
+    },
+    {
+      "id": "VERNIER_2",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -180,
+      "locations": [-38, -18.5]
+    },
+    {
+      "id": "RETRO_2",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -180,
+      "locations": [-26.5, -23]
+    },
+    {
+      "id": "RETRO_1",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 180,
+      "locations": [-26.5, 23]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": 10,
+      "locations": [31.5, 45]
+    },
+    {
+      "id": "RCOVER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -10,
+      "locations": [31.5, -45],
+      "renderOrderMod": 999
+    },
+    {
+      "id": "A_GUN2",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -10,
+      "locations": [31.5, -45],
+      "renderOrderMod": -9999
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -0,
+      "locations": [-5.5, 1],
+      "renderOrderMod": 999
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-50, 24],
+      "length": 68.15416,
+      "width": 12.650782,
+      "angle": 180,
+      "contrailSize": 12.650782,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, -24],
+      "length": 68,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, 24],
+      "length": 68,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, -24],
+      "length": 68,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, 24],
+      "length": 22.5,
+      "width": 8,
+      "angle": 169.5,
+      "contrailSize": 8,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, 24],
+      "length": 22.5,
+      "width": 8,
+      "angle": -169.5,
+      "contrailSize": 8,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, 24],
+      "length": 37.81089,
+      "width": 9.019238,
+      "angle": 155,
+      "contrailSize": 9.019238,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, -24],
+      "length": 37.001061,
+      "width": 9.627361,
+      "angle": -155,
+      "contrailSize": 9.627361,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, 23.5],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": -155,
+      "contrailSize": 8.992697,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50, -24],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": 155,
+      "contrailSize": 8.992697,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50.5, 14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": -178.5,
+      "contrailSize": 8.992697,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-50.5, -14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": 178.5,
+      "contrailSize": 8.992697,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-51, 14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": -168.5,
+      "contrailSize": 8.992697,
+      "style": "armaa_legioMech_engine"
+    },
+    {
+      "location": [-51, -14],
+      "length": 37.205952,
+      "width": 8.992697,
+      "angle": 168.5,
+      "contrailSize": 8.992697,
+      "style": "armaa_legioMech_engine"
+    }
+  ],
+  "bounds": [
+    -35.5, -2.5,
+    -48.5, -8,
+    -48.5, -29.5,
+    -18, -34.5,
+    -24, -42.5,
+    -17, -51.5,
+    1, -45,
+    4, -38,
+    7.5, -28,
+    11, -26,
+    17, -21.5,
+    30, -7.5,
+    30, 7.5,
+    17, 21.5,
+    11, 26,
+    7.5, 28,
+    4, 38,
+    1, 45,
+    -17, 51.5,
+    -24, 42.5,
+    -18, 34.5,
+    -48.5, 29.5,
+    -48.5, 8,
+    -35.5, 2.5
+  ]
+}

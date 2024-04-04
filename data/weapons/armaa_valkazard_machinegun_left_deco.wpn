@@ -1,0 +1,51 @@
+{
+  "id": "armaa_valkazard_machinegun_left_deco",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_mag47_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_valkazard_mg_left_00.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_mg_left_00.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkazard_mg_left_00.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "visualRecoil": 2,
+  "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    32,
+    9,
+    32,
+    15
+  ],
+  "turretAngleOffsets": [
+    -1,
+    -1
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "LINKED",
+"separateRecoilForLinkedBarrels":"TRUE",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 15,
+    "particleSizeMin": 12,
+    "particleSizeRange": 9,
+    "particleDuration": 0.04,
+    "particleCount": 13,
+    "particleColor": [
+      100,
+      255,
+      150,
+      250
+    ]
+  },
+  "fireSoundTwo": "heavy_machinegun_fire"
+}

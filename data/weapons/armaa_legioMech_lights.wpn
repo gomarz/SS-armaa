@@ -1,0 +1,57 @@
+{
+  "id": "armaa_legioMech_lights",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_lightTracker",  
+#"everyFrameEffect":"data.scripts.weapons.armaa_ceylonLights",
+  "collisionClass": "RAY_FIGHTER",
+  "renderHints":["RENDER_ADDITIVE"],	
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/legioMech/armaa_legioMech_lights.png",
+  "hardpointSprite": "graphics/armaa/ships/legioMech/armaa_legioMech_lights.png",
+  "glowColor": [
+    255,
+    255,
+    50,
+    100
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    15,
+    -1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    255,
+    255,
+    100,
+    200
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "darkCore": false,
+  "convergeOnPoint": false,
+  "width": 12,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 5,
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "armaa_pantherHead",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "displayArcRadius": 250,
+  "everyFrameEffect": "data.scripts.weapons.armaa_headTrackerPanther",
+  "turretSprite": "graphics/armaa/ships/panther/armaa_pantherHead.png",
+  "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    0.5,
+    3.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "coreColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "darkCore": true,
+  #"convergeOnPoint": true,
+  "width": 2,
+  "textureType": SMOOTH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
+}

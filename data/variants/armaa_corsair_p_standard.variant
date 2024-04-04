@@ -1,0 +1,33 @@
+{
+  "variantId": "armaa_corsair_p_standard",
+  "hullId": "armaa_corsair_p",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 5,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "multineedler",
+        "TRUE_GUN2": "hellbore"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0002": "pdburst",
+        "WS0004": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

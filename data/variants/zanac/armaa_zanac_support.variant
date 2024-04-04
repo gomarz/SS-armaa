@@ -1,0 +1,47 @@
+{
+  "variantId": "armaa_zanac_support",
+  "hullId": "armaa_zanac",
+  "displayName": "Close Support",
+  "goalVariant": true,
+  "fluxCapacitors": 19,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "hil"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0004": "harpoon",
+        "WS0005": "harpoon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN2": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "armaa_zanac_head",
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

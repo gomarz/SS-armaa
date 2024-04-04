@@ -1,0 +1,16 @@
+{
+    "displayName": "UWS",
+    "fluxCapacitors": 0,
+    "fluxVents": 5,
+    "hullId": "armaa_bit_kshatriya",
+    "goalVariant": true,
+    "hullMods": [],
+    "permaMods": [],
+    "variantId": "armaa_bit_std3",
+    "weaponGroups": [{
+        "autofire": true,
+        "mode": "LINKED",
+        "weapons": {"WS0001": "armaa_bit_kshatriya_beam"}
+
+    }]
+}

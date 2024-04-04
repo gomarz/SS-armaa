@@ -5,13 +5,12 @@
     },
     "hullFrequency":{
         "hulls":{
-            "armaa_garegga_tt":2,
+            "armaa_garegga_tt":0.3,
         },
     },
     "knownShips":{
         "hulls":[
             "armaa_garegga_tt",
-	    "armaa_kouto_frig",
 	    "armaa_aleste_frig",
         ],
     },
@@ -20,7 +19,6 @@
 		#"tags":["armaa_cataphract_bp"],
 		"fighters":
 		[
-			"armaa_kouto_wing",
 		],
 	},
 },

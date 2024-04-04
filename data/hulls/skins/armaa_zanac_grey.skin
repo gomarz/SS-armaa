@@ -1,0 +1,33 @@
+{
+    "baseHullId":"armaa_zanac",
+    "skinHullId":"armaa_zanac_grey",
+    "hullName":"Zanac",
+    "descriptionId":"armaa_zanac",
+    "descriptionPrefix":"General production version of the Zanac employed by the MRC.",
+    "spriteName":"graphics/armaa/ships/zanac/grey/zanac_lowerBody.png",
+    "baseValueMult":1.0,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    #"tags":["rare_bp"],
+    "systemId":"maneuveringjets",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],
+    "removeBuiltInMods":["unstable_injector"],
+    "builtInMods":["auxiliarythrusters"], 
+    "weaponSlotChanges":{},
+    "builtInWeapons":{
+    "A_GUN": "armaa_zanac_leftArm_grey",
+    "A_GUN2": "armaa_zanac_rightArm_grey_deco",
+    "LSHOULDER": "armaa_zanac_leftPauldron_grey",
+    "RETRO_1": "armaa_retrothruster",
+    "RETRO_2": "armaa_retrothruster",
+    "VERNIER_1": "armaa_emthrust_s",
+    "VERNIER_2": "armaa_emthrust_s",
+    "WS0003": "armaa_dd_legs",
+    "WS0006": "armaa_zanac_head_grey",
+    "LIGHTS": "armaa_zanac_lights",
+    "WS0007": "armaa_zanac_rightPauldron_grey"
+    },
+
+}

@@ -1,7 +1,7 @@
 {
 	"id":"armaa_smartbazooka_shot_kinetic",
 	"specClass":"missile",
-	"missileType":"PHASE_CHARGE",
+	"missileType":"PHASE_MINE",
 	"sprite":"graphics/armaa/weapons/armaa_smartrocket_shot.png",
 	"glowSprite":"graphics/armaa/weapons/armaa_smartrocket_shot_glow.png",
 "onHitEffect":"com.fs.starfarer.api.impl.combat.SabotOnHitEffect",
@@ -15,7 +15,7 @@
 	"fadeTime":0.1, # fadeout duration
 	"noEngineGlowTime":0.15, # time spent without the engine glow being rendered
 	"explosionColor":[0,100,255,100],  # purely visual, will get a white additively blended core on top of this color
-	"explosionRadius":100, # purely visual
+	"explosionRadius":25, # purely visual
 	"engineSpec":{"turnAcc":100,
 				  "turnRate":60,
 				  "acc":0,
@@ -46,24 +46,24 @@
 					"effectChance":0.3,
 					"range":70,
 					"slowToMaxSpeed":true,
-					"delay":0.2,
+					"delay":0.5,
 					"pingSound":"mine_ping",
-					"pingColor":[255,255,255,155],
+					"pingColor":[50,100,255,155],
 					"pingRadius":170,
 					"pingDuration":0.15,
 					"windupSound":"mine_windup_light",
 					"windupDelay":0.4,
 					"explosionSpec":{"duration":0.1f,
-									 "radius":80,
-									 "coreRadius":50, # full damage within core radius
+									 "radius":70,
+									 "coreRadius":40, # full damage within core radius
 									 "collisionClass":MISSILE_FF,
 									 "collisionClassByFighter":MISSILE_FF,
-									 "particleSizeMin":5.0,
-									 "particleSizeRange":3.0,
+									 "particleSizeMin":1.0,
+									 "particleSizeRange":10.0,
 									 "particleDuration":1,
-									 "particleCount":25,
-									 "particleColor":[200,200,255,255],
-									 "explosionColor":[200,100,255,155],
+									 "particleCount":10,
+									 "particleColor":[50,100,255,255],
+									 "explosionColor":[50,100,255,155],
 									 "useDetailedExplosion":true,
 									 "sound":"mine_explosion"},
 					}	

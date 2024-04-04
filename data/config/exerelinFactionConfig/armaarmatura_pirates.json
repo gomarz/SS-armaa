@@ -1,11 +1,39 @@
 {
-    "playableFaction":false,
-	"startingFaction":true,
+    "playableFaction":true,
+    "startingFaction":true,
     "corvusCompatible":true,
-    "freeStart":true,
-	"spawnAsFactionId":"player",
+    #"freeStart":true,
+    #"spawnAsFactionId":"player",
     "noRandomizeRelations":true,
     "difficultyString":"hard",
+    "pirateFaction":false,
+    "dispositions":{
+        "tritachyon": -50,
+        "sindrian_diktat": -50,
+	"persean": 10,
+        "hegemony": -50,
+    },
+    "maxRelationships":{ "tritachyon":-0.51, "remnant":-0.51, "sindrian_diktat": -0.51 },
+    "startRelationships":{ "luddic_path":0.25, "tritachyon":-0.8, "pirates":0.4, "cabal":-0.8, "sindrian_diktat": -0.51, "hegemony": -0.51, "luddic_church": 0.1, "persean_league":0.1 },
+    "alignments":{
+        "technocratic":-0.5,
+        "militarist":1,
+        "diplomatic":-0.25,
+        "ideological":1,
+        "corporate":-1,
+    },
+    "diplomacyTraits":["neutralist", "anarchist", "lowprofile","foreverwar"],
+    "freemarket":true,
+    "morality":"neutral",
+    "diplomacyNegativeChance":{ "tritachyon":2.0, "sindrian_diktat":2.0 },
+    "diplomacyPositiveChance":{ "legio_infernalis":2, "luddic_church":1.1,"luddic_path":1.5,"pirates":1.5 },
+    "vengeanceFleetNames":["Liberators", "HK Flotilla", "Armada"],
+    "vengeanceFleetNamesSingle":["an Liberation fleet", "a HK Flotilla", "a Armada"],
+     # chance of the faction being picked to send a colony expedition. Default 0 (disabled)
+    "colonyExpeditionChance":0,	# baseline expansion behaviour
+    "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",   
+    "specialForcesMaxFleets":1,
+
 	# transfer to this faction at start (after new game time pass)
     "ngcTooltip":"This is the story of a pilot who wanted to become ...",
 	

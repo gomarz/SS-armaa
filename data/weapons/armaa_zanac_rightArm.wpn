@@ -1,0 +1,66 @@
+{
+  "id": "armaa_zanac_rightArm",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "darkCore": true,
+  "beamEffect": "data.scripts.weapons.armaa_magnaBeam",
+  "everyFrameEffect": "data.scripts.weapons.armaa_magnaBurstEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/zanac/ex/zanac_rightArm_ex.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    255,
+    0,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    74,
+    -21
+  ],
+  "turretAngleOffsets": [
+    1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    100,
+    0,
+    100,
+    255
+  ],
+  "coreColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "width": 40,
+ # "textureType": [
+ #   "graphics/armaa/fx/armaa_parax_beam_fringe.png",
+  #  "graphics/armaa/fx/armaa_ppa_beam_core.png"
+  #],
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/armaa/fx/armaa_beamcore_interrupted.png"
+  ],
+  "textureScrollSpeed": 400,
+  "pixelsPerTexel": 3,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "fireSoundOne": "beambangMeso",
+  "fireSoundTwo": "beamfireMeso",
+}

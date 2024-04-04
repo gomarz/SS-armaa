@@ -1,0 +1,45 @@
+{
+	"id":"armaa_rampagedrive",
+	"type":"ENGINE_MOD",
+	#"aiType":"WEAPON_BOOST",
+        "aiType":"CUSTOM",
+        "aiScript":"data.scripts.shipsystems.ai.armaa_ironrampage",
+
+	"statsScript":"data.scripts.shipsystems.armaa_rampagedrive",
+	
+	"engineGlowLengthMult":2.5,
+	"engineGlowWidthMult":1.7,
+	"engineGlowGlowMult":1.35,
+	"engineGlowColor":[255,50,0,255],	
+	"jitterUnderColor":[255,55,0,55],
+	"jitterUnderCopies":2,
+	"jitterUnderMinRange":0,
+	"jitterUnderRange":20,
+	"jitterUnderRangeRadiusFraction":0,
+	
+	"jitterColor":[255,55,0,155],
+	"jitterCopies":5,
+	"jitterMinRange":0,
+	"jitterRange":10,
+	"jitterRangeRadiusFraction":0,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+	
+	"useSound":"system_plasma_burn",
+	"loopSound":"system_plasma_burn_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":200,
+		"burstMovementPotential":1000,
+		"averageSpeedIncrease":200,
+		"threatRange":700,
+		"threatAmount":8,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}

@@ -1,0 +1,30 @@
+{
+  "variantId": "armaa_corsair_isen_standard",
+  "hullId": "armaa_corsair_isen",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "mjolnir",
+        "TRUE_GUN2": "mjolnir"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "LMODULE": "armaa_corsair_isen_module_l_standard"
+    },
+    {
+      "RMODULE": "armaa_corsair_isen_module_r_standard"
+    }
+  ],
+  "wings": []
+}

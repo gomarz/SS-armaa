@@ -1,0 +1,53 @@
+{
+  "id": "armaa_kshatriya_head",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "beamEffect":"data.scripts.weapons.armaa_ionBeamEffect",
+  "collisionClass": "RAY_FIGHTER",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/kshatriya/armaa_kshatriya_head.png",
+  "hardpointSprite": "graphics/armaa/ships/kshatriya/armaa_kshatriya_head.png",
+  "glowColor": [
+    255,
+    0,
+    200,
+    100
+  ],
+  "hitGlowRadius": 50,
+  "turretOffsets": [
+    17,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    255,
+    0,
+    200,
+    200
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 25,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 5,
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

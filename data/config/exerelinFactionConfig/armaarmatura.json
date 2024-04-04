@@ -1,9 +1,9 @@
 {
     "playableFaction":false,
-	"startingFaction":true,
+    "startingFaction":true,
     "corvusCompatible":true,
     "freeStart":true,
-	"spawnAsFactionId":"player",
+    "spawnAsFactionId":"player",
     "noRandomizeRelations":true,
 	# transfer to this faction at start (after new game time pass)
     "ngcTooltip":"Start with some ArmaA hardware and loose ties to the corp",
@@ -24,21 +24,24 @@
 	"startShipsCarrierSmall":
 	[
 		["armaa_aleste_as_f", "armaa_valkyrie_standard"],
-		["armaa_valkenx_frig_standard","gemini_Standard"],
-		["armaa_leynos_standard","condor_Support"],
-		["armaa_einhander_plus_subprime","condor_Support"],
-		["armaa_record_frig_standard","armaa_condor_Support"],
+		["armaa_valkenx_frig_assault","gemini_Standard"],
+		["armaa_leynos_standard","armaa_condor_Support"],
+		["armaa_record_frig_standard","condor_Attack"],
 	],
 
-    "startShipsCarrierLarge":[["mora_Assault", "armaa_xyphos_standard", "armaa_broadsword_standard","armaa_hazard_standard","armaa_warthog_standard"]],
-	
 	"startShipsCombatSmall":
 	[
-		["armaa_monitor_standard", "armaa_garegga_standard","wayfarer_Standard"],
-		["armaa_garegga_standard","armaa_garegga_tt_assault","buffalo_Standard"]
+		["armaa_monitor_standard", "armaa_hazard_standard", "armaa_valkenx_frig_assault"],
+		["armaa_zanac_assault_gry", "armaa_hazard_standard", "armaa_leynos_standard"],
 	],
-	"startShipsSuper":[["armaa_altagrave_c_Standard","wayfarer_Standard"],["armaa_altagrave_standard","wayfarer_Standard"],
-["armaa_einhander_Strike", "armaa_condor_Support"],],
+	
+    "startShipsTradeSmall":[["gemini_standard", "armaa_record_frig_standard"]],
+    "startShipsExplorerLarge":[["venture_Balanced", "armaa_kouto_frig_standard"]],
+	"startShipsSuper":
+	[
+		["armaa_altagrave_c_Standard","wayfarer_Standard"],
+		["armaa_einhander_Strike", "gemini_Standard"],
+	],
 	"startSpecialItems":[
 		[["armaa_cataphract_package",""]],
 		[["armaa_advcataphract_package",""]],

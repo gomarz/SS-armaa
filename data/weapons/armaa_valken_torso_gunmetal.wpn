@@ -4,7 +4,7 @@
   "projectileSpecId": "lightag_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenBody_gunmetal.png",
+  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenBody.png",
   "turretGunSprite": "graphics/armaa/ships/valken/armaa_valkenBodyBarrel.png",
   "hardpointSprite": "",
   "visualRecoil": 3,

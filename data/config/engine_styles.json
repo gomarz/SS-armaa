@@ -21,6 +21,22 @@
 		"engineGlowGlowMult":1.2,
 		"type":"GLOW" # GLOW or SMOKE
 	},
+	"armaa_legioMech_engine":{
+		"mode":"QUAD_STRIP",
+		"engineColor":[255,60,40,255],
+		"contrailDuration":2,
+		"contrailWidthMult":1,
+		"contrailWidthAddedFractionAtEnd":-0.5,  # can be negative. makes trail spread out/narrow at the end
+		"contrailMinSeg":5, # min segment length, in pixels
+		"contrailMaxSpeedMult":1,
+		"contrailAngularVelocityMult":0,
+		"contrailColor":[255,0,0,70],
+		"contrailCampaignColor":[255,0,0,80],
+		"glowAlternateColor":[255,90,20,235],
+		"glowSprite":"graphics/fx/engineglow32b.png",
+		"glowOutline":"graphics/fx/engineflame32b.png",
+		"type":"SMOKE"
+	},
 "DRONE_ENGINE":{        
         "mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
         "contrailDuration":1.5,

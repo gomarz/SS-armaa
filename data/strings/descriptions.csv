@@ -1,366 +1,416 @@
-id,type,text1,text2,text3,text4,notes
-armaa_einhander,SHIP,"Exceptionally armed strikecraft with an equally steep logistical profile. While fragile and highly susceptible to point defenses, it's a monstrous weapon in the hands of skilled pilots.
+id,type,text1,text2,text3,text4,notes,Column 08
+armaa_einhander,SHIP,"The Einhänder is an exceptionally armed strikecraft with a high logistical profile that harnesses the power of phase technology. In the hands of skilled pilots, it becomes a monstrous weapon.
 
-A scrapped concept resurrected via the generous funding of an enigmatic venture capitalist. The original mission profile it was designed for has been lost to time, but records still expound that development proved to be an exhaustive and expensive task - decades of corporate espionage, fatal phase-related incidents, and technological hurdles were endured before the first functional unit rolled off the production lines. 
+Originally a scrapped concept, the Einhänder was brought back to life through the generous funding of an enigmatic venture capitalist. Although the original mission profile is now lost, historical records reveal the exhaustive and costly development process. Decades of corporate espionage, fatal phase-related incidents, and technological hurdles were overcome before the first functional unit was successfully produced.
 
-In its final iteration, the Einhänder came with capabilities matching that of the most advanced strikecraft designs known to exist, thanks in no small part to a irregular phase coil that partially submerges the unit in p-space. This allows it to retain the capability to interact with objects in normal space, granting it combat potential deceptively greater than one would expect.
+In its final iteration, the Einhänder emerged with capabilities on par with the most advanced strikecraft designs known to exist. Notably, it stands as one of the smallest phase-capable vessels in existence.
 
-Unfortunately, the massive costs and logistical requirements for a single strikecraft, no matter how effective, could not be justified to the supervisory board, and LPC production allegedly never commenced. Years later, a number of these were delivered to the ArmaA R&D division located in the Persean Sector prior to the Collapse for undisclosed purposes.
+Unfortunately, despite its impressive capabilities, the massive costs and logistical requirements of the Einhänder dissuaded the supervisory board from authorizing full production. Consequently, it is believed that the Einhänder never entered widespread manufacturing. However, a select number of units were delivered to ArmaA's R&D division in the Persean Sector prior to the Collapse, their purpose remaining undisclosed. The distinct divergence of this design from other Cataphracts has sparked numerous inquiries, but ArmaA has remained reticent, providing little clarity.
 
-The units that survived the ensuing crises that engulfed the sector are by and large a rarity - some remain in storage, according to official ArmaA Corporation statements, while others became heirlooms passed throughout the generations.",,,
-
+Today, surviving Einhänders are exceedingly rare. Some are said to be held in storage, according to official ArmaA Corporation statements, while others have become cherished heirlooms passed down through generations, their enigmatic history continuing to captivate minds.",,,,,
+,,,,,,,
 armaa_einhander_plus,SHIP,"Exceptionally armed strikecraft with an equally steep logistical profile. A monstrous weapon in the hands of skilled pilots.
 
-These Cataphracts - commonly referred to as Einhänder (P)lus - are generally salvaged units repaired and refurbished with other Cataphract components that are more easily sourced. The original torso and oversized powercore it houses are from Einhänder units, and thus they possess a energy signature nearly identical to it - hence their name (Notably, designation of 'Einhänder' is no longer truly accurate, as its integrated main weapon has been replaced with another manipulator-type arm). Despite this, however, the conversion is of a high quality.
+The Einhänder Plus is a mecha created by refurbishing and repairing the original Einhänder using Cataphract parts that are easier to find. Although not explicitly superior to the original, it has the advantage of being able to field a wider variety of weapons and addons due to the free space granted from the removal of the originals experimental weaponry.
 
-Contrary to expectations, the Plus is not explicitly superior to the original - it's speed, durability, and raw power being worse - but the free space granted from the removal of the originals experimental weaponry allows it to field a variety of weapons and addons far larger in scope than the base model. This advantage means that the possibility remains for this variant to match and even surpass the performance of the original, if properly equipped. 
+While the Plus has a slower speed, reduced durability, and less raw power compared to the Einhänder, its potential to match and even surpass the performance of the original can be realized with proper equipment. The Einhänder Plus has become a favorite among pilots who value versatility and customization in their mecha, despite its rarity due to the difficulty in acquiring and retrofitting the necessary parts.",,,,,
+,,,,,,,
+armaa_monitor,SHIP,"The Watchdog emphasizes long-range fire support as opposed to head-on confrontation. While especially effective against larger targets, poor shield emitters and maneuverability can lead to it being easily overwhelmed without a covering force to protect it.
 
-The reasoning behind the placement of a rear-facing missile mount remains a mystery. ",,,
+Some cycles before the First AI War, corp tech miners recovered databanks from a red-eyed vessel called a ""Mobile Armor."" Keen on replicating some aspects of this technology, particularly the advanced neural interface, the GAREGGA was rolled out as an initial effort to replicate the technology at a larger scale. Unfortunately, dwindling resources and technical know-how in the sector made further development of the SILVERSWORD system a herculean task, especially without the aid of AI, banned under Domain laws, now even more stringently enforced by the Hegemony.
 
-armaa_monitor,SHIP,"Destroyer-grade platform that emphasizes long-range fire support as opposed to head on confrontation. While especially effective against larger, slower targets, low flux capacity and manuverability can lead to it being easily overwhelmed without a covering force to support it.
+Instead, two larger designs were developed to further iterate upon the concept. A deal was brokered between the Ko Combine and ArmaA that granted them access to a number of Monitor-class frigates and limited production rights to several of its key components, which were used as the core for the Watchdog series. Beneath the additional armor plating and hulking, servo-assisted arms, grizzled spacers can likely spot some - mostly aesthetic - similarities between the two, but the final product has diverged greatly from its ancestor.
 
-Some cycles before the First AI War, corp techminers recovered databanks from a red-eyed vessel called a "Mobile Armor". Keen on replicating some aspects of this technology, particuarly the advanced neural interface, the Garegga was born as an initial effort to replicate the technology at a larger scale, but dwindling resources in the sector made this a herculean task, especially without the aid of AI banned under Domain laws. 
+Unlike most ArmaA designs, this vessel lacks any kind of neural control interface, and is thus one of the rare few capable of hosting full crew accommodations, as well as meaningful cargo capacity.",,,,,
+,,,,,,,
+armaa_valkenmp,SHIP,"The Valken series, while sacrificing quantity and speed, offers greater offensive capability against larger ships compared to its counterpart, the Talon. However, the tradeoff for this boon is that the Valken is only marginally better protected, resulting in few pilots surviving long enough to fully utilize its potential without additional support.
 
-Instead, two larger designs was developed to further iterate upon the concept. A deal was brokered between Ko Combine and ArmaA that granted them access to a number of Monitor-class frigates and limited production rights to several of its key components, which were used as the core for the Watchdog series. Unlike most ArmaA designs, this vessel lacks any kind of neural control interface, and is thus one of the rare few capable of hosting full crew accomodations, as well as meaningful cargo capacity.",,,
+Despite being considered no better than a Talon, the Valken series became the premiere Cataphract-class design due to the rationalization that high-performance strikecraft were unnecessary for pilots with a short life expectancy. To offset the expensive hardware required to develop a combat-viable machine capable of operating in space and on land, significant cuts were made in various aspects deemed non-vital to performance. The unit's artificial muscles utilize a cost-efficient fluid for locomotion, which also happens to be highly flammable. In the event of a critical strike to the torso, the internal ammo storage for the built-in mortar could be breached, resulting in an explosion directly below the cockpit, potentially killing the pilot.
 
-armaa_valkenmp,SHIP,"Generally considered no better than a Talon, the Valken series trades quantity and speed for enhanced offensive capability against larger ships. The greatest caveat to this boon is that they are only somewhat better protected than it's comparate, meaning few pilots live long enough to fully utilize this potential without additional assistance. 
-
-The premiere Cataphract-class design, the Valken won out over its competitor concepts with the rationalization that high-performance strikecraft were wasted on pilots whose average life expectancy could be highballed in minutes. In order to offset the expensive hardware necessary to develop a combat-viable machine that could operate effectively in space and land, sweeping cuts were made in as many aspects as possible, especially anything deemed non-vital to performance. The artificial muscles utilized by the unit enable locomotion via a cost efficient fluid, which coincidentally had the unfortunate characteristic of being highly flammable. In short, a critical strike to the torso generally resulted in an explosion when the internal ammo storage for the built-in mortar was breached, which conveniently rested directly below the cockpit. If by some miracle the pilot survived, they would be summarily cooked alive. 
-
-Despite being objectively inferior to dedicated land or space vehicles in their respective roles, its ability to fill both on demand at a low (economical) impact ensured it had a niche to carve out and enjoy some degree of success. It is the ArmA Corporation's good fortune that this stands even moreso in the grim reality of the Persean Sector post-Collapse, where the value of a human life has seen a steady decline, and the profession of enterprising raider or revolutionary has become commonplace. ",,,
-
+Despite being objectively inferior to dedicated land or space vehicles in their respective roles, the Valken's ability to serve in both capacities with minimal economic impact allowed it to carve out a niche and achieve some success. ArmA Corporation was fortunate that this niche was even more valuable in the grim reality of the Persean Sector post-Collapse, where human life had decreased in value and the roles of raiders and revolutionaries had become commonplace.",,,,,
+,,,,,,,
 armaa_valken_black,SHIP,"A variant of the Valken featuring a reinforced frame and higher mobility. The blows from its archaiac melee weapon are fierce enough to stress shield generators, but its overall firepower is still inferior to the original. 
 
 The premiere Cataphract-class design, the Valken won out over its competitor concepts with the rationalization that high-performance strikecraft were wasted on pilots whose average life expectancy could be highballed in minutes. In order to offset the expensive hardware necessary to develop a combat-viable machine that could operate effectively in space and land, sweeping cuts were made in as many aspects as possible, especially anything deemed non-vital to performance. The artificial muscles utilized by the unit enable locomotion via a cost efficient fluid, which coincidentally had the unfortunate characteristic of being highly flammable. In short, a critical strike to the torso generally resulted in an explosion when the internal ammo storage for the built-in mortar was breached, which conveniently rested directly below the cockpit. If by some miracle the pilot survived, they would be summarily cooked alive. 
 
-Despite being objectively inferior to dedicated land or space vehicles in their respective roles, its ability to fill both on demand at a low (economical) impact ensured it had a niche to carve out and enjoy some degree of success. It is the ArmA Corporation's good fortune that this stands even moreso in the grim reality of the Persean Sector post-Collapse, where the value of a human life has seen a steady decline, and the profession of enterprising raider or revolutionary has become commonplace. ",,,
+Despite being objectively inferior to dedicated land or space vehicles in their respective roles, its ability to fill both on demand at a low (economical) impact ensured it had a niche to carve out and enjoy some degree of success. It is the ArmA Corporation's good fortune that this stands even moreso in the grim reality of the Persean Sector post-Collapse, where the value of a human life has seen a steady decline, and the profession of enterprising raider or revolutionary has become commonplace. ",,,,,
+,,,,,,,
+armaa_valkencannon,SHIP,Shouldn't be obtainable.,,,,,
+,,,,,,,
+armaa_assaultPod_hull,SHIP,Shouldn't be obtainable.,,,,,
+,,,,,,,
+armaa_pa_mid,SHIP,Shouldn't be obtainable.,,,,,
+,,,,,,,
+armaa_kouto,SHIP,"The Kouto is primarily used as a screening unit to protect friendly forces against missiles and lesser strikecraft, while also relentlessly pressuring enemy shields with its kinetic energy bazooka and accompanying SCTR-20 Minigun. However, its lackluster maneuverability and ineffectiveness against heavily armored targets have caused it to be regarded unfavorably by many pilots.
 
-armaa_valkencannon,SHIP,"Shouldn't be obtainable.",,,
-
-armaa_assaultPod_hull,SHIP,"Shouldn't be obtainable.",,,
-
-armaa_pa_mid,SHIP,"Shouldn't be obtainable.",,,
-
-armaa_kouto,SHIP,"The suit of armor for modern-day knights of the Sector, the Kouto's primary role is to draw fire while applying unrelenting pressure on enemy targets via a kinetic energy bazooka and accompanying SCTR-20 Minigun. Less than ideal manuverability and ineffectiveness against armored targets has given it somewhat of a bad reputation among pilots.
-
-Conceived as the cutting edge showcase of the Land-Space Cataphract concept, the Kouto boasted a bevy of high-performance (and expensive) features, such as the implementation of revolutionarily compact yet powerful artificial muscles and a hybrid neurophysical piloting interface that allowed it to execute extremely precise maneuvers. Unfortunately, the development of the Kouto came about during a schism in the supervisory board; one side doggedly insistent on creating the most advanced and flashy hardware possible, while the other eschewed the importance of an cheap, easy to maintain, and comparatively effective platform - a debate that the champions of the Kouto ended up losing. The partially completed design was shelved in favor of the development of its far cheaper cousin, the Valken. Following an internal power struggle that saw company priorities shift once more, a retrofitted version of this unit was put into service.",,,
-armaa_ilorin,SHIP,"Shouldn't be obtainable.",,,
-
+Initially envisioned as the pinnacle of the Land-Space Cataphract concept, the Kouto was designed with a multitude of high-performance and costly features, including compact yet powerful artificial muscles and a hybrid neurophysical piloting interface that allowed for exceptional precision in maneuvers. Unfortunately, its development was mired in a conflict between two factions of the supervisory board - one advocating for the creation of the most advanced and flashy hardware possible, while the other sought a cheaper, more practical platform that would be easier to maintain and still effective in combat. The latter faction eventually won out, and the partially completed Kouto design was shelved in favor of the development of the more affordable Valken. However, after an internal power struggle shifted company priorities once again, a retrofitted version of the Kouto was eventually put into service.",,,,,
+armaa_ilorin,SHIP,Shouldn't be obtainable.,,,,,
+,,,,,,,
 armaa_altagrave,SHIP,"What this design lacks in weapon slot quantity is made up for via versatility; At its heart lies the KARMA system which posseses a variety of applications on the battlespace. Additional modular components grant impressive agility and speed, but are vulnerable to small strikecraft and flanking attacks. 
 
 Created during the First AI War at a period where the local ArmaA branch was considered to be at the peak of its power, this design can be partially attributed to reverse-engineered, borrowed, and outright stolen technologies of various origin. R&D of the accumulated tech base resulted in creation of the Kinetic Automated Range Missile Assimilator. With the aid of a delta-level AI, KARMA autonomously tags and identifies dangerous projectiles, intercepts them, and stores the acquired kinetic energy for later use. In the case of guided missiles, malicious code is injected that spoofs IFFs and renders the original signal unrecognizable, effectively hijacking them. This allows an Altagrave to screen ships against particularly thick hails of ordinance in a pinch, among other things. 
 
-While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - An enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, but generous projections on the outcome are the resulting strain would leave them with bits of brain leaking out of their ears.",,,
-
+While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - An enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, but generous projections on the outcome are the resulting strain would leave them with bits of brain leaking out of their ears.",,,,,
+,,,,,,,
 armaa_altagrave_r,SHIP,"An upgunned variant of the Altagrave employed by the Rocket Stars; At its heart lies the KARMA system which posseses a variety of applications on the battlespace.
 
 Created during the First AI War at a period where the local ArmaA branch was considered to be at the peak of its power, this design can be partially attributed to reverse-engineered, borrowed, and outright stolen technologies of various origin. R&D of the accumulated tech base resulted in creation of the Kinetic Automated Range Missile Assimilator. With the aid of a delta-level AI, KARMA autonomously tags and identifies dangerous projectiles, intercepts them, and stores the acquired kinetic energy for later use. In the case of guided missiles, malicious code is injected that spoofs IFFs and renders the original signal unrecognizable, effectively hijacking them. This allows an Altagrave to screen ships against particularly thick hails of ordinance in a pinch, among other things. 
 
-While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,
+While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,,,
 armaa_altagrave_c,SHIP,"A support variant of the Altagrave. The KARMA system has been modified with Tri-Tachyon tech to power a time dilation field capable of enhanching the capabilities of nearby friendlies. 
 
 Created during the First AI War at a period where the local ArmaA branch was considered to be at the peak of its power, this design can be partially attributed to reverse-engineered, borrowed, and outright stolen technologies of various origin. R&D of the accumulated tech base resulted in creation of the Kinetic Automated Range Missile Assimilator. With the aid of a delta-level AI, KARMA autonomously tags and identifies dangerous projectiles, intercepts them, and stores the acquired kinetic energy for later use. In the case of guided missiles, malicious code is injected that spoofs IFFs and renders the original signal unrecognizable, effectively hijacking them. This allows an Altagrave to screen ships against particularly thick hails of ordinance in a pinch, among other things. 
 
-While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,
+While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,,,
 armaa_altagrave_g,SHIP,"An offensive variant of the Altagrave. The KARMA system has been omitted in lieu of an enhanced power core and an upsized underslung turret on the torso.
 
 Created during the First AI War at a period where the local ArmaA branch was considered to be at the peak of its power, this design can be partially attributed to reverse-engineered, borrowed, and outright stolen technologies of various origin. R&D of the accumulated tech base resulted in creation of the Kinetic Automated Range Missile Assimilator. With the aid of a delta-level AI, KARMA autonomously tags and identifies dangerous projectiles, intercepts them, and stores the acquired kinetic energy for later use. In the case of guided missiles, malicious code is injected that spoofs IFFs and renders the original signal unrecognizable, effectively hijacking them. This allows an Altagrave to screen ships against particularly thick hails of ordinance in a pinch, among other things. 
 
-While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,
-armaa_altagrave_ex,SHIP,"The core of this aged machine is clearly an Altagrave-class, but detailed scans detect part of automated vessels in its superstructure. This casts an uncertainty on its point of origin: these automated components definitely aren't legal due to potential threat of delta+ AI possession, yet this vessel still contains human interface, control consoles and even cramped crew quarters. Perhaps this specimen was once captured by someone or something during the span of the First AI War and then was refurbished to different spec?
+While adopting fighting tactics more akin to a spaceship, operationally they behave more like oversized and overengineered strikecraft. Hardly any space is spared for cargo capacity or personnel to squeeze out maximum combat effectiveness, and assigned staff are generally ferried to the vessel prior to combat operations - lacking many basic amenities provided on true starships - while an enhanced derivative of the neural interface used by late-gen Cataphracts enables the vessel to be controlled by a single pilot at nearly a 1:1 ratio (albeit with the aid of neuro-linked support staff, whose sole function is to serve as extra computing power). While a lone pilot could theoretically operate an Altagrave without support staff, the resulting strain would leave them with bits of brain leaking out of their ears... and that's a generous assumption.",,,,,
+armaa_altagrave_ex,SHIP,"The heart of this ancient machine undeniably belongs to the Altagrave-class, but upon closer examination, detailed scans reveal traces of automated components integrated into its superstructure. This discovery raises questions about its origin: the inclusion of these automated elements is clearly illegal due to the potential threat of delta+ AI possession. Nevertheless, this vessel still boasts human interfaces, control consoles, and even cramped crew quarters. Could it be that this specimen was once seized by an entity or entity during the tumultuous era of the First AI War and subsequently retrofitted to a different specification?
 
-Truth may have been lost in  the annals of time, but what can't be disputed is its efficiency - it outperforms other mobile armors that are part of Altagrave series to this day.",,,
+The truth may have faded into the annals of time, but one fact remains indisputable—its performance is unparalleled. Even today, it outmatches other mobile armors within the Altagrave series.",,,,,
+,,,,,,,
+armaa_valkenx,SHIP,"The eXpansion-type sacrifices the firepower a full Valken lance offers for far greater survivability. The close quarters chaingun and blade combination can rapidly rend apart armor and disable electronic systems, but they're fairly ineffective against well-shielded opponents and optical weapons.",,,,,
+,,,,,,,
+armaa_valkenx_frig,SHIP,"A formidable Cataphract with decent striking power and commendable agility, the VX Custom is an ideal choice for interception and attack roles as it effortlessly evades incoming attacks.
 
-armaa_valkenx,SHIP,"The eXpansion-type sacrifices the firepower a full Valken lance offers for far greater survivability. The close quarters chaingun and blade combination can rapidly rend apart armor and disable electronic systems, but they're fairly ineffective against well-shielded opponents and optical weapons.",,,
+Originally designed explicitly for elite pilots who failed to qualify for the esteemed Aleste unit, the Valken X Custom Type, also known as VX Custom, represents a substantial advancement from the standard unit. It effectively closes the performance gap between first and second-generation Cataphract models; the power core three times as powerful, while its frame incorporates a robust yet adaptable internal skeleton that emphasizes versatility and resilience to endure the demanding conditions of space and land combat.",,,,,
+,,,,,,,
+armaa_caymon,SHIP,You shouldn't be able to see me,,,,,
+,,,,,,,
+armaa_aleste,SHIP,"The Aleste is an elite class of Cataphract mecha that excels in both durability and versatility. Its combat abilities are further enhanced by the deployment of two Jinete drones, which serve as nimble force multipliers.
 
-armaa_valkenx_frig,SHIP,"An upgraded variant of the Valken X. Improvements to armor and manuverability are minor, but it boasts a near frigate-grade power core which is 3 times as powerful as the original. The basic design is highly expandable and solid, boasting an internal skeleton that is not only rigid but also flexible so that it can withstand the stresses of combat in space and on land.",,,
-
-armaa_caymon,SHIP,"You shouldn't be able to see mee",,,
-
-armaa_aleste,SHIP,"Elite Cataphracts that boast exceptional durability and versatility. Their capabilities are rounded out by two Jinete bits, flimsy yet nimble drones that serve as effective threat multipliers.
-
-The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
-
-armaa_gallant,SHIP,"Slow and unwieldy strikecraft fitted with a Juno Mk. III beam cannon. Can overwhelms shields and vaporize hull, but are effectively helpless while firing. Best utilized in combination with other bombers, where it can soften shields prior to their strike.",,,
-
+As the first known Land-Space design after the Collapse, the Aleste is a direct descendant of the Einhander. It embodies a ""quality over quantity"" approach while still being cost-effective. The decision to revive this line of high-performance specifications arose from the desperate situation during the First AI War, where the frontlines were deteriorating rapidly. By avoiding the use of complex and alien phase components, the Aleste became highly modular. Two different versions were produced, one equipped with autonomous drones for additional anti-fighter capabilities, and another capable of mounting extra weapons for anti-ship purposes.",,,,,
+,,,,,,,
+armaa_gallant,SHIP,"Slow and unwieldy strikecraft fitted with a Juno Mk. III beam cannon. Can overwhelms shields and vaporize hull, but are effectively helpless while firing. Best utilized in combination with other bombers, where it can soften shields prior to their strike.",,,,,
+,,,,,,,
 armaa_hazard_frig,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverability and greater firepower. Extremely effective in small skirmishes and at harassing spaceships, G-Hazard comes with command suite, that allows its pilot to command a small Cataphract Lance, making it a cheap and disposable support unit in middle of combat.
 
-Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,
+Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,,,
+armaa_hazard,SHIP,"Gunhazard sacrifices durability for ludicrous maneuverability and greater firepower. Extremely effective in small skirmishes and at harassing spaceships, G-Hazard comes with command suite, that allows its pilot to command a small Cataphract Lance, making it a cheap and disposable support unit in middle of combat.
 
-armaa_valkazard,SHIP,"Advanced Series-II 'mech boasting a versatile weapons loadout and equipped with an outmoded variant of the same SILVERSWORD system utilized by the GAREGGA. Nimble, deadly, and flimsy. 
+Gunhazard is a Valken derivative with different designation in order to reduce potential consumer confusion, though its original designation was lost to time. It has been stated in the documentation that while chassis itself is not particularly expensive, its weaponry and command suite make more than half of unit's cost. Its current 'endearing' designation has been crafted during the chaos of First AI War. Assignments to this Cataphract were seen as marginally better compared to Talon or Valken wings. Unlucky G-Hazard pilots often met their end not from hands of enemy, but due to extreme pressure and gravitational forces exerted on their bodies during combat. This was mostly alleviated with the introduction of inertia dampeners as well as padded harness.",,,,,
+,,,,,,,
+armaa_valkazard,SHIP,"This advanced machine comes with a flexible armament and the powerful SILVERSWORD system that momentarily enhances its performance. However, its agility comes with a trade-off in durability, making it susceptible to sustained or high-powered assaults.
 
-From testimonials and what little evidence remains, it's inferred that prior to the Collapse a sole unit was transferred via gate network to the Persean Sector for 'cold storage', before its unfortunate disappearance during the destruction of old Meshan, circa c.94.",,,
+Records and limited evidence suggest that a single unit was moved via gate network for extended storage in the Persean Sector before the Collapse. Unfortunately, its whereabouts after the destruction of old Meshan during c.94 are unknown, and presumably was destroyed along with the planet.",,,,,
+,,,,,,,
+armaa_prodromos,SHIP,"This suit excels in intercepting fighter formations and missiles but is vulnerable to most space-grade weapons. While it is more durable than conventional infantry, its effectiveness is balanced against the minimal loss of pilots, distinguishing it from its closest comparison, the Wasp.
 
-armaa_prodromos,SHIP,"Excels at intercepting fighter formations and missiles. While considered incredibly durable compared to conventional infantry, most space-grade weapons will vaporize the user. The key distinction between itself and it's closest comparate the Wasp is a matter of effectiveness versus minimal loss of pilots. 
+Arma Armatura considers the Prodromos-class battle armor as one of their greatest creations. As a missing link between power armor-clad infantry and full-scale mechs, the executives envisioned the design to revolutionize traditional strategic marine applications. Soldiers could easily deploy from friendly ships for independent ""breach and board"" operations, eliminating the risk of losing boarding ships to an errant boardee's decision to scuttle their vessel. However, these ambitions were never realized as even the Talon, a lowly model, offers better protection than these hardsuits. Combat drones have also proven to be more suitable for land battles, rendering the Prodromos-class obsolete.
 
-Prodromos-class battle armors are considered by Arma Armatura as one of their greatest creations. The missing link between power armor clad infantry and full scale mechs, executives envisioned the design as completely upending current traditional strategic marine applications - soldiers nestled within these machines could easily deploy from friendly ships for 'breach and board' operations independently, simultaneously eliminating the risk of losing boarding ships to an errant boardee's decision to scuttle their vessel and take their aggressors along with them instead. These ambitions never came to pass as even the lowly Talon is better protected than these hardsuits, while combat drones can readily fill their intended niche in land battles. 
-
-After witnessing the high speed manuevers these suits can perform, many spacers are shocked to find them inadequate for land use - jump jets can be reconfigured for space use, but much like its larger brethern, these verniers are not as effective under the pressure of gravity.",,,
-
-armaa_kouto_frig,SHIP,"The Kouto Electronic Type, or E-Type for short, is designed for electronic warfare and to gather intelligence on enemy forces in order to lend allied forces the combat advantage. A large radome is mounted on the back, granting it enhanced ECM capabilities. By piggybacking off of additionally equipped ECM ships, the E-Type can launch coordinated electronic warfare attacks on enemy, rendering them vulnerable.",,,
-
-armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Silvia has been 'upgraded' with an inefficient shield generator as well as software to coordinate a Broadsword wing. It mounts additional hardpoints over the standard chassis, as well as an enhanced maneuvering system.",,, 
-
-armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,,
-
-armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,
-
-armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,
-
+Many spacers are surprised to find the suits inadequate for land use, despite their high speed maneuvers. Jump jets can be reconfigured for space use, but these verniers are not as effective under the pressure of gravity, making them large and slow targets on land.",,,,,
+,,,,,,,
+armaa_kouto_frig,SHIP,"The Kouto Electronic Type, or E-Type for short, is designed for electronic warfare and to gather intelligence on enemy forces in order to lend allied forces the combat advantage. A large radome is mounted on the back, granting it enhanced ECM capabilities. By piggybacking off of additionally equipped ECM ships, the E-Type can launch coordinated electronic warfare attacks on enemy, rendering them vulnerable.",,,,,
+,,,,,,,
+armaa_broadsword,SHIP,"Built on the modified aeroframe of the ubiquitous Broadsword, the Broadsword Silvia has been 'upgraded' with an inefficient shield generator as well as software to coordinate a Broadsword wing. It mounts additional hardpoints over the standard chassis, as well as an enhanced maneuvering system.",,, ,,
+,,,,,,,
+armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,,,,
+,,,,,,,
+armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,,,
+,,,,,,,
+armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,,,
+,,,,,,,
 armaa_xyphos,SHIP,"Upgraded with enhanced sensors and targetting software, this alteration of the Xyphos is able to operate independently (albeit briefly) and has been modified to carry an Ion Pulser for greater offensive power. Equipped with additional software that allows the pilot to properly coordinate an additional Xyphos wing, making them effective support units.
 
-The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,
+The design for these Xyphos were developed using captured craft from Tri-Tachyon during the First AI War, and altered with a red paintjob to be easily distinguishable. For one reason or another, they were never pushed into LPC production like most fighter chassis - despite this, they serve as adequate support units for a fleet with no better alternatives, and their ability to rapidly render vessels helpless and adrift in space - provided they are not obliterated first - have garnered them significant use by the more unscrupulous powers in the sector. ",,,,,
+,,,,,,,
+armaa_leynos_frig,SHIP,"The Leynos stands out as the ultimate assault Cataphract, with its thick armor that rivals even larger frigates, and the ability to mount mid-sized ballistic weaponry. Although it lacks any contemporary shielding system, it compensates with an integrated Damper Field and high burst damage potential.
 
-armaa_leynos_frig,SHIP,"Thick armor rivaling that of some frigates and midsized mounting for additional ballistic weaponry makes the Leynos the premiere assault Cataphract. The lack of any contemporary shielding system is mitigated by an integrated Damper Field and high burst damage potential.
+Originally unveiled as the Valken R-Type, this craft was part of an internal bid among ArmaA executives for a lucrative official contract that would determine the successor to the standard Valken model. However, during combat simulations, the R-Type's large size, low maneuverability, and overburdened power core led to disappointing results, causing it to lose out to the Valken X.
 
-Initially unveiled as as the Valken R-Type, this craft was created as part of an internal ArmaA bid among executives for a lucrative official contract that would determine the successor to the standard Valken model. Unfortunately the R-Type's large size, low maneuverability and overburdened power core all lead to disappointing results during combat simulations, and it was passed over in favor of the Valken X.
-
-Relegated to an unmarked hangar, the singular prototype was left to languish and gather dust for years until an enterprising Operations Manager took an interest in the design, pooling an untold number of credits into rebranding and revamping the design to match S-II standards.",,,
-
+The R-Type prototype was then left to gather dust in an unmarked hangar for years until an enterprising Operations Manager took an interest in the design. They pooled untold credits into rebranding and revamping the design to match S-II standards, resulting in current iteration seen today.",,,,,
+,,,,,,,
 armaa_leynos_frig_comet,SHIP,"Thick armor rivaling that of smaller frigates and larger housing for additional equipment sees the Leynos often serving as wing leader for small strikecraft squadrons. This particular model of the Leynos is allegedly three times faster than the original, and bears the paint scheme of the Rocket Stars.
 
 Originally devised as the Valken R-Type, this craft was initially intended to be a potential successor to the original Valken as part of an internal ArmaA bid dubbed 'Project VALHAWK', where it competed against several other in-house designs vying for a lucrative contract. However, it's large size, low manuverability, and overburdened power core saw it suffer abysmal performance during combat simulations.
 
-The R-Type was left to languish in an unmarked hangar for some time until an enterprising Operations Manager took interest in it, revamping the designs capability and rebranding it as a specialized command unit for squadron leaders.",,,
+The R-Type was left to languish in an unmarked hangar for some time until an enterprising Operations Manager took interest in it, revamping the designs capability and rebranding it as a specialized command unit for squadron leaders.",,,,,
+,,,,,,,
+armaa_aleste_frig,SHIP,"The Aleste S-II, a second-generation model tailored for officers, excels in close-quarters melee combat, delivering formidable damage quickly but at the risk of its own well-being. Its torso is equipped with a specialized ""Harpoon"" weapon for swiftly closing distances with larger targets or pulling smaller ones closer.
 
-armaa_aleste_frig,SHIP,"The Aleste S-II is an upgraded variant of the Aleste designed for officer use. The backpack has been redesigned, allowing the user to select and load equipment into a multi-connector pod connected via a drum frame mounted on the abdomen. It's generalist nature makes it rather unremarkable compared to other S-II's but allow it to fit a variety of fleet roles.
+As the first and perhaps only Post-Collapse Land-Space design, the Aleste descends directly from the Einhander and embodies the ""quality over quantity"" philosophy of its predecessor while being mindful of affordability. The decision to revisit a line of high-performance specifications arose out of desperation during the First AI War, as the warfront situation grew increasingly dire. By omitting complex and alien phase components, the Aleste gained significant modularity, resulting in two versions of the craft - one equipped with autonomous drones for additional anti-fighter capability, and another with additional weaponry for anti-ship purposes.",,,,,
+,,,,,,,
+armaa_record,SHIP,"The Spriggan is outfitted with a powerful recoilless rifle, making it an ideal choice for delivering a devastating blow that other Cataphract models cannot match. Unfortunately, it must get up close to its target to fully unleash its firepower, in contrast to conventional bombers.
 
-The first (perhaps only) Post-Collapse Land-Space design, the Aleste is a direct descendent of the Einhander that embodies the 'quality over quantity' ethos eschewed by its predecessor while remaining mindful of affordability. The decision to revisit a line of high-performance specifications arose moreso out of desperation than need during the First AI War, as the warfront situation progressively worsened. The omission of complex and alien phase components allowed significantly greater modularity, and as a result two different versions of the craft were produced - one equipped with autonomous drones for additional anti-fighter capability, and another capable of mounting additional weaponry. for anti-ship purposes.",,,
+Developed as an intermediate design between the Valken and the Valken EX, the Spriggan was created to support heavier weapons and enhanced survivability. While it accomplished these objectives, the resulting design sacrificed maneuverability and speed. Moreover, production costs were high, and weight-balancing issues arose during atmospheric operations. As a result, the Spriggan never achieved widespread use for general-purpose applications. The latest version has been redesigned to fit a strike role.",,,,,
+,,,,,,,
+armaa_record_frig,SHIP,"The Spriggan Powered is an advanced model of the Spriggan-class Cataphract, featuring a shield, two drones, and a heavy weapons pack that can launch larger missiles than any other Cataphract type. Although it can hold its own to some extent, it is most effective as a support unit.
 
-armaa_record,SHIP,"Equipped with a recoilless rifle and a scaled down Sabot SRM, the Spriggan is intended to provide the punch that other baseline Cataphract models lack. Unfortunately, it needs to get relatively close to a target to unleash its full payload.
+Despite being almost identical to the standard Spriggan, the conversion process for the Spriggan Powered is expensive. The armor is reinforced and improved with costlier materials, and the large shield is made with the same high-quality plating. The weapons pack contains systems that allow the pilot to control it directly and store necessary ammunition. Several proposals were put forward to upgrade standard Spriggans to the modified Powered model, but the added weight had an unfavorable effect on atmospheric operations, making mass production unfeasible.",,,,,
+,,,,,,,
+armaa_whitebase,SHIP,"The Fenris is well-equipped to support both space and land battles, though it is not particularly suited for direct confrontation. Its vast hangar bays, however, enable it to deploy a wide array of strikecraft.
 
-An intermediate design unveiled some time after the Valken but before the Valken EX, the Spriggan was developed as a platform that could support heavier weaponry alongside enhanced survivability. While these two goals were achieved, it was at the cost of a significant reduction in manuverability and speed. Combined with heightened production costs and weight-balancing issues during atmo operations, it never took off and was quickly overshadowed by the Valken's successor for general-purpose use.",,,
+As an atmosphere-capable vessel, the Fenris was designed with the specific purpose of carrying Cataphracts and quickly deploying them to ground targets. The ship is outfitted with armored pods where the Cataphracts are loaded before being launched towards the surface like missiles. When the Fenris is within range, it can easily retrieve deployed Cataphracts and bring them back to the ship as needed.",,,,,
+armaa_zanac,SHIP,"Designed upon the concept of marrying high manuverability with offensive prowess. It can wield some of the largest energy weapons found in the Sector, but is lacking in an overall quantity of weapon mounts compared to most destroyers.
 
-armaa_record_frig,SHIP,"An improved Spriggan-class Cataphract equipped with a shield, four drones, and a heavy weapons pack that enables it to utilize missile weapons far larger than other Cataphract types. Reduced manuverability and an overtaxed power core compared to other S-IIs make it more suitable as a fleet support unit.
+Intriguingly, historical records fail to trace the Zanac's involvement during the First AI War, sparking speculation that it might have emerged within the past 40 cycles through collaboration with a third party due ArmaA lacking the resources and infrastructure to develop such a weapon on its own post Collapse. 
 
-Even though the Spriggan Powered is almost identical to the standard version, the conversion process is relatively expensive. The downscaled Sabot generally carried in the torso is removed and armor is consequentially reinforced and even further improved via the use of costlier materials. The large shield it carries is armored similarly, and the Weapons Pack housing the necessary ammo storage and systems allowing the pilot to directly control it further raise the bill. Several considerations were made to upgrade the standard-issue Spriggans in service to a modified Powered spec suitable for mass production, but the negative effect such an increase in weight had for atmospheric operations ensured the proposal never got far.",,,
-
-armaa_whitebase,SHIP,"The Fenris appropriately possesses the capability to support the operation of both space and land battles. While poorly suited for direct confrontation, its cavernous hangar bays allow it to field a multitude of strikecraft.
-
-As an atmosphere-capable vessel, the Fenris was designed specifically as a Cataphract carrier, offering the means to rapidly dispatch them to ground targets. To this end the Fenris is equipped with several armored pods that Cataphracts are loaded into before being launched towards the surface like missiles. So long as the Fenris is nearby, it can then easily recall deployed Cataphracts back to the ship when necessary.",,,
-
-armaa_garegga_tt,SHIP,"When Tri-Tachyon eliminated ArmaA's security forces during the Battle of Meshan in cycle 94, they seized the majority of the corporations infrastructure and most of their assets. These revamped RA-96 were christened 'Tri-hander', a play on the companies moniker and the infamous Einhander. While not a mainstay of their navy by any means, these units served alongside other refurbished vessels following the First AI War when the corporation was still in disarray.",,,
+Despite several inquiries regarding its origin, ArmaA has remained tight-lipped on the matter, choosing not to disclose any information.",,,,,
+armaa_legioMech,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> 2 Match(es) found.
+#> >> Corsair-class Destroyer : 30% match
+#> >> ERROR
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,,,
+armaa_garegga_tt,SHIP,"Following Tri-Tachyon's successful takeover of ArmaA's infrastructure and assets during the Battle of Meshan in cycle 94, they rebranded the revamped RA-96 as the ""Tri-hander"" in reference to both their own company name and the legendary Einhander. Although not a primary component of their naval forces, these units were utilized in conjunction with other refurbished ships during the tumultuous period following the First AI War, when ArmaA was still recovering.",,,,,
 armaa_garegga,SHIP,"The RA-96 GAREGGA stands first-class amongst craft that excel in close-quarters combat. Dual G-1001 assault weapons capable of decimating entire strikecraft formations and pounding larger ships into scrap are only hindered by their meagre engagement range.
 
 Following the uneasy tension that befell the Sector following the events of Mairaath, the Garegga represented a shift in ArmaA priorities as the corporation was spurred into developing larger and more powerful machines to supplement their embryonic navy. Derived as a testbed for adapting technology behind cataphract-type mechs to a platform optimized for space combat, the Garegga is significantly larger to accomodate a greater power core and ship-grade weaponry, but lacks any ground combat capability. 
 
-The combination neural and targeting interface SILVERSWORD establishes a raw, semi-invasive connection between the pilots brain and an AI core adjunct to the machine itself, and safety limiters can be disabled in order to bring out its maximum potential. Sadly, sustained use resulted in catastrophic brain injury in 96.875% of all trial runs as the human component's mental bandwith was overwhelmed by the exponentially increasing information load fed into it. It was for this reason that an additional emergency stop circuit was introduced shortly thereafter, which automatically halts the system, violently shunting excess flux into the void. This method of interfacing would eventually be discarded in favor of a system that distributed the mental strain across multiple crewmembers.",,,
+The combination neural and targeting interface SILVERSWORD establishes a raw, semi-invasive connection between the pilots brain and an AI core adjunct to the machine itself, and safety limiters can be disabled in order to bring out its maximum potential. Sadly, sustained use resulted in catastrophic brain injury in 96.875% of all trial runs as the human component's mental bandwith was overwhelmed by the exponentially increasing information load fed into it. It was for this reason that an additional emergency stop circuit was introduced shortly thereafter, which automatically halts the system, violently shunting excess flux into the void. This method of interfacing would eventually be discarded in favor of a system that distributed the mental strain across multiple crewmembers.",,,,,
+armaa_garegga_xiv_carrier,SHIP,"with the aid of it's sensor drones, The Bakraid excels at providing longe-range fire support. Nevertheless, its limited armor and absence of point defense options expose it to sustained threats. Features a phase-capable unit which can detach and seamlessly continue the battle based on the situation.
 
-armaa_ceylon,SHIP,"A carrier equipped with an AWACS system designed to exploit weaknesses in enemy ships while supporting it's own fleet. It's heavily reliant on a trio of support drones that constantly feed the bridge crew combat data to administer these effects, which become less effective if they are disabled.",,,
-armaa_awacs,SHIP_SYSTEM,"Marks selected object as a priority target while analyzing it for potential vulnerabilities. The target takes +25% damage for 7 seconds. Base range is 500 SU, which scales with each deployed drone (up to a maximum range of 2000 SU)",,,
+The genesis of the Bakraid traces back to a strategic initiative aimed at overcoming the constraints of conventional Cataphracts, which heavily depend on carrier support and lack a travel drive, restricting their viability for extended operations such as longe range patrols. This design came about after some engineers gutted a salvaged Garegga unit and integrated a Cataphract-sized docking clamp in the gaping hole that remained. The limbs were removed in favor of additional missile hardpoints, while crew space and storage were strategically optimized. This transformation not only provided the newly named Bakraid with extended operational endurance but also granted it the autonomy to function independently for prolonged durations. The outcome was a state-of-the-art mobile armor capable of undertaking long-range missions with the added capability to eject the close quarters phase-capable unit as the situation required.
 
-armaa_valken_gun_black,WEAPON,"The bulky and cumbersome cousin to ArmaA's Laser Blades, Anti-Ship swords fell out of favor over the formers lightweightedness and ease of use. Despite this, these blades are extremely devastating.  The most important factor behind the design of anti-ship swords is raw power. As Laser Blades have little to no mass, the force of the impact is extremely weak. A standard Laser Blade relies entirely on the intense output of its beam to inflict damage - this is not so with anti-ship swords. With an anti-ship sword, it is tremendous mass that imparts devastating amounts of force onto whatever it impacts.",,,
+Phase-based ships are a rarity among the various organizations within the greater Hegemony, even for those embracing more experimental design philosophies. For that reason, there has been some speculation that the design was initially intended for another buyer.",,,,,
+armaa_panther_frig,SHIP,"Crafted through the collaborative efforts of Arma Armatura engineers and those from a distinguished house of Eventide, the Panther serves as a vital component within the Bakraid-class Mobile Armors, specializing in swift and calculated attacks. Although typically integrated into the Bakraid for coordinated assaults, detaching the Panther is reserved as a last-ditch maneuver, emphasizing its role as a versatile asset in critical situations.
 
-armaa_alesteHead,WEAPON,"Fires bursts of small flechettes at a high rate of fire. The volume of fire can quickly overwhelm shield projectors, but is generally ineffective against armor.",,,
+The Panther's proficiency in phase-based operations diverges from the preferences of traditional Hegemony commanders, who favor massive firepower and imposing vessels within their ""decisive battle"" doctrine. Recognizing this misalignment, Arma Armatura charted a different course, designing these units for deployment by a specific organization within the broader Hegemony framework.",,,,,
+armaa_garegga_xiv,SHIP,"With thicker armor and enhanced engines that facilitate agile evasion of incoming fire, these units demonstrate proficiency in swiftly closing the distance and creatively disassembling enemy ships, thanks to an oversized jackhammer mounted on their left arm.
 
-armaa_kouto_minigun_right,WEAPON,"Minigun with a high rate of fire. This latest iteration is employs high-velocity slugs adept at overloading shields.",,,
-armaa_koutoBazooka,WEAPON,"Anti-shield weapon. Launched projectiles detonate on proximity.",,,
-armaa_kouto_head,WEAPON,"A basic point defense weapon.",,,
-armaa_kouto_torso_frig,WEAPON,"Fires a barrage of homing missiles.",,,
-armaa_aleste_rightArm,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
+Originally crafted to adhere to the Hegemony's ""decisive battle doctrine,"" this version of the GAREGGA underwent a redesign when it became evident that the modified Watchdog units were better suited for the intended role. In this revised form, the GAREGGA had its more esoteric components replaced with easily replaceable ones.",,,,,
+armaa_corsair_xiv,SHIP,"The Corsair possesses a massive amount of firepower for its size hindered by an archaic autoloading system that can't quite sustain the stress. The ammo feeder can be overriden to reach performance levels slightly above spec, but only for brief periods of time.",,,,,
+armaa_corsair_isen,SHIP,"A specially modified Corsair in the colors of the Iron Sentinels, this version adapts an alternative defensive approach of utilizing removeable armor modules as opposed to integrated armor.
 
-armaa_aleste_rifle_left,WEAPON,"General purpose energy weapon. No major strengths or weaknesses.",,,
+The Corsair possesses a massive amount of firepower for its size hindered by an archaic autoloading system that can't quite sustain the stress. The ammo feeder can be overriden to reach performance levels slightly above spec, but only for brief periods of time.",,,,,
+armaa_corsair_p,SHIP,Shouldn't probably be visible/obtainable,,,,,
+armaa_kshatriya,SHIP,The Rajanya comes equipped with a powerful 'axe' weapon capable of mending damage received in combat and the capability to engage foes at all ranges. It's four shield binders further augment its defensive and support capabilities. ,,,,,
+armaa_ceylon,SHIP,"The carrier is outfitted with an advanced airborne early warning and control (AWACS) system, which enables it to detect and exploit vulnerabilities in enemy vessels while bolstering its own fleet. The carrier relies heavily on three support drones that constantly relay combat information to the bridge crew, allowing them to administer these effects. However, if the support drones are disabled, the effectiveness of the carrier is significantly reduced.",,,,,
+armaa_awacs,SHIP_SYSTEM,"Marks selected object as a priority target while analyzing it for potential vulnerabilities. The target takes +25% damage for 7 seconds. Base range is 500 SU, which scales with each deployed drone (up to a maximum range of 2000 SU)",,,,,
+,,,,,,,
+,,,,,,,
+armaa_zanac_rightArm,WEAPON,"""... A highly specialized beam weapon, our arm-mounted marvel harnesses the immense power of condensed energy, delivering devastating blasts in one go. With each shot, it unleashes a scorching stream surrounded by a plasma field, capable of obliterating unprotected targets with ease. However, we've found its energy consumption is substantial, limiting its practicality for sustained and general purpose production...""",- Chief Mechanic,,,,
+armaa_armorPod,WEAPON,"An armored pod equipped with dozens of autonomous combat drones. These machines are extremely slow and defenseless in space operations, but are equipped with weapons potent enough to breach hull and board enemy vessels, where they will proceed to do as much damage possible by attacking crew and vital infrastructure.",,,,,
+armaa_valken_gun_black,WEAPON,"Anti-Ship swords, the heavier and less agile cousins of ArmaA's Laser Blades, have fallen out of favor due to their bulkiness and lack of ease in use. Despite this, these blades are incredibly destructive due to their emphasis on raw power. Unlike Laser Blades, which rely solely on the intensity of their beam to inflict damage, the massive weight of anti-ship swords delivers a tremendous amount of force upon impact. This design prioritizes mass over agility, allowing for devastating damage to be dealt to whatever it strikes.",,,,,
+,,,,,,,
+armaa_alesteHead,WEAPON,"Fires bursts of small flechettes at a high rate of fire. The volume of fire can quickly overwhelm shield projectors, but is generally ineffective against armor.",,,,,
+,,,,,,,
+armaa_kouto_minigun_right,WEAPON,Minigun with a high rate of fire. This latest iteration is employs high-velocity slugs adept at overloading shields.,,,,,
+armaa_koutoBazooka,WEAPON,Anti-shield weapon. Launched projectiles detonate on proximity.,,,,,
+armaa_kouto_head,WEAPON,A basic point defense weapon.,,,,,
+armaa_kouto_torso_frig,WEAPON,Fires a barrage of homing missiles.,,,,,
+armaa_aleste_rightArm,WEAPON,General purpose energy weapon. No major strengths or weaknesses.,,,,,
+,,,,,,,
+armaa_aleste_rifle_left,WEAPON,General purpose energy weapon. No major strengths or weaknesses.,,,,,
+,,,,,,,
+armaa_aleste_heavyrifle_right,WEAPON,"Enhanced Rynex Pulse Rifle. Fires a significantly stronger laser, but capacitors can only last long enough to fire a few shots.",,,,,
+,,,,,,,
+armaa_aleste_grenade_left,WEAPON,Fires a burst of high-explosive grenades. Effective in target rich enviroments or versus slower enemies. ,,,,,
+,,,,,,,
+armaa_altagrave_syrinx,WEAPON,"Long range, homing missile. ",,,,,
+armaa_kshatriya_torso_chaosburst,WEAPON,"An long-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,,,
+armaa_kshatriya_rightArm_melee,WEAPON,"A ludicrously large weapon shaped like an axe. The archaic design belies its true nature, as this weapon is capable of assimilating material from targets with each strike, which are then repurposed for use on the parent vessel.",,,,,
+armaa_kshatriya_head,WEAPON,Head-mounted Ion Beam. Capable of disrupting systems on board the target vessel.,,,,,
+armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament to pirate ingenuity. While near useless against shields, the projectile making contact with hull produces a near constant cascading EMP effect that will rapidly disable weapons and other vital systems.",,,,,
+,,,,,,,
+armaa_valkazard_shotgun_right,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however.",,,,,
+,,,,,,,
+armaa_valkazard_shotgun_left,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however",,,,,
+,,,,,,,
+armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,,,
+,,,,,,,
+armaa_valkazard_torso_chaosburst,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,,,
+,,,,,,,
+armaa_valkazard_torso_boson,WEAPON,"Akin to the Sector-standard Heavy Blaster - fires bolts of energy at enemy targets, but up to a burst of three. With high damage and flux costs, the particle cannon is one of the most damaging weapons that can be mounted on a Cataphract.",,,,,
+,,,,,,,
+,,,,,,,
+armaa_valkazard_torso_shield,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,,,
+,,,,,,,
+armaa_valkazard_machinegun_left,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,,,
+,,,,,,,
+armaa_valkazard_machinegun_right,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,,,
+,,,,,,,
+armaa_valkazard_chaingun,WEAPON,"A 'melee' captain's favorite tool, the Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel.",,,,,
+,,,,,,,
+armaa_valkazard_pulse_rifle_left,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,,,
+,,,,,,,
+armaa_valkazard_pulse_rifle_right,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,,,
+,,,,,,,
+armaa_valkazard_rcl,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_valkazard_rcl_left,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_valkazard_torso_ac,WEAPON,A torso-mounted cannon that fires a duo of ionized shells capable of overloading and disabling enemy electronics at medium range.  It is most effective versus enemy shields.,,,,,
+,,,,,,,
+armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,,,
+,,,,,,,
+armaa_landingBeacon,WEAPON,Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.,,,,,
+,,,,,,,
+armaa_aleste_blade_LeftArm,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no joke. They use the same damn principle as other beams with a hyperdimensional filter. And let me tell ya, any electronics that ain't straight up disintegrated will be so screwed up, it'll take a tech wizard to fix it. So if some idiot tries to use this thing and gets blasted to scrap by point defenses, at least they can take out their weapons and engines on the way down.
 
-armaa_aleste_heavyrifle_right,WEAPON,"Enhanced Rynex Pulse Rifle. Fires a significantly stronger laser, but capacitors can only last long enough to fire a few shots.",,,
+Hey boss, why ya starin' at me like that?""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_altagrave_blade,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no joke. They use the same damn principle as other beams with a hyperdimensional filter. And let me tell ya, any electronics that ain't straight up disintegrated will be so screwed up, it'll take a tech wizard to fix it. So if some idiot tries to use this thing and gets blasted to scrap by point defenses, at least they can take out their weapons and engines on the way down.
 
-armaa_aleste_grenade_left,WEAPON,"Fires a burst of high-explosive grenades. Effective in target rich enviroments or versus slower enemies. ",,,
+Hey boss, why ya starin' at me like that?""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_valkazard_blade,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no joke. They use the same damn principle as other beams with a hyperdimensional filter. And let me tell ya, any electronics that ain't straight up disintegrated will be so screwed up, it'll take a tech wizard to fix it. So if some idiot tries to use this thing and gets blasted to scrap by point defenses, at least they can take out their weapons and engines on the way down.
 
-armaa_altagrave_syrinx,WEAPON,"Long range, homing missile. ",,,
-
-armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament to pirate ingenuity. While near useless against shields, the projectile making contact with hull produces a near constant cascading EMP effect that will rapidly disable weapons and other vital systems.",,,
-
-armaa_valkazard_shotgun_right,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however.",,,
-
-armaa_valkazard_shotgun_left,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however",,,
-
-armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,
-
-armaa_valkazard_torso_chaosburst,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,
-
-armaa_valkazard_torso_boson,WEAPON,"Akin to the Sector-standard Heavy Blaster - fires bolts of energy at enemy targets, but up to a burst of three. With high damage and flux costs, the particle cannon is one of the most damaging weapons that can be mounted on a Cataphract.",,,
-
-
-armaa_valkazard_torso_shield,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,
-
-armaa_valkazard_machinegun_left,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,
-
-armaa_valkazard_machinegun_right,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,
-
-armaa_valkazard_chaingun,WEAPON,"A 'melee' captain's favorite tool, the Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel.",,,
-
-armaa_valkazard_pulse_rifle_left,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,
-
-armaa_valkazard_pulse_rifle_right,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,
-
-armaa_valkazard_rcl,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,
-
-armaa_valkazard_rcl_left,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,
-
-armaa_valkazard_torso_ac,WEAPON,"A torso-mounted cannon that fires a duo of ionized shells capable of overloading and disabling enemy electronics at medium range.  It is most effective versus enemy shields.",,,
-
-armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,
-
-armaa_landingBeacon,WEAPON,"Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.","",,
-
-armaa_aleste_blade_LeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
-
-Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
-
-armaa_altagrave_blade,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
-
-Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
-
-
-
-armaa_valkazard_blade,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
-
-Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
-
-armaa_curvyLaser,WEAPON,"""... the energy mass pulses and undulates as if it were alive. I almost feel bad watching it expend its energy before self-terminating.""",- Chief Mechanic,,
-
+Hey boss, why ya starin' at me like that?""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_curvyLaser,WEAPON,"""... the energy mass pulses and writhes like a livin' creature. It's almost unsettling witnessin' it unleash its power before ultimately extinguishin' itself.""",- Chief Mechanic,,,,
+,,,,,,,
 armaa_monitor_leftArm,WEAPON,"Huge cannon, which fires slow-moving plasma-charged projectiles. Rounds are highly effective versus armor, and obliterate any hull structure left underneath.
-A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.","",,
-
+A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.",,,,,
+,,,,,,,
 armaa_monitor_leftArm_gauss,WEAPON,"A long range weapon designed to overload the target's shields. The heavy kinetic slug it fires is also effective against all but the heaviest armor.
-Uses magnetic coils to accelerate a 300mm caseless ultraheavy elemental slug to relativistic speeds. Usually rated at the hundreds of giga-amperes range, rarely exceeding one tera-ampere. Unlike most ballistic weapons, has a very high flux load when fired. Turrets mounted with this system have an extremely poor turn rate.","",,
-
+Uses magnetic coils to accelerate a 300mm caseless ultraheavy elemental slug to relativistic speeds. Usually rated at the hundreds of giga-amperes range, rarely exceeding one tera-ampere. Unlike most ballistic weapons, has a very high flux load when fired. Turrets mounted with this system have an extremely poor turn rate.",,,,,
+,,,,,,,
 armaa_monitor_rightArm,WEAPON,"Huge cannon, which fires slow-moving plasma-charged projectiles. Rounds are highly effective versus armor, and obliterate any hull structure left underneath.
-A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.","",,
-
+A feared weapon platform, rarely deployed due to the complexity involved in manufacturing a built-up barrel that can safely fire enormous high-explosive shaped charge rounds. When such a shell impacts a target, the Neumann effect causes the warhead to propel a jet of molten metal into the target's armor, vaporizing a small area, causing hull breaches, depressurization and extensive internal damage from the spall.",,,,,
+,,,,,,,
 armaa_monitor_rightArm_gauss,WEAPON,"A long range weapon designed to overload the target's shields. The heavy kinetic slug it fires is also effective against all but the heaviest armor.
-Uses magnetic coils to accelerate a 300mm caseless ultraheavy elemental slug to relativistic speeds. Usually rated at the hundreds of giga-amperes range, rarely exceeding one tera-ampere. Unlike most ballistic weapons, has a very high flux load when fired. Turrets mounted with this system have an extremely poor turn rate.","",,
-
+Uses magnetic coils to accelerate a 300mm caseless ultraheavy elemental slug to relativistic speeds. Usually rated at the hundreds of giga-amperes range, rarely exceeding one tera-ampere. Unlike most ballistic weapons, has a very high flux load when fired. Turrets mounted with this system have an extremely poor turn rate.",,,,,
+,,,,,,,
 armaa_aleste_blade_RightArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
-Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
-
-armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath its oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces. ArmaA Corporation denies any and all allegations regarding supposedly using materials forbidden by the Domain (and by extension) Hegemony Law, Section Regarding Restricted Weaponry.","",,
-
-armaa_leynos_autocannon_right,WEAPON,"Trustworthy and dependable autocannon mostly used in planetside warfare, where its destructive potential is widely known by armed forces and civilians alike. Unfortunately, It does not fare quite as well against spaceship-grade armor and shielding, but exposed hull is extremely vulnerable to its destructive shells.","",,
-
-armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by a minor damper field. The launched appendage 'handily' stresses shield generators and has enough kinetic force behind it deal some damage to armor and hull, but is vulnerable to interception via point defenses.","",,
-
-armaa_leynos_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.","",,
-
-armaa_armaa_valkenHead_gunmetal,WEAPON,"A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.","",,
-
-armaa_armaa_valkenHead,WEAPON,"A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.","",,
-
-armaa_leynos_railgun,WEAPON,"An improvement over the autocannon design, the Railgun accurately fires slugs at medium range. This version of the weapon fires smaller, weaker slugs covered in electromagnetic coating. Rounds cause disruptions in weaponry and auxiliary systems.","",,
-
-armaa_altagrave_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.","",,
-
-armaa_leynosBazooka,WEAPON,"Fires a small tight cluster of rocket-mines which activate and explode in proximity of enemy forces. Easily stopped by point defense weaponry. Official weapon manual recommends using them in close range if point defences are present as well as mentioning of its efficacy against clustered strike craft.","",,
-
-armaa_leynos_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-
-armaa_leynos_head_comet,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-
+Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_leynos_shotgun_right,WEAPON,"The semi-automatic 'Splatter' shotgun. Aptly named for the horrendous aftermath its oversized shells inflict on the crew unfortunate enough to be near the bulkheads it pierces. ArmaA Corporation denies any and all allegations regarding supposedly using materials forbidden by the Domain (and by extension) Hegemony Law, Section Regarding Restricted Weaponry.",,,,,
+,,,,,,,
+armaa_leynos_autocannon_right,WEAPON,"Trustworthy and dependable autocannon mostly used in planetside warfare, where its destructive potential is widely known by armed forces and civilians alike. Unfortunately, It does not fare quite as well against spaceship-grade armor and shielding, but exposed hull is extremely vulnerable to its destructive shells.",,,,,
+,,,,,,,
+armaa_leynosBoostKnuckle,WEAPON,"This modified arm launches a fist reinforced by a minor damper field. The launched appendage 'handily' stresses shield generators and has enough kinetic force behind it deal some damage to armor and hull, but is vulnerable to interception via point defenses.",,,,,
+,,,,,,,
+armaa_leynos_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.",,,,,
+,,,,,,,
+armaa_armaa_valkenHead_gunmetal,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,,,
+,,,,,,,
+armaa_armaa_valkenHead,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,,,
+,,,,,,,
+armaa_leynos_railgun,WEAPON,"An improvement over the autocannon design, the Railgun accurately fires slugs at medium range. This version of the weapon fires smaller, weaker slugs covered in electromagnetic coating. Rounds cause disruptions in weaponry and auxiliary systems.",,,,,
+,,,,,,,
+armaa_altagrave_ppc,WEAPON,"Devastating energy weapon capable of inflicting ruinous damage to enemy vessels. Unfortunately, spaceship shielding and armor easily negate vast majority of energy charge carried by the projectile, but a direct shot on exposed hull is known to cripple - if not outright obliterate frigates and even destroyer-sized ships.",,,,,
+,,,,,,,
+armaa_leynosBazooka,WEAPON,Fires a small tight cluster of rocket-mines which activate and explode in proximity of enemy forces. Easily stopped by point defense weaponry. Official weapon manual recommends using them in close range if point defences are present as well as mentioning of its efficacy against clustered strike craft.,,,,,
+,,,,,,,
+armaa_leynos_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+,,,,,,,
+armaa_leynos_head_comet,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+,,,,,,,
 armaa_valken_torso_gunmetal,WEAPON,"A small caliber cannon designed for close-range fights, excellent versus armor and with a superb fire rate.
-Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.","",,
-
+Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.",,,,,
+,,,,,,,
 armaa_valken_torso_black,WEAPON,"A small caliber cannon designed for close-range fights, excellent versus armor and with a superb fire rate.
-Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.","",,
-
-armaa_leynos_crusher_right,WEAPON,"Dual-barreled energy weapon firing plasma projectiles which explode on contact with stable matter, such as spaceship armor or shielding. The delay between shots has to be accounted for when firing.","",,
-
-
-armaa_valken_gun,WEAPON,"A variant of the sector-standard railgun that fires a burst of smaller slugs instead of a singular round.","",,
-
-armaa_valken_missile,WEAPON,"Miniature missiles. Easily intercepted, they are generally fired in large quantities to ensure at least a few breach point defense fields.","",,
-
-armaa_valkenx_torso,WEAPON,"A medium range energy cannon that delivers an electro-magnetic pulse (EMP) and can quickly disable enemy systems/engines.","",,
-
-armaa_chaingun,WEAPON,"The Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel..","",,
-
+Small caliber cannon designed to fire high-explosive rounds. Design of the coolant systems and autoloader emphasizes safety and prevention of cook-off potentially caused by high flux levels. Favored by destroyer captains that have something to prove.",,,,,
+,,,,,,,
+armaa_leynos_crusher_right,WEAPON,"Dual-barreled energy weapon firing plasma projectiles which explode on contact with stable matter, such as spaceship armor or shielding. The delay between shots has to be accounted for when firing.",,,,,
+,,,,,,,
+armaa_valken_gun,WEAPON,A variant of the sector-standard railgun that fires a burst of smaller slugs instead of a singular round.,,,,,
+,,,,,,,
+armaa_valken_missile,WEAPON,"Miniature missiles. Easily intercepted, they are generally fired in large quantities to ensure at least a few breach point defense fields.",,,,,
+,,,,,,,
+armaa_valkenx_torso,WEAPON,A medium range energy cannon that delivers an electro-magnetic pulse (EMP) and can quickly disable enemy systems/engines.,,,,,
+,,,,,,,
+armaa_chaingun,WEAPON,The Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel..,,,,,
+,,,,,,,
 armaa_valkenxLeftArm,WEAPON,"""My hypothesis is that these 'laser swords' employ the same principles behind other beams usin' a hyperdimensional filter. Any electronics that ain't vaporized outright will probably be severely crippled, so it can disable weapons and engines should the need arise, assumin' the fool using this wasn't pounded to scrap by point defenses.
 
-Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,
-
-
-armaa_aleste_flamer_right,WEAPON,"Evolution of the DR-79 plasma gatling. Rather short-ranged, but deadly in close-quarters combat.",,,
-armaa_altagrave_rightArm,WEAPON,"Fires nanomachines encased in a plasma sheathe shaped by the device's electromagnetic field. The resulting smart projectile produces a brilliant trail of energy while launched and has limited homing capability, although it fares rather poorly against small targets. Precise shots on the drone itself is enough to disrupt and destroy these projectiles.",,,
-armaa_altagrave_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-armaa_altagrave_head_c,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-armaa_altagrave_head_g,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-armaa_altagrave_head_ex,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-armaa_altagrave_head_r,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,
-armaa_sprigganHead,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,
-armaa_einhander_plus_head,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,
-armaa_leynos_minigun_right,WEAPON,Energy based minigun. Effecive versus a variety of targets..,,,
-
-armaa_einhanderGun,WEAPON,"Progenitor of the Juno-class beam weapon series. It lacks the specialization and raw power of later models due to several defects and the lack of practical knowledge regarding the partial output of energy in p-space. As a result, the pulses it does fire are generally less effective than a standard Pulse Laser; the flip side is that safety limiters on the weapon can be disabled for output far exceeding baseline performance.",,,
-armaa_sprigganTorso,WEAPON,"Launches a barrage of phased psuedo-projectiles. Extremely effective against fighters. This weapon is fueled directly by the unit's own power core, and the requisite energy required will gradually replenish itself over time.",,,
-armaa_heavyJavelin,WEAPON,"Heavy artillery developed to defeat extremely thick armor. Limited ammo, slow rate of fire and travel speed means making each shot count is vital.",,,
-armaa_fluxcannon,WEAPON,"A high intensity beam cannon that shares the unusual characteristic with Graviton Beam of being highly effective against shields, the Juno Mk. III diverges with a far higher flux requirement and output. While handily defeated by armor, the Mk. III can easily and rapidly liquify stripped hull. ",,,
-armaa_altagrave_fluxcannon,WEAPON,"A high intensity beam cannon that shares the unusual characteristic with Graviton Beam of being highly effective against shields, the Juno Mk. III diverges with a far higher flux requirement and output. While easily mitigated by  heavy armor, the Mk. III can rapidly liquify stripped hull. Due to some factor, this instance of the weapon has reduced cycling rate and range.",,,
-armaa_altagrave_shotgun,WEAPON,"Essentially a ludicrously scaled up shotgun, this weapon flings dozens of superheated projectiles into the target at high velocities, shredding armor.",,,
-armaa_altagrave_rynoxH,WEAPON,"Fires a trio of high-explosive grenades that explode after a brief delay. Effective both for anti-armor and anti-fighter purposes, as well as against tightly packed formations.",,,
-armaa_garegga_leftArm,WEAPON,"An assault weapon that spews what can essentially be regarded as torrent of hot molten death. The G-1001K Mutilator differs from its cousin with high velocity shells designed to rapidly strain even the strongest of shield generators. It is, however, only effective at close ranges.",,,
-armaa_garegga_rightArm,WEAPON,"An assault weapon that spews what can essentially be regarded as torrent of hot molten death. The G-1001 Mutilator earned it's name for it's ability to utterly shred armored targets, rendering them unrecognizable masses of twisted metal. It is, however, only effective at close ranges.",,,
+Commander, why're ya lookin' at me like that?""",- Chief Mechanic,,,,
+,,,,,,,
+armaa_legioMech_head,WEAPON,"""Point defense Weapon.""",,,,,
+,,,,,,,
+armaa_aleste_flamer_right,WEAPON,"Evolution of the DR-79 plasma gatling. Rather short-ranged, but deadly in close-quarters combat.",,,,,
+armaa_altagrave_rightArm,WEAPON,"Fires nanomachines encased in a plasma sheathe shaped by the device's electromagnetic field. The resulting smart projectile produces a brilliant trail of energy while launched and has limited homing capability, although it fares rather poorly against small targets. Precise shots on the drone itself is enough to disrupt and destroy these projectiles.",,,,,
+armaa_altagrave_head,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+armaa_altagrave_head_c,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+armaa_altagrave_head_g,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+armaa_altagrave_head_ex,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+armaa_altagrave_head_r,WEAPON,The head-mounted Anti Missile Weapon System is a combination fire-control system linked with an integrated Burst PD Laser.,,,,,
+armaa_sprigganHead,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,,,
+armaa_einhander_plus_head,WEAPON,A rapid fire weapon that is especially devastating to missiles and fighters at point-blank range. Accuracy degrades sharply during prolonged bursts.,,,,,
+armaa_leynos_minigun_right,WEAPON,Energy based minigun. Effecive versus a variety of targets..,,,,,
+,,,,,,,
+armaa_einhanderGun,WEAPON,"Progenitor of the Juno-class beam weapon series. It lacks the specialization and raw power of later models due to several defects and the lack of practical knowledge regarding the partial output of energy in p-space. As a result, the pulses it does fire are generally less effective than a standard Pulse Laser; the flip side is that safety limiters on the weapon can be disabled for output far exceeding baseline performance.",,,,,
+armaa_sprigganTorso,WEAPON,"Launches a barrage of phased psuedo-projectiles. Extremely effective against fighters. This weapon is fueled directly by the unit's own power core, and the requisite energy required will gradually replenish itself over time.",,,,,
+armaa_heavyJavelin,WEAPON,"Heavy artillery developed to defeat extremely thick armor. Limited ammo, slow rate of fire and travel speed means making each shot count is vital.",,,,,
+armaa_fluxcannon,WEAPON,"The Juno Mk. III boasts a unique feature shared with the Graviton Beam – an exceptional capability to penetrate shields. However, it stands out with a significantly greater energy demand and output, enabling it to excel against lightly armored adversaries and swiftly disintegrate exposed hulls. Has a brief charging period before firing.",,,,,
+armaa_altagrave_fluxcannon,WEAPON,"The Juno Mk. III boasts a unique feature shared with the Graviton Beam – an exceptional capability to penetrate shields. However, it stands out with a significantly greater energy demand and output, enabling it to excel against lightly armored adversaries and swiftly disintegrate exposed hulls. Has a brief charging period before firing.",,,,,
+armaa_altagrave_shotgun,WEAPON,"Essentially a ludicrously scaled up shotgun, this weapon flings dozens of superheated projectiles into the target at high velocities, shredding armor.",,,,,
+armaa_altagrave_rynoxH,WEAPON,"Fires a trio of high-explosive grenades that explode after a brief delay. Effective both for anti-armor and anti-fighter purposes, as well as against tightly packed formations.",,,,,
+armaa_garegga_leftArm,WEAPON,"An assault weapon that spews what can essentially be regarded as torrent of hot molten death. The G-1001K Mutilator differs from its cousin with high velocity shells designed to rapidly strain even the strongest of shield generators. It is, however, only effective at close ranges.",,,,,
+armaa_garegga_rightArm,WEAPON,"An assault weapon that spews what can essentially be regarded as torrent of hot molten death. The G-1001 Mutilator earned it's name for it's ability to utterly shred armored targets, rendering them unrecognizable masses of twisted metal. It is, however, only effective at close ranges.",,,,,
 armaa_garegga_leftArm_tt,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.
 
 Designed to fire pulses rather than a constant beam, with a total power output exceeding constant-operation designs. As with continuous lasers, a carbon dioxide gain medium is fed energy and produces photons at eleven microns wavelengths. 
 
-Greater energy delivered in shorter time means the target is ablated, a process that causes the vaporization of small surfaces sections. The resulting shock waves do additional structural damage. ",,,
+Greater energy delivered in shorter time means the target is ablated, a process that causes the vaporization of small surfaces sections. The resulting shock waves do additional structural damage. ",,,,,
 armaa_garegga_rightArm_tt,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy. 
 
 Designed to fire pulses rather than a constant beam, with a total power output exceeding constant-operation designs. As with continuous lasers, a carbon dioxide gain medium is fed energy and produces photons at eleven microns wavelengths. 
 
-Greater energy delivered in shorter time means the target is ablated, a process that causes the vaporization of small surfaces sections. The resulting shock waves do additional structural damage. ",,,
-
-armaa_prodromos_rightArm,WEAPON,"Features a built-in capacitor that lets the weapon fire several bursts in quick succession if allowed to fully recharge. Excellent vs missiles and fighters.",,,
-
-armaa_prodromos_leftArm,WEAPON,"Fearsome in its own right, this low-grade autocannon is only marginally effective against space vehicles. It's more than sufficient for clipping the wings of enemy strikecraft, however.",,,
-
-armaa_valkenxHead_frig,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,
-
-armaa_record_frig_head,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,
-
-armaa_altagrave_exceliza,WEAPON,"A grenade launcher. Explodes after a brief delay, dealing considerable damage to anything in the explosions radius.",,,
+Greater energy delivered in shorter time means the target is ablated, a process that causes the vaporization of small surfaces sections. The resulting shock waves do additional structural damage. ",,,,,
+armaa_garegga_xiv_leftArm,WEAPON,"""Meet the Pulverizer, boys!This beauty can't just dig through space rocks; it carves through enemy ships like they're made of butter. Swoop in, and bam! We'll be pounding through their hulls faster than Perkins blacks out during happy hour.""",- Captain Raine ,,,,
+armaa_garegga_xiv_rightArm,WEAPON,"A downscaled Mjolnir that fires in 3-shot bursts. Like its bigger brother, the micro capacitors within each shell are able to deliver enough energy to create a small-scale localized singularity. The built-in gravitic lens devastates all nearby matter, and creates the dreaded electromagnetic pulse (EMP) effect, disabling the target's weapons and systems.",- Captain Raine ,,,,
+armaa_prodromos_rightArm,WEAPON,Features a built-in capacitor that lets the weapon fire several bursts in quick succession if allowed to fully recharge. Excellent vs missiles and fighters.,,,,,
+armaa_barretta,WEAPON,"In principle an antiquated weapon system, the Barretta fires a high-velocity penetrator round that effectively strips even heavy armor with its sustained surgical barrage and causes utter devastation to the hull beneath.",,,,,
+armaa_prodromos_leftArm,WEAPON,"Fearsome in its own right, this low-grade autocannon is only marginally effective against space vehicles. It's more than sufficient for clipping the wings of enemy strikecraft, however.",,,,,
+,,,,,,,
+armaa_valkenxHead_frig,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,,,
+,,,,,,,
+armaa_record_frig_head,WEAPON,"Low grade beam weapon geared for point defense duty. After focusing on a target for a moment, it emits a concentrated burst of energy.",,,,,
+,,,,,,,
+armaa_altagrave_exceliza,WEAPON,"A grenade launcher. Explodes after a brief delay, dealing considerable damage to anything in the explosions radius.",,,,,
 armaa_ionBuster,WEAPON,"A sidegrade of the sector-standard Ion Cannon. Much like it's cousin, the Ion Buster fires bolts of ionized baryonic matter; it differs in design by focusing significantly more power into individual shots instead of providing a steady stream of fire. While the weapon takes far longer to charge and cannot fire as rapidly, the effects are significantly more devastating and can pierce strained shield generators.
 
-In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,
-
-armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,
-armaa_tshell,SHIP_SYSTEM,"Speeds up the flow of time on board the ship. Half as effective as the version featured on larger ships. Generates a significant amount of flux when used.",,,
-armaa_flarelauncher_active,SHIP_SYSTEM,"Launches flares to confuse the guidance systems of nearby enemy missiles. The flares are fast and actively track them.",,,
-armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,
+In the past, this weapon was actually the standard-issue head unit for Garegga. Their usefulness and effectiveness saw them revised into the modular form seen today.",,,,,
+,,,,,,,
+armaa_energysurge,SHIP_SYSTEM,"Increases manuverability and activates secondary firing mode of the main weapon at the expense of increased recoil, and decreased rate of fire. All energy damage increases as flux does.",,,,,
+armaa_tshell,SHIP_SYSTEM,Speeds up the flow of time on board the ship. Half as effective as the version featured on larger ships. Generates a significant amount of flux when used.,,,,,
+armaa_flarelauncher_active,SHIP_SYSTEM,Launches flares to confuse the guidance systems of nearby enemy missiles. The flares are fast and actively track them.,,,,,
+armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
-armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,
-armaa_siegeMode,SHIP_SYSTEM,"Top speed, maneuverability, and damage taken by shields is reduced by 50%, while weapon and sensor range is increased by the same amount",,,
-armaa_recalldevice,SHIP_SYSTEM,"Teleports a single vessel in need (with the Strikecraft hullmod) back to the carrier, allowing them to be quickly refitted and relaunched.",,,
-armaa_plasmaJets,SHIP_SYSTEM,"Grants an tremendous speed boost in the given direction briefly.",,,
-armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,
-armaa_pdamper,SHIP_SYSTEM,"Decreases damage taken by 40%, with 60% time dilation effect.",,,
-armaa_mpdamper,SHIP_SYSTEM,"Speeds up timeflow by 30%, reduces damage by 20%.",,,
-armaa_overshield,SHIP_SYSTEM,Shields absorb 5x damage. Disables weapons.,,,
-armaa_karma,SHIP_SYSTEM,"Projectiles within 600 SU are absorbed on activation, Hostile tracking missiles that can be hacked will target enemies. On standard Altagrave models, absorbed projectiles grant a scaling weapon RoF/Flux reduction up to 30%, while the [C]ommand variant grants a scaling time dilation bonus up to 15% for all friendlies within 1000 of the unit.",,,
-armaa_lowgradeemp,SHIP_SYSTEM,"Activates a weak EMP generator. Nearby missiles, fighters, weapon emplacements and engines of enemy ships are all targeted.",,,
-armaa_oboost,SHIP_SYSTEM,"Dramatically increases speed, and moderately increases manuverability for one second. ",,,
-armaa_oboost2,SHIP_SYSTEM,"Greatly increases speed while steadily increasing flux.",,,
-armaa_claw,SHIP_SYSTEM,"Autonomous interceptor drones. Two can be launched simultaneously, and carries 6 in total.",,,
-armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,
+armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,,,
+armaa_siegeMode,SHIP_SYSTEM,"Disables shields and diverts power from engines, doubling weapon and sensor range and increasing RoF slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
+armaa_recalldevice,SHIP_SYSTEM,"Teleports a single vessel in need (with the Strikecraft hullmod) back to the carrier, allowing them to be quickly refitted and relaunched.",,,,,
+armaa_plasmaJets,SHIP_SYSTEM,Grants an tremendous speed boost in the given direction briefly.,,,,,
+armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,,,
+armaa_pdamper,SHIP_SYSTEM,"Decreases damage taken by 40%, with 60% time dilation effect.",,,,,
+armaa_mpdamper,SHIP_SYSTEM,"Speeds up timeflow by 30%, reduces damage by 20%.",,,,,
+armaa_overshield,SHIP_SYSTEM,Shields absorb 5x damage. Disables weapons.,,,,,
+armaa_karma,SHIP_SYSTEM,"Projectiles within 600 SU are absorbed on activation, Hostile tracking missiles that can be hacked will target enemies. On standard Altagrave models, absorbed projectiles grant a scaling weapon RoF/Flux reduction up to 30%, while the [C]ommand variant grants a scaling time dilation bonus up to 15% for all friendlies within 1000 of the unit.",,,,,
+armaa_lowgradeemp,SHIP_SYSTEM,"Activates a weak EMP generator. Nearby missiles, fighters, weapon emplacements and engines of enemy ships are all targeted.",,,,,
+armaa_oboost,SHIP_SYSTEM,"Dramatically increases speed, and moderately increases manuverability for one second. ",,,,,
+armaa_oboost2,SHIP_SYSTEM,Greatly increases speed while steadily increasing flux.,,,,,
+armaa_claw,SHIP_SYSTEM,"Autonomous interceptor drones. Two can be launched simultaneously, and carries 6 in total.",,,,,
+armaa_silverSword,SHIP_SYSTEM,"Increases speed, acceleration, energy and ballistic rate of fire, as well as flux dissipation and capacity while reducing weapon range past 450 units and doubling CR degradation. Exceeding the time limit will overload the ship and generate an explosion damaging anything within its radius, rendering it vulnerable - however, the effects of this system are greatly magnified as the limit is approached.",,,,,
+,,,,,,,
+armaa_silverSwordV,SHIP_SYSTEM,"Increases manuverability, non-missile rate of fire, as well as flux dissipation and capacity, tripling CR degradation. Draining the gauge will overload and damage the ship. Effects of the system increase as the gauge nears zero. Best used in short bursts.",,,,,
+,,,,,,,
+armaa_afcss,SHIP_SYSTEM,"Increases damage dealt to a number of enemies within 2500 SU by 25% based on the combined ECM rating of nearby allies versus that of the enemy. The probability of individual ships being affected is further modified by their own ECCM rating. While the effect does not stack, successive attempts can affect enemies that resisted previous uses.",,,,,
+,,,,,,,
+armaa_meleeAttack,SHIP_SYSTEM,Charges forward at targeted enemy at high speeds.,,,,,
+,,,,,,,
+armaa_drone_strike,SHIP_SYSTEM,"Supercharges one of the UWS drones with a brief energy transfer. The drone tracks a nearby target like a missile, dealing damage on impact.",Offensive,Supercharges one of the UWS drones and sends it after a target. The drone deals 400 High Explosive damage and 400 EMP damage on impact.,400 High Explosive | 400 EMP,,
+,,,,,,,
+armaa_jauntbooster,SHIP_SYSTEM,Greatly boosts speed and acceleration for a short moment. More effective for lateral movement.,Movement,,,,
+,,,,,,,
+armaa_reload,SHIP_SYSTEM,Press the System Activation key at the right time to fire a powered up shot.,Movement,,,,
+armaa_drone_sensor,SHIP_SYSTEM,"Increases weapon and sensor range, while slightly decreasing RoF. Lost drones are slowly replaced.",Movement,,,,
+armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,,,
+armaa_rampagedrive,SHIP_SYSTEM,"Diverts all shield and some weapon power to the ship's engines and dampeners for a short time. Will attempt to ram targets, otherwise charges straight forward. Reduced damage taken and halved weapon rate of fire while active.",Movement,"Diverts all shield and some weapon power to the ship's engines and dampeners for a short time. Will attempt to ram targets, otherwise charges straight forward. A successful ram will deal a bonus 1500 High Explosive damage on impact. -66% damage taken and halved weapon rate of fire while active.",1500 High Explosive | -66%,,
+#CAMPAIGN STUFF,,,,,,,
+armaarmatura_pirates,FACTION,"The Meshan Reprisal Coalition (MRC) is the evolution of an initially peaceful political movement aimed to hold accountable those responsible for the catastrophic misuse of Domain-era planetkillers throughout the AI Wars. However, over time, the organization took a dark turn, evolving into a radicalized paramilitary organization that operates on the fringes of civilized space today. Their motivations have become morally ambiguous, to say the least.
 
-armaa_silverSwordV,SHIP_SYSTEM,"Increases manuverability, non-missile rate of fire, as well as flux dissipation and capacity, tripling CR degradation. Draining the gauge will overload and damage the ship. Effects of the system increase as the gauge nears zero. Best used in short bursts.",,,
+The MRC maintains loose affiliations with a spectrum of factions; all of whom claim to champion 'noble' causes, such as the ARC. This ambiguous nobility often pits them against the established powers in the Sector, though they hold particular ire towards Tri-Tachyon, the Hegemony, and the Sindrian Diktat. 
 
-armaa_afcss,SHIP_SYSTEM,"Increases damage dealt to a number of enemies within 2500 SU by 25% based on the combined ECM rating of nearby allies versus that of the enemy. The probability of individual ships being affected is further modified by their own ECCM rating. While the effect does not stack, successive attempts can affect enemies that resisted previous uses.",,,
+Persistent rumors suggest that influential figures in the landscape tacitly endorse the MRC's actions and have been subtly employing them as a sort of proxy to satisfy their own interests. This theory is supported by the steady decrease in any kind of tangible demands for justice and a ramp up in raids and attacks in recent years. The motives behind these actions remain ambiguous, leaving observers to question where the line between righteousness and ruthlessness truly lies.",,,,,
+armaa_homeworld,CUSTOM,"New Meshan, a planet deeply scarred by the devastating conflicts of the AI Wars, has undergone significant redevelopment under the stewardship of Arma Armatura. Following their acquisition of planetary rights through a corporate charter after the conclusion of the Second AI War, New Meshan has made notable strides in rebuilding its infrastructure and recapturing its former prosperity.
 
-armaa_meleeAttack,SHIP_SYSTEM,"Charges forward at targeted enemy at high speeds.",,,
+The colony has experienced remarkable growth, emerging as a prominent gathering point for independent mercenaries and fortune seekers in the surrounding region. Functioning as a fringe supply and maintenance depot, New Meshan provides essential services to those embarking on ventures beyond the Core Worlds. While ArmaA's influence is evident, the population of New Meshan retains a degree of self-governance, adopting a constitutional monarchy as its official governing structure. Nevertheless, there are those who assert that the decisions of a covert supervisory board hold substantial sway over the planet's affairs.",,"Tension between the inhabitants of New Meshan's vast megacities and the Luddic practitioners in the rural countryside have punctuated the ArmaA corporation's presence on the planet; at the same time, this juxtaposition has given rise to a distinctive culture over the past century.
 
-armaa_drone_strike,SHIP_SYSTEM,"Supercharges one of the UWS drones with a brief energy transfer. The drone tracks a nearby target like a missile, dealing damage on impact.",Offensive,"Supercharges one of the UWS drones and sends it after a target. The drone deals 400 High Explosive damage and 400 EMP damage on impact.",400 High Explosive | 400 EMP,
-
-armaa_jauntbooster,SHIP_SYSTEM,"Greatly boosts speed and acceleration for a short moment. More effective for lateral movement.",Movement,,
-
-armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defenses.,Defensive,Launches flares that interfere with point-defenses.",,,
-
-#CAMPAIGN STUFF,,,,,
-armaa_homeworld,CUSTOM,"One of many planets devastated during the AI Wars, 'New Meshan' has come a long way to recapturing its former grandeur after Arma Armatura received rights to the planet via corporate charter following the Second AI War a dozen or so cycles ago. 
-
-The colony has enjoyed rapid growth, housing one of the most well-trained conglomoration of independent mercenaries and fortune seekers in the region as a fringe supply and maintenance depot for those undertaking excursions out of the Core Worlds. ArmaA has apparently left the population to self-govern for the most part, and New Meshan is outwardly a constitutional monarchy. Those "in the know", however, maintain that the supervisory board covertly calls the shots.",,,
-
-armaa_station_exsedol,CUSTOM,"A vast orbital station built around the core of an old Expansion-era Sporeship buried under a forest of modular hangars, industrial pods, and hab rings. This station was once the staging area for Arma Armatura's security forces. It is now completely dead.",,"The primary reactors and all valuable industrial components have been stripped - and hastily, judging by the extensive secondary damage. Passive back-up systems were crippled by the process and the station too far from the primary to receive enough energy to maintain life support.",,,	
-
+Winding down like hyperdrives in the dead of space, weary offworlders, debauched unbelievers, and the faithul intermingle in the ethereal glow of neon-lit taverns, trading tales of cosmic escapades over water-downed spirits distilled from the remnants of long-defunct megacorps.",,,
+,,,,,,,
+armaa_station_exsedol,CUSTOM,"A colossal orbital station encircling the heart of an ancient Expansion-era Sporeship, concealed beneath a dense forest of modular hangars, industrial pods, and hab rings. Initially designed as a staging area for Arma Armatura's security forces, it underwent a transformation when refugees, criminals, freedom fighters, and fanatics alike, united in their efforts to convert it into a formidable colony with military capabilities. The result was the birth of a unique colony-military outpost, now recognized as Fort Exsodol.",,"Fort Exsodol exudes an atmosphere strikingly reminiscent of a typical fringe pirate station. Crews hurry to and fro, engaging in animated haggling for stim-sticks or loitering around dens of vice. Amidst this bustling scene, soldiers clad in formidable power armor and even larger battlesuits are actively being loaded onto shuttles, preparing for various covert operations. ",,,	
+,,,,,,,
 armaa_station_research,CUSTOM,"An abandoned research station, built either to study some interesting local phenomenon or to study that which is best kept far, far away from inhabited worlds. A cursory scan indicates that the majority of the station has been cold and dead for tens of cycles at the very least, possibly hundreds.",,"Upon closer inspection, sensors indicate that a storage section on the port side of the station was recently brought back online, and currently has active power.",,,	
-
-armaa_meshan,CUSTOM,"Originally the headquarters of the Arma Armatura megacorp in the Persean Sector, rendered unhabitable after being annihilated at the hands of forbidden planet-cracker weapons. Any hopes of the culprit ever being discovered and brought to justice have long since been dashed - a concession made among the polities during peace talks after the First AI War.",,"Over a hundred cycles ago, it was said that Meshan was promising and lush world, near fully terraformed. Now it is little more than a picked carcass and gravesite for the millions who perished when a planet-cracker was deployed upon it during cycle 94. A handful of survivors insisted that Tri-Tachyon was behind the atrocity, but such claims were easily quelled by the megacorps legal team, which summarily followed up with a defamation suit.",,
+,,,,,,,
+armaa_meshan,CUSTOM,"The once thriving planet that housed the headquarters of the Arma Armatura megacorporation in the Persean Sector met an unfathomable fate, as not only was the facility annihilated, but the entire planet itself was torn asunder. The cataclysmic event, perpetrated through the utilization of forbidden planet-cracker weapons, left no hope for discovering the culprits responsible or bringing them to justice. In the aftermath of the devastating destruction, peace talks following the First AI War led to a collective decision among polities to abandon any pursuit of retribution and instead focus on the delicate process of rebuilding and reconciliation.",,"Once hailed as a thriving and fertile world, Meshan's vibrant potential has been reduced to a desolate wasteland and somber burial ground. The planet's tragic fate was sealed over a hundred cycles ago in cycle 94, when a devastating planet-cracker weapon was unleashed upon it, claiming the lives of millions. Despite the claims of a few survivors implicating Tri-Tachyon as the perpetrator, such accusations were swiftly suppressed by the formidable legal team of the megacorporation, who promptly countered with a defamation lawsuit. As a result, any further discussion regarding Tri-Tachyon's involvement was effectively silenced.",,,

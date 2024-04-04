@@ -10,13 +10,13 @@
   "hardpointSprite": "graphics/armaa/weapons/armaa_revx_ml_variablerifle_00.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
-    0,
+    155,
     0,
     0,
     0
   ],
-  "specialWeaponGlowHeight": 20,
-  "specialWeaponGlowWidth": 10,
+  "specialWeaponGlowHeight": 0,
+  "specialWeaponGlowWidth": 0,
   "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -45,17 +45,17 @@
   "frameRate": 0,
   "fringeColor": [
     255,
-    255,
-    255,
-    255
+   155,
+    155,
+    0
   ],
   "coreColor": [
     255,
-    255,
-    255,
-    255
+    155,
+    155,
+    0
   ],
-  "width": 10,
+  "width": 1,
   "textureType": ROUGH,
   "textureScrollSpeed": 64,
   "pixelsPerTexel": 1

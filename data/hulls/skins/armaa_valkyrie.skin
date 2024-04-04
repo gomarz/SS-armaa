@@ -9,7 +9,7 @@
     "restoreToBaseHull":false,
     "fighterbays":1,
     "addHints":[],
-    "tags":["rare_bp"],
+    #"tags":["rare_bp"],
 	"systemId":"armaa_recalldevice",
     "tech":"Arma Armatura",
     "removeWeaponSlots":["WS 006"], 		# ids

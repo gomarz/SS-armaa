@@ -1,0 +1,23 @@
+{
+	"id":"armaa_axe_shot",
+        "onHitEffect":"data.scripts.weapons.armaa_axeEffect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":164.0,
+	"width":48,
+        "bulletSprite":"graphics/armaa/ships/kshatriya/kshatriya_rightArm_bullet.png",
+	#"length":130.0,
+	#"width":12,
+	"fadeTime":0.05,
+	"fringeColor":[235,133,0,0],
+	"coreColor":[235,133,0,0],
+	"glowColor":[235,133,9,100],
+	#"glowRadius":100,
+	"hitGlowRadius":0,	
+	"textureType":"SMOOTH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
+
+}

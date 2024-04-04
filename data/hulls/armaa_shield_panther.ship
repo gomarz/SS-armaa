@@ -1,0 +1,73 @@
+{
+  "hullName": "Shield",
+  "hullId": "armaa_shield_panther",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/panther/armaa_panther_shield.png",
+  "style": "MIDLINE",
+  "height": 98,
+  "width": 44,
+  "center": [23, 58],
+  "collisionRadius": 42.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 42,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "armaa_shield_controller"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [17, 19]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 90,
+      "locations": [12, 19]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -90,
+      "locations": [12, -19]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 90,
+      "locations": [28, 19]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -90,
+      "locations": [28, -19]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -3, 22,
+    13, 22,
+    36, 21,
+    36, 17,
+    13.5, 16,
+    -11, 16.5
+  ]
+}

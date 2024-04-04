@@ -1,8 +1,8 @@
 {
   "id": "armaa_pa_mid_leftArm",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_pa_autocannon_shot",
-  "type": "BALLISTIC",
+  "projectileSpecId": "ioncannon_shot",
+  "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_prodromosEffect",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
@@ -30,21 +30,15 @@
   ],
         "specialWeaponGlowWidth":3,
         "specialWeaponGlowHeight":5,
-  "barrelMode": "ALTERNATING",
-  "animationType": "MUZZLE_FLASH",
-  "muzzleFlashSpec": {
-    "length": 30,
-    "spread": 15,
-    "particleSizeMin": 7,
-    "particleSizeRange": 10,
-    "particleDuration": 0.05,
-    "particleCount": 10,
-    "particleColor": [
-      255,
-      200,
-      155,
-      200
-    ]
-  },
-  "fireSoundTwo": "autocannon_fire"
+ 	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"GLOW_AND_FLASH",
+	"muzzleFlashSpec":{"length":33.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":15.0,
+					   "particleSizeMin":10.0,
+					   "particleSizeRange":12.0,
+					   "particleDuration":0.12,
+					   "particleCount":17,
+					   "particleColor":[100,200,255,255]},
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+  "fireSoundTwo": "ion_cannon_fire"
 }

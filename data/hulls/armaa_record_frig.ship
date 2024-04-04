@@ -17,7 +17,8 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "reduced_explosion",
-    "rugged"
+    "rugged",
+    "armaa_variableRifle"
   ],
   "builtInWings": [
     "armaa_bit_spriggan"
@@ -55,8 +56,8 @@
     },
     {
       "id": "TRUE_GUN",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,

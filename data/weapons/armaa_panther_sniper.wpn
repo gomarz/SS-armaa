@@ -1,0 +1,53 @@
+{
+  "id": "armaa_panther_sniper",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_pulselaser_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_valkazardGunEffect",
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/ships/panther/armaa_panther_sniper.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_valkazard_laser_right_00.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "visualRecoil": 1,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    35,
+    -12.5,
+    35,
+    -12.5,
+    35,
+    -12.5
+  ],
+  "turretAngleOffsets": [
+    1,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "spread": 12,
+    "particleSizeMin": 18,
+    "particleSizeRange": 23,
+    "particleDuration": 0.04,
+    "particleCount": 12,
+    "particleColor": [
+      255,
+      68,
+      204,
+      220
+    ]
+  },
+  "fireSoundTwo": "rynex_fire"
+}

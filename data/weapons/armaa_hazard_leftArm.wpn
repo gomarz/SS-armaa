@@ -1,0 +1,55 @@
+{
+  "id": "armaa_hazard_leftArm",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_zanacDummyWeapon2",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/hazard/armaa_hazardLeftArm.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    14.5,
+    14,
+    14.5,
+    14,
+    14.5,
+    14
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 1,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 5
+}
