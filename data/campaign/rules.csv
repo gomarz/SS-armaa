@@ -1149,14 +1149,14 @@ anh_diktatPatrolStall3Yes:""As you wish.""
 anh_diktatPatrolStall3All:""No, this ends here. I'm handing you all over.""",
 armaa_anhDiktatPatrolStall3Yes,DialogOptionSelected,"$option == anh_diktatPatrolStall3Yes
 armaa_Hikaru_Utada hasOfficer armaa_dawn","$entity.anh_handOverMan = true 0
-AdjustRepPerson armaa_dawn -2","""What!?"" the kid shouts, ""You can't do that. You have to fight! You have a $shipOrFleet! You're just going to let those Diktat goons order you around?"" He lunges at you, and is bodily intercepted by the arm of one of your guards. After a yelp and a moment of struggle, the kid folds to an electrostun rod.
+AdjustRepPerson armaa_dawn VENGEFUL -5","""What!?"" the kid shouts, ""You can't do that. You have to fight! You have a $shipOrFleet! You're just going to let those Diktat goons order you around?"" He lunges at you, and is bodily intercepted by the arm of one of your guards. After a yelp and a moment of struggle, the kid folds to an electrostun rod.
 
 The old man does not give the commotion even a glance. Instead, his eyes are steady on yours. Looking deeply for something.
 
 ""He has so much to learn, $playerName."" He looks thoughtful, ""Fate may surprise us yet.""",anh_diktatPatrolStall4:Continue,
 armaa_anhDiktatPatrolStall3All,DialogOptionSelected,"$option == anh_diktatPatrolStall3All
 armaa_Hikaru_Utada hasOfficer armaa_dawn","$entity.anh_handOverBoth = true 0
-AdjustRepPerson armaa_dawn -15","""What!?"" the kid shouts, ""You can't do that! You're just-"" he lunges at you, and is bodily intercepted by the arm of one of your guards. After a yelp and a moment of struggle, the kid folds to an electrostun rod.
+AdjustRepPerson armaa_dawn VENGEFUL -15","""What!?"" the kid shouts, ""You can't do that! You're just-"" he lunges at you, and is bodily intercepted by the arm of one of your guards. After a yelp and a moment of struggle, the kid folds to an electrostun rod.
 
 The old man does not give the commotion even a glance. Instead, his eyes are steady on yours. Looking deeply for something.
 
