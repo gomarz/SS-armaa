@@ -1,7 +1,6 @@
 {
   #"animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.armaa_rcl_effect",
   "fireSoundTwo": "armaa_rcl_fire",
   "hardpointAngleOffsets": [
     0
