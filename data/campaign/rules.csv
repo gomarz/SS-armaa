@@ -18,7 +18,7 @@ A team is deployed to the station as a secondary measure. You watch from the fee
 
 A few hours pass before you receive a new report, indicating hardly anything valuable could be found; the station indeed had been rather thoroughly combed through. The only standout mention was the indication that someone had been staying on the station until recently, and all indications pointed to them departing towards the gas giant Raven in search of something.",defaultLeave:Leave,
 ,,,,,,
-nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == rocketStars,,"After a brieft moment, the connection resolves and a mercenaries visage stares back at you. 
+nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == rocketStars,,"After a brief moment, the connection resolves and a mercenaries visage stares back at you. 
 
 ""Ah, hello there! Are you in need of the skills of mercenaries with -real- talent?""",,
 nex_mercMeetBlurbCrimsonInsulted,Nex_MercMeetBlurb,"$nex_mercCompanyId == rocketStars
@@ -120,7 +120,7 @@ $nex_lastSelectedFleetType == CARRIER_SMALL
 AddText""111 years later, circa c.205...""
 SetTextHighlights 111 years
 
-AddText""Inceremoniously roused from your slumber, a panicked crewmember gives the sitrep: someone is approaching, but the IFFs aren't friendly. As the only capable pilot left, you are rushed into the only craft capable of defense...""
+AddText""Unceremoniously roused from your slumber, a panicked crewmember gives the sitrep: someone is approaching, but the IFFs aren't friendly. As the only capable pilot left, you are rushed into the only craft capable of defense...""
 SetTextHighlights sheer chance
 
 AddText ""You pilot the VALKAZARD. It can swap between various weapons.""
@@ -257,11 +257,11 @@ In time a small convoy of vehicles approach the shuttle, and a cadre of soldiers
 #armaaWFWhyHereSignal,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""We're responding to your signal.""",
 #armaaWFWhyHereAns,DialogOptionSelected,$option == armaaWFWhyHereAns,,"""Mmm...let's hear about it back in the city, yes?"" he says, motioning for you and your men to follow.
 
-You and your crew are loaded into one of the vehicles the soldiers brought along. They eye you with detached curiousity, but are not much for conversation, making the trip back rather uneventful. 
+You and your crew are loaded into one of the vehicles the soldiers brought along. They eye you with detached curiosity, but are not much for conversation, making the trip back rather uneventful. 
 
 As you draw near what appears to be a checkpoint, you note a trooper leaning against the wall of a two-story complex. The lower level of the building seems to house shops; the signs painted on the closed metal gates suggest they offer items like local bread and other edibles. Above them, a couple of flats can be seen, their windows also tightly closed with shutters. He stands, waving off some security drones, and opens a gate that allows the convoy to pass into the city proper.",armaaWFWhyHereAns2:Continue,
 #armaaWFWhyHereAns2,DialogOptionSelected,$option == armaaWFWhyHereAns2,,"Finally, the convoy comes to a halt, and the men sharing a vehicle at you nod, gesturing towards a building in the distance. ",armaaWFWhyHereAns3:Continue,
-#armaaWFWhyHereAns3,DialogOptionSelected,$option == armaaWFWhyHereAns3,FireAll armaaWFMissionQuestions,"blah blah blah desccribe the compound here
+#armaaWFWhyHereAns3,DialogOptionSelected,$option == armaaWFWhyHereAns3,FireAll armaaWFMissionQuestions,"blah blah blah describe the compound here
 
 blah blah blah entering the compound here.
 
@@ -331,9 +331,9 @@ $player.fcm_faction != sindrian_diktat",FireAll PopulateOptionsHire,"""As long a
 armaa_HireDawn2SD,DialogOptionSelected,"$option == armaa_HireDawn2
 $player.fcm_faction == sindrian_diktat",FireAll PopulateOptions,"Dawn gives you a once-over before letting out a sigh.
 
-""You're on the payroll for the sindies, aren't ya?""
+""You're on the payroll for the Sindies, aren't ya?""
 
-""Well, i'm not the holiest gal in the congregation, but I still hitch my wagon to the Church of Galactic Redemption. Can't rightly tag along with you, considerin' what they've pulled. It's a bit like tryin' to mix oil and water, you see? Apologies.""
+""Well, I'm not the holiest gal in the congregation, but I still hitch my wagon to the Church of Galactic Redemption. Can't rightly tag along with you, considerin' what they've pulled. It's a bit like tryin' to mix oil and water, you see? Apologies.""
 
 She bows her head a notch. ""I reckon we're headed in different directions. Best of luck to you, though.""",,
 armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
@@ -441,7 +441,7 @@ $player.ethosKnowledge++",,,
 armaa_dawnMeeting4,DialogOptionSelected,$option == armaa_dawn_barEvent4,"AdjustRepActivePerson COOPERATIVE 5
 BarCMD returnFromEvent false","Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
 
-""Reckon you've got your own path to tread, and I've got mine. But should our trails cross again, mayhaps we'll find ourselves fightin' side by side.""
+""Reckon you've got your own path to tread, and I've got mine. But should our trails cross again, mayhap we'll find ourselves fightin' side by side.""
 
 With a nod and a faint smile, she raised her tankard in a silent salute. ""May Ludd favor your journey, stranger. Until we meet again.""
 
@@ -504,7 +504,7 @@ armaa_barDawnEvent5DrinkYes,DialogOptionSelected,$option == armaa_barDawnEvent5D
 
 You take a cautionary sip - it was a drink as delightful as it smelled, with a perfect balance of sweetness and a pleasant warmth as it went down. The kind of drink that could bring a moment of relaxation and camaraderie amongst colleagues.
 
-$personName watches expectantly. ""What do you reckon? It suit your palete?""
+$personName watches expectantly. ""What do you reckon? It suit your palate?""
 
 With a mischievous glint in her eye, she added, ""If you're game, we can keep sippin' and spinnin' yarns. This drink's just the beginning, and the night's still young.""","armaa_barDawnEvent5DrinkMoreYes: Take the opportunity to unwind for once
 armaa_barDawnEvent5DrinkMoreNo: Apologize, you have other matters to attend to
@@ -518,7 +518,7 @@ EndConversation DO_NOT_FIRE
 ShowLargePlanet
 BarCMD leaveBar","$personName and yourself continue to indulge in your drinks, sharing stories, laughter, and even a few heartfelt confessions. You were not alone in your revelry; other patrons joined in, and soon, a small group of strangers had gathered around.
 
-Tales were swapped in this relatively cheerful atmosphere as individuals shared laughter and forging fleeting connections in the warmth of the bar. You catch glimpses of your bodyguards discreetley surveiling the raucus from time to time, ostensibly taking measures to ensure your safety while allowing you to bask in the camaraderie of the moment.
+Tales were swapped in this relatively cheerful atmosphere as individuals shared laughter and forging fleeting connections in the warmth of the bar. You catch glimpses of your bodyguards' discreetly surveiling the ruckus from time to time, ostensibly taking measures to ensure your safety while allowing you to bask in the camaraderie of the moment.
 
 An imperceptible amount of time passes, and you find yourself wobbling out of the bar alongside $personName. Your guards swiftly chaperone you towards a shuttle service that will return you to the fleet.
 
@@ -1419,7 +1419,7 @@ RollProbability 0.5
 ","ShowPersonVisual
 FireAll armaa_vxGiftQuestions","As the connection is established, you are greeted by the smiling visage of Sera.
 
-""Ah, there you are,"" she purred, a subtle hint of delight coloring her voice. ""My favorite spacer graces us with their presence once again. I have a suprise for you.""
+""Ah, there you are,"" she purred, a subtle hint of delight coloring her voice. ""My favorite spacer graces us with their presence once again. I have a surprise for you.""
 
 ",,
 armaa_vxGiftSel,armaa_vxGiftQuestions,,,,"armaa_vxGift1b:""Go on.""",
@@ -1430,7 +1430,7 @@ $armaa_vxSarcastic = true
 FireAll armaa_vxGiftQuestions","""Is that some kind of spacer joke?"" she retorts.
 
 ""Let's put the jests aside for a moment,"" she says, her tone now earnest and focused. ""Rest assured, what I have in store for you is far from mundane. It's a surprise that will undoubtedly leave you impressed. No distress calls, no pirates, just a remarkable advancement that I believe will elevate your performance to a whole new level.""",,
-armaa_vxGift1b,DialogOptionSelected,$option == armaa_vxGift1b,Highlight SILVERSWORD Valkazard,"""When you handed over the Valkazard some time ago, the SILVERSWORD system within it piqued my interest,"" she explains, her voice laced with intrigue. ""It's truly fascinating technology. While our Garegga-class mechs also incorporate a similar system, the one in the Valkazard is remarkably more compact and possesses unique enhancements. Ever since, my team and I have been dedicated to unlocking its full potential.""","armaa_vxGift2:""And what have you managed to acheive?""",
+armaa_vxGift1b,DialogOptionSelected,$option == armaa_vxGift1b,Highlight SILVERSWORD Valkazard,"""When you handed over the Valkazard some time ago, the SILVERSWORD system within it piqued my interest,"" she explains, her voice laced with intrigue. ""It's truly fascinating technology. While our Garegga-class mechs also incorporate a similar system, the one in the Valkazard is remarkably more compact and possesses unique enhancements. Ever since, my team and I have been dedicated to unlocking its full potential.""","armaa_vxGift2:""And what have you managed to achieve?""",
 armaa_vxGift2,DialogOptionSelected,$option == armaa_vxGift2,Highlight SILVERSWORD,"$personName's confidence radiated as she revealed her achievement. ""We succeeded in partially reverse engineering SILVERSWORD,"" she declared, her voice tinged with pride. ""Not only that, we've already integrated a simplified version into a select few units for thorough testing. And of course, I wouldn't pass up the opportunity to offer you a unit from the very first batch.""
 
 ""Rest assured, we've conducted extensive tests,"" she says, ""It's perfectly stable. The results have been... spectacular.""",armaa_vxGift3:Continue,
@@ -1634,7 +1634,7 @@ She leans back, steepling her fingers beneath her chin, a gesture of contemplati
 armaa_seraPLHarassmentWhatKindofAid,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp:""What exactly are you offering?""",
 armaa_seraPLHarassmentWhatKindofAid2,armaa_seraPLHarassmentOptions,$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp2:""Speak plainly. What is it you want?""",
 armaa_seraPLHarassmentWhatKindofAid3,armaa_seraPLHarassmentOptions,$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp3:""It's a deal.""",
-armaa_seraPLHarassmentWontBeIntimidated,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLsaidWontBeIntimidated,,,"armaa_seraPLHarassmentWontBeIntimidatedResp:""If the League thinks they can intimidate me, they're in for a suprise.""",
+armaa_seraPLHarassmentWontBeIntimidated,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLsaidWontBeIntimidated,,,"armaa_seraPLHarassmentWontBeIntimidatedResp:""If the League thinks they can intimidate me, they're in for a surprise.""",
 armaa_seraPLHarassmentMayJoinLeague,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLsaidMayJoin,,,"armaa_seraPLHarassmentMayJoinLeagueResp:""I've been considering joining the League.""",
 armaa_seraPLHarassmentWorriedAboutMeshan,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLWorriedMeshan,,,"armaa_seraPLHarassmentWorriedAboutMeshanResp:""Are you worried they'll pull this on other colonies? New Meshan, perhaps?""",
 armaa_seraPLHarassmentWhatKindofAidResp,DialogOptionSelected,$option == armaa_seraPLHarassmentWhatKindofAidResp,"$player.armaa_seraPLaskedAboutAid = true

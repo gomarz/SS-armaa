@@ -1,6 +1,6 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
-Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
+Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in combat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop",,,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
 Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
@@ -23,7 +23,7 @@ This type of coating can only be applied to specialized forms of armor, thereby 
 Cataphract Complement,cataphractBonus,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_CataphractComplement,"This vessel carries lances of Cataphract LSMs. These units can actively participate in ground operations, increasing their effective strength by a value up to the number of marines in the fleet.",,,graphics/armaa/hullmods/cataphracts.png
 No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables active venting,,,graphics/hullmods/vast_bulk.png
 Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,,graphics/hullmods/reduced_explosion.png
-Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,,graphics/hullmods/vast_bulk.png
+Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in maneuverability, as well as these extra systems granted.",,,graphics/hullmods/vast_bulk.png
 Karma Counter,armaa_karma,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Karma Counter [C],armaa_karmaC,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod_Command,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Greater Reduced Explosion,explosionredux,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.greaterReducedExplosion,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
@@ -173,7 +173,7 @@ The %s possesses an extremely powerful yet flux hungry built-in particle cannon 
 %s",,,graphics/armaa/hullmods/body.png
 BODY: HE BEAM,armaa_selector_chaos,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_s_spark,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
-The %s possesses the capability to fire a long range beam that generates a random number of additonal explosions in it's wake.
+The %s possesses the capability to fire a long range beam that generates a random number of additional explosions in it's wake.
 
 %s",,,graphics/armaa/hullmods/body.png
 BODY: KE AUTOCANNON,armaa_selector_ac20,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_ac20,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
