@@ -3,6 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
+  #"beamEffect": "data.scripts.weapons.armaa_targetPainter_BeamEffect",
   "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
@@ -13,9 +14,9 @@
     255,
     55,
     55,
-    255
+    150
   ],
-  "hitGlowRadius": 0,
+  "hitGlowRadius": 25,
   "turretOffsets": [
     3.5,
     -2.5,
@@ -35,7 +36,7 @@
   "fringeColor": [
     255,
     100,
-    0,
+    50,
     255
   ],
   "coreColor": [

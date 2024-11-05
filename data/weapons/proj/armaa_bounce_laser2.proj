@@ -10,34 +10,36 @@
 	"center":[5,12],
 	"collisionRadius":16,
 	"collisionClass":"MISSILE_NO_FF",
-	"explosionColor":[50,100,255,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionColor":[255,100,50,255],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":75, # purely visual
-#	"engineSpec":{"turnAcc":140,
-#				  "turnRate":35,
-#				  "acc":1000,
-#				  "dec":500},
-	"engineSpec":{"turnAcc":50,
-				  "turnRate":50,
-				  "acc":1000,
-				  "dec":5},
+	"engineSpec":{"turnAcc":400,
+				  "turnRate":200,
+				  "acc":2000,
+				  "dec":20},	
+#	"engineSpec":{"turnAcc":50,
+#				  "turnRate":0,
+#				  "acc":0,
+#				  "dec":0},
 	"engineSlots":[
 					{"id":"ES1",
-					"loc":[0, 0],
+					"loc":[-0, 0],
 				    "style":"CUSTOM",
 					"styleSpec":{
-						"engineColor":[55,100,255,255],
-						"contrailParticleSizeMult":15,
+						"mode":"QUAD_STRIP", 
+						"engineColor":[255,100,55,255],
+						"contrailParticleSizeMult":10,
 						"contrailParticleDuration":2,
-						"contrailDuration":4,
-						"contrailWidthMult":2,
-						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
-						"contrailMinSeg":8, # min segment length, in 
-						"contrailMaxSpeedMult":-0.1,
-						"contrailAngularVelocityMult":1f,
-						"contrailColor":[100,59,255,15],
+						"contrailDuration":2,
+						"contrailWidthMult":0.8,
+						"contrailWidthAddedFractionAtEnd":2,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":5, # min segment length, in 
+						"contrailMaxSpeedMult":0.25,
+						"contrailAngularVelocityMult":0.1f,
+						#"contrailColor":[150,125,125,150],
+						"contrailColor":[255,59,100,50],
 						"type":"GLOW" # GLOW or SMOKE
 					},
-				    "width":20.0,
+				    "width":7.0,
 				    "length":20.0,
 				    "angle":180.0},
 				   ]

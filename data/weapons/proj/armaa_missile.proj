@@ -2,28 +2,32 @@
 	"id":"armaa_missile",
 	"specClass":"missile",
 	"missileType":"MISSILE",
-	"sprite":"graphics/missiles/missile_locust.png",
-	"size":[8,14],
-	"armingTime":0.01,	
+	"sprite":"graphics/armaa/weapons/beermissile.png",
+	"size":[7,12],
+	"armingTime":0.02,	
 	"noEngineGlowTime":0, # time spent without the engine glow being rendered
 	"center":[3,6],
 	"flameoutTime":1, # total time from flameout to full fadeout
 	"collisionRadius":12,
 	"fadeTime":0.5, # fadeout duration
 	"collisionClass":"MISSILE_NO_FF",
-	"explosionColor":[255,165,50,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionColor":[150,175,255,255],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":50, # purely visual
-	"engineSpec":{"turnAcc":1600,
+	#"engineSpec":{"turnAcc":600,
+	#			  "turnRate":300,
+	#			  "acc":5500,
+	#			  "dec":3500},
+	"engineSpec":{"turnAcc":1000,
 				  "turnRate":1000,
-				  "acc":800,
-				  "dec":400},
+				  "acc":10000,
+				  "dec":300},
 	"engineSlots":[{"id":"ES1",
 					"loc":[-7, 0],
 				    #"style":"MISSILE_MIDLINE",
 				    "style":"CUSTOM",
 					"styleSpec":{
 						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
-						"engineColor":[232,165,45,250],
+						"engineColor":[100,165,255,250],
 						"contrailDuration":4,
 						"contrailWidthMult":1,
 						"contrailWidthAddedFractionAtEnd":2,  # can be negative. makes trail spread out/narrow at the end
@@ -31,7 +35,8 @@
 						"contrailMaxSpeedMult":0.1f,
 						"contrailAngularVelocityMult":0.1f,
 						"contrailSpawnDistMult":.5, # how far away from engine it starts
-						"contrailColor":[200,200,200,70],
+						#"contrailColor":[100,165,255,100],
+						"contrailColor":[125,125,150,200],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
 				    "width":4.0,

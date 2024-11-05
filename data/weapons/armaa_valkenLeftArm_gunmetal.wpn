@@ -46,7 +46,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/armaa/ships/valken/armaa_valkenLeftArm_gunmetal.png",
+  "turretSprite": "",
   "type": "DECORATIVE",
   "width": 1
 }

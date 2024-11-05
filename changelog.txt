@@ -1,7 +1,63 @@
+v3.0.7
+--------
+======= Fixes =======
+- Aleste with laser blade(s) should try to intercept missiles with them now
+- Reduced knockback on Laser Blades
+- fixed Dawn not receiving PPT bonus from Ace skill
+- fixed zanac ex appearing in illegal weapons dealer event
+- fixed landed strikecraft vector misalignment
+- fixed ceylon appearing in illegal weapons dealer event
+- fixed wrong design type for zanac ex
+- fixed fighter SO CTD
+- fixed missing hullmod from Einhander(MRC)
+- fixed strikecraft spontaneously exploding if they began landing on a carrier that was destroyed
+- fixed bug where strikecraft would path to invalid ships when attempting to refit
+- fixed dawn's pop up dialogs triggering in the wrong circumstances
+	- this SHOULD stop it from happening when you interact with anything on the campaign layer
+- fixed some badly/inaccurately named variants
+- Deanime-fied Dawn, Pariah, and Sarge a bit more
+- fixed some rulecmd being in com.fs.starfarer.api.impl.campaign.rulecmd package
+
+====== Features ======
+
+- New Quest: Crown of Cinders
+
+- Added Lympago (WINGCOM)
+	- Fragile, fast fire support
+	- 1x small missile
+	- 1x built-in kinetic
+- Added Lympago (AA)
+	- missile saturation interceptor
+	- 1x LMG, 1x missile pod
+- Added Proteus
+	- dual mode unit w/ fighter & mech mode
+	- 1x Medium Hybrid, 2x, small missile
+	- Ship System D.R.N.S.
+	- 12 DP (?)
+
+-Valkyrie (AA)
+	- DP: 5-> 8
+	- Removed Converted Hangar
+	- Ship System: Recall Device -> Active Flare Launcher
+	- Wing is now built-in: Prodromos Battle Armor
+	- Carries 1x Aleste (WINGCOM)
+		- Detach when in combat range
+		- Destroyed if mothership is destroyed
+-Leynos
+	- Anti-Beam Coat
+		- Reduces Beam damage based on flux level(up to 60%)
+	- Tweaked Sprite & animation
+	- Adjusted Med Ballistic slot location + arc
+
+-Added commission text for MRC
+-Added MRC HQ industry
+	- can request 'reprisals' here
+
 v3.0.6.1
 --------
 - removed fighter being spawned into fleet
 - aleste system: microburn->booster
+- removed everyframe from RCL
 
 
 v3.0.6

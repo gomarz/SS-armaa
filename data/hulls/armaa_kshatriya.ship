@@ -12,7 +12,7 @@
   "shieldRadius": 124,
   "viewOffset": 0,
   "builtInWings": [
-    "armaa_bit_wing3"
+    "armaa_bit_kshatriya_wing"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kshatriya_leftArm",

@@ -1,0 +1,29 @@
+{
+  "variantId": "armaa_lympago_frig_standard",
+  "hullId": "armaa_lympago_frig",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 5,
+  "fluxVents": 6,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN": "armaa_lympago_sniper",
+        "E_HEAD": "armaa_lympago_head",
+        "TRUE_GUN2": "gazer"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

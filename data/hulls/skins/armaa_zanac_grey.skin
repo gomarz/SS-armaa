@@ -8,7 +8,7 @@
     "baseValueMult":1.0,
     "restoreToBaseHull":false,
     "addHints":[],
-    #"tags":["rare_bp"],
+    "tags":["no_wingcom_docking"],
     "systemId":"maneuveringjets",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file

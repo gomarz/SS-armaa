@@ -9,6 +9,9 @@
 		"music_armaa_market_neutral":[
 			{"file":"old_city.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
+		"music_armaa_system":[
+			{"file":"cave_of_regret.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+		],
 		"music_armaa_pirate_market_hostile":[
 			{"file":"recollective_mind.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
@@ -32,6 +35,9 @@
 		],
 		"music_armaa_ax_bounty":[
 			{"file":"showdown.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+		],
+		"music_armaa_citybattle":[
+			{"file":"escape_from_control.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 	},	
 	"mechmove":[ 

@@ -14,14 +14,15 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
-    "armaa_strikeCraftFrig",
+    "beamcoat",
     "armaa_leynosWeaponSwap",
-    "rugged",
-    "reduced_explosion"
+    "rugged"
   ],
   "builtInWeapons": {
     "BEACON": "armaa_landingBeacon",
     "B_TORSO": "armaa_leynos_torso",
+    "B_TORSO_B": "armaa_leynos_torso_deco_bot",
+    "B_TORSO_T": "armaa_leynos_torso_deco_top",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_leynos_leftPauldron",
     "D_PAULDRONR": "armaa_leynos_rightPauldron",
@@ -37,7 +38,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-      "locations": [3, -4]
+      "locations": [2, -4]
     },
     {
       "id": "B_TORSO",
@@ -46,7 +47,27 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 0]
+      "locations": [0, -0]
+    },
+    {
+      "id": "B_TORSO_B",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0],
+      "renderOrderMod": -100
+    },
+    {
+      "id": "B_TORSO_T",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0],
+      "renderOrderMod": 100
     },
     {
       "id": "C_ARML",
@@ -55,7 +76,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 10,
-      "locations": [3, 4]
+      "locations": [2, 4]
     },
     {
       "id": "C_ARMR",
@@ -64,7 +85,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -10,
-      "locations": [3, -4]
+      "locations": [2, -4]
     },
     {
       "id": "D_PAULDRONL",
@@ -73,7 +94,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 10,
-      "locations": [3, 4]
+      "locations": [2, 4]
     },
     {
       "id": "D_PAULDRONR",
@@ -82,7 +103,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -10,
-      "locations": [3, -4]
+      "locations": [2, -4]
     },
     {
       "id": "E_HEAD",
@@ -91,7 +112,8 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "locations": [1, 0]
+      "locations": [1, 0],
+      "renderOrderMod": 101
     },
     {
       "id": "H_GLOW",
@@ -109,7 +131,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-3, -0],
+      "locations": [-2, -0],
       "renderOrderMod": -1000
     },
     {
@@ -124,17 +146,17 @@
     {
       "id": "WS002",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 360,
-      "angle": -25,
-      "locations": [-13, -14],
-      "renderOrderMod": 99999
+      "arc": 15,
+      "angle": 0,
+      "locations": [-1, -0],
+      "renderOrderMod": -50
     },
     {
       "id": "BEACON",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,

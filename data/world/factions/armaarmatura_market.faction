@@ -38,14 +38,14 @@
 				"armaa_garegga":4,
 				"armaa_garegga_tt":2,
 				"armaa_aleste_frig":3,
-				"armaa_leynos_frig":2,
+				"armaa_leynos_frig":3,
 				"armaa_hazard_frig":1,
 				"armaa_xyphos":4,
 				"armaa_monitor":3,
 				"armaa_valkyrie":10,
 				"armaa_kouto_frig":1,
-				"armaa_valkenx_frig":2,
-				"armaa_einhander_plus":1,
+				"armaa_valkenx_frig":3,
+				"armaa_einhander_plus":2,
 				"armaa_whitebase":3,
 				"buffalo2":0,
 				"gremlin":0,
@@ -174,15 +174,15 @@
 		],
 	},
 	"factionDoctrine":{
-		"warships":4,
+		"warships":3,
 		"carriers":3,
-		"phaseShips":1,
+		"phaseShips":2,
 
 		"officerQuality":2,
 		"shipQuality":2,
 		"numShips":3,
 
-		"shipSize":3,
+		"shipSize":2,
 
 		"aggression":4,
 

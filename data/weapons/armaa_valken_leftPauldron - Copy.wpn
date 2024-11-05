@@ -4,7 +4,7 @@
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/valken/armaa_valkenLeftShoulder_gunmetal.png",
+	"turretSprite":"",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

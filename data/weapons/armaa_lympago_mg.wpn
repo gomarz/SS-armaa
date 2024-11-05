@@ -1,0 +1,46 @@
+{
+  "id": "armaa_lympago_mg",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_mag47_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "",
+  "visualRecoil": "1",
+  "turretGunSprite": "graphics/armaa/ships/lympago/armaa_lympagoRightArm.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    21,
+    -14
+  ],
+  "turretAngleOffsets": [
+    0.5
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+ "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 15,
+    "particleSizeMin": 6,
+    "particleSizeRange": 8,
+    "particleDuration": 0.04,
+    "particleCount": 7,
+    "particleColor": [
+      100,
+      255,
+      150,
+      250
+    ]
+  },
+  "fireSoundTwo": "light_machinegun_fire"
+}

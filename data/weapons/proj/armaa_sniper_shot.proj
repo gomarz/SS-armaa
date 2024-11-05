@@ -1,19 +1,19 @@
 {
 	"id":"armaa_sniper_shot",
 	"specClass":"projectile",
-	"spawnType":"BALLISTIC",
-	"collisionClass":"PROJECTILE_FF",
-	"collisionClassByFighter":"PROJECTILE_FIGHTER",	
-	#"spawnType":"BALLISTIC_AS_BEAM",
-	#"collisionClass":"RAY",
-	#"collisionClassByFighter":"RAY_FIGHTER",
-	"length":120.0,
-	"width":7.5,
+	"onHitEffect":"data.scripts.weapons.armaa_BarrettaOnHitEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":130.0,
+	"width":10,
 	"fadeTime":0.3,
-	"fringeColor":[200,220,255,255],
-	"coreColor":[220,220,255,220],
-	"hitGlowRadius":100,
-	"textureScrollSpeed":64.0,
-	"pixelsPerTexel":5.0,
-	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png"	
+	"fringeColor":[255,125,0,255],
+	"coreColor":[250,197,92,255],
+	"glowColor":[255,100,0,25],
+	"glowRadius":0,
+	"hitGlowRadius":100,	
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
 }

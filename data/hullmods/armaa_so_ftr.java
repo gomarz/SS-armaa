@@ -16,6 +16,7 @@ public class armaa_so_ftr extends BaseHullMod {
 	private static Map speed = new HashMap();
 	static {
 		speed.put(HullSize.FIGHTER, 50f);
+		speed.put(HullSize.FRIGATE, 50f);		
 		speed.put(HullSize.DESTROYER, 30f);
 		speed.put(HullSize.CRUISER, 20f);
 		speed.put(HullSize.CAPITAL_SHIP, 10f);

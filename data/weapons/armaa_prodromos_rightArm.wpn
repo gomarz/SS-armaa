@@ -6,8 +6,6 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/pa/armaa_pa_rightArm.png",
-  "turretGlowSprite": "",
- # "turretGunSprite": "graphics/armaa/ships/pa/armaa_pa_rightArm.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "glowColor": [
@@ -16,14 +14,13 @@
     255,
     0
   ],
-  #"hitGlowRadius": 0,
-	"darkCore":true,
+  "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    9.5,
-    -5.5
+    13,
+    -8
   ],
   "turretAngleOffsets": [
     0.5
@@ -36,17 +33,18 @@
     0
   ],
   "fringeColor": [
-    100,
     255,
+    100,
     0,
     255
   ],
   "coreColor": [
-    200,
     255,
+    200,
     200,
     255
   ],
+  "darkCore": true,
   "width": 7,
   "textureType": [
     "graphics/armaa/fx/armaa_parax_beam_fringe.png",
@@ -54,7 +52,11 @@
   ],
   "textureScrollSpeed": 128,
   "pixelsPerTexel": 5,
-	"pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
-	"fireSoundOne":"laser_intro",
-	"fireSoundTwo":"pd_laser_loop",
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "pd_laser_loop"
 }

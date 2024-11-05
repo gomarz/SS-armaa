@@ -1,0 +1,31 @@
+{
+	"id":"armaa_gd_legs",  # this id must match what's in the spreadsheet
+        "everyFrameEffect": "data.scripts.weapons.armaa_guarDualLegAnim",
+	"specClass":"beam",
+	"type":"DECORATIVE",
+	"size":"SMALL",
+	"showDamageWhenDecorative":true,
+	"turretSprite":"graphics/armaa/ships/legs/armaa_ht_legs00.png",
+        "numFrames": 17,
+        "frameRate": 1,
+	"alwaysAnimate":"false",
+	"hardpointSprite":"graphics/armaa/ships/legs/armaa_ht_legs00.png",
+	#"numFrames":2,
+	#"frameRate":0,
+	#"alwaysAnimate":"false",
+	"renderBelowAllWeapons":"false",
+  "renderHints": [
+NEVER_RENDER_IN_CAMPAIGN
+  ],
+	"turretOffsets":[0, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[0, 0],
+	"hardpointAngleOffsets":[0],
+	"fringeColor":[255,255,255,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[255,255,255,255],
+	"width":1.0,
+	"textureType":ROUGH,
+	"textureScrollSpeed":1.0,
+	"pixelsPerTexel":1.0,	
+}

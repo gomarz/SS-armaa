@@ -1,4 +1,5 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
+AAF,armaa_aaf,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_aaf,Increases Fire Rate,,,graphics/hullmods/targeting_core.png
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop",,,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
@@ -257,6 +258,7 @@ L ARM: BLADE,armaa_aleste_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.ar
 L ARM: PILEBUNKER,armaa_alestePilebunker,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alestePilebunker,[REDACTED],Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
 ,,,,,,,,,,,,,,,,,,,
 Compound Unit,armaa_comboUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_comboUnit,"A Panther-class Cataphract is coupled with the Bakraid-class Mobile Armor, embodying a fusion of close-range phase capability and fire support. The Cataphract can detach for independent operations with the [%s] button, switching control to it and causing the Bakraid to retreat.",,,
+Variable Unit,armaa_variableUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_variableUnit,This unit can switch between modes by double-tapping the [%s] button.,,,
 #CEYLON,,,,,,,,,,,,,,,,,,,
 AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,
 ,,,,,,,,,,,,,,,,,,,

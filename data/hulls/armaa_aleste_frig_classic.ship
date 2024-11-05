@@ -32,7 +32,7 @@
     "armaa_weaponSwap"
   ],
   "builtInWings": [
-    "armaa_valkenx_wing"
+    "armaa_aleste_wing"
   ],
   "builtInWeapons": {
     #"A_GUN": "armaa_aleste_rightArm",

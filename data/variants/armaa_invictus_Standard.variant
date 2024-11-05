@@ -1,0 +1,66 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 0,
+    "fluxVents": 31,
+    "goalVariant": true,
+    "hullId": "armaa_invictus",
+    "hullMods": [
+        "fluxbreakers",
+        "reinforcedhull",
+        "armoredweapons",
+        "insulatedengine",
+	"armaa_wingCommander",
+	"converted_hangar"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "armaa_invictus_Standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "hellbore",
+                "WS 010": "hellbore"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 004": "hurricane",
+                "WS 007": "hurricane"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "mark9",
+                "WS 009": "mark9"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 003": "mark9",
+                "WS 008": "mark9"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "devastator",
+                "WS 005": "devastator",
+                "WS 006": "devastator",
+                "WS 026": "devastator"
+            }
+        }
+    ],
+  "wings": [
+    "armaa_valkenx_wing",
+    "armaa_record_wing"
+  ]
+}

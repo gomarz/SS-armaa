@@ -1,0 +1,51 @@
+{
+  "variantId": "armaa_valkazard_boss",
+  "hullId": "armaa_valkazard",
+  "displayName": "Lost",
+  "goalVariant": false,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "hardened_subsystems",
+    "hardenedshieldemitter",
+    "armaa_himac",
+    "automated",
+    "armoredweapons",
+    "coherer",
+    "extendedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "amsrm",
+        "WS0002": "amsrm"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

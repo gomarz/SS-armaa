@@ -36,19 +36,18 @@
 				"armaa_altagrave":0.25,
 				"armaa_altagrave_c":0.25,
 				"armaa_einhander_plus":0.75,
-				"armaa_monitor":1.2,
+				"armaa_monitor":1.1,
 				"armaa_einhander":0.1,
 				"armaa_garegga":0.25,
-				"armaa_zanac":1.25,
-				"armaa_zanac_grey":1.25,
+				"armaa_zanac":2,
+				"armaa_zanac_grey":1.5,
 				"armaa_valkenx_frig":1.5,
 				"armaa_aleste_frig":1.5,
-				"armaa_leynos_frig":1,
+				"armaa_leynos_frig":1.5,
 				"armaa_record_frig":1,
 				"armaa_hazard_frig":0.25,
 				"armaa_whitebase":0.5,
-				"monitor":0.25,
-				#"armaa_corsair_p": 1.25,	
+				"monitor":0.25,	
 				"heron": 0.5,
 				"drover": 0.5,
 				"manticore_pirates": 1,
@@ -60,7 +59,7 @@
 			},
 			"fighters":{
 			"armaa_aleste_wing":0.5,
-			"sarissa_wing":0,
+			"sarissa_wing":0.5,
 			"armaa_valkenx_wing":1.2,
 			"armaa_record_wing":1.5,
 
@@ -110,7 +109,6 @@
 				"heron",
 				"wolf",
 				"drover",
-				#"armaa_corsair_p",	
 			],
 	},
 	"shipsWhenImporting":{
@@ -125,6 +123,7 @@
 			"armaa_valkenx_wing",
 			"armaa_gallant_wing",
 			"armaa_aleste_wing",
+			"sarissa_wing"
 			],
 	},
 	"knownWeapons":{
@@ -147,8 +146,8 @@
 		],
 	},
 	"factionDoctrine":{
-		"warships":4,
-		"carriers":2,
+		"warships":3,
+		"carriers":3,
 		"phaseShips":2,
 
 		"officerQuality":2,

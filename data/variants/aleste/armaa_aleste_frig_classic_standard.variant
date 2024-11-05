@@ -1,0 +1,22 @@
+{
+  "variantId": "armaa_aleste_frig_classic_standard",
+  "hullId": "armaa_aleste_frig_classic",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_alesteHead"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

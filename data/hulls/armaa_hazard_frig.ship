@@ -13,6 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "strikeCraft",
+    "armaa_wingCommander",
     "repair_gantry"
   ],
   "builtInWings": [

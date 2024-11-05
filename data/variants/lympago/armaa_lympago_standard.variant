@@ -1,0 +1,24 @@
+{
+  "variantId": "armaa_lympago_standard",
+  "hullId": "armaa_lympago",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN": "armaa_lympago_mg",
+        "E_HEAD": "armaa_lympago_head",
+        "WS0001": "armaa_valken_missile"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -57,7 +57,7 @@
     {
       "id": "TRUE_GUN",
       "size": "SMALL",
-      "type": "UNIVERSAL",
+      "type": "MISSILE",
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
