@@ -3,17 +3,22 @@
   "hullId": "armaa_valkazard",
   "displayName": "Lost",
   "goalVariant": false,
-  "fluxCapacitors": 9,
+  "fluxCapacitors": 10,
   "fluxVents": 10,
   "permaMods": [],
   "hullMods": [
     "heavyarmor",
+    "unstable_injector",
+    "armoredweapons",
+    "safetyoverrides",
+    "auxiliarythrusters",
     "hardened_subsystems",
     "hardenedshieldemitter",
     "armaa_himac",
     "automated",
     "armoredweapons",
     "coherer",
+    "frontshield",
     "extendedshieldemitter"
   ],
   "weaponGroups": [
@@ -21,8 +26,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0001": "amsrm",
-        "WS0002": "amsrm"
+        "WS0001": "gorgon",
+        "WS0002": "gorgon"
       }
     },
     {

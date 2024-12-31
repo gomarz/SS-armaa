@@ -7,7 +7,7 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "turretSprite": "graphics/armaa/ships/valkazard/mp/armaa_valkazard_head_mp.png",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_head_01.png",
   "hardpointSprite": "graphics/armaa/ships/valkazard/mp/armaa_valkazard_head_mp.png",
   "glowColor": [
     0,

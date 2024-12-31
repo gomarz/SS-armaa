@@ -1,11 +1,16 @@
-v3.0.7
+v3.1B
 --------
 ======= Fixes =======
+- Added extra nullchecks with altagrave
+- Added extra nullchecks with wingcom
 - Aleste with laser blade(s) should try to intercept missiles with them now
 - Reduced knockback on Laser Blades
 - fixed Dawn not receiving PPT bonus from Ace skill
+- fixed Ace skill giving Combat Endurance CR bonus
 - fixed zanac ex appearing in illegal weapons dealer event
 - fixed landed strikecraft vector misalignment
+- fixed carrier not firing its weapons if strikecraft landed bay was within
+	the line of fire
 - fixed ceylon appearing in illegal weapons dealer event
 - fixed wrong design type for zanac ex
 - fixed fighter SO CTD
@@ -16,24 +21,64 @@ v3.0.7
 	- this SHOULD stop it from happening when you interact with anything on the campaign layer
 - fixed some badly/inaccurately named variants
 - Deanime-fied Dawn, Pariah, and Sarge a bit more
+- removed some duplicate src files
 - fixed some rulecmd being in com.fs.starfarer.api.impl.campaign.rulecmd package
+- fixed gallant Juno damage dps being 900(should be 700)
+	- chargeup: 1.5 -> 1.25
+	- range: 1369->1000
+	- no longer yeets the ship backwards
 
 ====== Features ======
 
-- New Quest: Crown of Cinders
+- Revised Gamlin system
 
-- Added Lympago (WINGCOM)
-	- Fragile, fast fire support
-	- 1x small missile
-	- 1x built-in kinetic
-- Added Lympago (AA)
-	- missile saturation interceptor
-	- 1x LMG, 1x missile pod
-- Added Proteus
+- MRC no longer starts as a full-fledged faction, acting more like a subfaction
+	- Fort Exsedol is now pirate-owned with "MRC HQ" industry
+	- While at least one of these HQs are active, MRC will target hostile systems and launch reprisals
+	- With Nexerelin, successful reprisals will flip the affected market to pirate, independent, or pather ownership, depending on the circumstances
+	- Player can attack factions hostile to MRC in the affected system for rewards
+	- can be toggled on/off w/ lunalib
+
+- New Quest: Crown of Cinders
+	- Navigate the onset of a planetary conflict with high stakes and rival factions
+- Hull & Armor values of most ships w/ strikecraft hullmod has been increased
+
+- Added GuarDUAL
 	- dual mode unit w/ fighter & mech mode
-	- 1x Medium Hybrid, 2x, small missile
-	- Ship System D.R.N.S.
-	- 12 DP (?)
+		- Can transform by double tapping X
+	- 1x Medium ballistic, 2x small missile, 1x small hybrid
+	- Ship System: PERCEPT
+	- 15 DP
+
+- Added Guppy
+	- cheap interceptor
+	- 1x light mortar, 1x vulcan cannon
+- Added Gunhed
+	- Replaces Gunhazard
+	- Heavy armored, but slow
+	- 1x Mining laser, 1x Piledriver
+
+- Added Aleste (WINGCOM)
+
+- Added Gallant (WINGCOM)
+
+- Added Caymon(officially)
+	- Replaces Gunhazard
+	- Heavy armored, but slow
+	- 20 DP
+
+===== Tweaks =====
+- Valkazard is no longer obtainable outside of starting with it(for now)
+
+- Aleste S-II
+	- Hi-MAC is now built-in
+	- Shield Efficiency: 1.0->0.9
+- VX Custom
+	- Hi-MAC is now built-in
+	- Shield Efficiency: 1.0->0.9
+
+- Xyphos(WINGCOM)
+	- Shield Efficiency: 1.0->0.9
 
 -Valkyrie (AA)
 	- DP: 5-> 8
@@ -49,9 +94,24 @@ v3.0.7
 	- Tweaked Sprite & animation
 	- Adjusted Med Ballistic slot location + arc
 
+-Watchdog
+	- Adjusted AI
+	- made watchdogs shield buff effect much more obvious
+
+-Valken III
+	- Revised sprite
+
 -Added commission text for MRC
+
 -Added MRC HQ industry
 	- can request 'reprisals' here
+
+-Added custom system music to Gamlin
+
+-Cataphracts no longer consume HP/CR during raid actions
+
+-Removed Nekki
+	- Planets in the system now reside in Gamlin
 
 v3.0.6.1
 --------

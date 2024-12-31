@@ -1,0 +1,22 @@
+{
+  "variantId": "armaa_gallant_frig_standard",
+  "hullId": "armaa_gallant_frig",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 8,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "armaa_leynos_head_comet"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

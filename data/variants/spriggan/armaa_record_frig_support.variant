@@ -22,7 +22,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "hveldriver"
+        "TRUE_GUN": "vulcan"
       }
     },
     {

@@ -25,11 +25,11 @@ Guardian Protocol,armaa_siegeMode,,0.1,,,,,,,,2,8,2,2,TRUE,,,,,,,,TRUE,,,,graphi
 Recall Device,armaa_recalldevice,,,,,,0.5,,2,0.05,0.5,,3,10,,,,,,,,,,,,,graphics/icons/hullsys/recall_device.png
 Takeoff,armaa_traveldrive,,,,,,,,,,2,,2,10,TRUE,,,,TRUE,FALSE,TRUE,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
 Adv. Fire Control System,armaa_afcss,,,,,,,,,,1,5,1,20,,,,,,,,,,,,,
-Active Flare Launcher,armaa_flarelauncher_active,,,,,,0.1,,,,,,,10,,,,,,,,,,,,,graphics/icons/hullsys/active_flare_launcher.png
+Active Flare Launcher,armaa_flarelauncher_active,,,,,,0.1,,,,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/active_flare_launcher.png
 Decoy Flare Launcher,armaa_flare_decoy,,,,,,,,1,0.05,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/flare_launcher.png
 Juno Mk. IV,armaa_morgana_beamSys,,,,,,,,,,1.5,,1,10,TRUE,,,,,,FALSE,TRUE,TRUE,,,,graphics/icons/hullsys/active_flare_launcher.png
 D.R.N.S.,armaa_drns,,,,,,,,,,,2,.1,1.5,TRUE,,,,TRUE,,FALSE,FALSE,FALSE,,,,graphics/icons/hullsys/active_flare_launcher.png
-P.E.R.C.E.P.T.,armaa_fluxBarrage,,,,,,.2,,2,0.1,1,.1,0,3,FALSE,,,,TRUE,,FALSE,FALSE,FALSE,,,,graphics/icons/hullsys/active_flare_launcher.png
+P.E.R.C.E.P.T.,armaa_percept,,,,,,.2,,3,0.1,1,.1,0,3,FALSE,,,,TRUE,,FALSE,FALSE,FALSE,,,,graphics/icons/hullsys/active_flare_launcher.png
 UWS Strike,armaa_drone_strike,,,,,,0.45,,,,0,0.05,0.2,,,,,TRUE,TRUE,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Booster,armaa_jauntbooster,,,,,,,,2,0.1,0.3,0.3,1,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

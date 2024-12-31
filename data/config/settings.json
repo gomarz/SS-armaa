@@ -3,6 +3,9 @@
             "armaa_EinhanderPlugin":"data.scripts.plugins.armaa_EinhanderHaxPlugin",
 #"armaa_FighterPlugin":"data.scripts.plugins.armaa_FighterHaxPlugin",
     },
+  "ruleCommandPackages": [
+    "data.campaign.rulecmd"
+  ],
     "designTypeColors":{
         "Arma Armatura":[152,171,75,255],
         "Arma Armatura (Sleepers)":[252,71,75,255],
@@ -41,14 +44,18 @@
 			"armaa_portrait_dawn":"graphics/armaa/portraits/armaa_dawn.png",
 			"armaa_portrait_sarge":"graphics/armaa/portraits/armaa_sarge.png",
 			"armaa_portrait_pariah":"graphics/armaa/portraits/armaa_pariah.png",
-			"armaa_portrait_ironking":"graphics/armaa/portraits/armaa_ironking.png",			"armaa_portrait_legioMechPilot":"graphics/armaa/portraits/armaa_legioMechPilot.png",
-			"armaa_portrait_kade":"graphics/armaa/portraits/armaa_kade.png"
+			"armaa_portrait_ironking":"graphics/armaa/portraits/armaa_ironking.png",						"armaa_portrait_legioMechPilot":"graphics/armaa/portraits/armaa_legioMechPilot.png",
+			"armaa_portrait_kade":"graphics/armaa/portraits/armaa_kade.png",
+			"armaa_portrait_redeye":"graphics/armaa/portraits/armaa_redeye.png",
+			"armaa_portrait_imelda":"graphics/armaa/portraits/armaa_imelda.png"
 		},
 		"illustrations":{
 			"armaa_newmeshan_illus":"graphics/armaa/illustrations/newmeshanii.jpg",
 			"armaa_exsedol_illus":"graphics/armaa/illustrations/armaa_exsedol.jpg",
 			"armaa_ceylon_illus":"graphics/armaa/illustrations/armaa_ceylon.jpg",
-"armaa_bar":"graphics/armaa/illustrations/armaa_bar.jpg",
+			"armaa_planetfall_illus":"graphics/armaa/illustrations/armaa_planetfall.jpg",
+			"armaa_harry":"graphics/illustrations/harry.jpg",
+			"armaa_bar":"graphics/armaa/illustrations/armaa_bar.jpg",
 		},
 		"nex_groundbattle":{
 			"icon_cataphract":"graphics/armaa/icons/groundbattle/cataphractstrike.png",

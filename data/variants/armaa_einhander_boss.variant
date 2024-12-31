@@ -1,0 +1,60 @@
+{
+  "variantId": "armaa_einhander_boss",
+  "hullId": "armaa_einhander",
+  "displayName": "Automated",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [
+    "hardened_subsystems",
+    "safetyoverrides",
+    "automated",
+    "ex_phase_coils",
+    "heavyarmor",
+    "magazines",
+    "neural_integrator",
+    "armaa_himac",
+    "armaa_sykoStims"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN": "armaa_einhanderGun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_sprigganTorso"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "DUMMYBIT": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "H_GLOW": "armaa_landingBeacon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

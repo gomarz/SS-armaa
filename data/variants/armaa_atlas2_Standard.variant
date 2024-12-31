@@ -1,0 +1,59 @@
+{
+    "displayName": "Combat",
+    "fluxCapacitors": 23,
+    "fluxVents": 28,
+    "goalVariant": false,
+    "hullId": "atlas2",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "armaa_atlas2_Standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS 012": "dragonpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS 013": "locust"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 008": "mjolnir",
+                "WS 009": "mjolnir"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 014": "arbalest",
+                "WS 015": "arbalest"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 017": "arbalest",
+                "WS 018": "arbalest"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "lightmg",
+                "WS 002": "lightmg",
+                "WS 010": "lightmg",
+                "WS 011": "lightmg",
+                "WS 020": "lightmg",
+                "WS 021": "lightmg"
+            }
+        }
+    ]
+}

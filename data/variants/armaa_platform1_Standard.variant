@@ -1,0 +1,26 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "hullId": "platform1",
+    "hullMods": ["shield_shunt"],
+    "permaMods": ["shield_shunt"],
+    "quality": 0.5,
+    "variantId": "armaa_platform1_Standard",
+    "goalVariant": true,
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "dualflak",
+                "WS 003": "dualflak"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS 001": "mark9"}
+        }
+    ]
+}

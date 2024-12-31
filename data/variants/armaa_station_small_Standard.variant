@@ -1,0 +1,15 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "hullId": "armaa_station_small",
+    "hullMods": [],
+    "quality": 0.5,
+    "variantId": "armaa_station_small_Standard",
+    "goalVariant": true,
+    "weaponGroups": [],
+    "modules": {
+        "WS 001": "armaa_platform1_Standard",
+        "WS 004": "armaa_platform1_Standard"
+    }
+}

@@ -1,0 +1,165 @@
+{
+  "hullName": "Morgana",
+  "hullId": "armaa_morgana",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/morgana/armaa_morganaa.png",
+  "style": "armaa_valkazard",
+  "height": 62,
+  "width": 52,
+  "center": [26, 31.5],
+  "collisionRadius": 44.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 43.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "strikeCraft",
+    "reduced_explosion",
+    "armaa_aaf",
+    "armaa_morganaBonus",
+    "armaa_wingClipper",
+    "armaa_wingCommander"
+  ],
+  "builtInWings": [
+    "armaa_morgana_wing"
+  ],
+  "builtInWeapons": {
+    "DECO": "armaa_morganaa_deco",
+    "DECOL": "armaa_morganaa_deco_l",
+    "DECOR": "armaa_morganaa_deco_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "TRUE_GUN",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-7, -18],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "TRUE_GUN2",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-7, 18],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [0, 4]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [0, -4]
+    },
+    {
+      "id": "DECOL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-9.5, 18],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "DECOR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-9.5, -18],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "DECO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-0.5, -0],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "KAMEHAMEHA",
+      "size": "LARGE",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-6.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-30, 6],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-30, -6],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-4.5, 24.5],
+      "length": 2.5,
+      "width": 2,
+      "angle": 180,
+      "contrailSize": 2,
+      "style": "CUSTOM",
+      "styleId": "VALKAZARD_ENGINE"
+    },
+    {
+      "location": [-4.5, -24.5],
+      "length": 2.5,
+      "width": 2,
+      "angle": -180,
+      "contrailSize": 2,
+      "style": "CUSTOM",
+      "styleId": "VALKAZARD_ENGINE"
+    }
+  ],
+  "bounds": [
+    16.5, -4,
+    6, -10,
+    1.5, -7,
+    -5.5, -9,
+    1.5, -21,
+    -4.5, -25,
+    -29.5, -5.5,
+    -17, -0,
+    -29.5, 5.5,
+    -29, 9.5,
+    -20, 12.5,
+    -4, 25.5,
+    1, 21.5,
+    -5.5, 9,
+    1.5, 7,
+    6, 10,
+    16.5, 4,
+    28.5, 0.5
+  ]
+}

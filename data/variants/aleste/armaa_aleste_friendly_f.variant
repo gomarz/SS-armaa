@@ -3,18 +3,19 @@
   "hullId": "armaa_aleste_frig",
   "displayName": "Friendly",
   "goalVariant": false,
-  "fluxCapacitors": 10,
-  "fluxVents": 10,
+  "fluxCapacitors": 9,
+  "fluxVents": 9,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
+    "hardenedshieldemitter",
+    "pointdefenseai"
   ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN": "heavyblaster",
         "WS001": "sabot",
         "WS002": "sabot"
       }
@@ -23,14 +24,14 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_aleste_blade_LeftArm"
+        "TRUE_GUN": "ionpulser"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_alesteHead"
+        "HARPOON": "armaa_aleste_harpoon"
       }
     },
     {

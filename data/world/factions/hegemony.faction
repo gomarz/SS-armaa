@@ -1,0 +1,16 @@
+{
+	"hullFrequency":{
+		"hulls":{
+			"aarmaa_garegga_xiv_carrier":0.5,
+			"armaa_corsair_xiv":0.5,
+			"armaa_monitor_xiv":0.5,
+		},
+	},
+	"knownShips":{
+		"hulls":[	
+    "armaa_garegga_xiv_carrier",
+    "armaa_corsair_xiv",
+    "armaa_monitor_xiv",
+			],
+	},
+},	

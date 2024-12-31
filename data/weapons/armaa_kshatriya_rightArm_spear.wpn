@@ -1,0 +1,54 @@
+{
+  "id": "armaa_kshatriya_rightArm_spear",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_jackhammer_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaSpearMeleeEffect",
+  "turretSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm_spear.png",
+  "turretGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm_spear_recoil.png",
+  "hardpointSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
+  "renderBelowAllWeapons": true,
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 40,
+  "renderHints": [
+    "RENDER_BARREL_BELOW",
+    "SUSPEND_RECOIL"
+  ],
+  "turretOffsets": [
+    32.5,
+    1
+  ],
+  "turretAngleOffsets": [
+    -1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "interruptibleBurst": true,
+  "smokeSpec": {
+    "particleSizeMin": 5,
+    "particleSizeRange": 15,
+    "cloudParticleCount": 6,
+    "cloudDuration": 1,
+    "cloudRadius": 20,
+    "blowbackParticleCount": 5,
+    "blowbackDuration": 0.5,
+    "blowbackLength": 15,
+    "blowbackSpread": 30,
+    "particleColor": [
+      150,
+      100,
+      100,
+      100
+    ]
+  },
+  "fireSoundTwo": "armaa_stake_shot",
+  "unaffectedByProjectileSpeedBonuses": true
+}

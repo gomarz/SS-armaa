@@ -3,7 +3,7 @@
   "hullId": "armaa_guardual",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/guardual/armaa_guardual.png",
-  "style": "MIDLINE",
+  "style": "armaa_GUARDUAL",
   "height": 36,
   "width": 34,
   "center": [17, 18],
@@ -25,8 +25,7 @@
     "F_GPOD": "armaa_guardual_variablerifle",
     "F_LEGS": "armaa_gd_legs",
     "WINGL": "armaa_guardual_wing_l",
-    "WINGR": "armaa_guardual_wing_r",
-    "WS0001": "armaa_valken_missile"
+    "WINGR": "armaa_guardual_wing_r"
   },
   "weaponSlots": [
     {
@@ -36,7 +35,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6.5, -0],
+      "locations": [-6, -0],
       "renderOrderMod": -1000
     },
     {
@@ -65,7 +64,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, -0]
+      "locations": [1, -0]
     },
     {
       "id": "D_PAULDRONL",
@@ -108,7 +107,7 @@
     {
       "id": "E_HEAD",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
@@ -117,11 +116,11 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 0,
+      "arc": 135,
       "angle": 0,
-      "locations": [-6, -0]
+      "locations": [1, -0]
     },
     {
       "id": "F_GPOD",
@@ -132,7 +131,6 @@
       "angle": 0,
       "locations": [-2, -0]
     },
-
     {
       "id": "WS0002",
       "size": "SMALL",
@@ -169,8 +167,8 @@
     5, -12.5,
     -3, -12.5,
     -5, -9.5,
-    -7, -3,
-    -7, 2.5,
+    -8, -2.5,
+    -8, 2.5,
     -5, 8.5,
     -2.5, 13,
     5, 13,

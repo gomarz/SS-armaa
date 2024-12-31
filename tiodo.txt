@@ -1,12 +1,11 @@
-- gunhazard revision (just remove it)
+- gunhazard revision (just remove it..nvm done)
 - ArmaA partnership (sandbag)
 - ArmaA-PL Crisis intervention (sandbag)
-- Kshatriya Spear
-- Dawn Skill Up
-- Morgana
+- Kshatriya Spear (done)
+- Dawn Skill Up (sandbag)
 - remove leave option from atmo boss fight
-- add resolution for killing kade
-- add reward for capturing IK
+- add resolution for killing kade (sandbag)
+- add reward for capturing IK (sandbag)
 - add quest tracker(Done, except for final stage (kade/IK))
 - finish morgana (mostly done)
 - add variable fighter? (mostly done)

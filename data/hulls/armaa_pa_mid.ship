@@ -12,7 +12,7 @@
   "shieldRadius": 21.5,
   "viewOffset": 0,
   "builtInMods": [
-    "armaa_melee"
+    "automated"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_pa_mid_leftArm",

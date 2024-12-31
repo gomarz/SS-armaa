@@ -7,7 +7,10 @@
   "fluxVents": 15,
   "quality": 0.5,
   "permaMods": [],
-  "hullMods": ["expanded_deck_crew","hiressensors"],
+  "hullMods": [
+    "expanded_deck_crew",
+    "hiressensors"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
@@ -15,15 +18,14 @@
       "weapons": {
         "WS 001": "vulcan",
         "WS 002": "vulcan",
-        "WS 004": "vulcan"
+        "WS 004": "gorgon"
       }
     }
   ],
   "modules": [
-{
+    {
       "MODULE1": "armaa_aleste_frig_classic_standard"
-}
-],
-  "wings": [
-  ]
+    }
+  ],
+  "wings": []
 }

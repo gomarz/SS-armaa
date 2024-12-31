@@ -25,9 +25,9 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 50,
-      "angle": 0,
-      "locations": [-3, -0],
+      "arc": 60,
+      "angle": 10,
+      "locations": [-2, 1],
       "renderOrderMod": 50
     },
     {
@@ -45,9 +45,9 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 90,
-      "angle": -0,
-      "locations": [-3, -0],
+      "arc": 60,
+      "angle": -10,
+      "locations": [-2, -1],
       "renderOrderMod": 50
     },
     {
@@ -62,7 +62,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-10, 4],
+      "location": [-9, 4],
       "length": 10.5,
       "width": 4,
       "angle": 180,
@@ -70,7 +70,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-10, -3],
+      "location": [-9, -3],
       "length": 10.5,
       "width": 4,
       "angle": -180,

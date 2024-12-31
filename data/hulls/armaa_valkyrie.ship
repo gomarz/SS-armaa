@@ -18,7 +18,7 @@
     "armaa_prodromos_wing"
   ],
   "builtInWeapons": {
-    "MODULE_CONTROLLER": "armaa_deco_valkyrie",
+    "MODULE_CONTROLLER": "armaa_deco_valkyrie"
   },
   "weaponSlots": [
     {
@@ -42,7 +42,7 @@
     {
       "id": "WS 004",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "MISSILE",
       "mount": "TURRET",
       "arc": 190,
       "angle": -90,

@@ -13,7 +13,6 @@
   "shieldRadius": 160,
   "viewOffset": 0,
   "builtInMods": [
-    "armaa_wingCommander"
   ],
   "builtInWeapons": {
     "DECO": "armaa_caymon_deco",

@@ -7,3 +7,4 @@ armaa_enableWingcom,Enable WINGCOM Chatter,Boolean,true,,Enable chatter from WIN
 armaa_inputTime,HIMAC Input Delay(MS),Int,300,,"Double Tap time delay to Quick/Assault Boost. The lower the value, the shorter the input window.",100,400,Examples
 armaa_repairLevel,Repair Threshold,Double,0.5,,Hull percentage that strikecraft will return to carrier for repairs. Higher values generally offer more survivability as you progress into the late game.,0.3,0.8,Examples
 armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voicedchatter from Dawn.,,,Examples
+armaa_enableReprisal,Enable MRC Reprisals,Boolean,True,,Enable MRCs reprisal events,,,Examples

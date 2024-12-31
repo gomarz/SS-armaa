@@ -36,7 +36,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0004": "irpulse"
+        "WS0004": "vulcan"
       }
     },
     {

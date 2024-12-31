@@ -1,11 +1,11 @@
 {
 	id:"armaarmatura_arusthai",
 	"color":[252,71,75,255],
-	"displayName":"MRC",
+	"displayName":"AS",
 	"displayNameWithArticle":"The MRC",
 	"displayNameLong":"Meshan Reprisal Coalition",
 	"displayNameLongWithArticle":"The Meshan Reprisal Coalition",
-	"logo":"graphics/armaa/factions/armaa_logo01_flag.png",
+	"logo":"graphics/armaa/factions/armaa_arusthai.png",
 	"crest":"graphics/armaa/factions/armaa_logo01_crest.png",
 	"shipNamePrefix":"DAS",
 
@@ -33,7 +33,7 @@
 			{
 
 	
-				"drover": 0.5,
+				"drover": 0.25,
 				"vanguard_pirates": 0.8,
 				"wolf": 0.3,
 				"hound": 1,
@@ -45,7 +45,7 @@
 			"warthog_wing":1,
 			"khopesh_wing":1,
 			"armaa_valkenx_wing":1,
-			"armaa_record_wing":1,
+			"armaa_record_wing":0.5,
 			"talon_wing":1,
 
 		},
@@ -59,9 +59,10 @@
 		"tags":[],
 		"hulls":[	
 				"armaa_xyphos",
+				"armaa_valkenx_frig",
+				"armaa_record_frig",
 				#"armaa_monitor",
 				#"armaa_whitebase",
-				"armaa_kouto_frig",
 				#"mora",
 				"cerberus",
 				"gemini",
@@ -73,9 +74,7 @@
 				"buffalo",
 				"nebula",
 			    	#"sunder",
-				#"heron",
-				"wolf",
-				"drover",
+				"condor"
 			],
 	},
 	"shipsWhenImporting":{
@@ -87,14 +86,8 @@
 			"fighters":[
 			"broadsword_wing",
 			"armaa_record_wing",
-			"armaa_valkenx_wing",
-			"armaa_gallant_wing",
-			"armaa_aleste_wing",
-			"talon_wing",
-			"warthog_wing",
 			"wasp_wing",
-			"thunder_wing",
-			"armaa_prodromos_wing"
+			"talon_wing",
 			],
 	},
 	"knownWeapons":{
@@ -112,33 +105,30 @@
 		],
 	},
 	"knownHullMods":{
-		"tags":["standard", "ind", "independent", "pirates"],
+		"tags":["standard","pirates"],
 		"hullMods":[
 		],
 	},
 	"factionDoctrine":{
-		"warships":4,
+		"warships":3,
 		"carriers":2,
 		"phaseShips":2,
 
 		"officerQuality":1,
 		"shipQuality":1,
-		"numShips":5,
+		"numShips":4,
 
 		"shipSize":1,
 
 		"aggression":5,
 
-		"combatFreighterProbability":0.05,     				# instead of some portion of the freighters in a fleet
-		"combatFreighterCombatUseFraction":0.05,  				# as part of the normal combat lineup
-		"combatFreighterCombatUseFractionWhenPriority":0.1,# as part of normal combat lineup, when marked as priority ship
-		"autofitRandomizeProbability":0.4,
+		"combatFreighterProbability":0.55,     				# instead of some portion of the freighters in a fleet
+		"combatFreighterCombatUseFraction":0.40,  				# as part of the normal combat lineup
+		"combatFreighterCombatUseFractionWhenPriority":0.4,# as part of normal combat lineup, when marked as priority ship
+		"autofitRandomizeProbability":0.5,
 
 		"commanderSkillsShuffleProbability":1,
 		"commanderSkills":[
-			"coordinated_maneuvers",
-			"carrier_group",
-			"cybernetic_augmentation",
 		],
 	},
 	"illegalCommodities":[
