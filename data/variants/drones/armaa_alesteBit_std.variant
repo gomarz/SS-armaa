@@ -16,8 +16,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "pdlaser",
-        "WS0003": "armaa_prodromos_leftArm"
+        "WS0002": "pdlaser"
       }
     }
   ],

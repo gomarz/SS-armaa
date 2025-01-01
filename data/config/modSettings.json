@@ -1,4 +1,13 @@
 {
+    "nexerelin":{
+		"mining_ship_strengths":{
+			"armaa_hazard_wing": 2.5,
+		},
+		"mining_weapon_strengths":{
+			"armaa_hazard_drill_left": 4,
+		},
+	},
+
 	"MagicLib":{
 		"interferences_weapons":
 		{

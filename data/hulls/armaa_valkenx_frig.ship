@@ -17,6 +17,7 @@
     "armaa_strikeCraftFrig",
     "autorepair",
     "armaa_vxSkinSwap",
+    "armaa_himac",
     "armaa_variableRifle"
   ],
   "builtInWeapons": {
@@ -170,7 +171,7 @@
     {
       "id": "WS0004",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 90,
       "angle": 5,

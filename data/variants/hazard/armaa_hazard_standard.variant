@@ -1,0 +1,30 @@
+{
+  "variantId": "armaa_hazard_standard",
+  "hullId": "armaa_hazard",
+  "displayName": "Mining Mech",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "mininglaser"
+      },
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "A_GUN2": "armaa_hazard_drill_left"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

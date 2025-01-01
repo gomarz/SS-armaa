@@ -47,7 +47,7 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 5,
       "angle": 0,
       "locations": [0, 0]
     },

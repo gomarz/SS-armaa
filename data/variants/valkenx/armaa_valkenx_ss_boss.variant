@@ -1,0 +1,65 @@
+{
+  "variantId": "armaa_valkenx_ss_boss",
+  "hullId": "armaa_vx_silversword",
+  "displayName": "Assault",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "unstable_injector",
+    "armoredweapons",
+    "safetyoverrides",
+    "auxiliarythrusters",
+    "hardened_subsystems",
+    "hardenedshieldemitter",
+    "automated",
+    "armoredweapons",
+    "coherer",
+    "frontshield",
+    "missile_autoloader",
+    "extendedshieldemitter",
+
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "minipulser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "gorgon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "cryoblaster"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "vulcan"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_valkenxHead_frig"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

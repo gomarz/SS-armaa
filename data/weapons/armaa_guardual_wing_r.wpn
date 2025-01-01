@@ -1,0 +1,57 @@
+{
+  "id": "armaa_guardual_wing_r",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "MEDIUM",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/guardual/armaa_guardual_wing_r.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "renderHints": [
+NEVER_RENDER_IN_CAMPAIGN
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    0,
+    -16,
+    0,
+    -16,
+    0,
+    -16
+  ],
+  "turretAngleOffsets": [
+    90,
+    90,
+    90
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 1,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 1
+}

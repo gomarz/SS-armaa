@@ -7,7 +7,7 @@
     #"spriteName":"graphics/armaa/ships/armaa_valkyrie_ca.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
-    "fighterbays":1,
+    "fighterBays":1,
     "addHints":[],
     "tags":["rare_bp"],
 #	"systemId":"armaa_recalldevice",

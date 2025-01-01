@@ -1,0 +1,175 @@
+{
+  "hullName": "Valkyrie",
+  "hullId": "armaa_valkyrie",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/armaa_valkyrie_ca.png",
+  "style": "MIDLINE",
+  "height": 260,
+  "width": 80,
+  "center": [42, 113],
+  "collisionRadius": 200,
+  "shieldCenter": [17, 0],
+  "shieldRadius": 180,
+  "viewOffset": 0,
+  "builtInMods": [
+    "ground_support"
+  ],
+  "builtInWings": [
+    "armaa_prodromos_wing"
+  ],
+  "builtInWeapons": {
+    "MODULE_CONTROLLER": "armaa_deco_valkyrie"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [-63, 28]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": -90,
+      "locations": [-63, -28]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": -90,
+      "locations": [60, -20]
+    },
+    {
+      "id": "WS 005",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 210,
+      "angle": 0,
+      "locations": [
+        119.5, 0.5,
+        23.5, 1
+      ]
+    },
+    {
+      "id": "WS 007",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [112.5, 25]
+    },
+    {
+      "id": "MODULE1",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [60, 33]
+    },
+    {
+      "id": "MODULE2",
+      "size": "SMALL",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": -90,
+      "locations": [60, -30]
+    },
+    {
+      "id": "MODULE_CONTROLLER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [10.5, 1]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [126, 8]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [124.5, -8.5]
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [37, 2.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-111, 29],
+      "length": 48,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-110, 20],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-109, 2],
+      "length": 80,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-110, -19],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-111, -28],
+      "length": 48,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -105, 37,
+    144, 21,
+    144, -21,
+    -105, -36
+  ]
+}

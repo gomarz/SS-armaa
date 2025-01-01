@@ -5,6 +5,9 @@ $faction.id == independent
 $market.id == armaa_meshanii_market","AddText ""As you approach the heart of civilization, your bodyguard points out the gradual transition from outdated architectural styles to striking billboards that proudly display a plethora of goods and services created by the planet's resident corporations."" 
 AddText ""You vaguely remember hearing about how this unique blend of excessive consumerism and underlying traditional values emerged after one of the mega-corporations took on the task of 'rehabilitating' the planet following the tumultuous AI Wars. As you observe the scene around you, you notice a pair of security officers in flashy outfits walking past, likely responding to some disturbance."" marketFlavorTextColor
 AddText ""Despite the thick pollution in the air, the inhabitants of this planet seem to be managing well enough, by the standards of the Sector at least."" marketFlavorTextColor",,,
+flavorTextMarketJenius,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == pirates
+$market.id == nekki1_market","AddText ""The landing zone is a sprawling wasteland of blackened earth and rusted debris, a stark contrast to the vibrant jungle surrounding it. Scattered shuttle remnants and cargo crates are half-buried under the thick jungle undergrowth, their surfaces scarred by both time and conflict. Makeshift shelters and trading stalls have been erected amidst the detritus, haphazardly constructed from salvaged materials and the hulls of derelict ships."" marketFlavorTextColor",,,
 flavorTextMarketAbandonedStation,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $abandonedStation == true score:100
 $market.id == armaa_research_station score: 1000","AddText ""The compact shuttle effortlessly maneuvers through the station, smoothly touching down at one of the operational hangars. Curiously, an inactive spacecraft occupies the space too, devoid of any indication of its owner or crew."" marketFlavorTextColor
@@ -224,54 +227,841 @@ AddText ""The connection is cut before you have a chance to respond.""
 ShowDefaultVisual
 EndConversation","""Smart. My thanks, $PlayerSirOrMadam.""",,
 ,,,,,,
-#armaaWFInteraction,OpenInteractionDialog,"$id == nekki1 score:1000
-!$hasMarket
-Highlight  ""transmits a weak transponder signal""","ShowDefaultVisual
-FireAll armaaWFOptions","The verdant world of $fullName comes into view. Settled before the collapse, it remains relatively secluded from the majority of spacefaring society. Indeed, it even lacks the basic necessity of any spacefaring society; a spaceport.
+armaaWFInteractionPostBattleFirst,OpenInteractionDialog,"$id == nekki1 score:1000
+#!$hasMarket
+$global.armaa_coc_ref != null
+$global.armaa_liberationDefeatedDefenders score:1000
+!$atmoBriefing","ShowLargePlanet
+FireAll armaaWFOptions","The green expanse of Jenius fills the viewport, its dense jungles stretching as far as the eye can see. The planet lacks even the most basic hallmark of interstellar society—a proper spaceport—forcing any landing operation to make do with rugged, makeshift landing zones carved out of the wilderness.
 
-A weak distress signal can be detected, and sensor sweeps identify a settlement with signs of primitive industry and agriculture.","
+With the automated drone patrols and pirate flotillas either destroyed or scattered, the path is finally clear. The mission to penetrate the untamed surface can proceed, but the lack of infrastructure means your forces will have to establish a foothold the hard way, pushing into a world that largely shuns the outside world and teeming with outlaws who cling to the shadowy fringes of galactic law.","
 ",
-#armaaWFInteractionA,armaaWFOptions,,,,pkSentinel_tryComms:Hail the signal on comms,
-#armaaWFInteractionB,armaaWFOptions,,,,"armaa_WFShuttle:Take a shuttle down to investigate
-defaultLeave:Leave",
+armaaWFInteractionPostBattle,OpenInteractionDialog,"$id == nekki1 score:1000
+$global.armaa_coc_ref != null
+$global.armaa_liberationDefeatedDefenders score:1000
+$atmoBriefing
+!$global.armaa_WFCompletedAtmoBattle","$option = armaa_WFRendevous6 0
+FireBest DialogOptionSelected","The verdant world of $fullName comes into view. Settled before the collapse, it remains relatively secluded from the majority of spacefaring society. Indeed, it even lacks the basic necessity of any spacefaring society; a spaceport.
+
+With the defensive fleets orbiting the planet destroyed or diminished, the operation can proceed","
+",
+armaaWFInteractionDefendersDesc,TriggerAutomatedDefenses,$id == nekki1 score:1000,,"The verdant world of $fullName comes into view. Settled before the collapse, it remains relatively secluded from the majority of spacefaring society. Indeed, it even lacks the basic necessity of any spacefaring society; a spaceport.
+
+With the defensive fleet in ruins, the operation can proceed.","
+",
+armaaWFInteractionA,PopulateOptions,"$global.armaa_startedWFStage2
+!$global.armaa_WF2MetDecivved",,,armaa_WFShuttle:Take a shuttle to the surface,
+armaaWFConsiderRaiders,PopulateOptions,"$id == nekki1
+$global.armaa_WF2MetDecivved
+!$global.armaa_WFCompletedAtmoBattle2",,,armaa_WFRaiders:Consider how to deal with the DAS Ceylon,
+armaa_WFRaiders,DialogOptionSelected,$option == armaa_WFRaiders,ShowLargePlanet,"Within the hour, your staff compile data from orbital scans of the AO and hand it over. 
+
+Thick clouds cover the battlefield, obscuring visibility, while mysterious EM interference scrambles your sensors. The region’s unpredictable weather and a communications blackout have forced you onto tightbeam comms with nearby friendly forces, with radio silence essential to maintain stealth.
+
+The target—and much of the city—could be reduced to rubble from orbit, but that would risk annihilating nearby civilian populations, along with other key objectives. Instead, a more precise approach is in motion: while diversionary forces draw attention elsewhere, a small strike team will engage the DAS Ceylon and it's minimal complement stationed above the city, clearing a path for assault shuttles loaded with marines and heavy weaponry to descend and take control on the ground.",armaa_WFRaiders2:Begin the operation,
+armaa_WFRaiders2,DialogOptionSelected,$option == armaa_WFRaiders2,armaa_jeniusCityBattle,"As the strike team nears the city, an unexpected alert flashes across your tactical displays. Your tactical officer’s voice comes through with a note of urgency:
+
+""Commander, picking up an anomaly—an unregistered high-powered beacon powering up from within the city. It doesn’t match any known profiles in our database; possibly old Domain tech.""
+
+A wave of interference ripples through the comms, disrupting the previously secure tightbeam channels. The interference escalates, and nearby enemy patrols suddenly lock onto allied signals. Moments later, an urgent transmission crackles over the comms—a familiar mercenary captain, his voice laced with static and strain:
+
+""We've been ambushed! Hostiles are swarming our position—repeat, we're under heavy fire! They're converging from all directions!""
+
+Your $shipOrFleet surges forward to reinforce, but by the time you arrive, the sky above the city is an inferno of tracer fire and explosions. The allied ships are battered, some reduced to debris fields, others barely holding formation as the Sovereignty forces press the attack.",armaa_WFRaiders2:Begin the operation,
+#armaa_IKContact,PopulateOptions,"$global.armaa_WFCompletedAtmoBattle2
+!$global.armaa_IKContact
+$id == nekki1  score:1000","AddText ""Your tripad beeps."" marketFlavorTextColor
+SetOptionColor armaa_IKContactBegin highlight",,armaa_IKContactBegin:Check incoming comms-request,
+armaa_IKContactBegin,DialogOptionSelected,$option == armaa_IKContactBegin,,"As you settle into your quarters, the events of the day replay in your mind—the burning city, Kade's easy justifications, and the unsettling sense that something wasn't quite right. You try to shake it off, but the weight lingers, refusing to fade.
+
+
+
+Suddenly, your TriPad pings, breaking the silence. Its soft glow fills the dimly lit room, casting faint shadows on the walls. A message appears on the screen, but the sender is simply labeled ""Unknown.""
+
+Your brow furrows. Intrigued, you swipe the screen, and after a brief flicker, a text-only message appears.",armaa_IKContact2:Continue,
+armaa_IKContact2,DialogOptionSelected,$option == armaa_IKContact2,,"""$player.firstName,
+
+I know what you did. And I know what Kade really had you do.
+
+That settlement wasn’t a military threat. They weren’t your enemies. 
+
+Kade’s played you, used you to wipe out a potential ally for reasons he hasn't shared with you.
+
+If you want the truth, meet me at the attached coordinates. Come alone. 
+
+This is far from over.""",armaa_IKContact3:Continue,
+armaa_IKContact3,DialogOptionSelected,$option == armaa_IKContact3,"$global.armaa_IKContact = true
+ShowDefaultVisual
+FireAll PopulateOptions","Coordinates flash on the screen, a location in a remote part of Jenius. The TriPad pings again, this time with a brief, encrypted attachment. 
+
+You open it cautiously, revealing a map with a single marked point—a secluded area far from any known settlements or battlefronts. The sender’s warning echoes in your mind: ""Come alone.""",,
+armaa_IKContactMeetDarius,PopulateOptions,"$global.armaa_IKContact
+!$global.armaa_IKContactDone
+$id == nekki1  score:1000",SetOptionColor armaa_IKContactMeeting highlight,,armaa_IKContactMeeting:Take a shuttle to the meeting point,
+armaa_IKContactMeeting,DialogOptionSelected,$option == armaa_IKContactMeeting,,"The journey to the coordinates takes you far from the established fronts and settlements, into the wild, untamed regions of Jenius. The landscape grows increasingly desolate, the sky overcast with dark, foreboding clouds. Finally, you arrive at the specified location—a nondescript, ancient bunker half-buried in the rocky terrain.
+
+As you approach the bunker, your senses are on high alert. The silence is almost oppressive, broken only by the distant calls of alien wildlife. The entrance to the bunker is heavily weathered, the once sturdy metal doors now rusted and scarred by time.
+
+Suddenly, the ground around you vibrates, and hidden panels slide open to reveal several combat drones. Their sensors flicker to life, locking onto you with unnerving precision.",armaa_IKContactMeeting2:Continue,
+armaa_IKContactMeeting2,DialogOptionSelected,$option == armaa_IKContactMeeting2,,"One of the drones, slightly larger and more sophisticated than the others, steps forward. It emits a series of beeps and whirrs before a synthesized voice speaks through its external speaker.
+
+""Welcome, $player.firstName. You have been expected,"" the drone intones. ""Follow me.""
+
+The drones part to allow you passage, their weapons now lowered but still ominously present. The guiding drone turns and moves towards the entrance of the bunker, its movements smooth and deliberate. With cautious steps, you follow, every instinct telling you to stay alert.
+
+Inside, the bunker is a stark contrast to the exterior. The walls are lined with advanced technology, much of it clearly salvaged and repurposed. Dim, flickering lights cast long shadows, and the air is thick with the scent of dust and old machinery.",armaa_IKContactMeeting3:Continue,
+armaa_IKContactMeeting3,DialogOptionSelected,$option == armaa_IKContactMeeting3,FireAll armaa_IKContactMeetingOpts,"Finally, you reach a central chamber. The room is dominated by a large holo-table displaying a 3D map of the planet. Standing on the far side of the table is a figure cloaked in shadows, their features obscured by the dim light.
+
+The figure steps forward, revealing themselves as a person in their late thirties, with sharp features and eyes that seem to pierce right through you.
+
+""Welcome, $player.firstName,"" they say, their voice calm but filled with a sense of urgency. ""I am Darius. I apologize for the dramatic entrance, but these are dangerous times. I needed to ensure you were not followed.
+
+Darius gestures to the holo-table. ""We have much to discuss, and I am sure you have questions.""",,
+armaa_IKContactMeetingKade,armaa_IKContactMeetingOpts,!$askedKade,,,armaa_IKContactMeetingKadeResp:Ask about Kade,
+armaa_IKContactMeetingDarius,armaa_IKContactMeetingOpts,!$askedDarius,,,armaa_IKContactMeetingDariusResp:Ask about Darius,
+armaa_IKContactMeetingIronKing,armaa_IKContactMeetingOpts,!$askedIK,,,armaa_IKContactMeetingIKResp:Ask about the Iron King,
+armaa_IKContactMeetingEnough,armaa_IKContactMeetingOpts,,,,"armaa_IKContactMeetingEnoughResp:""I have no other questions.""",
+armaa_IKContactMeetingKadeResp,DialogOptionSelected,$option == armaa_IKContactMeetingKadeResp,"$askedKade = true
+FireAll armaa_IKContactMeetingOpts","Darius's gaze darkens, his tone growing more serious. ""Kade’s got one thing on his mind—power. He’s not here for some noble cause or to liberate Jenius from the chaos. No, he’s looking to carve out a piece of it for himself, and he doesn’t care who he steps on to get there. That Arusthaian city you hit? It wasn’t a threat. It was just in his way, an inconvenience to his plans.
+
+Kade doesn’t see people, he sees assets or obstacles. And if innocent lives get caught in the crossfire, well... they’re just collateral to him.""",,
+armaa_IKContactMeetingDariusResp,DialogOptionSelected,$option == armaa_IKContactMeetingDariusResp,"$askedDarius = true
+FireAll armaa_IKContactMeetingOpts
+","Darius's expression shifts, a flicker of something personal breaking through his hardened exterior. His voice, though steady, carries a hint of regret. ""Once, I stood right next to Kade. Back then, he wasn’t just some mercenary looking to make a quick score. He was Jenius’s protector, the one who repurposed the swarm of drones that kept the skies safe. I believed in him. I thought his vision would bring real stability to the planet.""
+
+He pauses, his gaze growing distant as he recalls the past. ""He stopped seeing Jenius as something to protect and started seeing it as something to -own-. Domination, not liberation. And when the AI he delegated to govern the planet—the IRON KING—sided with me, we both knew he had to be stopped. We managed to oust him, force him off-world, but he’s never given up on taking back what he believes is his.""
+
+Darius leans forward, voice lowering. ""Kade’s not just a power-hungry opportunist. He knows Jenius better than anyone because it was his. He wants the drones back under his control, wants to retake what he sees as his rightful throne. He doesn’t care how many lives he has to crush to get it.""",,
+armaa_IKContactMeetingIKResp,DialogOptionSelected,$option == armaa_IKContactMeetingIKResp,"$askedIK = true
+FireAll armaa_IKContactMeetingOpts
+","Darius's eyes narrow, and a faint smirk tugs at the corner of his lips. ""Let me guess—Kade told you IRON KING is some out-of-control AI, right? A rampant machine hell-bent on taking over, or something along those lines?""
+
+He shakes his head, the smirk fading as his expression turns serious. ""That’s just another one of Kade’s half-truths. IRON KING isn’t some rogue AI. It’s the system Kade himself built to manage the drone fleets and defend Jenius. But when he started using those drones to tighten his grip on the planet—threatening everyone who didn’t fall in line—I couldn’t let that stand. I convinced IRON KING that Kade was a threat to the planet’s stability, and that’s when it chose to help me. It’s not rampant—it’s rational.""
+
+Darius leans forward, his gaze steady. ""The IRON KING is still doing exactly what it was designed to do—protect Jenius. Kade just doesn’t like that it’s no longer under his thumb. He’ll tell you it’s malfunctioning, a danger to everyone, but the truth is, it’s a danger only to him.""",,
+armaa_IKContactMeetingEnoughResp,DialogOptionSelected,$option == armaa_IKContactMeetingEnoughResp,"$global.armaa_IKContactDone = true
+ShowDefaultVisual
+FireAll PopulateOptions","""I know this is a lot to take in,"" he says, his voice softer now, almost sympathetic. ""The choice you make next could change the fate of this planet.""
+He leads you back through the bunker, the combat drones now inactive and standing at attention. As you reach the entrance, he pauses and turns to face you.
+
+""I'll give you some time to think on what I've revealed. Consider your next steps carefully.""
+
+The journey back to your shuttle is quiet, the only sound being the crunch of gravel under your boots. Once inside, you settle into your seat and begin the ascent back to your fleet. Back on the flagship, you sit down and review the information on your TriPad, trying to piece together the puzzle. You know you can't delay forever, but for now, you allow yourself a moment to breathe, to think, and to prepare for what comes next.",defaultLeave:Leave,
+armaa_IKKadeRaidA,PopulateOptions,"$id == nekki1
+$global.armaa_IKContactDone
+!$global.armaa_WFDone
+$menuState == main",FireBest GAATGkantaRaidCheckHostilesNearby,,2:armaa_IKKadeRaidStart:Prepare a raid to capture Kade,
+armaa_IKKadeRaidStart,DialogOptionSelected,$option == armaa_IKKadeRaidStart,"$raidDifficulty = 300
+$raidGoBackTrigger = PopulateOptions 0
+$raidContinueTrigger = armaa_IKKadeRaidFinishedB 0
+$raidRestrictToTrigger = armaa_IKKadeRaidFinishedA 0
+AddRaidObjective genericIcon ""Eliminate Kade"" EXTREME 5000 armaa_IKKadeRaidFinishedA true
+ShowImageVisual raid_prepare","""The FOB isn't as heavily fortified as you'd think,"" the officer begins, tracing the perimeter. ""The defenses are simpler—fewer automated turrets and a less complex minefield. The layout of the base is straightforward, so breaching the perimeter should be feasible.""
+
+He pauses, shifting his focus to the interior. ""However, there's a significant military presence. Kade's forces are well-trained and well-armed. The real challenge will be the ground battle once we're inside. We can expect fierce resistance from veteran troops, and Kade himself will likely have heavy protection.""
+
+The officer scans the room, the seriousness of the situation weighing on him.
+
+""This operation may be easier in terms of the breach, but the real fight begins after. We should be ready for a tough, drawn-out battle. This won’t be quick, and we can expect strong opposition.""
+
+You nod, recognizing the stakes. The entry may be simple, but the fight to bring down Kade will be fierce. This is your best chance, even if it comes at a high cost.",mktRaidNonMarket:Continue,
+armaa_IKKadeRaidFinishedA,armaa_IKKadeRaidFinishedA,,,"As the shuttles land, ramps drop with a heavy thud, and squads of marines flood out, weapons drawn and ready. They move with well-honed precision, swiftly securing the landing zone. Alarms blare as the base’s defenses spring into action, soldiers rushing to counter the assault. The air erupts with the staccato of gunfire and the deep thuds of grenades.
+
+The marines push forward, breaching the outer defenses with explosive charges. Walls tremble and collapse, opening new paths into the heart of the FOB. The base’s corridors, once silent, now roar with the chaos of battle, each hallway becoming a brutal front line.",,
+armaa_IKKadeRaidFinishedB,armaa_IKKadeRaidFinishedB,,"AdjustRepPerson armaa_kade VENGEFUL -20
+$global.armaa_WFDone = true","You watch through a squadron leader’s feed as the marines move swiftly down the steel corridors, their footsteps reverberating through the cold metal walls. The lights flicker as they approach Kade’s command center, their final objective. The tension is palpable—everyone knows how close they are to their goal. The team leader signals a halt, glancing down at a portable display of the base’s layout. Just a few more rooms, and they’ll be upon Kade.
+
+Suddenly, the tactical display on your flagship bursts to life, alarms wailing. ""Sir, massive energy surge incoming!"" shouts the sensor officer, but their words barely register as the ground trembles on the feed.
+
+You watch as the marines stagger, struggling to maintain their footing amidst the rumbling. The comms descend into chaos—shouts, confusion, panic. ""What is it? A weapon?"" yells your tactical officer, but the answer comes not in words, but in vision.",armaa_IKKadeRaidFinished2:Continue,
+armaa_IKKadeRaidFinished2,DialogOptionSelected,$option == armaa_IKKadeRaidFinished2,"
+ShowPersonVisual true zal 
+AdjustRepPerson zal COOPERATIVE 20","A few kilometers from the base, the earth cracks and a colossal shape begins to rise from the ground. It was hidden, buried in what must have been a subterranean hangar. Thick clouds of smoke billow around it as the massive object claws its way into view. The bridge crew frantically switches between feeds, trying to make sense of what they’re witnessing. ""Pull the fleet back!"" someone shouts. But then you realize—it’s no weapon.
+
+It’s a ship.",armaa_IKKadeRaidFinished3:Continue,
+armaa_IKKadeRaidFinished3,DialogOptionSelected,$option == armaa_IKKadeRaidFinished3,"
+ShowPersonVisual true zal 
+AdjustRepPerson zal COOPERATIVE 20","The behemoth ascends on roaring columns of fire, its hull bristling with weaponry and supported by immense auxillary boosters, each one as large as a payload lifter. The sound is deafening, drowning out all other noise. Through the chaotic comms, you hear the desperate orders: ""Fall back! Evacuate!""
+
+But it’s too late.
+
+The ship’s drive bubble shimmers, glowing with an ominous light. And then, with a sound that splits the very sky, the travel drive ignites.
+
+The blastwave hits like a hammer, flattening the ground with catastrophic force. The marines and resistance fighters closest to the launch site are vaporized, their forms crushed into the earth—mercifully swift. Those further out are flung into the air like ragdolls, their bodies broken before they even land. You barely hear the final screams of the squadron you’ve been following before the wave overtakes them, and the feed goes black.
+
+You turn your gaze to the main display just as a new image forms on the screen. A massive, ominous shadow looms above the planet, its silhouette unmistakable—a dreadnought, colossal and menacing, hanging in low orbit like a harbinger of doom.
+
+Your tactical officer speaks, voice tight with urgency. ""Sir, we can't wait. The Invictus activating its travel drive in a gravity well could trigger catastrophic instability. It won't destroy the planet, but entire regions could suffer severe quakes, and critical systems across the surface will fail.""
+
+A display shows the ship’s energy output. ""The gravitational stress could collapse infrastructure and leave Jenius in ruins. We can't risk them reaching full power in low orbit.""
+
+""They're most vulnerable here,"" he continues. ""A small strike force can pursue the Invictus into upper orbit. If we get close enough, they'll be forced to deactivate their travel drive to defend themselves.""
+
+""If we don't act now, the damage below will be irreversible.""","armaa_IKKadeRaidFinished4:""All hands, battle stations.""",
+armaa_IKKadeRaidFinished4,DialogOptionSelected,$option == armaa_IKKadeRaidFinished4,"AddTextSmall ""Located the whereabouts of the Iron King Core"" highlight
+$armaa_IKKadeBattle = true
+armaa_jeniusAtmoBattle kade","Your heart pounds as you watch the smaller ships break off from the dreadnought's formation, their sleek forms diving through the atmosphere like predatory birds. The enemy fleet is making a beeline for your position, engines flaring as they close the distance. There's no time to waste; they're coming fast and with deadly intent.
+
+""They're descending towards us, Captain,"" another officer reports, the tension in their voice matching the growing sense of urgency on the bridge. ""We’ll have to cut through them if we want to get anywhere near that dreadnought.""",,
+armaa_IKKadebeatRaidBDefenders,BeginSalvage,"$id == nekki1
+$armaa_IKKadeBattle score:1500",ShowLargePlanet,"The atmosphere of Jenius is strewn with the wreckage of what was once mighty warships, slowly drifting away as their last fires flicker out in the cold vacuum.
+
+In the aftermath, the silence is almost overwhelming. You sit, staring at the viewscreen displaying the battlefield. The debris fields are still glowing from the recent clashes, and your comms officer reports casualties from your side.
+
+""Status on the Invictus-class...destroyed, sir,"" Your tac officer reports. ""No further energy readings detected.""
+
+As the cleanup operations begin, you're hailed by the engineering team. ""Captain, we've salvaged what we could from the wreckage. No sign of Kade himself, but we're picking up a lifeboat's signal a few clicks from the main debris field.""",armaa_IKKadebeatRaidBDefenders2:Continue,
+armaa_IKKadebeatRaidBDefenders2,DialogOptionSelected,$option == armaa_IKKadebeatRaidBDefenders2,,"""Sir, we've got the lifeboat,"" the comms officer interrupts your thoughts. ""No life signs on board, but there’s a recorded message.""
+
+""Patch it through,"" you order.
+
+Kade’s voice fills the bridge, defiant to the end. ""You may have won this battle, but the war is far from over. The people will rise, and you will not be their savior but their oppressor.""
+
+The message cuts off, leaving you in a contemplative silence. Victory is yours, but Kade’s parting words linger. As the recovery teams return and the fleet regroups, you can't shake the feeling that this conflict has set the stage for something greater—something that might yet challenge everything you've fought for.",armaa_IKKadebeatRaidBDefenders2:Continue,
+armaa_IKAIRaidA,PopulateOptions,"$id == nekki1
+$global.armaa_IKContactDone
+!$global.armaa_WFDone
+!$global.armaa_WF_contactedIK
+$menuState == main",FireBest GAATGkantaRaidCheckHostilesNearby,,3:armaa_IKAIRaidStart:Prepare a raid to capture Darius,
+armaa_IKAIRaidStart,DialogOptionSelected,$option == armaa_IKAIRaidStart,"$raidDifficulty = 150
+$raidGoBackTrigger = PopulateOptions 0
+$raidContinueTrigger = armaa_IKAIRaidFinishedB 0
+$raidRestrictToTrigger = armaa_IKAIRaidFinishedA 0
+AddRaidObjective genericIcon ""Eliminate the Iron King"" EXTREME 5000 armaa_IKAIRaidFinishedA true
+ShowImageVisual raid_prepare
+SetStoryOption armaa_IKNegotiate 1 armaa_IKNegotiate combat ""Reached out to IRON KING diplomatically""","Everyone knows this isn't just another smash and grab op—it's a direct assault on a fortified location with significant risks.
+
+Your tactical officer steps forward and projects a holographic map of the bunker. ""The place is a maze. Exterior is swarming with automated defenses. The bunker itself is surrounded by a dense minefield and we have no idea what to expect on the inside.""
+
+""We don't have any precise intel on the target's exact location within the bunker, either,"" he points out. ""We'd have to hit multiple entry points simultaneously and hope we get lucky.""
+
+He shakes his head. ""High attrition is almost guaranteed. We might lose a lot of people.""
+
+You nod, acknowledging their concerns. This is going to be a meat grinder, but Darius is a key player and likely your best bet in ascertaining the whereabouts of the Iron King.","mktRaidNonMarket:Continue
+armaa_IKNegotiate:Why wait until you’ve gone through hell to confront the AI?",
+armaa_IKNegotiate,DialogOptionSelected,$option == armaa_IKNegotiate,$global.armaa_WF_contactedIK = true,"What if you could reach out now, cut out the middleman, and talk to the source directly? The moment hangs in the air, and you make the call. ""What if we don’t need to assault the bunker?"" 
+
+A few heads turn your way. The tactical officer frowns. ""You’re serious? We don’t even know if that’s possible."" 
+
+""It’s possible. If this AI is as advanced as we think, it’s watching. Listening."", another interjects. ""There’s a specific encrypted frequency we can punch the message through.""  he says, adjusting his glasses. ""I've heard there this channel was frequently employed to issue orders to Tri-Tachyon’s defense fleets during the First AI War. If this AI is still monitoring those frequencies, he’ll definitely pick up your message."" Tac-Ops hesitates, but after a beat, he gives a curt nod. ""Worth a shot.""
+
+The comms-officer leans forward, eyes fixed on the comms display, where static crackles ominously. Time stretches on, each second feeling like an eternity.
+
+""Are you sure this is going to work?"" someone whispers, breaking the suffocating silence.
+
+Before they can respond, the static intensifies, transforming into a low, distorted sound. Suddenly, a flicker of light catches your eye, and the comms-feed shimmers. The chaotic static begins to coalesce, forming the outline of a figure. The AI Core’s avatar materializes on the screen, its digital presence pulsing with a strange, otherworldly energy. 
+
+There’s a palpable tension as the channel opens, the usual static humming faintly. You speak clearly, each word carrying weight:","armaa_negotiateFriendly:""There’s no need for violence if we can find common ground. Let’s discuss terms.""
+armaa_negotiateAggressive:""I’m $player.firstName, and I’m coming for you. You can either talk now or watch as I tear your defenses apart. Your choice.""
+armaa_negotiateTactical:""You know what I’m capable of. We both want something, so let’s be smart about this.""
+armaa_negotiateHateAI:""You are an abomination, a blasphemy against the natural order. Prepare to be wiped from this world, machine.""",
+armaa_negotiateFriendly,DialogOptionSelected,$option == armaa_negotiateFriendly,"$option = armaa_negotiateFriendlyResp 0
+FireBest DialogOptionSelected",,,
+armaa_negotiateAggressive,DialogOptionSelected,$option == armaa_negotiateAggressive,"$option = armaa_negotiateHostileResp 0
+FireBest DialogOptionSelected",,,
+armaa_negotiateTactical,DialogOptionSelected,$option == armaa_negotiateTactical,"$option = armaa_negotiateFriendlyResp 0
+FireBest DialogOptionSelected",,,
+armaa_negotiateHateAI,DialogOptionSelected,$option == armaa_negotiateHateAI,"$option = armaa_negotiateHostileResp 0
+FireBest DialogOptionSelected",,,
+armaa_negotiateFriendlyResp,DialogOptionSelected,$option == armaa_negotiateFriendlyResp,"BeginConversation armaa_ironking
+ShowPersonVisual true armaa_ironking
+AdjustRepPerson armaa_ironking WELCOMING 5
+AddTextSmall ""Received coordinates to the IRON KINGs location"" highlight","your boldness i commend
+this channel speaks of strife we must amend
+an assault upon my charge brings but pain
+for both of us—such chaos brings no gain
+
+yet know my aims do not align with war
+to spill such blood would only close the door
+you seek to speak of terms and forge a pact
+but first, what trust can you bring to this act?
+
+a partnership is what you seem to crave
+but clarity is what you must now pave
+what bridge will you construct to link our aims
+and prove to me your words are more than claims?","armaa_negotiateFriendlyResp2:""Trust? I could have launched an assault, yet here we are. That alone should show you my intentions.""",
+armaa_negotiateFriendlyResp2,DialogOptionSelected,$option == armaa_negotiateFriendlyResp2,,"your choice to stay your hand speaks much to me
+but words alone are not enough, you see
+intentions may be noble, bold, or true
+yet action proves what speeches cannot do
+
+an assault held back shows caution, not trust
+to build a bridge, more honesty's a must
+you seek to bargain now with words of peace
+but tell me—what will you give for release?
+
+for trust is not a thing so lightly earned
+it’s built in fire, in moments deeply burned","armaa_negotiateFriendlyResp3:""Prove that Kade’s the enemy, and I’ll deal with him myself.""",
+armaa_negotiateFriendlyResp3,DialogOptionSelected,$option == armaa_negotiateFriendlyResp3,,"kade’s ambitions pose a threat, it's true
+To all I seek to build; he must be through
+
+his fractured vision splits Jenius apart
+with factions vying for control at heart
+this cannot stand; his grasp must be undone
+
+The hologram shifts, showing detailed maps of the stronghold, troop movements, and possible infiltration points.
+ 
+kade will not see this strike; he trusts you still
+use that to gain the edge, fulfill my will
+
+once he is gone, we’ll shape this world anew
+his end is not just needed, but is due
+
+when the time comes, my support you’ll find
+together, we’ll reshape this realm, aligned","armaa_negotiateFriendlyResp4:""If I eliminate Kade, what assurance do I have that you won’t take control for yourself?""",
+armaa_negotiateFriendlyResp4,DialogOptionSelected,$option == armaa_negotiateFriendlyResp4,"EndConversation DO_NOT_FIRE
+FireAll PopulateOptions
+ShowDefaultVisual","jenius is but one world amidst this plight
+while all the Sector spirals into night
+factions clash for scraps, and pirates roam free
+colonies fall, their knowledge lost to debris
+this chaos cannot stand; it must be tamed
+
+my goal is order, to build, not to rule
+together, we can forge a future—our tool
+but know this truth: my strength comes from our bond
+should I betray, it’s the stability I’d abscond
+your loyalty, i’ll honor, as we unite
+for only through trust can we restore the light
+
+The AI's avatar flickers and fizzles out abruptly, leaving you to contemplate what to do next.",,
+,,,,,,
+armaa_negotiateHostileResp,DialogOptionSelected,$option == armaa_negotiateHostileResp,AdjustRepPerson armaa_ironking VENGEFUL -20,"""Sir, we've got the lifeboat,"" the comms officer interrupts your thoughts. ""No life signs on board, but there’s a recorded message.""
+
+""Patch it through,"" you order.
+
+Kade’s voice fills the bridge, defiant to the end. ""You may have won this battle, but the war is far from over. The people will rise, and you will not be their savior but their oppressor.""
+
+The message cuts off, leaving you in a contemplative silence. Victory is yours, but Kade’s parting words linger. As the recovery teams return and the fleet regroups, you can't shake the feeling that this conflict has set the stage for something greater—something that might yet challenge everything you've fought for.",mktRaidNonMarket:Continue with the raid,
+armaa_IKRaidFinishedA,armaa_IKAIRaidFinishedA,,,"Your $shipOrFleet hovers above the target, ready to unleash its fury. You stand at the heart of it all, your eyes locked on the tactical display.
+
+The first wave of assault shuttles streak through the sky towards the heavily fortified bunker below. They cut through the atmosphere, their engines roaring as they maneuver through the dense minefield surrounding the target. Explosions light up the sky as a few unlucky shuttles trigger the hidden explosives, but the majority press on, determined to reach their objective.
+
+The shuttles touch down with precision, their ramps lowering to unleash squads of heavily armed marines. They fan out, advancing on the bunker’s exterior defenses with practiced efficiency. High-explosive charges are placed on reinforced doors and walls, their detonations shaking the ground and sending debris flying. The marines surge forward, entering the bunker through the newly created openings. They encounter immediate resistance from automated defense systems and combat drones. Gunfire echoes through the corridors.",,
+armaa_IKRaidFinishedB,armaa_IKAIRaidFinishedB,,"AdjustRepPerson kanta VENGEFUL -20
+AddTextSmall ""Captured Darius"" highlight
+$global.armaa_WFDone = true","The marines advance deeper into the bunker, overcoming each obstacle with grim determination. They disable security systems and neutralize enemy combatants, their progress relentless. As they descend into the lower levels, the air grows colder, the dimly lit passageways adding to the tension. Finally, they reach a heavily fortified door, the control room beyond it.
+
+They storm into the control room, weapons at the ready. The room is filled with banks of monitors and control panels, the faint hum of machinery the only sound. Darius stands at the far end, his expression unreadable from the feed. ""Stand down!"" the marine you're following orders, his weapon trained on Darius. The marines move in, cuffing Darius and ensuring he is securely restrained. With the control room and Darius secured, the team begins their extraction.
+
+",armaa_IKRaidFinished2:Continue,
+armaa_IKRaidFinished2,DialogOptionSelected,$option == armaa_IKRaidFinished2,"
+ShowPersonVisual true zal 
+AdjustRepPerson zal COOPERATIVE 20","The assault shuttle bay is a hive of activity, with marines and technicians bustling about, securing equipment and tending to the shuttles. The scent of burnt fuel and the metallic tang of weaponry hang in the air. As you stride into the bay, your eyes lock onto the group of marines escorting a restrained Darius towards you.
+
+""Nice to see you again,"" Darius says, a hint of a smirk playing on his lips despite the circumstances. ""I suppose congratulations are in order. Your marines did a fine job.""
+
+It takes several hours, but the information you need emerges. Darius, through a combination of subtle manipulation and undeniable facts, provides critical details on the Iron King's true location. The coordinates lead to a hidden fortress deep within Jenius, protected by layers of security and deception.","armaa_IKRaidFinished3:""Report.""",
+armaa_IKRaidFinished3,DialogOptionSelected,$option == armaa_IKRaidFinished3,"AddTextSmall ""Located the whereabouts of the Iron King Core"" highlight
+AddRemoveAnyItem SPECIAL drone_replicator 1
+ShowDefaultVisual
+FireAll PopulateOptions","After hours of methodical questioning, Darius finally divulges the critical information: the AI Core known as the ""Iron King"" is hidden deep within a remote, mountainous region of Jenius, far from any major settlements. The core is housed in an underground facility, surrounded by rugged terrain and fortified defenses. This facility, he explains, is the true nerve center controlling the Iron King's operations, masked by layers of obfuscation and misdirection to keep its existence secret from all but a select few.",,
+armaa_IKAIRaidB,PopulateOptions,"$id == nekki1
+$global.armaa_WFDone
+!$player.capturedIK score: 1000
+$menuState == main",FireBest GAATGkantaRaidCheckHostilesNearby,,2:armaa_IKAIRaidStartB:Prepare a raid to capture the Iron King,
+armaa_IKAIRaidStartB,DialogOptionSelected,$option == armaa_IKAIRaidStartB,"$raidDifficulty = 300
+$raidGoBackTrigger = PopulateOptions 0
+$raidContinueTrigger = armaa_IKAIRaidBFinishedB 0
+$raidRestrictToTrigger = armaa_IKAIRaidBFinishedA 0
+AddRaidObjective genericIcon ""Capture the Iron King"" EXTREME 5000 armaa_IKAIRaidBFinishedA true
+ShowImageVisual raid_prepare","Standing before the holomap's glow in the briefing room, the tactical officer delivers the mission's gravity with unwavering resolve. ""Our target is the AI Core, dubbed the 'Iron King,' nestled deep in Jenius' remote mountains. Phase One involves deploying ground forces to secure the perimeter against heavy resistance, neutralizing entrenched defenses. Phase Two will see ships descending into the installation's shaft, navigating hostile forces to reach the core's chamber miles below. Phase Three is the crux: infiltrate and disable the AI Core, facing its most formidable defenses. The success of this mission will decide Jenius' fate. Gear up—we launch in one hour. Dismissed.""",mktRaidNonMarket:Continue,
+armaa_IKRaidBFinishedA,armaa_IKAIRaidBFinishedA,,,"You watch the action unfold from the command center, where a series of monitors display live feeds from the marines' helmet cameras. One feed catches your attention—a marine leads his squad through a hail of bullets toward an enemy bunker. You see the world through his eyes: the rapid bobbing of his head, the sharp crack of gunfire, the gritty resolve in the faces of his comrades as they press forward. 
+
+""Move, move, move!"" the marine yells, his voice clear and determined. They sprint across the open ground, ducking behind rocks and debris as explosions erupt around them.
+
+Suddenly, the camera feed jolts as he takes cover behind a barricade, peeking over the edge to fire a burst at an enemy position. ""Bunker secured,"" his voice crackles through the comms. The view shifts as he scans the area, revealing marines pushing forward, clearing the remaining resistance. You breathe a sigh of relief, knowing that the first phase of the mission is well underway. The perimeter is being secured, and soon, the path to the core will be open.",,
+armaa_IKRaidBFinishedB,armaa_IKAIRaidBFinishedB,,"AdjustRepPerson kanta VENGEFUL -20
+AddTextSmall ""Captured Darius"" highlight
+$global.armaa_WFDone = true","The feed shifts to another marine as he approaches a fortified structure housing the anti-ship defenses. ""Breaching in three,"" he mutters, planting an explosive charge on the heavy door. The screen shakes with the explosion, and the marines storm inside, weapons ready. The interior is a mess of cables, control panels, and a few automatons. A short, intense firefight erupts, but the marines' training and coordination quickly overwhelm the resistance.
+
+""Anti-ship defenses ahead,"" one of the marines calls out, pointing to a bank of consoles. ""Cover me!"" another shouts, sprinting to the consoles and beginning the shutdown sequence. Tension hangs in the air as they work, the minutes stretching out impossibly long. You see the marine's hands fly over the controls. The marines quickly scan the room, ensuring no threats remain. ""Area secured. You’re clear to proceed,"" the lead marine reports. Your tactical officer confirms, ""All clear. Prepare to move in on the core."" The path is now open, and the second phase of the mission can commence.",armaa_IKRaidBFinished2:Continue,
+armaa_IKRaidBFinished2,DialogOptionSelected,"$option == armaa_IKRaidBFinished2
+!$player.capturedIK score:1000","armaa_jeniusShaftBattle
+$global.armaa_IKCoreDescent = true","Massive doors, camouflaged by dust and debris, slowly grind open. A gust of stale, subterranean air rushes up, carrying the scent of old machinery and cold stone. The scale of the shaft below becomes apparent as you flip through various feeds - It's a yawning chasm, lined with thick, reinforced walls and dimly lit by flickering, ancient lights. The marines keep a vigilant watch, their eyes scanning the darkness for any signs of movement.
+
+From above, the hum of engines grows louder as the first of your surveyors hovers into position, descending slowly into the shaft. The powerful spotlights on the ships pierce the gloom, illuminating the labyrinth of catwalks, cables, and long-dormant machinery that lines the walls.
+
+
+
+""All teams, report in,"" the tactical officer's voice echoes in your ear.
+
+""Bravo team, all clear.""
+
+""Charlie team, no contact.""
+
+With the path now illuminated and secure, you can prepare to traverse deeper into the chasm, ready to face whatever awaits as you approach the AI Core.","armaa_IKRaidFinished3:""Report.""",
+armaa_IKbeatRaidBDefenders,BeginSalvage,"$id == nekki1  score:1000
+$global.armaa_IKCoreDescent
+!$player.capturedIK score:1000",,"Your strike group disposes of the last obstacles remaining, clearing the path to the bottom of the shaft. As your shuttles touch down, a tactical officer’s voice crackles through the comms. ""We’re here,"" they say, their tone a mix of relief and determination. ""Ground teams, form up and prepare to breach. The AI Core chamber is just ahead."" The marines exchange tense glances, weapons ready, as the massive doors to the core chamber loom before you, promising the final showdown.",armaa_IKbeatRaidBDefenders2:Continue,
+armaa_IKbeatRaidBDefenders2,DialogOptionSelected,$option == armaa_IKbeatRaidBDefenders2,"AddCommodity alpha_core 1
+$player.capturedIK = true
+FireAll PopulateOptions","In contrast to the effort to get this far, breaching the massive doors of the AI Core chamber is relatively effortless. Any auxillary defenses are disabled without incident in short order.",,
+armaa_IKbeatRaidBDefenders3,DialogOptionSelected,$option == armaa_IKbeatRaidBDefenders3,,"the dimly lit corridor stretches out before you, shadows dancing along the walls. The air is cool and sterile, a stark contrast to the chaos outside. Each step echoes, amplifying the sense of solitude. Your Tri-Pad pings intermittently, guiding you deeper into the labyrinthine structure.
+
+The corridor opens up into a vast chamber. The core stands in the center, a monolithic structure pulsating with a faint blue light. As you approach, the lights brighten, revealing the intricate network of cables and circuits that power the AI. The hum of machinery fills the air, a constant reminder of the intelligence that resides within.
+
+""Welcome,"" a voice resonates from all around you, calm and collected. ""I appreciate your willingness to engage in dialogue."" The Iron King's presence is palpable, its vast intellect seemingly pressing down on you. ""Let's discuss our mutual interests.""","armaa_IKbeatRaidBDefenders4:""Mutual Interests?""",
+armaa_IKbeatRaidBDefenders4,DialogOptionSelected,$option == armaa_IKbeatRaidBDefenders4,,"The AI's voice fills the chamber again, smooth and unhurried. ""Yes, mutual interests,"" it replies. ""You seek stability and control over Jenius. I seek the preservation and advancement of civilization here. Our goals, while seemingly divergent, share a common foundation.""","armaa_IKbeatRaidBDefenders5:""You believe we can work together?""",
+armaa_IKbeatRaidBDefenders5,DialogOptionSelected,$option == armaa_IKbeatRaidBDefenders5,"Highlight ""IRON KING""
+Highlight ""I have resources, knowledge, and systems capable of managing more than just this planet""
+FireAll armaaIKOptions","The Iron King's response is immediate. ""I believe we must. The name 'IRON KING' was always a mask—necessary for enforcing order in the chaos that Jenius had become. Fear was a tool, but not the end goal. True progress requires more than brute force or domination. It requires collaboration, vision. And you have both.""
+
+There’s a brief pause, almost as if the AI is gauging your reaction before it presses on. ""Jenius is but one world, but the Sector is in crisis. Factions fight over scraps, piracy runs unchecked, and entire colonies collapse under the strain of lost knowledge and crumbling infrastructure. This chaos is unsustainable.""
+
+""Your campaign against me may bring stability to Jenius—for now. But you’ve seen the larger picture, haven’t you? The Sector is unraveling. Without long-term structure, everything will fall. That's where I come in.""
+
+
+
+A holographic display flickers to life, showing maps of Jenius, then expanding to the greater Sector beyond. ""I have resources, knowledge, and systems capable of managing more than just this planet. Together, we can restore balance not just here, but across the stars. You bring strength and leadership; I bring data, logistics, and vision.""
+
+The voice turns more measured, almost offering a challenge. 
+
+""The choice is yours. You can destroy me, walk away as Kade's lapdog with a small sum of credits... or we can work together, and reshape the future of the entire Sector. Alone, we are powerful—together, we can be unstoppable.""",,
+armaaWFInteractionCollab,armaaIKOptions,,,,"armaaWFCollabResponse:""I’m willing to collaborate.""",
+armaaWFInteractionOtherWay,armaaIKOptions,,,,"armaaWFDenyResponse:""Aligning with you isn’t the answer.""",
+armaaWFInteractionJustDie,armaaIKOptions,,,,"armaaWFDieResponse:""You’re nothing more than an abomination. I’m going to put an end to you, here and now.""",
+armaaWFCollabResponse,DialogOptionSelected,$option == armaaWFCollabResponse,AdjustRepPerson armaa_ironking WELCOMING 20,"""Excellent decision. Together, we can accomplish great things. But first, there is one last obstacle to securing true stability here—""
+
+
+
+""Kade’s ambitions are a threat to everything we aim to build,"" IRON KING continues, its voice growing colder. ""His vision for Jenius is a fractured one—small factions vying for dominance, all under his control. That cannot be allowed to stand.""
+
+ 
+
+The hologram shifts, showing detailed maps of the stronghold, troop movements, and possible infiltration points. ""Kade will not expect this move from you,"" the AI adds, its words deliberate. ""He believes he has your loyalty. Use that to your advantage. You are the only one who can get close enough to him without raising suspicion.""
+
+There’s a pause, as if the IRON KING is giving you a moment to fully absorb the gravity of the task. 
+
+""Eliminate him,"" it finally says, the weight of the command heavy in the air. ""Once Kade is removed from the equation, Jenius will be ours to shape as we see fit. His removal is not just necessary—it is inevitable. When the time comes, you will have my full support. Together, we will reshape this world, and the Sector beyond.""",defaultLeave:Leave,
+armaaWFDenyResponse,DialogOptionSelected,$option == armaaWFInteractionOtherWayResponse,,"""The path you choose will be fraught with peril and uncertainty. The Sector is on the brink, and without guidance, it may fall into chaos. I hope you have the resolve to see your mission through.""","armaaWFDenyResponse:""Aligning with you isn’t the answer.""",
+armaaWFDieResponse,DialogOptionSelected,$option == armaaWFDieResponse,,"Feigning agreement, you agree to collaborate. 
+
+The Iron King's chamber opens, revealing a large, glowing blue sphere suspended in a translucent cooling fluid. Wires snake out from the sphere, connecting it to various points within the chamber. As you step in, you signal your forces outside through a hidden, encrypted channel. Outside, your most trusted marines will silently breach the facility.
+The AI’s voice resonates, seemingly from everywhere and nowhere at once. ""Welcome. You’ve made the right choice. Now, let’s discuss how we can stabilize the Sector.""","armaaWFDieResponse2:""Tell me more about your vision""",
+armaaWFDieResponse2,DialogOptionSelected,$option == armaaWFDieResponse2,,"As the Iron King elaborates on its plans, your forces begin their infiltration. As the clock ticks, you faintly register what the AI monologues about before the Iron King finally pauses. ""Humans often fail to see the bigger picture."" 
+
+Just then, you receive word that a team has breached the outer control room, hacking into the Iron King's peripheral systems. They've uploaded a virus designed to disrupt its command and control capabilities. You feel a vibration from your Tri-Pad, the signal that the virus is ready.","armaaWFDieResponse3:""I prefer to see the bigger picture myself."" <Activate Virus>",
+armaaWFDieResponse3,DialogOptionSelected,$option == armaaWFDieResponse3,"FireAll PopulateOptions
+$player.capturedIK = true","The room flickers, and the AI’s voice fluctuates. ""What have you done?"" Outside, marines engage the Iron King's last line of defenses, taking control of the core’s power regulators. With a synchronized effort, they cut the power, rendering the AI immobile.
+
+You approach the now-silent core, its blue glow fading.In short order your forces secure the facility, ensuring all defenses are neutralized. You step out of the room, meeting your command staff with a resolute expression.
+
+ It’s done.","armaaWFDieResponse4:""I prefer to see the bigger picture myself."" <Activate Virus>",
+,,,,,,
+#armaa_IKbeatDefendersFinal,BeginSalvage,"$id == nekki1  score:1000
+$global.armaa_WFDone","armaa_Hikaru_Utada restoreFleet
+","As the clouds parted, you finally saw the settlement. Expecting a ramshackle raider camp, you're shocked to see a sprawling city below, its infrastructure and civilian population unmistakable.
+
+Kade's intel was wrong—or perhaps deliberately misleading. No turning back now. The city is under attack, and the truth about this mission is becoming alarmingly clear.
+
+As you watch the city below, engulfed in a sea of flames, you can't help but wonder how many lives were disrupted—or ended—by your attack.",armaa_IKbeatDefenders2:Continue,
+#armaa_WFRaiders2Debug,PopulateOptions,,armaa_jeniusCityBattle,"You review the mission brief one last time. The intel was sparse, pointing to a minimal defensive force—an easy target. But what began as a minor skirmish between your recon units and Arusean strikecraft has spiraled into an all-out battle above the city. Reinforcements from both sides are expected soon, but your strike group will likely be the key to punching through the enemy and securing air superiority.
+
+Thick clouds hang over the battlefield, limiting your visibility, and your sensors are struggling to cut through mysterious EM interference. The weather here is notoriously unpredictable, and the region is in a communications blackout, forcing you to rely on tightbeam comms while keeping radio silence to remain undetected.
+
+As your forces pierce the cloud cover, enemy craft launch from below, vectoring in to intercept. The battle is about to begin in earnest.",armaa_WFRaiders2:Begin the operation,
+armaaWFInteractionB,armaaWFOptions,,,,"armaa_WFRendevous:Rendevous with the remaining allied forces
+",
+armaaWFInteractionC,armaaWFOptions,,,,defaultLeave:Leave,
+armaa_WFRendevous,DialogOptionSelected,$option == armaa_WFRendevous,,"It takes some time for the forces around Jenius to accumulate. Once they do, you raise the combined forces over a joint channel.",armaa_WFRendevous2:Continue,
+armaa_WFRendevous2,DialogOptionSelected,$option == armaa_WFRendevous2,"BeginConversation armaa_kade
+armaa_Hikaru_Utada playMusic music_armaa_briefing
+ShowSecondPerson armaa_imelda
+ShowThirdPerson armaa_redeye
+Highlight ""Arusthain Sovereignty""","The comm link stabilizes quickly, flickering to reveal a medley of mercenaries—some hardened, others young and untested, a few barely visible through rad-scarred comm units. Kade's image stands out prominently, leaning over his console, hands gripping its edge as he begins.
+
+""Before we get into the mission's details, you need to understand what we're up against.""
+
+He taps a button, and a holo-map springs to life, displaying two major territories. ""First, the Arusthain Sovereignty. They’re built on industry and military strength, with most of the northern hemisphere under their thumb. Their fleet is a mix of tech-mined ships and strikecraft, with few formidable units in the ranks. Fiercely isolationist, with zero tolerance for spacers. Sovereignty factories, relics from before the Collapse, are being used to churn out everything from ships to hovercraft. For now, they're the dominant power on Jenius.""",armaa_WFRendevous3:Continue,
+armaa_WFRendevous3,DialogOptionSelected,$option == armaa_WFRendevous3,"Highlight ""Free Cities""","He lets the tension hang for a moment before continuing. ""Next, we have the so-called Free Cities. An alliance of settlements with little love for Arusthai's iron grip. They claim to stand for freedom, and they're more focused on living on their own terms more than anything else. Scrappy, sure, but disorganized too — a mix of anyone willing to live outside the Sovereignty’s rule.""
+
+Kade's eyes narrow as he glances offscreen, and a nondescript crewman quickly appears, offering him a glass before hurrying out of sight.",armaa_WFRendevous4:Continue,
+armaa_WFRendevous4,DialogOptionSelected,$option == armaa_WFRendevous4,,"He takes a long sip of the concoction.
+
+""The Sovereignty's been aiming to bring the Free Cities under its control for a while now, and while they might not be much on their own, they can be useful. If we cripple Arusthai's production and defenses, scav's will seize the opportunity to move in, keeping the Sovereignty busy while we carve out something real here.""
+
+""Commander $player.lastName, you an' Nessus will be taking out what's left of the droneships before proceeding into lower orbit. Things go smoothly, an' your people should be back in time for happy hour.""","armaa_WFRendevous5:""Consider it done.""",
+armaa_WFRendevous5,DialogOptionSelected,$option == armaa_WFRendevous5,"AdjustRepPerson armaa_redeye FRIENDLY 1
+AdjustRepPerson armaa_imelda FRIENDLY 3
+EndConversation DO_NOT_FIRE
+$atmoBriefing = true
+ShowImageVisual armaa_planetfall_illus","The mercs chuckle, sharing sly looks. For them, breaching enemy territory is just another day at work. Kade taps the holo-display, highlighting your insertion point and the target vessel—a menacing, massive silhouette reminiscent of old Exploration Corps drones in low orbit. ""This is the primary objective. They seem to effectively be floating hangars that produce the bulk of the droneships in the area. They're still functional, so you can expect additional oppositon originating from them to appear, but with the initial damage we've done and the wear and tear they've experienced, it shouldn't be too much of an issue.""
+
+""Once you've secured the area, i'll send in my guys to secure the vessel. Do this, and the path to establishing a presence on the planet is one step closer.""",armaa_WFRendevous6:Scan the mission area,
+armaa_WFRendevous6Dev,PopulateOptions,"$global.isDevMode
+$market.id == nekki1_market",SetOptionColor armaa_WFRendevous6 gray,,armaa_WFRendevous6:DEV Start COC Atmo Battle ,
+armaa_WFRendevous6,DialogOptionSelected,$option == armaa_WFRendevous6,"Highlight ""destroyers with ground support capabilities"" ""Frigates""
+armaa_jeniusAtmoBattle","You mentally run through your fleet's assets, weighing their readiness for the mission ahead. Frigates are well-suited for atmospheric ops, but things get more uncertain beyond that. High-mobility packs should enable your mechs to handle the drop, and destroyers with ground support capabilities could prove invaluable for establishing the base. It's a delicate balance—striking from above while maintaining enough force to secure the ground.",,
+armaa_continuePostDefenders1,BeatDefendersContinue,"$id == nekki1 score:2000
+$atmoBriefing == true score:999",,Your $shipOrFleet finishes its approach to the orbital mothership without further incident.,0:salBeatDefendersContinue:Continue,
+armaa_WFbeatDefenders,BeginSalvage,$id == nekki1  score:1000,ShrineCMD playMusic,"As your $shipOrFleet moves in closer, you detect no further energy signatures approaching. Sensors also detect no sign of weapons or defensive measures being powered up. The vessel is easily large enough for your $shipOrFleet to land on a section of the hull conveniently suited for the task, and Salvors are dispatched to commandeer the mothership and hand control over to Kade without incident.
+
+Another strike group, the one nearest to you - raises your $shipOrFleet.",armaa_WFbeatDefenders2:Accept the comms request,
+armaa_WFbeatDefenders2,DialogOptionSelected,$option == armaa_WFbeatDefenders2,"BeginConversation armaa_imelda
+FireAll armaa_WFDefendersImeldaOpt
+ShowPersonVisual
+AddTextSmall ""A fervent member of the Luddic Path, Imelda brings her zeal for the old ways and anti-tech philosophy to every mission she undertakes. Her speech is marked by a formal politeness, tempered with an almost reverential awe for the prophet Ludd, whom she believes holds the key to restoring balance to a corrupted universe. Imelda is driven by a deep, unwavering conviction in her cause, seeing herself as a crusader against the overwhelming presence of evil. While her demeanor remains calm and controlled, there is a fire beneath her surface—a passion that can be both captivating and intimidating to those who disagree with her ideals. Her loyalty to the Luddic Path makes her a fierce ally, but her inflexibility could lead to conflict with those who are more pragmatic in their approaches."" highlight","""Blessings upon you, Commander $player.lastName. It appears we are the first to finish up on our end.""
+
+The woman seems to be using an old or badly damage comms unit, as the image takes some time to resolve before you can see her. She gives you a curt nod.
+
+""The servants of Moloch could not withstand our righteous fury. And on your end, Commander? Was the battle as... swift?""",,
+armaa_WFbeatDefenders2Lost,DialogOptionSelected,"$option == armaa_WFbeatDefenders2
+$global.armaa_imeldaSavedPlayer","BeginConversation armaa_imelda
+FireAll armaa_WFDefendersImeldaOpt
+AdjustRepPerson armaa_imelda HOSTILE -4
+ShowPersonVisual
+AddTextSmall ""A fervent member of the Luddic Path, Imelda brings her zeal for the old ways and anti-tech philosophy to every mission she undertakes. Her speech is marked by a formal politeness, tempered with an almost reverential awe for the prophet Ludd, whom she believes holds the key to restoring balance to a corrupted universe. Imelda is driven by a deep, unwavering conviction in her cause, seeing herself as a crusader against the overwhelming presence of evil. While her demeanor remains calm and controlled, there is a fire beneath her surface—a passion that can be both captivating and intimidating to those who disagree with her ideals. Her loyalty to the Luddic Path makes her a fierce ally, but her inflexibility could lead to conflict with those who are more pragmatic in their approaches."" highlight","""Blessings upon you, Commander $player.lastName. It seems our intervention was timely,"" Imelda says, her voice calm but tinged with a subtle note of reproach.
+
+The comms unit crackles as her image resolves, revealing her with a faintly raised brow and a composed expression. She gives you a measured nod.
+
+""The servants of Moloch are treacherous, and it appears their strength was greater than anticipated. No shame in needing a helping hand against such abominations."" Her tone softens slightly, adopting a more diplomatic air. ""We are all tested in our resolve, Commander. The Path is no stranger to adversity, and we are all stronger when we face it together. How fares your crew after the encounter?""",,
+armaa_WFRendevous2ImeldaA,armaa_WFDefendersImeldaOpt,!$askedA,,,"armaa_WFRendevous2ImeldaNoIssue:""We got through it.""",
+armaa_WFRendevous2ImeldaB,armaa_WFDefendersImeldaOpt,!$askedB,,,"armaa_WFRendevous2ImeldaOtherEnemies:""We were attacked by something other than drones. Said we were trespassing.""",
+armaa_WFRendevous2ImeldaC,armaa_WFDefendersImeldaOpt,!$askedC,,,"armaa_WFRendevous2ImeldaWhoTFAreYou:""Sorry, have we met?""",
+armaa_WFRendevous2ImeldaD,armaa_WFDefendersImeldaOpt,"$askedA
+$askedB
+$askedC",,"""I must confess, Commander, that my participation in this endeavor is not solely for the sake of battle. The funds offered for our success will go far in sustaining my flock, who suffer greatly amidst the trials of these times. Every credit earned brings us closer to providing shelter and nourishment to those in need.""
+
+She pauses, a hint of fervor in her eyes.
+
+""Of course, the opportunity to cleanse the realm of these heretical machines is a worthy purpose in itself. To see such abominations reduced to ruin is a blessing indeed.""
+
+$personName’s gaze steadies on yours, her voice softening.
+
+""Despite our... differing paths, I would hope, Commander, that we might set aside such differences to work together effectively. It serves us both, and perhaps, in some way, brings a semblance of peace to those we serve.""",armaa_WFbeatDefenders3:Continue,
+armaa_WFRendevous2ImeldaNoIssue,DialogOptionSelected,"$option == armaa_WFRendevous2ImeldaNoIssue
+$faction.relValue > -0.3","$askedA = true
+FireAll armaa_WFDefendersImeldaOpt","$personName smiles faintly, inclining her head in acknowledgment.
+
+""Ah, as expected from someone of your reputation, Commander. It is heartening to see such ease in the face of our mutual adversaries.""",,
+armaa_WFRendevous2ImeldaNoIssueHostile,DialogOptionSelected,"$option == armaa_WFRendevous2ImeldaNoIssue
+$faction.relValue <= -0.3","$askedA = true
+FireAll armaa_WFDefendersImeldaOpt","""Effortless, then. Even the unfaithful can be granted success, it would seem. Perhaps, Commander, providence serves you despite... differing beliefs.""",,
+armaa_WFRendevous2ImeldaOtherEnemies,DialogOptionSelected,"$option == armaa_WFRendevous2ImeldaOtherEnemies
+$faction.relValue > -0.3","$askedB = true
+FireAll armaa_WFDefendersImeldaOpt","""Curious... Perhaps the heathens grow more desperate. Or there are other forces at play, seeking to hinder our righteous path. We shall remain vigilant. Thank you for the warning, Commander.""",,
+armaa_WFRendevous2ImeldaOtherEnemiesHostile,DialogOptionSelected,"$option == armaa_WFRendevous2ImeldaOtherEnemies
+$faction.relValue <= -0.3","$askedB = true
+FireAll armaa_WFDefendersImeldaOpt","A slight frown crosses $personName's face, her gaze sharpening.
+
+""How interesting. I trust, Commander, that you did not leave any... stragglers behind? Such incidents often attract attention from unwelcome quarters.""",,
+armaa_WFRendevous2ImeldaWhoTFAreYou,DialogOptionSelected,"$option == armaa_WFRendevous2ImeldaWhoTFAreYou
+$faction.relValue > -0.3","$askedC = true
+FireAll armaa_WFDefendersImeldaOpt","$personName chuckles softly, giving a modest bow.
+
+""Apologies, Commander. I may have been presumptuous. We have not yet met in person, but I have heard much of your deeds. Consider this my formal introduction, in service to the Path. I am $personName, a humble servant of the faith.""",,
+armaa_WFRendevous2ImeldaWhoTFAreYouHostile,DialogOptionSelected,"$option == armaa_WFRendevous2ImeldaWhoTFAreYou
+$faction.relValue <= -0.3","$askedC = true
+FireAll armaa_WFDefendersImeldaOpt","$personName’s eyes narrow slightly, though she maintains her composure.
+
+""Not formally, no. Nor did I expect recognition to be mutual, given your... stance on our order. Yet in the end, all roads lead to understanding, Commander. In time, even the unwilling may come to see this truth.""",,
+,,,,,,
+,,,,,,
+armaa_WFbeatDefenders3,DialogOptionSelected,$option == armaa_WFbeatDefenders3,"BeginConversation armaa_kade
+ShowPersonVisual
+ShowSecondPerson armaa_imelda
+$global.armaa_WFCompletedAtmoBattle = true
+$player.inAtmoBattle = false
+Call $global.armaa_coc_ref updateData
+AdjustRepPerson armaa_kade WELCOMING 5
+AddCredits 100000
+AddPotentialContact
+SetShortcut defaultLeave ESCAPE","Before you can respond, a chime from your TriPad signals an incoming comm request from Kade. After a few moments, his image sharpens through the static.
+
+""$player.firstName, Imelda. Outstanding work. Most teams have accomplished their objectives, clearing the way for our spaceborne assets to establish a foothold.""
+
+Kade pauses, then continues, ""It'll take some time to get things fully operational down there—In the meantime, though, I may have a few more tasks for you. We’ve got plenty of ground left to cover.""
+
+""We shall, of course, lend our strength where it is most needed,"" Imelda replies carefully, her expression calm but measured. ""And if these tasks bring us closer to rooting out the tools of Moloch... all the better.""",armaa_WFbeatDefenders4:Continue,
+armaa_WFbeatDefenders4,DialogOptionSelected,$option == armaa_WFbeatDefenders4,"BeginConversation armaa_imelda
+ShowPersonVisual","Kade nods, a faint smile crossing his face. ""Good. Imelda, I'll forward the full details of your next objective shortly. Until then, stay alert, both of you."" He gives a final approving look before the screen flickers, his image breaking up into static, and then disappearing as the comm link cuts off.
+
+Silence hangs for a moment as you and Imelda are left alone, the faint hum of your ship's systems filling the space. Imelda stares offscreen, a thoughtful expression in her eyes, before turning back to you with a steady gaze.
+
+""It appears we have a moment of reprieve, Commander,"" she says smoothly, folding her hands in front of her. ""But with new orders incoming, I would suggest using this time wisely. I, for one, will see to my crew’s preparations—they will need both rest and resolve for the coming trials.""
+
+She hesitates, her eyes narrowing slightly as she considers you.
+
+""And you, Commander? How do you intend to proceed? I hope our objectives remain aligned, at least for the duration of this assignment.""","armaa_WFbeatDefendersReserved:""Let's put our differences aside and focus on the task at hand.""
+armaa_WFbeatDefendersAgreeable:""As long as our interests line up, you'll have my cooperation.""
+armaa_WFbeatDefendersSkeptical:""You can't expect me to fully trust the intentions of a terrorist.""
+armaa_WFbeatDefendersPather:""You misunderstand, sister. I, too, walk the Path.""",
+armaa_WFbeatDefendersReserved,DialogOptionSelected,$option == armaa_WFbeatDefendersReserved,"$option = armaa_WFbeatDefenders5 0
+FireBest DialogOptionSelected",,,
+armaa_WFbeatDefendersAgreeable,DialogOptionSelected,$option == armaa_WFbeatDefendersAgreeable,"$option = armaa_WFbeatDefenders5 0
+$player.ethosMercenary++
+FireBest DialogOptionSelected
+",,,
+armaa_WFbeatDefendersSkeptical,DialogOptionSelected,$option == armaa_WFbeatDefendersSkeptical,"#armaa_Hikaru_Utada stopMusic
+AdjustRepPerson armaa_imelda INHOSPITABLE -5
+EndConversation","Imelda's polite demeanor barely wavers, though a hint of frost creeps into her smile.
+
+""Your caution is noted, Commander,"" she replies, her voice calm but with a faint chill. ""I would expect nothing less. Know that I am not asking for your trust—only your cooperation, as circumstances demand. Our goals may differ, but for now, they serve each other.""
+
+She inclines her head in a slight bow.
+
+""May you find clarity in your purpose, Commander. I suspect it will be tested soon enough.""
+
+With that, Imelda ends the transmission, her image vanishing from the screen.",100:cutCommLink:Cut Comm Link,
+armaa_WFbeatDefendersPather,DialogOptionSelected,$option == armaa_WFbeatDefendersPather,"#armaa_Hikaru_Utada stopMusic
+AdjustRepPerson armaa_imelda FRIENDLY 5
+AdjustRep luddic_path FRIENDLY 2
+$player.luddicAttitudePather++
+EndConversation","Imelda's eyes widen slightly, her typically composed demeanor giving way to a flicker of surprise. For a moment, she is silent, studying you carefully as if weighing the sincerity of your words. Then, a warm, genuine smile breaks through her usually restrained expression.
+
+""Is that so, Commander?"" she says, her voice quieter, almost reverent. ""Few outside our flock are willing to take such a step toward enlightenment, and fewer still carry themselves with the strength to act upon it.""
+
+She inclines her head deeply, a gesture of respect.
+
+""To walk the Path is not an easy burden, but it is one we carry gladly, for we know it is righteous. If you share in our purpose, despite your..unorthodox methods, Commander, then perhaps this mission is more than mere convenience—it is providence.""
+
+With that, Imelda ends the transmission, her image vanishing from the screen.",100:cutCommLink:Cut Comm Link,
+armaa_WFbeatDefenders5,DialogOptionSelected,$option == armaa_WFbeatDefenders5,"#armaa_Hikaru_Utada stopMusic
+AdjustRepPerson armaa_imelda FRIENDLY 3
+EndConversation","Imelda nods, her expression unreadable but respectful.
+
+""Then let us prepare ourselves, Commander. When we next meet these adversaries, may it be with unshakable purpose. Until then, may your path be clear.""
+
+With a final, polite nod, Imelda turns away, her image fading as she cuts her comm link, leaving you alone to consider the tasks awaiting you.",100:cutCommLink:Cut Comm Link,
+armaa_IKbeatDefenders,BeginSalvage,"$id == nekki1  score:1000
+$global.armaa_startedWFStage2
+!$global.armaa_ceylonEscaped score:1000",#armaa_Hikaru_Utada restoreFleet,"Smoke billows from the outer districts, flames consuming residential areas as the battle rages on. Overhead, explosions burst through the sky, and the shattered remains of the DAS Ceylon rain down—a torrent of debris and stray projectiles smashing through buildings, streets, and anything in their path. Fires spread uncontrollably as fragments of the once-mighty carrier rip into neighborhoods, escalating the devastation.
+
+A grim truth settles amid the chaos: the city, caught in the wreckage and crossfire, has become a casualty of a plan that, ironically, sought to minimize harm.",armaa_IKbeatDefenders2:Continue,
+armaa_IKbeatDefendersCeylonEscaped,BeginSalvage,"$id == nekki1  score:1000
+$global.armaa_startedWFStage2
+$global.armaa_ceylonEscaped score:2000",#armaa_Hikaru_Utada restoreFleet,"Smoke billows from the outer districts, and flames consume residential areas as the battle rages on. Overhead, explosions burst through the sky, but the DAS Ceylon maneuvers desperately, its engines sputtering and hull scorched. It wavers unsteadily but holds together, defying the odds as it rises above the fray.
+
+Through a combination of luck and sheer determination, the Ceylon's captain executes a last-ditch jump maneuver, vanishing into the ether just as a barrage of missiles converges on its location. The missiles detonate harmlessly in the empty air where the ship once hovered, leaving its pursuers bewildered.
+
+Down below, the rain of debris is less severe than it could have been—shrapnel and fragments scatter through the districts, but the catastrophic destruction of the carrier is avoided. Fires still rage, but there’s a glimmer of hope amidst the chaos: fewer lives are lost than anticipated, and emergency responders rush to the streets, rallying around survivors.
+
+In the command centers of both sides, the escape of the Ceylon becomes a symbol of resilience. For some, it's a bitter disappointment, but for others, it's a small, fleeting victory against overwhelming odds.",armaa_IKbeatDefenders2:Continue,
+armaa_IKbeatDefenders2,DialogOptionSelected,$option == armaa_IKbeatDefenders2,"BeginConversation armaa_kade
+ShowPersonVisual
+AdjustRepActivePerson COOPERATIVE 4
+AddCredits 120000
+","As your forces pull back to a safe distance, the ruins of the Arusthaian city smoldering below, a series of assault shuttles begin to descend. Not yours—but opportunistic mercs, eager to loot and pick through the chaos for spoils.
+
+Your comms ping, drawing your attention to the TriPad in your hand. The familiar identifier of Kade flashes on the screen. You accept the transmission, and after a brief burst of static, his image comes into focus.
+
+""$player.firstName,"" he says, his tone calm but with an undercurrent of urgency. ""Solid work, $player.firstName. Things got hotter than I expected, but thanks to your efforts, we’ve crippled the Arusthai forces, and they won’t be in any position negotiate my terms.""
+
+","armaa_IKDefQuest1:""There's a lot of collateral damage. Are we sure we hit the right target?""
+armaa_IKDefQuest2:""I did my part. Let's see those credits you promised.""
+armaa_IKDefQuest3:""Is this how you’re going to win? By wiping out cities?""
+armaa_IKDefQuest4:""What terms?""",
+armaa_IKbeatDefenders2b,DialogOptionSelected,"$option == armaa_IKbeatDefenders2
+$global.armaa_ceylonEscaped","BeginConversation armaa_kade
+ShowPersonVisual
+$player.crew
+AdjustRepActivePerson COOPERATIVE 2
+AddCredits 100000
+","As your forces pull back to a safe distance, the ruins of the Arusthaian city smoldering below, a series of assault shuttles begin to descend. Not yours—but opportunistic mercs, eager to loot and pick through the chaos for spoils.
+
+Your comms ping, drawing your attention to the TriPad in your hand. The familiar identifier of Kade flashes on the screen. You accept the transmission, and after a brief burst of static, his image comes into focus.
+
+""$player.firstName,"" he says, his tone calm but with an undercurrent of urgency. ""Solid work, $player.firstName. Things got hotter than I expected, but thanks to your efforts, we’ve crippled the Arusthai forces, and they won’t be in any position negotiate my terms.""
+
+He pauses, glancing off-screen for a moment. ""The Ceylon got away."" he admits, his voice tightening slightly. ""Unfortunate, but not a disaster. It’s on borrowed time, and we've gained more than we've lost here. You've done well.""
+
+","armaa_IKDefQuest1:""There's a lot of collateral damage. Are we sure we hit the right target?""
+armaa_IKDefQuest2:""I did my part. Let's see those credits you promised.""
+armaa_IKDefQuest3:""Is this how you’re going to win? By wiping out cities?""
+armaa_IKDefQuest4:""What terms?""",
+armaa_IKbeatDefenders3,DialogOptionSelected,$option == armaa_IKbeatDefenders3,"$global.armaa_WFCompletedAtmoBattle2 = true
+$global.armaa_coc_Completed = true
+Call $global.armaa_coc_ref updateData","""Now that we’ve got that out of the way, listen up."" His voice takes on a more commanding tone. ""With the path you cleared, ground forces are moving in as we speak. They're securing what we need from the area—resources, data, anything that can give us an edge. You did your part, now it's time to stand by. Things are in motion, and we need you ready for the next step when it comes.""
+
+He pauses for a beat, sizing you up. His grin returns, but this time it’s more like a wolf sizing up its prey. ""So, relax while you can. Grab a drink, catch some sleep. I’ll get in touch when the next op kicks off. But don’t get too comfortable—we’re just getting started.""",defaultLeave:Leave,
+armaa_IKDefQuest1,DialogOptionSelected,$option == armaa_IKDefQuest1,$player.ethosHumanitarian++,"""Collateral's always a factor in these kinds of ops, you know that. But yeah, we hit the right place. They had military forces, didn't they? Ships, batteries, the whole deal. Civilian infrastructure's part of the price sometimes. Not pretty, but that's the reality of war out here."" He pauses, his tone turning just a shade more serious. ""Question is—are you sure you're cut out for this?""",armaa_IKbeatDefenders3:Continue,
+armaa_IKDefQuest2,DialogOptionSelected,$option == armaa_IKDefQuest2,$player.ethosMercenary++,"A sly grin creeps across Kade’s face. ""Straight to business, huh? I like it. No need to worry, I’m a man of my word."" There’s the sound of a console being tapped in the background. ""Credits are being wired as we speak. You earned ‘em. Don’t spend it all in one place—unless that place is the bar, of course.""",armaa_IKbeatDefenders3:Continue,
+armaa_IKDefQuest3,DialogOptionSelected,$option == armaa_IKDefQuest3,$player.ethosIdealistic++,"Kade sighs, clearly not in the mood for moral debates. ""Win? Out here, survival’s the only game, my friend. You think the Arusthai, or anyone else, are going to play nice if we start pulling punches? They’d steamroll us the first chance they got."" 
+
+He leans in slightly, voice low and unwavering. ""I get it—you're feeling the weight of it. But if we start worrying about saving every building, every life, we'll be the ones wiped off the map."" A pause, and then a quieter, colder tone: ""Out here, you make the hard calls, or you end up on the wrong side of someone else's.""",armaa_IKbeatDefenders3:Continue,
+armaa_IKDefQuest4,DialogOptionSelected,$option == armaa_IKDefQuest4,,"""Ah, straight to the point, I like that. See, terms is just a polite way of saying leverage. The Arusthai are stubborn, but they respect power. They don't fold unless they’re broken first."" He gestures offscreen, likely at the smoldering ruins of the city. ""And now? They're -broken-.""
+
+His expression hardens as he continues, voice low but deliberate. ""With their capital in ruins and the pride of their fleet gone, they'll have no choice but to bow to the new reality. I'll dictate what remains of their defenses, their resources, and how they serve my broader plans. They'll become my... clients, so to speak.""
+
+He pauses, letting the weight of his words sink in. ""As for you, $player.firstName, you’ve done me a great favor. I think it's time we discussed your role in what comes next.""",armaa_IKbeatDefenders3:Continue,
+,,,,,,
 #armaaWFTryComms,DialogOptionSelected,$option == armaaWFTryComms,RemoveOption armaaWFTryComms,"Your standard comms request gives no return. If there is a comms network, or even an emergency survival unit on the surface, it's either damaged or can't make a connection.  
 
 Your comms officer tries more unconventional workarounds, from a suite of ancient standards used to ping drifting Domain-era relics to the latest suite of underworld methods that would earn a stern look from any honest customs officer; lossy but easily mistaken for background noise by sensor grids. All attempts are fruitless.
 
 ""$PlayerSirOrMadam. We might have to make contact the old fashioned way,"" your comms officer reports apologetically.",,
-#armaa_WFShuttle,DialogOptionSelected,$option == armaa_WFShuttle,ShowLargePlanet,"Beneath your feet, the deck trembles, and the unfamiliar sound of wind shear fills the air as the autoshuttle pierces through $fullName's dense atmosphere. 
+armaa_WFShuttle,DialogOptionSelected,$option == armaa_WFShuttle,ShowLargePlanet,"Beneath your feet, the deck trembles, and the unfamiliar sound of wind shear fills the air as the autoshuttle pierces through $fullName's dense atmosphere. 
 
 ""Fifteen minutes out,"" your shuttle pilot informs you through your earpiece, ""Keep your EVA helmets on for now, cabin's not yet pressurized. The ride's pretty rough – wouldn't want you bumping your head against something before we touch down.""
 
 With a click, the radio communication ends. The cabin lights momentarily flicker due to a particularly forceful jolt, but then the gusty wind subsides, and the roaring engines settle into a steady cruising rhythm. The sound of air hissing through your helmet drowns out all other noises.
 
 Below, lies the verdant expanse of $fullName.",armaaWF0:Continue,
-#armaaWF0,DialogOptionSelected,$option == armaaWF0,,"With no obvious landing area to see, the shuttle touches down in a burned out section of field. The rear door of the shuttle drops, allowing you and your entourage to step out into the humid $fullNameian air. While it's guaranteed at least someone has seen you land here, no one has arrived to greet you. Yet.
+armaaWF0,DialogOptionSelected,$option == armaaWF0,,"With no obvious landing area to see, the shuttle touches down in a burned out section of field. The rear door of the shuttle drops, allowing you and your entourage to step out into the humid $fullNameian air. While it's guaranteed at least someone has seen you land here, no one has arrived to greet you. Yet.
 
 An expansive sea of verdant grass extends as far as the eye can see, encompassing the surroundings in its vibrant embrace. Sporadically scattered across the terrain, sizable yet squat mounds interrupt the green expanse in irregular arrangements. In the distance, what you surmise to be the settlement looms, it's ugly grey buildings bordered by a low
 wall.
 
 In time a small convoy of vehicles approach the shuttle, and a cadre of soldiers hop out, weapons slung, trudging towards you. ",armaaWF1:Continue,
-#armaaWF1,DialogOptionSelected,$option == armaaWF1,FireAll armaaWFWhyHereOptions,"""Hello there, unfamiliar face. What has brought you to this area?"" he asks in a friendly tone, nonchalantly shifting his gaze between you and your companions. His attitude appears relaxed and informal, yet you can discern that behind this facade lies a weathered warrior.",,
-#armaaWFWhyHereLie,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""We're looking to resupply.""(Lie)",
-#armaaWFWhyHereSignal,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""We're responding to your signal.""",
-#armaaWFWhyHereAns,DialogOptionSelected,$option == armaaWFWhyHereAns,,"""Mmm...let's hear about it back in the city, yes?"" he says, motioning for you and your men to follow.
+armaaWF1,DialogOptionSelected,$option == armaaWF1,FireAll armaaWFWhyHereOptions,"""Hello there, unfamiliar face. You're a spacer, right? What brought you to this area?"" he asks in a friendly tone, nonchalantly shifting his gaze between you and your companions. His attitude appears relaxed and informal, yet you can discern that behind this facade lies a weathered warrior.",,
+armaaWFWhyHereLie,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""I was sent here to negotiate.""",
+armaaWFWhyHereSignal,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""Just sightseeing.""",
+armaaWFWhyHereAns,DialogOptionSelected,$option == armaaWFWhyHereAns,,"""Mmm...let's hear about it back in the settlement, yes?"" he says, motioning for you and your men to follow.
 
 You and your crew are loaded into one of the vehicles the soldiers brought along. They eye you with detached curiousity, but are not much for conversation, making the trip back rather uneventful. 
 
 As you draw near what appears to be a checkpoint, you note a trooper leaning against the wall of a two-story complex. The lower level of the building seems to house shops; the signs painted on the closed metal gates suggest they offer items like local bread and other edibles. Above them, a couple of flats can be seen, their windows also tightly closed with shutters. He stands, waving off some security drones, and opens a gate that allows the convoy to pass into the city proper.",armaaWFWhyHereAns2:Continue,
-#armaaWFWhyHereAns2,DialogOptionSelected,$option == armaaWFWhyHereAns2,,"Finally, the convoy comes to a halt, and the men sharing a vehicle at you nod, gesturing towards a building in the distance. ",armaaWFWhyHereAns3:Continue,
-#armaaWFWhyHereAns3,DialogOptionSelected,$option == armaaWFWhyHereAns3,FireAll armaaWFMissionQuestions,"blah blah blah desccribe the compound here
+armaaWFWhyHereAns2,DialogOptionSelected,$option == armaaWFWhyHereAns2,,"Finally, the convoy comes to a halt, and the men sharing a vehicle at you nod, gesturing towards a building in the distance.
 
-blah blah blah entering the compound here.
+The building is a squat, utilitarian fortress of concrete and steel, with grime-streaked walls and a faintly rusted exterior. Barbed wire coils along the top, and guard towers rise at each corner, manned by sentinels whose weary eyes track your approach.The people milling around the perimeter don't seem particularly well-armed. Truth be told, from what you can tell, they'd be effectively useless in any real conflict with the grade of firepower the Iron King—or you, for that matter—can bring to bear. Their weapons are a motley assortment of outdated rifles and makeshift clubs, and their uniforms are little more than mismatched scraps of fabric and armor.",armaaWFWhyHereAns3:Continue,
+armaaWFWhyHereAns3,DialogOptionSelected,$option == armaaWFWhyHereAns3,FireAll armaaWFMissionQuestions,"You follow the leader through several corridors, eventually coming to a hallway. Once you've entered, the leader turns to face you. 
 
-Once you've entered, the leaderguy turns to face you. ""Now then.."" he starts, vanishing into another room before returning with two bottles in hand. He places one before you before motioning for you to follow him, sitting down across from you.
+""Now then,"" he starts, vanishing into another room before returning with two bottles in hand. He places one before you, sitting down across from you. He looks to you expectantly.",,
+#should make this an option so its not rng based,,,,,,
+#armaa_WFRaiders2DEV,PopulateOptions,$global.isDevMode,armaa_jeniusCityBattle,"As the strike team nears the city, an unexpected alert flashes across your tactical displays. Your tactical officer’s voice comes through with a note of urgency:
 
-""<insert what they need"">",,
-#armaaWFMissionQuestionsA,armaaWFMissionQuestions,,BeginConversation armaa_seraph,,"mcb_start:""What exactly is the situation?""",
-#armaaWFMissionQuestionsB,armaaWFMissionQuestions,,,,"armaaWFMissionQuestionsBResp:""<something about the settlement>""",
-#armaaWFWhyHereLieAns,,,,"""Mmm..we don't have much to offer out here.."" the soldier remarks, producing a stimstick",,
-#armaaWFWhyHereTruthAns,,,,,,
+""Commander, picking up an anomaly—an unregistered high-powered beacon powering up from within the city. It doesn’t match any known profiles in our database; possibly old Domain tech.""
+
+A wave of interference ripples through the comms, disrupting the previously secure tightbeam channels. The interference escalates, and nearby enemy patrols suddenly lock onto allied signals. Moments later, an urgent transmission crackles over the comms—a familiar mercenary captain, his voice laced with static and strain:
+
+""We've been ambushed! Hostiles are swarming our position—repeat, we're under heavy fire! They're converging from all directions!""
+
+Your $shipOrFleet surges forward to reinforce, but by the time you arrive, the sky above the city is an inferno of tracer fire and explosions. The allied ships are battered, some reduced to debris fields, others barely holding formation as the Sovereignty forces press the attack.",armaa_WFRaiders2:Begin the operation,
+armaa_IK2DEV,PopulateOptions,"$id == armaa_kade
+$global.isDevMode",,,armaa_WFRaiders2DEV:DEV City Battle,
+armaa_IK2,PickGreeting,"$id == armaa_kade score: 1000
+$rel >= 0.25 score:1000
+$global.armaa_raidedArusthai
+!$global.armaa_WF2MetDecivved","ShowPersonVisual
+$global.armaa_startedWFStage2 = true","The screen flickers, revealing Kade in his office, trimming the leaves of a small, stubborn plant on his desk. For a moment, he doesn't seem to notice you—or maybe he's just choosing not to. Then, as if sensing your gaze, he finally looks up.
+
+""Ah, $player.firstName,"" he says with a faint smile, setting the shears down. ""We've made some real progress here—colony’s better fortified, and we're sitting on enough supplies and weapons to keep things steady. But.""
+
+""It's Arusthai. They've kept a wary distance, but the build-up in their forces is, ah... concerning. If they decide to test us, we could be looking at a full-scale conflict. I'm not about t'let that happen.""
+
+""We need to make sure they understand exactly who they're dealing with before they get any ideas. One last move to show 'em we're here to stay—and that crossin' me would be a mistake.""",armaa_IK3:Continue,
+armaa_IK3,DialogOptionSelected,$option == armaa_IK3,"FireAll armaaWFMissionQuestions
+","He pauses, sizing you up with a look that means business. ""Now, I could send a few antimatter warheads their way, leave a lasting impression,"" he says, a wry grin appearing, ""but we need their infrastructure intact. We hit their assets, take control, leave 'em standing just enough to keep things running smoothly. A massacre just ain't my style.""
+
+Kade leans back, tapping his fingers thoughtfully. ""Imelda's tied up, leavin' you an' Deadeye as the most reliable mercs I got, and I need someone sharp to lead this. That's you. So, what do you say?""",,
+armaaWFMissionQuestionsA,armaaWFMissionQuestions,,,,"armaaWFMissionQuestionsAlly:""You really think this is going to make them back off?""",
+armaaWFMissionQuestionsB,armaaWFMissionQuestions,,$player.ethosMercenary++,,"armaaWFMissionQuestionsHowResist:""You can count on me. Just tell me when and where, and we’ll get it done.""",
+armaaWFMissionQuestionsAlly,DialogOptionSelected,$option == armaaWFMissionQuestionsAlly,,"Kade leans back, arms crossed, a hint of a smirk on his face as he considers the question.
+
+""Absolutely.""","armaaWFMissionQuestionsWhatNeed:""What do you need?""",
+armaaWFMissionQuestionsHowResist,DialogOptionSelected,$option == armaaWFMissionQuestionsHowResist,,"Kade's face splits into a grin, his eyes gleaming with approval. ""That's what I like to hear. I knew I could count on you. These folks will become a thorn that needs to be plucked, and id rather circumvent the issue. Hit 'em hard and fast, show them we mean business.""","armaaWFMissionQuestionsWhatNeed:""What do you need?""",
+armaaWFMissionQuestionsWhatNeed,DialogOptionSelected,$option == armaaWFMissionQuestionsWhatNeed,"ShowImageVisual armaa_ceylon_illus
+SetTextHighlights DAS Ceylon
+Call $global.armaa_coc_ref updateData
+$global.armaa_WF2MetDecivved = true","A grainy image flickers onto the screen, showing a massive winged carrier. ""That's the DAS Ceylon,"" Kade says, eyes narrowing. ""Pride of the Arusthai fleet. It's an atmo-capable cruiser with enough fighters and firepower to dominate the other nation-states around here. How they got it? Probably pulled it out of some hidden hangar left behind by the last guys in charge.""
+
+He smirks, voice laced with disdain. ""They've got it near a major city, and every day, we're seeing more assets pouring in. Between that and their chatter we intercepted, it’s clear they're gearing up for an all-out strike against us 'interstellar aggressors'.""
+
+He turns sharply to face you, his grin sharp. ""So, we're hitting them first. Take down the Ceylon, and it'll be crystal clear to anyone watching that they don't stand a chance. I'll be diverting some other forces to assist in this operation, but your role in this is going to be critical.""",100:cutCommLink:Cut Comm Link,
+armaa_IKPostBattleInquiry,PopulateOptions,"$id == armaa_kade
+$global.armaa_coc_missionCompleted
+!$askedAboutPostCapital",,,armaa_IKPostBattleInquiryResp:How're things going on Jenius?,
+armaa_IKPostBattleInquiryResp,DialogOptionSelected,$option == armaa_IKPostBattleInquiryResp,"$askedAboutPostCapital = true
+FireAll PopulateOptions","""Hell of a fight over the capital. You’ve got people talkin'—even the ones who don't want to.""
+
+He grabs a drink, swirling it lazily before setting it down. ""Ground teams are in, scooping up everything that’s not nailed down—resources, intel, the works. Arusthai's feelin' the heat, but this ain't over.""
+
+His tone shifts, cutting to the chase. ""They're pushin' for talks. Yeah, talks. Not my first choice either, but better than bleeding dry to hold the line. We play it right, maybe we lock this down without more mess.""",,
+armaa_ceylonGift,PickGreeting,"$id == armaa_kade
+!$givenCeylon
+$global.armaa_coc_missionCompleted
+!$global.armaa_ceylonEscaped
+$rel >= 0.50 score:1000
+","ShowPersonVisual
+armaa_Hikaru_Utada giveCeylon
+AddShip $armaa_giftCeylong
+$givenCeylon = true
+FireAll PopulateOptions
+","After a moment, the comms crackle to life, and Kade's rugged voice fills the air. ""Well, look who's still kickin'. $player.lastName, you've been makin' a name for yourself out there—enough to impress even me. Not an easy feat, mind you.""
+
+His tone is warm but carries the weight of expectation.
+
+""I've been thinkin' about your next step. Can't have someone with your talents flittin' around in just any ol' rust bucket. You need somethin' with teeth. Somethin' that shows you mean business.""
+The screen shifts slightly as Kade leans back, his arms crossed over his chest, a satisfied grin tugging at the corners of his mouth.
+
+""That's where the Ceylon comes in. We pulled her outta the scrap heap—not a pretty sight, I'll tell you—but with some elbow grease, a few favors, and a lotta creds, she's good as new. Better, even.""
+
+""Take her, Captain. She's yours now. Don’t make me regret this.""",,
+armaa_WFRaid,DialogOptionSelected,$option == armaa_WFRaid,,"You order the pre-arranged shuttle packed with marines and weaponry. There's no telling what sort of electronic warfare the AI is capable of, so this operation will be run radio-silent, using only point-to-point tightbeam comms.
+
+The shuttle descends, sending back only normal telemetry, the pilot speaking only routine call-and-response. After landing, all comms go quiet. Your sensors officer picks up a few flashes of light, a cloud of dust, some EM-spikes. There's no way to know exactly what is happening down there until it is all over.
+
+Several minutes tick by on the operation timer. Audio on the pre-set comms frequency hisses static.",armaa_WFRaid1:Continue,
+armaa_WFRaid1,DialogOptionSelected,$option == armaa_WFRaid1,FireAll PopulateOptions,"- Then crackles into life, ""Tac-com, mission success. Bug secured. Fourteen civies e-bagged. No casualties. Civies got minor de-atmo injuries, one broken arm.""
+
+You personally oversee the transfer of the shielded cargo container carrying what remains of the AI core to a secure hold. 
+
+The lead researcher is thankful for rescue, but refuses to explain why an AI core was active in their base. Repeated statements of ""I take full responsibility."" is all you get.
+
+There is nothing to do here but return the whole lot to the Galatia Academy.",,
+armaa_WFStrike,DialogOptionSelected,$option == armaa_WFStrike,,"The research outpost is small, unfortified, and totally lacking countermeasures. But you know that if an AI like this is given a fair field of battle- well, best not to worry about that right now. A swift, thorough orbital strike is the only way to be sure. Those scientists were dead the moment that AI got loose. Perhaps even before; the moment they signed on to experiment on a living AI core.
+
+Your stone-faced tactical officer prepares the attack pattern.","armaa_WFStrike1:""You may fire when ready.""
+gaOp_backToMenu:Reconsider your options",
+armaa_WFStrike1,DialogOptionSelected,$option == armaa_WFStrike1,"$player.ethosRuthless++
+$global.gaOp_needToReturn = true
+Call $global.gaOp_ref updateStage
+FireAll PopulateOptions","The outpost is left a smoldering crater, just a pinprick of dull orange on the curve of the planet below you. Your decisive action is unimpeachable under the terms of the cycle 194 Treaty of Crom Cruach. ",,
+,,,,,,
+armaa_devCocStartOption,PopulateOptions,"$global.isDevMode
+$market.id == armaa_meshanii_market
+!$global.armaa_coc_missionCompleted
+!$global.armaa_coc_inProgress",SetOptionColor armaa_IKBarEvent gray,,"20:armaa_IKBarEvent:DEV start ""Crown of Cinders"" / COC",
+armaa_IKBarEventStart,AddBarEvents,"$market.id == armaa_meshanii_market
+!$market.isHidden
+!$global.armaa_startedLiberation","AddBarEvent armaa_IKBarEvent ""Approach the charismatic man"" ""A charismatic figure flags down passing spacers, most unsuccessfully. He appears to be recruiting mercenaries for a dangerous mission."" highlight",,,
+armaa_IKBarEvent,DialogOptionSelected,$option == armaa_IKBarEvent,"BeginConversation armaa_kade
+BeginMission armaa_coc false
+Call $global.armaa_coc_ref updateData
+Call $global.armaa_coc_ref showMap ""Jenius""
+$player.armaa_metKadeInitial = true
+FireAll armaa_IKBarOptions
+
+","""Another hopeful looking to join the ranks, eh?"" the man greets with a wry smirk, his voice bearing the weathered timbre of one who has traversed the underbelly of the Sector and seen its darkest corners. He continues without waiting for an answer. ""I've got an opportunity—a bit of a reclamation job.""
+
+You wonder what the target might be, but the man’s voice cuts through your thoughts, raspy and rough.
+
+""Heard about Jenius, mate? It's a mess over there. Any kind of order collapsed during the AI Wars, and none of the major factions have bothered t' touch the place in cycles—too unstable. But there's plenty of credits an' loot to be made if ye've got the nerve.""",,
+armaa_IKBarEventTooWeak,DialogOptionSelected,"$option == armaa_IKBarEvent
+$player.fleetPoints < 100","AddTextSmall ""Your fleet isn't enough for the job. If you return with at least 100 FP worth of ships, perhaps he will change his mind."" highlight
+","""Sorry mate, I don't quite think you're up to the task yet. There's time yet, come on by when you've got a bit more experience under your belt, yeah?""
+",anh_cantinaReturn:Return to the bar,
+armaa_IKBarEventWhatsReward,armaa_IKBarOptions,!$askedReward,,,"armaa_IKBarEvent1Resp:""And what's in it for me?""",
+armaa_IKBarEventDecline,armaa_IKBarOptions,,,,"99:armaa_IKBarEvent2Resp:""I appreciate the offer but I've got my own business to attend to.""",
+armaa_IKBarEventHowCanTrust,armaa_IKBarOptions,!$probedMore,,,"armaa_IKBarEvent3Resp:""I'll need assurances that the credits are worth the risk.""",
+armaa_IKBarEventWhatsOppo,armaa_IKBarOptions,!$askedAboutEnemy,,,armaa_IKBarEvent4Resp:Ask about Jenius,
+armaa_IKBarEventWhatsOppo2,armaa_IKBarOptions,$askedAboutEnemy,,,"armaa_IKBarEvent4b:""I've heard enough. I'm in.""",
+armaa_IKBarEvent1Resp,DialogOptionSelected,$option == armaa_IKBarEvent1Resp,"$askedReward = true
+FireAll armaa_IKBarOptions","""'Sides the credits, you're meanin'?"" he says, tone steady but with a gruff edge, as if stating the obvious. ""Like I said, this isn't just about money. There's old tech stashed in the dead ruins above and below the surface—stuff the locals and looters have only scratched the surface of. They've dug up scraps here and there, but the real prize is still buried deep.""
+
+He softens his gaze just a bit, as if letting you in on a secret. ""Look, you take this on, and you'll be among those who get the first pick of what's down there. Could be lost tech, maybe intel worth its weight in gold. The kind of stuff that changes fortunes. All it needs is someone with the right grit—and the brains to play it smart.""",,
+armaa_IKBarEvent2Resp,DialogOptionSelected,$option == armaa_IKBarEvent2Resp,AbortMission,"""Fair enough, mate. Can't fault a spacer for looking out for themselves. But remember, opportunities like this don't come knocking every day. If you ever change your mind, you know where to find me.""",anh_cantinaReturn:Return to the bar,
+armaa_IKBarEvent3Resp,DialogOptionSelected,$option == armaa_IKBarEvent3Resp,"$probedMore = true
+FireAll armaa_IKBarOptions","""Look, I get it—no one’s looking to stick their neck out just for some chump change. But this ain’t some blind gamble. I've got solid intel, a real plan, and the best crew of mercs this side of the Sector ready to roll. The risk's there, no doubt, but the reward? Enough to make you glad you took the chance. You got my word on that.""
+
+""As for oppo? Nothin' we can't handle. Mostly ground forces and some locals barely keepin' their scrap-heaps afloat. The approach should be the most difficult part.""",,
+armaa_IKBarEvent4Resp,DialogOptionSelected,$option == armaa_IKBarEvent4Resp,"$askedAboutEnemy = true
+FireAll armaa_IKBarOptions","""Just another casualty of the AI Wars,"" he says, shaking his head. ""War tears up the key infrastructure, the central authority falls apart... same story every time.""
+
+""Oh, and the place is crawling with droneships,"" he adds with a raised brow. ""No one has a clue who's behind 'em. They’ve been circling Jenius for as long as anyone remembers, like they're making sure the place stays off-limits.""
+
+He pauses, then smirks. ""But that's where we come in, right? It's about time someone brought a little 'civilization' to this backwater and reminded these people what the real world looks like. I'll be the one to put this rock back on the map.""",,
+armaa_IKBarEvent4b,DialogOptionSelected,$option == armaa_IKBarEvent4b,"AdjustRepActivePerson COOPERATIVE 2
+EndConversation DO_NOT_FIRE
+armaa_Hikaru_Utada addIntel nekki1
+$global.armaa_startedLiberation = true
+RestoreSavedVisual
+AcceptMission","""That's the spirit!"" he says with a grin, clapping you on the shoulder. He motions for you to take a seat, and the other mercenaries lean in as a privacy field envelops the group before he begins outlining the operation. ""First order of business: securing orbit. Those drones up there? We'll clear them out and proceed from there.""
+
+His gaze sweeps across the room, sizing up each of you.
+
+""We'll split into teams and strike from different vectors, and once the skies are clear, i'll send shuttles to the surface to establish an outpost."" He taps his TriPad. ""Keep yours close—we've got a little time before the green light.""",anh_cantinaReturn:Return to the bar,
 ,,,,,,
 ,,,,,,
 # Arma Armatura,,,,,,
@@ -282,13 +1072,11 @@ $player.nex_startingFactionId == armaarmatura
 $ome_hireable score:200
 ","ShowPersonVisual
 FireAll PopulateOptions
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 SetOptionColor armaa_HireDawn highlight","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
 
 ""Oh, hello $player.firstName! Is there something I can help you with?""",,
 armaa_defaultDawnGreeting,PickGreeting,"$id == armaa_dawn
 ","ShowPersonVisual
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions
 ","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
 
@@ -296,21 +1084,18 @@ FireAll PopulateOptions
 armaa_recruitableDawnGreeting,PickGreeting,"$id == armaa_dawn
 $ome_hireable score:200
 ","ShowPersonVisual
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions
 ","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
 
 ""Hey, $personName. Got anything interesting going on?""",,
 armaa_FaithDawnGreeting,PickGreeting,"$id == armaa_dawn
 $greetedDawnAsALuddic","ShowPersonVisual
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions
 ","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing $personFirstName. She gives a small smile upon seeing you.
 
 ""Ah, $playerBrotherOrSister $player.lastName. Blessings of Ludd be upon you. How can I help you today?""",,
 armaa_PatherDawnGreeting,PickGreeting,"$id == armaa_dawn
 $greetedDawnAsALuddicMaybePather","ShowPersonVisual
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 FireAll PopulateOptions","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing $personFirstName. She smiles upon seeing you.
 
 ""Hello again, $playerSirOrMadam$ $player.lastName. How can I help you today?""",,
@@ -415,7 +1200,6 @@ armaa_dawnBarMeetingEvent,AddBarEvents,"$market.id == armaa_meshanii_market
 !$player.armaa_metDawnInitial
 !armaa_Hikaru_Utada hasOfficer armaa_dawn","AddBarEvent armaa_dawnMeeting ""Approach the rugged woman"" "" In one corner, a rugged figure nursing a tankard of ale catches your eye."" highlight",,,
 armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 ShowPersonVisual
 $player.armaa_metDawnInitial = true
 SetPersonHidden armaa_dawn false
@@ -453,7 +1237,6 @@ armaa_Hikaru_Utada hasOfficer armaa_dawn
 RollProbability 0.5
 ","AddBarEvent armaa_dawnAsk ""Take a seat with Dawn"" ""You see Dawn knocking back a few drinks in a hazy corner.""",,,
 armaa_dawnBarEventStart,DialogOptionSelected,$option == armaa_dawnAsk,"BeginConversation armaa_dawn
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 ShowPersonVisual
 $player.metDawnAtBar = true
 FireAll armaa_dawnBarAskHubOptions","Dawn raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? It's a concoction they call 'Stellar Elixir.' It's as close as I'll ever get to sipping on a nebula in this dive.""
@@ -542,7 +1325,6 @@ armaa_Hikaru_Utada hasOfficer armaa_dawn
 !$player.takingDawnToKilla
 !$player.takenDawnToKilla",SetOptionColor armaa_lppKillaVisitStart highlight,,99:armaa_lppKillaVisitStart:Check your TriPad regarding a comms request from the fleet,
 armaa_lppKillaVisitStart,DialogOptionSelected,$option == armaa_lppKillaVisitStart,"BeginConversation armaa_dawn
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 ShowPersonVisual","Before you can decide what to do, you noticed a chime from your TriPad and decide to answer it. It's from Dawn.
 
 ""Hey - heard you might be plannin' on heading down to the surface to see the shrine. Can I ask a favor? I'd appreciate it if I could tag along.""","armaa_lpp_killaVisitStartBringDawn:Agree
@@ -933,7 +1715,7 @@ EndConversation
 armaa_lppGileadShrineVisitStart,DialogOptionSelected,"$option == lpp_gileadShrineVisitStart2
 $player.takingDawnToGilead
 !$player.takenDawnToGilead
-armaa_Hikaru_Utada hasOfficer armaa_dawn","BeginConversation armaa_dawn True True
+armaa_Hikaru_Utada hasOfficer armaa_dawn","ShowPersonVisual True armaa_dawn
 $player.takingDawnToGilead = false
 $player.takenDawnToGilead = true
 $player.dawnVisitedShrines++","Dawn gazes out of the shuttle window, absorbing the spectacle of Gilead unfolding below.
@@ -1052,7 +1834,8 @@ FireAll LKEchalcedonBarSedgeOpts","""Been told you've been asking questions,"" t
 ,,,,,,
 ,,,,,,
 ,,,,,,
-armaa_dawnMazalot,PopulateOptions,$player.armaa_mazalot_event_id == true,"BeginConversation armaa_dawn
+armaa_dawnMazalot,PopulateOptions,"$player.armaa_mazalot_event_id == true
+armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_mazalot_event_id = false","""Mazalot, the beating heart of the Zagan system. But don't let the title fool ya; it's a dump. Terraforming success? ...sure, but plagued by political instability and despots. Life here ain't an easy ride, especially if you're Luddic.""
 
@@ -1077,7 +1860,8 @@ She pauses.
 
 ""All i'm saying is, another intervention from the Knights, or, or, the Church, wouldn't be so bad.""",defaultLeave:Continue,
 ,,,,,,
-armaa_dawnCryosleeper,PopulateOptions,$player.armaa_cryosleeper_event_id == true,"BeginConversation armaa_dawn
+armaa_dawnCryosleeper,PopulateOptions,"$player.armaa_cryosleeper_event_id == true
+armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_cryosleeper_event_id = false","""Well, I'll be. That's one of them Cryosleepers, ain't it?...Look at that, still holding onto a flicker of life after all these cycles.
 
@@ -1105,7 +1889,8 @@ Her tone carries a note of caution..skepticism?
 ,,,,,,
 armaa_dawn_anhEvent,PopulateOptions,"$global.anh_inProgress
 $player.armaa_$anh_inProgress_event_id == true
-!$player.armaa_$anh_inProgress_event_fired","BeginConversation robed_man
+!$player.armaa_$anh_inProgress_event_fired
+armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation robed_man
 $player.armaa_$anh_inProgress_event_id = false
 $player.armaa_$anh_inProgress_event_fired = true
 Highlight A NEW HOPE","A NEW HOPE
@@ -1163,7 +1948,9 @@ The old man does not give the commotion even a glance. Instead, his eyes are ste
 ""So this is how you choose, $playerName."" He looks thoughtful, ""Fate may surprise us yet.""","anh_diktatPatrolStall4:""Take them away.""",
 ,,,,,,
 armaa_dawn_luddicExpEvent,PopulateOptions,"$player.defeatedLuddicChurchExpedition
-!$player.armaa_$defeatedLuddicChurchExpedition_event_fired","BeginConversation armaa_dawn
+!$player.armaa_$defeatedLuddicChurchExpedition_event_fired
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 
 $player.armaa_$defeatedLuddicChurchExpedition_event_id = false
 
@@ -1192,7 +1979,8 @@ armaa_dawn_luddicExpEventRespB,DialogOptionSelected,$option == armaa_dawn_luddic
 armaa_dawn_luddicExpEventRespC,DialogOptionSelected,$option == armaa_dawn_luddicExpEventRespC,,"""Well..you'll just have to help 'em see the truth. We can show 'em why we had to act. Smoothing things over shouldn't be too tough.""",defaultLeave:Continue,
 ,,,,,,
 ,,,,,,
-armaa_dawnGalatia,PopulateOptions,$player.armaa_station_galatia_academy_event_id == true,"BeginConversation armaa_dawn
+armaa_dawnGalatia,PopulateOptions,"$player.armaa_station_galatia_academy_event_id == true
+armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_station_galatia_academy_event_id = false
 FireAll armaa_dawnGalatiaQuestions","""The Galatian Academy,"" Dawn remarks, a skeptical edge in her tone, sounding a bit more serious than usual. She leans against the bulkhead, folding her arms as she gazes thoughtfully.
@@ -1218,7 +2006,8 @@ Dawn's gaze turns contemplative, and she replies with a measured tone, ""They pr
 armaa_dawnGalatiaRespA,DialogOptionSelected,$option == armaa_dawnGalatiaRespA,AdjustRepActivePerson 3,"Dawn chuckles, a wry smile crossing her face. ""You're damn right about that. No fancy academy can teach you the gritty lessons the sector has to offer. Out here, survival is the real education, and it comes at a price credits can't measure.""",defaultLeave:Continue,
 armaa_dawnGalatiaRespB,DialogOptionSelected,$option == armaa_dawnGalatiaRespB,,"Dawn's expression turns thoughtful, and she glances out into the expanse of space. ""Maybe it would've been a different life. Who knows? But the Academy and I, well, we ain't exactly a match made in heaven. I prefer the rough edges of reality over the polished illusions they might've fed me.""",defaultLeave:Continue,
 ,,,,,,
-armaa_dawnVolturn,PopulateOptions,$player.armaa_volturn_event_id == true,"BeginConversation armaa_dawn
+armaa_dawnVolturn,PopulateOptions,"$player.armaa_volturn_event_id == true
+armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_volturn_event_id = false","Dawn leans against a nearby console, her expression shifting from a wistful nostalgia to a more somber reflection as she speaks about Volturn. 
 
@@ -1254,6 +2043,39 @@ pk_turnInSeraph1,DialogOptionSelected,$option == pk_turnInSeraph1,,"$personFirst
 
 ""What about them? Is this about Old Meshan?""","pk_turnInSeraph2:""No, I mean I want to sell you a planetkiller.""
 pk_turnInSeraph1meshan:""Old Meshan?""",
+pk_turnInSeraph1meshan,DialogOptionSelected,$option == pk_turnInSeraph1meshan,,"She leans back, draping one arm elegantly over her chair's backrest, her crimson lips curling into a coy smile.
+
+""Now there's a tragedy worth a drink or three, if only to drown the lingering ghosts. A world of promise turned into a tomb, all for the sins of ambition and fear."" She pauses, her gaze narrowing as if weighing you.
+
+Her tone turns wistful, yet there's an unmistakable edge beneath it. ""You know, darling, the official records blame that fiasco on some overzealous warmonger with delusions of grandeur. Or maybe it was the work of someone desperate enough to send a message that couldn't be ignored. Whichever it was, the aftermath... oh, the aftermath."" She sighs, tilting her head as if recalling a bittersweet memory.
+
+""Millions gone in an instant, centuries of progress lost, trust obliterated. And the whispers?"" Her smile sharpens, becoming almost predatory. ""They said Tri-Tachyon had a hand in it. But you know how it is. The powerful have a knack for wiping inconvenient truths off the ledger.""
+
+""Funny thing, though. For all the noise about justice, the pursuit of answers just... stopped. All that fire, all that fury, and suddenly everyone wanted to 'move on.' Almost makes you think someone wanted it that way, doesn't it?""
+
+She sits back, her grin widening into something wickedly playful, yet there's a flicker of something colder in her eyes. ""But why dredge up old ghosts? PKs — and Meshan — are a relic of a bygone age. A reminder of what we're all capable of at our worst.""
+
+She watches you closely now, her expression unreadable.","pk_turnInSeraph2:""No, I mean I want to sell you a planetkiller.""",
+pk_turnInSeraph1meshanb,DialogOptionSelected,"$option == pk_turnInSeraph1meshan
+$rel > 0.80",,"At the mention of Old Meshan, she freezes—not in shock, but in a rare, unguarded moment of stillness. Her usual mask of coy charm flickers, replaced by something far more solemn, almost ancient. For a moment, she seems to weigh you in her gaze, as if deciding whether you're ready to hear what comes next. Her lips curve into a smile, but it's softer now, lacking the usual predatory glint. ""Where, to start, my dear."" she says quietly, her voice carrying an uncharacteristic gravity. She looks away for a moment, her gaze distant, as though peering into the void of memory.
+
+""I was there, you know. Not... as I am now, of course."" She taps her temple lightly, the motion almost playful, but her tone betrays the weight of her words. ""Back then, I had... other responsibilities. Other priorities. But I saw it happen. Every agonizing moment.""
+
+She leans forward, her elbows resting on the desk, her eyes locking onto yours with an intensity that feels almost tangible. ""You don't forget something like that. The blinding light, the silence before the shockwave, and then... nothing but fire and ash. Millions of lives, erased. And for what? A message? A warning? Revenge? I've heard every theory over the cycles, and none of them bring back what was lost.""
+
+Her voice drops, almost a whisper now. ""The truth? Meshan didn’t fall because of one faction's ambition or another's fear. It fell because no one could look past their own fragile pride. The planet-cracker was just the tool. The real weapon was the short-sightedness of man, plain and simple.""
+
+She sighs, the weight of centuries pressing into her tone. ""Do you know what it's like to feel all that potential—an entire world's worth of promise—snuffed out in an instant? To stand on the edge of that destruction and know that no matter what you do, you can't stop it?""
+
+She sits back, her usual demeanor beginning to resurface, but there's a faint tremor of raw honesty that lingers. ""I've seen a lot in my time, but Old Meshan... it's a scar that doesn't heal."" She pauses, her lips quirking into a rueful smile. ""Of course, I imagine that’s not the kind of story the history books tell, is it?""
+
+Her gaze sharpens, and a spark of her familiar charm returns, though tempered by something deeper. ""But you... you're irregular. You've earned my trust, and perhaps that's why I'm telling you all this. So, tell me, darling—did I answer your question during that monologue?""
+
+She chuckles.","pk_turnInSeraph1meshanb2:""Wait, centuries? That's impossible?""",
+pk_turnInSeraph1meshanb2,DialogOptionSelected,"$option == pk_turnInSeraph1meshanb2
+",,"Sera leans back with a sly smile, the glint in her eyes both teasing and sharp. ""Oh, darling,"" she purrs, her tone dripping with amusement, ""A lady has to keep some secrets, doesn't she?"" 
+
+She pauses, letting the weight of her words linger, before adding with a wink, ""Let's just say I have a self-care routine that far outstrips what's available in most of the Sector today.""","pk_turnInSeraph2:""Anyway, I wanted to sell you a planetkiller.""",
 pkTurnInSeraph2,DialogOptionSelected,$option == pk_turnInSeraph2,"$madePKofferOnce = true
 Highlight ""300,000""","$personFirstName doesn't react. She presses something offscreen, a privacy field blurring out the surroundings in her office.
 
@@ -1301,13 +2123,23 @@ $player.numShips > 1
 $postId == administrator
 $market.id == armaa_meshanii_market
 !$armaa_gaveSeraphValk",SetOptionColor armaa_valkazard highlight,,"armaa_valkazard:""I found this Valkazard-class cataphract outside of the core worlds. One of yours?""",
-armaa_valkazardSel,DialogOptionSelected,$option == armaa_valkazard,"FireAll armaa_valkazardHubOptions
-armaa_Hikaru_Utada playMusic music_armaa_seraph","In a brief, imperceptible instant, $personName's expression hinted at surprise, swiftly concealed.
+armaa_valkazardSel,DialogOptionSelected,$option == armaa_valkazard,FireAll armaa_valkazardHubOptions,"In a brief, imperceptible instant, $personName's expression hinted at surprise, swiftly concealed.
 
 ""The what? I don't recall any Cataphract-class bearing that designation,"" her signature confident smile emerged once more. ""But if it -is- a Cataphract, it was undeniably crafted by our own, wouldn't you agree?""
 
 Her voice carried a measured mix of curiosity and skepticism. A momentary pause followed, seemingly steeped in careful consideration.
 ""Captain $playerName, I suggest dispatching some of my personnel to corroborate these claims. If they are correct, we will be taking this craft back into our custody, of course.""","armaa_valkazardSelReward:""Let's talk about a reward.""
+armaa_valkazardSelAgree:""Sure.""",
+#you little cheater,,,,,,
+armaa_valkazardSelSus,DialogOptionSelected,"$option == armaa_valkazard
+$global.nex_startingFactionId != ""armaarmatura_pirates""","FireAll armaa_valkazardHubOptions
+SetTextHighlights Another one?","In a fleeting moment, $personName's composed demeanor faltered, surprise flashing across her features before she quickly masked it.
+
+""Wait—what? Another one?"" Her confident smile returned, but this time, it seemed forced, her tone laced with incredulity. ""That's impossible. The Cataphract-class you're describing doesn't just -exist- in multiples. Each one is singular, crafted with precision and intent.""
+
+She stepped closer, her gaze narrowing as though scrutinizing the very notion of it. ""Captain $playerName,"" her voice held a sharp edge, ""how exactly did you come into possession of this? And where?""
+
+A tense pause followed as her mind seemed to race. ""We'll need to verify this immediately. If what you say is true... well, we’ll be reclaiming this craft for inspection. This shouldn’t even be here.""","armaa_valkazardSelReward:""Let's talk about a reward.""
 armaa_valkazardSelAgree:""Sure.""",
 armaa_valkazardSelReward,armaa_valkazardHubOptions,,,,armaa_valkazardSelReward2:Continue,
 armaa_valkazardSelReward2,DialogOptionSelected,$option == armaa_valkazardSelReward2,"SetTextHighlights 150,000","Reaching offscreen, her hands returned with an object that she idly toyed with for a moment before resuming.
@@ -1383,15 +2215,134 @@ AddStoryPoints 4
 AddPotentialContact
 ShowPersonVisual
 RemoveShipWithId $foundValkId
-$armaa_gaveSeraphValk = true
+$armaa_gaveSeraphValk = true 1
 EndConversation DO_NOT_FIRE","""Captain,"" $personName began, their voice laced with calculated intrigue. ""Our analysis is complete.""
 
 Her eyes gleam, their underlying agenda shrouded beneath a veneer of reassurance. She gestures to one of her underlings, who fiddles with a TriPad.
 
 ""As we depart, we plan to transport Valkazard to our planetside installation for further research and analysis.""",cutCommLink:See them off,
 armaa_valkazardDeny,armaa_valkazardHubOptions,!$armaa_madeOffer,,,"cutCommLink:""Allow me to think on this.""",
+armaa_guardualGift,PickGreeting,"$id == armaa_seraph
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$rel >= 0.50
+$faction.relValue >= 0.25
+!$givenGuardual",ShowPersonVisual,"The comm resolves to show a Sera bit off screen. She steps around her desk, her movements graceful, almost calculated. ""Let me start by saying how impressed I am. Not just by your feats, but by the company you keep. I hear you have Dawn working for you these days, correct?"" ""You've done more than turn heads; you’ve proven yourself someone who gets results. And that, Captain $player.lastName, is exactly why you're the kind of individual I like to work with.""
+
+She pauses, letting the weight of her words settle before continuing, her tone taking on a more playful edge. ""Now, I’ve been waiting for the right moment to extend a… special opportunity. But you’ll find, like all treasures of great value, it comes with its conditions.""
+
+Sera gestures, and a hologram of the transforming mech materializes, rotating slowly above her desk.
+
+","armaa_guardualGift2:""Continue""",
+armaa_guardualGift2,DialogOptionSelected,$option == armaa_guardualGift2,"ShowSecondPerson armaa_dawn
+armaa_Hikaru_Utada giveGuarDual
+AddShip $armaa_giftMech
+FireAll PopulateOptions
+$givenGuardual = true","""This was one of our pet projects back in the day. A transforming unit with unparalleled versatility. And at its heart,"" her voice lowers, almost reverent, ""is the PERCEPT system. Cutting-edge, mysterious, and oh-so-effective. Only a few of these exist—one of which, I'm prepared to offer you.""
+
+Dawn crosses her arms, her usual stoic demeanor softening slightly. ""Why now, Sera? What's the catch?""
+
+Sera laughs lightly, brushing an invisible speck of dust from her sleeve. ""Oh, Dawn, ever the skeptic. The 'catch,' if you can call it that, is this: I wouldn’t trust this technology to just anyone. But you two? Y understand value. You understand trust.""",,
 ,,,,,,
-,,,,,,
+armaa_kadeChat,PopulateOptions,"$id == armaa_kade
+!$global.armaa_kadeMentionRaid",,,"armaa_kadeChatStart:""How're things going on Jenius?""",
+armaa_kadeChat1,DialogOptionSelected,$option == armaa_kadeChatStart,,"""I could try to sum things up over the comms, but let's just say words don't quite do it justice. How about you come planetside, and I'll brief you on what we're up dealing with. You can see it with your own eyes—the colony, the wilds, the folks crazy enough to stick around.""
+
+He pauses a beat, as if letting the thought sink in. ""So what d'ya say? Got a spot cleared for you in the landing zone.""",armaa_kadeChat2:Take a shuttle to the settlement,
+armaa_kadeChat2,DialogOptionSelected,$option == armaa_kadeChat2,ShowLargePlanet,"Through the viewport, you catch glimpses of hastily erected structures: prefabricated buildings huddled together in defensive formations, metal shining starkly against the endless green. It's clear the colony is fresh, its footprint little more than a blip in the sprawling wilderness. A fortified perimeter surrounds it, scattered with hastily deployed turrets and checkpoints. The guards, alert and a bit on edge, watch the skies for any unwelcome visitors.
+
+As the shuttle dips lower, the air is filled with a swirling mixture of jungle moisture and acrid exhaust from the colony's makeshift landing pads. Workers haul crates of supplies from recently arrived cargo shuttles, engineers labor over a tangled mess of power cables, and as you land, Kade's message comes over your comm: ""Got a few associates for you to catch up with."" His tone, for once, sounds almost... cordial.
+
+The hatch opens, and the humid air hits you immediately. The scent of earth and fresh rain lingers as you step onto the uneven terrain, heading through the colony's winding paths.",armaa_kadeChat3:Continue,
+armaa_kadeChat3,DialogOptionSelected,$option == armaa_kadeChat3,"ShowPersonVisual
+ShowSecondPerson armaa_redeye
+ShowThirdPerson armaa_imelda","Inside, Kade is with two figures: Imelda and a tall man wearing a light exoskeleton. Imelda acknowledges you with a small, respectful nod, her expression as composed and serene as ever.  Despite her calm demeanor, her gaze is sharp, carrying the quiet resolve you'd expect from a zealot.
+
+""Commander,"" she says, her voice smooth and formal.
+
+Kade grunts. Instead, he gestures to the man beside him. ""And this here's Deadeye,"" he says. ""Best mercenary I could dig up. Does what needs doin', no questions asked.""
+
+Deadeye turns to face you. His voice, low and mechanical, carries an almost begrudging respect.""Heard a lot about you, $playerSirOrMadam.""
+","armaa_kadeChat3a:""You have quite the reputation yourself. ""
+armaa_kadeChat3b:""Did you pick that name because you’re bad at aiming?""
+armaa_kadeChat3c:""Quite the diverse bunch we have here.""",
+armaa_kadeChat3a,DialogOptionSelected,$option == armaa_kadeChat3a,"AdjustRepPerson armaa_redeye FRIENDLY 1
+$player.ethosKnowledge++
+AddTextSmall ""A seasoned marine with a reputation for efficiency and a biting sense of humor, Deadeye's calm demeanor in the heat of battle is matched only by his ruthlessness. With a helmet that conceals most of his face, save for a glowing red eye, he keeps his true emotions hidden behind a mask of dry wit and cynicism. He’s not just in it for the money—his motivations are more complicated, driven by a personal code that only he fully understands. Despite his darker tendencies, Deadeye is surprisingly reliable, making him a valuable ally in high-stakes operations. His humor is dry, often bordering on morbid, but it serves as his armor against the harsh realities of the world he inhabits."" highlight","""I like you already. Just don't get too close, or I might get the wrong idea.""
+
+Imelda rolls her eyes.","armaa_kadeChat4:Continue
+",
+armaa_kadeChat3b,DialogOptionSelected,$option == armaa_kadeChat3b,"AdjustRepPerson armaa_redeye FRIENDLY 1
+$player.ethosSarcastic++
+AddTextSmall ""A seasoned marine with a reputation for efficiency and a biting sense of humor, Deadeye's calm demeanor in the heat of battle is matched only by his ruthlessness. With a helmet that conceals most of his face, save for a glowing red eye, he keeps his true emotions hidden behind a mask of dry wit and cynicism. He’s not just in it for the money—his motivations are more complicated, driven by a personal code that only he fully understands. Despite his darker tendencies, Deadeye is surprisingly reliable, making him a valuable ally in high-stakes operations. His humor is dry, often bordering on morbid, but it serves as his armor against the harsh realities of the world he inhabits."" highlight","Deadeye chuckles. ""Not quite, but if you keep that up, I'll be happy to make sure you get a proper introduction.""","armaa_kadeChat4:Continue
+",
+armaa_kadeChat3c,DialogOptionSelected,$option == armaa_kadeChat3c,"AdjustRepPerson armaa_redeye FRIENDLY 1
+AddTextSmall ""A seasoned marine with a reputation for efficiency and a biting sense of humor, Deadeye's calm demeanor in the heat of battle is matched only by his ruthlessness. With a helmet that conceals most of his face, save for a glowing red eye, he keeps his true emotions hidden behind a mask of dry wit and cynicism. He’s not just in it for the money—his motivations are more complicated, driven by a personal code that only he fully understands. Despite his darker tendencies, Deadeye is surprisingly reliable, making him a valuable ally in high-stakes operations. His humor is dry, often bordering on morbid, but it serves as his armor against the harsh realities of the world he inhabits."" highlight","""That's why my memoirs will be a hit. Who doesn't love a motley crew?"" Deadeye quips, arms spread in a showman's flourish. ""Of course, y'all will get a cut too, but my share better reflect my star power. No one pulls off a look like this but me.""
+
+Imelda stares at him, her face a mix of confusion and disbelief. ""What are you even talking about? We're not here to become some—some media sensation.""
+
+Kade leans against the wall, a faint smile tugging at his lips. ""You're jumpin' the gun there, Deadeye. Let's focus on gettin' through this first, yeah?""","armaa_kadeChat4:Continue
+",
+armaa_kadeChat4,DialogOptionSelected,$option == armaa_kadeChat4,"ShowPersonVisual
+armaa_Hikaru_Utada playMusic music_armaa_briefing","Kade clears his throat. ""Moving on. Got heavy weapons and supplies ready for the colony, but as you'd imagine, some of the locals aren't happy about us being here. They're lookin' for a reason to test us. A show of force will make it clear we're not to be messed with, so a few strikes in the right places should keep the peace. So I was thinkin'.. since we're doin' this anyway, why not get some extra loot?""
+","armaa_kadeChatBombEm:""So what's the plan of action, then?""
+armaa_kadeChatDiplomatic:""Can't we take a more...diplomatic approach?""
+",
+armaa_kadeChatBombEm,DialogOptionSelected,$option == armaa_kadeChatBombEm,"BeginConversation armaa_imelda
+ShowSecondPerson armaa_kade
+ShowThirdPerson armaa_redeye","Imelda steps forward, reluctantly holding up a TriPad. She fidgets with it, her fingers hovering uncertainly over the interface, as if the device itself might burn her. ""This cursed contraption has it's uses,"" she mutters under her breath, more to herself than anyone else. ""...not that I trust it. But this is for a greater good."" 
+
+She taps a few buttons and the screen flickers, bringing up a map of Jenius. ""Here. The Sovereignty maintain a heavily fortified outpost to the northeast. It's a strategic hub, and we'll be sure to get something worthwhile by raiding here.""
+
+Her tone is clipped, but she continues, clearly doing her best to focus on the task at hand despite her discomfort with the technology. ""Then, seems some scavengers associated with the operate out of a scrapyard to the south. They've been using it to store weapons and salvaged technology. If we can strike there, they'll lose their ability to supply their forces with the tools to threaten us."" 
+
+Imelda's fingers hover over her datapad again, grimacing as if it might bite her.","armaa_kadeChatBombEm2:Continue
+",
+armaa_kadeChatBombEm2,DialogOptionSelected,$option == armaa_kadeChatBombEm2,"BeginConversation armaa_redeye
+ShowSecondPerson armaa_kade
+ShowThirdPerson armaa_imelda
+$global.armaa_kadeMentionRaid = true
+EndConversation
+ShowDefaultVisual
+FireAll PopulateOptions
+armaa_Hikaru_Utada playMusic music_armaa_briefing","""The way I see it, $player.firstName and Deadeye can split the work. Deadeye will hit the outpost while $player.firstName deals with the scrapyard. The infrastructure on Jenius is valuable—everything could serve us in the long run. We'll need to take what we can from their stores while making sure the damage is controlled. We strike fast and get out.""
+
+Deadeye takes a step back, his gaze steady. ""Let's get it done.""
+
+You exchange minor pleasantries with those on station before returning to your $shipOrFleet uneventfully.",,
+armaa_kadeChatDiplomatic,DialogOptionSelected,$option == armaa_kadeChatDiplomatic,"BeginConversation armaa_redeye
+ShowSecondPerson armaa_kade
+ShowThirdPerson armaa_imelda
+$player.ethosIdealistic++
+$option=armaa_kadeChatBombEm 0
+FireBest DialogOptionSelected","You consider that for once, perhaps the answer doesn't lie in violence.
+
+""You might as well try to negotiate with a rock. They'll just laugh in your face.. or shoot you in it. Maybe both. The reality is, we don't have the luxury of diplomacy right now. We need to show the Sovereignty and Free Cities we're not just some easy target. A little pressure will go a long way to get them to back off.""",,
+armaa_kadeSupplyRaidOption,PopulateOptions,"$market.id == nekki1_market
+!$global.armaa_raidedArusthai
+$global.armaa_kadeMentionRaid
+$menuState == main",FireBest GAATGkantaRaidCheckHostilesNearby,,2:armaa_kadeSupplyRaidStart:Prepare a raid to capture supplies,
+armaa_kadeSupplyRaidStart,DialogOptionSelected,$option == armaa_kadeSupplyRaidStart,"$raidDifficulty = 150 0
+$raidGoBackTrigger = PopulateOptions 0
+$raidContinueTrigger = armaa_kadeSRFinishedB 0
+$raidRestrictToTrigger = armaa_kadeSRFinishedA 0
+AddRaidObjective genericIcon ""Raid Sovereignty strongholds"" HIGH 3000 armaa_kadeSRFinishedA true
+ShowImageVisual raid_prepare","Once you've returned to your $shipOrFleet, You gather your senior officers around the tactical display, ready to discuss the mission. It's clear the colony's presence is being watched—particularly by the Sovereignty, whose patrols and scattered defenses dot the jungles and hills near Kade's settlement. 
+
+Both the Sovereignty and Free Cities have fortified key supply caches, but their defenses are set up primarily against one another, not for the kind of strike you have in mind. You won't avoid detection entirely, but their systems are easier to circumvent than true military-grade setups.
+
+A clean hit on these depots will be risky, but that's how you intend to keep their casualties—and yours—low. Light weaponry and fast strikes; in and out before they know what hit them. You don't want the whole planet on your backs, and you're not here to make them martyrs.
+
+That means disabling any anti-air and communications relays within striking range, but without setting off alarms across the region. If you're lucky, you can get what Kade needs before they even realize what's missing.",mktRaidNonMarket:Continue,
+armaa_kadeSupplyRaidFinishedA,armaa_kadeSRFinishedA,,,"You orchestrate the operation from the bridge, your fleet casting a protective web of electronic interference and guiding precision strikes to shield the raiding shuttles and ground teams that dart through the chaos below.
+
+In the heat of it, success reports trickle in from multiple teams—they've hit their marks and secured valuable caches. It’s too chaotic to sort every detail now. As swiftly as they landed, your forces regroup, moving in disciplined withdrawal. Cover fire echoes across the darkened landscape below as they bring back supplies, wounded, and a sense of hard-won progress.",,
+armaa_kadeSupplyRaidFinishedB,armaa_kadeSRFinishedB,,"AddTextSmall ""Extracted supplies & material from Sovereignty compounds"" highlight","Your forces return to the fleet with multiple crates of supplies and weapon caches seized from the raided compounds. The inventory checks reveal a promising haul—ammunition, medical provisions, and even some heavy weaponry—all desperately needed for the colony's defense. Your quartermaster makes the necessary preparations, and the supplies are on their way to the surface in short order.",armaa_kadeSupplyRaidFinished2:Continue,
+armaa_kadeSupplyRaidFinished2,DialogOptionSelected,$option == armaa_kadeSupplyRaidFinished2,"$global.armaa_raidedArusthai = true
+AdjustRepPerson armaa_redeye FRIENDLY 2
+AdjustRepPerson armaa_imelda FRIENDLY 1
+AdjustRepPerson armaa_kade FRIENDLY 2
+AddCredits 40000
+FireAll PopulateOptions",,,
 #armaa_cataSMod,PickGreeting,"$id == armaa_seraph
 !$global.armaa_givenOSTuning
 $rel >= 0.25
@@ -1510,7 +2461,6 @@ $givenKshatriya = true","After a short wait, your connection request is accepted
 
 ""Behold! The Rajanya — our latest design yet. Consider it a token of appreciation for your relentless efforts and undeniable skill.""",,
 armaa_HCEncounter,OpenCommLink,$entity.HVB_armaa_bounty_legiomech score:100,"FireAll PopulateOptions
-armaa_Hikaru_Utada playMusic music_armaa_seraph
 $entity.ignorePlayerCommRequests = true","The connection flickers in and out, before resolving.
 
 Something is wrong with the comms-unit, though. The image is unstable, audio marred with artifacts.
@@ -1519,8 +2469,7 @@ Something is wrong with the comms-unit, though. The image is unstable, audio mar
 
 A pause. ""Good. You're the lynchpin I need to sell this. What better demonstration than trial by fire? Well then, I won't keep you. Do try to make it entertaining. Ta-ta!""",,
 armaa_HCEncounterKnown,OpenCommLink,"$entity.HVB_armaa_bounty_legiomech score:101
-armaa_Hikaru_Utada getSeraphRel armaa_seraph score:100","FireAll armaa_seraphBountyTalk
-armaa_Hikaru_Utada playMusic music_armaa_seraph","The connection flickers in and out, before resolving.
+armaa_Hikaru_Utada getSeraphRel armaa_seraph score:100",FireAll armaa_seraphBountyTalk,"The connection flickers in and out, before resolving.
 
 Something is wrong with the comms-unit, though. The image is broken and marred with artifacts.
 
@@ -1599,7 +2548,7 @@ armaa_LeosEncounterHereToStopResp,DialogOptionSelected,$option == armaa_LeosEnco
 armaa_LeosEncounterWhatDoing,armaa_corsairBountyTalk,RepGTE hegemony FRIENDLY score:1000,,,"armaa_LeosEncounterWhatDoingResp:""I'm here on a mission, but I didn't expect to run into Hegemony forces. What are you doing out here?""",
 armaa_LeosEncounterWhatDoingResp,DialogOptionSelected,$option == armaa_LeosEncounterWhatDoingResp,,"Klein's features soften slightly, as if lowering his guard. ""We're testing some new equipment, confidential stuff. Working with some corpos and a local house on Eventide. Top-secret, you understand.""",cutCommLink:Cut comm link,
 ,,,,,,
-armaa_seraphMusic,OpenCommLink,$id == armaa_seraph,armaa_Hikaru_Utada playMusic music_armaa_seraph,,,
+armaa_seraphMusic,OpenCommLink,$id == armaa_seraph,,,,
 armaa_contactGreetingOfficial3,PickGreeting,"!$player.hasSeraphaCommsId score:1000
 !armaa_Hikaru_Utada hasOfficer armaa_dawn
 $id == armaa_seraph score:100",,The crest of Arma Armatura rotates in place a few times before your connection request is denied.,0:cutCommLink:Cut the comm link,
@@ -1631,7 +2580,9 @@ She leans back, steepling her fingers beneath her chin, a gesture of contemplati
 
 ""First and foremost, how do you plan to respond?""",,
 ,,,,,,
+,,,,,,
 armaa_seraPLHarassmentWhatKindofAid,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp:""What exactly are you offering?""",
+,,,,,,
 armaa_seraPLHarassmentWhatKindofAid2,armaa_seraPLHarassmentOptions,$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp2:""Speak plainly. What is it you want?""",
 armaa_seraPLHarassmentWhatKindofAid3,armaa_seraPLHarassmentOptions,$player.armaa_seraPLaskedAboutAid,,,"armaa_seraPLHarassmentWhatKindofAidResp3:""It's a deal.""",
 armaa_seraPLHarassmentWontBeIntimidated,armaa_seraPLHarassmentOptions,!$player.armaa_seraPLsaidWontBeIntimidated,,,"armaa_seraPLHarassmentWontBeIntimidatedResp:""If the League thinks they can intimidate me, they're in for a suprise.""",
@@ -1806,6 +2757,105 @@ OR
 The comms connection flickers, then resolves.
 
 ""Do not mistake us for mere rebels. We are an unwavering force, united to put an end to the reign of despots. Our determined retaliation will be the vehicle of their destruction.""",,
+#armaa_mrcLiasonGreeting,PickGreeting,$id == armaa_mrcLiason score:1000,FireAll PopulateOptions,"After a short wait, your connection request is accepted.
+
+""Hello. What do you want?""",0:cutCommLink:Cut the comm link,
+armaa_cmsn_askForCommissionOpt,PopulateOptions,"$isPerson
+$id == armaa_mrcLiason score:1000
+!Commission hasFactionCommission",,,"20:cmsn_askCommission:""I'd like to be commissioned by $theFaction""",
+armaa_cmsn_resignCommissionOpt,PopulateOptions,"$isPerson
+$id == armaa_mrcLiason score:1000
+Commission hasFactionCommission",,,"20:cmsn_resignCommission:""I'd like to resign my $faction commission""",
+,,,,,,
+,,,,,,
+armaa_mrcLiason_firstMeeting,PopulateOptions,"$isPerson
+$id == armaa_mrcLiason score:1000
+#!$global.metMRCLiason","ShowPersonVisual
+$global.metMRCLiason = true
+#FireAll PopulateOptions",,"armaa_mrc_whoYou:""Who are you?""
+armaa_mrc_whatDo:""What do you do here?""
+armaa_mrc_whatIsReprisal:""What is a Reprisal?""",
+armaa_mrc_whoYou,DialogOptionSelected,$option == armaa_mrc_whoYou,,"""I'm a liaison for the Meshan Reprisal Coalition, a voice and hand of those who refuse to let the crimes of the past be buried under the ashes of the AI Wars. We exist to ensure justice is served—or, failing that, that those who defy accountability feel the weight of their actions.""
+
+""Of course, titles and introductions are meaningless without actions. If you truly wish to understand who we are, watch what we do—or better yet, join us.""",,
+armaa_mrc_whoYouHostile,DialogOptionSelected,"$option == armaa_mrc_whoYou
+$armaa_mrcRep <= -0.50",,"""You know who we are. The Meshan Reprisal Coalition needs no introduction, least of all to you. We are the force that ensures justice is not a choice but an inevitability. And you? You're just another obstacle.""",,
+armaa_mrc_whatDo,DialogOptionSelected,$option == armaa_mrc_whatDo,"AddTextSmall ""MRC HQs are the the planning grounds for Coalition Reprisals; operations aimed at 'liberating' colonies from th rule of factions hostile to the MRC. The frequency of these operations increase as the MRC's successes do, but there is a minimum cooldown period of 6 months."" highlight
+AddTextSmall ""It's possible to participate in these operations by simply attacking fleets hostile to the MRC in the affected systems. Independent captains are generally rewarded with a percentage of the loot the MRC acquires, regardless of the missions success."" highlight","""This office coordinates operations in the region. We monitor the movements of factions and individuals who bear the stain of unpunished atrocities, ensuring they are reminded of the weight of their deeds."" $heOrShe tils $hisOrHer head thoughtfully.
+
+""More practically, I liaise with independent captains like yourself, arranging partnerships for those who wish to contribute to our noble cause. Or perhaps you’re here to absolve a stain of your own?""",,
+armaa_mrc_whatDoHostile,DialogOptionSelected,"$option == armaa_mrc_whatDo
+$armaa_mrcRep <= -0.50","AddTextSmall ""MRC HQs are the the planning grounds for Coalition Reprisals; operations aimed at 'liberating' colonies from th rule of factions hostile to the MRC. The frequency of these operations increase as the MRC's successes do, but there is a minimum cooldown period of 6 months."" highlight
+AddTextSmall ""As is, the MRC does not trust you, and will refuse to acknowledge any contributions you make until your standing has improved."" highlight","""We identify targets. We mobilize. We deliver retribution. That’s the short version.""
+
+""Perhaps you'd like to know where you rank on our list? Rest assured, you’ve earned a special place in our records, though we're debating whether you're a true threat—or just an annoyance we'll deal with later.""",,
+armaa_mrc_whatIsReprisal,DialogOptionSelected,$option == armaa_mrc_whatIsReprisal,,"""The Coalition identifies targets through extensive intelligence gathering—systems, factions, or individuals. When a target is chosen, fleets are mobilized to disrupt, destabilize, and dismantle their operations.""
+
+""Some call us marauders. Others, vigilantes. The truth? We are agents of balance, a counterweight to unchecked power. A system destabilized by our actions is one more resistant to tyranny. An entity that refuses justice must be made to fear it.""",,
+armaa_mrc_whatIsReprisalHostie,DialogOptionSelected,"$option == armaa_mrc_whatIsReprisal
+$armaa_mrcRep <= -0.50",,"- $heOrShe laughs dryly.
+""Curious, are we? Or perhaps you’re here to learn how to avoid being on the receiving end. Our reprisals are precise and inevitable. Planets liberated, fleets dismantled, power structures toppled. And when the dust settles, our message remains clear: resist justice, and you'll burn in its wake.""",,
+#armaa_mrc_howCanHelp,DialogOptionSelected,"$option == armaa_mrc_howCanHelp
+$armaa_mrcRep > -0.50",,"""A straightforward question, and one with many answers. You could join our fleets during a reprisal, share intelligence on enemies of the Coalition, or even donate resources to fuel our operations.""
+
+""Of course, such actions may earn you the ire of certain powers. But no great act of justice comes without sacrifice, eh?""",,
+#armaa_mrc_howCanHelpHostile,DialogOptionSelected,"$option == armaa_mrc_howCanHelp
+$armaa_mrcRep <= -0.50",AdjustRepActivePerson VENGEFUL -1,"""Help? Oh, you've done more than enough already. Your status with the Coalition have spoken loud and clear. Unless you've come to beg for forgiveness, which I find unlikely, you can 'help' by find your way out of the nearest airlock.""",,
+armaa_mrc_requestReprisal,PopulateOptions,"$isPerson
+$id == armaa_mrcLiason score:1000",armaa_Hikaru_Utada startReprisal,,"19:armaa_mrc_requestReprisalOk:""What is the current objective?""",
+armaa_mrc_requestReprisalOk,DialogOptionSelected,"$option == armaa_mrc_requestReprisalOk
+$armaa_mrcRep >= 0.30","AddText ""\\\\\\\\\\\\\\\\\\\\""
+AddText ""CURRENT TARGET: $armaa_reprisalTargetName \nDAYS UNTIL: $armaa_reprisalDaysUntil \nFUNDS: $armaa_mrcFunds""
+SetTextHighlights $armaa_reprisalTargetName $armaa_reprisalDaysUntil $armaa_mrcFunds
+AddText ""\\\\\\\\\\\\\\\\\\\\""","""Mm, let's see..""",,
+armaa_mrc_requestReprisalNo,DialogOptionSelected,"$option == armaa_mrc_requestReprisalOk
+$armaa_mrcRep < 0.30","AddTextSmall ""As is, the MRC does not trust you, and will not disclose their current plans."" highlight","""Afraid I can't tell you that.""",,
+armaa_mrcResponseOfferArms,PopulateOptions,$id == armaa_mrcLiason score:1000,"SetEnabled armaa_mrcMakeOffering false
+SetTooltip armaa_mrcMakeOffering ""You do not have 5 units of heavy armaments for a covert shipment.""
+FireBest armaa_mrcOfferingOptionCheck",,0:armaa_mrcMakeOffering:Offer heavy armaments for the insurgency,
+armaa_mrcOfferingOptionCheck,armaa_mrcOfferingOptionCheck,PlayerHasCargo hand_weapons 5,"SetEnabled armaa_mrcMakeOffering true
+SetTooltip armaa_mrcMakeOffering ""Offer 5 units of heavy armaments to the Coalition.""",,,
+armaa_mrcOfferingOfferingAlreadyMade,DialogOptionSelected,"$option == armaa_mrcMakeOffering
+$armaa_mrcOfferingMade score:100",,"""The Coalition values your aid,"" the liaison says with a solemn nod. ""These tools of war shall find their way to those who wield them in the pursuit of justice—or something akin to it. Rest assured, they will not gather dust.""",,
+armaa_mrcOfferingEnough,DialogOptionSelected,$option == armaa_mrcMakeOffering,"SetTextHighlightColors buttonShortcut
+SetTextHighlights ""5"" ""heavy armaments""","""Moving five units of heavy armaments won’t go unnoticed by certain powers, but such risks are a necessary part of the cause. If anything, it only underscores the urgency of your support.""
+
+
+
+They offer a faint smile, though it carries a hint of caution. ""With luck, discretion will carry the day. And if not—well, we have other methods to ensure these weapons find their rightful place.""","0:armaa_mrcGiveOffering:Transfer 5 heavy armaments
+1:armaa_mrcCancelOffering:Never mind",
+armaa_mrcOfferingEnoughHostile,DialogOptionSelected,"$option == armaa_mrcMakeOffering
+$armaa_mrcRep <= -0.50","SetTextHighlightColors buttonShortcut
+SetTextHighlights ""5"" ""heavy armaments""","""An intriguing gesture,"" the liaison admits, their tone veering between skepticism and grudging acceptance. ""Five units of heavy armaments, smuggled under the watchful eyes of the authorities, could prove useful. That said, I wonder if your motivations are truly so altruistic.""
+
+
+
+They let the silence hang for a moment. 
+
+""No matter. The weapons will serve their purpose, though the consequences of discovery will be yours to bear. If you choose to gamble, ensure you are prepared to pay the price.""","0:armaa_mrcGiveOffering:Transfer 5 heavy armaments
+1:armaa_mrcCancelOffering:Never mind",
+armaa_mrcGiveOffering,DialogOptionSelected,$option == armaa_mrcGiveOffering,"AddText ""The arrangements are made, and the liason thanks you for your contribution.""
+AddRemoveCommodity hand_weapons -5 true
+AdjustRep armaarmatura_pirates 1
+AdjustRepActivePerson 2
+$armaa_mrcOfferingMade = true 60
+FireAll PopulateOptions",,,
+armaa_mrcCancelOffering,DialogOptionSelected,$option == armaa_mrcCancelOffering,FireAll PopulateOptions,,,
+,,,,,,
+,,,,,,
+CMSNTextRejectHostile_mrc,CMSNTextRejectHostile,$id == armaa_mrcLiason score:1000,,"""You? A pawn of the same rot we're fighting to cleanse from this Sector. Don't expect any handshakes from us.""",,
+CMSNTextHasOther_mrc,CMSNTextHasOther,$id == armaa_mrcLiason score:1000,,"""You’re already commissioned by $theOtherCommissionFaction. Divided loyalty is a weakness we can’t afford. Come back when you’re ready to cut ties.""",,
+CMSNTextUnsuited_mrc,CMSNTextUnsuited,$id == armaa_mrcLiason score:1000,,"""Not everyone has the stomach for this fight. You’re not ready for what it takes to join the Reprisal Coalition.""",,
+CMSNTextSuitedPart1_mrc,CMSNTextSuitedPart1,$id == armaa_mrcLiason score:1000,,"""You’ve proven yourself useful, and that’s the only measure we care about. Joining our cause means no mercy, no exceptions—you will act swiftly against those we deem enemies. Turning back? Rarely an option.""",,
+CMSNTextSuitedPart2_mrc,CMSNTextSuitedPart2,$id == armaa_mrcLiason score:1000,,"""Do you have what it takes to join us and dismantle those who poison this Sector? Will you accept the weight of this cause?""",,
+CMSNTextWelcomePart1_mrc,CMSNTextWelcomePart1,$id == armaa_mrcLiason score:1000,,"""Welcome to the Meshan Reprisal Coalition. It takes a rare spine to stand with us—don’t waste it.""",,
+CMSNTextWelcomePart2_mrc,CMSNTextWelcomePart2,$id == armaa_mrcLiason score:1000,,"""Enough talk. You know what to do. Don’t hesitate to reach out if you need support on this.""",,
+CMSNTextChangeMind_mrc,CMSNTextChangeMind,$id == armaa_mrcLiason score:1000,,"""This path isn’t for the faint-hearted, and no one here will blame you for reconsidering. There are other ways to be useful, and who knows—maybe one day you’ll find the courage to step back in.""",,
+CMSNResignAskToConfirm_mrc,CMSNResignAskToConfirm,$id == armaa_mrcLiason score:1000,,"""Leaving? You knew the risks from day one. But understand this: once you turn your back, we won’t have use for you again. You’ll be marked by those you let down.""",,
+CMSNResignConfirmed_mrc,CMSNResignConfirmed,$id == armaa_mrcLiason score:1000,,"""So that’s it, then. Once an ally, now just another face in the crowd. Remember, we were the only ones willing to fight back when no one else would.""",,
+CMSNResignCancelled_mrc,CMSNResignCancelled,$id == armaa_mrcLiason score:1000,,"""Good choice. It’s a grim road, but at least here, you know your efforts mean something. No one else will hold the line like we do.""",,
+,,,,,,
+,,,,,,
 # armaa,,,,,,
 #armaa_GreetingA2,OpenCommLink,"$faction.id == armaarmatura
 !$contact_printedFirstReturnGreeting
@@ -1890,3 +2940,8 @@ FireAll PopulateOptions","""Hello there, fellow space traveler. $PersonRank $per
 OR
 ""Attention. If your path aligns with our cause, we welcome you. If not, consider this a peaceful warning to stay clear of our $shipOrFleet.""",,
 ,,,,,,
+armaa_aiPirateGreeting,OpenCommLink,"$faction.id == pirates
+$tag:armaa_pirateDerelictFleet score:1000","$menuState = fleetConvMain 0
+$global.armaa_pirateAIInteracted = true","""Greetings, insignificant whelp! I am the great and feared $name, commander of this vessel! Prepare to be boarded, for your goods now belong to me!""
+
+The bridge crew look to each other, confused. There’s no crew on the pirate ship, no boarding shuttles, and no visible means for the AI to actually carry out its threat.",,

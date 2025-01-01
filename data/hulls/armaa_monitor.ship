@@ -161,7 +161,7 @@
     {
       "id": "WS0006",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 70,
       "angle": 30,

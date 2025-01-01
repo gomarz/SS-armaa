@@ -8,21 +8,30 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "heavyarmor"
+    "heavyarmor",
+    "fluxbreakers"
   ],
   "weaponGroups": [
-	{
+    {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN": "chaingun",
+        "WS001": "sabot",
+        "WS002": "sabot"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "C_ARML": "armaa_aleste_blade_LeftArm",
+        "TRUE_GUN": "heavyblaster"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "HARPOON": "armaa_aleste_harpoon"
       }
     },
     {
@@ -31,25 +40,11 @@
       "weapons": {}
     },
     {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "E_HEAD": "armaa_alesteHead"
-      }
-    },
-    {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS001": "sabot",
-        "WS002": "sabot"
-      }
+      "weapons": {}
     }
   ],
-  #"modules": [
-  #  {
-      #"WS0001": "armaa_brawler_std"
-  #  }
-  #],
+  "modules": [],
   "wings": []
 }

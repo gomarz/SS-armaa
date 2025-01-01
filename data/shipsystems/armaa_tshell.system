@@ -37,7 +37,7 @@
 	"aiHints":{
 		"activeSpeedIncrease":100,  # not right since it's ship-dependent, but hopefully close enough
 		"burstMovementPotential":0,
-		"averageSpeedMult":1.46,
+		"averageSpeedMult":1.8,
 	}
 }
 

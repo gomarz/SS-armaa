@@ -16,7 +16,7 @@
     "armaa_himac"
   ],
   "builtInWings": [
-    "armaa_bit_spriggan_h"
+    "armaa_bit_wing_standard"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_legioMech_leftArm",

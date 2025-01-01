@@ -2,7 +2,7 @@
 	"id":"armaa",
 	"name":"Arma Armatura",
 	"author":"shoi",
-	"version":"3.0.6.1",
+	"version":"3.1B",
 	"description":"Mechs n Fighters. Requires LazyLib + MagicLib.",
 	"gameVersion":"0.97a-RC6",
 	"jars":["jars/armaa.jar"],

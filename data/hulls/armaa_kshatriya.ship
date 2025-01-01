@@ -11,12 +11,15 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 124,
   "viewOffset": 0,
+  "builtInMods": [
+    "armaa_kshatriyaweaponSwap"
+  ],
   "builtInWings": [
-    "armaa_bit_wing3"
+    "armaa_bit_kshatriya_wing"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kshatriya_leftArm",
-    "A_GUN2": "armaa_kshatriya_rightArm_melee",
+   # "A_GUN2": "armaa_kshatriya_rightArm_spear",
     "LSHOULDER": "armaa_kshatriya_leftPauldron",
     "WS0003": "armaa_dd_legs",
     "WS0004": "armaa_kshatriya_torso_chaosburst",

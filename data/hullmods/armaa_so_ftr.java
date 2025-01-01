@@ -16,6 +16,7 @@ public class armaa_so_ftr extends BaseHullMod {
 	private static Map speed = new HashMap();
 	static {
 		speed.put(HullSize.FIGHTER, 50f);
+		speed.put(HullSize.FRIGATE, 50f);		
 		speed.put(HullSize.DESTROYER, 30f);
 		speed.put(HullSize.CRUISER, 20f);
 		speed.put(HullSize.CAPITAL_SHIP, 10f);
@@ -57,29 +58,7 @@ public class armaa_so_ftr extends BaseHullMod {
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "" + ((Float) speed.get(HullSize.FRIGATE)).intValue();
-		if (index == 1) return "" + ((Float) speed.get(HullSize.DESTROYER)).intValue();
-		if (index == 2) return "" + ((Float) speed.get(HullSize.CRUISER)).intValue();
-		//if (index == 3) return "" + ((Float) speed.get(HullSize.)).intValue();
-		if (index == 3) return Misc.getRoundedValue(FLUX_DISSIPATION_MULT);
-		//if (index == 4) return Strings.X + Misc.getRoundedValue(PEAK_MULT);
-		if (index == 4) return "3";
-		//if (index == 3) return Misc.getRoundedValue(CR_DEG_MULT);
-		if (index == 5) return Misc.getRoundedValue(RANGE_THRESHOLD);
-//		if (index == 4) return Misc.getRoundedValue(RECOIL_MULT);
-		//if (index == 3) return (int)OVERLOAD_DUR + "%";
-		
-//		if (index == 0) return "" + ((Float) speed.get(hullSize)).intValue();
-//		if (index == 1) return "" + (int)((FLUX_DISSIPATION_MULT - 1f) * 100f) + "%";
-//		if (index == 2) return "" + (int)((1f - PEAK_MULT) * 100f) + "%";
-		
-//		if (index == 0) return "" + ((Float) speed.get(HullSize.FRIGATE)).intValue();
-//		if (index == 1) return "" + ((Float) speed.get(HullSize.DESTROYER)).intValue();
-//		if (index == 2) return "" + ((Float) speed.get(HullSize.CRUISER)).intValue();
-//		if (index == 3) return "" + ((Float) speed.get(HullSize.CAPITAL_SHIP)).intValue();
-//		
-//		if (index == 4) return "" + (int)((FLUX_DISSIPATION_MULT - 1f) * 100f);
-//		if (index == 5) return "" + (int)((1f - PEAK_MULT) * 100f);
+
 		
 		return null;
 	}

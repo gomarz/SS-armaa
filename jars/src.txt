@@ -1,0 +1,3 @@
+i had to manually compile the src and then go through individual files to fix inconsistencies due to the nature of my dev environment
+
+if you have any issues with src please use 2 braincells to ask me about the issue instead of wasting time trying to fix it yourself 

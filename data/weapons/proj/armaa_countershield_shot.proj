@@ -1,18 +1,47 @@
 {
 	"id":"armaa_countershield_shot",
-	"specClass":"projectile",
-	#"sprite":"graphics/missiles/am_srm.png",
-        #"onHitEffect":"com.fs.starfarer.api.impl.combat.CryofluxTransducerEffect",
+	"specClass":"missile",
 	"onHitEffect":"data.scripts.weapons.HomingLaserOnHit2",
-	"spawnType":"BALLISTIC_AS_BEAM",
-	"collisionClass":"RAY",
-	"collisionClassByFighter":"RAY_FIGHTER",
-	"length":7.0,
-	"width":10,
-	"fadeTime":0.25,
-	"fringeColor":[50,175,255,255],
-	"coreColor":[200,200,255,255],
-	"textureType":"ROUGH",  # only needed for BEAM spawnType
-	"textureScrollSpeed":-256,
-	"pixelsPerTexel":5.0
+	"missileType":"MISSILE",
+	"sprite":"graphics/armaa/weapons/armaa_hominglaser.png",
+	"size":[7,10],	
+	"center":[3.5,5],
+	"collisionRadius":9,
+	"armingTime":0,	
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[199,146,0,25],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":50, # purely visual
+	"explosionSpec":{"duration":0.9f, # not visual
+					 "radius":50,
+					 "coreRadius":35, # full damage within core radius
+					 "collisionClass":HITS_SHIPS_AND_ASTEROIDS,
+					 "collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
+					 "particleSizeMin":7.0,
+					 "particleSizeRange":2.0,
+					 "particleDuration":3.2,
+					 "particleCount":7,
+					 "particleColor":[199,146,0,200]},
+	"engineSpec":{"turnAcc":0,
+				  "turnRate":0,
+				  "acc":0,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[0, 0],
+				    #"style":"MISSILE_MIDLINE",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"PARTICLES", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[255,0,255,0],
+						"contrailParticleSizeMult":50.0,
+						"contrailParticleDuration":0.1,
+						"contrailParticleFinalSizeMult":1.5,		
+						"contrailMaxSpeedMult":0.33,
+						"contrailAngularVelocityMult":0.33,
+						"contrailColor":[199,146,0,155],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":1,
+				    "length":1,
+				    "angle":180.0},
+				    ]
 }

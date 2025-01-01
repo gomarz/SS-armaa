@@ -13,8 +13,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-	"WS0001": "reaper",
-        "WS0002": "reaper"
+	"WS0001": "gorgon",
+        "WS0002": "gorgon"
       }
     },
     {

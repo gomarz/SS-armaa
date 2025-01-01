@@ -1,0 +1,54 @@
+{
+  "variantId": "armaa_ceylon_boss",
+  "hullId": "armaa_ceylon",
+  "displayName": "Elite",
+  "goalVariant": true,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "ecm",
+    #"stealth_minefield",
+    "armaa_wingCommander",
+    "eccm"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "harpoon",
+        "WS0006": "harpoon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "vulcan",
+        "WS0003": "vulcan",
+        "WS0004": "vulcan",
+        "WS0005": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "dualflak"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "AWACS": "armaa_ceylon_module_Standard"
+    }
+  ],
+  "wings": [
+    "warthog_wing",
+    "broadsword_wing",
+    "thunder_wing",
+    "thunder_wing"
+  ]
+}

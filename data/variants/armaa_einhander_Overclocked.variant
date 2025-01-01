@@ -1,38 +1,47 @@
 {
-  "displayName": "Overclocked",
-  "fluxCapacitors": 5,
-  "fluxVents": 0,
-  "goalVariant": true,
-  "hullId": "armaa_einhander",
-  "hullMods": [
-	"eccm",
-	"hardened_subsystems",
-	"safetyoverrides"
-  ],
-  "permaMods": [],
-  "quality": 0,
   "variantId": "armaa_einhander_Overclocked",
+  "hullId": "armaa_einhander",
+  "displayName": "Overclocked",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "eccm",
+    "hardened_subsystems",
+    "safetyoverrides"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {"A_GUN": "armaa_einhanderGun"}
+      "weapons": {
+        "A_GUN": "armaa_einhanderGun",
+        "DUMMYBIT": "ioncannon",
+        "H_GLOW": "armaa_landingBeacon"
+      }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {"B_TORSO": "armaa_sprigganTorso"}
+      "weapons": {
+        "B_TORSO": "armaa_sprigganTorso"
+      }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {"WS0001": "armaa_heavyJavelin"}
+      "weapons": {}
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {"E_HEAD": "armaa_sprigganHead"}
+      "weapons": {
+        "E_HEAD": "armaa_sprigganHead"
+      }
     }
   ],
+  "modules": [],
   "wings": []
 }

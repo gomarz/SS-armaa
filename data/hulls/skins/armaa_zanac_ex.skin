@@ -8,9 +8,9 @@
     "baseValueMult":1.2,
     "restoreToBaseHull":false,
     "addHints":[],
-    #"tags":["rare_bp"],
+    "tags":["no_sell","no_dealer","restricted","no_drop"],
     "systemId":"highenergyfocus",
-    "tech":"armaarmatura",
+    #"tech":"armaarmatura",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":["RETRO_1","RETRO_2","VERNIER_1","VERNIER_2"],

@@ -6,7 +6,7 @@
   "size": "SMALL",
   "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
   "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow_left.png",
-  "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_rifle_left.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_rifle_left.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
   "glowColor": [

@@ -2,7 +2,7 @@
   "hullName": "Hazard",
   "hullId": "armaa_hazard",
   "hullSize": "FIGHTER",
-  "spriteName": "graphics/armaa/ships/hazard/armaa_hazardBody.png",
+  "spriteName": "graphics/armaa/ships/hazard/armaa_hazardBody2.png",
   "style": "LOW_TECH",
   "height": 36,
   "width": 34,
@@ -12,12 +12,10 @@
   "shieldRadius": 20,
   "viewOffset": 0,
   "builtInMods": [
-    "ill_advised",
-    "armaa_so_ftr"
+    "armaa_fighterStrafe"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_hazard_rightArm",
-    "A_GUN2": "armaa_hazard_leftArm",
     "D_PAULDRONL": "armaa_hazard_leftPauldron",
     "D_PAULDRONR": "armaa_hazard_rightPauldron"
   },
@@ -43,16 +41,16 @@
     {
       "id": "A_GUN2",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 100,
+      "arc": 50,
       "angle": 10,
       "locations": [3, 9]
     },
     {
       "id": "TRUE_GUN2",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 100,
       "angle": 10,
@@ -116,7 +114,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-15, -0],
+      "location": [-7.5, -0],
       "length": 18,
       "width": 8,
       "angle": 180,
@@ -125,7 +123,7 @@
       "styleId": "LOW_TECH"
     },
     {
-      "location": [-13, 7],
+      "location": [-5.5, 7],
       "length": 18,
       "width": 8,
       "angle": 157,
@@ -134,7 +132,7 @@
       "styleId": "LOW_TECH"
     },
     {
-      "location": [-15, -0],
+      "location": [-7.5, -0],
       "length": 16.5,
       "width": 5,
       "angle": 141.5,
@@ -143,7 +141,7 @@
       "styleId": "LOW_TECH"
     },
     {
-      "location": [-15, 0],
+      "location": [-7.5, 0],
       "length": 16.5,
       "width": 5,
       "angle": -141.5,
@@ -151,7 +149,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-13, -7],
+      "location": [-5.5, -7],
       "length": 16.599014,
       "width": 6.549121,
       "angle": -157,

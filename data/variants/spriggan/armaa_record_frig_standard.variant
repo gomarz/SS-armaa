@@ -1,0 +1,46 @@
+{
+  "variantId": "armaa_record_frig_standard",
+  "hullId": "armaa_record_frig",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 4,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "hardened_subsystems",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "sabot"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_record_frig_head"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "MODULE": "armaa_wepPack_variant"
+    },
+    {
+      "SHIELD": "armaa_shield_variant"
+    }
+  ],
+  "wings": []
+}

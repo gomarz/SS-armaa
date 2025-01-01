@@ -3,21 +3,21 @@
   "specClass": "projectile",
   "projectileSpecId": "armaa_jackhammer_shot",
   "type": "BALLISTIC",
-  "size": "MEDIUM",
-  #"everyFrameEffect": "data.scripts.weapons.armaa_drill",
-  "turretSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
-  "turretGunSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm_recoil.png",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_drill",
+  "turretSprite": "graphics/armaa/ships/hazard/armaa_hazardLeftArm.png",
+  "turretGunSprite": "graphics/armaa/ships/hazard/armaa_hazardLeftArm_recoil.png",
   "hardpointSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
-  "showDamageWhenDecorative": true,
   "renderBelowAllWeapons": true,
+  "showDamageWhenDecorative": true,
   "visualRecoil": 40,
   "renderHints": [
     "RENDER_BARREL_BELOW",
     "SUSPEND_RECOIL"
   ],
   "turretOffsets": [
-    49,
-    15
+    9,
+    7.5
   ],
   "turretAngleOffsets": [
     -1

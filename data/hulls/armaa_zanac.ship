@@ -14,6 +14,9 @@
   "builtInMods": [
     "unstable_injector"
   ],
+  "builtInWings": [
+    "armaa_bit_wing_zanac"
+  ],
   "builtInWeapons": {
     "A_GUN": "armaa_zanac_leftArm",
     "A_GUN2": "armaa_zanac_rightArm_deco",

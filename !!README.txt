@@ -1,0 +1,1 @@
+if you don't want anime portraits, you can just drag armaa into your mod folder. otherwise, drag and enable both.

@@ -1,55 +1,50 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "id": "armaa_leynos_shotgun_right",
+  "specClass": "projectile",
+  "projectileSpecId": "heavymg_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect2",
-  "fireSoundTwo": "armaa_shotgun_fire_small",
-  "hardpointAngleOffsets": [
-    0
-  ],
+  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_shotgun.png",
+  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "specialWeaponGlowHeight": 20,
+  "specialWeaponGlowWidth": 10,
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    41,
+    -12.5
+  ],
+  "turretAngleOffsets": [
+    0.5
+  ],
   "hardpointOffsets": [
     17,
     0
   ],
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "id": "armaa_leynos_shotgun_right",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
   "muzzleFlashSpec": {
     "length": 20,
+    "spread": 25,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "particleDuration": 0.02,
+    "particleCount": 20,
     "particleColor": [
       255,
       200,
       165,
       200
-    ],
-    "particleCount": 20,
-    "particleDuration": 0.02,
-    "particleSizeMin": 10,
-    "particleSizeRange": 10,
-    "spread": 25
+    ]
   },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-        "specialWeaponGlowWidth":10,
-        "specialWeaponGlowHeight":20,
-  "interruptibleBurst":true,
-  "projectileSpecId": "heavymg_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    RENDER_BARREL_BELOW
-  ],
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0.5
-  ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_shotgun.png",
-  "turretOffsets": [
-    48.5,
-    -12.5
-  ],
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
-  "type": "BALLISTIC",
-  "visualRecoil": 2
+  "fireSoundTwo": "armaa_shotgun_fire_small"
 }

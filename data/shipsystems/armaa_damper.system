@@ -1,7 +1,6 @@
 {
 	"id":"armaa_damper",
 	"type":"STAT_MOD",
-	#"type":"PHASE_CLOAK",
 	"aiType":"CUSTOM",
 	"statsScript":"data.scripts.shipsystems.armaa_damperFieldStats",
 	"aiScript":"data.scripts.shipsystems.ai.armaa_damperAI",
