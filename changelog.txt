@@ -40,8 +40,9 @@ v3.1B
 	- can be toggled on/off w/ lunalib
 
 - New Quest: Crown of Cinders
-	- Navigate the onset of a planetary conflict with high stakes and rival factions
-- Hull & Armor values of most ships w/ strikecraft hullmod has been increased
+	- Navigate the initial onset of a planetary conflict
+
+- Hull & Armor values of most ships w/ strikecraft hullmod has been somewhat increased
 
 - Added GuarDUAL
 	- dual mode unit w/ fighter & mech mode
@@ -62,13 +63,9 @@ v3.1B
 
 - Added Gallant (WINGCOM)
 
-- Added Caymon(officially)
-	- Replaces Gunhazard
-	- Heavy armored, but slow
-	- 20 DP
-
 ===== Tweaks =====
 - Valkazard is no longer obtainable outside of starting with it(for now)
+	- add extra dialogue if player somehow acquires one anyway and presents to sera
 
 - Aleste S-II
 	- Hi-MAC is now built-in
@@ -83,7 +80,6 @@ v3.1B
 -Valkyrie (AA)
 	- DP: 5-> 8
 	- Removed Converted Hangar
-	- Ship System: Recall Device -> Active Flare Launcher
 	- Wing is now built-in: Prodromos Battle Armor
 	- Carries 1x Aleste (WINGCOM)
 		- Detach when in combat range
@@ -110,7 +106,7 @@ v3.1B
 
 -Cataphracts no longer consume HP/CR during raid actions
 
--Removed Nekki
+-Removed Nekki system
 	- Planets in the system now reside in Gamlin
 
 v3.0.6.1
