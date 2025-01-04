@@ -12,7 +12,6 @@
   "shieldRadius": 54.5,
   "viewOffset": 0,
   "builtInMods": [
-        "axialrotation",
 	"armaa_assaultPodKiller"
   ],
   "weaponSlots": [],

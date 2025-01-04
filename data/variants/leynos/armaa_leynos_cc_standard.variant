@@ -8,8 +8,6 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "armaa_selector_ppc",
-    "armaa_selector_crusher",
     "heavyarmor",
     "fluxdistributor",
     "reinforcedhull"
