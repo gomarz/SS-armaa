@@ -12,8 +12,6 @@
   "shieldCenter": [35, 0],
   "shieldRadius": 160,
   "viewOffset": 0,
-  "builtInMods": [
-  ],
   "builtInWeapons": {
     "DECO": "armaa_caymon_deco",
     "POD": "armaa_armorPod"
@@ -66,8 +64,8 @@
       "type": "SYSTEM",
       "mount": "TURRET",
       "arc": 5,
-      "angle": 0,
-      "locations": [29, -37]
+      "angle": -90,
+      "locations": [-13, -48]
     },
     {
       "id": "WS0001",
@@ -123,6 +121,42 @@
       "angle": 0,
       "locations": [128, -0],
       "renderOrderMod": 100
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -90,
+      "locations": [3.5, -50]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 90,
+      "locations": [3.5, 50]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -90,
+      "locations": [-30, -53]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 90,
+      "locations": [-30, 53]
     }
   ],
   "engineSlots": [

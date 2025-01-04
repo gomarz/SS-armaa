@@ -1,5 +1,20 @@
+V3.1.1
+--------
+- Added MRC submarket to fort exsedol
+- fixed gravion orbiting into jenius
+- moved mrc reprisal autoresolve check to economy tick
+
 v3.1B
 --------
+======= Hotfixes ========
+-fixed checking for memkey that didn't exist yet
+-fixed percept orb detonating on friendly ships
+-fixed spriggan having small ballistic instead of medium
+-fixed guardual nullpointer when no missiles slotted
+-fixed aleste(wingcom) arms being strippable
+-fixed aleste(frig) having so_ftr hullmod
+-fixed alternate boss causing CTD when destroyed in atmo battle
+-fixed AL 4096x soundplayer crash
 ======= Fixes =======
 - Added extra nullchecks with altagrave
 - Added extra nullchecks with wingcom
