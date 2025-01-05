@@ -1,3 +1,14 @@
+V3.1.2
+--------
+- Fixed strikecraft taking damage from hyperspace storms
+- fixed leynos damper having no system description
+- fixed Aleste(WINGCOM) firing while docked
+- Slightly tweaked Aleste LPC sprite
+- GuarDUAL
+	- reduced system regen rate(.1->0.06)
+	- fixed weapon hiding not working correctly if a hybrid mount was empty
+- improved reprisal autoresolve logic
+- changed Crown of Cinders drone fleet faction from pirate to one that should be always hostile
 V3.1.1
 --------
 - Added MRC submarket to fort exsedol
