@@ -3,13 +3,13 @@
 	"color":[152,171,75,255],
 	"displayName":"Arusthai",
 	"displayNameWithArticle":"the Arusthaian",
-	"displayNameLong":"Arusthai Dominion",
-	"displayNameLongWithArticle":"the Arusthai Dominion",
+	"displayNameLong":"Arusthai",
+	"displayNameLongWithArticle":"the Arusthai",
 	"entityNamePrefix":"",
 	"personNamePrefix":"mercenary",
 	"personNamePrefixAOrAn":"an",
-	"logo":"graphics/armaa/factions/armaa_logo00_flag.png",
-	"crest":"graphics/armaa/factions/armaa_logo00_crest.png",
+	"logo":"graphics/armaa/factions/armaa_arusthai.png",
+	"crest":"graphics/armaa/factions/armaa_arusthai.png",
 	"shipNamePrefix":"ADNV",
 
 	"showInIntelTab":false,
@@ -23,7 +23,7 @@
 		"GENERAL":1,
 		"armaa":3,
 	},
-	"description":"One of the premier developers of heavy weapons in the vast galactic polity that had once been called the Domain. The Collapse and two wars, brought about the apparent demise of that golden age, along with the majority of the companies infrastructure.",
+	"description":"",
 	"names":{
 		"modern":1,
 		"world":1,
@@ -271,6 +271,8 @@
 	"custom":{
 		"offersCommissions":false,
 		"decentralized":false,
+		"pirateBehavior":true, # for fleet behavior
+		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
 		"allowsTransponderOffTrade":true,
 		"engagesInHostilities":false,
 		"buysAICores":true,
