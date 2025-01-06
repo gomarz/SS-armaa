@@ -2772,9 +2772,14 @@ armaa_mrcLiason_firstMeeting,PopulateOptions,"$isPerson
 $id == armaa_mrcLiason score:1000
 #!$global.metMRCLiason","ShowPersonVisual
 $global.metMRCLiason = true
-#FireAll PopulateOptions",,"armaa_mrc_whoYou:""Who are you?""
+FireAll PopulateOptions",,"armaa_mrc_whoYou:""Who are you?""
 armaa_mrc_whatDo:""What do you do here?""
 armaa_mrc_whatIsReprisal:""What is a Reprisal?""",
+armaa_mrcLiason_forceReprisalDEV,PopulateOptions,"$isPerson
+$id == armaa_mrcLiason score:1000
+$global.isDevMode",,,armaa_mrcLiason_forceReprisalDEV2:DEV Set reprisal counter to 0 ,
+armaa_mrcLiason_forceReprisalDEV2,DialogOptionSelected,$option == armaa_mrcLiason_forceReprisalDEV2,"armaa_Hikaru_Utada setReprisalDaysLeft 0
+FireAll PopulateOptions",---,,
 armaa_mrc_whoYou,DialogOptionSelected,$option == armaa_mrc_whoYou,,"""I'm a liaison for the Meshan Reprisal Coalition, a voice and hand of those who refuse to let the crimes of the past be buried under the ashes of the AI Wars. We exist to ensure justice is served—or, failing that, that those who defy accountability feel the weight of their actions.""
 
 ""Of course, titles and introductions are meaningless without actions. If you truly wish to understand who we are, watch what we do—or better yet, join us.""",,
