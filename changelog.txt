@@ -1,5 +1,13 @@
 V3.1.2
 --------
+======Hotfix======
+- Fixed compile w/ jdk 23 error
+- Fixed MRC HQ continuing to demand resources when inactive/hidden on a colony
+- Fixed MRC Reprisal always spawning same fleet size
+	- Should scale around the level of the target system, so they can't randomly attack and take a size 8
+- Fixed station not transferring to new owner correctly
+==================
+
 - Fixed strikecraft taking damage from hyperspace storms
 - fixed leynos damper having no system description
 - fixed Aleste(WINGCOM) firing while docked
