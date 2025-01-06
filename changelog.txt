@@ -1,10 +1,15 @@
-V3.1.2
---------
+V3.1.3
+-------
 ======Hotfix======
 - Fixed compile w/ jdk 23 error
 - Fixed MRC HQ continuing to demand resources when inactive/hidden on a colony
-- Fixed MRC Reprisal always spawning same fleet size
-	- Should scale around the level of the target system, so they can't randomly attack and take a size 8
+- Adjusted MRC Reprisal always spawning same fleet size
+	- Shouldn't always be ~9 fleets now
+- Fixed station not being transferred properly on takeover
+
+V3.1.2
+--------
+take a size 8
 - Fixed station not transferring to new owner correctly
 ==================
 
