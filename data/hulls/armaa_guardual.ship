@@ -160,6 +160,14 @@
       "angle": 180,
       "contrailSize": 12,
       "style": "GUARDUAL_ENGINE"
+    },
+    {
+      "location": [-7, -0],
+      "length": 11.5,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "MIDLINE"
     }
   ],
   "bounds": [

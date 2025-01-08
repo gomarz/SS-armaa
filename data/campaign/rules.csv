@@ -961,6 +961,7 @@ He smirks, voice laced with disdain. ""They've got it near a major city, and eve
 He turns sharply to face you, his grin sharp. ""So, we're hitting them first. Take down the Ceylon, and it'll be crystal clear to anyone watching that they don't stand a chance. I'll be diverting some other forces to assist in this operation, but your role in this is going to be critical.""",100:cutCommLink:Cut Comm Link,
 armaa_IKPostBattleInquiry,PopulateOptions,"$id == armaa_kade
 $global.armaa_coc_missionCompleted
+$market.id == nekki1_market
 !$askedAboutPostCapital",,,armaa_IKPostBattleInquiryResp:How're things going on Jenius?,
 armaa_IKPostBattleInquiryResp,DialogOptionSelected,$option == armaa_IKPostBattleInquiryResp,"$askedAboutPostCapital = true
 FireAll PopulateOptions","""Hell of a fight over the capital. You’ve got people talkin'—even the ones who don't want to.""
@@ -1041,7 +1042,8 @@ armaa_IKBarEvent1Resp,DialogOptionSelected,$option == armaa_IKBarEvent1Resp,"$as
 FireAll armaa_IKBarOptions","""'Sides the credits, you're meanin'?"" he says, tone steady but with a gruff edge, as if stating the obvious. ""Like I said, this isn't just about money. There's old tech stashed in the dead ruins above and below the surface—stuff the locals and looters have only scratched the surface of. They've dug up scraps here and there, but the real prize is still buried deep.""
 
 He softens his gaze just a bit, as if letting you in on a secret. ""Look, you take this on, and you'll be among those who get the first pick of what's down there. Could be lost tech, maybe intel worth its weight in gold. The kind of stuff that changes fortunes. All it needs is someone with the right grit—and the brains to play it smart.""",,
-armaa_IKBarEvent2Resp,DialogOptionSelected,$option == armaa_IKBarEvent2Resp,AbortMission,"""Fair enough, mate. Can't fault a spacer for looking out for themselves. But remember, opportunities like this don't come knocking every day. If you ever change your mind, you know where to find me.""",anh_cantinaReturn:Return to the bar,
+armaa_IKBarEvent2Resp,DialogOptionSelected,$option == armaa_IKBarEvent2Resp,"EndConversation
+AbortMission","""Fair enough, mate. Can't fault a spacer for looking out for themselves. But remember, opportunities like this don't come knocking every day. If you ever change your mind, you know where to find me.""",anh_cantinaReturn:Return to the bar,
 armaa_IKBarEvent3Resp,DialogOptionSelected,$option == armaa_IKBarEvent3Resp,"$probedMore = true
 FireAll armaa_IKBarOptions","""Look, I get it—no one’s looking to stick their neck out just for some chump change. But this ain’t some blind gamble. I've got solid intel, a real plan, and the best crew of mercs this side of the Sector ready to roll. The risk's there, no doubt, but the reward? Enough to make you glad you took the chance. You got my word on that.""
 
