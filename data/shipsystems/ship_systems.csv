@@ -38,7 +38,7 @@ Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons
 Sensor Drones(IC),armaa_drone_sensor,,,,,,,,2,0.025,0,,0,0,,,,,,,,,,,,,graphics/icons/hullsys/drone_sensor.png
 Reload,armaa_reload,,,,,,,,,,0.5,1,,5,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Rampage Drive,armaa_rampagedrive,1,,,,,,,1,0.07,0.5,1.5,1.5,2,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png
-Executioner's Mark,armaa_rampagedrive2,1,,,,,,,1,0.07,0.5,1.5,1.5,2,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png
+Executioner's Mark,armaa_rampagedrive2,1,,,,,,,2,0.07,0.5,3,1.5,2,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,,,graphics/icons/hullsys/burn_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,5 +1,8 @@
 V3.1.4
 ------
+- Fixed bug that could occur if multiple guardians were generated in the fleet during Jenius planetfall
+- Fixed bug that could occur when refusing the Crown of Cinders quest where player would still be in dialogue with Kade
+- Fixed bug that could lead to drone fleets chasing each other into the fringes of Gamlin
 - Further tweaked Reprisal fleet spawn behavior
 - Add better handling for market selection for reprisal origin
 
