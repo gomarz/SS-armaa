@@ -1,5 +1,5 @@
 V3.1.4
-------
+-------
 - Fixed bug that could occur if multiple guardians were generated in the fleet during Jenius planetfall
 - Fixed bug that could occur when refusing the Crown of Cinders quest where player would still be in dialogue with Kade
 - Fixed bug that could lead to drone fleets chasing each other into the fringes of Gamlin
@@ -14,7 +14,7 @@ V3.1.3
 - Adjusted MRC Reprisal always spawning same fleet size
 	- Shouldn't always be ~9 fleets now
 V3.1.2
---------
+-------
 - Fixed strikecraft taking damage from hyperspace storms
 - fixed leynos damper having no system description
 - fixed Aleste(WINGCOM) firing while docked
