@@ -2,7 +2,8 @@ v3.1.5
 -------
 - stopped some system only weapon from being purchaseable
 - removed dev invictus being generated from planetfall armada
-- Added fallback fleet in ACoC that spawns if indie armada gets destroyed
+- Added fallback fleet in ACoC that spawns if indie armada gets destroyed + misc other hopeful fallback precautions
+- fixed NPE that could occur when PERCEPT AI checked missile without a weaponspec
 
 
 V3.1.4
