@@ -1,3 +1,10 @@
+v3.1.5
+-------
+- stopped some system only weapon from being purchaseable
+- removed dev invictus being generated from planetfall armada
+- Added fallback fleet in ACoC that spawns if indie armada gets destroyed
+
+
 V3.1.4
 -------
 - Fixed bug that could occur if multiple guardians were generated in the fleet during Jenius planetfall

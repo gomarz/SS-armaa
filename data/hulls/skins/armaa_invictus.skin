@@ -3,7 +3,7 @@
 	"skinHullId":"armaa_invictus",
 	"hullName":"Invictus",
 	"descriptionPrefix":"",
-	"tags":["no_dealer"],
+	"tags":["no_dealer","no_sell","no_drop"],
 	#"tech":"Lion's Guard",
 	"spriteName":"graphics/ships/invictus/invictus.png",
 	"baseValueMult":1,
