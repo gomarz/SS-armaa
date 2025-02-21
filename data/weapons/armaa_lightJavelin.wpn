@@ -1,0 +1,47 @@
+{
+  "id": "armaa_lightJavelin",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_leynos_crusher_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_crusherEffect",
+  "turretSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_turret.png",
+  "turretGunSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_barrel.png",
+  "hardpointSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_turret.png",
+  "hardpointGunSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_barrel.png",
+  "visualRecoil": 5,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    11.5,
+    1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    22.5,
+    1
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 5,
+    "particleSizeMin": 15,
+    "particleSizeRange": 15,
+    "particleDuration": 0.15,
+    "particleCount": 25,
+    "particleColor": [
+      100,
+      255,
+      200,
+      205
+    ]
+  },
+  "fireSoundTwo": "armaa_crusher_fire"
+}

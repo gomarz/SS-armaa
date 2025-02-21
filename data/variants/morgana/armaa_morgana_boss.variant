@@ -19,19 +19,22 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "railgun",
-        "WS0004": "railgun"
+        "TRUE_GUN": "armaa_valken_missile",
+        "TRUE_GUN2": "armaa_valken_missile",
+        "WS0003": "riftlance",
+        "WS0004": "riftlance"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {
-        "TRUE_GUN": "sabot",
-        "TRUE_GUN2": "sabot",
-      }
+      "weapons": {}
     }
   ],
-  "modules": [],
+  "modules": [
+    {
+      "MORGANASUP": "armaa_morganab_dummy_boss"
+    }
+  ],
   "wings": []
 }

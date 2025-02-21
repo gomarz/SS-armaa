@@ -1,22 +1,30 @@
 {
   "id": "armaa_valken_torso",
   "specClass": "projectile",
-  "projectileSpecId": "lightag_shot",
-  "type": "BALLISTIC",
+  "projectileSpecId": "armaa_missile",
+  "type": "MISSILE",
   "size": "SMALL",
   "turretSprite": "graphics/armaa/ships/valken/armaa_valkenBody.png",
-  "turretGunSprite": "graphics/armaa/ships/valken/armaa_valkenBodyBarrel.png",
   "hardpointSprite": "",
   "visualRecoil": 3,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    20,
-    0.5
+    -11,
+    8,
+    -11.5,
+    5,
+    -14,
+    -7,
+    -11,
+    -6
   ],
   "turretAngleOffsets": [
-    0
+    90,
+    149,
+    -135,
+    -90
   ],
   "hardpointOffsets": [
     -5,
@@ -29,21 +37,23 @@
     45
   ],
   "barrelMode": "ALTERNATING",
-  "animationType": "MUZZLE_FLASH",
-  "requiresFullCharge": false,
-  "muzzleFlashSpec": {
-    "length": 20,
-    "spread": 16,
-    "particleSizeMin": 8,
-    "particleSizeRange": 10,
-    "particleDuration": 0.35,
-    "particleCount": 12,
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 7,
+    "particleSizeRange": 7,
+    "cloudParticleCount": 5,
+    "cloudDuration": 2,
+    "cloudRadius": 7,
+    "blowbackParticleCount": 0,
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackSpread": 10,
     "particleColor": [
-      255,
+      100,
       155,
-      105,
-      185
+      255,
+      50
     ]
   },
-  "fireSoundTwo": "light_assault_gun_fire"
+  "fireSoundTwo": "swarmer_fire"
 }

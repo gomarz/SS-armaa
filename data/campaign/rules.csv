@@ -593,7 +593,13 @@ From above, the hum of engines grows louder as the first of your surveyors hover
 With the path now illuminated and secure, you can prepare to traverse deeper into the chasm, ready to face whatever awaits as you approach the AI Core.","armaa_IKRaidFinished3:""Report.""",
 armaa_IKbeatRaidBDefenders,BeginSalvage,"$id == nekki1  score:1000
 $global.armaa_IKCoreDescent
-!$player.capturedIK score:1000",,"Your strike group disposes of the last obstacles remaining, clearing the path to the bottom of the shaft. As your shuttles touch down, a tactical officer’s voice crackles through the comms. ""We’re here,"" they say, their tone a mix of relief and determination. ""Ground teams, form up and prepare to breach. The AI Core chamber is just ahead."" The marines exchange tense glances, weapons ready, as the massive doors to the core chamber loom before you, promising the final showdown.",armaa_IKbeatRaidBDefenders2:Continue,
+!$player.capturedIK score:1000",,"Your strike group disposes of the last obstacles remaining, clearing the path to the bottom of the shaft. Salvors are dispatched to clear any wreckage as you finally see the end..floor? Of the structure.
+
+Over the comms, the lead salvor's gruff voice breaks the silence.
+
+""We're moving into position now,"" she reports, her tone professional but tinged with the exhaustion of a long day's work. ""Lots of scrap down here—engines, hull plating, energy conduits... Nothing out of the ordinary yet. Continuing the sweep.""
+
+You sit back, watching the drone feeds flicker with images of twisted metal and ruined machinery. The battle had been fierce, yet somehow the shaft has endured the violence. Its immense structure holds firm, defying the destruction that should have torn it apart. Whether it’s a testament to ancient engineering or sheer luck, you can't say.",armaa_WFShaftBattleEnd:Continue,
 armaa_IKbeatRaidBDefenders2,DialogOptionSelected,$option == armaa_IKbeatRaidBDefenders2,"AddCommodity alpha_core 1
 $player.capturedIK = true
 FireAll PopulateOptions","In contrast to the effort to get this far, breaching the massive doors of the AI Core chamber is relatively effortless. Any auxillary defenses are disabled without incident in short order.",,
@@ -886,38 +892,6 @@ His expression hardens as he continues, voice low but deliberate. ""With their c
 
 He pauses, letting the weight of his words sink in. ""As for you, $player.firstName, you’ve done me a great favor. I think it's time we discussed your role in what comes next.""",armaa_IKbeatDefenders3:Continue,
 ,,,,,,
-#armaaWFTryComms,DialogOptionSelected,$option == armaaWFTryComms,RemoveOption armaaWFTryComms,"Your standard comms request gives no return. If there is a comms network, or even an emergency survival unit on the surface, it's either damaged or can't make a connection.  
-
-Your comms officer tries more unconventional workarounds, from a suite of ancient standards used to ping drifting Domain-era relics to the latest suite of underworld methods that would earn a stern look from any honest customs officer; lossy but easily mistaken for background noise by sensor grids. All attempts are fruitless.
-
-""$PlayerSirOrMadam. We might have to make contact the old fashioned way,"" your comms officer reports apologetically.",,
-armaa_WFShuttle,DialogOptionSelected,$option == armaa_WFShuttle,ShowLargePlanet,"Beneath your feet, the deck trembles, and the unfamiliar sound of wind shear fills the air as the autoshuttle pierces through $fullName's dense atmosphere. 
-
-""Fifteen minutes out,"" your shuttle pilot informs you through your earpiece, ""Keep your EVA helmets on for now, cabin's not yet pressurized. The ride's pretty rough – wouldn't want you bumping your head against something before we touch down.""
-
-With a click, the radio communication ends. The cabin lights momentarily flicker due to a particularly forceful jolt, but then the gusty wind subsides, and the roaring engines settle into a steady cruising rhythm. The sound of air hissing through your helmet drowns out all other noises.
-
-Below, lies the verdant expanse of $fullName.",armaaWF0:Continue,
-armaaWF0,DialogOptionSelected,$option == armaaWF0,,"With no obvious landing area to see, the shuttle touches down in a burned out section of field. The rear door of the shuttle drops, allowing you and your entourage to step out into the humid $fullNameian air. While it's guaranteed at least someone has seen you land here, no one has arrived to greet you. Yet.
-
-An expansive sea of verdant grass extends as far as the eye can see, encompassing the surroundings in its vibrant embrace. Sporadically scattered across the terrain, sizable yet squat mounds interrupt the green expanse in irregular arrangements. In the distance, what you surmise to be the settlement looms, it's ugly grey buildings bordered by a low
-wall.
-
-In time a small convoy of vehicles approach the shuttle, and a cadre of soldiers hop out, weapons slung, trudging towards you. ",armaaWF1:Continue,
-armaaWF1,DialogOptionSelected,$option == armaaWF1,FireAll armaaWFWhyHereOptions,"""Hello there, unfamiliar face. You're a spacer, right? What brought you to this area?"" he asks in a friendly tone, nonchalantly shifting his gaze between you and your companions. His attitude appears relaxed and informal, yet you can discern that behind this facade lies a weathered warrior.",,
-armaaWFWhyHereLie,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""I was sent here to negotiate.""",
-armaaWFWhyHereSignal,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""Just sightseeing.""",
-armaaWFWhyHereAns,DialogOptionSelected,$option == armaaWFWhyHereAns,,"""Mmm...let's hear about it back in the settlement, yes?"" he says, motioning for you and your men to follow.
-
-You and your crew are loaded into one of the vehicles the soldiers brought along. They eye you with detached curiousity, but are not much for conversation, making the trip back rather uneventful. 
-
-As you draw near what appears to be a checkpoint, you note a trooper leaning against the wall of a two-story complex. The lower level of the building seems to house shops; the signs painted on the closed metal gates suggest they offer items like local bread and other edibles. Above them, a couple of flats can be seen, their windows also tightly closed with shutters. He stands, waving off some security drones, and opens a gate that allows the convoy to pass into the city proper.",armaaWFWhyHereAns2:Continue,
-armaaWFWhyHereAns2,DialogOptionSelected,$option == armaaWFWhyHereAns2,,"Finally, the convoy comes to a halt, and the men sharing a vehicle at you nod, gesturing towards a building in the distance.
-
-The building is a squat, utilitarian fortress of concrete and steel, with grime-streaked walls and a faintly rusted exterior. Barbed wire coils along the top, and guard towers rise at each corner, manned by sentinels whose weary eyes track your approach.The people milling around the perimeter don't seem particularly well-armed. Truth be told, from what you can tell, they'd be effectively useless in any real conflict with the grade of firepower the Iron King—or you, for that matter—can bring to bear. Their weapons are a motley assortment of outdated rifles and makeshift clubs, and their uniforms are little more than mismatched scraps of fabric and armor.",armaaWFWhyHereAns3:Continue,
-armaaWFWhyHereAns3,DialogOptionSelected,$option == armaaWFWhyHereAns3,FireAll armaaWFMissionQuestions,"You follow the leader through several corridors, eventually coming to a hallway. Once you've entered, the leader turns to face you. 
-
-""Now then,"" he starts, vanishing into another room before returning with two bottles in hand. He places one before you, sitting down across from you. He looks to you expectantly.",,
 #should make this an option so its not rng based,,,,,,
 #armaa_WFRaiders2DEV,PopulateOptions,$global.isDevMode,armaa_jeniusCityBattle,"As the strike team nears the city, an unexpected alert flashes across your tactical displays. Your tactical officer’s voice comes through with a note of urgency:
 
@@ -1010,6 +984,142 @@ $global.gaOp_needToReturn = true
 Call $global.gaOp_ref updateStage
 FireAll PopulateOptions","The outpost is left a smoldering crater, just a pinprick of dull orange on the curve of the planet below you. Your decisive action is unimpeachable under the terms of the cycle 194 Treaty of Crom Cruach. ",,
 ,,,,,,
+armaaWFStart,PickGreeting,"$id == armaa_kade
+$global.armaa_coc_missionCompleted
+$market.id == nekki1_market
+$askedAboutPostCapital
+!$global.armaaWFStarted","ShowPersonVisual
+FireAll armaaWFStartOptions","Kade looks up as his image stabilizes, with that signature toothy grin you've become familiar with.
+
+""Ah, Commander, just the person I needed,"" he says, motioning for something offscreen. ""You'll be glad to hear negotiations with the Arusthai went better than expected. They agreed to the new peckin' order—under a few conditions, of course. They get to keep running their operations as they see fit, but it's all under my watchful eye and say-so. Every decision, every move they make... i've made arrangements to keep 'em honest.""
+
+He leans back slightly, his tone darkening. ""Not everyone's thrilled about the arrangement. There are always holdouts—those who think they can resist or stir up trouble. We've already had to put down a few uprisings, and now one of their settlements has become a problem. They're claiming 'technical issues' as the cause for delays in their tech-minin' operation, but I'm not buyin' it. Sounds more like they're testing how far they can push me.""
+
+""Do me a favor, an' sort it out. Find out what's really going on and make sure it's handled. Whatever it is, I want it resolved. Think you can make that happen?""",,
+armaaWFStartCurious,armaaWFStartOptions,!$askedCurious,,,"armaaWFStartCuriousResp:""Why not send someone local? Wouldn't they be more familiar with what's going on?""",
+armaaWFStartSkeptical,armaaWFStartOptions,!$askedSkeptical,,,"armaaWFStartSkepticalResp:""You're sure this isn't just a misunderstanding? Not every issue is rebellion.""",
+armaaWFStartSarcastic,armaaWFStartOptions,!$askedSarcastic,,,"armaaWFStartSarcasticResp:""I guess accidentally bombing their capital didn't win you any bonus points.""",
+armaaWFStartAccept,armaaWFStartOptions,,,,armaaWFStartAcceptResp:Accept,
+armaaWFStartCuriousResp,DialogOptionSelected,$option == armaaWFStartCuriousResp,"$askedCurious = true
+FireAll armaaWFStartOptions","""I don't need someone 'familiar' with these people. I need someone loyal—to me. The locals? They might still have their old loyalties, or worse, ambitions of their own. I can't afford loose ends, $player.firstName. I picked you because I know you'll do what's necessary, without hesitation.""",armaaWF0:Continue,
+armaaWFStartSkepticalResp,DialogOptionSelected,$option == armaaWFStartSkepticalResp,"$askedSkeptical = true
+FireAll armaaWFStartOptions","""Misunderstanding or not, it's a problem. And problems get solved before they grow into something worse, aye? I didn't claw my way into this position by second-guessin' my gut, $player.firstName. You of all people know what I mean.""",armaaWF1:Continue,
+armaaWFStartSarcasticResp,DialogOptionSelected,$option == armaaWFStartSarcasticResp,"$askedSarcastic = true
+FireAll armaaWFStartOptions","His smile sharpens, but it’s more wolfish now.
+
+""Let's not pretend we didn’t accomplish exactly what we set out to. Their capital is mine now. Their people answer to me. What I need now is to make sure everyone remembers that. Which is where you come in.""
+
+He spreads his arms wide, a dramatic flourish that's almost a mock bow, his grin dripping with sarcasm. ""So, save the jokes, and get it done. If you’d be so gracious as to indulge me, $playerSirOrMadam.""",,
+armaaWFStartAcceptResp,DialogOptionSelected,$option == armaaWFStartAcceptResp,"$global.armaaWFStarted = true
+AddTextSmall ""Received settlement coordinates"" highlight
+
+FireAll PopulateOptions","""Good. I knew I could count on you to handle this personally."" He flicks a hand toward a holo-map, zooming in to a settlement not far from their current location. ""The place is called Varyn's Hollow. You'll need to take a shuttle to get there—quick hop, nothing major.""
+
+He straightens, his expression sharpening. ""I've also stationed a few of my men within comms range. If things somehow go FUBAR, they'll step in. That said, I'm betting your freakish bodyguards can keep things under control if it comes to that."" A dry chuckle escapes him. ""Just don't go leveling the place. We need them alive and cooperative, not cowering in rubble.""
+
+""Resolve this quickly, cleanly, and don't let it escalate. I expect a report from your people when it's handled.""",,
+,,,,,,
+,,,,,,
+,,,,,,
+#armaaWFTryComms,DialogOptionSelected,$option == armaaWFTryComms,RemoveOption armaaWFTryComms,"Your standard comms request gives no return. If there is a comms network, or even an emergency survival unit on the surface, it's either damaged or can't make a connection.  
+
+Your comms officer tries more unconventional workarounds, from a suite of ancient standards used to ping drifting Domain-era relics to the latest suite of underworld methods that would earn a stern look from any honest customs officer; lossy but easily mistaken for background noise by sensor grids. All attempts are fruitless.
+
+""$PlayerSirOrMadam. We might have to make contact the old fashioned way,"" your comms officer reports apologetically.",,
+armaa_WFShuttle,PopulateOptions,"$global.armaaWFStarted
+!$global.armaaWFSpokeToSettlement
+$market.id == nekki1_market",ShowLargePlanet,,armaa_WFShuttle2:Take a shuttle to Varyn's Hollow,
+armaa_WFShuttle2,DialogOptionSelected,$option == armaa_WFShuttle2,ShowLargePlanet,"Beneath your feet, the deck trembles, and the unfamiliar sound of wind shear fills the air as the autoshuttle pierces through $fullName's dense atmosphere. 
+
+""Fifteen minutes out,"" your shuttle pilot informs you through your earpiece, ""Keep your EVA helmets on for now, cabin's not yet pressurized. The ride's pretty rough – wouldn't want you bumping your head against something before we touch down.""
+
+With a click, the radio communication ends. The cabin lights momentarily flicker due to a particularly forceful jolt, but then the gusty wind subsides, and the roaring engines settle into a steady cruising rhythm. The sound of air hissing through your helmet drowns out all other noises.
+
+Below, lies the verdant expanse of $fullName.",armaaWF0:Continue,
+armaaWF0,DialogOptionSelected,$option == armaaWF0,,"With no obvious landing area to see, the shuttle touches down in a burned out section of field. The rear door of the shuttle drops, allowing you and your entourage to step out into the humid $fullNameian air. While it's guaranteed at least someone has seen you land here, no one has arrived to greet you. Yet.
+
+An expansive sea of verdant grass extends as far as the eye can see, encompassing the surroundings in its vibrant embrace. Sporadically scattered across the terrain, sizable yet squat mounds interrupt the green expanse in irregular arrangements. In the distance, what you surmise to be the settlement looms, it's ugly grey buildings bordered by a low
+wall.
+
+In time a small convoy of vehicles approach the shuttle, and a cadre of soldiers hop out, weapons slung, trudging towards you.
+
+The leader, a wiry Arusthaian with salt-and-pepper hair and a rifle slung lazily over his shoulder, greets you with a disarming grin that doesn't quite reach his eyes. ",armaaWF1:Continue,
+armaaWF1,DialogOptionSelected,$option == armaaWF1,"BeginConversation man
+ShowPersonVisual
+FireAll armaaWFWhyHereOptions","""Ah, Kade's big gun, huh? Spacer, right? What brought you out here?"" he asks in a friendly tone, nonchalantly shifting his gaze between you and your companions. His attitude appears relaxed and informal, yet you can discern that behind this facade lies a weathered warrior.",,
+armaaWFWhyHereLie,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""I was sent here to negotiate.""",
+armaaWFWhyHereSignal,armaaWFWhyHereOptions,,,,"armaaWFWhyHereAns:""Just sightseeing.""",
+armaaWFWhyHereAns,DialogOptionSelected,$option == armaaWFWhyHereAns,,"""Mmm...let's hear about it back in the settlement, yes?"" he says, motioning for you and your men to follow.
+
+You and your crew are loaded into one of the vehicles the soldiers brought along. They eye you with detached curiousity, but are not much for conversation, making the trip back rather uneventful. 
+
+As you draw near what appears to be a checkpoint, you note a trooper leaning against the wall of a two-story complex. The lower level of the building seems to house shops; the signs painted on the closed metal gates suggest they offer items like local bread and other edibles. Above them, a couple of flats can be seen, their windows also tightly closed with shutters. He stands, waving off some security drones, and opens a gate that allows the convoy to pass into the city proper.",armaaWFWhyHereAns2:Continue,
+armaaWFWhyHereAns2,DialogOptionSelected,$option == armaaWFWhyHereAns2,,"Finally, the convoy comes to a halt, and the men sharing a vehicle at you nod, gesturing towards a building in the distance.
+
+The building is a squat, utilitarian fortress of concrete and steel, with grime-streaked walls and a faintly rusted exterior. Barbed wire coils along the top, and guard towers rise at each corner, manned by sentinels whose weary eyes track your approach.The people milling around the perimeter don't seem particularly well-armed. Truth be told, from what you can tell, they'd be effectively useless in any real conflict with the grade of firepower spacefaring society—or you, for that matter—can bring to bear. Their weapons are a motley assortment of outdated firearms with makeshift bayonets, and their uniforms are little more than mismatched scraps of fabric and armor.",armaaWFWhyHereAns3:Continue,
+armaaWFWhyHereAns3,DialogOptionSelected,$option == armaaWFWhyHereAns3,,"You follow the leader through several corridors, eventually coming to a hallway. Once you've entered, the leader turns to face you.
+
+""Name's Jaxan. I run this little slice of paradise, for better or worse."" He gestures vaguely at the cluttered room, his casual tone masking the weight of his words. 
+
+He doesn't waste much time with pleasantries, leaning back in his chair as he sizes you up. ""So, I'm guessing Kade sent you down to chew me out about the tech-mining? Yeah, not exactly a stellar report coming out of here lately. Now then.."" he starts, vanishing into another room before returning with two bottles in hand. He places one before you, sitting down across from you. He looks to you expectantly.","armaaWFSettlementDrink:Take a drink
+armaaWFSettlementDontDrink:Decline",
+armaaWFSettlementDrink,DialogOptionSelected,$option == armaaWFSettlementDrink,,,armaaWFSettlement2:Continue,
+armaaWFSettlementDontDrink,DialogOptionSelected,$option == armaaWFSettlementDontDrink,,,armaaWFSettlement2:Continue,
+armaaWFSettlement2,DialogOptionSelected,$option == armaaWFSettlement2,,"Jaxan sighs, rubbing the back of his neck. ""Thing is, it's not for lack of trying. My people are stretched thin as it is, keeping this place from falling apart. The real issue? Some mutineers set up shop at the mining site. Staked their claim, brought in enough firepower to make it clear they're not leaving anytime soon.""
+
+He takes a long sip from his bottle, setting it down with a soft thud. ""We've got our hands full just trying to hold the place together. You might have seen the soldiers outside, right? Look like they're about ready to fall apart if someone breathes on 'em wrong, yeah? That's 'cause they are. Hell, most of 'em wouldn’t even pass muster back in Arusthai proper. Got a few who know their way around, but most of 'em are just kids with rifles that barely work.""",armaaWFSettlement3:Nod Politely,
+armaaWFSettlement3,DialogOptionSelected,$option == armaaWFSettlement3,FireAll armaaWFSettlementQuestions,"Part of you wonders if this kind of political strife is below your paygrade. Surely, some paper pusher would've been better suited for sorting out these greivances about the new world order? You push the thought out of your head as you register the man broaching a topic more relevant to the task at hand.
+
+""...So here we are. My hands are tied, and the mutineers are sitting on the only thing keeping this place relevant. Figured Kade'd send someone eventually—didn't expect it to be you, but I'm not complaining. You're probably better equipped to deal with this mess than any of my lot.""",armaaWFSettlementDontDrink:Decline,
+armaaWFSettlementWant,armaaWFSettlementQuestions,!$askedWhatWant,,,"armaaWFSettlementWantResp:""What do they want?""",
+armaaWFSettlementWhereArusthai,armaaWFSettlementQuestions,!$askedWhereArusthai,,,"armaaWFSettlementWhereArusthaiResp:""Why hasn't Arusthai stepped in yet? This seems like their job.""",
+armaaWFSettlementSentiment,armaaWFSettlementQuestions,!$askedSentiment,,,"armaaWFSettlementSentimentResp:""How do people here feel about working under Kade’s watch? Is this rebellion isolated?""",
+armaaWFSettlementAccept,armaaWFSettlementQuestions,,,,"armaaWFSettlementAcceptResp:""I've heard enough.""",
+armaaWFSettlementWantResp,DialogOptionSelected,$option == armaaWFSettlementWantResp,"$askedWhatWant = true
+FireAll armaaWFSettlementQuestions","""I'm not sure they even know. Some of 'em probably think they’re fighting for freedom or some other noble nonsense, but most are just bitter. Bitter about Kade, about their lot in life, about… hell, probably me, too. What they want is to push back, but they're not organized enough to make it mean anything. Just a bunch of angry folks with guns in their hands.""",,
+armaaWFSettlementWhereArusthaiResp,DialogOptionSelected,$option == armaaWFSettlementWhereArusthaiResp,"$askedWhereArusthai = true
+FireAll armaaWFSettlementQuestions","""Yeah, it does, doesn't it? But they've got bigger fish to fry, keeping order in the major hubs and squashing other rebellions before they get any ideas. Out here? We're low priority. No one’s rushing to put out a fire in an outhouse when the city's on the verge of burning down.""",,
+armaaWFSettlementSentimentResp,DialogOptionSelected,$option == armaaWFSettlementSentimentResp,"$askedSentiment = true
+FireAll armaaWFSettlementQuestions","Jaxan’s expression darkens, and he taps a finger against the table rhythmically.
+""It’s… complicated. Some folks see Kade as a necessary evil—keeps the lights on, keeps the wolves at bay. Others? They see him as just another tyrant with a shiny uniform. The rebellion’s not isolated, but it’s not a full-blown revolution either. It’s pockets of resistance, scattered anger. Most people are too scared or too tired to do much of anything, but it’s a powder keg waiting for the right spark. And that’s what worries me.""",,
+armaaWFSettlementAcceptResp,DialogOptionSelected,$option == armaaWFSettlementAcceptResp,"FireAll PopulateOptions
+$global.armaaWFSpokeToSettlement = true","Jaxan nods, his gaze steady but weary.
+""Fair enough. I’ve laid it all out for you. Now it’s your call on how to handle this mess.",,
+,,,,,,
+armaa_WFShaftBattle,PopulateOptions,"$global.armaaWFSpokeToSettlement
+!$global.armaa_capturedMorgana
+$market.id == nekki1_market",,,armaa_WFShaftBattleStart:Proceed to the subterranean facility,
+armaa_WFShaftBattleStart,DialogOptionSelected,$option == armaa_WFShaftBattleStart,"armaa_jeniusShaftBattle
+$global.armaa_IKCoreDescent = true","As your $shipOrFleet approaches the entrance to the tech-mining site, the desolation of the rocky plain gives way to the imposing sight of the massive blast doors ahead. Cracked and weathered by time, they loom over the terrain like ancient sentinels. With a shriek of grinding metal, the doors begin to part, releasing a rush of stale, subterranean air thick with the tang of rusted machinery and damp stone.
+
+Beyond the doors lies the shaft—a cavernous abyss stretching deep into the earth. The reinforced walls are lined with tangled cables, long-defunct machinery, and crumbling catwalks. Flickering lights sputter in and out, casting fleeting shadows across the eerie void.
+
+Before your fleet can advance further, your sensors light up with a flurry of activity.  ""Multiple energy signatures— IFF is hostile. Looks like they've got defenses primed and ready.""
+
+Your tactical display updates, showing several vessels moving into defensive positions deeper within the shaft. The mutineers have clearly fortified their hold on the mining site, their larger ships already positioned with calculated precision.
+
+From below, the marine detachment commander radios in, his voice tense.
+""Ground teams in position. No visual contact yet, but we’re detecting movement—plenty of it. They know we're here.""
+
+As your $shipOrFleet hovers over the chasm, spotlights flicker on, slicing through the oppressive darkness to reveal a labyrinth of abandoned mining platforms, crumbling tunnels, and rusted equipment.","armaa_ShaftBattleEnd:""Report.""",
+armaa_WFShaftBattleEnd,DialogOptionSelected,$option == armaa_WFShaftBattleEnd,"AddTextSmall ""Recovered Morgana wreckage"" highlight","""Commander, you’re going to want to see this,"" she says. ""We've got the remains of one of those advanced fighters you took down earlier. No survivors - most of it's wrecked, but the core structure's intact. This thing... it’s custom-built, no doubt about it. Way beyond the mutineers' usual tech.""
+
+The camera feed zooms in, revealing scorched plating and shattered wings. The cockpit, though crushed and dark, still flickers faintly with residual power.
+The tactical officer leans closer to the console, his brow furrowed as he studies the wreck.
+
+""That's no off-the-shelf hardware,"" he mutters. ""Whoever built this had access to resources far beyond what these mutineers should've had. There’s no way they got this on their own.""
+
+The salvor's voice cuts in again, her tone tinged with curiosity. ""Scans are showing some systems might still be functional. If we can extract it, we might get some useful data—or at least figure out who's bankrolling these guys.""",armaa_WFShaftBattleEnd2:Continue,
+armaa_WFShaftBattleEnd2,DialogOptionSelected,$option == armaa_WFShaftBattleEnd2,"$global.armaa_capturedMorgana = true
+AdjustRepPerson armaa_kade FRIENDLY 3
+AddCredits 200000
+FireAll PopulateOptions","Your $shipOrFleet ascends carefully, the battered walls of the shaft looming around you like the ribs of some colossal beast.
+
+Outside, the settlement is just as grim as you left it, but there's a flicker of relief in the faces of the people as word spreads. The mutineers are no longer a threat, and the tech-mining site is back in their control. As your officers finalize their status report, you take a moment to relay the situation to the outpost leader. His gratitude is gruff but genuine, his parting words promising an attempt to get the settlement back on its feet—though it’s clear they have a long road ahead.
+
+Back aboard your flagship, the report is prepared. Your findings on the advanced fighter and the unusual technology are compiled in detail, alongside your assessment of the mutineers' origins and intentions. One of your officers forwards the file to Kade without delay, along with your recommendation to investigate the source of the mutineers' resources.
+
+As your fleet breaks free of the planet's atmosphere, the installation and its struggles fade into the distance, replaced by the expanse of space. Another mission completed, another problem solved—but the echoes of the battle and the questions it raised linger.",,
 armaa_devCocStartOption,PopulateOptions,"$global.isDevMode
 $market.id == armaa_meshanii_market
 !$global.armaa_coc_missionCompleted
@@ -1030,9 +1140,18 @@ You wonder what the target might be, but the man’s voice cuts through your tho
 
 ""Heard about Jenius, mate? It's a mess over there. Any kind of order collapsed during the AI Wars, and none of the major factions have bothered t' touch the place in cycles—too unstable. But there's plenty of credits an' loot to be made if ye've got the nerve.""",,
 armaa_IKBarEventTooWeak,DialogOptionSelected,"$option == armaa_IKBarEvent
-$player.fleetPoints < 100","AddTextSmall ""Your fleet isn't enough for the job. If you return with at least 100 FP worth of ships, perhaps he will change his mind."" highlight
+$player.fleetPoints < 100
+!$convincedWorthy","SetStoryOption armaa_IKBarEventTooWeakSP 1 armaa_IKBarEventTooWeakSP combat ""Insisted on your personal skill when scouted for a mission on New Meshan""
+AddTextSmall ""Your fleet isn't enough for the job. If you return with at least 100 FP worth of ships, perhaps he will change his mind."" highlight
 ","""Sorry mate, I don't quite think you're up to the task yet. There's time yet, come on by when you've got a bit more experience under your belt, yeah?""
-",anh_cantinaReturn:Return to the bar,
+","anh_cantinaReturn:Return to the bar
+armaa_IKBarEventTooWeakSP:Insist on your capabilities",
+armaa_IKBarEventTooWeakSP,DialogOptionSelected,"$option == armaa_IKBarEventTooWeakSP
+$player.fleetPoints < 100","BeginConversation armaa_kade
+$convincedWorthy = true
+FireAll armaa_IKBarOptions","You graciously thank Kade for his concern, but insist it is not necessary. Weaving an intricate tale of your exploits - perhaps with a little bluster, perhaps not, you set forth a strong case for your employment, despite your $shipOrFleet's appearances.
+
+He is silent for but a moment, before shrugging. ""Sod it. What do I have to lose, eh?""",,
 armaa_IKBarEventWhatsReward,armaa_IKBarOptions,!$askedReward,,,"armaa_IKBarEvent1Resp:""And what's in it for me?""",
 armaa_IKBarEventDecline,armaa_IKBarOptions,,,,"99:armaa_IKBarEvent2Resp:""I appreciate the offer but I've got my own business to attend to.""",
 armaa_IKBarEventHowCanTrust,armaa_IKBarOptions,!$probedMore,,,"armaa_IKBarEvent3Resp:""I'll need assurances that the credits are worth the risk.""",
@@ -1193,7 +1312,11 @@ FireAll PopulateOptions","$personName's expression holds a touch of disbelief as
 armaa_dawnSmallTalkFriendlyWithChurch,,RepGTE luddic_church FAVORABLE,,,,
 ,,,,,,
 armaa_loreDump1,DialogOptionSelected,$option == armaa_loreDump1,,"""Yeah, um...where is that- ah!""",armaa_loreDump2: Continue,
-armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"As $personName delves into the details of the company's dealings, you faintly listen, only registering information that would be useful. Within her chatter, you manage to catch snippets of information about Arma Armatura's vast array of products. From power armor to mechs, it seems they're deeply involved in the realm of military equipment. Yet, amidst the talk of such advanced technology, you also learn that they create more mundane designs, like construction vehicles, service drones, and sub-delta automatons, which find use in civil applications.",armaa_loreDump3: Continue,
+armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"Arma Armatura was once a dominant megacorporation, its influence spanning the military-industrial sector long before the Collapse and well into its early days. However, the First AI War dealt a severe blow to its manufacturing capabilities and assets, stripping it of much of its former power. Despite these losses, the company remains a major player in the production of military and commercial technology. Their catalog includes everything from power armor and mechs to simpler automatons, service drones, and construction vehicles.
+
+These days, Arma Armatura is just as focused on shaping the future of New Meshan—its corporate headquarters and a growing hub of redevelopment—as it is on selling cutting-edge hardware. The promotional materials lean heavily into this narrative, filled with the polished rhetoric of corporate responsibility.
+
+As $personName speaks at length about the company's operations, you only half-listen, filtering for useful details. Between the corporate platitudes, you manage to pick up key insights—Arma Armatura's reach extends far beyond the battlefield, its technology woven into both military and civilian life.",armaa_loreDump3: Continue,
 armaa_loreDump3,DialogOptionSelected,$option == armaa_loreDump3,"AddTextSmall ""Received \""ArmaA Product Portfolio (c.200 Edition)\"""" highlight
 $armaa_gotBrochure = true
 FireAll PopulateOptions","""Got any burning questions or wanna dig into a specific product? Don't hold back, just shoot. I'll toss you our brochure for the nitty-gritty details,"" she gruffly states.",,

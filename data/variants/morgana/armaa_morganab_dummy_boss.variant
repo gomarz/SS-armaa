@@ -1,0 +1,31 @@
+{
+  "variantId": "armaa_morganab_dummy_boss",
+  "hullId": "armaa_morganab_dummy",
+  "displayName": "Support",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "swarmer_fighter",
+        "WS0002": "swarmer_fighter"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "shockrepeater",
+        "WS0004": "shockrepeater"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -33,7 +33,7 @@
     -45,
     45
   ],
-  "barrelMode": "ALTERNATING",
+  "barrelMode": "LINKED",
   "animationType": "SMOKE",
   "autocharge": true,
   "smokeSpec": {

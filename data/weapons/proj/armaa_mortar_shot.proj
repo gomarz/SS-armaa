@@ -41,7 +41,7 @@
 									 "particleColor":[240,30,90,255],
 									 "explosionColor":[240,30,90,155],
 									 "useDetailedExplosion":true,
-									 "sound":"magellan_fusion_crit"},
+									 "sound":""},
 					}		  
 	
 }

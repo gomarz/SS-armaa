@@ -17,10 +17,10 @@ public class armaa_selector_blade extends BaseHullMod
 		}    
     
     @Override
-    public String getDescriptionParam(int index, ShipAPI.HullSize hullSize)
-	{
-		if (index == 0) return "BAZOOKA";
-		if (index == 1) return "Remove this hullmod to cycle between weapons.";
+    public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
+		if (index == 0) return "MOONLIGHT";
+		if (index == 1) return "WARNING: Pilots will attempt to close to minimal range with this weapon!";
+		if (index == 2) return "Remove this hullmod to cycle between weapons.";
         return null;
     }
 }

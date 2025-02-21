@@ -18,7 +18,7 @@
     "armaa_variableRifle",
     "armaa_himac",
     "armaa_alesteMeleeSwap",
-    "armaa_alesteSkinSwap",
+    "armaa_alesteSkinSwap"
   ],
   "builtInWeapons": {
     "C_ARMR": "armaa_sprigganRightArm",
@@ -61,8 +61,8 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "renderOrderMod": -900,
-      "locations": [0, 0]
+      "locations": [0, 0],
+      "renderOrderMod": -900
     },
     {
       "id": "WS001",
@@ -175,7 +175,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-19, -0]
+      "locations": [0, -0]
     }
   ],
   "engineSlots": [

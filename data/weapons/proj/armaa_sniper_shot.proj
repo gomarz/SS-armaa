@@ -1,18 +1,18 @@
 {
 	"id":"armaa_sniper_shot",
 	"specClass":"projectile",
-	"onHitEffect":"data.scripts.weapons.armaa_BarrettaOnHitEffect",
+	#"onHitEffect":"data.scripts.weapons.armaa_BarrettaOnHitEffect",
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	"length":130.0,
-	"width":10,
+	"length":80.0,
+	"width":6,
 	"fadeTime":0.3,
 	"fringeColor":[255,125,0,255],
 	"coreColor":[250,197,92,255],
 	"glowColor":[255,100,0,25],
-	"glowRadius":0,
-	"hitGlowRadius":100,	
+	"glowRadius":5,
+	"hitGlowRadius":40,	
 	"textureType":"ROUGH",  # only needed for BEAM spawnType
 	"textureScrollSpeed":-256.0,
 	"pixelsPerTexel":1.0

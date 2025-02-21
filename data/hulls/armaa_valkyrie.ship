@@ -85,7 +85,7 @@
       "mount": "TURRET",
       "arc": 190,
       "angle": -90,
-      "locations": [60, -30]
+      "locations": [10, -29]
     },
     {
       "id": "MODULE_CONTROLLER",

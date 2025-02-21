@@ -1,3 +1,64 @@
+v3.2
+------
+======Additions======
+- Added SP option to circumvent FP limit for starting ACoC
+- New Wing: MUSHA
+	- 8 OP, 3 wingsize
+	- slow, mid-long range, prioritize fighters
+- New Mission: Descent
+	
+======Fixes======
+- Fixed Kouto (E-Type) missing desc
+- Fixed some bugs that could occur if mod was loaded into an existing save
+- Fixed reference to Raven at abandoned station
+
+======Tweaks======
+- Valken
+	- OP: 7->4
+	- Refit Time:9->5
+	- Revised description
+	- Revised sprite
+	- LAG -> M1 Pod
+	- Matching their description, may explode if torso is disabled
+	- deals up to HP+(ammo*weaponDamage)*0.25 in small AOE
+
+- Valken X
+	- Armor:100->75
+	- LS-20
+		- Chargeup: 0.33->0.11
+		- Chargedown: 0.33->0.55
+		- should reduce whiffed melee attacks due to the windup
+
+- Watchdog
+	- HP: 5000->6000
+	- Siege Mode
+		- Speed Reduction: 50%->20%
+
+- Zanac
+	- Top Speed: 90->100
+	
+- Gunhed
+	- Armor:250->200
+
+- GuarDUAL
+	- Minor gfx tweak
+	- Improved(?) AI
+	- Some characteristics are 
+	- Now has WINGCOM built-in
+		- should help offset limited weapon slot
+	- tweaked fire offset for head weapon
+	- Percept (HOMING)
+		- EMP: 25->40
+- Bakraid
+	- clamped CR to 1(100%) to prevent 50000% CR bug when seperating
+- Aleste SII
+	- Ship System: Fuller Auto
+		- fixed incorrect system desc, said increases RoF by 30% and Time Dilation by 20%, but reduces Weapon flux cost by 30% and time dilation by 25%
+- Zanac
+	-Ship System
+		- in combat stated only affected ballistics, when it affects energy+ballistic
+		- Stated flux reduction was 10%, when actual reduciton was 20% 
+
 v3.1.5
 -------
 - stopped some system only weapon from being purchaseable
