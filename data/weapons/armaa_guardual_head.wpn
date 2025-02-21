@@ -3,20 +3,26 @@
   "specClass": "projectile",
   "projectileSpecId": "vulcan_shot",
   "type": "DECORATIVE",
-  "showDamageWhenDecorative":true,
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_guarDualEffect",
   "displayArcRadius": 250,
   "turretSprite": "graphics/armaa/ships/guardual/armaa_guardual_head.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  "showDamageWhenDecorative": true,
   "renderHints": [
     NEVER_RENDER_IN_CAMPAIGN
   ],
   "turretOffsets": [
-    0.5,
-    3.5
+    1,
+    3,
+    1,
+    -3,
+    5,
+    0
   ],
   "turretAngleOffsets": [
+    0,
+    0,
     0
   ],
   "hardpointOffsets": [

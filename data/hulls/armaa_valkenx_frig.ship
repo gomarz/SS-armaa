@@ -14,11 +14,14 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
-    "armaa_strikeCraftFrig",
+    "armaa_wingCommander",
     "autorepair",
     "armaa_vxSkinSwap",
     "armaa_himac",
     "armaa_variableRifle"
+  ],
+  "builtInWings": [
+    "armaa_valkenx_wing"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_valkenx_torso_frig",

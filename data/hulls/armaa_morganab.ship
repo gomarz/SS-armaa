@@ -72,8 +72,8 @@
     },
     {
       "id": "WS0003",
-      "size": "LARGE",
-      "type": "BALLISTIC",
+      "size": "SMALL",
+      "type": "DECORATIVE",
       "mount": "HIDDEN",
       "arc": 5,
       "angle": 0,

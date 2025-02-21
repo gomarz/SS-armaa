@@ -22,8 +22,8 @@ armaa_hominglaserkin_trail3,armaa_hominglaser2_kin,beam_trail_smooth,14,0,0.1,0.
 armaa_seeker_trail,armaa_karma_seeker,beam_trail_smooth,10,0,0.1,0.1,10,5,"[149,206,240]","[0,0,250]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_spike_shot,armaa_spike_shot,base_trail_mild,10,0.1,0.1,1,10,5,"[225,200,200]","[225,100,200]",0.5,256,-256,0,0,1,FALSE,FALSE,TRUE,50,0,0,180,45,0,TRUE,
-armaa_sniper_shot,armaa_sniper_shot,base_trail_mild,5,0.1,0.1,0.5,5,1,"[250,250,150]","[150,150,25]",0.5,256,10,0,0,1,TRUE,FALSE,TRUE,50,0,0,180,45,0,FALSE,
-armaa_sniper_shot2,armaa_sniper_shot,base_trail_zap,8,0,0.1,0.15,8,10,"[100,100,0]","[55,100,250]",0.8,128,10,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+armaa_sniper_shot,armaa_sniper_shot,base_trail_mild,5,0.1,0.1,0.2,5,1,"[250,250,150]","[150,150,25]",0.5,256,10,0,0,1,TRUE,FALSE,TRUE,50,0,0,180,45,0,FALSE,
+armaa_sniper_shot2,armaa_sniper_shot,base_trail_zap,8,0,0.1,0.15,8,10,"[100,100,0]","[100,100,100",0.8,128,10,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
 armaa_seeker_trail,armaa_mrm3,beam_trail_smooth,10,0,0.1,0.1,10,5,"[149,206,240]","[0,0,250]",0.8,400,1000,5,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,TRUE,FALSE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_aleste1,heavyrynex_shot,beam_trail_helix,5,0,0.2,0.4,12,15,"[245,188,44]","[255,0,0]",1,400,-256,0,10,1,TRUE,FALSE,TRUE,150,0,0,180,150,0,TRUE,FALSE

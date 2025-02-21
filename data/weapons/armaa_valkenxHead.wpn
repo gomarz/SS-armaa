@@ -7,8 +7,8 @@
   #"everyFrameEffect": "data.scripts.weapons.armaa_torsoSwapper", 
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordHead2.png",
-  #"turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  #"turretSprite": "graphics/armaa/ships/recordbreaker/armaa_recordHead2.png",
+  "turretSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
   "glowColor": [
     255,

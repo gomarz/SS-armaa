@@ -1,0 +1,34 @@
+{
+  "variantId": "armaa_morgana_standardm",
+  "hullId": "armaa_morgana",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 2,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "railgun",
+        "WS0004": "railgun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "sabot",
+        "TRUE_GUN2": "sabot"
+      }
+    }
+  ],
+  "modules": [ {"MORGANASUP": "armaa_morganab_dummy_standard"}],
+  "wings": []
+}

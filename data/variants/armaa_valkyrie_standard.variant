@@ -25,6 +25,9 @@
   "modules": [
     {
       "MODULE1": "armaa_aleste_frig_classic_standard"
+    },
+    {
+      "MODULE2": "armaa_musha_frig_standard"
     }
   ],
   "wings": []

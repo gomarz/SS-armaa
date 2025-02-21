@@ -1,0 +1,17 @@
+{
+	"id":"armaa_siegeModeFighter",
+	"type":"STAT_MOD",
+        "aiType":"WEAPON_BOOST",
+	"statsScript":"data.scripts.shipsystems.armaa_siegeModeFighterStats",
+	
+	#"weaponGlowColor":[255,200,0,155],
+	"weaponGlowColor":[205,50,20,255],
+	"weaponTypes":[BALLISTIC,ENERGY],
+	#"shieldRingColor":[255,66,255,255],
+	#"shieldInnerColor":[255,15,100,75],
+	#"shieldThicknessMult":1.1,
+	#"shieldFluctuationMult":1.5,
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

@@ -33,6 +33,9 @@
 		"music_armaa_ax_bounty":[
 			{"file":"showdown.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
+		"music_armaa_mission_descent":[
+			{"file":"world_breaker.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
+		],
 		"music_armaa_citybattle":[
 			{"file":"escape_from_control.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
