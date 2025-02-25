@@ -109,7 +109,7 @@
       "mount": "TURRET",
       "arc": 30,
       "angle": 0,
-      "locations": [17, 22]
+      "locations": [9.5, 13]
     },
     {
       "id": "WS0003",
@@ -118,7 +118,7 @@
       "mount": "TURRET",
       "arc": 30,
       "angle": -0,
-      "locations": [17, -22]
+      "locations": [9.5, 13]
     },
     {
       "id": "WS0002",
@@ -164,8 +164,26 @@
       "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 70,
-      "angle": 30,
-      "locations": [-4, 47]
+      "angle": 0,
+      "locations": [30, -1]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 70,
+      "angle": 0,
+      "locations": [17, 22]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [17, -22]
     }
   ],
   "engineSlots": [
