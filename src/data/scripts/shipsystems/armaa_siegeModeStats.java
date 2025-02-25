@@ -28,7 +28,7 @@ import org.lwjgl.opengl.Display;
 public class armaa_siegeModeStats extends BaseShipSystemScript {
 
 	public static final float SENSOR_RANGE_PERCENT = 25f;
-	public static final float WEAPON_RANGE_PERCENT = 80f;
+	public static final float WEAPON_RANGE_PERCENT = 100f;
 	private float rotation = 0f;
 	private IntervalUtil interval = new IntervalUtil(0.05f,0.05f);	
 	private List<ShipAPI> targets;	
