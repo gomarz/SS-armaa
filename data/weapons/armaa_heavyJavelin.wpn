@@ -42,7 +42,7 @@
   "turretAngleOffsets": [
     0
   ],
-  "turretGunSprite": "graphics/armaa/weapons/armaa_javelin_barrel.png",
+  "turretGunSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_barrel.png",
   "turretOffsets": [
     11.5,
     1

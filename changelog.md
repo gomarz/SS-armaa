@@ -5,6 +5,8 @@ v3.2
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize
 	- slow, mid-long range, prioritize fighters
+- Bassline:
+	- Combat Carrier
 - New Mission: Descent
 	
 ======Fixes======
@@ -15,6 +17,8 @@ v3.2
 
 ======Tweaks======
 
+- Increased Shield Upkeep for all strikecraft (except Aleste S-II and Valkazard)
+	- 0.2->0.3
 -Strikecraft hullmod specifies ships benefit from Frigate-based bonuses
 
 Juno Mk. III
@@ -37,7 +41,7 @@ Altagrave
 	- Revised sprite
 	- LAG -> M1 Pod
 	- Matching their description, may explode if torso is disabled
-	- deals up to HP+(ammo*weaponDamage)*0.25 in small AOE
+		- deals up to HP+(ammo*weaponDamage)*0.25 in small AOE
 
 - Valken X
 	- Armor:100->80
@@ -47,10 +51,17 @@ Altagrave
 		- Chargedown: 0.33->0.55
 		- should reduce whiffed melee attacks due to the windup
 
+- Spriggan Powered
+	- Medium Ballistic -> Small Ballistic
+	- Added 2x Small Missiles
+	- Removed drone wing
+	- Top Speed: 130->100
+	- Armor: 100->150
+	- Ship System: FMR -> Manuevering Jets
+
 - Watchdog
-	- HP: 5000->6000
 	- OP: 85->100
-	- Shield Efficiency: 1.1->0.9
+	- Shield Efficiency: 1.1->1.05
 	- Add 2x small composite hardpoints
 	- Siege Mode
 		- Speed Reduction: 50%->20%
@@ -63,14 +74,18 @@ Altagrave
 	- Armor:250->200
 
 - GuarDUAL
-	- Minor gfx tweak
+	- gfx tweak
 	- Improved(?) AI
-	- Some characteristics are 
-	- Now has WINGCOM built-in
-		- should help offset limited weapon slot
+	- Mode BETA
+		- Ballistic RoF: 0.50x -> 1.00x
+	- Mode ALPHA
+		- Ballistic RoF: 1.00x->1.50x
+		- should help offset limited weapon slots
+	- Top Speed: 250->215
+	- Shield Efficiency: 0.85 -> 0.90
 	- tweaked fire offset for head weapon
 	- Percept (HOMING)
-		- EMP: 25->40
+		- EMP: 25->45
 - Bakraid
 	- clamped CR to 1(100%) to prevent 50000% CR bug when seperating
 - Aleste SII

@@ -3,20 +3,23 @@
   "hullId": "armaa_morganamp",
   "displayName": "Standard",
   "goalVariant": false,
-  "fluxCapacitors": 5,
+  "fluxCapacitors": 7,
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "hardenedshieldemitter",
+    "eccm"
+  ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "harpoon",
-        "TRUE_GUN2": "harpoon",
-        "WS0003": "irpulse",
-        "WS0004": "irpulse"
+        "TRUE_GUN": "sabot",
+        "TRUE_GUN2": "sabot",
+        "WS0003": "lightag",
+        "WS0004": "lightag"
       }
     }
   ],

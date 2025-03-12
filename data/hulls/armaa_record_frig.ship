@@ -14,14 +14,9 @@
   "builtInMods": [
     "cataphract",
     "strikeCraft",
-    "armaa_strikeCraftFrig",
-    "autorepair",
     "reduced_explosion",
     "rugged",
     "armaa_variableRifle"
-  ],
-  "builtInWings": [
-    "armaa_bit_spriggan"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_valkenx_frig_ml_variablerifle",
@@ -52,16 +47,16 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [1, -1]
+      "locations": [1, -2]
     },
     {
       "id": "TRUE_GUN",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [1, -1],
+      "locations": [4, -2],
       "renderOrderMod": -900
     },
     {
@@ -143,7 +138,7 @@
       "mount": "TURRET",
       "arc": 193,
       "angle": 0,
-      "locations": [-22, -0],
+      "locations": [-18, -0],
       "renderOrderMod": 9999
     },
     {
@@ -153,7 +148,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [-22, -0]
+      "locations": [-18, -0]
     },
     {
       "id": "SHIELD",
@@ -172,6 +167,35 @@
       "arc": 0,
       "angle": 0,
       "locations": [-10, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 10.5,
+      "locations": [3.5, 15]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": 20,
+      "locations": [-8, 17],
+      "renderOrderMod": 500
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -20,
+      "locations": [-8, -17],
+      "renderOrderMod": 500
     }
   ],
   "engineSlots": [

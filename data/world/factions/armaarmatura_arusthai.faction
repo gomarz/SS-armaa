@@ -60,10 +60,10 @@
 		"hulls":[	
 				"armaa_xyphos",
 				"armaa_valkenx_frig",
-				"armaa_record_frig",
+				"armaa_leynos_frig",
 				#"armaa_monitor",
-				#"armaa_whitebase",
-				#"mora",
+				"armaa_whitebase",
+				"mora",
 				"cerberus",
 				"gemini",
 				"hermes",
@@ -73,7 +73,7 @@
 				"mudskipper",
 				"buffalo",
 				"nebula",
-			    	#"sunder",
+			    	"brawler",
 				"condor"
 			],
 	},
@@ -86,6 +86,8 @@
 			"fighters":[
 			"broadsword_wing",
 			"armaa_record_wing",
+			"armaa_valkenmp_wing",
+			"armaa_musha_wing",
 			"wasp_wing",
 			"talon_wing",
 			],
@@ -110,15 +112,15 @@
 		],
 	},
 	"factionDoctrine":{
-		"warships":3,
-		"carriers":2,
-		"phaseShips":2,
+		"warships":4,
+		"carriers":1,
+		"phaseShips":1,
 
 		"officerQuality":1,
 		"shipQuality":1,
 		"numShips":4,
 
-		"shipSize":1,
+		"shipSize":2,
 
 		"aggression":5,
 

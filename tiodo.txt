@@ -7,3 +7,4 @@
 - Unused string in strikecraft repair ???
 - VX redesign? Gave it Wingcom
 - make valken actually worth using
+- fix Sus Valkazard handover (even if its supposed to fire because valk was already acquired, we need to account for it being gotten by other means..?)
