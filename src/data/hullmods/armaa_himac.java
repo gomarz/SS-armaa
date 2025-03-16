@@ -419,7 +419,7 @@ public class armaa_himac extends BaseHullMod {
             data.cooldown += amount*bonus;
         }
 		
-		if(!data.burnedOut && !ship.getFluxTracker().isOverloaded() || ship.getEngineController().isFlamedOut())
+		if(!data.burnedOut && !ship.getFluxTracker().isOverloaded() && !ship.getEngineController().isFlamedOut())
 		{
 			if(Global.getCombatEngine().getPlayerShip() == ship)		
 				isKeyPressed(ship);

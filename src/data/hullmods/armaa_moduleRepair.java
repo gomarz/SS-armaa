@@ -80,8 +80,12 @@ public class armaa_moduleRepair extends BaseHullMod {
 
 			}
 			
-			if(ship.getHullLevel() > 0.5 && isDestroyed)
+			if(ship.getHullLevel() > 0.5 && isDestroyed || ship.getParentStation() != null && !Global.getCombatEngine().isEntityInPlay(ship.getParentStation()))
 			{
+				if(ship.getCaptain().isDefault())
+				{
+					ship.getCaptain().setPersonality("cautious");
+				}
 				isDestroyed = false;
 				ship.setCollisionClass(CollisionClass.FIGHTER);
 				ship.getSpriteAPI().setColor(new Color(255,255,255,255));

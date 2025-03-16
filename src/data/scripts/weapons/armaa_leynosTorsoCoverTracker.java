@@ -99,7 +99,7 @@ public class armaa_leynosTorsoCoverTracker implements EveryFrameWeaponEffectPlug
 			//y = originalY;
 			//head.getSpec().getTurretFireOffsets().add(new Vector2f(x,y+currRetract));			
 		}		
-		head.getSprite().setColor(new Color(1f,1f,1f,(1f-(1f*(currRetract/retractLevel)))));
+		head.getSprite().setColor(new Color(1f,1f,1f,MathUtils.clamp(1f - (currRetract / retractLevel), 0, 1)));
 		
     }
 }

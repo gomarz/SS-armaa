@@ -43,20 +43,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 	private float depth = 0.01f;
 	private boolean startedMusic = false;
 	private boolean finalBossSpawn = false;
-    public static Map MANUVER_MALUS = new HashMap();
 	boolean reinforcementsTriggered = false;
-    static {
-        /*mass_mult.put(HullSize.FRIGATE, 3f);
-        mass_mult.put(HullSize.DESTROYER, 3f);
-        mass_mult.put(HullSize.CRUISER, 2f);
-        mass_mult.put(HullSize.CAPITAL_SHIP, 2f); massy*/
-        MANUVER_MALUS.put(HullSize.FIGHTER, 0.90f);
-        MANUVER_MALUS.put(HullSize.FRIGATE, 0.80f);
-        MANUVER_MALUS.put(HullSize.DESTROYER, 0.60f);
-        MANUVER_MALUS.put(HullSize.CRUISER, 0.50f);
-        MANUVER_MALUS.put(HullSize.CAPITAL_SHIP, 0.40f);
-    }
-	
 	public Color shiftColor(Color start, Color end)
 	{
 		Color intermediateColor = Color.WHITE;
@@ -73,8 +60,6 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 		intermediateColor = new Color(red, green, blue, alpha);	
 		
 		return intermediateColor;
-		
-		
 	}
 	
 	public Vector2f calculateMidpoint()
@@ -122,13 +107,12 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			Global.getSoundPlayer().playCustomMusic(0,0,"music_armaa_pirate_encounter_hostile",true);	
 			playedSecondPhase = true;
 		}
-		Color bgColor = new Color(40,25,10,150);
+		Color bgColor = new Color(0,30,15,150);
 		Color endColor = new Color(25,25,25,255);
 		Color endColor2 = new Color(25,25,25,120);	
 		Color endColor3 = new Color(0,0,0,0);			
 		engine.setBackgroundGlowColor(shiftColor(bgColor,endColor));
 		engine.setBackgroundColor(endColor);		
-		engine.maintainStatusForPlayerShip("AceSystem2","graphics/ui/icons/icon_repair_refit.png","",""+engine.getViewport().getViewMult(),true);
 		if(!reinforcementsTriggered && engine.getElapsedInContactWithEnemy() > 1)
 		{			
 			reinforcementsTriggered = true;
@@ -291,7 +275,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			new Vector2f(100f,100f),		
 			0f,
 			spin/5f,
-			shiftColor(new Color(30,20,5,255),new Color(0,0,0,255)),
+			shiftColor(new Color(0,20,10,255),new Color(0,0,0,255)),
 			false,
 			0f,
 			0f,
@@ -333,7 +317,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			new Vector2f(100f,100f),		
 			0f,
 			spin/2,
-			shiftColor(new Color(30,20,5,255),new Color(0,0,0,255)),
+			shiftColor(new Color(0,10,20,255),new Color(0,0,0,255)),
 			false,
 			0f,
 			0f,
@@ -380,11 +364,9 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			}
 			for (ShipAPI ship : engine.getShips())
 			{
-				ship.getMutableStats().getMaxSpeed().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));
-				ship.getMutableStats().getMaxTurnRate().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));
-				ship.getMutableStats().getAcceleration().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));
-				ship.getMutableStats().getTurnAcceleration().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));	
-				Global.getCombatEngine().maintainStatusForPlayerShip("atmo", "graphics/ui/icons/icon_repair_refit.png","In Atmoshpere", "Manuverability reduced",true);	
+				ship.getMutableStats().getSensorProfile().modifyMult(ship.getId()+"_atmo",0.50f);					
+				ship.getMutableStats().getSensorStrength().modifyMult(ship.getId()+"_atmo",0.50f);	
+				Global.getCombatEngine().maintainStatusForPlayerShip("atmo", "graphics/ui/icons/icon_repair_refit.png","EM Interference", "Sensor range reduced",true);	
 				if(!ship.isAlive() || ship.isHulk() || !engine.isEntityInPlay(ship))
 				{
 					engine.removeEntity(ship);					
@@ -396,9 +378,9 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 	private Color getSmokeColor() {
 		Random rand = new Random();
 		// Define the range for fiery red-orange shades
-		float r = 0.04f + rand.nextFloat() * 0.1f; // Minimal red for a cold feel
-		float g = 0.03f + rand.nextFloat() * 0.04f; // Cool greenish-blue
-		float b = 0.02f + rand.nextFloat() * 0.02f; // Vivid blue tones
+		float r = 0.03f + rand.nextFloat() * 0.1f; // Minimal red for a cold feel
+		float g = 0.03f + rand.nextFloat() * 0.1f; // Cool greenish-blue
+		float b = 0.04f + rand.nextFloat() * 0.1f; // Vivid blue tones
 
 		// Return the color with adjusted alpha based on the ratio
 		return new Color(r, g, b, .1f); 

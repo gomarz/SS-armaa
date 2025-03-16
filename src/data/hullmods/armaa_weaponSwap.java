@@ -51,7 +51,7 @@ public class armaa_weaponSwap extends BaseHullMod{
     
     private final Map<Integer,String> LEFTSWITCH = new HashMap<>();
     {
-        LEFTSWITCH.put(0,"armaa_selector_blade");
+        LEFTSWITCH.put(0,"armaa_selector_bazooka");
         LEFTSWITCH.put(1,"armaa_selector_stake");
 		LEFTSWITCH.put(2,"armaa_selector_lrifle_left");
 		LEFTSWITCH.put(3,"armaa_selector_grenade");

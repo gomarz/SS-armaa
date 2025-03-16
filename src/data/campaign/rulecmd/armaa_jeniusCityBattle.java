@@ -53,17 +53,23 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 		ArrayList<FleetMemberAPI> removedShips = new ArrayList();	
 		for(FleetMemberAPI member: Global.getSector().getPlayerFleet().getMembersWithFightersCopy())
 		{
-			if(member.isCruiser() || member.isCapital())
-			{
-				member.getRepairTracker().setMothballed(true);
-				removedShips.add(member);;
-			}
-			
-			else if(member.isDestroyer() && member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).isUnmodified())
+			float crew = 0f;			
+			if(member.isCapital())
 			{
 				member.getRepairTracker().setMothballed(true);
 				removedShips.add(member);
 			}
+
+			else if((member.isCruiser()) && member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).isUnmodified())
+			{
+				member.getRepairTracker().setMothballed(true);
+				removedShips.add(member);
+			}
+			
+			else
+				continue;
+			crew+=member.getCrewComposition().getCrewInt();
+			Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_"+member.getId(), crew);			
 		}
 		Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
 		FleetParamsV3 fparams = new FleetParamsV3(
@@ -176,7 +182,8 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 					dialog.dismiss();
 				}
 				CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
-				ArrayList<FleetMemberAPI> removedShips = new ArrayList();			
+				ArrayList<FleetMemberAPI> removedShips = new ArrayList();
+			
 				if(Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().contains("$nonAtmoShips"))
 				{
 					removedShips = (ArrayList<FleetMemberAPI>)Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().get("$nonAtmoShips");
@@ -184,7 +191,13 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 				
 				for(FleetMemberAPI member: removedShips)
 				{
+					float crew = (float)Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().get("$nonAtmoShipsCrew_"+member.getId());						
 					member.getRepairTracker().setMothballed(false);
+					if(member.getCrewComposition().getCrew() != crew)
+					{
+						Global.getSector().getPlayerFleet().getCargo().addCrew((int)Math.abs(member.getCrewComposition().getCrew()-crew));
+						member.getCrewComposition().setCrew(crew);
+					}
 				}
 					Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");						
 			}
@@ -258,7 +271,6 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 						}
 					}
 				}
-				
 				float fuelMult = Global.getSector().getPlayerFleet().getStats().getDynamic().getValue(Stats.FUEL_SALVAGE_VALUE_MULT_FLEET);
 				//float fuel = salvage.getFuel();
 				//salvage.addFuel((int) Math.round(fuel * fuelMult));
@@ -270,9 +282,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 					}
 					salvage.addFromStack(stack);
 				}
-				
 			}
-			
 		};
 		dialog.setPlugin(plugin);
 		plugin.init(dialog);

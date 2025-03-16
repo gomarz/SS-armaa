@@ -105,6 +105,11 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 			{
 				engine.addPlugin(new armaa_shaftBattlePlugin());
 				engine.getCustomData().put("armaa_atmoPlugin","-");
+			}
+			else if(engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inGravionBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null)
+			{
+				engine.addPlugin(new armaa_gasGiantBattlePlugin());
+				engine.getCustomData().put("armaa_atmoPlugin","-");
 			}				
 			interval.advance(amount);
 			if(interval.intervalElapsed())

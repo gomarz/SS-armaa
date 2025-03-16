@@ -225,6 +225,13 @@ public class cataphract2 extends BaseHullMod {
         }
 
 	}
+
+	@Override	
+	public boolean isApplicableToShip(ShipAPI ship) 
+	{
+		return false;
+	}	
+	
 	@Override
     public void addSModEffectSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec, boolean isForBuildInList)
 	{

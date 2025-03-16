@@ -3,6 +3,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.combat.WeaponAPI;
@@ -166,11 +167,20 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 			engine.getCustomData().remove("armaa_transformNow_"+ship.getId());	
 		}
 		if(!transformBlock && ship.isAlive())
-		if((!ship.getFluxTracker().isOverloaded() && !transforming) || !ship.getFluxTracker().isOverloaded() &&transformNow && !transforming)
+		if((!ship.getFluxTracker().isOverloaded() && !transforming) || !ship.getFluxTracker().isOverloaded() && transformNow && !transforming)
 		{
 			//AI stuff
-			ShipwideAIFlags flags = ship.getAIFlags();			
-			if((!flags.hasFlag(ShipwideAIFlags.AIFlags.HAS_INCOMING_DAMAGE) && (transformNow ||transformInterval.intervalElapsed()) && engine.getPlayerShip() != ship ))			
+			ShipwideAIFlags flags = ship.getAIFlags();
+			boolean inDanger = flags.hasFlag(ShipwideAIFlags.AIFlags.HAS_INCOMING_DAMAGE);
+			for(BeamAPI beam : engine.getBeams())
+			{
+				if(beam.getDamageTarget() == ship)
+				{
+					inDanger = true;
+					break;
+				}
+			}
+			if( (!inDanger) && (transformNow ||transformInterval.intervalElapsed()) && ship.getShipAI() != null )			
 			{
 				if(transformNow)
 				{

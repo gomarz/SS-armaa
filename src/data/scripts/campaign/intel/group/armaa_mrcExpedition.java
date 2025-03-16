@@ -238,7 +238,7 @@ public class armaa_mrcExpedition extends BlockadeFGI implements EconomyTickListe
 			}
 
 			Industry station = Misc.getStationIndustry(target);
-			if (station != null) {
+			if (station != null && !station.getId().equals("ass_arkoship_base") && (!station.getId().equals("ass_arkoship_base2"))) {
 				OrbitalStation.disrupt(station);
 				station.reapply();				
 			}

@@ -578,11 +578,9 @@ $global.armaa_WFDone = true","The feed shifts to another marine as he approaches
 ""Anti-ship defenses ahead,"" one of the marines calls out, pointing to a bank of consoles. ""Cover me!"" another shouts, sprinting to the consoles and beginning the shutdown sequence. Tension hangs in the air as they work, the minutes stretching out impossibly long. You see the marine's hands fly over the controls. The marines quickly scan the room, ensuring no threats remain. ""Area secured. You’re clear to proceed,"" the lead marine reports. Your tactical officer confirms, ""All clear. Prepare to move in on the core."" The path is now open, and the second phase of the mission can commence.",armaa_IKRaidBFinished2:Continue,
 armaa_IKRaidBFinished2,DialogOptionSelected,"$option == armaa_IKRaidBFinished2
 !$player.capturedIK score:1000","armaa_jeniusShaftBattle
-$global.armaa_IKCoreDescent = true","Massive doors, camouflaged by dust and debris, slowly grind open. A gust of stale, subterranean air rushes up, carrying the scent of old machinery and cold stone. The scale of the shaft below becomes apparent as you flip through various feeds - It's a yawning chasm, lined with thick, reinforced walls and dimly lit by flickering, ancient lights. The marines keep a vigilant watch, their eyes scanning the darkness for any signs of movement.
+$global.armaa_IKCoreDescent = true","Massive doors, camouflaged by dust and debris, slowly grind open. A gust of stale, subterranean air rushes up, carrying the scent of old machinery and cold stone. The scale of the shaft below becomes apparent as you flip through various feeds - It's a yawning chasm, lined with thick, reinforced walls and dimly lit by flickering, ancient lights.
 
 From above, the hum of engines grows louder as the first of your surveyors hovers into position, descending slowly into the shaft. The powerful spotlights on the ships pierce the gloom, illuminating the labyrinth of catwalks, cables, and long-dormant machinery that lines the walls.
-
-
 
 ""All teams, report in,"" the tactical officer's voice echoes in your ear.
 
@@ -593,7 +591,7 @@ From above, the hum of engines grows louder as the first of your surveyors hover
 With the path now illuminated and secure, you can prepare to traverse deeper into the chasm, ready to face whatever awaits as you approach the AI Core.","armaa_IKRaidFinished3:""Report.""",
 armaa_IKbeatRaidBDefenders,BeginSalvage,"$id == nekki2  score:1000
 $global.armaa_IKCoreDescent
-!$player.capturedIK score:1000",,"Your strike group disposes of the last obstacles remaining, clearing the path to the bottom of the shaft. Salvors are dispatched to clear any wreckage as you finally see the end..floor? Of the structure.
+!$player.capturedIK score:1000",,"Your strike group disposes of the last obstacles remaining, clearing the path to explore the rest of the facility undisturbed. Salvors are dispatched to salvage what you can.
 
 Over the comms, the lead salvor's gruff voice breaks the silence.
 
@@ -1162,12 +1160,11 @@ Before your fleet can advance further, your sensors light up with a flurry of ac
 
 Your tactical display updates, showing several vessels moving into defensive positions deeper within the shaft. The mutineers have clearly fortified their hold on the mining site, their larger ships already positioned with calculated precision.
 
-From below, the marine detachment commander radios in, his voice tense.
-""Ground teams in position. No visual contact yet, but we’re detecting movement—plenty of it. They know we're here.""
+""No visual contact yet, but we're detecting movement—plenty of it. They know we're here.""
 
 As your $shipOrFleet hovers over the chasm, spotlights flicker on, slicing through the oppressive darkness to reveal a labyrinth of abandoned mining platforms, crumbling tunnels, and rusted equipment.","armaa_ShaftBattleEnd:""Report.""",
 armaa_WFShaftBattleEnd,DialogOptionSelected,$option == armaa_WFShaftBattleEnd,"Call $global.armaa_des_ref updateData
-AddTextSmall ""Recovered Morgana wreckage"" highlight","""Commander, you’re going to want to see this,"" she says. ""We've got the remains of one of those advanced fighters you took down earlier. No survivors - most of it's wrecked, but the core structure's intact. This thing... it’s custom-built, no doubt about it. Way beyond the mutineers' usual tech.""
+AddTextSmall ""Recovered Morgana wreckage"" highlight","""Commander, you're going to want to see this,"" she says. ""We've got the remains of one of those advanced fighters you took down earlier. No survivors - most of it's wrecked, but the core structure's intact. This thing... it’s custom-built, no doubt about it. Way beyond the mutineers' usual tech.""
 
 The camera feed zooms in, revealing scorched plating and shattered wings. The cockpit, though crushed and dark, still flickers faintly with residual power.
 The tactical officer leans closer to the console, his brow furrowed as he studies the wreck.
@@ -1183,6 +1180,42 @@ FireAll PopulateOptions","Your $shipOrFleet ascends carefully, the battered wall
 Back aboard your flagship, the report is prepared. Your findings on the advanced fighter and the unusual technology are compiled in detail, alongside your assessment of the mutineers' origins and intentions. One of your officers forwards the file to Kade without delay, along with your recommendation to investigate the source of the mutineers' resources.
 
 As your fleet breaks free of the planet's atmosphere, the installation and its struggles fade into the distance, replaced by the expanse of space. Another mission completed, another problem solved.",,
+,,,,,,
+armaa_WFGravionBattle,PopulateOptions,"!$global.armaaWFGravionBattleComplete
+$global.armaa_capturedMorgana
+$id == nekki3",,,armaa_WFGravionBattleStart:Descend towards Gravion,
+armaa_WFGravionBattleStart,DialogOptionSelected,$option == armaa_WFGravionBattleStart,"armaa_gravionBattle
+$global.armaa_IKCoreDescent = true","The coordinates recovered from the wreckage of the Morgana fighter led you here; a world of violent weather and crushing pressure, where few sane operators would choose to stage an operation. Yet someone clearly has.
+
+Your fleet drifts closer, scanners sweeping the storm-laden skies. The transponder signatures here are sparse—faint, flickering echoes of vessels that might be running dark, or long-abandoned derelicts being slowly swallowed by the atmosphere. Then, a signal spikes. Multiple returns, shifting in and out of detection range, their signatures barely visible against the interference. Whatever is down there, it's active.
+
+A transmission attempts to break through the static, fragmented by interference.
+
+""—coming— warning— in restricted— turn back—""
+
+The message is cut off by another surge of atmospheric noise. The meaning, however, is clear. Someone doesn’t want you here.
+
+Your $shipOrFleet pushes forward, descending into the gravity well. The clouds below twist and fracture, revealing the shadow of something vast within the storm’s eye—a station, partially concealed by the swirling gases, its structure bristling with weapon platforms. Around it, dark shapes flicker into motion. Ships, undeterred by the deadly conditions, rising from the depths like predators sensing fresh prey.
+
+The battle for answers is about to begin.","armaa_ShaftBattleEnd:""Report.""",
+armaa_WFGravionBattleEnd,DialogOptionSelected,$option == armaa_WFGravionBattleEnd,"Call $global.armaa_des_ref updateData
+AddTextSmall ""Recovered Morgana wreckage"" highlight","""Commander, you're going to want to see this,"" she says. ""We've got the remains of one of those advanced fighters you took down earlier. No survivors - most of it's wrecked, but the core structure's intact. This thing... it’s custom-built, no doubt about it. Way beyond the mutineers' usual tech.""
+
+The camera feed zooms in, revealing scorched plating and shattered wings. The cockpit, though crushed and dark, still flickers faintly with residual power.
+The tactical officer leans closer to the console, his brow furrowed as he studies the wreck.
+
+""That's no off-the-shelf hardware,"" he mutters. ""Whoever built this had access to resources far beyond what these mutineers should've had. There’s no way they got this on their own.""
+
+The salvor's voice cuts in again, her tone tinged with curiosity. ""Scans are showing some systems might still be functional. If we can extract it, we might get some useful data—or at least figure out who's bankrolling these guys.""",armaa_WFShaftBattleEnd2:Continue,
+armaa_WFGravionBattleEnd2,DialogOptionSelected,$option == armaa_WFGravionBattleEnd2,"$global.armaa_capturedMorgana = true
+AdjustRepPerson armaa_kade FRIENDLY 3
+AddCredits 200000
+FireAll PopulateOptions","Your $shipOrFleet ascends carefully, the battered walls of the shaft looming around you like the ribs of some colossal beast.
+
+Back aboard your flagship, the report is prepared. Your findings on the advanced fighter and the unusual technology are compiled in detail, alongside your assessment of the mutineers' origins and intentions. One of your officers forwards the file to Kade without delay, along with your recommendation to investigate the source of the mutineers' resources.
+
+As your fleet breaks free of the planet's atmosphere, the installation and its struggles fade into the distance, replaced by the expanse of space. Another mission completed, another problem solved.",,
+,,,,,,
 armaa_devCocStartOption,PopulateOptions,"$global.isDevMode
 $market.id == armaa_meshanii_market
 !$global.armaa_coc_missionCompleted

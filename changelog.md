@@ -81,11 +81,13 @@ Altagrave
 	- Mode ALPHA
 		- Ballistic RoF: 1.00x->1.50x
 		- should help offset limited weapon slots
-	- Top Speed: 250->215
-	- Shield Efficiency: 0.85 -> 0.90
+	- Top Speed: 250->240
+	- Flux Capacity: 1750->2000
 	- tweaked fire offset for head weapon
 	- Percept (HOMING)
 		- EMP: 25->45
+- PERCEPT
+	- chargeup: 1->0.30
 - Bakraid
 	- clamped CR to 1(100%) to prevent 50000% CR bug when seperating
 - Aleste SII

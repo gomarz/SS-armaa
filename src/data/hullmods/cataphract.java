@@ -154,6 +154,8 @@ public class cataphract extends BaseHullMod {
 		float padS = 2f;
 		final Color flavor = new Color(110,110,110,255);
 		float n2 = GROUND_BONUS_DEFAULT;
+		if(ship == null)
+			return;
 		if(GROUND_BONUS.get(ship.getHullSpec().getHullId()) != null)
 		n2  = GROUND_BONUS.get(ship.getHullSpec().getHullId());	
 		float missilerate = MISSILES_DEBUFF*100f;

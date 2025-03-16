@@ -64,13 +64,7 @@ Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,dat
 Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_kshatriyaweaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_kshatriyaweaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 L ARM: BLADE,armaa_selector_blade_VAL,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade_VAL,HAND weapons can be changed to better suit the pilot's preferences. ,,,graphics/armaa/hullmods/hand_l.png
-L ARM: KINETIC BAZOOKA,armaa_selector_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade,"HAND weapons can be changed to better suit the pilot's preferences. 
-
-%s is geared specifically to deal with shields, but has very low ammo.
-
-%s 
-
-%s",,,graphics/armaa/hullmods/hand_l.png
+L ARM: BLADE,armaa_selector_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blade,HAND weapons can be changed to better suit the pilot's preferences. ,,,graphics/armaa/hullmods/hand_l.png
 L ARM: STAKE DRIVER,armaa_selector_stake,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_stake,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 %s fires large spikes that explodes after a few seconds, but has limited ammo.

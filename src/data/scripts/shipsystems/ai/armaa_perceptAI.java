@@ -37,6 +37,15 @@ public class armaa_perceptAI implements ShipSystemAIScript
     
 	public void forceTransform()
 	{
+		for(BeamAPI beam : engine.getBeams())
+		{
+			if(beam.getDamageTarget() == ship)
+				return;
+		}
+		if(flags.hasFlag(ShipwideAIFlags.AIFlags.HAS_INCOMING_DAMAGE))
+		{
+			return;
+		}
 		if(!engine.getCustomData().containsKey("armaa_transformNow_"+ship.getId()))	
 			engine.getCustomData().put("armaa_transformNow_"+ship.getId(),"-");	
 	}
@@ -79,6 +88,17 @@ public class armaa_perceptAI implements ShipSystemAIScript
 				if( missile.getWeaponSpec() != null && missile.getWeaponSpec().getWeaponId().equals("armaa_curvyLaser"))
 					orbs.add(missile);
 			}
+			//I dont think we can tell if we want to vent, so just don't do it if you can shoot something
+			if(orbs.size() > 0 && ship.getSystem().getAmmo() > 0)
+			{
+				if(ship.getSystem().getAmmo() == 1 && isRobot)
+				{
+					forceTransform();
+				}
+				flags.setFlag(ShipwideAIFlags.AIFlags.DO_NOT_VENT,1f);
+				return;
+			}
+			
 			List<ShipAPI> targets = new ArrayList<ShipAPI>();
 			for(ShipAPI potTarget:CombatUtils.getShipsWithinRange(ship.getLocation(), 1000f))
 			{
@@ -88,19 +108,20 @@ public class armaa_perceptAI implements ShipSystemAIScript
 					continue;
 				targets.add(potTarget);
 			}
-			if(orbs.size() > 0 && targets != null && targets.size() > 0 && !flags.hasFlag(ShipwideAIFlags.AIFlags.HAS_INCOMING_DAMAGE))
+			if(orbs.size() > 0 && targets != null && targets.size() > 0)
 			{
-				if(isRobot && !transformingAlready)
+				if(isRobot && !transformingAlready && !flags.hasFlag(ShipwideAIFlags.AIFlags.HAS_INCOMING_DAMAGE))
+				{
 					forceTransform();
-				ship.useSystem();
-				return;
+				}
+					ship.useSystem();
+					return;
 			}				
 			// No point using if we don't have any flux to do meaningful damage or orbs to shoot
 			// Or there are no targets
 			else if (!ship.areAnyEnemiesInRange() || (ship.getFluxLevel() < 0.05f  && orbs.size() <= 0)) 
 			{
 				return;
-				
 			}
 			// We can either fire off a homing attack off enemy is some ways away or deploy an orb to 
 			// try to pressure/delay them with EMP
@@ -127,28 +148,7 @@ public class armaa_perceptAI implements ShipSystemAIScript
 				}
 				
 			}
-			if(flags.hasFlag(ShipwideAIFlags.AIFlags.BACKING_OFF) && AIUtils.getNearestEnemy(ship) != null) 
-			{
-				//They're close enough to get EMPed, probably
-				if(MathUtils.getDistance(AIUtils.getNearestEnemy(ship),ship) <= 700f)
-				{
-					//CHeck if Robot, if not transform
-					if(isRobot && orbs.size() < 1 && ship.getFluxLevel() >= 0.15f)
-					{
-						useSystem = true;
-					}
-				}
-				
-				else
-				{
-					if(isRobot && !transformingAlready && orbs.size() > 0 && ship.getFluxLevel() >= 0.10f)
-					{
-						forceTransform();
-					}
-					useSystem = true;
-				}
-			}
-			else if(flags.hasFlag(ShipwideAIFlags.AIFlags.PURSUING) && ship.getFluxLevel() >= 0.20)
+			if(flags.hasFlag(ShipwideAIFlags.AIFlags.PURSUING) && ship.getFluxLevel() >= 0.20)
 			{
 				if(!isRobot)
 					useSystem = true;
@@ -157,19 +157,6 @@ public class armaa_perceptAI implements ShipSystemAIScript
 					forceTransform();
 					useSystem = true;
 				}
-			}
-			//general logic
-			if(Math.random() < 0.30f)
-			if(ship.getFluxLevel() < 0.75f && ship.getFluxLevel() >= 0.2f )
-			{
-				ShipAPI nearest = AIUtils.getNearestEnemy(ship);
-				if(orbs.size() > 1 && isRobot && !transformingAlready)
-					forceTransform();
-				else if(isRobot && (nearest == null || MathUtils.getDistance(nearest,ship) > 700f))
-					return;
-				if(useSystem)
-					if(!ship.getSystem().isActive())
-						ship.useSystem();
 			}
 		}
 	}

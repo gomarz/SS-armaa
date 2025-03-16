@@ -5,8 +5,6 @@ import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.BattleCreationContext;
-import com.fs.starfarer.api.impl.combat.BattleCreationPluginImpl;
-import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogPlugin;
@@ -18,9 +16,7 @@ import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import com.fs.starfarer.api.SettingsAPI;
+
 import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.*;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageGenFromSeed.SDMParams;
@@ -49,14 +45,12 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
 
-public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
+public class armaa_gravionBattle extends BaseCommandPlugin {
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) 
 	{
 		CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
 		ArrayList<FleetMemberAPI> removedShips = new ArrayList();	
-		String action = params.size() > 0 ? params.get(0).getString(memoryMap) : "";
-		float marines = 0f;		
 		for(FleetMemberAPI member: Global.getSector().getPlayerFleet().getMembersWithFightersCopy())
 		{
 			float crew = 0f;			
@@ -77,50 +71,31 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 			crew+=member.getCrewComposition().getCrewInt();
 			Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_"+member.getId(), crew);			
 		}
-		Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);		
-		String faction = "derelict";
-		float str = Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.7f;
-		if("kade".equals(action))		
-		{
-			str = Math.max(200f,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.80f);
-			faction = "armaarmatura_boss";
-			
-		}
+		Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
 		FleetParamsV3 fparams = new FleetParamsV3(
-			Global.getSector().getEntityById("nekki1").getLocationInHyperspace(),
-			faction,
+			Global.getSector().getEntityById("nekki3").getLocationInHyperspace(),
+			"armaarmatura_arusthai",
 			null,
-			FleetTypes.PATROL_LARGE,
-			str, // combatPts
+			FleetTypes.PATROL_SMALL,
+			Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f, // combatPts
 			0f, // freighterPts 
 			0f, // tankerPts
 			0f, // transportPts
 			0f, // linerPts
 			0f, // utilityPts
-			0.1f // qualityMod
+			0.4f // qualityMod
 			);
-		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);
-		FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.40f,new Random());			
-		FleetFactoryV3.applyDamageToFleet(enemyFleet,0.65f,true,new Random());		
-		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());	
-		FleetFactoryV3.applyDamageToFleet(enemyFleet,0.45f,true,new Random());	
-		FleetMemberAPI boss = enemyFleet.getFleetData().addFleetMember("guardian_Standard");	
-		boss.setShipName("GR340959F");
-		if("kade".equals(action))
-		{
-			//PersonAPI pilot = OfficerManagerEvent.createOfficer(enemyFleet.getFleetData().getCommander().getFaction(),10);			
-			//f = enemyFleet.getFleetData().addFleetMember("armaa_leynos_cc_standard");
-			//f.setCaptain(pilot);			
-			//pilot = OfficerManagerEvent.createOfficer(enemyFleet.getFleetData().getCommander().getFaction(),5);			
-		}			
+		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);	
+		FleetFactoryV3.applyDamageToFleet(enemyFleet,0.20f,true,new Random());		
+		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());		
+		//FleetFactoryV3.applyDamageToFleet(enemyFleet,0.40f,true,new Random());		
+		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);			
+		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());
 		final SectorEntityToken entity = dialog.getInteractionTarget();
-		Misc.setDefenderOverride(entity, new DefenderDataOverride("derelict",1f,100,200));
+		Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.PIRATES,1f,100,200));
 		final MemoryAPI memory = getEntityMemory(memoryMap);		
-		dialog.setInteractionTarget(enemyFleet);
-		if("kade".equals(action))		
-			enemyFleet.getMemoryWithoutUpdate().set("$inAtmoBossBattle","-");	
-		else
-			enemyFleet.getMemoryWithoutUpdate().set("$inAtmoBattle","-");
+		dialog.setInteractionTarget(enemyFleet); 
+		enemyFleet.getMemoryWithoutUpdate().set("$inGravionBattle","-");
 		final FIDConfig config = new FIDConfig();
 		config.leaveAlwaysAvailable = true;
 		config.showCommLinkOption = false;
@@ -135,8 +110,8 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 		config.pullInEnemies = true;
 		config.pullInStations = false;
 		config.lootCredits = false;		
-		config.firstTimeEngageOptionText = "Engage the automated defenses";
-		config.afterFirstTimeEngageOptionText = "Re-engage the automated defenses";
+		config.firstTimeEngageOptionText = "Engage the raiders";
+		config.afterFirstTimeEngageOptionText = "Re-engage the raiders";
 		config.noSalvageLeaveOptionText = "Continue";		
 		config.dismissOnLeave = false;
 		config.printXPToDialog = true;		
@@ -228,9 +203,6 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 			}
 			@Override
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
-				BattleCreationPluginImpl b = new BattleCreationPluginImpl();
-				b.width = 100;
-				b.height = 100;
 				bcc.aiRetreatAllowed = false;
 				bcc.objectivesAllowed = false;
 				bcc.enemyDeployAll = true;
@@ -299,7 +271,6 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 						}
 					}
 				}
-				
 				float fuelMult = Global.getSector().getPlayerFleet().getStats().getDynamic().getValue(Stats.FUEL_SALVAGE_VALUE_MULT_FLEET);
 				//float fuel = salvage.getFuel();
 				//salvage.addFuel((int) Math.round(fuel * fuelMult));
@@ -311,9 +282,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 					}
 					salvage.addFromStack(stack);
 				}
-				
 			}
-			
 		};
 		dialog.setPlugin(plugin);
 		plugin.init(dialog);

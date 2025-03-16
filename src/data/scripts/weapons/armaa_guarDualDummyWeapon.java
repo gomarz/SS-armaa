@@ -125,6 +125,8 @@ public class armaa_guarDualDummyWeapon implements EveryFrameWeaponEffectPlugin {
         }
         if(trueWeapon != null)
         {
+			trueWeapon.setWeaponGlowHeightMult(0.5f); 
+			trueWeapon.setWeaponGlowWidthMult(0.5f); 			
             if(trueWeapon.getSprite() != null)
                     trueWeapon.getSprite().setColor(invis);
 
@@ -175,6 +177,8 @@ public class armaa_guarDualDummyWeapon implements EveryFrameWeaponEffectPlugin {
         }
         if(headWeapon != null)
         {
+			headWeapon.setWeaponGlowHeightMult(0.5f); 
+			headWeapon.setWeaponGlowWidthMult(0.5f); 			
             if(headWeapon.getSprite() != null)
                     headWeapon.getSprite().setColor(invis);
 

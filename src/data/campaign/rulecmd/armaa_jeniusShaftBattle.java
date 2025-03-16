@@ -51,21 +51,12 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
 	{
 		CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
 		ArrayList<FleetMemberAPI> removedShips = new ArrayList();	
-		for(FleetMemberAPI member: Global.getSector().getPlayerFleet().getMembersWithFightersCopy())
-		{
-			if(member.isCruiser() || member.isCapital())
-			{
-				Global.getSector().getPlayerFleet().getFleetData().removeFleetMember(member);
-				removedShips.add(member);
-			}
-		}
-		Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
 		FleetParamsV3 fparams = new FleetParamsV3(
 			Global.getSector().getEntityById("nekki1").getLocationInHyperspace(),
 			"scavengers",
 			null,
 			FleetTypes.SCAVENGER_SMALL,
-			Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.50f, // combatPts
+			Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.1f, // combatPts
 			0f, // freighterPts 
 			0f, // tankerPts
 			0f, // transportPts
@@ -165,19 +156,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
 					}
 				} else {
 					dialog.dismiss();
-				}
-				CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
-				ArrayList<FleetMemberAPI> removedShips = new ArrayList();			
-				if(Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().contains("$nonAtmoShips"))
-				{
-					removedShips = (ArrayList<FleetMemberAPI>)Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().get("$nonAtmoShips");
-				}
-				
-				for(FleetMemberAPI member: removedShips)
-				{
-						Global.getSector().getPlayerFleet().getFleetData().addFleetMember(member);
-				}
-					Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");						
+				}						
 			}
 			@Override
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
