@@ -41,6 +41,7 @@ public class armaa_DescentMission extends HubMissionWithSearch {
 		GO_TO_VARYNS,
 		GO_TO_MESHAN,
 		DESCENT,
+		DEBRIEF,
 		COMPLETED
 	}
 	protected MarketAPI nekki1;		
@@ -63,7 +64,9 @@ public class armaa_DescentMission extends HubMissionWithSearch {
 		setStageOnGlobalFlag(Stage.GO_TO_MESHAN, "$armaaWFSpokeToSettlement");
 		makeImportant(Global.getSector().getEntityById("nekki2"), "$armaaWFSpokeToSettlement", Stage.GO_TO_MESHAN);
 		setStageOnGlobalFlag(Stage.DESCENT, "$armaa_capturedMorgana");
-		
+		makeImportant(Global.getSector().getEntityById("nekki3"), "$armaa_capturedMorgana", Stage.DESCENT);		
+		setStageOnGlobalFlag(Stage.DEBRIEF, "$armaaWFGravionBattleComplete");
+		makeImportant(nekki1.getAdmin(), "$armaaWFGravionBattleComplete", Stage.DEBRIEF);			
 		setStageOnGlobalFlag(Stage.COMPLETED, "$armaa_des_Completed");
 		
 		setRepFactionChangesNone();
@@ -116,7 +119,10 @@ public class armaa_DescentMission extends HubMissionWithSearch {
 			info.addPara("Travel to the subterranean facility on " + nekki1.getName()+".", opad);
 		}
 		if (currentStage == Stage.DESCENT) {
-			info.addPara("Return the damaged fighter to _____", opad);
+			info.addPara("Travel to Gravion and investigate the station", opad);
+		}
+		if (currentStage == Stage.DEBRIEF) {
+			info.addPara("Return to Kade for debrief", opad);
 		}		
 	}
 
@@ -136,9 +142,12 @@ public class armaa_DescentMission extends HubMissionWithSearch {
 			return true;
 		}
 		if (currentStage == Stage.DESCENT) {
-			info.addPara("Return the wreckage", tc, pad);
+			info.addPara("Travel to Gravion and investigate the station", tc, pad);
 			return true;
-		}	
+		}
+		if (currentStage == Stage.DEBRIEF) {
+			info.addPara("Return to Kade for debrief", tc, pad);
+		}				
 		if (currentStage == Stage.COMPLETED) {
 			info.addPara("Completed", tc, pad);
 		}				

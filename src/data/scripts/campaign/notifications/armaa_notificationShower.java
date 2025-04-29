@@ -10,6 +10,8 @@ import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.ids.*;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.characters.OfficerDataAPI;
 import data.scripts.campaign.notifications.armaa_NotificationBase;
@@ -36,25 +38,11 @@ public class armaa_notificationShower implements EveryFrameScript {
 		validEntities.add("volturn");
 		
 		validKeys.add("$anh_inProgress");
+		//validKeys.add("$foundOneslaught");
+		validKeys.add("$encounteredDweller");
 		//validKeys.add("$defeatedLuddicChurchExpedition");		
 	}
 
-    static {
-        //notifications.put(HUNTER_FLEET_APPROACHING_ID, new armaa_NotificationBase(HUNTER_FLEET_APPROACHING_ID) {
-         //   @Override
-         //   public InteractionDialogPlugin create() {
-         //       return new armaa_approachingPlanetNotification();
-         //  }
-         //});
-    }
-	/*
-	@Override
-	public boolean showAutomaticallyIf(){
-		MemoryAPI memory = Global.getSector().getMemory();
-		return memory != null && memory.contains(MAGIC_BOUNTY_DEFEATED_KEY)
-				&& memory.getBoolean(MAGIC_BOUNTY_DEFEATED_KEY);
-	}
-	*/
 	//This script adds all the possible notifications
 	//When a notif can be shown/should be shown, shownotifactions is caleld
 	//this tells the notifcation that it should  be shown
@@ -145,7 +133,19 @@ public class armaa_notificationShower implements EveryFrameScript {
 						//Global.getSector().getCampaignUI().addMessage("Near " + entity.getId(),Misc.getHighlightColor());					
 					}	
 				}
-
+				
+				//check for shrouded hullmods
+				if(notifications.get("armaa_shroudmod_event_id") == null)
+					for (FleetMemberAPI member : flt.getFleetData().getMembersListCopy()) {
+						for (String modId : member.getVariant().getHullMods()) {
+							HullModSpecAPI spec = Global.getSettings().getHullModSpec(modId);
+							if (spec.hasTag(Tags.SHROUDED))
+							{
+								addNotification("shroudmod");
+								showNotificationOnce("armaa_shroudmod_event_id");
+							}
+						}
+					}
 				//check if there are any triggers we can talk about
 				for(String key : Global.getSector().getMemoryWithoutUpdate().getKeys())
 				{						

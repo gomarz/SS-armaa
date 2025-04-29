@@ -7,6 +7,13 @@ import com.fs.starfarer.api.util.Misc.Token;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
+import com.fs.starfarer.api.campaign.StarSystemAPI;
+import com.fs.starfarer.api.campaign.NascentGravityWellAPI;
+import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
+import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
+import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.DebrisFieldParams;
+import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.DebrisFieldSource;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import java.util.Map;
 import java.util.Random;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
@@ -24,11 +31,12 @@ import com.fs.starfarer.api.impl.campaign.intel.contacts.ContactIntel;
 import com.fs.starfarer.api.impl.campaign.intel.contacts.ContactIntel.ContactState;
 import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import data.scripts.campaign.intel.armaa_liberationIntel;
+import data.scripts.world.systems.armaa_nekki;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import java.util.List;
 import java.util.ArrayList;
 import data.scripts.campaign.armaa_mrcReprisalListener;
-//import com.fs.starfarer.api.impl.campaign.fleets.ArmaaHunterFleetManager;
+import data.scripts.campaign.intel.events.armaa_combatDataEventIntel;
 //wtf i love MOOD RUNES
 
 public class armaa_Hikaru_Utada extends BaseCommandPlugin {
@@ -57,6 +65,15 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 			return pf.getId().equals(dialog.getInteractionTarget().getId());
 		}
 		
+		if ("removeDawn".equals(action))
+		{
+			for(FleetMemberAPI member:pf.getFleetData().getMembersListCopy())
+			{
+				if(member.getCaptain() == Global.getSector().getImportantPeople().getPerson("armaa_dawn"))
+					member.setCaptain(null);
+			}
+			pf.getFleetData().removeOfficer(Global.getSector().getImportantPeople().getPerson("armaa_dawn"));
+		}		
 		if ("removeContact".equals(action))
 		{
 			for (IntelInfoPlugin curr : Global.getSector().getIntelManager().getIntel(ContactIntel.class)) 
@@ -270,6 +287,89 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 				}
 			}			
 		}
+		else if ("AddATACIntel".equals(action))
+		{
+			armaa_combatDataEventIntel foo = new armaa_combatDataEventIntel(dialog.getTextPanel(),true);
+
+			return true;
+		}
+		else if ("setJeniusOwner".equals(action))
+		{
+			SectorEntityToken jenius = Global.getSector().getEntityById("nekki1");
+			jenius.getMarket().setFactionId("pirates");
+			for (SectorEntityToken curr : jenius.getMarket().getConnectedEntities()) {
+				curr.setFaction("pirates");
+			}
+
+			return true;
+		}			
+		else if ("doGravionAftermath".equals(action))
+		{
+			SectorEntityToken jenius = Global.getSector().getEntityById("nekki1");
+			jenius.getMarket().getCommDirectory().addPerson(Global.getSector().getImportantPeople().getPerson("armaa_imelda"),999);		
+			SectorEntityToken gravion = Global.getSector().getEntityById("nekki3");
+			SectorEntityToken magec_gate = Global.getSector().getEntityById("magec_gate");			
+			for(SectorEntityToken gate : Global.getSector().getCustomEntitiesWithTag("gate"))
+			{
+				if(Math.random() < 0.30f || magec_gate == null)
+				{
+					magec_gate = gate;
+					break;
+				}
+			}
+		
+			//Spawn Valk if player didn't have it at the startExpedition
+			if(!Global.getSector().getMemoryWithoutUpdate().contains("$nex_startingFactionId") || !Global.getSector().getMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
+			{
+				SectorEntityToken valkazard = armaa_nekki.addDerelict(magec_gate.getStarSystem(), "armaa_valkazard_standard", magec_gate.getOrbit(), ShipRecoverySpecial.ShipCondition.GOOD, true, null);
+				// Debris
+				DebrisFieldParams param = new DebrisFieldParams(
+						800f, // field radius - should not go above 1000 for performance reasons
+						4f, // density, visual - affects number of debris pieces
+						50f, // duration in days
+						0.25f); // days the field will keep generating glowing pieces
+				param.source = DebrisFieldSource.MIXED;
+				param.baseSalvageXP = 500; // base XP for scavenging in field
+				SectorEntityToken debris = Misc.addDebrisField(magec_gate.getContainingLocation(), param, StarSystemGenerator.random);
+				SalvageSpecialAssigner.assignSpecialForDebrisField(debris);
+
+				// makes the debris field always visible on map/sensors and not give any xp or notification on being discovered
+				debris.setSensorProfile(null);
+				debris.setDiscoverable(null);
+				debris.setCircularOrbit(valkazard, 45 + 10, 200, 250);
+				valkazard.setLocation(magec_gate.getLocation().x,magec_gate.getLocation().y);
+				Misc.makeImportant(valkazard,"sick loot");
+				valkazard.setDiscoverable(true);			
+				valkazard.getMemoryWithoutUpdate().set("$valkazard", true);				
+			}
+				Global.getSector().getPlayerFleet().getContainingLocation().removeEntity(Global.getSector().getPlayerFleet());
+				magec_gate.getContainingLocation().addEntity(Global.getSector().getPlayerFleet());
+				Global.getSector().setCurrentLocation(magec_gate.getContainingLocation());		
+				Global.getSector().getPlayerFleet().setLocation(magec_gate.getLocation().x,magec_gate.getLocation().y);
+				
+				StarSystemAPI gamlin = gravion.getStarSystem();
+				for(SectorEntityToken token:gamlin.getTerrainCopy())
+				{
+					if(token.getOrbitFocus() == gravion)
+					{
+						token.getContainingLocation().removeEntity(token);
+						magec_gate.getContainingLocation().addEntity(token);
+					}
+				}
+				for(NascentGravityWellAPI token:gamlin.getGravityWells())
+				{
+					if(token.getTarget() == gravion)
+					{
+						token.getContainingLocation().removeEntity(token);
+					}
+				}				
+				gravion.getContainingLocation().removeEntity(gravion);
+				Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
+				//gravion.getStarSystem().autogenerateHyperspaceJumpPoints(true,true);					
+				gravion.setLocation(Global.getSector().getEntityById("magec_gate").getLocation().x,Global.getSector().getEntityById("magec_gate").getLocation().y);	
+				gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(),90,9000,365);				
+				//doHyperspaceTransition(CampaignFleetAPI fleet, SectorEntityToken jumpLocation, JumpPointAPI.JumpDestination dest)			
+		}			
 		else if ("checkKadeOnMarket".equals(action))
 		{
 			MarketAPI target = Global.getSector().getEntityById("nekki1").getMarket();

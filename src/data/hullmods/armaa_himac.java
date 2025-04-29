@@ -80,6 +80,8 @@ public class armaa_himac extends BaseHullMod {
 		boolean window = false;
 		long startTime = System.currentTimeMillis();
 		boolean moveKeyPressed = false;
+		public String lastKeyPressed = null;
+		public long lastKeyTime = 0;		
 		boolean boostEnabled = false;		
 		boolean assaultBoostEnabled = false;
 		boolean assaultBoostCharging = false;
@@ -305,11 +307,12 @@ public class armaa_himac extends BaseHullMod {
 			ship.getMutableStats().getMaxTurnRate().modifyMult(id, 1.25f);
 			ship.getMutableStats().getTurnAcceleration().modifyMult(id, 1.25f);		
 		}
-		if(data.cooldown <= 0)
+		if(data.cooldown < 0)
 		{
 			ship.getEngineController().forceFlameout();
 			data.burnedOut = true;
 			Global.getSoundPlayer().playSound("disabled_small_crit",1f,1f,ship.getLocation(),ship.getVelocity());
+			data.cooldown = 0;
 			return;
 		}
 		CombatUtils.applyForce(ship, angleDegrees, (ship.getMaxSpeed()+(ship.getMass()*SIZE_MULT.get(ship.getHullSize()))*bonus));
@@ -321,75 +324,67 @@ public class armaa_himac extends BaseHullMod {
 		boolean aPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("A"));
 		boolean sPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("S"));
 		boolean dPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("D"));
-		ArrayList<Boolean> pressedKeys = new ArrayList<>();
-		
-		pressedKeys.add(wPressed);
-		pressedKeys.add(sPressed);
-		pressedKeys.add(aPressed);
-		pressedKeys.add(dPressed);		
+
 		String key = DATA_KEY + "_" + ship.getId();
 		armaa_himacdata data = (armaa_himacdata) Global.getCombatEngine().getCustomData().get(key);
-		data.keyPressed = pressedKeys.contains(true);
-		if (sPressed && data.assaultBoostEnabled == true)
-		{
+
+		// Check if *any* movement key is pressed
+		data.keyPressed = wPressed || aPressed || sPressed || dPressed;
+
+		// Disable assault boost if moving backward
+		if (sPressed && data.assaultBoostEnabled) {
 			data.assaultBoostEnabled = false;
 		}
 
-		if(wPressed && data.assaultBoostCharging && !data.assaultBoostCharged)
-		{
-			pressedKeys.remove(wPressed);
-		}
-		
-		else if(!data.boostEnabled)
-		{
-			if(!data.moveKeyPressed && data.keyPressed)
-			{
+		// Handle W blocking when charging
+		if (wPressed && data.assaultBoostCharging && !data.assaultBoostCharged) {
+			// ignore W in pressed key logic
+		} else if (!data.boostEnabled) {
+			// If a movement key was just pressed
+			if (!data.moveKeyPressed && data.keyPressed) {
 				long now = System.currentTimeMillis();
 				int inputTime = 300;
-				if (Global.getSettings().getModManager().isModEnabled("lunalib"))
-				{
+
+				if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
 					inputTime = LunaSettings.getInt("armaa", "armaa_inputTime");
 				}
-				if(now > data.startTime + 300)
-				{
-					data.startTime = now;
-				}
-				else
-				{
-					if(!wPressed && !data.assaultBoostEnabled)
-						data.boostEnabled = true;
-					// do stuff on double tap...
-					if (wPressed) 
-					{
-						if(!data.assaultBoostCharging  && !data.assaultBoostCharged && !data.assaultBoostEnabled)
-						{
-							data.assaultBoostCharging = true;
-							data.boostEnabled = false;
-							Global.getCombatEngine().getCustomData().put(key,data);							
-						}
 
-					}
-					else if (aPressed)
-					{
-						boost(ship.getFacing()+90f,ship,false); // Boost in the direction of 180 degrees (left)
-					}
-					else if (sPressed) 
-					{
-						boost(ship.getFacing()-180f,ship,false); // Boost in the direction of 270 degrees (backward)
-					}
-					else if (dPressed)
-					{
-						boost(ship.getFacing()-90f,ship,false); // Boost in the direction of 0 degrees (right)
+				String currentKey = null;
+				if (wPressed) currentKey = "W";
+				else if (aPressed) currentKey = "A";
+				else if (sPressed) currentKey = "S";
+				else if (dPressed) currentKey = "D";
+
+				if (currentKey != null) {
+					// Double tap check: same key pressed again within time
+					if (currentKey.equals(data.lastKeyPressed) && now - data.lastKeyTime < inputTime) {
+						if ("W".equals(currentKey)) {
+							if (!data.assaultBoostCharging && !data.assaultBoostCharged && !data.assaultBoostEnabled) {
+								data.assaultBoostCharging = true;
+								data.boostEnabled = false;
+							}
+						} else if ("A".equals(currentKey)) {
+							boost(ship.getFacing() + 90f, ship, false);
+						} else if ("S".equals(currentKey)) {
+							boost(ship.getFacing() - 180f, ship, false);
+						} else if ("D".equals(currentKey)) {
+							boost(ship.getFacing() - 90f, ship, false);
+						}
+					} else {
+						// Record new key and time
+						data.lastKeyPressed = currentKey;
+						data.lastKeyTime = now;
 					}
 				}
 				data.moveKeyPressed = true;
 			}
-		
-			if(!data.keyPressed){
-			  data.moveKeyPressed = false;
+
+			if (!data.keyPressed) {
+				data.moveKeyPressed = false;
 			}
 		}
-		Global.getCombatEngine().getCustomData().put(key,data);
+
+		Global.getCombatEngine().getCustomData().put(key, data);
 	}
 
  
@@ -618,10 +613,9 @@ public class armaa_himac extends BaseHullMod {
 					if((flags.hasFlag(AIFlags.MOVEMENT_DEST) && !ship.areAnyEnemiesInRange() || flags.hasFlag(AIFlags.PURSUING))   && !data.assaultBoostEnabled && data.cooldown >= 5f)
 					{
 						data.assaultBoostCharging = true;
-						
 					}
 					
-					if(data.assaultBoostEnabled && armaa_utils.estimateIncomingDamage(ship) >= 200)
+					if(data.assaultBoostEnabled && flags.hasFlag(AIFlags.HAS_INCOMING_DAMAGE))
 						data.assaultBoostEnabled = false;
 					if(ship.getEngineController().isDecelerating() && data.assaultBoostEnabled)
 						data.assaultBoostEnabled = false;

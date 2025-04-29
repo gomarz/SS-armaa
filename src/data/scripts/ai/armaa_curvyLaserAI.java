@@ -2,6 +2,7 @@ package data.scripts.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.EmpArcEntityAPI.EmpArcParams;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.magiclib.util.MagicRender;
 import org.magiclib.util.MagicTargeting;
@@ -213,7 +214,38 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 					if(target != moveTarget && target != null)
 					{
 						missile.setArmingTime(0f);
-						engine.spawnEmpArc(missile.getSource(), missile.getSource().getLocation(), missile.getSource(), target, DamageType.ENERGY, 0f, 0f, 10000f, "tachyon_lance_emp_impact", 40f, colorGlow, MUZZLE_FLASH_COLOR_ALT);
+
+						EmpArcParams params = new EmpArcParams();
+
+						params.segmentLengthMult = 8f;
+						params.zigZagReductionFactor = 0.15f;					
+						params.brightSpotFullFraction = 0.5f;
+						params.brightSpotFadeFraction = 0.5f;
+
+						float dist = Misc.getDistance(missile.getSource().getLocation(), target.getLocation());
+						params.flickerRateMult = 0.6f - dist / 3000f;
+						if (params.flickerRateMult < 0.3f) {
+							params.flickerRateMult = 0.3f;
+						}
+						float emp = 0;
+						float dam = 0;
+						EmpArcEntityAPI arc = (EmpArcEntityAPI)engine.spawnEmpArc(missile.getSource(), missile.getSource().getLocation(), missile.getSource(), target,
+										   DamageType.ENERGY, 
+										   dam,
+										   emp, // emp 
+										   100000f, // max range 
+										   "tachyon_lance_emp_impact",
+										   40f, // thickness
+										   //new Color(100,165,255,255),
+										   colorGlow,
+										   new Color(255,255,255,255),
+										   params
+										   );
+						arc.setCoreWidthOverride(30f);
+						
+						//arc.setFadedOutAtStart(true);
+						//arc.setRenderGlowAtStart(false);
+						arc.setSingleFlickerMode(true);
 					}					
 					moveTarget = target;
 				}

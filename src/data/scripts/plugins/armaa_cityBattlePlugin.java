@@ -178,11 +178,14 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 			}
 			if(!wave2Triggered && ( (ratio > 0.1f && engine.getFleetManager(1).getCurrStrength() < 25) || ratio >= 2f ) )
 			{
-				//Global.getSoundPlayer().playCustomMusic(1,1,"music_armaa_ax_bounty",true);				
+				Global.getSoundPlayer().playCustomMusic(1,1,"music_armaa_ax_bounty",true);				
 				boolean losing = engine.getFleetManager(1).getCurrStrength() < 25;
 				PersonAPI pilot = OfficerManagerEvent.createOfficer(engine.getFleetManager(0).getDefaultCommander().getFaction(),5, true);				
-				ShipAPI f = engine.getFleetManager(1).spawnShipOrWing("armaa_ceylon_boss",new Vector2f(0,10000),270f,0f);
-				engine.getFleetManager(1).spawnShipOrWing("heron_Attack",new Vector2f(200,10000),270f,0f);
+				ShipAPI f = engine.getFleetManager(1).spawnShipOrWing("armaa_ceylon_boss",new Vector2f(0,10000),270f,15f);
+				engine.getFleetManager(1).spawnShipOrWing("heron_Attack",new Vector2f(200,10000),270f,15f);
+				engine.getFleetManager(1).spawnShipOrWing("armaa_bassline_standard",new Vector2f(-200,10000),270f,15f);	
+				engine.getFleetManager(1).spawnShipOrWing("armaa_bassline_standard",new Vector2f(400,10000),270f,15f);	
+				engine.getFleetManager(1).spawnShipOrWing("armaa_bassline_standard",new Vector2f(-400,10000),270f,15f);						
 				f.setName("DAS Ceylon");
 				f.setCaptain(pilot);					
 				if(losing)
@@ -191,20 +194,17 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 					
 				}
 				else
-					engine.getCombatUI().addMessage(1,f,Color.red,f.getName(),Color.white,":",Color.white,"Attention all friendlies - DAS Ceylon retasking to this sector. Took a while cleaning up the spacer scum in the outskirts; Looks like we still have some filth to clean up. Moving in to assist.");
+					engine.getCombatUI().addMessage(1,f,Color.red,f.getName(),Color.white,":",Color.white,"DAS Ceylon inbound. Scum in the outskirts put up a fight.. pointless, of course. Still more trash to clear. Beginning approach.");
 				pilot = OfficerManagerEvent.createOfficer(engine.getFleetManager(0).getDefaultCommander().getFaction(),10, true);
-				f = engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_boss",new Vector2f(0,8000),270f,0f);
-				f.setCaptain(pilot);
 				for(int i = 0; i < 12; i++)
 				{
 					f = engine.getFleetManager(1).spawnShipOrWing("armaa_morganamp_standard",new Vector2f(MathUtils.getRandomNumberInRange(-2000,2000),MathUtils.getRandomNumberInRange(-10000,10000)),270f,3f);
 					f.setAnimatedLaunch();
 				}		
 				f.setCaptain(pilot);
-				engine.getCombatUI().addMessage(1,f,Color.red,f.getName(),Color.white,":",Color.white,"Rapier-1 and Rapier-2, engaging. Let's put an end to this.");
 				wave2Triggered = true;
 			}					
-	
+				if(ratio > 0.8f)
 				MagicRender.screenspace(
 					Global.getSettings().getSprite("misc", str),
 					MagicRender.positioning.CENTER, 

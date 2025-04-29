@@ -56,13 +56,11 @@ public class eis_wingClipper extends BaseHullMod
 		{
 			float currentBonus = Math.min(BONUS_MAX,(Float)Global.getCombatEngine().getCustomData().get("eis_wingClipper_bonus_"+ship.getId()));
 			stats.getFluxDissipation().modifyPercent(id,currentBonus);
-			stats.getAutofireAimAccuracy().modifyPercent(id, currentBonus);
-			stats.getMaxTurnRate().modifyPercent(id, currentBonus);
-			stats.getAcceleration().modifyPercent(id, currentBonus * 2f);
-			stats.getDeceleration().modifyPercent(id, currentBonus);
-			stats.getTurnAcceleration().modifyPercent(id, currentBonus * 2f);			
+			stats.getFluxCapacity().modifyPercent(id,currentBonus);			
+			stats.getBallisticRoFMult().modifyPercent(id, currentBonus);
+			stats.getEnergyRoFMult().modifyPercent(id, currentBonus);		
 			if(player)
-				Global.getCombatEngine().maintainStatusForPlayerShip("eis_wingClipper", "graphics/ui/icons/icon_repair_refit.png","Air Superiority", "TRN RATE/DISS/AIM: +" + (int)currentBonus + "%",false);
+				Global.getCombatEngine().maintainStatusForPlayerShip("eis_wingClipper", "graphics/ui/icons/icon_repair_refit.png","Air Superiority", "CAPACITY/DISS/ROF: +" + (int)currentBonus + "%",false);
 			if(currentBonus > 0f && interval.intervalElapsed())
 				Global.getCombatEngine().getCustomData().put("eis_wingClipper_bonus_"+ship.getId(),currentBonus-.1f);
 
@@ -71,13 +69,15 @@ public class eis_wingClipper extends BaseHullMod
 		else
 		{
 			stats.getFluxDissipation().unmodify(id);
-			stats.getAutofireAimAccuracy().unmodify(id);
-			stats.getMaxTurnRate().unmodify(id);
-			stats.getTurnAcceleration().unmodify(id);			
-			stats.getAcceleration().unmodify(id);
-			stats.getDeceleration().unmodify(id);			
+			stats.getFluxCapacity().unmodify(id);
+			stats.getBallisticRoFMult().unmodify(id);
+			stats.getEnergyRoFMult().unmodify(id);		
 		}
     }
+	public String getDescriptionParam(int index, HullSize hullSize) {
+		if (index == 0) return "" + (int)BONUS_MAX+"%";
+		return null;
+	}	
 	//This listener ensures we die properly
 	public static class PeacekeeperDeatMod implements DamageDealtModifier, AdvanceableListener 
 	{
@@ -111,6 +111,10 @@ public class eis_wingClipper extends BaseHullMod
 			multiplier = damageVal;
 			if(damageVal >= s.getHitpoints() && s.getHitpoints() > 0)
 			{
+				if(ship.getHitpoints() < ship.getMaxHitpoints())
+				{
+					ship.setHitpoints(Math.min(ship.getMaxHitpoints(),ship.getHitpoints()+s.getMaxHitpoints()*0.03f));
+				}
 				s.setHitpoints(0f);
 				float fp = s.getWing() != null ? (float)s.getWing().getSpec().getFleetPoints()/(float)s.getWing().getSpec().getNumFighters() : INCREASE_AMT;
 				//Global.getCombatEngine().applyDamage(s,point,99999f,DamageType.ENERGY,0f,true,false,ship);
@@ -125,55 +129,5 @@ public class eis_wingClipper extends BaseHullMod
 			return id;
 		}
 	}
-	/*	
-	public static class eis_wingClipperDamageListener implements DamageDealtModifier 
-	{
-		ShipAPI ship;
-		
-		public eis_wingClipperDamageListener(ShipAPI ship) 
-		{
-			this.ship = ship;
-		}
-
-		public void reportDamageApplied(Object source, CombatEntityAPI target, ApplyDamageResultAPI result) 
-		{
-				ShipAPI fighter = (ShipAPI) target;	
-			if(source instanceof WeaponAPI)
-			{
-				WeaponAPI wep = (WeaponAPI)source;
-				if(wep.getShip() != ship)
-				{
-					return;
-				}
-			}
-			
-			else if(source instanceof DamagingProjectileAPI)
-			{
-				DamagingProjectileAPI src = (DamagingProjectileAPI)source;
-				if(src.getSource() != ship)
-					return;					
-			}
-			
-			else if(source instanceof ShipAPI)
-			{
-				if((ShipAPI)source != ship)
-					return;
-			}
-				
-			if(fighter.getHullLevel() <= 0)
-			{
-				Global.getCombatEngine().addFloatingTextAlways(new Vector2f(fighter.getLocation().x,fighter.getLocation().y+fighter.getCollisionRadius()), "U killed me peacekeeper-chan", 20f, Color.white, fighter, 1f, 1f, 1f, 1f, 1f, .5f);
-				float currentBonus = 0f;
-				if(Global.getCombatEngine().getCustomData().get("eis_wingClipper_bonus_"+ship.getId()) instanceof Float)
-				{
-					currentBonus = (Float)Global.getCombatEngine().getCustomData().get("eis_wingClipper_bonus_"+ship.getId());
-				}
-				Global.getCombatEngine().getCustomData().put("eis_wingClipper_bonus_"+ship.getId(),currentBonus+1f);
-				fighter.removeListener(this);
-			}
-
-		}
-	}
-	*/
 }
 

@@ -139,7 +139,7 @@ public class armaa_sykoEveryFrame extends BaseEveryFrameCombatPlugin
 					dmg += proj.getDamageAmount() + proj.getEmpAmount() * 0.25f;
 				}			
 				
-				if(CollisionUtils.isPointWithinCollisionCircle(proj.getLocation(), ship))
+				if(CollisionUtils.isPointWithinCollisionCircle(proj.getLocation(), ship) && ship.getShield() == null || ship.getShield().isOff())
 				{			
 					if(!CollisionUtils.getCollides(proj.getLocation(),proj.getVelocity(),ship.getLocation(), 25f) && dmg >= 40f)
 					{
@@ -168,8 +168,7 @@ public class armaa_sykoEveryFrame extends BaseEveryFrameCombatPlugin
 						Global.getSoundPlayer().playSound("ui_neural_transfer_begin", .7f, 1f, ship.getLocation(),new Vector2f());
 						CombatUtils.applyForce(proj,-proj.getFacing(),5f);
 						dodgeBonus = true;
-						// Stronger effect if shields are down
-						shieldMult = (ship.getShield() == null || ship.getShield().isOff()) ? 1f:0.5f;
+						shieldMult = 1f;
 					}
 				}
 			}

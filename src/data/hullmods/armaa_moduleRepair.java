@@ -65,8 +65,17 @@ public class armaa_moduleRepair extends BaseHullMod {
 			return false;
 		}
 
-		public void advance(float amount) {
+		public void advance(float amount) 
+		{
 			String key = "moduleRepair_isDestroyed"+"_"+ship.getId();
+			if(ship.getParentStation() == null || !ship.getParentStation().isAlive())
+			{
+				ship.getMutableStats().getHullDamageTakenMult().unmodify("invincible");
+				ship.getMutableStats().getArmorDamageTakenMult().unmodify("invincible");
+				Global.getCombatEngine().getCustomData().remove(key);	
+				ship.setHitpoints(0f);
+				Global.getCombatEngine().removeEntity(ship);
+			}
 			if (isDestroyed) {
 				ship.getSpriteAPI().setColor(new Color(0,0,0,0));
 				ship.setCollisionClass(CollisionClass.NONE);

@@ -162,7 +162,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
 				bcc.aiRetreatAllowed = false;
 				bcc.objectivesAllowed = false;
-				bcc.enemyDeployAll = true;
+				bcc.enemyDeployAll = false;
 			}
 			@Override
 			public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {

@@ -14,7 +14,6 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.combat.entities.Ship;
 import com.fs.starfarer.api.combat.CombatTaskManagerAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
@@ -90,7 +89,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin
 				Global.getCombatEngine().removeEntity(ship);
 			}	
 		}		
-
+		
 		if(carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) 
 		{
 			if(ship.isFinishedLanding() || hasLanded)
@@ -98,9 +97,9 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin
 				ship.getMutableStats().getHullDamageTakenMult().unmodify("invincible");
 				ship.getMutableStats().getArmorDamageTakenMult().unmodify("invincible");
 				if(carrier != null && !fleetManager.getRetreatedCopy().contains(carrier.getFleetMember()))
-				{					
-					armaa_utils.destroy(ship);
-					Global.getCombatEngine().removeEntity(ship);					
+				{	
+					ship.setHullSize(HullSize.FRIGATE);			
+					armaa_utils.destroy(ship);					
 				}
 			}
 			takeOff(ship,landingLocation,true);
@@ -189,7 +188,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin
 			ship.setShipSystemDisabled(false);
 			ship.resetDefaultAI();
 			//ctm.orderSearchAndDestroy(fleetManager.getDeployedFleetMember(ship),false);		
-
+			
 			for(WeaponGroupAPI w:ship.getWeaponGroupsCopy())
 			{
 				if(!w.getActiveWeapon().usesAmmo())
@@ -241,6 +240,12 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin
 			{ 
 				ship.setCurrentCR(CRmarker+.1f);
 			}
+			// I'm not sure how this interact with some effect added by mods that alters
+			// malfunction chances, but it might be okay
+			ship.getMutableStats().getWeaponMalfunctionChance().unmodify("cr_effect");
+			ship.getMutableStats().getCriticalMalfunctionChance().unmodify("cr_effect");
+			ship.getMutableStats().getEngineMalfunctionChance().unmodify("cr_effect");
+			ship.getMutableStats().getShieldMalfunctionChance().unmodify("cr_effect");					
 			ship.clearDamageDecals();
 			ship.setHitpoints(ship.getMaxHitpoints()); //Hull to 100%
 			pptMax = ship.getVariant().getHullSpec().getNoCRLossTime(); 				

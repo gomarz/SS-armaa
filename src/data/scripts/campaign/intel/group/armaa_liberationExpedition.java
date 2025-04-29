@@ -541,12 +541,12 @@ public class armaa_liberationExpedition extends BlockadeFGI implements EconomyTi
 	public void performTakeover(boolean voluntary) {
 		this.voluntary = voluntary;
 		MarketAPI target = blockadeParams.specificMarket;
-		target.setFactionId("independent");
+		target.setFactionId("armaarmatura_arusthai");
 		target.setPlayerOwned(false);
         Global.getSector().getEconomy().addMarket(target, false);
         target.getPrimaryEntity().setMarket(target);
 		for (SectorEntityToken curr : target.getConnectedEntities()) {
-			curr.setFaction("independent");
+			curr.setFaction("armaarmatura_arusthai");
 		}
 		if(!target.getConstructionQueue().hasItem(Industries.SPACEPORT))
 			target.getConstructionQueue().addToEnd(Industries.SPACEPORT,0);

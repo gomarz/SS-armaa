@@ -32,8 +32,8 @@ public class armaa_sykoStims extends BaseHullMod {
 	private final float GRAZE_TIME_BONUS_MIN = 1.1f;
 	private final float MAX_TIME_MULT = 1f;
 	private final float MIN_TIME_MULT = 0.1f;
-	private final float up = 0.7f;
-	private final float down = 10f;
+	private final float up = 1f;
+	private final float down = 6f;
 	public static final int DRUGS_CONSUMED = 3;
 	private IntervalUtil buffTimer = new IntervalUtil(up,up);
 	private IntervalUtil coolDownTimer = new IntervalUtil(down,down);

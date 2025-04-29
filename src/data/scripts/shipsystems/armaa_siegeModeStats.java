@@ -72,7 +72,7 @@ public class armaa_siegeModeStats extends BaseShipSystemScript {
 				}
 				else
 				{
-					target.getMutableStats().getShieldDamageTakenMult().unmodify();
+					target.getMutableStats().getShieldDamageTakenMult().unmodify("armaa_guardianProtocol");
 					toRemove.add(target);
 				}					
 			}

@@ -77,7 +77,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 			"armaarmatura_arusthai",
 			null,
 			FleetTypes.PATROL_SMALL,
-			Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f, // combatPts
+			Math.max(400f,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f), // combatPts
 			0f, // freighterPts 
 			0f, // tankerPts
 			0f, // transportPts
@@ -85,11 +85,12 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 			0f, // utilityPts
 			0.4f // qualityMod
 			);
-		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);	
-		FleetFactoryV3.applyDamageToFleet(enemyFleet,0.20f,true,new Random());		
+		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);			
 		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());		
 		//FleetFactoryV3.applyDamageToFleet(enemyFleet,0.40f,true,new Random());		
-		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);			
+		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);
+		for(int i = 0; i < 25; i++)
+		enemyFleet.getFleetData().addFleetMember("kite_pirates_Raider");		
 		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());
 		final SectorEntityToken entity = dialog.getInteractionTarget();
 		Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.PIRATES,1f,100,200));

@@ -332,6 +332,12 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			if(Math.random() < 0.20f)
 			{
 
+			}	
+			if(Math.random() < 0.20f && engine.getFleetManager(1).getCurrStrength() < 5)
+			{			
+				Vector2f loc = new Vector2f(MathUtils.getRandomNumberInRange(minX,maxX),MathUtils.getRandomNumberInRange(minY,maxY));				
+				engine.spawnExplosion(loc, new Vector2f(), new Color(250,200,75,150), 200f, 1f);
+				Global.getSoundPlayer().playUISound("gate_explosion", MathUtils.getRandomNumberInRange(0.5f,1.5f), 10f);					
 			}			
 		}
 		
@@ -339,25 +345,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 		{
 			float bgStage = (float) engine.getElapsedInContactWithEnemy() / 100;			
 			Vector2f vec = (Vector2f)engine.getCustomData().get("armaa_atmoWarningLoc"+0);
-			if(bgStage >= 1 && !finalBossSpawn)
-			{
-				finalBossSpawn = true;
-				/* Maybe save this for later
-				String bossStr ="armaa_valkazard_boss";
-				boolean haveNex = Global.getSettings().getModManager().isModEnabled("nexerelin");					
-				if(haveNex && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
-				{
-					bossStr ="armaa_altagrave_ex_Standard";					
-				}					
-				ShipAPI s = engine.getFleetManager(1).spawnShipOrWing(bossStr,calculateMidpoint(),90f,20f);
-				*/
-				ShipAPI s = engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_boss",calculateMidpoint(),90f,20f);
-				s.setCaptain(Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE,"remnant",new Random()));
-				s.setAnimatedLaunch();
-				//Global.getSoundPlayer().playCustomMusic(1,0,null,true);	
-				//playSecondPhase = true;			
-				
-			}
+
 			for(CombatEntityAPI asteroid: engine.getAsteroids())
 			{
 				engine.removeEntity(asteroid);

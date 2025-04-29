@@ -38,7 +38,7 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
-
+import org.lazywizard.lazylib.MathUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -50,6 +50,7 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) 
 	{
 		CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
+		/*
 		ArrayList<FleetMemberAPI> removedShips = new ArrayList();	
 		for(FleetMemberAPI member: Global.getSector().getPlayerFleet().getMembersWithFightersCopy())
 		{
@@ -72,25 +73,33 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 			Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_"+member.getId(), crew);			
 		}
 		Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
+		*/
 		FleetParamsV3 fparams = new FleetParamsV3(
 			Global.getSector().getEntityById("nekki3").getLocationInHyperspace(),
-			"armaarmatura_arusthai",
+			"pirates",
 			null,
 			FleetTypes.PATROL_SMALL,
-			Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f, // combatPts
+			Math.max(100f,MathUtils.getRandomNumberInRange(0.50f*Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.80f,0.50f*Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f)), // combatPts
 			0f, // freighterPts 
 			0f, // tankerPts
 			0f, // transportPts
 			0f, // linerPts
 			0f, // utilityPts
-			0.4f // qualityMod
+			0.2f // qualityMod
 			);
-		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);	
-		FleetFactoryV3.applyDamageToFleet(enemyFleet,0.20f,true,new Random());		
+			
+		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);		
 		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());		
-		//FleetFactoryV3.applyDamageToFleet(enemyFleet,0.40f,true,new Random());		
+		for(int i = 0; i < 5; i++)
+		enemyFleet.getFleetData().addFleetMember("scarab_Experimental");
+		for(int i = 0; i < 5; i++)
+		enemyFleet.getFleetData().addFleetMember("brawler_tritachyon_Standard");	
+		for(int i = 0; i < 2; i++)
+		enemyFleet.getFleetData().addFleetMember("anubis_Standard");	
+		enemyFleet.getFleetData().addFleetMember("armaa_bassline_standard");				
 		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);			
 		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());
+		enemyFleet.getFleetData().addFleetMember("apex_Overdriven");		
 		final SectorEntityToken entity = dialog.getInteractionTarget();
 		Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.PIRATES,1f,100,200));
 		final MemoryAPI memory = getEntityMemory(memoryMap);		
@@ -181,6 +190,7 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 				} else {
 					dialog.dismiss();
 				}
+				/*
 				CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
 				ArrayList<FleetMemberAPI> removedShips = new ArrayList();
 			
@@ -199,13 +209,14 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 						member.getCrewComposition().setCrew(crew);
 					}
 				}
-					Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");						
+					Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");
+				*/					
 			}
 			@Override
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
 				bcc.aiRetreatAllowed = false;
-				bcc.objectivesAllowed = false;
-				bcc.enemyDeployAll = true;
+				bcc.objectivesAllowed = true;
+				bcc.enemyDeployAll = false;
 			}
 			@Override
 			public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {

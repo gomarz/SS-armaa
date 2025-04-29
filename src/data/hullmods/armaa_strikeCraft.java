@@ -73,8 +73,7 @@ public class armaa_strikeCraft extends BaseHullMod {
 	public final ArrayList<String> landingLines_notPossible = new ArrayList<>();
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
 	
-		private Logger logger;
-	
+	// private Logger logger = Logger.getLogger(armaa_strikeCraft.class);	
     enum RefitMode {
         REFIT_WHEN_SAFE("armaa_strikecraft_refit_outCombat"),
         REFIT_ASAP("armaa_strikecraft_refit_standard"),
@@ -109,6 +108,15 @@ public class armaa_strikeCraft extends BaseHullMod {
 		landingLines_notPossible.add("\"Zilch on available carriers. Aborting refit!\"");
 		landingLines_notPossible.add("\"There's nowhere for me to resupply.\"");
 	}
+
+    public static Map DAMAGE_MAP = new HashMap();
+    static {
+        DAMAGE_MAP.put(HullSize.FIGHTER, 1f);
+        DAMAGE_MAP.put(HullSize.FRIGATE, 1.20f);
+        DAMAGE_MAP.put(HullSize.DESTROYER, 1.10f);
+        DAMAGE_MAP.put(HullSize.CRUISER, 0.90f);
+        DAMAGE_MAP.put(HullSize.CAPITAL_SHIP, 0.80f);
+    }
 		
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
@@ -124,6 +132,7 @@ public class armaa_strikeCraft extends BaseHullMod {
 			boolean carrierBonus = false;
 			boolean independent = stats.getVariant().getHullSpec().getTags().contains("independent_of_carrier") ? true :false;
 			boolean hasSupportingShip = false;
+			PersonAPI defaultCap = null; 
 			fleet.syncIfNeeded();
 			for(FleetMemberAPI ship: fleet.getMembersListCopy())
 			{
@@ -154,13 +163,13 @@ public class armaa_strikeCraft extends BaseHullMod {
 			if(carrierBonus && (!Global.getSector().getPersistentData().containsKey("armaa_hyperSpaceBuff")))
 			{
 				stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).modifyMult("armaa_carrierStorageHyper",CORONA_EFFECT_REDUCTION);
-			}
+			}			
 		}
 		
 		if(Global.getCombatEngine() != null || (Global.getSector() != null && Global.getSector().getCampaignUI() != null && Global.getSector().getCampaignUI().isShowingDialog()))
 		{
 			stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).unmodify("armaa_carrierStorageHyper");
-		}
+		}	
 	}
 		
 	@Override
@@ -176,11 +185,7 @@ public class armaa_strikeCraft extends BaseHullMod {
 			
 		if(!ship.hasListenerOfClass(armaa_strikeCraft.StrikeCraftDeathMod.class))
 		{
-			if(!ship.getVariant().hasHullMod("armaa_strikeCraftFrig"))
-			{
-				ship.addListener(new StrikeCraftDamageListener(ship));
-			}
-				ship.addListener(new StrikeCraftDeathMod(ship));
+			ship.addListener(new StrikeCraftDeathMod(ship));
 		}
 	}
 	
@@ -225,35 +230,6 @@ public class armaa_strikeCraft extends BaseHullMod {
 		}
 		Global.getCombatEngine().getCustomData().put("armaa_strikecraftPilot"+ship.getId(),dangerLevel);
 		
-	}
-
-	public void drawHud(ShipAPI ship)
-	{
-		MagicUI.drawHUDStatusBar(
-			ship, 
-			(ship.getHitpoints()/ship.getMaxHitpoints()),
-			null,
-			null,
-			1,
-			"HULL",
-			">",
-			true
-		);
-
-		MagicUI.drawHUDStatusBar(
-		 ship, (ship.getCurrFlux()/ship.getMaxFlux()),
-		 null,
-		 null,
-		(ship.getHardFluxLevel()),
-		 "FLUX",
-		 ">",
-		 false
-		);
-	}
-
-	public Color getColorCondition(ShipAPI ship)
-	{
-		return Global.getSettings().getColor("textFriendColor");
 	}
 
 	public String getDescriptionParam(int index, HullSize hullSize) 
@@ -713,7 +689,7 @@ public class armaa_strikeCraft extends BaseHullMod {
 			ship.setCollisionClass(CollisionClass.FIGHTER);
 		
 		if(!ship.isAlive())
-			return;
+			return;		
 		/*
 		boolean player = Global.getCombatEngine().getPlayerShip() == ship;
 		if(Global.getCombatEngine().getCustomData().get("armaa_hullSupplies_"+ship.getOwner()) == null)
@@ -879,48 +855,6 @@ public class armaa_strikeCraft extends BaseHullMod {
 		}
     }
 	
-	public static class StrikeCraftDamageListener implements DamageListener {
-		ShipAPI ship;
-		
-		public StrikeCraftDamageListener(ShipAPI ship) 
-		{
-			this.ship = ship;
-		}
-
-		public void reportDamageApplied(Object source, CombatEntityAPI target, ApplyDamageResultAPI result) 
-		{
-			float totalDamage = result.getDamageToHull() + result.getTotalDamageToArmor();
-			if(source instanceof WeaponAPI)
-			{
-				WeaponAPI wep = (WeaponAPI)source;
-				ShipAPI ship = (ShipAPI) target;
-				
-				//We dont have the armor to tank beams like larger ships, back off if we start to take too much hull/armor damage
-				if(wep.isBeam() && totalDamage > 20)
-				{
-					ShipwideAIFlags flags = ship.getAIFlags();
-					flags.setFlag(ShipwideAIFlags.AIFlags.BACK_OFF,1f);
-					flags.setFlag(ShipwideAIFlags.AIFlags.DO_NOT_PURSUE,1f);
-				}
-			}
-			
-			//Damage floaties since they aren't created for fighter hullsize
-			if(ship.getHullSize() == HullSize.FIGHTER && Global.getCombatEngine().getPlayerShip() == ship)
-			{
-				float shipRadius = armaa_utils.effectiveRadius(ship);
-				Vector2f anchorPoint = MathUtils.getRandomPointInCircle(ship.getLocation(), shipRadius);
-				if(source instanceof CombatEntityAPI)
-				{
-					Global.getCombatEngine().addFloatingDamageText(anchorPoint, result.getTotalDamageToArmor(), Color.yellow, ship, (CombatEntityAPI)source);
-					anchorPoint.setY(anchorPoint.getY()-20);
-					Global.getCombatEngine().addFloatingDamageText(anchorPoint, result.getDamageToHull(), Color.red, ship, (CombatEntityAPI)source);
-					anchorPoint.setY(anchorPoint.getY()-20);
-					Global.getCombatEngine().addFloatingDamageText(anchorPoint, result.getDamageToShields(), new Color(125,125,200,255), ship, (CombatEntityAPI)source);
-				}				
-			}
-		}
-	}
-	
 	//This listener ensures we die properly
 	public static class StrikeCraftDeathMod implements DamageTakenModifier, AdvanceableListener 
 	{
@@ -929,11 +863,8 @@ public class armaa_strikeCraft extends BaseHullMod {
 			this.ship = ship;
 		}
 		
-		public void advance(float amount) 
-		{
-
-		}
-
+		public void advance(float amount) {}
+		
 		public String modifyDamageTaken(Object param,CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) 
 		{
 			
@@ -942,42 +873,38 @@ public class armaa_strikeCraft extends BaseHullMod {
 			
 			if(shieldHit)
 				return null;
-			float multiplier = 1f;
-			switch(damage.getType())
-			{
-				case KINETIC:
-				multiplier = 0.5f;
-				break;
-				
-				case HIGH_EXPLOSIVE:
-				multiplier = 2f;
-				break;
-				
-				case FRAGMENTATION:
-				multiplier = 0.25f;
-			}
 			ShipAPI s = (ShipAPI) target;
 			String id = "strikecraft_death";
-			if(s.getVariant().hasHullMod("armaa_strikeCraftFrig") && s.getCaptain() != null && s.getCaptain().getStats() != null)
-			{
+
 				float level = ship.getCaptain().isDefault() ? 0:ship.getCaptain().getStats().getLevel();
-				float bonus = ship.getVariant().getSModdedBuiltIns().contains("cataphract2") ? 1f - (1f - 0.02f*level) : 1f;
+				//float bonus = ship.getVariant().getSModdedBuiltIns().contains("cataphract2") ? 1f - (1f - 0.02f*level) : 1f;
 				if(damage.getStats() != null)
 				{
-					damage.getModifier().modifyMult(id, Math.max(1f,damage.getStats().getDamageToFighters().getModifiedValue()*(bonus)));
-
+					if(ship.getVariant().hasHullMod("armaa_targetingDisruptor"))
+					{
+						Float hullSizeMult = (float)DAMAGE_MAP.get(damage.getStats().getVariant().getHullSize());
+						if (hullSizeMult != null)
+							damage.getModifier().modifyMult(id, hullSizeMult);
+					}
+					else
+					{
+						float mult = Math.max(1f,Math.min(1.30f,damage.getStats().getDamageToFighters().getModifiedValue()));
+						if (mult > 1.05f && Math.random() < 0.05f) { // only flash if bonus is significant (say >5% bonus)
+							Color textColor = mult >= 1.25f ? Color.RED : (mult >= 1.15f ? Color.ORANGE : Color.YELLOW);
+							Global.getCombatEngine().addFloatingText(
+								ship.getLocation(),
+								"PD-Optimized strike! +"+mult+"x dmg",
+								16f,            // text size
+								textColor,
+								ship,
+								0.5f,           // fade in time
+								1.0f            // full visible time
+							);
+						}
+						damage.getModifier().modifyMult(id, mult);
+					}
 				}
-
-			}
-
-			float damageVal = damage.getDamage();
-			float armor = DefenseUtils.getArmorValue(s,point);
-			multiplier = damageVal;
-			if(damageVal >= s.getHitpoints() || s.getHitpoints() <= 0)
-				s.setHullSize(HullSize.FRIGATE);
-
 			return id;
 		}
 	}
 }
-

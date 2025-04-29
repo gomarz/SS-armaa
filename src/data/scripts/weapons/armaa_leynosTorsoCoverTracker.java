@@ -79,11 +79,15 @@ public class armaa_leynosTorsoCoverTracker implements EveryFrameWeaponEffectPlug
 			{
 				currRetract+=0.5f;
 			}
+			else if(currRetract > retractLevel)
+			{
+				currRetract = retractLevel;
+			}
 		}
 		else
 		{
 			if(currRetract > 0)
-				currRetract-=-.5f;
+				currRetract-=0.5f;
 		}
 		weapon.getSprite().setCenterY(originalPos+(currRetract));
 

@@ -14,6 +14,7 @@ import org.magiclib.util.MagicRender;
 import org.magiclib.util.MagicLensFlare;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.loading.ProjectileSpecAPI;
 
 
 
@@ -33,6 +34,11 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 	
         if (weapon.isFiring() && charge != 1f) 
 		{
+			ProjectileSpecAPI spec = (ProjectileSpecAPI)weapon.getSpec().getProjectileSpec();
+			float r = spec.getFringeColor().getRed()/255f;
+			float b = spec.getFringeColor().getBlue()/255f;
+			float g = spec.getFringeColor().getGreen()/255f;
+			float alpha = spec.getFringeColor().getAlpha()/255f;
 			for(int i = 0; i< numbarrels; i++)
 			{
 				int barrel = i;
@@ -54,7 +60,7 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 						Vector2f.add(offset, origin, origin);
 						Vector2f loc = MathUtils.getPoint((Vector2f)weapon.getLocation(), (float)18.5f, (float)weapon.getCurrAngle());
 						Vector2f vel = weapon.getShip().getVelocity();
-						engine.addHitParticle(origin, vel, MathUtils.getRandomNumberInRange((float)20.0f*size, (float)(charge*size * 60.0f + 20.0f)), MathUtils.getRandomNumberInRange((float)0.5f, (float)(0.5f + charge)), MathUtils.getRandomNumberInRange((float)0.1f, (float)(0.1f + charge / 10.0f)), new Color(0f, charge / 1.5f, charge /2f));
+						engine.addHitParticle(origin, vel, MathUtils.getRandomNumberInRange((float)20.0f*size, (float)(charge*size * 60.0f + 20.0f)), MathUtils.getRandomNumberInRange((float)0.5f, (float)(0.5f + charge)), MathUtils.getRandomNumberInRange((float)0.1f, (float)(0.1f + charge / 10.0f)), new Color(r*charge, g*charge, b*charge,alpha*charge));
 
 						Vector2f particleVel = MathUtils.getRandomPointInCircle((Vector2f)new Vector2f(), (float)(35.0f * charge));
 						Vector2f particleLoc = new Vector2f();
@@ -62,7 +68,7 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 						Vector2f.add((Vector2f)vel, (Vector2f)particleVel, (Vector2f)particleVel);
 						for (int j = 0; j < 5; ++j) 
 						{
-							 engine.addHitParticle(particleLoc, particleVel, MathUtils.getRandomNumberInRange((float)1.0f, (float)(charge * 2.0f + 1.0f)), MathUtils.getRandomNumberInRange((float)0.5f, (float)(0.5f + charge)), MathUtils.getRandomNumberInRange((float)0.75f, (float)(0.75f + charge / 4.0f)), new Color(charge/2f, charge, charge/1.5f));
+							 engine.addHitParticle(particleLoc, particleVel, MathUtils.getRandomNumberInRange((float)1.0f, (float)(charge * 2.0f + 1.0f)), MathUtils.getRandomNumberInRange((float)0.5f, (float)(0.5f + charge)), MathUtils.getRandomNumberInRange((float)0.75f, (float)(0.75f + charge / 4.0f)), new Color(r*charge, g*charge, b*charge,alpha*charge));
 						}
 					}
 				}
@@ -79,13 +85,15 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 		}
 		
 	}
-    private static final Color MUZZLE_FLASH_COLOR = new Color(0, 171, 128, 255);
-    private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(255, 255, 255, 100);
-    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(0, 255, 0, 50);
-    private static final float MUZZLE_FLASH_DURATION = 0.20f;
-    private static final float MUZZLE_FLASH_SIZE = 30.0f;	
+
 	public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) 
 	{
+		ProjectileSpecAPI spec = (ProjectileSpecAPI)weapon.getSpec().getProjectileSpec();
+		final Color MUZZLE_FLASH_COLOR = spec.getFringeColor();
+		final Color MUZZLE_FLASH_COLOR_ALT = new Color(255, 255, 255, 100);
+		final Color MUZZLE_FLASH_COLOR_GLOW = spec.getGlowColor();
+		final float MUZZLE_FLASH_DURATION = 0.20f;
+		final float MUZZLE_FLASH_SIZE = 30.0f;			
 		if(MagicRender.screenCheck(0.2f, projectile.getLocation()))
 		{
 			
@@ -109,14 +117,15 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 					
 	}
 
-    private static final Color PARTICLE_COLOR = new Color(50, 255, 50, 174);
-    private static final Color BLAST_COLOR = new Color(255, 16, 16, 255);
-    private static final Color CORE_COLOR = new Color(119, 194, 255);
-    private static final Color FLASH_COLOR = new Color(152, 255, 225);
-    private static final int NUM_PARTICLES = 15;
 	//@Override
 	public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine)  
 	{
+		ProjectileSpecAPI spec = (ProjectileSpecAPI)projectile.getProjectileSpec();	
+		final Color PARTICLE_COLOR = spec.getFringeColor();
+		final Color BLAST_COLOR = new Color(255, 16, 16, 255);
+		final Color CORE_COLOR = spec.getCoreColor();
+		final Color FLASH_COLOR = spec.getFringeColor();
+		final int NUM_PARTICLES = 15;		
         engine.spawnExplosion(point, new Vector2f(), PARTICLE_COLOR, 75f, 1f);
         engine.spawnExplosion(point, new Vector2f(), CORE_COLOR, 50f, 1f);
 
@@ -139,8 +148,8 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 			for (int x = 0; x < NUM_PARTICLES; x++) 
 			{
 				engine.addHitParticle(point,
-						MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(100f, 150f), (float) Math.random() * 360f),
-						5f, 1f, MathUtils.getRandomNumberInRange(0.6f, 1f), PARTICLE_COLOR);
+						MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(100f, 600f), (float) Math.random() * 360f),
+						MathUtils.getRandomNumberInRange(4f,7f), 1f, MathUtils.getRandomNumberInRange(0.5f, 2f), PARTICLE_COLOR);
 			}	
 		}	
     }   
