@@ -8,15 +8,13 @@
   "permaMods": [],
   "hullMods": [
     "heavyarmor",
-    "unstable_injector",
     "armoredweapons",
-    "safetyoverrides",
-    "auxiliarythrusters",
     "hardened_subsystems",
     "hardenedshieldemitter",
+    "shrouded_thunderhead",
     "armaa_himac",
-    "automated",
     "armoredweapons",
+    "armaa_wingCommander",
     "coherer",
     "frontshield",
     "extendedshieldemitter"
@@ -26,8 +24,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0001": "gorgon",
-        "WS0002": "gorgon"
+        "WS0001": "amsrm",
+        "WS0002": "amsrm"
       }
     },
     {
@@ -52,5 +50,5 @@
     }
   ],
   "modules": [],
-  "wings": []
+  "wings": ["aspect_attack_wing"]
 }

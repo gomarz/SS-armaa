@@ -1,0 +1,37 @@
+{
+  "variantId": "armaa_bassline_standard",
+  "hullId": "armaa_bassline",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "taclaser",
+        "WS0002": "gravitonbeam",
+        "WS0003": "gravitonbeam",
+        "WS0004": "taclaser",
+        "WS0005": "taclaser",
+        "WS0006": "taclaser",
+        "WS0007": "irautolance",
+        "WS0008": "irautolance",
+        "WS0009": "vulcan",
+        "WS0010": "vulcan",
+        "WS0012": "hil"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "armaa_kouto_wing",
+    "armaa_kouto_wing"
+  ]
+}

@@ -8,3 +8,23 @@
 - VX redesign? Gave it Wingcom
 - make valken actually worth using
 - fix Sus Valkazard handover (even if its supposed to fire because valk was already acquired, we need to account for it being gotten by other means..?)
+- bassline
+- mission 4 and resolution
+- shaft rewrite (leave out morgana here, and in city battle)
+- go through GC with CN bros for final bug hunting
+- finish implementing ATAC stuff
+- Sunrider collab event with Ava?
+- make sure fleet is spawning properly
+
+3.1.6?
+
+- Sunrider - Ava - Dawn event
+- 1000 pt atac reward
+- bug hunt
+- fix travel drive lock when launched from carrier
+- fix Gravion gravity well remaining at gamlin instead of being removed
+- Thermoflux & Targeting Disruptor hullmod Icons and description 
+- Increase stock of Arma Armatura stuff?
+- Leynos - Blink...should it be less spammy? 
+- fix automaton officer assignment/unassignment when hm removed
+- RMS skill desc

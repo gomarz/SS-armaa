@@ -40,6 +40,9 @@ Modules %s, and %s.
 Targeting Core,armaa_targetingCore,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_targetingCore,"Extends the range of ballistic and energy weapons by %s. The range of point-defense weapons is only extended by %s.
 
 Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,,
+Targeting Profile Disruptor,armaa_targetingDisruptor,,,Arma Armatura,special,,,,,,5,10,15,20,data.hullmods.armaa_targetingDisruptor,"Signature modulation reroutes hostile targeting profiles. Larger vessels misread the unit's priority--smaller ones do not. Increases damage received from Frigates and Destroyers by %s, but Decreases damage received from Cruisers and Capital Ships by %s.
+
+Fully negates extra damage taken from ships with PD enhancing skills.",,,
 SERAPH,seraph,,,????,,,,,TRUE,TRUE,-6,-12,-18,-30,data.hullmods.seraph,"Armor is increased by %s standard units, and %s increase in speed and maneuverability. Exceptionally well-tuned energy systems increase flux throughput and capacity by %s over standard examples of this hull.",,,graphics/icons/markets/rogue_ai.png
 SILVERSWORD,armaa_SeraphTargetingSoftware,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SeraphTargetingSoftware,"A specialized combat support suite governed by an (allegedly) delta-level AI core which excels in precision strikes. Small non-missile weapons automatically target missiles and ignore flares, and damage against missiles and fighters is increased by %s.
 
@@ -47,17 +50,26 @@ This system is equipped with a manual safety override that can be tripped to for
 
 Due to limited space, %s.",,,graphics/armaa/hullmods/armaa_seraph_targeting.png
 SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,0,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
+C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,40,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
 Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,"special,no_drop",,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
 
 When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,
+Thermoflux Drive,armaa_wingClipper2,,,Arma Armatura,"special,no_drop",,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.eis_wingClipper,"Enemy fighters hit by projectiles/beams with damage greater than their remaining HP are instantly destroyed, regardless of defensive bonuses.
+
+Downing enemy fighters increases flux capacity, non-missile rate of fire, and dissipation by up to %s. Additionally, 3% of the fighters max HP is restored to the ship's hull.
+This bonus decays over time, and the amount gained per fighter is determined by its FP value divided by squadron size.",,,
+Automaton Control Shell,armaa_automatedCognitionShell,,,Arma Armatura,"special,no_drop",,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.armaa_automatedCognitionShell,"The Automaton Control Shell is a patchwork solution born of budget cuts, a recurrent lack of good pilots(or rather, good pilots who survive more than a single sortie) and creative interpretations of AI governance. By grafting a subprocess of a Gamma Core into an obsolete humanoid automaton—once used for civ-grade inspection or crowd control—the system allows strikecraft to be ""piloted"" without officially being automated.
+
+The shell mimics human interface behaviors: flipping switches, pressing pedals, even reacting to G-forces (badly). It doesn't scream when facing immediate liquification via a stray hellbore round, but it does twitch. Sometimes it waves at the maintenance crew.
+
+Per outdated Domain bureaucratic language, ""Automated ship systems"" refer to hulls controlled by direct AI interface or wholly autonomous routines. Technically, it's not an AI. Legally, it's not a pilot. Functionally... it works. Most of the time.",,,
 WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters,40000,,,,10,10,15,20,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/armaa/hullmods/armaa_wingcom.png
 OVERLORD SUITE[ALPHA],armaa_skyMindAlpha,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteAlpha,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/advanced_targeting_core.png
 OVERLORD SUITE[BETA],armaa_skyMindBeta,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteBeta,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/targeting_core.png
 OVERLORD SUITE[GAMMA],armaa_skyMindGamma,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteGamma,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/automated.png
 Fighter Strafing,armaa_fighterStrafe,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_fighterStrafe,,,,
 AI Core Utility Script,armaa_aicoreutilityscript,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_aicoreutilityscript,This should not be visible.,Spaghetti scripts.,,graphics/icons/markets/headquarters.png
-,,,,,,,,,,,,,,,,,,,
+AI Pilot Utility Script,armaa_acsutilityscript,,,,,,,,TRUE,FALSE,0,0,0,0,data.hullmods.armaa_acsutilityscript,This should not be visible.,Spaghetti scripts.,,graphics/icons/markets/headquarters.png
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,,

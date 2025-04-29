@@ -1,0 +1,5 @@
+name,id,demand class,base price,export value,price variability,utility,origin,tags,stack size,cargo space,icon,sound id,sound id drop,order,economyTier,econUnitOrigUnused,econUnit,baseRaidDanger,eU * base value,iconWidthMult,plugin,desc
+Combat Data,armaa_combat_data,armaa_combat_data,1000,,0,1,,"nonecon, armaa_combat_data, hide_in_codex",1000,1,graphics/icons/cargo/ai_core_gamma.png,ai_core_pickup,ui_fighter_drop,30,,,,,,1,,
+Basic Telemetry Data,armaa_combat_data1,armaa_combat_data,,,0,150,,"nonecon, armaa_combat_data, no_loss_from_combat, codex_unlockable",1000,1,graphics/icons/cargo/ai_core_alpha.png,ai_core_pickup,ui_alpha_core_drop,40,,,,HIGH,,1,,
+Advanced Combat Analytics,armaa_combat_data2,armaa_combat_data,,,0,30,,"nonecon, armaa_combat_data, no_loss_from_combat, codex_unlockable",1000,1,graphics/icons/cargo/ai_core_beta.png,ai_core_pickup,ui_beta_core_drop,39,,,,MEDIUM,,1,,
+Prototype Field Feedback,armaa_combat_data3,armaa_combat_data,,,0,10,,"nonecon, armaa_combat_data, no_loss_from_combat, codex_unlockable",1000,1,graphics/icons/cargo/ai_core_gamma.png,ai_core_pickup,ui_gamma_core_drop,38,,,,MEDIUM,,1,,

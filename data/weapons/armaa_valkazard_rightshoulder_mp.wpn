@@ -1,7 +1,6 @@
 {
 	"id":"armaa_valkazard_rightshoulder_mp",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
-        "everyFrameEffect": "data.scripts.weapons.armaa_alesteEffect",
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,

@@ -2,6 +2,8 @@ v3.2
 ------
 ======Additions======
 - Added SP option to circumvent FP limit for starting ACoC
+- Add new voice lines for Dawn
+- Add 2 new events re: spooky redacted if Dawn is present
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize
 	- slow, mid-long range, prioritize fighters
@@ -14,13 +16,32 @@ v3.2
 - Fixed some bugs that could occur if mod was loaded into an existing save
 - Fixed reference to Raven at abandoned station
 - Fixed bug where strikecraft would activate travel drive when deploying from carriers
+- Fixed HI-MAC triggering when not double tapping the same activation key (I.E tapping A, then tapping D)
+- Fixed HI-MAC charge going negative if used after flame out
+- Fixed ships with HI-MAC being a little too suicidal when system was active, should deactivate and use shield more often
+- Fixed potential bug with strikecraft not being properly recognized as dead if destroyed while landed
 
 ======Tweaks======
-
-- Increased Shield Upkeep for all strikecraft (except Aleste S-II and Valkazard)
-	- 0.2->0.3
+- Jenius becomes Pirate owned instead of Independent after completing ACoC
+	- briefly has 'Arusthai' ownership during the mission to prevent rep loss to pirates during story related raid
+- Bonus incoming damage dealt to strikecraft by fighter damage modifier had no upper bound. Now caps out at a 30% bonus.
+	- New hullmods to alter/adjust this modifier:
+		- Targeting Profile Disruptor
+			Effect: Nullifies bonus fighter damage, but:
+				- +15% damage taken from frigates
+				- +7% from destroyers
+				- -7% from cruisers
+				- -15% from capitals
+		- Advanced Evasion Software
+			- Halves the extra fighter damage bonus (i.e., +15% max instead of +30%)
+			- +10% top speed / weapon fire rate
 -Strikecraft hullmod specifies ships benefit from Frigate-based bonuses
+-Strikecraft should no longer suffer malfunctions caused by low CR after repairing fully
 
+C-Stim Dispatcher
+	- Uptime: 0.7s->1s
+	- Downtime: 10s->6s
+	- Fixed bug that caused ability to proc even when shields were raised
 Juno Mk. III
 	- Chargeup: 1.5 -> 1
 
@@ -76,6 +97,7 @@ Altagrave
 - GuarDUAL
 	- gfx tweak
 	- Improved(?) AI
+	- DP: 15->13
 	- Mode BETA
 		- Ballistic RoF: 0.50x -> 1.00x
 	- Mode ALPHA

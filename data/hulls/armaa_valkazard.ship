@@ -121,7 +121,7 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "UNIVERSAL",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
@@ -131,7 +131,7 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "UNIVERSAL",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,

@@ -173,7 +173,7 @@
 	"illegalCommodities":[
 	],
 	"music":{
-		"theme":"music_armaa_pirate_market_neutral",
+		"theme":"music_armaa_gravionbattle2",
 		"market_neutral":"music_armaa_pirate_market_neutral",
 		"market_hostile":"music_armaa_pirate_market_hostile",
 		"market_friendly":"music_armaa_pirate_market_friendly",

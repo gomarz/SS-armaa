@@ -1,13 +1,13 @@
 {
 	id:"armaarmatura_arusthai",
 	"color":[252,71,75,255],
-	"displayName":"AS",
+	"displayName":"Arusthai",
 	"displayNameWithArticle":"The MRC",
-	"displayNameLong":"Meshan Reprisal Coalition",
-	"displayNameLongWithArticle":"The Meshan Reprisal Coalition",
+	"displayNameLong":"Arusthai Sovereignty",
+	"displayNameLongWithArticle":"The Arusthai Sovereignty",
 	"logo":"graphics/armaa/factions/armaa_arusthai.png",
 	"crest":"graphics/armaa/factions/armaa_logo01_crest.png",
-	"shipNamePrefix":"DAS",
+	"shipNamePrefix":"AS",
 
 	"showInIntelTab":false,
 
@@ -224,27 +224,21 @@
 	"custom":{
 		"decentralized":true,
 		"engageWhenEvenStrength":true,
-		"exemptFromFoodShortages":false,
-		"willTradeWhenHostile":true,
-		"ignoreTradeWithEnemiesForReputation":false,
-		"postsNoBounties":false,
-		"offerMissionsWhenHostile":true,
-		"allowsTransponderOffTrade":true,
+		"exemptFromFoodShortages":true,
+		"willTradeWhenHostile":false,
+		"ignoreTradeWithEnemiesForReputation":true,
+		"postsNoBounties":true,
+		"offerMissionsWhenHostile":false,
+		"allowsTransponderOffTrade":false,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":true, # for fleet behavior
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
-		"patherBaseTypesSmall":{
-			"orbitalstation":10,
-		},
-		"patherBaseTypesLarge":{
-			"battlestation":10,
-		},
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,
 			"vsFreePort":false,
-			"canBombard":true,
+			"canBombard":false,
 			"territorial":false,
-			"canSendWithoutMilitaryBase":true,
+			"canSendWithoutMilitaryBase":false,
 		},
 	},
 	"fleetTypeNames":{
