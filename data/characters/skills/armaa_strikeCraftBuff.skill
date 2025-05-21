@@ -4,21 +4,14 @@
 	"compressHullmods":false,
 	"scope":CUSTOM,
 	"scopeStr":"all combat strikecraft",
-	#"scopeStr":"all combat phase ships in fleet",
-	#"scopeStr":"all phase ships with officers, including flagship",
 	"effectGroups":[
-		{
-			"requiredSkillLevel":0,
-			"effects":[
-				{"type":"DESCRIPTION", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level0"},
-			]
-		},
 		{
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level1"},			
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level2"},			
 				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level3"},
-				#{"type":"FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level4"},
 			]
 		},
 	],

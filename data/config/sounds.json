@@ -12,15 +12,6 @@
 		"music_armaa_system":[
 			{"file":"cave_of_regret.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
-		"music_armaa_pirate_market_hostile":[
-			{"file":"recollective_mind.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
-		],
-		"music_armaa_pirate_market_neutral":[
-			{"file":"decision.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
-		],
-		"music_armaa_pirate_market_friendly":[
-			{"file":"decision.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
-		],
 		"music_armaa_pirate_encounter_neutral":[
 			{"file":"elimination.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
@@ -40,7 +31,7 @@
 			{"file":"escape_from_control.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_gravionbattle":[
-			{"file":"O3D001.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
+			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_gravionbattle2":[
 			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":1,"randomStart":true},

@@ -9,14 +9,14 @@
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["no_sell","no_dealer","restricted","no_drop"],
-    "systemId":"armaa_amalgamatefeed",
+    #"systemId":"microburn",
     "tech":"Arma Armatura (Modified)",
-    "removeWeaponSlots":["TRUE_GUN"], 		# ids
+    "removeWeaponSlots":["TRUE_GUN","WS0006"], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-    "removeBuiltInWeapons":["A_GUN"],
+    "removeBuiltInWeapons":["A_GUN","WS0001"],
     "removeWings":1,
-    "removeBuiltInMods":[],
-    "builtInMods":["armoredweapons","fourteenth","armaa_wingCommander"],
+    "removeBuiltInMods":["escort_package"],
+    "builtInMods":["armoredweapons","fourteenth"],
   "weaponSlotChanges":{
 	   "WS0005":{
 		  "angle": 0,
@@ -46,6 +46,13 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -30
+    },
+      "E_LARM":{
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30
     },
 },
     "builtInWeapons":{

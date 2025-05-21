@@ -137,7 +137,7 @@
     {
       "id": "TRUE_GUN",
       "size": "LARGE",
-      "type": "ENERGY",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 120,
       "angle": 20,

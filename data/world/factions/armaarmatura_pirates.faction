@@ -184,10 +184,10 @@
 	"illegalCommodities":[
 	],
 	"music":{
-		"theme":"music_armaa_pirate_market_neutral",
-		"market_neutral":"music_armaa_pirate_market_neutral",
-		"market_hostile":"music_armaa_pirate_market_hostile",
-		"market_friendly":"music_armaa_pirate_market_friendly",
+		"theme":"music_pirates_market_neutral",
+		"market_neutral":"music_pirates_market_neutral",
+		"market_hostile":"music_pirates_market_hostile",
+		"market_friendly":"music_pirates_market_friendly",
 		"encounter_neutral":"music_armaa_pirate_encounter_neutral",
 		"encounter_hostile":"music_armaa_pirate_encounter_hostile",
 		"encounter_friendly":"music_armaa_pirate_encounter_friendly",

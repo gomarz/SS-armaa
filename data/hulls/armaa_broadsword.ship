@@ -1,0 +1,82 @@
+{
+  "hullName": "Broadsword",
+  "hullId": "armaa_broadsword",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/armaa_broadsword.png",
+  "style": "LOW_TECH",
+  "height": 33,
+  "width": 30,
+  "center": [15, 13],
+  "collisionRadius": 30,
+  "shieldCenter": [1, 0],
+  "shieldRadius": 22,
+  "viewOffset": 0,
+  "builtInMods": [
+    "strikeCraft",
+    "armaa_wingCommander",
+    "rugged",
+    "frontshield",
+    "heavyarmor",
+    "hardenedshieldemitter"
+  ],
+  "builtInWings": [
+    "broadsword_wing"
+  ],
+  "builtInWeapons": {
+    "WS 001": "lightmg",
+    "WS 002": "lightmg"
+  },
+  "weaponSlots": [
+    {
+      "id": "TURRET",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-10, -0]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-5, -10]
+    },
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-5, 11]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-11, 6],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-11, -5],
+      "length": 32,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -5, 12,
+    20, 0,
+    -5, -12,
+    -10, 0
+  ]
+}

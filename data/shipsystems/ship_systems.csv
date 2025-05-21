@@ -32,7 +32,7 @@ Juno Mk. IV,armaa_morgana_beamSys,,,,,,,,,,1.5,,1,10,TRUE,,,,,,FALSE,TRUE,TRUE,,
 D.R.N.S.,armaa_drns,,,,,,,,,,,2,.1,1.5,TRUE,,,,TRUE,,FALSE,FALSE,FALSE,,,,graphics/icons/hullsys/active_flare_launcher.png
 P.E.R.C.E.P.T.,armaa_percept,,,,,,.22,,3,0.06,0.5,.1,0,3,FALSE,,,,FALSE,,FALSE,FALSE,FALSE,,,,graphics/icons/hullsys/active_flare_launcher.png
 UWS Strike,armaa_drone_strike,,,,,,0.45,,,,0,0.05,0.2,,,,,TRUE,TRUE,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Booster,armaa_jauntbooster,,,,,,,,2,0.1,0.3,0.3,1,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
+Booster,armaa_jauntbooster,,,,,,,,4,0.2,0.1,0.3,0,1,,,,TRUE,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 AWACS,armaa_awacs,,,,,,0.2,,,,0.5,7,1,10,,,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png

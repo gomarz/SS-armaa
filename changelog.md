@@ -7,34 +7,55 @@ v3.2
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize
 	- slow, mid-long range, prioritize fighters
-- Bassline:
+- New Ship: Bassline
 	- Combat Carrier
+- Added some playable vanilla strikecraft analogues
+	- Low OP, but several beneficial built-in hullmods including WINGCOM
+		- New(?) Ship: Broadsword (WINGCOM)
+			- 1x composite, 2x built-in LMG
+		- New Ship: Sarissa (WINGCOM)
+		- New Ship: Trident (WINGCOM)
+			- Ship System: Reserve Deployment
+			- 1x rear facing energy turret
 - New Mission: Descent
+	- If didn't start with Valkazard, can be obtained/encountered in the climax of this mission
+- ATAC "Event"
+	- Progress accumulates from destroying ships with ArmaA ships present in the fleet
+	- Grants various rewards + minor buff geared towards strikecraft
 	
 ======Fixes======
 - Fixed Kouto (E-Type) missing desc
+- Fixed strikecraft not launching from converted hangar ships
+- Fixed D-modded GuarDUALs causing CTD if mousing over Variable Unit hullmod
+- FIxed enemy Panther's spawning at 5000% CR
+- Arma Armatura now knows their XIV BPs (this means they will show up in the special submarket)
 - Fixed some bugs that could occur if mod was loaded into an existing save
 - Fixed reference to Raven at abandoned station
-- Fixed bug where strikecraft would activate travel drive when deploying from carriers
 - Fixed HI-MAC triggering when not double tapping the same activation key (I.E tapping A, then tapping D)
 - Fixed HI-MAC charge going negative if used after flame out
 - Fixed ships with HI-MAC being a little too suicidal when system was active, should deactivate and use shield more often
 - Fixed potential bug with strikecraft not being properly recognized as dead if destroyed while landed
+- Fixed bug where strikecraft would automatically activate travel drive when launching from carrier
+- Fixed bug where strikecraft would initially launch from bay with wrong orientation
+- Fixed PERCEPT orb not changing target if current target was already dead
+- Fixed strikecraft always accelerating forward post launch, instead of in the direction they are facing
+- Increased performance of missions with special backgrounds
 
 ======Tweaks======
 - Jenius becomes Pirate owned instead of Independent after completing ACoC
 	- briefly has 'Arusthai' ownership during the mission to prevent rep loss to pirates during story related raid
-- Bonus incoming damage dealt to strikecraft by fighter damage modifier had no upper bound. Now caps out at a 30% bonus.
-	- New hullmods to alter/adjust this modifier:
+- Bonus incoming damage dealt to strikecraft by fighter damage modifier had no upper bound. 
+	- Now caps out at a 25% bonus.
+	- Added floaty text to make it more obvious ship is being hit by something w/ the damage modifier
+	- New hullmod to alter/adjust this modifier:
 		- Targeting Profile Disruptor
-			Effect: Nullifies bonus fighter damage, but:
-				- +15% damage taken from frigates
-				- +7% from destroyers
-				- -7% from cruisers
-				- -15% from capitals
-		- Advanced Evasion Software
-			- Halves the extra fighter damage bonus (i.e., +15% max instead of +30%)
-			- +10% top speed / weapon fire rate
+			Effect: Nullifies bonus incoming damage, but:
+				- +20% damage taken from all frigates
+				- +10% from all destroyers
+				- -10% from all cruisers
+				- -20% from all capitals
+				- From 1000 SU, capitals and cruisers autofire accuracy decreases as the ship gets closer (up to 20%), non-stacking
+
 -Strikecraft hullmod specifies ships benefit from Frigate-based bonuses
 -Strikecraft should no longer suffer malfunctions caused by low CR after repairing fully
 
@@ -54,7 +75,6 @@ Altagrave
 	- Vajra
 		- Range: 600->1000
 		
-
 - Valken
 	- OP: 7->4
 	- Refit Time:9->5
@@ -77,45 +97,52 @@ Altagrave
 	- Added 2x Small Missiles
 	- Removed drone wing
 	- Top Speed: 130->100
-	- Armor: 100->150
-	- Ship System: FMR -> Manuevering Jets
+	- HP: 700->800
+	- Armor: 100->200
+	- Ship System: FMR -> drone_sensor
 
 - Watchdog
 	- OP: 85->100
 	- Shield Efficiency: 1.1->1.05
 	- Add 2x small composite hardpoints
+	- Large Hybrid->Large Ballistic
 	- Siege Mode
 		- Speed Reduction: 50%->20%
 		- No longer disables shields
 
 - Zanac
 	- Top Speed: 90->100
+	- Large Energy -> Large Universal
 	
 - Gunhed
 	- Armor:250->200
+
+- Panther (XIV)
+	- Can now detach even if overloaded
+	- Will detach with the CR Bakraid deployed with at the start of the battle
 
 - GuarDUAL
 	- gfx tweak
 	- Improved(?) AI
 	- DP: 15->13
 	- Mode BETA
-		- Ballistic RoF: 0.50x -> 1.00x
+		- Non missile RoF: 0.50x -> 1.00x
 	- Mode ALPHA
-		- Ballistic RoF: 1.00x->1.50x
+		- Non missile RoF: 1.00x->1.50x
 		- should help offset limited weapon slots
 	- Top Speed: 250->240
 	- Flux Capacity: 1750->2000
 	- tweaked fire offset for head weapon
-	- Percept (HOMING)
+	- Percept (MODE A projectile)
 		- EMP: 25->45
-- PERCEPT
-	- chargeup: 1->0.30
+	- PERCEPT (System)
+		- chargeup: 1->0.30
 - Bakraid
 	- clamped CR to 1(100%) to prevent 50000% CR bug when seperating
 - Aleste SII
 	- Ship System: Fuller Auto
 		- fixed incorrect system desc, said increases RoF by 30% and Time Dilation by 20%, but reduces Weapon flux cost by 30% and time dilation by 25%
-- Zanac
+- Zanac(MRC)
 	-Ship System
 		- in combat stated only affected ballistics, when it affects energy+ballistic
 		- Stated flux reduction was 10%, when actual reduciton was 20% 

@@ -1,0 +1,82 @@
+{
+  "hullName": "Sarissa (WINGCOM)",
+  "hullId": "armaa_sarissa",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/fighters/sarissa_lowtech.png",
+  "style": "LOW_TECH",
+  "height": 35,
+  "width": 34,
+  "center": [17, 16],
+  "collisionRadius": 25,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 22,
+  "viewOffset": 0,
+  "builtInMods": [
+    "strikeCraft",
+    "armaa_wingCommander",
+    "rugged",
+    "frontshield",
+    "heavyarmor",
+    "hardenedshieldemitter"
+  ],
+  "builtInWings": [
+    "sarissa_wing"
+  ],
+  "builtInWeapons": {
+    "WS 001": "lightac",
+    "WS 000": "lightac"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [13, 11]
+    },
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [13, -10]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": 0,
+      "locations": [13, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-14, 8],
+      "length": 16,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-14, -8],
+      "length": 16,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    13, 16,
+    -13, 12,
+    -13, -11,
+    13, -15
+  ]
+}
