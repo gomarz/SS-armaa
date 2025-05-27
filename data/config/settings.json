@@ -48,7 +48,8 @@
 			"armaa_portrait_kade":"graphics/armaa/portraits/armaa_kade.png",
 			"armaa_portrait_redeye":"graphics/armaa/portraits/armaa_redeye.png",
 			"armaa_portrait_imelda":"graphics/armaa/portraits/armaa_imelda.png",
-			"armaa_portrait_automaton":"graphics/armaa/portraits/armaa_automaton.png"
+			"armaa_portrait_automaton":"graphics/armaa/portraits/armaa_automaton.png",
+			"armaa_portrait_felner":"graphics/armaa/portraits/armaa_felner.png",
 		},
 		"illustrations":{
 			"armaa_newmeshan_illus":"graphics/armaa/illustrations/newmeshanii.jpg",

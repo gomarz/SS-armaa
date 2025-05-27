@@ -30,11 +30,11 @@
     {
       "id": "WS 002",
       "size": "SMALL",
-      "type": "SYNERGY",
+      "type": "SYSTEM",
       "mount": "TURRET",
       "arc": 120,
       "angle": 180,
-      "locations": [-10, -0]
+      "locations": [-12, -0]
     },
     {
       "id": "WS 004",

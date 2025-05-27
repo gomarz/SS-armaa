@@ -1,0 +1,29 @@
+{
+  "variantId": "armaa_garegga_tt_carrier_standard",
+  "hullId": "armaa_garegga_tt_carrier",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 5,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "MAIN_GUN": "gravitonbeam",
+        "TRUE_GUN": "sabot",
+        "TRUE_GUN2": "sabot"
+      }
+    }
+  ],
+  "modules": [
+    {
+      #"MODULE": "armaa_gallant_frig_standard"
+       "MODULE": "armaa_aleste_frig_classic_standard"
+    }
+  ],
+  "wings": []
+}
