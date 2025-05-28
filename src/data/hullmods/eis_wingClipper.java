@@ -22,6 +22,7 @@ import org.lazywizard.lazylib.combat.DefenseUtils;
 public class eis_wingClipper extends BaseHullMod
 {
 	private final float BONUS_MAX = 10f;
+	private final float LIFE_BONUS = 3f;
 	private static final float INCREASE_AMT = 1f;
 	private IntervalUtil interval = new IntervalUtil(1.5f,1.5f);
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
@@ -76,6 +77,7 @@ public class eis_wingClipper extends BaseHullMod
     }
 	public String getDescriptionParam(int index, HullSize hullSize) {
 		if (index == 0) return "" + (int)BONUS_MAX+"%";
+		if (index == 1) return "" + (int)LIFE_BONUS+"%";		
 		return null;
 	}	
 	//This listener ensures we die properly

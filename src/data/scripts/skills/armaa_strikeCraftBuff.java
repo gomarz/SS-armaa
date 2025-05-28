@@ -25,7 +25,7 @@ import com.fs.starfarer.api.characters.AfterShipCreationSkillEffect;
 public class armaa_strikeCraftBuff {
 	
 	public static float DISSIPATION_BONUS = 15f;	
-	public static float CAPACITY_BONUS = 5f;	
+	public static float CAPACITY_BONUS = 10f;	
 
 	public static boolean isStrikecraftAndOfficer(MutableShipStatsAPI stats) {
 		if (stats.getEntity() instanceof ShipAPI) {
@@ -40,22 +40,49 @@ public class armaa_strikeCraftBuff {
 		}
 	}
 
-	// this is hidden, so I guess we don't really need to fill this out
-	public static class Level0 implements DescriptionSkillEffect {
-		public String getString() {
-			return "";
+	public static class Level1 implements ShipSkillEffect {
+		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+
 		}
-		public Color[] getHighlightColors() {
-			return null;
-		}
-		public String[] getHighlights() {
-			return null;
-		}
-		public Color getTextColor() {
-			return null;
-		}
-	}
 		
+		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+
+		}
+		
+		public String getEffectPerLevelDescription() {
+			return null;
+		}		
+		
+		public String getEffectDescription(float level) {
+			return "Increases Flux dissipation by " + (int)(DISSIPATION_BONUS-1f)+"% " + "and capacity by " + (int)(CAPACITY_BONUS-1f)+"%";
+		}
+				
+		public ScopeDescription getScopeDescription() {
+			return ScopeDescription.ALL_SHIPS;
+		}
+	}		
+	
+	public static class Level2 implements ShipSkillEffect {
+		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+
+		}
+		
+		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+
+		}	
+		
+		public String getEffectDescription(float level) {
+			return "reduces damage taken to shields by " + (int)(CAPACITY_BONUS-1f)+"%";
+		}
+		
+		public String getEffectPerLevelDescription() {
+			return null;
+		}
+		
+		public ScopeDescription getScopeDescription() {
+			return ScopeDescription.ALL_SHIPS;
+		}
+	}	
 	public static class Level3 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource, AfterShipCreationSkillEffect {
 		
 		public FleetTotalItem getFleetTotalItem() {
@@ -86,7 +113,7 @@ public class armaa_strikeCraftBuff {
 		}
 		
 		public String getEffectDescription(float level) {
-			return null;
+			return "When flux is over 80%, speed increases by 30%, rapidly degrading over 3s. This effect can only trigger once ever 8s.";
 		}
 		
 		public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill, 
@@ -128,8 +155,8 @@ public class armaa_strikeCraftBuff {
 			}
 			if(triggered)
 			{
-				stats.getMaxSpeed().modifyPercent(id, 25f * (1f - ratio));
-				stats.getMaxTurnRate().modifyPercent(id, 25f * (1f - ratio));				
+				stats.getMaxSpeed().modifyPercent(id, 30f * (1f - ratio));
+				stats.getMaxTurnRate().modifyPercent(id, 30f * (1f - ratio));				
 				upInterval.advance(amount);
 			}
 			if(cooldown)
@@ -145,7 +172,8 @@ public class armaa_strikeCraftBuff {
 			if(player)
 			{
 				String deadString = triggered ? "ACTIVE" : "INACTIVE";
-				Global.getCombatEngine().maintainStatusForPlayerShip("armaa_dd", "graphics/icons/tactical/engine_boost2.png","Deadman's Dash -" + deadString, String.valueOf(25f * (1f - ratio))+"%" ,triggered);		
+				if(triggered)
+					Global.getCombatEngine().maintainStatusForPlayerShip("armaa_dd", "graphics/icons/tactical/engine_boost2.png","Deadman's Dash -" + deadString, String.valueOf(25f * (1f - ratio))+"%" ,triggered);		
 			}
 		}
 	}

@@ -10,6 +10,8 @@ import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.ids.*;
+import com.fs.starfarer.api.campaign.CargoAPI.CargoItemType;
+import com.fs.starfarer.api.campaign.SpecialItemData;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -40,6 +42,7 @@ public class armaa_notificationShower implements EveryFrameScript {
 		validKeys.add("$anh_inProgress");
 		//validKeys.add("$foundOneslaught");
 		validKeys.add("$encounteredDweller");
+		validKeys.add("$pk_recovered");		
 		//validKeys.add("$defeatedLuddicChurchExpedition");		
 	}
 
@@ -146,6 +149,14 @@ public class armaa_notificationShower implements EveryFrameScript {
 							}
 						}
 					}
+				// we have to check if player has PK for the pk event, else it can be flagged to trigger
+				// and nothing will actually happen since the rule has condition of having it also
+				if(notifications.get("armaa_pk_event_id") == null)
+					if(Global.getSector().getPlayerFleet().getCargo().getQuantity(CargoItemType.SPECIAL, new SpecialItemData("planetkiller", null)) > 0)
+					{						
+						addNotification("pk");
+						showNotificationOnce("armaa_pk_event_id");	
+					}						
 				//check if there are any triggers we can talk about
 				for(String key : Global.getSector().getMemoryWithoutUpdate().getKeys())
 				{						

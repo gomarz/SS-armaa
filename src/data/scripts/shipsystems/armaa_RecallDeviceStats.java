@@ -172,6 +172,10 @@ import org.magiclib.util.MagicLensFlare;
 			
 			if(!ship.getVariant().hasHullMod("strikeCraft"))
 				continue;
+			String key = "armaa_"+ship.getId()+"_emergencyRecall_canRecall";
+			boolean canRecall = !Global.getCombatEngine().getCustomData().containsKey(key);
+			if(canRecall)
+				continue;
 			if(ship.getHullLevel() <= 0.50f || ship.getCurrentCR() < .45f || ship.getFluxTracker().isOverloaded() || ship.getHullLevel() < 0.70f && !carrier.areSignificantEnemiesInRange())	
 			{
 				if(ship.isAlive() && MathUtils.getDistance(ship,carrier) > 1000f && !ship.controlsLocked() && !ship.isRetreating() && !isStrikeCraftNearCarrier(ship))				

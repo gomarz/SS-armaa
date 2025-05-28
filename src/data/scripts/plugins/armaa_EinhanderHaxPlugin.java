@@ -213,7 +213,7 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 								toRemove.add(ship);	
 								ship.resetDefaultAI();						
 							}
-							if(!ship.getFluxTracker().isOverloaded() &&(doubletapped || engine.getPlayerShip() != ship && ship.getHullLevel() < 0.50f))
+							if(doubletapped || engine.getPlayerShip() != ship && (ship.getHullLevel() < 0.50f || ship.getFluxTracker().isOverloaded()))
 							{
 								module.getFluxTracker().showOverloadFloatyIfNeeded("Emergency Purge!", Color.blue, 4f, true);								
 								FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP,module.getVariant().clone());
@@ -227,7 +227,7 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 								f.setCaptain(ship.getCaptain());
 								f.setOwner(ship.getFleetMember().getOwner());
 								ship.getFleetMember().getCrewComposition().transfer(2,f.getCrewComposition());
-								f.getRepairTracker().setCR(Math.min(1f,ship.getCurrentCR()));
+								f.getRepairTracker().setCR(Math.min(1f,ship.getCRAtDeployment()));
 								f.updateStats();
 								if(ship.getOwner() == 0 && !ship.isAlly())
 								{
@@ -239,7 +239,7 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 								if(ship.getOwner() != 1)
 									s = engine.getFleetManager(ship.getOwner()).spawnFleetMember(f,module.getLocation(),module.getFacing(),0f);	
 								else
-									s = CombatUtils.spawnShipOrWingDirectly("armaa_panther_standard",FleetMemberType.SHIP,FleetSide.ENEMY,50,module.getLocation(),module.getFacing());
+									s = CombatUtils.spawnShipOrWingDirectly("armaa_panther_standard_shield",FleetMemberType.SHIP,FleetSide.ENEMY,Math.min(1f,ship.getCRAtDeployment()),module.getLocation(),module.getFacing());
 								if(ship.isAlly())
 									s.setAlly(true);
 								s.setHitpoints(module.getHitpoints());

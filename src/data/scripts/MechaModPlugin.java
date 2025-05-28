@@ -274,51 +274,7 @@ public class MechaModPlugin extends BaseModPlugin {
 		Global.getSector().removeTransientScript(notificationScript);
 		
 		boolean hiredDawn = false;
-        MarketAPI nekki1 = Global.getSector().getEconomy().getMarket("armaa_nekki1_market");
-		if(nekki1!=null && !nekki1.getAdmin().getId().equals("armaa_kade") && nekki1.getAdmin().getFaction().getId().equals("pirates"))
-		{
-			boolean flip = false;
-			for (CampaignFleetAPI fleet : nekki1.getStarSystem().getFleets()) 
-			{
-				if(fleet.getFaction().getId().equals("armaarmatura_arusthai"))
-				{
-					if(fleet.getFaction().getRelationship("armaarmatura_arusthai") < 1)
-					{
-						flip = true;
-						fleet.getFaction().setRelationship("armaarmatura_arusthai",1);
-					}
-				}
-				MemoryAPI mem = fleet.getMemoryWithoutUpdate();
-				if(mem.contains("$armaa_liberationDefenders"))
-					if(fleet.getFleetPoints() < 50)
-					{
-						
-						mem.unset("$armaa_liberationDefenders");
-						Misc.makeUnimportant(fleet, "$armaa_liberationDefenders"); 
-					}
-					else
-						defeatedEnemies = false;					
-			}
-			if((defeatedEnemies || flip) && !Global.getSector().getMemoryWithoutUpdate().contains("$armaa_liberationDefeatedDefenders"))
-			{
-				Global.getSector().getMemoryWithoutUpdate().set("$armaa_liberationDefeatedDefenders",true);
-			}				
-			if(Global.getSector().getMemoryWithoutUpdate().contains("$armaa_WFCompletedAtmoBattle"))
-			{
-				boolean hasKade = false;
-				for(PersonAPI person : nekki1.getPeopleCopy())
-				{
-					if(person.getId().equals("armaa_kade"))
-					{
-						hasKade = true;
-						break;
-					}
-					
-				}
-				if(!hasKade)
-					nekki1.setAdmin(Global.getSector().getImportantPeople().getPerson("armaa_kade"));
-			}
-		}
+
         MarketAPI exsedol = Global.getSector().getEconomy().getMarket("exsedol_station_market");
 		if(exsedol != null && !exsedol.hasSubmarket("armaa_mrcMarket"))
 		{
@@ -419,8 +375,10 @@ public class MechaModPlugin extends BaseModPlugin {
 			ironKing.setAICoreId(Commodities.ALPHA_CORE);
 			Global.getSector().getImportantPeople().addPerson(ironKing);
 			ironKing.getMemoryWithoutUpdate().set(MemFlags.SUSPECTED_AI, true);					
-		}		
-				
+		}	
+		ShipHullSpecAPI spec = Global.getSettings().getHullSpec("armaa_legioMech");		
+		spec.setShipSystemId("armaa_fullerAuto");	
+		
 		if(haveTahlan)
 		{
 			
@@ -440,10 +398,10 @@ public class MechaModPlugin extends BaseModPlugin {
 			tahlanIds.add("armaa_legioMech_rightShoulder");			
 			for(String part : tahlanIds)
 			{
-				ShipHullSpecAPI spec = Global.getSettings().getHullSpec(part);
+				spec = Global.getSettings().getHullSpec(part);
 				if(part.equals("armaa_legioMech"))
 				{
-					spec.setShipSystemId("tahlan_weaponsoverdrive");
+					spec.setShipSystemId("armaa_fullerAuto");
 					ShipVariantAPI variant = Global.getSettings().getVariant(part+"_standard");
 					variant.getWing(0).setId("tahlan_miasma_drone_wing"); 
 					

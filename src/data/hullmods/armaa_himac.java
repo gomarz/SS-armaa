@@ -59,7 +59,7 @@ public class armaa_himac extends BaseHullMod {
 
     static {
 		SIZE_MULT.put(HullSize.FIGHTER, 1f);
-        SIZE_MULT.put(HullSize.FRIGATE, 1f);
+        SIZE_MULT.put(HullSize.FRIGATE, 1.2f);
 		SIZE_MULT.put(HullSize.DESTROYER, 0.85f);
 		SIZE_MULT.put(HullSize.CRUISER, 0.50f);
 		SIZE_MULT.put(HullSize.CAPITAL_SHIP, 0.50f);

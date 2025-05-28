@@ -120,7 +120,8 @@ public class armaa_strikeCraft extends BaseHullMod {
 		
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
 	{
-		stats.getZeroFluxMinimumFluxLevel().modifyFlat(id, -1f); // -1 means boost never takes effect; 2 means always on
+		armaa_utils.applyFlatMod(stats.getZeroFluxMinimumFluxLevel(), id, -114514f); // -1 means boost never takes effect; 2 means always on
+		armaa_utils.applyMultMod(stats.getAllowZeroFluxAtAnyLevel(), id, -114514f);	
 		stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
 		stats.getSensorProfile().modifyMult(id,0.5f);
 		stats.getSensorStrength().modifyMult(id,0.5f);		
@@ -286,14 +287,11 @@ public class armaa_strikeCraft extends BaseHullMod {
 		tooltip.addPara("%s " + "Most weapons %s.", padS, Misc.getHighlightColor(), "\u2022", "fire over allied ships");
 		tooltip.addPara("%s " + "No %s.", padS, Misc.getHighlightColor(), "\u2022", "zero-flux speed bonus");
 		tooltip.addPara("%s " + "Combat Readiness decreases %s faster.", padS, arr2, "\u2022", (int) DEGRADE_INCREASE_PERCENT + "%");
-		tooltip.addPara("%s " + "Docking replenishes PPT and %s armor/hull/ammo.", padS, Misc.getHighlightColor(), "\u2022",(int)CR + "%",(int)Repair+"%");
-		if(!canCapturePoints)
-			tooltip.addPara("%s " + "Incapable of %s.", padS, Misc.getHighlightColor(), "\u2022","capturing objectives");
-
+		tooltip.addPara("%s " + "Docking replenishes PPT, armor, hull, and ammo.", padS, Misc.getHighlightColor(), "\u2022");
+		tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022","frigates");		
 		tooltip.addSectionHeading("Point Defense Vulnerability",Alignment.MID,10);
         TooltipMakerAPI pdWarning = tooltip.beginImageWithText("graphics/armaa/icons/hullsys/armaa_pdWarning.png", 64);
-		pdWarning.addPara("%s " + "Incurs additional damage from all weapons employed by captains with the %s skill. The visual indicator to the left will appear over such vessels.", padS, Misc.getHighlightColor(), "\u2022","Point Defense");
-		pdWarning.addPara("%s " + "This malus applies to any other abilities that increase damage to fighters, as well.", padS, Misc.getHighlightColor(), "\u2022","Point Defense");		
+		pdWarning.addPara("%s " + "Receives extra damage ships/weapons would deal to fighters, up %s. The visual indicator to the left will appear over such vessels.", padS, Misc.getHighlightColor(),"\u2022","25%","visual indicator");		
 		UIPanelAPI temp =tooltip.addImageWithText(10f);
 		
 		tooltip.addSectionHeading("Refit Mode",Alignment.MID,10);
@@ -888,7 +886,7 @@ public class armaa_strikeCraft extends BaseHullMod {
 					}
 					else
 					{
-						float mult = Math.max(1f,Math.min(1.30f,damage.getStats().getDamageToFighters().getModifiedValue()));
+						float mult = Math.max(1f,Math.min(1.25f,damage.getStats().getDamageToFighters().getModifiedValue()));
 						if (mult > 1.05f && Math.random() < 0.05f) { // only flash if bonus is significant (say >5% bonus)
 							Color textColor = mult >= 1.25f ? Color.RED : (mult >= 1.15f ? Color.ORANGE : Color.YELLOW);
 							Global.getCombatEngine().addFloatingText(

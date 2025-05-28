@@ -52,19 +52,19 @@ public class armaa_JauntBoosterStats extends BaseShipSystemScript {
     static {
         SPEED_FALLOFF_PER_SEC.put(HullSize.FIGHTER, 0.75f); // base boost distance 386-580, time 2.07-3.15 (carnifex 175 speed, 175 accel, 115 decel)
         SPEED_FALLOFF_PER_SEC.put(HullSize.FRIGATE, 0.55f); // base boost distance 438-577, time 2.67-3.65 (decurion 135 speed, 110 accel, 80 decel)
-        SPEED_FALLOFF_PER_SEC.put(HullSize.DESTROYER, 0.375f); // base boost distance 465-528, time 3.47-4.12 (interrex 80 speed, 60 accel, 50 decel)
+        SPEED_FALLOFF_PER_SEC.put(HullSize.DESTROYER, 0.45f); // base boost distance 465-528, time 3.47-4.12 (interrex 80 speed, 60 accel, 50 decel)
         SPEED_FALLOFF_PER_SEC.put(HullSize.CRUISER, 0.25f); // base boost distance 361-420, time 3.32-4.30 (sebastos 55 speed, 40 accel, 30 decel)
         SPEED_FALLOFF_PER_SEC.put(HullSize.CAPITAL_SHIP, 0.225f); // base boost distance 357-413, time 4.55-5.92 (barrus 40 speed, 20 accel, 15 decel)
 
         BASELINE_MULT.put(HullSize.FIGHTER, 0.975f);
         BASELINE_MULT.put(HullSize.FRIGATE, 0.85f);
-        BASELINE_MULT.put(HullSize.DESTROYER, 0.75f);
+        BASELINE_MULT.put(HullSize.DESTROYER, 0.80f);
         BASELINE_MULT.put(HullSize.CRUISER, 0.75f);
         BASELINE_MULT.put(HullSize.CAPITAL_SHIP, 0.75f);
 
         FORWARD_PENALTY.put(HullSize.FIGHTER, 0.675f); // boost distance 263-393, time 1.70-2.58
         FORWARD_PENALTY.put(HullSize.FRIGATE, 0.35f); // boost distance 305-397, time 2.20-2.98
-        FORWARD_PENALTY.put(HullSize.DESTROYER, 0.25f); // boost distance 214-238, time 2.18-2.57
+        FORWARD_PENALTY.put(HullSize.DESTROYER, 0.3f); // boost distance 214-238, time 2.18-2.57
         FORWARD_PENALTY.put(HullSize.CRUISER, 0.2f); // boost distance 140-153, time 1.67-2.10
         FORWARD_PENALTY.put(HullSize.CAPITAL_SHIP, 0.2f); // boost distance 126-135, time 2.02-2.53
 
@@ -75,14 +75,14 @@ public class armaa_JauntBoosterStats extends BaseShipSystemScript {
         REVERSE_PENALTY.put(HullSize.CAPITAL_SHIP, 0.4f); // boost distance 64-65, time 0.97-1.03
 
         IN_OVERRIDE.put(HullSize.FIGHTER, 0.2f);
-        IN_OVERRIDE.put(HullSize.FRIGATE, 0.2f);
-        IN_OVERRIDE.put(HullSize.DESTROYER, 0.2f);
+        IN_OVERRIDE.put(HullSize.FRIGATE, 0.1f);
+        IN_OVERRIDE.put(HullSize.DESTROYER, 0.1f);
         IN_OVERRIDE.put(HullSize.CRUISER, 0.2f);
         IN_OVERRIDE.put(HullSize.CAPITAL_SHIP, 0.2f);
 
         ACTIVE_OVERRIDE.put(HullSize.FIGHTER, 0.2f);
-        ACTIVE_OVERRIDE.put(HullSize.FRIGATE, 0.2f);
-        ACTIVE_OVERRIDE.put(HullSize.DESTROYER, 0.2f);
+        ACTIVE_OVERRIDE.put(HullSize.FRIGATE, 0.3f);
+        ACTIVE_OVERRIDE.put(HullSize.DESTROYER, 0.3f);
         ACTIVE_OVERRIDE.put(HullSize.CRUISER, 0.2f);
         ACTIVE_OVERRIDE.put(HullSize.CAPITAL_SHIP, 0.2f);
 
@@ -94,13 +94,13 @@ public class armaa_JauntBoosterStats extends BaseShipSystemScript {
 
         USES_OVERRIDE.put(HullSize.FIGHTER, 3);
         USES_OVERRIDE.put(HullSize.FRIGATE, 4);
-        USES_OVERRIDE.put(HullSize.DESTROYER, 2);
-        USES_OVERRIDE.put(HullSize.CRUISER, 2);
-        USES_OVERRIDE.put(HullSize.CAPITAL_SHIP, 2);
+        USES_OVERRIDE.put(HullSize.DESTROYER, 4);
+        USES_OVERRIDE.put(HullSize.CRUISER, 3);
+        USES_OVERRIDE.put(HullSize.CAPITAL_SHIP, 3);
 
         REGEN_OVERRIDE.put(HullSize.FIGHTER, 0.2f);
         REGEN_OVERRIDE.put(HullSize.FRIGATE, 0.2f);
-        REGEN_OVERRIDE.put(HullSize.DESTROYER, 0.125f);
+        REGEN_OVERRIDE.put(HullSize.DESTROYER, 0.2f);
         REGEN_OVERRIDE.put(HullSize.CRUISER, 0.1f);
         REGEN_OVERRIDE.put(HullSize.CAPITAL_SHIP, 0.075f);
 

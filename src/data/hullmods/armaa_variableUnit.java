@@ -102,7 +102,7 @@ public class armaa_variableUnit extends BaseHullMod {
 		float level = 0;
 		if(ship != null)
 			level = ship.getCaptain().isDefault() ? 0:ship.getCaptain().getStats().getLevel()*2f;		
-		float n2  = GROUND_BONUS.get(ship.getHullSpec().getHullId());	
+		float n2  = GROUND_BONUS.get(ship.getHullSpec().getHullId()) != null ? GROUND_BONUS.get(ship.getHullSpec().getHullId()) : 25f;	
 		int n = (int)(n2+level);		
  		tooltip.addPara("%s " + "Increases effective strength of ground ops by %s, (up to number of marines in the fleet)", pad*2, Misc.getHighlightColor(), "\u2022", Integer.toString(n));       
         tooltip.addPara("%s", 6f, Misc.getGrayColor(), new String[] { "\"Keeping this thing running is like patching up three LSMs at once. A miracle when it's flight-ready, and a nightmare when it's not. Makes you understand why they kept production numbers low.\"" }).italicize();

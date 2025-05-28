@@ -25,7 +25,7 @@ import org.lwjgl.input.Keyboard;
 import org.magiclib.util.MagicRender.*;
 import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-
+import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
@@ -38,11 +38,12 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 	private IntervalUtil interval = new IntervalUtil(.025f, .05f);
 	private IntervalUtil interval2 = new IntervalUtil(.05f, .05f);
 	private IntervalUtil interval3 = new IntervalUtil(2f, 2f);
+	private IntervalUtil bgInterval = new IntervalUtil(0.05f,0.5f);	
 	private IntervalUtil attackInterval = new IntervalUtil(2f, 2f);	
 	private float spin = 0f, ratioMod = 0f;
-	// 1 - 100% HP
 	private boolean playedMusic = false;
-	private float bossStage = 1f;
+	private boolean perfMode = false;
+	private float bossStage = 1f, ratio = 0f, bgStage = 0f;
 	private float battleStr = -99f;
 	private boolean bossLine1, bossLine2, bossLine3, firstContact = false, stationAlive = true;
 	private boolean spawnedBoss = false, spawnedCorpse = false;
@@ -83,6 +84,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
     {
 		if(!playedMusic)
 		{
+			if (Global.getSettings().getModManager().isModEnabled("lunalib"))
+			{
+				perfMode = LunaSettings.getBoolean("armaa", "armaa_performanceMode");
+			}			
 			Global.getSoundPlayer().playCustomMusic(1,1,"music_armaa_ax_bounty",true);
 			playedMusic = true;
 			// give player some extra help
@@ -105,31 +110,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
         Color endColorBG = new Color(175, 175, 175, 255);   // Ending color: (0, 0, 200)
         Color endColorBG2 = new Color(175, 175, 175, 0);   // Ending color: (0, 0, 200)		
 		engine.setBackgroundColor(new Color(150,100,100,255));
-		float ratio = 0f;
-		float bgStage = 0f;
-		if(!engine.isPaused())
-		{
-		
-			ratio = (float) (engine.getElapsedInContactWithEnemy() / 100);
-			
-			if (!stationAlive) {
-				if (ratioMod >= 0f) {
-					ratioMod = -ratio; // Set `ratioMod` initially when station is no longer alive
-				}
-				ratio += ratioMod; // Decrease `ratio` by `ratioMod` when `stationAlive` is false
-			} else {
-				ratio = 0f;       // Reset `ratio` if the station is alive
-				ratioMod = 0f;    // Reset `ratioMod` to prevent locking when station is alive
-			}
-			bgStage = ratio;
-			engine.setBackgroundGlowColor(shiftColor(startColor,endColor,ratio));			
-			interval3.advance(amount);
-			float mult = engine.getViewport().getViewMult();
-			//Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem3", "graphics/ui/icons/icon_repair_refit.png", "mult",""+ ratio,false);		
-			float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
-			float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
-			float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
-			float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport	
+				if(ratio >= 0.60f)
 				MagicRender.screenspace(
 					Global.getSettings().getSprite("misc", "armaa_atmo2"),
 					MagicRender.positioning.CENTER, 
@@ -139,7 +120,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(0,0),
 					spin, 
 					0f, //spin 
-					shiftColor(startColorBG,endColorBG,bgStage), 
+					endColorBG, 
 					false, 
 					0f, 
 					0f, 
@@ -147,11 +128,11 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f, 
 					0f, 
 					0f, 
-					1, 
+					-1, 
 					0f, 
 					CombatEngineLayers.CLOUD_LAYER
 				);
-				if(ratio < 0.60)
+				if(ratio < 0.70f)
 				MagicRender.screenspace(
 					Global.getSettings().getSprite("misc", "armaa_atmo"),
 					MagicRender.positioning.CENTER,
@@ -161,7 +142,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(50,50), 
 					spin,
 					0f, //spin 
-					shiftColor(new Color(155,155,155,200),endColorBG2,bgStage), 
+					shiftColor(new Color(155,100,100,255),new Color(200,155,155,255),bgStage), 
 					false, 
 					0f, 
 					0, 
@@ -169,11 +150,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f, 
 					0f, 
 					0f, 
-					1, 
+					-1, 
 					0f, 
 					CombatEngineLayers.CLOUD_LAYER  
-				);
-				spin+= amount/2;			
+				);		
 			if(bgStage > 0.50f)
 			{
 				float size = Math.min(1f,(bgStage)-0.50f);
@@ -195,7 +175,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f,
 				0f,
 				0f,
-				amount,
+				-1,
 				0f,
 				CombatEngineLayers.CLOUD_LAYER
 				);
@@ -221,11 +201,36 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f,
 					0f,
 					0f,
-					amount,
+					-1,
 					0f,
 					CombatEngineLayers.CLOUD_LAYER
 					);
+			}				
+		if(!engine.isPaused())
+		{
+		
+			ratio = (float) (engine.getElapsedInContactWithEnemy() / 100);
+			
+			if (!stationAlive) {
+				if (ratioMod >= 0f) {
+					ratioMod = -ratio; // Set `ratioMod` initially when station is no longer alive
+				}
+				ratio += ratioMod; // Decrease `ratio` by `ratioMod` when `stationAlive` is false
+			} else {
+				ratio = 0f;       // Reset `ratio` if the station is alive
+				ratioMod = 0f;    // Reset `ratioMod` to prevent locking when station is alive
 			}
+			bgStage = ratio;
+			engine.setBackgroundGlowColor(shiftColor(startColor,endColor,ratio));			
+			interval3.advance(amount);
+			float mult = engine.getViewport().getViewMult();
+			//Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem3", "graphics/ui/icons/icon_repair_refit.png", "mult",""+ ratio,false);		
+			float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
+			float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
+			float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
+			float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport
+			spin+= amount/2;			
+
 				ShipAPI bossEne = null;			
 				if(engine.getCustomData().containsKey("armaa_atmo_boss"))
 					bossEne = (ShipAPI)engine.getCustomData().get("armaa_atmo_boss");
@@ -272,7 +277,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				String bossStr = "armaa_valkenx_ss_boss";
 				String chaffStr = "armaa_valkenx_ss_IK";
 				boolean haveNex = Global.getSettings().getModManager().isModEnabled("nexerelin");			
-				if(haveNex && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
+				if(haveNex && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId") != null && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
 				{
 					bossStr = "armaa_leynos_cc_standard";
 					chaffStr = "armaa_valkenx_frig_assault";	
@@ -321,7 +326,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				}						
 				
 			}			
-			if(interval3.intervalElapsed() && ratio < 0.55f)
+			if(((!perfMode && interval3.intervalElapsed()) || perfMode && bgInterval.intervalElapsed()) && ratio < 0.55f)
 			{					
 				for(int i = 0; i < Math.random()*10*mult; i++)
 				{
@@ -343,7 +348,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f,
 					0f,
 					0.4f*mult,
-					4f*mult,
+					2f*mult,
 					1f*mult,
 					CombatEngineLayers.BELOW_SHIPS_LAYER
 					);
@@ -352,7 +357,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 			}		
 			else if(interval3.intervalElapsed() && ratio > 0.60f)
 			{				
-				for(int i = 0; i < Math.random()*15*mult; i++)
+				for(int i = 0; i < Math.random()*10*mult; i++)
 				{
 					float xVel = (float)(MathUtils.getRandomNumberInRange(-250,250));
 					float cloudSize = (float)(MathUtils.getRandomNumberInRange(1000,1500)*(Math.random()*2));
@@ -365,7 +370,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f,
 					0f,
 					new Color(150,150,150,225),
-					false,
+					true,
 					0f,
 					0f,
 					0f,
@@ -427,7 +432,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f,
 				0f,
 				0.5f*mult,
-				3f*mult,
+				2f*mult,
 				1f*mult,
 				CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
 				);
@@ -454,40 +459,41 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				);			
 			}				
 		}
+		Vector2f vec = (Vector2f)engine.getCustomData().get("armaa_atmoWarningLoc"+0);
+
+		if(vec != null && !warning && bgStage < 0.60f)
+		{
+			
+			float elapsed = attackInterval.getElapsed();
+			float maxinterval = attackInterval.getMaxInterval();
+			float rate = Math.min(1f,elapsed/maxinterval);
+			SpriteAPI enemySpr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("warden").getSpriteName());
+			MagicRender.battlespace(
+			enemySpr,
+			vec,
+			new Vector2f(0,0),
+			new Vector2f(enemySpr.getWidth()*rate,enemySpr.getWidth()*rate),
+			new Vector2f(0,0),		
+			-10f,
+			0f,
+			new Color(0.5f*rate,0.5f*rate,0.5f*rate,1f),
+			false,
+			0f,
+			0f,
+			0f,
+			0f,
+			0f,
+			0f,
+			-1,
+			0f,
+			CombatEngineLayers.FRIGATES_LAYER
+			);		
+		}		
 		if(!engine.isPaused())
 		{		
 			interval.advance(amount);
 			attackInterval.advance(amount);
-			Vector2f vec = (Vector2f)engine.getCustomData().get("armaa_atmoWarningLoc"+0);
 
-			if(vec != null && !warning && bgStage < 0.60f)
-			{
-				
-				float elapsed = attackInterval.getElapsed();
-				float maxinterval = attackInterval.getMaxInterval();
-				float rate = Math.min(1f,elapsed/maxinterval);
-				SpriteAPI enemySpr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("warden").getSpriteName());
-				MagicRender.battlespace(
-				enemySpr,
-				vec,
-				new Vector2f(0,0),
-				new Vector2f(enemySpr.getWidth()*rate,enemySpr.getWidth()*rate),
-				new Vector2f(0,0),		
-				-10f,
-				0f,
-				new Color(0.5f*rate,0.5f*rate,0.5f*rate,1f),
-				false,
-				0f,
-				0f,
-				0f,
-				0f,
-				0f,
-				0f,
-				amount,
-				0f,
-				CombatEngineLayers.FRIGATES_LAYER
-				);		
-			}
 			if(attackInterval.intervalElapsed() && bgStage > 0.10f)
 			{
 				float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
@@ -562,7 +568,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 						0f,
 						0f,
 						0f,
-						amount,
+						-1,
 						0f,
 						CombatEngineLayers.BELOW_SHIPS_LAYER
 						);	
@@ -596,7 +602,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 			{
 				float velX = ship.getVelocity().getX();
 				float velY = ship.getVelocity().getY();
-				if(MagicRender.screenCheck(0.2f, ship.getLocation()))
+				if(MagicRender.screenCheck(0.2f, ship.getLocation()) && interval.intervalElapsed())
 				{				
 					if(Math.random() <= 1f-ratio  && ratio >= 0.20f && ratio <= 0.60f)
 						MagicRender.battlespace(
@@ -654,10 +660,17 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 						stationAlive = false;
 						Global.getSector().getMemoryWithoutUpdate().set("$armaa_killedJeniusGuardian",true);
 						Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);	
-						engine.getCombatUI().addMessage(1,ship,Color.white,"Obstacle eliminated. Proceeding into lower orbit...");							
-						engine.removeEntity(ship);
+						engine.getCombatUI().addMessage(1,ship,Color.white,"Obstacle eliminated. Proceeding into lower orbit...");
+						if(!ship.isAlive())
+							engine.removeEntity(ship);
 						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(0,-7000),270f,0f);	
-						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(0,-7000),270f,0f);							
+						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(0,-7000),270f,0f);		
+						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(7000,-7000),270f,0f);	
+						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(-7000,-7000),270f,0f);
+						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(-7000,-6000),270f,0f);	
+						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(-7000,-5000),270f,0f);	
+						engine.getFleetManager(1).spawnShipOrWing("warden_Defense",new Vector2f(-7000,-4000),270f,0f);	
+						
 					}
 				}
 

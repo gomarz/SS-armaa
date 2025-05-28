@@ -17,26 +17,24 @@ import com.fs.starfarer.api.mission.FleetSide;
 public class armaa_gareggaEffectXIV implements EveryFrameWeaponEffectPlugin{    
 
     private boolean runOnce=false;
-    private WeaponAPI reference;
     private ShipAPI ship;
-	private float check = 0f;
-	private WeaponAPI armL, armR, shoulderR, head, headGlow, shoulderL,turretL,turretR,decoL,decoR;
+	private WeaponAPI armL, armR, shoulderR, head, shoulderL,turretL,turretR,decoL,decoR;
     private float overlap=0, overlap2=0, overlap3=0;
 	private float currentRotateL=0;
     private float currentRotateR=0;
-	private String mecha = null;
 	private float originalShoulderPos = 0, originalShoulderPosL;
 	private final float TORSO_OFFSET = -45, LEFT_ARM_OFFSET = -75, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 7, maxlegRotate=22.5f; 
-	private boolean lostmodules = false;
 	private boolean noMissiles = false;
 	
     @Override
-    public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
-  
+    public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) 
+	{
         if(!runOnce)
 		{
             runOnce=true;
             ship=weapon.getShip();
+			if(!ship.getHullSpec().getBaseHullId().contains("garegga"))
+				return;			
             for(WeaponAPI w : ship.getAllWeapons())
 			{
 				switch (w.getSlot().getId()) 

@@ -50,30 +50,6 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) 
 	{
 		CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
-		/*
-		ArrayList<FleetMemberAPI> removedShips = new ArrayList();	
-		for(FleetMemberAPI member: Global.getSector().getPlayerFleet().getMembersWithFightersCopy())
-		{
-			float crew = 0f;			
-			if(member.isCapital())
-			{
-				member.getRepairTracker().setMothballed(true);
-				removedShips.add(member);
-			}
-
-			else if((member.isCruiser()) && member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).isUnmodified())
-			{
-				member.getRepairTracker().setMothballed(true);
-				removedShips.add(member);
-			}
-			
-			else
-				continue;
-			crew+=member.getCrewComposition().getCrewInt();
-			Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_"+member.getId(), crew);			
-		}
-		Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
-		*/
 		FleetParamsV3 fparams = new FleetParamsV3(
 			Global.getSector().getEntityById("nekki3").getLocationInHyperspace(),
 			"pirates",
@@ -89,12 +65,8 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 			);
 			
 		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);		
-		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());		
-		for(int i = 0; i < 5; i++)
-		enemyFleet.getFleetData().addFleetMember("scarab_Experimental");
-		for(int i = 0; i < 5; i++)
-		enemyFleet.getFleetData().addFleetMember("brawler_tritachyon_Standard");	
-		for(int i = 0; i < 2; i++)
+		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());			
+		for(int i = 0; i < 1; i++)
 		enemyFleet.getFleetData().addFleetMember("anubis_Standard");	
 		enemyFleet.getFleetData().addFleetMember("armaa_bassline_standard");				
 		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);			
@@ -189,28 +161,7 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 					}
 				} else {
 					dialog.dismiss();
-				}
-				/*
-				CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
-				ArrayList<FleetMemberAPI> removedShips = new ArrayList();
-			
-				if(Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().contains("$nonAtmoShips"))
-				{
-					removedShips = (ArrayList<FleetMemberAPI>)Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().get("$nonAtmoShips");
-				}
-				
-				for(FleetMemberAPI member: removedShips)
-				{
-					float crew = (float)Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().get("$nonAtmoShipsCrew_"+member.getId());						
-					member.getRepairTracker().setMothballed(false);
-					if(member.getCrewComposition().getCrew() != crew)
-					{
-						Global.getSector().getPlayerFleet().getCargo().addCrew((int)Math.abs(member.getCrewComposition().getCrew()-crew));
-						member.getCrewComposition().setCrew(crew);
-					}
-				}
-					Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");
-				*/					
+				}				
 			}
 			@Override
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {

@@ -36,6 +36,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 	// for atmo battle
 	boolean warning = true;
     protected CombatEngineAPI engine;
+	private IntervalUtil effectInterval = new IntervalUtil(0.05f,1.5f);
 	private IntervalUtil interval3 = new IntervalUtil(2f, 2f);
 	private boolean playSecondPhase, playedSecondPhase = false;
 	private IntervalUtil attackInterval = new IntervalUtil(3f, 3f);	
@@ -61,33 +62,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 		
 		return intermediateColor;
 	}
-	
-	public Vector2f calculateMidpoint()
-	{
-		ShipAPI pship = engine.getPlayerShip();
-		Vector2f velocity = engine.getPlayerShip().getVelocity();		
-		Vector2f vec = new Vector2f(pship.getLocation().getX()+velocity.getX(),pship.getLocation().getY()+velocity.getY());
-		//engine.getViewport().set(0,0,1536,834);
-		Vector2f vec2 = new Vector2f(engine.getViewport().convertScreenXToWorldX(Global.getSettings().getMouseX()),engine.getViewport().convertScreenYToWorldY(Global.getSettings().getMouseY()));
-	// Calculate the midpoint
-		float midpointX = (vec.x + vec2.x) / 2.0f;
-		float midpointY = (vec.y + vec2.y) / 2.0f;
-
-		// Viewport boundaries in world coordinates
-		float minX = vec.getX()-834.0f; // Replace with actual minimum x boundary
-		float maxX = vec.getX()+1536.0f; // Replace with actual maximum x boundary
-		float minY = vec.getY()-1536.0f; // Replace with actual minimum y boundary
-		float maxY =  vec.getY()+834.0f; // Replace with actual maximum y boundary
-
-		// Clamp the midpoint to the boundaries
-		midpointX = MathUtils.clamp(midpointX, minX, maxX);
-		midpointY = MathUtils.clamp(midpointY, minY, maxY);
-		//Update midpoint gradually from last midpoint over an interval
-		//if interval isnt elapsed, just set midpoint
-		//otherwise, increment midpoint values until == midpoint
-		return new Vector2f(midpointX, midpointY);
-	}
-	
+		
     @Override
     public void advance(float amount, List<InputEventAPI> events)
     {
@@ -107,7 +82,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			Global.getSoundPlayer().playCustomMusic(0,0,"music_armaa_pirate_encounter_hostile",true);	
 			playedSecondPhase = true;
 		}
-		Color bgColor = new Color(0,30,15,150);
+		Color bgColor = new Color(30,15,0,150);
 		Color endColor = new Color(25,25,25,255);
 		Color endColor2 = new Color(25,25,25,120);	
 		Color endColor3 = new Color(0,0,0,0);			
@@ -116,32 +91,14 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 		if(!reinforcementsTriggered && engine.getElapsedInContactWithEnemy() > 1)
 		{			
 			reinforcementsTriggered = true;
-		}		
-		if(!engine.isPaused())
-		{
-			float ratio = (float) engine.getElapsedInContactWithEnemy() / 100;
-			interval3.advance(amount);		
-			float elapsed = interval3.getElapsed();
-			float maxinterval = interval3.getMaxInterval();
-			float rate = Math.min(1f,elapsed/maxinterval);
-			float mult = engine.getViewport().getViewMult();	
-			float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
-			float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
-			float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
-			float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport	
-			float xMove = engine.getPlayerShip() != null ? engine.getPlayerShip().getVelocity().getX() != 0 ? 1 : 0 : 0;
-			float yMove = engine.getPlayerShip() != null ? engine.getPlayerShip().getVelocity().getY() : 0;			
-			//if(interval2.intervalElapsed())
-			//{	
+		}
 			String str = "armaa_shaft";
 			float initialWidth = Global.getSettings().getScreenWidth();
 			float initialHeight = Global.getSettings().getScreenWidth();
 			float currentWidth = initialWidth;
 			float currentHeight = initialHeight;
 			if(engine.getCustomData().get("armaa_bgHeight")== null)
-			{
-				Vector2f midpoint = calculateMidpoint();
-				engine.getViewport().setCenter(midpoint);			
+			{			
 				engine.getCustomData().put("armaa_bgHeight",currentWidth);				
 			}
 			else
@@ -170,10 +127,12 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f, 
 				0f, 
 				0f, 
-				amount, 
+				-1, 
 				0f, 
 				CombatEngineLayers.CLOUD_LAYER
 			);			
+			effectInterval.advance(amount);
+			float cloudSize = (float)(MathUtils.getRandomNumberInRange(300,600));				
 			MagicRender.screenspace(
 				Global.getSettings().getSprite("misc", str),
 				MagicRender.positioning.CENTER, 
@@ -191,7 +150,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f, 
 				0f, 
 				0f, 
-				amount, 
+				-1, 
 				0f, 
 				CombatEngineLayers.CLOUD_LAYER
 			);
@@ -212,7 +171,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f, 
 				0f, 
 				0f, 
-				amount, 
+				-1, 
 				0f, 
 				CombatEngineLayers.CLOUD_LAYER
 			);					
@@ -233,7 +192,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f, 
 				0f, 
 				0f, 
-				amount, 
+				-1, 
 				0f, 
 				CombatEngineLayers.CLOUD_LAYER
 			);	
@@ -254,18 +213,27 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f, 
 				0f, 
 				0f, 
-				amount, 
+				-1, 
 				0f, 
 				CombatEngineLayers.CLOUD_LAYER
 			);
-			float vel = MathUtils.getRandomNumberInRange(-200,200);
-		
+			float vel = MathUtils.getRandomNumberInRange(-200,200);		
+	
+		if(!engine.isPaused())
+		{
+			float ratio = (float) engine.getElapsedInContactWithEnemy() / 100;
+			interval3.advance(amount);		
+			float elapsed = interval3.getElapsed();
+			float maxinterval = interval3.getMaxInterval();
+			float rate = Math.min(1f,elapsed/maxinterval);
+			float mult = engine.getViewport().getViewMult();	
+			float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
+			float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
+			float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
+			float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport	
+
 			depth+=amount;
 			spin+=amount;
-			if(depth > 3.5f)
-				depth = 0.01f;
-			float xVel = (float)(MathUtils.getRandomNumberInRange(-100,100));
-			float cloudSize = (float)(MathUtils.getRandomNumberInRange(300,600));			
 			MagicRender.screenspace(
 			Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
 			MagicRender.positioning.CENTER, 
@@ -275,48 +243,6 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			new Vector2f(100f,100f),		
 			0f,
 			spin/5f,
-			shiftColor(new Color(0,20,10,255),new Color(0,0,0,255)),
-			false,
-			0f,
-			0f,
-			0f,
-			0f,
-			0f,
-			.2f,
-			.2f,
-			.3f,
-			CombatEngineLayers.BELOW_SHIPS_LAYER
-			);
-			MagicRender.screenspace(
-			Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-			MagicRender.positioning.CENTER, 
-			new Vector2f(0,0), 
-			new Vector2f(vel,vel), 			
-			new Vector2f(cloudSize*4,cloudSize*3),
-			new Vector2f(100f,100f),		
-			spin/10f,
-			0,
-			shiftColor(getSmokeColor(),new Color(0,0,0,255)),
-			true,
-			0f,
-			0f,
-			0f,
-			0f,
-			0f,
-			.2f,
-			.2f,
-			.3f,
-			CombatEngineLayers.ABOVE_SHIPS_LAYER
-			);
-			MagicRender.screenspace(
-			Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-			MagicRender.positioning.CENTER, 
-			new Vector2f(0,0), 
-			new Vector2f(vel,vel), 			
-			new Vector2f(cloudSize,cloudSize),
-			new Vector2f(100f,100f),		
-			0f,
-			spin/2,
 			shiftColor(new Color(0,10,20,255),new Color(0,0,0,255)),
 			false,
 			0f,
@@ -328,7 +254,74 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			.2f,
 			.3f,
 			CombatEngineLayers.BELOW_SHIPS_LAYER
-			);
+			);			
+			if(effectInterval.intervalElapsed())
+			{
+				MagicRender.screenspace(
+				Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+				MagicRender.positioning.CENTER, 
+				new Vector2f(0,0), 
+				new Vector2f(vel,vel), 			
+				new Vector2f(cloudSize,cloudSize),
+				new Vector2f(100f,100f),		
+				0f,
+				spin/2,
+				shiftColor(new Color(20,10,0,255),new Color(0,0,0,255)),
+				false,
+				0f,
+				0f,
+				0f,
+				0f,
+				0f,
+				-1,
+				-1,
+				1f,
+				CombatEngineLayers.BELOW_SHIPS_LAYER
+				);					
+				float xVel = (float)(MathUtils.getRandomNumberInRange(-100,100));
+				MagicRender.screenspace(
+				Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+				MagicRender.positioning.CENTER, 
+				new Vector2f(0,0), 
+				new Vector2f(vel,vel), 			
+				new Vector2f(cloudSize,cloudSize),
+				new Vector2f(100f,100f),		
+				0f,
+				spin/5f,
+				shiftColor(new Color(20,0,10,255),new Color(0,0,0,255)),
+				false,
+				0f,
+				0f,
+				0f,
+				0f,
+				0f,
+				.2f,
+				.2f,
+				.3f,
+				CombatEngineLayers.BELOW_SHIPS_LAYER
+				);
+				MagicRender.screenspace(
+				Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+				MagicRender.positioning.CENTER, 
+				new Vector2f(0,0), 
+				new Vector2f(vel,vel), 			
+				new Vector2f(cloudSize*4,cloudSize*3),
+				new Vector2f(100f,100f),		
+				spin/10f,
+				0,
+				shiftColor(getSmokeColor(),new Color(0,0,0,255)),
+				true,
+				0f,
+				0f,
+				0f,
+				0f,
+				0f,
+				.2f,
+				.2f,
+				.3f,
+				CombatEngineLayers.ABOVE_SHIPS_LAYER
+				);
+			}			
 			if(Math.random() < 0.20f)
 			{
 
@@ -366,9 +359,9 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 	private Color getSmokeColor() {
 		Random rand = new Random();
 		// Define the range for fiery red-orange shades
-		float r = 0.03f + rand.nextFloat() * 0.1f; // Minimal red for a cold feel
+		float r = 0.1f + rand.nextFloat() * 0.2f; // Minimal red for a cold feel
 		float g = 0.03f + rand.nextFloat() * 0.1f; // Cool greenish-blue
-		float b = 0.04f + rand.nextFloat() * 0.1f; // Vivid blue tones
+		float b = 0.01f + rand.nextFloat() * 0.1f; // Vivid blue tones
 
 		// Return the color with adjusted alpha based on the ratio
 		return new Color(r, g, b, .1f); 

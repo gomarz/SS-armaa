@@ -11,6 +11,7 @@ armaa_guppy_wing,armaa_guppy_standard,"interceptor1,interceptor",0,0.1,3,3,BOX,4
 armaa_musha_wing,armaa_musha_variant,"interceptor4,interceptor,ind,merc",0,0.1,6,8,V,4000,500,,3,INTERCEPTOR,Interceptor,10,10000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
+armaa_bit_blade_wing,armaa_bit_blade_variant,"no_drop, no_sell",3,,3,4,DIAMOND,1000,500,,3,FIGHTER,Fire Support,8,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_wing_shield,armaa_bit_shield,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,CLAW,1000,500,-100,4,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit2_wing,armaa_bit_alta,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,4,0,BOX,0,500,,1,SUPPORT,Fire Support,20,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm,stay_in_front_of_ship",3,,4,0,DIAMOND,2000,500,,2,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,

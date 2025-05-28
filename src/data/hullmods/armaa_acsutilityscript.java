@@ -61,6 +61,11 @@ public class armaa_acsutilityscript extends BaseHullMod{
 					member.getVariant().removePermaMod("armaa_acsutilityscript");
 
 				}
+				if(data.containsKey(DATA_PREFIX + member.getId()) && !member.getCaptain().getId().equals("armaa_automata"))
+				{
+					member.getVariant().removeMod("armaa_automatedCognitionShell");
+					member.getVariant().removePermaMod("armaa_acsutilityscript");
+				}
 			}
 	} 
 }

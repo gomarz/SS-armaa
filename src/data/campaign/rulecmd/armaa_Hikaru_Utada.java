@@ -8,6 +8,7 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
+import com.fs.starfarer.api.campaign.JumpPointAPI;
 import com.fs.starfarer.api.campaign.NascentGravityWellAPI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
@@ -362,7 +363,15 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 					{
 						token.getContainingLocation().removeEntity(token);
 					}
-				}				
+				}
+				for(SectorEntityToken token:gamlin.getJumpPoints())
+				{
+					JumpPointAPI jp = (JumpPointAPI)token;
+					if(jp.getRelatedPlanet() == gravion)
+					{
+						token.getContainingLocation().removeEntity(token);
+					}
+				}							
 				gravion.getContainingLocation().removeEntity(gravion);
 				Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
 				//gravion.getStarSystem().autogenerateHyperspaceJumpPoints(true,true);					

@@ -1,6 +1,8 @@
 v3.2
 ------
 ======Additions======
+- Add 'performance mode' lunalib setting
+	- reduces most special fx in the mission battles
 - Added SP option to circumvent FP limit for starting ACoC
 - Add new voice lines for Dawn
 - Add 2 new events re: spooky redacted if Dawn is present
@@ -19,6 +21,8 @@ v3.2
 			- 1x rear facing energy turret
 - New Mission: Descent
 	- If didn't start with Valkazard, can be obtained/encountered in the climax of this mission
+- New Mission: By Their Silence
+	- can be triggered once at 25% reputation with MRC Liason
 - ATAC "Event"
 	- Progress accumulates from destroying ships with ArmaA ships present in the fleet
 	- Grants various rewards + minor buff geared towards strikecraft

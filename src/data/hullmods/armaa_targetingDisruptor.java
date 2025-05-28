@@ -25,6 +25,7 @@ public class armaa_targetingDisruptor extends BaseHullMod {
         DAMAGE_MAP.put(HullSize.CAPITAL_SHIP, 0.80f);
     }
 	private List<ShipAPI> targets;		
+	private int autoAimMalus = 20;
 	private IntervalUtil interval = new IntervalUtil(0.05f,0.05f);		
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
@@ -97,6 +98,7 @@ public class armaa_targetingDisruptor extends BaseHullMod {
 		if (index == 0) return "" + DAMAGE_MAP.get(HullSize.FRIGATE)+"x /"+DAMAGE_MAP.get(HullSize.DESTROYER)+"x";
 		//if (index == 1) return "" + (int) BEAM_DAMAGE_PENALTY;
 		if (index == 1) return "" + DAMAGE_MAP.get(HullSize.CRUISER)+"x /"+DAMAGE_MAP.get(HullSize.CAPITAL_SHIP)+"x";
+		if (index == 2) return "" + autoAimMalus+"%";		
 		return null;
 	}
 }

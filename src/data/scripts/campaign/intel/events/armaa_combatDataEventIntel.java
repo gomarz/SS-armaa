@@ -147,7 +147,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 		getDataFor(Stage.ADVANCED_TELEMETRY).keepIconBrightWhenLaterStageReached = true;
 		getDataFor(Stage.PROTOTYPE_BREAKTHROUGH).keepIconBrightWhenLaterStageReached = true;
 		getDataFor(Stage.AUTOMATION).keepIconBrightWhenLaterStageReached = true;
-		//getDataFor(Stage.GENERATE_SLIPSURGE).keepIconBrightWhenLaterStageReached = true;
+		getDataFor(Stage.DATA_DELIVERY).keepIconBrightWhenLaterStageReached = true;
 		
 	}
 	
@@ -196,7 +196,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 				info.addPara("Prototype fighter %s delivered to %s for testing", initPad, tc, h, "MORGANA","GAMLIN");
 			}
 			if (esd.id == Stage.DATA_DELIVERY) {
-				info.addPara("Topographic data gained", tc, initPad);
+				info.addPara("New hullmods unlocked", tc, initPad);
 			}
 			return;
 		}
@@ -276,14 +276,14 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 					);
 		} else if (stageId == Stage.ADVANCED_TELEMETRY) {
 			info.addPara("Ships with the %s hullmod and piloted by officers have enhanced performance " +
-						 "%s, %s, %s are improved by %s. Non-missile RoF increased by %s.",
+						 "%s and%s  are improved by %s. Shield Efficiency increased by %s.",
 					initPad, Misc.getHighlightColor(),
 					"STRIKECRAFT",
-					"Weapon Turn Rate",
-					"Shield Efficiency",
 					"Flux Dissipation",
-					"10%", //dont hardcode it
-					"5%" //dont hardoced this either
+					"Flux Capacity",
+					"Shield Efficiency",
+					"15%", //dont hardcode it
+					"10%" //dont hardoced this either
 					);
 		} else if (stageId == Stage.PROTOTYPE_BREAKTHROUGH) {
 			info.addPara("The reverse-engineered fighter %s has been left in storage "
@@ -302,12 +302,16 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 					"OVERLORD SUITE[BETA]"
 					);
 		} else if (stageId == Stage.DATA_DELIVERY) {
-			int min = getTopoResetMin();
-			int max = getTopoResetMax();
-			info.addPara("A batch of topographic data that can be sold for a"
-					+ " considerable number of credits.", initPad);
-			info.addPara("Event progress will be reset to between %s and %s points when this outcome is reached.",
-					opad, h, "" + min, "" + max);
+			info.addPara("Data gleaned from your ops "
+					+ "has prompted the design of several new technologies "
+					+ "for %s. Design notes for several hullmods have been transferred to you:\n "
+					+ "%s,%s,%s.", initPad, 
+					Misc.getHighlightColor(),
+					"STRIKECRAFT",
+					"Hi-Manuever System",
+					"Emergency Recall Device",
+					"OVERLORD SUITE[ALPHA]"
+					);
 		}
 	}
 	
@@ -330,7 +334,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 					} else if (esd.id == Stage.AUTOMATION) {
 						tooltip.addTitle("Automation");
 					} else if (esd.id == Stage.DATA_DELIVERY) {
-						tooltip.addTitle("Data Delivery");
+						tooltip.addTitle("Strategic Convergence");
 					}
 
 					addStageDesc(tooltip, esd.id, opad, true);
@@ -439,18 +443,6 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 		return points;
 	}	
 
-	public int getTopoResetMin() {
-		EventStageData stage = getDataFor(Stage.MINOR_INSIGHTS);
-		return stage.progress;
-	}
-	public int getTopoResetMax() {
-		return getTopoResetMin() + 50;
-	}
-
-	public void resetTopographicData() {
-		int resetProgress = getTopoResetMin() + getRandom().nextInt(getTopoResetMax() - getTopoResetMin() + 1);
-		setProgress(resetProgress);
-	}
 
 	@Override
 	public Set<String> getIntelTags(SectorMapAPI map) {
@@ -519,19 +511,23 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 				Global.getSector().getPlayerFaction().addKnownHullMod("armaa_skyMindBeta");	
 		}
 		if (stage.id == Stage.DATA_DELIVERY) {
-			resetTopographicData();
-			CargoAPI cargo = Global.getSector().getPlayerFleet().getCargo();
-			cargo.addSpecial(new SpecialItemData(Items.TOPOGRAPHIC_DATA, null), 1);
+			if(!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice"))
+				Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
+			if(!Global.getSector().getPlayerFaction().knowsHullMod("armaa_himac"))
+				Global.getSector().getPlayerFaction().addKnownHullMod("armaa_himac");	
+			if(!Global.getSector().getPlayerFaction().knowsHullMod("armaa_skyMindAlpha"))
+				Global.getSector().getPlayerFaction().addKnownHullMod("armaa_skyMindAlpha");	
 		}
-	}
-	
-	public void reportCurrentLocationChanged(LocationAPI prev, LocationAPI curr) {
-		//applyFleetEffects();
 	}
 	
 	public void reportAboutToRefreshCharacterStatEffects() {
 		
 	}
+	
+	public void reportCurrentLocationChanged(LocationAPI prev, LocationAPI curr) {
+		//applyFleetEffects();
+	}
+		
 
 	public void reportRefreshedCharacterStatEffects() {
 		// called when opening colony screen, so the Spaceport tooltip gets the right values
@@ -540,27 +536,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 	}
 	
 	public void applyFleetEffects() {
-		String id1 = "hypertopology1";
-		
-		CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
-		pf.getStats().getFleetwideMaxBurnMod().unmodifyFlat(id1);
-		
-		MutableStat stat = pf.getStats().getDynamic().getStat(Stats.FUEL_USE_NOT_SHOWN_ON_MAP_MULT);
-		stat.unmodifyMult(id1);
-		
-		//if (pf.isInHyperspace()) { // doesn't work; after reportCurrentLocationChanged()
-		// the current location is right but the player fleet hasn't been added to it yet
-		if (Global.getSector().getCurrentLocation().isHyperspace()) {
-			if (isStageActive(Stage.ADVANCED_TELEMETRY)) {
-				for (StatMod mod : stat.getMultMods().values()) {
-					if (SlipstreamTerrainPlugin2.FUEL_USE_MODIFIER_DESC.equals(mod.desc)) {
-						stat.modifyMult(id1, SLIPSTREAM_FUEL_MULT, 
-								SlipstreamTerrainPlugin2.FUEL_USE_MODIFIER_DESC + " (hyperspace topography)");
-						break;
-					}
-				}
-			}			
-		}
+
 	}
 		
 	public boolean withMonthlyFactors() {

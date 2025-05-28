@@ -38,7 +38,11 @@ private ShipAPI carrier;
 		ShipAPI ship = (ShipAPI)stats.getEntity();
 		boolean standardDeploy = ship.getFacing() == 90f ? true:false;
 		if(runOnce && !ship.isRetreating())
+		{
+			ship.getTravelDrive().deactivate();
+			unapply(stats,id);
 			return;
+		}
 		if(ship.getOwner() == 1)
 			standardDeploy = ship.getFacing() == 270f ? true:false;
 		boolean alreadyDone = Global.getCombatEngine().getCustomData().get("armaa_carrierDeployDone_"+ship.getId()) instanceof Boolean ? true : false;
@@ -65,7 +69,8 @@ private ShipAPI carrier;
 				for(WeaponSlotAPI wep:carrier.getHullSpec().getAllWeaponSlotsCopy())
 				{
 					//Vector2f takeOffLoc = carrier.getLocation();
-					
+					if(Global.getCombatEngine().getCustomData().get("armaa_launchSlots"+carrier.getId()+"_"+wep.getId()) != null)
+						continue;
 					if(wep.getWeaponType() == WeaponType.LAUNCH_BAY)
 					{
 						if(Global.getCombatEngine().getPlayerShip() == ship)
@@ -75,10 +80,9 @@ private ShipAPI carrier;
 						}
 						
 						ship.setFacing(carrier.getFacing()+wep.getAngle());
-						takeOffLoc = new Vector2f(wep.computePosition(carrier));
-						
-						if(Math.random() <= .50f)
-							break;
+						takeOffLoc = new Vector2f(wep.computePosition(carrier));				
+						Global.getCombatEngine().getCustomData().put("armaa_launchSlots"+carrier.getId()+"_"+wep.getId(),"-");
+						break;
 					}
 				}
 				
@@ -157,7 +161,7 @@ private ShipAPI carrier;
 			if(carrier.isHulk())
 				continue;
 
-			if(carrier.getNumFighterBays() > 0 && carrier.getHullSpec().getFighterBays() > 0)
+			if(carrier.getNumFighterBays() > 0 && carrier.getHullSpec().getFighterBays() > 0 || carrier.getLaunchBaysCopy().size() > 0 )
 			{
 				potCarrier = carrier; 
 				if(!initial)

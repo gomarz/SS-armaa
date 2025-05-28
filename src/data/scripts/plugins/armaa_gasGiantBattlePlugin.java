@@ -41,7 +41,8 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 	private IntervalUtil attackInterval = new IntervalUtil(2f, 2f);	
 	private IntervalUtil bossInterval = new IntervalUtil(10f,10f);
 	//try to improve perf a bit here
-	private IntervalUtil bgInterval = new IntervalUtil(0.1f,0.1f);
+	private IntervalUtil bgInterval = new IntervalUtil(0.1f,0.5f);
+	private IntervalUtil asteroidInterval = new IntervalUtil(1f,5f);	
 	private float spin = 0f;
 	// 1 - 100% HP
 	private boolean playedMusic, playedMusicSt2 = false;
@@ -127,24 +128,8 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
         Color endColorBG = new Color(175, 175, 175, 255);   // Ending color: (0, 0, 200)
         Color endColorBG2 = new Color(175, 175, 175, 0);   // Ending color: (0, 0, 200)		
 		engine.setBackgroundColor(new Color(150,125,0,255));
-		if(!engine.isPaused())
-		{
-		
-			engine.setBackgroundGlowColor(shiftColor(startColor,endColor,Math.min(1f,collapseAftermathInterval.getElapsed()/collapseAftermathInterval.getIntervalDuration())));			
-			float mult = engine.getViewport().getViewMult();		
-			float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
-			float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
-			float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
-			float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport	
-			float size = Math.max(1f,1f*(float)(engine.getTotalElapsedTime(false) / 100));
-			float mapMult = (engine.getTotalElapsedTime(false) / 100);
-			if((engine.getTotalElapsedTime(false) / 100)> 0.15 && initialStr == 0)
-			{
-				initialStr = engine.getFleetManager(1).getCurrStrength();
-				currentStr = initialStr;
-			}
-			bgInterval.advance(amount);
-			float anomalySize = collapsing ? Math.min(1f,(engine.getTotalElapsedTime(false) / 100)-0.50f) : 0;				
+		float anomalySize = collapsing ? Math.min(1f,(engine.getTotalElapsedTime(false) / 100)-0.50f) : 0;
+		float mapMult = (engine.getTotalElapsedTime(false) / 100);		
 			if(!collapsedAftermath)
 				MagicRender.screenspace(
 					Global.getSettings().getSprite("misc", "armaa_gravion"),
@@ -155,7 +140,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(0,0),
 					spin, 
 					0f, //spin 
-					shiftColor(new Color(.33f,.33f,.33f,1f),startColorBG,(engine.getTotalElapsedTime(false)/100)+0.1f), 
+					shiftColor(new Color(0f,0f,0f,1f),startColorBG,(engine.getTotalElapsedTime(false)/100)+0.1f), 
 					false, 
 					0f, 
 					0f, 
@@ -163,7 +148,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f, 
 					0f, 
 					0f, 
-					1, 
+					-1, 
 					0f, 
 					CombatEngineLayers.CLOUD_LAYER
 				);
@@ -185,10 +170,27 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 				0f, 
 				0f, 
 				0f, 
-				1, 
+				-1, 
 				0f, 
 				CombatEngineLayers.CLOUD_LAYER
-			);		
+			);				
+		if(!engine.isPaused())
+		{
+		
+			engine.setBackgroundGlowColor(shiftColor(startColor,endColor,Math.min(1f,collapseAftermathInterval.getElapsed()/collapseAftermathInterval.getIntervalDuration())));			
+			float mult = engine.getViewport().getViewMult();		
+			float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
+			float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
+			float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
+			float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport	
+			float size = Math.max(1f,1f*(float)(engine.getTotalElapsedTime(false) / 100));
+			if((engine.getTotalElapsedTime(false) / 100)> 0.15 && initialStr == 0)
+			{
+				initialStr = engine.getFleetManager(1).getCurrStrength();
+				currentStr = initialStr;
+			}
+			bgInterval.advance(amount);
+			asteroidInterval.advance(amount);			
 			float effectLevel = collapseInterval.getElapsed()/collapseInterval.getIntervalDuration() - collapseAftermathInterval.getElapsed()/collapseAftermathInterval.getIntervalDuration();										
 			if(collapsed && !collapseAftermathInterval.intervalElapsed())	
 			{
@@ -246,7 +248,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(800*anomalySize,800*anomalySize),		
 					-spin*3,
 					0f,
-					Color.cyan,
+					Color.red,
 					true,
 					0f,
 					0f,
@@ -268,14 +270,14 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					-spin*3,
 					0f,
 					new Color(col,col,col,Math.max(0f,0.8f-explosionSize)),
-					true,
+					false,
 					0f,
 					0f,
 					0f,
 					0f,
 					0f,
 					0f,
-					amount,
+					-1,
 					0f,
 					CombatEngineLayers.CLOUD_LAYER
 					);
@@ -329,6 +331,10 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 						
 					if((!collapseAftermathInterval.intervalElapsed() && Math.random() < 0.03 || (collapsedAftermath && attackInterval.intervalElapsed())))
 					{
+						engine.spawnAsteroid(MathUtils.getRandomNumberInRange(1,3),MathUtils.getRandomNumberInRange(-10000,10000),
+						10000,
+						MathUtils.getRandomNumberInRange(-500,500),
+						-MathUtils.getRandomNumberInRange(500,600));						
 						String asteroidSpr = "armaa_asteroid_big"+MathUtils.getRandomNumberInRange(1,3);						
 						MagicRender.battlespace(
 						Global.getSettings().getSprite("misc", asteroidSpr),
@@ -345,9 +351,9 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 						0f,
 						0f,
 						0f,
-						0.1f,
-						10f,
-						1f,
+						0.25f,
+						7f,
+						2f,
 						CombatEngineLayers.BELOW_SHIPS_LAYER
 						);							
 					}						
@@ -405,28 +411,6 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					}
 						float gateRatio = interval.getElapsed()/interval.getIntervalDuration();	
 						float bossRatio = bossInterval.getElapsed()/bossInterval.getIntervalDuration();
-						spr = Global.getSettings().getSprite("campaignEntities", "inactive_gate");
-						MagicRender.screenspace(
-						spr,
-						MagicRender.positioning.CENTER,				
-						new Vector2f(0,0),
-						new Vector2f(0,0),
-						new Vector2f(spr.getWidth()*2f,spr.getHeight()*2f),
-						new Vector2f(0,0),		
-						0f,
-						0f,
-						new Color(0.50f,0.50f,0.50f,1f), 
-						false,
-						0f,
-						0f,
-						0f,
-						0f,
-						0f,
-						0f,
-						amount,
-						0f,
-						CombatEngineLayers.CLOUD_LAYER
-						);
 						if(gateRatio > 0)
 						{
 							spr = Global.getSettings().getSprite("gates", "glow_rays");							
@@ -447,7 +431,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 							0f,
 							0f,
 							0f,
-							amount,
+							-1,
 							0f,
 							CombatEngineLayers.CLOUD_LAYER
 							);				
@@ -469,14 +453,14 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 							0f,
 							0f,
 							0f,
-							amount,
+							-1,
 							0f,
 							CombatEngineLayers.CLOUD_LAYER
 							);				
 						}
 						if(!bossSpawn)
 						{
-							spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("facet").getSpriteName());
+							spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("tesseract").getSpriteName());
 							MagicRender.screenspace(
 							spr,
 							MagicRender.positioning.CENTER,				
@@ -494,7 +478,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 							0f,
 							0f,
 							0f,
-							amount,
+							-1,
 							0f,
 							CombatEngineLayers.CLOUD_LAYER
 							);
@@ -515,7 +499,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 							0f,
 							0f,
 							0f,
-							amount,
+							-1,
 							0f,
 							CombatEngineLayers.CLOUD_LAYER
 							);									
@@ -560,7 +544,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 				ShipAPI bossEne = null;			
 				if(engine.getCustomData().containsKey("armaa_atmo_boss"))
 					bossEne = (ShipAPI)engine.getCustomData().get("armaa_atmo_boss");
-			if(!collapseBegan && ((engine.getTotalElapsedTime(false) / 100)> 0.50f || currentStr < initialStr/2f || engine.getFleetManager(1).getDeployedCopy().size() <= 0))
+			if(!collapseBegan && ((engine.getTotalElapsedTime(false) / 100)> 0.50f || currentStr < initialStr/2f))
 			{
 				Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);				
 				engine.getCombatUI().addMessage(1,"",Color.red,"=INTERCEPTED TRANSMISSION=",Color.cyan,":",Color.cyan,
@@ -607,7 +591,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 			}
 			
 			float effectLevel = collapseInterval.getElapsed()/collapseInterval.getIntervalDuration() - collapseAftermathInterval.getElapsed()/collapseAftermathInterval.getIntervalDuration();			
-			if(collapsed && !collapsedAftermath && effectLevel > 0.60f && bgInterval.intervalElapsed())
+			if(collapsed && !collapsedAftermath && effectLevel > 0.60f && bgInterval.intervalElapsed() && Math.random() > 0.50f)
 			{
 					String asteroidStr = "asteroid_" + MathUtils.getRandomNumberInRange(1,4);	
 					float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
@@ -633,19 +617,29 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
 					);						
 			}
-			if((collapsedAftermath && Math.random() < 0.30f) && bgInterval.intervalElapsed())
+			/*
+			if((collapsedAftermath && Math.random() < 0.40f) && bgInterval.intervalElapsed())
 			{
 				float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
-				float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport	
+				float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport
+				if(Math.random() > 0.50f)
 				engine.spawnAsteroid(MathUtils.getRandomNumberInRange(1,3),MathUtils.getRandomNumberInRange(-10000,10000),
 				10000,
 				MathUtils.getRandomNumberInRange(-500,500),
-				-MathUtils.getRandomNumberInRange(500,600));
+				-MathUtils.getRandomNumberInRange(500,600));				
+			}
+			*/
+			if((collapsedAftermath && asteroidInterval.intervalElapsed()))
+			{
+				float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
+				float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport		
+				float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
+				float maxY= engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport				
 				String asteroidStr = "asteroid_" + MathUtils.getRandomNumberInRange(1,4);
 					MagicRender.battlespace(
 					Global.getSettings().getSprite("terrain", asteroidStr),
 					new Vector2f(MathUtils.getRandomNumberInRange(minX,maxX),engine.getViewport().getCenter().y+engine.getViewport().getVisibleHeight()),
-					new Vector2f(MathUtils.getRandomNumberInRange(-200,200),-MathUtils.getRandomNumberInRange(300,400)),
+					new Vector2f(MathUtils.getRandomNumberInRange(-200,200),-MathUtils.getRandomNumberInRange(-300,400)),
 					new Vector2f(Global.getSettings().getSprite("terrain", asteroidStr).getWidth()*0.50f,Global.getSettings().getSprite("terrain", asteroidStr).getHeight()*0.50f),
 					new Vector2f(0f,0f),			
 					MathUtils.getRandomNumberInRange(0f,360f),
@@ -657,11 +651,12 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f,
 					0f,
 					0f,
-					0.1f,
-					5f,
+					0.5f,
+					4f,
 					2f,
 					CombatEngineLayers.BELOW_SHIPS_LAYER
-					);					
+					);	
+				
 			}
 			for (ShipAPI ship : engine.getShips())
 			{
@@ -738,13 +733,10 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 	{
 		if (Misc.getAICoreOfficerPlugin(Commodities.OMEGA_CORE) == null)
 			return;		
-		
-		PersonAPI pilot = Misc.getAICoreOfficerPlugin(Commodities.OMEGA_CORE).createPerson(Commodities.OMEGA_CORE,"remnant",new Random());
-		ShipAPI ship = engine.getFleetManager(1).spawnShipOrWing("shard_right_Missile",new Vector2f(500,-10000),90f,5f);
+		PersonAPI pilot = Misc.getAICoreOfficerPlugin(Commodities.OMEGA_CORE).createPerson(Commodities.OMEGA_CORE,"remnant",new Random());	
+		ShipAPI ship = engine.getFleetManager(1).spawnShipOrWing("armaa_facet_boss",new Vector2f(-500,-10000),90f,5f);	
 		ship.setCaptain(pilot);		
-		ship = engine.getFleetManager(1).spawnShipOrWing("shard_left_Armorbreaker",new Vector2f(-500,-10000),90f,5f);	
-		ship.setCaptain(pilot);		
-		ship = engine.getFleetManager(1).spawnShipOrWing("facet_Defense",new Vector2f(0,-10000),90f,15f);	
+		ship = engine.getFleetManager(1).spawnShipOrWing("armaa_tesseract_boss",new Vector2f(0,-10000),90f,15f);	
 		ship.setCaptain(pilot);
 		Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
 		engine.getCombatUI().addMessage(1,"",Color.white,"",Color.white,"",new Color(255,0,235,255),"Something shifts. From deep within the churning black void, a faint melody begins to rise like a broken music box echoing across time and space.");

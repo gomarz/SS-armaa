@@ -2,6 +2,7 @@ package data.scripts.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.impl.combat.MoteControlScript;
 import com.fs.starfarer.api.combat.EmpArcEntityAPI.EmpArcParams;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.magiclib.util.MagicRender;
@@ -211,6 +212,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 						target = ship.getShipTarget();
 					if(target == null)
 							reacquireTarget();
+
 					if(target != moveTarget && target != null)
 					{
 						missile.setArmingTime(0f);
@@ -248,6 +250,16 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 						arc.setSingleFlickerMode(true);
 					}					
 					moveTarget = target;
+					if(moveTarget != null)
+					{
+						EveryFrameCombatPlugin plugin = new MoteCaller().pickJitterPlugin(
+							(ShipAPI) moveTarget,
+							0.1f,
+							0.4f,
+							colorGlow
+						);					
+						Global.getCombatEngine().addPlugin(plugin);
+					}
 				}
 			}				
 			if(trailtimer.intervalElapsed())
@@ -317,12 +329,15 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 		{
 			if(target != null)
 				moveTarget = target;
-			else
-				return;
+		}
+		if(moveTarget instanceof ShipAPI){
+			ShipAPI shipTarget = (ShipAPI)moveTarget;
+			if(shipTarget.isHulk() || !shipTarget.isAlive())			
+				moveTarget = MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false);	
 		}
         timer.advance(amount);
         //finding lead point to aim to        
-        if(timer.intervalElapsed()){
+        if(timer.intervalElapsed() && moveTarget != null){
             //best intercepting point
             lead = AIUtils.getBestInterceptPoint(
                     missile.getLocation(),
@@ -411,4 +426,9 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
     {
         this.target = target;
     }
+	public class MoteCaller extends MoteControlScript {
+		public EveryFrameCombatPlugin pickJitterPlugin(ShipAPI ship, float intensity, float range, Color color) {
+			return createTargetJitterPlugin(ship, intensity, range, color);
+		}
+	}	
 }

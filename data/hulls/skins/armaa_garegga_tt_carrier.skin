@@ -9,7 +9,7 @@
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["rare_bp"],
-	#"systemId":"plasmajets",
+    "systemId":"drone_strike",
     "tech":"Tri-Tachyon",
     "removeBuiltInMods":["fourteenth"],
     "removeWeaponSlots":[], 		# ids
@@ -24,7 +24,8 @@
 		  "type": "SYNERGY"
 	   },
 },
-    "builtInMods":["fluxcoil",],
+    "builtInMods":["fluxcoil","fluxdistributor","converted_hangar"],
+    "builtInWings":["armaa_bit_blade_wing",],
     "builtInWeapons":{
 		"E_LSHOULDER": "armaa_garegga_leftPauldron_tt",
 		"E_RSHOULDER": "armaa_garegga_rightPauldron_tt",

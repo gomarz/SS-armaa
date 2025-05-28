@@ -22,7 +22,7 @@
   "modules": [
     {
       #"MODULE": "armaa_gallant_frig_standard"
-       "MODULE": "armaa_aleste_frig_classic_standard"
+       "MODULE": "armaa_valkenx_frig_assault"
     }
   ],
   "wings": []

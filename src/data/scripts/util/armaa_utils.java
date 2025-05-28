@@ -14,6 +14,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.CombatEngineLayers;
+import com.fs.starfarer.api.combat.MutableStat;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.input.Keyboard;
+
 //those methods were copied from source files of other modders like Sundog and Dark.Revenant
 
 public class armaa_utils {
@@ -106,6 +108,33 @@ public class armaa_utils {
 		
 		return intermediateColor;	
 	}
+	
+	//thanks HzDev <3
+	/**
+	 * Ensures unique application of data.
+	 * @param stat The module data storage where the data will be applied.
+	 * @param toApplyID The ID originally intended to be applied.
+	 * @param value The data originally intended to be applied.
+	 */
+	public static void applyFlatMod(MutableStat stat, String toApplyID, float value) {
+		for (String originID : new ArrayList<>(stat.getFlatMods().keySet())) {
+			stat.unmodifyFlat(originID);
+		}
+		stat.modifyFlat(toApplyID, value);
+	}
+
+	/**
+	 * Ensures unique application of data.
+	 * @param stat The module data storage where the data will be applied.
+	 * @param toApplyID The ID originally intended to be applied.
+	 * @param value The data originally intended to be applied.
+	 */
+	public static void applyMultMod(MutableStat stat, String toApplyID, float value) {
+		for (String originID : new ArrayList<>(stat.getMultMods().keySet())) {
+			stat.unmodifyMult(originID);
+		}
+		stat.modifyMult(toApplyID, value);
+	}	
 
     public static float getEngineFractionDisabled(ShipAPI ship) {
         float maxThrust = 0;

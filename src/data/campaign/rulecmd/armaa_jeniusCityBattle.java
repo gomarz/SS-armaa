@@ -89,8 +89,6 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());		
 		//FleetFactoryV3.applyDamageToFleet(enemyFleet,0.40f,true,new Random());		
 		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);
-		for(int i = 0; i < 25; i++)
-		enemyFleet.getFleetData().addFleetMember("kite_pirates_Raider");		
 		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());
 		final SectorEntityToken entity = dialog.getInteractionTarget();
 		Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.PIRATES,1f,100,200));
@@ -110,9 +108,9 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 		config.pullInAllies = true;
 		config.pullInEnemies = true;
 		config.pullInStations = false;
-		config.lootCredits = false;		
-		config.firstTimeEngageOptionText = "Engage the raiders";
-		config.afterFirstTimeEngageOptionText = "Re-engage the raiders";
+		config.lootCredits = true;		
+		config.firstTimeEngageOptionText = "Engage the Arusthai navy";
+		config.afterFirstTimeEngageOptionText = "Re-engage the Arusthai navy";
 		config.noSalvageLeaveOptionText = "Continue";		
 		config.dismissOnLeave = false;
 		config.printXPToDialog = true;		
@@ -206,7 +204,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
 				bcc.aiRetreatAllowed = false;
 				bcc.objectivesAllowed = false;
-				bcc.enemyDeployAll = true;
+				bcc.enemyDeployAll = false;
 			}
 			@Override
 			public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {

@@ -139,7 +139,7 @@ public class armaa_sykoEveryFrame extends BaseEveryFrameCombatPlugin
 					dmg += proj.getDamageAmount() + proj.getEmpAmount() * 0.25f;
 				}			
 				
-				if(CollisionUtils.isPointWithinCollisionCircle(proj.getLocation(), ship) && ship.getShield() == null || ship.getShield().isOff())
+				if(CollisionUtils.isPointWithinCollisionCircle(proj.getLocation(), ship) && (ship.getShield() == null || ship.getShield().isOff()))
 				{			
 					if(!CollisionUtils.getCollides(proj.getLocation(),proj.getVelocity(),ship.getLocation(), 25f) && dmg >= 40f)
 					{
