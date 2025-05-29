@@ -3,13 +3,9 @@ package data.scripts.weapons;
 import java.awt.Color;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.combat.*;
-import org.magiclib.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.magiclib.util.MagicRender;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
-import org.lazywizard.lazylib.VectorUtils;
 
 public class armaa_shotgunEffect2 implements OnHitEffectPlugin {
     

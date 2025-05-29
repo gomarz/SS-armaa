@@ -11,7 +11,6 @@ import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.VectorUtils;
 import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicLensFlare;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.Misc;
 

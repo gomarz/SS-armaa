@@ -1,19 +1,15 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lwjgl.util.vector.Vector2f;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.combat.OnFireEffectPlugin;
 import com.fs.starfarer.api.combat.OnHitEffectPlugin;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
-import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.MathUtils;
 import org.magiclib.util.MagicRender;
 import data.scripts.weapons.armaa_vajraProjectileScript;
 
-import java.util.Random;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;

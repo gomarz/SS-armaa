@@ -14,13 +14,9 @@ import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.util.FaderUtil;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 import data.scripts.util.armaa_utils;
-import data.scripts.weapons.armaa_curveLaserProjectileScript;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 

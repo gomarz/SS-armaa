@@ -3,12 +3,10 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
 import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.MathUtils;
 import java.awt.Color;
 import org.lazywizard.lazylib.VectorUtils;
-import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.IntervalUtil;
 
 

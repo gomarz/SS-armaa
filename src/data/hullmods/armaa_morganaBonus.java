@@ -4,21 +4,14 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import java.util.*;
 import java.awt.Color;
 
 import org.lwjgl.util.vector.Vector2f;
-import data.scripts.util.armaa_utils;
 import com.fs.starfarer.api.util.IntervalUtil;
 
-import com.fs.starfarer.api.SettingsAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.combat.listeners.*;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import org.magiclib.util.MagicRender;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import org.magiclib.util.MagicUI;
-import org.lazywizard.lazylib.combat.DefenseUtils;
 
 public class armaa_morganaBonus extends BaseHullMod
 {

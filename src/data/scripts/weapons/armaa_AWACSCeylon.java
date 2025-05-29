@@ -4,9 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import java.awt.*;
 import com.fs.starfarer.api.util.Misc;
 
@@ -21,7 +19,6 @@ import org.lazywizard.lazylib.VectorUtils;
 import com.fs.starfarer.api.combat.CombatEngineLayers;
 import org.magiclib.util.MagicRender;
 
-import static org.lwjgl.opengl.GL11.*;
 
 public class armaa_AWACSCeylon implements EveryFrameWeaponEffectPlugin {
     private static final float[] COLOR_NORMAL = {255f / 255f, 100f / 255f, 20f / 255f};

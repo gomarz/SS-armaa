@@ -3617,9 +3617,10 @@ armaa_btsStart,PopulateOptions,"$id == armaa_mrcLiason score:1000
 !$global.armaa_bts_inProgress
 !$global.armaa_bts_Completed
 !$global.armaa_bts_missionCompleted",,,10:armaa_btsStart: Ask if there's more serious work available,
-armaa_bts,DialogOptionSelected,$option == armaa_btsStart,"Highlight ""Tri-Tachyon""","""You've pulled weight, Captain. A lot of it.""
+armaa_bts,DialogOptionSelected,$option == armaa_btsStart,"Highlight ""Tri-Tachyon""
+ShowSecondPerson armaa_felner","""You've pulled weight, Captain. A lot of it.""
 
-$HeOrShe taps a key. A holofile flickers to life, showing a blurred figure in a detention cell. ""Got an asset- codename FLINT. Embedded with Tri-Tachyon for two cycles. Went dark a dozen shifts back. No exfil, no dead-drop, no codeflash. Normally, standard protocol says we assume dead. But I've been doing this too long not to know which ones crack. If they get to him—and they will, if they haven't already-then it's not just a loss. We lose INFOSEC. We lose people.""","10:armaa_bts2: ""Right, so you want me to extract them?""",
+$HeOrShe taps a key. A holofile flickers to life, showing the image of a rather tired looking man. ""Got an asset- codename FLINT. Embedded with Tri-Tachyon for two cycles. Went dark a dozen shifts back. No exfil, no dead-drop, no codeflash. Normally, standard protocol says we assume dead. But I've been doing this too long not to know which ones crack. If they've got him—and I'd wager they do—it's not just one more ghost on the ledger. It's INFOSEC blown wide. It's names. It's locations. It's burn notices and body bags. If we move fast, we contain it. If not...""","10:armaa_bts2: ""Right, so you want me to extract them?""",
 armaa_bts2,DialogOptionSelected,$option == armaa_bts2,"BeginMission armaa_bts false
 Call $global.armaa_bts_ref updateData
 Call $global.armaa_bts_ref showMap $armaa_bts_marketName
@@ -3627,10 +3628,12 @@ $global.armaa_bts_marketId = $armaa_bts_marketId
 FireAll armaa_btsOpts","""No. I want you to make sure he doesn't..hasn't talked."" A pause. The holofile loops silently in the background. ""If he's clean, extraction may not even be needed. If he's cracked, extraction's a liability. Make contact. Or confirm he hasn't gone out through a pressure seam—if you catch my drift.""
 
 $HeOrShe smiles apologetically, ""I know this might feel beneath your station. But if we send one of ours, it lights up every scanner from here to Eochu. You, though... people like you move different. Little more room to maneuver. Little more plausible deniability.""","10:armaa_bts2: ""Right, so you want me to extract them?""",
-armaa_btsOptRisks,armaa_btsOpts,$player.commissionFactionId != tritachyon,,,"10:armaa_btsOpRisksResp: ""And what about me? If this goes sideways-how much of it sticks to me?""",
-armaa_btsOptRisksTriTachyon,armaa_btsOpts,$player.commissionFactionId == tritachyon score:2,,,"10:armaa_btsOpRisksResp: ""You do realize i'm on Tri-Tachyon's payroll, right?""",
-armaa_btsOptCompromised,armaa_btsOpts,,,,"10:armaa_btsOpCompromisedResp: ""How do I know if he's been compromised?""",
-armaa_btsOpWhatDoing,armaa_btsOpts,,,,"10:armaa_btsOpWhatDoingResp: ""What exactly was this agent doing?""",
+armaa_btsOptRisks,armaa_btsOpts,"!$armaa_askedWhatAgentRisks
+$player.commissionFactionId != tritachyon",,,"10:armaa_btsOpRisksResp: ""And what about me? If this goes sideways-how much of it sticks to me?""",
+armaa_btsOptRisksTriTachyon,armaa_btsOpts,"!$armaa_askedWhatAgentRisks
+$player.commissionFactionId == tritachyon score:2",,,"10:armaa_btsOpRisksResp: ""You do realize i'm on Tri-Tachyon's payroll, right?""",
+armaa_btsOptCompromised,armaa_btsOpts,!$armaa_askedIfAgentCompromised,,,"10:armaa_btsOpCompromisedResp: ""How do I know if he's been compromised?""",
+armaa_btsOpWhatDoing,armaa_btsOpts,!$armaa_askedWhatAgentMissionWas,,,"10:armaa_btsOpWhatDoingResp: ""What exactly was this agent doing?""",
 armaa_btsOpAccept,armaa_btsOpts,,,,"10:armaa_btsOpAcceptResp: ""No promises on how this ends. But I'll look.(accept)""",
 armaa_btsOpRefuse,armaa_btsOpts,,,,"10:armaa_btsOpRefuseResp: ""I'll need to think about this.(refuse)""",
 armaa_btsOpRisksResp,DialogOptionSelected,"$option == armaa_btsOpRisksResp
@@ -3914,8 +3917,8 @@ A pause. A blink. The tone of the $personRank shifts downward a fraction, into s
 ""To ensure this proceeds in accordance with Tri-Tachyon's internal review protocols, we kindly request that you power down all weapons systems and permit a boarding team to conduct a localized search and retrieval operation for proprietary materials.""
 
 Another brief smile, entirely disconnected from their eyes. ""Cooperation will be noted. Resistance... likewise.""",,
-armaa_btsHunterSt1Hostile,armaa_btsHunterSt1Options,,,,"armaa_btsHunterSt1CommissionResp:""I operate under Tri-Tachyon special commission. Your authority doesn't extend to internal assets.",
-armaa_btsHunterSt1Commission,armaa_btsHunterSt1Options,$player.commissionFactionId == tritachyon score:2,,,"armaa_btsHunterSt1HostileResp:""No Thanks."" (cut comm, power up weapons)",
+armaa_btsHunterSt1Hostile,armaa_btsHunterSt1Options,,,,"armaa_btsHunterSt1HostileResp:""No Thanks."" (cut comm, power up weapons)",
+armaa_btsHunterSt1Commission,armaa_btsHunterSt1Options,$player.commissionFactionId == tritachyon score:2,,,"armaa_btsHunterSt1CommissionResp:""I operate under Tri-Tachyon special commission. Your authority doesn't extend to internal assets.",
 armaa_btsHunterSt1CommissionResp,DialogOptionSelected,$option == armaa_btsHunterSt1CommissionResp,"$hailing = false 0
 $entity.ignorePlayerCommRequests = true 1
 MakeOtherFleetGoAway false

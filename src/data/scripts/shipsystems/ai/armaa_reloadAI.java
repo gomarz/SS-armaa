@@ -8,10 +8,6 @@ import com.fs.starfarer.api.combat.*;
 import org.lazywizard.lazylib.combat.WeaponUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.IntervalUtil;
-import data.scripts.util.armaa_utils;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class armaa_reloadAI implements ShipSystemAIScript
 {

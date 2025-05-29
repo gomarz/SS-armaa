@@ -5,9 +5,6 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import org.lazywizard.lazylib.MathUtils;
-import com.fs.starfarer.api.combat.ShipCommand;
-import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -21,7 +18,6 @@ import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 
 import org.magiclib.util.MagicIncompatibleHullmods;
-import data.scripts.MechaModPlugin;
 
 import java.awt.Color;
 import java.util.HashSet;

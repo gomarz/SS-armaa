@@ -2,9 +2,6 @@ package data.hullmods;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
-import org.magiclib.util.MagicIncompatibleHullmods;
 import org.magiclib.util.ui.StatusBarData;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import org.lazywizard.lazylib.FastTrig;
@@ -16,7 +13,6 @@ import java.util.*;
 import java.util.List;
 import java.util.Collection;
 //import java.util.Set;
-import org.apache.log4j.Logger;
 
 public class armaa_KarmaMod extends BaseHullMod {
 

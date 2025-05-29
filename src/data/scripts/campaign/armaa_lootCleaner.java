@@ -1,13 +1,10 @@
 package data.scripts.campaign;
 
-import java.util.Iterator;
-import java.util.List;
 import com.fs.starfarer.api.campaign.listeners.ShowLootListener;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.combat.WeaponAPI.AIHints;
-import java.util.List;
 public class armaa_lootCleaner implements ShowLootListener
 {
 	

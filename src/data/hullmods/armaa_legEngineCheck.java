@@ -2,18 +2,10 @@ package data.hullmods;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.FighterWingAPI;
-import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipEngineControllerAPI;
-import org.lwjgl.util.vector.Vector2f;
 import java.util.List;
 import java.util.ArrayList;
-import com.fs.starfarer.api.combat.CombatUIAPI;
-import java.awt.Color;
-import org.apache.log4j.Logger;
 
 public class armaa_legEngineCheck extends BaseHullMod {
 	

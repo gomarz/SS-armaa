@@ -1,12 +1,10 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.OnHitEffectPlugin;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 
 import org.lwjgl.util.vector.Vector2f;
 
@@ -32,7 +30,6 @@ public class MissileOnHit implements OnHitEffectPlugin
     // placeholder, please change this once you have a nice explosion sound :)
    // private final String SFX = "istl_energy_crit";
 
-    @Override
     public void onHit(DamagingProjectileAPI projectile,
             CombatEntityAPI target,
             Vector2f point,
@@ -51,4 +48,9 @@ public class MissileOnHit implements OnHitEffectPlugin
             //play a sound
             //Global.getSoundPlayer().playSound(SFX, 1f, 1f, target.getLocation(), target.getVelocity());
         }
+
+    @Override
+    public void onHit(DamagingProjectileAPI dpapi, CombatEntityAPI ceapi, Vector2f vctrf, boolean bln, ApplyDamageResultAPI adrapi, CombatEngineAPI ceapi1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

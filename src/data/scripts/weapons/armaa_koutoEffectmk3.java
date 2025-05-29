@@ -1,10 +1,8 @@
 package data.scripts.weapons;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.AnimationAPI;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.magiclib.util.MagicAnim;
 import java.awt.Color;
 import java.util.List;

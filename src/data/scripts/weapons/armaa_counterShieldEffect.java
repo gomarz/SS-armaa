@@ -1,21 +1,14 @@
 package data.scripts.weapons;
-import com.fs.starfarer.api.AnimationAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.graphics.SpriteAPI;
-import org.magiclib.util.MagicAnim;
 import org.magiclib.util.MagicRender;
 import org.magiclib.util.ui.StatusBarData;
 import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
 import org.lazywizard.lazylib.combat.CombatUtils;
 
-import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
-import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.combat.listeners.DamageListener;
 import com.fs.starfarer.api.combat.*;

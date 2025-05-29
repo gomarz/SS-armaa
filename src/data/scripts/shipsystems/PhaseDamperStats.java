@@ -1,15 +1,11 @@
 package data.scripts.shipsystems;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import com.fs.starfarer.api.combat.CollisionClass;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 public class PhaseDamperStats extends BaseShipSystemScript {

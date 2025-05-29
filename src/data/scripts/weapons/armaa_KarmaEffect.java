@@ -4,10 +4,8 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import java.awt.*;
 
 import static org.lwjgl.opengl.GL11.*;

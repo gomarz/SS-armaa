@@ -3,7 +3,6 @@ package data.scripts.campaign.notifications;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.OptionPanelAPI;
 import org.lwjgl.input.Keyboard;
-import data.scripts.campaign.notifications.armaa_notificationDialogBase;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

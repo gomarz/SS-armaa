@@ -1,7 +1,5 @@
 package data.hullmods;
 
-import java.util.Iterator;
-import java.util.List;
 
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.UIPanelAPI;
@@ -14,16 +12,12 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import data.scripts.util.armaa_utils;
 import com.fs.starfarer.api.ui.Alignment;
-import com.fs.starfarer.api.loading.HullModSpecAPI;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 public class armaa_variableUnit extends BaseHullMod {

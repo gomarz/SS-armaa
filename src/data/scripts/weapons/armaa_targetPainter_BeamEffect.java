@@ -4,7 +4,6 @@ import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.CollisionClass;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.lazywizard.lazylib.MathUtils;
-import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.util.Misc;

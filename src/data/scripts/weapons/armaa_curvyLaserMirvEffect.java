@@ -4,7 +4,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lwjgl.util.vector.Vector2f;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import java.util.ArrayList;
 import java.util.List;
 import org.lazywizard.lazylib.VectorUtils;
@@ -52,7 +51,7 @@ public class armaa_curvyLaserMirvEffect extends BaseCombatLayeredRenderingPlugin
 			engine.getCustomData().put(prevKey, projectile);
 				if (projectile.getWeapon() == weapon && !alreadyRegisteredProjectiles.contains(projectile) && engine.isEntityInPlay(projectile) && !projectile.didDamage()) 
 				{
-					engine.addPlugin(new armaa_curveLaserProjectileScript(projectile, target));
+					engine.addPlugin(new armaa_curveLaserProjectileScript(projectile, target,0,"foo"));
 					alreadyRegisteredProjectiles.add(projectile);
 				}		
 			if (trails == null) {

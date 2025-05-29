@@ -1,9 +1,6 @@
 package data.scripts.weapons;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.Global;
-import java.awt.Color;
 import java.util.List;
-import org.lwjgl.util.vector.Vector2f;
 
 public class armaa_valkyrieEffect implements EveryFrameWeaponEffectPlugin  {
 	

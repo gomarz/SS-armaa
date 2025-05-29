@@ -7,11 +7,8 @@ import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import org.magiclib.util.MagicIncompatibleHullmods;
 import data.scripts.util.armaa_sykoEveryFrame;
 import com.fs.starfarer.api.ui.Alignment;
@@ -20,8 +17,6 @@ import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 
-import org.lazywizard.lazylib.VectorUtils;
-import org.lwjgl.util.vector.Vector2f;
 public class armaa_sykoStims extends BaseHullMod {
 
 	private final float DAMAGE_BONUS = 100f;

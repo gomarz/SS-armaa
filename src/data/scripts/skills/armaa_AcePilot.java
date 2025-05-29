@@ -15,12 +15,10 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
-import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.skills.*;
 import com.fs.starfarer.api.combat.listeners.*;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.util.IntervalUtil;
-import java.awt.Color;
 import org.lazywizard.lazylib.combat.DefenseUtils;
 
 public class armaa_AcePilot {

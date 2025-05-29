@@ -167,23 +167,23 @@ public class armaa_ByTheirSilenceMission extends HubMissionWithSearch {
 	public boolean addNextStepText(TooltipMakerAPI info, Color tc, float pad) {
 		Color h = Misc.getHighlightColor();
 		if (currentStage == Stage.GO_TO_PLANET) {
-			info.addPara("Speak to Kade on Jenius", tc, pad);
+			info.addPara("Locate the wherabouts of FLINT. Last seen on " + market.getName()+".", pad);
 			return true;
 		}		
 		if (currentStage == Stage.GET_FLINT_COMMS) {
-			info.addPara("Travel to the tech-mining facility on Jenius", tc, pad);
+			info.addPara("Contact FLINT. He was located on " + market.getName()+".", pad);
 			return true;
 		}
 		if (currentStage == Stage.MEET_FLINT) {
-			info.addPara("Travel to the subterranean facility on Meshan", tc, pad);
+			info.addPara("Travel to chalet to speak with Flint, on " + market.getName()+".", pad);
 			return true;
 		}
 		if (currentStage == Stage.CONFRONT_FLINT) {
-			info.addPara("Travel to Gravion and investigate the station", tc, pad);
+			info.addPara("Travel to chalet to speak with Flint", pad);
 			return true;
 		}
 		if (currentStage == Stage.DEBRIEF) {
-			info.addPara("Return to Kade for debrief", tc, pad);
+			info.addPara("Return for debrief", pad);
 		}				
 		if (currentStage == Stage.COMPLETED) {
 			info.addPara("Completed", tc, pad);

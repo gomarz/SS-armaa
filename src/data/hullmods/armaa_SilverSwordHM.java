@@ -1,14 +1,12 @@
 package data.hullmods;
 
 import java.util.Iterator;
-import java.util.List;
 
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.UIPanelAPI;
 import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
 
-import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 
@@ -19,13 +17,10 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponSize;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.CollisionClass;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import org.magiclib.util.MagicIncompatibleHullmods;
 import data.scripts.util.armaa_utils;
@@ -34,7 +29,6 @@ import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 
-import org.lazywizard.lazylib.VectorUtils;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.ArrayList;

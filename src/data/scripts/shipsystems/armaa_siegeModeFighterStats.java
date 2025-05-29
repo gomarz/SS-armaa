@@ -1,30 +1,11 @@
 package data.scripts.shipsystems;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.magiclib.util.MagicRender;
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipSystemAPI;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ViewportAPI;
-import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import org.lazywizard.lazylib.MathUtils;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.util.IntervalUtil;
-import java.util.ArrayList;
 import java.util.List;
-import java.awt.*;
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL11.glPopAttrib;
-import static org.lwjgl.opengl.GL11.glPopMatrix;
-import org.lwjgl.opengl.Display;
 
 public class armaa_siegeModeFighterStats extends BaseShipSystemScript {
 

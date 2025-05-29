@@ -8,8 +8,6 @@ import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.util.Misc;
-import org.magiclib.util.MagicFakeBeam;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 
 /**

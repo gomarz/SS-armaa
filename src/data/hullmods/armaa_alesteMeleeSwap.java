@@ -1,7 +1,5 @@
 package data.hullmods;
 
-import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
@@ -9,12 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
-import org.lwjgl.input.Keyboard;
-import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
-import org.apache.log4j.Logger;
 
 public class armaa_alesteMeleeSwap extends BaseHullMod{
 	private String meleeSlot =  "C_ARML";

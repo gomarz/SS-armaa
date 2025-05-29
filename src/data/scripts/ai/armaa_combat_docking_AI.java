@@ -3,43 +3,23 @@ package data.scripts.ai;
 import data.scripts.util.armaa_utils;
 import data.scripts.util.armaa_strikeCraftRepairTracker;
 
-import java.awt.Color;
 import java.util.*;
 
-import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
-import org.lwjgl.util.Point;
 import org.lwjgl.util.vector.Vector2f;
-import org.lwjgl.input.Keyboard;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.SoundAPI;
-import com.fs.starfarer.api.combat.ArmorGridAPI;
-import com.fs.starfarer.api.combat.CombatAssignmentType;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatFleetManagerAPI;
-import com.fs.starfarer.api.combat.FighterLaunchBayAPI;
 import com.fs.starfarer.api.combat.FighterWingAPI;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAIConfig;
-import com.fs.starfarer.api.combat.ShipAIPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.CollisionClass;
-import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.combat.entities.Ship;
-import com.fs.starfarer.api.combat.CombatTaskManagerAPI;
 
 //based on code from Sundog's ICE repair drone, Dark.Revenant's Imperium Titan, ED Shipyards Maltese AI
 //Modified from Harupea's base Combat Docking Module

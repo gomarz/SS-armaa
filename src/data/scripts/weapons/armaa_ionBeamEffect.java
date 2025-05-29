@@ -11,7 +11,6 @@ import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.lazywizard.lazylib.combat.CombatUtils;
 
 public class armaa_ionBeamEffect implements BeamEffectPlugin {
 

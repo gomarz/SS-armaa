@@ -2,23 +2,16 @@ package data.scripts.shipsystems;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicUI;
 import org.magiclib.util.MagicLensFlare;
 import org.magiclib.util.MagicRender;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import java.awt.Color;
 import data.hullmods.armaa_KarmaMod;
-import org.dark.shaders.distortion.DistortionShader;
-import org.dark.shaders.distortion.RippleDistortion;
-import org.dark.shaders.light.LightShader;
-import org.dark.shaders.light.StandardLight;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import data.scripts.MechaModPlugin;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import org.lazywizard.lazylib.MathUtils;
 
 

@@ -1,18 +1,13 @@
 
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
-import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.util.vector.Vector2f;
-import org.lazywizard.lazylib.VectorUtils;
 import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicLensFlare;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
 
 public class armaa_valkazard_shotgunEffect implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin, OnHitEffectPlugin {

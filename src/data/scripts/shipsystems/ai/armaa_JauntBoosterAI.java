@@ -15,7 +15,6 @@ import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.shipsystems.armaa_JauntBoosterStats;
-import data.scripts.util.armaa_utils;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;

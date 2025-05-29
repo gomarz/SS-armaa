@@ -4,23 +4,15 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.input.InputEventAPI;
-import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import com.fs.starfarer.api.Global;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
-import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.combat.ShipAPI;
-import data.scripts.util.armaa_utils;
 import java.awt.*;
-import java.util.Random;
-import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.magiclib.util.MagicRender;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
-import org.lwjgl.opengl.Display;
-import static org.lwjgl.opengl.GL11.*;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 public class armaa_AFCSStats extends BaseShipSystemScript {

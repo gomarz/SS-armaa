@@ -1,39 +1,12 @@
 package data.scripts.campaign;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.campaign.FleetDataAPI;
-import com.fs.starfarer.api.loading.FighterWingSpecAPI;
-import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD.TempData;
-import com.fs.starfarer.api.util.Misc;
-import data.hullmods.cataphract;
-import com.fs.starfarer.api.impl.campaign.intel.armaa_promoteWingman;
-import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin;
-import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.DataForEncounterSide.OfficerEngagementData;
 import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.DataForEncounterSide;
-import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.FleetMemberData;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent.*;
 import java.util.*;
-import java.awt.Color;
-import com.fs.starfarer.api.characters.*;
-
-import com.fs.starfarer.api.characters.MutableCharacterStatsAPI.*;
-import com.fs.starfarer.api.campaign.CombatDamageData.DamageToFleetMember;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
-import com.fs.starfarer.api.impl.campaign.ids.Commodities;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import com.fs.starfarer.api.SettingsAPI;
-//import com.fs.starfarer.api.impl.campaign.*;
-
-import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.MissionCompletionRep;
-import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.*;
-import com.fs.starfarer.api.campaign.ReputationActionResponsePlugin.ReputationAdjustmentResult;
 import com.fs.starfarer.api.campaign.RepLevel;
-import org.lazywizard.lazylib.MathUtils;
 
 public class armaa_skyMindBattleResultListener extends BaseCampaignEventListener implements EveryFrameScript
 {

@@ -8,16 +8,11 @@ import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.listeners.ColonyPlayerHostileActListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.fleet.RepairTrackerAPI;
-import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD.TempData;
-import com.fs.starfarer.api.util.Misc;
 import data.hullmods.cataphract;
-import org.lazywizard.lazylib.MathUtils;
 import java.util.*;
 
 
-import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
 
 public class armaa_raid implements ColonyPlayerHostileActListener {
 	

@@ -13,20 +13,14 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.input.InputEventAPI;
-import com.fs.starfarer.api.util.Misc;
 import org.jetbrains.annotations.NotNull;
-import org.lazywizard.lazylib.CollisionUtils;
-import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicLensFlare;
 import org.magiclib.util.MagicFakeBeam;
 import com.fs.starfarer.api.util.IntervalUtil;
 public class armaa_harpoonProjectileScript extends BaseEveryFrameCombatPlugin 

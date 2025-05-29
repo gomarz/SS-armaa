@@ -1,19 +1,12 @@
 package data.scripts.shipsystems.ai;
 
-import com.fs.starfarer.api.combat.FluxTrackerAPI;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipCommand;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.VectorUtils;
-import java.util.ArrayList;
 import com.fs.starfarer.api.Global;
-import java.util.List;
-import java.awt.*;
-import data.scripts.util.armaa_utils;
 
 public class armaa_morganaAI implements ShipSystemAIScript
 {

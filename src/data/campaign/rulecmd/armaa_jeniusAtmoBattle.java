@@ -2,25 +2,18 @@ package data.campaign.rulecmd;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.impl.combat.BattleCreationPluginImpl;
-import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogPlugin;
-import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.DataForEncounterSide;
 import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.FleetMemberData;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
-import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import com.fs.starfarer.api.SettingsAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.*;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageGenFromSeed.SDMParams;
@@ -229,8 +222,6 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 			@Override
 			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
 				BattleCreationPluginImpl b = new BattleCreationPluginImpl();
-				b.width = 100;
-				b.height = 100;
 				bcc.aiRetreatAllowed = false;
 				bcc.objectivesAllowed = false;
 				bcc.enemyDeployAll = true;

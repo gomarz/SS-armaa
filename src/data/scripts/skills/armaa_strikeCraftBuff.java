@@ -1,11 +1,8 @@
 package data.scripts.skills;
 
-import java.awt.Color;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.FleetDataAPI;
 import com.fs.starfarer.api.impl.campaign.skills.*;
-import com.fs.starfarer.api.characters.DescriptionSkillEffect;
 import com.fs.starfarer.api.characters.FleetTotalItem;
 import com.fs.starfarer.api.characters.FleetTotalSource;
 import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
@@ -15,11 +12,9 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.characters.AfterShipCreationSkillEffect;
 
 public class armaa_strikeCraftBuff {

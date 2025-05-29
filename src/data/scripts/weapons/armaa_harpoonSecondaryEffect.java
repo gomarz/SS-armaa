@@ -5,7 +5,6 @@ import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.OnHitEffectPlugin;
-import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;

@@ -12,13 +12,6 @@ import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAIScript;
-import com.fs.starfarer.api.combat.ShipCommand;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import com.fs.starfarer.api.combat.WeaponAPI;
-import java.util.ArrayList;
-import com.fs.starfarer.api.Global;
-import java.util.List;
 import data.scripts.shipsystems.armaa_RecallDeviceStats;
 
 public class armaa_recallAI implements ShipSystemAIScript

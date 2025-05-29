@@ -5,7 +5,6 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -17,11 +16,9 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.impl.hullmods.CompromisedStructure;
 import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
-import com.fs.starfarer.api.combat.WeaponAPI;
 
 
 import org.magiclib.util.MagicIncompatibleHullmods;
-import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;

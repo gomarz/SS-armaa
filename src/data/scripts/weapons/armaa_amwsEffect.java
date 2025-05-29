@@ -1,6 +1,5 @@
 package data.scripts.weapons;
 
-import java.awt.Color;
 
 import org.lwjgl.util.vector.Vector2f;
 

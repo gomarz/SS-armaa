@@ -1,7 +1,6 @@
 package data.scripts.shipsystems;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
@@ -17,9 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.lazywizard.lazylib.MathUtils;
-import org.magiclib.util.MagicLensFlare;
 import org.lazywizard.lazylib.VectorUtils;
-import org.lazywizard.lazylib.combat.entities.AnchoredEntity;
 import org.lwjgl.util.vector.Vector2f;
 
 public class armaa_JauntBoosterStats extends BaseShipSystemScript {

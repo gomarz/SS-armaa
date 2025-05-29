@@ -28,7 +28,6 @@ import static exerelin.campaign.intel.groundbattle.plugins.FireSupportAbilityPlu
 
 import exerelin.campaign.ui.InteractionDialogCustomPanelPlugin;
 import exerelin.campaign.ui.CustomPanelPluginWithInput.RadioButtonEntry;
-import exerelin.campaign.ui.CustomPanelPluginWithInput;
 import exerelin.utilities.NexUtilsGUI;
 import exerelin.utilities.StringHelper;
 

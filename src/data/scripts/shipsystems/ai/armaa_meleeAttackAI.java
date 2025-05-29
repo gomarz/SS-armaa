@@ -14,7 +14,6 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 

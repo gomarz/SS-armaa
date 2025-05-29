@@ -4,19 +4,13 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-import org.lazywizard.lazylib.FastTrig;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.combat.ai.FighterAI;
 //CombatFleetManagerAPI.AssignmentInfo;
 
 public class armaa_beamConvergeEffect implements EveryFrameWeaponEffectPlugin {

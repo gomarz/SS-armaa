@@ -16,9 +16,7 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
-import com.fs.starfarer.api.ui.Alignment;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.Random;
 import java.awt.Color;
 public class armaa_automatedCognitionShell extends BaseHullMod {

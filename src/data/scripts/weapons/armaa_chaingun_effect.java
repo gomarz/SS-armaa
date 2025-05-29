@@ -1,12 +1,7 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.util.IntervalUtil;
 import org.lwjgl.util.vector.Vector2f;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.Color;
 import org.lazywizard.lazylib.VectorUtils;
 import org.magiclib.util.MagicRender;

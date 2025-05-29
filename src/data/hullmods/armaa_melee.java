@@ -1,20 +1,12 @@
 package data.hullmods;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.characters.PersonalityAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
-import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Personalities;
-//import data.scripts.util.KT_SinuousSegment;
-import com.fs.starfarer.api.combat.ShipAIConfig;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import org.lwjgl.util.vector.Vector2f;
 
 public class armaa_melee extends BaseHullMod 

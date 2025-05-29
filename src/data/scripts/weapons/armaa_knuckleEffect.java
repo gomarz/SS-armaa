@@ -2,8 +2,6 @@ package data.scripts.weapons;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.Iterator;
 import java.util.List;
 
 import org.lwjgl.util.vector.Vector2f;
@@ -11,16 +9,10 @@ import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import com.fs.starfarer.api.util.FaderUtil;
-import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import data.scripts.weapons.armaa_boostHammerProjectileScript;
 import org.magiclib.util.MagicRender;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import org.lazywizard.lazylib.FastTrig;
-import org.magiclib.util.MagicLensFlare;
 
 
 /**

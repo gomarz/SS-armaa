@@ -1,16 +1,11 @@
 package data.scripts.campaign;
 
 import com.fs.starfarer.api.campaign.BaseCampaignEventListenerAndScript;
-import com.fs.starfarer.api.campaign.CampaignEventListener;
 import com.fs.starfarer.api.campaign.*;
-import com.fs.starfarer.api.campaign.BattleAPI.BattleSide;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.apache.log4j.Logger;
-import org.magiclib.util.MagicCampaign;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Collections;
 import data.scripts.campaign.intel.armaa_reprisalIntel;
-import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.DataForEncounterSide;
 import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScript

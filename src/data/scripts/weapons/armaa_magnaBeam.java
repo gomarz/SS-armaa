@@ -2,25 +2,17 @@ package data.scripts.weapons;
 
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.BeamEffectPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.VectorUtils;
-import data.scripts.plugins.MagicTrailPlugin;
-
-import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicLensFlare;
 
 import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
-import com.fs.starfarer.api.util.Misc;
 
 public class armaa_magnaBeam implements BeamEffectPlugin {
 

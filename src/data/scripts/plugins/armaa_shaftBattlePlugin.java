@@ -2,33 +2,15 @@ package data.scripts.plugins;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.impl.campaign.ids.Commodities;
-import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.input.InputEventAPI;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.*;
-import com.fs.starfarer.api.combat.CombatFleetManagerAPI.*;
-import com.fs.starfarer.api.util.IntervalUtil;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.CollisionUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicFakeBeam;
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import java.awt.Color;
-import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.fleet.FleetMemberType;
-import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import org.lwjgl.input.Keyboard;
-import org.magiclib.util.MagicRender.*;
 import org.lazywizard.lazylib.MathUtils;
 
 
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
 
 public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin

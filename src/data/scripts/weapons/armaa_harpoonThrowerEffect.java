@@ -9,21 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.awt.*;
-import org.magiclib.util.MagicRender;
-import com.fs.starfarer.api.SettingsAPI;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.util.vector.Vector2f;
-//import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
-
-import java.awt.DisplayMode;
-import java.nio.ByteBuffer;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GLContext;
-//import org.lwjgl.util.Display;
-import org.lwjgl.util.glu.GLU;
 
 public class armaa_harpoonThrowerEffect implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin{
 

@@ -11,12 +11,9 @@ import com.fs.starfarer.api.Global;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.fs.starfarer.api.combat.EmpArcEntityAPI;
 
 
 /**

@@ -9,7 +9,6 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.HashMap;
 import java.util.Map;
 import org.lazywizard.lazylib.MathUtils;
-import org.apache.log4j.Logger;
 
 public class armaa_vxSkinSwap extends BaseHullMod{
         

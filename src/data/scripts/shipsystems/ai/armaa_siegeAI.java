@@ -4,30 +4,22 @@
 
 package data.scripts.shipsystems.ai;
 
-import com.fs.starfarer.api.combat.FluxTrackerAPI;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAIScript;
-import com.fs.starfarer.api.combat.ShipCommand;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.combat.WeaponUtils;
-import org.lazywizard.lazylib.opengl.DrawUtils;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponSize;
 import java.util.ArrayList;
-import com.fs.starfarer.api.Global;
 import java.util.List;
-import java.awt.*;
 import data.scripts.util.armaa_utils;
-import com.fs.starfarer.api.combat.CombatEngineLayers;
-import org.magiclib.util.MagicRender;
 
 public class armaa_siegeAI implements ShipSystemAIScript
 {

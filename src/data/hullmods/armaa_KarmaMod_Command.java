@@ -2,16 +2,10 @@ package data.hullmods;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
-import org.magiclib.util.MagicIncompatibleHullmods;
 import org.magiclib.util.ui.StatusBarData;
 import org.magiclib.util.MagicUI;
-import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import org.lazywizard.lazylib.FastTrig;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicRender;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import java.awt.*;
 import java.util.*; 

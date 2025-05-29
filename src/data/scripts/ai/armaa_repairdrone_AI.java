@@ -9,25 +9,21 @@ import java.util.Iterator;
 import java.util.Random;
 
 import org.lazywizard.lazylib.CollisionUtils;
-import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.Point;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.util.List;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.SoundAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
-import com.fs.starfarer.api.combat.FighterLaunchBayAPI;
 import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAIConfig;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
 
 //based on code from Sundog's ICE repair drone and Dark.Revenant's Imperium Titan
 

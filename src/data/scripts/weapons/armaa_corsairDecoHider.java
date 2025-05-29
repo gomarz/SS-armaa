@@ -5,7 +5,6 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import java.awt.Color;
 import java.util.List;
-import com.fs.starfarer.api.Global;
 
 //need this to hide decos after module is dead. sigh
 public class armaa_corsairDecoHider implements EveryFrameWeaponEffectPlugin {

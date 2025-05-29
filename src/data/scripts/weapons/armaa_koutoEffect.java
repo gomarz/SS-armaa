@@ -7,16 +7,13 @@ import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.graphics.SpriteAPI;
-import org.magiclib.util.MagicAnim;
 import java.awt.Color;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.util.Misc;
 
 /**
  *

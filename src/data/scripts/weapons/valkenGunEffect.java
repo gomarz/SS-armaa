@@ -6,11 +6,8 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.OnHitEffectPlugin;
-import com.fs.starfarer.api.combat.DamageType;
-import com.fs.starfarer.api.combat.ShipAPI;
 import org.magiclib.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 
 public class valkenGunEffect implements OnHitEffectPlugin {

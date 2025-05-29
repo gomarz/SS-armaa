@@ -2,7 +2,6 @@ package data.hullmods;
 
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
-import java.awt.*;
 
 public class armaa_alestePilebunker extends BaseHullMod { 
 

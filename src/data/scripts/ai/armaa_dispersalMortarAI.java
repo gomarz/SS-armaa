@@ -14,7 +14,6 @@ import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.*;
 import org.lwjgl.util.vector.Vector2f;
 
 

@@ -2,7 +2,6 @@ package data.hullmods;
 
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import org.magiclib.util.MagicIncompatibleHullmods;
 import com.fs.starfarer.api.combat.ShipAPI;

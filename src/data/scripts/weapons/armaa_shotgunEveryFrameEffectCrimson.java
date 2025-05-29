@@ -7,10 +7,8 @@ import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import java.util.ArrayList;
 import java.util.List;
-import com.fs.starfarer.api.combat.ShipSystemAIScript;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
-import org.lazywizard.lazylib.combat.AIUtils;
 
 
 public class armaa_shotgunEveryFrameEffectCrimson implements EveryFrameWeaponEffectPlugin {

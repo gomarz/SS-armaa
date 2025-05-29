@@ -8,9 +8,7 @@ import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import data.scripts.world.systems.armaa_K;
-import data.scripts.world.systems.armaa_nekki;
 import java.util.ArrayList;
 
 public class ARMAAWorldGen implements SectorGeneratorPlugin {

@@ -1,19 +1,7 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.util.Misc;
-;
-import org.lwjgl.util.vector.Vector2f;
 import java.util.*; 
-import java.util.List;
-import com.fs.starfarer.api.combat.CombatUIAPI;
-import java.awt.Color;
-import org.magiclib.util.MagicIncompatibleHullmods;
-import java.util.Collection;
-import com.fs.starfarer.api.combat.BaseCombatLayeredRenderingPlugin;
 
 public class armaa_wepRandomizer implements EveryFrameWeaponEffectPlugin {
 	

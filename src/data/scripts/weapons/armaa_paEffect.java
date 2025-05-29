@@ -6,7 +6,6 @@ import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.magiclib.util.MagicAnim;
@@ -14,13 +13,9 @@ import com.fs.starfarer.api.Global;
 import java.awt.Color;
 import java.util.Map;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicUI;
-import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.util.FaderUtil;
 import com.fs.starfarer.api.combat.DamageType;
 
 public class armaa_paEffect implements EveryFrameWeaponEffectPlugin {

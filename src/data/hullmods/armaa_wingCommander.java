@@ -5,12 +5,9 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponSize;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.UIPanelAPI;
-import com.fs.starfarer.api.campaign.TextPanelAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
@@ -27,16 +24,10 @@ import data.scripts.util.armaa_pilotTracker;
 import data.scripts.util.armaa_pilotTrackerNP;
 import com.fs.starfarer.api.loading.FighterWingSpecAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import org.magiclib.util.MagicSettings;
 import data.scripts.MechaModPlugin;
-import com.fs.starfarer.api.loading.WingRole;
-import com.fs.starfarer.combat.ai.FighterAI;
-import com.fs.starfarer.api.mission.FleetSide;
-import com.fs.starfarer.combat.entities.Ship;
 import org.lwjgl.input.Keyboard;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.fs.starfarer.api.impl.campaign.ids.Voices;
-import com.fs.starfarer.api.campaign.PersonImportance;
 
 import org.magiclib.util.MagicIncompatibleHullmods;
 
@@ -618,7 +609,7 @@ public class armaa_wingCommander extends BaseHullMod {
 		if(Global.getSector().getPersistentData().get("armaa_wingCommander_squadSize_"+commander.getId()) instanceof Integer)
 		{
 			currentSize = (int)Global.getSector().getPersistentData().get("armaa_wingCommander_squadSize_"+commander.getId());
-			if(size == Global.getSector().getPersistentData().get("armaa_wingCommander_squadSize_"+commander.getId()) || size == 0)
+			if(size == (int)Global.getSector().getPersistentData().get("armaa_wingCommander_squadSize_"+commander.getId()) || size == 0)
 				return;
 			//quick fix for bug with drone wings
 			if(currentSize > 100)

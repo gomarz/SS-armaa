@@ -18,7 +18,6 @@ import java.util.List;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicLensFlare;
 
 public class armaa_spikeAI implements MissileAIPlugin, GuidedMissileAI {
     

@@ -2,27 +2,17 @@ package data.scripts.shipsystems;
 
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import com.fs.starfarer.api.Global;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.CollisionUtils;
-import org.lazywizard.lazylib.combat.DefenseUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.combat.ShipAPI;
 import data.scripts.util.armaa_utils;
-import data.scripts.util.armaa_takeOffScript;
 import java.awt.Color;
-import java.util.*;
 import com.fs.starfarer.api.combat.WeaponAPI.*;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
 
-import com.fs.starfarer.api.combat.WeaponGroupAPI;
-import com.fs.starfarer.api.combat.MissileRenderDataAPI;
-import com.fs.starfarer.api.combat.FighterWingAPI;
-import com.fs.starfarer.api.combat.FighterLaunchBayAPI;
 public class armaa_TravelDriveStats extends BaseShipSystemScript {
 
 private boolean carriersNearby = false;

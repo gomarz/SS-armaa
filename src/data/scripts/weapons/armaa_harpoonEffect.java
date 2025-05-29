@@ -8,8 +8,6 @@ import com.fs.starfarer.api.combat.OnHitEffectPlugin;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import data.scripts.weapons.armaa_harpoonProjectileScript;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.VectorUtils;
 public class armaa_harpoonEffect implements OnHitEffectPlugin {
     
     private final String ID="armaa_harpoonSecondary";

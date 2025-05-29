@@ -24,8 +24,6 @@ import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.FaderUtil;
 import com.fs.starfarer.api.util.Misc;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import data.scripts.weapons.armaa_curveLaserProjectileScript;
 
 /**
@@ -179,7 +177,7 @@ public class armaa_curvyLaserEffect extends BaseCombatLayeredRenderingPlugin imp
 		
 		engine.getCustomData().put(prevKey, projectile);
 	            if (projectile.getWeapon() == weapon && !alreadyRegisteredProjectiles.contains(projectile) && engine.isEntityInPlay(projectile) && !projectile.didDamage()) {
-                engine.addPlugin(new armaa_curveLaserProjectileScript(projectile, target));
+                engine.addPlugin(new armaa_curveLaserProjectileScript(projectile, target,0,"foo"));
                 alreadyRegisteredProjectiles.add(projectile);
             }		
 		if (trails == null) {

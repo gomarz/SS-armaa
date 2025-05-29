@@ -1,18 +1,12 @@
 package data.scripts.campaign;
 
-import java.util.Iterator;
-import java.util.List;
-import data.hullmods.armaa_weaponSwap;
-import data.hullmods.armaa_leynosWeaponSwap;
 import com.fs.starfarer.api.campaign.BaseCampaignEventListenerAndScript;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import org.apache.log4j.Logger;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.magiclib.util.MagicCampaign;
 public class armaa_hyperSpaceImmunity extends BaseCampaignEventListenerAndScript
 {
 	//Logger log = Logger.getLogger(armaa_hyperSpaceImmunity.class.getName());

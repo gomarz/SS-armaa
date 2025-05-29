@@ -3,20 +3,9 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
 import org.lazywizard.lazylib.MathUtils;
-import org.magiclib.util.MagicRender;
-import java.awt.Color;
-import java.util.List;
-import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-    
-import org.lwjgl.input.Keyboard;
 
 public class armaa_watchdogEffect implements EveryFrameWeaponEffectPlugin{    
 

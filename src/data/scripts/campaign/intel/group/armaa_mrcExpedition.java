@@ -2,8 +2,6 @@ package data.scripts.campaign.intel.group;
 
 import java.awt.Color;
 import java.util.Random;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.lwjgl.util.vector.Vector2f;
 
@@ -15,26 +13,21 @@ import com.fs.starfarer.api.impl.campaign.command.WarSimScript;
 import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.OptionalFleetData;
 import com.fs.starfarer.api.impl.campaign.fleets.RouteManager;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import data.scripts.campaign.armaa_mrcReprisalListener;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation;
 import com.fs.starfarer.api.campaign.listeners.EconomyTickListener;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.combat.MutableStatWithTempMods;
 import com.fs.starfarer.api.impl.campaign.HasslePlayerScript;
 import com.fs.starfarer.api.impl.campaign.NPCHassler;
 import com.fs.starfarer.api.impl.campaign.econ.RecentUnrest;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Sounds;
-import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
-import com.fs.starfarer.api.impl.campaign.intel.events.HostileActivityEventIntel;
 import com.fs.starfarer.api.impl.campaign.intel.events.LuddicChurchHostileActivityFactor;
 import com.fs.starfarer.api.impl.campaign.intel.group.FGBlockadeAction.FGBlockadeParams;
 import com.fs.starfarer.api.impl.campaign.missions.FleetCreatorMission;
@@ -46,8 +39,6 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.intel.group.*;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
-import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 
 import lunalib.lunaSettings.LunaSettings;

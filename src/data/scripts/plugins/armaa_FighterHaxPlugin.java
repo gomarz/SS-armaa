@@ -1,20 +1,10 @@
 package data.scripts.plugins;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.input.InputEventAPI;
 import java.util.ArrayList;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.List;
-import com.fs.starfarer.api.combat.CombatFleetManagerAPI.*;
-import com.fs.starfarer.api.util.IntervalUtil;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.CollisionUtils;
-import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicRender;
-import java.awt.Color;
-import com.fs.starfarer.api.combat.MissileAPI;
 
 //import org.lazywizard.console.commands.ToggleAI;
 

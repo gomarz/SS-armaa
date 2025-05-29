@@ -1,16 +1,9 @@
 package data.hullmods;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
 import org.magiclib.util.MagicIncompatibleHullmods;
 
-import java.awt.*;
 import java.util.HashSet;
-import java.util.*; 
-
-import java.util.List;
 import java.util.Set;
 
 //Nabbed this from Alfonzo, madman extraordinaire

@@ -20,7 +20,6 @@ import com.fs.starfarer.api.util.Misc;
 import org.magiclib.util.MagicRender;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 
 public class armaa_AWACSSys extends BaseShipSystemScript {
