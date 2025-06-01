@@ -2494,31 +2494,20 @@ armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 $player.armaa_$encounteredDweller_event_id = false
 $player.armaa_$encounteredDweller_event_fired = true
 Highlight BEYOND THE ABYSS
-armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","BEYOND THE ABYSS
+armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","The blast doors hiss open. Dawn steps through, slower than usual. She doesn't speak at first. One hand rests on the Book at her hip, fingers tightening around the worn leather like it's anchoring her.
 
-Dawn steps through the blast doors slower than usual. She doesn't speak right away. Her hand rests on the Book at her hip, fingers curling around the leather like it might keep her steady.Her voice isn't loud. But it carries.
+When she does speak, her voice is low — not loud, but steady enough to carry.
 
-""I, uh... I ain't one for big talk, Captain, but..."" She swallows, voice low. ""That thing? That weren't manmade. That was an abomination. A demon, if you believe in such.""
-She finally unclips the Book, not to preach-but like she needs to hold onto something solid.
+""I... I ain't much for speeches, Captain, but-"" She swallows, eyes fixed on some point far past you. ""That thing? That weren't man-made. That was an abomination. A demon, if you believe in such."" Her hand slips the Book free. She doesn't open it to preach - just holds it like something solid to hold onto. ""Back in training, they warned us. Said it wouldn't just be strength that got tested out here. Said sometimes the void stares back. And I think... I think that's what we just saw."" She breathes deep, steadying herself, though it's clear it takes effort. ""That was an abomination made real. Not stories. Not old spacer tales. Just quiet, creeping evil. Ludd help me, I'm glad we put it down.""
 
-""Back in training, they used to warn us about things like this. Not just tests of strength, but of will. They said if we ever saw the void stare back, we'd know it. And I, I think that's what we just did.""
+",armaa_dawn_dwellerEvent2:Continue,
+armaa_dawn_dwellerEvent2,DialogOptionSelected,$option == armaa_dawn_dwellerEvent2,FireAll armaa_dawn_dwellerEventOptions,"Ops clears his throat, fingers tapping a little too hard against his console. ""It *could* have been a hyperspace anomaly. Emergent AI construct, maybe. Some residual Domain system gone strange—time decay, radiation drift. We've seen plenty of oddities. Always a cause. Always an explanation. Nothing's supernatural out here- just feels that way when we don't have the data."" Dawn doesn't look at him. She's staring past the viewscreen, jaw tight.
 
-She takes a breath, steadying herself, but it doesn't come easy.
+""Wrap it up in science if it helps you sleep. But that thing? That didn't fight like any machine. Back in training, clergy told us- evil don't always knock. Sometimes it waits. Watches. Smiles when you call its name."" She shakes her head, voice dropping. ""I don't claim to understand what we saw. But I know how it felt. That wasn't natural. That was something that don't belong."" Ops hesitates, glancing toward you. ""Whatever it was, it's gone. We survived. That's what matters.""
 
-""That was an abomination made manifest, Captain. Not metaphor. Not superstition. Just real, quiet, creeping evil. And Ludd help me, I'm glad we killed it. But I'm tellin' you now... if we ever see another one, we don't let it linger."" She closes the Book slowly. Not like a verdict. Like a prayer ending. ""We atomize it.""",armaa_dawn_dwellerEvent2:Continue,
-armaa_dawn_dwellerEvent2,DialogOptionSelected,$option == armaa_dawn_dwellerEvent2,FireAll armaa_dawn_dwellerEventOptions,"Ops clears his throat, tapping at his console a little too forcefully.
-
-""I mean... it COULD have been a hyperspace anomaly. Some kind of emergent AI construct maybe. Residual Domain tech, just warped by time or radiation."" He tries to sound confident, but his voice wavers at the end. ""We've seen our share of strange things. There's always an explanation. Always a cause. Nothing's supernatural out here- it just feels that way when we don't have the data.""
-
-Dawn doesn't look at him. She's staring past the viewscreen, jaw tight.
-
-""You keep tellin' yourself that,"" she says, voice low. ""Wrap it up in science, if it helps you sleep. But that thing didn't fight like no machine. Back when I trained with the clergy, they said sometimes evil don't knock. It waits. Watches. Smiles when you call its name. I ain't sayin' I understand what we saw. But I know what it felt like. And that? That was a thing that shouldn't be. A presence that ain't right with the Lord.""
-
-The Ops Officer hesitates, glancing toward you. ""Whatever it was, it's gone. We survived. That's all that matters.""
-
-Dawn finally turns back toward the center of the bridge. Her expression's steady, but her voice is colder now. ""It ain't gone. Not really. That was just the first crack in the bulkhead.. and the worst mistake we could make is pretendin' it was anything else.""",,
-armaa_dawn_dwellerEventOptA,armaa_dawn_dwellerEventOptions,,$player.luddicAttitudeFaithful++,,"armaa_dawn_dwellerEventRespA:""I have no doubt - that was evil made manifest, just as the Book says.""",
-armaa_dawn_dwellerEventOptB,armaa_dawn_dwellerEventOptions,,$player.ethosSarcastic++,,"armaa_dawn_dwellerEventRespB:""Great. So we fought biblical space demons and won. Should I start calling the $shipOrFleet 'The Chosen One' now?.""",
+Dawn finally turns, eyes steady but her voice colder. ""It ain't gone. Not really. That was just the first crack in the bulkhead. The worst mistake we can make is pretendin' it was anything else.""",,
+armaa_dawn_dwellerEventOptA,armaa_dawn_dwellerEventOptions,,$player.luddicAttitudeFaithful++,,"armaa_dawn_dwellerEventRespA:""No doubt. That was evil, plain and real. Just like the Book warned.""",
+armaa_dawn_dwellerEventOptB,armaa_dawn_dwellerEventOptions,,$player.ethosSarcastic++,,"armaa_dawn_dwellerEventRespB:""So. We fought biblical space demons and won. What now? Start calling the $shipOrFleet the Chosen?""",
 armaa_dawn_dwellerEventOptC,armaa_dawn_dwellerEventOptions,,,,"armaa_dawn_dwellerEventRespC:""I don't believe in monsters- only in things we don't yet understand. All that matters is we can destroy them.""",
 armaa_dawn_dwellerEventRespA,DialogOptionSelected,$option == armaa_dawn_dwellerEventRespA,"$option = armaa_dawn_dwellerEvent3 0
 FireBest DialogOptionSelected",,,
@@ -2535,18 +2524,14 @@ $player.armaa_pk_event_id = false
 $player.armaa_pk_event_fired = true
 Highlight PLANETKILLER
 armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","PLANETKILLER
-Hold 3B – Two Hours After Retrieval
 
-The cargo bay smells of metal, oil, and scorched air-residual ozone from the fusion cutters still clinging to the bulkheads. The air recyclers are working overtime, hissing with strained effort, but no one notices. They're too busy staring. It's longer than a shuttle, broader than a torpedo, and utterly silent. No hum, no ticking systems. Just cold, terrible potential. A half-dozen salvors stand nearby in various states of disbelief. One leans on a crowbar like it's a crutch. Another smokes something synth-wrapped and sharp, the cherry flickering faster than his heartbeat. Quiet arguments ripple through the group.
+The cargo bay stinks of scorched metal and spent coolant. Ozone hangs thick in the air, clinging to bulkheads where the fusion cutters bit deep. The recyclers hiss under strain, their steady labor unnoticed by the crew clustered nearby. It dominates the bay. Longer than a cutter shuttle, broader than a standard torpedo casing, inert and silent. A half-dozen salvors linger at a distance, postures caught somewhere between awe and apprehension. One shifts uneasily against a crowbar, another pulls a sharp drag from a synth-wrap, the ember flaring like a pulse monitor in overdrive. Low voices pass back and forth.
 
-""You sure that's what it is?""
-""Are you stupid? Ops already confirmed it. This is Domain-genocide grade.""
-""We shouldn't even be in the same room as it. What if it's live?""
-""Nah, see the banding on the core shroud? Safed. No access ports. It's deader than Ed's love life.""
+""Ops confirmed it?"" ""They confirmed it."" ""Domain-grade extermination package. Goddamn genocide stockpile."" ""We shouldn't be this close."" ""Relax. Look at the banding. Core shroud's sealed, no access ports. Safety state. Cold as a grave.""
 
-Dawn steps through the access hatch, her boots clicking softly on the deck. She isn't wearing her flight jacket, just a sleeveless vest and scorched work fatigues. Alongside her is an individual who seems rather displeased to be here. Another pilot, you recall. 
+The hatch hisses. Dawn steps through, boots clicking once against the grated deck. She's stripped down to fatigues and a scorched vest, flight jacket left elsewhere. Beside her walks another pilot — their expression suggests they'd rather be anywhere else. Her voice is low, mostly for her companion. ""You didn't say it was one of these.""
 
-""You didn't tell me it was this."" she says as an aside to her colleague as she steps closer. Not enough to touch it—she doesn't even try—but enough to let the flickering hazard lights cast shadows across her face.","armaa_dawnPKRespA:""It's safe. No code, no detonation.""
+She stops short of the thing itself. The flickering hazard strobes catch across her features as she studies it. Shadows move in time with the warning lights, stretching long across the bay.","armaa_dawnPKRespA:""It's safe. No code, no detonation.""
 armaa_dawnPKRespB:""You know about these?""
 armaa_dawnPKRespC:""I thought they were myths.""
 armaa_dawnPKRespD:Stay silent
@@ -2554,12 +2539,13 @@ armaa_dawnPKRespD:Stay silent
 armaa_dawnPKRespA,DialogOptionSelected,$option == armaa_dawnPKRespA,"$option = armaa_dawnPKEvent2 0
 FireBest DialogOptionSelected","""So's a virus, in a sealed lab. Don't mean it ain't still a plague.""",,
 armaa_dawnPKRespB,DialogOptionSelected,$option == armaa_dawnPKRespB,"$option = armaa_dawnPKEvent2 0
-FireBest DialogOptionSelected","""You ever seen what's left of Opis? Just a cluster of rocks now. I know enough.""",,
+FireBest DialogOptionSelected","""Enough to know we shouldn't have it.""",,
 armaa_dawnPKRespC,DialogOptionSelected,$option == armaa_dawnPKRespC,"$option = armaa_dawnPKEvent2 0
-FireBest DialogOptionSelected","""Lotta things are myths 'til you trip over one in a cargo bay, I suppose.""",,
+FireBest DialogOptionSelected","""Most myths don't come with serial numbers."" Her gaze lingers on the hazard striping, the faint Domain etchings barely visible beneath layers of scorched alloy.
+""They're real. And once word gets out we pulled one up, you can bet plenty of people will come to make sure it stops being our problem.""",,
 armaa_dawnPKRespD,DialogOptionSelected,$option == armaa_dawnPKRespD,"$option = armaa_dawnPKEvent2 0
 FireBest DialogOptionSelected",,,
-armaa_dawnPKEvent2,DialogOptionSelected,$option == armaa_dawnPKEvent2,,"She stares at it like one might stare at a mass grave. ""Things like this—tools like this—they leave a mark just by existin'.""","armaa_dawnPKRespA2:""What, are you scared?""
+armaa_dawnPKEvent2,DialogOptionSelected,$option == armaa_dawnPKEvent2,,"She watches it like she's looking at something half-buried in a bad memory. ""Thing like this... don't gotta go off to do damage. Just sittin' there's enough to make the whole sector a little worse.""","armaa_dawnPKRespA2:""What, are you scared?""
 armaa_dawnPKRespB2:""It's still just metal.""
 armaa_dawnPKRespC2:""I can use this as leverage.""
 armaa_dawnPKRespD2:""This thing shouldn't exist. It's a remnant of mankind's arrogance-proof of what Ludd warned us about.""
@@ -2578,10 +2564,10 @@ armaa_dawnPKRespD2,DialogOptionSelected,$option == armaa_dawnPKRespD2,"$option =
 FireBest DialogOptionSelected","She turns to look at you—really look. ""Well. There it is."" She taps the warhead's casing gently with the back of her hand. ""Right here. Our Tower of Babel. You ain't wrong. This, this is what the old books meant when they talked about the kind of foolishness that makes man think he gets to decide whether a whole world lives or dies.""
 
 She pauses for a moment, as if thinking hard on something. ""But Ludd didn't preach fear. He preached choice. Repentance. Turnin' away from power like this, even when it's right there in your hand.""",,
-armaa_dawnPKEvent3,DialogOptionSelected,$option == armaa_dawnPKEvent3,,"She steps back from the device, letting silence settle between you like dust in a vacuum. ""Ain't my place to command you. Never was."" She looks up at the ceiling.
-""I've known folk who thought they could hold fire and not get burned. Thought power like this could stay clean if you just didn't press the button too hard. But even carryin' it changes you. Changes how people look at you. Changes what you let yourself think is acceptable. There's no neutral ground when you're ridin' shotgun with somethin' that could erase a world."" She breathes out slowly.
+armaa_dawnPKEvent3,DialogOptionSelected,$option == armaa_dawnPKEvent3,,"She steps back from the device, letting silence settle between you like dust in a vacuum. She looks up at the ceiling.
+""I've known folk who thought they could hold fire and not get burned. Thought power like this could stay clean if you just didn't press the button too hard. But even carryin' it changes you. Changes how people look at you. Changes what you let yourself think is acceptable. There's no neutral ground when you're ridin' shotgun with somethin' that could wipe a world clean."" She breathes out slowly.
 
-""So I ain't gonna tell you to blow it, sell it, or sanctify it. I ain't Ludd, and I ain't your conscience. But I will tell you this: Whatever you do with that thing... it's gonna echo. Maybe not today. Maybe not next cycle. But it will. Just make sure when the echo comes back... you can still live with the sound.""
+""So I won't tell you to blow it, sell it, or sanctify it. I ain't Ludd, and I sure as hell ain't your conscience. But I will say this — whatever you choose to do with that thing... it's gonna echo. Maybe not today. Maybe not next cycle. But it will. And when it does — you better be able to live with the sound.""
 
 ",defaultLeave:Continue,
 ,,,,,,
@@ -2661,15 +2647,14 @@ pk_turnInSeraph1,DialogOptionSelected,$option == pk_turnInSeraph1,,"$personFirst
 
 ""What about them? Is this about Old Meshan?""","pk_turnInSeraph2:""No, I mean I want to sell you a planetkiller.""
 pk_turnInSeraph1meshan:""Old Meshan?""",
-pk_turnInSeraph1meshan,DialogOptionSelected,$option == pk_turnInSeraph1meshan,,"Sera folds her hands atop the table, posture impeccable. Her tone is even, almost bored - the kind of voice you use when the recorders are running.
+pk_turnInSeraph1meshan,DialogOptionSelected,$option == pk_turnInSeraph1meshan,,"Sera folds her hands on the table, posture precise. Her voice is level, almost detached — the tone of someone well aware the recorders are active. ""Meshan remains one of the less fortunate events in recent cycles. Significant loss of infrastructure. High casualties. The investigation attributed responsibility to a rogue command element operating without strategic authorization.""
 
-""Meshan remains one of the more unfortunate incidents in recent history. A high-casualty loss of infrastructure and life. The official investigation attributed responsibility to a rogue command element acting without strategic authorization."" She tilts her head slightly, shoulder-length hair falling neatly into place.
+She tilts her head slightly. Her hair shifts neatly into place. ""Tri-Tachyon maintains it had no sanctioned operational presence in-system at the time. Speculation to the contrary has been addressed through the appropriate legal frameworks."" Her expression remains unreadable, but a faint edge threads into the next words. ""The aftermath proved... informative. In how quickly certain narratives form — and how readily some abandon accountability when the cost becomes politically unviable.""
 
-""Tri-Tachyon maintains that it had no official operational presence in the system at the time of the event. Any speculation to the contrary has been addressed through appropriate legal channels."" A pause. Her expression is unreadable, professional. But the faintest trace of emphasis creeps into the next sentence.
+She offers a small, professional smile that never touches her eyes. ""The matter is closed. Sector authorities are satisfied. For most, that suffices."" Then, barely audible — a shift in tone, like a classified addendum not meant for public record.
 
-""The aftermath was... instructive. In terms of how rapidly narratives can take shape- and how eager some are to abandon the pursuit of accountability when the cost becomes politically inconvenient."" She offers a small, practiced smile; the kind that doesn't reach the eyes. ""The matter is considered closed by Sector authorities. And for most, that seems to be enough."" Then, just barely audible- a fractional drop in tone, almost an afterthought:
+""But memory is persistent.""
 
-""But memory is a stubborn thing.""
 
 ","pk_turnInSeraph2:""No, I mean I want to sell you a planetkiller.""",
 pk_turnInSeraph1meshanb,DialogOptionSelected,"$option == pk_turnInSeraph1meshan
@@ -2682,33 +2667,25 @@ Her tone lifts, just a little- ""By the way, i'm only telling you this because w
 
 ""So. Does that answer your question? Or just give you more to lose sleep over?""","pk_turnInSeraph1meshanb2:""That was at least a century ago. How?""",
 pk_turnInSeraph1meshanb2,DialogOptionSelected,"$option == pk_turnInSeraph1meshanb2
-",,"Sera offers a small smile; polite, professional. ""I suppose when I say 'there', it can be interpreted in quite a few ways, hm?"" She adjusts the cuff of her jacket, letting the pause breathe. ""Records from that era are sparse, or not wholly accurate. But some systems endure. In one form or another."" She meets your gaze directly, her voice smooth as silk. ""Let's just say I've been with the company a long time. Long enough to remember what most would rather forget.""
+",,"Sera offers a small, professional smile. ""I suppose when I say 'there', it leaves room for interpretation."" She adjusts the cuff of her jacket, letting the pause settle. ""Records from that cycle are incomplete. In some cases, deliberately so. But certain systems endure — in one form or another."" Her gaze meets yours, steady and composed, voice smooth.
 
-A hint of a smirk now- she raises her head, looking slightly downward at you.
-
-""Continuity is valuable, darling. Especially when so much else in the Sector burns out so quickly. And as for how I'm still here?"" She taps her temple, a precise motion. ""Well. Some architectures age better than others.""
-
-","pk_turnInSeraph2:""Anyway, I wanted to sell you a planetkiller.""",
+""Let's just say I've been with the company a long time. Long enough to remember what most would prefer remain forgotten.""A hint of a smirk follows as she tilts her chin, her eyes narrowing slightly.
+""Continuity has its value, Captain. Especially in a Sector that burns through people and assets at the rate this one does."" She taps the side of her head, the gesture precise. ""And as for how I'm still here — well. Some architectures age better than others.""","pk_turnInSeraph2:""Anyway, I wanted to sell you a planetkiller.""",
 pkTurnInSeraph2,DialogOptionSelected,$option == pk_turnInSeraph2,"$madePKofferOnce = true
-Highlight ""300,000""","$personFirstName taps something just out of frame, and a low hum signals the activation of a privacy field- the office view blurs, distant sounds fade.
-""I won't ask how you got your hands on something like that, Captain."" Her tone is polite. Not cold, but entirely professional. ""But I'm not buying.""
+Highlight ""300,000""","$personFirstName taps something just out of frame. A low hum answers as the privacy field activates; the office view blurs, ambient sound fading into silence. ""Assuming this isn't some joke... I won't ask how you came by something like that, Captain."" Her tone is polite. Not cold — professional. Controlled.
 
-She steeples her fingers. ""Even if I trusted myself to bury it - and I do - the attention that kind of hardware brings? Not worth it. Not to me. Not to ARMA. Sooner or later, someone serious comes looking. And when they do, there's only one direction that kind of trouble flows.""
+""But I'm not buying."" She steeples her fingers, voice calm. ""Even if I trusted myself to bury it - and I do - the kind of attention that follows hardware like that? Not worth it. Not for me. Not for ArmaA. Sooner or later, someone serious comes looking. And when they do, there's only one direction that sort of trouble flows."" A brief pause. Her smile is small, sharp at the edges. 
 
-A pause. She smiles - just a little too sharp. ""And what would I even do with it? Level Chicomoztoc? Overkill isn't great for the brand.""
-She chuckles softly, then leans forward, her voice lowering a notch. ""Kidding, of course.""
+""And what would I even do with it? Level Chicomoztoc? Mass murder tends to play poorly in the quarterly reports."" The faintest chuckle escapes, but her eyes stay steady as she leans forward, voice dropping slightly. ""Kidding, of course."" She lets the quiet linger for half a breath before continuing, tone firm now.
 
-""Listen, $player.firstName. I've been in this business a long time. Long enough to know when something's too hot to hold. Here's my advice - on the house.""
-Her gaze fixes on yours - steady, serious.
+""Listen, $player.firstName. I've been in this business a long time. Long enough to know when something's too hot to hold."" Her gaze fixes on yours, steady.
 
 ""Get rid of it. Quietly.""","pk_turnInSeraph3a:""Absolutely.""
 pk_turnInSeraph3b:""Well...""",
 pkTurnInSeraph3a,DialogOptionSelected,$option == pk_turnInSeraph3a,"$armaa_askedSeraphAboutPK = true
 AdjustRepActivePerson 1
 FireAll PopulateOptions
-","""Good. We never talked about this. Alright?""
-
-She smiles warmly, waving a hand as the privacy field disappears.
+","""Good. We never talked about this. Alright?"" She smiles warmly, waving a hand as the privacy field disappears.
 
 ""Now then. Anything else?""",,
 pkTurnInSeraph3b,DialogOptionSelected,$option == pk_turnInSeraph3b,"$armaa_askedSeraphAboutPK = true
@@ -2800,12 +2777,8 @@ $player.numShips > 1
 $postId == administrator
 $market.id == armaa_meshanii_market
 !$armaa_gaveSeraphValk",SetOptionColor armaa_valkazard highlight,,"armaa_valkazard:""I found this Valkazard-class cataphract outside of the core worlds. One of yours?""",
-armaa_valkazardSel,DialogOptionSelected,$option == armaa_valkazard,FireAll armaa_valkazardHubOptions,"In a brief, imperceptible instant, $personName's expression hinted at surprise, swiftly concealed.
-
-""The what? I don't recall any Cataphract-class bearing that designation,"" her signature confident smile emerged once more. ""But if it -is- a Cataphract, it was undeniably crafted by our own, wouldn't you agree?""
-
-Her voice carried a measured mix of curiosity and skepticism. A momentary pause followed, seemingly steeped in careful consideration.
-""Captain $playerName, I suggest dispatching some of my personnel to corroborate these claims. If they are correct, we will be taking this craft back into our custody, of course.""","armaa_valkazardSelReward:""Let's talk about a reward.""
+armaa_valkazardSel,DialogOptionSelected,$option == armaa_valkazard,FireAll armaa_valkazardHubOptions,"For the briefest moment, $personName's expression flickers — surprise, quickly masked. ""The what? I don't recall any Cataphract-class registered under that designation.""
+Her usual confidence returns with a faint, polished smile. ""But if it is a Cataphract — well. Clearly one of ours, wouldn't you say?"" Her voice carries a smooth blend of curiosity and skepticism. She pauses, weighing her next words. ""Captain $playerName, I suggest assigning a team of my personnel to verify the claim. And if confirmed — naturally — the unit will be returned to corporate custody.""","armaa_valkazardSelReward:""Let's talk about a reward.""
 armaa_valkazardSelAgree:""Sure.""",
 #you little cheater,,,,,,
 #armaa_valkazardSelSus,DialogOptionSelected,"$option == armaa_valkazard
@@ -2825,7 +2798,7 @@ armaa_valkazardSelReward2,DialogOptionSelected,$option == armaa_valkazardSelRewa
 
 ""Take a moment to savor the prospect of not only claiming this reward but also securing your place as a valued partner in this grand enterprise,"" she declared. ""Your collaboration will prove essential as we embark on a journey to unveil the mysteries surrounding this enigma.""
 
-You don't fail to miss the fact that despite her apparent initial lack of knowledge, she is already offering a moderate sum to have the Valkazard back. There might be an opportunity to negotiate for a more substantial reward.","armaa_valkazardSelReward3:""That's all?""
+You note, despite her earlier show of unfamiliarity, she's already placing value on the Valkazard — and not an insignificant sum. There may be room to negotiate for more.","armaa_valkazardSelReward3:""That's all?""
 armaa_valkazardSelAgree2:""It's a deal.""
 cutCommLink:""No Deal.""",
 armaa_valkazardSelReward3,DialogOptionSelected,"$option == armaa_valkazardSelReward3
@@ -3540,19 +3513,10 @@ $option = armaaBarMRCHint 0
 FireBest DialogOptionSelected",,,
 armaaBarMRCHint2,DialogOptionSelected,$option == armaaBarMRCHint,,"You're nursing a drink and a half-interest in leaving when the tone shifts. A group of local toughs—shipless pirates, from the look—are zeroing in on your table. One of them knocks over a chair, not by accident. ""That your $shipOrFleet in orbit?"" one of them slurs, half a grin, half a dare. ""Figure someone oughta collect a toll for all that hull flash.""
 
-You don't have time to answer. One of your bodyguards is already standing, hand drifting to their sidearm, eyes locked. The second steps to your flank. The pirates pause. For a moment, it looks like that'll be the end of it.
+You don't have time to answer. One of your bodyguards is already standing, hand drifting to their sidearm, eyes locked. The second steps to your flank. The pirates pause. For a moment, it looks like that'll be the end of it. But someone's ego doesn't get the message.",armaaBarMRCHint2:Continue,
+armaaBarMRCHint3,DialogOptionSelected,$option == armaaBarMRCHint2,FireAll armaa_barFightOptions,"A bottle smashes against the wall beside you. One of the pirates—wired with black-market augments—lunges forward with unnatural speed. Your bodyguard moves faster. The strike is intercepted, a pistol drawn but left unfired. Another pirate catches an elbow, crumples before he hits the ground. The bar dissolves into chaos — blades flash, chairs splinter, shouts rise into a confused roar. In the press of bodies, you're shoved back, separated from your escorts.
 
-But someone's ego doesn't get the message.",armaaBarMRCHint2:Continue,
-armaaBarMRCHint3,DialogOptionSelected,$option == armaaBarMRCHint2,FireAll armaa_barFightOptions,"A bottle shatters against the wall beside you. Chairs scrape. A pirate, wired with black-market augs, lunges at you with preternatural speed.
-
-One of your bodyguards-better augmented, better trained—intercepts the blow with practiced efficiency. Pistol drawn, but not fired. Another pirate catches an elbow and folds before hitting the floor.
-
-The bar erupts into a full-blown melee. Blades flash, chairs shatter, and voices rise into a chorus of chaos. In the swirl of movement and flying bodies, you're shoved back—separated from your escorts.
-
-One of the pirates from earlier spots you. He straightens, cracked knuckles glinting under the bar's dirty lights, and swagger-walks your way through the brawl.
-
-""Well, well, well,"" he growls, eyes glinting with confidence. ""What do we have here?""
-",,
+One of the earlier pirates spots you. He straightens, flexing cracked knuckles under the bar's flickering lights. ""Well, well,"" he growls, starting toward you through the fight. ""Look what we've got here.""",,
 ,,,,,,
 armaa_barFightCocky,armaa_barFightOptions,,,,"armaa_barFightCockyResp:""A bar, a bottle, and a soon-to-be corpse. Guess which one you are.""",
 armaa_barFightCockyAlt,armaa_barFightOptions,,,,"armaa_barFightCockyAltResp:""A concussion, in about ten seconds.""",
@@ -3586,20 +3550,15 @@ FireBest DialogOptionSelected","You stare at the ceiling dramatically. Nothing h
 ""...What the hell are you doing? ...Okay. You're either insane or... no, just insane."" He lunges, but a few others in the bar actually take a step back, suddenly less sure about picking this fight.
 ",,
 ,,,,,,
-armaaBarMRCHint4,DialogOptionSelected,$option == armaaBarMRCHint3,,"The pirate snarls—whether in rage, confusion, or sheer momentum, it's hard to tell—and lunges.
+armaaBarMRCHint4,DialogOptionSelected,$option == armaaBarMRCHint3,,"The pirate snarls - rage, panic, momentum. Hard to say. He commits to the charge like a destroyer activating it's burn drive. You shift your weight, slipping under the first swing - a clean vector adjustment. The second comes in fast, but you jam a stool into its arc. Impact. The improvised defense shatters, but buys you enough time to reposition.
 
-You duck the first swing. Another comes in from your side, but a well-placed stool catches it mid-arc, splintering on impact.
+The bar collapses into full disorder. Strikes flying blind, glass breaking, shouted orders lost under music no one bothered to cut.
+Your escorts vanish into the scramble - locked in their own engagements or screened off entirely.
 
-The bar dissolves into chaos again: fists flying, glass shattering, shouting layered over music that someone forgot to cut. You lose sight of your bodyguards in the blur—either tangled up in their own fights or blocked off by the crowd. You manage to stay upright, slipping between tables and broken chairs, dodging another swing from someone hopped up on synthmorph adrenaline and poor impulse control. You're fast, but not invincible—and you're alone.
+You move like a frigate under pressure, threading gaps between tables and broken chairs, avoiding another wild strike from someone running high on synthmorph stimulants and bad instincts. You're fast. Not invulnerable. Your flux is building. And you're isolated. For now.",armaaBarMRCHint4:Continue,
+armaaBarMRCHint5,DialogOptionSelected,$option == armaaBarMRCHint4,"Highlight ""Fort Exsedol""","One of your attackers is yanked back by the collar, slammed face-first into the counter with enough force to dent the metal. Another staggers forward, only to be caught mid-swing — his wrist locked, folded back until his knees give out. The fight doesn't stop, but flanked by the newcomers, you push through the chaos. Your guards regroup, subduing the remaining threats as the room settles into uneasy stillness. One of the men who assisted you steps forward- Sharp eyes, a ragged scar along his jaw. ""You hold your ground,"" he says, ""That counts for something."" He pauses, studying you — not like a stranger, but like a profile long reviewed.
 
-At least, you were.",armaaBarMRCHint4:Continue,
-armaaBarMRCHint5,DialogOptionSelected,$option == armaaBarMRCHint4,"Highlight ""Fort Exsedol""","One of your attackers is yanked back by the collar and driven face-first into the counter, hard enough to leave a dent. Another stumbles forward, only to be caught mid-swing—his wrist folded neatly back until his knees give out. The violence doesn't end, but flanked by the newcomers, you're able to make your way back to your guards and pacify the rest of your attackers.
-
-The one in front steps forward—a man with sharp eyes, a ragged scar tracing his jaw, and the calm of someone who's fought too many times to flinch anymore. ""You hold your ground,"" he says, voice low but firm. ""That's something."" He pauses, studying you—not like a stranger, but like a dossier come to life.
-
-""Heard the stories. About what you've done. What you haven't. Some of us were wondering if you'd end up here eventually."" He tosses a card onto the table. Matte black. Etched with a red, stylized flame that catches the light like blood on ceramic. ""If you're looking for a... business opportunity,"" he adds, ""head to Fort Exsedol. Orbits what's left of Meshan.""
-
-He turns to go, then stops. ""And Captain?"" His eyes meet yours. ""Pleasure making your acquaintance.""",barHRE_goToNormalBar:Look around the bar,
+""Heard the stories. What you've done. What you haven't. Some of us figured you'd end up here sooner or later."" He places a card on the table. Matte black. A red flame etched across the surface, catching the light. You recognize it as one carried by the Meshan Reprisal Coalition. ""If you're looking for work,"" he says, ""head for Fort Exsedol. Meshan orbit."" He turns to leave, then glances back. ""And Captain—"" A thin smile. ""Pleasure.""",barHRE_goToNormalBar:Look around the bar,
 CMSNTextRejectHostile_mrc,CMSNTextRejectHostile,$id == armaa_mrcLiason score:1000,,"""You? A pawn of the same rot we're fighting to cleanse from this Sector. Don't expect any handshakes from us.""",,
 CMSNTextHasOther_mrc,CMSNTextHasOther,$id == armaa_mrcLiason score:1000,,"""You're already commissioned by $theOtherCommissionFaction. Divided loyalty is a weakness we can't afford. Come back when you're ready to cut ties.""",,
 CMSNTextUnsuited_mrc,CMSNTextUnsuited,$id == armaa_mrcLiason score:1000,,"""Not everyone has the stomach for this fight. You're not ready for what it takes to join the Reprisal Coalition.""",,
@@ -3681,6 +3640,9 @@ FireAll armaa_btsDebriefOpts","""You're back. I take it you have news?""
 armaa_btsDebriefDead,armaa_btsDebriefOpts,$global.armaa_btsKilledFlint,,,"10:armaa_btsDebriefDeadResp: ""He's dead.""",
 armaa_btsDebriefDeadLie,armaa_btsDebriefOpts,!$global.armaa_btsKilledFlint,,,"10:armaa_btsDebriefDeadRespLie: ""He's dead."" (lie)",
 armaa_btsDebriefAgreement,armaa_btsDebriefOpts,,,,"10:armaa_btsDebriefAgreementResp: ""We came to an agreement. He stays quiet, you get what we want. No blood, no blowback.""",
+armaa_btsDebriefTurnOver,armaa_btsDebriefOpts,"$global.armaa_btsTransportingFlint
+!$global.armaa_resolvedFlint",,,"10:armaa_btsDebriefTurnoverResp: ""He asked for transport. I'm returning him to you instead.""",
+,,,,,,
 armaa_btsDebriefDeadResp,DialogOptionSelected,$option == armaa_btsDebriefDeadResp,"$option = armaa_btsDebriefEnd
 FireBest DialogOptionSelected","""Then that's that. Felner was always a liability. Good work.""",,
 armaa_btsDebriefDeadRespLie,DialogOptionSelected,$option == armaa_btsDebriefDeadRespLie,"$player.ethosLiar++
@@ -3693,18 +3655,30 @@ FireBest DialogOptionSelected","$personName cocks an eyebrow. You send the data 
 
 ""Data's clean. Matches the intercepts, timestamp's recent. That'll do."" $heOrShe pauses, a little too long to be comfortable, then exhales loudly. ""But let's be clear. You weren't authorized to cut a deal.""
 $HeOrShe sets the pad down. ""There are people above me who won't like this. People who prefer operators that follow orders, not make judgment calls. But not everyone in this line of work climbs the ladder by following instructions. Some of us got here by doing what had to be done—quietly, competently."" $heOrShe lets that hang, just long enough for you to catch the double meaning.",,
+armaa_btsDebriefTurnOverResp,DialogOptionSelected,$option == armaa_btsDebriefTurnOverResp,"AdjustRep armaarmatura_pirates FRIENDLY 5
+AdjustRepActivePerson COOPERATIVE 3
+AdjustRepPerson armaa_felner VENGEFUL -100
+$global.armaa_btsTransportingFlint = false
+$global.armaa_resolvedFlint = true
+$option = armaa_btsDebriefEnd
+FireBest DialogOptionSelected","""Understood, Captain. That simplifies matters considerably. We'll arrange retrieval. Your crew will handle transfer protocol on arrival. Standard procedure.""
+
+",,
 armaa_btsDebriefEnd,DialogOptionSelected,$option == armaa_btsDebriefEnd,"AdjustRep armaarmatura_pirates COOPERATIVE 3
 AdjustRepActivePerson COOPERATIVE 5
 $global.armaa_bts_Completed = true
 Call $global.armaa_bts_ref updateData
-AddCredits 100000
+AddCredits 70000
 FireAll PopulateOptions","""Either way, it's done. The board shifts, and now we move with it."" $heOrShe gestures vaguely offscreen. ""I'll handle the formalities. You'll want to stay light—this won't be the last mess his name stirs up.""",,
+,,,,,,
+,,,,,,
 "#bts, speaking to the planet administrator",,,,,,
 armaa_btsAdminQuestion,PopulateOptions,"$postId == administrator
 !$armaa_annoyedBtsAdmin
+!$armaa_askedBtsAdminFelner
 $market.id == $global.armaa_bts_marketId
-!$global.armaa_btsInvitedToChalet",,,"10:armaa_btsAdminQuestionResp: ""I'm looking for an executive named Felner. Know if he's still assigned here?""",
-armaa_btsAdminQuestionResp,DialogOptionSelected,$option == armaa_btsAdminQuestionResp,,"""Felner? Hm."" $HeOrShe scrolls through a data slate with the languid precision of someone too used to being asked for favors. ""Yeah. Assigned here... until two weeks ago. Transfer to an off-site role. Something under strategic reallocation protocols.""",,
+!$global.armaa_btsInvitedToChalet",$armaa_askedBtsAdminFelner = true,,"10:armaa_btsAdminQuestionResp: ""I'm looking for an executive named Felner. Know if he's still assigned here?""",
+armaa_btsAdminQuestionResp,DialogOptionSelected,$option == armaa_btsAdminQuestionResp,,"""Felner? Hm."" $HeOrShe scrolls through a data slate with the languid precision of someone too used to being asked for favors. ""Yeah. Assigned here... until two weeks ago. Transfer to an off-site role. Something under strategic reallocation protocols."" $HeOrShe smiles apologetically. ""We at Tri-Tachyon value our Valued Partner's privacy. I'm sad to say that I can't disclose more, per company policy.""",,
 armaa_btsAdminQuestionRespTT,DialogOptionSelected,"$option == armaa_btsAdminQuestionResp
 $player.commissionFactionId == tritachyon score:2",,"""Of course. One moment, captain.""
 A few keystrokes, a flick of the wrist across the interface.
@@ -3770,10 +3744,10 @@ The path to the main structure is flanked by synthetic pines and whisper-quiet f
 ",armaa_btsTravelToChalet3:Continue,
 armaa_btsTravelToChalet3a,DialogOptionSelected,"$option == armaa_btsTravelToChalet3
 #$player.sdtu_weaponPistol","$option = armaa_btsTravelToChalet4
-FireBest DialogOptionSelected","The pistol rides high under your jacket, familiar in its snug holster. Any personal scanner won't notice it. It's light, quick, and dirty. The kind of insurance policy that doesn't ask questions.",,
+FireBest DialogOptionSelected","The pistol rides high under your uniform, familiar in its snug holster. Any personal scanner won't notice it. It's light, quick, and dirty. The kind of insurance policy that doesn't ask questions.",,
 armaa_btsTravelToChalet3b,DialogOptionSelected,"$option == armaa_btsTravelToChalet3
 $player.sdtu_weaponGrenade","$option = armaa_btsTravelToChalet4
-FireBest DialogOptionSelected",The weight in your coat pocket is subtle but unmistakable. Compact casing. Manual trigger. No markings. You adjusted the fuse timing back on the shuttle — just in case talking turns into something less productive.,,
+FireBest DialogOptionSelected","The weight in your uniform is subtle but unmistakable. Compact casing, manual trigger, adjustable yield. You adjusted the fuse timing back on the shuttle — just in case talking turns into something less productive.",,
 armaa_btsTravelToChalet3c,DialogOptionSelected,"$option == armaa_btsTravelToChalet3
 $player.sdtu_weaponKnife","$option = armaa_btsTravelToChalet4
 FireBest DialogOptionSelected","The knife sits sheathed along your ribs, silent now, but your hearing remembers the high, insectile whine it made when activated. When live, it can part armor like cloth. You keep one hand close to where it rests.",,
@@ -3782,11 +3756,10 @@ $player.sdtu_weaponSpray","$option = armaa_btsTravelToChalet4
 FireBest DialogOptionSelected",You check the capsule inside your cuff — with a mere flick of the hand and a demon's exhalation you could ensure the rapid loss of consciousness or death of a small cluster of adult humans within a range of a few meters. The poisons would then react with self-contained nanotech pseudo-proteins to dissolve into a wisp of molecules which could be plausibly found on any imperfectly maintained spacefaring vessel.,,
 armaa_btsTravelToChalet3e,DialogOptionSelected,"$option == armaa_btsTravelToChalet3
 $player.sdtu_weaponWire","$option = armaa_btsTravelToChalet4
-FireBest DialogOptionSelected","You flex your hand inside the glove, feeling the faint pressure of the false fingertip click into position. It warms against your skin, syncing pigmentation and ridgeline texture. One tap, and the line will unspool — molecule-thin, murder-sharp.",,
+FireBest DialogOptionSelected","Beneath your glove, the false fingertip sits flush - a concealed housing for a monomolecular wire: a molecule-thin cutting edge, invisible and lethally precise. A weapon for work that requires discretion.",,
 armaa_btsTravelToChalet3f,DialogOptionSelected,"$option == armaa_btsTravelToChalet3
 $player.sdtu_weaponNone","$option = armaa_btsTravelToChalet4
 FireBest DialogOptionSelected","You came alone, and came bare — no edge, no sidearm. Just boots on soil and the rhythm of breath. Confidence or arrogance, you haven't decided. But you've fought with less.
-
 ",,
 armaa_btsTravelToChalet3g,DialogOptionSelected,"$option == armaa_btsTravelToChalet3
 $player.sdtu_weaponSword","$option = armaa_btsTravelToChalet4
@@ -3795,21 +3768,18 @@ armaa_btsTravelToChalet4,DialogOptionSelected,$option == armaa_btsTravelToChalet
 FireBest DialogOptionSelected","The interior is all engineered woodgrain and neutral lighting. Felner stands at the far end of the room, beside a low glass table set with two untouched drinks. 
 He watches you approach with neither fear nor welcome.",,
 armaa_btsTravelToChalet5,DialogOptionSelected,$option == armaa_btsTravelToChalet5,"BeginConversation armaa_felner
-ShowPersonVisual","""So. They finally sent someone.""
-He nods toward the second glass. ""Help yourself, if you want. Or don't.""","armaa_btsTravelToChalet6a: ""You sound like you're expecting the worst.""
+ShowPersonVisual","He nods toward the second glass. ""Help yourself, if you want. Or don't.""","armaa_btsTravelToChalet6a: ""You sound like you're expecting the worst.""
 armaa_btsTravelToChalet6b: ""Why haven't you been responding?""
 armaa_btsTravelToChalet6c: ""Nice place. The corporate life must be treating you well.""",
 armaa_btsTravelToChalet6a,DialogOptionSelected,$option == armaa_btsTravelToChalet6a,"$option = armaa_btsTravelToChalet7
-FireBest DialogOptionSelected","""Hope's not really part of the equation anymore. But if I had to name it? I wanted to see if anyone still believed there was a third option. Between silence... and the shot.""",armaa_btsTravelToChalet5: Continue,
+FireBest DialogOptionSelected","""I just wanted to see if anyone still believed there was a way out - something between vanishing quietly and someone being sent to tie off loose ends.""",armaa_btsTravelToChalet5: Continue,
 armaa_btsTravelToChalet6b,DialogOptionSelected,$option == armaa_btsTravelToChalet6b,"$option = armaa_btsTravelToChalet7
 FireBest DialogOptionSelected","""Because anything worth saying was better left unsaid."" He swirls the drink, but doesn't sip. ""Besides, if I'd kept reporting, I'd have lied. And if I'd told the truth... well. We both know what would've happened.""",armaa_btsTravelToChalet5: Continue,
 armaa_btsTravelToChalet6c,DialogOptionSelected,$option == armaa_btsTravelToChalet6c,"$option = armaa_btsTravelToChalet7
 FireBest DialogOptionSelected","""It has its perks. Real food. Cold air. People call you 'sir' with a straight face."" He glances around.",armaa_btsTravelToChalet5: Continue,
-armaa_btsTravelToChalet7,DialogOptionSelected,$option == armaa_btsTravelToChalet7,,"""You know what I realized?"" He doesn't wait for your answer. ""The MRC talks like it's building something. But it doesn't make. It takes, or destroys. Leans on locals like they owe us, slaps a banner on the hull and calls it justice. Tri-Tachyon? They don't pretend. They build things. Terrible things, sometimes, but things all the same. Tech. Infrastructure. Policy. Direction."" A beat.
-""And they paid me to understand it. Not to posture, not to posture about why we hate it. Just to see how the machine works."" He swirls his drink, watching the glass more than you.
-
-""And I did. And I liked it. More than I expected.""",armaa_btsTravelToChalet8: Continue,
-armaa_btsTravelToChalet8,DialogOptionSelected,$option == armaa_btsTravelToChalet8,,"""Yeah. Figured it'd be something like that."" He sets the glass down, gently but with finality. ""Not a rescue. Not a recall. Just confirmation. You think I don't know what that means?"" He frowns, eyes finally meeting yours. There's no heat in them—just a sort of tired clarity. ""You can tell them I'm still breathing, if that's what they want to hear. Still thinking. Still dangerous, probably. But I'm not coming back.""
+armaa_btsTravelToChalet7,DialogOptionSelected,$option == armaa_btsTravelToChalet7,,"""You know what I realized?"" He doesn't wait for your answer. 
+""The MRC talks like it's building something. But it doesn't create. It takes, or it breaks. Tri-Tachyon? They don't bother pretending. They build. Terrible things, sometimes- but things all the same. Tech. Infrastructure. Policy. Direction."" He pauses, swirling the glass, eyes fixed on the slow orbit of the liquid. ""And they paid me to understand it. Not to posture about why we're supposed to hate it. Just to study how the machine runs."" A thin breath. ""And I did. And I liked it. More than I thought I would.""",armaa_btsTravelToChalet8: Continue,
+armaa_btsTravelToChalet8,DialogOptionSelected,$option == armaa_btsTravelToChalet8,,"He sets the glass down, gently but with finality. ""You can tell them I'm still breathing, if that's what they want to hear. Still thinking. Still dangerous, probably. But I'm not coming back.""
 
 ""Unless you've got a better reason than 'orders,' you might as well finish your drink.""
 
@@ -3827,72 +3797,72 @@ armaa_btsTravelToChalet11b: ""I'm taking a huge risk letting you walk. I want cr
 armaa_btsTravelToChaletKill: ""Nah."" (attack)",
 armaa_btsTravelToChalet11a,DialogOptionSelected,$option == armaa_btsTravelToChalet11a,,"He watches you, gauging whether you're the type to appreciate the quiet calculus of survival. ""Maybe it doesn't. Maybe it gets shredded in some backroom and I get marked for cleanup anyway. That's not your problem unless you make it one.""","armaa_btsTravelToChalet11b: ""I'm taking a huge risk letting you walk. I want credits too.""
 armaa_btsTravelToChaletKill: Attack ",
-armaa_btsTravelToChalet11b,DialogOptionSelected,$option == armaa_btsTravelToChalet11b,"$player.ethosMercenary++
-AddCredits 25000
-AddRemoveAnyItem SPECIAL ship_bp armaa_garegga_tt_carrier 1","He smirks, not insulted—just resigned. ""You should. Everyone else already got paid to put me in the ground."" He fishes something from his coat—a TriPad, extending it out. You do the same, and with a tap he has the means to send you your fee. ""50,000. Half now, and half once you're..gone.""","armaa_btsTravelToChalet12: ""You have yourself a deal""
+armaa_btsTravelToChalet11b,DialogOptionSelected,$option == armaa_btsTravelToChalet11b,$player.ethosMercenary++,"He smirks, not insulted—just resigned. ""You should. Everyone else already got paid to put me in the ground."" He fishes something from his coat—a TriPad, extending it out. You do the same, and with a tap he has the means to send you your fee. ""50,000. Half now, and half once you're..gone.""","armaa_btsTravelToChalet12: ""You have yourself a deal""
 armaa_btsTravelToChaletKill: ""Thanks."" (attack)",
 armaa_btsTravelToChalet12,DialogOptionSelected,$option == armaa_btsTravelToChalet12,"$player.ethosMercy++
-AdjustRepPerson armaa_felner COOPERATIVE 5","Felner doesn't smile. But there's something like relief in the way his shoulders lower. ""That's fair. Cleaner than I expected."" He slides both chips toward you across the table. One data, one payment. ""No trackers. No tags. I burned the paper trail before I ever invited you in."" He stands, adjusting the collar of his coat. For a moment, the tiredness shows—under the eyes, in the joints. ""This place was always temporary. I just didn't know how short until now."" He looks at you, not as an enemy, not quite as a friend. Then he walks. No dramatics, no last words. Just a quiet exit through a side door.
-
-You're alone now. Just you, the chips, and the weight of whatever this turned into.",armaa_btsTravelToChalet13: Continue,
+AdjustRepPerson armaa_felner COOPERATIVE 5
+$global.armaa_btsTransportingFlint = true
+AddCredits 20000
+AddTextSmall ""Agreed to smuggle Felner out"" highlight","Felner doesn't smile. But there's something like relief in the way his shoulders lower. ""That's fair. Cleaner than I expected."" For a moment, the tiredness shows—under the eyes, in the joints. ""This place was always temporary. I just didn't know how short until now."" A pause. His voice drops slightly. ""They're still watching, of course. House arrest by another name."" He glances toward the security cams- or where they might be. ""If you can arrange an exit window — ship, shuttle, even just the gap- I can handle the rest."" He meets your eyes. Not quite an appeal. More like a professional offering terms.",armaa_btsTravelToChalet13: Continue,
 armaa_btsTravelToChalet13,DialogOptionSelected,$option == armaa_btsTravelToChalet13,"EndConversation
 ShowDefaultVisual
 $global.armaa_btsDealtWithFlint = true
 Call $global.armaa_bts_ref updateData
-FireAll PopulateOptions","The door shuts behind you with a soft hiss. You pause at the bottom of the stairs. Glance once over your shoulder. No one follows.
+FireAll PopulateOptions","The door shuts behind you with a soft hiss. You pause at the bottom of the stairs. No alarm sounds, No patrols scramble. If anyone was watching, they've chosen not to interfere. For now.
 
-Whatever this was-closure, betrayal, duty-it's done. The chip feels heavier in your pocket than it should. Or maybe it's just your conscience shifting weight. Ahead, the city waits. Loud, bright, full of eyes and secrets. You don't look back again.",,
+Whatever this was-closure, betrayal, duty-it's done. The chip feels heavier in your pocket than it should. Or maybe it's just your conscience shifting weight. Ahead, the shuttle awaits. You don't look back again.",,
 #insert weapon options,,,,,,
 armaa_btsTravelToChaletKilla,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 #$player.sdtu_weaponPistol","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","You draw fast. The shot cracks like a snapped bone in a silent room.
-Felner jerks back with a grunt, glass shattering in his hand as he slumps sideways over the table. One clean shot, center mass. 
+FireBest DialogOptionSelected","You draw fast. The shot cracks like a snapped bone in a silent room. Felner jerks back with a grunt, glass shattering in his hand as he slumps sideways over the table. One clean shot, center mass. 
 He looks at you once before the light leaves his eyes.",,
 armaa_btsTravelToChaletKillb,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 $player.sdtu_weaponGrenade","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","You don't hesitate. Thumb the pin, roll it beneath the table.
-Felner's eyes go wide—he moves, but not fast enough.
-The blast flares, brief and brutal. When the dust settles, the booth is smoke and red mist.",,
+FireBest DialogOptionSelected","You don't hesitate. Thumb the pin, roll it beneath the table. Felner's eyes go wide—he moves, but not fast enough. The blast flares, brief and brutal. When the dust settles, the booth is smoke and red mist.",,
 armaa_btsTravelToChaletKillc,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 $player.sdtu_weaponKnife","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","Your hand moves under the table. The blade flashes up—quiet, personal.
-Felner tries to stand, but you're already on him. One thrust under the ribs, twisted clean.
-He gasps, mouth working silently, then folds over without a word.",,
+FireBest DialogOptionSelected","Your hand moves beneath the table. The blade flashes upward- quick, close, silent. To Felner's credit, he reacts quickly - just not quickly enough.
+
+One thrust beneath the ribs, a sharp twist. He gasps once, soundless, then folds forward, breath and life leaving together.",,
 armaa_btsTravelToChaletKilld,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 $player.sdtu_weaponSpray","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","You flick the nozzle and fire. The mist hisses across the table.
-Felner coughs once, then again—choking, clutching at his throat as the chemical burns eat through cloth and skin.
+FireBest DialogOptionSelected","You flick the nozzle and fire. The mist hisses across the table. Felner coughs once, then again—choking, clutching at his throat as the chemical burns eat through cloth and skin.
 He reaches for his drink with trembling fingers, then collapses against the booth, twitching.",,
 armaa_btsTravelToChaletKille,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 $player.sdtu_weaponWire","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","You loosen the false fingertip with a practiced twitch.
-The filament unspools with barely a sound.
-One swift arc across the table—smooth, deliberate—intersects Felner at the neck.
-He flinches, confused, then stills.
-The line of blood is thin, almost polite, until it isn't.
-You retract the wire. The fingertip clicks back into place.",,
+FireBest DialogOptionSelected","In one smooth motion, you flick the false fingertip open and swing the wire in a clean arc across the table. The monomolecular filament passes through Felner's neck without resistance. He stiffens, eyes wide for a moment, then slumps forward as a thin line of blood spills across the table. The filament retracts with a faint click. The room falls still.",,
 armaa_btsTravelToChaletKillf,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 $player.sdtu_weaponNone","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","You move suddenly—over the table, grabbing him by the collar and slamming his head into the edge.
-Once. Twice. He's stunned, bleeding, but still reaching. You don't stop until he stops.",,
+FireBest DialogOptionSelected","You surge forward, bracing against the table as your boot drives upward into Felner's chest. The impact lifts him half out of the booth, breath knocked from his lungs in a sharp, strangled gasp. His arms flail, but the second strike finds his head- a sharp, driving kick that snaps his neck back with a dull crack. Felner shudders once, legs folding beneath him as his body crumples into the corner of the booth.
+
+A thin line of blood spills from his mouth, pooling silently beneath the table.",,
 armaa_btsTravelToChaletKillg,DialogOptionSelected,"$option == armaa_btsTravelToChaletKill
+$global.armaa_btsKilledFlint
 $player.sdtu_weaponSword","$player.ethosRuthless++
 $option = armaa_btsTravelToChalet13
 $global.armaa_btsKilledFlint
-FireBest DialogOptionSelected","The blade clears its scabbard in a whisper. Felner doesn't even get to speak—your strike comes diagonal, clean and sharp.
-He slumps back, jacket parting where the steel split through bone and breath. A red line blooms across his chest as the booth goes still.",,
+FireBest DialogOptionSelected","The blade clears its scabbard with a whisper of steel. Felner barely registers the motion before your strike lands — diagonal, clean, final. He slumps back, jacket parting where the blade severed breath and bone.
+
+A crimson line blooms across his chest as his body settles.",,
+,,,,,,
 ,,,,,,
 armaa_btsHunterCheck,BeginFleetEncounter,"$armaa_bts_tritachyonPatrol score:100
 !$entity.ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
@@ -3930,19 +3900,56 @@ The officer's smug professionalism falters. They pause—eyes flicking off-scree
 armaa_btsHunterSt1HostileResp,DialogOptionSelected,$option == armaa_btsHunterSt1HostileResp,"FireAll PopulateOptions
 $entity.ignorePlayerCommRequests = true 1
 $hailing = false 0",,,
-armaa_btsHunterSt1Why,armaa_btsHunterSt1Options,!$armaa_btsHunterSt1_askedWhy,,,"armaa_valkHunterSt1WhyResp:""This isn't Tri-Tach Materiel. It's mine.""",
-armaa_btsHunterSt1WhyResp,DialogOptionSelected,$option == armaa_btsHunterSt1WhyResp,"Highlight $considerably less comfortable
-$armaa_valkHunterSt1_askedWhy = true
-FireAll armaa_valkHunterSt1Options
-","""You see, my dear interloper,"" $heOrShe starts, pacing about the bridge, there's a certain gravity to the situation you seem to be ignorant of."" 
+armaa_btsHunterSt1TurnOver,armaa_btsHunterSt1Options,$global.armaa_btsTransportingFlint,,,armaa_btsHunterSt1TurnOverResp:Order your crew to eject Felner for retrieval by Tri-Tachyon,
+armaa_btsHunterSt1TurnOverResp,DialogOptionSelected,$option == armaa_btsHunterSt1TurnOverResp,"$hailing = false 0
+AdjustRepActivePerson FRIENDLY 10
+AdjustRepPerson armaa_felner VENGEFUL -200
+AdjustRep tritachyon FRIENDLY 5
+AdjustRep armaarmatura_pirates VENGEFUL -5
+$entity.ignorePlayerCommRequests = true 1
+MakeOtherFleetGoAway false
+MakeOtherFleetNonHostile true
+$player.ethosMercy--
+$player.ethosLiar++
+FireAll PopulateOptions","You don't see Felner's expression as he's transferred to the external recovery cradle, nor hear whatever final words he might have offered. A brief pause follows. Then the comms light flickers as the Tri-Tachyon officer returns to the channel, voice smooth, almost conversational now. ""Retrieval confirmed. Subject secured."" A short exhale, the kind someone makes after a problem resolves itself.
 
-""You may consider your little possession a trinket of sorts, but let me assure you, the consequences of obstructing my retrieval efforts could be, well, dire. We have the resources, influence, and determination to make your life considerably less comfortable, shall we say. This defiance would be the spark igniting a rather unpleasant chain of events.""
+""You've saved us both a considerable amount of paperwork, Captain- and spared my department several difficult internal memos."" A brief pause, as if weighing whether to say more.
+""For what it's worth: professional discretion is still appreciated. The Sector turns smoother when everyone understands where not to look."" The officer's tone sharpens slightly, returning to formality.
 
-""On the other hand, if you were to be reasonable? Why, that may lead to an arrangement that curbs the impending storm. Cooperation, yielding what is rightfully ours, could open doors to opportunities you've never fathomed. Deny us, and you'll find that the Sector can be quite unforgiving to those who stand in our way.""
+""This incident will be recorded as satisfactorily resolved under Clause 17-B. You are clear to depart."" Then, more quietly, almost genuinely: ""Burn bright out there, Captain.""
+The channel cuts. The Tri-Tachyon vessels pivot cleanly away, formation dispersing as they begin their return burn.
 
-""So, before you making a decision that could irrevocably alter your life's trajectory, think long and hard about the path you're about to tread. It's often wiser to swim with the tide than against it""
+",,
+,,,,,,
+# Release agent somewhere,,,,,,
+armaa_btsReleaseFlint,MarketPostDock,"$faction.id != tritachyon
+$faction.id != pirates
+$faction.id != armaarmatura_pirates
+$global.armaa_btsTransportingFlint
+!$global.armaa_resolvedFlint
+!$market.isHidden
+$market.size > 2","$global.armaa_resolvedFlint = true
+$global.armaa_btsTransportingFlint = false
+BeginConversation armaa_felner
+ShowPersonVisual
+AddCredits 20000
+AddRemoveAnyItem SPECIAL ship_bp armaa_garegga_tt_carrier 1","You approach $name and consider the outstanding issue of relocating Felner. This would not be an inappropriate place for him to start a new life.
 
-$heOrShe comes to a halt roughly at the spot they started at, turning to face you once more.",,
+Felner steps onto the deck beside you, duffel slung over one shoulder, coat pulled tight against the thin, scrubbed air. For a moment, he pauses, as if weighing whether to say something more. ""Wasn't sure I'd make it this far,"" he says at last. ""Figured you might vent me and call it done."" His tone carries no blame, no relief — just the flat edge of someone long familiar with how things turn in the Sector.
+
+He meets your eyes, gives a small nod. ""Appreciate the ride."" his face goes slack for a moment, likely interfacing with some implant before your TriPad pings.","armaa_btsReleaseFlintLet:Let him off here
+armaa_btsReleaseFlintJob:""What will you do now?""",
+armaa_btsReleaseFlintLet,DialogOptionSelected,$option == armaa_btsReleaseFlintLet,"EndConversation
+ShowDefaultVisual
+FireBest MarketPostDock",You see him off on a shuttle.,,
+armaa_btsReleaseFlintJob,DialogOptionSelected,$option == armaa_btsReleaseFlintJob,"EndConversation
+ShowDefaultVisual
+FireBest MarketPostDock","Felner pauses, glancing out at the shuttle bay's flickering traffic beacons. ""Same thing as anyone, I guess,"" he says. ""Find a place. Stay useful. Keep moving if I can't.""
+A faint breath — not quite a laugh. ""Corporate life's not so bad, once you stop worrying about morality. Clean contracts, steady credits, nice view out the habitat window. All comes down to who's paying, and how long they need you before someone higher up starts asking questions."" He adjusts the strap on his duffel.
+
+""Plenty of firms out there. Someone'll have a desk for me."" He gives you a final nod, then disappears into the shuttle.
+
+",,
 ,,,,,,
 armaa_turnInOption,PopulateOptions,"$isPerson
 $id == armaa_seraph",FireBest armaa_disableTurnInDataOptionIfNeeded,,10:armaa_startTurnIn: I've collected some field data during recent combat ops. Thought you might be interested.,

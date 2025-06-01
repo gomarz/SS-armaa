@@ -1,14 +1,25 @@
 package data.scripts.weapons;
 
+import com.fs.starfarer.api.AnimationAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.graphics.SpriteAPI;
+import org.magiclib.util.MagicAnim;
+import org.lazywizard.lazylib.combat.CombatUtils;
 import java.awt.Color;
 import com.fs.starfarer.api.Global;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
+import com.fs.starfarer.api.util.*;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.ReadableVector2f;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
 
 
 public class armaa_sylphAMWSEffect implements EveryFrameWeaponEffectPlugin 
@@ -34,8 +45,8 @@ public class armaa_sylphAMWSEffect implements EveryFrameWeaponEffectPlugin
 	private static final int SMOKE_SIZE_MIN = 30;
     private static final int SMOKE_SIZE_MAX = 60;
 	
-	private boolean isAnimating = false;
-	private IntervalUtil interval = new IntervalUtil(1f,20f);
+	private boolean isAnimating = false, isTracking = false;
+	private IntervalUtil interval = new IntervalUtil(1f,12f);
 	private IntervalUtil animInterval = new IntervalUtil(0.06f,0.08f);
 	private int target = 0;
 	private int currFrame = 0;
@@ -56,7 +67,7 @@ public class armaa_sylphAMWSEffect implements EveryFrameWeaponEffectPlugin
 		ShipAPI ship = weapon.getShip();
 		Color color = new Color(247, 176, 52, 255);
 		Color color2 = new Color(0, 226, 188, 255);	
-
+		isTracking = ship.getShipTarget() != null;
 		if(weapon.getBeams() != null && !weapon.getBeams().isEmpty())
 		{
 			color = weapon.getBeams().get(0).getCoreColor();
@@ -113,32 +124,34 @@ public class armaa_sylphAMWSEffect implements EveryFrameWeaponEffectPlugin
             hasFired = false;
 		}
 		//animate head
+		if(ship.getShipTarget() != null)
+		{
+			float facing = weapon.getCurrAngle();
+			float targetAngle = VectorUtils.getAngle(ship.getLocation(),ship.getShipTarget().getLocation());
+			
+			float difference = Math.abs(facing - targetAngle);
+
+			float increments = 4;
+			if (facing > targetAngle) 
+			{
+				target = (int)Math.floor(Math.min(5f+ (difference / 25f),8f));			
+			} 
+			else if (facing < targetAngle) 
+			{
+				target = (int)Math.floor(Math.max(3f- (difference / 25f),0f));
+			}
+				interval = new IntervalUtil(0.5f,1f);
+				currFrame = weapon.getAnimation().getFrame();
+				//if(currFrame != target)
+					//isAnimating = true;
+		}
 		if(interval.intervalElapsed() && !isAnimating)
 		{
-
-			isAnimating = true;
-			
+			isAnimating = true;	
 			currFrame = weapon.getAnimation().getFrame();
 			target = currFrame <= 4 ? 8 : 0;
 			animInterval = new IntervalUtil(0.055f,0.08f);
-			if(weapon.getShip().getShipTarget() != null)
-			{
-				float facing = weapon.getCurrAngle();
-				float targetAngle = VectorUtils.getAngle(weapon.getShip().getLocation(),weapon.getShip().getShipTarget().getLocation());
-				
-				float difference = Math.abs(facing - targetAngle);
-
-				float increments = 4;
-				if (facing > targetAngle) 
-				{
-					target = (int)Math.floor(Math.min(5f+ (difference / 25f),8f));			
-				} 
-				else if (facing < targetAngle) 
-				{
-					target = (int)Math.floor(Math.max(3f- (difference / 25f),0f));
-				}
-			}
-			else if(Math.random() <= 0.25f)
+			if(Math.random() <= 0.25f)
 			{
 				if(target == 8)
 					target = MathUtils.getRandomNumberInRange(4, 6);
@@ -146,11 +159,14 @@ public class armaa_sylphAMWSEffect implements EveryFrameWeaponEffectPlugin
 				else
 					target = MathUtils.getRandomNumberInRange(0,4);
 			}
-			if(Math.random() <= 0.25f)
+			if(Math.random() <= 0.25f && currFrame != target)
 			{
 				Global.getSoundPlayer().playSound("armaa_monoeye_move", 0.8f, 0.8f, weapon.getLocation(), weapon.getShip().getVelocity());				
 			}
+			interval = new IntervalUtil(1f,12f);
+
 		}
+		
 		
 		if(!isAnimating)
 		{
@@ -160,16 +176,13 @@ public class armaa_sylphAMWSEffect implements EveryFrameWeaponEffectPlugin
 		else
 		{
 			animInterval.advance(amount);
-			if(animInterval.intervalElapsed())
+			if(animInterval.intervalElapsed() || weapon.getShip().getShipTarget() != null)
 			{
 				currFrame = weapon.getAnimation().getFrame();
-				
 				if(currFrame == target)
 				{
-					interval = new IntervalUtil(5f,15f);
 					isAnimating = false;
 				}
-				
 				else
 				{
 					if(currFrame < target)

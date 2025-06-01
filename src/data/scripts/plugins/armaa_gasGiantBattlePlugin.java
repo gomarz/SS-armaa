@@ -5,17 +5,30 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.*;
+import com.fs.starfarer.api.combat.CombatFleetManagerAPI.*;
+import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.combat.CombatUtils;
+import org.lazywizard.lazylib.CollisionUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
+import org.magiclib.util.MagicFakeBeam;
 import java.awt.Color;
+import lunalib.lunaSettings.LunaSettings;
+import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.fleet.FleetMemberType;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import org.lwjgl.input.Keyboard;
+import org.magiclib.util.MagicRender.*;
 import org.lazywizard.lazylib.MathUtils;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
 
 public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
@@ -28,6 +41,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 	private IntervalUtil collapseAftermathInterval = new IntervalUtil(8f, 8f);	
 	private IntervalUtil attackInterval = new IntervalUtil(2f, 2f);	
 	private IntervalUtil bossInterval = new IntervalUtil(10f,10f);
+	private boolean perfMode = false;	
 	//try to improve perf a bit here
 	private IntervalUtil bgInterval = new IntervalUtil(0.1f,0.5f);
 	private IntervalUtil asteroidInterval = new IntervalUtil(1f,5f);	
@@ -75,10 +89,14 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
     {
 		if(!playedMusic)
 		{
+			if (Global.getSettings().getModManager().isModEnabled("lunalib"))
+			{
+				perfMode = LunaSettings.getBoolean("armaa", "armaa_performanceMode");
+			}					
 			Global.getSoundPlayer().playCustomMusic(1,1,"music_encounter_mysterious",true);
 			playedMusic = true;
 			engine.setDoNotEndCombat(true); 
-			engine.getCombatUI().addMessage(1,"",Color.red,"=INTERCEPTED TRANSMISSION=",Color.cyan,":",Color.cyan,""+Global.getSector().getPlayerPerson().getRank()+" "+Global.getSector().getPlayerPerson().getName().getLast()+"'s fleet? How did they find us?! Lock down the station!");			
+			engine.getCombatUI().addMessage(1,"",Color.red,"=INTERCEPTED TRANSMISSION=",Color.cyan,":",Color.cyan,""+Global.getSector().getPlayerPerson().getRank()+" "+Global.getSector().getPlayerPerson().getName().getLast()+"? Here? Lock down the station - full lockdown! We're compromised!");			
 		}
 		else if(!playedMusicSt2)
 		{
@@ -278,7 +296,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 					{
 						// at this point size >= 1f
 						Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
-						engine.getCombatUI().addMessage(1,"",Color.red,"=INTERCEPTED TRANSMISSION=",Color.cyan,":",Color.cyan,"No, no, NO! Cut power to the drive!\nWe aren't ready! it's goin' to-" );
+						engine.getCombatUI().addMessage(1,"",Color.red,"=INTERCEPTED TRANSMISSION=",Color.cyan,":",Color.cyan,"No, no - kill the drive! We're not ready! It's going to-" );
 						Global.getSoundPlayer().playUISound("gate_explosion_windup", 0.50f, 10f);
 							Global.getSoundPlayer().pauseCustomMusic();							
 							collapsed = true;

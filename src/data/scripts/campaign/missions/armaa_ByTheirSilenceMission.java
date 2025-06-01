@@ -193,7 +193,7 @@ public class armaa_ByTheirSilenceMission extends HubMissionWithSearch {
 
 	@Override
 	public String getBaseName() {
-		return "Descent";
+		return "By Their Silence";
 	}
 
 	@Override

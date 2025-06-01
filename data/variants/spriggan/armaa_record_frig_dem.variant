@@ -1,8 +1,8 @@
 {
-  "variantId": "armaa_record_frig_standard",
+  "variantId": "armaa_record_frig_dem",
   "hullId": "armaa_record_frig",
-  "displayName": "Standard",
-  "goalVariant": true,
+  "displayName": "DEM",
+  "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
   "quality": 1,
@@ -16,15 +16,15 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "harpoonpod"
+        "WS0002": "dragon"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0004": "harpoon",
-        "WS0005": "harpoon"
+        "WS0004": "gazer",
+        "WS0005": "gazer"
       }
     },
     {

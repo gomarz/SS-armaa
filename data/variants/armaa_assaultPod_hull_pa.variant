@@ -1,14 +1,25 @@
 {
+  "variantId": "armaa_assaultPod_hull_pa",
+  "hullId": "armaa_assaultPod_hull",
   "displayName": "assaultpod",
+  "goalVariant": true,
   "fluxCapacitors": 0,
   "fluxVents": 0,
-  "goalVariant": true,
-  "hullId": "armaa_assaultPod_hull",
-  "hullMods": [],
-  "modules": [],
-  "permaMods": [],
   "quality": 0,
-  "variantId": "armaa_assaultPod_hull_pa",
-  "weaponGroups": [],
-  "wings": ["armaa_pa_mid_wing","armaa_pa_mid_wing"],
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "armaa_aleste_harpoon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "armaa_pa_mid_wing",
+    "armaa_pa_mid_wing"
+  ]
 }

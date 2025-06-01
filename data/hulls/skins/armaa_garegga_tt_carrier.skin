@@ -21,10 +21,10 @@
 		  #"arc": 5,
 		  #"mount": "TURRET",
 		  #"size": "SMALL",
-		  "type": "SYNERGY"
+		  "type": "ENERGY"
 	   },
 },
-    "builtInMods":["fluxcoil","fluxdistributor","converted_hangar"],
+    "builtInMods":["shield_shunt","converted_hangar"],
     "builtInWings":["armaa_bit_blade_wing",],
     "builtInWeapons":{
 		"E_LSHOULDER": "armaa_garegga_leftPauldron_tt",

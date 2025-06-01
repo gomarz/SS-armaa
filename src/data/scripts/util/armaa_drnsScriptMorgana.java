@@ -1,12 +1,18 @@
 package data.scripts.util;
 
+import data.scripts.weapons.armaa_counterShieldScript;
 import java.awt.Color;
 import java.util.*;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.SoundAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.WeaponAPI.*;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.lazywizard.lazylib.combat.CombatUtils;
@@ -144,7 +150,7 @@ public class armaa_drnsScriptMorgana extends BaseEveryFrameCombatPlugin
 				}
 				if(target1 == null)
 					return;
-				engine.spawnEmpArc(ship, ship.getLocation(), ship, target1, DamageType.ENERGY, damage, damage, 10000f, "tachyon_lance_emp_impact", Math.min(150f,damage), Color.red, Color.white);		
+				engine.spawnEmpArc(ship, ship.getLocation(), ship, target1, DamageType.ENERGY, damage, damage, 10000f, "tachyon_lance_emp_impact", Math.min(150f,damage), new Color(0,150,255,200), Color.white);		
 				gauge -= damage;
 				maxDamage-= damage;
 				maxProjs--;

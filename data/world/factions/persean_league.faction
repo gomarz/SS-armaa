@@ -14,6 +14,7 @@
 	},
 	"variantOverrides":{
 		"armaa_heron_Attack3":5,
+		"armaa_record_frig_dem":10,
 	},
 	"shipsWhenImporting":{
 		"hulls":[		

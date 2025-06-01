@@ -3,23 +3,58 @@
   "hullId": "armaa_assaultPod_hull",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/armaa_pod.png",
-  "style": "HIGH_TECH",
-  "height": 52,
-  "width": 38,
-  "center": [16, 27],
-  "collisionRadius": 58,
+  "style": "LOW_TECH",
+  "height": 38,
+  "width": 28,
+  "center": [14, 22],
+  "collisionRadius": 21,
   "shieldCenter": [0, -0],
-  "shieldRadius": 54.5,
+  "shieldRadius": 23.5,
   "viewOffset": 0,
   "builtInMods": [
-	"armaa_assaultPodKiller"
+    "armaa_assaultPodKiller"
   ],
-  "weaponSlots": [],
-  "engineSlots": [],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-19, -0],
+      "length": 23,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-15, 12],
+      "length": 11.5,
+      "width": 7,
+      "angle": 168.5,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-15, -12],
+      "length": 11.5,
+      "width": 7,
+      "angle": -168.5,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    }
+  ],
   "bounds": [
-    24, -18,
-    -25.5, -18,
-    -25.5, 13,
-    24, 13
+    12.5, -7.5,
+    -17, -13.5,
+    -16.5, 10,
+    12.5, 8
   ]
 }

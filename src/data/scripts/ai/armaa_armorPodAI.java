@@ -3,9 +3,12 @@ package data.scripts.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.IntervalUtil;
+import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.CollisionUtils;
+import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.combat.*;
 
 public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
@@ -39,6 +42,8 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
 				CombatFleetManagerAPI cfm = engine.getFleetManager(1);
 				cfm.setSuppressDeploymentMessages(true);
 				ShipAPI pod = cfm.spawnShipOrWing("armaa_assaultPod_hull_pa",missile.getLocation(),0f);
+				if(pod == null)
+					return;
 				pod.setFacing(missile.getFacing());
 				pod.getVelocity().set(missile.getVelocity());
 				pod.setOwner(missile.getSource().getOriginalOwner());

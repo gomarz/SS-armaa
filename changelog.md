@@ -5,7 +5,8 @@ v3.2
 	- reduces most special fx in the mission battles
 - Added SP option to circumvent FP limit for starting ACoC
 - Add new voice lines for Dawn
-- Add 2 new events re: spooky redacted if Dawn is present
+- Add 3 new dawn events (spooky redacted, PK)
+
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize
 	- slow, mid-long range, prioritize fighters
@@ -22,10 +23,10 @@ v3.2
 - New Mission: Descent
 	- If didn't start with Valkazard, can be obtained/encountered in the climax of this mission
 - New Mission: By Their Silence
-	- can be triggered once at 25% reputation with MRC Liason
+	- can be triggered once >= 25 reputation with MRC Liason on Fort Exsedol
 - ATAC "Event"
 	- Progress accumulates from destroying ships with ArmaA ships present in the fleet
-	- Grants various rewards + minor buff geared towards strikecraft
+	- Grants various rewards + minor buffs geared towards strikecraft
 	
 ======Fixes======
 - Fixed Kouto (E-Type) missing desc
@@ -44,13 +45,15 @@ v3.2
 - Fixed PERCEPT orb not changing target if current target was already dead
 - Fixed strikecraft always accelerating forward post launch, instead of in the direction they are facing
 - Increased performance of missions with special backgrounds
+- Added extra check for assault pod removal (will self-remove once replacement rate decreases below 90%
+	- It can never naturally replace new fighters, so this won't cause any issues
 
 ======Tweaks======
 - Jenius becomes Pirate owned instead of Independent after completing ACoC
 	- briefly has 'Arusthai' ownership during the mission to prevent rep loss to pirates during story related raid
 - Bonus incoming damage dealt to strikecraft by fighter damage modifier had no upper bound. 
 	- Now caps out at a 25% bonus.
-	- Added floaty text to make it more obvious ship is being hit by something w/ the damage modifier
+	- Added floaty text to make it even more obvious ship is being hit by something w/ the damage modifier
 	- New hullmod to alter/adjust this modifier:
 		- Targeting Profile Disruptor
 			Effect: Nullifies bonus incoming damage, but:
@@ -100,23 +103,26 @@ Altagrave
 	- Medium Ballistic -> Small Ballistic
 	- Added 2x Small Missiles
 	- Removed drone wing
-	- Top Speed: 130->100
 	- HP: 700->800
 	- Armor: 100->200
-	- Ship System: FMR -> drone_sensor
 
 - Watchdog
 	- OP: 85->100
+	- sprite tweaks
 	- Shield Efficiency: 1.1->1.05
 	- Add 2x small composite hardpoints
 	- Large Hybrid->Large Ballistic
 	- Siege Mode
 		- Speed Reduction: 50%->20%
 		- No longer disables shields
+- Watchdog(XIV)
+	- Ship System: Reload->Siege Mode
+	- Carries two barrettas instead of one
 
 - Zanac
 	- Top Speed: 90->100
 	- Large Energy -> Large Universal
+	- Zanac (MRC) monoeye will more aggressively track object's ship's targeting
 	
 - Gunhed
 	- Armor:250->200

@@ -5,11 +5,14 @@ import com.fs.starfarer.api.Global;
 
 import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
+import com.fs.starfarer.api.impl.campaign.intel.contacts.ContactIntel;
+import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.ShipAIPlugin;
 import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
@@ -17,6 +20,7 @@ import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.campaign.PersonImportance;
 import com.fs.starfarer.api.campaign.FactionAPI;
+import com.fs.starfarer.api.SettingsAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
@@ -40,15 +44,19 @@ import data.scripts.ai.armaa_grenadeAI;
 import data.scripts.ai.armaa_dispersalMortarAI;
 import data.scripts.ai.armaa_curvyLaserAI;
 import data.scripts.ai.armaa_armorPodAI;
+import data.scripts.plugins.CataphractCheck;
 import data.scripts.world.ARMAAWorldGen;
+import data.scripts.campaign.ARMAACampaignPlugin;
 import data.scripts.campaign.notifications.armaa_notificationShower;
 import data.hullmods.cataphract;
 
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 
+import com.fs.starfarer.api.fleet.FleetMemberType;
 
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
+import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
@@ -60,11 +68,18 @@ import data.scripts.campaign.armaa_lootCleaner;
 import data.scripts.campaign.armaa_hyperSpaceImmunity;
 import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.armaa_squadManagerIntel;
+import data.scripts.campaign.intel.ArmaArmaturaDeal;
 import data.scripts.fleets.ArmaaFleetManager;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 
 import java.util.*;
+import org.lwjgl.util.vector.Vector2f;
+import org.apache.log4j.Logger;
+import org.lazywizard.lazylib.campaign.CampaignUtils;
+import org.lazywizard.lazylib.MathUtils;
 import lunalib.lunaSettings.LunaSettings;
+import com.fs.starfarer.api.campaign.SectorAPI;
+import static data.scripts.world.ARMAAWorldGen.addMarketplace;
 
 //import exerelin.campaign.SectorManager;
 
@@ -259,6 +274,14 @@ public class MechaModPlugin extends BaseModPlugin {
 		Global.getSector().removeTransientScript(notificationScript);
 		
 		boolean hiredDawn = false;
+		
+		for(ShipHullSpecAPI spec :Global.getSettings().getAllShipHullSpecs())
+		{
+			if(spec.getHullSize() == HullSize.FIGHTER)
+				continue;
+			if(spec.hasTag("armaa_strikecraftize"))
+				spec.addBuiltInMod("strikeCraft");
+		}
 
         MarketAPI exsedol = Global.getSector().getEconomy().getMarket("exsedol_station_market");
 		if(exsedol != null && !exsedol.hasSubmarket("armaa_mrcMarket"))
