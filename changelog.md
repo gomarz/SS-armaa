@@ -56,7 +56,7 @@ v3.2
 	- Added floaty text to make it even more obvious ship is being hit by something w/ the damage modifier
 	- New hullmod to alter/adjust this modifier:
 		- Targeting Profile Disruptor
-			Effect: Nullifies bonus incoming damage, but:
+			-Effect: Nullifies bonus incoming damage, but:
 				- +20% damage taken from all frigates
 				- +10% from all destroyers
 				- -10% from all cruisers
@@ -66,14 +66,14 @@ v3.2
 -Strikecraft hullmod specifies ships benefit from Frigate-based bonuses
 -Strikecraft should no longer suffer malfunctions caused by low CR after repairing fully
 
-C-Stim Dispatcher
+-C-Stim Dispatcher
 	- Uptime: 0.7s->1s
 	- Downtime: 10s->6s
 	- Fixed bug that caused ability to proc even when shields were raised
-Juno Mk. III
+-Juno Mk. III
 	- Chargeup: 1.5 -> 1
 
-Altagrave
+-Altagrave
 	- Exceliza Grenade Launcher
 		- Burst Size: 2 -> 4
 		- Range: 600->800
@@ -82,7 +82,7 @@ Altagrave
 	- Vajra
 		- Range: 600->1000
 		
-- Valken
+-Valken
 	- OP: 7->4
 	- Refit Time:9->5
 	- Revised description
@@ -91,7 +91,7 @@ Altagrave
 	- Matching their description, may explode if torso is disabled
 		- deals up to HP+(ammo*weaponDamage)*0.25 in small AOE
 
-- Valken X
+-Valken X
 	- Armor:100->80
 	- Add Hi-MAC hullmod
 	- LS-20
@@ -99,14 +99,14 @@ Altagrave
 		- Chargedown: 0.33->0.55
 		- should reduce whiffed melee attacks due to the windup
 
-- Spriggan Powered
+-Spriggan Powered
 	- Medium Ballistic -> Small Ballistic
 	- Added 2x Small Missiles
 	- Removed drone wing
 	- HP: 700->800
 	- Armor: 100->200
 
-- Watchdog
+-Watchdog
 	- OP: 85->100
 	- sprite tweaks
 	- Shield Efficiency: 1.1->1.05
@@ -115,23 +115,23 @@ Altagrave
 	- Siege Mode
 		- Speed Reduction: 50%->20%
 		- No longer disables shields
-- Watchdog(XIV)
+-Watchdog(XIV)
 	- Ship System: Reload->Siege Mode
 	- Carries two barrettas instead of one
 
-- Zanac
+-Zanac
 	- Top Speed: 90->100
 	- Large Energy -> Large Universal
 	- Zanac (MRC) monoeye will more aggressively track object's ship's targeting
 	
-- Gunhed
+-Gunhed
 	- Armor:250->200
 
-- Panther (XIV)
+-Panther (XIV)
 	- Can now detach even if overloaded
 	- Will detach with the CR Bakraid deployed with at the start of the battle
 
-- GuarDUAL
+-GuarDUAL
 	- gfx tweak
 	- Improved(?) AI
 	- DP: 15->13
@@ -147,16 +147,16 @@ Altagrave
 		- EMP: 25->45
 	- PERCEPT (System)
 		- chargeup: 1->0.30
-- Bakraid
+-Bakraid
 	- clamped CR to 1(100%) to prevent 50000% CR bug when seperating
-- Aleste SII
+-Aleste SII
 	- Ship System: Fuller Auto
 		- fixed incorrect system desc, said increases RoF by 30% and Time Dilation by 20%, but reduces Weapon flux cost by 30% and time dilation by 25%
-- Zanac(MRC)
+-Zanac(MRC)
 	-Ship System
 		- in combat stated only affected ballistics, when it affects energy+ballistic
 		- Stated flux reduction was 10%, when actual reduciton was 20% 
-- Assault Pod
+-Assault Pod
 	- Burst Size: 1->2
 	- Spawns 2 battle armors instead of 4 per pod
 	- Added Weapon: TB-11 Harpoon (Same as Aleste)
