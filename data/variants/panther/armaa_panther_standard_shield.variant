@@ -3,12 +3,12 @@
   "hullId": "armaa_panther_frig",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 5,
-  "fluxVents": 10,
+  "fluxCapacitors": 4,
+  "fluxVents": 8,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit",
+    "unstable_injector",
     "hardened_subsystems",
     "heavyarmor"
   ],
@@ -17,14 +17,14 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN2": "jackhammer"
+        "TRUE_GUN2": "miningblaster"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "heavymauler"
+        "TRUE_GUN": "heavymg"
       }
     },
     {
