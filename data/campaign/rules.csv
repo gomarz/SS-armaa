@@ -904,7 +904,7 @@ Your $shipOrFleet surges forward to reinforce, but by the time you arrive, the s
 armaa_IK2DEV,PopulateOptions,"$id == armaa_kade
 $global.isDevMode",,,armaa_WFRaiders2:DEV City Battle,
 armaa_DEDEV,PopulateOptions,"$id == armaa_kade
-$global.isDevMode",,,armaa_IKRaidBFinished2:DEV Descent Battle,
+$global.isDevMode",,,armaa_WFShaftBattleStart:DEV Descent Battle,
 armaa_GVDEV,PopulateOptions,"$id == armaa_kade
 $global.isDevMode",,,armaa_WFGravionBattleStart:DEV Gravion Battle,
 armaa_IK2,PickGreeting,"$id == armaa_kade score: 1000
