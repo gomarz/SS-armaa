@@ -65,13 +65,13 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 		if(engine == null)
 			return;
         Color startColor = new Color(150, 150, 150, 244); // Starting color: (200, 0, 0)
-        Color endColor = new Color(15, 30, 75, 0);   // Ending color: (0, 0, 200)
-		engine.setBackgroundGlowColor(shiftColor(new Color(50,50,50,80),new Color(75,50,0,25)));		
+        Color endColor = new Color(15, 30, 75, 0);   // Ending color: (0, 0, 200)	
 		float elapsed = interval3.getElapsed();
 		float maxinterval = interval3.getMaxInterval();
 		float rate = Math.min(1f,elapsed/maxinterval);
 		if(!reinforcementsTriggered)
 		{
+			engine.setBackgroundGlowColor(shiftColor(new Color(50,50,50,80),new Color(75,50,0,25)));	
 			engine.getFleetManager(0).setSuppressDeploymentMessages(true);			
 			Global.getSoundPlayer().playCustomMusic(1,1,"music_armaa_citybattle",true);		
 			PersonAPI pilot = OfficerManagerEvent.createOfficer(engine.getFleetManager(0).getDefaultCommander().getFaction(),5, true);				
@@ -142,7 +142,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 			MagicRender.positioning.CENTER, 
 			new Vector2f(0,0), 
 			new Vector2f(0,0), 
-			new Vector2f(Global.getSettings().getScreenWidth()*Math.max(1.2f,1.3f/engine.getViewport().getViewMult()),Global.getSettings().getScreenWidth()*Math.max(1.2f,1.3f/engine.getViewport().getViewMult())), 
+			new Vector2f(Global.getSettings().getScreenWidth(),Global.getSettings().getScreenWidth()), 
 			new Vector2f(0,0),
 			spin/10f, 
 			0f, //spin 
@@ -222,55 +222,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 			spinInterval.advance(amount);
 			if(spinInterval.intervalElapsed())
 				spin++;
-			if(ratio < 0.80f)
-			{
-				if(Math.random() < 0.30f && interval2.intervalElapsed())
-				{
-					float xVel = (float)(MathUtils.getRandomNumberInRange(-1000,1000));
-					float cloudSize = (float)(MathUtils.getRandomNumberInRange(1500,2000)*(Math.random()*2));
-					MagicRender.battlespace(
-					Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-					new Vector2f(MathUtils.getRandomNumberInRange(minX,maxX),engine.getViewport().getCenter().y+engine.getViewport().getVisibleHeight()),
-					new Vector2f(xVel,-MathUtils.getRandomNumberInRange(800,1500)*mult),
-					new Vector2f(MathUtils.getRandomNumberInRange(cloudSize*0.7f,cloudSize*1.25f),MathUtils.getRandomNumberInRange(cloudSize*0.70f,cloudSize*1.25f)),
-					new Vector2f(0f,0f),		
-					0f,
-					0f,
-					shiftColor(new Color(50,50,50,80),new Color(175,175,150,80)),
-					false,
-					0f,
-					0f,
-					0f,
-					0f,
-					0f,
-					(0.1f),
-					(0.2f),
-					(0.1f),
-					CombatEngineLayers.BELOW_SHIPS_LAYER
-					);
-					if(Math.random() < 0.10f && interval2.intervalElapsed())
-					MagicRender.battlespace(
-					Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-					new Vector2f(MathUtils.getRandomNumberInRange(minX,maxX),engine.getViewport().getCenter().y+engine.getViewport().getVisibleHeight()),
-					new Vector2f(xVel,-MathUtils.getRandomNumberInRange(800,1000)*mult),
-					new Vector2f(MathUtils.getRandomNumberInRange(cloudSize*0.7f,cloudSize*1.25f),MathUtils.getRandomNumberInRange(cloudSize*0.7f,cloudSize*1.25f)),
-					new Vector2f(0f,0f),		
-					0f,
-					0f,
-					shiftColor(new Color(50,50,50,80),new Color(200,200,175,80)),
-					false,
-					0f,
-					0f,
-					0f,
-					0f,
-					0f,
-					(0.1f)*mult,
-					(0.1f)*mult,
-					(0.1f)*mult,
-					CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
-					);					
-				}
-			}
 
 			if(ratio >= .75f && ratio < .80f)
 			{
@@ -285,7 +236,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(0,0),
 					spin, 
 					0f, //spin 
-					new Color (175,175,150,75), 
+					new Color (50,50,50,75), 
 					false, 
 					0f, 
 					0f, 
@@ -338,7 +289,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(150f,150f),		
 					90f,
 					0f,
-					new Color(100,100,155,170),
+					new Color(20,20,25,170),
 					false,
 					0f,
 					0f,
@@ -346,8 +297,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f,
 					0f,
 					0.2f,
-					1f,
-					1f,
+					2f,
+					0.5f,
 					CombatEngineLayers.BELOW_SHIPS_LAYER
 					);
 				}							
@@ -377,28 +328,20 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 					{
 						engine.removeEntity(ship);
 					}				
-				if(ceylon == null)
+				if(ceylon == null && wave2Triggered)
 					if(ship.getHullSpec().getBaseHullId().contains("armaa_ceylon"))
 						if(ship.getOwner() == 1)
 							ceylon = ship;
-				if(morgana == null)
+				if(morgana == null && wave2Triggered)
 					if(ship.getHullSpec().getBaseHullId().equals("armaa_morgana"))
 						if(ship.getOwner() == 1)
 							morgana = ship;						
-				if(ship.getHullSpec().getBaseHullId().contains("armaa_morganamp"))
-				{
-					ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
-					ship.blockCommandForOneFrame(ShipCommand.ACCELERATE_BACKWARDS);	
-					ship.blockCommandForOneFrame(ShipCommand.STRAFE_LEFT);	
-					ship.blockCommandForOneFrame(ShipCommand.STRAFE_RIGHT);						
-				}
-				else
-				{
+
 					ship.getMutableStats().getMaxSpeed().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));
 					ship.getMutableStats().getMaxTurnRate().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));
 					ship.getMutableStats().getAcceleration().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));
 					ship.getMutableStats().getTurnAcceleration().modifyMult(ship.getId()+"_atmo",(float)MANUVER_MALUS.get(ship.getHullSize()));	
-				}
+
 				Global.getCombatEngine().maintainStatusForPlayerShip("atmo", "graphics/ui/icons/icon_repair_refit.png","In Atmoshpere", "Manuverability reduced",true);	
 			}										
 		}	

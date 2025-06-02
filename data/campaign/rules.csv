@@ -262,15 +262,10 @@ armaa_WFRaiders,DialogOptionSelected,$option == armaa_WFRaiders,ShowLargePlanet,
 Thick clouds cover the battlefield, obscuring visibility, while mysterious EM interference scrambles your sensors. The region's unpredictable weather and a communications blackout have forced you onto tightbeam comms with nearby friendly forces. Radio silence is essential to maintain stealth.
 
 The target and much of the city could be reduced to rubble from orbit, but that would risk annihilating nearby civilian populations along with other key objectives. Instead, a more precise approach is in motion. While diversionary forces draw attention elsewhere, a small strike team will engage the DAS Ceylon and its minimal complement stationed above the city, clearing a path for assault shuttles loaded with marines and heavy weaponry to descend and take control on the ground.",armaa_WFRaiders2:Begin the operation,
-armaa_WFRaiders2,DialogOptionSelected,$option == armaa_WFRaiders2,armaa_jeniusCityBattle,"As the strike team nears the city, an unexpected alert flashes across your tactical displays. Your tactical officer's voice comes through with a note of urgency:
+armaa_WFRaiders2,DialogOptionSelected,$option == armaa_WFRaiders2,armaa_jeniusCityBattle,"As the strike group closes on the city, a new contact flashes across the tactical overlay. Your comms officer speaks up, voice tight: ""Captain $player.lastName - anomaly detected. High-powered beacon just came online inside the city perimeter. No registry match- reading as possible Domain-era signature."" Static lances through the tightbeam channels. Interference blooms across the spectrum- enough to scramble encrypted comms. In the growing chaos, enemy patrols abruptly adjust course, vectoring straight toward allied transponders. Moments later, a garbled burst breaks through- one of Kade's contracted captains, his voice strained under pressure. ""Ambush! Hostiles converging on all sides- we're taking heavy fire! Requesting immediate support!""
 
-""Commander, picking up an anomaly-an unregistered high-powered beacon powering up from within the city. It doesn't match any known profiles in our database; possibly old Domain tech.""
-
-A wave of interference ripples through the comms, disrupting the previously secure tightbeam channels. The interference escalates, and nearby enemy patrols suddenly lock onto allied signals. Moments later, an urgent transmission crackles over the comms-a familiar mercenary captain, his voice laced with static and strain:
-
-""We've been ambushed! Hostiles are swarming our position-repeat, we're under heavy fire! They're converging from all directions!""
-
-Your $shipOrFleet surges forward to reinforce, but by the time you arrive, the sky above the city is an inferno of tracer fire and explosions. The allied ships are battered, some reduced to debris fields, others barely holding formation as the Sovereignty forces press the attack.",armaa_WFRaiders2:Begin the operation,
+Your $shipOrFleet burns hard toward the engagement zone, but as you approach, the distant city skyline is already lit by overlapping tracer streams and rising plumes of fire. Wreckage dot the outskirts, fragments of friendlies caught in the opening volleys. What's left of the formation struggles to hold as Sovereignty forces tighten the noose.",armaa_WFRaiders2:Begin the operation,
+"#Not implemented, IK quest",,,,,,
 #armaa_IKContact,PopulateOptions,"$global.armaa_WFCompletedAtmoBattle2
 !$global.armaa_IKContact
 $id == nekki1  score:1000","AddText ""Your tripad beeps."" marketFlavorTextColor
@@ -655,7 +650,7 @@ $player.capturedIK = true","The room flickers, and the AI's voice fluctuates. ""
 You approach the now-silent core, its blue glow fading.In short order your forces secure the facility, ensuring all defenses are neutralized. You step out of the room, meeting your command staff with a resolute expression.
 
  It's done.","armaaWFDieResponse4:""I prefer to see the bigger picture myself."" <Activate Virus>",
-,,,,,,
+# End unimplemented IK stuff,,,,,,
 #armaa_IKbeatDefendersFinal,BeginSalvage,"$id == nekki1  score:1000
 $global.armaa_WFDone","armaa_Hikaru_Utada restoreFleet
 ","As the clouds parted, you finally saw the settlement. Expecting a ramshackle raider camp, you're shocked to see a sprawling city below, its infrastructure and civilian population unmistakable.
@@ -1189,16 +1184,14 @@ armaa_WFShaftBattle,PopulateOptions,"$global.armaaWFSpokeToSettlement
 !$global.armaa_capturedMorgana
 $id == nekki2",,,armaa_WFShaftBattleStart:Proceed to the subterranean facility,
 armaa_WFShaftBattleStart,DialogOptionSelected,$option == armaa_WFShaftBattleStart,"armaa_jeniusShaftBattle
-$global.armaa_IKCoreDescent = true","Your $shipOrFleet approaches the entrance to installation, the desolation of the rocky plain gives way to the imposing sight of the massive blast doors ahead. Cracked and weathered by time, they loom over the terrain like ancient sentinels. With a shriek of grinding metal, the doors begin to part, releasing a rush of stale, subterranean air thick with the tang of rusted machinery and damp stone.
+$global.armaa_IKCoreDescent = true","Your $shipOrFleet closes on the facility entrance. The barren rock gives way to the looming silhouette of massive blast doors, their surface scarred and pitted with age. They stand like silent relics of a forgotten era. With a groan of stressed servos and grinding metal, the gates split open, releasing a rush of stagnant air thick with rust, oil, and damp stone. Beyond lies the shaft- a cavernous pit plunging deep into the planet's crust. Reinforced walls disappear into darkness, lined with corroded machinery, collapsed catwalks, and knotted cables trailing like dead vines. Sporadic lights sputter weakly against the void, casting brief flashes of movement across the abyss. Your sensors flare.
 
-Beyond the doors lies the shaft, a cavernous abyss stretching deep into the earth. The reinforced walls are lined with tangled cables, long-defunct machinery, and crumbling catwalks. Flickering lights sputter in and out, casting fleeting shadows across the eerie void. Before your fleet can advance further, your sensors light up with a flurry of activity.  ""Multiple energy signatures, hostile. Looks like they've got defenses primed and ready."" tactical updates, displays showing several vessels moving into defensive positions deeper within the shaft. The mutineers have clearly fortified their position.
-
-As your $shipOrFleet hovers over the chasm, spotlights flicker on, slicing through the oppressive darkness to reveal a labyrinth of abandoned mining platforms, crumbling tunnels, and rusted equipment.","armaa_ShaftBattleEnd:""Report.""",
+""Multiple contacts -- power signatures live. Defensive positions established,"" your tactical officer reports. Target icons bloom across your displays as hostile vessels maneuver into position further down the shaft; a defensive perimeter hastily assembled, but dangerous nonetheless. The mutineers are dug in. As your $shipOrFleet hovers at the lip of the chasm, floodlights cut through the gloom, illuminating fragments of derelict mining platforms, skeletal tunnels, and rusted extraction rigs, the remnants of an industry long abandoned to decay.","armaa_ShaftBattleEnd:""Report.""",
 armaa_WFShaftBattleEnd,DialogOptionSelected,$option == armaa_WFShaftBattleEnd,,"A day passes.
 
 You're halfway through reviewing fleet maintenance logs when your comms crackle to life. The voice on the other end is crisp but edged with tension. ""Commander $player.lastName, this is Salvage Lead Tarek. We've found something. You might want to come down here in person."" You arrive at the makeshift triage bay hastily assembled in one of your auxiliary landers. Inside, under dim field lights, are three bodies. One missing an arm. Another strapped to a gurney, half-conscious. The third, a younger man, is seated and restrained. Eyes wild, but alert.
 
-A nearby officer steps up, datapad in hand. ""We were combing through the wreckage of a command runner near the shaft's core,"" she explains. ""Looked like they tried to stay behind after the others pulled out. Maybe to secure their data vault. Maybe to die clean. Hard to say."" She glances at the restrained survivor. ""This one tried to go for a sidearm when we pulled the hatch. Lucky for us, i'm a faster shot.""
+An officer steps forward, datapad in hand. ""Recovered them inside the wreck of a command runner, near the shaft core,"" she reports. ""Looks like they stayed behind after the main group pulled out. Could've been securing the data vault. Could've been waiting to die. Hard to tell.""
 
 You take a slow breath as your eyes drift to a nearby monitor. Fragmented ship logs are already being decoded: blocky characters, scrambled coordinates, partial manifests.",armaa_WFShaftBattleEnd2:Continue,
 armaa_WFShaftBattleEnd2,DialogOptionSelected,$option == armaa_WFShaftBattleEnd2,"$global.armaa_capturedMorgana = true
@@ -1207,13 +1200,11 @@ AddCredits 200000
 SetTextHighlights Eye.
 Call $global.armaa_des_ref updateData
 AddTextSmall ""Recovered secret station coordinates"" highlight
-FireAll PopulateOptions","Your $shipOrFleet ascends carefully, the battered walls of the shaft looming around you like the ribs of some colossal beast.
+FireAll PopulateOptions","Your $shipOrFleet ascends cautiously, the fractured walls of the shaft rising around you like the hollowed ribs of some vast carcass. The fragments of recovered ship logs, combined with the stammering testimony of the surviving prisoner, begin to form a pattern. The mutineers weren’t operating alone; they were supplied and directed from offworld, their operations far more organized than initial scans suggested. The survivor speaks between shivers, his voice ragged, pupils blown wide from the stims.
 
-Between the fragmented ship logs and the half-coherent words of the injured survivor, a picture begins to emerge. The mutineers weren't acting alone-they were staging from somewhere offworld, supplied and coordinated with alarming precision. The survivor mentioned shipments, rendezvous points, and something he called the Eye.
+""They said... it watches. Not to stare too long, said it stares back."" He swallows, breathing uneven. ""Orders came through the relay. Always the relay. Never saw anyone. Just voices.""
 
-""They said it watches... that we don't look at it too long, or it sees back,"" he mumbled, shivering through a haze of stims. ""Our orders came through the relay. Always from the relay. Never saw a face.""
-
-The data confirms it: encrypted relays traceable to a known transponder path; one that terminates not on any settled world, but on Gravion, the gas giant brooding at the system's edge. It's an unlikely origin point, until you notice the telemetry. The signature of a hidden orbital platform, masked by storm interference and high-altitude pressure bands. It's not visible from standard scan sweeps, but it's there.",,
+Data reconstruction confirms the claim: encrypted command relays routed through a known but rarely used transponder corridor, one that terminates not on any registered colony, but instead at Gravion, the gas giant brooding on the system's fringe. Unlikely, until the telemetry anomalies resolve. Sensor overlays highlight the disturbance: an orbital platform, partially masked within Gravion's storm bands, shielded by pressure fronts and interference zones. Invisible to standard sweeps, but present.",,
 ,,,,,,
 armaa_WFGravionBattle,PopulateOptions,"!$global.armaaWFGravionBattleComplete
 $global.armaa_capturedMorgana
@@ -1244,13 +1235,9 @@ You lay it out: the battle over Gravion, the strange station, the burst of white
 
 Kade sets the glass down slowly. ""Still confirmin' the data, but what you're describing..."" He exhales through his nose.  He glances off-screen and taps something on his console. ""You'll want to hear what Imelda has to say.""",armaaWFGravionDebrief2: Continue,
 armaaWFGravionDebrief2,DialogOptionSelected,$option == armaaWFGravionDebrief2,"ShowSecondPerson armaa_imelda
-","A moment later, the screen splits. Imelda appears, dimly lit from behind by a flickering lamp. Her expression is already grim. ""I warned you,"" she murmurs, folding her hands. ""Something wicked stirs, and I fear we are too late to close the door.""
+","The feed splits. Imelda appears, lit from behind by the uneven flicker of a field lamp. Her expression is already grave. ""I warned you,"" she says quietly, hands folding before her. ""Something wicked stirs. And I fear we’re too late to seal the breach."" Kade exhales, leaning back. ""You think those strange ships were part of it?""
 
-Kade leans back. ""You think those weird ships were part of it?""
-
-She glances downward for a moment, as if searching for the right words. Then her voice returns, stronger, edged with conviction.
-
-""The Book of Ludd speaks of Mammon, the false light that tempts with power. And Moloch, who devours what is sacred. That ship... it bore no markings, no purpose that we could comprehend. But it observed. Like a shepherd of fire, waiting to see if the flock would burn.""",armaaWFGravionDebrief3: Continue,
+Imelda lowers her gaze for a moment, searching. When she speaks again, her voice is steadier. ""The Book of Ludd names Mammon- the, the false light, offering power without grace. And Moloch — who devours the sacred to feed the void."" She pauses, eyes narrowing slightly. ""That ship... it bore no colors, no banner. But it watched, like a, like a shepherd of fire, waiting to see which of the flock would burn.""",armaaWFGravionDebrief3: Continue,
 armaaWFGravionDebrief3,DialogOptionSelected,$option == armaaWFGravionDebrief3,"AddCredits 250000
 $global.armaa_des_Completed = true
 Call $global.armaa_des_ref updateData
@@ -1259,7 +1246,7 @@ FireAll PopulateOptions
 
 ""Ludd teach us that false gods wear many faces. We may have glimpsed one... and I fear it has seen us in turn."" Imelda's screen dims slightly as the signal begins to degrade. Distance, perhaps, or something else.
 
-Kade mutters something under his breath as he massages his forehead. ""Alright, alright. No need to panic just yet. But we'll be watching a little closer now."" Imelda doesn't smile, but she nods. ""$player.firstName, thanks for sorting this out. With the report you sent, I doubt there's much opposition left to intefere with me, for the time being.""",,
+Kade mutters something under his breath as he massages his forehead. ""Alright, alright. No need to panic just yet. But we'll be watching a little closer now. $player.firstName, thanks for sorting this out. With the report you sent, I doubt there's much opposition left to intefere with me, for the time being.""",,
 armaaWFInteractionPostBattleGravion,OpenInteractionDialog,"$id == nekki3 score:2000
 $global.armaa_des_missionCompleted
 !$rediscoveredGravion","ShowLargePlanet

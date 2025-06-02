@@ -211,9 +211,9 @@ public class armaa_counterShieldScript extends BaseEveryFrameCombatPlugin {
 			MathUtils.getRandomNumberInRange(2, 5),
 			1f,
 			MathUtils.getRandomNumberInRange(0.4f, 0.8f),
-			new Color(199f/255f, 146f/255f,0,1f));
+			new Color(0.502f, 0.70f,0.95f,1f));
 			
-			Global.getCombatEngine().addSwirlyNebulaParticle(proj.getLocation(), new Vector2f(0.0f, 0.0f),MathUtils.getRandomNumberInRange((float)10.0f, (float)(60.0f)), 1.2f, 0.15f, 0.0f, 0.5f, new Color(199f/255f, 146f/255f,0,1f),false);	
+			Global.getCombatEngine().addSwirlyNebulaParticle(proj.getLocation(), new Vector2f(0.0f, 0.0f),MathUtils.getRandomNumberInRange((float)10.0f, (float)(60.0f)), 1.2f, 0.15f, 0.0f, 0.5f, new Color(0.502f, 0.70f,0.95f,1f),false);	
 		}
 
 		//Tick the sway counter up here regardless of if we need it or not: helps reduce boilerplate code

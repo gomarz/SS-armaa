@@ -5,16 +5,29 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.*;
+import com.fs.starfarer.api.combat.CombatFleetManagerAPI.*;
+import com.fs.starfarer.api.util.IntervalUtil;
+import org.lazywizard.lazylib.combat.CombatUtils;
+import org.lazywizard.lazylib.CollisionUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
+import org.magiclib.util.MagicFakeBeam;
 import java.awt.Color;
+import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.fleet.FleetMemberType;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import org.lwjgl.input.Keyboard;
+import org.magiclib.util.MagicRender.*;
 import org.lazywizard.lazylib.MathUtils;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
 
 public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
@@ -94,10 +107,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
         Color startColor = new Color(75, 0, 0, 255); // Starting color: (200, 0, 0)
         Color endColor = new Color(15, 30, 75, 100);   // Ending color: (0, 0, 200)
         Color startColorBG = new Color(100, 25, 0, 255); // Starting color: (200, 0, 0)
-        Color endColorBG = new Color(175, 175, 175, 255);   // Ending color: (0, 0, 200)
+        Color endColorBG = new Color(100, 100, 100, 255);   // Ending color: (0, 0, 200)
         Color endColorBG2 = new Color(175, 175, 175, 0);   // Ending color: (0, 0, 200)		
 		engine.setBackgroundColor(new Color(150,100,100,255));
-				if(ratio >= 0.60f)
+				if(ratio >= 0.1f)
 				MagicRender.screenspace(
 					Global.getSettings().getSprite("misc", "armaa_atmo2"),
 					MagicRender.positioning.CENTER, 
@@ -107,7 +120,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(0,0),
 					spin, 
 					0f, //spin 
-					endColorBG, 
+					shiftColor(new Color(50,50,50,255),endColorBG,bgStage), 
 					false, 
 					0f, 
 					0f, 
@@ -119,7 +132,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					0f, 
 					CombatEngineLayers.CLOUD_LAYER
 				);
-				if(ratio < 0.70f)
+				Color bg2Color  = new Color(200,155,155,0);
+				if(ratio < 0.45f)
 				MagicRender.screenspace(
 					Global.getSettings().getSprite("misc", "armaa_atmo"),
 					MagicRender.positioning.CENTER,
@@ -129,7 +143,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 					new Vector2f(50,50), 
 					spin,
 					0f, //spin 
-					shiftColor(new Color(155,100,100,255),new Color(200,155,155,255),bgStage), 
+					shiftColor(new Color(155,100,100,200),bg2Color,bgStage), 
 					false, 
 					0f, 
 					0, 
@@ -154,7 +168,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				new Vector2f(0,0),		
 				-spin*3,
 				0f,
-				new Color(0.7f*size,0.7f*size,0.7f*size,1f),
+				new Color(0.6f*size,0.6f*size,0.6f*size,1f),
 				false,
 				0f,
 				0f,
@@ -315,7 +329,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 			}			
 			if(((!perfMode && interval3.intervalElapsed()) || perfMode && bgInterval.intervalElapsed()) && ratio < 0.55f)
 			{					
-				for(int i = 0; i < Math.random()*10*mult; i++)
+				for(int i = 0; i < Math.random()*4*mult; i++)
 				{
 					float xVel = (float)(MathUtils.getRandomNumberInRange(-100,100));
 					float cloudSize = (float)(MathUtils.getRandomNumberInRange(1200,1800)*(Math.random()*2));
@@ -342,9 +356,9 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 				}
 				
 			}		
-			else if(interval3.intervalElapsed() && ratio > 0.60f)
+			else if(interval3.intervalElapsed() && ratio > 0.60f )
 			{				
-				for(int i = 0; i < Math.random()*10*mult; i++)
+				for(int i = 0; i < Math.random()*2*mult; i++)
 				{
 					float xVel = (float)(MathUtils.getRandomNumberInRange(-250,250));
 					float cloudSize = (float)(MathUtils.getRandomNumberInRange(1000,1500)*(Math.random()*2));
@@ -589,7 +603,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin
 			{
 				float velX = ship.getVelocity().getX();
 				float velY = ship.getVelocity().getY();
-				if(MagicRender.screenCheck(0.2f, ship.getLocation()) && interval.intervalElapsed())
+				if(MagicRender.screenCheck(0.05f, ship.getLocation()) && interval.intervalElapsed() && !ship.isFighter())
 				{				
 					if(Math.random() <= 1f-ratio  && ratio >= 0.20f && ratio <= 0.60f)
 						MagicRender.battlespace(

@@ -5,7 +5,9 @@ import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
+import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import data.scripts.util.armaa_utils;
@@ -13,6 +15,7 @@ import org.magiclib.util.MagicAnim;
 import java.awt.Color;
 import java.util.*;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
@@ -438,7 +441,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 			float blue = col.getBlue()/255f;			
 			for(int i = 0; i < lMissile.getMissileRenderData().size(); i++)
 			{
-				lMissile.getMissileRenderData().get(i).getSprite().setCenterY(ogPosLMissile.getY()-8*(1f-sineC));
+				lMissile.getMissileRenderData().get(i).getSprite().setCenterY(4+ogPosLMissile.getY()-8*(1f-sineC));
 				lMissile.getMissileRenderData().get(i).getSprite().setCenterX(ogPosLMissile.getX()-2*(1f-sineC));
 				lMissile.getMissileRenderData().get(i).getSprite().setColor(new Color((red)*(transformLevel),green*transformLevel,blue*transformLevel,sineC));
 			}			
@@ -451,7 +454,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 			float blue = col.getBlue()/255f;			
 			for(int i = 0; i < rMissile.getMissileRenderData().size(); i++)
 			{
-				rMissile.getMissileRenderData().get(i).getSprite().setCenterY(ogPosRMissile.getY()-8*(1f-sineC));
+				rMissile.getMissileRenderData().get(i).getSprite().setCenterY(4+ogPosRMissile.getY()-8*(1f-sineC));
 				rMissile.getMissileRenderData().get(i).getSprite().setCenterX(ogPosRMissile.getX()+2*(1f-sineC));
 				rMissile.getMissileRenderData().get(i).getSprite().setColor(new Color((red)*(transformLevel),green*transformLevel,blue*transformLevel,sineC));
 			}			

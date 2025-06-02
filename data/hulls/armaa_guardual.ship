@@ -120,8 +120,8 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": 0,
-      "renderOrderMod": -900,
-      "locations": [1, -0]
+      "locations": [1, -0],
+      "renderOrderMod": -900
     },
     {
       "id": "F_GPOD",
@@ -139,7 +139,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [-9, 16],
+      "locations": [-10, 16],
       "renderOrderMod": -1000
     },
     {
@@ -149,7 +149,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [-9, -16],
+      "locations": [-10, -16],
       "renderOrderMod": -1000
     }
   ],

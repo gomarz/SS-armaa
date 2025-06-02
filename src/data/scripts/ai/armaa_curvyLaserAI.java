@@ -14,9 +14,13 @@ import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.util.FaderUtil;
+import com.fs.starfarer.api.graphics.SpriteAPI;
+import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 import data.scripts.util.armaa_utils;
+import data.scripts.weapons.armaa_curveLaserProjectileScript;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
@@ -44,10 +48,10 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 	private IntervalUtil empTimer= new IntervalUtil(1f,2f);
 	private IntervalUtil fireTimer= new IntervalUtil(1f,1f);
 	private IntervalUtil armingTimer= new IntervalUtil(2f,4f);
-    private static final Color MUZZLE_FLASH_COLOR = new Color(199, 146, 0, 50);
+    private static final Color MUZZLE_FLASH_COLOR = new Color(100, 146, 255, 50);
     private static final Color MUZZLE_FLASH_COLOR_END = new Color(199, 0, 0, 100);	
     private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(255, 255, 255, 100);
-    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(255, 200, 0, 50);
+    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(0, 0, 255, 50);
     private static final Color MUZZLE_FLASH_COLOR_GLOW_END = new Color(255, 0, 0, 100);	
     private static final float MUZZLE_FLASH_DURATION = 0.10f;
     private static final float MUZZLE_FLASH_SIZE = 40.0f;
@@ -93,6 +97,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 	{
 		Color color = armaa_utils.shiftColor(MUZZLE_FLASH_COLOR,MUZZLE_FLASH_COLOR_END,missile.getFlightTime()/missile.getMaxFlightTime());		
 		Color colorGlow = armaa_utils.shiftColor(MUZZLE_FLASH_COLOR_GLOW,MUZZLE_FLASH_COLOR_GLOW_END,missile.getFlightTime()/missile.getMaxFlightTime());
+		missile.setDestroyedExplosionColorOverride(colorGlow);
 		engine.addSmoothParticle(missile.getLocation(), ZERO, MUZZLE_FLASH_SIZE, 1f, MUZZLE_FLASH_DURATION * 4f, colorGlow);     
         if(missile.isFizzling() || missile.isFading() || primed)
 		{
@@ -422,7 +427,9 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
     {
         this.target = target;
     }
-	public class MoteCaller extends MoteControlScript {
+	
+	//dont reinvent the wheel I guess 
+	private class MoteCaller extends MoteControlScript {
 		public EveryFrameCombatPlugin pickJitterPlugin(ShipAPI ship, float intensity, float range, Color color) {
 			return createTargetJitterPlugin(ship, intensity, range, color);
 		}

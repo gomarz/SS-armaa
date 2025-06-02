@@ -1,5 +1,5 @@
 {
-  "animationType": "GLOW_AND_FLASH",
+  "animationType": "NONE",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "vajra_fire",
   "everyFrameEffect": "data.scripts.weapons.armaa_counterShieldScript",
@@ -18,20 +18,6 @@
   ],
   "hardpointSprite": "",
   "id": "armaa_percept_homing",
-  "muzzleFlashSpec": {
-    "length": 50,
-    "particleColor": [
-      250,
-      102,
-      92,
-      255
-    ],
-    "particleCount": 25,
-    "particleDuration": 0.15,
-    "particleSizeMin": 20,
-    "particleSizeRange": 30,
-    "spread": 10
-  },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,

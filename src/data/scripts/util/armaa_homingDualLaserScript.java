@@ -5,9 +5,14 @@ import java.awt.Color;
 import java.util.*;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.SoundAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.WeaponAPI.*;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.lazywizard.lazylib.combat.CombatUtils;
@@ -78,10 +83,6 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 				isFiring = true;
 			}
 		}
-		float shipRadius = armaa_utils.effectiveRadius(ship);	
-		float randRange = (float) shipRadius * 0.5f * 1f;
-		randRange = (float) Math.sqrt(shipRadius) * 0.75f * 1f;
-		ship.setJitter(ship, new Color(199f/255f,146f/255f,0,Math.max((gauge/MAX_GAUGE),0f)), 1f * (gauge/MAX_GAUGE), 4, 25);
 
 		if(isFiring == true)
 			interval.advance(amount);		
@@ -137,8 +138,9 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 						id = weaponId2;
 					
 					DamagingProjectileAPI proj = (DamagingProjectileAPI)engine.spawnProjectile(ship,weapon,id,MathUtils.getRandomPointInCircle(weapon.getLocation(),10f),angle,new Vector2f());
-				engine.addNebulaSmokeParticle(ship.getLocation(),
-					new Vector2f(proj.getVelocity().getX()/2,proj.getVelocity().getY()/2),
+
+					engine.addNebulaSmokeParticle(ship.getLocation(),
+					new Vector2f((float)Math.random()*(proj.getVelocity().getX()/4+ship.getVelocity().getX()),(proj.getVelocity().getY()/4+ship.getVelocity().getY())*(float)Math.random()),
 					 40f * (0.75f + (float) Math.random() * 0.5f),
 					3f + 1f * (float)Math.random()*2f,
 					0f,
@@ -151,12 +153,10 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 					float variance = MathUtils.getRandomNumberInRange(-0.6f,0f);
 
 					Global.getSoundPlayer().playSound("vajra_fire", 1f+variance, 1f+variance, proj.getLocation(), proj.getVelocity());
-
 					if(MagicRender.screenCheck(0.25f, proj.getLocation())){
-						engine.addSmoothParticle(proj.getLocation(), new Vector2f(), 60, 0.5f, 0.25f, new Color(199f/255f, 146f/255f,0f,Math.max(0f,gauge)/MAX_GAUGE));
+						engine.addSmoothParticle(ship.getLocation(), new Vector2f(), 60, 0.5f, 0.25f, new Color(128f/255f,180f/255f,242f/255f,Math.max(0f,gauge)/MAX_GAUGE));
 						//engine.addHitParticle(proj.getLocation(), new Vector2f(), 50, 1f, 0.1f, Color.white);
-					}
-					
+					}					
 					maxProjs--;
 					Global.getCombatEngine().getCustomData().put("armaa_morgana_absorbed_"+ship.getId(),maxDamage);				
 					Global.getCombatEngine().getCustomData().put("armaa_morgana_absorbed_"+ship.getId(),gauge);				
@@ -179,8 +179,8 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 				float variance = MathUtils.getRandomNumberInRange(-0.6f,-1f);				
 				Global.getSoundPlayer().playSound("vajra_fire", 0.8f+variance, 1f, ship.getLocation(), ship.getVelocity());				
 				engine.addNebulaSmokeParticle(ship.getLocation(),
-				new Vector2f(ship.getVelocity().getX()/2,ship.getVelocity().getY()/2),
-				150f * (0.75f + (float) Math.random() * 0.5f),
+				new Vector2f((float)Math.random()*(ship.getVelocity().getX()),(ship.getVelocity().getY())*(float)Math.random()),
+				 40f * (0.75f + (float) Math.random() * 0.5f),
 				3f + 1f * (float)Math.random()*2f,
 				0f,
 				0f,
@@ -206,13 +206,7 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 								true
 						);
 				}					
-				//if(level > 2)
-					//proj.setHitpoints(proj.getHitpoints()*1.5f);
 
-				if(MagicRender.screenCheck(0.25f, ship.getLocation())){
-					engine.addSmoothParticle(ship.getLocation(), new Vector2f(), 60, 0.5f, 0.25f, new Color(199f/255f, 146f/255f,0f,Math.max(0f,gauge)/MAX_GAUGE));
-					//engine.addHitParticle(proj.getLocation(), new Vector2f(), 50, 1f, 0.1f, Color.white);
-				}
 				ShipAPI target1 = null;
 				if(ship.getWeaponGroupFor(weapon)!=null )
 				{

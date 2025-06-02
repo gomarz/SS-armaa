@@ -7,6 +7,8 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.Global;
 import data.scripts.util.armaa_utils;
 import data.scripts.util.armaa_homingDualLaserScript;
+import org.lazywizard.lazylib.MathUtils;
+import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
 
 public class armaa_perceptStats extends BaseShipSystemScript {
@@ -21,8 +23,7 @@ public class armaa_perceptStats extends BaseShipSystemScript {
 		boolean mode = Global.getCombatEngine()
 		.getCustomData().get("armaa_tranformState_"+ship.getId()) != null ? 
 			(Boolean)Global.getCombatEngine().getCustomData().get("armaa_tranformState_"+ship.getId()) : false;			
-		//stats.getShieldDamageTakenMult().modifyMult("armaa_drnus_"+s.getId(),0.50f);
-		armaa_utils.createChargeParticle(effectLevel, ship.getLocation(), ship,new Color(199, 146,0,Math.min(255, (int)(150 * Math.max(0f, effectLevel)))),4f);
+		armaa_utils.createChargeParticle(effectLevel, ship.getLocation(), ship,new Color(128, 180,242,Math.min(255, (int)(150 * Math.max(0f, effectLevel)))),4f);
 		float jitterLevel = effectLevel;
 		float jitterRangeBonus = 0;
 		float maxRangeBonus = 10f;
@@ -39,8 +40,7 @@ public class armaa_perceptStats extends BaseShipSystemScript {
 			jitterRangeBonus = jitterLevel * maxRangeBonus;
 		}
 		jitterLevel = (float) Math.sqrt(jitterLevel);		
-		//ship.setJitter(this, new Color(199, 146,0,Math.min(255, (int)(150 * Math.max(0f, effectLevel)))), jitterLevel, 3, 0, 0 + jitterRangeBonus);
-		ship.setJitterUnder(this, new Color(199, 146,0,Math.min(255, (int)(150 * Math.max(0f, effectLevel)))), jitterLevel, 25, 0f, 7f + jitterRangeBonus);			
+		ship.setJitterUnder(this, new Color(128, 180,242,Math.min(255, (int)(150 * Math.max(0f, effectLevel)))), jitterLevel, 25, 0f, 7f + jitterRangeBonus);			
 	}
 	
 	public void unapply(MutableShipStatsAPI stats, String id) 
@@ -55,7 +55,7 @@ public class armaa_perceptStats extends BaseShipSystemScript {
 	
 	public StatusData getStatusData(int index, State state, float effectLevel) {
 		if (index == 0) {
-			return new StatusData("shield absorbs 10x damage"+resType, false);
+			return new StatusData("CHARGING...", false);
 		}
 
 		return null;

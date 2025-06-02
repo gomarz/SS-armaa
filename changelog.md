@@ -156,6 +156,13 @@ Altagrave
 	-Ship System
 		- in combat stated only affected ballistics, when it affects energy+ballistic
 		- Stated flux reduction was 10%, when actual reduciton was 20% 
+- Assault Pod
+	- Burst Size: 1->2
+	- Spawns 2 battle armors instead of 4 per pod
+	- Added Weapon: TB-11 Harpoon (Same as Aleste)
+	- Added Engine
+	- Replaced sprite with a better, but equally worse one
+	- Pod's will now self destruct if replacement rate decreases below 95%, or HP decreases below 50%
 
 v3.1.5
 -------
