@@ -5,7 +5,7 @@
 	"displayNameWithArticle":"ArmaA",
 	"displayNameLong":"Arma Armatura Corporation",
 	"displayNameLongWithArticle":"The Arma Armatura Corporation",
-	"entityNamePrefix":"",
+	#"entityNamePrefix":"",
 	"personNamePrefix":"mercenary",
 	"personNamePrefixAOrAn":"an",
 	"logo":"graphics/armaa/factions/armaa_logo00_flag.png",
@@ -23,7 +23,7 @@
 		"GENERAL":1,
 		"armaa":3,
 	},
-	"description":"One of the premier developers of heavy weapons in the vast galactic polity that had once been called the Domain. The Collapse and two wars, brought about the apparent demise of that golden age, along with the majority of the companies infrastructure.",
+	"description":"One of many developers of heavy weapons in the vast galactic polity that had once been called the Domain. The Collapse and two wars, brought about the apparent demise of that golden age, along with the majority of the companies infrastructure.",
 	"names":{
 		"modern":1,
 		"world":1,

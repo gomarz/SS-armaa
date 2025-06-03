@@ -46,9 +46,6 @@
     }
   ],
   "modules": [
-    {
-      "WS0001": "armaa_aleste_frig_armor_torso_standard"
-    }
   ],
   "wings": []
 }

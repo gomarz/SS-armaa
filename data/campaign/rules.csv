@@ -1018,7 +1018,8 @@ $global.armaa_coc_missionCompleted
 $market.id == nekki1_market
 $askedAboutPostCapital
 !$global.armaaWFStarted
-!$global.armaa_des_inProgress","ShowPersonVisual
+!$global.armaa_des_inProgress
+!$global.armaa_des_Completed","ShowPersonVisual
 BeginMission armaa_des false
 Call $global.armaa_des_ref updateData
 Call $global.armaa_des_ref showMap ""Jenius""
@@ -1033,7 +1034,8 @@ armaaWFStart2,PickGreeting,"$id == armaa_kade
 $global.armaa_coc_missionCompleted
 $market.id == nekki1_market
 !$global.armaaWFStarted
-$global.armaa_des_inProgress","ShowPersonVisual
+$global.armaa_des_inProgress
+!$global.armaa_des_Completed","ShowPersonVisual
 FireAll armaaWFStartOptions","Kade looks up as his image stabilizes, with that signature toothy grin you've become familiar with.
 
 ""Ah, Commander, just the person I needed,"" he says, motioning for something offscreen. ""You'll be glad to hear negotiations with the Arusthai went better than expected. They agreed to the new peckin' order... under a few conditions, of course. They get to keep running their operations as they see fit, but it's all under my watchful eye and say-so. Every decision, every move they make... i've made arrangements to keep 'em honest.""
@@ -1200,7 +1202,7 @@ AddCredits 200000
 SetTextHighlights Eye.
 Call $global.armaa_des_ref updateData
 AddTextSmall ""Recovered secret station coordinates"" highlight
-FireAll PopulateOptions","Your $shipOrFleet ascends cautiously, the fractured walls of the shaft rising around you like the hollowed ribs of some vast carcass. The fragments of recovered ship logs, combined with the stammering testimony of the surviving prisoner, begin to form a pattern. The mutineers weren’t operating alone; they were supplied and directed from offworld, their operations far more organized than initial scans suggested. The survivor speaks between shivers, his voice ragged, pupils blown wide from the stims.
+FireAll PopulateOptions","Your $shipOrFleet ascends cautiously, the fractured walls of the shaft rising around you like the hollowed ribs of some vast carcass. The fragments of recovered ship logs, combined with the stammering testimony of the surviving prisoner, begin to form a pattern. The mutineers weren't operating alone; they were supplied and directed from offworld, their operations far more organized than initial scans suggested. The survivor speaks between shivers, his voice ragged, pupils blown wide from the stims.
 
 ""They said... it watches. Not to stare too long, said it stares back."" He swallows, breathing uneven. ""Orders came through the relay. Always the relay. Never saw anyone. Just voices.""
 
@@ -1235,7 +1237,7 @@ You lay it out: the battle over Gravion, the strange station, the burst of white
 
 Kade sets the glass down slowly. ""Still confirmin' the data, but what you're describing..."" He exhales through his nose.  He glances off-screen and taps something on his console. ""You'll want to hear what Imelda has to say.""",armaaWFGravionDebrief2: Continue,
 armaaWFGravionDebrief2,DialogOptionSelected,$option == armaaWFGravionDebrief2,"ShowSecondPerson armaa_imelda
-","The feed splits. Imelda appears, lit from behind by the uneven flicker of a field lamp. Her expression is already grave. ""I warned you,"" she says quietly, hands folding before her. ""Something wicked stirs. And I fear we’re too late to seal the breach."" Kade exhales, leaning back. ""You think those strange ships were part of it?""
+","The feed splits. Imelda appears, lit from behind by the uneven flicker of a field lamp. Her expression is already grave. ""I warned you,"" she says quietly, hands folding before her. ""Something wicked stirs. And I fear we're too late to seal the breach."" Kade exhales, leaning back. ""You think those strange ships were part of it?""
 
 Imelda lowers her gaze for a moment, searching. When she speaks again, her voice is steadier. ""The Book of Ludd names Mammon- the, the false light, offering power without grace. And Moloch — who devours the sacred to feed the void."" She pauses, eyes narrowing slightly. ""That ship... it bore no colors, no banner. But it watched, like a, like a shepherd of fire, waiting to see which of the flock would burn.""",armaaWFGravionDebrief3: Continue,
 armaaWFGravionDebrief3,DialogOptionSelected,$option == armaaWFGravionDebrief3,"AddCredits 250000
@@ -1413,20 +1415,16 @@ FireBest DialogOptionSelected","""Anomalous pattern density. Unresolved variance
 armaa_gravionIKProb3,DialogOptionSelected,$option == armaa_gravionIKProbQuestion3,,"""Input threshold reached."" A fractional delay follows, as if processing demand momentarily exceeded capacity. On the primary display, the emblem pulses once- dim, deliberate, and without flourish. ""Interrogative phase concluded. Subject responses exhibit consistency and intent. This is sufficient for reclassification. You are no longer externally categorized. Further actions will proceed with that adjustment.""
 
 The transmission ends without transition. The usual background hum of power relays and life support systems felt louder now, as if reality had resumed playback. Several of the junior officers stared at blank monitors, as though expecting the symbol to return. Someone cleared their throat - quietly, almost guiltily. Your gaze drifted to the display screen for the pod's occupant, who currently lay under sedation. Still breathing, still unconscious. ",armaa_gravionIKProbQuestion4:Continue,
-armaa_gravionIKProb4,DialogOptionSelected,$option == armaa_gravionIKProbQuestion4,ShowLargePlanet,"""That guy... he's not tagged with anything. No hardware I recognize. No uplink gear, no transmitter nodes. I ran a scan before we sealed the bay."" one of your engineers says.
-A pause, then a shrug. ""But something got through. Whatever just hijacked our systems, it didn't come in by conventional means."" A figure at the corner of the bridge stirred - medical crew, arms folded tight, eyes fixed on the viewport glass. ""You think it was him?"" they asked, voice sof","armaa_gravionIKProbQuestion5:""What are you saying?""",
+armaa_gravionIKProb4,DialogOptionSelected,$option == armaa_gravionIKProbQuestion4,ShowLargePlanet,"""Th-that one..."" your engineer mutters, eyes fixed on the sealed bay feed. ""N-no tags. No implants I can see. I, uh, I swept him before we locked down."" She hesitates, glancing up at the flickering warning lights overhead. ""B-but something got through. Whatever cracked our systems — it didn-t come in on anything... standard?""
+
+At the edge of the bridge, the med tech shifts, arms folded tight, voice low. ""You think it was him?""","armaa_gravionIKProbQuestion5:""What are you saying?""",
 armaa_gravionIKProb5,DialogOptionSelected,$option == armaa_gravionIKProbQuestion5,"$global.armaa_metIronKing = true
 EndConversation
-FireAll PopulateOptions","The engineer hesitated. ""I don't know. I'm, ah, i'm just saying-if you wanted to bypass every firewall we've got? You'd need a trojan that doesn't read like code. He didn't even wake up. He's not doing anything.""
-The medic's voice was uncertain now. ""Hasn't moved since the pod cracked open.""
+FireAll PopulateOptions","The engineer swallowed. ""I... I don't know. I'm, ah, I'm just saying — if you wanted to cut through every firewall we've got? Y-you'd need something that doesn't read like code. He didn't even wake. He's not... he's not doing anything.""
 
-""Could be he doesn't have to. Could be he's just a trigger. A shaped biological interface with embedded access. No signal until we brought him inside.""
+The medic's voice wavered. ""Hasn't moved since the pod cracked.""
 
-They both fell silent again, watching the still figure under glass. Then the medic spoke once more, barely above a whisper. ""So we were never the ones making contact. We were the endpoint.""
-
-You watched the stars for a while longer. They did not blink. They only burned.
-
-",,
+""Could be he doesn't have to,"" the engineer murmured. ""Could be he's just... just a trigger. A shaped biological interface. No signal, not until we brought him inside."" Silence settled between them, both staring at the unmoving figure beneath the containment field. Then, softly, the medic spoke again. ""So we were never making contact. We were... the endpoint."" You kept your gaze on the stars. They did not blink. They only burned.",,
 ,,,,,,
 #armaaWFGravionDebriefShipOriginUnknown,armaaWFGravionDebriefOptions,,!$askedOrigin,,"armaaWFGravionDebriefShipOriginUnknownResp:""Any ideas where the ship came from?""",
 #armaaWFGravionDebriefShipOriginknown,armaaWFGravionDebriefOptions,,!$askedOrigin,,"armaaWFGravionDebriefShipOriginknownResp:""I've encountered ships like that one before.""",
@@ -1448,7 +1446,8 @@ $market.id == armaa_meshanii_market
 !$global.armaa_coc_inProgress",SetOptionColor armaa_IKBarEvent gray,,"20:armaa_IKBarEvent:DEV start ""Crown of Cinders"" / COC",
 armaa_IKBarEventStart,AddBarEvents,"$market.id == armaa_meshanii_market
 !$market.isHidden
-!$global.armaa_startedLiberation","AddBarEvent armaa_IKBarEvent ""Approach the charismatic man"" ""A charismatic figure flags down passing spacers, most unsuccessfully. He appears to be recruiting mercenaries for a dangerous mission."" highlight",,,
+!$global.armaa_startedLiberation
+$global.daysSinceStart > 30","AddBarEvent armaa_IKBarEvent ""Approach the charismatic man"" ""A charismatic figure flags down passing spacers, most unsuccessfully. He appears to be recruiting mercenaries for a dangerous mission."" highlight",,,
 armaa_IKBarEvent,DialogOptionSelected,$option == armaa_IKBarEvent,"BeginConversation armaa_kade
 BeginMission armaa_coc false
 Call $global.armaa_coc_ref updateData
@@ -1462,15 +1461,19 @@ You wonder what the target might be, but the man's voice cuts through your thoug
 
 ""Heard about Jenius, mate? It's a mess over there. Any kind of order collapsed during the AI Wars, and none of the major factions have bothered t' touch the place in cycles-too unstable. But there's plenty of credits an' loot to be made if ye've got the nerve.""",,
 armaa_IKBarEventTooWeak,DialogOptionSelected,"$option == armaa_IKBarEvent
-$player.fleetPoints < 100
+$player.fleetPoints < 200
 !$convincedWorthy","SetStoryOption armaa_IKBarEventTooWeakSP 1 armaa_IKBarEventTooWeakSP combat ""Insisted on your personal skill when scouted for a mission on New Meshan""
-AddTextSmall ""Your fleet isn't enough for the job. If you return with at least 100 FP worth of ships, perhaps he will change his mind."" highlight
+AddTextSmall ""Your fleet isn't enough for the job. If you return with at least 200 FP worth of ships, perhaps he will change his mind."" highlight
 ","""Sorry mate, I don't quite think you're up to the task yet. There's time yet, come on by when you've got a bit more experience under your belt, yeah?""
 ","anh_cantinaReturn:Return to the bar
 armaa_IKBarEventTooWeakSP:Insist on your capabilities",
 armaa_IKBarEventTooWeakSP,DialogOptionSelected,"$option == armaa_IKBarEventTooWeakSP
 $player.fleetPoints < 100","BeginConversation armaa_kade
 $convincedWorthy = true
+BeginMission armaa_coc false
+Call $global.armaa_coc_ref updateData
+Call $global.armaa_coc_ref showMap ""Jenius""
+$player.armaa_metKadeInitial = true
 FireAll armaa_IKBarOptions","You graciously thank Kade for his concern, but insist it is not necessary. Weaving an intricate tale of your exploits - perhaps with a little bluster, perhaps not, you set forth a strong case for your employment, despite your $shipOrFleet's appearances.
 
 He is silent for but a moment, before shrugging. ""Sod it. What do I have to lose, eh?""",,
@@ -1508,38 +1511,38 @@ His gaze sweeps across the room, sizing up each of you.
 ,,,,,,
 ,,,,,,
 # Arma Armatura,,,,,,
-armaa_barDesc,BarPrintDesc,$market.id == armaa_meshanii_market,ShowImageVisual armaa_bar,"Patrons entering the bar are greeted by the  luminescence of media feeds streaming in from the core worlds, blending harmoniously with the animated conversations and laughter of the diverse crowd. Your gaze catches four security officers discreetly keeping watch, introducing a subtle sense of unease. However, the bustling atmosphere, illuminated by dim lights, persists with patrons immersed in the scent of intoxicating substances and cheap drinks.",,
+armaa_barDesc,BarPrintDesc,$market.id == armaa_meshanii_market,ShowImageVisual armaa_bar,"Patrons entering the bar are greeted by the luminescence of media feeds streaming in from the core worlds, blending harmoniously with the animated conversations and laughter of the diverse crowd. Your gaze catches four security officers discreetly keeping watch, introducing a subtle sense of unease. However, the bustling atmosphere, illuminated by dim lights, persists with patrons immersed in the scent of intoxicating substances and cheap drinks.",,
 # Dawn,,,,,,
 armaa_defaultDawnGreetingFactionMember,PickGreeting,"$id == armaa_dawn
 $player.nex_startingFactionId == armaarmatura
 $ome_hireable score:200
 ","ShowPersonVisual
 FireAll PopulateOptions
-SetOptionColor armaa_HireDawn highlight","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
+SetOptionColor armaa_HireDawn highlight","The Arma Armatura crest lingers on the comm-link display before the channel stabilizes. A moment later, the feed resolves into the image of a young woman- plain clothes, windswept hair bound back with a faded headband. She studies the screen with a guarded expression, like she's weighing what kind of trouble just came knocking.
 
-""Oh, hello $player.firstName! Is there something I can help you with?""",,
+""Oh, hello $player.firstName. Is there something I can help you with?""",,
 armaa_defaultDawnGreeting,PickGreeting,"$id == armaa_dawn
 ","ShowPersonVisual
 FireAll PopulateOptions
-","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
+","The Arma Armatura crest lingers on the comm-link display before the channel stabilizes. A moment later, the feed resolves into the image of a young woman- plain clothes, windswept hair bound back with a faded headband. She studies the screen with a guarded expression, like she's weighing what kind of trouble just came knocking.
 
 ""I'm Dawn, serving as a liaison for Arma Armatura. How may I assist you on this day?""",,
 armaa_recruitableDawnGreeting,PickGreeting,"$id == armaa_dawn
 $ome_hireable score:200
 ","ShowPersonVisual
 FireAll PopulateOptions
-","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing a modestly attired girl. Her face is adorned with a pensive look that lingers like the shadow of a passing cloud.
+","The Arma Armatura crest lingers on the comm-link display before the channel stabilizes. A moment later, the feed resolves into the image of a young woman- plain clothes, windswept hair bound back with a faded headband. She studies the screen with a guarded expression, like she's weighing what kind of trouble just came knocking.
 
 ""Hey, $personName. Got anything interesting going on?""",,
 armaa_FaithDawnGreeting,PickGreeting,"$id == armaa_dawn
 $greetedDawnAsALuddic","ShowPersonVisual
 FireAll PopulateOptions
-","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing $personFirstName. She gives a small smile upon seeing you.
+","The Arma Armatura crest lingers on the comm-link display before the channel stabilizes. A moment later, the feed resolves into the image of a young woman- plain clothes, windswept hair bound back with a faded headband. She studies the screen with a guarded expression, like she's weighing what kind of trouble just came knocking.
 
 ""Ah, $playerBrotherOrSister $player.lastName. Blessings of Ludd be upon you. How can I help you today?""",,
 armaa_PatherDawnGreeting,PickGreeting,"$id == armaa_dawn
 $greetedDawnAsALuddicMaybePather","ShowPersonVisual
-FireAll PopulateOptions","As you gaze at the crest of Arma Armatura, it takes a moment before the comm-link connects, revealing $personFirstName. She smiles upon seeing you.
+FireAll PopulateOptions","The Arma Armatura crest lingers on the comm-link display before the channel stabilizes. A moment later, the feed resolves into the image of a young woman- plain clothes, windswept hair bound back with a faded headband. She studies the screen with a guarded expression, like she's weighing what kind of trouble just came knocking.
 
 ""Hello again, $playerSirOrMadam$ $player.lastName. How can I help you today?""",,
 ,,,,,,
@@ -1557,19 +1560,21 @@ $player.hasSeraphaCommsId",SetOptionColor armaa_HireDawn2 highlight,,"armaa_Hire
 armaa_HireDawn2,DialogOptionSelected,"$option == armaa_HireDawn2
 $player.fcm_faction != sindrian_diktat",FireAll PopulateOptionsHire,"""As long as it's not as your secretary. Need a pilot?""",,
 armaa_HireDawn2SD,DialogOptionSelected,"$option == armaa_HireDawn2
-$player.fcm_faction == sindrian_diktat",FireAll PopulateOptions,"Dawn gives you a once-over before letting out a sigh.
+$player.fcm_faction == sindrian_diktat",FireAll PopulateOptions,"Dawn gives you a slow once-over, then lets out a quiet sigh. ""You're runnin' with the Sindies, huh?"" She pauses, voice steady but edged with a hint of regret. ""Now, I ain't exactly the holiest soul in the flock, but I still ride with the Church of Galactic Redemption. And truth be told- can't see myself taggin' along with you while you're flyin' their colors. Oil and water, y'know how it is."" Dawn dips her head slightly, the faintest smile ghosting across her lips.
 
-""You're on the payroll for the sindies, aren't ya?""
-
-""Well, i'm not the holiest gal in the congregation, but I still hitch my wagon to the Church of Galactic Redemption. Can't rightly tag along with you, considerin' what they've pulled. It's a bit like tryin' to mix oil and water, you see? Apologies.""
-
-She bows her head a notch. ""I reckon we're headed in different directions. Best of luck to you, though.""",,
+""Looks like our Path splits here. No hard feelings — hope the stars treat you kind.""",,
 armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk
 !$askedForSeraph","AddPotentialContact
-$askedForSeraph = true","""Oh, check you out! Shooting for the stars, huh? Gotta wonder, how often does that approach actually pan out for ya? Hate to burst your bubble, but I ain't some miracle worker who can whip that up on the fly. Still, I'll jot down your fancy request.""
+$askedForSeraph = true","""Heh. Look at you.. shootin' for the stars, huh? Gotta ask- how often does that kinda luck play out for ya?"" Dawn smirks, her tone half-teasing, half-wary.
 
-""Now, if you've got a minute to spare, you might remember I'm the middleman around here, dealing with a bunch of those leftover contracts – just bits and bobs, really. How 'bout you tackle a bit of that grunt work for me, and then we'll see what kinda mojo I can muster up for ya, huh?""",,
+""Not lookin' to rain on your parade, but I ain't some miracle worker that can pull that kind of magic outta thin air. Still..."" She flicks open a datapad, thumbing in a few notes. ""I'll log your fancy request."" She leans in a bit, lowering her voice with a familiar grin.
+
+""Now, since you're already standin' here jawin' with me- you might recall I handle a lot of the scraps and leftover gigs floatin' 'round these parts. Nothing glamorous, just bits and pieces that need doing."" Dawn tilts her head, one brow raised.
+
+""You help me clear out a few of those, and maybe I can twist the right arms to get somethin' rollin' for you. Fair's fair, yeah?""
+
+",,
 armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk",,"""Sorry, still can't do. I'll log your request, though.""",,
 ,,,,,,
@@ -1595,11 +1600,13 @@ armaa_dawnRepReward,PickGreeting,"$id == armaa_dawn
 $rel >= 0.25","$dawnContactGivenGoods = true
 AddRemoveAnyItem FIGHTER_CHIP armaa_aleste_wing 1
 ShowPersonVisual
-FireAll PopulateOptions","""$player.firstName, I've been noticin' the quality of the work you've been putting in. Those odd jobs and ends may seem trivial to some, but I reckon a reliable hand is worth its weight in volatiles in this sector. Keep it up, and I might just start thinkin' I can rely on you for the bigger tasks.""
+FireAll PopulateOptions","""$PlayerSirOrMadam $player.lastName, been watchin' the work you've been puttin' in."" Dawn crosses her arms, giving you a small nod. ""These little odds and ends? Some folks turn their nose up at 'em. But out here? A steady hand's worth its weight in volatiles, easy. Keep this up, and I might start thinkin' you're ready for the heavier lifts."" She leans in just a touch, voice lowering with that familiar, easy drawl.
 
-Dawn leans in slightly, a subtle nod of approval in her gaze. ""You've got a knack for getting things done without much fuss, and that's a rare trait in these parts. Here's a little somethin' for your efforts. It's not much, but consider it a token of appreciation. Just remember, there's always more to be done, so don't go slackin' on me now.""",,
+""Got a knack for getti'' things done without makin' a mess — not many like that these days. Here. A little somethin' for the trouble. Don't spend it all in one free port."" Dawn straightens, smirking. ""Course, there's always more work to be had. So don't go slackin' on me just yet.""
+
+",,
 armaa_OfficeTalk,DialogOptionSelected,$option == armaa_OfficeTalk,,,,
-armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""What, my name? Too Luddic for your tastes 'er somethin?""
+armaa_dawnSmallTalk,DialogOptionSelected,$option == armaa_dawnSmallTalk,FireAll armaa_dawnSmallTalkQuestions,"$personName raises an eyebrow. ""What, my name? Too 'luddie' for your tastes 'er somethin?""
 ","armaa_dawnSmallTalkNeutral:""What's a luddic doing employed by a weapons manufacturer?""
 armaa_dawnSmallTalkFaith:""Always a pleasure to meet another of the faith. Blessings to you, sister.""
 armaa_dawnSmallTalkPather:""Surely you can make a living outside the employ of these heretics?""",
@@ -1607,23 +1614,23 @@ armaa_dawnSmallTalkNeutral,DialogOptionSelected,$option == armaa_dawnSmallTalkNe
 $askedDawnAboutName = true
 FireAll PopulateOptions","$personName half smiles, ""Gotta make a living, same as everyone else. Now then, anything else you need?""",,
 armaa_dawnSmallTalkPather,DialogOptionSelected,$option == armaa_dawnSmallTalkPather,"$player.luddicAttitudePather++
-$askedDawnAboutName = true","$personName fixes you with a gaze that hints at suspicion, though it's not exactly that. More like curiosity tinged with doubt.
+$askedDawnAboutName = true","$personName eyes you for a moment, head tilted — not quite suspicious, but weighing something behind the gaze.
 
-""There is a contradiction between my role and holding dear to the teachings of the Church of Galactic Redemption, I guess. Alas, life is not always a tale spun in perfection, and choices must be made to keep a roof above our heads and bread on the table.""
+""Guess you could say there's a bit of a... contradiction in what I do, considerin' I still hold to the Church."" She exhales, voice calm but edged with something older. ""But life don't always deal you a clean hand. Gotta make choices- keep a roof overhead, keep food on the plate."" She gives you a small, knowing smirk.
 
-""Perhaps you can relate - considering your line of work, $playerSirOrMadam.""",armaa_dawnSmallTalkPather2:Continue,
-armaa_dawnSmallTalkPather2,DialogOptionSelected,$option == armaa_dawnSmallTalkPather2,,"""Oh, sure - I dream about living in the middle of nowhere in some run down hovel, where the land kisses the sky, and the wind sings lullabies through the fields. But in this sprawling city of metal and mayhem, I must find my place and bloom where I'm planted, as they say.""
+""Reckon you know how that goes yourself, $playerSirOrMadam — considerin' the business you're in.""",armaa_dawnSmallTalkPather2:Continue,
+armaa_dawnSmallTalkPather2,DialogOptionSelected,$option == armaa_dawnSmallTalkPather2,,"""Oh, sure. Sometimes I catch myself dreamin'. Livin' out in the middle o' nowhere, some beat-up homestead where the dirt meets the sky and the wind hums you to sleep at night."" She gives a dry little chuckle, glancing around the steel and circuitry surrounding her. ""But here I am. Metal, noise, and too many people packed into too little space. Gotta bloom where you're planted, they say."" Her gaze drifts upward, eyes half-lidded, like she's either ponderin' some great truth or checking for a hidden recorder.
 
-""Perhaps I will find a path that leads me back to the embrace of our more agrarian roots, but for now, I continue sowing the seeds of hope, wherever I am.""
-
-Her gaze drifts upward and to the left, as if pondering the mysteries of the universe or, more likely, looking for a hidden camera.",armaa_dawnSmallTalkPather3:Continue,
+""Maybe one day I'll find my way back to greener ground. But for now?"" She shrugs. ""I'll keep plantin' what seeds I can, wherever I end up.""",armaa_dawnSmallTalkPather3:Continue,
 armaa_dawnSmallTalkPather3,DialogOptionSelected,$option == armaa_dawnSmallTalkPather3,"FireAll PopulateOptions
 AdjustRepActivePerson FRIENDLY 5
 AdjustRep luddic_path FRIENDLY 2
 AdjustRep armaarmatura SUSPICIOUS -2
-$greetedDawnAsALuddicMaybePather = true","""As my mother says, 'The smallest of pebbles can create ripples in the biggest of ponds.' So, if I stick to my guns, toss some kindness at the folks nearby, and let my moves do the talking, maybe I can stir up a bit of change, you know?""
+$greetedDawnAsALuddicMaybePather = true","""As my mama used to say — 'Even a little pebble can stir up waves in a big pond.'"" Dawn flashes a crooked grin, voice somewhere between sincere and amused.
 
-Hard to say if she's dead serious or sarcastic. Either way, you decide to move on to another topic.",,
+""So I just keep doin' what I do — stick to my guns, throw a bit of kindness where I can, let my actions speak for themselves. Maybe stir up a little change while I'm at it. Who knows.""
+
+You're not sure if she's being earnest or taking the piss. Either way, you steer the conversation somewhere else.",,
 armaa_dawnSmallTalkFaith,DialogOptionSelected,$option == armaa_dawnSmallTalkFaith,"AdjustRepActivePerson FRIENDLY 2
 $player.luddicAttitudeFaithful++
 $askedDawnAboutName = true
@@ -1634,11 +1641,11 @@ FireAll PopulateOptions","$personName's expression holds a touch of disbelief as
 armaa_dawnSmallTalkFriendlyWithChurch,,RepGTE luddic_church FAVORABLE,,,,
 ,,,,,,
 armaa_loreDump1,DialogOptionSelected,$option == armaa_loreDump1,,"""Yeah, um...where is that- ah!""",armaa_loreDump2: Continue,
-armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"Arma Armatura was once a dominant megacorporation, its influence spanning the military-industrial sector long before the Collapse and well into its early days. However, the First AI War dealt a severe blow to its manufacturing capabilities and assets, stripping it of much of its former power. Despite these losses, the company remains a major player in the production of military and commercial technology. Their catalog includes everything from power armor and mechs to simpler automatons, service drones, and construction vehicles.
+armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"rma Armatura once stood among the titans of the Domain's military-industrial complex, its reach stretching across fleets and frontier outposts alike. Even as the Collapse unraveled that golden age, the corporation weathered the storm longer than most- until the First AI War gutted its factories and tore into its holdings, stripping away much of its former might. What remains, however, is far from insignificant. Arma Armatura continues to field a formidable presence across the Sector, its production lines turning out everything from powered exosuits and combat mechs to work drones, cargo-handling automatons, and civilian construction platforms. The company's hardware has found its way into both warzones and work crews alike- often blurring the line between the two.
 
-Arma Armatura is just as focused on shaping the future of New Meshan (its corporate headquarters and a growing hub of redevelopment) as it is on selling cutting-edge hardware. The promotional materials lean heavily into this narrative, filled with the polished rhetoric of corporate responsibility.
+Now headquartered on New Meshan, a rising world of steel and corporate ambition, Arma Armatura presents itself as a pillar of stability and progress. Promotional feeds overflow with polished rhetoric: responsibility, security, prosperity. A carefully manicured image for a company still deeply invested in the art of warfare.
 
-As $personName speaks at length about the company's operations, you only half-listen, filtering for useful details. Between the corporate platitudes, you manage to pick up a few key insights, namely that Arma Armatura's reach beyond the battlefield, its technology woven into both military and civilian life.",armaa_loreDump3: Continue,
+As $personName speaks at length about the firm's current ventures, you filter past the marketing gloss. Beneath the corporate polish lies the simple truth: Arma Armatura's machines remain deeply embedded across the Sector, their influence felt far beyond the battlefield.",armaa_loreDump3: Continue,
 armaa_loreDump3,DialogOptionSelected,$option == armaa_loreDump3,"AddTextSmall ""Received \""ArmaA Product Portfolio (c.200 Edition)\"""" highlight
 $armaa_gotBrochure = true
 FireAll PopulateOptions","""Got any burning questions or wanna dig into a specific product? Don't hold back, just shoot. I'll toss you our brochure for the nitty-gritty details,"" she gruffly states.",,
@@ -1650,15 +1657,11 @@ armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConver
 ShowPersonVisual
 $player.armaa_metDawnInitial = true
 SetPersonHidden armaa_dawn false
-AddPotentialContact armaa_dawn","Dawn watches you approach with mild interest, crooked smile greeting you as she acknowledges your presence.
+AddPotentialContact armaa_dawn","Dawn glances up as you approach, a lazy grin tugging at the corner of her mouth. ""Well now. Look what the cat coughed up. Here to jaw for a spell, are ya?""
 
-""Well, look what the cat dragged in. Fancy a chat, do ya?"" You pull out a chair and take a seat, trying to match her casual demeanor.
+You settle into the chair opposite, matching her easy posture. The two of you trade stories: some offered freely, others left to linger between the lines. The scars etched across her face say plenty, though she leaves the worst of it unsaid. Tales of contracts gone sideways, close calls, and the long grind of survival drift back and forth like old freight on a slow burn. You share a few of your own in kind. After a pause, she leans back, boots thunking softly against the table's edge.
 
-You speak to the woman at length about a variety of topics. The scars on her face tell stories of their own, but specifics are left unspoken. She freely shares other snippets of her mercenary life, battles, and surviving against the odds, and you too offer a recounting of your own experiences.
-
-""Hmm,"" she grunts, ""Sounds like a right mess you're in. If you're lookin' for a bit of advice or maybe some work, I might consider lending a hand.""
-
-","armaa_dawn_barEvent1:""See you around.""
+""Hmm. Sounds like you're in a real patch o' trouble,"" she drawls. ""Suppose if you're after advice— or work— I might be inclined to lend a hand. For the right sort, anyhow.""","armaa_dawn_barEvent1:""See you around.""
 armaa_dawn_barEvent2:""Thanks. I appreciate it.""
 armaa_dawn_barEvent3:""I'll look you up if i'm in the area.""",
 armaa_dawnMeeting1,DialogOptionSelected,$option == armaa_dawn_barEvent1,"$option = armaa_dawn_barEvent4 0
@@ -1670,13 +1673,9 @@ armaa_dawnMeeting3,DialogOptionSelected,$option == armaa_dawn_barEvent3,"$option
 FireBest DialogOptionSelected
 $player.ethosKnowledge++",,,
 armaa_dawnMeeting4,DialogOptionSelected,$option == armaa_dawn_barEvent4,"AdjustRepActivePerson COOPERATIVE 5
-BarCMD returnFromEvent false","Dawn studies your face for one last time, her scarred features revealing little emotion. A brief flicker of approval crosses her eyes.
+BarCMD returnFromEvent false","Dawn studies you a moment longer, her expression hard to read beneath the scars. For a breath, something like approval flickers in her eye. ""Well. You've got your road, I've got mine. Maybe one day they'll run alongside, eh? And if they do - heh - let's hope we're on the same side of the shooting."" She lifts her tankard in a quiet toast. ""May Ludd keep you, traveler. 'Til next time.""
 
-""Reckon you've got your own path to tread, and I've got mine. But should our trails cross again, mayhaps we'll find ourselves fightin' side by side.""
-
-With a nod and a faint smile, she raised her tankard in a silent salute. ""May Ludd favor your journey, stranger. Until we meet again.""
-
-Dawn then excuses herself with a gruff chuckle, signaling the end of the conversation. ""I've got more drinking to do and tales to drown. Safe travels, and may the stars guide you.""",backToBar:Take a look around the bar,
+With a low chuckle, she stands, adjusting her jacket with a practiced tug. ""Got drinks need finishing, and ghosts need drowning. Safe runnin' out there. Blessings upon ye.""",backToBar:Take a look around the bar,
 ,,,,,,
 armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
@@ -1686,16 +1685,14 @@ RollProbability 0.5
 armaa_dawnBarEventStart,DialogOptionSelected,$option == armaa_dawnAsk,"BeginConversation armaa_dawn
 ShowPersonVisual
 $player.metDawnAtBar = true
-FireAll armaa_dawnBarAskHubOptions","Dawn raises her glass once she notices your approach, the fluorescent liquid inside pulsating with an otherworldly glow. ""This? 'Stellar Elixae.' It's as close as I'll ever get to sipping on a nebula in this dive.""
-
-""Anyways..business or pleasure?""","armaa_dawnBarEventBusiness:""Business.""
+FireAll armaa_dawnBarAskHubOptions","Dawn lifts her glass as you approach, the strange fluorescent brew within pulsing faintly under the dim lights. ""This? 'Stellar Elixae.' Closest thing to drinkin' a nebula you'll find in a hole like this."" She leans back slightly, giving you a lopsided grin. ""Anyhow... this visit o' yours - business, or just lookin' to pass the time?""","armaa_dawnBarEventBusiness:""Business.""
 armaa_barDawnEventPleasure:""Pleasure.""
 ",
 armaa_dawnBarEventBusiness,DialogOptionSelected,$option == armaa_dawnBarEventBusiness,,"""Ensuring we have a steady stream of leads is important. Well, I'll be here enjoyin' myself for a while yet. If you need a break from the hustle and bustle, y'know where to find me, $playerSirOrMadam.""","armaa_barDawnEventPleasure:""I have some time to mingle (join Dawn).""
 lpp_hesperus_returnToBar:Return to the bar",
-armaa_barDawnEventPleasure,DialogOptionSelected,$option == armaa_barDawnEventPleasure,,"""I'll toast to that. Come on, have a seat.""
+armaa_barDawnEventPleasure,DialogOptionSelected,$option == armaa_barDawnEventPleasure,,"""I'll drink to that. C'mon, grab a seat."" You settle in across from her. Dawn gives a crooked grin, raising the bottle slightly.
 
-You settle in beside the $personName. ""Welcome to the cosmic carnival,"" she says, her voice carrying a sense of whimsy, ""where my cherished friend,"" she gestures toward the bottle in her grasp, ""and I share a dance.""",armaa_barDawnEvent2:Continue,
+""Welcome to the cosmic circus,"" she drawls, voice light but with that familiar edge. ""Just me and my good friend here,"" she gives the bottle a small tilt, ""spinnin' through the void together.""",armaa_barDawnEvent2:Continue,
 armaa_barDawnEvent2,DialogOptionSelected,$option == armaa_barDawnEvent2,FireAll armaa_dawnBarEventMotivationResp,"Taking a slow sip from her drink, $personName leans in and fixes her eyes on you. ""So, what got you into this biz? What's your motivation, your backstory, the whole shebang? Lay it on me.""",,
 armaa_dawnBarEventMotivationAdventure,armaa_dawnBarEventMotivationResp,,,,"armaa_dawnBarEventMotivationRespAdventure: ""I'm a adventurer at heart, and my desire is to study the cosmos and unlock its secrets.""",
 armaa_dawnBarEventMotivationLegacy,armaa_dawnBarEventMotivationResp,,,,"armaa_dawnBarEventMotivationRespLegacy: ""My families stories of exploration inspired me to follow in their footsteps. I'm determined to honor that tradition.""",
@@ -1718,25 +1715,25 @@ armaa_dawnBarEventWeirdNo: ""No""
 ",
 armaa_dawnBarEventWeirdYes,DialogOptionSelected,$option == armaa_dawnBarEventWeirdYes,AdjustRepActivePerson 1,"""Well, ya sure had me goin' there for a minute.""",armaa_barDawnEvent3: Continue,
 armaa_dawnBarEventWeirdNo,DialogOptionSelected,$option == armaa_dawnBarEventWeirdNo,,"$personName stares at you for a moment, before looking directly forward and downing her bottle. She motions for a staff member and soon has another beverage in hand. ""Yeah, why don't we unpack that at a later date.""",armaa_barDawnEvent3: Continue,
-armaa_barDawnEvent3,DialogOptionSelected,$option == armaa_barDawnEvent3,,"""Either way,"" she says. ""You shared something with me, so it's only fair I do the same in kind. I started off as a simple crewman on a starship, doin' the grunt work and such. Worked my way up to being a pilot, got a taste of freedom in those little ships. Still in one piece, by the grace of Ludd."" A pause. ""Mostly.""
+armaa_barDawnEvent3,DialogOptionSelected,$option == armaa_barDawnEvent3,,"""Either way,"" she says, voice easy. ""You shared a bit, so I figure it's only fair I return the favor. Started out workin' crew on a hauler- grunt work, patchin' lines, keepin' things from fallin' apart. Eventually wrangled my way into a cockpit. Got a taste for it. Freedom, you know? Still breathin', by Ludd's grace."" She chuckles softly. ""Mostly.""
 
-""But, like you, I decided to strike out on my own as a mercenary. It was a rough and tumble life, takin' contracts wherever they'd have me. Eventually, I caught the eye of Arma Armatura, the corporation, you know? They saw potential in me and offered a position.""
+Her gaze drifts for a moment before she continues.
 
-She sighed, her expression a mix of nostalgia and a hint of something more. ""It's been a wild ride, but it's been worth it. I've seen the good, the bad, and the downright bizarre out there in the Sector. Sometimes, you gotta make your own path, and I reckon that's what we've both done.""",armaa_barDawnEvent4: Continue,
+""Figured I'd try my luck solo, mercin' where the credits took me. Rough business- some jobs good, some you don't talk about. Then Arma Armatura came sniffin' 'round. Saw somethin' they liked, offered me a spot."" She exhales, a quiet mix of fondness and something harder to name.
+
+""Been a hell of a run since. Seen the Sector at its best, worst, and plain strangest. End of the day, you make your own road out here. Reckon that's what both of us've done.""
+
+",armaa_barDawnEvent4: Continue,
 armaa_barDawnEvent4,DialogOptionSelected,$option == armaa_barDawnEvent4,,"""As for my time servin' as an officer in your fleet, it's been an eye-opener, to be sure. I've seen many things, met all sorts of folks, and been part of some interesting missions. I appreciate the opportunity to be part of your crew, and I'm ready for whatever comes our way. The cosmos always keeps us on our toes, doesn't it?""
 
 Without looking at you, she extends her drink in your direction.","armaa_barDawnEvent5DrinkYes: Drink
 armaa_barDawnEvent5DrinkNo: Politely decline
 ",
-armaa_barDawnEvent5DrinkYes,DialogOptionSelected,$option == armaa_barDawnEvent5DrinkYes,AdjustRepActivePerson 1,"The beverage, a deep amber liquid, glistened under the bar lights. It had a rich, sweet aroma with hints of honey and a faint touch of citrus.
+armaa_barDawnEvent5DrinkYes,DialogOptionSelected,$option == armaa_barDawnEvent5DrinkYes,AdjustRepActivePerson 1,"The drink gleams under the bar lights — deep amber, smooth as polished brass. The air carries a sweet scent, laced with honey and just a whisper of citrus. Dawn gives the bottle a little swirl, her grin easy.
+""Picked this up on one of my runs. Smooth, honey-sweet, bit of citrus bite at the end. Folk say it comes from a colony that got wiped clean back in the AI Wars — poor bastards. What's left of 'em sure knew how to make a bottle worth savin'. Go on — take a sip, tell me what you think.""
 
-""This here's a special brew I stumbled upon in one of my journeys. Got a smooth, honeyed flavor with just a bit of a citrusy zing to it. They say it's crafted by the folk of a distant colony that was smashed to bits in one of them AI Wars, poor souls. Give it a try, let me know what you think.""
-
-You take a cautionary sip - it was a drink as delightful as it smelled, with a perfect balance of sweetness and a pleasant warmth as it went down. The kind of drink that could bring a moment of relaxation and camaraderie amongst colleagues.
-
-$personName watches expectantly. ""What do you reckon? It suit your palete?""
-
-With a mischievous glint in her eye, she added, ""If you're game, we can keep sippin' and spinnin' yarns. This drink's just the beginning, and the night's still young.""","armaa_barDawnEvent5DrinkMoreYes: Take the opportunity to unwind for once
+You raise the glass and sample it carefully. The taste matches the scent — sweet, warm, and just sharp enough to stay interesting. The kind of drink that could turn strangers into friends, if only for a while.
+Dawn watches with a spark in her eye. ""Well? Hit the spot?"" Her grin widens, voice low and playful. ""If you're game, we can keep at it. Plenty more in the bottle- and the night's still got some stars left to burn.""","armaa_barDawnEvent5DrinkMoreYes: Take the opportunity to unwind for once
 armaa_barDawnEvent5DrinkMoreNo: Apologize, you have other matters to attend to
 ",
 armaa_barDawnEvent5DrinkNo,DialogOptionSelected,$option == armaa_barDawnEvent5DrinkNo,"EndConversation DO_NOT_FIRE
@@ -1746,13 +1743,11 @@ armaa_barDawnEvent5DrinkMoreYes,DialogOptionSelected,$option == armaa_barDawnEve
 AddTextSmall ""Received: Hangover"" highlight
 EndConversation DO_NOT_FIRE
 ShowLargePlanet
-BarCMD leaveBar","$personName and yourself continue to indulge in your drinks, sharing stories, laughter, and even a few heartfelt confessions. You were not alone in your revelry; other patrons joined in, and soon, a small group of strangers had gathered around.
+BarCMD leaveBar","You and Dawn keep at it, drinks flowing easy as the stories. Laughter comes freer now, and a few nearby patrons drift over, drawn by the easy rhythm of the exchange. Before long, you're at the center of a small, makeshift circle — strangers swapping tales, trading barbs, and sharing the kind of brief, easy camaraderie that only ever seems to happen in places like this. Your bodyguards linger at the edges, keeping a careful eye while giving you space to enjoy the moment — professionals, but not without a sense for when to let a good night run its course.
 
-Tales were swapped in this relatively cheerful atmosphere as individuals shared laughter and forging fleeting connections in the warmth of the bar. You catch glimpses of your bodyguards discreetley surveiling the raucus from time to time, ostensibly taking measures to ensure your safety while allowing you to bask in the camaraderie of the moment.
+Time slips past in that way it does when the drink's good and the company's better. Eventually, you and Dawn stumble out together, voices still low with the last of your shared laughter. Your guards move in with practiced ease, guiding you toward the waiting shuttle.
 
-An imperceptible amount of time passes, and you find yourself wobbling out of the bar alongside $personName. Your guards swiftly chaperone you towards a shuttle service that will return you to the fleet.
-
-It was a night to remember, even if it came with a bit of a morning-after reminder.",,
+One for the logs, you figure- though tomorrow might bring its own price for the indulgence.",,
 armaa_barDawnEvent5DrinkMoreNo,DialogOptionSelected,$option == armaa_barDawnEvent5DrinkMoreNo,"EndConversation DO_NOT_FIRE
 RestoreSavedVisual
 BarCMD showOptions",You politely excuse yourself.,,
@@ -1841,13 +1836,9 @@ $player.takingDawnToVolturn","AddText ""Dawn scoffs, murmuring something under h
 SetOptionColor armaa_lppVolturnOfficialAskDawnResp highlight",,2:armaa_lppVolturnOfficialAskDawnResp:Ask Dawn for her thoughts,
 armaa_lppVolturnOfficialAskDawnResp,DialogOptionSelected,$option == armaa_lppVolturnOfficialAskDawnResp,"BeginConversation armaa_dawn False False
 ShowPersonVisual
-$player.askedDawnVolturn = true","""What's the deal back there? They playin' coy with you? 'Round these parts, they're not too keen on the Luddic faithful. It's like tryin' to fit a square peg in a round hole."" She spits on the ground. A gesture of annoyance?
+$player.askedDawnVolturn = true","""What's the word back there? They givin' you the runaround?"" Dawn drawls, glancing over her shoulder. ""Folks 'round here don't take kindly to Ludd's flock. Like tryin' to wedge a square peg into a busted thruster port."" She spits to the side — whether out of irritation or habit, it's hard to say. She leans in close, voice low, eyes sharp. ""You know the score. This lot'd throw themselves into a black hole 'fore they gave the Luddic folk a fair shot.""
 
-Dawn leans in, her eyes sharp as an eagle scouting its prey. ""I'm sure you know the story behind this place. They'd dive into a black hole before giving the Luddic folk a fair shake.""
-
-She kicks a rock with the toe of her worn boot, mumbling, ""Might need to parlay a little to get through this one."" 
-
-""So what's the plan, 'Great Leader'?.""",armaa_lppVolturnOfficialAskDawnRespReturn: Consider your options,
+With a soft grunt, she nudges a loose stone with her boot. ""Might take a bit of smooth talkin' to walk us through this mess. So. What's the grand plan, 'Oh Fearless Leader'?""",armaa_lppVolturnOfficialAskDawnRespReturn: Consider your options,
 armaa_lppVolturnOfficialAskDawnRespReturn,DialogOptionSelected,$option == armaa_lppVolturnOfficialAskDawnRespReturn,"EndConversation
 ShowDefaultVisual
 FireAll LPPVolturnOfficialConvo",,,
@@ -2087,15 +2078,13 @@ armaa_dawnJangalaConvoRespFaith,DialogOptionSelected,$option == armaa_dawnJangal
 ""Glad we're singing from the same hymn sheet, but honestly? Not so sure I'm eager to dive headfirst into that shrubbery.""",lpp_JangalaFirstVisit2:Continue,
 armaa_dawnJangalaConvoRespCynical,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespCynical,$player.luddicAttitudeCynical++,"Dawn squints, a subtle grin forming. ""You've got a knack for playing the skeptic, huh? I reckon, deep down, we both know that honoring our beliefs goes beyond a little risk. Whatever those may be.""",lpp_JangalaFirstVisit2:Continue,
 armaa_dawnJangalaConvoRespAgnostic,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespAgnostic,$player.luddicAttitudeAgnostic++,Dawn nods with approval.,lpp_JangalaFirstVisit2:Continue,
-armaa_dawnJangalaConvoRespPather,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespPather,$player.luddicAttitudePather++,"""I share your reverence for nature. Damaging the wonders of Jangala is a sin indeed, and those who tread upon this sacred ground with destructive intent should face the wrath of both Ludd and our devout kin.""
+armaa_dawnJangalaConvoRespPather,DialogOptionSelected,$option == armaa_dawnJangalaConvoRespPather,$player.luddicAttitudePather++,"I get where you're comin' from. Ain't right, what folks've done to Jangala- scarin' up what Ludd laid down, like it's theirs to break. Those that stomp through His garden without care oughta answer for it, sure enough."" She pauses, voice softening into something more pragmatic.
 
-""But that..that isn't really practical at this point, you see? How many folks do you reckon have settled here; four...five million? I wager the church does what it can. 'spose that's the best that anyone can do.""",lpp_JangalaFirstVisit2:Continue,
+""But... that ain't exactly how things play out, is it? Place like this- what, four... five million souls tryin' to carve out a life? The Church does what it can, I reckon. Sometimes that's about as much as anyone can hope for.""",lpp_JangalaFirstVisit2:Continue,
 ,,,,,,
 armaa_lppJangalaFirstVisit2c,DialogOptionSelected,"$option == lpp_JangalaFirstVisit2c
 $player.takingDawnToJangala
-armaa_Hikaru_Utada hasOfficer armaa_dawn",,"-At least, judging by the holos available on the public infonet, which are indeed gruesome.
-
-A cynical part of you wonders if the authorities allow distribution of these graphic accounts to promote protocol compliance.
+armaa_Hikaru_Utada hasOfficer armaa_dawn",,"-At least, judging by the holos available on the public infonet, which are indeed gruesome. A cynical part of you wonders if the authorities allow distribution of these graphic accounts to promote protocol compliance.
 
 Dawn's eyes narrow as she processes the information from the datapad. ""Well, ain't that a revelation,"" she mutters.
 
@@ -2299,9 +2288,7 @@ She frowns. ""Ludd, how depressing. Where's my bottle...""",defaultLeave:Continu
 armaa_dawnMazalotRespD,DialogOptionSelected,$option == armaa_dawnMazalotRespD,"AdjustRepActivePerson 3
 $player.ethosHumanitarian++","""Y'know, the Faith guides us along a... trajectory of understanding and redemption. Choosin' a trajectory that aligns with it? Tougher than catching a damn Hyperion, but in the end, the waypoints justify the course, know what I mean?""
 
-She pauses.
-
-""All i'm saying is, another intervention from the Knights, or, or, the Church, wouldn't be so bad.""",defaultLeave:Continue,
+She pauses. ""All i'm saying is, another intervention from the Knights, or, or, the Church, wouldn't be so bad.""",defaultLeave:Continue,
 ,,,,,,
 armaa_dawnCryosleeper,PopulateOptions,"$player.armaa_cryosleeper_event_id == true
 armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
@@ -2342,9 +2329,11 @@ The briefing room exudes a muted ambiance, its lighting casting a soft glow. The
 
 As you explained potential routes provided by navigation via a holographic star map, the old man chimed in with a few thoughtful remarks about what had been covered so far. You were navigating through the nuances of the plan when the door slid open.",armaa_dawn_anhEvent2:Continue,
 armaa_dawn_anhEvent2,DialogOptionSelected,$option == armaa_dawn_anhEvent2,"ShowSecondPerson armaa_dawn
-FireAll armaa_dawn_anhEventOptions","As Dawn strides into the room, her eyes zero in on the peculiar robot. Suspicion furrows her brow, and with a direct gaze, she questions, ""What's this hunk of metal doin' here?"" Her scrutiny lingers on the automaton.
+FireAll armaa_dawn_anhEventOptions","Dawn steps into the room, eyes narrowing as they land on the machine. Her brow creases, suspicion plain on her face. ""What's this pile of scrap doin' here?"" she asks flatly, gaze fixed on the automaton, reading it like a bad sensor return. Before the silence can thicken, the boy cuts in, voice sharp with conviction.
 
-In a swift defense, the boy interjects, his voice charged with determination, ""Hey, leave 'em alone! He's not just a robot; he's our friend!""",,
+""Hey! Don't talk like that- he's not just some robot. He's our friend!""
+
+",,
 armaa_dawn_anhEventOptA,armaa_dawn_anhEventOptions,,,,"armaa_dawn_anhEventRespA:""It's just a companion, no harm in that, right?""",
 armaa_dawn_anhEventOptB,armaa_dawn_anhEventOptions,,,,"armaa_dawn_anhEventRespB:""Let's focus on the route. The robot's not an issue.""",
 armaa_dawn_anhEventOptC,armaa_dawn_anhEventOptions,,,,"armaa_dawn_anhEventRespC:""Maybe the robot's the secret to the best sand harvests. Ever think of that, Dawn?""",
@@ -2354,23 +2343,17 @@ armaa_dawn_anhEventRespB,DialogOptionSelected,$option == armaa_dawn_anhEventResp
 FireBest DialogOptionSelected",,,
 armaa_dawn_anhEventRespC,DialogOptionSelected,$option == armaa_dawn_anhEventRespC,"$option = armaa_dawn_anhEvent3 0
 FireBest DialogOptionSelected",,,
-armaa_dawn_anhEvent3,DialogOptionSelected,$option == armaa_dawn_anhEvent3,$player.dawnMetOldManANH = true,"Dawn, undeterred, raises an eyebrow, maintaining her scrutiny. The old man speaks up, his demeanor calm and composed.
+armaa_dawn_anhEvent3,DialogOptionSelected,$option == armaa_dawn_anhEvent3,$player.dawnMetOldManANH = true,"Dawn doesn't flinch, one brow arching as her gaze stays fixed on the machine. The old man speaks, voice calm, measured. ""Helps with the heavy lifting,"" he says lightly, a faint smile curling at the edges of his mouth. Dawn's skepticism lingers, voice low and edged. ""Travelers... with a tin-can porter? What kind of tach-head rad-sniffer hauls one of those around?""
 
-""Our friend here assists with heavy lifting,"" he explained, a gentle smile playing on his lips.
+The old man's smile widens, tone almost amused. ""Best not to ask too many questions, my dear. The Sector has a way of leading folk down strange roads.""
 
-Dawn's skepticism lingered. ""Travelers? With an iron man? What kind of 'tachie loving rad-snorter travels with a-""
+Dawn's face goes slack. ""Right. Best not to ask."" Without another word, she turns on her heel and slips out, boots tapping softly against the deck.
 
-""Best not to ask too many questions, my dear. Life takes us on unexpected paths,"" the robed man replied, his smile deepening.
-
-Dawn's expression stiffened. ""I shouldn't ask too many questions."" Without further comment, she turned away, exiting the room quietly.
-
-The robed man shared a knowing look with the boy, his eyes glinting with subtle mystery.",defaultLeave:Continue,
+The old man and the boy exchange a glance, quiet understanding passing between them. The old man's eyes gleam, hinting at deeper things left unsaid.",defaultLeave:Continue,
 armaa_anhDiktatPatrolStall3,DialogOptionSelected,"$option == anh_diktatPatrolStall3
 $player.dawnMetOldManANH",ShowThirdPerson armaa_dawn,"""I told you something was off about that damn machine!"" Dawn grimaces.
 
-""Now there's a man I have not seen in a long, long time,"" he says quietly. ""By now, even I was starting to think he might be dead.""
-
-He looks to you now, a glimmer of that younger self appearing in his face. ""Give me over to them, captain. The boy must go to Volturn without me. He will be safe if they have me.""
+""Now there's a man I have not seen in a long, long time,"" he says quietly. ""By now, even I was starting to think he might be dead."" He looks to you now, a glimmer of that younger self appearing in his face. ""Give me over to them, captain. The boy must go to Volturn without me. He will be safe if they have me.""
 
 The kid is aghast. ""No!"" he shouts, ""They'll kill you!""","anh_diktatPatrolStall3No:""I'm not handing anyone to the Diktat.""
 anh_diktatPatrolStall3Yes:""As you wish.""
@@ -2426,13 +2409,13 @@ armaa_dawnGalatia,PopulateOptions,"$player.armaa_station_galatia_academy_event_i
 armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_station_galatia_academy_event_id = false
-FireAll armaa_dawnGalatiaQuestions","""The Galatian Academy,"" Dawn remarks, a skeptical edge in her tone, sounding a bit more serious than usual. She leans against the bulkhead, folding her arms as she gazes thoughtfully.
+FireAll armaa_dawnGalatiaQuestions","""The Galatian Academy,"" Dawn mutters, her voice carrying a rare edge of seriousness. She leans against the bulkhead, arms folded, gaze distant. ""Prestigious, sure enough. Had a wild notion once, thinkin' I might end up there."" A small, fleeting smile tugs at her lips before slipping away. ""But life's got a way of pullin' you back to Jangala."" She exhales, the weight behind it hard to miss.
 
-""Prestigious, no doubt. I always had this wild dream of attending, y'know?"" A wistful smile briefly graces her face before fading. ""But reality has a funny way of bringing you back to Jangala."" She sighs. Was that a hint of disappointment in her voice?
+""Wouldn't have been able to afford it, even if I tried."" She drums her fingers on the console, eyes narrowing a touch. ""And truth be told, my folks were dead set against it anyhow. Said I'd be swallowin' the 'lies of Moloch,' as they put it. Dangerous business, they said."" She shakes her head, voice dipping lower.
 
-""Couldn't afford it, even if I wanted to."" Dawn pauses, her fingers tapping lightly on the console. ""And even if I could, my parents thought I'd be fed the 'lies of Moloch,' as they called it. Dangerous, they said."" She shakes her head.
+""Chasin' knowledge's a fine thing — noble, even. But it's a thin line out here between learnin' and diggin' into things best left buried."" Dawn straightens, her expression hardening as the moment passes.
 
-""The pursuit of knowledge, noble as it may be, comes with its pitfalls."" Dawn's gaze becomes distant, as if reflecting on missed opportunities. ""There's a thin line between enlightenment and meddlin' in forces beyond our understanding."" She straightens up, her features settling into a more resolute expression.",,# available by default
+",,# available by default
 armaa_dawnGalatiaDoRegret,armaa_dawnGalatiaQuestions,!$askedIfRegrets,,,"armaa_dawnGalatiaDoRegretResp:""Do you ever regret not going?""",
 armaa_dawnGalatiaDangersOutweighRisks,armaa_dawnGalatiaQuestions,!$askedIfRisksAreWorth,,,"armaa_dawnGalatiaDangerOutweighRisksResp:""Do you think the dangers of knowledge outweigh its benefits, considering your experiences?""",
 armaa_dawnGalatiaParentsFeelAboutJob,armaa_dawnGalatiaQuestions,!$howParentsFeel,,,"armaa_dawnGalatiaParentsFeelAboutJobResp:""How did your parents feel about you exploring the sector instead of following the 'lies of Moloch' at the Academy?""",
@@ -3562,7 +3545,8 @@ CMSNResignCancelled_mrc,CMSNResignCancelled,$id == armaa_mrcLiason score:1000,,"
 armaa_btsStart,PopulateOptions,"$id == armaa_mrcLiason score:1000
 !$global.armaa_bts_inProgress
 !$global.armaa_bts_Completed
-!$global.armaa_bts_missionCompleted",,,10:armaa_btsStart: Ask if there's more serious work available,
+!$global.armaa_bts_missionCompleted
+$rel > 0.24",,,10:armaa_btsStart: Ask if there's more serious work available,
 armaa_bts,DialogOptionSelected,$option == armaa_btsStart,"Highlight ""Tri-Tachyon""
 ShowSecondPerson armaa_felner","""You've pulled weight, Captain. A lot of it.""
 

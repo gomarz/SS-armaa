@@ -30,6 +30,7 @@ v3.2
 	
 ======Fixes======
 - Fixed Kouto (E-Type) missing desc
+- Fixed 'no description..yet' for arma faction start
 - Fixed strikecraft not launching from converted hangar ships
 - Fixed D-modded GuarDUALs causing CTD if mousing over Variable Unit hullmod
 - FIxed enemy Panther's spawning at 5000% CR
