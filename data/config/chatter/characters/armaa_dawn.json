@@ -15,37 +15,45 @@
 		"start_boss":[
 			{"text":"Big one's out. Let's see what it's got."},
 			{"text":"That one's gonna take some elbow grease."},
-			{"text":"Well now. This'll be interestin'."}
+			{"text":"Big fish, big payday. I ain't turnin' back."},
+			{"text":"Well now. This is a fine way to test one's faith.."}
 		],		
 		"retreat":[
 			{"text":"Pullin' back for now."},
 			{"text":"Ain't my day, commander."},
-			{"text":"I'll live to take another crack at it."}
+			{"text":"Ludd teaches us to endure, not to perish."}
 		],
 		"out_of_missiles":[
 			{"text":"That's all she wrote for the launchers."},
 			{"text":"Dry on missiles - not done yet."},
-			{"text":"No more tricks left in the tubes."}
+			{"text":"No more tricks left in the tubes."},
+			{"text":"Missiles are done. Back to the gospel of kinetic persuasion."}
 		],
 		"engaged":[
 			{"text":"C'mon now, let's dance."},
-			{"text":"Lockin' em down."},
+			{"text":"I see you, sinner."},
 			{"text":"They won't like how this ends."}
 		],
 		"need_help":[
+			{"text": "Blessed be the reinforcements- now send me some!"},
 			{"text":"Bit of a pickle here, commander."},
-			{"text":"Could use a hand if you're feelin' generous."},
+			{"text":"Could use a hand if you're feelin' generous, $commanderName."},
 			{"text":"Don't leave me hangin' out here."}
 		],
 		"pursuing":[
 			{"text":"They're runnin'. I'll run 'em down."},
 			{"text":"Not lettin' this one slip off."},
-			{"text":"Almost feel sorry for ‘em. Almost."}
+			{"text":They know they're guilty- I'll remind 'em.},
+			{"text":"I chase like Ludd's fire."}
 		],
 		"running":[
 			{"text":"Well, they brought friends."},
 			{"text":"Backin' off before I get boxed in."},
-			{"text":"Alright, time to skedaddle."}
+			{"text":"Alright, time to skedaddle."},
+			{"text":"They're stackin' up - pullin' back."},
+			{"text":"Time to move before I get boxed in."},
+			{"text":"Don't much fancy stayin' put right now."},
+			{"text":"Tide's turnin'. Ain't worth dyin' here."}
 		],
 		"hull_90":[
 		    {"text":"That all you got?"},
@@ -53,33 +61,47 @@
 		    {"text":"Light scratches so far."}
 		],
 		"hull_50":[
-		    {"text":"Gettin' a little warm in here."},
-			{"text":"She's taken worse."},
-			{"text":"Still breathin', still fightin'."}
+		   {"text":"Are you kiddin' me?"},
+		   {"text":"I'm not checking out yet."},
+		   {"text":"Uh..are they suppose to be this good?"},
+		   {"text":"Come on baby, stay with me just a bit more."},
+		   {"text":"She's taken worse."},
+		   {"text":"Still breathin', still fightin'."}
 		],
 		"hull_30":[
-		    {"text":"Hull's startin' to peel a bit."},
+		    {"text":"Gonna need a tow if this keeps up."},
+		    {"text":"This isn't looking good."},
 		    {"text":"Not quittin' yet."},
 		    {"text":"Hope you're ready to fish me out after."}
 		],
 		"overload":[
 			{"text":"C'mon now, hold together."},
-			{"text":"Flux's got me jammed up!"},
+			{"text":"Systems are locked up!"},
 			{"text":"Too hot, too fast- damn it!"}
 		],
 		"death":[
 		    {"text":"Ain't my finest hour..."},
 		    {"text":"Guess that's on me."},
-		    {"text":"Well... shoot."}
+		    {"text":"Today..just isn't my day.."},
+		    {"text":"Guess I'm floatin' for a bit."},
+		    {"text":"Well... shi-."},
+		    {"text": "Tell 'em I died swingin'."},
+		    {"text": "No shame. Just flame."},
+		    {"text": "Ludd... I'm comin' home."}
 		],
 		"victory":[
 			{"text":"That went smooth enough."},
 			{"text":"Another one for the books."},
-			{"text":"Storm's passed, for now."}
+			{"text":"Storm's passed, for now."},
+			{"text": "Another heresy cleansed."},
+			{"text": "Let Mammon count his losses."},
+			{"text": "That's one less ship drownin' the stars in sin."}
 		],
 		"victory_boss":[
 			{"text":"That one's not gettin' back up."},
-			{"text":"They'll be tellin' stories ‘bout that one."}
+			{"text":"They'll be tellin' stories 'bout that one."},
+			{"text": "That hull'll haunt salvage crews for cycles."},
+			{"text": "Even Moloch'd flinch at that wreck."}
 		]
 	}
 }
