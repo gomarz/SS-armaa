@@ -211,6 +211,10 @@ public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScrip
 				hasNex = true;
 				for(FactionAPI fac : Global.getSector().getAllFactions())
 				{
+					if(fac.getId().equals("armaarmatura_pirates"))
+						continue;
+					if(!fac.isHostileTo(Global.getSector().getFaction("armaarmatura_pirates")))
+						continue;					
 					if(fac.getMemoryWithoutUpdate().get("$nex_badboy") != null)
 					{
 						badBoys.add(fac);
@@ -237,7 +241,7 @@ public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScrip
 				{
 					continue;
 				}
-				if(!hasNex)
+				if(!hasNex || badBoys.isEmpty())
 				{
 					entity = armaa_reprisalIntel.getEntity(market.getId());
 					break;

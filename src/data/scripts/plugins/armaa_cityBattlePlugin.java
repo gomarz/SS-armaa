@@ -142,7 +142,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 			MagicRender.positioning.CENTER, 
 			new Vector2f(0,0), 
 			new Vector2f(0,0), 
-			new Vector2f(Global.getSettings().getScreenWidth(),Global.getSettings().getScreenWidth()), 
+			new Vector2f(Global.getSettings().getScreenWidth()*1.2f,Global.getSettings().getScreenWidth()*1.2f), 
 			new Vector2f(0,0),
 			spin/10f, 
 			0f, //spin 

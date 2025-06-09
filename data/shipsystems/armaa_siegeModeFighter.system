@@ -1,7 +1,7 @@
 {
 	"id":"armaa_siegeModeFighter",
 	"type":"STAT_MOD",
-        "aiType":"WEAPON_BOOST",
+	"aiType":"DAMPER_FIELD",
 	"statsScript":"data.scripts.shipsystems.armaa_siegeModeFighterStats",
 	
 	#"weaponGlowColor":[255,200,0,155],

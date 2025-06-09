@@ -10,6 +10,8 @@ import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.magiclib.util.MagicAnim;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
+import com.fs.starfarer.api.combat.ShipwideAIFlags;
+import com.fs.starfarer.api.combat.ShipCommand;
 
 /**
  *Base script by
@@ -186,6 +188,17 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 				
 				if(bladeArm.getSpec().getWeaponId().contains("armaa_aleste_blade_LeftArm"))
 				{
+					if(!ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.BACKING_OFF) && !ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.DO_NOT_PURSUE))
+					{
+						if(ship.getShipTarget() != null && MathUtils.getDistance(ship,ship.getShipTarget()) < 500 && !weapon.isDisabled())
+						{
+							if(ship.getAI() != null )
+							{
+								ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
+								engine.headInDirectionWithoutTurning(ship, weapon.getCurrAngle(), ship.getMaxSpeed());
+							}					
+						}								
+					}					
 					if(bladeArm.getCooldownRemaining() <= 0f && !bladeArm.isFiring())
 						cooldown = false;
 					

@@ -3,3 +3,4 @@ id,first name,last name,character
 # for multiple matching entries the first one is picked,two-name matches are preferred,,
 # note that if the character name is same as the officer's full name it automatically matches without checking this file,,,
 armaa_crimsoncomet,Crimson,Comet,pw_crimson1
+armaa_dawnG,Dawn,Given-to-god,armaa_dawn

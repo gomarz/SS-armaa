@@ -2,7 +2,7 @@
   "id": "armaa_musha_rightPauldron",
   "specClass": "projectile",
   "projectileSpecId": "armaa_energyshotgun_shot",
-  "type": "ENERGY",
+  "type": "DECORATIVE",
   "size": "SMALL",
   "displayArcRadius":400,
   "turretGunSprite": "graphics/armaa/ships/musha/armaa_musha_right_shoulder.png",

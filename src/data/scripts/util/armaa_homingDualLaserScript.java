@@ -5,14 +5,9 @@ import java.awt.Color;
 import java.util.*;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.SoundAPI;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.WeaponAPI.*;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import org.lazywizard.lazylib.combat.CombatUtils;
@@ -44,22 +39,19 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 		waveSprite = Global.getSettings().getSprite("misc", "armaa_sfxpulse");	
 		if (waveSprite != null)
 		{
-			MagicRender.objectspace(
+			MagicRender.battlespace(
 						waveSprite,
-						ship,
-						new Vector2f(),
-						new Vector2f(),
+						ship.getLocation(),
+						new Vector2f(ship.getVelocity().getX()/2,ship.getVelocity().getY()/2),
 						new Vector2f((float)Math.random()*ship.getCollisionRadius(),(float)Math.random()*ship.getCollisionRadius()),
-						new Vector2f(200f,200f),
+						new Vector2f(300f,300f),
 						5f,
 						5f,
+						new Color(128f/255f,180f/255f,242f/255f,Math.max(0f,gauge)/MAX_GAUGE), 
 						true,
-						new Color(150,155,155,100), 
-						true,
+						.1f,
 						.2f,
-						.2f,
-						.2f,
-						true
+						.4f
 				);
 		}				
     }
@@ -146,7 +138,7 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 					0f,
 					0f,
 					1f,
-					new Color(255,255,255,155));
+					new Color(128f/255f,180f/255f,242f/255f,Math.max(0f,gauge)/MAX_GAUGE));
 			
 					if(level > 2)
 						proj.setHitpoints(proj.getHitpoints()*1.5f);
@@ -154,7 +146,7 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 
 					Global.getSoundPlayer().playSound("vajra_fire", 1f+variance, 1f+variance, proj.getLocation(), proj.getVelocity());
 					if(MagicRender.screenCheck(0.25f, proj.getLocation())){
-						engine.addSmoothParticle(ship.getLocation(), new Vector2f(), 60, 0.5f, 0.25f, new Color(128f/255f,180f/255f,242f/255f,Math.max(0f,gauge)/MAX_GAUGE));
+						engine.addSmoothParticle(ship.getLocation(), ship.getVelocity(), 100, 0.5f, 0.25f, new Color(128f/255f,180f/255f,242f/255f,Math.max(0f,gauge)/MAX_GAUGE));
 						//engine.addHitParticle(proj.getLocation(), new Vector2f(), 50, 1f, 0.1f, Color.white);
 					}					
 					maxProjs--;
@@ -178,35 +170,15 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin
 				//interval = new IntervalUtil(amount,amount);
 				float variance = MathUtils.getRandomNumberInRange(-0.6f,-1f);				
 				Global.getSoundPlayer().playSound("vajra_fire", 0.8f+variance, 1f, ship.getLocation(), ship.getVelocity());				
-				engine.addNebulaSmokeParticle(ship.getLocation(),
-				new Vector2f((float)Math.random()*(ship.getVelocity().getX()),(ship.getVelocity().getY())*(float)Math.random()),
+				engine.addNebulaParticle(ship.getLocation(),
+				new Vector2f(ship.getVelocity().getX(),ship.getVelocity().getY()),
 				 40f * (0.75f + (float) Math.random() * 0.5f),
 				3f + 1f * (float)Math.random()*2f,
 				0f,
 				0f,
 				1f,
 				new Color(255,255,255,155));
-				if (waveSprite != null)
-				{
-					MagicRender.objectspace(
-								waveSprite,
-								ship,
-								new Vector2f(),
-								new Vector2f(),
-								new Vector2f((float)Math.random()*ship.getCollisionRadius(),(float)Math.random()*ship.getCollisionRadius()),
-								new Vector2f(100f,100f),
-								5f,
-								5f,
-								true,
-								new Color(150,155,155,100), 
-								true,
-								.1f,
-								.2f,
-								.2f,
-								true
-						);
-				}					
-
+					
 				ShipAPI target1 = null;
 				if(ship.getWeaponGroupFor(weapon)!=null )
 				{

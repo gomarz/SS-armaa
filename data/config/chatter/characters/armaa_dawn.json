@@ -1,0 +1,85 @@
+{
+	"name":"Dawn Given-to-god",
+	"personalities":["steady", "aggressive","reckless"],
+	"gender":["f"],
+	"chance":1,
+	"talkativeness":1,
+	"categoryTags":["original"],
+	
+	"lines":{
+		"start":[
+			{"text":"Alright. Let's get to work."},
+			{"text":"Looks like it's my shift."},
+			{"text":"Ain't nothing we can't handle."}
+		],
+		"start_boss":[
+			{"text":"Big one's out. Let's see what it's got."},
+			{"text":"That one's gonna take some elbow grease."},
+			{"text":"Well now. This'll be interestin'."}
+		],		
+		"retreat":[
+			{"text":"Pullin' back for now."},
+			{"text":"Ain't my day, commander."},
+			{"text":"I'll live to take another crack at it."}
+		],
+		"out_of_missiles":[
+			{"text":"That's all she wrote for the launchers."},
+			{"text":"Dry on missiles - not done yet."},
+			{"text":"No more tricks left in the tubes."}
+		],
+		"engaged":[
+			{"text":"C'mon now, let's dance."},
+			{"text":"Lockin' em down."},
+			{"text":"They won't like how this ends."}
+		],
+		"need_help":[
+			{"text":"Bit of a pickle here, commander."},
+			{"text":"Could use a hand if you're feelin' generous."},
+			{"text":"Don't leave me hangin' out here."}
+		],
+		"pursuing":[
+			{"text":"They're runnin'. I'll run 'em down."},
+			{"text":"Not lettin' this one slip off."},
+			{"text":"Almost feel sorry for ‘em. Almost."}
+		],
+		"running":[
+			{"text":"Well, they brought friends."},
+			{"text":"Backin' off before I get boxed in."},
+			{"text":"Alright, time to skedaddle."}
+		],
+		"hull_90":[
+		    {"text":"That all you got?"},
+		    {"text":"Still holdin' together just fine."},
+		    {"text":"Light scratches so far."}
+		],
+		"hull_50":[
+		    {"text":"Gettin' a little warm in here."},
+			{"text":"She's taken worse."},
+			{"text":"Still breathin', still fightin'."}
+		],
+		"hull_30":[
+		    {"text":"Hull's startin' to peel a bit."},
+		    {"text":"Not quittin' yet."},
+		    {"text":"Hope you're ready to fish me out after."}
+		],
+		"overload":[
+			{"text":"C'mon now, hold together."},
+			{"text":"Flux's got me jammed up!"},
+			{"text":"Too hot, too fast- damn it!"}
+		],
+		"death":[
+		    {"text":"Ain't my finest hour..."},
+		    {"text":"Guess that's on me."},
+		    {"text":"Well... shoot."}
+		],
+		"victory":[
+			{"text":"That went smooth enough."},
+			{"text":"Another one for the books."},
+			{"text":"Storm's passed, for now."}
+		],
+		"victory_boss":[
+			{"text":"That one's not gettin' back up."},
+			{"text":"They'll be tellin' stories ‘bout that one."}
+		]
+	}
+}

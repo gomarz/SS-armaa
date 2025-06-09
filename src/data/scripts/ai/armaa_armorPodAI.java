@@ -3,12 +3,9 @@ package data.scripts.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.IntervalUtil;
-import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.CollisionUtils;
-import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.combat.*;
 
 public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {

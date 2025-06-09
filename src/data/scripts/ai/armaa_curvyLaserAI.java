@@ -2,27 +2,23 @@ package data.scripts.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.impl.combat.MoteControlScript;
 import com.fs.starfarer.api.combat.EmpArcEntityAPI.EmpArcParams;
+import com.fs.starfarer.api.impl.combat.MoteControlScript;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicTargeting;
-import java.awt.Color;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
-import org.lazywizard.lazylib.CollisionUtils;
-import org.lazywizard.lazylib.combat.AIUtils;
-import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.util.FaderUtil;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import java.util.Iterator;
+import data.scripts.util.armaa_utils;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-import data.scripts.util.armaa_utils;
-import data.scripts.weapons.armaa_curveLaserProjectileScript;
+import org.lazywizard.lazylib.CollisionUtils;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
+import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
+import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
+import org.magiclib.util.MagicTargeting;
 
 public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin implements MissileAIPlugin, GuidedMissileAI {
 	//This script combines the cyroflamer script with the Projectile Tracking script developed by Nicke535
@@ -48,10 +44,11 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 	private IntervalUtil empTimer= new IntervalUtil(1f,2f);
 	private IntervalUtil fireTimer= new IntervalUtil(1f,1f);
 	private IntervalUtil armingTimer= new IntervalUtil(2f,4f);
-    private static final Color MUZZLE_FLASH_COLOR = new Color(100, 146, 255, 50);
+    private static final Color MUZZLE_FLASH_COLOR = new Color(128, 180, 242, 50);
     private static final Color MUZZLE_FLASH_COLOR_END = new Color(199, 0, 0, 100);	
-    private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(255, 255, 255, 100);
-    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(0, 0, 255, 50);
+    private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(140, 200, 255, 100);
+    private static final Color MUZZLE_FLASH_COLOR_ALT_END = new Color(200, 0, 0, 100);
+    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(0, 150, 200, 50);
     private static final Color MUZZLE_FLASH_COLOR_GLOW_END = new Color(255, 0, 0, 100);	
     private static final float MUZZLE_FLASH_DURATION = 0.10f;
     private static final float MUZZLE_FLASH_SIZE = 40.0f;
@@ -151,7 +148,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             return;
         }
         if(launch){            
-            setTarget(MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false));
+            setTarget((CombatEntityAPI) MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false));
             timer.forceIntervalElapsed();
             launch=false;
         }
@@ -323,7 +320,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 			}	
         if(target == null || (target instanceof ShipAPI && ((!((ShipAPI)target).isAlive()) ||((ShipAPI)target).isPhased())) || !engine.isEntityInPlay(target))
 		{
-			setTarget(MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false));		
+			setTarget((CombatEntityAPI) MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false));		
 		}
 
 		if(moveTarget == null)
@@ -334,7 +331,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
 		if(moveTarget instanceof ShipAPI){
 			ShipAPI shipTarget = (ShipAPI)moveTarget;
 			if(shipTarget.isHulk() || !shipTarget.isAlive())			
-				moveTarget = MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false);	
+				moveTarget = (CombatEntityAPI) MagicTargeting.pickTarget(missile,MagicTargeting.targetSeeking.NO_RANDOM,(int)missile.getWeapon().getRange(),90,0,1,1,1,1,false);	
 		}
         timer.advance(amount);
         //finding lead point to aim to        

@@ -1,9 +1,7 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.OnHitEffectPlugin;
@@ -16,7 +14,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 import org.lazywizard.lazylib.MathUtils;
 
-import java.util.Random;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.util.Misc;

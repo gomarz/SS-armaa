@@ -114,15 +114,6 @@ public class armaa_gareggaEffectXIV implements EveryFrameWeaponEffectPlugin{
 					{
 						module.getFluxTracker().beginOverloadWithTotalBaseDuration(ship.getFluxTracker().getOverloadTimeRemaining()); 
 					}
-					if(!noMissiles)
-						for(WeaponAPI wep : module.getAllWeapons())
-						{
-							if(wep.getSlot().getId().equals("TRUE_GUN2"))
-							{
-								wep.disable(true);
-								noMissiles = true;
-							}
-						}
 				}
 			}
 		}

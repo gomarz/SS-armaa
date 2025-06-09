@@ -13,6 +13,8 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.characters.OfficerDataAPI;
+import data.scripts.campaign.notifications.armaa_NotificationBase;
+import data.scripts.campaign.notifications.armaa_approachingPlanetNotification;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
@@ -111,6 +113,18 @@ public class armaa_notificationShower implements EveryFrameScript {
 			List<SectorEntityToken> entities = CampaignUtils.getNearbyEntitiesWithTag((SectorEntityToken)flt,1000f,Tags.STATION);
 			entities.addAll(CampaignUtils.getNearbyEntitiesWithTag(flt,1000f,Tags.PLANET));
 			entities.addAll(CampaignUtils.getNearbyEntitiesWithTag(flt,1000f,Tags.CRYOSLEEPER));
+
+
+			//sleeper start notification
+			if(notifications.get("armaa_valkHunter_event_id") == null)
+				if(Global.getSector().getMemoryWithoutUpdate().contains("$armaa_engagedValkHunters"))
+				{
+					addNotification("valkHunter");
+					showNotificationOnce("armaa_valkHunter_event_id");
+					notifications.get("armaa_valkHunter_event_id").showIfRequested();				
+				}
+					
+
 			
 			//Dawn Notifications -- maybe should be its own class?
 			if(dawnIsPresent())
@@ -170,10 +184,8 @@ public class armaa_notificationShower implements EveryFrameScript {
 						showNotificationOnce("armaa_"+key+"_event_id");								
 					}
 				}
-				for (armaa_NotificationBase notification : notifications.values()) {
-					notification.showIfRequested();
-				}
 			}
+			
 			// Other Notifications - caused by flags being set or something I guess
 		}		
     }

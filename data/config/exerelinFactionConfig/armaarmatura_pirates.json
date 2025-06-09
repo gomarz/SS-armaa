@@ -8,7 +8,7 @@
     #"spawnAsFactionId":"player",
     "noRandomizeRelations":true,
     "difficultyString":"hard",
-    "pirateFaction":true,
+    "pirateFaction":false,
     "dispositions":{
         "tritachyon": -50,
         "sindrian_diktat": -50,
@@ -36,7 +36,7 @@
     "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",   
     "specialForcesMaxFleets":1,
 
-	# transfer to this faction at start (after new game time pass)
+    # transfer to this faction at start (after new game time pass)
     "ngcTooltip":"This is the story of a pilot who wanted to become ...",
 	
     "factionsLiked":[

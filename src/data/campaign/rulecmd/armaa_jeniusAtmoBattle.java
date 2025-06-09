@@ -92,6 +92,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 			0f, // utilityPts
 			0.1f // qualityMod
 			);
+
 		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);
 		FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.40f,new Random());			
 		FleetFactoryV3.applyDamageToFleet(enemyFleet,0.65f,true,new Random());		

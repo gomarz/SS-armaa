@@ -123,9 +123,7 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 		final Color BLAST_COLOR = new Color(255, 16, 16, 255);
 		final Color CORE_COLOR = spec.getCoreColor();
 		final Color FLASH_COLOR = spec.getFringeColor();
-		final int NUM_PARTICLES = 15;		
-        engine.spawnExplosion(point, new Vector2f(), PARTICLE_COLOR, 75f, 1f);
-        engine.spawnExplosion(point, new Vector2f(), CORE_COLOR, 50f, 1f);
+		final int NUM_PARTICLES = 10;		
 
 		if(MagicRender.screenCheck(0.2f, point))
 		{
@@ -133,7 +131,7 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 			engine.addNebulaParticle(projectile.getLocation(),
 				new Vector2f(),
 				 40f * (0.75f + (float) Math.random() * 0.5f),
-				5f + 3f * Misc.getHitGlowSize(100f, projectile.getDamage().getBaseDamage(), damageResult) / 100f,
+				2f + 3f * Misc.getHitGlowSize(100f, projectile.getDamage().getBaseDamage(), damageResult) / 100f,
 				0f,
 				0f,
 				1f,
@@ -146,8 +144,8 @@ public class armaa_crusherEffect implements EveryFrameWeaponEffectPlugin, OnFire
 			for (int x = 0; x < NUM_PARTICLES; x++) 
 			{
 				engine.addHitParticle(point,
-						MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(100f, 600f), (float) Math.random() * 360f),
-						MathUtils.getRandomNumberInRange(4f,7f), 1f, MathUtils.getRandomNumberInRange(0.5f, 2f), PARTICLE_COLOR);
+						MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 100f), (float) Math.random() * 360f),
+						MathUtils.getRandomNumberInRange(1f,10f), 1f, MathUtils.getRandomNumberInRange(0.5f, 2f), PARTICLE_COLOR);
 			}	
 		}	
     }   

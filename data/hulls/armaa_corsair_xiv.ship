@@ -13,8 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "fourteenth",
-    "hbi",
-    "safetyoverrides"
+    "hbi"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_corsair_leftArm",

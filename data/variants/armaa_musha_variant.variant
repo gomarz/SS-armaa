@@ -11,24 +11,29 @@
   "weaponGroups": [
     {
       "autofire": true,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
         "WS0001": "armaa_lightJavelin"
       }
     },
     {
-      "autofire": false,
-      "mode": "LINKED",
+      "autofire": true,
+      "mode": "ALTERNATING",
       "weapons": {
-        "WS0002": "armaa_musha_rightPauldron"
+        "WS0004": "armaa_lightJavelin"
       }
     },
     {
       "autofire": true,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
         "HEAD": "armaa_mushaHead"
       }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
     }
   ],
   "modules": [],

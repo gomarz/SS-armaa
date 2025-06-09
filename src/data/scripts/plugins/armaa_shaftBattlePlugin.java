@@ -307,12 +307,6 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin
 			if(Math.random() < 0.20f)
 			{
 
-			}	
-			if(Math.random() < 0.20f && engine.getFleetManager(1).getCurrStrength() < 5)
-			{			
-				Vector2f loc = new Vector2f(MathUtils.getRandomNumberInRange(minX,maxX),MathUtils.getRandomNumberInRange(minY,maxY));				
-				engine.spawnExplosion(loc, new Vector2f(), new Color(250,200,75,150), 200f, 1f);
-				Global.getSoundPlayer().playUISound("gate_explosion", MathUtils.getRandomNumberInRange(0.5f,1.5f), 10f);					
 			}			
 		}
 		

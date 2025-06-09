@@ -3,7 +3,7 @@
   "hullId": "armaa_record_frig",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 2,
+  "fluxCapacitors": 0,
   "fluxVents": 6,
   "quality": 1,
   "permaMods": [],
@@ -15,7 +15,15 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "harpoonpod"
+        "WS0002": "sabotpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "swarmer",
+        "WS0005": "swarmer"
       }
     },
     {

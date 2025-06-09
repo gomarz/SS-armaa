@@ -8,7 +8,6 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.campaign.JumpPointAPI;
 import com.fs.starfarer.api.campaign.NascentGravityWellAPI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
@@ -38,6 +37,7 @@ import java.util.List;
 import java.util.ArrayList;
 import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.events.armaa_combatDataEventIntel;
+import exerelin.campaign.SectorManager;
 //wtf i love MOOD RUNES
 
 public class armaa_Hikaru_Utada extends BaseCommandPlugin {
@@ -303,7 +303,11 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 			}
 
 			return true;
-		}			
+		}
+		else if ("transferMarketNex".equals(action))
+		{
+			SectorManager.transferMarket(Global.getSector().getEconomy().getMarket("exsedol_station_market"), Global.getSector().getFaction("armaarmatura_pirates"), Global.getSector().getFaction("pirates"), false, false, null, 0);			
+		}
 		else if ("doGravionAftermath".equals(action))
 		{
 			SectorEntityToken jenius = Global.getSector().getEntityById("nekki1");
@@ -320,7 +324,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 			}
 		
 			//Spawn Valk if player didn't have it at the startExpedition
-			if(!Global.getSector().getMemoryWithoutUpdate().contains("$nex_startingFactionId") || !Global.getSector().getMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
+			if(!Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().contains("$nex_startingFactionId") || !Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
 			{
 				SectorEntityToken valkazard = armaa_nekki.addDerelict(magec_gate.getStarSystem(), "armaa_valkazard_standard", magec_gate.getOrbit(), ShipRecoverySpecial.ShipCondition.GOOD, true, null);
 				// Debris
@@ -353,30 +357,36 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 				{
 					if(token.getOrbitFocus() == gravion)
 					{
-						token.getContainingLocation().removeEntity(token);
-						magec_gate.getContainingLocation().addEntity(token);
+						token.getContainingLocation().removeEntity(token);	
+						Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(token);						
 					}
 				}
 				for(NascentGravityWellAPI token:gamlin.getGravityWells())
 				{
 					if(token.getTarget() == gravion)
 					{
-						token.getContainingLocation().removeEntity(token);
+						gamlin.removeEntity(token);						
+						//token.getContainingLocation().removeEntity(token);
+						//Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(token);
+						//token.setLocation(Global.getSector().getEntityById("magec_gate").getStarSystem().getLocation().x,Global.getSector().getEntityById("magec_gate").getStarSystem().getLocation().y);	
+						
 					}
-				}
-				for(SectorEntityToken token:gamlin.getJumpPoints())
-				{
-					JumpPointAPI jp = (JumpPointAPI)token;
-					if(jp.getRelatedPlanet() == gravion)
-					{
-						token.getContainingLocation().removeEntity(token);
-					}
-				}							
+				}				
 				gravion.getContainingLocation().removeEntity(gravion);
 				Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
 				//gravion.getStarSystem().autogenerateHyperspaceJumpPoints(true,true);					
 				gravion.setLocation(Global.getSector().getEntityById("magec_gate").getLocation().x,Global.getSector().getEntityById("magec_gate").getLocation().y);	
-				gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(),90,9000,365);				
+				gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(),90,9000,365);	
+				for(SectorEntityToken token:Global.getSector().getHyperspace().getEntitiesWithTag("jump_point"))
+				{
+					if(token.getName().contains("Gravion"))
+					{
+						Global.getSector().getHyperspace().removeEntity(token);
+						Global.getSector().getCampaignUI().addMessage(token.getName()+"", Misc.getNegativeHighlightColor()); 
+					}						
+					//JumpPointAPI jp = (JumpPointAPI)token;
+				}
+			
 				//doHyperspaceTransition(CampaignFleetAPI fleet, SectorEntityToken jumpLocation, JumpPointAPI.JumpDestination dest)			
 		}			
 		else if ("checkKadeOnMarket".equals(action))

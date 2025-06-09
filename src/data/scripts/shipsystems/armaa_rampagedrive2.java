@@ -284,7 +284,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                                             //&&
                                             //!(e.getCollisionClass()==CollisionClass.FIGHTER && e.getOwner()==ship.getOwner() && !((ShipAPI)e).getEngineController().isFlamedOut())               
                                 ShipAPI s = (ShipAPI) e;
-                                Vector2f hitPoint = getShipCollisionPoint(from, end, s, angle);
+                                Vector2f hitPoint = (Vector2f) getShipCollisionPoint(from, end, s, angle);
                                 if (hitPoint != null ){col = hitPoint;}
                             }
                             if (col.x != 1000000 && MathUtils.getDistanceSquared(from, col) < MathUtils.getDistanceSquared(from, end)) {

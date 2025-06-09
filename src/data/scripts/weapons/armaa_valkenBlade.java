@@ -20,7 +20,7 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
 	private IntervalUtil fireInterval = new IntervalUtil(0.05f, 0.05f);
 
 	private final Vector2f ZERO = new Vector2f();
-	private final float BLADE_KNOCKBACK_MAX = 200f;
+	private final float BLADE_KNOCKBACK_MAX = 125f;
     // -- stuff for tweaking particle characteristics ------------------------
     // color of spawned particles
     private static final Color PARTICLE_COLOR = new Color(214,156,56,200);

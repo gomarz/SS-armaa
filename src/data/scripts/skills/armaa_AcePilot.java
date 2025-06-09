@@ -181,7 +181,7 @@ public class armaa_AcePilot {
 			{
 				chatterEnabled = LunaSettings.getBoolean("armaa", "armaa_enableDawnVoice");
 			}
-			if(interval.intervalElapsed() && !runOnce && !ship.isStationModule() && chatterEnabled)
+			if(interval.intervalElapsed() && !runOnce && !ship.isStationModule() && chatterEnabled && ship.getOwner() == 0)
 			{
 				Global.getSoundPlayer().playUISound("armaa_dawn_intro",1,0.90f);		
 				runOnce = true;

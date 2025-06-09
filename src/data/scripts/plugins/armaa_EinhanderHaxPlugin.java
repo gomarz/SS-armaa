@@ -3,10 +3,8 @@ package data.scripts.plugins;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.input.InputEventAPI;
 import java.util.*;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
 import java.awt.Color;
@@ -221,7 +219,7 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 									commander = ship.getOwner() == 0 && !ship.isAlly() ? ship.getCaptain() : ship.getFleetMember().getFleetData().getCommander();
 								f.setFleetCommanderForStats(commander,ship.getFleetMember().getFleetDataForStats());
 								f.setCaptain(ship.getCaptain());
-								f.setOwner(ship.getFleetMember().getOwner());
+								f.setOwner(ship.getOwner());
 								ship.getFleetMember().getCrewComposition().transfer(2,f.getCrewComposition());
 								f.getRepairTracker().setCR(Math.min(1f,ship.getCRAtDeployment()));
 								f.updateStats();
@@ -232,10 +230,7 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 									ship.getFleetMember().getFleetData().removeFleetMember(module.getFleetMember());
 								}
 								ShipAPI s = null;
-								if(ship.getOwner() != 1)
-									s = engine.getFleetManager(ship.getOwner()).spawnFleetMember(f,module.getLocation(),module.getFacing(),0f);	
-								else
-									s = CombatUtils.spawnShipOrWingDirectly("armaa_panther_standard_shield",FleetMemberType.SHIP,FleetSide.ENEMY,Math.min(1f,ship.getCRAtDeployment()),module.getLocation(),module.getFacing());
+								s = engine.getFleetManager(ship.getOwner()).spawnFleetMember(f,module.getLocation(),module.getFacing(),0f);	
 								if(ship.isAlly())
 									s.setAlly(true);
 								s.setHitpoints(module.getHitpoints());

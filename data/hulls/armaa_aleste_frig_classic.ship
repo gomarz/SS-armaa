@@ -30,9 +30,6 @@
     "strikeCraft",
     "armaa_weaponSwap"
   ],
-  "builtInWings": [
-    "armaa_aleste_wing"
-  ],
   "builtInWeapons": {
     #"A_GUN": "armaa_aleste_rightArm",
     "B_TORSO": "armaa_aleste_torso_ace",
@@ -105,7 +102,7 @@
   ],
   "shieldRadius": 35,
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "armaa_TECH",
+  "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

@@ -1,3 +1,37 @@
+V3.2RC2
+-----
+- Fixed Corsair XIV having built-in SO
+- Fixed Panther(XIV) not firing one of its weapons when still connected to Bakraid
+- Fixed Recall Device never firing
+- Fixed potential NPE when landing
+- Added some missing wings to tritachyon
+
+- Valkazard
+	- Should now be more proactive with using melee weapon under AI Control
+
+- Aleste 
+	- Should now be more proactive with using melee weapon under AI Control
+
+- MUSHA
+	- 8 OP -> 12 OP
+	- Added 1x Light Crusher Cannon
+	- INTERCEPTOR -> SUPPORT
+	- Light Crusher Cannon
+		- Range: 700->800
+- M3 Pod
+	- Burst Size: 10 -> 4
+
+- Expanded on the MRC Sleeper start
+	- Added new dialog when encountering the initial fleet
+	- added new dialog after encountering the initial fleet
+	- added new dock/event on new meshan & fort exsedol post encounter
+
+- Fixed edge case that allowed MRC to launch reprisals against itself and allies
+- Fixed bug where Dawn on enemy side would chatter when voice was enabled
+- Fixed gravion's terrain disappearing after a certain point in Descent
+- Added Combat Chatter profile for Dawn
+
+
 v3.2
 ------
 ======Additions======
@@ -152,6 +186,7 @@ v3.2
 - Aleste SII
 	- Ship System: Fuller Auto
 		- fixed incorrect system desc, said increases RoF by 30% and Time Dilation by 20%, but reduces Weapon flux cost by 30% and time dilation by 25%
+	- Updated Sephiran skin (thx mayu)
 - Zanac(MRC)
 	-Ship System
 		- in combat stated only affected ballistics, when it affects energy+ballistic
@@ -537,7 +572,7 @@ v2.3.3
 - fixed recoil sprite for watchdog(H)
 - corsair
 	- shield arc: 120->180
-- added bbplus skin for aleste
+- added sephiran skin for aleste
 - fixed particles effects from hi-mac not matching engine color if it was shifted
 - fixed bad rank id for sera
 - fixed memory leak with syko stim everyframe

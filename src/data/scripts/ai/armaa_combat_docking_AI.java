@@ -381,14 +381,17 @@ public class armaa_combat_docking_AI extends BaseShipAI {
 						ShipAPI fighter = null;
 						boolean isTaken = false;
 						for(int i = 0; i < potentialCarrier.getNumFighterBays(); i++)
-						{	
-							if(Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen"+potentialCarrier.getId()+"_"+i) instanceof Boolean)			
-								isTaken = (boolean)Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen"+potentialCarrier.getId()+"_"+i);		
-								if(isTaken)
-									continue;
-								bayNo = i;									
-								fighter = potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing().getLeader();
-								break;
+						{
+							if(potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing() != null)
+							{
+								if(Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen"+potentialCarrier.getId()+"_"+i) instanceof Boolean)			
+									isTaken = (boolean)Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen"+potentialCarrier.getId()+"_"+i);		
+									if(isTaken)
+										continue;
+									bayNo = i;									
+									fighter = potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing().getLeader();
+									break;
+							}
 						}
 						if(fighter != null)
 						{

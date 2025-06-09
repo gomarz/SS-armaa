@@ -7,8 +7,6 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.Global;
 import data.scripts.util.armaa_utils;
 import data.scripts.util.armaa_homingDualLaserScript;
-import org.lazywizard.lazylib.MathUtils;
-import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
 
 public class armaa_perceptStats extends BaseShipSystemScript {
