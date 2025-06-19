@@ -1,0 +1,42 @@
+{
+  "variantId": "armaa_garegga_tt_carrier_aleste",
+  "hullId": "armaa_garegga_tt_carrier",
+  "displayName": "Aleste",
+  "goalVariant": false,
+  "fluxCapacitors": 4,
+  "fluxVents": 7,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": ["missleracks","high_scatter_amp"],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "MAIN_GUN": "phasebeam",
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN": "harpoon",
+        "TRUE_GUN2": "harpoon",
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+	"WS0001": "sabot",
+      }
+    }
+  ],
+  "modules": [
+    {
+      #"MODULE": "armaa_gallant_frig_standard"
+       "MODULE": "armaa_aleste_friendly_f"
+    }
+  ],
+  "wings": []
+}

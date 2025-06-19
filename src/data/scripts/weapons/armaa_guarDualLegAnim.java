@@ -124,7 +124,6 @@ public class armaa_guarDualLegAnim implements EveryFrameWeaponEffectPlugin {
 		SpriteAPI spr = Global.getSettings().getSprite("graphics/armaa/ships/legs/armaa_ht_legs0"+frame+".png");			
 		if(frame >= 10)
 		spr = Global.getSettings().getSprite("graphics/armaa/ships/legs/armaa_ht_legs"+frame+".png");				
-		weapon.getAnimation().setFrame(frame);
 		Color color = new Color(defColor.getRed()+60,defColor.getGreen()+60,defColor.getBlue()+60);
 		color = new Color(color.getRed()/255f,color.getGreen()/255f,color.getBlue()/255f,(color.getAlpha()/255f)*ship.getCombinedAlphaMult()*(1f-alphaMod));
 		MagicRender.singleframe(

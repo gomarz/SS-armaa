@@ -27,7 +27,7 @@ private ShipAPI carrier;
 		
 		ShipAPI ship = (ShipAPI)stats.getEntity();
 		boolean standardDeploy = ship.getFacing() == 90f ? true:false;
-		if(runOnce && !ship.isRetreating())
+		if(runOnce && !ship.isRetreating() && !ship.isDirectRetreat())
 		{
 			ship.getTravelDrive().deactivate();
 			unapply(stats,id);
@@ -43,8 +43,8 @@ private ShipAPI carrier;
 				stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
 			} else 
 			{
-				stats.getMaxSpeed().modifyFlat(id, 100f * effectLevel);
-				stats.getAcceleration().modifyFlat(id, 100f * effectLevel);
+				stats.getMaxSpeed().modifyFlat(id, 600f * effectLevel);
+				stats.getAcceleration().modifyFlat(id, 600f * effectLevel);
 			}
 			Global.getCombatEngine().getCustomData().put("armaa_carrierDeployDone_"+ship.getId(),true);
 		}

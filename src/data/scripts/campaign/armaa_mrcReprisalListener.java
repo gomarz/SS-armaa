@@ -172,6 +172,10 @@ public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScrip
 		}
 		if(!reprisalEnabled)
 			return;
+		if(getNumHQs() <= 0)
+		{
+			return;
+		}		
 		if(Global.getSector().getPlayerFleet() == null)
 			return;
 		// Store the time in global memory?

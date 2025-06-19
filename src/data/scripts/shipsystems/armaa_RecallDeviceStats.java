@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.HashMap;
 import org.lwjgl.util.vector.Vector2f;
-
+import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
@@ -15,6 +15,7 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.magiclib.util.MagicLensFlare;
+import lunalib.lunaSettings.LunaSettings;
 
 
 	public class armaa_RecallDeviceStats extends BaseShipSystemScript {
@@ -129,6 +130,10 @@ import org.magiclib.util.MagicLensFlare;
 					fighter.getSystem().deactivate();
 					armaa_utils.setLocation(fighter, MathUtils.getRandomPointInCircle(ship.getLocation(), 500f));
 					fighter.setExtraAlphaMult(1f);
+					for(ShipEngineAPI engine: fighter.getEngineController().getShipEngines())
+					{
+						engine.repair();
+					}
 					MagicLensFlare.createSharpFlare(Global.getCombatEngine(),fighter,fighter.getLocation(),5f,100f,0f,BASIC_FLASH_COLOR,Color.white);
 					Global.getCombatEngine().addSmoothParticle(fighter.getLocation(), new Vector2f(), 100f, 0.7f, 0.1f, BASIC_FLASH_COLOR);
 					Global.getCombatEngine().addSmoothParticle(fighter.getLocation(), new Vector2f(), 150f, 0.7f, 1f, BASIC_GLOW_COLOR);
@@ -180,7 +185,18 @@ import org.magiclib.util.MagicLensFlare;
 				if(!usedEmergencyRecall)
 					continue;
 			}
-			if(ship.getHullLevel() <= 0.50f || ship.getCurrentCR() < .45f || ship.getFluxTracker().isOverloaded() || ship.getHullLevel() < 0.70f && !carrier.areSignificantEnemiesInRange())	
+			float hullThreshold = 0.50f;
+			if (Global.getSettings().getModManager().isModEnabled("lunalib"))
+			{
+				// someone wanted option to not be recalled  unless holding fire..so sure
+				boolean playerRecallEnabled = LunaSettings.getBoolean("armaa", "armaa_playerRecall");
+				if(Global.getCombatEngine().getPlayerShip() == ship)
+					if(!playerRecallEnabled && !ship.isHoldFire())
+							continue;
+				// why is this a double anyway
+				hullThreshold = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
+			}				
+			if(ship.getHullLevel() <= hullThreshold || ship.getCurrentCR() <= .30f || ship.getHullLevel() <= 0.50f && ship.getFluxTracker().isOverloaded())	
 			{
 				if(ship.isAlive() && MathUtils.getDistance(ship,carrier) > 1000f && !ship.controlsLocked() && !ship.isRetreating() && !isStrikeCraftNearCarrier(ship))				
 				{

@@ -67,15 +67,7 @@ public class armaa_legAnimLarge implements EveryFrameWeaponEffectPlugin {
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) 
 	{		
-        ShipAPI ship = weapon.getShip();
-		weapon.getSprite().setColor(new Color(0f,0f,0f,0f));		
-		if(ship.getOwner() == -1)
-		{
-			//m.setHullSize(HullSize.FRIGATE);
-			weapon.getAnimation().setFrame(6);	
-			return;
-		}
-		
+        ShipAPI ship = weapon.getShip();		
 		if(!Global.getCombatEngine().isEntityInPlay(weapon.getShip()))
 			return;
 		

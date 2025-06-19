@@ -176,14 +176,29 @@ public class armaa_notificationShower implements EveryFrameScript {
 					}
 				}
 				for(String key : Global.getSector().getPlayerMemoryWithoutUpdate().getKeys())
-				{						
+				{
+					
 					if(validKeys.contains(key) && notifications.get("armaa_"+key+"_event_id") == null)
 					{
 						//Misc.showRuleDialog(flt, "PopulateOptions");
 						addNotification(key);
 						showNotificationOnce("armaa_"+key+"_event_id");								
 					}
+					else if(Global.getSector().getPlayerMemoryWithoutUpdate().contains("$dawnVisitedShrines"))
+					{
+						float numShrinesVisited = (float)Global.getSector().getPlayerMemoryWithoutUpdate().get("$dawnVisitedShrines");
+						if(numShrinesVisited > 4f)
+						{
+							addNotification("CoF");
+							showNotificationOnce("armaa_CoF_event_id");								
+						}
+						
+					}
 				}
+				for (armaa_NotificationBase notification : notifications.values()) {
+					notification.showIfRequested();
+					//break; //I think we only should do once each
+				}				
 			}
 			
 			// Other Notifications - caused by flags being set or something I guess

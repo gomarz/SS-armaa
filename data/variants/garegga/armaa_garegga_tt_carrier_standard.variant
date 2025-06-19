@@ -1,7 +1,7 @@
 {
   "variantId": "armaa_garegga_tt_carrier_standard",
   "hullId": "armaa_garegga_tt_carrier",
-  "displayName": "Standard",
+  "displayName": "VX",
   "goalVariant": false,
   "fluxCapacitors": 4,
   "fluxVents": 0,

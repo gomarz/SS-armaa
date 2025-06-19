@@ -3,7 +3,7 @@
   "hullId": "armaa_morganab",
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/morgana/armaa_morganab.png",
-  "style": "armaa_valkazard",
+  "style": "MIDLINE",
   "height": 62,
   "width": 52,
   "center": [26, 31.5],

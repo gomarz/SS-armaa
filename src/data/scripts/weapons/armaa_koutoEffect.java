@@ -161,7 +161,7 @@ public class armaa_koutoEffect implements EveryFrameWeaponEffectPlugin {
 		{
 			DamagingExplosionSpec spec = new DamagingExplosionSpec(1f, ship.getCollisionRadius()*2f+(torso.getAmmo()*0.25f),ship.getCollisionRadius(), ship.getHitpoints()+50f+(torso.getAmmo()*torso.getDamage().getDamage()*0.25f), ship.getHitpoints(), CollisionClass.MISSILE_FF, CollisionClass.MISSILE_NO_FF, 3f, 5f, 1f, 10, Color.yellow, Color.red);
 			engine.spawnDamagingExplosion(spec, ship,ship.getLocation(), true); 										
-			engine.spawnExplosion(ship.getLocation(), new Vector2f(), new Color(250,150,75,150), ship.getCollisionRadius()*2f+(torso.getAmmo()*0.25f), 1f);	
+			engine.spawnExplosion(ship.getLocation(), new Vector2f(), new Color(250,200,75,150), ship.getCollisionRadius()*2f+(torso.getAmmo()*0.25f), 1f);	
 			engine.addFloatingText(ship.getLocation(),"AMMO EXPLOSION",24f,Color.red,ship,2f,2f);
 			engine.removeEntity(ship);
 		}

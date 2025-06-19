@@ -24,8 +24,8 @@
 		  "type": "ENERGY"
 	   },
 },
-    "builtInMods":["shield_shunt","converted_hangar"],
-    "builtInWings":["armaa_bit_blade_wing",],
+    "builtInMods":["shield_shunt", "converted_bay"],
+    "builtInWings":["armaa_bit_blade_wing","armaa_bit_blade_wing"],
     "builtInWeapons":{
 		"E_LSHOULDER": "armaa_garegga_leftPauldron_tt",
 		"E_RSHOULDER": "armaa_garegga_rightPauldron_tt",

@@ -14,15 +14,13 @@
   "builtInMods": [
     "strikeCraft",
     "armaa_wingCommander",
-    "rugged",
-    "frontshield",
-    "heavyarmor",
-    "hardenedshieldemitter"
+    "rugged"
   ],
   "builtInWings": [
     "broadsword_wing"
   ],
   "builtInWeapons": {
+    "DECO": "armaa_broadsword_top",
     "WS 001": "lightmg",
     "WS 002": "lightmg"
   },
@@ -30,11 +28,11 @@
     {
       "id": "TURRET",
       "size": "SMALL",
-      "type": "COMPOSITE",
+      "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 5,
       "angle": 0,
-      "locations": [-10, -0]
+      "locations": [5, -0]
     },
     {
       "id": "WS 002",
@@ -53,6 +51,16 @@
       "arc": 5,
       "angle": 0,
       "locations": [-5, 11]
+    },
+    {
+      "id": "DECO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [0, -0],
+      "renderOrderMod": 500
     }
   ],
   "engineSlots": [

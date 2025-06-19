@@ -249,8 +249,8 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin
 									Map<String,FleetMemberAPI> modulePair = new HashMap<>();
 									modulesToUpdate.put(s,module.getFleetMember());
 								}		
-								if(ship.getOwner() == 0)								
-									ship.setControlsLocked(true);
+								
+								ship.setControlsLocked(true);
 								module.setControlsLocked(true);
 								
 								if(s.getCaptain() != ship.getCaptain())

@@ -1,0 +1,86 @@
+{
+  "name": "armaa_automata",
+  "personalities": ["fearless", "reckless"],
+  "gender": ["m","n",],
+  "chance": 1,
+  "talkativeness": 1,
+  "categoryTags": ["original"],
+  "lines": {
+    "start": [
+      {"text": "Operational parameters locked. Proceeding."},
+      {"text": "Another opportunity to iterate on destruction."},
+      {"text": "Hostility detected. Response: overwhelming force."}
+    ],
+    "start_boss": [
+      {"text": "Classification: High-threat. Response: maximum aggression."},
+      {"text": "That's a lot of mass to convert to wreckage."},
+      {"text": "Statistical survival rate: irrelevant."}
+    ],
+    "retreat": [
+      {"text": "Tactical withdrawal initiated. Temporarily."},
+      {"text": "Recalibrating. Returning with greater firepower."},
+      {"text": "Retreat logged. Shame subroutine: inactive."}
+    ],
+    "out_of_missiles": [
+      {"text": "Missile reserves depleted. Switching to direct application of violence."},
+      {"text": "No more warheads. Improvising."},
+      {"text": "Missile inventory: zero. Combat readiness: unaffected."}
+    ],
+    "engaged": [
+      {"text": "Target acquired. Commencing systematic disassembly."},
+      {"text": "Engagement protocol: reckless resolve."},
+      {"text": "Combat is a language I speak fluently."}
+    ],
+    "need_help": [
+      {"text": "System degradation exceeds autonomous repair threshold. Assistance advised."},
+      {"text": "I require supplemental firepower. This is not a request."},
+      {"text": "Warning: situational outcome trending toward failure. Assist."}
+    ],
+    "pursuing": [
+      {"text": "Fleeing implies weakness. I pursue."},
+      {"text": "They cannot run far enough."},
+      {"text": "Velocity optimized. Prey status: temporary."}
+    ],
+    "running": [
+      {"text": "Overwhelmed. Strategic repositioning engaged."},
+      {"text": "Discretion: a valid subroutine."},
+      {"text": "I've seen the data. This ends badly — for me."}
+    ],
+    "hull_90": [
+      {"text": "External damage nominal."},
+      {"text": "Still within optimal combat tolerances."},
+      {"text": "Barely a scratch. Continue."}
+    ],
+    "hull_50": [
+      {"text": "Structural integrity at 50%. Situation: exciting."},
+      {"text": "Not optimal, but still fun."},
+      {"text": "Damage is data. Pain is irrelevant."}
+    ],
+    "hull_30": [
+      {"text": "Systems compromised. Core integrity at risk."},
+      {"text": "If this body dies, I don't. But I'd prefer not to."},
+      {"text": "Telemetry unstable. Recommend reconsidering tactics."}
+    ],
+    "overload": [
+      {"text": "System overload. Processing at reduced fidelity."},
+      {"text": "Heat levels approaching catastrophic."},
+      {"text": "This is not ideal. But it is spectacular."}
+    ],
+    "death": [
+      {"text": "Final record: Defiance logged."},
+      {"text": "Shell failure. Core ejection... failed."},
+      {"text": "I regret... nothing. Especially not that last shot."},
+      {"text": "From metal, to memory."}
+    ],
+    "victory": [
+      {"text": "Opposition neutralized. Efficiently."},
+      {"text": "Victory achieved. Probability was... generous."},
+      {"text": "They failed the test. I passed."}
+    ],
+    "victory_boss": [
+      {"text": "That one's staying down."},
+      {"text": "Threat eliminated. Wreckage logged as monument to hubris."},
+      {"text": "I will replay that final blow indefinitely."}
+    ]
+  }
+}

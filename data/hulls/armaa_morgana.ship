@@ -3,7 +3,7 @@
   "hullId": "armaa_morgana",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/morgana/armaa_morganaa.png",
-  "style": "armaa_valkazard",
+  "style": "MIDLINE",
   "height": 62,
   "width": 52,
   "center": [26, 31.5],
@@ -15,8 +15,7 @@
     "strikeCraft",
     "reduced_explosion",
     "armaa_aaf",
-    "armaa_morganaBonus",
-    "armaa_wingClipper",
+    "armaa_wingClipper2",
     "armaa_wingCommander"
   ],
   "builtInWings": [

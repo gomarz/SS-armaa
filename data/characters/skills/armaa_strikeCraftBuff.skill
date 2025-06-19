@@ -2,8 +2,10 @@
 	"id":"armaa_strikeCraftBuff",
 	"governingAptitude":"technology",
 	"compressHullmods":false,
+	"elite":false,
 	"scope":CUSTOM,
 	"scopeStr":"all combat strikecraft",
+	"scope2":"PILOTED_SHIP",	
 	"effectGroups":[
 		{
 			"requiredSkillLevel":1,
@@ -12,6 +14,9 @@
 				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level1"},			
 				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level2"},			
 				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level3"},
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level1"},			
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level2"},			
+				{"type":"SHIP", "script":"data.scripts.skills.armaa_strikeCraftBuff$Level3"},				
 			]
 		},
 	],

@@ -1,20 +1,23 @@
 package data.scripts.util;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
+import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.DeployedFleetMemberAPI;
+import com.fs.starfarer.api.combat.MutableStat;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.combat.CombatEngineLayers;
-import com.fs.starfarer.api.combat.MutableStat;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
+import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,17 +26,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import org.lazywizard.lazylib.CollisionUtils;
+import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.FastTrig;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.util.IntervalUtil;
-import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.util.vector.ReadableVector2f;
+import org.lwjgl.util.vector.Vector2f;
 
 //those methods were copied from source files of other modders like Sundog and Dark.Revenant
 
@@ -655,6 +655,8 @@ public class armaa_utils {
 					
 					else
 					{
+                                            if(w.getAnimation() != null)
+                                            {
 						int frame = w.getAnimation().getFrame();
 						SpriteAPI spr = Global.getSettings().getSprite("graphics/armaa/ships/valkazard/armaa_valkazard_legs0"+frame+".png");
 					
@@ -679,7 +681,8 @@ public class armaa_utils {
 								0.1f,
 								0.1f,
 								0.3f,
-								CombatEngineLayers.BELOW_SHIPS_LAYER);								
+								CombatEngineLayers.BELOW_SHIPS_LAYER);	
+                                            }
 					}							
 					
 					if(w.getBarrelSpriteAPI() != null)

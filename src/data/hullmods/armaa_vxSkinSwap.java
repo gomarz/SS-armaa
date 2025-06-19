@@ -52,7 +52,7 @@ public class armaa_vxSkinSwap extends BaseHullMod{
             }
         }		
 
-        if(toSwitchLeft){	
+        if(toSwitchLeft || stats.getVariant().getWeaponSpec(decoGunID) == null){	
 		boolean random=false;
             if(stats.getVariant().getWeaponSpec(decoGunID) != null)
 			{

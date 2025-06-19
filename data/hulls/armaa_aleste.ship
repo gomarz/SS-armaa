@@ -27,18 +27,17 @@
   ],
   "builtInMods": [
     "cataphract",
-    "autorepair",
     "armaa_fighterStrafe",
     "no_weapon_flux"
   ],
   "builtInWeapons": {
     #"A_GUN": "armaa_aleste_rightArm",
-    "B_TORSO": "armaa_aleste_torso",
+    "B_TORSO": "armaa_aleste_torso_ace",
     #"C_ARML": "armaa_aleste_blade_LeftArm",
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead2",
+    "E_HEAD": "armaa_alesteHead",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },

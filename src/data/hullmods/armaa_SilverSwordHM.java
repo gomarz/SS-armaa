@@ -49,6 +49,7 @@ public class armaa_SilverSwordHM extends BaseHullMod {
 	private IntervalUtil coolDownTimer = new IntervalUtil(5f,5f);
 	private boolean dodgeBonus = false;
 	private boolean cooldown = false;
+	private boolean runOnce = false;
 	private float multBonus = 1f;
 	
 	private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
@@ -216,6 +217,11 @@ public class armaa_SilverSwordHM extends BaseHullMod {
 			Global.getCombatEngine().getTimeMult().unmodify(ship.getId());				
             return;
 		}
+		if(player && !runOnce && !ship.isStationModule() && ship.getOwner() == 0)
+		{
+			Global.getSoundPlayer().playUISound("armaa_valkazard_intro",1,0.90f);		
+			runOnce = true;
+		}		
 		if(!dodgeBonus&&!cooldown && hasCopium && !CombatUtils.getEntitiesWithinRange(ship.getLocation(), 1000f).isEmpty() && !ship.isFinishedLanding())
 		{
 			

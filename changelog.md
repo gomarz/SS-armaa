@@ -1,3 +1,18 @@
+V3.2RC3
+-----
+- Valkyrie(AA)
+	- Aleste -> Aleste Early Type
+		- Ship System: Microburn->Booster
+		- OP: 30->15
+	- CIVILIAN tag -> CARRIER tag
+- Added Bakraid(TT) desc
+
+- Broadsword(WINGCOM)
+	- Small composite -> small ballistic
+	- adjusted sprite
+- Trident Wing
+
+- Fixed reduce travel drive speed for strikecraft
 V3.2RC2
 -----
 - Fixed Corsair XIV having built-in SO
@@ -39,7 +54,7 @@ v3.2
 	- reduces most special fx in the mission battles
 - Added SP option to circumvent FP limit for starting ACoC
 - Add new voice lines for Dawn
-- Add 3 new dawn events (spooky redacted, PK)
+- Add 4 new dawn events (spooky redacted, PK, shrine completion)
 
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize
@@ -191,6 +206,12 @@ v3.2
 	-Ship System
 		- in combat stated only affected ballistics, when it affects energy+ballistic
 		- Stated flux reduction was 10%, when actual reduciton was 20% 
+
+- Prodromos
+	- Ship System
+		- None-> Manuevering Jets
+		- Support Range: 0 -> 6000
+
 - Assault Pod
 	- Burst Size: 1->2
 	- Spawns 2 battle armors instead of 4 per pod

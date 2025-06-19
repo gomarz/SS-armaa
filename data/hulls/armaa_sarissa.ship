@@ -15,9 +15,7 @@
     "strikeCraft",
     "armaa_wingCommander",
     "rugged",
-    "frontshield",
-    "heavyarmor",
-    "hardenedshieldemitter"
+    "heavyarmor"
   ],
   "builtInWings": [
     "sarissa_wing"

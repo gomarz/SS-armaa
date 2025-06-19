@@ -45,7 +45,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [3, -3]
+      "locations": [4, -3]
     },
     {
       "id": "TRUE_GUN",
@@ -54,7 +54,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [3, -3],
+      "locations": [4, -3],
       "renderOrderMod": -900
     },
     {
@@ -64,7 +64,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [2, 1]
     },
     {
       "id": "D_PAULDRONL",
@@ -160,7 +160,7 @@
       "width": 5,
       "angle": 180,
       "contrailSize": 9,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-7, -0],
@@ -168,7 +168,7 @@
       "width": 4,
       "angle": 161,
       "contrailSize": 2.185229,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-7, 0],
@@ -176,7 +176,7 @@
       "width": 4,
       "angle": -161,
       "contrailSize": 2.185229,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-7, -0],
@@ -184,7 +184,7 @@
       "width": 5,
       "angle": 180,
       "contrailSize": 5,
-      "style": "MIDLINE"
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [

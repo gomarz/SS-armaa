@@ -5,14 +5,11 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.impl.campaign.skills.*;
 import com.fs.starfarer.api.characters.FleetTotalItem;
 import com.fs.starfarer.api.characters.FleetTotalSource;
-import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
 import com.fs.starfarer.api.characters.ShipSkillEffect;
-import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.characters.AfterShipCreationSkillEffect;
@@ -49,7 +46,7 @@ public class armaa_strikeCraftBuff {
 		}		
 		
 		public String getEffectDescription(float level) {
-			return "Increases Flux dissipation by " + (int)(DISSIPATION_BONUS-1f)+"% " + "and capacity by " + (int)(CAPACITY_BONUS-1f)+"%";
+			return "- Increases Flux dissipation by " + (int)(DISSIPATION_BONUS-1f)+"% " + "and capacity by " + (int)(CAPACITY_BONUS-1f)+"%";
 		}
 				
 		public ScopeDescription getScopeDescription() {
@@ -67,7 +64,7 @@ public class armaa_strikeCraftBuff {
 		}	
 		
 		public String getEffectDescription(float level) {
-			return "reduces damage taken to shields by " + (int)(CAPACITY_BONUS-1f)+"%";
+			return "- reduces damage taken to shields by " + (int)(CAPACITY_BONUS-1f)+"%" +"\n- When flux is over 80%, speed increases by 30%, rapidly degrading over 3s. This effect can only trigger once ever 8s.";
 		}
 		
 		public String getEffectPerLevelDescription() {
@@ -108,13 +105,13 @@ public class armaa_strikeCraftBuff {
 		}
 		
 		public String getEffectDescription(float level) {
-			return "When flux is over 80%, speed increases by 30%, rapidly degrading over 3s. This effect can only trigger once ever 8s.";
+			return "- When flux is over 80%, speed increases by 30%, rapidly degrading over 3s. This effect can only trigger once ever 8s.";
 		}
 		
-		public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill, 
-											TooltipMakerAPI info, float width) {
-
-		}
+		//public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill, 
+		//									TooltipMakerAPI info, float width) {
+		//
+		//}
 		
 		public ScopeDescription getScopeDescription() {
 			return ScopeDescription.ALL_SHIPS;

@@ -48,7 +48,9 @@
 			"armaa_portrait_kade":"graphics/armaa/portraits/armaa_kade.png",
 			"armaa_portrait_redeye":"graphics/armaa/portraits/armaa_redeye.png",
 			"armaa_portrait_imelda":"graphics/armaa/portraits/armaa_imelda.png",
-			"armaa_portrait_automaton":"graphics/armaa/portraits/armaa_automaton.png",
+			"armaa_portrait_automaton":"graphics/armaa/portraits/armaa_automaton0.png",
+			"armaa_portrait_automaton2":"graphics/armaa/portraits/armaa_automaton1.png",
+			"armaa_portrait_automaton3":"graphics/armaa/portraits/armaa_automaton2.png",
 			"armaa_portrait_felner":"graphics/armaa/portraits/armaa_felner.png",
 		},
 		"illustrations":{
@@ -113,6 +115,8 @@
 			"armaa_monitorrad":"graphics/armaa/fx/armaa_monitorrad.png",
 			"armaa_jackhammerRecoil":"graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm_recoil.png",
 			"armaa_pdWarning":"graphics/armaa/icons/hullsys/armaa_pdWarning.png",
+
+			"dd_legs_09":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs00.png",
 			"dd_legs_10":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs01.png",
 			"dd_legs_11":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs02.png",
 			"dd_legs_12":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs03.png",
@@ -184,6 +188,7 @@
 			"ht_legs_23":"graphics/armaa/ships/legs/armaa_ht_legs14.png",
 			"ht_legs_24":"graphics/armaa/ships/legs/armaa_ht_legs15.png",
 			"ht_legs_25":"graphics/armaa/ships/legs/armaa_ht_legs16.png",
+			"ht_legs_26":"graphics/armaa/ships/legs/armaa_ht_legs00.png",
 			
 			"ml_legs_10":"graphics/armaa/ships/legs/armaa_ml_legs01.png",
 			"ml_legs_11":"graphics/armaa/ships/legs/armaa_ml_legs02.png",
@@ -201,6 +206,7 @@
 			"ml_legs_23":"graphics/armaa/ships/legs/armaa_ml_legs14.png",
 			"ml_legs_24":"graphics/armaa/ships/legs/armaa_ml_legs15.png",
 			"ml_legs_25":"graphics/armaa/ships/legs/armaa_ml_legs16.png",
+			"ml_legs_26":"graphics/armaa/ships/legs/armaa_ml_legs17.png",
 		},	
     }
 }

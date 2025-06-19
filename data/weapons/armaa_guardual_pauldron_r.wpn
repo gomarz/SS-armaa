@@ -6,6 +6,9 @@
 	"showDamageWhenDecorative":true,
 	"turretSprite":"graphics/armaa/ships/guardual/armaa_guardual_pauldron_r.png",
 	"hardpointSprite":"",
+  "renderHints": [
+    NEVER_RENDER_IN_CAMPAIGN
+  ],
 	#"numFrames":2,
 	#"frameRate":0,
 	#"alwaysAnimate":"false",

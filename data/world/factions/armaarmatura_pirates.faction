@@ -9,7 +9,7 @@
 	"crest":"graphics/armaa/factions/armaa_logo01_crest.png",
 	"shipNamePrefix":"MRV",
 
-	"showInIntelTab":false,
+	"showInIntelTab":true,
 
 	"shipNameSources":{
 		"REVOLUTIONARY":5,

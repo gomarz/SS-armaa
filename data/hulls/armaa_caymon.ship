@@ -107,10 +107,10 @@
       "id": "POD",
       "size": "MEDIUM",
       "type": "BUILT_IN",
-      "mount": "HARDPOINT",
+      "mount": "HIDDEN",
       "arc": 0,
       "angle": 0,
-      "locations": [125, -0]
+      "locations": [138, -0]
     },
     {
       "id": "DECO",

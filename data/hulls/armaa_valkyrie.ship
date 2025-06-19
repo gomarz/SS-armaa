@@ -76,7 +76,7 @@
       "mount": "TURRET",
       "arc": 190,
       "angle": 90,
-      "locations": [60, 33]
+      "locations": [10, 35]
     },
     {
       "id": "MODULE2",
@@ -85,7 +85,7 @@
       "mount": "TURRET",
       "arc": 190,
       "angle": -90,
-      "locations": [10, -29]
+      "locations": [10, -35]
     },
     {
       "id": "MODULE_CONTROLLER",
@@ -122,6 +122,15 @@
       "arc": 190,
       "angle": 90,
       "locations": [37, 2.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [60, 23]
     }
   ],
   "engineSlots": [

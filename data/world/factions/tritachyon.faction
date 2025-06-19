@@ -7,6 +7,7 @@
         "hulls":{
             "armaa_garegga_tt":0.3,
 	    "armaa_altagrave":0.4,
+            "armaa_garegga_tt_carrier":0.2,
         },
     },
     "knownShips":{
@@ -15,6 +16,7 @@
 	    "armaa_aleste_frig",
 	    "armaa_altagrave",
 	    "armaa_einhander",
+            "armaa_garegga_tt_carrier",
 	    "armaa_kouto_frig",
         ],
     },

@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import java.util.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
+import com.fs.starfarer.api.util.Misc;
 
 public class armaa_acsutilityscript extends BaseHullMod{
 
@@ -46,12 +47,16 @@ public class armaa_acsutilityscript extends BaseHullMod{
 				{
 					//Log.info("Refunding " + " " + itemMap.get(DATA_PREFIX));
 					data.remove(DATA_PREFIX + member.getId());
-					if(member.getCaptain() != null  && member.getCaptain().getId().equals("armaa_automaton"));
-						member.setCaptain(null);					
+					if(member.getCaptain() != null  && member.getCaptain().getId().contains("armaa_automata"))
+					{
+						Misc.setUnremovable(member.getCaptain(),false);	
+						member.setCaptain(null);
+						
+					}						
 					member.getVariant().removePermaMod("armaa_acsutilityscript");
 
 				}
-				if(data.containsKey(DATA_PREFIX + member.getId()) && !member.getCaptain().getId().equals("armaa_automata"))
+				if(data.containsKey(DATA_PREFIX + member.getId()) && !member.getCaptain().getId().contains("armaa_automata"))
 				{
 					member.getVariant().removeMod("armaa_automatedCognitionShell");
 					member.getVariant().removePermaMod("armaa_acsutilityscript");

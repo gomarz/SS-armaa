@@ -737,8 +737,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin
 		Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
 		engine.getCombatUI().addMessage(1,"",Color.white,"",Color.white,"",new Color(255,0,235,255),"Something shifts. From deep within the churning black void, a faint melody begins to rise like a broken music box echoing across time and space.");
 		engine.getCombatUI().addMessage(1,"",Color.white,"",Color.white,"",new Color(255,0,235,255),"The sound is wrong. Melancholic, almost human, but undeniably alien. Then you see it. A jagged shape in the haze, massive and gliding.");		
-		if(!Global.getSector().getMemoryWithoutUpdate().contains("$nex_startingFactionId") || 
-			!Global.getSector().getMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
+			if(!Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().contains("$nex_startingFactionId") || !Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates"))
 			{
 				ShipAPI valkazard = engine.getFleetManager(1).spawnShipOrWing("armaa_valkazard_boss",new Vector2f(500,-10000),90f,2f);
 				valkazard.setCaptain(Global.getSector().getImportantPeople().getPerson("armaa_redeye"));

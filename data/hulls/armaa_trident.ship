@@ -15,16 +15,14 @@
     "strikeCraft",
     "armaa_wingCommander",
     "rugged",
-    "heavyarmor",
-    "missleracks",
-    "hardenedshieldemitter"
+    "missleracks"
   ],
   "builtInWings": [
     "trident_wing"
   ],
   "builtInWeapons": {
-    "WS 004": "atropos_single",
-    "WS 005": "atropos_single"
+    #"WS 004": "atropos_single",
+    #"WS 005": "atropos_single"
   },
   "weaponSlots": [
     {
@@ -39,7 +37,7 @@
     {
       "id": "WS 004",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "MISSILE",
       "mount": "HIDDEN",
       "arc": 5,
       "angle": 0,
@@ -48,7 +46,7 @@
     {
       "id": "WS 005",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "MISSILE",
       "mount": "HIDDEN",
       "arc": 5,
       "angle": 0,

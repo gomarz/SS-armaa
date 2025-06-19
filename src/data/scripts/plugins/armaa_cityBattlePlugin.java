@@ -146,7 +146,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin
 			new Vector2f(0,0),
 			spin/10f, 
 			0f, //spin 
-			shiftColor(new Color (50,50,50,255),new Color(75,75,100,255)),
+			shiftColor(new Color (255,255,255,255),new Color(128,128,128,255)),
 			false, 
 			0f, 
 			0f, 

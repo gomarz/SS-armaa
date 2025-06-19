@@ -90,7 +90,13 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 				}
 			}
 		}
-		
+		else if ("buffDawn".equals(action))
+		{
+			for(FleetMemberAPI member:pf.getFleetData().getMembersListCopy())
+			{
+				Global.getSector().getImportantPeople().getPerson("armaa_dawn").getFleet().getFleetData().getOfficerData(Global.getSector().getImportantPeople().getPerson("armaa_dawn")).canLevelUp(true);
+			}
+		}			
 		else if ("giveSSMech".equals(action))
 		{
 			String variantId = "armaa_vx_silversword_Hull";

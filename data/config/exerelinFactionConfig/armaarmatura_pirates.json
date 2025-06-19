@@ -76,7 +76,7 @@
 
 	"startShipsSuper":
 	[
-		["armaa_valkazard_standard", "hermes_Standard"]
+		["armaa_valkazard_standard", "buffalo_Standard"]
 	],
 	"startSpecialItems":[
 		[["drone_replicator",""]],

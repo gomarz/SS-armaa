@@ -1,7 +1,7 @@
 {
   "id": "armaa_musha_rightPauldron",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_energyshotgun_shot",
+  "projectileSpecId": "railgun_shot",
   "type": "DECORATIVE",
   "size": "SMALL",
   "displayArcRadius":400,
@@ -40,5 +40,5 @@
       185
     ]
   },
-  "fireSoundTwo": "rynex_fire"
+  "fireSoundTwo": "railgun_fire"
 }
