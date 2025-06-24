@@ -712,6 +712,7 @@ public class armaa_strikeCraft extends BaseHullMod {
 
         float CurrentHull = ship.getHitpoints();
         float MaxHull = ship.getMaxHitpoints();
+        float CurrentHullLevel = ship.getHullLevel();
         float CurrentCR = ship.getCurrentCR();
         boolean needsrefit = false;
         ShipAPI target = null;
@@ -728,7 +729,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             }
         }
 
-        if (((CurrentHull < armaa_utils.getMaxHPRepair(ship)) || (CurrentCR < armaa_utils.getMaxCRRepair(ship)) || (needsReload(ship)) || (selectedCarrier)) && canRefit(ship)) {
+        if (((CurrentHull < armaa_utils.getMaxHPRepair(ship) && CurrentHullLevel <= HPPercent ) || (CurrentCR < armaa_utils.getMaxCRRepair(ship)) || (needsReload(ship)) || (selectedCarrier)) && canRefit(ship)) {
             if (!ship.isStationModule() || ship.getStationSlot() == null) {
                 needsrefit = checkRefitStatus(ship, amount);
             }
