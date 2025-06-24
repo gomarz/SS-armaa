@@ -155,7 +155,7 @@ public class armaa_harpoonProjectileScript extends BaseEveryFrameCombatPlugin
 			float distanceModifier = 1f - (distance / 600f * AT_MAX_RANGE);
 
 			// Applies forces to both parties
-			if(distance > 30)
+			if(distance > 100)
 			{
 				Vector2f dirClone = new Vector2f(dir);
 				Vector2f.add((Vector2f)dir.scale(pushMe * shieldModifier * distanceModifier * -1f),source.getVelocity(),source.getVelocity());

@@ -9,7 +9,7 @@ public class armaa_alesteSkin_sephira extends BaseHullMod {
     private final String LIGMA_RED = "bbplus_sm_unstable";
     private final String LIGMA_BLUE = "bbplus_sm_highgrade";
     private final String LIGMA_GREEN = "bbplus_sm_lowgrade";
-    private final Color DEFAULT = new Color(200,55,210,215);
+    private final Color DEFAULT = new Color(10,185,190,250);
     private final Color LIGMA_ACCEL = new Color(255,25,25,255);
     private final Color LIGMA_CONDENSED = new Color(115,240,250,255);
     private final Color LIGMA_STABILIZED = new Color(80,240,190,255); 
@@ -45,8 +45,6 @@ public class armaa_alesteSkin_sephira extends BaseHullMod {
 	}		  
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
- 		if (index == 0) return "Gauss";
-		if (index == 1) return "Remove this hullmod to cycle between weapons.";
         return null;    
     }
 }

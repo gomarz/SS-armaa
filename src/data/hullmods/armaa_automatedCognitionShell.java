@@ -37,8 +37,14 @@ public class armaa_automatedCognitionShell extends BaseHullMod {
 				}				
 				PersonAPI pilot = Misc.getAICoreOfficerPlugin("gamma_core").createPerson("gamma_core","player",new Random());
 				int portraitNum = (int)(Math.random()*3);
-				pilot.setId("armaa_automata"+portraitNum);				
+                                String autoType = Math.random() < 0.20f ? "_c" : "";
+				pilot.setId("armaa_automata"+autoType+portraitNum);				
 				pilot.setPortraitSprite("graphics/armaa/portraits/armaa_automaton"+portraitNum+".png");
+                                if(pilot.getId().equals("armaa_automata_c2"))
+                                {
+                                    pilot.getName().setFirst("XN");
+                                    pilot.getName().setLast("KRIEGOR MK. IV");
+                                }
 				pilot.getName().setFirst("Automaton");
 				stats.getFleetMember().setCaptain(pilot);
 				Misc.setUnremovable(pilot,true);				

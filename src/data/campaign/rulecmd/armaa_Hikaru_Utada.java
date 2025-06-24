@@ -33,6 +33,8 @@ import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import data.scripts.campaign.intel.armaa_liberationIntel;
 import data.scripts.world.systems.armaa_nekki;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import java.util.List;
 import java.util.ArrayList;
 import data.scripts.campaign.armaa_mrcReprisalListener;
@@ -41,6 +43,7 @@ import exerelin.campaign.SectorManager;
 //wtf i love MOOD RUNES
 
 public class armaa_Hikaru_Utada extends BaseCommandPlugin {
+    @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Token> params, Map<String, MemoryAPI> memoryMap) 
 	{
 		String action = params.get(0).getString(memoryMap);
@@ -68,10 +71,48 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 		
 		if ("removeDawn".equals(action))
 		{
+                    boolean permanent = true;
+			if (params.size() > 1) 
+                        {
+                            // really, I should evaluate the string
+                            // but the only time anything extra goes here is if i want it to be
+                            // non permanent
+                            permanent = false;
+			}
 			for(FleetMemberAPI member:pf.getFleetData().getMembersListCopy())
 			{
 				if(member.getCaptain() == Global.getSector().getImportantPeople().getPerson("armaa_dawn"))
-					member.setCaptain(null);
+                                {                                  
+                                    if(!permanent)
+                                    {
+                                        ArrayList<MarketAPI> markets = new ArrayList<MarketAPI>();
+                                        for(MarketAPI market : Global.getSector().getEconomy().getMarketsCopy())
+                                        {
+                                            if(market.getFaction().isHostileTo("luddic_church"))
+                                                continue;
+                                            markets.add(market);
+                                        }
+                                        MarketAPI randomMarket = markets.get((int)(Math.random() * markets.size()));
+                                        member.getCaptain().setMarket(randomMarket);
+                                        member.getCaptain().getMarket().getCommDirectory().addPerson(member.getCaptain());                                    
+                                        member.getCaptain().getMarket().getCommDirectory().getEntryForPerson(member.getCaptain()).setHidden(false);
+                                        Global.getSector().getCampaignUI().addMessage(randomMarket.getName());	
+                                        memory.set("$armaa_dawnHomeId", randomMarket.getName(),1f);
+                                        ContactIntel intel = new ContactIntel(member.getCaptain(), randomMarket);
+                                        Global.getSector().getIntelManager().addIntel(intel, false, dialog.getTextPanel());
+					OfficerManagerEvent event = new OfficerManagerEvent();
+					OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(member.getCaptain(),randomMarket.getId(),10,1000);
+					 member.getCaptain().getMemoryWithoutUpdate().set("$ome_hireable", true);
+					 member.getCaptain().getMemoryWithoutUpdate().set("$ome_eventRef", event);
+					 member.getCaptain().getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));		
+					 member.getCaptain().getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));	
+					event.addAvailable(f);                                        
+                                        //member.getCaptain().setPostId(Ranks.POST_MERCENARY);
+                                        member.getCaptain().getMemoryWithoutUpdate().set("$postId","officer_for_hire");                                        
+                                    }
+                                    member.setCaptain(null);  
+                                    break;
+                                }
 			}
 			pf.getFleetData().removeOfficer(Global.getSector().getImportantPeople().getPerson("armaa_dawn"));
 		}		

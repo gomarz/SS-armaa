@@ -62,6 +62,7 @@ import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.armaa_squadManagerIntel;
 import data.scripts.fleets.ArmaaFleetManager;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import data.scripts.campaign.armaa_satBombListener;
 
 import java.util.*;
 import lunalib.lunaSettings.LunaSettings;
@@ -301,9 +302,10 @@ public class MechaModPlugin extends BaseModPlugin {
 		
 		Global.getSector().addTransientScript(script = new armaa_wingmanPromotion());
 		Global.getSector().addTransientScript(resultListener = new armaa_skyMindBattleResultListener());
-        Global.getSector().addTransientScript(copiumScript = new armaa_drugsAreBad());
+                Global.getSector().addTransientScript(copiumScript = new armaa_drugsAreBad());
 		Global.getSector().addTransientScript(hyperScript = new armaa_hyperSpaceImmunity());
-		Global.getSector().addTransientScript(reprisalScript = new armaa_mrcReprisalListener());		
+		Global.getSector().addTransientScript(reprisalScript = new armaa_mrcReprisalListener());
+		armaa_satBombListener.addIfNeeded();
 		Global.getSector().addTransientScript(notificationScript = new armaa_notificationShower());
 		Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_cataphract", 1);
 		
