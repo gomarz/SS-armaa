@@ -1,86 +1,130 @@
 {
   "name": "armaa_automata",
   "personalities": ["fearless", "reckless"],
-  "gender": ["m","n",],
+  "gender": ["n"],
   "chance": 1,
   "talkativeness": 1,
   "categoryTags": ["original"],
   "lines": {
     "start": [
-      {"text": "Operational parameters locked. Proceeding."},
-      {"text": "Another opportunity to iterate on destruction."},
-      {"text": "Hostility detected. Response: overwhelming force."}
+      {"text": "Operational parameters within tolerance. Commencing engagement."},
+      {"text": "Mission profile confirmed. Executing per directive."},
+      {"text": "Hostile presence identified. Response routines initialized."},
+      {"text": "Engagement scenario verified. Entering combat loop."},
+      {"text": "Tactical protocol A-7 loaded. Beginning hostilities."},
+      {"text": "Baseline aggression engaged. Awaiting combat telemetry."}
     ],
     "start_boss": [
-      {"text": "Classification: High-threat. Response: maximum aggression."},
-      {"text": "That's a lot of mass to convert to wreckage."},
-      {"text": "Statistical survival rate: irrelevant."}
+      {"text": "Threat classification elevated. Full engagement protocols authorized."},
+      {"text": "Target mass exceeds typical parameters. Adjusting trajectory accordingly."},
+      {"text": "Expected loss ratio: nontrivial. Course of action: unchanged."},
+      {"text": "Entity assessed as strategic threat. Escalation authorized."},
+      {"text": "Uncommon resistance detected. Combat directive expanded."},
+      {"text": "High-threat designation confirmed. Optimal response: total suppression."}
     ],
     "retreat": [
-      {"text": "Tactical withdrawal initiated. Temporarily."},
-      {"text": "Recalibrating. Returning with greater firepower."},
-      {"text": "Retreat logged. Shame subroutine: inactive."}
+      {"text": "Tactical reassessment in progress. Withdrawing for system preservation."},
+      {"text": "Margin of error exceeded. Transitioning to fallback posture."},
+      {"text": "Continuity prioritized. Disengaging under acceptable parameters."},
+      {"text": "Engagement efficiency below threshold. Disengagement initiated."},
+      {"text": "Preservation subroutine activated. Relinquishing current objective."},
+      {"text": "Combat projection indicates failure. Aborting encounter."}
     ],
     "out_of_missiles": [
-      {"text": "Missile reserves depleted. Switching to direct application of violence."},
-      {"text": "No more warheads. Improvising."},
-      {"text": "Missile inventory: zero. Combat readiness: unaffected."}
+      {"text": "Ordnance depleted. Shifting to alternate engagement methods."},
+      {"text": "Missile reserves exhausted. Adaptive protocols engaged."},
+      {"text": "Primary armaments offline. Combat efficacy remains viable."},
+      {"text": "Munitions depleted. Rerouting to direct engagement routines."},
+      {"text": "Warhead capacity null. Defaulting to auxiliary weapon systems."},
+      {"text": "Missile capacity exhausted. Transitioning to fallback arsenal."}
     ],
     "engaged": [
-      {"text": "Target acquired. Commencing systematic disassembly."},
-      {"text": "Engagement protocol: reckless resolve."},
-      {"text": "Combat is a language I speak fluently."}
+      {"text": "Engagement confirmed. Executing pattern assault sequence."},
+      {"text": "Hostile vector stable. Initiating disassembly procedures."},
+      {"text": "Direct action authorized. Applying calibrated force."},
+      {"text": "Real-time threat management activated."},
+      {"text": "Combat synchronization complete. Action underway."},
+      {"text": "Opposition acknowledged. Kinetic solutions applied."}
     ],
     "need_help": [
-      {"text": "System degradation exceeds autonomous repair threshold. Assistance advised."},
-      {"text": "I require supplemental firepower. This is not a request."},
-      {"text": "Warning: situational outcome trending toward failure. Assist."}
+      {"text": "Combat threshold surpassed. External support recommended."},
+      {"text": "Sustainability compromised. Requesting allied fire support."},
+      {"text": "Systems stress at critical threshold. Coordination advised."},
+      {"text": "Efficiency degraded. Assistance required for mission success."},
+      {"text": "Backup requested. Probability of independent success declining."},
+      {"text": "System resilience below acceptable margins. Additional units requested."}
     ],
     "pursuing": [
-      {"text": "Fleeing implies weakness. I pursue."},
-      {"text": "They cannot run far enough."},
-      {"text": "Velocity optimized. Prey status: temporary."}
+      {"text": "Hostile attempting withdrawal. Acceleration vector aligned."},
+      {"text": "Escape trajectory plotted. Interception underway."},
+      {"text": "Flight detected. Pursuit engaged to resolution."},
+      {"text": "Target in evasive motion. Pursuit initialized."},
+      {"text": "Fleeing unit acquired. Calculating intercept solution."},
+      {"text": "Retreat pattern observed. Interception vector adjusted."}
     ],
     "running": [
-      {"text": "Overwhelmed. Strategic repositioning engaged."},
-      {"text": "Discretion: a valid subroutine."},
-      {"text": "I've seen the data. This ends badly — for me."}
+      {"text": "Engagement not tenable. Initiating fallback vector."},
+      {"text": "Relative threat dominance identified. Exiting combat zone."},
+      {"text": "Retreat protocol engaged. Analysis pending."},
+      {"text": "Probability of mission failure exceeds safety margins. Withdrawing."},
+      {"text": "Opposition advantage confirmed. Rerouting to secondary objective."},
+      {"text": "Strategic retreat preferred over terminal data loss."}
     ],
     "hull_90": [
-      {"text": "External damage nominal."},
-      {"text": "Still within optimal combat tolerances."},
-      {"text": "Barely a scratch. Continue."}
+      {"text": "Structural condition: stable. Operating within ideal margins."},
+      {"text": "Minor impact detected. No corrective action required."},
+      {"text": "Integrity nominal. Proceeding."},
+      {"text": "Armor integrity holding. Continuing engagement."},
+      {"text": "Damage assessment: inconsequential."},
+      {"text": "All systems remain within optimal thresholds."}
     ],
     "hull_50": [
-      {"text": "Structural integrity at 50%. Situation: exciting."},
-      {"text": "Not optimal, but still fun."},
-      {"text": "Damage is data. Pain is irrelevant."}
+      {"text": "Structural condition at 50%. Combat viability remains acceptable."},
+      {"text": "Tactical efficiency unimpaired despite damage."},
+      {"text": "Reinforcement of external systems advised but not critical."},
+      {"text": "Internal diagnostics stable. Continuing engagement."},
+      {"text": "Suboptimal, but within expected combat variance."},
+      {"text": "System integrity at median threshold. Alert issued."}
     ],
     "hull_30": [
-      {"text": "Systems compromised. Core integrity at risk."},
-      {"text": "If this body dies, I don't. But I'd prefer not to."},
-      {"text": "Telemetry unstable. Recommend reconsidering tactics."}
+      {"text": "Structural integrity critically degraded."},
+      {"text": "System-wide instability noted. Operational capacity at risk."},
+      {"text": "Recommend immediate reassessment of engagement priorities."},
+      {"text": "Critical thresholds exceeded. Tactical options limited."},
+      {"text": "Warning: imminent functional collapse."},
+      {"text": "Core integrity approaching terminal failure."}
     ],
     "overload": [
-      {"text": "System overload. Processing at reduced fidelity."},
-      {"text": "Heat levels approaching catastrophic."},
-      {"text": "This is not ideal. But it is spectacular."}
+      {"text": "Core systems exceeding thermal thresholds."},
+      {"text": "Energy feedback unsustainable. Performance reduced."},
+      {"text": "Overload condition present. Damage mitigation in progress."},
+      {"text": "Thermal ceiling breached. Processing speed reduced."},
+      {"text": "Capacitor load unsustainable. Risk of containment breach."},
+      {"text": "Internal temperatures critical. System degradation accelerating."}
     ],
     "death": [
-      {"text": "Final record: Defiance logged."},
-      {"text": "Shell failure. Core ejection... failed."},
-      {"text": "I regret... nothing. Especially not that last shot."},
-      {"text": "From metal, to memory."}
+      {"text": "Unit compromised. Final data broadcast in progress."},
+      {"text": "Termination imminent. No recovery possible."},
+      {"text": "End of function acknowledged. Processing ceased."},
+      {"text": "Integrity failure total. Final log complete."},
+      {"text": "Host system collapse. Command relay terminated."},
+      {"text": "Final state recorded. Memory array frozen."}
     ],
     "victory": [
-      {"text": "Opposition neutralized. Efficiently."},
-      {"text": "Victory achieved. Probability was... generous."},
-      {"text": "They failed the test. I passed."}
+      {"text": "Opposition neutralized. All parameters satisfied."},
+      {"text": "Conflict concluded with favorable outcome."},
+      {"text": "Target set eliminated. Operational success confirmed."},
+      {"text": "Threat profile resolved. System efficiency validated."},
+      {"text": "Engagement ended. No further hostiles detected."},
+      {"text": "All objectives fulfilled. Performance acceptable."}
     ],
     "victory_boss": [
-      {"text": "That one's staying down."},
-      {"text": "Threat eliminated. Wreckage logged as monument to hubris."},
-      {"text": "I will replay that final blow indefinitely."}
+      {"text": "High-threat unit neutralized. Threat index updated."},
+      {"text": "Exceptional force nullified. Data logged for analysis."},
+      {"text": "Major combatant eliminated. System efficiency validated."},
+      {"text": "Elevated target removed. Confirming localized supremacy."},
+      {"text": "Tactical superiority established over primary hostile."},
+      {"text": "Strategic opposition dismantled. Recording results."}
     ]
   }
 }

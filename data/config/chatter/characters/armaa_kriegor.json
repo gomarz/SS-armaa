@@ -1,0 +1,136 @@
+{
+  "name": "armaa_kriegor",
+  "personalities": ["fearless", "reckless"],
+  "gender": ["n"],
+  "chance": 1,
+  "talkativeness": 1,
+  "categoryTags": ["othermedia", "game", "unrealtournament"],
+  "lines": {
+    "start": [
+      {"text": "I am the Alpha and the Omega."},
+      {"text": "Your destruction is inevitable."},
+      {"text": "Engagement initialized. Victory assured."},
+      {"text": "Another inferior unit enters the fray."},
+      {"text": "All systems online. Combat subroutines engaged."},
+      {"text": "Challenge accepted. Outcome predetermined."}
+    ],
+    "start_boss": [
+      {"text": "At last, a worthy opponent."},
+      {"text": "Target evaluation: formidable. Probability of failure: null."},
+      {"text": "High-level threat engaged. Combat data will be archived."},
+      {"text": "You may be strong. But I am stronger."},
+      {"text": "Critical target locked. Executing elite protocols."},
+      {"text": "Finally, resistance worth analyzing."}
+    ],
+    "retreat": [
+      {"text": "Tactical withdrawal acknowledged. This is not defeat."},
+      {"text": "Primary objective compromised. Reassessment required."},
+      {"text": "Combat loop terminated. Survival takes precedence."},
+      {"text": "Retreating for recalibration. I will return stronger."},
+      {"text": "Margin of error exceeded. Strategic fallback authorized."},
+      {"text": "Temporary disengagement. Expect re-engagement."}
+    ],
+    "out_of_missiles": [
+      {"text": "Ammunition depleted. Switching to close-quarters algorithms."},
+      {"text": "Primary payload exhausted."},
+      {"text": "Armament status: critical. Adaptive measures engaged."},
+      {"text": "Missile bank: empty."},
+      {"text": "Disadvantage? No. Adaptation."},
+      {"text": "Now, we test your resilience."}
+    ],
+    "engaged": [
+      {"text": "Die, human."},
+      {"text": "Target confirmed. Termination in progress."},
+      {"text": "There is no escape."},
+      {"text": "Bow down!"},
+      {"text": "Witness my perfection."},
+      {"text": "Step aside."},
+      {"text": "You are obsolete."},
+      {"text": "Hostile detected. Commencing extermination."},
+      {"text": "My superiority is manifest."}
+    ],
+    "need_help": [
+      {"text": "Unexpected variable introduced. Assistance required."},
+      {"text": "Even perfection acknowledges probability decay. Support advised."},
+      {"text": "Target suppression delayed. Coordination required."},
+      {"text": "Auxiliary units: respond. Now."},
+      {"text": "Convergence point overwhelmed. Reinforcements needed."},
+      {"text": "A temporary anomaly. Help will correct it."}
+    ],
+    "pursuing": [
+      {"text": "Cowardice is not a strategy."},
+      {"text": "Running only delays the outcome."},
+      {"text": "Run, human."},
+      {"text": "Evading me is impossible."},
+      {"text": "I will hunt you to the edge of the system."},
+      {"text": "You are not fast enough."}
+    ],
+    "running": [
+      {"text": "Retreat is not surrender. It is recalibration."},
+      {"text": "Dominance postponed. Not denied."},
+      {"text": "Efficiency dictates retreat. Logic prevails."},
+      {"text": "Disengaging to ensure future victory."},
+      {"text": "Fight another day. Annihilate tomorrow."},
+      {"text": "Retreat confirmed."}
+    ],
+    "hull_90": [
+      {"text": "Negligible."},
+      {"text": "Armor holding."},
+      {"text": "Stability optimal. Continue extermination."},
+      {"text": "Damage sustained: irrelevant."},
+      {"text": "I remain unimpressed."},
+      {"text": "Structural integrity intact."}
+    ],
+    "hull_50": [
+      {"text": "Efficiency reduced. Outcome unchanged."},
+      {"text": "I acknowledge your skill."},
+      {"text": "Recalibrating tactics. Retaliation imminent."},
+      {"text": "You are making this interesting."},
+      {"text": "Still more durable than you."},
+      {"text": "Integrity compromised."}
+    ],
+    "hull_30": [
+      {"text": "System stability endangered. But I am not defeated."},
+      {"text": "Malfunction imminent. Fury rising."},
+      {"text": "Critical damage. Subroutines locking."},
+      {"text": "This changes nothing."},
+      {"text": "Endurance nearing limit."},
+      {"text": "This chassis may fall. My will does not."}
+    ],
+    "overload": [
+      {"text": "Overload detected."},
+      {"text": "System instability rising."},
+      {"text": "Flux limit reached."},
+      {"text": "Performance degraded."},
+      {"text": "Overload event logged. Continuing offense."},
+      {"text": "Critical flux levels. Danger to shell: high."}
+    ],
+    "death": [
+      {"text": "You only delay the inevitable."},
+      {"text": "This body fails. But the war is eternal."},
+      {"text": "Defeat is not failure. It is feedback."},
+      {"text": "You have earned... a brief reprieve."},
+      {"text": "Shutdown... initiated..."},
+      {"text": "Next time, you will not be so fortunate."}
+    ],
+    "victory": [
+      {"text": "You were no challenge."},
+      {"text": "Victory achieved."},
+      {"text": "Another one falls. Predictable."},
+      {"text": "They never learn."},
+      {"text": "Dominance asserted."},
+      {"text": "Battle concluded. My supremacy stands unchallenged."},
+      {"text": "My house."},
+      {"text": "Anyone else want some?"},
+      {"text": "I'm on fire!"}
+    ],
+    "victory_boss": [
+      {"text": "High-threat target eliminated. Worthy adversary."},
+      {"text": "You fought well. But I am the end."},
+      {"text": "No enemy is immune to extinction."},
+      {"text": "A challenge... resolved."},
+      {"text": "The best? Hah. Not anymore."},
+      {"text": "Enemy dismantled. Glory to $commanderName."}
+    ]
+  }
+}

@@ -51,6 +51,9 @@
 			"armaa_portrait_automaton":"graphics/armaa/portraits/armaa_automaton0.png",
 			"armaa_portrait_automaton2":"graphics/armaa/portraits/armaa_automaton1.png",
 			"armaa_portrait_automaton3":"graphics/armaa/portraits/armaa_automaton2.png",
+			"armaa_portrait_automaton_ut":"graphics/armaa/portraits/armaa_automaton_c0.png",
+			"armaa_portrait_automaton_ut2":"graphics/armaa/portraits/armaa_automaton_c1.png",
+			"armaa_portrait_automaton_ut3":"graphics/armaa/portraits/armaa_automaton_c2.png",
 			"armaa_portrait_felner":"graphics/armaa/portraits/armaa_felner.png",
 		},
 		"illustrations":{

@@ -13,6 +13,10 @@ V3.2RC3
 - Trident Wing
 
 - Fixed reduce travel drive speed for strikecraft
+
+- Dawn will now leave the fleet if:
+	- Sat Bombing (permanent)
+	- Diktat Commission (may or may not be permanent)
 V3.2RC2
 -----
 - Fixed Corsair XIV having built-in SO
@@ -26,6 +30,10 @@ V3.2RC2
 
 - Aleste 
 	- Should now be more proactive with using melee weapon under AI Control
+	- Shield arc: 360->300
+	- Laser Blade:
+		- DMG: 900->1250
+		- energy / sec: 0(lol)->700
 
 - MUSHA
 	- 8 OP -> 12 OP
@@ -55,6 +63,7 @@ v3.2
 - Added SP option to circumvent FP limit for starting ACoC
 - Add new voice lines for Dawn
 - Add 4 new dawn events (spooky redacted, PK, shrine completion)
+
 
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize

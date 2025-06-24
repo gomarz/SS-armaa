@@ -2490,10 +2490,10 @@ FireAll armaa_dawnGalatiaQuestions","""The Galatian Academy,"" Dawn mutters, her
 
 ",,# available by default
 armaa_dawnGalatiaDoRegret,armaa_dawnGalatiaQuestions,!$askedIfRegrets,,,"armaa_dawnGalatiaDoRegretResp:""Do you ever regret not going?""",
-armaa_dawnGalatiaDangersOutweighRisks,armaa_dawnGalatiaQuestions,!$askedIfRisksAreWorth,,,"armaa_dawnGalatiaDangerOutweighRisksResp:""Do you think the dangers of knowledge outweigh its benefits, considering your experiences?""",
-armaa_dawnGalatiaParentsFeelAboutJob,armaa_dawnGalatiaQuestions,!$howParentsFeel,,,"armaa_dawnGalatiaParentsFeelAboutJobResp:""How did your parents feel about you exploring the sector instead of following the 'lies of Moloch' at the Academy?""",
-armaa_dawnGalatiaA,armaa_dawnGalatiaQuestions,,,,"armaa_dawnGalatiaRespA:""You got a different kind of education out here in the sector. One that money can't buy.""",
-armaa_dawnGalatiaB,armaa_dawnGalatiaQuestions,,,,"armaa_dawnGalatiaRespB:""It's a shame you couldn't attend. The Academy might have been a better path for you.""",
+armaa_dawnGalatiaDangersOutweighRisks,armaa_dawnGalatiaQuestions,!$askedIfRisksAreWorth,,,"armaa_dawnGalatiaDangerOutweighRisksResp:""Think the dangers of knowledge outweigh its benefits?""",
+armaa_dawnGalatiaParentsFeelAboutJob,armaa_dawnGalatiaQuestions,!$howParentsFeel,,,"armaa_dawnGalatiaParentsFeelAboutJobResp:""How did your parents feel about you being a spacer instead?""",
+armaa_dawnGalatiaA,armaa_dawnGalatiaQuestions,,,,"armaa_dawnGalatiaRespA:""You got an education out here in the Sector. One that money can't buy.""",
+armaa_dawnGalatiaB,armaa_dawnGalatiaQuestions,,,,"armaa_dawnGalatiaRespB:""It's a shame you couldn't attend.""",
 armaa_dawnGalatiaDoRegretResp,DialogOptionSelected,$option == armaa_dawnGalatiaDoRegretResp,"$askedIfRegrets = true
 FireAll armaa_dawnGalatiaQuestions","Dawn's eyes glint with a hint of introspection. ""Regret? Nah. Sure, there are moments when I wonder what it'd be like, but the path I chose out here, in the sector, has its own kind of richness. Can't say I'd trade it for the cloistered halls of an Academy.""",,
 armaa_dawnGalatiaDangerOutweighRisksResp,DialogOptionSelected,$option == armaa_dawnGalatiaDangerOutweighRisksResp,"$askedIfRisksAreWorth = true
@@ -2559,10 +2559,7 @@ armaa_dawn_PKEvent,PopulateOptions,"$player.armaa_pk_event_id == true
 armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 $player.armaa_pk_event_id = false
 $player.armaa_pk_event_fired = true
-Highlight PLANETKILLER
-armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","PLANETKILLER
-
-The cargo bay stinks of scorched metal and spent coolant. Ozone hangs thick in the air, clinging to bulkheads where the fusion cutters bit deep. The recyclers hiss under strain, their steady labor unnoticed by the crew clustered nearby. It dominates the bay. Longer than a cutter shuttle, broader than a standard torpedo casing, inert and silent. A half-dozen salvors linger at a distance, postures caught somewhere between awe and apprehension. One shifts uneasily against a crowbar, another pulls a sharp drag from a synth-wrap, the ember flaring like a pulse monitor in overdrive. Low voices pass back and forth.
+armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","The cargo bay stinks of scorched metal and spent coolant. Ozone hangs thick in the air, clinging to bulkheads where the fusion cutters bit deep. The recyclers hiss under strain, their steady labor unnoticed by the crew clustered nearby. It dominates the bay. Longer than a cutter shuttle, broader than a standard torpedo casing, inert and silent. A half-dozen salvors linger at a distance, postures caught somewhere between awe and apprehension. One shifts uneasily against a crowbar, another pulls a sharp drag from a synth-wrap, the ember flaring like a pulse monitor in overdrive. Low voices pass back and forth.
 
 ""Ops confirmed it?"" ""They confirmed it."" ""Domain-grade extermination package. Goddamn genocide stockpile."" ""We shouldn't be this close."" ""Relax. Look at the banding. Core shroud's sealed, no access ports. Safety state. Cold as a grave.""
 
@@ -4218,6 +4215,7 @@ $market.size > 2
 !$player.hadDawnAskDiktat","ShowLargePlanet
 $player.hadDawnAskDiktat = true","As your $shipOrFleet approaches $name, the internal comms flicker to life.",armaa_dawnHateSindiesStart:Accept the comm link,
 armaa_dawnHateSindiesStart,DialogOptionSelected,$option == armaa_dawnHateSindiesStart,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_encounter_mysterious
 ShowPersonVisual
 ","""So we're flying under a fuel baron now. Thought you had more sense than to swear fealty to a man who prints his face on ration packs.""","armaa_dawnHateSindiesMercenary:""I don't serve the Diktat. I use it. Same as i'd use any tool.""
 armaa_dawnHateSindiesSupport:""The Supreme Executor offers what the rest only pretend to; vision, order, and destiny.""
@@ -4239,8 +4237,8 @@ armaa_dawnHateSindiesMercenary,DialogOptionSelected,$option == armaa_dawnHateSin
 
 ""That right? 'Cause from where I'm standing, looks a lot like servin'."" A look, curiousity? briefly passes.
 
-""What kinda reasons make you fly under a tyrant's banner? Enlighten me, Captain.""","armaa_dawnHateSindiesMercenaryOverthrow:""People deserve better than Andrada or the jackals circling him. I'm here to give them a chance.""
-armaa_dawnHateSindiesMercenaryReform:""Order matters. Just not his kind. I'll fix it from the inside.""
+""What kinda reasons make you fly under a tyrant's banner? Enlighten me, Captain.""","armaa_dawnHateSindiesMercenaryOverthrow:""People deserve better than Andrada. I think I can stir things up to give them a chance.""
+armaa_dawnHateSindiesMercenaryReform:""The Diktat used to stand for something. I'll fix it from the inside.""
 armaa_dawnHateSindiesMercenaryMercenary:""They've got fuel, equipment, and blind ambition. I'm here to profit off all three.""
 ",
 armaa_dawnHateSindiesSupport,DialogOptionSelected,$option == armaa_dawnHateSindiesSupport,"AdjustRepActivePerson SUSPICIOUS -1
@@ -4256,33 +4254,32 @@ She moves to cut the comm link.",,
 ,,,,,,
 armaa_dawnHateSindiesMercenaryOverthrow,DialogOptionSelected,$option == armaa_dawnHateSindiesMercenaryOverthrow,"$player.ethosIdealistic++
 FireAll armaa_diktatOverthrowOpts","""Big talk. You planning to knock heads or twist knives? You've got a plan, I want to hear it. 'Cause from where I'm standing, the Diktat doesn't give second chances.""",,
-armaa_dawnHateSindiesMercenaryOverthrowMacario,armaa_diktatOverthrowOpts,,FireAll armaa_macarioCheck,,"armaa_dawnHateSindiesMercenaryOverthrowMacarioResp:""Andrada's dead, dying, or worse. The real fight's between the ones circling his throne. If I play it right, I can shape what comes next.""",
+armaa_dawnHateSindiesMercenaryOverthrowMacario,armaa_diktatOverthrowOpts,,FireAll armaa_macarioCheck,,"armaa_dawnHateSindiesMercenaryOverthrowMacarioResp:""Macario says Andrada's done. I plan to shape what comes after.""",
 armaa_macarioCheck,armaa_macarioCheck,!$player.metMacario,"SetEnabled armaa_dawnHateSindiesMercenaryOverthrowMacarioResp false
 SetTooltip armaa_dawnHateSindiesMercenaryOverthrowMacarioResp ""You are not aware of any internal strife within the Diktat""",,,
 armaa_dawnHateSindiesMercenaryOverthrowMacarioResp,DialogOptionSelected,$option == armaa_dawnHateSindiesMercenaryOverthrowMacarioResp,"$player.ethosKnowledge++
 AdjustRepActivePerson COOPERATIVE 3
-armaa_Hikaru_Utada removeDawn
+armaa_Hikaru_Utada removeDawn true
 AddTextSmall ""Dawn has left the $shipOrFleet"" bad
+Highlight $armaa_dawnHomeId
 EndConversation
 ShowDefaultVisual
-FireBest MarketPostDock","She blinks, slow. You see the moment hit her-real, not performative.
+FireBest MarketPostDock","She blinks, slow. You see the moment hit her.
 
-""Guess that explains the silence. Lotta noise comin' from his dogs, but not much from the man himself.""
-
-Her expression hardens.
-
-""They kept it quiet. Let his face do the talking while they carve up what's left.""
+""Mother of Ludd. That explains some. Lotta noise comin' from his dogs, but not much from the man himself."" Her expression hardens.
 
 She slings her kit over one shoulder, voice steady now.
 
-""If you're tryin' to make something decent out of the wreck, I won't get in your way. But I'm not takin' their pay. You want help when it matters-call me then.""",,
+""If you're tryin' to make something decent out of the wreck, I won't get in your way. But I'm not takin' their pay. You want help when it matters-call me then.""
+
+""Heard $armaa_dawnHomeId ain't so bad. I'll try my luck there a spell.""",,
 armaa_dawnHateSindiesMercenaryOverthrowNoPlan,armaa_diktatOverthrowOpts,,,,"armaa_dawnHateSindiesMercenaryMercenary:""No grand plan. Just... seeing where the cracks go.""",
 armaa_dawnHateSindiesMercenaryOverthrowFaith,armaa_diktatOverthrowOpts,,FireAll armaa_faithCheck,,"armaa_dawnHateSindiesMercenaryOverthrowFaithResp:""The sects on Volturn are being crushed. If I can shift the balance, even a little-I will.""",
 armaa_faithCheck,armaa_faithCheck,!$player.luddicAttitudeFaithfulOrPather,"SetEnabled armaa_dawnHateSindiesMercenaryOverthrowFaithResp false
 SetTooltip armaa_dawnHateSindiesMercenaryOverthrowFaithResp ""You are not a member of the Galactic Church of Redemption""",,,
 armaa_dawnHateSindiesMercenaryOverthrowFaithResp,DialogOptionSelected,$option == armaa_dawnHateSindiesMercenaryOverthrowFaithResp,"$player.ethosFreedom++
 AdjustRepActivePerson COOPERATIVE 3
-armaa_Hikaru_Utada removeDawn
+armaa_Hikaru_Utada removeDawn true
 AddTextSmall ""Dawn has left the $shipOrFleet"" bad
 EndConversation
 ShowDefaultVisual
@@ -4294,7 +4291,7 @@ FireBest MarketPostDock","She studies you, something unreadable behind her gaze.
 
 She throws you a half salute, before moving to cut the comm link.",,
 armaa_dawnHateSindiesMercenaryReform,DialogOptionSelected,$option == armaa_dawnHateSindiesMercenaryReform,"$player.ethosOrder++
-armaa_Hikaru_Utada removeDawn
+armaa_Hikaru_Utada removeDawn true
 AddTextSmall ""Dawn has left the $shipOrFleet"" bad
 EndConversation
 ShowDefaultVisual
@@ -4304,9 +4301,9 @@ FireBest MarketPostDock","She lets out a dry laugh-short, sharp, bitter.
 
 ""Hope you brought more than good intentions. Me I can't take their blood money.""
 
-She moves to cut the comm link.",,
+She moves to cut the comm link, but pauses. ""Come find me once you've got your head straight.""",,
 armaa_dawnHateSindiesMercenaryMercenary,DialogOptionSelected,$option == armaa_dawnHateSindiesMercenaryMercenary,"$player.ethosMercenary++
-armaa_Hikaru_Utada removeDawn
+armaa_Hikaru_Utada removeDawn true
 AddTextSmall ""Dawn has left the $shipOrFleet"" bad
 EndConversation
 ShowDefaultVisual
@@ -4319,6 +4316,42 @@ She slings her kit over one shoulder.
 ""But I won't fly for a tyrant's paycheck. You do what you need to—just don't expect me to help cash it.""
 
 She moves to cut the comm link.",,
+,,,,,,
+# Dawn - Sat bomb,,,,,,
+armaa_dawnSatBomb,MarketPostDock,"$faction.id != sindrian_diktat
+$global.armaa_dawnHeardOfAtrocities
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+!$market.isHidden
+$market.size > 2
+!$player.hadDawnAskAtrocity","ShowLargePlanet
+$player.hadDawnAskAtrocity = true","As your $shipOrFleet approaches $name, the internal comms flicker to life.",armaa_dawnSatBombStart:Accept the request,
+armaa_dawnSatBombStart,DialogOptionSelected,$option == armaa_dawnSatBombStart,"BeginConversation armaa_dawn
+armaa_Hikaru_Utada playMusic music_encounter_mysterious
+ShowPersonVisual
+","Dawn's face appears on-screen, lit by the dim fluorescents of her berth. She doesn't speak at first- just stares a strange stare past the camera, jaw set, fingers tapping an uneven rhythm against the console.
+
+""You did it. You really did it. I've flown in wars I didn't believe in. I've taken pay I didn't earn. Hell, I've pulled the trigger on people who never even saw me coming. But this? This?!"" Her voice rises, sharp and unforgiving. ""You turned a city into glass. You burned a world. I don't care what flag was flying over it. There were people there. Kids. Families. People who couldn't run even if they knew they had to.""","armaa_dawnSatBombLastResort:""I didn't want this, Dawn. But I can't lose more people.""
+armaa_dawnSatBombDefiant:""Spare me the sermon. I didn't ask for your blessing.""
+armaa_dawnSatBombUnderstanding:""I figured you might say that. For what it's worth... I'm sorry.""",
+armaa_dawnSatBombLastResort,DialogOptionSelected,$option == armaa_dawnSatBombLastResort,"AdjustRepActivePerson VENGEFUL -200
+$option = armaa_dawnSatBomb2
+FireBest DialogOptionSelected",,,
+armaa_dawnSatBombDefiant,DialogOptionSelected,$option == armaa_dawnSatBombDefiant,"AdjustRepActivePerson VENGEFUL -200
+$option = armaa_dawnSatBomb2
+FireBest DialogOptionSelected",,,
+armaa_dawnSatBombUnderstanding,DialogOptionSelected,$option == armaa_dawnSatBombUnderstanding,"AdjustRepActivePerson VENGEFUL -200
+$option = armaa_dawnSatBomb2
+FireBest DialogOptionSelected",,,
+armaa_dawnSatBomb2,DialogOptionSelected,$option == armaa_dawnSatBomb2,"armaa_Hikaru_Utada removeDawn
+AddTextSmall ""Dawn has permanently left the $shipOrFleet"" bad
+EndConversation
+ResumeNormalMusic
+ShowDefaultVisual
+FireBest MarketPostDock","She rips the wing patch from her uniform-not with ceremony, but with violence. The sound of tearing Velcro cuts through the static like a gunshot.
+
+""I signed on to fight wars, not light worlds on fire,"" she spits. You want to be Loke? Go find some rad-addled freak who thinks that was glory.""
+
+The feed lingers- long enough for you to see the decision settle in her shoulders. Long enough for you to understand it's final.",,
 ,,,,,,
 #TODO literally dont have the willpower rn,,,,,,
 #armaa_rtcStart,PopulateOptions,"$id == armaa_mrcLiason score:1000
