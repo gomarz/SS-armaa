@@ -35,7 +35,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6, -0],
+      "locations": [-7, -0],
       "renderOrderMod": -1000
     },
     {
