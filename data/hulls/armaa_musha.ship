@@ -12,7 +12,6 @@
   "shieldRadius": 43.5,
   "viewOffset": 0,
   "builtInMods": [
-    #"armaa_fighterStrafe",
     "cataphract"
   ],
   "builtInWeapons": {
@@ -38,7 +37,7 @@
       "mount": "TURRET",
       "arc": 70,
       "angle": -10,
-      "locations": [0, -1]
+      "locations": [0, -2]
     },
     {
       "id": "WS0003",
@@ -47,7 +46,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 10,
-      "locations": [0, 1]
+      "locations": [0, 2]
     },
     {
       "id": "WS0004",

@@ -1,46 +1,51 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "id": "armaa_mushaHead_frig",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "com.fs.starfarer.api.impl.combat.GravitonBeamEffect",
+  "collisionClass": "RAY_FIGHTER",
+  "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "fireSoundTwo": "vulcan_cannon_fire",
-  "hardpointAngleOffsets": [
+  "turretSprite": "graphics/armaa/ships/musha/armaa_musha_head_ex.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    0,
+    0,
+    155
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    2,
+    1
+  ],
+  "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
     4,
     0
   ],
-  "hardpointSprite": "",
-  "id": "armaa_mushaHead_frig",
-  "muzzleFlashSpec": {
-    "length": 5,
-    "particleColor": [
-      255,
-      240,
-      165,
-      200
-    ],
-    "particleCount": 7,
-    "particleDuration": 0.15,
-    "particleSizeMin": 6,
-    "particleSizeRange": 8,
-    "spread": 6
-  },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "vulcan_shot",
-  "renderAboveAllWeapons": 0,
-  "size": "SMALL",
-  "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
+  "hardpointAngleOffsets": [
     0
   ],
-  "turretOffsets": [
+  "fringeColor": [
+    255,
     0,
-    4
+    0,
+    255
   ],
-  "turretSprite": "graphics/armaa/ships/musha/armaa_mushaHead_red.png",
-  "type": "BALLISTIC"
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "convergeOnPoint": true,
+  "width": 3,
+	"textureType":ROUGH,
+	"textureScrollSpeed":260.0,
+  "pixelsPerTexel": 1,
+  "fireSoundTwo": "graviton_beam_loop"
 }

@@ -56,10 +56,10 @@ public class armaa_harpoonThrowerEffect implements EveryFrameWeaponEffectPlugin,
         }
         
     }
-	public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) 
-	{
-		//weapon.setRemainingCooldownTo(weapon.getCooldownRemaining()*.5f); 
-	}
+    public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) 
+    {
+            //weapon.setRemainingCooldownTo(weapon.getCooldownRemaining()*.5f); 
+    }
 	
     public void putHIT(CombatEntityAPI target) {
         hit.add(target);

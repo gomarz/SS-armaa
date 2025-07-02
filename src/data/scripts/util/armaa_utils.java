@@ -325,8 +325,22 @@ public class armaa_utils {
         if(limitedCRRepair)
             return ship.getCRAtDeployment();
 
-        return 1f;       
+        return ship.getFleetMember().getRepairTracker().getCR();    
     }
+    
+    public static boolean canRestoreHPOrCR(ShipAPI ship)
+    {
+        float CurrentHull = ship.getHitpoints();
+        float CurrentCR = ship.getCurrentCR();
+        float HPPercent = 0.50f;
+        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float)
+            HPPercent = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId());
+        if(LunaSettings.getDouble("armaa", "armaa_repairLevel") != null)
+            HPPercent = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
+          return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent) 
+                || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);       
+    }
+        
     public static ShipAPI getFirstShipOnSegment(Vector2f from, Vector2f to) {
         return getFirstShipOnSegment(from, to, null);
     }

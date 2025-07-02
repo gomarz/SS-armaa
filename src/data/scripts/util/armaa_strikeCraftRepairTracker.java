@@ -12,6 +12,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
+import java.awt.Color;
 
 public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
@@ -118,7 +119,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         timer = String.valueOf(refit_timer);
 
         float crLevel = ship.getCurrentCR() / 1f; // range from 0 to 1
-        float remainder = (armaa_utils.getMaxHPRepair(ship) - ship.getHitpoints()) * ship.getHullLevel() * ((adjustedRate / maxinterval) * elapsed);
+        float remainder = (armaa_utils.getMaxHPRepair(ship) - ship.getHitpoints()) * ((adjustedRate / maxinterval) * elapsed);
 
         float crRemainder;
         crRemainder = (1f - ship.getCurrentCR()) * crLevel * ((adjustedRate / maxinterval) * elapsed);
@@ -211,6 +212,9 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.clearDamageDecals();
             ship.setHitpoints(armaa_utils.getMaxHPRepair(ship)); //Hull to 100%
             ship.getVariant().getHullSpec().getNoCRLossTime();
+            Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getFlatBonuses()); 
+            Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getMultBonuses()); 
+            Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getPercentBonuses());             
             if (ship.getMutableStats().getPeakCRDuration().computeEffective(0f) < ship.getTimeDeployedForCRReduction()) {
                 ship.getMutableStats().getPeakCRDuration().modifyFlat(ship.getId(), ship.getTimeDeployedForCRReduction());
             }

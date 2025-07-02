@@ -1,8 +1,8 @@
 {
   "hullName": "Musha",
-  "hullId": "armaa_musha_frig",
+  "hullId": "armaa_musha_frig_sniper",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/musha/armaa_musha.png",
+  "spriteName": "graphics/armaa/ships/musha/armaa_musha_ex.png",
   "style": "LOW_TECH",
   "height": 42,
   "width": 34,
@@ -13,36 +13,47 @@
   "viewOffset": 0,
   "builtInMods": [
     "strikeCraft",
-    "cataphract",
-    "armaa_wingCommander"
+    "escort_package",
+    "cataphract"
   ],
   "builtInWings": [
-    "armaa_musha_wing"
+    "armaa_borer_wing"
   ],
   "builtInWeapons": {
-    "HEAD": "armaa_mushaHead",
-    "WS0002": "armaa_musha_rightPauldron",
+    "HEAD": "armaa_mushaHead_frig",
+    "WS0001": "atropos_single",
+    "WS0002": "armaa_musha_rightPauldron_frig",
     "WS0003": "armaa_musha_leftPauldron"
   },
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "ENERGY",
-      "mount": "HARDPOINT",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-14, -8],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
       "arc": 50,
       "angle": 0,
-      "locations": [-9, 9],
+      "locations": [-9, -11],
       "renderOrderMod": 1000
     },
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 70,
       "angle": -10,
-      "locations": [0, -2]
+      "locations": [1, -5]
     },
     {
       "id": "WS0003",
@@ -51,17 +62,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 10,
-      "locations": [0, 2]
-    },
-    {
-      "id": "WS0004",
-      "size": "SMALL",
-      "type": "ENERGY",
-      "mount": "HARDPOINT",
-      "arc": 50,
-      "angle": 0,
-      "locations": [-9, -11],
-      "renderOrderMod": 1000
+      "locations": [0, 4]
     },
     {
       "id": "HEAD",
@@ -70,7 +71,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -0]
+      "locations": [-2, 2]
     }
   ],
   "engineSlots": [

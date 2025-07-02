@@ -21,7 +21,7 @@
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkenx_leftPauldron",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron",
-    "E_HEAD": "armaa_mushaHead_frig",
+    "E_HEAD": "armaa_valkenxHead",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },

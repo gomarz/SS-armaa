@@ -54,8 +54,6 @@ public class armaa_strikeCraft extends BaseHullMod {
     private final float Repair = 100, CR = 20; //Hullmod in game description.
     private float HPPercent = 0.80f;
     private float BaseTimer = .30f;
-    private float CRmarker = 0.4f;
-    private float repairLevel = 0.5f;
 
     private float MISSILE_DAMAGE_THRESHOLD = 750f;
     public final ArrayList<String> landingLines_Good = new ArrayList<>();
@@ -387,9 +385,6 @@ public class armaa_strikeCraft extends BaseHullMod {
 
     //Check if any of our weapons are out of ammo.
     private boolean needsReload(ShipAPI target) {
-        if (target.getHullLevel() <= repairLevel) {
-            return true;
-        }
         getRefitRate(target);
         List<WeaponAPI> weapons = target.getAllWeapons();
         int loadedWeps = 0;
@@ -703,17 +698,8 @@ public class armaa_strikeCraft extends BaseHullMod {
                 Global.getCombatEngine().getCustomData().put("armaa_strikecraftLanded" + ship.getId(), false);
             }
 
-            if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float == false) {
-                getPilotPersonality(ship);
-            } else {
-                HPPercent = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId());
-            }
-        }
-
         float CurrentHull = ship.getHitpoints();
-        float MaxHull = ship.getMaxHitpoints();
         float CurrentHullLevel = ship.getHullLevel();
-        float CurrentCR = ship.getCurrentCR();
         boolean needsrefit = false;
         ShipAPI target = null;
         boolean selectedCarrier = false;
@@ -729,9 +715,11 @@ public class armaa_strikeCraft extends BaseHullMod {
             }
         }
 
-        if (((CurrentHull < armaa_utils.getMaxHPRepair(ship) && CurrentHullLevel <= HPPercent ) || (CurrentCR < armaa_utils.getMaxCRRepair(ship)) || (needsReload(ship)) || (selectedCarrier)) && canRefit(ship)) {
-            if (!ship.isStationModule() || ship.getStationSlot() == null) {
-                needsrefit = checkRefitStatus(ship, amount);
+        if (canRefit(ship)) {
+            if (armaa_utils.canRestoreHPOrCR(ship)|| (needsReload(ship)) || (selectedCarrier)) {
+                if (!ship.isStationModule() || ship.getStationSlot() == null) {
+                    needsrefit = checkRefitStatus(ship, amount);
+                }
             }
         }
 
@@ -798,6 +786,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             }
         }
     }
+}
 
     //This listener ensures we die properly
     public static class StrikeCraftDeathMod implements DamageTakenModifier, AdvanceableListener {

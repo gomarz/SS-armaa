@@ -156,16 +156,10 @@ public class armaa_combat_docking_AI extends BaseShipAI {
             return false;
         }
 
-        float CurrentHull = ship.getHitpoints();
-        float MaxHull = armaa_utils.getMaxHPRepair(ship);
-        float CurrentCR = ship.getCurrentCR(); 
-        float maxCR = armaa_utils.getMaxCRRepair(ship);        
-
-        if ((CurrentHull < MaxHull) || (CurrentCR < maxCR)) {
+        if (armaa_utils.canRestoreHPOrCR(ship)) {
             needrepair = true;
             returning = true;
         }
-        //Missile ammo check
 
         for (WeaponAPI w : ship.getAllWeapons()) {
             if (w.usesAmmo() && w.getAmmo() <= 0 && !(w.getSlot().isDecorative())) {

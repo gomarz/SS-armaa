@@ -26,7 +26,7 @@ armaa_pa_mid_wing,armaa_pa_mid_standard,"interceptor1, interceptor,rare_bp,no_dr
 armaa_spriggan_wing,armaa_record_Standard,"bomber3, bomber,cataphract,no_sell,no_drop",3,0.25,4,18,V,4000,1000,-100,2,FIGHTER,Bomber,15,14000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_morgana_wing,armaa_morganab_standard,"support6, support,no_drop,no_sell,stay_in_front_of_ship",0,0.3,3,30,DIAMOND,0,600,,1,SUPPORT,Support Fighter,25,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_borer_wing,drone_borer,"no_drop, no_sell, low, stay_in_front_of_ship",0,,2,0,BOX,2000,500,,2,SUPPORT,Drone,5,1500,,,,,,,,,,,,,18,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

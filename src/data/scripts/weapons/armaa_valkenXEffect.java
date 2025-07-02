@@ -170,7 +170,7 @@ public class armaa_valkenXEffect implements EveryFrameWeaponEffectPlugin {
 				if(armL.getCooldownRemaining() <= 0f && !armL.isFiring())
 					cooldown = false;
 				
-				if(!swinging && !cooldown && armL.getChargeLevel() > 0f)
+				if(!swinging && armL.getChargeLevel() > 0f)
 				{
 					armL.setCurrAngle(armL.getCurrAngle() + (sineA * TORSO_OFFSET*0.30f) *armL.getChargeLevel());
 				}

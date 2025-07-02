@@ -25,14 +25,14 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
     private ShipAPI ship;
     private SpriteAPI sprite;
     private AnimationAPI anim;
-    private WeaponAPI head, armL, armL2, armR, pauldronL, pauldronR, torso,gun, shoulderwep, headGlow, trueWeapon;	
+    private WeaponAPI head, armL, armL2, armR, pauldronL, pauldronR, torso,gun, shoulderwep, headGlow, trueWeapon;
     private final Vector2f ZERO = new Vector2f();
     private int limbInit = 0;
-	
+
 	private float swingLevel = 0f;
 	private boolean swinging = false;
 	private boolean cooldown = false;
-	
+
 	private float swingLevelR = 0f;
 	private boolean swingingR = false;
 	private boolean cooldownR = false;
@@ -100,7 +100,7 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
                    		headGlow = w;
                     break;
                 case "TRUE_GUN":
-                    if(trueWeapon==null) 
+                    if(trueWeapon==null)
 					{
                         trueWeapon = w;
                     }
@@ -109,13 +109,13 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
         }
     }
     @Override
-    public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) 
+    public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon)
 	{
 
         ship = weapon.getShip();
         sprite = ship.getSpriteAPI();
         system = ship.getSystem();
-		
+
 		if(!runOnce)
         init();
 		if(gun == null || armL == null) return;
@@ -123,7 +123,7 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 			return;
         anim = gun.getAnimation();
 		ship.syncWeaponDecalsWithArmorDamage();
-		
+
 		if (ship.getEngineController().isAccelerating()) {
 			if (overlap > (MAX_OVERLAP - 0.1f)) {
 				overlap = MAX_OVERLAP;
@@ -144,7 +144,7 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 			}
 		}
 
-		float sineA = 0, sinceB = 0, sineC=0, sinceD=0;	
+		float sineA = 0, sinceB = 0, sineC=0, sinceD=0;
 		float global = ship.getFacing();
 		float aim = MathUtils.getShortestRotation(global, gun.getCurrAngle());
 		float aim2 = MathUtils.getShortestRotation(global, armL.getCurrAngle());
@@ -160,9 +160,9 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 			{
 				sineA=MagicAnim.smoothNormalizeRange(bladeArm.getChargeLevel(),0.3f,0.9f);
 				sinceB=MagicAnim.smoothNormalizeRange(bladeArm.getChargeLevel(),0.3f,1f);
-			} 
-			else 
-			{                
+			}
+			else
+			{
 				sineA =1;
 				sinceB =1;
 			}
@@ -180,12 +180,12 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 				WeaponAPI bladeArm = armL2 == null ? armL : armL2;
 				if(noanim)
 					weapon.setCurrAngle(global + (sineA * TORSO_OFFSET + aim * 0.3f));
-			
+
 				else
 				{
 					weapon.setCurrAngle(global + (sineA * (TORSO_OFFSET-(TORSO_OFFSET*(swingLevel/9f))) + aim * 0.3f)*bladeArm.getChargeLevel());
 				}
-				
+
 				if(bladeArm.getSpec().getWeaponId().contains("armaa_aleste_blade_LeftArm"))
 				{
 					if(!ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.BACKING_OFF) && !ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.DO_NOT_PURSUE))
@@ -196,34 +196,34 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 							{
 								ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
 								engine.headInDirectionWithoutTurning(ship, weapon.getCurrAngle(), ship.getMaxSpeed());
-							}					
-						}								
-					}					
+							}
+						}
+					}
 					if(bladeArm.getCooldownRemaining() <= 0f && !bladeArm.isFiring())
 						cooldown = false;
-					
-					if(!swinging && !cooldown && bladeArm.getChargeLevel() > 0f)
+
+					if(!swinging && bladeArm.getChargeLevel() > 0f)
 					{
-						armL.setCurrAngle(armL.getCurrAngle() + (sineA * TORSO_OFFSET*0.30f) *bladeArm.getChargeLevel());
+						bladeArm.setCurrAngle(bladeArm.getCurrAngle() + (sineA * TORSO_OFFSET*0.30f) *bladeArm.getChargeLevel());
 					}
 					if(bladeArm.getChargeLevel() >= 1f)
 					{
 						swinging = true;
 					}
-					
-					if(swinging && armL.getCurrAngle() != armL.getShip().getFacing()+45f)
+
+					if(swinging && bladeArm.getCurrAngle() != bladeArm.getShip().getFacing()+45f)
 					{
 						animInterval.advance(amount);
-						armL.setCurrAngle((float)Math.min(armL.getCurrAngle()+swingLevel,armL.getCurrAngle()+armL.getArc()/2));
+						bladeArm.setCurrAngle((float)Math.min(bladeArm.getCurrAngle()+swingLevel,bladeArm.getCurrAngle()+bladeArm.getArc()/2));
 					}
-					
+
 					if(swinging == true && (bladeArm.getChargeLevel() <= 0f))
 					{
 						swinging = false;
 						swingLevel = 0f;
 						cooldown = true;
 					}
-					
+
 					if(animInterval.intervalElapsed())
 					{
 						swingLevel+=0.5;
@@ -236,9 +236,9 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 						swingLevel = 0f;
 					}
 				}
-			}				
+			}
 		}
-		
+
 		if(armL2 != null)
 		{
 			armL2.setCurrAngle(armL.getCurrAngle());
@@ -252,9 +252,9 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 			{
 				sineC=MagicAnim.smoothNormalizeRange(gun.getChargeLevel(),0.3f,0.9f);
 				sinceD=MagicAnim.smoothNormalizeRange(gun.getChargeLevel(),0.3f,1f);
-			} 
-			else 
-			{                
+			}
+			else
+			{
 				sineC =1;
 				sinceD =1;
 			}
@@ -263,8 +263,8 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 				{
 					if(gun.getCooldownRemaining() <= 0f && !gun.isFiring())
 						cooldownR = false;
-					
-					if(!swingingR && !cooldownR && gun.getChargeLevel() > 0f)
+
+					if(!swingingR  && gun.getChargeLevel() > 0f)
 					{
 						gun.setCurrAngle(gun.getCurrAngle() + (sineC * -(TORSO_OFFSET)*0.30f) *gun.getChargeLevel());
 					}
@@ -272,20 +272,20 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 					{
 						swingingR = true;
 					}
-					
+
 					if(swingingR && gun.getCurrAngle() != gun.getShip().getFacing()-45f)
 					{
 						animInterval.advance(amount);
 						gun.setCurrAngle((float)Math.max(gun.getCurrAngle()-swingLevelR,gun.getCurrAngle()-gun.getArc()/2));
 					}
-					
+
 					if(swingingR == true && (gun.getChargeLevel() <= 0f))
 					{
 						swingingR = false;
 						swingLevelR = 0f;
 						cooldownR = true;
 					}
-					
+
 					if(animInterval.intervalElapsed())
 					{
 						swingLevelR+=0.5;
@@ -298,28 +298,28 @@ public class armaa_alesteEffect implements EveryFrameWeaponEffectPlugin {
 						swingLevelR = 0f;
 					}
 				}
-			}			
+			}
 //
 		if (pauldronR != null)
 		{
 			pauldronR.setCurrAngle(global + sineA * (TORSO_OFFSET-(TORSO_OFFSET*(swingLevel/9f))) * 0.5f + aim * 0.75f + RIGHT_ARM_OFFSET * 0.5f);
 			if(gun.getBarrelSpriteAPI() != null)
 			pauldronR.getSprite().setCenterY(gun.getBarrelSpriteAPI().getCenterY()-40f);
-		
+
 			if(trueWeapon != null && trueWeapon.getCooldown() > 0)
 			{
 				gun.getSprite().setCenterY(originalRArmPos+(2*trueWeapon.getCooldownRemaining()/trueWeapon.getCooldown()));
-				pauldronR.getSprite().setCenterY(originalRShoulderPos+(2*trueWeapon.getCooldownRemaining()/trueWeapon.getCooldown()));			
-			}			
+				pauldronR.getSprite().setCenterY(originalRShoulderPos+(2*trueWeapon.getCooldownRemaining()/trueWeapon.getCooldown()));
+			}
 		}
-				
+
 		if (pauldronL != null)
 		{
 			if(armL != null)
 			pauldronL.setCurrAngle(global + sineA * TORSO_OFFSET * 0.5f + aim2 * 0.75f - RIGHT_ARM_OFFSET * 0.5f);
 			pauldronL.getSprite().setCenterY(originalShoulderPos-(8*sinceB));
 		}
-		
+
 		if(headGlow != null)
 		{
 			headGlow.setCurrAngle(head.getCurrAngle());

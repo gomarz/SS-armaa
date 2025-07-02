@@ -161,6 +161,12 @@ public class armaa_harpoonProjectileScript extends BaseEveryFrameCombatPlugin
 				Vector2f.add((Vector2f)dir.scale(pushMe * shieldModifier * distanceModifier * -1f),source.getVelocity(),source.getVelocity());
 				Vector2f.add((Vector2f)dirClone.scale(pushYou * shieldModifier * distanceModifier),target.getVelocity(),target.getVelocity());
 			}
+                        
+                        else
+                        {
+                            proj.explode();
+                            Global.getCombatEngine().removePlugin(this);                            
+                        }
 
 		}
 		
