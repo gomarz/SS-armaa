@@ -162,6 +162,8 @@ public class armaa_strikeCraft extends BaseHullMod {
         if (Global.getCombatEngine() != null || (Global.getSector() != null && Global.getSector().getCampaignUI() != null && Global.getSector().getCampaignUI().isShowingDialog())) {
             stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).unmodify("armaa_carrierStorageHyper");
         }
+        if(stats.getVariant().getHullSpec().hasTag("armaa_launches_from_ships"))
+            stats.getVariant().getHullSpec().setTravelDriveId("armaa_traveldrive");
     }
 
     @Override
