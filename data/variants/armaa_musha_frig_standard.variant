@@ -8,10 +8,7 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "heavyarmor",
-    "escort_package",
-    "coherer",
-    "advancedcore"
+    "heavyarmor"
   ],
   "weaponGroups": [
     {

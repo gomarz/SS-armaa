@@ -6,11 +6,17 @@
 			"armaa_monitor_xiv":0.50,
 		},
 	},
+	"variantOverrides":{
+		"armaa_valkyrie_hegemony":10,
+	},
 	"knownShips":{
 		"hulls":[	
     			"armaa_garegga_xiv_carrier",
     			"armaa_corsair_xiv",
     			"armaa_monitor_xiv",
+			"armaa_valkyrie",
+			"armaa_panther_frig",
+			"armaa_musha_frig_sniper"
 			],
 	},
 },	

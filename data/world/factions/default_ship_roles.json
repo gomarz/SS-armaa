@@ -41,6 +41,7 @@
 	"combatFreighterMedium":{
 		"armaa_valkyrie_standard":10,
 		"armaa_valkyrie_sniper":5,
+		"armaa_valkyrie_hegemony":0,
 	},
 	"combatCapital":{
 

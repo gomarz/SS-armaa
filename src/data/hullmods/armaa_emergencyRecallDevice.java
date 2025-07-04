@@ -211,7 +211,9 @@ public class armaa_emergencyRecallDevice extends BaseHullMod {
 		if (ship.getVariant().hasHullMod(HullMods.PHASE_ANCHOR)) {
 			return "Incompatible with Adaptive Phase Coils";
 		}
-
+		if (!ship.getVariant().hasHullMod("strikeCraft")) {
+			return "Only compatible with strikecraft";
+		}
 		return super.getUnapplicableReason(ship);
 	}
 	

@@ -1,3 +1,22 @@
+V3.2.1
+-----
+- Fixed Emergency Recall working on non strikecraft
+- Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
+- Valkyri(AA)
+	- Aded more variants
+	- Can appear carrying MUSHA + MUSHA Sniper, Aleste + MUSHA, MUSHA + Panther(for the hegemony), etc
+- Added MUSHA (Sniper)
+	- 3 DP
+	- 15 OP
+	- Sniper Rifle
+		- 1000 range, kinetic
+	- Atropos (Single)
+	- Targeting Laser
+		- Functionally identical to graviton beam
+	- Ship System: Called Shot
+		- simple "qte" that increases damage based on threshold
+		- ranges from miss->okay->good->perfect
+
 V3.2RC3
 -----
 - Valkyrie(AA)
@@ -10,7 +29,6 @@ V3.2RC3
 - Broadsword(WINGCOM)
 	- Small composite -> small ballistic
 	- adjusted sprite
-- Trident Wing
 
 - Fixed reduce travel drive speed for strikecraft
 
@@ -68,6 +86,8 @@ v3.2
 - New Wing: MUSHA
 	- 8 OP, 3 wingsize
 	- slow, mid-long range, prioritize fighters
+- New Ship: MUSHA Sniper
+	- 3 DP
 - New Ship: Bassline
 	- Combat Carrier
 - Added some playable vanilla strikecraft analogues

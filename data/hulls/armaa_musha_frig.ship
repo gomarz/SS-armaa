@@ -21,14 +21,16 @@
   ],
   "builtInWeapons": {
     "HEAD": "armaa_mushaHead",
+    "WS0001": "railgun",
     "WS0002": "armaa_musha_rightPauldron",
-    "WS0003": "armaa_musha_leftPauldron"
+    "WS0003": "armaa_musha_leftPauldron",
+    "WS0004": "railgun"
   },
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 50,
       "angle": 0,
@@ -56,7 +58,7 @@
     {
       "id": "WS0004",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 50,
       "angle": 0,
