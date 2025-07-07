@@ -189,8 +189,9 @@ $player.armaa_valkHunter_event_id = false","You're still shaking off the residua
 
 Another crew member snorts bitterly. ""Why would they? No one's supposed to care what happens out here anymore."" 
 
-An older officer glances around. ""We need to settle leadership. If we don't establish command now, we won't last the week."" The group hesitates. Quiet glances pass between the faces in the room. No one steps forward. Finally, one of the senior crew speaks up. ""It should be $player.himOrHer."" He nods toward you. ""They pulled us out of that fight. Only one left with clearance."" The older officer continues without pause. ""Quartermaster - Davos. Ops - Ferin. Sensors - Aira. I'll serve as XO for now.""",armaa_valkHunterPost2:Continue,# available by default
-armaa_valkHunterPost2,DialogOptionSelected,$option == armaa_valkHunterPost2,,"The crew disperse to their stations, but your XO lingers nearby, datapad in hand, scrolling through the decade of events you've missed. After a moment, he speaks.
+An older officer glances around. ""We need to settle leadership. If we don't establish command now, we won't last the week."" The group hesitates. Quiet glances pass between the faces in the room. No one steps forward. Finally, one of the senior crew speaks up. ""It should be $playerHimOrHer."" He nods toward you. ""They pulled us out of that fight. Only one left with clearance."" The older officer continues without pause. ""Quartermaster - Davos. Ops - Ferin. Sensors - Aira. I'll serve as XO for now.""",armaa_valkHunterPost2:Continue,# available by default
+armaa_valkHunterPost2,DialogOptionSelected,$option == armaa_valkHunterPost2,"SetTextHighlights ""If anyone in the Sector might understand our situation, it's Arma Armatura.""
+","The crew disperse to their stations, but your XO lingers nearby, datapad in hand, scrolling through the decade of events you've missed. After a moment, he speaks.
 
 ""We're running on borrowed time. Supplies won't last forever. If we're going to stabilize, we'll need outside support- and legitimacy."" He glances up at you. ""From what these logs show, Arma Armatura managed to secure corporate governance over the colony they're calling 'New Meshan.' Looks like they've re-established full corporate board operations out there."" The XO tilts his head slightly, watching your reaction.
 
@@ -3002,6 +3003,7 @@ Whatever path you choose next, you know one thing for certain:
 You're no longer invisible.",,
 ,,,,,,
 armaa_valkazard,PopulateOptions,"armaa_Hikaru_Utada findValk
+!$global.armaa_engagedValkHunters
 $player.numShips > 1
 $postId == administrator
 $market.id == armaa_meshanii_market
@@ -3120,7 +3122,7 @@ $givenGuardual = true","""This was one of our pet projects back in the day. A tr
 
 Dawn crosses her arms, her usual stoic demeanor softening slightly. ""Why now, Sera? What's the catch?""
 
-Sera laughs lightly, brushing an invisible speck of dust from her sleeve. ""Oh, Dawn, ever the skeptic. The 'catch,' if you can call it that, is this: I wouldn't trust this technology to just anyone. But you two? Y understand value. You understand trust.""",,
+Sera laughs lightly, brushing an invisible speck of dust from her sleeve. ""Oh, Dawn, ever the skeptic. The 'catch,' if you can call it that, is this: I wouldn't trust this technology to just anyone. But you two? You understand value.""",,
 ,,,,,,
 armaa_kadeChat,PopulateOptions,"$id == armaa_kade
 !$global.armaa_kadeMentionRaid",,,"armaa_kadeChatStart:""How're things going on Jenius?""",
@@ -3242,7 +3244,7 @@ armaa_vxGift,PickGreeting,"$id == armaa_seraph
 !$givenCustomVXCustom score: 1000
 $armaa_gaveSeraphValk score: 1000
 $rel >= 0.30
-RollProbability 0.5
+$global.daysSinceStart > 180
 ","ShowPersonVisual
 FireAll armaa_vxGiftQuestions","As the connection is established, you are greeted by the smiling visage of Sera.
 
@@ -4708,7 +4710,35 @@ $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Hello there, fellow space traveler. $PersonRank $personName here. Looks like we've crossed paths in this vast expanse - no hostile intent on our end. Let's keep it peaceful, shall we?""
 OR
 ""Attention. If your path aligns with our cause, we welcome you. If not, consider this a peaceful warning to stay clear of our $shipOrFleet.""",,
-,,,,,,
+#armaa_MRCAvertCombatCommsOpen,OpenCommLink,"RollProbability 0.4
+armaa_Hikaru_Utada isPlayerFriendlyToMRC
+$sourceMarket.id == exsedol_station_market
+$faction.id == pirates
+RollProbability
+!$letPlayerGoBefore
+$entity.isHostile
+$entity.relativeStrength > 0","MakeOtherFleetNonHostile true
+$entity.ignorePlayerCommRequests = true 1
+$letPlayerGoBefore = true","The comm channel crackles to life. A grim-faced pirate leans into view, flanked by blinking red status lights and the metallic hiss of pressure seals.
+
+""Well, well. Look what stumbled into our sights,"" $heOrShe sneers, voice rough with anticipation. ""Strip the drives, jettison the cargo, and maybe we'll let your crew drift home in one piece."" $HeOrShe leans forward—then freezes, eyes scanning data just off-screen. A pause. A frown. A low grunt.
+
+""...Huh."" They tap a gloved finger against a data slate, brows furrowing. ""MRC flagged. You're one of them."" The shift in tone is immediate-still gruff, but cautious now. ""That buys you a pass today."" The $rank exhales through their nose, tension giving way to a guarded sort of respect.
+
+The channel cuts with a curt nod, and $hisOrHer fleet begins to veer off.",cutCommLink:Cut the comm link,
+#armaa_MRCAvertCombatCommsOpenWeaker,OpenCommLink,"armaa_Hikaru_Utada isPlayerFriendlyToMRC
+RollProbability 0.6
+$sourceMarket.id == exsedol_station_market
+$faction.id == pirates
+$entity.isHostile
+$entity.relativeStrength < 0","$entity.ignorePlayerCommRequests = true 1
+MakeOtherFleetNonHostile true","The comm connection stutters, then resolves into the image of a weathered pirate captain that's seen better cycles. $HisOrHer expression is guarded, posture tight.
+
+""Look... ain't lookin' for trouble,"" they say, voice low and even. ""Your transponder checks out-MRC-favored. Didn't know we were brushin' up against one of them."" They glance off-screen, probably at a second monitor full of threat assessments and retreat vectors.
+
+""No point getting scorched over a misunderstanding. You're clear to go. We'll keep to our lane."" The pirate offers a small, reluctant nod of respect.
+
+The transmission ends, and the pirate fleet promptly begins to attempt breaking formation, aiming to steer a wide berth around your $shipOrFleet.",cutCommLink:Cut the comm link,
 armaa_aiPirateGreeting,OpenCommLink,"$faction.id == pirates
 $tag:armaa_pirateDerelictFleet score:1000","$menuState = fleetConvMain 0
 $global.armaa_pirateAIInteracted = true","""Greetings, insignificant whelp! I am the great and feared $name, commander of this vessel! Prepare to be boarded, for your goods now belong to me!""

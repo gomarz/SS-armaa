@@ -1,6 +1,8 @@
 V3.2.1
 -----
 - Fixed Emergency Recall working on non strikecraft
+- Added armaa_launches_from_ships tag
+	- add's the armaa travel drive to any strikecraft with tag
 - Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
 - Valkyri(AA)
 	- Aded more variants
@@ -16,6 +18,7 @@ V3.2.1
 	- Ship System: Called Shot
 		- simple "qte" that increases damage based on threshold
 		- ranges from miss->okay->good->perfect
+- fixed some typos in rules.csv
 
 V3.2RC3
 -----
