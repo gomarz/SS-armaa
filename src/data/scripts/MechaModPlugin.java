@@ -479,7 +479,7 @@ public class MechaModPlugin extends BaseModPlugin {
 				"tritachyon",
 				null,
 				FleetTypes.PATROL_SMALL,
-				20f, // combatPts
+				10f, // combatPts
 				0f, // freighterPts 
 				0f, // tankerPts
 				0f, // transportPts
@@ -496,8 +496,14 @@ public class MechaModPlugin extends BaseModPlugin {
 			fleet.setId("armaa_valkDefender");
 			fleet.getFleetData().addFleetMember("armaa_garegga_tt_carrier_standard");	
 			fleet.getFleetData().addFleetMember("armaa_garegga_tt_carrier_standard");
-			fleet.getFleetData().addFleetMember("armaa_garegga_tt_carrier_standard");			
-			fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, loc, 500f);						
+                        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PURSUE_PLAYER, true);
+                        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_ALWAYS_PURSUE, true); 
+                        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_HOLD_VS_STRONGER, true);   
+                        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
+                        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);                            
+                        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MISSION_IMPORTANT, true);                          
+			fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, loc, 500f);
+                        
 		}
         MarketAPI market = Global.getSector().getEconomy().getMarket("armaa_meshanii_market");
         if (market != null) 

@@ -16,9 +16,13 @@
 	#"engineGlowColor":[0,0,0,0],
 	#"engineGlowContrailColor":[0,0,0,0],
 	#"engineGlowMaxBlend":0.25,
-	"engineGlowLengthMult":1.5,
-	"engineGlowWidthMult":1.5,
-	"engineGlowGlowMult":1.5,
+	#"engineGlowLengthMult":1.5,
+	#"engineGlowWidthMult":1.5,
+	#"engineGlowGlowMult":1.5,
+	"engineGlowMaxBlend":0.25,
+	"engineGlowLengthMult":4,
+	"engineGlowWidthMult":3,
+	"engineGlowGlowMult":2,
 	
 	"flameoutOnImpactChance":0,
 

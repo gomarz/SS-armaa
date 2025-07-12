@@ -69,17 +69,17 @@ public class armaa_reloadEveryFrame extends BaseEveryFrameCombatPlugin {
             MagicFakeBeam.spawnFakeBeam(
                     Global.getCombatEngine(),
                     wep.getFirePoint(0),
-                    wep.getRange(),
+                    wep.getRange()*1.10f,
                     wep.getCurrAngle(),
                     5f * hitStrength,
                     0.15f,
                     0.25f,
                     200,
                     Color.white,
-                    Color.yellow,
+                    Color.white,
                     wep.getDamage().getDamage() * hitStrength,
-                    DamageType.ENERGY,
-                    200f,
+                    DamageType.KINETIC,
+                    200f*hitStrength,
                     ship);
             for (int i = 0; i < 20; i++) {
                 Vector2f vel = MathUtils.getRandomPointInCone(new Vector2f(), 100, angle - 20, angle + 20);

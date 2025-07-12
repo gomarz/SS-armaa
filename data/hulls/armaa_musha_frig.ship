@@ -14,6 +14,7 @@
   "builtInMods": [
     "strikeCraft",
     "cataphract",
+    "escort_package",
     "armaa_wingCommander"
   ],
   "builtInWings": [

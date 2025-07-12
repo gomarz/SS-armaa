@@ -17,10 +17,11 @@ import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicFakeBeam;
 import org.magiclib.util.MagicRender;
 import org.magiclib.util.MagicTargeting;
 
-public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin implements MissileAIPlugin, GuidedMissileAI {
+public class armaa_curvyLaserAIKinetic extends BaseCombatLayeredRenderingPlugin implements MissileAIPlugin, GuidedMissileAI {
     //This script combines the cyroflamer script with the Projectile Tracking script developed by Nicke535
     //Modified by shoi
 
@@ -45,11 +46,12 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
     private IntervalUtil empTimer = new IntervalUtil(1f, 2f);
     private IntervalUtil fireTimer = new IntervalUtil(1f, 1f);
     private IntervalUtil armingTimer = new IntervalUtil(2f, 4f);
-    private static final Color MUZZLE_FLASH_COLOR = new Color(128, 180, 242, 50);
+    private IntervalUtil targetingTimer = new IntervalUtil (0.5f,0.5f);
+    private static final Color MUZZLE_FLASH_COLOR = new Color(255, 255, 255, 50);
     private static final Color MUZZLE_FLASH_COLOR_END = new Color(199, 0, 0, 100);
-    private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(140, 200, 255, 100);
+    private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(200, 200, 200, 100);
     private static final Color MUZZLE_FLASH_COLOR_ALT_END = new Color(200, 0, 0, 100);
-    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(0, 150, 200, 50);
+    private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(200, 200, 200, 50);
     private static final Color MUZZLE_FLASH_COLOR_GLOW_END = new Color(255, 0, 0, 100);
     private static final float MUZZLE_FLASH_DURATION = 0.10f;
     private static final float MUZZLE_FLASH_SIZE = 40.0f;
@@ -70,7 +72,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
     private static final float A_2 = CONE_ANGLE / 2;
     private List<MissileAPI> alreadyRegisteredProjectiles = new ArrayList<MissileAPI>();
 
-    public armaa_curvyLaserAI(MissileAPI missile, ShipAPI launchingShip) {
+    public armaa_curvyLaserAIKinetic(MissileAPI missile, ShipAPI launchingShip) {
 
         if (engine != Global.getCombatEngine()) {
             this.engine = Global.getCombatEngine();
@@ -97,7 +99,6 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
         engine.addSmoothParticle(missile.getLocation(), ZERO, MUZZLE_FLASH_SIZE, 1f, MUZZLE_FLASH_DURATION * 4f, colorGlow);
         if (missile.isFizzling() || missile.isFading() || primed) {
             if (MagicRender.screenCheck(0.25f, missile.getLocation())) {
-                engine.addSmoothParticle(missile.getLocation(), missile.getVelocity(), 100 * fluxLevel, 0.5f, 0.25f, Color.blue);
                 engine.addHitParticle(missile.getLocation(), missile.getVelocity(), 100 * fluxLevel, 1f, 0.1f, Color.white);
             }
             DamagingExplosionSpec boom = new DamagingExplosionSpec(
@@ -164,25 +165,24 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             }
             engine.addSmoothParticle(missile.getLocation(), missile.getVelocity(), MUZZLE_FLASH_SIZE * 2f * fluxLevel, 1f, MUZZLE_FLASH_DURATION * 2f, colorGlow);
         } else {
-            /*
-				if(target!=null && MathUtils.getDistance(target,missile) <= 700f)
-				MagicFakeBeam.spawnFakeBeam(
-					engine,
-					missile.getLocation(),
-					2000,
-					VectorUtils.getAngle(missile.getLocation(),target.getLocation()),
-					40f*fluxLevel,
-					amount,
-					amount/2,
-					100f*fluxLevel,
-					new Color(255,255,255),
-					new Color(199,146,0),
-					150f*amount*fluxLevel,
-					DamageType.ENERGY,
-					0f,
-					missile.getSource()
-				);
-             */
+            targetingTimer.advance(amount);
+            if(target!=null && MathUtils.getDistance(target,missile) <= 700f && targetingTimer.intervalElapsed())
+            MagicFakeBeam.spawnFakeBeam(
+                    engine,
+                    missile.getLocation(),
+                    2000,
+                    VectorUtils.getAngle(missile.getLocation(),target.getLocation()),
+                    40f*fluxLevel,
+                    amount,
+                    amount/2,
+                    100f*fluxLevel,
+                    new Color(255,255,255),
+                    new Color(199,146,0),
+                    150f*amount*fluxLevel,
+                    DamageType.ENERGY,
+                    0f,
+                    missile.getSource()
+            );
             missile.giveCommand(ShipCommand.ACCELERATE);
             if (Math.random() > 0.75) {
                 engine.spawnExplosion(missile.getLocation(), missile.getVelocity(), MUZZLE_FLASH_COLOR_ALT, MUZZLE_FLASH_SIZE * 0.20f * fluxLevel, MUZZLE_FLASH_DURATION);

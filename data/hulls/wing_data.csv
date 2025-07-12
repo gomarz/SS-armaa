@@ -9,6 +9,8 @@ armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_
 armaa_hazard_wing,armaa_hazard_standard,"fighter3,support,stay_in_front_of_ship,rare_bp",2,0.3,5,9,CLAW,3000,500,,3,FIGHTER,Close Support,13,6000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_guppy_wing,armaa_guppy_standard,"interceptor1,interceptor",0,0.1,3,3,BOX,4000,600,,4,INTERCEPTOR,Interceptor,5,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_musha_wing,armaa_musha_variant,"support3,support,ind,merc,stay_in_front_of_ship",2,0.2,7,12,V,1000,900,,3,SUPPORT,Fire Support,10,5000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_guardual_wing,armaa_guardual_standard_f,"fighter6, fighter,high, no_sell",3,0.7,8,21,BOX,4000,600,,2,FIGHTER,General Purpose,25,18000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_bit_wing,armaa_bit_std,"no_drop, no_sell,wingmen_no_swarm,leader_no_swarm,stay_in_front_of_ship",3,,3,4,DIAMOND,2000,500,,2,SUPPORT,Fire Support,12,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_blade_wing,armaa_bit_blade_variant,"no_drop, no_sell",3,,3,4,DIAMOND,1000,500,,1,FIGHTER,Fire Support,8,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
@@ -18,6 +20,7 @@ armaa_bit_spriggan,armaa_alesteBit_std,"no_drop, no_sell,leader_no_swarm,wingman
 armaa_bit_wing_standard,armaa_bit_sys,"no_drop, no_sell,leader_no_swarm,wingman_no_swarm,stay_in_front_of_ship",3,,4,0,DIAMOND,2000,500,,2,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_wing_zanac,armaa_alesteBit_adv,"no_drop, no_sell,stay_in_front_of_ship",3,,4,0,DIAMOND,2000,500,,2,SUPPORT,Fire Support,5,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
 armaa_bit_kshatriya_wing,armaa_bit_kshatriya_std,"no_drop, no_sell,stay_in_front_of_ship",3,,3,4,DIAMOND,2000,400,,2,INTERCEPTOR,Fire Support,8,6000,,,,,,,,,,,,,19,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #why?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_crew_wing,armaa_crew_standard,"interceptor1, interceptor,no_drop,no_sell",0,0.3,1,0,BOX,2000,599,,6,INTERCEPTOR,Crew,1,10,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10

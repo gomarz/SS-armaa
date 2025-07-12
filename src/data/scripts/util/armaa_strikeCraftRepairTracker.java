@@ -201,7 +201,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
         if (!abort) {
             if ((ship.getCurrentCR() <= armaa_utils.getMaxCRRepair(ship))) {
-                ship.setCurrentCR(armaa_utils.getMaxCRRepair(ship));
+                ship.setCurrentCR(Math.max(ship.getCurrentCR(),armaa_utils.getMaxCRRepair(ship)));
             }
             // I'm not sure how this interact with some effect added by mods that alters
             // malfunction chances, but it might be okay
@@ -210,11 +210,11 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.getMutableStats().getEngineMalfunctionChance().unmodify("cr_effect");
             ship.getMutableStats().getShieldMalfunctionChance().unmodify("cr_effect");
             ship.clearDamageDecals();
-            ship.setHitpoints(armaa_utils.getMaxHPRepair(ship)); //Hull to 100%
+            ship.setHitpoints(Math.max(ship.getHitpoints(),armaa_utils.getMaxHPRepair(ship))); //Hull to 100%
             ship.getVariant().getHullSpec().getNoCRLossTime();
-            Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getFlatBonuses()); 
-            Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getMultBonuses()); 
-            Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getPercentBonuses());             
+            // Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getFlatBonuses()); 
+            // Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getMultBonuses()); 
+            // Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getPercentBonuses());             
             if (ship.getMutableStats().getPeakCRDuration().computeEffective(0f) < ship.getTimeDeployedForCRReduction()) {
                 ship.getMutableStats().getPeakCRDuration().modifyFlat(ship.getId(), ship.getTimeDeployedForCRReduction());
             }

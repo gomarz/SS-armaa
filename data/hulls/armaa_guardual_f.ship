@@ -1,7 +1,7 @@
 {
   "hullName": "guardual",
-  "hullId": "armaa_guardual",
-  "hullSize": "FRIGATE",
+  "hullId": "armaa_guardual_f",
+  "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/guardual/armaa_guardual.png",
   "style": "MIDLINE",
   "height": 36,
@@ -12,17 +12,16 @@
   "shieldRadius": 35,
   "viewOffset": 0,
   "builtInMods": [
-    "strikeCraft",
     "armaa_variableUnit",
-    "autorepair",
-    "delicate"
+    "armaa_fighterStrafe",
+    "autorepair"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_guardual_arm_right",
     "C_ARML": "armaa_valkenLeftArm",
     "D_PAULDRONL": "armaa_guardual_pauldron_l",
     "D_PAULDRONR": "armaa_guardual_pauldron_r",
-    "E_HEAD": "armaa_guardual_head",
+    "E_HEAD": "armaa_guardual_head_b",
     "F_GPOD": "armaa_guardual_variablerifle",
     "F_LEGS": "armaa_gd_legs",
     "WINGL": "armaa_guardual_wing_l",
@@ -118,7 +117,7 @@
       "id": "WS0001",
       "size": "SMALL",
       "type": "HYBRID",
-      "mount": "TURRET",
+      "mount": "HIDDEN",
       "arc": 135,
       "angle": 0,
       "locations": [1, -0],
@@ -136,8 +135,8 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
       "arc": 5,
       "angle": 0,
       "locations": [-10, 16],
@@ -146,8 +145,8 @@
     {
       "id": "WS0004",
       "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
       "arc": 5,
       "angle": -0,
       "locations": [-10, -16],

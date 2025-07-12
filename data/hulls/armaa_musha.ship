@@ -12,6 +12,7 @@
   "shieldRadius": 43.5,
   "viewOffset": 0,
   "builtInMods": [
+    "escort_package",
     "cataphract"
   ],
   "builtInWeapons": {

@@ -26,7 +26,7 @@ public class armaa_morganaBonus extends BaseHullMod
 	@Override
 	public void applyEffectsAfterShipCreation(ShipAPI ship, java.lang.String id)
 	{
-		if(!ship.hasListenerOfClass(MorganaDamageListener.class))
+		if(!ship.hasListenerOfClass(MorganaDamageListener.class) && ship.isFighter())
 		{
 			ship.addListener(new MorganaDamageListener(ship));
 		}

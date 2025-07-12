@@ -4,6 +4,18 @@ V3.2.1
 - Added armaa_launches_from_ships tag
 	- add's the armaa travel drive to any strikecraft with tag
 - Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
+- GuarDUAL
+	- Added Automated Repair Unit
+	- Can transform now by using Middle Mouse Button
+	- Raising shields no longer forces transformation
+		- Shield arc in fighter mode is 50% base arc
+- New WIng: GuarDUAL (FV)
+	- Identical to GuarDUAL, sans PERCEPT, flux cap/diss, and shields
+	- 21 OP
+- PERCEPT
+	- chargeup: 0.30->0.25
+	- cooldown: 3->1.5
+	- regen: 0.06->0.08
 - Valkyri(AA)
 	- Aded more variants
 	- Can appear carrying MUSHA + MUSHA Sniper, Aleste + MUSHA, MUSHA + Panther(for the hegemony), etc

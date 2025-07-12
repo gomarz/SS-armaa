@@ -10,6 +10,8 @@
   "turretGunSprite": "graphics/armaa/ships/guardual/armaa_guardual_arm_right.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_revx_ml_variablerifle_00.png",
   "showDamageWhenDecorative": true,
+  "numFrames": 0,
+  "frameRate": 0,
   "glowColor": [
     155,
     0,

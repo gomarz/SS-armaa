@@ -34,7 +34,6 @@ import data.scripts.campaign.intel.armaa_liberationIntel;
 import data.scripts.world.systems.armaa_nekki;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import java.util.List;
 import java.util.ArrayList;
 import data.scripts.campaign.armaa_mrcReprisalListener;
@@ -137,7 +136,11 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 			{
 				Global.getSector().getImportantPeople().getPerson("armaa_dawn").getFleet().getFleetData().getOfficerData(Global.getSector().getImportantPeople().getPerson("armaa_dawn")).canLevelUp(true);
 			}
-		}			
+		}
+		else if ("isPlayerFriendlyToMRC".equals(action))
+		{
+                        return Global.getSector().getFaction("armaarmatura_pirates").getRelToPlayer().getRel() > 25f;
+		}
 		else if ("giveSSMech".equals(action))
 		{
 			String variantId = "armaa_vx_silversword_Hull";

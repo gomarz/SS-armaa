@@ -34,6 +34,7 @@ import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -60,6 +61,31 @@ public class armaa_utils {
         boolean ejectKeyPressed = false;
         long startTime = System.currentTimeMillis();
     }
+    
+    public static boolean isMiddleMouseClicked(ShipAPI ship, CombatEngineAPI engine) {
+            if (engine.getPlayerShip() != ship)
+                    return false;
+
+            boolean mmbDown = Mouse.isButtonDown(2);  // 2 = Middle Mouse Button
+
+            boolean result = false;           
+            String key = "armaa_mmbTransform" + "_" + ship.getId();
+            armaa_purgedata data = (armaa_purgedata) engine.getCustomData().get(key);
+            if (data == null) {
+                    data = new armaa_purgedata();
+                    engine.getCustomData().put(key, data);
+            }
+
+            // Detect "just pressed" – was not down last frame, is down this frame
+            if (mmbDown && !data.ejectKeyPressed) {
+                    result = true;
+            }
+            // Update the state tracking
+            data.ejectKeyPressed = mmbDown;
+
+            engine.getCustomData().put(key, data);
+            return result;
+    }    
 
     public static boolean isKeyDoubleTapped(ShipAPI ship, CombatEngineAPI engine) {
         if (engine.getPlayerShip() != ship) {
@@ -153,11 +179,6 @@ public class armaa_utils {
         }
 
         return onlineThrust / maxThrust;
-    }
-
-    public static void showHealText(ShipAPI anchor, Vector2f at, float repairAmount) {
-//        Global.getCombatEngine().addFloatingDamageText(at, repairAmount,
-//            ICEModPlugin.HEAL_TEXT_COLOR, anchor, anchor);
     }
 
     public static List<CombatEntityAPI> getCollideablesInRange(Vector2f at, float range) {
