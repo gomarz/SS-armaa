@@ -277,10 +277,10 @@
 	"custom":{
 		"decentralized":true,
 		"engageWhenEvenStrength":true,
-		"exemptFromFoodShortages":false,
+		"exemptFromFoodShortages":true,
 		"willTradeWhenHostile":true,
 		"ignoreTradeWithEnemiesForReputation":false,
-		"postsNoBounties":false,
+		"postsNoBounties":true,
 		"offerMissionsWhenHostile":true,
 		"allowsTransponderOffTrade":true,
 		"patrolsHaveNoPatrolMemoryKey":true,

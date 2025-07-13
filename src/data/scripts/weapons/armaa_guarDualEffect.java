@@ -35,6 +35,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
     private IntervalUtil interval2 = new IntervalUtil(1f, 1f);
     private IntervalUtil transformInterval = new IntervalUtil(3f, 5f);
     private IntervalUtil forceTransformTimer = new IntervalUtil(1.5f, 5f);
+    private final IntervalUtil animUpdateInterval = new IntervalUtil(0.033f,0.05f);
     private Vector2f ogPosL, ogPosR, ogPosRArm, ogPosLArm, ogPosLWing, ogPosRWing, ogPosGunF, ogPosLMissile, ogPosRMissile;
     private final float TORSO_OFFSET = -150, LEFT_ARM_OFFSET = -65, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
 
@@ -288,7 +289,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         }
         ship.getMutableStats().getBallisticRoFMult().modifyPercent(id, 50f * transformLevel);
         ship.getMutableStats().getEnergyRoFMult().modifyPercent(id, 50f * transformLevel);
-        ship.getMutableStats().getShieldDamageTakenMult().modifyPercent(id,50f * transformLevel);
+        ship.getMutableStats().getShieldDamageTakenMult().modifyMult(id,1f+(0.25f * transformLevel));
         if(ship.getShield() != null)
         {
             float sArc = (float)engine.getCustomData().get("armaa_transformState_sArc_" + ship.getId());            
@@ -373,15 +374,18 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         } else {
             sineD -= amount;
         }
-        if (sineD < 0) {
-            sineD = 0;
-        } else if (sineD > 1) {
-            sineD = 1;
+        if (sineD < 0f) {
+            sineD = 0f;
+        } else if (sineD > 1f) {
+            sineD = 1f;
         }
         if(!MagicRender.screenCheck(0.1f, weapon.getLocation()))
         {
             return;
         }
+        animUpdateInterval.advance(amount);
+        if(!animUpdateInterval.intervalElapsed())
+            return;
         if (gun != null) {
             gun.getSprite().setCenterY(ogPosRArm.getY() + 6 * sineC);
             gun.getSprite().setCenterX(ogPosRArm.getX() + 4 * sineC);
@@ -415,7 +419,8 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                     + ((aim + LEFT_ARM_OFFSET) * sineD) * (1f - transformLevel)
                     + ((overlap + aim * 0.25f) * (1 - sineD)) * (1f - transformLevel)
             );
-            armL.getSprite().setCenterY(ogPosLArm.getY() + 15 * sineC + recoil);
+            float recoilOffset = sineD >= 1f ? recoil : 0f;
+            armL.getSprite().setCenterY(ogPosLArm.getY() + 15f * sineC + recoilOffset);
             armL.getSprite().setCenterX(ogPosLArm.getX() - 5 * sineC);
             Color col = armL.getSprite().getColor();
             float red = col.getRed() / 255f;
@@ -437,7 +442,8 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 
         if (pauldronL != null) {
             pauldronL.setCurrAngle(global + MathUtils.getShortestRotation(ship.getFacing(), armL.getCurrAngle()) * (1f - transformLevel) * 0.6f + (sineA + sineC) * 90f);
-            pauldronL.getSprite().setCenterY(ogPosL.getY() - 6 * sineC + recoil);
+            float recoilOffset = sineD >= 1f ? recoil : 0f;            
+            pauldronL.getSprite().setCenterY(ogPosL.getY() - 6 * sineC + recoilOffset);
             pauldronL.getSprite().setCenterX(ogPosL.getX() - 4 * sineC);
             wingL.setCurrAngle(pauldronL.getCurrAngle());
             wingL.getSprite().setCenterY(ogPosLWing.getY() - 14 * sineC);

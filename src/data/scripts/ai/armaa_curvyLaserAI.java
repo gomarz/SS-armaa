@@ -283,8 +283,11 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             }
         }
         if (empTimer.intervalElapsed()) {
-            float numStrikes = 1 * fluxLevel;
-            for (MissileAPI target : CombatUtils.getMissilesWithinRange(missile.getLocation(), 700f)) {
+            int maxStrikes = 4;
+            float fluxWeighted = fluxLevel * (maxStrikes - 1);  // 0.0 to 3.0
+            int baseStrikes = 1 + (int)(fluxWeighted + Math.random());  
+            float numStrikes = Math.min(baseStrikes, maxStrikes);
+            for (MissileAPI target : CombatUtils.getMissilesWithinRange(missile.getLocation(), 800f)) {
                 if (target.getOwner() == missile.getSource().getOwner()) {
                     continue;
                 }

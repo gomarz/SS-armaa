@@ -24,8 +24,8 @@
     "E_HEAD": "armaa_guardual_head_b",
     "F_GPOD": "armaa_guardual_variablerifle",
     "F_LEGS": "armaa_gd_legs",
-    "WINGL": "armaa_guardual_wing_l",
-    "WINGR": "armaa_guardual_wing_r"
+    "WINGL": "armaa_guardual_wing_l_f",
+    "WINGR": "armaa_guardual_wing_r_f"
   },
   "weaponSlots": [
     {

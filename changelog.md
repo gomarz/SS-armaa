@@ -6,16 +6,21 @@ V3.2.1
 - Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
 - GuarDUAL
 	- Added Automated Repair Unit
+	- Flux Capacity: 2000 -> 2250
+	- Flux Dissipation: 175->225
 	- Can transform now by using Middle Mouse Button
 	- Raising shields no longer forces transformation
 		- Shield arc in fighter mode is 50% base arc
-- New WIng: GuarDUAL (FV)
+		- Shields take 25% more damage
+- New Wing: GuarDUAL (FV)
 	- Identical to GuarDUAL, sans PERCEPT, flux cap/diss, and shields
 	- 21 OP
 - PERCEPT
 	- chargeup: 0.30->0.25
 	- cooldown: 3->1.5
 	- regen: 0.06->0.08
+	- missile intercept range: 700->800
+	- max # of missile strikes: 1 -> 4 (based on flux level)
 - Valkyri(AA)
 	- Aded more variants
 	- Can appear carrying MUSHA + MUSHA Sniper, Aleste + MUSHA, MUSHA + Panther(for the hegemony), etc

@@ -25,7 +25,7 @@ public class armaa_variableUnit extends BaseHullMod {
     private static final float DAMAGE_BONUS = 50f;
     private static final float ROF_MALUS = 40f;
     private static final float SPEED_MALUS = 50f;
-    private static final float MAX_TIME_MULT = 1.10f;
+    private static final float MAX_TIME_MULT = 1.15f;
     private static final float MIN_TIME_MULT = 0.1f;
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
     public static final Map<String, Float> GROUND_BONUS = new HashMap<>();
@@ -79,7 +79,7 @@ public class armaa_variableUnit extends BaseHullMod {
         transformInfo.addPara(DNITitle, pad, YELLOW, DNITitle);
         transformInfo.addPara(DNIText1, pad, arr2, SPEED_MALUS + "%", "Disables hybrid slot");
         transformInfo.addPara(DNIText2, pad, Misc.getNegativeHighlightColor(), SPEED_MALUS + "%");
-        transformInfo.addPara(DNIText3, pad, Misc.getHighlightColor(), SPEED_MALUS + "%");
+        transformInfo.addPara(DNIText3, pad, Misc.getHighlightColor(), SPEED_MALUS/2 + "%");
         transformInfo.addPara(DNIText4, pad, Misc.getPositiveHighlightColor(), (int) ((MAX_TIME_MULT - 1f) * 100f) + "%");
         UIPanelAPI temp = tooltip.addImageWithText(PAD);
         Color[] disabletext = {Global.getSettings().getColor("textGrayColor"), Misc.getNegativeHighlightColor()};
