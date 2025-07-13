@@ -21,7 +21,7 @@ V3.2.1
 	- regen: 0.06->0.08
 	- missile intercept range: 700->800
 	- max # of missile strikes: 1 -> 4 (based on flux level)
-- Valkyri(AA)
+- Valkyrie(AA)
 	- Aded more variants
 	- Can appear carrying MUSHA + MUSHA Sniper, Aleste + MUSHA, MUSHA + Panther(for the hegemony), etc
 - Added MUSHA (Sniper)
