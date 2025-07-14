@@ -119,7 +119,7 @@
       "size": "SMALL",
       "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 135,
+      "arc":360,
       "angle": 0,
       "locations": [1, -0],
       "renderOrderMod": -900

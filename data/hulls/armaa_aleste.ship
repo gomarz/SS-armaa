@@ -179,7 +179,7 @@
     },
     {
       "angle": 0,
-      "arc": 135,
+      "arc": 360,
       "id": "E_HEAD",
       "locations": [
         3,

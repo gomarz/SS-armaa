@@ -15,11 +15,15 @@ AddText ""Upon inspection, it becomes evident that an area designated for storin
 armaa_resStationOption,PopulateOptions,"$market.id == armaa_research_station 
 !$armaa_searchStation
 !$global.hasValk",,,9:armaa_stationInspect:Order a more detailed investigation,
-armaa_resStationOption2,DialogOptionSelected,$option == armaa_stationInspect,"$armaa_searchStation = true 
-AddTextSmall ""Discovered something of value may be in the system"" highlight","Your fleet fruitlessly attempts to raise the station, and predictably receives no response.
-A team is deployed to the station as a secondary measure. You watch from the feeds of the crew as the proceed to comb throughout the station for anything useful.
+armaa_resStationOption2,DialogOptionSelected,$option == armaa_stationInspect,$armaa_searchStation = true ,"Your fleet makes several attempts to hail the station, but no response ever comes-no signal, no ping, not even automated fallback protocols. Eventually, a small team is dispatched to board and investigate.
 
-A few hours pass before you receive a new report, indicating hardly anything valuable could be found; the station indeed had been rather thoroughly combed through. The only standout mention was the indication that someone had been staying on the station until recently, and all indications pointed to them departing towards the gas giant Gravion in search of something.",defaultLeave:Leave,
+Through the grainy feeds of the boarding team's helmet cams, you observe as they move through dim corridors and cold, quiet chambers. The station has been thoroughly stripped-data cores wiped, storage lockers emptied, consoles inert. Whoever passed through here last was meticulous, deliberate.
+
+And yet. There are signs that someone remained behind until recently. Jury-rigged power lines run from backup systems to a sealed maintenance hatch. Scorch marks near an airlock suggest a hasty departure.
+
+Most notably, the cryobay is found powered down but intact-its pods still functioning, but all of them empty. No records remain of who occupied them, or why they were activated.
+
+Someone was here. More than one, possibly. But they're long gone now—and they didn't want to be followed.",defaultLeave:Leave,
 ,,,,,,
 nex_mercMeetBlurbCrimson,Nex_MercMeetBlurb,$nex_mercCompanyId == rocketStars,,"After a brieft moment, the connection resolves and a mercenaries visage stares back at you. 
 
@@ -1500,8 +1504,7 @@ AddTextSmall ""Your fleet isn't enough for the job. If you return with at least 
 ","""Sorry mate, I don't quite think you're up to the task yet. There's time yet, come on by when you've got a bit more experience under your belt, yeah?""
 ","anh_cantinaReturn:Return to the bar
 armaa_IKBarEventTooWeakSP:Insist on your capabilities",
-armaa_IKBarEventTooWeakSP,DialogOptionSelected,"$option == armaa_IKBarEventTooWeakSP
-$player.fleetPoints < 100","BeginConversation armaa_kade
+armaa_IKBarEventTooWeakSP,DialogOptionSelected,$option == armaa_IKBarEventTooWeakSP,"BeginConversation armaa_kade
 $convincedWorthy = true
 BeginMission armaa_coc false
 Call $global.armaa_coc_ref updateData
