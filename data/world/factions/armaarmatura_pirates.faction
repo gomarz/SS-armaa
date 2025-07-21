@@ -279,13 +279,16 @@
 		"engageWhenEvenStrength":true,
 		"exemptFromFoodShortages":true,
 		"willTradeWhenHostile":true,
-		"ignoreTradeWithEnemiesForReputation":false,
+		"ignoreTradeWithEnemiesForReputation":true,
 		"postsNoBounties":true,
-		"offerMissionsWhenHostile":true,
+		"simulatorData":{
+			"showInSimulator":true,
+		},
+		"offerMissionsWhenHostile":false,
 		"allowsTransponderOffTrade":true,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":true, # for fleet behavior
-		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
+		"fightToTheLast":false, # order a full assault instead of retreating, in most cases
 		"patherBaseTypesSmall":{
 			"orbitalstation":10,
 		},
@@ -297,7 +300,7 @@
 			"vsFreePort":false,
 			"canBombard":true,
 			"territorial":false,
-			"canSendWithoutMilitaryBase":true,
+			"canSendWithoutMilitaryBase":false,
 		},
 	},
 	"fleetTypeNames":{

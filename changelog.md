@@ -5,6 +5,7 @@ V3.2.1
 	- add's the armaa travel drive to any strikecraft with tag
 - added minor tweaks to reduce performance hit from units w/ animations
 - Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
+- Removed missile debuff / blocked EMR for ships with cataphracht hullmod
 - GuarDUAL
 	- Added Automated Repair Unit
 	- Flux Capacity: 2000 -> 2250
@@ -25,6 +26,8 @@ V3.2.1
 - Valkyrie(AA)
 	- Aded more variants
 	- Can appear carrying MUSHA + MUSHA Sniper, Aleste + MUSHA, MUSHA + Panther(for the hegemony), etc
+- Spriggan Powered
+	- OP: 30 -> 40
 - Added MUSHA (Sniper)
 	- 3 DP
 	- 15 OP

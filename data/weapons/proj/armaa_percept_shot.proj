@@ -1,7 +1,7 @@
 {
 	"id":"armaa_percept_shot",
 	"specClass":"missile",
-	"onHitEffect":"data.scripts.weapons.HomingLaserOnHit2",
+	"onHitEffect":"data.scripts.weapons.armaa_perceptHomingLaserOnHit",
 	"missileType":"MISSILE",
 	"sprite":"graphics/armaa/weapons/armaa_hominglaser.png",
 	"size":[7,10],	

@@ -19,8 +19,8 @@
   "builtInWeapons": {
     "A_GUN": "armaa_guardual_arm_right",
     "C_ARML": "armaa_valkenLeftArm",
-    "D_PAULDRONL": "armaa_guardual_pauldron_l",
-    "D_PAULDRONR": "armaa_guardual_pauldron_r",
+    "D_PAULDRONL": "armaa_guardual_pauldron_l_f",
+    "D_PAULDRONR": "armaa_guardual_pauldron_r_f",
     "E_HEAD": "armaa_guardual_head_b",
     "F_GPOD": "armaa_guardual_variablerifle",
     "F_LEGS": "armaa_gd_legs",
@@ -118,7 +118,7 @@
       "size": "SMALL",
       "type": "HYBRID",
       "mount": "HIDDEN",
-      "arc": 135,
+      "arc": 200,
       "angle": 0,
       "locations": [1, -0],
       "renderOrderMod": -900

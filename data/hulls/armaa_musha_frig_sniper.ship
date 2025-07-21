@@ -20,8 +20,9 @@
     "armaa_borer_wing"
   ],
   "builtInWeapons": {
+    "F_LEGS": "armaa_ht_legs",
     "HEAD": "armaa_mushaHead_frig",
-    "WS0001": "atropos_single",
+    #"WS0001": "atropos_single",
     "WS0002": "armaa_musha_rightPauldron_frig",
     "WS0003": "armaa_musha_leftPauldron"
   },
@@ -29,12 +30,22 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "MISSILE",
       "mount": "HIDDEN",
       "arc": 0,
       "angle": 0,
       "locations": [-14, -8],
       "renderOrderMod": 1000
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-10, -0],
+      "renderOrderMod": -1000
     },
     {
       "id": "WS0004",
