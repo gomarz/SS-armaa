@@ -3,7 +3,7 @@
   "hullId": "armaa_valkenx_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
-  "style": "armaa_TECH",
+  "style": "MIDLINE",
   "height": 30,
   "width": 22,
   "center": [11, 16],
@@ -14,8 +14,6 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
-    "armaa_strikeCraftFrig",
-    "autorepair",
     "armaa_vxSkinSwap",
     "armaa_himac",
     "armaa_variableRifle"

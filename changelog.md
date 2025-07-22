@@ -1,3 +1,279 @@
+V3.2.1
+-----
+- Fixed Emergency Recall working on non strikecraft
+- Added armaa_launches_from_ships tag
+	- add's the armaa travel drive to any strikecraft with tag
+- added minor tweaks to reduce performance hit from units w/ animations
+- Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
+- Removed missile debuff / blocked EMR for ships with cataphracht hullmod
+- Added GuarDUAL/ GuarDUAL FV to ATAC reward
+- GuarDUAL
+	- Added Automated Repair Unit
+	- Flux Capacity: 2000 -> 2250
+	- Flux Dissipation: 175->225
+	- Can transform now by using Middle Mouse Button
+	- Raising shields no longer forces transformation
+		- Shield arc in fighter mode is 50% base arc
+		- Shields take 25% more damage
+- New Wing: GuarDUAL (FV)
+	- Identical to GuarDUAL, sans PERCEPT, flux cap/diss, and shields
+	- 21 OP
+- PERCEPT
+	- chargeup: 0.30->0.25
+	- cooldown: 3->1.5
+	- regen: 0.06->0.08
+	- missile intercept range: 700->800
+	- max # of missile strikes: 1 -> 4 (based on flux level)
+- Valkyrie(AA)
+	- Aded more variants
+	- Can appear carrying MUSHA + MUSHA Sniper, Aleste + MUSHA, MUSHA + Panther(for the hegemony), etc
+- Spriggan Powered
+	- OP: 30 -> 40
+- Added MUSHA (Sniper)
+	- 3 DP
+	- 15 OP
+	- Sniper Rifle
+		- 1000 range, kinetic
+	- Atropos (Single)
+	- Targeting Laser
+		- Functionally identical to graviton beam
+	- Ship System: Called Shot
+		- simple "qte" that increases damage based on threshold
+		- ranges from miss->okay->good->perfect
+- fixed some typos in rules.csv
+
+V3.2RC3
+-----
+- Valkyrie(AA)
+	- Aleste -> Aleste Early Type
+		- Ship System: Microburn->Booster
+		- OP: 30->15
+	- CIVILIAN tag -> CARRIER tag
+- Added Bakraid(TT) desc
+
+- Broadsword(WINGCOM)
+	- Small composite -> small ballistic
+	- adjusted sprite
+
+- Fixed reduce travel drive speed for strikecraft
+
+- Dawn will now leave the fleet if:
+	- Sat Bombing (permanent)
+	- Diktat Commission (may or may not be permanent)
+V3.2RC2
+-----
+- Fixed Corsair XIV having built-in SO
+- Fixed Panther(XIV) not firing one of its weapons when still connected to Bakraid
+- Fixed Recall Device never firing
+- Fixed potential NPE when landing
+- Added some missing wings to tritachyon
+
+- Valkazard
+	- Should now be more proactive with using melee weapon under AI Control
+
+- Aleste 
+	- Should now be more proactive with using melee weapon under AI Control
+	- Shield arc: 360->300
+	- Laser Blade:
+		- DMG: 900->1250
+		- energy / sec: 0(lol)->700
+
+- MUSHA
+	- 8 OP -> 12 OP
+	- Added 1x Light Crusher Cannon
+	- INTERCEPTOR -> SUPPORT
+	- Light Crusher Cannon
+		- Range: 700->800
+- M3 Pod
+	- Burst Size: 10 -> 4
+
+- Expanded on the MRC Sleeper start
+	- Added new dialog when encountering the initial fleet
+	- added new dialog after encountering the initial fleet
+	- added new dock/event on new meshan & fort exsedol post encounter
+
+- Fixed edge case that allowed MRC to launch reprisals against itself and allies
+- Fixed bug where Dawn on enemy side would chatter when voice was enabled
+- Fixed gravion's terrain disappearing after a certain point in Descent
+- Added Combat Chatter profile for Dawn
+
+
+v3.2
+------
+======Additions======
+- Add 'performance mode' lunalib setting
+	- reduces most special fx in the mission battles
+- Added SP option to circumvent FP limit for starting ACoC
+- Add new voice lines for Dawn
+- Add 4 new dawn events (spooky redacted, PK, shrine completion)
+
+
+- New Wing: MUSHA
+	- 8 OP, 3 wingsize
+	- slow, mid-long range, prioritize fighters
+- New Ship: MUSHA Sniper
+	- 3 DP
+- New Ship: Bassline
+	- Combat Carrier
+- Added some playable vanilla strikecraft analogues
+	- Low OP, but several beneficial built-in hullmods including WINGCOM
+		- New(?) Ship: Broadsword (WINGCOM)
+			- 1x composite, 2x built-in LMG
+		- New Ship: Sarissa (WINGCOM)
+		- New Ship: Trident (WINGCOM)
+			- Ship System: Reserve Deployment
+			- 1x rear facing energy turret
+- New Mission: Descent
+	- If didn't start with Valkazard, can be obtained/encountered in the climax of this mission
+- New Mission: By Their Silence
+	- can be triggered once >= 25 reputation with MRC Liason on Fort Exsedol
+- ATAC "Event"
+	- Progress accumulates from destroying ships with ArmaA ships present in the fleet
+	- Grants various rewards + minor buffs geared towards strikecraft
+	
+======Fixes======
+- Fixed Kouto (E-Type) missing desc
+- Fixed 'no description..yet' for arma faction start
+- Fixed strikecraft not launching from converted hangar ships
+- Fixed D-modded GuarDUALs causing CTD if mousing over Variable Unit hullmod
+- FIxed enemy Panther's spawning at 5000% CR
+- Arma Armatura now knows their XIV BPs (this means they will show up in the special submarket)
+- Fixed some bugs that could occur if mod was loaded into an existing save
+- Fixed reference to Raven at abandoned station
+- Fixed HI-MAC triggering when not double tapping the same activation key (I.E tapping A, then tapping D)
+- Fixed HI-MAC charge going negative if used after flame out
+- Fixed ships with HI-MAC being a little too suicidal when system was active, should deactivate and use shield more often
+- Fixed potential bug with strikecraft not being properly recognized as dead if destroyed while landed
+- Fixed bug where strikecraft would automatically activate travel drive when launching from carrier
+- Fixed bug where strikecraft would initially launch from bay with wrong orientation
+- Fixed PERCEPT orb not changing target if current target was already dead
+- Fixed strikecraft always accelerating forward post launch, instead of in the direction they are facing
+- Increased performance of missions with special backgrounds
+- Added extra check for assault pod removal (will self-remove once replacement rate decreases below 90%
+	- It can never naturally replace new fighters, so this won't cause any issues
+
+======Tweaks======
+- Jenius becomes Pirate owned instead of Independent after completing ACoC
+	- briefly has 'Arusthai' ownership during the mission to prevent rep loss to pirates during story related raid
+- Bonus incoming damage dealt to strikecraft by fighter damage modifier had no upper bound. 
+	- Now caps out at a 25% bonus.
+	- Added floaty text to make it even more obvious ship is being hit by something w/ the damage modifier
+	- New hullmod to alter/adjust this modifier:
+		- Targeting Profile Disruptor
+			-Effect: Nullifies bonus incoming damage, but:
+				- +20% damage taken from all frigates
+				- +10% from all destroyers
+				- -10% from all cruisers
+				- -20% from all capitals
+				- From 1000 SU, capitals and cruisers autofire accuracy decreases as the ship gets closer (up to 20%), non-stacking
+- Strikecraft hullmod specifies ships benefit from Frigate-based bonuses
+- Strikecraft should no longer suffer malfunctions caused by low CR after repairing fully
+
+- C-Stim Dispatcher
+	- Uptime: 0.7s->1s
+	- Downtime: 10s->6s
+	- Fixed bug that caused ability to proc even when shields were raised
+- Juno Mk. III
+	- Chargeup: 1.5 -> 1
+
+- Altagrave
+	- Exceliza Grenade Launcher
+		- Burst Size: 2 -> 4
+		- Range: 600->800
+		- Chargedown: 5->4
+		- Damage: 500->550
+	- Vajra
+		- Range: 600->1000
+		
+- Valken
+	- OP: 7->4
+	- Refit Time:9->5
+	- Revised description
+	- Revised sprite
+	- LAG -> M1 Pod
+	- Matching their description, may explode if torso is disabled
+		- deals up to HP+(ammo*weaponDamage)*0.25 in small AOE
+
+- Valken X
+	- Armor:100->80
+	- Add Hi-MAC hullmod
+	- LS-20
+		- Chargeup: 0.33->0.11
+		- Chargedown: 0.33->0.55
+		- should reduce whiffed melee attacks due to the windup
+
+- Spriggan Powered
+	- Medium Ballistic -> Small Ballistic
+	- Added 2x Small Missiles
+	- Removed drone wing
+	- HP: 700->800
+	- Armor: 100->200
+
+- Watchdog
+	- OP: 85->100
+	- sprite tweaks
+	- Shield Efficiency: 1.1->1.05
+	- Add 2x small composite hardpoints
+	- Large Hybrid->Large Ballistic
+	- Siege Mode
+		- Speed Reduction: 50%->20%
+		- No longer disables shields
+- Watchdog(XIV)
+	- Ship System: Reload->Siege Mode
+	- Carries two barrettas instead of one
+
+- Zanac
+	- Top Speed: 90->100
+	- Large Energy -> Large Universal
+	- Zanac (MRC) monoeye will more aggressively track object's ship's targeting
+	
+- Gunhed
+	- Armor:250->200
+
+- Panther (XIV)
+	- Can now detach even if overloaded
+	- Will detach with the CR Bakraid deployed with at the start of the battle
+
+- GuarDUAL
+	- gfx tweak
+	- Improved(?) AI
+	- DP: 15->13
+	- Mode BETA
+		- Non missile RoF: 0.50x -> 1.00x
+	- Mode ALPHA
+		- Non missile RoF: 1.00x->1.50x
+		- should help offset limited weapon slots
+	- Top Speed: 250->240
+	- Flux Capacity: 1750->2000
+	- tweaked fire offset for head weapon
+	- Percept (MODE A projectile)
+		- EMP: 25->45
+	- PERCEPT (System)
+		- chargeup: 1->0.30
+- Bakraid
+	- clamped CR to 1(100%) to prevent 50000% CR bug when seperating
+- Aleste SII
+	- Ship System: Fuller Auto
+		- fixed incorrect system desc, said increases RoF by 30% and Time Dilation by 20%, but reduces Weapon flux cost by 30% and time dilation by 25%
+	- Updated Sephiran skin (thx mayu)
+- Zanac(MRC)
+	-Ship System
+		- in combat stated only affected ballistics, when it affects energy+ballistic
+		- Stated flux reduction was 10%, when actual reduciton was 20% 
+
+- Prodromos
+	- Ship System
+		- None-> Manuevering Jets
+		- Support Range: 0 -> 6000
+
+- Assault Pod
+	- Burst Size: 1->2
+	- Spawns 2 battle armors instead of 4 per pod
+	- Added Weapon: TB-11 Harpoon (Same as Aleste)
+	- Added Engine
+	- Replaced sprite with a better, but equally worse one
+	- Pod's will now self destruct if replacement rate decreases below 95%, or HP decreases below 50%
+
 v3.1.5
 -------
 - stopped some system only weapon from being purchaseable
@@ -371,7 +647,7 @@ v2.3.3
 - fixed recoil sprite for watchdog(H)
 - corsair
 	- shield arc: 120->180
-- added bbplus skin for aleste
+- added sephiran skin for aleste
 - fixed particles effects from hi-mac not matching engine color if it was shifted
 - fixed bad rank id for sera
 - fixed memory leak with syko stim everyframe

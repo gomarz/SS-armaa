@@ -45,6 +45,7 @@
       "weapons": {}
     }
   ],
-  "modules": [],
+  "modules": [
+  ],
   "wings": []
 }

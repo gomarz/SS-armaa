@@ -1,0 +1,89 @@
+{
+  "hullName": "Trident (WINGCOM)",
+  "hullId": "armaa_trident",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/trident.png",
+  "style": "HIGH_TECH",
+  "height": 34,
+  "width": 38,
+  "center": [19, 15],
+  "collisionRadius": 36,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 30,
+  "viewOffset": 0,
+  "builtInMods": [
+    "strikeCraft",
+    "armaa_wingCommander",
+    "rugged",
+    "missleracks"
+  ],
+  "builtInWings": [
+    "trident_wing"
+  ],
+  "builtInWeapons": {
+    #"WS 004": "atropos_single",
+    #"WS 005": "atropos_single"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 180,
+      "locations": [-12, -0]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [7, 8]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [7, -8]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-14, 11],
+      "length": 16,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14, 0],
+      "length": 24,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14, -11],
+      "length": 16,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    10, 12,
+    10, -12,
+    -8, -15,
+    -13, 0,
+    -7, 15
+  ]
+}

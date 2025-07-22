@@ -29,6 +29,10 @@
       }
     }
   ],
-  "modules": [],
+  "modules": [
+    {
+      "MORGANASUP": "armaa_morganab_dummy_boss"
+    }
+  ],
   "wings": []
 }

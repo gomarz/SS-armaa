@@ -3,7 +3,7 @@
   "hullId": "armaa_guardual",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/guardual/armaa_guardual.png",
-  "style": "armaa_GUARDUAL",
+  "style": "MIDLINE",
   "height": 36,
   "width": 34,
   "center": [17, 18],
@@ -14,6 +14,7 @@
   "builtInMods": [
     "strikeCraft",
     "armaa_variableUnit",
+    "autorepair",
     "delicate"
   ],
   "builtInWeapons": {
@@ -35,7 +36,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6, -0],
+      "locations": [-7, -0],
       "renderOrderMod": -1000
     },
     {
@@ -45,7 +46,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [3, -3]
+      "locations": [4, -3]
     },
     {
       "id": "TRUE_GUN",
@@ -54,7 +55,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [3, -3],
+      "locations": [4, -3],
       "renderOrderMod": -900
     },
     {
@@ -64,7 +65,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [2, 1]
     },
     {
       "id": "D_PAULDRONL",
@@ -109,7 +110,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "TURRET",
-      "arc": 135,
+      "arc": 360,
       "angle": 0,
       "locations": [1, -0]
     },
@@ -118,9 +119,10 @@
       "size": "SMALL",
       "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 135,
+      "arc":360,
       "angle": 0,
-      "locations": [1, -0]
+      "locations": [1, -0],
+      "renderOrderMod": -900
     },
     {
       "id": "F_GPOD",
@@ -136,9 +138,9 @@
       "size": "SMALL",
       "type": "MISSILE",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 5,
       "angle": 0,
-      "locations": [-9, 16],
+      "locations": [-10, 16],
       "renderOrderMod": -1000
     },
     {
@@ -146,28 +148,44 @@
       "size": "SMALL",
       "type": "MISSILE",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 5,
       "angle": -0,
-      "locations": [-9, -16],
+      "locations": [-10, -16],
       "renderOrderMod": -1000
     }
   ],
   "engineSlots": [
     {
       "location": [-7, -0],
-      "length": 14,
-      "width": 12,
+      "length": 12,
+      "width": 5,
       "angle": 180,
-      "contrailSize": 12,
-      "style": "GUARDUAL_ENGINE"
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
     },
     {
       "location": [-7, -0],
-      "length": 11.5,
+      "length": 12,
       "width": 4,
+      "angle": 161,
+      "contrailSize": 2.185229,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-7, 0],
+      "length": 12,
+      "width": 4,
+      "angle": -161,
+      "contrailSize": 2.185229,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-7, -0],
+      "length": 18.5,
+      "width": 5,
       "angle": 180,
-      "contrailSize": 4,
-      "style": "MIDLINE"
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [

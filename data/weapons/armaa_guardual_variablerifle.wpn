@@ -6,8 +6,8 @@
   #"everyFrameEffect": "data.scripts.weapons.armaa_koutoDummyWeapon",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/guardual/armaa_guardual_gunpod_f.png",
-  "hardpointSprite": "graphics/armaa/weapons/armaa_revx_ml_variablerifle_00.png",
+  "turretSprite": "graphics/armaa/ships/guardual/armaa_guardual_gunpod_f00.png",
+  "hardpointSprite": "graphics/armaa/ships/guardual/armaa_guardual_gunpod_f00.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
     155,
@@ -42,7 +42,7 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "numFrames": 0,
+  "numFrames": 3,
   "frameRate": 0,
   "fringeColor": [
     255,

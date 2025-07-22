@@ -1,0 +1,40 @@
+{
+  "variantId": "armaa_musha_frig_sniper_standard",
+  "hullId": "armaa_musha_frig_sniper",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 3,
+  "fluxVents": 7,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "heavyarmor",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "breach"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "armaa_musha_rightPauldron_frig"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "HEAD": "armaa_mushaHead_frig"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

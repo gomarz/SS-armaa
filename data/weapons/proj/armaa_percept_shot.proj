@@ -1,7 +1,7 @@
 {
 	"id":"armaa_percept_shot",
 	"specClass":"missile",
-	"onHitEffect":"data.scripts.weapons.HomingLaserOnHit2",
+	"onHitEffect":"data.scripts.weapons.armaa_perceptHomingLaserOnHit",
 	"missileType":"MISSILE",
 	"sprite":"graphics/armaa/weapons/armaa_hominglaser.png",
 	"size":[7,10],	
@@ -9,7 +9,7 @@
 	"collisionRadius":9,
 	"armingTime":0,	
 	"collisionClass":"MISSILE_NO_FF",
-	"explosionColor":[199,146,0,25],  # purely visual, will get a white additively blended core on top of this color
+	"explosionColor":[128,180,242,25],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":50, # purely visual
 	"explosionSpec":{"duration":0.9f, # not visual
 					 "radius":50,
@@ -20,7 +20,7 @@
 					 "particleSizeRange":2.0,
 					 "particleDuration":3.2,
 					 "particleCount":7,
-					 "particleColor":[199,146,0,200]},
+					 "particleColor":[128,180,242,200]},
 	"engineSpec":{"turnAcc":0,
 				  "turnRate":0,
 				  "acc":0,
@@ -31,13 +31,13 @@
 				    "style":"CUSTOM",
 					"styleSpec":{
 						"mode":"PARTICLES", # PARTICLES or QUAD_STRIP, determines which params are used
-						"engineColor":[255,0,255,0],
+						"engineColor":[128,180,242,0],
 						"contrailParticleSizeMult":50.0,
 						"contrailParticleDuration":0.1,
 						"contrailParticleFinalSizeMult":1.5,		
 						"contrailMaxSpeedMult":0.33,
 						"contrailAngularVelocityMult":0.33,
-						"contrailColor":[199,146,0,155],
+						"contrailColor":[128,180,242,155],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
 				    "width":1,

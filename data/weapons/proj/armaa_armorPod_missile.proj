@@ -5,8 +5,8 @@
 	"sprite":"graphics/armaa/ships/armaa_pod.png",
 	"glowSprite":"graphics/armaa/weapons/armaa_alesteRifle_glow.png",
 	"glowColor":[255,255,255,255],
-	"size":[38,52],	
-	"center":[19,26],
+	"size":[28,38],	
+	"center":[14,19],
 	"collisionRadius":30,
 	"collisionClass":"MISSILE_FF",
 	"explosionColor":[255,165,75,255],  # purely visual, will get a white additively blended core on top of this color

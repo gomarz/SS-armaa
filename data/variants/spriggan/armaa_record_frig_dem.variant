@@ -1,0 +1,54 @@
+{
+  "variantId": "armaa_record_frig_dem",
+  "hullId": "armaa_record_frig",
+  "displayName": "DEM",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "eccm",
+    "efficiency_overhaul"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "gorgonpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0004": "gazer",
+        "WS0005": "gazer"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "lightac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_record_frig_head"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "MODULE": "armaa_wepPack_variant"
+    },
+    {
+      "SHIELD": "armaa_shield_variant"
+    }
+  ],
+  "wings": []
+}

@@ -11,8 +11,8 @@
 			"minLevel":5,
 			"ships":[
 				["armaa_zanac_sniper_ex"],
-				["armaa_valkenx_frig_assault"],
-				["armaa_valkenx_frig_assault"],
+				["armaa_valkyrie_standard"],
+				["armaa_einhander_Overclocked"],
 			],
 			"officers":[
 				{

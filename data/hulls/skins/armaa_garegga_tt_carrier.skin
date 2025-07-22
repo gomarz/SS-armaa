@@ -1,0 +1,45 @@
+{
+    "baseHullId":"armaa_garegga_xiv_carrier",
+    "skinHullId":"armaa_garegga_tt_carrier",
+    "hullName":"Bakraid(TT)",
+    "descriptionId":"armaa_garegga_tt_carrier",
+    "descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "spriteName":"graphics/armaa/ships/garegga/armaa_garegga_body_tt_carrier.png",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["rare_bp"],
+    "systemId":"drone_strike",
+    "tech":"Tri-Tachyon",
+    "removeBuiltInMods":["fourteenth"],
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":["E_LSHOULDER","E_RSHOULDER"],
+    "weaponSlotChanges":{
+	   "MAIN_GUN":{
+		  #"angle": 0,
+		  #"arc": 5,
+		  #"mount": "TURRET",
+		  #"size": "SMALL",
+		  "type": "ENERGY"
+	   },
+},
+    "builtInMods":["shield_shunt", "converted_bay"],
+    "builtInWings":["armaa_bit_blade_wing","armaa_bit_blade_wing"],
+    "builtInWeapons":{
+		"E_LSHOULDER": "armaa_garegga_leftPauldron_tt",
+		"E_RSHOULDER": "armaa_garegga_rightPauldron_tt",
+    },
+	"engineSlotChanges":{
+		"0":{
+			#"width": 0,
+          	#"length": 210,
+          	#"angle": 210,
+          	"style": "HIGH_TECH",
+		},
+		"1":{"style":"HIGH_TECH"},
+		"2":{"style":"HIGH_TECH"},
+		"3":{"style":"HIGH_TECH"},
+		"4":{"style":"HIGH_TECH"},
+	},  
+}

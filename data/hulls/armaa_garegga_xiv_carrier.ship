@@ -3,7 +3,7 @@
   "hullId": "armaa_garegga_xiv_carrier",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/garegga/xiv/armaa_garegga_xiv_body_carrier.png",
-  "style": "LOW_TECH",
+  "style": "MIDLINE",
   "height": 132,
   "width": 110,
   "center": [55, 48],

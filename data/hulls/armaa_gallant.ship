@@ -11,6 +11,9 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 40,
   "viewOffset": 0,
+  "builtInMods": [
+    "armaa_fighterStrafe"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",

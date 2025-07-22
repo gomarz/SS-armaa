@@ -78,7 +78,7 @@
     {
       "id": "TRUE_GUN2",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 5,
       "angle": 0,

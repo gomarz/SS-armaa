@@ -12,7 +12,7 @@
   "shieldRadius": 87,
   "viewOffset": 50,
   "builtInMods": [
-    "armoredweapons",
+    "insulatedengine",
     "armaa_himac",
     "rugged",
     "fourteenth"

@@ -1,0 +1,107 @@
+{
+  "hullName": "Musha",
+  "hullId": "armaa_musha_frig_sniper",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/musha/armaa_musha_ex.png",
+  "style": "LOW_TECH",
+  "height": 42,
+  "width": 34,
+  "center": [17, 23.5],
+  "collisionRadius": 44.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 43.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "strikeCraft",
+    "escort_package",
+    "cataphract"
+  ],
+  "builtInWings": [
+    "armaa_borer_wing"
+  ],
+  "builtInWeapons": {
+    "F_LEGS": "armaa_ht_legs",
+    "HEAD": "armaa_mushaHead_frig",
+    #"WS0001": "atropos_single",
+    "WS0002": "armaa_musha_rightPauldron_frig",
+    "WS0003": "armaa_musha_leftPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-14, -8],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-10, -0],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 50,
+      "angle": 0,
+      "locations": [-9, -11],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": -10,
+      "locations": [1, -5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 10,
+      "locations": [0, 4]
+    },
+    {
+      "id": "HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [-2, 2]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-16, -0],
+      "length": 7,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    14, -4.5,
+    -11, -9,
+    -23, -8.5,
+    -14.5, -0.5,
+    -21.5, 9.5,
+    -10.5, 9,
+    15, 5
+  ]
+}

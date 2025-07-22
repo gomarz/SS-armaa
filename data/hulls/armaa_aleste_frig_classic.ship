@@ -1,197 +1,93 @@
 {
-  "bounds": [
-    15,
-    -4.5,
-    6,
-    -8,
-    3,
-    -13.5,
-    -1,
-    -13.5,
-    -3,
-    -6.5,
-    -13,
-    -5.5,
-    -13,
-    5.5,
-    -3,
-    6.5,
-    -1,
-    13.5,
-    3,
-    13.5,
-    6,
-    8,
-    15,
-    4.5
-  ],
+  "hullName": "Aleste",
+  "hullId": "armaa_aleste_frig_classic",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
+  "style": "HIGH_TECH",
+  "height": 26,
+  "width": 18,
+  "center": [9, 16.5],
+  "collisionRadius": 18,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 35,
+  "viewOffset": 0,
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
-    "armaa_wingCommander",
     "armaa_weaponSwap"
   ],
-  "builtInWings": [
-    "armaa_aleste_wing"
-  ],
   "builtInWeapons": {
-    #"A_GUN": "armaa_aleste_rightArm",
-    "B_TORSO": "armaa_aleste_torso_ace",
-    #"C_ARML": "armaa_aleste_blade_LeftArm",
+    "B_TORSO": "armaa_aleste_torso",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_aleste_leftPauldron",
-    "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead",
+    "D_PAULDRONL": "armaa_valkenx_leftPauldron",
+    "D_PAULDRONR": "armaa_valkenx_rightPauldron",
+    "E_HEAD": "armaa_valkenxHead",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
-  "center": [
-    9,
-    16.5
-  ],
-  "collisionRadius": 18,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 8,
-      "length": 18,
-      "location": [
-        -14,
-        -5
-      ],
-      "style": "HIGH_TECH",
-      "width": 8
-    },
-    {
-      "angle": 180,
-      "contrailSize": 8,
-      "length": 18,
-      "location": [
-        -14,
-        5
-      ],
-      "style": "HIGH_TECH",
-      "width": 8
-    },
-    {
-      "angle": 141.5,
-      "contrailSize": 5,
-      "length": 16.5,
-      "location": [
-        -14,
-        6
-      ],
-      "style": "HIGH_TECH",
-      "width": 5
-    },
-    {
-      "angle": -141.5,
-      "contrailSize": 5,
-      "length": 16.5,
-      "location": [
-        -14,
-        -6
-      ],
-      "style": "HIGH_TECH",
-      "width": 5
-    }
-  ],
-  "height": 26,
-  "hullId": "armaa_aleste_frig_classic",
-  "hullName": "Aleste",
-  "hullSize": "FRIGATE",
-  "shieldCenter": [
-    0,
-    -0
-  ],
-  "shieldRadius": 35,
-  "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "armaa_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": -15,
-      "arc": 90,
       "id": "A_GUN",
-      "locations": [
-        0,
-        -3
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "BUILT_IN"
-    },
-    {
-      "angle": 0,
-      "arc": 360,
-      "id": "B_TORSO",
-      "locations": [
-        0,
-        0
-      ],
+      "type": "BUILT_IN",
       "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
-      "angle": 15,
       "arc": 90,
-      "id": "C_ARML",
-      "locations": [
-        3,
-        3
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "BUILT_IN"
-    },
-    {
       "angle": -15,
+      "locations": [2, -3]
+    },
+    {
+      "id": "B_TORSO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
       "arc": 360,
+      "angle": 0,
+      "locations": [0, 0]
+    },
+    {
+      "id": "C_ARML",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 15,
+      "locations": [3, 3]
+    },
+    {
       "id": "C_ARMR",
-      "locations": [
-        3,
-        -3
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -15,
+      "locations": [3, -3]
     },
     {
-      "angle": 0,
-      "arc": 360,
       "id": "D_PAULDRONL",
-      "locations": [
-        0,
-        6
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
-      "angle": -0,
+      "type": "DECORATIVE",
+      "mount": "TURRET",
       "arc": 360,
-      "id": "D_PAULDRONR",
-      "locations": [
-        0,
-        -6
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
+      "angle": 0,
+      "locations": [2, 6]
     },
     {
-      "angle": 0,
-      "arc": 135,
-      "id": "E_HEAD",
-      "locations": [
-        3,
-        -0
-      ],
-      "mount": "TURRET",
+      "id": "D_PAULDRONR",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [2, -6]
+    },
+    {
+      "id": "E_HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [3, -0]
     },
     {
       "id": "F_LEGS",
@@ -204,29 +100,70 @@
       "renderOrderMod": -1000
     },
     {
-      "angle": 0,
-      "arc": 360,
       "id": "F_GLOW",
-      "locations": [
-        0,
-        -3
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [2, -3]
     },
     {
-      "angle": 0,
-      "arc": 135,
       "id": "H_GLOW",
-      "locations": [
-        1,
-        -0
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [1, -0]
     }
   ],
-  "width": 18
+  "engineSlots": [
+    {
+      "location": [-14, -5],
+      "length": 18,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14, 5],
+      "length": 18,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14, 6],
+      "length": 16.5,
+      "width": 5,
+      "angle": 141.5,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14, -6],
+      "length": 16.5,
+      "width": 5,
+      "angle": -141.5,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    15, -4.5,
+    6, -8,
+    3, -13.5,
+    -1, -13.5,
+    -3, -6.5,
+    -13, -5.5,
+    -13, 5.5,
+    -3, 6.5,
+    -1, 13.5,
+    3, 13.5,
+    6, 8,
+    15, 4.5
+  ]
 }

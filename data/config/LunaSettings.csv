@@ -1,10 +1,12 @@
 fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
-luna_exampleHeader,Example Header,Header,Example Section,,,,,Examples
-luna_exampleText,Example Text Field,Text,"Any value below is merely an example for Modders. 
-None of the Settings here do anything.
-",,,,,Examples
-armaa_enableWingcom,Enable WINGCOM Chatter,Boolean,true,,Enable chatter from WINGCOM pilots.,,,Examples
-armaa_inputTime,HIMAC Input Delay(MS),Int,300,,"Double Tap time delay to Quick/Assault Boost. The lower the value, the shorter the input window.",100,400,Examples
-armaa_repairLevel,Repair Threshold,Double,0.5,,Hull percentage that strikecraft will return to carrier for repairs. Higher values generally offer more survivability as you progress into the late game.,0.3,0.8,Examples
-armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voicedchatter from Dawn.,,,Examples
-armaa_enableReprisal,Enable MRC Reprisals,Boolean,True,,Enable MRCs reprisal events,,,Examples
+armaa_campaignHeader,Campaign Header,Header,Campaign settings,,,,,Settings
+armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voicedchatter from Dawn.,,,Settings
+armaa_enableReprisal,Enable MRC Reprisals,Boolean,True,,Enable MRCs reprisal events,,,Settings
+armaa_combatHeader,Combat,Header,Combat Settings,,,,,Settings
+armaa_performanceMode,Performance Mode,Boolean,False,,Reduce the amount of effects in the custom mission battles,,,Settings
+armaa_limitedRepairs,Limited Hull Repairs,Boolean,True,,Strikecraft can't be repaired over starting HP at deployment.,,,Strikecraft
+armaa_limitedCRRepairs,Limited CR Recovery,Boolean,True,,Strikecraft can't recover over starting CR at deployment.,,,Strikecraft
+armaa_repairLevel,Repair Threshold,Double,0.5,,Hull percentage that strikecraft will return to carrier for repairs. Higher values generally offer more survivability as you progress into the late game.,0.3,0.8,Strikecraft
+armaa_inputTime,HIMAC Input Delay(MS),Int,300,,"Double Tap time delay to Quick/Assault Boost. The lower the value, the shorter the input window.",100,400,Settings
+armaa_enableWingcom,Enable WINGCOM Chatter,Boolean,True,,Enable chatter from WINGCOM pilots.,,,Settings
+armaa_playerRecall,Recall player if overloaded,Boolean,True,,"Ships with recall device will automatically recall the player if they overload. If disabled, will not unless below a certain HP or holding fire is toggled on",,,Strikecraft

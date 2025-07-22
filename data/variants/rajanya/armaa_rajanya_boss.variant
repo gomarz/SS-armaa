@@ -6,7 +6,6 @@
   "fluxCapacitors": 15,
   "fluxVents": 20,
   "quality": 1,
-  "permaMods": ["heavyarmor","hardenedshieldemitter","advancedoptics"],
   "sMods": ["heavyarmor","hardenedshieldemitter","advancedoptics"],
   "hullMods": [],
   "weaponGroups": [

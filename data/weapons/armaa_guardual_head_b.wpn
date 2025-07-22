@@ -1,0 +1,54 @@
+{
+  "id": "armaa_guardual_head_b",
+  "specClass": "projectile",
+  "projectileSpecId": "vulcan_shot",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_guarDualEffect",
+  "displayArcRadius": 250,
+  "turretSprite": "graphics/armaa/ships/guardual/armaa_guardual_headb.png",
+  "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
+  "showDamageWhenDecorative": true,
+  "renderHints": [
+    NEVER_RENDER_IN_CAMPAIGN
+  ],
+  "turretOffsets": [
+    1,
+    3,
+    1,
+    -3,
+    5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 5,
+    "particleSizeRange": 5,
+    "cloudParticleCount": 3,
+    "cloudDuration": 1,
+    "cloudRadius": 5,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 2,
+    "blowbackLength": 10,
+    "blowbackSpread": 5,
+    "particleColor": [
+      155,
+      155,
+      100,
+      75
+    ]
+  }
+}

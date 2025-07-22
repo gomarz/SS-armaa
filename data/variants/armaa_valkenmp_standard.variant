@@ -4,7 +4,6 @@
   "goalVariant": true,
   "fluxVents": 0,
   "hullId": "armaa_valkenmp",
-  "hullMods": ["no_weapon_flux"],
   "variantId": "armaa_valkenmp_standard",
   "weaponGroups": [
     {

@@ -8,7 +8,8 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "hardenedshieldemitter"
+    "hardenedshieldemitter",
+    "armaa_vxSkin_midline"
   ],
   "weaponGroups": [
     {

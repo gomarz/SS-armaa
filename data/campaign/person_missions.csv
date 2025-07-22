@@ -1,3 +1,6 @@
 mission id,person id,tagsAll,tagsAny,tagsNotAny,tags,freq,min timeout,max timeout,min rep,max rep,importance,reqMissionAny,reqMissionAll,reqMissionNone,icon,plugin
 armaa_coc,,,,,,,,,,,,,,,graphics/icons/missions/tactical_bombardment.png,data.scripts.campaign.missions.armaa_JeniusMission
+armaa_des,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_des.png,data.scripts.campaign.missions.armaa_DescentMission
+armaa_bts,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_bts.png,data.scripts.campaign.missions.armaa_ByTheirSilenceMission
+armaa_rtc,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_bts.png,data.scripts.campaign.missions.armaa_RobbingTheCradleMission
 "# note: if person id, tagsAll, tagsAny, and tagsNotAny are all blank, the mission will not be offered by any contact without specific scripting to make it so (via BeginMission, etc). Otherwise, the mission may be offered by any contact that meets the conditions specified by these columns.",,,,,,,,,,,,,,,,

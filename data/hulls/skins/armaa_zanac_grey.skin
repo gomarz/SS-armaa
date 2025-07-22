@@ -3,13 +3,13 @@
     "skinHullId":"armaa_zanac_grey",
     "hullName":"Zanac",
     "descriptionId":"armaa_zanac",
-    "descriptionPrefix":"General production version of the Zanac employed by the MRC.",
+    "descriptionPrefix":"General production version of the Zanac more popularly employed by the MRC.",
     "spriteName":"graphics/armaa/ships/zanac/grey/zanac_lowerBody.png",
     "baseValueMult":1.0,
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["no_wingcom_docking"],
-    "systemId":"maneuveringjets",
+    "systemId":"armaa_jauntbooster",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":[],

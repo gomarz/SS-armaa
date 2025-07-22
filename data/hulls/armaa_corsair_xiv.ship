@@ -3,7 +3,7 @@
   "hullId": "armaa_corsair_xiv",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/corsair/armaa_corsair_xiv.png",
-  "style": "MIDLINE",
+  "style": "LOW_TECH",
   "height": 66,
   "width": 106,
   "center": [53, 33],
@@ -13,11 +13,13 @@
   "viewOffset": 0,
   "builtInMods": [
     "fourteenth",
-"ballistic_rangefinder"
+    "hbi"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_corsair_leftArm",
     "A_GUN2": "armaa_corsair_rightArm",
+    "E_LSHOULDER": "armaa_garegga_xiv_rightPauldron",
+    "E_RSHOULDER": "armaa_garegga_xiv_leftPauldron",
     "WS0001": "armaa_corsair_leftShoulder",
     "WS0003": "armaa_corsair_rightShoulder",
     "WS0005": "armaa_corsair_leftArm_cover",
@@ -32,7 +34,7 @@
       "mount": "TURRET",
       "arc": 60,
       "angle": 0,
-      "locations": [28, 38]
+      "locations": [30, 44]
     },
     {
       "id": "A_GUN2",
@@ -41,7 +43,7 @@
       "mount": "TURRET",
       "arc": 60,
       "angle": -0,
-      "locations": [28, -38]
+      "locations": [30, -44]
     },
     {
       "id": "WS0001",
@@ -51,7 +53,7 @@
       "arc": 30,
       "angle": 0,
       "locations": [17, 31],
-      "renderOrderMod": 1000
+      "renderOrderMod": 1100
     },
     {
       "id": "WS0003",
@@ -61,27 +63,27 @@
       "arc": 30,
       "angle": -0,
       "locations": [17, -31],
-      "renderOrderMod": 1000
+      "renderOrderMod": 1100
     },
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 180,
       "angle": -90,
       "locations": [-5, -29.5],
-      "renderOrderMod": 1000
+      "renderOrderMod": 1200
     },
     {
       "id": "WS0004",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 180,
       "angle": 90,
       "locations": [-5, 28],
-      "renderOrderMod": 1000
+      "renderOrderMod": 1200
     },
     {
       "id": "TRUE_GUN",
@@ -90,7 +92,7 @@
       "mount": "TURRET",
       "arc": 60,
       "angle": 0,
-      "locations": [28, 38]
+      "locations": [30, 44]
     },
     {
       "id": "TRUE_GUN2",
@@ -99,7 +101,7 @@
       "mount": "TURRET",
       "arc": 60,
       "angle": 0,
-      "locations": [28, -38]
+      "locations": [30, -44]
     },
     {
       "id": "WS0005",
@@ -108,7 +110,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [28, 38],
+      "locations": [30, 44],
       "renderOrderMod": 900
     },
     {
@@ -118,7 +120,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [28, -38],
+      "locations": [30, -44],
       "renderOrderMod": 900
     },
     {
@@ -131,24 +133,24 @@
       "locations": [0, -0]
     },
     {
-      "id": "LPAULDRON",
+      "id": "E_RSHOULDER",
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 30,
-      "angle": 0,
-      "locations": [5, 30],
-      "renderOrderMod": 1100
+      "angle": 170.5,
+      "locations": [-7.5, -41],
+      "renderOrderMod": 1000
     },
     {
-      "id": "RPAULDRON",
+      "id": "E_LSHOULDER",
       "size": "LARGE",
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 30,
-      "angle": -0,
-      "locations": [5, -30],
-      "renderOrderMod": 1100
+      "angle": -170.5,
+      "locations": [-7.5, 41],
+      "renderOrderMod": 1000
     }
   ],
   "engineSlots": [
@@ -182,6 +184,22 @@
       "width": 10,
       "angle": -180,
       "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-31, 20.5],
+      "length": 19.785286,
+      "width": 10.916498,
+      "angle": 139.5,
+      "contrailSize": 10.916498,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-31, -20.5],
+      "length": 19.785286,
+      "width": 10.916498,
+      "angle": -139.5,
+      "contrailSize": 10.916498,
       "style": "LOW_TECH"
     }
   ],

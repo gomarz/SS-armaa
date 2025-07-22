@@ -1,0 +1,11 @@
+{
+	"armaa_cradle":{
+		"name":"Cradle",
+		"icon":"graphics/warroom/objective_nav_buoy.png",
+		"sprite":"graphics/ships/deployables/mini_navbeacon.png",
+		"spriteScale":1,
+		"captureTime":100,
+		"battleSizeFractionBonus":0.05,
+		"effectClass":"com.fs.starfarer.api.impl.combat.NavBuoyEffect",
+	},
+}

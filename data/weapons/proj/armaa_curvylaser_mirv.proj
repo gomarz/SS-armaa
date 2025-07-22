@@ -8,7 +8,7 @@
 	"armingTime":99999,
 	"collisionRadius":16,
 	"collisionClass":"MISSILE_NO_FF",
-	"explosionColor":[194,146,0,200],  # purely visual, will get a white additively blended core on top of this color
+	"explosionColor":[140,180,255,150],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":150, # purely visual
 	"explosionSpec":{"duration":0.1f, # not visual
 					 "radius":175,
@@ -19,7 +19,7 @@
 					 "particleSizeRange":3.0,
 					 "particleDuration":1,
 					 "particleCount":50,
-					 "particleColor":[194,146,0,200]},
+					 "particleColor":[194,0,255,200]},
 	"engineSpec":{"turnAcc":400,
 				  "turnRate":200,
 				  "acc":1000,
@@ -38,7 +38,7 @@
 						"contrailMinSeg":8, # min segment length, in 
 						"contrailMaxSpeedMult":-0.1,
 						"contrailAngularVelocityMult":1f,
-						"contrailColor":[194,146,0,15],
+						"contrailColor":[194,25,255,15],
 						"type":"GLOW" # GLOW or SMOKE
 					},
 				    "width":10.0,

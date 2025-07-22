@@ -22,7 +22,8 @@
     "E_DECO_R": "armaa_monitor_deco_right",
     "E_GLOW": "armaa_monitor_glow",
     "E_LSHOULDER": "armaa_monitor_leftPauldron",
-    "E_RSHOULDER": "armaa_monitor_rightPauldron"
+    "E_RSHOULDER": "armaa_monitor_rightPauldron",
+    "WS0001": "armaa_monitor_deco_torso"
   },
   "weaponSlots": [
     {
@@ -109,7 +110,8 @@
       "mount": "TURRET",
       "arc": 30,
       "angle": 0,
-      "locations": [17, 22]
+      "locations": [-3, -1],
+      "renderOrderMod": 500
     },
     {
       "id": "WS0003",
@@ -118,7 +120,7 @@
       "mount": "TURRET",
       "arc": 30,
       "angle": -0,
-      "locations": [17, -22]
+      "locations": [9.5, 13]
     },
     {
       "id": "WS0002",
@@ -152,7 +154,7 @@
     {
       "id": "TRUE_GUN2",
       "size": "LARGE",
-      "type": "HYBRID",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 90,
       "angle": -30,
@@ -162,10 +164,28 @@
       "id": "WS0006",
       "size": "MEDIUM",
       "type": "COMPOSITE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [30, -1]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
       "arc": 70,
-      "angle": 30,
-      "locations": [-4, 47]
+      "angle": 0,
+      "locations": [17, 22]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [17, -22]
     }
   ],
   "engineSlots": [

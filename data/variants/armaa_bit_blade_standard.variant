@@ -1,0 +1,22 @@
+{
+  "variantId": "armaa_bit_blade_variant",
+  "hullId": "armaa_bit_blade",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "armaa_blade_pila"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,13 +1,13 @@
 {
 	id:"armaarmatura_arusthai",
 	"color":[252,71,75,255],
-	"displayName":"AS",
-	"displayNameWithArticle":"The MRC",
-	"displayNameLong":"Meshan Reprisal Coalition",
-	"displayNameLongWithArticle":"The Meshan Reprisal Coalition",
+	"displayName":"Arusthai",
+	"displayNameWithArticle":"Arusthai",
+	"displayNameLong":"Arusthai Sovereignty",
+	"displayNameLongWithArticle":"The Arusthai Sovereignty",
 	"logo":"graphics/armaa/factions/armaa_arusthai.png",
 	"crest":"graphics/armaa/factions/armaa_logo01_crest.png",
-	"shipNamePrefix":"DAS",
+	"shipNamePrefix":"AS",
 
 	"showInIntelTab":false,
 
@@ -35,17 +35,19 @@
 	
 				"drover": 0.25,
 				"vanguard_pirates": 0.8,
-				"wolf": 0.3,
+				"wolf": 0.5,
 				"hound": 1,
-				"mudskipper2": 0.20,	
-				"odyssey": 0.4,
-				"falcon_p":0.25,
+				"mudskipper2": 1,	
+				"odyssey": 0.5,
+				"falcon_p":0.3,
 			},
 			"fighters":{
 			"warthog_wing":1,
 			"khopesh_wing":1,
+			"armaa_crew":1,
 			"armaa_valkenx_wing":1,
 			"armaa_record_wing":0.5,
+			"armaa_kouto_wing":0.5,
 			"talon_wing":1,
 
 		},
@@ -60,20 +62,24 @@
 		"hulls":[	
 				"armaa_xyphos",
 				"armaa_valkenx_frig",
-				"armaa_record_frig",
-				#"armaa_monitor",
-				#"armaa_whitebase",
-				#"mora",
+				"armaa_leynos_frig",
+				"armaa_monitor",
+				"vigilance",
 				"cerberus",
 				"gemini",
+				"vanguard",
+				"armaa_aleste_frig",
+				"gremlin",
+				"armaa_altagrave",
+				"armaa_morganamp",
 				"hermes",
 				"kite",
 				"lasher",
 				"mudskipper2",	
 				"mudskipper",
-				"buffalo",
+				"buffalo2",
 				"nebula",
-			    	#"sunder",
+			    	"brawler",
 				"condor"
 			],
 	},
@@ -86,6 +92,8 @@
 			"fighters":[
 			"broadsword_wing",
 			"armaa_record_wing",
+			"armaa_valkenmp_wing",
+			"armaa_musha_wing",
 			"wasp_wing",
 			"talon_wing",
 			],
@@ -110,15 +118,15 @@
 		],
 	},
 	"factionDoctrine":{
-		"warships":3,
-		"carriers":2,
-		"phaseShips":2,
+		"warships":4,
+		"carriers":1,
+		"phaseShips":1,
 
 		"officerQuality":1,
 		"shipQuality":1,
 		"numShips":4,
 
-		"shipSize":1,
+		"shipSize":2,
 
 		"aggression":5,
 
@@ -134,10 +142,10 @@
 	"illegalCommodities":[
 	],
 	"music":{
-		"theme":"music_armaa_pirate_market_neutral",
-		"market_neutral":"music_armaa_pirate_market_neutral",
-		"market_hostile":"music_armaa_pirate_market_hostile",
-		"market_friendly":"music_armaa_pirate_market_friendly",
+		"theme":"music_pirates_market_neutral",
+		"market_neutral":"music_pirates_market_neutral",
+		"market_hostile":"music_pirates_market_hostile",
+		"market_friendly":"music_pirates_market_friendly",
 		"encounter_neutral":"music_armaa_pirate_encounter_neutral",
 		"encounter_hostile":"music_armaa_pirate_encounter_hostile",
 		"encounter_friendly":"music_armaa_pirate_encounter_friendly",
@@ -222,27 +230,21 @@
 	"custom":{
 		"decentralized":true,
 		"engageWhenEvenStrength":true,
-		"exemptFromFoodShortages":false,
-		"willTradeWhenHostile":true,
-		"ignoreTradeWithEnemiesForReputation":false,
-		"postsNoBounties":false,
-		"offerMissionsWhenHostile":true,
-		"allowsTransponderOffTrade":true,
+		"exemptFromFoodShortages":true,
+		"willTradeWhenHostile":false,
+		"ignoreTradeWithEnemiesForReputation":true,
+		"postsNoBounties":true,
+		"offerMissionsWhenHostile":false,
+		"allowsTransponderOffTrade":false,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":true, # for fleet behavior
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
-		"patherBaseTypesSmall":{
-			"orbitalstation":10,
-		},
-		"patherBaseTypesLarge":{
-			"battlestation":10,
-		},
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,
 			"vsFreePort":false,
-			"canBombard":true,
+			"canBombard":false,
 			"territorial":false,
-			"canSendWithoutMilitaryBase":true,
+			"canSendWithoutMilitaryBase":false,
 		},
 	},
 	"fleetTypeNames":{

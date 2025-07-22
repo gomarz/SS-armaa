@@ -1,0 +1,88 @@
+{
+  "hullName": "Musha",
+  "hullId": "armaa_musha",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/musha/armaa_musha.png",
+  "style": "LOW_TECH",
+  "height": 42,
+  "width": 34,
+  "center": [17, 23.5],
+  "collisionRadius": 44.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 43.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "escort_package",
+    "cataphract"
+  ],
+  "builtInWeapons": {
+    "HEAD": "armaa_mushaHead",
+    "WS0002": "armaa_musha_rightPauldron",
+    "WS0003": "armaa_musha_leftPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": 0,
+      "locations": [-9, 9],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": -10,
+      "locations": [0, -2]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 10,
+      "locations": [0, 2]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": 0,
+      "locations": [-9, -11],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [0, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-16, -0],
+      "length": 7,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    14, -4.5,
+    -11, -9,
+    -10.5, 9,
+    15, 5
+  ]
+}

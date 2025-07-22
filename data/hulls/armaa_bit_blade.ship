@@ -1,0 +1,58 @@
+{
+  "hullName": "Bit",
+  "hullId": "armaa_bit_blade",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/armaa_claw_old.png",
+  "style": "HIGH_TECH",
+  "height": 32,
+  "width": 26,
+  "center": [13, 15],
+  "collisionRadius": 16.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 14.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "pointdefenseai",
+    "armaa_fighterStrafe"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [8, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-14.5, 0.5],
+      "length": 14.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-15, 0.5],
+      "length": 20.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "CUSTOM",
+      "styleId": "VALKAZARD_ENGINE"
+    }
+  ],
+  "bounds": [
+    14.5, -4,
+    5, -4.5,
+    3.5, -12,
+    -13.5, -4,
+    -14, 3.5,
+    3.5, 12,
+    5, 4.5,
+    14.5, 4
+  ]
+}

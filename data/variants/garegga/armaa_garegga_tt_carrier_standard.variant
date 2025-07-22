@@ -1,0 +1,42 @@
+{
+  "variantId": "armaa_garegga_tt_carrier_standard",
+  "hullId": "armaa_garegga_tt_carrier",
+  "displayName": "VX",
+  "goalVariant": false,
+  "fluxCapacitors": 4,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": ["safetyoverrides"],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "MAIN_GUN": "armaa_fluxcannon",
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN": "breach",
+        "TRUE_GUN2": "breach",
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+	"WS0001": "sabot",
+      }
+    }
+  ],
+  "modules": [
+    {
+      #"MODULE": "armaa_gallant_frig_standard"
+       "MODULE": "armaa_valkenx_frig_standard"
+    }
+  ],
+  "wings": []
+}

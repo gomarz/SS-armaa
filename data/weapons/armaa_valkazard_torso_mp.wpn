@@ -2,12 +2,12 @@
   "id": "armaa_valkazard_torso_mp",
   "specClass": "beam",
   "type": "DECORATIVE",
+  "everyFrameEffect": "data.scripts.weapons.armaa_VXSSEffect",
   "size": "SMALL",
   "collisionClass": "RAY",
   "showDamageWhenDecorative":true,
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/valkazard/mp/armaa_valkazard_torso_mp.png",
-  "everyFrameEffect": "data.scripts.weapons.armaa_VXEffect",  
   "hardpointSprite": "graphics/armaa/ships/valkazard/mp/armaa_valkazard_torso_mp.png",
   "glowColor": [
     255,

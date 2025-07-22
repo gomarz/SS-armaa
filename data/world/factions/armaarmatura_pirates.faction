@@ -9,7 +9,7 @@
 	"crest":"graphics/armaa/factions/armaa_logo01_crest.png",
 	"shipNamePrefix":"MRV",
 
-	"showInIntelTab":false,
+	"showInIntelTab":true,
 
 	"shipNameSources":{
 		"REVOLUTIONARY":5,
@@ -90,6 +90,8 @@
 				"condor",
 				"armaa_leynos_frig",
 				"armaa_xyphos",
+				"armaa_broadsword",
+				"armaa_sarissa",
 				"armaa_monitor",
 				"armaa_whitebase",
 				"armaa_kouto_frig",
@@ -116,6 +118,9 @@
 				"brawler",
 				"heron",
 				"wolf",
+				"armaa_musha_frig",
+				"armaa_aleste_frig_classic",
+				"armaa_musha_frig_sniper",
 				"drover",
 				"armaa_valkyrie",
 			],
@@ -132,6 +137,8 @@
 			"armaa_hazard_wing",
 			"armaa_prodromos_wing",
 			"armaa_guppy_wing",
+			"armaa_valkenmp_wing",
+			"armaa_musha_wing",
 			"warthog_wing",
 			],
 	},
@@ -182,10 +189,10 @@
 	"illegalCommodities":[
 	],
 	"music":{
-		"theme":"music_armaa_pirate_market_neutral",
-		"market_neutral":"music_armaa_pirate_market_neutral",
-		"market_hostile":"music_armaa_pirate_market_hostile",
-		"market_friendly":"music_armaa_pirate_market_friendly",
+		"theme":"music_pirates_market_neutral",
+		"market_neutral":"music_pirates_market_neutral",
+		"market_hostile":"music_pirates_market_hostile",
+		"market_friendly":"music_pirates_market_friendly",
 		"encounter_neutral":"music_armaa_pirate_encounter_neutral",
 		"encounter_hostile":"music_armaa_pirate_encounter_hostile",
 		"encounter_friendly":"music_armaa_pirate_encounter_friendly",
@@ -270,15 +277,18 @@
 	"custom":{
 		"decentralized":true,
 		"engageWhenEvenStrength":true,
-		"exemptFromFoodShortages":false,
+		"exemptFromFoodShortages":true,
 		"willTradeWhenHostile":true,
-		"ignoreTradeWithEnemiesForReputation":false,
-		"postsNoBounties":false,
-		"offerMissionsWhenHostile":true,
+		"ignoreTradeWithEnemiesForReputation":true,
+		"postsNoBounties":true,
+		"simulatorData":{
+			"showInSimulator":true,
+		},
+		"offerMissionsWhenHostile":false,
 		"allowsTransponderOffTrade":true,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":true, # for fleet behavior
-		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
+		"fightToTheLast":false, # order a full assault instead of retreating, in most cases
 		"patherBaseTypesSmall":{
 			"orbitalstation":10,
 		},
@@ -290,7 +300,7 @@
 			"vsFreePort":false,
 			"canBombard":true,
 			"territorial":false,
-			"canSendWithoutMilitaryBase":true,
+			"canSendWithoutMilitaryBase":false,
 		},
 	},
 	"fleetTypeNames":{

@@ -12,17 +12,8 @@
 		"music_armaa_system":[
 			{"file":"cave_of_regret.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
-		"music_armaa_pirate_market_hostile":[
-			{"file":"recollective_mind.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
-		],
-		"music_armaa_pirate_market_neutral":[
-			{"file":"decision.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
-		],
-		"music_armaa_pirate_market_friendly":[
-			{"file":"decision.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
-		],
 		"music_armaa_pirate_encounter_neutral":[
-			{"file":"elimination.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"black_magic.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_pirate_encounter_friendly":[
 			{"file":"black_magic.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
@@ -33,8 +24,17 @@
 		"music_armaa_ax_bounty":[
 			{"file":"showdown.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
+		"music_armaa_mission_descent":[
+			{"file":"dangerous_ideology.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
+		],
 		"music_armaa_citybattle":[
 			{"file":"escape_from_control.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+		],
+		"music_armaa_gravionbattle":[
+			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
+		],
+		"music_armaa_gravionbattle2":[
+			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":1,"randomStart":true},
 		],
 		"music_armaa_briefing":[
 			{"file":"clenched_fist.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
@@ -226,18 +226,41 @@
 		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":1.03,"volume":1.03},
 		{"file":"sounds/armaa/armaa_monoeye_move.ogg","pitch":.97,"volume":.97},
 	],
+        "armaa_valkazard_intro":
+        [
+		{"file":"sounds/armaa/valkazard/definitelynotACInspired.ogg","pitch":1.0,"volume":1},
+        ],
 	"armaa_dawn_intro":
 	[
 		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro0.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro2.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro3.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro4.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro5.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro6.ogg","pitch":1.0,"volume":1},
-	{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro7.ogg","pitch":1.0,"volume":.97},
-
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro1.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro2.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro3.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro4.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro5.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro6.ogg","pitch":1.0,"volume":1},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro7.ogg","pitch":1.0,"volume":0.97},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro8.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro9.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro10.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro11.ogg","pitch":1.0,"volume":0.9},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro12.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro13.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro14.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro15.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro16.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro17.ogg","pitch":1.0,"volume":1.0},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro18.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro19.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro20.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro21.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro22.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro23.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro24.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro25.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro26.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro27.ogg","pitch":1.0,"volume":0.85},
+		{"file":"sounds/armaa/officers/dawn/armaa_dawn_intro28.ogg","pitch":1.0,"volume":0.85},
 	],
 	"armaa_crewDeath":[							
 			{"file":"sounds/armaa/armaa_death.ogg","pitch":.7,"volume":0.2},

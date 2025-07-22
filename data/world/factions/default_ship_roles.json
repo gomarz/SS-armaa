@@ -1,18 +1,22 @@
 {
-"combatSmallForSmallFleet":{
+  "combatSmall": {
 "armaa_garegga_tt_standard":1,
 "armaa_garegga_tt_assault":1,
-},
-  "combatSmall": {
-    "armaa_garegga_tt_standard":1,
+"armaa_garegga_tt_carrier_standard":1,
+"armaa_garegga_tt_carrier_aleste":0.5,
     "armaa_garegga_standard":1,
 	"armaa_aleste_as_f":0.8,
 	"armaa_aleste_friendly_f":1,
 	"armaa_record_frig_standard":1,
 	"armaa_record_frig_support":1,
+        "armaa_record_frig_dem":0,
+	"armaa_morganamp_standard":1,
+	"armaa_musha_frig_sniper_standard":1,
+	"armaa_musha_frig_standard":1,
 	"armaa_aleste_swordsman":1,
         "armaa_valkenx_frig_standard":1,
         "armaa_valkenx_frig_assault":1,
+        "armaa_valkenx_frig_support":1,
 	"armaa_xyphos_standard":1,
 	"armaa_leynos_standard":1,
 	"armaa_einhander_Overclocked": 0.9,
@@ -38,6 +42,8 @@
   },
 	"combatFreighterMedium":{
 		"armaa_valkyrie_standard":10,
+		"armaa_valkyrie_sniper":5,
+		"armaa_valkyrie_hegemony":0,
 	},
 	"combatCapital":{
 

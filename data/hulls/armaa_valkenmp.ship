@@ -30,7 +30,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [2, -2]
+      "locations": [2, -0]
     },
     {
       "id": "F_LEGS",
@@ -39,7 +39,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-11, -0],
+      "locations": [-9, -0],
       "renderOrderMod": -1000
     },
     {
@@ -47,7 +47,7 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 5,
+      "arc": 50,
       "angle": 0,
       "locations": [0, 0]
     },
@@ -58,7 +58,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [2, 2]
+      "locations": [0, -0]
     },
     {
       "id": "C_ARMR",
@@ -67,7 +67,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [2, -2]
+      "locations": [2, -0]
     },
     {
       "id": "D_PAULDRONL",
@@ -76,7 +76,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 2]
+      "locations": [0, 1]
     },
     {
       "id": "D_PAULDRONR",
@@ -85,14 +85,14 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -2]
+      "locations": [0, -1]
     },
     {
       "id": "E_HEAD",
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 135,
+      "arc": 360,
       "angle": 0,
       "locations": [1, -0]
     },
@@ -118,10 +118,10 @@
   "engineSlots": [
     {
       "location": [-13.5, -0],
-      "length": 19.5,
-      "width": 8,
+      "length": 8,
+      "width": 10,
       "angle": 180,
-      "contrailSize": 8,
+      "contrailSize": 10,
       "style": "CUSTOM",
       "styleId": "MIDLINE"
     }

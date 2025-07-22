@@ -1,11 +1,37 @@
-- gunhazard revision (just remove it..nvm done)
 - ArmaA partnership (sandbag)
 - ArmaA-PL Crisis intervention (sandbag)
 - Kshatriya Spear (done)
 - Dawn Skill Up (sandbag)
-- remove leave option from atmo boss fight
-- add resolution for killing kade (sandbag)
-- add reward for capturing IK (sandbag)
-- add quest tracker(Done, except for final stage (kade/IK))
-- finish morgana (mostly done)
-- add variable fighter? (mostly done)
+- numCrew in mrc expedition/liberation expedition
+- Unused string in strikecraft repair x
+- VX redesign? Gave it Wingcom
+- make valken actually worth using x(?)
+- fix Sus Valkazard handover x(probably)
+- bassline x
+- mission 4 and resolution x
+- shaft rewrite (leave out morgana here, and in city battle) x
+- go through GC with CN bros for final bug hunting
+- finish implementing ATAC stuff x
+- Sunrider collab event with Ava?
+- make sure fleet is spawning properly (???)
+
+3.1.6?
+
+- Sunrider - Ava - Dawn event
+- optimize mission gfx - there's some stuff rendering for 1s -every frame-, probably have to move some stuff out of engine.isPaused() x
+- 1000 pt atac reward - ERD, HI-MAC, OVERLORD ALPHA
+- bug hunt
+- fix travel drive lock when launched from carrier x
+- fix Gravion gravity well remaining at gamlin instead of being removed x(?)
+- Thermoflux & Targeting Disruptor hullmod Icons and description x 
+- Increase stock of Arma Armatura stuff?
+- Leynos - Blink...should it be less spammy? x
+- fix automaton officer assignment/unassignment when hm removed
+- RMS skill desc x(?)
+
+- Dawn events
+	- PK x
+	- Diktat Commission
+	- Helping the ARC?
+	- Debt
+	

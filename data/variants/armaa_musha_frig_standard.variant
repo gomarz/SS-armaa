@@ -1,0 +1,31 @@
+{
+  "variantId": "armaa_musha_frig_standard",
+  "hullId": "armaa_musha_frig",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 8,
+  "fluxVents": 9,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "HEAD": "armaa_mushaHead_frig"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "armaa_musha_rightPauldron"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

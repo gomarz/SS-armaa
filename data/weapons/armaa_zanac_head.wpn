@@ -3,7 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "beamEffect": "data.scripts.weapons.armaa_amwsEffect",
+  "beamEffect": "data.scripts.weapons.armaa_chaosBurstBeam",
   "everyFrameEffect": "data.scripts.weapons.armaa_sylphAMWSEffect",
   "collisionClass": "RAY_FIGHTER",
   "collisionClassByFighter": "RAY_FIGHTER",
@@ -47,7 +47,7 @@
   ],
   "darkCore": false,
   "convergeOnPoint": false,
-  "width": 12,
+  "width": 20,
   "textureType": [
     "graphics/fx/beam_laser_fringe.png",
     "graphics/fx/beamcorec.png"

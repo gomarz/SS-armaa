@@ -5,8 +5,8 @@
 	"type":"DECORATIVE",
 	"size":"SMALL",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/legs/destroyer/armaa_dd_legs00.png",
-        "numFrames": 12,
+	"turretSprite":"",
+        "numFrames": 1,
         "frameRate": 1,
 	"alwaysAnimate":"false",
   "renderHints": [
