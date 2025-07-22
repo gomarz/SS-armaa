@@ -6,6 +6,7 @@ V3.2.1
 - added minor tweaks to reduce performance hit from units w/ animations
 - Added dialogue option to get pirate fleets to stand down if friendly with MRC (only if they originated from fort exsedol)
 - Removed missile debuff / blocked EMR for ships with cataphracht hullmod
+- Added GuarDUAL/ GuarDUAL FV to ATAC reward
 - GuarDUAL
 	- Added Automated Repair Unit
 	- Flux Capacity: 2000 -> 2250

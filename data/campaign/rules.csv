@@ -3106,7 +3106,7 @@ Her eyes gleam, their underlying agenda shrouded beneath a veneer of reassurance
 
 ""As we depart, we plan to transport Valkazard to our planetside installation for further research and analysis.""",cutCommLink:See them off,
 armaa_valkazardDeny,armaa_valkazardHubOptions,!$armaa_madeOffer,,,"cutCommLink:""Allow me to think on this.""",
-armaa_guardualGift,PickGreeting,"$id == armaa_seraph
+#armaa_guardualGift,PickGreeting,"$id == armaa_seraph
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 $rel >= 0.50
 $faction.relValue >= 0.25
@@ -3117,7 +3117,7 @@ She pauses, letting the weight of her words settle before continuing, her tone t
 Sera gestures, and a hologram of the transforming mech materializes, rotating slowly above her desk.
 
 ","armaa_guardualGift2:""Continue""",
-armaa_guardualGift2,DialogOptionSelected,$option == armaa_guardualGift2,"ShowSecondPerson armaa_dawn
+#armaa_guardualGift2,DialogOptionSelected,$option == armaa_guardualGift2,"ShowSecondPerson armaa_dawn
 armaa_Hikaru_Utada giveGuarDual
 AddShip $armaa_giftMech
 FireAll PopulateOptions
