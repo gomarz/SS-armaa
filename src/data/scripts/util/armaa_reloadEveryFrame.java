@@ -35,6 +35,7 @@ public class armaa_reloadEveryFrame extends BaseEveryFrameCombatPlugin {
         for (WeaponAPI weapon : ship.getAllWeapons()) {
             if (weapon.getId().equals("armaa_musha_rightPauldron_frig")) {
                 this.wep = weapon;
+                weapon.setRemainingCooldownTo(0f);
             }
         }
     }

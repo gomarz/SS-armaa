@@ -176,11 +176,9 @@ public class armaa_reload extends BaseShipSystemScript {
             default ->
                 "miss!";
         };
-        boolean success = false;
         if ((isPlayer && abort || !isPlayer) && state == State.ACTIVE) {
             if (hitQuality > 0) {
-                success = true;
-                Global.getSoundPlayer().playSound("ui_char_spent_story_point_combat", 0.7f, 1f, ship.getLocation(), new Vector2f());
+                Global.getSoundPlayer().playSound("system_nova_burst_fire", 0.7f*hitQuality, 1f, ship.getLocation(), new Vector2f());
                 Global.getCombatEngine().addPlugin(new armaa_reloadEveryFrame(ship, hitQuality));
             }
             Global.getCombatEngine().addFloatingText(ship.getLocation(), outcome, 24, Color.WHITE, ship, 0f, 0f);
@@ -220,9 +218,6 @@ public class armaa_reload extends BaseShipSystemScript {
                         true
                 );
             }
-            if (success == false) {
-                Global.getSoundPlayer().playSound("cr_playership_malfunction", 1.3f, 1f, ship.getLocation(), new Vector2f());
-            }
             ship.getSystem().deactivate();
         }
     }
@@ -256,8 +251,8 @@ public class armaa_reload extends BaseShipSystemScript {
                     .5f,
                     true
             );
-            Global.getSoundPlayer().playSound("cr_playership_malfunction", 0.5f, 1f, ship.getLocation(), new Vector2f());
         }
+            Global.getSoundPlayer().playSound("disabled_large_crit", 0.5f, 1f, ship.getLocation(), new Vector2f());
         interval = new IntervalUtil(1.5f, 1.5f);
     }
 

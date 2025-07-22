@@ -167,7 +167,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 info.addPara("New hullmods unlocked", initPad, tc, h, "MORGANA", "GAMLIN");
             }
             if (esd.id == Stage.PROTOTYPE_BREAKTHROUGH) {
-                info.addPara("Prototype fighter %s delivered to %s for testing", initPad, tc, h, "MORGANA", "GAMLIN");
+                info.addPara("Fighters %s and %s delivered to %s for use", initPad, tc, h, "MORGANA","GUARDUAL", "GAMLIN");
             }
             if (esd.id == Stage.DATA_DELIVERY) {
                 info.addPara("New hullmods unlocked", tc, initPad);
@@ -259,9 +259,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                     "10%" //dont hardoced this either
             );
         } else if (stageId == Stage.PROTOTYPE_BREAKTHROUGH) {
-            info.addPara("The reverse-engineered fighter %s has been left in storage "
+            info.addPara("The reverse-engineered fighter %s, and %s has been left in storage "
                     + "at %s for use, at your discretion.", initPad, h,
                     "MORGANA",
+                    "GUARDUAL",
                     "GAMLIN");
         } else if (stageId == Stage.AUTOMATION) {
             info.addPara("Data gleaned from your ops "
@@ -471,6 +472,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_hasMorgana")) {
                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
                             Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_morgana_standard", "Morgana");
+                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                             Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_guardual_standard", "GD-42");
+                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                             Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing",2);                     
                     Global.getSector().getMemoryWithoutUpdate().set("$armaa_hasMorgana", true);
                 }
             }

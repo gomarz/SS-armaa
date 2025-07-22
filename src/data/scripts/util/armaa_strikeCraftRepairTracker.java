@@ -9,6 +9,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
@@ -77,6 +78,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         if (!ship.isFinishedLanding() && !hasLanded) {
             return;
         }
+
         armaa_utils.setLocation(ship, landingLocation); //set to location of carrier in case of drift
 
         if (w != null) {
@@ -232,7 +234,6 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         ship.setControlsLocked(false);
         ship.setShipSystemDisabled(false);
         ship.getMutableStats().getCRLossPerSecondPercent().unmodify(ship.getId());
-
         for (ShipAPI modules : ship.getChildModulesCopy()) {
             modules.setHitpoints(modules.getMaxHitpoints());
             modules.getFluxTracker().stopOverload();
@@ -250,6 +251,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             }
         }
         ship.resetDefaultAI();
+        ship.getFluxTracker().ventFlux();
         Global.getCombatEngine().getCustomData().remove("armaa_repairTracker_" + ship.getId());
         Global.getCombatEngine().removePlugin(this);
     }

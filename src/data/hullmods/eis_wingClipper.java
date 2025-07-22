@@ -114,7 +114,6 @@ public class eis_wingClipper extends BaseHullMod
 				s.setHitpoints(0f);
 				float fp = s.getWing() != null ? (float)s.getWing().getSpec().getFleetPoints()/(float)s.getWing().getSpec().getNumFighters() : INCREASE_AMT;
 				//Global.getCombatEngine().applyDamage(s,point,99999f,DamageType.ENERGY,0f,true,false,ship);
-				Global.getCombatEngine().addFloatingTextAlways(new Vector2f(target.getLocation().x,target.getLocation().y+target.getCollisionRadius()), "U killed me peacekeeper-chan", 20f, Color.white, target, 1f, 1f, 1f, 1f, 1f, .5f);
 				float currentBonus = 0f;
 				if(Global.getCombatEngine().getCustomData().get("eis_wingClipper_bonus_"+ship.getId()) instanceof Float)
 				{

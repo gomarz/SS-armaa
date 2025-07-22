@@ -99,7 +99,11 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                     if (gunF == null) {
                         gunF = w;
                         if(gunF.getAnimation() != null)
-                            gunF.getAnimation().setFrame(1);
+                            if(!ship.isFighter())
+                                gunF.getAnimation().setFrame(1);
+                            else
+                                gunF.getAnimation().setFrame(2);
+                            
                         ogPosGunF = new Vector2f(gunF.getSprite().getCenterX(), gunF.getSprite().getCenterY());
                     }
                     break;

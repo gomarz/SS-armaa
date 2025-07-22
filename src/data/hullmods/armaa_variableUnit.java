@@ -25,7 +25,7 @@ public class armaa_variableUnit extends BaseHullMod {
     private static final float DAMAGE_BONUS = 50f;
     private static final float ROF_MALUS = 40f;
     private static final float SPEED_MALUS = 50f;
-    private static final float MAX_TIME_MULT = 1.15f;
+    private static final float MAX_TIME_MULT = 1.12f;
     private static final float MIN_TIME_MULT = 0.1f;
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
     public static final Map<String, Float> GROUND_BONUS = new HashMap<>();
