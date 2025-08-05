@@ -9,11 +9,9 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
-import java.awt.Color;
 
 public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
@@ -52,21 +50,19 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         if (Global.getCombatEngine().isPaused()) {
             return;
         }
-
         for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) {
             if (fleetManager.getShipFor(member) != carrier) {
                 continue;
             }
-            if (fleetManager.getShipFor(member) == carrier) {
+            if (fleetManager.getShipFor(member) == carrier) {               
                 fleetManager.addToReserves(ship.getFleetMember());
-                Global.getCombatEngine().removeEntity(ship);
+                Global.getCombatEngine().removeEntity(ship);                
+                takeOff(ship, landingLocation, true);                
             }
         }
 
         if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) {
             if (ship.isFinishedLanding() || hasLanded) {
-                ship.getMutableStats().getHullDamageTakenMult().unmodify("invincible");
-                ship.getMutableStats().getArmorDamageTakenMult().unmodify("invincible");
                 if (carrier != null && !fleetManager.getRetreatedCopy().contains(carrier.getFleetMember())) {
                     ship.setHullSize(HullSize.FRIGATE);
                     armaa_utils.destroy(ship);
@@ -130,8 +126,8 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         //prevent (noticeable)cr loss while docked
         ship.getMutableStats().getCRLossPerSecondPercent().modifyMult(ship.getId(), 0.001f);
 
-        ship.getMutableStats().getHullDamageTakenMult().modifyMult("invincible", 0f);
-        ship.getMutableStats().getArmorDamageTakenMult().modifyMult("invincible", 0f);
+        ship.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
+        ship.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
 
         ship.setHitpoints(Math.min(ship.getHitpoints() + remainder * (elapsed / maxinterval), ship.getMaxHitpoints()));
         armaa_utils.setArmorPercentage(ship, currArmor + ((1f - currArmor) * (adjustedRate / maxinterval)) * elapsed * amount); //Armor to 100%
@@ -158,7 +154,6 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.setHullSize(HullSize.FRIGATE); //Einhander AI fix, fighter hullsize cannot resetDefaultAI, will crash
             ship.setShipSystemDisabled(false);
             ship.resetDefaultAI();
-            //ctm.orderSearchAndDestroy(fleetManager.getDeployedFleetMember(ship),false);
 
             for (WeaponGroupAPI w : ship.getWeaponGroupsCopy()) {
                 if (!w.getActiveWeapon().usesAmmo()) {
@@ -188,11 +183,9 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
     private void takeOff(ShipAPI ship, Vector2f landingLocation, boolean abort) {
         Global.getSoundPlayer().playSound("fighter_takeoff", 1f, 1f, ship.getLocation(), new Vector2f());
-        ship.getMutableStats().getHullDamageTakenMult().unmodify("invincible");
-        ship.getMutableStats().getArmorDamageTakenMult().unmodify("invincible");
         ship.setInvalidTransferCommandTarget(false);
         ship.setCollisionClass(CollisionClass.SHIP);
-
+        ship.getFluxTracker().forceOverload(1f);
         ship.getFluxTracker().stopOverload();
         ship.getFluxTracker().setCurrFlux(0f);
         Global.getCombatEngine().getCustomData().remove("armaa_strikecraftisLanding" + ship.getId());
@@ -213,10 +206,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.getMutableStats().getShieldMalfunctionChance().unmodify("cr_effect");
             ship.clearDamageDecals();
             ship.setHitpoints(Math.max(ship.getHitpoints(),armaa_utils.getMaxHPRepair(ship))); //Hull to 100%
-            ship.getVariant().getHullSpec().getNoCRLossTime();
-            // Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getFlatBonuses()); 
-            // Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getMultBonuses()); 
-            // Global.getLogger(this.getClass()).info(ship.getMutableStats().getPeakCRDuration().getPercentBonuses());             
+            ship.getVariant().getHullSpec().getNoCRLossTime();             
             if (ship.getMutableStats().getPeakCRDuration().computeEffective(0f) < ship.getTimeDeployedForCRReduction()) {
                 ship.getMutableStats().getPeakCRDuration().modifyFlat(ship.getId(), ship.getTimeDeployedForCRReduction());
             }
@@ -253,6 +243,8 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         ship.resetDefaultAI();
         ship.getFluxTracker().ventFlux();
         Global.getCombatEngine().getCustomData().remove("armaa_repairTracker_" + ship.getId());
+        ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
+        ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");        
         Global.getCombatEngine().removePlugin(this);
     }
 }

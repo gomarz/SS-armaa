@@ -3,12 +3,13 @@
   "hullId": "armaa_guardual_f",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 8,
-  "fluxVents": 9,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "pointdefenseai"
+    "pointdefenseai",
+    "no_weapon_flux"
   ],
   "weaponGroups": [
     {

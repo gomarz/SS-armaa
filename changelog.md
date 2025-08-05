@@ -1,3 +1,26 @@
+V3.2.2
+------
+- Musha Sniper
+	- Defense: Damper-> Front Shield
+	- Railgun-> Pinion Lance (just a name change)
+		- Flux per shot: 40 -> 400
+- Hi-MAC
+	- Hotkeys are no longer hardcoded to WASD
+	- they are tied to keys for accelerating,turning left,decelerating, and turning right, respectively
+
+- ACS
+	- Fixed automaton being locked to ship
+
+Spriggan Powered
+	- DP: 5 -> 6
+
+- fixed bug where strikecraft traveldrive would never deactivate
+- fixed bug where music would sometime never end post crown of cinders
+- fixed bug with notification queuing(?)
+- fixed weird missile positioning on guarDUAL
+- fixed bug where MRC would award player 0 credits during reprisals
+- minor rules.csv tweaks
+
 V3.2.1
 -----
 - Fixed Emergency Recall working on non strikecraft

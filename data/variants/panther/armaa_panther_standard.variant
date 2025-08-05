@@ -36,6 +36,9 @@
     }
   ],
   "modules": [
+    {
+      "SHIELD": "armaa_shield_panther_standard"
+    }
   ],
   "wings": []
 }

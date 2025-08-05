@@ -100,12 +100,10 @@ public class armaa_cataphract {
 
         public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
             checkForCats(stats);
-            unapplyAutomatons(stats);
         }
 
         public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
             checkForCats(stats);
-            unapplyAutomatons(stats);
         }
 
         public String getEffectDescription(float level) {

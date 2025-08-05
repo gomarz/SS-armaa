@@ -66,8 +66,8 @@ public class armaa_moduleRepair extends BaseHullMod {
 			String key = "moduleRepair_isDestroyed"+"_"+ship.getId();
 			if(ship.getParentStation() == null || !ship.getParentStation().isAlive())
 			{
-				ship.getMutableStats().getHullDamageTakenMult().unmodify("invincible");
-				ship.getMutableStats().getArmorDamageTakenMult().unmodify("invincible");
+				ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
+				ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
 				Global.getCombatEngine().getCustomData().remove(key);	
 				ship.setHitpoints(0f);
 				Global.getCombatEngine().removeEntity(ship);
@@ -75,8 +75,8 @@ public class armaa_moduleRepair extends BaseHullMod {
 			if (isDestroyed) {
 				ship.getSpriteAPI().setColor(new Color(0,0,0,0));
 				ship.setCollisionClass(CollisionClass.NONE);
-				ship.getMutableStats().getHullDamageTakenMult().modifyMult("invincible",0f);
-				ship.getMutableStats().getArmorDamageTakenMult().modifyMult("invincible",0f);
+				ship.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible",0f);
+				ship.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible",0f);
 				ship.blockCommandForOneFrame(ShipCommand.USE_SYSTEM); 
 				ship.getMutableStats().getAcceleration().modifyMult(ship.getId()+"_shield",1.25f);
 				ship.getMutableStats().getMaxSpeed().modifyMult(ship.getId()+"_shield",1.25f);
@@ -94,8 +94,8 @@ public class armaa_moduleRepair extends BaseHullMod {
 				isDestroyed = false;
 				ship.setCollisionClass(CollisionClass.FIGHTER);
 				ship.getSpriteAPI().setColor(new Color(255,255,255,255));
-				ship.getMutableStats().getHullDamageTakenMult().unmodify("invincible");
-				ship.getMutableStats().getArmorDamageTakenMult().unmodify("invincible");
+				ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
+				ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
 				Global.getCombatEngine().getCustomData().remove(key);				
 				ship.getMutableStats().getAcceleration().unmodify(ship.getId()+"_shield");
 				ship.getMutableStats().getMaxSpeed().unmodify(ship.getId()+"_shield");

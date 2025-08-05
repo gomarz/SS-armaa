@@ -1,30 +1,36 @@
 {
   "variantId": "armaa_valkyrie_hegemony",
   "hullId": "armaa_valkyrie",
-  "displayName": "Standard",
+  "displayName": "Raider",
   "goalVariant": true,
-  "fluxCapacitors": 12,
-  "fluxVents": 15,
+  "fluxCapacitors": 10,
+  "fluxVents": 3,
   "quality": 0.5,
   "permaMods": [],
   "hullMods": [
-    "expanded_deck_crew",
-    "hiressensors"
+    "targetingunit",
+    "missleracks"
   ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS 001": "vulcan",
-        "WS 002": "vulcan",
-        "WS 004": "gorgon"
+        "WS 001": "railgun",
+        "WS 002": "railgun",
+        "WS 004": "harpoon",
+        "WS0002": "harpoon"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "modules": [
     {
-      "MODULE1": "armaa_panther_standard_shield"
+      "MODULE1": "armaa_musha_frig_standard"
     },
     {
       "MODULE2": "armaa_musha_frig_standard"
