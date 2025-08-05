@@ -157,7 +157,7 @@ public class armaa_himac extends BaseHullMod {
                 Global.getCombatEngine().addNebulaSmoothParticle(eng.getLocation(), vector, 25f * eng.getEngineSlot().getWidth(), 1f, 0.5f, 0.25f, 1f, bigBoostColor, true);
             }
             Global.getSoundPlayer().playSound("system_orion_device_explosion", 1.1f, 1f, ship.getLocation(), new Vector2f());
-            
+
             boost(ship.getFacing() + 0f, ship, true);
         }
 
@@ -303,10 +303,10 @@ public class armaa_himac extends BaseHullMod {
     }
 
     public void isKeyPressed(ShipAPI ship) {
-        boolean wPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("W"));
-        boolean aPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("A"));
-        boolean sPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("S"));
-        boolean dPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex("D"));
+        boolean wPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_ACCELERATE")));
+        boolean aPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_TURN_LEFT")));
+        boolean sPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_ACCELERATE_BACKWARDS")));
+        boolean dPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_TURN_RIGHT")));
 
         String key = DATA_KEY + "_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) Global.getCombatEngine().getCustomData().get(key);

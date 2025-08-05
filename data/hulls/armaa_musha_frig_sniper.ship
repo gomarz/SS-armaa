@@ -22,7 +22,6 @@
   "builtInWeapons": {
     "F_LEGS": "armaa_ht_legs",
     "HEAD": "armaa_mushaHead_frig",
-    #"WS0001": "atropos_single",
     "WS0002": "armaa_musha_rightPauldron_frig",
     "WS0003": "armaa_musha_leftPauldron"
   },
@@ -82,7 +81,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [-2, 2]
+      "locations": [0, 3]
     }
   ],
   "engineSlots": [

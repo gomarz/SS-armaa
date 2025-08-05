@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
@@ -14,6 +15,7 @@ import org.magiclib.util.MagicAnim;
 import java.awt.Color;
 import java.util.*;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
@@ -35,7 +37,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
     private IntervalUtil interval2 = new IntervalUtil(1f, 1f);
     private IntervalUtil transformInterval = new IntervalUtil(3f, 5f);
     private IntervalUtil forceTransformTimer = new IntervalUtil(1.5f, 5f);
-    private final IntervalUtil animUpdateInterval = new IntervalUtil(0.033f,0.05f);
+    private final IntervalUtil animUpdateInterval = new IntervalUtil(0.033f, 0.05f);
     private Vector2f ogPosL, ogPosR, ogPosRArm, ogPosLArm, ogPosLWing, ogPosRWing, ogPosGunF, ogPosLMissile, ogPosRMissile;
     private final float TORSO_OFFSET = -150, LEFT_ARM_OFFSET = -65, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
 
@@ -98,37 +100,27 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 case "F_GPOD":
                     if (gunF == null) {
                         gunF = w;
-                        if(gunF.getAnimation() != null)
-                            if(!ship.isFighter())
+                        if (gunF.getAnimation() != null) {
+                            if (!ship.isFighter()) {
                                 gunF.getAnimation().setFrame(1);
-                            else
+                            } else {
                                 gunF.getAnimation().setFrame(2);
-                            
+                            }
+                        }
+
                         ogPosGunF = new Vector2f(gunF.getSprite().getCenterX(), gunF.getSprite().getCenterY());
                     }
                     break;
                 case "WS0002":
                     if (lMissile == null) {
                         lMissile = w;
-                        if (w.getMissileRenderData() != null && w.getMissileRenderData().size() > 0) {
-                            int index = 0;
-                            if (w.getMissileRenderData().size() / 2 > 0) {
-                                index = w.getMissileRenderData().size() / 2;
-                            }
-                            ogPosLMissile = new Vector2f(lMissile.getMissileRenderData().get(index).getSprite().getCenterX(), lMissile.getMissileRenderData().get(index).getSprite().getCenterY());
-                        }
+                        ogPosLMissile = new Vector2f(lMissile.getSprite().getCenterX(), lMissile.getSprite().getCenterY());
                     }
                     break;
                 case "WS0004":
                     if (rMissile == null) {
                         rMissile = w;
-                        if (w.getMissileRenderData() != null && w.getMissileRenderData().size() > 0) {
-                            int index = 0;
-                            if (w.getMissileRenderData().size() / 2 > 0) {
-                                index = w.getMissileRenderData().size() / 2;
-                            }
-                            ogPosRMissile = new Vector2f(rMissile.getMissileRenderData().get(index).getSprite().getCenterX(), rMissile.getMissileRenderData().get(index).getSprite().getCenterY());
-                        }
+                        ogPosRMissile = new Vector2f(rMissile.getSprite().getCenterX(), rMissile.getSprite().getCenterY());
                     }
                     break;
             }
@@ -140,13 +132,14 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         if (ship == null) {
             ship = weapon.getShip();
         }
-        if(!runOnce)
-        {
-            if(ship.getShield() != null)
-                engine.getCustomData().put("armaa_transformState_sArc_" + ship.getId(),ship.getShield().getArc());
-            if(!ship.isFighter())
+        if (!runOnce) {
+            if (ship.getShield() != null) {
+                engine.getCustomData().put("armaa_transformState_sArc_" + ship.getId(), ship.getShield().getArc());
+            }
+            if (!ship.isFighter()) {
                 transforming = true;
-                isRobot = false;
+            }
+            isRobot = false;
 
             init();
         }
@@ -168,7 +161,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             wingR.getSprite().setCenterY(ogPosRWing.getY() - 14 * 1);
             wingR.getSprite().setCenterX(ogPosRWing.getX() + 8 * 1);
         }
-        if (!Global.getCombatEngine().isEntityInPlay(ship)) {
+        if (!Global.getCombatEngine().isEntityInPlay(ship) || engine.isPaused()) {
             return;
         }
         boolean transformNow = engine.getCustomData().get("armaa_transformNow_" + ship.getId()) != null
@@ -202,8 +195,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                         if (flags.hasFlag(AIFlags.TURN_QUICKLY)) {
                             transforming = true;
                         }
-                    }
-                    else if (isRobot) {
+                    } else if (isRobot) {
                         if (flags.hasFlag(AIFlags.BACK_OFF) || flags.hasFlag(AIFlags.BACKING_OFF)
                                 || flags.hasFlag(AIFlags.BACKING_OFF) || flags.hasFlag(AIFlags.HARASS_MOVE_IN)) {
                             transforming = true;
@@ -214,10 +206,11 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                         }
                     }
                 }
-                if(!isRobot && inDanger && ship.getShipAI() != null) {
-                    if(Math.random() > 0.50f)
+                if (!isRobot && inDanger && ship.getShipAI() != null) {
+                    if (Math.random() > 0.50f) {
                         transforming = true;
-                }                
+                    }
+                }
                 if (!ship.getFluxTracker().isVenting() && (armaa_utils.isKeyDoubleTapped(ship, engine) || armaa_utils.isMiddleMouseClicked(ship, engine))
                         || (ship.getFluxTracker().isVenting() && ship.getFluxLevel() != 0) && !isRobot && !transforming) {
                     if (ship.getFluxTracker().isVenting() && !isRobot) {
@@ -228,9 +221,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 else if (forcedToMech && isRobot && !ship.getFluxTracker().isVenting() && ship.getFluxLevel() == 0) {
                     transforming = true;
                     forcedToMech = false;
-                }
-                else if(ship.isFighter() && Math.random() < 0.40f && transformInterval.intervalElapsed())
-                {
+                } else if (ship.isFighter() && Math.random() < 0.40f && transformInterval.intervalElapsed()) {
                     transforming = true;
                 }
                 if (transforming) {
@@ -238,10 +229,8 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 }
             }
         }
-        if(ship.isFighter())
-        {
-            if(Math.random() < 0.40f && transformInterval.intervalElapsed())
-            {
+        if (ship.isFighter()) {
+            if (Math.random() < 0.40f && transformInterval.intervalElapsed()) {
                 transforming = true;
             }
         }
@@ -262,8 +251,9 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 transformLevel = 0f;
                 isRobot = true;
                 transforming = false;
-                if(ship.getShield() != null)
-                    engine.getCustomData().put("armaa_transformState_sArc_" + ship.getId(),ship.getShield().getArc());
+                if (ship.getShield() != null) {
+                    engine.getCustomData().put("armaa_transformState_sArc_" + ship.getId(), ship.getShield().getArc());
+                }
             }
         }
         engine.getCustomData().put("armaa_tranformState_" + ship.getId(), isRobot);
@@ -271,12 +261,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         String id = "armaa_transformationBonus_" + ship.getId();
         MutableShipStatsAPI stats = ship.getMutableStats();
         stats.getMaxSpeed().modifyMult(id, 1f - (0.50f * (1f - transformLevel)));
-        // if (transformLevel >= 1f && !ship.isFighter()) {
-            // if (ship.getShield() != null && ship.getShield().isOn()) {
-            //    ship.getShield().toggleOff();
-            // }
-        // }
-        // Engines
+
         for (ShipEngineAPI eng : ship.getEngineController().getShipEngines()) {
             //IDK If there's a better way, seems there's no engine slot ID
             if (eng != ship.getEngineController().getShipEngines().get(0)) {
@@ -293,15 +278,13 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         }
         ship.getMutableStats().getBallisticRoFMult().modifyPercent(id, 50f * transformLevel);
         ship.getMutableStats().getEnergyRoFMult().modifyPercent(id, 50f * transformLevel);
-        ship.getMutableStats().getShieldDamageTakenMult().modifyMult(id,1f+(0.25f * transformLevel));
-        if(ship.getShield() != null)
-        {
-            float sArc = (float)engine.getCustomData().get("armaa_transformState_sArc_" + ship.getId());            
-            ship.getShield().setArc(sArc-sArc*.50f*transformLevel);
+        ship.getMutableStats().getShieldDamageTakenMult().modifyMult(id, 1f + (0.25f * transformLevel));
+        if (ship.getShield() != null) {
+            float sArc = (float) engine.getCustomData().get("armaa_transformState_sArc_" + ship.getId());
+            ship.getShield().setArc(sArc - sArc * .50f * transformLevel);
         }
         if (isRobot) {
             float mult = (1f - transformLevel);
-            int level = ship.getCaptain() != null ? Math.min(15, ship.getCaptain().getStats().getLevel()) : 1;
             ship.getMutableStats().getMaxTurnRate().modifyPercent(id, 50f * mult);
             ship.getMutableStats().getBallisticWeaponDamageMult().modifyPercent(id, 50f * mult);
             ship.getMutableStats().getEnergyWeaponDamageMult().modifyPercent(id, 50f * mult);
@@ -383,13 +366,66 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         } else if (sineD > 1f) {
             sineD = 1f;
         }
-        if(!MagicRender.screenCheck(0.1f, weapon.getLocation()))
-        {
+        if (!MagicRender.screenCheck(0.1f, weapon.getLocation())) {
             return;
         }
+        Color col = armL.getSprite().getColor();
+        float red = col.getRed() / 255f;
+        float green = col.getGreen() / 255f;
+        float blue = col.getBlue() / 255f;
+        if (sineC > 0) {
+
+            //literally dont know any other way to do this
+            WeaponAPI lWep, rWep;
+            if (engine.getCustomData().get("armaa_lfakeWep_" + ship.getId()) instanceof WeaponAPI weaponAPI) {
+                lWep = weaponAPI;
+            } else {
+                lWep = engine.createFakeWeapon(ship, lMissile.getSpec().getWeaponId());
+                engine.getCustomData().put("armaa_lfakeWep_" + ship.getId(), lWep);
+            }
+            if (engine.getCustomData().get("armaa_rfakeWep_" + ship.getId()) instanceof WeaponAPI weaponAPI) {
+                rWep = weaponAPI;
+            } else {
+                rWep = engine.createFakeWeapon(ship, rMissile.getSpec().getWeaponId());
+                engine.getCustomData().put("armaa_rfakeWep_" + ship.getId(), rWep);
+            }
+            Color wepCol = new Color((red) * (transformLevel), green * transformLevel, blue * transformLevel, sineC);
+            // Offset vector in missile local space (e.g., shift 4 units forward)
+            float offsetAmount = 0f - 8f * (1f - sineC);
+            float offsetAmountR = 0f + 8f * (1f - sineC);
+            Vector2f offset = new Vector2f(6f, offsetAmount);
+            Vector2f offsetR = new Vector2f(6f, offsetAmountR);
+            offset = VectorUtils.rotate(offset, ship.getFacing());
+            offsetR = VectorUtils.rotate(offsetR, ship.getFacing());
+            Vector2f renderPosL = Vector2f.add(lMissile.getLocation(), offset, null);
+            Vector2f renderPosR = Vector2f.add(rMissile.getLocation(), offsetR, null);
+            if (lMissile.getAmmo() > 0) {
+                MagicRender.singleframe(
+                        lWep.getMissileRenderData().get(0).getSprite(),
+                        renderPosL,
+                        new Vector2f(lWep.getMissileRenderData().get(0).getSprite().getWidth(), lWep.getMissileRenderData().get(0).getSprite().getHeight()),
+                        ship.getFacing() - 90f,
+                        new Color(wepCol.getRed() / 255f, wepCol.getBlue() / 255f, wepCol.getGreen() / 255f, (wepCol.getAlpha() / 255f) * (1 - lMissile.getCooldownRemaining() / lMissile.getCooldown())),
+                        false,
+                        CombatEngineLayers.FRIGATES_LAYER
+                );
+            }
+            if (rMissile.getAmmo() > 0) {
+                MagicRender.singleframe(
+                        rWep.getMissileRenderData().get(0).getSprite(),
+                        renderPosR,
+                        new Vector2f(rWep.getMissileRenderData().get(0).getSprite().getWidth(), rWep.getMissileRenderData().get(0).getSprite().getHeight()),
+                        ship.getFacing() - 90f,
+                        new Color(wepCol.getRed() / 255f, wepCol.getBlue() / 255f, wepCol.getGreen() / 255f, (wepCol.getAlpha() / 255f) * (1 - rMissile.getCooldownRemaining() / rMissile.getCooldown())),
+                        false,
+                        CombatEngineLayers.FRIGATES_LAYER
+                );
+            }
+        }
         animUpdateInterval.advance(amount);
-        if(!animUpdateInterval.intervalElapsed())
+        if (!animUpdateInterval.intervalElapsed()) {
             return;
+        }
         if (gun != null) {
             gun.getSprite().setCenterY(ogPosRArm.getY() + 6 * sineC);
             gun.getSprite().setCenterX(ogPosRArm.getX() + 4 * sineC);
@@ -407,7 +443,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 }
             }
         }
-        float recoil = realGun != null && realGun.getCooldown() > 0 ? (2 * (realGun.getCooldownRemaining() / realGun.getCooldown()) * (1f - sineC)) : 1 * 0;        
+        float recoil = realGun != null && realGun.getCooldown() > 0 ? (2 * (realGun.getCooldownRemaining() / realGun.getCooldown()) * (1f - sineC)) : 1 * 0;
         if (pauldronR != null) {
             pauldronR.setCurrAngle(global + (sineA + sineC) * TORSO_OFFSET * 0.5f + (aim * (1f - transformLevel)) * 0.75f + RIGHT_ARM_OFFSET * 0.5f);
             pauldronR.getSprite().setCenterY(ogPosR.getY() - 6 * sineC + recoil);
@@ -426,10 +462,6 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             float recoilOffset = sineD >= 1f ? recoil : 0f;
             armL.getSprite().setCenterY(ogPosLArm.getY() + 15f * sineC + recoilOffset);
             armL.getSprite().setCenterX(ogPosLArm.getX() - 5 * sineC);
-            Color col = armL.getSprite().getColor();
-            float red = col.getRed() / 255f;
-            float green = col.getGreen() / 255f;
-            float blue = col.getBlue() / 255f;
             float normalizedAlpha = 1f;
             float newAlpha = Math.max(0f, Math.min(1f, normalizedAlpha * (1f - transformLevel)));
             Color newCol = new Color(red, green, blue, newAlpha);
@@ -446,7 +478,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 
         if (pauldronL != null) {
             pauldronL.setCurrAngle(global + MathUtils.getShortestRotation(ship.getFacing(), armL.getCurrAngle()) * (1f - transformLevel) * 0.6f + (sineA + sineC) * 90f);
-            float recoilOffset = sineD >= 1f ? recoil : 0f;            
+            float recoilOffset = sineD >= 1f ? recoil : 0f;
             pauldronL.getSprite().setCenterY(ogPosL.getY() - 6 * sineC + recoilOffset);
             pauldronL.getSprite().setCenterX(ogPosL.getX() - 4 * sineC);
             wingL.setCurrAngle(pauldronL.getCurrAngle());
@@ -456,34 +488,25 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 
         ship.setSprite("guardual", "armaa_guardual" + (int) Math.round(6 * (1f - transformLevel)));
         if (lMissile != null && lMissile.getMissileRenderData() != null) {
-            Color col = armL.getSprite().getColor();
-            float red = col.getRed() / 255f;
-            float green = col.getGreen() / 255f;
-            float blue = col.getBlue() / 255f;
             for (int i = 0; i < lMissile.getMissileRenderData().size(); i++) {
                 lMissile.getMissileRenderData().get(i).getSprite().setCenterY(4 + ogPosLMissile.getY() - 8 * (1f - sineC));
-                lMissile.getMissileRenderData().get(i).getSprite().setCenterX(ogPosLMissile.getX() - 2 * (1f - sineC));
-                lMissile.getMissileRenderData().get(i).getSprite().setColor(new Color((red) * (transformLevel), green * transformLevel, blue * transformLevel, sineC));
+                lMissile.getMissileRenderData().get(i).getSprite().setCenterX((ogPosLMissile.getX()) * (1f - sineC));
+                lMissile.getMissileRenderData().get(i).getSprite().setColor(new Color((red) * (transformLevel), green * transformLevel, blue * transformLevel, 0f));
             }
         }
         if (rMissile != null && rMissile.getMissileRenderData() != null) {
-            Color col = armL.getSprite().getColor();
-            float red = col.getRed() / 255f;
-            float green = col.getGreen() / 255f;
-            float blue = col.getBlue() / 255f;
             for (int i = 0; i < rMissile.getMissileRenderData().size(); i++) {
                 rMissile.getMissileRenderData().get(i).getSprite().setCenterY(4 + ogPosRMissile.getY() - 8 * (1f - sineC));
-                rMissile.getMissileRenderData().get(i).getSprite().setCenterX(ogPosRMissile.getX() + 2 * (1f - sineC));
-                rMissile.getMissileRenderData().get(i).getSprite().setColor(new Color((red) * (transformLevel), green * transformLevel, blue * transformLevel, sineC));
+                rMissile.getMissileRenderData().get(i).getSprite().setCenterX((ogPosRMissile.getX() - ogPosRMissile.getX()) * (1f - sineC));
+                rMissile.getMissileRenderData().get(i).getSprite().setColor(new Color((red) * (transformLevel), green * transformLevel, blue * transformLevel, 0f));
             }
         }
+        List<String> ids = new ArrayList<String>();
+        ids.add("WS0002");
+        ids.add("WS0004");
         for (WeaponAPI w : ship.getAllWeapons()) {
-            List<String> ids = new ArrayList<String>();
-            ids.add("WS0002");
-            ids.add("WS0004");
             if (ids.contains(w.getSlot().getId())) {
                 Color invis = new Color(0f, 0f, 0f, 0f);
-                WeaponAPI trueWeapon = w.getSlot().getId().equals("WS0002") ? wingL : wingR;
                 w.ensureClonedSpec();
                 List<Vector2f> ogSpec = new ArrayList<Vector2f>(w.getSpec().getTurretFireOffsets());
                 List<Float> ogAngle = new ArrayList<Float>(w.getSpec().getTurretAngleOffsets());

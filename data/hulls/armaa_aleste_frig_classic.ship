@@ -21,7 +21,7 @@
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkenx_leftPauldron",
     "D_PAULDRONR": "armaa_valkenx_rightPauldron",
-    "E_HEAD": "armaa_valkenxHead",
+    "E_HEAD": "armaa_valkenHead",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
@@ -33,7 +33,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -15,
-      "locations": [2, -3]
+      "locations": [1, -3]
     },
     {
       "id": "B_TORSO",
@@ -51,7 +51,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 15,
-      "locations": [3, 3]
+      "locations": [2, 3]
     },
     {
       "id": "C_ARMR",
@@ -69,7 +69,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [2, 6]
+      "locations": [0, 4]
     },
     {
       "id": "D_PAULDRONR",
@@ -78,7 +78,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [2, -6]
+      "locations": [0, -4]
     },
     {
       "id": "E_HEAD",
@@ -87,7 +87,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [3, -0]
+      "locations": [1, -0]
     },
     {
       "id": "F_LEGS",
@@ -96,7 +96,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-7, -0],
+      "locations": [-5, -0],
       "renderOrderMod": -1000
     },
     {

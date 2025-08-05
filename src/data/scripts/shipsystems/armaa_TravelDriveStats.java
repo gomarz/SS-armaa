@@ -29,8 +29,9 @@ private ShipAPI carrier;
 		boolean standardDeploy = ship.getFacing() == 90f ? true:false;
 		if(runOnce && !ship.isRetreating() && !ship.isDirectRetreat())
 		{
-			ship.getTravelDrive().deactivate();
+			ship.getTravelDrive().deactivate();                        
 			unapply(stats,id);
+                        ship.giveCommand(ShipCommand.VENT_FLUX, new Object(), 0);                        
 			return;
 		}
 		if(ship.getOwner() == 1)
@@ -102,7 +103,7 @@ private ShipAPI carrier;
 		stats.getMaxTurnRate().unmodify(id);
 		stats.getTurnAcceleration().unmodify(id);
 		stats.getAcceleration().unmodify(id);
-		stats.getDeceleration().unmodify(id);;
+		stats.getDeceleration().unmodify(id);
 	}
 	
 	public StatusData getStatusData(int index, State state, float effectLevel) 

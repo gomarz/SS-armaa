@@ -25,28 +25,10 @@ public class armaa_automatedCognitionShell extends BaseHullMod {
     public static final String ITEM = Commodities.GAMMA_CORE;
     public static final String DATA_PREFIX = "gamma_core_acs_check_";
 
-    public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
+    public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) 
+    {
         stats.getMinCrewMod().modifyFlat(id, -1f);
-        if (stats.getFleetMember() != null) {
-            if (stats.getFleetMember().getCaptain().isDefault() || !stats.getFleetMember().getCaptain().getId().contains("armaa_automata")) {
-                //Apparently this can be the case
-                if (Misc.getAICoreOfficerPlugin("gamma_core") == null) {
-                    return;
-                }
-                PersonAPI pilot = Misc.getAICoreOfficerPlugin("gamma_core").createPerson("gamma_core", "player", new Random());
-                int portraitNum = (int) (Math.random() * 3);
-                String autoType = Math.random() < 0.20f ? "_c" : "";
-                pilot.setId("armaa_automata" + autoType + portraitNum);
-                pilot.setPortraitSprite("graphics/armaa/portraits/armaa_automaton" + portraitNum + ".png");
-                if (pilot.getId().equals("armaa_automata_c2")) {
-                    pilot.getName().setFirst("XN");
-                    pilot.getName().setLast("KRIEGOR MK. IV");
-                }
-                pilot.getName().setFirst("Automaton");
-                stats.getFleetMember().setCaptain(pilot);
-                Misc.setUnremovable(pilot, true);
-            }
-        }
+
     }
 
     @Override
@@ -114,16 +96,28 @@ public class armaa_automatedCognitionShell extends BaseHullMod {
     }
 
     @Override
-    public void advanceInCampaign(FleetMemberAPI member, float amount) {
-        final Map<String, Object> data = Global.getSector().getPersistentData();
-
-        if (data.containsKey(DATA_PREFIX + member.getId())) {
+    public void advanceInCombat(ShipAPI ship, float amount) 
+    {
+        MutableShipStatsAPI stats = ship.getMutableStats();
+        if(stats  == null || ship.getOwner() < 0)
             return;
-        }
-
-        if (!member.getVariant().hasHullMod("armaa_acsutilityscript")) {
-            data.put(DATA_PREFIX + member.getId(), "_");
-            member.getVariant().addPermaMod("armaa_acsutilityscript");
+        if (ship.getCaptain().isDefault()) {
+            //Apparently this can be the case
+            if (Misc.getAICoreOfficerPlugin("gamma_core") == null) {
+                return;
+            }
+            PersonAPI pilot = Misc.getAICoreOfficerPlugin("gamma_core").createPerson("gamma_core", "player", new Random());
+            int portraitNum = (int) (Math.random() * 3);
+            String autoType = Math.random() < 0.20f ? "_c" : "";
+            pilot.setId("armaa_automata" + autoType + portraitNum);
+            pilot.setPortraitSprite("graphics/armaa/portraits/armaa_automaton" + autoType + portraitNum + ".png");
+            if (pilot.getId().equals("armaa_automata_c2")) {
+                pilot.getName().setFirst("XN");
+                pilot.getName().setLast("KRIEGOR MK. IV");
+            }
+            pilot.getName().setFirst("Automaton");
+            ship.setCaptain(pilot);
+            // Misc.setUnremovable(pilot, true);
         }
     }
 
