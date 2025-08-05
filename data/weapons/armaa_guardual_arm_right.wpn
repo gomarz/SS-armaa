@@ -32,8 +32,8 @@
   ],
   "turretAngleOffsets": [
     1,
-    0,
-    0
+    1,
+    0.5
   ],
   "hardpointOffsets": [
     17,

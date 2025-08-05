@@ -1268,7 +1268,7 @@ $global.armaa_des_inProgress","ShowPersonVisual
 armaa_Hikaru_Utada playMusic music_encounter_mysterious
 AdjustRepPerson armaa_kade COOPERATIVE 5","The comms connection hisses to life, stabilizing on the familiar image of Kade. He's seated at his desk, a datapad in one hand, half a glass of something amber in the other. He looks up at your report, the corners of his mouth twitching not into a smile, but something more mercurial..annoyance?
 
-You lay it out: the battle over Gravion, the strange station, the burst of white light and your transportation to Magec.
+You lay it out: the battle over Gravion, the strange station, the burst of white light and your transportation to a Gate.
 
 Kade sets the glass down slowly. ""Still confirmin' the data, but what you're describing..."" He exhales through his nose.  He glances off-screen and taps something on his console. ""You'll want to hear what Imelda has to say.""",armaaWFGravionDebrief2: Continue,
 armaaWFGravionDebrief2,DialogOptionSelected,$option == armaaWFGravionDebrief2,"ShowSecondPerson armaa_imelda

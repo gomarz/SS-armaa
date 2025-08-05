@@ -14,10 +14,15 @@ V3.2.2
 Spriggan Powered
 	- DP: 5 -> 6
 
+GuarDUAL
+	- Acceleration: 240->200
+	- Increased decleration in mech form (240->480)
+	- fixed weird missile positioning of some weapons
+	- Adjusted turret fire offsets, should fire slightly more to the left (should help firing at small targets)
+
 - fixed bug where strikecraft traveldrive would never deactivate
 - fixed bug where music would sometime never end post crown of cinders
 - fixed bug with notification queuing(?)
-- fixed weird missile positioning on guarDUAL
 - fixed bug where MRC would award player 0 credits during reprisals
 - minor rules.csv tweaks
 
