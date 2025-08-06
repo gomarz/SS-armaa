@@ -1,3 +1,6 @@
+V3.2.3
+------
+- Fixed nullpointer if guardual had no missiles slotted
 V3.2.2
 ------
 - Musha Sniper
