@@ -240,8 +240,8 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 ship.setShipTarget(null);
             }
         }
+        ship.getFluxTracker().ventFlux();        
         ship.resetDefaultAI();
-        ship.getFluxTracker().ventFlux();
         Global.getCombatEngine().getCustomData().remove("armaa_repairTracker_" + ship.getId());
         ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
         ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");        
