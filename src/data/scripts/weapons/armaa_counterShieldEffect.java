@@ -55,7 +55,10 @@ public class armaa_counterShieldEffect implements EveryFrameWeaponEffectPlugin
 		if(!runOnce)
 			init(ship);
 		//"fringeColor":[255,68,204,255],
-
+                if(MAX_GAUGE < 0)
+                    MAX_GAUGE = 0;
+                if(gauge < 0)
+                    gauge = 0;
 		if(ship.getShield() != null)
 		{
 			float r = Math.max((BASE_SHIELD_COLOR.getRed()/255f)-(gauge/MAX_GAUGE),.2f);
@@ -119,7 +122,11 @@ public class armaa_counterShieldEffect implements EveryFrameWeaponEffectPlugin
 			float shipRadius = armaa_utils.effectiveRadius(ship);	
 			float randRange = (float) shipRadius * 0.5f * 1f;
 			randRange = (float) Math.sqrt(shipRadius) * 0.75f * 1f;
-			ship.setJitter(ship, new Color(50/255f,175f/255f,255f/255f,Math.min(1f*(gauge/MAX_GAUGE),1f)), 1f * (gauge/MAX_GAUGE), 4, 25);
+                        float red = 50f / 255f;
+                        float green = 175f / 255f;
+                        float blue = 255f / 255f;
+                        float a = Math.max(0f, Math.min(gauge / MAX_GAUGE, 1f));
+			ship.setJitter(ship, new Color(red,green,blue,a), 1f * (gauge/MAX_GAUGE), 4, 25);
 
 			if(isFiring == true)
 				interval.advance(amount);		

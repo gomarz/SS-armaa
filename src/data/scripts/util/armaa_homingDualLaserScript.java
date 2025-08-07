@@ -119,15 +119,12 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
                     }
                     Global.getCombatEngine().getCustomData().put("armaa_percept_homing_fluxLevel_"+ship.getId(),ship.getFluxLevel());
                     DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, id, MathUtils.getRandomPointInCircle(weapon.getLocation(), 10f), angle, new Vector2f());
-
-                    engine.addNebulaSmokeParticle(ship.getLocation(),
-                            new Vector2f((float) Math.random() * (proj.getVelocity().getX() / 4 + ship.getVelocity().getX()), (proj.getVelocity().getY() / 4 + ship.getVelocity().getY()) * (float) Math.random()),
-                            40f * (0.75f + (float) Math.random() * 0.5f),
-                            3f + 1f * (float) Math.random() * 2f,
-                            0f,
-                            0f,
-                            1f,
-                            new Color(128f / 255f, 180f / 255f, 242f / 255f, Math.max(0f, gauge) / MAX_GAUGE));
+                    for (int x = 0; x < 4; x++) 
+                    {
+                            engine.addHitParticle(proj.getLocation(),
+                                            MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(100f, 150f), (float) Math.random() * 360f),
+                                            5f, 1f, MathUtils.getRandomNumberInRange(0.6f, 1f),                             new Color(128f / 255f, 180f / 255f, 242f / 255f, Math.max(0f, gauge) / MAX_GAUGE));
+                    }
 
                     if (level > 2) {
                         proj.setHitpoints(proj.getHitpoints() * 1.5f);

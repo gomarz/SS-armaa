@@ -296,10 +296,9 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             }
             stats.getArmorDamageTakenMult().modifyMult(id, 1f - (0.50f * mult));
             stats.getEngineDamageTakenMult().modifyMult(id, 1f - (0.50f * mult));
-            //stats.getFluxDissipation().modifyPercent(id,50f*mult);
 
-            stats.getAcceleration().modifyMult(id, 1f - (0.50f * mult));
-            stats.getDeceleration().modifyPercent(id, 50f * mult);
+            stats.getAcceleration().modifyMult(id, 1f - (0.5f * mult));
+            stats.getDeceleration().modifyPercent(id, 100f * mult);
             stats.getTurnAcceleration().modifyPercent(id, 50f * mult);
         } else {
             if (lMissile != null) {
@@ -373,7 +372,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         float red = col.getRed() / 255f;
         float green = col.getGreen() / 255f;
         float blue = col.getBlue() / 255f;
-        if (sineC > 0) {
+        if (sineC > 0 && lMissile != null && rMissile != null) {
 
             //literally dont know any other way to do this
             WeaponAPI lWep, rWep;
@@ -399,7 +398,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             offsetR = VectorUtils.rotate(offsetR, ship.getFacing());
             Vector2f renderPosL = Vector2f.add(lMissile.getLocation(), offset, null);
             Vector2f renderPosR = Vector2f.add(rMissile.getLocation(), offsetR, null);
-            if (lMissile.getAmmo() > 0) {
+            if (lMissile.getAmmo() > 0 && lWep.getMissileRenderData() != null) {
                 MagicRender.singleframe(
                         lWep.getMissileRenderData().get(0).getSprite(),
                         renderPosL,
@@ -410,7 +409,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                         CombatEngineLayers.FRIGATES_LAYER
                 );
             }
-            if (rMissile.getAmmo() > 0) {
+            if (rMissile.getAmmo() > 0 && rWep.getMissileRenderData() != null) {
                 MagicRender.singleframe(
                         rWep.getMissileRenderData().get(0).getSprite(),
                         renderPosR,

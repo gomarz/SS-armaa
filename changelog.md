@@ -1,6 +1,12 @@
 V3.2.3
 ------
 - Fixed nullpointer if guardual had no missiles slotted
+<<<<<<< HEAD
+=======
+- fixed nullpointer caused by giving ship command to vent(somehow)
+- fixed exception thrown by valkazard if countershield gauge was < 0
+- fixed malformed chatter text
+>>>>>>> 13ed2d9 (bugfixes)
 V3.2.2
 ------
 - Musha Sniper

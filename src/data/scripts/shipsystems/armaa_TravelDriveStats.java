@@ -31,7 +31,7 @@ private ShipAPI carrier;
 		{
 			ship.getTravelDrive().deactivate();                        
 			unapply(stats,id);
-                        ship.giveCommand(ShipCommand.VENT_FLUX, new Object(), 0);                        
+                        ship.getFluxTracker().ventFlux();
 			return;
 		}
 		if(ship.getOwner() == 1)
