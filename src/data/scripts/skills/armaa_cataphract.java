@@ -3,7 +3,6 @@ package data.scripts.skills;
 import java.awt.Color;
 
 import com.fs.starfarer.api.characters.DescriptionSkillEffect;
-import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.characters.ShipSkillEffect;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
@@ -12,7 +11,6 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.skills.*;
 import com.fs.starfarer.api.util.Misc;
 import java.util.List;
-import java.util.Random;
 
 public class armaa_cataphract {
 
@@ -64,9 +62,6 @@ public class armaa_cataphract {
             //apparently the list isn't empty even when the carrier has no wings...
             if (!wings.isEmpty()) {
                 for (int i = 0; i < wings.size(); i++) {
-                    if (ship.getWing(i) == null) {
-                        break;
-                    }
                     if (ship.getWing(i).getTags().contains("cataphract")) {
                         hasMechs = true;
                         if (!ship.hasHullMod("cataphractBonus")) {

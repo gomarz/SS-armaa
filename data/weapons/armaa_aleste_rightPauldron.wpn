@@ -5,7 +5,7 @@
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
 	"turretSprite":"graphics/armaa/ships/aleste/armaa_alesteRightShoulder.png",
-	"hardpointSprite":"",
+	"hardpointSprite":"graphics/fx/empty.png",
 	#"numFrames":2,
 	#"frameRate":0,
 	#"alwaysAnimate":"false",

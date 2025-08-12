@@ -1,10 +1,38 @@
 id,trigger,conditions,script,text,options,notes
 # Market descriptions,,,,,,
+mrcrelLevelFriendly,RelationshipLevelDesc,"$faction.rel == FRIENDLY
+$faction.id == armaarmatura_pirates",,"Your record with the Coalition speaks for itself. Trusted by cell leaders and respected by the rank-and-file, you enjoy unimpeded access to their enclaves and supply chains. Even high-value targets may be shared with you.",,
+armaa_mrcrelLevelWelcoming,RelationshipLevelDesc,"$faction.rel == WELCOMING
+$faction.id == armaarmatura_pirates",,"Your name carries weight among senior operatives. Most local commanders see you as an asset to the cause and are willing to grant leeway in Coalition space.
+
+",,
+armaa_mrcrelLevelFavorable,RelationshipLevelDesc,"$faction.rel == FAVORABLE
+$faction.id == armaarmatura_pirates",,"Coalition operatives tend to look kindly on you, though ideology outweighs sentiment. You may be granted access to basic armaments or intelligence scraps, but trust is still measured in actions, not words.
+
+",,
+armaa_relLevelNeutral,RelationshipLevelDesc,"$faction.rel == NEUTRAL
+$faction.id == armaarmatura_pirates",,"The Coalition knows of you, but you've yet to make a mark one way or the other. Your movements draw neither suspicion nor support. At least, for now.
+
+",,
+armaa_relLevelSuspicious,RelationshipLevelDesc,"$faction.rel == SUSPICIOUS
+$faction.id == armaarmatura_pirates",,"Whispers circulate that you loyalties are uncertain. You are considered naive at best, or an active lapdog of the powers that be. Access to MRC networks is limited, and your arrival in Coalition space is shadowed by informants and silent watchers.",,
+armaa_relLevelInhospitable,RelationshipLevelDesc,"$faction.rel == INHOSPITABLE
+$faction.id == armaarmatura_pirates",,"Doubts have hardened into accusations. MRC enclaves refuse you entry, and Field commanders see you as an impediment to the cause.
+
+",,
+armaa_relLevelHostile,RelationshipLevelDesc,"$faction.rel == HOSTILE
+$faction.id == armaarmatura_pirates",,"The Coalition has declared you a threat to the free people of the Sector and an enemy of the cause. Warbands have authorization to intercept your fleet without hesitation, agents actively have been dispatched to hinder your operaitons.",,
+armaa_relLevelVengeful,RelationshipLevelDesc,"$faction.rel == VENGEFUL
+$faction.id == armaarmatura_pirates",,"Your name is spoken in the same breath as the MRC's bitterest enemies. Coalition strike teams carry your IDENT-hash and operational profile, with standing orders to destroy you on sight- no matter the cost.",,
+relLevelMrcAgent,RelLevelMoreDescription,"$faction.id == armaarmatura_pirates
+$global.armaa_bts_Completed",,"Due to your handling of the FLINT incident, some intelligence handlers consider you a reliable agent for sensitive assignments.",,
+,,,,,,
 flavorTextMarketMeshan,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == independent
 $market.id == armaa_meshanii_market","AddText ""As you near the center of habitation, the shifting skyline tells its own story. Crumbling pre-Collapse structures give way to towering corporate arcologies, their facades lit by oversized billboards advertising goods and services pushed by the planet's resident concerns."" 
 AddText ""You recall some half-remembered account: a reconstruction effort led by one of the major megacorps, brought in to stabilize the world after the AI Wars left it fractured. The result is what stands before you-a fragile synthesis of corporate consumption layered over surviving local traditions."" marketFlavorTextColor
 AddText ""The air carries the familiar bite of industrial pollutants, but the population seems to adapt as best they can. By Sector standards, it's almost comfortable."" marketFlavorTextColor",,,
+,,,,,,
 flavorTextMarketJenius,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == pirates
 $market.id == nekki1_market","AddText ""The landing zone is a sprawling wasteland of blackened earth and rusted debris, a stark contrast to the vibrant jungle surrounding it. Scattered shuttle remnants and cargo crates are half-buried under the thick jungle undergrowth, their surfaces scarred by both time and conflict. Makeshift shelters and trading stalls have been erected amidst the detritus, haphazardly constructed from salvaged materials and the hulls of derelict ships."" marketFlavorTextColor",,,
@@ -3844,7 +3872,7 @@ armaa_btsStart,PopulateOptions,"$id == armaa_mrcLiason score:1000
 !$global.armaa_bts_inProgress
 !$global.armaa_bts_Completed
 !$global.armaa_bts_missionCompleted
-$rel > 0.24",,,10:armaa_btsStart: Ask if there's more serious work available,
+$rel > 0.25",,,10:armaa_btsStart: Ask if there's more serious work available,
 armaa_bts,DialogOptionSelected,$option == armaa_btsStart,"Highlight ""Tri-Tachyon""
 ShowSecondPerson armaa_felner","""You've pulled weight, Captain. A lot of it.""
 

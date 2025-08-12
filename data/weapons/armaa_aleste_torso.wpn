@@ -13,7 +13,7 @@
     -5,
     5
   ],
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/fx/empty.png",
   "id": "armaa_aleste_torso",
   "muzzleFlashSpec": {
     "length": 25,

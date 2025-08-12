@@ -7,7 +7,7 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftArm_blade.png",
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/fx/empty.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
     75,

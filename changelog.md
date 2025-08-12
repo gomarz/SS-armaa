@@ -1,3 +1,11 @@
+V3.2.4
+------
+- Added UI Tags for modular hullmods
+- used "empty" sprite for hardpoint/turretsprites that were left blank
+- Updated cataphract complement ui, fixed bug that made it only checked first slot
+- Fixed WINGCOM not being usable with Converted Hangar ships
+- fixed valken x not having auto repair unit built in
+
 V3.2.3
 ------
 - Fixed nullpointer if guardual had no missiles slotted
