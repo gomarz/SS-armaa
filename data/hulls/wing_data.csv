@@ -1,14 +1,15 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number,,,,,,,,,,,,,,,,,,
-armaa_kouto_wing,armaa_kouto_Standard,"fighter4, fighter, armaa_advcataphract_bp,cataphract,rare_bp,stay_in_front_of_ship",2,0.3,5,14,BOX,4000,600,,2,FIGHTER,Hvy Fighter (Kinetic),16,9000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_kouto_wing,armaa_kouto_Standard,"fighter4, fighter, armaa_advcataphract_bp,cataphract,rare_bp,stay_in_front_of_ship",2,0.3,5,14,BOX,4000,600,-400,2,FIGHTER,Hvy Fighter (Kinetic),16,9000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t",1,0.2,4,11,V,4000,500,,3,FIGHTER,Close Combat(HE),10,8000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
-armaa_record_wing,armaa_record_Standard,"bomber3, bomber,cataphract,armaa_cataphract_bp",3,0.4,4,18,V,4000,1000,-100,3,BOMBER,Bomber,15,10000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_record_wing,armaa_record_Standard,"bomber3, bomber,cataphract,armaa_cataphract_bp",3,0.4,4,18,V,4000,1000,,3,BOMBER,Bomber,15,10000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cataphract_bp,cataphract,merc,ind",0,0.1,3,4,V,4000,300,,4,INTERCEPTOR,Interceptor/Coffin,5,4250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_valken_black_wing,armaa_valken_black_standard,"fighter1,fighter,cataphract",0,0.1,3,5,CLAW,4000,600,,4,FIGHTER,Kinetic,6,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_aleste_wing,armaa_aleste_standard,"fighter6, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t",3,0.7,5,20,BOX,4000,600,,2,FIGHTER,General Purpose,20,25000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_gallant_wing,armaa_gallant_standard,"bomber3, bomber, armaa_advcataphract_bp,merc,rare_bp",2,0.5,4,15,V,4000,900,,2,BOMBER,Lancer,15,10000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 armaa_hazard_wing,armaa_hazard_standard,"fighter3,support,stay_in_front_of_ship,rare_bp",2,0.3,5,9,CLAW,3000,500,,3,FIGHTER,Close Support,13,6000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_guppy_wing,armaa_guppy_standard,"interceptor1,interceptor",0,0.1,3,3,BOX,4000,600,,4,INTERCEPTOR,Interceptor,5,4000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_musha_wing,armaa_musha_variant,"support3,support,ind,merc,stay_in_front_of_ship",2,0.2,7,12,V,1000,900,,3,SUPPORT,Fire Support,10,5000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_musha_wing,armaa_musha_variant,"support3,support,ind,merc,stay_in_front_of_ship",2,0.2,7,12,V,1000,900,,3,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+armaa_musham3_wing,armaa_musham3_variant,"fighter3,support",1,0.2,8,12,V,2500,900,-400,2,FIGHTER,Heavy Fighter,12,9000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_guardual_wing,armaa_guardual_standard_f,"interceptor6, interceptor, no_sell",3,0.7,8,21,BOX,4000,600,,2,INTERCEPTOR,General Purpose,20,30000,,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -25,7 +26,7 @@ armaa_bit_kshatriya_wing,armaa_bit_kshatriya_std,"no_drop, no_sell,stay_in_front
 #why?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 armaa_crew_wing,armaa_crew_standard,"interceptor1, interceptor,no_drop,no_sell",0,0.8,1,0,BOX,2000,599,,6,INTERCEPTOR,Crew,1,10,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_prodromos_wing,armaa_prodromos_standard,"support1, support,rare_bp,no_drop,no_sell,stay_in_front_of_ship",0,0.3,3,4,DIAMOND,6000,600,,6,SUPPORT,Battle Armor,4,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
-armaa_pa_mid_wing,armaa_pa_mid_standard,"interceptor1, interceptor,rare_bp,no_drop,no_sell,independent_of_carrier",0,0.3,3,4,DIAMOND,100000,600,,1,FIGHTER,Battle Armor,4,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
+armaa_pa_mid_wing,armaa_pa_mid_standard,"interceptor1, interceptor,rare_bp,no_drop,no_sell,independent_of_carrier",0,0.3,3,4,DIAMOND,100000,600,,3,FIGHTER,Battle Armor,4,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_spriggan_wing,armaa_record_Standard,"bomber3, bomber,cataphract,no_sell,no_drop",3,0.25,4,18,V,4000,1000,-100,2,FIGHTER,Bomber,15,14000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 armaa_morgana_wing,armaa_morganab_standard,"support6, support,no_drop,no_sell,stay_in_front_of_ship",0,0.3,3,30,DIAMOND,0,600,,1,SUPPORT,Support Fighter,25,2000,,,,,,,,,,,,,1,0,1,,10,25000,10,15,150,0.1,6,6,,,0.7,0.75,2,3,10
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

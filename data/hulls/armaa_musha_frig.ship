@@ -2,7 +2,7 @@
   "hullName": "Musha",
   "hullId": "armaa_musha_frig",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/musha/armaa_musha.png",
+  "spriteName": "graphics/armaa/ships/musha/armaa_musha_ex.png",
   "style": "LOW_TECH",
   "height": 42,
   "width": 34,

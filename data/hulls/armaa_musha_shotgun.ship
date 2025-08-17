@@ -1,7 +1,7 @@
 {
   "hullName": "Musha",
-  "hullId": "armaa_musha_frig_sniper",
-  "hullSize": "FRIGATE",
+  "hullId": "armaa_musha_shotgun",
+  "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/musha/m3/armaa_musha.png",
   "style": "LOW_TECH",
   "height": 42,
@@ -12,17 +12,12 @@
   "shieldRadius": 43.5,
   "viewOffset": 0,
   "builtInMods": [
-    "strikeCraft",
-    "escort_package",
     "cataphract"
-  ],
-  "builtInWings": [
-    "armaa_borer_wing"
   ],
   "builtInWeapons": {
     "F_LEGS": "armaa_ht_legs",
-    "HEAD": "armaa_mushaHead_frig",
-    "WS0002": "armaa_musha_rightPauldron_frig",
+    "HEAD": "armaa_mushaHead_m3",
+    "WS0002": "armaa_musha_rightPauldron_frig2",
     "WS0003": "armaa_musha_leftPauldron_frig"
   },
   "weaponSlots": [

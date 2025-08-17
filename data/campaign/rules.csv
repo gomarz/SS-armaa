@@ -175,6 +175,7 @@ SetTextHighlights Combat is imminent",,,
 #END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb,#END Nex Blurb
 ,,,,,,
 armaa_valkHunterCheck,BeginFleetEncounter,"$id == armaa_valkDefender score:100
+!$global.armaa_engagedValkHunters
 !$entity.ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
 $hailing = true 0
 $global.armaa_engagedValkHunters = true",,,
