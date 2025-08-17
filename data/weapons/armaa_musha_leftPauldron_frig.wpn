@@ -1,11 +1,11 @@
 {
-	"id":"armaa_aleste_leftPauldron_s",  # this id must match what's in the spreadsheet
+	"id":"armaa_musha_leftPauldron_frig",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
 	"type":"DECORATIVE",
-	"size":"MEDIUM",
+	"size":"SMALL",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftShoulder.png",
-	"hardpointSprite":"graphics/fx/empty.png",
+	"turretSprite":"graphics/armaa/ships/musha/m3/armaa_musha_left_shoulder.png",
+	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,
 	#"alwaysAnimate":"false",

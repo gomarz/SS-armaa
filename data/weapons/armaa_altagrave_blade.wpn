@@ -8,7 +8,7 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/proto/armaa_altagrave_gun.png",
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/fx/empty.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
     255,

@@ -11,7 +11,7 @@
     4,
     0
   ],
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/fx/empty.png",
   "id": "armaa_alesteHead2",
   "muzzleFlashSpec": {
     "length": 5,

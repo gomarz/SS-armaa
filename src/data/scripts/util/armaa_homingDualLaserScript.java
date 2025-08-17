@@ -117,13 +117,25 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
                     if (gauge > 0.50f) {
                         id = weaponId2;
                     }
-                    Global.getCombatEngine().getCustomData().put("armaa_percept_homing_fluxLevel_"+ship.getId(),ship.getFluxLevel());
+                    Global.getCombatEngine().getCustomData().put("armaa_percept_homing_fluxLevel_" + ship.getId(), ship.getFluxLevel());
                     DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, id, MathUtils.getRandomPointInCircle(weapon.getLocation(), 10f), angle, new Vector2f());
-                    for (int x = 0; x < 4; x++) 
-                    {
-                            engine.addHitParticle(proj.getLocation(),
-                                            MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(100f, 150f), (float) Math.random() * 360f),
-                                            5f, 1f, MathUtils.getRandomNumberInRange(0.6f, 1f),                             new Color(128f / 255f, 180f / 255f, 242f / 255f, Math.max(0f, gauge) / MAX_GAUGE));
+                    float fxAngle = proj.getFacing() + MathUtils.getRandomNumberInRange(-45f, 45f);
+                    Vector2f vel = MathUtils.getPointOnCircumference(
+                        null,
+                        MathUtils.getRandomNumberInRange(340f, 520f), // speed = outward punch
+                        fxAngle
+                    );
+                    Vector2f shipVel = new Vector2f(ship.getVelocity());
+                    shipVel.scale(0.25f);                    
+                    Vector2f.add(vel, (Vector2f) shipVel, vel);                    
+
+                    for (int x = 0; x < 5; x++) {
+                        engine.addHitParticle(proj.getLocation(),
+                                vel,
+                                (float) Math.random() * 10f,
+                                1f,
+                                MathUtils.getRandomNumberInRange(0.5f, 1f), new Color(128f / 255f, 180f / 255f, 242f / 255f, Math.max(0f, gauge) / MAX_GAUGE)
+                        );
                     }
 
                     if (level > 2) {

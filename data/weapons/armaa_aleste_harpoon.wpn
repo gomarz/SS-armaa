@@ -5,9 +5,9 @@
   "type": "BALLISTIC",
   "everyFrameEffect": "data.scripts.weapons.armaa_harpoonThrowerEffect",
   "size": "SMALL",
-  "turretSprite": "",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/ships/aleste/armaa_aleste_harpoon_recoil.png",
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/fx/empty.png",
   "showDamageWhenDecorative": true,
   "visualRecoil": 10,
   "renderHints": [

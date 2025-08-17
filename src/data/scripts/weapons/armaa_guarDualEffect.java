@@ -484,8 +484,10 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             wingL.getSprite().setCenterY(ogPosLWing.getY() - 14 * sineC);
             wingL.getSprite().setCenterX(ogPosLWing.getX() - 8 * sineC);
         }
-
-        ship.setSprite("guardual", "armaa_guardual" + (int) Math.round(6 * (1f - transformLevel)));
+        String spriteString = "guardual";
+        if(ship.isFighter())
+            spriteString+="_f";
+        ship.setSprite(spriteString, "armaa_guardual" + (int) Math.round(6 * (1f - transformLevel)));
         if (lMissile != null && lMissile.getMissileRenderData() != null) {
             for (int i = 0; i < lMissile.getMissileRenderData().size(); i++) {
                 lMissile.getMissileRenderData().get(i).getSprite().setCenterY(4 + ogPosLMissile.getY() - 8 * (1f - sineC));

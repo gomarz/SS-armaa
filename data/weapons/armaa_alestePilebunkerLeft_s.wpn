@@ -11,7 +11,7 @@
     0,
     0
   ],
-  "hardpointSprite": "",
+  "hardpointSprite": "graphics/fx/empty.png",
   "id": "armaa_alestePilebunkerLeft_s",
   "interruptibleBurst": true,
   "muzzleFlashSpec": {

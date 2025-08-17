@@ -1,11 +1,12 @@
 {
-  "id": "armaa_musha_rightPauldron_frig",
+  "id": "armaa_musha_rightPauldron_frig2",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_sniper_shot",
+  "projectileSpecId": "heavymg_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
   "displayArcRadius":400,
-  "turretGunSprite":   "graphics/armaa/ships/musha/m3/armaa_musha_right_shoulder_frig.png",
+  "everyFrameEffect": "data.scripts.weapons.armaa_mushaEveryFrameEffect",
+  "turretGunSprite":   "graphics/armaa/ships/musha/m3/armaa_musha_right_shoulder_frig2.png",
   "turretSprite": "",
   "hardpointSprite": "",
   "visualRecoil":3.0,  # the gun sprites are only used if this is non-0
@@ -25,20 +26,21 @@
     0
   ],
   "barrelMode": "ALTERNATING",
-	"animationType":"MUZZLE_FLASH",  # NONE, GLOW, MUZZLE_FLASH, SMOKE
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
   "muzzleFlashSpec": {
-    "length": 30,
-    "spread": 30,
-    "particleSizeMin": 20,
+    "length": 20,
+    "spread": 25,
+    "particleSizeMin": 10,
     "particleSizeRange": 10,
     "particleDuration": 0.02,
     "particleCount": 20,
     "particleColor": [
-      150,
-      150,
-      120,
-      185
+      255,
+      200,
+      165,
+      200
     ]
   },
-  "fireSoundTwo": "railgun_fire"
+  "fireSoundTwo": "armaa_shotgun_fire_small"
 }

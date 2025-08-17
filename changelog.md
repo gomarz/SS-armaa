@@ -1,3 +1,20 @@
+V3.2.4
+------
+- Added UI Tags for modular hullmods
+- used "empty" sprite for hardpoint/turretsprites that were left blank
+- Updated cataphract complement ui, fixed bug that made it only checked first slot
+- Fixed WINGCOM not being usable with Converted Hangar ships
+- fixed valken x not having auto repair unit built in
+- fixed bug where some strikecraft would be invincible if carrier was killed while it was repairing
+- add 'no_combat_chatter' tag to assault pod
+
+- MUSHA Sniper
+	- tweaked sprite
+	- HP: 1100->1000
+	- Armor: 175->300
+	- Small missile -> small composite
+	- DP: 3-> 4
+
 V3.2.3
 ------
 - Fixed nullpointer if guardual had no missiles slotted

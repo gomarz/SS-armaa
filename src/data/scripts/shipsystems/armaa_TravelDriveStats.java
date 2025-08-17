@@ -31,7 +31,8 @@ private ShipAPI carrier;
 		{
 			ship.getTravelDrive().deactivate();                        
 			unapply(stats,id);
-                        ship.getFluxTracker().ventFlux();
+                        //if(ship.getAI() != null)
+                        //    ship.getFluxTracker().ventFlux();
 			return;
 		}
 		if(ship.getOwner() == 1)

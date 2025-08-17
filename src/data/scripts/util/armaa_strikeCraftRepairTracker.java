@@ -34,47 +34,31 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         fleetManager = Global.getCombatEngine().getFleetManager(ship.getOwner());
     }
 
-    public void lerp(float currentX, float currentY, float destX, float destY, float amount) {
-        float xValue = Math.abs(currentX - destX);
-        float yValue = Math.abs(currentY - destY);
-
-        float amountToMoveX = xValue / (amount);
-        float amountToMoveY = yValue / (amount);
-        Vector2f loc = ship.getLocation();
-        ship.getLocation().setX(loc.getX() + amountToMoveX);
-        ship.getLocation().setY(loc.getY() + amountToMoveY);
-    }
-
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
         if (Global.getCombatEngine().isPaused()) {
             return;
         }
-        for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) {
-            if (fleetManager.getShipFor(member) != carrier) {
-                continue;
-            }
+        for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) 
+        {
             if (fleetManager.getShipFor(member) == carrier) {               
                 fleetManager.addToReserves(ship.getFleetMember());
-                Global.getCombatEngine().removeEntity(ship);                
-                takeOff(ship, landingLocation, true);                
+                ship.setRetreating(true,false);
+                ship.getLocation().set(0, -1000000f);
+                Global.getCombatEngine().removePlugin(this);
+                return;              
             }
         }
 
-        if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) {
-            if (ship.isFinishedLanding() || hasLanded) {
-                if (carrier != null && !fleetManager.getRetreatedCopy().contains(carrier.getFleetMember())) {
-                    ship.setHullSize(HullSize.FRIGATE);
-                    armaa_utils.destroy(ship);
-                }
-            }
+        if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) 
+        {
             takeOff(ship, landingLocation, true);
+            armaa_utils.destroy(ship);
         }
 
         if (!ship.isFinishedLanding() && !hasLanded) {
             return;
         }
-
         armaa_utils.setLocation(ship, landingLocation); //set to location of carrier in case of drift
 
         if (w != null) {
@@ -110,7 +94,8 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.setShipAI(null);
         }
         BASE_REFIT.advance(adjustedRate);
-        ship.setHullSize(HullSize.FIGHTER);
+        if(ship.getHullSize() != HullSize.FIGHTER)
+            ship.setHullSize(HullSize.FIGHTER);
         float elapsed = BASE_REFIT.getElapsed();
         float maxinterval = BASE_REFIT.getMaxInterval();
         float refit_timer = Math.round((elapsed / maxinterval) * 100f);
@@ -126,8 +111,11 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         //prevent (noticeable)cr loss while docked
         ship.getMutableStats().getCRLossPerSecondPercent().modifyMult(ship.getId(), 0.001f);
 
-        ship.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
-        ship.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
+        if(hasLanded)
+        {
+            ship.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
+            ship.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
+        }
 
         ship.setHitpoints(Math.min(ship.getHitpoints() + remainder * (elapsed / maxinterval), ship.getMaxHitpoints()));
         armaa_utils.setArmorPercentage(ship, currArmor + ((1f - currArmor) * (adjustedRate / maxinterval)) * elapsed * amount); //Armor to 100%
@@ -151,7 +139,6 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         boolean abort = Keyboard.isKeyDown(Keyboard.getKeyIndex(abortString));
         if (BASE_REFIT.intervalElapsed() || abort) {
             takeOff(ship, landingLocation, abort);
-            ship.setHullSize(HullSize.FRIGATE); //Einhander AI fix, fighter hullsize cannot resetDefaultAI, will crash
             ship.setShipSystemDisabled(false);
             ship.resetDefaultAI();
 
@@ -160,8 +147,6 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                     w.toggleOn();
                 }
             }
-            Global.getCombatEngine().getCustomData().remove("armaa_repairTracker_" + ship.getId());
-            Global.getCombatEngine().removePlugin(this);
         }
     }
 
@@ -240,6 +225,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 ship.setShipTarget(null);
             }
         }
+        ship.setHullSize(HullSize.FRIGATE); //Einhander AI fix, fighter hullsize cannot resetDefaultAI, will crash        
         ship.getFluxTracker().ventFlux();        
         ship.resetDefaultAI();
         Global.getCombatEngine().getCustomData().remove("armaa_repairTracker_" + ship.getId());
