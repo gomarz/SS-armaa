@@ -16,7 +16,7 @@
   ],
   "builtInWeapons": {
     "F_LEGS": "armaa_ht_legs",
-    "HEAD": "armaa_mushaHead_m3",
+    "HEAD": "blinker_red",
     "WS0002": "armaa_musha_rightPauldron_frig2",
     "WS0003": "armaa_musha_leftPauldron_frig"
   },
@@ -72,7 +72,7 @@
     {
       "id": "HEAD",
       "size": "SMALL",
-      "type": "BUILT_IN",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
