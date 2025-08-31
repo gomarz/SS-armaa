@@ -17,7 +17,6 @@
     "cataphract"
   ],
   "builtInWings": [
-    "armaa_borer_wing"
   ],
   "builtInWeapons": {
     "F_LEGS": "armaa_ht_legs",

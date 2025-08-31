@@ -3365,7 +3365,8 @@ armaa_kshatriyaGift,PickGreeting,"$id == armaa_seraph
 !$givenKshatriya score: 1000
 $rel >= 0.90
 ","ShowPersonVisual
-AddRemoveAnyItem SPECIAL ship_bp armaa_kshatriya 1
+armaa_Hikaru_Utada giveKshatriya
+AddShip $armaa_giftMech
 FireAll PopulateOptions
 $givenKshatriya = true","After a short wait, your connection request is accepted.
 
@@ -3953,7 +3954,7 @@ FireBest DialogOptionSelected","$personName cocks an eyebrow. You send the data 
 
 ""Data's clean. Matches the intercepts, timestamp's recent. That'll do."" $heOrShe pauses, a little too long to be comfortable, then exhales loudly. ""But let's be clear. You weren't authorized to cut a deal.""
 $HeOrShe sets the pad down. ""There are people above me who won't like this. People who prefer operators that follow orders, not make judgment calls. But not everyone in this line of work climbs the ladder by following instructions. Some of us got here by doing what had to be done-quietly, competently."" $heOrShe lets that hang, just long enough for you to catch the double meaning.",,
-armaa_btsDebriefTurnOverResp,DialogOptionSelected,$option == armaa_btsDebriefTurnOverResp,"AdjustRep armaarmatura_pirates FRIENDLY 5
+armaa_btsDebriefTurnOverResp,DialogOptionSelected,$option == armaa_btsDebriefTurnoverResp,"AdjustRep armaarmatura_pirates FRIENDLY 5
 AdjustRepActivePerson COOPERATIVE 3
 AdjustRepPerson armaa_felner VENGEFUL -100
 $global.armaa_btsTransportingFlint = false
@@ -4218,6 +4219,7 @@ The channel cuts. The Tri-Tachyon vessels pivot cleanly away, formation dispersi
 armaa_btsReleaseFlint,MarketPostDock,"$faction.id != tritachyon
 $faction.id != pirates
 $faction.id != armaarmatura_pirates
+$market.id != exsedol_station_market
 $global.armaa_btsTransportingFlint
 !$global.armaa_resolvedFlint
 !$market.isHidden

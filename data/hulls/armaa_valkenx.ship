@@ -13,7 +13,6 @@
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",
-    "autorepair",
     "armaa_himac",
     "armaa_fighterStrafe"
   ],
@@ -108,7 +107,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-6, -0.5],
+      "locations": [-8, -0],
       "renderOrderMod": -1000
     },
     {

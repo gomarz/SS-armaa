@@ -1,3 +1,31 @@
+V3.2.5
+------
+
+- Assault Pod
+	- Hullsize is now Fighter
+	- should prevent the bugs of locking up battles and spamming the screen with  destruciton notifications when using many
+
+- Panther
+	DP: 4->8
+
+- Sera now correctly gives 1 Rajanya as reward instead of it's BP
+
+- New wing: MUSHA M3
+
+- Valken X
+	- Wing Size: 3->2
+
+- By Their Silence
+	- Fixed dialog bug when turning FLINT over to MRC
+
+- GuarDUAL
+	- Shield Efficiency: 0.85 -> 0.90
+	- Shield Arc: 120->160
+	- Tweaked AI
+
+- MUSHA Sniper
+	- Ship System effect now properly scales based on target size
+
 V3.2.4
 ------
 - Added UI Tags for modular hullmods

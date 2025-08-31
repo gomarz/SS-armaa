@@ -15,7 +15,7 @@ The Einhänder Plus is a mecha created by refurbishing and repairing the origina
 
 While the Plus has a slower speed, reduced durability, and less raw power compared to the Einhänder, its potential to match and even surpass the performance of the original can be realized with proper equipment. The Einhänder Plus has become a favorite among pilots who value versatility and customization in their mecha, despite its rarity due to the difficulty in acquiring and retrofitting the necessary parts.",,,,,
 ,,,,,,,
-armaa_monitor,SHIP,"The Watchdog emphasizes long-range fire support as opposed to head-on confrontation. While especially effective against larger targets, poor shield emitters and maneuverability can lead to it being easily overwhelmed without a covering force to protect it.
+armaa_monitor,SHIP,"The Watchdog emphasizes long-range fire support with a system that enhances it's range as well as the shield effectiveness of allies. Poor shield emitters and maneuverability can lead to it being easily overwhelmed without a covering force to protect it.
 
 Some cycles before the First AI War, corp tech miners recovered databanks from a red-eyed vessel called a ""Mobile Armor."" Keen on replicating some aspects of this technology, particularly the advanced neural interface, the GAREGGA was rolled out as an initial effort to replicate the technology at a larger scale. Unfortunately, dwindling resources and technical know-how in the sector made further development of the SILVERSWORD system a herculean task, especially without the aid of AI, banned under Domain laws, now even more stringently enforced by the Hegemony.
 
@@ -161,9 +161,7 @@ armaa_musha_frig,SHIP,"A command-focused variant of the MUSHA designed to coordi
 
 Intended for officer assignment within mixed Cataphract squadrons, this model introduces expanded sensor-sharing, improved vector control, and limited override capabilities over subordinate units. The added complexity reduces logistical advantages compared to the base platform but delivers a measurable increase in combat effectiveness when deployed in formation.",,,,,
 armaa_musha_frig_sniper,SHIP,"The MUSHA M3-(S)niper is equipped with a high-velocity kinetic rail system capable of disabling light targets and crippling exposed systems on larger ones. A specialized fire-control routine, often jokingly referred to by pilots as a ""death QTE,"" governs the system's overcharged firing mode, rewarding precision with devastating results.",,,,,
-armaa_musha_shotgun,SHIP,"WIP - shouldn't be visible
-
-The M3-SH's primary armament is a short-range scatter-cannon, a crude but effective weapon designed to overwhelm shields with the assistance of the cranial targeting laser and tear into exposed plating at close quarters. Supplementing this is a compact breach missile pod, granting the unit a limited capacity for decisive armor-piercing strikes.
+armaa_musha_shotgun,SHIP,"The M3-SH's primary armament is a short-range scatter-cannon, a crude but effective weapon designed to overwhelm shields. Supplementing this is a compact breach missile pod, granting the unit a limited capacity for armor-piercing strikes.
 
 Unlike the specialized fire-control systems of its sniper sibling, the shotgun variant relies on straightforward mechanics: charge in, discharge, and withdraw before return fire takes its toll. Though lacking finesse, its brutal efficiency and ease of maintenance have made it a favored choice for militias and mercenary crews who value reliability over refinement.",,,,,
 armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more effective than a standard Warthog, although the frame can accomodate an additional weapon over the standard chassis, possesses a rudimentary shield,and can rapidly unleash a hail of fire.",,,,,
