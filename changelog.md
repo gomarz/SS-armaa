@@ -26,6 +26,11 @@ V3.2.5
 - MUSHA Sniper
 	- Ship System effect now properly scales based on target size
 
+- MORGANA
+	- Morgana B has no supply cost/repair time. this should prevent Morgana ending battles showing it's at 50% hull / armor (even though it's really not, and just the module is dead)
+
+- NEXERELIN
+	- MRC <-> Diktat Max relation: -40->-10
 V3.2.4
 ------
 - Added UI Tags for modular hullmods
