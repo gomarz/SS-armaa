@@ -13,6 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "cataphract2",
+    "autorepair",
     "strikeCraft",
     "armaa_vxSkinSwap",
     "armaa_himac",

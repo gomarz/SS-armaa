@@ -2,7 +2,7 @@
   "hullName": "Musha",
   "hullId": "armaa_musha_frig_sniper",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/musha/armaa_musha_ex.png",
+  "spriteName": "graphics/armaa/ships/musha/m3/armaa_musha.png",
   "style": "LOW_TECH",
   "height": 42,
   "width": 34,
@@ -17,23 +17,22 @@
     "cataphract"
   ],
   "builtInWings": [
-    "armaa_borer_wing"
   ],
   "builtInWeapons": {
     "F_LEGS": "armaa_ht_legs",
     "HEAD": "armaa_mushaHead_frig",
     "WS0002": "armaa_musha_rightPauldron_frig",
-    "WS0003": "armaa_musha_leftPauldron"
+    "WS0003": "armaa_musha_leftPauldron_frig"
   },
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HIDDEN",
-      "arc": 0,
-      "angle": 0,
-      "locations": [-14, -8],
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -37,
+      "locations": [-14, -10],
       "renderOrderMod": 1000
     },
     {
@@ -81,7 +80,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, 3]
+      "locations": [0, 4]
     }
   ],
   "engineSlots": [

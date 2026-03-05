@@ -1,0 +1,52 @@
+{
+  "id": "armaa_breach_fighter",
+  "specClass": "projectile",
+  "projectileSpecId": "breach_srm",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/weapons/armaa_breach_srm_rack_turret.png",
+  "hardpointSprite": "graphics/armaa/weapons/armaa_breach_srm_rack_turret.png",
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    6,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    10,
+    -6,
+    12,
+    0,
+    10,
+    6
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 10,
+    "particleSizeRange": 14,
+    "cloudParticleCount": 3,
+    "cloudDuration": 1.5,
+    "cloudRadius": 12,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 0.45,
+    "blowbackLength": 20,
+    "blowbackSpread": 6,
+    "particleColor": [
+      190,
+      180,
+      160,
+      95
+    ]
+  },
+  "fireSoundTwo": "breach_fire"
+}

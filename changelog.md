@@ -1,6 +1,59 @@
+V3.2.5
+------
+
+- Assault Pod
+	- Hullsize is now Fighter
+	- should prevent the bugs of locking up battles and spamming the screen with  destruciton notifications when using many
+
+- Panther
+	DP: 4->8
+
+- Sera now correctly gives 1 Rajanya as reward instead of it's BP
+
+- New wing: MUSHA M3
+
+- Valken X
+	- Wing Size: 3->2
+
+- By Their Silence
+	- Fixed dialog bug when turning FLINT over to MRC
+
+- GuarDUAL
+	- Shield Efficiency: 0.85 -> 0.90
+	- Shield Arc: 120->160
+	- Tweaked AI
+
+- MUSHA Sniper
+	- Ship System effect now properly scales based on target size
+
+- MORGANA
+	- Morgana B has no supply cost/repair time. this should prevent Morgana ending battles showing it's at 50% hull / armor (even though it's really not, and just the module is dead)
+
+- NEXERELIN
+	- MRC <-> Diktat Max relation: -40->-10
+V3.2.4
+------
+- Added UI Tags for modular hullmods
+- used "empty" sprite for hardpoint/turretsprites that were left blank
+- Updated cataphract complement ui, fixed bug that made it only checked first slot
+- Fixed WINGCOM not being usable with Converted Hangar ships
+- fixed valken x not having auto repair unit built in
+- fixed bug where some strikecraft would be invincible if carrier was killed while it was repairing
+- add 'no_combat_chatter' tag to assault pod
+
+- MUSHA Sniper
+	- tweaked sprite
+	- HP: 1100->1000
+	- Armor: 175->300
+	- Small missile -> small composite
+	- DP: 3-> 4
+
 V3.2.3
 ------
 - Fixed nullpointer if guardual had no missiles slotted
+- fixed nullpointer caused by giving ship command to vent(somehow)
+- fixed exception thrown by valkazard if countershield gauge was < 0
+- fixed malformed chatter text
 V3.2.2
 ------
 - Musha Sniper

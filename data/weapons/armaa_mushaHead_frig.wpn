@@ -7,7 +7,7 @@
   "collisionClass": "RAY_FIGHTER",
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "turretSprite": "graphics/armaa/ships/musha/armaa_musha_head_ex.png",
+  "turretSprite": "graphics/armaa/ships/musha/m3/armaa_musha_head.png",
   "hardpointSprite": "",
   "glowColor": [
     255,

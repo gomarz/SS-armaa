@@ -85,6 +85,15 @@
 			"armaa_guardual5":"graphics/armaa/ships/guardual/armaa_guardual5.png",
 			"armaa_guardual6":"graphics/armaa/ships/guardual/armaa_guardual6.png",
 		},
+		"guardual_f":{
+			"armaa_guardual0":"graphics/armaa/ships/guardual/fighter/armaa_guardual.png",
+			"armaa_guardual1":"graphics/armaa/ships/guardual/fighter/armaa_guardual1.png",
+			"armaa_guardual2":"graphics/armaa/ships/guardual/fighter/armaa_guardual2.png",
+			"armaa_guardual3":"graphics/armaa/ships/guardual/fighter/armaa_guardual3.png",
+			"armaa_guardual4":"graphics/armaa/ships/guardual/fighter/armaa_guardual4.png",
+			"armaa_guardual5":"graphics/armaa/ships/guardual/fighter/armaa_guardual5.png",
+			"armaa_guardual6":"graphics/armaa/ships/guardual/fighter/armaa_guardual6.png",
+		},
 		"events":{
 			"armaa_analysis_start":"graphics/armaa/icons/campaign/armaa_analysis.png",
 			"armaa_analysis_minor_insights":"graphics/armaa/icons/campaign/armaa_analysis_minor_insights.png",

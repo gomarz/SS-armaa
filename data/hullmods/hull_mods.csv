@@ -2,7 +2,7 @@ name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hid
 AAF,armaa_aaf,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_aaf,Increases Fire Rate,,,graphics/hullmods/targeting_core.png
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
-HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop",,,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
+HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop","Engines, Special",,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
 Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
 Cramped Firing Solutions,armaa_crampedFiring,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_crampedFiring,Reduces fire rate by %s percent.,,,graphics/hullmods/targeting_core.png
@@ -40,7 +40,7 @@ Modules %s, and %s.
 Targeting Core,armaa_targetingCore,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_targetingCore,"Extends the range of ballistic and energy weapons by %s. The range of point-defense weapons is only extended by %s.
 
 Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,,
-Targeting Disruptor,armaa_targetingDisruptor,,,Arma Armatura,special,,,,,,5,10,15,20,data.hullmods.armaa_targetingDisruptor,"Increases damage received from Frigates and Destroyers by %s.
+Targeting Disruptor,armaa_targetingDisruptor,,,Arma Armatura,special,Defenses,,,,,5,10,15,20,data.hullmods.armaa_targetingDisruptor,"Increases damage received from Frigates and Destroyers by %s.
 
 Decreases damage received from Cruisers and Capital Ships by %s, and reduces autoaim accuracy by up to %s based on proximity.
 
@@ -52,20 +52,20 @@ This system is equipped with a manual safety override that can be tripped to for
 
 Due to limited space, %s.",,,graphics/armaa/hullmods/armaa_seraph_targeting.png
 SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
-C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,,20000,,,,6,12,20,40,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
-Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,"special,no_drop",,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
+C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,Special,20000,,,,6,12,20,40,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
+Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,"special,no_drop",Special,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
 
 When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,graphics/armaa/hullmods/armaa_thermoflux.png
-Thermoflux Drive,armaa_wingClipper2,,,Arma Armatura,"special,no_drop",,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.eis_wingClipper,"Enemy fighters hit by projectiles/beams with damage greater than their remaining HP are instantly destroyed, regardless of defensive bonuses.
+Thermoflux Drive,armaa_wingClipper2,,,Arma Armatura,"special,no_drop",Special,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.eis_wingClipper,"Enemy fighters hit by projectiles/beams with damage greater than their remaining HP are instantly destroyed, regardless of defensive bonuses.
 
 Downing enemy fighters increases flux capacity, non-missile rate of fire, and dissipation by up to %s. Additionally, %s of the fighters max HP is restored to the ship's hull.
 This bonus decays over time, and the amount gained per fighter is determined by its FP value divided by squadron size.",,,graphics/armaa/hullmods/armaa_thermoflux.png
-Automaton Control Shell,armaa_automatedCognitionShell,,,Arma Armatura,"special,no_drop",,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.armaa_automatedCognitionShell,"Assigns a Gamma Core as the pilot of a Strikecraft that normally takes on crew.
+Automaton Control Shell,armaa_automatedCognitionShell,,,Arma Armatura,"special,no_drop",Special,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.armaa_automatedCognitionShell,"Assigns a Gamma Core as the pilot of a Strikecraft that normally takes on crew.
 
 Sometimes it waves at the maintenance crew.
 
 Per outdated Domain bureaucratic language, ""Automated ship systems"" refer to hulls controlled by direct AI interface or wholly autonomous routines. Technically, it's not an AI. Legally, it's not a pilot. Functionally... it works. Most of the time.",,,graphics/armaa/hullmods/armaa_automaton.png
-Emergency Recall Device,armaa_emergencyRecallDevice,,,Arma Armatura,"special,no_drop",,,FALSE,FALSE,FALSE,8,15,30,24,data.hullmods.armaa_emergencyRecallDevice,"Immediately recalls the ship to the nearest carrier when receiving an attack that would destroy it. Unlike shipboard recall device, the recall will always succeed, but it can only be used once per battle. Ship-based recall devices won't prioritize the ships recovery until the Emergency Recall has been used.",,,graphics/armaa/hullmods/armaa_emergencyRecall.png
+Emergency Recall Device,armaa_emergencyRecallDevice,,,Arma Armatura,"special,no_drop",Special,,FALSE,FALSE,FALSE,8,15,30,24,data.hullmods.armaa_emergencyRecallDevice,"Immediately recalls the ship to the nearest carrier when receiving an attack that would destroy it. Unlike shipboard recall device, the recall will always succeed, but it can only be used once per battle. Ship-based recall devices won't prioritize the ships recovery until the Emergency Recall has been used.",,,graphics/armaa/hullmods/armaa_emergencyRecall.png
 WINGCOM SUITE,armaa_wingCommander,3,,Arma Armatura,"special, non_phase",Fighters,40000,,,,10,10,15,20,data.hullmods.armaa_wingCommander,An assortment of electronics and other equipment that allows the vessel to facilitate the coordination of a specialized strikecraft wing. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/armaa/hullmods/armaa_wingcom.png
 OVERLORD SUITE[ALPHA],armaa_skyMindAlpha,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteAlpha,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/advanced_targeting_core.png
 OVERLORD SUITE[BETA],armaa_skyMindBeta,3,,Arma Armatura,special,Fighters,40000,,,,0,0,0,0,data.hullmods.armaa_skyMindSuiteBeta,Enables a sufficiently powerful AI Core to remotely control the ships unmanned fighters. Can only be installed on Strikecraft or carriers larger than frigates.,,,graphics/hullmods/targeting_core.png

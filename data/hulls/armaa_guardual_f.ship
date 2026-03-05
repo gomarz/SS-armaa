@@ -2,7 +2,7 @@
   "hullName": "guardual",
   "hullId": "armaa_guardual_f",
   "hullSize": "FIGHTER",
-  "spriteName": "graphics/armaa/ships/guardual/armaa_guardual.png",
+  "spriteName": "graphics/armaa/ships/guardual/fighter/armaa_guardual.png",
   "style": "MIDLINE",
   "height": 36,
   "width": 34,

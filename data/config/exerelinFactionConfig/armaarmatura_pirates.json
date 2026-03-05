@@ -15,8 +15,8 @@
 	"persean": 10,
         "hegemony": -50,
     },
-    "maxRelationships":{ "tritachyon":-0.40, "remnant":-0.51, "sindrian_diktat": -0.40 },
-    "startRelationships":{ "luddic_path":0.25, "tritachyon":-0.8, "pirates":0.4, "cabal":-0.8, "sindrian_diktat": -0.51, "hegemony": -0.51, "luddic_church": 0.1, "persean_league":0.1 },
+    "maxRelationships":{ "tritachyon":-0.30, "remnant":-0.51, "sindrian_diktat": -0.10 },
+    "startRelationships":{ "luddic_path":0.25, "tritachyon":-0.8, "pirates":0.4, "cabal":-0.8, "sindrian_diktat": -0.50, "hegemony": -0.10, "luddic_church": 0.1, "persean_league":0.1 },
     "alignments":{
         "technocratic":-0.5,
         "militarist":1,
