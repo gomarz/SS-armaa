@@ -1,101 +1,29 @@
 {
   "hullName": "Garegga",
   "hullId": "armaa_garegga_xiv_carrier",
-  "hullSize": "FRIGATE",
+  "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/garegga/xiv/armaa_garegga_xiv_body_carrier.png",
   "style": "MIDLINE",
   "height": 132,
   "width": 110,
-  "center": [55, 48],
-  "collisionRadius": 62.5,
+  "center": [55, 66],
+  "collisionRadius": 78,
   "shieldCenter": [0, -0],
-  "shieldRadius": 62.5,
+  "shieldRadius": 79,
   "viewOffset": 50,
   "builtInMods": [
     "fourteenth",
     "armaa_comboUnit"
   ],
-  "builtInWeapons": {
-    "E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
-    "E_RSHOULDER": "armaa_garegga_xiv_rightPauldron"
-  },
   "weaponSlots": [
-    {
-      "id": "E_LSHOULDER",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": 30,
-      "locations": [4, 20],
-      "renderOrderMod": 100
-    },
-    {
-      "id": "A_GUN",
-      "size": "MEDIUM",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 100,
-      "angle": 10,
-      "locations": [9, 30],
-      "renderOrderMod": -99998
-    },
     {
       "id": "TRUE_GUN",
       "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 5,
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
       "angle": 45,
-      "locations": [0, 45]
-    },
-    {
-      "id": "TRUE_GUN2",
-      "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [16, -34],
-      "renderOrderMod": -9999
-    },
-    {
-      "id": "E_RSHOULDER",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": -30,
-      "locations": [4, -20],
-      "renderOrderMod": 100
-    },
-    {
-      "id": "A_GUN2",
-      "size": "MEDIUM",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 100,
-      "angle": -10,
-      "locations": [9, -30],
-      "renderOrderMod": -99998
-    },
-    {
-      "id": "SYS1",
-      "size": "SMALL",
-      "type": "SYSTEM",
-      "mount": "HIDDEN",
-      "arc": -165,
-      "angle": 180,
-      "locations": [-19, -21]
-    },
-    {
-      "id": "SYS1",
-      "size": "SMALL",
-      "type": "SYSTEM",
-      "mount": "HIDDEN",
-      "arc": -165,
-      "angle": 180,
-      "locations": [-2, 10]
+      "locations": [-14, 37]
     },
     {
       "id": "MODULE",
@@ -108,27 +36,45 @@
     },
     {
       "id": "MAIN_GUN",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
-      "mount": "HARDPOINT",
-      "arc": 5,
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 360,
       "angle": 0,
-      "locations": [16, 32],
+      "locations": [-31, -0],
       "renderOrderMod": -99998
     },
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 180,
+      "angle": -45,
+      "locations": [-14, -37]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
-      "angle": -45,
-      "locations": [0, -45]
+      "angle": 0,
+      "locations": [8, 40]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [8, -40]
     }
   ],
   "engineSlots": [
     {
-      "location": [-25, 11],
+      "location": [-33, 20],
       "length": 32,
       "width": 9,
       "angle": 180,
@@ -136,7 +82,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-25, -11],
+      "location": [-33, -20],
       "length": 32,
       "width": 9,
       "angle": -180,
@@ -144,15 +90,15 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-32, -0],
-      "length": 43,
-      "width": 15,
+      "location": [-34, 9],
+      "length": 56,
+      "width": 27,
       "angle": 180,
-      "contrailSize": 15,
+      "contrailSize": 27,
       "style": "LOW_TECH"
     },
     {
-      "location": [-25, 11],
+      "location": [-33, 20],
       "length": 13,
       "width": 9,
       "angle": 145,
@@ -160,30 +106,46 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-25, -11],
+      "location": [-33, -20],
       "length": 13,
       "width": 9,
       "angle": -145,
       "contrailSize": 9,
       "style": "LOW_TECH"
+    },
+    {
+      "location": [-34, -9],
+      "length": 56,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "LOW_TECH"
     }
   ],
   "bounds": [
-    19, -3,
-    22, -10,
-    18, -28,
-    8.5, -32,
-    -12, -16,
-    -22, -13.5,
-    -22.5, -5,
-    -30, -4,
-    -30, 4,
-    -22.5, 5,
-    -21.5, 15.5,
-    -12, 16,
-    8.5, 32,
-    18, 28,
-    22, 10,
-    18, 2.5
+    32.5, -8,
+    25.5, -24.5,
+    64, -32,
+    64.5, -39,
+    28, -44.5,
+    -12, -49.5,
+    -37, -45,
+    -62.5, -42.5,
+    -65, -34,
+    -52, -26,
+    -62.5, -23.5,
+    -62.5, 23.5,
+    -51, 30,
+    -66.5, 32.5,
+    -63.5, 41,
+    -44, 40.5,
+    -36.5, 48,
+    -8, 48,
+    23, 45,
+    64.5, 39,
+    64, 32,
+    25.5, 24.5,
+    32.5, 9,
+    23, 2
   ]
 }

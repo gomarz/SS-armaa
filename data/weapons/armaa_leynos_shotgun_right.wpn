@@ -5,7 +5,7 @@
   "type": "BALLISTIC",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_shotgunEveryFrameEffect2",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_shotgun.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",

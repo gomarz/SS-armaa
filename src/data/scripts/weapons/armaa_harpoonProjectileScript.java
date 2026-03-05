@@ -164,8 +164,11 @@ public class armaa_harpoonProjectileScript extends BaseEveryFrameCombatPlugin
                         
                         else
                         {
-                            proj.explode();
-                            Global.getCombatEngine().removePlugin(this);                            
+                            if(!proj.getWeapon().getId().equals("armaa_valkazard_harpoon"))
+                            {
+                                proj.explode();
+                                Global.getCombatEngine().removePlugin(this);
+                            }
                         }
 
 		}

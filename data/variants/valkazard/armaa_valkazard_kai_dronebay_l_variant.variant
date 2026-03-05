@@ -1,0 +1,14 @@
+{
+  "variantId": "armaa_valkazard_kai_dronebay_l_variant",
+  "hullId": "armaa_valkazard_kai_dronebay_l",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

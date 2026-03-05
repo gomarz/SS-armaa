@@ -35,7 +35,7 @@
   "modules": [
     {
       #"MODULE": "armaa_gallant_frig_standard"
-       "MODULE": "armaa_valkenx_frig_standard"
+       "MODULE": "armaa_panther_standard_shield"
     }
   ],
   "wings": []

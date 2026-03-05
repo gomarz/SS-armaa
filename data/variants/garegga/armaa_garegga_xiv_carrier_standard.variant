@@ -4,24 +4,32 @@
   "displayName": "Standard",
   "goalVariant": false,
   "fluxCapacitors": 5,
-  "fluxVents": 10,
+  "fluxVents": 5,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "targetingunit",
+    "reinforcedhull"
+  ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "MAIN_GUN": "shredder",
-        "TRUE_GUN": "sabot",
-        "TRUE_GUN2": "sabot"
+        "MAIN_GUN": "mjolnir",
+        "TRUE_GUN": "sabot_fighter",
+        "WS0001": "sabot_fighter"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "modules": [
     {
-      "MODULE": "armaa_panther_standard_shield"
+      "MODULE": "armaa_panther_standard_xiv"
     }
   ],
   "wings": []

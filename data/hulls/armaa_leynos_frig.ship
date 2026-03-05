@@ -15,7 +15,9 @@
     "cataphract2",
     "strikeCraft",
     "beamcoat",
+    "armaa_spare_chassis",
     "armaa_leynosWeaponSwap",
+    "armaa_repair_kit",
     "rugged"
   ],
   "builtInWeapons": {

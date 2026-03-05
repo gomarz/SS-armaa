@@ -49,6 +49,7 @@ public class EnergySurgeStats extends BaseShipSystemScript {
 			ship.getEngineController().extendFlame(this, 1.35f * effectLevel, 1.35f * effectLevel, 0f * effectLevel);
 		}
 	}
+        @Override
 	public void unapply(MutableShipStatsAPI stats, String id) {
 		stats.getMaxSpeed().unmodify(id);
 		stats.getMaxTurnRate().unmodify(id);
@@ -63,6 +64,7 @@ public class EnergySurgeStats extends BaseShipSystemScript {
 
 	}
 	
+        @Override
 	public StatusData getStatusData(int index, State state, float effectLevel) {
 		//float bonusPercent = DAMAGE_BONUS_PERCENT * effectLevel;
 		if (index == 0) 

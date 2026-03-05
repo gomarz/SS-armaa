@@ -66,7 +66,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
                 Global.getSector().getEntityById("nekki1").getLocationInHyperspace(),
                 "armaarmatura_arusthai",
                 null,
-                FleetTypes.PATROL_SMALL,
+                FleetTypes.PATROL_LARGE,
                 Math.max(400f, Global.getSector().getPlayerFleet().getFleetPoints() * 1.15f), // combatPts
                 0f, // freighterPts
                 0f, // tankerPts
@@ -76,12 +76,15 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
                 2f // qualityMod
         );
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
-        for(int i = 0; i < 7; i++)
-        {
-            enemyFleet.getFleetData().addFleetMember("armaa_musha_frig_sniper_standard");
-            enemyFleet.getFleetData().addFleetMember("armaa_musha_frig_standard");
+        enemyFleet.getFleetData().addFleetMember("berserker_Assault");
+        for (int i = 0; i < 3; i++) {
+            enemyFleet.getFleetData().addFleetMember("kite_pirates_Raider");
+            enemyFleet.getFleetData().addFleetMember("kite_Standard");
+            enemyFleet.getFleetData().addFleetMember("armaa_morganamp_standard");
+            enemyFleet.getFleetData().addFleetMember("picket_Assault");
+            enemyFleet.getFleetData().addFleetMember("sentry_FS");
+            enemyFleet.getFleetData().addFleetMember("warden_Defense");
         }
-            enemyFleet.getFleetData().addFleetMember("armaa_altagrave_standard");        
         //FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());
         //FleetFactoryV3.applyDamageToFleet(enemyFleet,0.40f,true,new Random());
         //Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);
@@ -196,7 +199,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
             public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
                 bcc.aiRetreatAllowed = false;
                 bcc.objectivesAllowed = false;
-                bcc.enemyDeployAll = false;
+                bcc.enemyDeployAll = true;
             }
 
             @Override

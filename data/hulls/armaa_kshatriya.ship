@@ -7,11 +7,12 @@
   "height": 112,
   "width": 136,
   "center": [68, 56],
-  "collisionRadius": 124,
+  "collisionRadius": 137.5,
   "shieldCenter": [0, 0],
-  "shieldRadius": 124,
+  "shieldRadius": 135.5,
   "viewOffset": 0,
   "builtInMods": [
+    "autorepair",
     "armaa_kshatriyaweaponSwap"
   ],
   "builtInWings": [
@@ -19,7 +20,6 @@
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kshatriya_leftArm",
-   # "A_GUN2": "armaa_kshatriya_rightArm_spear",
     "LSHOULDER": "armaa_kshatriya_leftPauldron",
     "WS0003": "armaa_dd_legs",
     "WS0004": "armaa_kshatriya_torso_chaosburst",
@@ -101,8 +101,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 99,
-      "locations": [7, 40]
+      "angle": 67,
+      "locations": [10, 52]
     },
     {
       "id": "BINDER_02",
@@ -110,8 +110,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": 140,
-      "locations": [-35, 40]
+      "angle": 138.5,
+      "locations": [-32, 30]
     },
     {
       "id": "BINDER_03",
@@ -119,8 +119,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 360,
-      "angle": -140,
-      "locations": [-35, -40]
+      "angle": -138.5,
+      "locations": [-32, -30]
     },
     {
       "id": "WS0001",
@@ -146,8 +146,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -99,
-      "locations": [7, -40]
+      "angle": -67,
+      "locations": [10, -52]
     },
     {
       "id": "WS0004",

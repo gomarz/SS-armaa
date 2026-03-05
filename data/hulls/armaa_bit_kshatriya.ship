@@ -11,7 +11,7 @@
     6,
     10.5
   ],
-  "builtInMods": ["pointdefenseai","armaa_fighterStrafe"],
+  "builtInMods": ["pointdefenseai","armaa_himac"],
   "collisionRadius": 16.5,
   "engineSlots": [
     {

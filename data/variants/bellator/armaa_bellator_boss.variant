@@ -1,0 +1,81 @@
+{
+  "variantId": "armaa_bellator_boss",
+  "hullId": "armaa_bellator",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armaa_spare_chassis_storage",
+    "ballistic_rangefinder",
+    "targetingunit",
+    "turretgyros",
+    "armaa_himac",
+    "reinforcedhull",
+    "heavyarmor",
+    "fluxdistributor",
+    "fluxcoil",
+    "extendedshieldemitter",
+    "ecm",
+    "eccm",
+    "armaa_wingCommander",
+    "armoredweapons",
+    "advancedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "devastator",
+        "WS0010": "devastator",
+        "WS0015": "heavy_adjudicator",
+        "WS0016": "mjolnir",
+        "WS0017": "heavyneedler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "armaa_armorPod",
+        "WS0004": "armaa_armorPod",
+        "WS0005": "armaa_armorPod",
+        "WS0006": "armaa_armorPod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "heavyneedler",
+        "WS0011": "armaa_fluxcannon",
+        "WS0013": "armaa_fluxcannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "heavyneedler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "guardian",
+        "WS0002": "guardian",
+        "WS0012": "heavyburst",
+        "WS0014": "heavyburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "armaa_musham3_wing",
+    "armaa_musham3_wing"
+  ]
+}

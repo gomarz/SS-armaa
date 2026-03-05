@@ -1,7 +1,7 @@
 {
   "variantId": "armaa_musha_frig_standard",
   "hullId": "armaa_musha_frig",
-  "displayName": "New Variant",
+  "displayName": "Standard",
   "goalVariant": false,
   "fluxCapacitors": 8,
   "fluxVents": 9,

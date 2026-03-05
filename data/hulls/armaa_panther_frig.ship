@@ -3,7 +3,7 @@
   "hullId": "armaa_panther_frig",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/einhander/armaa_einhander_body.png",
-  "style": "LOW_TECH",
+  "style": "HIGH_TECH",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
@@ -14,12 +14,12 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
-    "fourteenth",
+    "delicate",
     "phasefield"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_panther_variablerifle",
-    "A_GUN2": "armaa_panther_missile_deco",
+    "A_GUN2": "armaa_panther_shoulder_deco",
     "B_TORSO": "armaa_panther_torso",
     "C_ARML": "armaa_pantherLeftArm",
     "D_PAULDRONL": "armaa_panther_leftPauldron",
@@ -41,7 +41,7 @@
     {
       "id": "TRUE_GUN",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 90,
       "angle": -15,
@@ -70,19 +70,20 @@
       "id": "A_GUN2",
       "size": "SMALL",
       "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 5,
+      "mount": "HARDPOINT",
+      "arc": 10,
       "angle": 0,
-      "locations": [1, 4]
+      "locations": [-6.5, 13],
+      "renderOrderMod": 100
     },
     {
       "id": "TRUE_GUN2",
       "size": "MEDIUM",
-      "type": "UNIVERSAL",
-      "mount": "TURRET",
-      "arc": 5,
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
       "angle": 0,
-      "locations": [1, 4],
+      "locations": [-6.5, 13],
       "renderOrderMod": -900
     },
     {
@@ -116,9 +117,9 @@
     {
       "id": "E_HEAD",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 135,
+      "arc": 360,
       "angle": 0,
       "locations": [1, -0]
     },
@@ -159,7 +160,7 @@
       "angle": 180,
       "contrailSize": 8,
       "style": "CUSTOM",
-      "styleId": "LOW_TECH"
+      "styleId": "HIGH_TECH"
     },
     {
       "location": [-14, 5],
@@ -168,7 +169,7 @@
       "angle": 180,
       "contrailSize": 8,
       "style": "CUSTOM",
-      "styleId": "LOW_TECH"
+      "styleId": "HIGH_TECH"
     },
     {
       "location": [-14, 6],
@@ -177,7 +178,7 @@
       "angle": 141.5,
       "contrailSize": 5,
       "style": "CUSTOM",
-      "styleId": "LOW_TECH"
+      "styleId": "HIGH_TECH"
     },
     {
       "location": [-14, -6],
@@ -185,7 +186,7 @@
       "width": 5,
       "angle": -141.5,
       "contrailSize": 5,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [

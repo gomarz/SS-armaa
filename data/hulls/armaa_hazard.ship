@@ -17,7 +17,8 @@
   "builtInWeapons": {
     "A_GUN": "armaa_hazard_rightArm",
     "D_PAULDRONL": "armaa_hazard_leftPauldron",
-    "D_PAULDRONR": "armaa_hazard_rightPauldron"
+    "D_PAULDRONR": "armaa_hazard_rightPauldron",
+    "F_LEGS": "armaa_ht_legs"
   },
   "weaponSlots": [
     {
@@ -27,7 +28,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 15.5,
-      "locations": [3, 1]
+      "locations": [8, -0]
     },
     {
       "id": "D_PAULDRONR",
@@ -36,7 +37,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -15.5,
-      "locations": [3, -1]
+      "locations": [8, 0]
     },
     {
       "id": "A_GUN2",
@@ -45,7 +46,7 @@
       "mount": "TURRET",
       "arc": 50,
       "angle": 10,
-      "locations": [3, 9]
+      "locations": [6, 9]
     },
     {
       "id": "TRUE_GUN2",
@@ -54,7 +55,7 @@
       "mount": "TURRET",
       "arc": 100,
       "angle": 10,
-      "locations": [3, 9]
+      "locations": [5, 9]
     },
     {
       "id": "A_GUN",
@@ -63,7 +64,7 @@
       "mount": "TURRET",
       "arc": 100,
       "angle": -10,
-      "locations": [3, -9]
+      "locations": [5, -9]
     },
     {
       "id": "WS0003",
@@ -82,25 +83,7 @@
       "mount": "TURRET",
       "arc": 100,
       "angle": -10,
-      "locations": [3, -9]
-    },
-    {
-      "id": "WS0002",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 360,
-      "angle": 78.5,
-      "locations": [-3.5, 6.5]
-    },
-    {
-      "id": "WS0005",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 360,
-      "angle": -78.5,
-      "locations": [-3.5, -6.5]
+      "locations": [5, -9]
     },
     {
       "id": "WS0004",
@@ -109,7 +92,16 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, -0]
+      "locations": [6, -0]
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-2, -0]
     }
   ],
   "engineSlots": [

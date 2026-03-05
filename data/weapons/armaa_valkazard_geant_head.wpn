@@ -1,0 +1,62 @@
+{
+  "id": "armaa_valkazard_geant_head",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  #"beamEffect": "data.scripts.weapons.armaa_amwsEffect",
+  "beamEffect": "data.scripts.weapons.armaa_magnaBeam",
+  "everyFrameEffect": "data.scripts.weapons.armaa_magnaBurstEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/valkazard/geant/armaa_valkazard_geant_head.png",
+  "turretGlowSprite": "graphics/armaa/ships/leynos/armaa_leynosheadglow.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    55,
+    255,
+    55,
+    200
+  ],
+  "hitGlowRadius": 50,
+  "turretOffsets": [
+    15,
+    -1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    0,
+    255,
+    0,
+    200
+  ],
+  "coreColor": [
+    200,
+    255,
+    200,
+    255
+  ],
+  "width": 36,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beam_rough2_core.png"
+  ],
+  "textureScrollSpeed": 135,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "fireSoundTwo": "high_intensity_laser_loop"
+}

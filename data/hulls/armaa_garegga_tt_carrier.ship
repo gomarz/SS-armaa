@@ -1,0 +1,273 @@
+{
+  "hullName": "Garegga",
+  "hullId": "armaa_garegga_tt_carrier",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/garegga/armaa_garegga_body_tt_carrier.png",
+  "style": "HIGH_TECH",
+  "height": 176,
+  "width": 132,
+  "center": [66, 88],
+  "collisionRadius": 82.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 82.5,
+  "viewOffset": 50,
+  "builtInMods": [
+    "armaa_comboUnit"
+  ],
+  "builtInWeapons": {
+    "E_LSHOULDER": "armaa_garegga_tt_carrier_leftPauldron",
+    "E_RSHOULDER": "armaa_garegga_tt_carrier_rightPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "E_LSHOULDER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [14, 13],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "A_GUN",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -2.5,
+      "locations": [13, -1],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 45,
+      "locations": [-33, 47]
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [14, -13],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [-3, -0]
+    },
+    {
+      "id": "MAIN_GUN",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [17, 38],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -45,
+      "locations": [-33, -48]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [-39, -1],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 90,
+      "angle": 0,
+      "locations": [3, -43]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-70, 12],
+      "length": 32,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, -16],
+      "length": 32,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, 3],
+      "length": 43,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, 12],
+      "length": 13,
+      "width": 9,
+      "angle": 145,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, -16],
+      "length": 13,
+      "width": 9,
+      "angle": -145,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, -7],
+      "length": 43,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, 25],
+      "length": 43,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, -29],
+      "length": 43,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-67, 45],
+      "length": 19,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-67, -49],
+      "length": 19,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-68, 42],
+      "length": 19,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-68, -46],
+      "length": 19,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-69, 39],
+      "length": 19,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-69, -43],
+      "length": 19,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, 36],
+      "length": 19,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-70, -40],
+      "length": 19,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, 33],
+      "length": 19,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71, -37],
+      "length": 19,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    28, 10,
+    26.5, -17,
+    19.5, -27.5,
+    -2.5, -51,
+    -31, -64,
+    -64, -51,
+    -68, -40,
+    -72, -24,
+    -67.5, 1,
+    -70.5, 25,
+    -66, 47,
+    -24, 61.5,
+    -7, 50.5,
+    65.5, 42.5,
+    63.5, 34.5,
+    19, 25
+  ]
+}

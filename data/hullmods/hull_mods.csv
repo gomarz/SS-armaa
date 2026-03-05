@@ -5,10 +5,8 @@ Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmod
 HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop","Engines, Special",,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
 Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
-Cramped Firing Solutions,armaa_crampedFiring,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_crampedFiring,Reduces fire rate by %s percent.,,,graphics/hullmods/targeting_core.png
 Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,,graphics/armaa/hullmods/armaa_assaultpods.png
 Assault Pod Killer,armaa_assaultPodKiller,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPodKiller,Shouldn't be visible. Kills BA Pods at end of combat.,,,graphics/armaa/hullmods/armaa_assaultpods.png
-Advanced Optics(AA),armaa_advancedoptics,,,Arma Armatura,,,,,TRUE,,3,10,15,25,data.hullmods.armaa_advancedoptics,"Extends the range of beam weapons by %s, but reduces their turn rate by %s. Cumulative with Integrated Targeting Unit. Cannot be built-in.",Increases beam weapon range.,,graphics/hullmods/advanced_optics.png
 Cataphract LSM,cataphract,,,Arma Armatura,"special,no_drop",,,,,,0,0,0,0,data.hullmods.cataphract,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .",,graphics/armaa/hullmods/cataphract.png
 Cataphract S-II,cataphract2,,,Arma Armatura,"special,no_drop",,,,,,0,0,0,0,data.hullmods.cataphract2,"Cataphract Land Space Mechs are multipurpose warmachines that combine land and space combat capabilities, to varying degrees of efficiency.","%s resistance to EMP, reduced damage taken to weapons and engines by %s, %s missile fire rate, increases ground op strength by %s  .","Increases flux dissipation, turning rate, and autofire accuracy by %s per pilot level. The current increase is %s.",graphics/armaa/hullmods/cataphract.png
 Anti-Beam Coat,beamcoat,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.beamCoat,"Obsolete defensive measure against beam weaponry.
@@ -53,10 +51,10 @@ This system is equipped with a manual safety override that can be tripped to for
 Due to limited space, %s.",,,graphics/armaa/hullmods/armaa_seraph_targeting.png
 SILVERSWORD [Type A],armaa_SilverSwordHM,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_SilverSwordHM,A specialized combat support suite featuring an experimental piloting system.,,,graphics/armaa/hullmods/armaa_neural_piloting_interface.png
 C-Stim Dispatcher,armaa_sykoStims,3,0.5,Arma Armatura,special,Special,20000,,,,6,12,20,40,data.hullmods.armaa_sykoStims,Installs equipment to administer combat stims directly to the pilot. Synthesizing its potent effects demands an extravagant amount of recreational drugs (relatively speaking).,,,graphics/armaa/hullmods/armaa_seraph_targeting_old.png
-Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,"special,no_drop",Special,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.eis_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
+Thermoflux Drive,armaa_wingClipper,,,Arma Armatura,"special,no_drop",Special,,FALSE,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_wingClipper,"Beyond its acclaimed features of heat dissipation optimization, unparalleled turn rate, and blistering acceleration, this drive boasts an ingenious combat synergy system known as 'Fighter Flux Interaction' (FFI)
 
 When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,graphics/armaa/hullmods/armaa_thermoflux.png
-Thermoflux Drive,armaa_wingClipper2,,,Arma Armatura,"special,no_drop",Special,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.eis_wingClipper,"Enemy fighters hit by projectiles/beams with damage greater than their remaining HP are instantly destroyed, regardless of defensive bonuses.
+Thermoflux Drive,armaa_wingClipper2,,,Arma Armatura,"special,no_drop",Special,,FALSE,FALSE,FALSE,3,6,12,24,data.hullmods.armaa_wingClipper,"Enemy fighters hit by projectiles/beams with damage greater than their remaining HP are instantly destroyed, regardless of defensive bonuses.
 
 Downing enemy fighters increases flux capacity, non-missile rate of fire, and dissipation by up to %s. Additionally, %s of the fighters max HP is restored to the ship's hull.
 This bonus decays over time, and the amount gained per fighter is determined by its FP value divided by squadron size.",,,graphics/armaa/hullmods/armaa_thermoflux.png
@@ -167,7 +165,30 @@ L ARM: BAZOOKA,armaa_selector_bazooka,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullm
 ,,,,,,,,,,,,,,,,,,,
 #VALKAZARD SELECTOR,,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_valkazardWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardweaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+Versatile Frame,armaa_valkazardKaiWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valkazardKaiWeaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_valken3weaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_valken3weaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+,,,,,,,,,,,,,,,,,,,
+HEAD: COUNTER SHIELD,armaa_selector_command,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_counter_shield,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+
+The %s utilizes a specialized omnidirectional shield emitter that accumulates energy from any attacks against it while deployed. Capacity scales with the units flux reserves, and can readily be weaponized in suitable circumstances.
+
+%s",,,graphics/armaa/hullmods/body.png
+HEAD: FRAG SHOTGUN,armaa_selector_assault,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_blunderbuss,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+
+The %s is a relatively standard core unit, featuring a built-in weapon that can effectively eliminate small targets within its meagre firing arc, as well as doubling as a close-range assault weapon. While it lacks any kind of gimmick like other Cores, extra space that would be reserved for those systems is used for additional ammo storage and a slightly enhanced central thruster.
+
+%s",,,graphics/armaa/hullmods/body.png
+HEAD: ENERGY BLASTER,armaa_selector_pd,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_boson,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities. 
+
+The %s possesses an extremely powerful yet flux hungry built-in particle cannon with limited ammo.
+
+%s",,,graphics/armaa/hullmods/body.png
+HEAD: HE BEAM,armaa_selector_lance,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_s_spark,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
+
+The %s possesses the capability to fire a long range beam that generates a random number of additonal explosions in it's wake.
+
+%s",,,graphics/armaa/hullmods/body.png
+,,,,,,,,,,,,,,,,,,,
 BODY: COUNTER SHIELD,armaa_selector_counter_shield,,,,"no_build_in,req_spaceport",Requires Dock,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_counter_shield,"Core modules are the heart of the machine, storing vital components such as the cockpit and serving as the central core for other components. Cores can be changed to better suit the pilot's preferences, but only at a spaceport with proper facilities.  
 
 The %s utilizes a specialized omnidirectional shield emitter that accumulates energy from any attacks against it while deployed. Capacity scales with the units flux reserves, and can readily be weaponized in suitable circumstances.
@@ -278,41 +299,6 @@ Morgana POW UP,armaa_morganaBonus,,,Arma Armatura,"special,no_drop",,,FALSE,TRUE
 
 When shooting down enemy aircraft, it triggers a complex series of microthermal reactions within the drive's core. These reactions momentarily amplify the mech's flux dissipation capabilities, allowing it to channel and dissipate excess thermal energy with unmatched efficiency. As a result, the mech remains cool under the most intense combat conditions, enabling sustained high-performance operations.",,,
 ,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
+Repair Kit,armaa_repair_kit,,,Arma Armatura,"special,no_drop",Special,,FALSE,TRUE,,0,0,0,0,data.hullmods.armaa_repair_kit_subsystem,,,,
+Spare Chassis,armaa_spare_chassis,,,Arma Armatura,"special,no_drop",Special,,,TRUE,,0,0,0,0,data.hullmods.armaa_spareChassis,"This unit is simple enough for multiple spare chassis to be produced prior to combat. If the current ship is destroyed, a spare will be deployed. Due to the ease of manufacture, damaged units will simply be recycled for a new frame. Receives no D-Mods.",,,
+Spare Chassis Storage,armaa_spare_chassis_storage,,,Arma Armatura,"special,no_drop",Special,,TRUE,,,0,0,0,0,data.hullmods.armaa_spareChassisStorage,"This unit is simple enough for multiple spare chassis to be produced prior to combat. If the current ship is destroyed, a spare will be deployed. Due to the ease of manufacture, damaged units will simply be recycled for a new frame. Receives no D-Mods.",,,

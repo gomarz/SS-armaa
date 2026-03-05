@@ -16,13 +16,13 @@ import java.util.*;
 
 public class armaa_notificationShower implements EveryFrameScript {
 
-    private final IntervalUtil timer = new IntervalUtil(1f, 1f);
+    private final IntervalUtil timer = new IntervalUtil(1f, 5f);
     private final Map<String, armaa_NotificationBase> notifications = new HashMap<>();
     private final List<armaa_NotificationBase> notificationQueue = new ArrayList<>();
 
     private static final List<String> validEntities = new ArrayList<>();
     private static final List<String> validKeys = new ArrayList<>();
-
+    private static final List<String> validSingleKeys = new ArrayList<>();
     static {
         validEntities.add("station_galatia_academy");
         validEntities.add("mazalot");
@@ -31,6 +31,9 @@ public class armaa_notificationShower implements EveryFrameScript {
         validKeys.add("$anh_inProgress");
         validKeys.add("$encounteredDweller");
         validKeys.add("$pk_recovered");
+        
+        validSingleKeys.add("$armaa_engagedValkHunters");
+        validSingleKeys.add("$armaa_cassianReadyToChat");
     }
 
     public void showNotificationOnce(String id) {
@@ -80,7 +83,9 @@ public class armaa_notificationShower implements EveryFrameScript {
         timer.advance(amount);
         if (timer.intervalElapsed()) {
             CampaignFleetAPI flt = Global.getSector().getPlayerFleet();
-            if (flt == null) return;
+            if (flt == null) {
+                return;
+            }
 
             List<SectorEntityToken> entities = new ArrayList<>();
             entities.addAll(CampaignUtils.getNearbyEntitiesWithTag(flt, 1000f, Tags.STATION));
@@ -93,7 +98,11 @@ public class armaa_notificationShower implements EveryFrameScript {
                 addNotification("valkHunter");
                 showNotificationOnce("armaa_valkHunter_event_id");
             }
-
+            if (notifications.get("armaa_cassianReadyToChat_event_id") == null
+                    && Global.getSector().getMemoryWithoutUpdate().contains("$armaa_cassianReadyToChat")) {
+                addNotification("cassianReadyToChat");
+                showNotificationOnce("armaa_cassianReadyToChat_event_id");
+            }
             // Dawn-triggered notifications
             if (dawnIsPresent()) {
                 for (SectorEntityToken entity : entities) {

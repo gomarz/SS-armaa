@@ -17,14 +17,14 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN2": "jackhammer"
+        "TRUE_GUN2": "dragon"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "heavymauler"
+        "TRUE_GUN": "pulselaser"
       }
     },
     {

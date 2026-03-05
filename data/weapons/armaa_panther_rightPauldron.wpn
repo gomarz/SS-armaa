@@ -4,7 +4,7 @@
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/panther/armaa_pantherRightShoulder.png",
+	"turretSprite":"graphics/armaa/ships/panther/ht/armaa_pantherRightShoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

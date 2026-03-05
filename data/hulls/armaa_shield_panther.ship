@@ -2,7 +2,7 @@
   "hullName": "Shield",
   "hullId": "armaa_shield_panther",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/armaa/ships/panther/armaa_panther_shield.png",
+  "spriteName": "graphics/armaa/ships/panther/ht/armaa_panther_shield.png",
   "style": "MIDLINE",
   "height": 98,
   "width": 44,

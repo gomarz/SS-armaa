@@ -60,29 +60,33 @@ public class armaa_cataphract {
             ShipVariantAPI ship = stats.getVariant();
             boolean hasMechs = false;
             //apparently the list isn't empty even when the carrier has no wings...
-            if (!wings.isEmpty()) {
+            if (!wings.isEmpty()) 
+            {
                 for (int i = 0; i < wings.size(); i++) {
-                    if (ship.getWing(i).getTags().contains("cataphract")) {
-                        hasMechs = true;
-                        if (!ship.hasHullMod("cataphractBonus")) {
-                            ship.addMod("cataphractBonus");
-                            //NewChange = true;
+                    if (ship.getWing(i) != null) 
+                    {
+                        if (ship.getWing(i).getTags().contains("cataphract")) 
+                        {
+                            hasMechs = true;
+                            if (!ship.hasHullMod("cataphractBonus")) 
+                            {
+                                ship.addMod("cataphractBonus");
+                            }
                         }
                     }
+            }
+
+                if (!hasMechs) {
+
+                    ship.removeMod("cataphractBonus");
                 }
             }
-
-            if (!hasMechs) {
-
-                ship.removeMod("cataphractBonus");
-            }
         }
-
         // honestly this probably should be a seperate skill
         // this checks if any strikecraft has automaton pilot
         // but not the automaton hullmod and removes them
         // it can be done in a convulted manner with a hullmod
-        // but the change isn't instantaneous and kinda buggy 
+        // but the change isn't instantaneous and kinda buggy
         public void unapplyAutomatons(MutableShipStatsAPI stats) {
             FleetMemberAPI ship = stats.getFleetMember();
             if (ship != null && ship.getVariant() != null) {
@@ -91,7 +95,7 @@ public class armaa_cataphract {
                     ship.setCaptain(null);
                 }
             }
-        }        
+        }
 
         public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
             checkForCats(stats);

@@ -52,7 +52,7 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 			"pirates",
 			null,
 			FleetTypes.PATROL_SMALL,
-			Math.max(100f,MathUtils.getRandomNumberInRange(0.50f*Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.80f,0.50f*Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f)), // combatPts
+			Math.min(100f,MathUtils.getRandomNumberInRange(0.50f*Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*0.80f,0.50f*Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()*1.15f)), // combatPts
 			0f, // freighterPts 
 			0f, // tankerPts
 			0f, // transportPts
@@ -64,11 +64,9 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 		final CampaignFleetAPI enemyFleet =FleetFactoryV3.createFleet(fparams);		
 		//FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());			
 		for(int i = 0; i < 1; i++)
-		enemyFleet.getFleetData().addFleetMember("anubis_Standard");	
-		enemyFleet.getFleetData().addFleetMember("armaa_bassline_standard");				
+		enemyFleet.getFleetData().addFleetMember("anubis_Standard");				
 		//Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);			
-		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());
-		enemyFleet.getFleetData().addFleetMember("apex_Overdriven");		
+		FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet,fparams, new Random());		
 		final SectorEntityToken entity = dialog.getInteractionTarget();
 		Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.PIRATES,1f,100,200));
 		final MemoryAPI memory = getEntityMemory(memoryMap);		

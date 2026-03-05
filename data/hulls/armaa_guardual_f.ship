@@ -135,8 +135,8 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "HYBRID",
-      "mount": "HIDDEN",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [-10, 16],
@@ -145,8 +145,8 @@
     {
       "id": "WS0004",
       "size": "SMALL",
-      "type": "HYBRID",
-      "mount": "HIDDEN",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
       "locations": [-10, -16],

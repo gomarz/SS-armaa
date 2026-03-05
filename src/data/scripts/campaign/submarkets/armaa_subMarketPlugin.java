@@ -19,9 +19,8 @@ public class armaa_subMarketPlugin extends BaseSubmarketPlugin {
     @Override
     public void init(SubmarketAPI submarket) {
         super.init(submarket);
-						getCargo().addHullmods("armaa_wingCommander",1);
+        getCargo().addHullmods("armaa_wingCommander", 1);
     }
-
 
     @Override
     public float getTariff() {
@@ -40,8 +39,7 @@ public class armaa_subMarketPlugin extends BaseSubmarketPlugin {
     }
 
     @Override
-    public boolean isEnabled(CoreUIAPI ui) 
-	{
+    public boolean isEnabled(CoreUIAPI ui) {
 
         return true;
     }
@@ -59,24 +57,25 @@ public class armaa_subMarketPlugin extends BaseSubmarketPlugin {
 
             FactionDoctrineAPI doctrineOverride = submarket.getFaction().getDoctrine().clone();
             addShips(submarket.getFaction().getId(),
-                    125f, // combat
-                    0f, // freighter
-                    0f, // tanker
-                    0f, // transport
-                    0f, // liner
-                    0f, // utilityPts
+                    (float)(Math.random()*360f), // combat
+                    35f, // freighter
+                    35f, // tanker
+                    35f, // transport
+                    35f, // liner
+                    35f, // utilityPts
                     null, // qualityOverride
                     0f, // qualityMod
-                    ShipPickMode.PRIORITY_THEN_ALL,
+                    ShipPickMode.PRIORITY_ONLY,
                     doctrineOverride);
 
             pruneWeapons(0f);
 
-            addWeapons(3, 10, 5, submarket.getFaction().getId());
-
-            addFighters(3, 5, 5, submarket.getFaction().getId());
-			
-            pruneShips(0.5f);
+            addWeapons(1, 10, 5, submarket.getFaction().getId());
+            addWeapons(1, 10, 5, "independent");
+            addWeapons(1, 10, 5, "mercenary");
+            addFighters(1, 3, 6, submarket.getFaction().getId());
+            addFighters(1, 3, 5, "mercenary");
+            //pruneShips((float)Math.random());
         }
 
         getCargo().sort();
@@ -111,6 +110,5 @@ public class armaa_subMarketPlugin extends BaseSubmarketPlugin {
     public boolean isParticipatesInEconomy() {
         return false;
     }
-
 
 }

@@ -164,25 +164,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             }
             engine.addSmoothParticle(missile.getLocation(), missile.getVelocity(), MUZZLE_FLASH_SIZE * 2f * fluxLevel, 1f, MUZZLE_FLASH_DURATION * 2f, colorGlow);
         } else {
-            /*
-				if(target!=null && MathUtils.getDistance(target,missile) <= 700f)
-				MagicFakeBeam.spawnFakeBeam(
-					engine,
-					missile.getLocation(),
-					2000,
-					VectorUtils.getAngle(missile.getLocation(),target.getLocation()),
-					40f*fluxLevel,
-					amount,
-					amount/2,
-					100f*fluxLevel,
-					new Color(255,255,255),
-					new Color(199,146,0),
-					150f*amount*fluxLevel,
-					DamageType.ENERGY,
-					0f,
-					missile.getSource()
-				);
-             */
+
             missile.giveCommand(ShipCommand.ACCELERATE);
             if (Math.random() > 0.75) {
                 engine.spawnExplosion(missile.getLocation(), missile.getVelocity(), MUZZLE_FLASH_COLOR_ALT, MUZZLE_FLASH_SIZE * 0.20f * fluxLevel, MUZZLE_FLASH_DURATION);
@@ -240,7 +222,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
                     arc.setSingleFlickerMode(true);
                 }
                 moveTarget = target;
-                if (moveTarget != null) {
+                if (moveTarget != null && moveTarget instanceof ShipAPI) {
                     EveryFrameCombatPlugin plugin = new MoteCaller().pickJitterPlugin(
                             (ShipAPI) moveTarget,
                             0.1f,

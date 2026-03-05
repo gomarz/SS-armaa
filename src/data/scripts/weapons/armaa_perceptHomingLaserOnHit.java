@@ -124,7 +124,7 @@ public class armaa_perceptHomingLaserOnHit implements OnHitEffectPlugin {
             pierceChance *= projectile.getSource().getMutableStats().getDynamic().getValue(Stats.SHIELD_PIERCED_MULT);
             ShipAPI ship = projectile.getSource();
             boolean piercedShield = shieldHit && (float) Math.random() < pierceChance;
-            float fluxLevel = (float)engine.getCustomData().get("armaa_percept_homing_fluxLevel_"+ship.getId());
+            float fluxLevel = engine.getCustomData().containsKey("armaa_percept_homing_fluxLevel_"+ship.getId()) ? (float)engine.getCustomData().get("armaa_percept_homing_fluxLevel_"+ship.getId()) : 0;
             if ((float) Math.random() > Math.max(0.1f,0.75f-fluxLevel) && (!shieldHit || piercedShield)) {
                 float emp = projectile.getDamage().getFluxComponent() * 1f;
                 float dam = projectile.getDamage().getDamage() * 1f;

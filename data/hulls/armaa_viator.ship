@@ -1,0 +1,221 @@
+{
+  "hullName": "Viator",
+  "hullId": "armaa_viator",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/viator/armaa_viator.png",
+  "style": "MIDLINE",
+  "coversColor": "255,188,175,255",
+  "height": 220,
+  "width": 130,
+  "center": [65, 110],
+  "collisionRadius": 105,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 104.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "BRIDGE": "armaa_viator_deco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 90,
+      "locations": [8, 26]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -90,
+      "locations": [8, -26]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 90,
+      "locations": [-13, 34]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -90,
+      "locations": [-13, -34]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 90,
+      "locations": [-34, 44]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -90,
+      "locations": [-34, -44]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 90,
+      "locations": [-29, 25]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -90,
+      "locations": [-29, -25]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 90,
+      "locations": [-8, 15]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -90,
+      "locations": [-8, -15]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 90,
+      "locations": [48, 9]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -90,
+      "locations": [48, -9]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [69, -0]
+    },
+    {
+      "id": "WS0014",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 180,
+      "locations": [-50, -0]
+    },
+    {
+      "id": "BRIDGE",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 0,
+      "locations": [-20, -0],
+      "renderOrderMod": 100
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-91, 17],
+      "length": 64,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-91, -17],
+      "length": 64,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-87, 33],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-87, 25],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-87, -25],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-87, -33],
+      "length": 32,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -34, 59,
+    -77, 37,
+    -86, 37.5,
+    -86, 16,
+    -101, 8,
+    -102, -6,
+    -88, -11,
+    -87, -34.5,
+    -77, -36,
+    -39, -62,
+    0, -44,
+    99, -2,
+    97, 6
+  ]
+}

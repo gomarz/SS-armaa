@@ -1,0 +1,62 @@
+{
+	"id":"armaa_boostHammer_missile_returning",
+	"specClass":"missile",	
+  	"onHitEffect": "data.scripts.weapons.armaa_ashuraHammerEffect",
+	"missileType":"ROCKET",
+	"sprite":"graphics/armaa/ships/ashura/armaa_ashura_mjolnir_proj.png",
+	"size":[34,60],	
+        "armingTime":0,
+	"center":[17,30],
+	"collisionRadius":20,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[100,100,100,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":100, # purely visual
+	"engineSpec":{"turnAcc":0,
+				  "turnRate":0,
+				  "acc":500,
+				  "dec":500},
+#	"engineSpec":{"turnAcc":1000,
+#				  "turnRate":100,
+#				  "acc":25,
+#				  "dec":25},
+	"engineSlots":[
+					{"id":"ES1",
+					"loc":[-13, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"engineColor":[252,176,53,0],
+						"contrailParticleSizeMult":15,
+						"contrailParticleDuration":2,
+						"contrailDuration":4,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":8, # min segment length, in 
+						"contrailMaxSpeedMult":-0.1,
+						"contrailAngularVelocityMult":1f,
+						"contrailColor":[100,100,59,0],
+						"type":"GLOW" # GLOW or SMOKE
+					},
+				    "width":10.0,
+				    "length":25.0,
+				    "angle":180.0},
+{"id":"ES2",
+					"loc":[-15, 0],
+				    #"style":"MISSILE_MIDLINE",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[255,145,75,0],
+						"contrailDuration":1,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":-0.3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":8, # min segment length, in pixels
+						"contrailMaxSpeedMult":0.1f,
+						"contrailAngularVelocityMult":0.1f,
+						"contrailColor":[255,140,100,0],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":3.0,
+				    "length":15.0,
+				    "angle":180.0},
+				   ]
+}

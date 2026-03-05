@@ -79,6 +79,14 @@
 	"armaa_silversword_warning":[ 
 		{"file":"sounds/armaa/armaa_silversword_warning.ogg","pitch":1,"volume":0.65},
 	],
+	"armaa_boss_warning":[ 
+		{"file":"sounds/armaa/music/descent/armaa_bellator_warning.ogg","pitch":1,"volume":0.95},
+	],
+	"armaa_polearm":[ 
+		{"file":"sounds/armaa/armaa_polearm_01.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/armaa_polearm_02.ogg","pitch":1.05,"volume":1},
+		{"file":"sounds/armaa/armaa_polearm_03.ogg","pitch":0.95,"volume":1},
+	],	
 	"armaa_flamer_loop":[ 
 		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1,"volume":0.85},
 		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1.03,"volume":0.88},

@@ -3,6 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaBinderEffect",
   "beamEffect":"data.scripts.weapons.armaa_ionBeamEffect",
   "collisionClass": "RAY_FIGHTER",
   "collisionClassByFighter": "RAY_FIGHTER",

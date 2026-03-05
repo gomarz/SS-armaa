@@ -14,6 +14,7 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
+    "armaa_repair_kit",
     "armaa_weaponSwap"
   ],
   "builtInWeapons": {

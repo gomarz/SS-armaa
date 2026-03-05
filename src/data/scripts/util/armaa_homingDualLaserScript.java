@@ -121,13 +121,13 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
                     DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, id, MathUtils.getRandomPointInCircle(weapon.getLocation(), 10f), angle, new Vector2f());
                     float fxAngle = proj.getFacing() + MathUtils.getRandomNumberInRange(-45f, 45f);
                     Vector2f vel = MathUtils.getPointOnCircumference(
-                        null,
-                        MathUtils.getRandomNumberInRange(340f, 520f), // speed = outward punch
-                        fxAngle
+                            null,
+                            MathUtils.getRandomNumberInRange(340f, 520f), // speed = outward punch
+                            fxAngle
                     );
                     Vector2f shipVel = new Vector2f(ship.getVelocity());
-                    shipVel.scale(0.25f);                    
-                    Vector2f.add(vel, (Vector2f) shipVel, vel);                    
+                    shipVel.scale(0.25f);
+                    Vector2f.add(vel, (Vector2f) shipVel, vel);
 
                     for (int x = 0; x < 5; x++) {
                         engine.addHitParticle(proj.getLocation(),

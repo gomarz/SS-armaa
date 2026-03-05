@@ -144,9 +144,6 @@ public class armaa_VXEffect implements EveryFrameWeaponEffectPlugin {
 		}
         anim = dummyGun.getAnimation();
 		//if(ship.getHullLevel() < .5f)
-			ship.syncWeaponDecalsWithArmorDamage();
-		
-		
 		float sineA = 0, sinceB = 0, sineC=0, sinceD=0;	
 		float global = ship.getFacing();
 		float aim = MathUtils.getShortestRotation(global, dummyGun.getCurrAngle());

@@ -1,11 +1,11 @@
 {
   "id": "armaa_laser",
   "specClass": "projectile",
-  "projectileSpecId": "lightmg_shot",
-  "type": "BALLISTIC",
+  "projectileSpecId": "armaa_irpulse_shot",
+  "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffect",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_valkenmachineGunBarrel.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
@@ -36,5 +36,5 @@
 					   "particleDuration":0.15,
 					   "particleCount":7,
 					   "particleColor":[255,240,165,200]},
-  "fireSoundTwo": "light_machinegun_fire"
+  "fireSoundTwo": "ir_pulse_laser_fire"
 }

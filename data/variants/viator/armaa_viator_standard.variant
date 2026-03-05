@@ -1,0 +1,59 @@
+{
+  "variantId": "armaa_viator_variant",
+  "hullId": "armaa_viator",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 14,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightag",
+        "WS0002": "lightdualac",
+        "WS0003": "lightag",
+        "WS0005": "lightag",
+        "WS0007": "railgun",
+        "WS0009": "railgun",
+        "WS0014": "phasebeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "lightag",
+        "WS0006": "lightag",
+        "WS0008": "lightdualac",
+        "WS0010": "lightdualac"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0011": "pdlaser",
+        "WS0012": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

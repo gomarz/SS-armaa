@@ -10,10 +10,10 @@
     "difficultyString":"hard",
     "pirateFaction":false,
     "dispositions":{
-        "tritachyon": -50,
-        "sindrian_diktat": -50,
+        "tritachyon": -49,
+        "sindrian_diktat": -49,
 	"persean": 10,
-        "hegemony": -50,
+        "hegemony": -30,
     },
     "maxRelationships":{ "tritachyon":-0.30, "remnant":-0.51, "sindrian_diktat": -0.10 },
     "startRelationships":{ "luddic_path":0.25, "tritachyon":-0.8, "pirates":0.4, "cabal":-0.8, "sindrian_diktat": -0.50, "hegemony": -0.10, "luddic_church": 0.1, "persean_league":0.1 },

@@ -1,0 +1,40 @@
+{
+  "variantId": "armaa_panther_standard_xiv",
+  "hullId": "armaa_panther_frig_xiv",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 8,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN": "hveldriver",
+        "TRUE_GUN2": "shredder"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+    {
+      "SHIELD": "armaa_shield_panther_xiv_standard"
+    }
+  ],
+  "wings": []
+}

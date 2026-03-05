@@ -104,14 +104,18 @@ public class cataphract extends BaseHullMod {
 
     @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
-        float level = member.getCaptain().isDefault() ? 1 : member.getCaptain().getStats().getLevel() * 1.5f;
+        float level = member.getCaptain().isDefault() ? 1 : member.getCaptain().getStats().getLevel();
 
-        if (member.getRepairTracker().getBaseCR() >= getCRPenalty(member.getVariant())) {
+        if (member.getRepairTracker().getBaseCR() >= getCRPenalty(member.getVariant()) && member.getFleetData().getFleet() != null) {
             if (GROUND_BONUS.get(member.getHullSpec().getBaseHullId()) != null) {
-                member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).modifyFlat("id", GROUND_BONUS.get(member.getHullSpec().getBaseHullId()) + level);
+                member.getFleetData().getFleet().getStats().getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).modifyFlat("armaa_"+member.getId(), (GROUND_BONUS.get(member.getHullSpec().getBaseHullId()))*(level), member.getShipName());     
+            }
+            else
+            {
+                member.getFleetData().getFleet().getStats().getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).modifyFlat("armaa_"+member.getId(), (member.getFleetPointCost())*(level), member.getShipName());                
             }
         } else {
-            member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).modifyFlat("id", GROUND_BONUS_DEFAULT + level);
+            member.getStats().getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).unmodify("armaa_"+member.getId());
         }
     }
 

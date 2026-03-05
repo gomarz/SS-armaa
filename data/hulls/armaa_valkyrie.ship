@@ -15,7 +15,8 @@
     "ground_support"
   ],
   "builtInWings": [
-    "armaa_prodromos_wing"
+    "armaa_prodromos_wing",
+    "armaa_valkenmp_wing"
   ],
   "builtInWeapons": {
     "MODULE_CONTROLLER": "armaa_deco_valkyrie"

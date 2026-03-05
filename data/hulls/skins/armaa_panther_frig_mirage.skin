@@ -1,0 +1,17 @@
+{
+    "baseHullId":"armaa_panther_frig",
+    "skinHullId":"armaa_panther_frig_mirage",
+    "hullName":"Mirage",
+    "descriptionId":"armaa_panther_frig",
+    "descriptionPrefix":"This mech has been thoroughly overhauled by the Tri-Tachyon corporation. Tri-Tachyon compliant software patches have been installed which are fully integrated with TriPad (R) status monitoring protocols, high-spec flux conduit upgrades performed, and weapon attachment points refurbished for mounting advanced energy weapons.",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["rare_bp"],
+    "removeBuiltInMods":["strikeCraft"],
+    "systemId":"displacer",
+    "tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],  
+}

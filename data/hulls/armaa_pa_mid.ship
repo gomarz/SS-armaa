@@ -3,7 +3,7 @@
   "hullId": "armaa_pa_mid",
   "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/pa/armaa_pa_mid_torso.png",
-  "style": "HIGH_TECH",
+  "style": "MIDLINE",
   "height": 36,
   "width": 34,
   "center": [17, 18],

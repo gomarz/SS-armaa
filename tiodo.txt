@@ -23,15 +23,46 @@
 - bug hunt
 - fix travel drive lock when launched from carrier x
 - fix Gravion gravity well remaining at gamlin instead of being removed x(?)
-- Thermoflux & Targeting Disruptor hullmod Icons and description x 
-- Increase stock of Arma Armatura stuff?
+- Thermoflux & Targeting Disruptor hullmod Icons and description x <--- need to make what it does more obvious
+- Increase stock of Arma Armatura stuff? x
 - Leynos - Blink...should it be less spammy? x
-- fix automaton officer assignment/unassignment when hm removed
+- fix automaton officer assignment/unassignment when hm removed 
 - RMS skill desc x(?)
 
 - Dawn events
 	- PK x
-	- Diktat Commission
+	- Diktat Commission 
 	- Helping the ARC?
 	- Debt
 	
+Kshatriya - Sera should give SHIP instead of BP x
+MRC Mission - FLINT dialogue failure
+
+
+Finish GuarDUAL + impl + anim(?)
+redo leg sprites
+finish valkazard upgrade
+some way to swap the core unit of bakraid out?
+some way to swap the units on the Valkyrie AA out?
+Add RTC quest x
+expand Valkazard start quest
+
+
+Priority:
+1. Finish up expanding valakzard start
+2. Fix Ashura melee trail fx, rename scripts
+3. Fix/Buff Leynos rocket punch
+4. Astraikaiser
+5. Ace skill unlock
+6. GuarDUAL + & Valkazard +
+7. Story script tweaks
+7. Script cleanup
+8. MRC fixes
+- Figure out how to handle raids and cata's - should they contribute if 0 marines?
+- Finish going through the main quest and make sure everything is good here / writing pass
+- Finish up flesihn out the recruit mechanics / scene
+- Astraikaiser
+- Bakraid (H) and Bakraid (HT) touch ups
+- Dawn revisions
+- Shrouded interaction w/ Dawn (Option to ignore?)
+- Add option to only recall if holding fire?

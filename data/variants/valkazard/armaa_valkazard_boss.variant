@@ -49,6 +49,7 @@
       "weapons": {}
     }
   ],
-  "modules": [],
+  "modules": [
+  ],
   "wings": ["aspect_attack_wing"]
 }

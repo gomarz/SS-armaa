@@ -1,0 +1,214 @@
+{
+  "hullName": "ashura",
+  "hullId": "armaa_ashura_frig",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/leynos/armaa_leynos_hips.png",
+  "style": "LOW_TECH",
+  "height": 30,
+  "width": 22,
+  "center": [9, 19],
+  "collisionRadius": 45,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 44.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "cataphract",
+    "strikeCraft",
+    "armaa_himac",
+    "reduced_explosion"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_ashura_variablerifle",
+    "B_TORSO": "armaa_ashura_torso",
+    "C_ARML": "armaa_ashura_leftArm",
+    "D_PAULDRONL": "armaa_ashura_leftPauldron",
+    "D_PAULDRONR": "armaa_ashura_rightPauldron",
+    "E_HEAD": "armaa_ashura_head",
+    "F_LEGS": "armaa_ht_legs",
+    "H_GLOW": "armaa_sprigganHeadGlow",
+    "SUBARML": "armaa_ashura_leftSubArm_naginata",
+    "SUBARMR": "armaa_ashura_rightSubArm_naginata"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -15,
+      "locations": [0, -6]
+    },
+    {
+      "id": "B_TORSO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-2.5, -0]
+    },
+    {
+      "id": "C_ARML",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 15,
+      "locations": [0, 6]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -15,
+      "locations": [0, -6]
+    },
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, 4]
+    },
+    {
+      "id": "D_PAULDRONR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -4]
+    },
+    {
+      "id": "E_HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "H_GLOW",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 0,
+      "locations": [0, 0]
+    },
+    {
+      "id": "WS001",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [7.5, -4]
+    },
+    {
+      "id": "SUBARML",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 185,
+      "angle": 56,
+      "locations": [-14, 14],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-8, -0],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "SUBARMR",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 185,
+      "angle": -56,
+      "locations": [-14, -14],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-20, 11],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-20, -11],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": 15,
+      "locations": [0, 6]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-16, 0.5],
+      "length": 16.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-16.5, 3],
+      "length": 11.667831,
+      "width": 6.359791,
+      "angle": 151.5,
+      "contrailSize": 6.359791,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-16.5, -3],
+      "length": 11.082763,
+      "width": 5.448803,
+      "angle": -165,
+      "contrailSize": 5.448803,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    12.5, -4.5,
+    3.5, -8,
+    0.5, -13.5,
+    -3.5, -13.5,
+    -5.5, -6.5,
+    -15.5, -5.5,
+    -15.5, 5.5,
+    -5.5, 6.5,
+    -3.5, 13.5,
+    0.5, 13.5,
+    3.5, 8,
+    12.5, 4.5
+  ]
+}

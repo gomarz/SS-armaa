@@ -1,0 +1,29 @@
+{
+  "id": "armaa_valkazard_geant_mknuckle_left",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_mKnuckle_missile",
+  "type": "MISSILE",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_mKnuckleEffect",
+  "turretSprite": "graphics/armaa/ships/valkazard/geant/armaa_valkazard_geant_leftArm.png",
+  "hardpointSprite": "graphics/armaa/ships/valkazard/geant/armaa_valkazard_geant_arm_shot.png",
+  "showDamageWhenDecorative": true,
+  "turretOffsets": [
+    -3,
+    5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "fireSoundOne": "laser_intro",
+  "fireSoundTwo": "reaper_fire"
+}

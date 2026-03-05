@@ -4,26 +4,22 @@
   "projectileSpecId": "armaa_axe_shot",
   "type": "ENERGY",
   "size": "LARGE",
-  #"interruptibleBurst": true,
-  "autocharge": true,
-  "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaMeleeEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaAxeEffect",
   "turretSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
-  #"visualRecoil": 10,
-  #"turretGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm.png",
-  "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
-  "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",
+  "turretGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm_axe.png",
+  "hardpointSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm_axe_glow.png",
+  "hardpointGunSprite": "graphics/armaa/ships/kshatriya/kshatriya_rightArm_axe_glow.png",
+  "visualRecoil": 40,
   "renderHints": [
-    RENDER_BARREL_BELOW
+    "RENDER_BARREL_BELOW",
+    "SUSPEND_RECOIL"
   ],
   "turretOffsets": [
-    119.5,
-    2.5,
-    68,
-    -17
+    26,
+    1
   ],
   "turretAngleOffsets": [
-    6,
-    0
+    6
   ],
   "hardpointOffsets": [
     17,
@@ -34,6 +30,7 @@
   ],
   "barrelMode": "LINKED",
   "animationType": "NONE",
+  "autocharge": true,
   "fireSoundOne": "laser_intro",
   "fireSoundTwo": "pd_laser_loop"
 }

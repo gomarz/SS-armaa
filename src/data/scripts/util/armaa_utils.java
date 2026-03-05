@@ -9,7 +9,9 @@ import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.DeployedFleetMemberAPI;
+import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.MutableStat;
+import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
@@ -21,7 +23,6 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -356,8 +357,8 @@ public class armaa_utils {
         float HPPercent = 0.50f;
         if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float)
             HPPercent = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId());
-        if(LunaSettings.getDouble("armaa", "armaa_repairLevel") != null)
-            HPPercent = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
+        if(Global.getSettings().getModManager().isModEnabled("lunalib") && LunaSettings.getFloat("armaa", "armaa_repairLevel") != null)
+            HPPercent = LunaSettings.getFloat("armaa", "armaa_repairLevel").floatValue();
           return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent) 
                 || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);       
     }
@@ -468,9 +469,11 @@ public class armaa_utils {
         float accumulator = 0f;
 
         accumulator += estimateIncomingBeamDamage(ship, damageWindowSeconds);
+        List<DamagingProjectileAPI> projs = new ArrayList<>(Global.getCombatEngine().getProjectiles());
 
-        for (DamagingProjectileAPI proj : Global.getCombatEngine().getProjectiles()) {
-
+        for (DamagingProjectileAPI proj : projs) {
+            if(!Global.getCombatEngine().isEntityInPlay(proj))
+                continue;
             if (proj.getOwner() == ship.getOwner()) {
                 continue; // Ignore friendly projectiles
             }
@@ -512,48 +515,77 @@ public class armaa_utils {
 
         return accumulator;
     }
+    public static boolean getWeaponSide(Vector2f center, float facing, Vector2f weaponPosition) {
+        // Calculate forward direction vector
+        float facingRadians = (float) Math.toRadians(facing);
+        Vector2f forward = new Vector2f((float) Math.cos(facingRadians), (float) Math.sin(facingRadians));
 
-    public static float estimateIncomingBeamDamage(ShipAPI ship, float damageWindowSeconds) {
-        float accumulator = 0f;
+        // Calculate relative vector from center to weapon
+        Vector2f centerToWeapon = new Vector2f(weaponPosition.x - center.x, weaponPosition.y - center.y);
 
-        for (Iterator iter = Global.getCombatEngine().getBeams().iterator(); iter.hasNext();) {
-            BeamAPI beam = (BeamAPI) iter.next();
+        // Compute cross product
+        float crossProduct = forward.x * centerToWeapon.y - forward.y * centerToWeapon.x;
 
-            if (beam.getDamageTarget() != ship) {
-                continue;
-            }
-
-            float dps = beam.getWeapon().getDerivedStats().getDamageOver30Sec() / 30;
-            float emp = beam.getWeapon().getDerivedStats().getEmpPerSecond();
-
-            accumulator += (dps + emp) * damageWindowSeconds;
+        // Determine side
+        if (crossProduct > 0) {
+            return true;
         }
+        return false;
+    }
+public static float estimateIncomingBeamDamage(ShipAPI ship, float damageWindowSeconds) {
+    CombatEngineAPI engine = Global.getCombatEngine();
+    if (engine == null) return 0f;
 
-        return accumulator;
+    float accumulator = 0f;
+
+    // Snapshot to avoid CME if beams list changes mid-iteration
+    // not sure if this is actually the cause but yolo
+    List<BeamAPI> beams = new ArrayList<>(engine.getBeams());
+    for (BeamAPI beam : beams) {
+        if (beam == null) continue;
+        if (!engine.isEntityInPlay((CombatEntityAPI) beam)) continue; // beams are CombatEntityAPI
+        if (beam.getDamageTarget() != ship) continue;
+
+        WeaponAPI w = beam.getWeapon();
+        if (w == null) continue;
+
+        float dps = w.getDerivedStats().getDamageOver30Sec() / 30f;
+        float emp = w.getDerivedStats().getEmpPerSecond();
+        accumulator += (dps + emp) * damageWindowSeconds;
     }
 
-    public static float estimateIncomingMissileDamage(ShipAPI ship) {
-        float accumulator = 0f;
-        DamagingProjectileAPI missile;
+    return accumulator;
+}
+public static float estimateIncomingMissileDamage(ShipAPI ship) {
+    CombatEngineAPI engine = Global.getCombatEngine();
+    if (engine == null) return 0f;
 
-        for (Iterator iter = Global.getCombatEngine().getMissiles().iterator(); iter.hasNext();) {
-            missile = (DamagingProjectileAPI) iter.next();
+    float accumulator = 0f;
 
-            if (missile.getOwner() == ship.getOwner()) {
-                continue; // Ignore friendly missiles
-            }
-            float safeDistance = SAFE_DISTANCE + ship.getCollisionRadius();
-            float threat = missile.getDamageAmount() + missile.getEmpAmount();
+    // Snapshot to avoid CME if missiles list changes mid-iteration
+    List<MissileAPI> missiles = new ArrayList<>(engine.getMissiles());
+    for (MissileAPI missile : missiles) {
+        if (missile == null) continue;
+        if (!engine.isEntityInPlay(missile)) continue;
+        if (missile.getOwner() == ship.getOwner()) continue; // Ignore friendly
 
-            if (ship.getShield() != null && ship.getShield().isWithinArc(missile.getLocation())) {
-                continue;
-            }
+        float safeDistance = SAFE_DISTANCE + ship.getCollisionRadius();
+        float threat = missile.getDamageAmount() + missile.getEmpAmount();
 
-            accumulator += threat * Math.max(0, Math.min(1, Math.pow(1 - MathUtils.getDistance(missile, ship) / safeDistance, 2)));
+        ShieldAPI sh = ship.getShield();
+        if (sh != null && sh.isOn() && sh.isWithinArc(missile.getLocation())) {
+            continue;
         }
 
-        return accumulator;
+        float dist = MathUtils.getDistance(missile, ship);
+        float t = 1f - dist / safeDistance;
+        if (t <= 0f) continue;
+
+        accumulator += threat * (t * t);
     }
+
+    return accumulator;
+}
 
     public static float getHitChance(DamagingProjectileAPI proj, CombatEntityAPI target) {
         if (proj.getOwner() == target.getOwner()) {

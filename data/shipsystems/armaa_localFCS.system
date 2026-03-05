@@ -1,0 +1,24 @@
+{
+	"id":"armaa_localFCS",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.armaa_localFCSAI",
+	
+	"statsScript":"data.scripts.shipsystems.armaa_localFCSStats",
+
+	#"runScriptWhilePaused":true, # only for the player's ship
+	#"runScriptWhileIdle":true, # unapply() never gets called
+		
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_entropy",
+	"loopSound":"system_entropy_loop",
+	"deactivateSound":"system_entropy_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+

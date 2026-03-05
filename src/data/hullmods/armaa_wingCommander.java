@@ -7,7 +7,6 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
-import com.fs.starfarer.api.ui.UIPanelAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
@@ -35,20 +34,12 @@ import com.fs.starfarer.api.util.IntervalUtil;
 
 public class armaa_wingCommander extends BaseHullMod {
 
-    private Object KEY_JITTER = new Object();
-    private Color COLOR = new Color(0, 106, 0, 50);
     private static final float RETREAT_AREA_SIZE = 2000f;
-    private boolean hasLanded;
-    private Vector2f landingLoc = new Vector2f();
-    //public List<String> squadNames = new ArrayList<>();
-    private static final Color JITTER_UNDER_COLOR = new Color(50, 125, 50, 50);
-    private static final float MAX_TIME_MULT = 1.1f;
     private static final Map<HullSize, Float> ENGAGEMENT_REDUCTION = new HashMap<>();
     private static final int BOMBER_COST_MOD = 10000;
     private static final float FIGHTER_REPLACEMENT_TIME_MULT = .70f;
     private static final float FIGHTER_RATE = 1.25f;
     private static final float CREW_LOSS_MULT = 0.25f;
-    private float deadWingmen = 0;
     private IntervalUtil tracker = new IntervalUtil(0.5f, 1.0f);
 
     private static String st = "st";
@@ -56,19 +47,13 @@ public class armaa_wingCommander extends BaseHullMod {
     private static String rd = "rd";
     private static String th = "th";
 
-    //private final ArrayList<String> squadChatter = new ArrayList<>();
     private final ArrayList<String> squadChatter_villain = new ArrayList<>();
-    private final ArrayList<String> squadChatter_aristo = new ArrayList<>();
-    private final ArrayList<String> squadChatter_business = new ArrayList<>();
-    private final ArrayList<String> squadChatter_faithful = new ArrayList<>();
-    private final ArrayList<String> squadChatter_official = new ArrayList<>();
-    private final ArrayList<String> squadChatter_pather = new ArrayList<>();
-    private final ArrayList<String> squadChatter_scientist = new ArrayList<>();
     private final ArrayList<String> squadChatter_soldier = new ArrayList<>();
-    private final ArrayList<String> squadChatter_spacer = new ArrayList<>();
     private final WeightedRandomPicker<String> voices = new WeightedRandomPicker<>();
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
-
+    public static float FIGHTER_OP_PER_DP = 5;
+    public static int MIN_DP = 1;    
+    
     static {
         // These hullmods will automatically be removed
         // This prevents unexplained hullmod blocking
@@ -102,22 +87,72 @@ public class armaa_wingCommander extends BaseHullMod {
     //PLT_DATA.add("Callsign",String);
     //PLT_DATA.add("
 //	}
+	public static int computeDPModifier(float fighterOPCost) {
+		int mod = (int) Math.ceil(fighterOPCost / FIGHTER_OP_PER_DP);
+		if (mod < MIN_DP) mod = MIN_DP;
+		return mod;
+	}
+	
+	public static float getFighterOPCost(MutableShipStatsAPI stats) {
+		float cost = 0;
+		for (String wingId : getFighterWings(stats)) {
+			FighterWingSpecAPI spec = Global.getSettings().getFighterWingSpec(wingId);
+			cost += spec.getOpCost(stats);
+		}
+		return cost;
+	}
+	
+	public static List<String> getFighterWings(MutableShipStatsAPI stats) {
+		if (stats.getVariant() != null) {
+			int baseBays = (int) Math.round(stats.getNumFighterBays().getBaseValue());
+			if (baseBays <= 0) {
+				return stats.getVariant().getFittedWings();
+			} else {
+				List<String> result = new ArrayList<>();
+				for (String wingId : stats.getVariant().getFittedWings()) {
+					if (baseBays > 0) {
+						baseBays--;
+						continue;
+					}
+					result.add(wingId);
+				}
+				return result;
+			}
+		}
+		return new ArrayList<String>();
+//		if (stats.getEntity() instanceof ShipAPI) {
+//			ShipAPI ship = (ShipAPI) stats.getEntity();
+//		} else {
+//			FleetMemberAPI member = stats.getFleetMember();
+//		}
+	}
     private final Map<String, List<String>> VOICE_DIALG = new HashMap<>();
 
     {
-        //vanilla lpcs
-        // VOICE_DIALG.put(Voices.ARISTO, "\"Finally, someone with class. Hello, Commander!\"");
-        //VOICE_DIALG.put(Voices.ARISTO, "\"I like your style.\"");
-        //VOICE_DIALG.put(Voices.BUSINESS, "\"Even though they fly like bricks, Warthogs are hardy and pack a punch. We never know what we could run into out here, so i'm a little more at ease with that knowledge.\"");
-
         VOICE_DIALG.put(Voices.SOLDIER, MechaModPlugin.squadChatter_soldier);
         VOICE_DIALG.put(Voices.VILLAIN, MechaModPlugin.squadChatter_villain);
-        //"OK, that's enough work for today. Why don't we all go out drinking?"
-
     }
+	public float computeCRMult(float suppliesPerDep, float dpMod) {
+		return 1f + dpMod / suppliesPerDep;
+	}
 
+    @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        int numFighters = 0;
+        
+        if (1==1) {
+            float dpMod = computeDPModifier(getFighterOPCost(stats));
+            if (dpMod > 0) {
+                stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id, dpMod);
+
+                if (stats.getFleetMember() != null) {
+                    float perDep = stats.getFleetMember().getHullSpec().getSuppliesToRecover();
+                    float mult = computeCRMult(perDep, dpMod);
+                    stats.getCRPerDeploymentPercent().modifyMult(id, mult);
+                }
+
+                stats.getSuppliesToRecover().modifyFlat(id, dpMod);
+            }
+        }
         int extraCrew = 0;
         if (stats.getVariant().getHullSpec().getFighterBays() == 0) {
             for (int i = 0; i < stats.getVariant().getWings().size(); i++) {
@@ -128,8 +163,9 @@ public class armaa_wingCommander extends BaseHullMod {
             stats.getMinCrewMod().modifyFlat(id, extraCrew);
             stats.getDynamic().getMod(Stats.BOMBER_COST_MOD).modifyFlat(id, BOMBER_COST_MOD);
             stats.getDynamic().getMod(Stats.BOMBER_COST_MOD).modifyFlat(id, BOMBER_COST_MOD);
-            if(stats.getNumFighterBays().isUnmodified())
+            if (stats.getNumFighterBays().isUnmodified()) {
                 stats.getNumFighterBays().modifyFlat(id, 1f);
+            }
             stats.getDynamic().getStat(Stats.REPLACEMENT_RATE_DECREASE_MULT).modifyMult(id, 1f + FIGHTER_REPLACEMENT_TIME_MULT);
         }
 
@@ -141,6 +177,7 @@ public class armaa_wingCommander extends BaseHullMod {
     }
 
     //@Override
+    @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, java.lang.String id) {
         for (String tmp : BLOCKED_HULLMODS) {
             if (ship.getVariant().getHullMods().contains(tmp)) {
@@ -164,9 +201,11 @@ public class armaa_wingCommander extends BaseHullMod {
 
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        return (!ship.isStationModule() && ship.getVariant().hasHullMod("strikeCraft") && ship.getHullSpec().getFighterBays() == 0) || ship.getMutableStats().getNumFighterBays().isPositive();
+        return (!ship.isStationModule() && ship.getVariant().hasHullMod("strikeCraft") && ship.getHullSpec().getFighterBays() == 0)
+                || ship.getMutableStats().getNumFighterBays().isPositive() || ship.getHullSize() != HullSize.FRIGATE && ship.getHullSpec().getFighterBays() > 0;
     }
 
+    @Override
     public String getUnapplicableReason(ShipAPI ship) {
         if (ship == null) {
             return "Can not be assigned";
@@ -220,33 +259,32 @@ public class armaa_wingCommander extends BaseHullMod {
             if (wing == null) {
                 tooltip.addPara(
                         "No wing assigned.",
-                         10,
-                         Misc.getHighlightColor()
+                        10,
+                        Misc.getHighlightColor()
                 );
 
             } else if (wingSize == 0) {
                 tooltip.addPara(
                         "Wing is automated. No pilots assigned.",
-                         10,
-                         Misc.getHighlightColor()
+                        10,
+                        Misc.getHighlightColor()
                 );
             } else if (Global.getCombatEngine().isInCampaign() && Global.getSector().getPlayerFleet().getCargo().getCrew() - 1 <= wingSize) {
                 tooltip.addPara(
                         "No crew can be spared to assign to this wing.",
-                         10,
-                         Misc.getHighlightColor()
+                        10,
+                        Misc.getHighlightColor()
                 );
             } else if (ship.getCaptain().isDefault()) {
                 tooltip.addPara(
                         "The wing lead by this unit is of no real note. Assign an officer to establish a squadron.",
-                         10,
-                         Misc.getHighlightColor()
+                        10,
+                        Misc.getHighlightColor()
                 );
 
             } else {
                 boolean expand = Keyboard.isKeyDown(Keyboard.getKeyIndex("F1"));
 
-                String captain = ship.getCaptain().getNameString();
                 //Only create wingmen for named captains and non auto fighters
                 if (!ship.getCaptain().isDefault() && wingSize > 0) {
                     boolean hasSpecialString = false;
@@ -281,10 +319,10 @@ public class armaa_wingCommander extends BaseHullMod {
                             + " has been established under the command of "
                             + ship.getCaptain().getNameString()
                             + ". If this officer is assigned to another unit with WINGCOM, they will follow.",
-                             10,
-                             HL,
-                             squadName,
-                             ship.getCaptain().getNameString()
+                            10,
+                            HL,
+                            squadName,
+                            ship.getCaptain().getNameString()
                     );
 
                     float squadLevel = 0;
@@ -339,7 +377,6 @@ public class armaa_wingCommander extends BaseHullMod {
                             ArrayList<String> lines = new ArrayList<String>(VOICE_DIALG.get(pilot.getVoice()));
                             int rnd = rand.nextInt(lines.size());
                             chatter = lines.get(rnd);
-                            String p = pilot.getVoice();
                             switch (pilot.getVoice()) {
                                 case "soldier":
                                     soldierChatterCopy.remove(chatter);
@@ -360,7 +397,6 @@ public class armaa_wingCommander extends BaseHullMod {
 
                         tooltip.addSectionHeading("Persona: " + personality, HL, TT, Alignment.MID, 0f);
                         tooltip.beginImageWithText(pilot.getPortraitSprite(), 100).addPara(chatter, 3, def, chatter);
-                        UIPanelAPI temp = tooltip.addImageWithText(8);
                         tooltip.addRelationshipBar(pilot, 5f);
                     }
                 }
@@ -565,7 +601,6 @@ public class armaa_wingCommander extends BaseHullMod {
         }
 
         for (int i = 0; i < size; i++) {
-            Random rand = new Random();
             PersonAPI pilot = null;
             String callsign;
 
@@ -636,7 +671,7 @@ public class armaa_wingCommander extends BaseHullMod {
         if (ship.getCaptain() == null || ship.getCaptain().isDefault()) {
             return;
         }
-        int count = 0;
+        int count;
 
         if (fighter.getMutableStats().getMinCrewMod().computeEffective(fighter.getHullSpec().getMinCrew()) <= 0) {
             return;
@@ -740,6 +775,7 @@ public class armaa_wingCommander extends BaseHullMod {
         stats.getFluxDissipation().modifyMult("armaa_wingCommander", 1f + mult);
     }
 
+    @Override
     public String getDescriptionParam(int index, HullSize hullSize) {
         return null;
     }
@@ -821,7 +857,6 @@ public class armaa_wingCommander extends BaseHullMod {
             }
             if (fighter != null) {
                 if (bay.getWing().isReturning(fighter)) {
-                    boolean carriersExist = false;
                     ShipAPI posCarrier = getCarrier(fighter);
                     if (posCarrier != null) {
                         armaa_combat_docking_AI_fighter DockingAI = new armaa_combat_docking_AI_fighter(fighter);
@@ -848,7 +883,6 @@ public class armaa_wingCommander extends BaseHullMod {
                 }
 
                 if (fighter.isLanding()) {
-                    ShipAPI carrierLandingOn;
                     for (ShipAPI carrier : CombatUtils.getShipsWithinRange(fighter.getLocation(), 100f)) {
                         if (carrier.getOwner() != fighter.getOwner()) {
                             continue;

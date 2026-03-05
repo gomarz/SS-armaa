@@ -17,7 +17,7 @@ import java.awt.Color;
 
 public class armaa_selector_counter_shield extends BaseHullMod {
 
-	private static final float SHIELD_MALUS = 0.5f;
+	private static final float SHIELD_MALUS = 0.25f;
 	public static final float SHIELD_BONUS_TURN = 100f;
 	public static final float SHIELD_BONUS_UNFOLD = 100f;
         public static float SHIELD_BONUS = 10f;

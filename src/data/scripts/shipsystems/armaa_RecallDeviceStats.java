@@ -116,6 +116,7 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                 if (ship != null) 
                 {
                     //fighter.setPhased(false);
+                    ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_recallDevice", -5f);
                     fighter.getFluxTracker().forceOverload(1f);
                     if (fighter.getSystem() != null) {
                         fighter.getSystem().deactivate();
@@ -175,7 +176,6 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                 }
             }
             float hullThreshold = 0.50f;
-            float crThreshold = .30f;
             if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
                 // someone wanted option to not be recalled  unless holding fire..so sure
                 boolean playerRecallEnabled = LunaSettings.getBoolean("armaa", "armaa_playerRecall");
@@ -192,7 +192,7 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                     continue;
                 } 
             }
-            if (ship.getHullLevel() <= hullThreshold || ship.getCurrentCR() <= crThreshold || ship.getHullLevel() <= 0.50f && ship.getFluxTracker().isOverloaded()) {
+            if (armaa_utils.canRestoreHPOrCR(ship)) {
                 if (ship.isAlive() && MathUtils.getDistance(ship, carrier) > 1000f && !ship.controlsLocked() && !ship.isRetreating() && !isStrikeCraftNearCarrier(ship)) {
                     result.add(ship);
                 }

@@ -9,7 +9,8 @@
 		#"tags":["armaa_cataphract_bp"],
 		"fighters":
 		[
-			"armaa_crew_wing"
+			"armaa_crew_wing",
+			"armaa_musham3_wing"
 		],
 	},
 },

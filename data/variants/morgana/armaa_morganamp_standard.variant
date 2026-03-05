@@ -8,7 +8,9 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "hardenedshieldemitter",
+    "insulatedengine",
+    "heavyarmor",
+    "safetyoverrides",
     "eccm"
   ],
   "weaponGroups": [
@@ -16,10 +18,10 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "sabot",
-        "TRUE_GUN2": "sabot",
-        "WS0003": "lightag",
-        "WS0004": "lightag"
+        "TRUE_GUN": "atropos",
+        "TRUE_GUN2": "atropos",
+        "WS0003": "railgun",
+        "WS0004": "railgun"
       }
     }
   ],

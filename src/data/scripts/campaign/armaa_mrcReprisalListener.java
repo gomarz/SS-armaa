@@ -19,7 +19,6 @@ public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScrip
     //Logger log = Logger.getLogger(armaa_hyperSpaceImmunity.class.getName());
 
     private IntervalUtil interval = new IntervalUtil(1f, 1f);
-    private IntervalUtil fleetinterval = new IntervalUtil(1f, 1f);
     private long days = Global.getSector().getClock().getTimestamp();
     private final float DAYS_MONTH = 30f;
     private int maxWait = 24; // Maximum cooldown in months
@@ -310,8 +309,9 @@ public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScrip
         // ships in a faction friendly to MRC? I don't know how likely this is, but I guess
         // we can say the MRC would just consider them accessories
         // just dont bother if player is hostile
-        if(Global.getSector().getPlayerFleet().getFaction().getRelationship("armaarmatura_pirates") <= -0.50)
+        if (Global.getSector().getPlayerFleet().getFaction().getRelationship("armaarmatura_pirates") <= -0.50) {
             return;
+        }
         BattleAPI battle = result.getBattle();
         EngagementResultForFleetAPI mrcSide = null;
         EngagementResultForFleetAPI enemySide = null;

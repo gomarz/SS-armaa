@@ -1,11 +1,11 @@
 {
   "id": "armaa_pa_mid_leftArm",
   "specClass": "projectile",
-  "projectileSpecId": "ioncannon_shot",
+  "projectileSpecId": "minipulser_shot",
   "type": "ENERGY",
   "size": "SMALL",
   #"everyFrameEffect": "data.scripts.weapons.armaa_prodromosEffect",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   #"turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow.png",
   "turretGunSprite": "graphics/armaa/ships/pa/armaa_pa_mid_leftArm.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",

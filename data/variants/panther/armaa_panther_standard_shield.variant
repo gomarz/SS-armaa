@@ -17,14 +17,14 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "TRUE_GUN2": "miningblaster"
+        "TRUE_GUN2": "sabotpod"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "heavymg"
+        "TRUE_GUN": "heavyblaster"
       }
     },
     {

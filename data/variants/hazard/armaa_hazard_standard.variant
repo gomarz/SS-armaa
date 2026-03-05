@@ -9,13 +9,12 @@
   "permaMods": [],
   "hullMods": [],
   "weaponGroups": [
-
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "mininglaser"
-      },
+        "WS0004": "armaa_hazardHead"
+      }
     },
     {
       "autofire": true,
@@ -23,7 +22,14 @@
       "weapons": {
         "A_GUN2": "armaa_hazard_drill_left"
       }
-    }
+     },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "mininglaser"
+      }
+    },
   ],
   "modules": [],
   "wings": []

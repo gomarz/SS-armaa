@@ -1,0 +1,55 @@
+{
+  "variantId": "armaa_valkazard_standard_kai",
+  "hullId": "armaa_valkazard_kai",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": ["armaa_selector_machinegun_left","armaa_selector_pulse_rifle_right","armaa_selector_boson","heavyarmor","hardened_subsystems","hardenedshieldemitter","armoredweapons"],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+	"WS0001": "gorgon",
+        "WS0002": "gorgon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+	"B_TORSO": "armaa_valkazard_torso_boson"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {"A_GUN": "armaa_valkazard_pulse_rifle_right"}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "C_ARML": "armaa_valkazard_machinegun_left"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+{
+      "BAY1": "armaa_valkazard_kai_dronebay_l_variant",
+},
+{
+      "BAY2": "armaa_valkazard_kai_dronebay_r_variant"
+}
+
+],
+  "wings": []
+}

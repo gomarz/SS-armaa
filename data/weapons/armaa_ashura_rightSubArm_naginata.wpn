@@ -1,0 +1,36 @@
+{
+  "id": "armaa_ashura_rightSubArm_naginata",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_light_flechette_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_ashuraNaginataEffect",
+  "turretSprite": "graphics/armaa/ships/ashura/armaa_ashura_rightSubArm.png",
+  "turretGunSprite": "graphics/armaa/ships/ashura/armaa_ashura_rightSubArm_naginata.png",
+  "hardpointSprite": "graphics/armaa/ships/ashura/armaa_ashura_rightSubArm_naginata.png",
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 40,
+  "renderHints": [
+    "RENDER_BARREL_BELOW",
+    "SUSPEND_RECOIL"
+  ],
+  "turretOffsets": [
+    21,
+    -18
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "autocharge": true,
+  "requiresFullCharge": false,
+  "fireSoundTwo": "light_mass_driver_fire"
+}

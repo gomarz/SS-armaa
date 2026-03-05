@@ -1,6 +1,7 @@
 {
   "combatSmall": {
 "armaa_garegga_tt_standard":1,
+"armaa_ashura_frig_standard":1,
 "armaa_garegga_tt_assault":1,
 "armaa_garegga_tt_carrier_standard":1,
 "armaa_garegga_tt_carrier_aleste":0.5,
@@ -51,6 +52,7 @@
 	},
 	"carrierMedium":{
 		"armaa_whitebase_standard":0.5,
+		"armaa_bassline_standard":0.5,
 		"armaa_caymon_standard":0.25,
 		"armaa_mora_Assault":3,
 	},

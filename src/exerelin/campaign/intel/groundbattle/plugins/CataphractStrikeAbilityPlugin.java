@@ -58,7 +58,7 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
     public transient FleetMemberAPI cataphract;
 
     public float getDamage(FleetMemberAPI cataphract) {
-        float damage = BASE_DAMAGE + (cataphract.getMemberStrength()) +
+        float damage = BASE_DAMAGE + (cataphract.getFleetPointCost()+cataphract.getMemberStrength()) +
                 cataphract.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).getFlatBonus();
         if (!cataphract.getCaptain().isDefault())
             damage += cataphract.getCaptain().getStats().getLevel() * 1.5f;
@@ -72,12 +72,10 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
         super.activate(dialog, user);
 
         Set<GroundUnit> enemies = new HashSet<>();
-        float totalDamage = 0;
 
         logActivation(user);    // so it displays before the unit destruction messages, if any
         float damageTaken = 0f;
         IndustryForBattle ifb = target;
-        boolean isAttacker = getSide().isAttacker();
         float damage = getDamage(cataphract);
         float attrition = getSide().getDropAttrition().getModifiedValue() / 100;
         damage *= 1 - attrition;
@@ -379,6 +377,7 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
         if (fleet == null) return members;
         for (FleetMemberAPI candidate : fleet.getFleetData().getCombatReadyMembersListCopy()) {
             if (isCataphract(candidate)) {
+                Global.getLogger(this.getClass()).info(candidate.getShipName());
                 members.add(candidate);
             }
         }
@@ -386,7 +385,7 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
     }
 
     public boolean isCataphract(FleetMemberAPI member) {
-        return !(!member.getVariant().getTags().contains("armaa_nexGroundCapable") && !member.getVariant().hasHullMod("cataphract2") && !member.getVariant().hasHullMod("cataphract") &&!member.getVariant().hasHullMod("armaa_variableUnit"));
+        return member.getHullSpec().getTags().contains("armaa_nexGroundCapable");
     }
 
     public boolean haveEnoughCR(FleetMemberAPI member) {

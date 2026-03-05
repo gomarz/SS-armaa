@@ -13,11 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "strikeCraft",
-    "armaa_himac",
     "armaa_aaf",
     "armaa_morganaBonus",
-    "armaa_sykoStims",
-    "do_not_back_off"
   ],
   "weaponSlots": [
     {
@@ -105,24 +102,6 @@
       "angle": -180,
       "contrailSize": 30,
       "style": "MIDLINE"
-    },
-    {
-      "location": [-4.5, 24.5],
-      "length": 2.5,
-      "width": 2,
-      "angle": 180,
-      "contrailSize": 2,
-      "style": "CUSTOM",
-      "styleId": "VALKAZARD_ENGINE"
-    },
-    {
-      "location": [-4.5, -24.5],
-      "length": 2.5,
-      "width": 2,
-      "angle": -180,
-      "contrailSize": 2,
-      "style": "CUSTOM",
-      "styleId": "VALKAZARD_ENGINE"
     }
   ],
   "bounds": [

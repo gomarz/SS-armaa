@@ -1,0 +1,16 @@
+{
+	"id":"armaa_irpulse_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":70.0,
+	"width":11.0,
+	"fadeTime":0.25,
+	"fringeColor":[200,150,0,255],
+	"coreColor":[255,225,50,200],
+	#"textureType":"SMOOTH",  # only needed for BEAM spawnType
+	"textureType":["graphics/fx/emp_arcs.png","graphics/fx/beam_rough2_core.png"],
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
+}

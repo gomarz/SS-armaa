@@ -46,7 +46,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/armaa/ships/panther/armaa_pantherLeftArm.png",
+  "turretSprite": "graphics/armaa/ships/panther/ht/armaa_pantherLeftArm.png",
   "type": "DECORATIVE",
   "width": 1
 }

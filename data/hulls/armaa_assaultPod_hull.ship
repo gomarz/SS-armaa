@@ -12,7 +12,8 @@
   "shieldRadius": 23.5,
   "viewOffset": 0,
   "builtInMods": [
-    "armaa_assaultPodKiller"
+    "armaa_assaultPodKiller",
+    "armaa_fighterStrafe"
   ],
   "weaponSlots": [
     {

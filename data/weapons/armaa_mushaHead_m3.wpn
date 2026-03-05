@@ -1,5 +1,5 @@
 {
-  "id": "armaa_mushaHead_m3",
+  "id": "armaa_hazardHead",
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
@@ -7,7 +7,7 @@
   "collisionClass": "RAY_FIGHTER",
   "collisionClassByFighter": "RAY_FIGHTER",
   "displayArcRadius": 250,
-  "turretSprite": "graphics/armaa/ships/musha/m3/armaa_musha_head.png",
+  "turretSprite": "graphics/armaa/ships/hazard/armaa_hazard_head.png",
   "hardpointSprite": "",
   "glowColor": [
     255,

@@ -1,9 +1,166 @@
+V3.2.6
+------
+- Fixed armaa_anime portraits for Kade, Imelda, Deadeye not appearing
+- Fixed second Valkazard being spawned at the end of Descent if started with it
+- Add specification on what tool was used for AI generated art
+- fixed CTD caused by not having LunaLib
+- fixed CTD caused by unused var
+- fixed dawn not immediately being removed as a contact if hired
+- fixed unnecessary method call in strikecraft hullmod that could cause a perf hit
+- fixed ships with independent_of_carrier tag not being able to move in campaign map if no other ships were present
+- fixed submarkets not properly being transferred on Jenius post CoC
+- Fixed compound units detached ship not being set as the last ship player transferred to
+- fixed bug where Juno III would continuously play chargeup sound,OP 16->13, range 1000->800
+- lowered quality of some backgrounds to trim file size
+- Valk III retrieval is now a selectable dialog option that appears once conditions are met
+- Fixed bug where Jangala shrine scene with Dawn could be missed since LPP hadn't "started" yet
+
+- Added a bit more clarification on fleet size requirements for Crown of Cinders
+	- Added slightly alternate dialogue with Imelda if player is friendly to the Path
+- Achievements - Defeat Ceylon before it retreats, Visit all shrines with Dawn, Lose Dawn, Join ATAC, Get Valkazard
+- Added extra conditional to "Ace" skill to prevent Dawn voicelines from playing
+- Added floaty text when reinforcements appear during Crown of Cinders
+- New Meshan AA market should offer more AA specific ships
+- Added an industry on New Meshan that spawns fleets using mostly AA gear
+- Added an industry on Jenius that spawns derelict patrols initially
+- Added new event after docking at Jenius post-CoC
+- Added new event after completing Descent (occurs after end of month)
+- Added 2 new quests
+	- Red Earth, Iron Cages
+	- Homecoming
+- Valkazard is no longer taken by Sera Pha after letting ArmaA scan it
+- added minor permutations to valkazard turn-in event if Homecoming is completed beforehand
+- Added alternate event if player completely loses against TT fleet at Valkazard start
+- Removed Guppy wing
+- Increased armor for VX Custom and Aleste by 50, Leynos, Spriggan Powered, and Kouto ECM by 100
+
+- WINGCOM
+	- DP increased based on fighter OP cost
+- Ceylon
+	- Fixed AI only using system at minimum range
+
+- Watchdog
+	- Improved(?) AI
+	- Shield Efficiency: 1.05 -> 1.00
+	- Increased Base Speed
+
+- Ground Operations
+	- Units with Cataphract S-I / Cataphract S-II hullmods interact with raids a little bit differently
+	- Now provide flat bonus to raid strength as long as player has at least 1 marine in the fleet
+		- new formula is fleetpoints * 2 * officer level
+
+- Ship Systems
+	- Executioners Mark
+		- Fixed bug that would massively increase targeted ships defensive stats
+		- Charges: 2 -> 1
+		- Turn Rate: 100%->50%
+		- Can now be toggled like Burn Drive
+		- Cooldown: 10->5
+		- Flux / Use: 0 -> 0.1 base cap
+- Crown of Cinders
+	- Fixed first map being partially transparent
+	- Added slightly expanded opening "cinematic" to missions
+	- Increase spawn rate of drones during first mission
+	- Revised some fx
+
+- Removed Leynos (RS)
+
+- Aleste (Wing)
+	- Wing Size: 2->1
+	- Speed: 150->180
+- Aleste
+	- script perf enhancements
+	- Laser Blade
+		- Damage: 1800 -> 1400
+	- Fixed head using needler sounds and projectiles instead of Vulcan
+	- Armor: 225->200
+	- Speed: 180->150
+	- Ship System: Fuller Auto -> Plasma Jets
+
+- Kouto
+	- 
+- Rajanya
+	- Updated melee effects
+	- Added ARU as built-in
+	- Bit
+		- Refit Time: 8->5
+		- Ship System: None -> Plasma Jets
+	- Binders (Module)
+		- No longer have shields
+		- Each binder contributes extra 5% shield efficiency to the core unit while intact (+25% shield efficiency total)
+
+- Bakraid
+	- HP: 1500-> 2500
+	- Armor: 200->250
+	- Dissipation: 180 -> 225
+	- Speed: 110 -> 140
+	- Medium slot is now Large
+	- removed 1x missile slot
+
+- GuarDUAL
+	- fixed shield arc progressively decreasing after transformation
+	- fixed AI spamming guarDUAL transformation when no enemies present
+
+- GuarDUAL FV (Wing)
+	- Minigun
+		- Chargeup: 0.35->0.1
+	- Swarmer SRM -> Breach SRM (Fighter)
+	- Added ECCM hullmod
+
+- Gunhed
+	- Revised sprite
+
+- Valkazard
+	- If player elects to give Valkazard back to Sera, she will eventually return an upgraded version of it
+		- Conditions (only one needed):
+			- Completed ATAC
+			- Completed Descent
+			- Reached Level 15
+- VX Custom
+	- 
+
+- Panther (XIV) -> Caracal
+	- Phase Cloak -> Havoc Drive
+	- DP: 8->10
+	- Shield
+		- ..also has a shield
+		- EMP Emitter -> Flare Launcher
+
+- New unit: Ashura
+	- Built-in Hammer + 2 melee weapons
+		- Hammer has light tracking abilities and will (try) to return on impact
+	- 1x small ballistic, 2x small composite
+
+- New unit: Panther
+	- Same slots as Panther(XIV), but energy-oriented
+	- DP: 13
+	- System: Mirage Shroud
+		- Creates two duplicates that have 25% of the originals HP/Armor for 6 seconds
+		- Copies only deal 40% of the original's damage
+		- Player can cancel the system early to swap positions with one of the clones
+- New ship: Viator
+
+- New ship: Bellator
+
+- Zanac:
+	- Ship System: Booster -> Displacer (Standard)
+	- Ship System: Firebolt Feeder -> Fuller Auto (MRC)
+	- Shield Arc: 300->120
+	- Shield Type: FRONT->OMNI
+	- Shield Efficiency: 0.80->0.75
+
+V3.2.5.1
+------
+- fixed CTD caused by unused loc on ships w/ strikecraft hullmod that somehow dont have a captain
+- fixed CTD caused by not having lunalib installed
+- fixed bug that would cause guardual shield radius to gradually decrease by transforming
+
 V3.2.5
 ------
 
 - Assault Pod
 	- Hullsize is now Fighter
-	- should prevent the bugs of locking up battles and spamming the screen with  destruciton notifications when using many
+	- should prevent the bugs of locking up battles and spamming the screen with destruciton notifications when using many
 
 - Panther
 	DP: 4->8

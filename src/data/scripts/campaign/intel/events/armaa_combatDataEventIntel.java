@@ -432,8 +432,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     protected void advanceImpl(float amount) {
         super.advanceImpl(amount);
         applyFleetEffects();
-
         float days = Global.getSector().getClock().convertToDays(amount);
+        if(getMaxProgress() >= PROGRESS_MAX)
+            if(!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacCompleted"))
+                Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacCompleted",true);
         recent.advance(days);
 
         //setProgress(getProgress() + 10);

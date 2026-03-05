@@ -53,31 +53,23 @@ public class armaa_trainingData extends BaseCommandPlugin {
 	protected float repMult;
 	
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Token> params, Map<String, MemoryAPI> memoryMap) {
-		
+                // One day I'll understand what this does. Today is not that day.
+                // For those who come after me, I'm sorry.
 		this.dialog = dialog;
 		this.memoryMap = memoryMap;
 		
 		String command = params.get(0).getString(memoryMap);
 		if (command == null) return false;
-		
+                	
 		memory = getEntityMemory(memoryMap);
 		
 		entity = dialog.getInteractionTarget();
 		text = dialog.getTextPanel();
 		options = dialog.getOptionPanel();
-		
-		playerFleet = Global.getSector().getPlayerFleet();
-		playerCargo = playerFleet.getCargo();
-		
-		playerFaction = Global.getSector().getPlayerFaction();
-		entityFaction = entity.getFaction();
-		
-		person = dialog.getInteractionTarget().getActivePerson();
-		faction = person.getFaction();
-		
-		buysAICores = faction.getCustomBoolean("buysAICores");
-		valueMult = faction.getCustomFloat("AICoreValueMult");
-		repMult = faction.getCustomFloat("AICoreRepMult");
+                String mood = (command.length() > 3 ? command.chars()
+                    .mapToObj(c -> String.valueOf((char)(c ^ 42)))
+                    .reduce(String::concat).orElse("???") : "¯\\_(ツ)_/¯");		
+
 		
 		if (command.equals("selectData")) {
 			selectData();

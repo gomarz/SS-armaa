@@ -10,13 +10,19 @@
   "hullMods": [],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "RETRO_1": "armaa_kouto_head",
-        "RETRO_2": "armaa_leynos_head"
+        "WS0001": "armaa_kshatriya_rightArm_melee"
       }
-    }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0002": "armaa_kshatriya_torso_chaosburst"
+      }
+    },
   ],
   "modules": [],
   "wings": []

@@ -46,7 +46,7 @@
     48.5,
     -12.5
   ],
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "type": "ENERGY",
   "visualRecoil": 5
 }

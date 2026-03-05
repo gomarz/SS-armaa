@@ -1,0 +1,41 @@
+{
+  "id": "armaa_valkazard_geant_core_lv2",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_dim_buster_shot",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "everyFrameEffect": "data.scripts.weapons.armaa_dimEffectLv2",
+  "turretSprite": "graphics/armaa/ships/valkazard/geant/armaa_valkazard_geant_core.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil_boson.png",
+  "hardpointSprite": "",
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    23,
+    0
+  ],
+  "hardpointAngleOffsets": [
+0
+  ],
+  "barrelMode": "ALTERNATING",
+  "interruptibleBurst":true,
+  "requiresFullCharge": false,
+  "animationType": "MUZZLE_FLASH",
+  "fireSoundTwo": "armaa_crusher_fire",
+	"muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":5.0,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":15.0,
+					   "particleDuration":0.15,
+					   "particleCount":25,
+					   "particleColor":[200,55,200,205]}	
+}

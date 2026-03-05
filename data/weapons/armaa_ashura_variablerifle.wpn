@@ -1,0 +1,37 @@
+{
+  "id": "armaa_ashura_variablerifle",
+  "specClass": "projectile",
+  "projectileSpecId": "lightmortar_shot",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_koutoDummyWeapon",
+  "turretSprite": "graphics/armaa/ships/ashura/armaa_ashura_rightArm.png",
+  "hardpointSprite": "graphics/fx/empty.png",
+  "showDamageWhenDecorative": true,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    49,
+    -14,
+    49,
+    -8,
+    49,
+    -8
+  ],
+  "turretAngleOffsets": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "frameRate": 0
+}

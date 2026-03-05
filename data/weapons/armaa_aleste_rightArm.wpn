@@ -4,7 +4,7 @@
   "projectileSpecId": "armaa_rynex_shot",
   "type": "ENERGY",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_alestechainGunBarrel.png",
   "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
