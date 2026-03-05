@@ -83,7 +83,7 @@ public class armaa_mrcExpedition extends BlockadeFGI implements EconomyTickListe
     @Override
     protected void notifyEnding() {
         super.notifyEnding();
-        float reward = armaa_mrcReprisalListener.getLoot();
+        int reward = (int)armaa_mrcReprisalListener.getLoot();
         if (reward > 0) {
             boolean playerParticipated = armaa_mrcReprisalListener.hasPlayerParticipated() || armaa_mrcReprisalListener.getPlayerDamage() > 0 ? true : false;
             if (playerParticipated) {
@@ -93,8 +93,8 @@ public class armaa_mrcExpedition extends BlockadeFGI implements EconomyTickListe
                 float ratio = armaa_mrcReprisalListener.getPlayerDamage() / armaa_mrcReprisalListener.getAiDamage();
                 if(ratio*reward > 0)
                 {
-                    Global.getSector().getCampaignUI().addMessage("Received " + reward * ratio, Color.white, String.valueOf(reward), "c", Misc.getHighlightColor(), Misc.getHighlightColor());
-                    Global.getSector().getPlayerFleet().getCargo().getCredits().add(reward * ratio);
+                    Global.getSector().getCampaignUI().addMessage("Received " + (int)(reward * ratio), Color.white, String.valueOf(reward), "c", Misc.getHighlightColor(), Misc.getHighlightColor());
+                    Global.getSector().getPlayerFleet().getCargo().getCredits().add((int)(reward * ratio));
                     reward -= reward * ratio;
                 }
             }

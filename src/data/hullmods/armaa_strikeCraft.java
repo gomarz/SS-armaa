@@ -505,7 +505,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             if (carrier.getOwner() != ship.getOwner() || !carrier.getHullSpec().hasTag("strikecraft_with_bays") && (carrier.isFighter() || carrier.isFrigate()) && !carrier.isStationModule() || carrier == ship) {
                 continue;
             }
-            if (carrier.isHulk()) {
+            if (carrier.isHulk() || !carrier.isAlive() || Global.getCombatEngine().isEntityInPlay(carrier) == false) {
                 continue;
             }
 
