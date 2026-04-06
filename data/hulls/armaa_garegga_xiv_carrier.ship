@@ -15,6 +15,10 @@
     "fourteenth",
     "armaa_comboUnit"
   ],
+  "builtInWeapons": {
+    "E_LSHOULDER": "armaa_garegga_xiv_carrier_leftPauldron",
+    "E_RSHOULDER": "armaa_garegga_xiv_carrier_rightPauldron"
+  },
   "weaponSlots": [
     {
       "id": "TRUE_GUN",
@@ -23,7 +27,7 @@
       "mount": "TURRET",
       "arc": 180,
       "angle": 45,
-      "locations": [-14, 37]
+      "locations": [0, 37]
     },
     {
       "id": "MODULE",
@@ -32,26 +36,26 @@
       "mount": "TURRET",
       "arc": 150,
       "angle": 0,
-      "locations": [7, -0]
+      "locations": [17, -0]
     },
     {
       "id": "MAIN_GUN",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [-31, -0],
+      "locations": [-17, -0],
       "renderOrderMod": -99998
     },
     {
       "id": "WS0001",
       "size": "SMALL",
       "type": "BALLISTIC",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 180,
       "angle": -45,
-      "locations": [-14, -37]
+      "locations": [0, -37]
     },
     {
       "id": "WS0002",
@@ -60,7 +64,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [8, 40]
+      "locations": [42, 34]
     },
     {
       "id": "WS0003",
@@ -69,83 +73,96 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [8, -40]
+      "locations": [42, -34]
+    },
+    {
+      "id": "E_LSHOULDER",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [19, 5]
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [19, -5]
     }
   ],
   "engineSlots": [
     {
-      "location": [-33, 20],
-      "length": 32,
-      "width": 9,
+      "location": [-57, 28],
+      "length": 48,
+      "width": 24,
       "angle": 180,
-      "contrailSize": 9,
+      "contrailSize": 24,
       "style": "LOW_TECH"
     },
     {
-      "location": [-33, -20],
-      "length": 32,
-      "width": 9,
+      "location": [-57, -28],
+      "length": 48,
+      "width": 24,
       "angle": -180,
-      "contrailSize": 9,
+      "contrailSize": 24,
       "style": "LOW_TECH"
     },
     {
-      "location": [-34, 9],
-      "length": 56,
-      "width": 27,
+      "location": [-53, 10],
+      "length": 24,
+      "width": 12,
       "angle": 180,
-      "contrailSize": 27,
+      "contrailSize": 12,
       "style": "LOW_TECH"
     },
     {
-      "location": [-33, 20],
-      "length": 13,
-      "width": 9,
+      "location": [-57, 28],
+      "length": 34.941002,
+      "width": 10.886052,
       "angle": 145,
-      "contrailSize": 9,
+      "contrailSize": 10.886052,
       "style": "LOW_TECH"
     },
     {
-      "location": [-33, -20],
-      "length": 13,
-      "width": 9,
+      "location": [-57, -28],
+      "length": 34.941002,
+      "width": 10.886052,
       "angle": -145,
-      "contrailSize": 9,
+      "contrailSize": 10.886052,
       "style": "LOW_TECH"
     },
     {
-      "location": [-34, -9],
-      "length": 56,
-      "width": 27,
+      "location": [-53, -12],
+      "length": 24,
+      "width": 12,
       "angle": 180,
-      "contrailSize": 27,
+      "contrailSize": 12,
       "style": "LOW_TECH"
     }
   ],
   "bounds": [
-    32.5, -8,
-    25.5, -24.5,
-    64, -32,
-    64.5, -39,
+    36.5, -7,
+    45.5, -3.5,
+    45, -43,
     28, -44.5,
     -12, -49.5,
-    -37, -45,
-    -62.5, -42.5,
-    -65, -34,
-    -52, -26,
-    -62.5, -23.5,
-    -62.5, 23.5,
-    -51, 30,
-    -66.5, 32.5,
-    -63.5, 41,
+    -39, -50.5,
+    -56.5, -39.5,
+    -46.5, -27,
+    -49.5, -19,
+    -49.5, 19,
+    -43.5, 29,
+    -55, 37.5,
     -44, 40.5,
-    -36.5, 48,
-    -8, 48,
+    -42, 51,
+    -7, 52,
     23, 45,
-    64.5, 39,
-    64, 32,
-    25.5, 24.5,
-    32.5, 9,
-    23, 2
+    45, 43,
+    45.5, 3.5,
+    36, 6
   ]
 }

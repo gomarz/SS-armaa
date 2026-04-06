@@ -116,7 +116,6 @@
 	"knownFighters":{
 		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
 			"fighters":[
-			"armaa_gallant_wing",
 			"armaa_prodromos_wing",
 			"armaa_valkenmp_wing",
 			"armaa_record_wing",

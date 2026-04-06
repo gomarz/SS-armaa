@@ -14,6 +14,7 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
+    "armaa_reactiveCarapace",
     "delicate",
     "phasefield"
   ],
@@ -68,13 +69,13 @@
     },
     {
       "id": "A_GUN2",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": 0,
       "locations": [-6.5, 13],
-      "renderOrderMod": 100
+      "renderOrderMod": 200
     },
     {
       "id": "TRUE_GUN2",

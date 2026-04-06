@@ -46,7 +46,6 @@
 			"khopesh_wing":1,
 			"armaa_crew":1,
 			"armaa_valkenx_wing":1,
-			"armaa_record_wing":0.5,
 			"armaa_kouto_wing":0.5,
 			"talon_wing":1,
 
@@ -92,9 +91,12 @@
 		"tags":[],
 			"fighters":[
 			"broadsword_wing",
-			"armaa_record_wing",
 			"armaa_valkenmp_wing",
 			"armaa_musha_wing",
+			"armaa_musha_bomber_wing",
+                        "gladius_wing",
+			"hoplon_wing",
+                        "dagger_wing",
 			"wasp_wing",
 			"talon_wing",
 			],

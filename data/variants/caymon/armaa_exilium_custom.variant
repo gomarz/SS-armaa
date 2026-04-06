@@ -1,0 +1,83 @@
+{
+  "variantId": "armaa_exilium_custom",
+  "hullId": "armaa_exilium",
+  "displayName": "Anti-Rain",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 25,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "hardenedshieldemitter"
+  ],
+  "sMods": ["expanded_deck_crew","defensive_targeting_array","missleracks"
+    ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "devastator"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "mininglaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "atropos",
+        "WS0003": "atropos"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 009": "mininglaser",
+        "WS 010": "mininglaser",
+        "WS0005": "mininglaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "armaa_fluxcannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "POD": "dragonpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sabotpod"
+      }
+    }
+  ],
+  "modules": [
+        {
+      "WS0006": "armaa_einhander_plus_subprime",
+    },
+    {
+      "WS0008": "armaa_kouto_frig_standard",
+    },
+      #"WS0007": "armaa_valkenx_frig_standard",
+  ],
+  "wings": [
+    "armaa_musham3_wing",
+    "armaa_musha_wing"
+  ]
+}

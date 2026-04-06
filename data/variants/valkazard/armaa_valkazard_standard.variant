@@ -7,13 +7,19 @@
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
-  "hullMods": ["armaa_selector_machinegun_left","armaa_selector_pulse_rifle_right","armaa_selector_boson","heavyarmor","hardened_subsystems","hardenedshieldemitter","armoredweapons"],
+  "hullMods": [
+    "armaa_selector_machinegun_left",
+    "armaa_selector_pulse_rifle_right",
+    "armaa_selector_boson",
+    "heavyarmor",
+    "hardened_subsystems",
+    "hardenedshieldemitter"
+  ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-	"WS0001": "gorgon",
         "WS0002": "gorgon"
       }
     },
@@ -21,20 +27,18 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-	"B_TORSO": "armaa_valkazard_torso_boson"
+        "WS0001": "gazer"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {"A_GUN": "armaa_valkazard_pulse_rifle_right"}
+      "weapons": {}
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "C_ARML": "armaa_valkazard_machinegun_left"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,

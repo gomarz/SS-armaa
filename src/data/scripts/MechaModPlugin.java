@@ -1,9 +1,11 @@
 package data.scripts;
 
 import com.fs.starfarer.api.BaseModPlugin;
+import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 
 import com.fs.starfarer.api.PluginPick;
+import com.fs.starfarer.api.campaign.CampaignEventListener;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
@@ -20,7 +22,6 @@ import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
-
 
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 
@@ -56,6 +57,7 @@ import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.armaa_squadManagerIntel;
 import data.scripts.fleets.ArmaaFleetManager;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import data.scripts.campaign.armaa_cataphractGBListener;
 import data.scripts.campaign.armaa_satBombListener;
 
 import java.util.*;
@@ -110,6 +112,17 @@ public class MechaModPlugin extends BaseModPlugin {
     private armaa_mrcReprisalListener reprisalScript;
     private armaa_skyMindBattleResultListener resultListener;
     private armaa_notificationShower notificationScript;
+    private armaa_cataphractGBListener GBScript;
+
+private void removeScript(Object s) {
+    if (s == null) return;
+    if (s instanceof EveryFrameScript) {
+        Global.getSector().removeTransientScript((EveryFrameScript) s);
+    }
+    if (s instanceof CampaignEventListener) {
+        Global.getSector().removeListener((CampaignEventListener) s);
+    }
+}
 
     @Override
     public void onNewGame() {
@@ -212,16 +225,13 @@ public class MechaModPlugin extends BaseModPlugin {
     @Override
     public void beforeGameSave() {
         //TODO: Why do I do this twice?
-        Global.getSector().removeTransientScript(resultListener);
-        Global.getSector().removeListener(resultListener);
-        Global.getSector().removeTransientScript(script);
-        Global.getSector().removeListener(script);
-        Global.getSector().removeTransientScript(copiumScript);
-        Global.getSector().removeListener(copiumScript);
-        Global.getSector().removeTransientScript(hyperScript);
-        Global.getSector().removeListener(hyperScript);
-        Global.getSector().removeListener(reprisalScript);
-        Global.getSector().removeTransientScript(notificationScript);
+        removeScript(resultListener);
+        removeScript(script);
+        removeScript(copiumScript);
+        removeScript(hyperScript);
+        removeScript(reprisalScript);
+        removeScript(GBScript);
+        removeScript(notificationScript);
     }
 
     @Override
@@ -232,6 +242,7 @@ public class MechaModPlugin extends BaseModPlugin {
         Global.getSector().addTransientScript(hyperScript = new armaa_hyperSpaceImmunity());
         Global.getSector().addTransientScript(reprisalScript = new armaa_mrcReprisalListener());
         Global.getSector().addTransientScript(notificationScript = new armaa_notificationShower());
+        Global.getSector().addTransientScript(GBScript = new armaa_cataphractGBListener());
     }
 
     @Override
@@ -240,13 +251,13 @@ public class MechaModPlugin extends BaseModPlugin {
         boolean haveTahlan = Global.getSettings().getModManager().isModEnabled("tahlan");
         boolean havePAGSM = Global.getSettings().getModManager().isModEnabled("PAGSM");
 
-        Global.getSector().removeTransientScript(resultListener);;
-        Global.getSector().removeTransientScript(script);
-        Global.getSector().removeTransientScript(copiumScript);
-        Global.getSector().removeTransientScript(hyperScript);
-        Global.getSector().removeTransientScript(reprisalScript);
-        Global.getSector().removeTransientScript(notificationScript);
-
+        removeScript(resultListener);
+        removeScript(script);
+        removeScript(copiumScript);
+        removeScript(hyperScript);
+        removeScript(reprisalScript);
+        removeScript(notificationScript);
+        removeScript(GBScript);
         boolean hiredDawn = false;
 
         for (ShipHullSpecAPI spec : Global.getSettings().getAllShipHullSpecs()) {
@@ -268,6 +279,8 @@ public class MechaModPlugin extends BaseModPlugin {
         Global.getSector().addTransientScript(copiumScript = new armaa_drugsAreBad());
         Global.getSector().addTransientScript(hyperScript = new armaa_hyperSpaceImmunity());
         Global.getSector().addTransientScript(reprisalScript = new armaa_mrcReprisalListener());
+        Global.getSector().addTransientScript(GBScript = new armaa_cataphractGBListener());
+
         armaa_satBombListener.addIfNeeded();
         Global.getSector().addTransientScript(notificationScript = new armaa_notificationShower());
         Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_cataphract", 1);
@@ -288,7 +301,7 @@ public class MechaModPlugin extends BaseModPlugin {
             } else {
                 secretary.setPortraitSprite("graphics/armaa/portraits/armaa_seraph.png");
             }
-        }    
+        }
         if (Global.getSector().getImportantPeople().getPerson("armaa_imelda") != null) {
             PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_imelda");
             if (haveAnime) {
@@ -367,8 +380,6 @@ public class MechaModPlugin extends BaseModPlugin {
             ironKing.getMemoryWithoutUpdate().set(MemFlags.SUSPECTED_AI, true);
         }
         ShipHullSpecAPI spec = Global.getSettings().getHullSpec("armaa_legioMech");
-        spec.setShipSystemId("armaa_fullerAuto");
-
         if (haveTahlan) {
 
             FactionAPI MRC = Global.getSector().getFaction("armaarmatura_pirates");
@@ -386,13 +397,6 @@ public class MechaModPlugin extends BaseModPlugin {
             tahlanIds.add("armaa_legioMech_rightShoulder");
             for (String part : tahlanIds) {
                 spec = Global.getSettings().getHullSpec(part);
-                if (part.equals("armaa_legioMech")) {
-                    spec.setShipSystemId("armaa_fullerAuto");
-                    ShipVariantAPI variant = Global.getSettings().getVariant(part + "_standard");
-                    variant.getWing(0).setId("tahlan_miasma_drone_wing");
-
-                    variant.refreshBuiltInWings();
-                }
                 if (!spec.getBuiltInMods().contains("tahlan_daemonarmor")) {
                     ShipVariantAPI variant = Global.getSettings().getVariant(part + "_standard");
                     if (spec.getHullSize() != HullSize.FIGHTER) {
@@ -473,7 +477,7 @@ public class MechaModPlugin extends BaseModPlugin {
                     .5f // qualityMod
             );
             CampaignFleetAPI fleet = FleetFactoryV3.createFleet(fparams);
-            SectorEntityToken loc = Global.getSector().getPlayerFleet() == null ? Global.getSector().getEntityById("armaa_research_station") :Global.getSector().getPlayerFleet() ;
+            SectorEntityToken loc = Global.getSector().getPlayerFleet() == null ? Global.getSector().getEntityById("armaa_research_station") : Global.getSector().getPlayerFleet();
             // Spawn fleet around player
             loc.getContainingLocation().spawnFleet(
                     loc, 25, 25, fleet);

@@ -2,55 +2,59 @@
   "variantId": "armaa_viator_variant",
   "hullId": "armaa_viator",
   "displayName": "Standard",
-  "goalVariant": false,
-  "fluxCapacitors": 14,
+  "goalVariant": true,
+  "fluxCapacitors": 20,
   "fluxVents": 20,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "heavyarmor",
-    "targetingunit"
+    "targetingunit",
+    "turretgyros",
+    "fluxbreakers"
   ],
   "weaponGroups": [
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "lightag",
-        "WS0002": "lightdualac",
-        "WS0003": "lightag",
-        "WS0005": "lightag",
-        "WS0007": "railgun",
-        "WS0009": "railgun",
-        "WS0014": "phasebeam"
+        "WS0003": "lightdualac",
+        "WS0014": "shredder"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
+        "WS0001": "lightac",
+        "WS0007": "lightac",
+        "WS0009": "lightac",
+        "WS0011": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "lightag",
         "WS0004": "lightag",
-        "WS0006": "lightag",
-        "WS0008": "lightdualac",
-        "WS0010": "lightdualac"
+        "WS0008": "lightag",
+        "WS0010": "lightag",
+        "WS0012": "irpulse"
       }
-    },
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {}
-    },
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {}
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0011": "pdlaser",
-        "WS0012": "pdlaser"
+        "WS0013": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "vulcan",
+        "WS0006": "vulcan"
       }
     }
   ],

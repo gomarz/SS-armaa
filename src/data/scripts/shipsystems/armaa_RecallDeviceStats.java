@@ -113,8 +113,7 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
             }
 
             if (effectLevel == 1) {
-                if (ship != null) 
-                {
+                if (ship != null) {
                     //fighter.setPhased(false);
                     ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_recallDevice", -5f);
                     fighter.getFluxTracker().forceOverload(1f);
@@ -158,8 +157,7 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
     public static List<ShipAPI> getFighters(ShipAPI carrier) {
         List<ShipAPI> result = new ArrayList<>();
 
-        for (ShipAPI ship : Global.getCombatEngine().getShips()) 
-        {
+        for (ShipAPI ship : Global.getCombatEngine().getShips()) {
             if (ship.getOwner() != carrier.getOwner()) {
                 continue;
             }
@@ -178,19 +176,19 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
             float hullThreshold = 0.50f;
             if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
                 // someone wanted option to not be recalled  unless holding fire..so sure
-                boolean playerRecallEnabled = LunaSettings.getBoolean("armaa", "armaa_playerRecall");
+                boolean armaa_recallOnlyWhenHoldFire = LunaSettings.getBoolean("armaa", "armaa_recallOnlyWhenHoldFire");
                 if (Global.getCombatEngine().getPlayerShip() == ship) {
-                    if (!playerRecallEnabled && !ship.isHoldFire()) {
+                    if (armaa_recallOnlyWhenHoldFire && !ship.isHoldFire()) {
                         continue;
                     }
                 }
                 // why is this a double anyway
-                if(LunaSettings.getDouble("armaa", "armaa_repairLevel") != null)
+                if (LunaSettings.getDouble("armaa", "armaa_repairLevel") != null) {
                     hullThreshold = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
-                if(ship.getHitpoints() >= armaa_utils.getMaxHPRepair(ship) && ship.getCurrentCR() >= armaa_utils.getMaxCRRepair(ship))
-                {
+                }
+                if (ship.getHitpoints() >= armaa_utils.getMaxHPRepair(ship) && ship.getCurrentCR() >= armaa_utils.getMaxCRRepair(ship)) {
                     continue;
-                } 
+                }
             }
             if (armaa_utils.canRestoreHPOrCR(ship)) {
                 if (ship.isAlive() && MathUtils.getDistance(ship, carrier) > 1000f && !ship.controlsLocked() && !ship.isRetreating() && !isStrikeCraftNearCarrier(ship)) {

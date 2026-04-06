@@ -72,9 +72,7 @@
 			"armaa_prodromos_wing":0.2,
 			"warthog_wing":1,
 			"armaa_valkenx_wing":1,
-			"armaa_record_wing":1,
 			"armaa_valkenmp_wing":0.8,
-			"armaa_valken_black_wing":0.8,
 
 		},
 	},
@@ -136,10 +134,10 @@
 		"tags":[],
 			"fighters":[
 			"broadsword_wing",
-			"armaa_record_wing",
 			"talon_wing",
 			"armaa_musha_wing",
 			"armaa_musham3_wing",
+			"armaa_musha_bomber_wing",
 			"warthog_wing",
 			"perdition_wing",
                         "piranha_wing",

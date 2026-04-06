@@ -72,6 +72,7 @@ public class armaa_JeniusMission extends HubMissionWithSearch {
         setStoryMission();
         makeImportant(Global.getSector().getEconomy().getMarket("armaa_meshanii_market"), "$armaa_coc_barNudged", Stage.CONTACT);
         makeImportant(nekki1, "$armaa_coc_tookTheJob", Stage.GO_TO_JENIUS);
+        setStageOnGlobalFlag(Stage.GO_TO_JENIUS, "$armaa_startedLiberation");
         setStageOnGlobalFlag(Stage.DESCENT, "$armaa_liberationDefeatedDefenders");
         setStageOnGlobalFlag(Stage.WAIT_FOR_FOB, "$armaa_WFCompletedAtmoBattle");
         setStageOnGlobalFlag(Stage.CITY_RAID, "$armaa_startedWFStage2");
@@ -104,6 +105,7 @@ public class armaa_JeniusMission extends HubMissionWithSearch {
                         0f, // utilityPts
                         .1f // qualityMod
                 );
+                fparams.maxShipSize = 3;
                 CampaignFleetAPI fleet = FleetFactoryV3.createFleet(fparams);
                 if (i == 6 || Math.random() > 0.50f) {
                     FleetFactoryV3.addCommanderAndOfficersV2(fleet, fparams, new Random());

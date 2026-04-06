@@ -1,7 +1,7 @@
 {
   "hullName": "Kshatriya Binder",
   "hullId": "armaa_kshatriya_binder",
-  "hullSize": "FRIGATE",
+  "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
   "style": "MIDLINE",
   "height": 154,
@@ -13,14 +13,14 @@
   "viewOffset": 0,
   "builtInMods": [
     "fluxshunt",
-    "no_weapon_flux",
+    "no_weapon_flux"
   ],
   "builtInWings": [
     "armaa_bit_kshatriya_wing"
   ],
   "builtInWeapons": {
     "WS0001": "armaa_kshatriya_torso_chaosburst",
-    "WS0002": "armaa_kshatriya_torso_chaosburst",
+    "WS0002": "armaa_kshatriya_torso_chaosburst"
   },
   "weaponSlots": [
     {
@@ -46,16 +46,16 @@
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "HIDDEN",
-      "arc": 25,
+      "arc": 45,
       "angle": 45,
       "locations": [63.5, 29]
     },
     {
       "id": "WS0002",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "HIDDEN",
-      "arc": -25,
+      "arc": -45,
       "angle": -45,
       "locations": [63.5, -29]
     }

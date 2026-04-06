@@ -56,37 +56,37 @@ public class armaa_utils {
         baseOverloadTimes.put(HullSize.DEFAULT, 6f);
     }
 
-    private static class armaa_purgedata 
-    {
+    private static class armaa_purgedata {
 
         boolean ejectKeyPressed = false;
         long startTime = System.currentTimeMillis();
     }
-    
+
     public static boolean isMiddleMouseClicked(ShipAPI ship, CombatEngineAPI engine) {
-            if (engine.getPlayerShip() != ship)
-                    return false;
+        if (engine.getPlayerShip() != ship) {
+            return false;
+        }
 
-            boolean mmbDown = Mouse.isButtonDown(2);  // 2 = Middle Mouse Button
+        boolean mmbDown = Mouse.isButtonDown(2);  // 2 = Middle Mouse Button
 
-            boolean result = false;           
-            String key = "armaa_mmbTransform" + "_" + ship.getId();
-            armaa_purgedata data = (armaa_purgedata) engine.getCustomData().get(key);
-            if (data == null) {
-                    data = new armaa_purgedata();
-                    engine.getCustomData().put(key, data);
-            }
-
-            // Detect "just pressed" – was not down last frame, is down this frame
-            if (mmbDown && !data.ejectKeyPressed) {
-                    result = true;
-            }
-            // Update the state tracking
-            data.ejectKeyPressed = mmbDown;
-
+        boolean result = false;
+        String key = "armaa_mmbTransform" + "_" + ship.getId();
+        armaa_purgedata data = (armaa_purgedata) engine.getCustomData().get(key);
+        if (data == null) {
+            data = new armaa_purgedata();
             engine.getCustomData().put(key, data);
-            return result;
-    }    
+        }
+
+        // Detect "just pressed" – was not down last frame, is down this frame
+        if (mmbDown && !data.ejectKeyPressed) {
+            result = true;
+        }
+        // Update the state tracking
+        data.ejectKeyPressed = mmbDown;
+
+        engine.getCustomData().put(key, data);
+        return result;
+    }
 
     public static boolean isKeyDoubleTapped(ShipAPI ship, CombatEngineAPI engine) {
         if (engine.getPlayerShip() != ship) {
@@ -325,44 +325,44 @@ public class armaa_utils {
         return winner;
     }
 
-    public static float getMaxHPRepair(ShipAPI ship)
-    {
+    public static float getMaxHPRepair(ShipAPI ship) {
         boolean limitedRepair = true;
-        if (Global.getSettings().getModManager().isModEnabled("lunalib")) 
-        {
+        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
             limitedRepair = LunaSettings.getBoolean("armaa", "armaa_limitedRepairs");
         }
-        if(limitedRepair)
-            return ship.getHullLevelAtDeployment()*ship.getMaxHitpoints();
+        if (limitedRepair) {
+            return ship.getHullLevelAtDeployment() * ship.getMaxHitpoints();
+        }
 
         return ship.getMaxHitpoints();
     }
-    public static float getMaxCRRepair(ShipAPI ship)
-    {
-         boolean limitedCRRepair = true;
-        if(Global.getSettings().getModManager().isModEnabled("lunalib")) 
-        {
+
+    public static float getMaxCRRepair(ShipAPI ship) {
+        boolean limitedCRRepair = true;
+        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
             limitedCRRepair = LunaSettings.getBoolean("armaa", "armaa_limitedCRRepairs");
         }
-        if(limitedCRRepair)
+        if (limitedCRRepair) {
             return ship.getCRAtDeployment();
+        }
 
-        return ship.getFleetMember().getRepairTracker().getCR();    
+        return ship.getFleetMember().getRepairTracker().getCR();
     }
-    
-    public static boolean canRestoreHPOrCR(ShipAPI ship)
-    {
+
+    public static boolean canRestoreHPOrCR(ShipAPI ship) {
         float CurrentHull = ship.getHitpoints();
         float CurrentCR = ship.getCurrentCR();
         float HPPercent = 0.50f;
-        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float)
+        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float) {
             HPPercent = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId());
-        if(Global.getSettings().getModManager().isModEnabled("lunalib") && LunaSettings.getFloat("armaa", "armaa_repairLevel") != null)
+        }
+        if (Global.getSettings().getModManager().isModEnabled("lunalib") && LunaSettings.getFloat("armaa", "armaa_repairLevel") != null) {
             HPPercent = LunaSettings.getFloat("armaa", "armaa_repairLevel").floatValue();
-          return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent) 
-                || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);       
+        }
+        return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent)
+                || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);
     }
-        
+
     public static ShipAPI getFirstShipOnSegment(Vector2f from, Vector2f to) {
         return getFirstShipOnSegment(from, to, null);
     }
@@ -472,8 +472,9 @@ public class armaa_utils {
         List<DamagingProjectileAPI> projs = new ArrayList<>(Global.getCombatEngine().getProjectiles());
 
         for (DamagingProjectileAPI proj : projs) {
-            if(!Global.getCombatEngine().isEntityInPlay(proj))
+            if (!Global.getCombatEngine().isEntityInPlay(proj)) {
                 continue;
+            }
             if (proj.getOwner() == ship.getOwner()) {
                 continue; // Ignore friendly projectiles
             }
@@ -515,6 +516,7 @@ public class armaa_utils {
 
         return accumulator;
     }
+
     public static boolean getWeaponSide(Vector2f center, float facing, Vector2f weaponPosition) {
         // Calculate forward direction vector
         float facingRadians = (float) Math.toRadians(facing);
@@ -532,60 +534,81 @@ public class armaa_utils {
         }
         return false;
     }
-public static float estimateIncomingBeamDamage(ShipAPI ship, float damageWindowSeconds) {
-    CombatEngineAPI engine = Global.getCombatEngine();
-    if (engine == null) return 0f;
 
-    float accumulator = 0f;
-
-    // Snapshot to avoid CME if beams list changes mid-iteration
-    // not sure if this is actually the cause but yolo
-    List<BeamAPI> beams = new ArrayList<>(engine.getBeams());
-    for (BeamAPI beam : beams) {
-        if (beam == null) continue;
-        if (!engine.isEntityInPlay((CombatEntityAPI) beam)) continue; // beams are CombatEntityAPI
-        if (beam.getDamageTarget() != ship) continue;
-
-        WeaponAPI w = beam.getWeapon();
-        if (w == null) continue;
-
-        float dps = w.getDerivedStats().getDamageOver30Sec() / 30f;
-        float emp = w.getDerivedStats().getEmpPerSecond();
-        accumulator += (dps + emp) * damageWindowSeconds;
-    }
-
-    return accumulator;
-}
-public static float estimateIncomingMissileDamage(ShipAPI ship) {
-    CombatEngineAPI engine = Global.getCombatEngine();
-    if (engine == null) return 0f;
-
-    float accumulator = 0f;
-
-    // Snapshot to avoid CME if missiles list changes mid-iteration
-    List<MissileAPI> missiles = new ArrayList<>(engine.getMissiles());
-    for (MissileAPI missile : missiles) {
-        if (missile == null) continue;
-        if (!engine.isEntityInPlay(missile)) continue;
-        if (missile.getOwner() == ship.getOwner()) continue; // Ignore friendly
-
-        float safeDistance = SAFE_DISTANCE + ship.getCollisionRadius();
-        float threat = missile.getDamageAmount() + missile.getEmpAmount();
-
-        ShieldAPI sh = ship.getShield();
-        if (sh != null && sh.isOn() && sh.isWithinArc(missile.getLocation())) {
-            continue;
+    public static float estimateIncomingBeamDamage(ShipAPI ship, float damageWindowSeconds) {
+        CombatEngineAPI engine = Global.getCombatEngine();
+        if (engine == null) {
+            return 0f;
         }
 
-        float dist = MathUtils.getDistance(missile, ship);
-        float t = 1f - dist / safeDistance;
-        if (t <= 0f) continue;
+        float accumulator = 0f;
 
-        accumulator += threat * (t * t);
+        // Snapshot to avoid CME if beams list changes mid-iteration
+        // not sure if this is actually the cause but yolo
+        List<BeamAPI> beams = new ArrayList<>(engine.getBeams());
+        for (BeamAPI beam : beams) {
+            if (beam == null) {
+                continue;
+            }
+            if (!engine.isEntityInPlay((CombatEntityAPI) beam)) {
+                continue; // beams are CombatEntityAPI
+            }
+            if (beam.getDamageTarget() != ship) {
+                continue;
+            }
+
+            WeaponAPI w = beam.getWeapon();
+            if (w == null) {
+                continue;
+            }
+
+            float dps = w.getDerivedStats().getDamageOver30Sec() / 30f;
+            float emp = w.getDerivedStats().getEmpPerSecond();
+            accumulator += (dps + emp) * damageWindowSeconds;
+        }
+
+        return accumulator;
     }
 
-    return accumulator;
-}
+    public static float estimateIncomingMissileDamage(ShipAPI ship) {
+        CombatEngineAPI engine = Global.getCombatEngine();
+        if (engine == null) {
+            return 0f;
+        }
+
+        float accumulator = 0f;
+
+        // Snapshot to avoid CME if missiles list changes mid-iteration
+        List<MissileAPI> missiles = new ArrayList<>(engine.getMissiles());
+        for (MissileAPI missile : missiles) {
+            if (missile == null) {
+                continue;
+            }
+            if (!engine.isEntityInPlay(missile)) {
+                continue;
+            }
+            if (missile.getOwner() == ship.getOwner()) {
+                continue; // Ignore friendly
+            }
+            float safeDistance = SAFE_DISTANCE + ship.getCollisionRadius();
+            float threat = missile.getDamageAmount() + missile.getEmpAmount();
+
+            ShieldAPI sh = ship.getShield();
+            if (sh != null && sh.isOn() && sh.isWithinArc(missile.getLocation())) {
+                continue;
+            }
+
+            float dist = MathUtils.getDistance(missile, ship);
+            float t = 1f - dist / safeDistance;
+            if (t <= 0f) {
+                continue;
+            }
+
+            accumulator += threat * (t * t);
+        }
+
+        return accumulator;
+    }
 
     public static float getHitChance(DamagingProjectileAPI proj, CombatEntityAPI target) {
         if (proj.getOwner() == target.getOwner()) {
@@ -750,6 +773,10 @@ public static float estimateIncomingMissileDamage(ShipAPI ship) {
     }
 
     public static void makeAfterImages(ShipAPI ship, float AFTERIMAGE_THRESHOLD, float amount) {
+        makeAfterImages(ship, AFTERIMAGE_THRESHOLD, amount, new Color(100, 255, 150, 185));
+    }
+
+    public static void makeAfterImages(ShipAPI ship, float AFTERIMAGE_THRESHOLD, float amount, Color tint) {
         //afterimage shit from tahlan
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerNullerID", -1);
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerID",
@@ -786,7 +813,7 @@ public static float estimateIncomingMissileDamage(ShipAPI ship) {
                                 new Vector2f(0, 0),
                                 ship.getFacing() - 90f,
                                 0f,
-                                new Color(100, 255, 150, 185),
+                                tint,
                                 true,
                                 0f,
                                 0f,
@@ -794,8 +821,8 @@ public static float estimateIncomingMissileDamage(ShipAPI ship) {
                                 0f,
                                 0f,
                                 0.1f,
-                                0.1f,
-                                0.3f,
+                                0.5f,
+                                0.5f,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER);
                     } else {
                         if (w.getAnimation() != null) {
@@ -814,16 +841,16 @@ public static float estimateIncomingMissileDamage(ShipAPI ship) {
                                     new Vector2f(0, 0),
                                     ship.getFacing() - 90f,
                                     0f,
-                                    new Color(100, 255, 150, 185),
+                                    tint,
                                     true,
                                     0f,
                                     0f,
                                     0f,
                                     0f,
                                     0f,
-                                    0.1f,
-                                    0.1f,
-                                    0.3f,
+                              0.1f,
+                                0.5f,
+                                0.5f,
                                     CombatEngineLayers.BELOW_SHIPS_LAYER);
                         }
                     }
@@ -844,16 +871,16 @@ public static float estimateIncomingMissileDamage(ShipAPI ship) {
                                 new Vector2f(0, 0),
                                 w.getCurrAngle() - 90f,
                                 0f,
-                                new Color(100, 200, 150, 185),
+                                tint,
                                 true,
                                 0f,
                                 0f,
                                 0f,
                                 0f,
                                 0f,
-                                0.1f,
-                                0.1f,
-                                0.3f,
+                              0.1f,
+                                0.5f,
+                                0.5f,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER);
                     }
                 }

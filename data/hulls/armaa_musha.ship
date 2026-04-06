@@ -24,54 +24,72 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "ENERGY",
-      "mount": "HARDPOINT",
-      "arc": 50,
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 45,
       "angle": 0,
-      "locations": [-9, 9],
+      "locations": [0, 2],
       "renderOrderMod": 1000
     },
     {
       "id": "WS0002",
       "size": "SMALL",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HIDDEN",
       "arc": 70,
-      "angle": -10,
-      "locations": [0, -2]
+      "angle": -9.5,
+      "locations": [-9, -1.5]
     },
     {
       "id": "WS0003",
       "size": "SMALL",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HIDDEN",
       "arc": 0,
       "angle": 10,
-      "locations": [0, 2]
+      "locations": [-10, 1.5]
     },
     {
       "id": "WS0004",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "HARDPOINT",
-      "arc": 50,
-      "angle": 0,
-      "locations": [-9, -11],
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -9.5,
+      "locations": [0, -2],
       "renderOrderMod": 1000
     },
     {
       "id": "HEAD",
       "size": "SMALL",
-      "type": "BUILT_IN",
-      "mount": "TURRET",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
       "arc": 360,
-      "angle": -0,
+      "angle": 0,
       "locations": [0, -0]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": -65,
+      "locations": [-14, -8]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": 65,
+      "locations": [-14, 8]
     }
   ],
   "engineSlots": [
     {
-      "location": [-16, -0],
+      "location": [-12, -0],
       "length": 7,
       "width": 7,
       "angle": 180,

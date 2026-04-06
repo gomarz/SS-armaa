@@ -16,7 +16,6 @@ import data.scripts.campaign.intel.armaa_reprisalIntel;
 import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScript {
-    //Logger log = Logger.getLogger(armaa_hyperSpaceImmunity.class.getName());
 
     private IntervalUtil interval = new IntervalUtil(1f, 1f);
     private long days = Global.getSector().getClock().getTimestamp();

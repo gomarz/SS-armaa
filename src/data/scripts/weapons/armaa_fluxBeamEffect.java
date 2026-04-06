@@ -13,6 +13,9 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import org.magiclib.util.MagicRender;
 
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipCommand;
+import com.fs.starfarer.api.combat.ShipwideAIFlags;
 
 public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
 
@@ -30,7 +33,6 @@ public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
     private boolean cooling = false;
     private boolean firing = false;
     private final IntervalUtil interval = new IntervalUtil(0.015f, 0.015f);
-    private final IntervalUtil interval2 = new IntervalUtil(0.075f, 0.075f);
     private float level = 0f;
 
     @Override
@@ -40,6 +42,24 @@ public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
         }
         if (!MagicRender.screenCheck(0.2f, weapon.getLocation())) {
             return;
+        }
+        ShipAPI ship = weapon.getShip();
+        if (ship == null) {
+            return;
+        }
+        
+        if (ship.isFighter()) {
+            if (weapon.isFiring() && weapon.getAmmo() <= 0) {
+                ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
+                ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
+                if(ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.CARRIER_FIGHTER_TARGET))
+                    ship.setShipTarget((ShipAPI)ship.getAIFlags().getCustom(ShipwideAIFlags.AIFlags.CARRIER_FIGHTER_TARGET));
+                if(ship.getShipTarget() != null)
+                {
+                    weapon.setCurrAngle(VectorUtils.getAngle(ship.getLocation(), ship.getShipTarget().getLocation()));
+                    ship.setFacing(weapon.getCurrAngle());
+                }
+            }
         }
         Vector2f origin = new Vector2f(weapon.getLocation());
         Vector2f offset = new Vector2f(TURRET_OFFSET, -0f);
@@ -95,10 +115,7 @@ public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
                                 angle);
 
                         float size = MathUtils.getRandomNumberInRange(CHARGEUP_PARTICLE_SIZE_MIN + 1f, CHARGEUP_PARTICLE_SIZE_MAX + 3f) * weapon.getChargeLevel();
-                        // float angle = MathUtils.getRandomNumberInRange(-0.5f * CHARGEUP_PARTICLE_ANGLE_SPREAD, 0.5f
-                        //       * CHARGEUP_PARTICLE_ANGLE_SPREAD);
-                        // Vector2f particleVelocity = MathUtils.getPointOnCircumference(shipVelocity, speed, angle + shipFacing
-                        //  + 180f);
+
                         engine.addHitParticle(origin, vector, size, CHARGEUP_PARTICLE_BRIGHTNESS * Math.min(
                                 weapon.getChargeLevel() + 0.5f, 1f)
                                 * MathUtils.getRandomNumberInRange(0.75f, 1.25f), CHARGEUP_PARTICLE_DURATION,
@@ -119,9 +136,9 @@ public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
         }
         level = chargeLevel;
     }
-    
-	public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) {
-                Global.getSoundPlayer().playSound("beamchargeM", .95f, 1.05f, weapon.getFirePoint(0), weapon.getShip().getVelocity());		
-	}
+
+    public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) {
+        Global.getSoundPlayer().playSound("beamchargeM", .95f, 1.05f, weapon.getFirePoint(0), weapon.getShip().getVelocity());
+    }
 
 }

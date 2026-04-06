@@ -11,9 +11,9 @@ public class armaa_kshatriyaBinderEffect implements EveryFrameWeaponEffectPlugin
     private float currentRotateR = 0;
     private float sway = 0f;
     private final float maxbinderrotate = 40f;
-    private int numModules = 4;
     public static float SHIELD_BONUS = 5f;
     public boolean init = false;
+
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
 
@@ -26,67 +26,67 @@ public class armaa_kshatriyaBinderEffect implements EveryFrameWeaponEffectPlugin
 
         // Modules
         List<ShipAPI> children = ship.getChildModulesCopy();
+        int numModules = 0;
         if (children != null) {
             for (ShipAPI m : children) {
                 m.ensureClonedStationSlotSpec();
-                if (m.getStationSlot() == null) {
-                    numModules--;
-                    continue;
-                }
-                if(!init)
-                {
-                    m.setHullSize(ShipAPI.HullSize.FRIGATE);
-                    m.resetDefaultAI();;
-                }
-                if (ship.getSystem().isActive()) {
-                    m.useSystem();
-                }
-                if (ship.getFluxTracker().isVenting()) {
-                    m.getFluxTracker().ventFlux();
-                }
-                if (ship.isPullBackFighters() == false) {
-                    m.setPullBackFighters(false);
-                } else {
-                    m.setPullBackFighters(true);
-                }
-                if (ship.getShipTarget() != null) {
-                    m.setShipTarget(ship.getShipTarget());
-                }
-
-                if (m.getLayer() != CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER) {
-                    m.setLayer(CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
-                }
-
-                if (engine.getCustomData().get("" + m.getStationSlot().getId() + "_centerX") == null) {
-                    engine.getCustomData().put("" + m.getStationSlot().getId() + "_centerX", m.getSpriteAPI().getCenterX());
-                }
-                if (engine.getCustomData().get("" + m.getStationSlot().getId() + "_centerY") == null) {
-                    engine.getCustomData().put("" + m.getStationSlot().getId() + "_centerY", m.getSpriteAPI().getCenterY());
-                }
-
-                if (m.getStationSlot().getId().equals("BINDER_01") || m.getStationSlot().getId().equals("BINDER_02")) {
-                    if (!m.getStationSlot().getId().equals("BINDER_01")) {
-                        m.setFacing(m.getFacing() + currentRotateR);
-                    } else {
-                        engine.getCustomData().put(ship.getId() + "_BINDER_01", m);
-                        m.setFacing(m.getFacing() + currentRotateR / 2);
+                if (m.getStationSlot() != null) {
+                    numModules++;
+                    if (!init) {
+                        m.setHullSize(ShipAPI.HullSize.FRIGATE);
+                        m.resetDefaultAI();
+                        m.setHullSize(ShipAPI.HullSize.FIGHTER);
+                        init = true;
                     }
-                } else {
-                    if (!m.getStationSlot().getId().equals("BINDER_04")) {
-                        m.setFacing(m.getFacing() + currentRotateL);;
+                    if (ship.getSystem().isActive()) {
+                        m.useSystem();
+                    }
+                    if (ship.getFluxTracker().isVenting()) {
+                        m.getFluxTracker().ventFlux();
+                    }
+                    if (ship.isPullBackFighters() == false) {
+                        m.setPullBackFighters(false);
                     } else {
-                        engine.getCustomData().put(ship.getId() + "_BINDER_04", m);
-                        m.setFacing(m.getFacing() + currentRotateL / 2);
+                        m.setPullBackFighters(true);
+                    }
+                    if (ship.getShipTarget() != null) {
+                        m.setShipTarget(ship.getShipTarget());
+                    }
+
+                    if (m.getLayer() != CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER) {
+                        m.setLayer(CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
+                    }
+
+                    if (engine.getCustomData().get("" + m.getStationSlot().getId() + "_centerX") == null) {
+                        engine.getCustomData().put("" + m.getStationSlot().getId() + "_centerX", m.getSpriteAPI().getCenterX());
+                    }
+                    if (engine.getCustomData().get("" + m.getStationSlot().getId() + "_centerY") == null) {
+                        engine.getCustomData().put("" + m.getStationSlot().getId() + "_centerY", m.getSpriteAPI().getCenterY());
+                    }
+
+                    if (m.getStationSlot().getId().equals("BINDER_01") || m.getStationSlot().getId().equals("BINDER_02")) {
+                        if (!m.getStationSlot().getId().equals("BINDER_01")) {
+                            m.setFacing(m.getFacing() + currentRotateR);
+                        } else {
+                            engine.getCustomData().put(ship.getId() + "_BINDER_01", m);
+                            m.setFacing(m.getFacing() + currentRotateR / 2);
+                        }
+                    } else {
+                        if (!m.getStationSlot().getId().equals("BINDER_04")) {
+                            m.setFacing(m.getFacing() + currentRotateL);;
+                        } else {
+                            engine.getCustomData().put(ship.getId() + "_BINDER_04", m);
+                            m.setFacing(m.getFacing() + currentRotateL / 2);
+                        }
                     }
                 }
             }
-            init = true;
         }
-        ship.getMutableStats().getShieldDamageTakenMult().modifyMult(ship.getId()+"_binders",1f-SHIELD_BONUS * numModules * 0.01f);
-        
+        ship.getMutableStats().getShieldDamageTakenMult().modifyMult(ship.getId() + "_binders", 1f - SHIELD_BONUS * numModules * 0.01f);
+
     }
-    private void animateBinders()
-    {
+
+    private void animateBinders() {
         float ltarget = 0;
         float rtarget = 0;
 

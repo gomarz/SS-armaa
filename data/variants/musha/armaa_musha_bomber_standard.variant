@@ -1,0 +1,29 @@
+{
+  "variantId": "armaa_musha_bomber_standard",
+  "hullId": "armaa_musha_bomber",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "armaa_ilorin_torso"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "HEAD": "armaa_mushaHead"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

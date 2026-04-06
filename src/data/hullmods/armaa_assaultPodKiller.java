@@ -5,11 +5,13 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.combat.CollisionClass;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.DamageType;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
 public class armaa_assaultPodKiller extends BaseHullMod {
 
@@ -36,6 +38,8 @@ public class armaa_assaultPodKiller extends BaseHullMod {
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+       if(ship.getCollisionClass() != CollisionClass.SHIP)
+           ship.setCollisionClass(CollisionClass.SHIP);
         ship.setHitpoints(ship.getHitpoints() - amount * 6);
         for (ShipAPI target : CombatUtils.getShipsWithinRange(ship.getLocation(), 1000f)) {
             if (ship.getOwner() == target.getOwner()) {
@@ -46,23 +50,10 @@ public class armaa_assaultPodKiller extends BaseHullMod {
         }
         boolean justDie = Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId()) != null;
         IntervalUtil dieTimer = null;
-        /*
-        if (!spawnedPA) {
-            Global.getCombatEngine().getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(true);
 
-            ShipAPI w = Global.getCombatEngine().getFleetManager(ship.getOwner()).spawnShipOrWing("armaa_pa_mid_wing", ship.getLocation(), ship.getFacing());
-            w.setLaunchingShip(ship);
-            for (ShipAPI s : w.getWing().getWingMembers()) {
-                s.setAnimatedLaunch();
-            }
-            spawnedPA = true;
-        }
-        */
         Global.getCombatEngine().getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(false);
         if ((ship.getSharedFighterReplacementRate() < 0.95f || ship.getHullLevel() < 0.50f) && !justDie) {
-            Global.getCombatEngine().getCustomData().put("armaa_killPod_" + ship.getId(), new IntervalUtil(1f, 3f));
-            if(ship.getSystem() != null && ship.getSystem().canBeActivated())
-                ship.useSystem();  
+            Global.getCombatEngine().getCustomData().put("armaa_killPod_" + ship.getId(), new IntervalUtil(0.5f, 0.5f));
         } else if (justDie) {
             dieTimer = (IntervalUtil) Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId());
             dieTimer.advance(amount);
@@ -76,6 +67,25 @@ public class armaa_assaultPodKiller extends BaseHullMod {
         }
 
         if (dieTimer != null && dieTimer.intervalElapsed()) {
+            DamagingExplosionSpec boom = new DamagingExplosionSpec(
+                    1f ,
+                    250,
+                    75,
+                    1000f,
+                    500f,
+                    CollisionClass.MISSILE_FF,
+                    CollisionClass.PROJECTILE_FIGHTER,
+                    5,
+                    10,
+                    5,
+                    50,
+                    Color.yellow,
+                    Color.yellow
+            );
+            boom.setDamageType(DamageType.ENERGY);
+            boom.setShowGraphic(false);
+            boom.setSoundSetId("mine_explosion");
+            Global.getCombatEngine().spawnDamagingExplosion(boom, ship, ship.getLocation(), false);            
             Global.getCombatEngine().applyDamage(ship, ship.getLocation(), 100000f, DamageType.ENERGY, 0f, true, false, ship, false);
         }
         if (Global.getCombatEngine().isCombatOver() || Global.getCombatEngine().getFleetManager(0).getTaskManager(false).isInFullRetreat() || Global.getCombatEngine().isEnemyInFullRetreat()) {

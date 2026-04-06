@@ -12,7 +12,8 @@
   "shieldRadius": 50,
   "viewOffset": 0,
   "builtInMods": [
-    "novent"
+    "novent",
+    "ablative_armor"
   ],
   "builtInWeapons": {
     "WS0001": "armaa_shield_controller"

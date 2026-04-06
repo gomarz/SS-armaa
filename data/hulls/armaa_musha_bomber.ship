@@ -1,0 +1,104 @@
+{
+  "hullName": "Musha M2",
+  "hullId": "armaa_musha_bomber",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/musha/armaa_musha_ex.png",
+  "style": "LOW_TECH",
+  "height": 42,
+  "width": 34,
+  "center": [17, 23.5],
+  "collisionRadius": 44.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 43.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "cataphract"
+  ],
+  "builtInWeapons": {
+    "HEAD": "armaa_mushaHead",
+    "WS0003": "armaa_musha_leftPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": 0,
+      "locations": [-9, 9],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": 0,
+      "locations": [-1, -13]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 10,
+      "locations": [0, 1]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": 0,
+      "locations": [-9, -10],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [0, 3]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": -65,
+      "locations": [-14, -8]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 50,
+      "angle": 65,
+      "locations": [-14, 8]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-16, -0],
+      "length": 7,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    14, -4.5,
+    -11, -9,
+    -10.5, 9,
+    15, 5
+  ]
+}

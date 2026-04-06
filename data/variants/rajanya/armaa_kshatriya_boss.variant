@@ -1,0 +1,65 @@
+{
+  "variantId": "armaa_kshatriya_boss",
+  "hullId": "armaa_kshatriya",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "armaa_sykoStims",
+    "armaa_himac"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "vpdriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "armaa_kshatriya_torso_chaosburst",
+        "WS0005": "armaa_kshatriya_torso_chaosburst"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "riftlance",
+        "WS0002": "riftlance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+    {
+      "BINDER_01": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_02": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_03": "armaa_kshatriya_binder_variant"
+    },
+    {
+      "BINDER_04": "armaa_kshatriya_binder_variant"
+    }
+  ],
+  "wings": []
+}

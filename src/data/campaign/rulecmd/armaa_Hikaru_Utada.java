@@ -61,6 +61,14 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                 }
             }
         }
+        if ("findGuarDUAL".equals(action)) {
+            for (FleetMemberAPI member : pf.getFleetData().getMembersListCopy()) {
+                if (member.getHullSpec().getBaseHullId().equals("armaa_guardual") || member.getHullSpec().getHullId().equals("armaa_guardual")) {
+                    memory.set("$foundGuardualName", member.getShipName(), 1f);
+                    return true;
+                }
+            }
+        }
         if ("gameOver".equals(action)) {
             Global.getSector().getCampaignUI().cmdExitWithoutSaving();
         }
@@ -167,11 +175,19 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             memory.set("$armaa_giftMech", member, 1f);
 
             return true;
-        } else if ("giveKshatriya".equals(action)) {
-            String variantId = "armaa_kshatriya_Hull";
+
+        } else if ("giveBellator".equals(action)) {
+            String variantId = "armaa_bellator_Hull";
             ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
             FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
+            memory.set("$armaa_giftMech", member, 1f);
 
+            return true;
+        } else if ("giveKshatriya".equals(action)) {
+            String variantId = "armaa_kshatriya_boss";
+            ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
+            FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
+            member.getRepairTracker().applyCREvent(-100f, "Destroyed in battle");
             memory.set("$armaa_giftMech", member, 1f);
 
             return true;
@@ -183,7 +199,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             memory.set("$armaa_giftCeylong", member, 1f);
 
             return true;
-        }  else if ("addIntel".equals(action)) {
+        } else if ("addIntel".equals(action)) {
             SectorEntityToken entity = dialog.getInteractionTarget();
             if (params.size() > 1) {
                 String id = params.get(1).getString(memoryMap);
@@ -291,7 +307,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                 }
             }
         } else if ("AddATACIntel".equals(action)) {
-
+            armaa_combatDataEventIntel foo = new armaa_combatDataEventIntel(dialog.getTextPanel(), true);
             return true;
         } else if ("setJeniusOwner".equals(action)) {
             SectorEntityToken jenius = Global.getSector().getEntityById("nekki1");
@@ -375,27 +391,41 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                 }
             }
             gravion.getContainingLocation().removeEntity(gravion);
-            Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
-            gravion.setLocation(Global.getSector().getEntityById("magec_gate").getLocation().x, Global.getSector().getEntityById("magec_gate").getLocation().y);
-            gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(), 90, 9000, 365);
+            gravion.getContainingLocation().removeEntity(gravion.getContainingLocation().getEntityById("armaa_nekki_field"));
+            SectorEntityToken research_station = magec_gate.getContainingLocation().addCustomEntity("armaa_gravion_station", "Abandoned Research Station", "station_side07", "neutral");
+            research_station.setCircularOrbitPointingDown(magec_gate, 90, 50, 25);
+            research_station.setCustomDescriptionId("armaa_station_research");
+            research_station.setInteractionImage("illustrations", "abandoned_station");
+            research_station.setId("armaa_gravion_station");
+            Misc.makeImportant(research_station, "plot");
+            //Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
+            //gravion.setLocation(Global.getSector().getEntityById("magec_gate").getLocation().x, Global.getSector().getEntityById("magec_gate").getLocation().y);
+            //gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(), 90, 9000, 365);
             for (SectorEntityToken token : Global.getSector().getHyperspace().getEntitiesWithTag("jump_point")) {
                 if (token.getName().contains("Gravion")) {
                     Global.getSector().getHyperspace().removeEntity(token);
                     Global.getSector().getCampaignUI().addMessage(token.getName() + "", Misc.getNegativeHighlightColor());
                 }
             }
-        }
-        else if ("getShipDummy".equals(action))
-        {
+        } else if ("expireToken".equals(action)) {
             String id = params.get(1).getString(memoryMap);
-            if(id == null) return false;
-            
-            FleetMemberAPI  dummy = Global.getFactory().createFleetMember(FleetMemberType.SHIP, Global.getSettings().getVariant("armaa_garegga_tt_carrier_aleste"));
+            if (id == null) {
+                return false;
+            }
+            SectorEntityToken token = Global.getSector().getEntityById(id);
+            token.setExpired(true);
+            return true;
+        } else if ("getShipDummy".equals(action)) {
+            String id = params.get(1).getString(memoryMap);
+            if (id == null) {
+                return false;
+            }
+
+            FleetMemberAPI dummy = Global.getFactory().createFleetMember(FleetMemberType.SHIP, Global.getSettings().getVariant(id));
             dialog.getVisualPanel().showFleetMemberInfo(dummy, true);
             return true;
             // memory.set("$armaa_dummy_ship", dummy);        
-        }
-        else if ("checkKadeOnMarket".equals(action)) {
+        } else if ("checkKadeOnMarket".equals(action)) {
             MarketAPI target = Global.getSector().getEntityById("nekki1").getMarket();
             if (target.getAdmin().getId().equals("armaa_kade")) {
                 return true;

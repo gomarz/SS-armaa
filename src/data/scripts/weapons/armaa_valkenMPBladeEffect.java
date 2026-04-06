@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import org.magiclib.plugins.MagicTrailPlugin;
 import org.magiclib.util.MagicFakeBeam;
 import org.magiclib.util.MagicLensFlare;
 import org.magiclib.util.MagicRender;
@@ -28,7 +27,6 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
     private boolean beamFired;
     private float dir = 1f;
 
-    private float id2;
     private float ogSpikePos = 0f;
     private float ogShoulderPos = 0f;
     private WeaponAPI shoulder;
@@ -36,8 +34,6 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
     private float recoil = 0f;
 
     private final IntervalUtil animInterval = new IntervalUtil(0.012f, 0.012f);
-    private final IntervalUtil trailInterval = new IntervalUtil(0.05f, 0.05f);
-
     // Only way I can think of gating logic so we cant hit stuff while on cooldown
     private IntervalUtil attackDuration = new IntervalUtil(0.8f, 0.8f);
     private boolean canAttack = true;
@@ -73,7 +69,6 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
             if (ship == null) {
                 return;
             }
-            id2 = MagicTrailPlugin.getUniqueID();
             ogSpikePos = weapon.getBarrelSpriteAPI().getCenterY();
 
             for (WeaponAPI wep : ship.getAllWeapons()) {
@@ -204,7 +199,6 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
                 && !attackDuration.intervalElapsed()
                 && canAttack) {
             attackDuration.advance(amount);
-            trailInterval.advance(amount);
 
             MagicFakeBeam.spawnFakeBeam(
                     engine,
@@ -226,31 +220,6 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
             float angDeg = weapon.getCurrAngle();
             Vector2f origin = new Vector2f(weapon.getFirePoint(0));
             Vector2f point = getBeamEndpoint(origin, (float) Math.toRadians(angDeg), weapon.getRange() + 10f);
-
-            if (MagicRender.screenCheck(0.2f, weapon.getFirePoint(0)) && trailInterval.intervalElapsed()) {
-                Vector2f midpoint = new Vector2f(
-                        (weapon.getFirePoint(0).x + point.x) / 2f,
-                        (weapon.getFirePoint(0).y + point.y) / 2f
-                );
-
-                MagicTrailPlugin.addTrailMemberAdvanced(
-                        weapon.getShip(),
-                        id2,
-                        Global.getSettings().getSprite("fx", "beam_trail_cel"),
-                        midpoint,
-                        0f,
-                        0f,
-                        weapon.getCurrAngle() * mult,
-                        0f,
-                        0f,
-                        weapon.getRange() - wepRecoilMax + recoil, weapon.getRange() - wepRecoilMax + recoil,
-                        new Color(1f, 1f, 1f, .2f), new Color(1f, 1f, 1f, .2f), 0.5f,
-                        0f, 0.2f, 0.1f,
-                        true,
-                        256f, 0f, 1f,
-                        null, null, null, 1f
-                );
-            }
 
             for (CombatEntityAPI target : CombatUtils.getEntitiesWithinRange(weapon.getFirePoint(0), weapon.getRange() + 10f)) {
                 // no killing stuff on our side
@@ -278,7 +247,7 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
                 if (target instanceof MissileAPI) {
                     MissileAPI missile = (MissileAPI) target;
                     if (preciseHitCheck(weapon, target) != null) {
-                        MagicLensFlare.createSharpFlare(Global.getCombatEngine(), ship, missile.getLocation(), 1, 75, 0, new Color(50,50,50,50), Color.white);
+                        MagicLensFlare.createSharpFlare(Global.getCombatEngine(), ship, missile.getLocation(), 1, 75, 0, new Color(50, 50, 50, 50), Color.white);
                         engine.applyDamage(missile, missile.getLocation(), weapon.getDamage().getDamage(), weapon.getDamageType(), 0f, false, false, weapon.getShip());
                     }
                     continue;
@@ -302,7 +271,7 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
                     float variance = MathUtils.getRandomNumberInRange(-0.3f, .3f);
                     Global.getSoundPlayer().playSound("armaa_polearm", 1.1f + variance, 1f + variance, point, new Vector2f());
                     MagicLensFlare.createSharpFlare(Global.getCombatEngine(), ship, shieldHit, 3, 100, weapon.getCurrAngle(), Color.white, Color.white);
-                    //dir *= -1f;                    
+                    dir *= -1f;                    
                     continue;
                 }
 
@@ -354,7 +323,7 @@ public class armaa_valkenMPBladeEffect implements EveryFrameWeaponEffectPlugin, 
             canAttack = true;
             attackDuration = new IntervalUtil(1f, 1f);
         }
-        shoulder.getSprite().setCenterY(ogShoulderPos - recoil *0.75f);
+        shoulder.getSprite().setCenterY(ogShoulderPos - recoil * 0.75f);
     }
 
     // ---- helpers ----

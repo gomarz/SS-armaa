@@ -60,21 +60,17 @@ public class armaa_cataphract {
             ShipVariantAPI ship = stats.getVariant();
             boolean hasMechs = false;
             //apparently the list isn't empty even when the carrier has no wings...
-            if (!wings.isEmpty()) 
-            {
+            if (!wings.isEmpty()) {
                 for (int i = 0; i < wings.size(); i++) {
-                    if (ship.getWing(i) != null) 
-                    {
-                        if (ship.getWing(i).getTags().contains("cataphract")) 
-                        {
+                    if (ship.getWing(i) != null) {
+                        if (ship.getWing(i).getTags().contains("cataphract")) {
                             hasMechs = true;
-                            if (!ship.hasHullMod("cataphractBonus")) 
-                            {
+                            if (!ship.hasHullMod("cataphractBonus")) {
                                 ship.addMod("cataphractBonus");
                             }
                         }
                     }
-            }
+                }
 
                 if (!hasMechs) {
 
@@ -82,6 +78,7 @@ public class armaa_cataphract {
                 }
             }
         }
+
         // honestly this probably should be a seperate skill
         // this checks if any strikecraft has automaton pilot
         // but not the automaton hullmod and removes them

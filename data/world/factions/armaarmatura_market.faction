@@ -78,6 +78,7 @@
 				"armaa_einhander",
 				"armaa_altagrave",
 				"armaa_garegga",
+				"armaa_viator",
 				"armaa_garegga_tt",
 				"armaa_aleste_frig",
 				"armaa_leynos_frig",
@@ -130,11 +131,11 @@
 	"knownFighters":{
 		"tags":["armaa_cataphract_bp","armaa_advcataphract_bp"],
 			"fighters":[
-			"armaa_gallant_wing",
 			"armaa_prodromos_wing",
 			"armaa_valkenmp_wing",
 			"armaa_record_wing",
 			"armaa_musha_wing",
+			"armaa_musha_bomber_wing",
 			"armaa_musham3_wing",
 			],
 	},

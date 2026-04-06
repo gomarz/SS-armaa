@@ -1,7 +1,12 @@
 V3.2.6
 ------
 - Fixed armaa_anime portraits for Kade, Imelda, Deadeye not appearing
+- Fixed corsair xiv standard variant being under OP
+- Fixed valkazard standard variant being over OP
+- lowered bg rotation / scroll speed
 - Fixed second Valkazard being spawned at the end of Descent if started with it
+- Made it more clear that while possible, full armaa ships composition is not the intended playstyle
+- Made it more abundantly clear the main quest doesn't end after the 2 jenius battles
 - Add specification on what tool was used for AI generated art
 - fixed CTD caused by not having LunaLib
 - fixed CTD caused by unused var
@@ -10,15 +15,14 @@ V3.2.6
 - fixed ships with independent_of_carrier tag not being able to move in campaign map if no other ships were present
 - fixed submarkets not properly being transferred on Jenius post CoC
 - Fixed compound units detached ship not being set as the last ship player transferred to
-- fixed bug where Juno III would continuously play chargeup sound,OP 16->13, range 1000->800
+- fixed bug where Juno III would continuously play chargeup sound
 - lowered quality of some backgrounds to trim file size
 - Valk III retrieval is now a selectable dialog option that appears once conditions are met
 - Fixed bug where Jangala shrine scene with Dawn could be missed since LPP hadn't "started" yet
-
 - Added a bit more clarification on fleet size requirements for Crown of Cinders
 	- Added slightly alternate dialogue with Imelda if player is friendly to the Path
 - Achievements - Defeat Ceylon before it retreats, Visit all shrines with Dawn, Lose Dawn, Join ATAC, Get Valkazard
-- Added extra conditional to "Ace" skill to prevent Dawn voicelines from playing
+- Added extra conditional to "Ace" skill to prevent Dawn voice lines from playing
 - Added floaty text when reinforcements appear during Crown of Cinders
 - New Meshan AA market should offer more AA specific ships
 - Added an industry on New Meshan that spawns fleets using mostly AA gear
@@ -32,12 +36,41 @@ V3.2.6
 - added minor permutations to valkazard turn-in event if Homecoming is completed beforehand
 - Added alternate event if player completely loses against TT fleet at Valkazard start
 - Removed Guppy wing
+- Removed Gallant wing
+- Removed Valken(P) wing
 - Increased armor for VX Custom and Aleste by 50, Leynos, Spriggan Powered, and Kouto ECM by 100
+- Slightly reduce max turn rate / accel across the board for cataphracts
+- Revised some mission battles
 
 - WINGCOM
-	- DP increased based on fighter OP cost
+	- DP of unit with hullmod now increased based on fighter OP cost
+
+- Strikecraft
+	- Repairs
+		- Repairs are now finite
+		- Each unit has a static, non replenishable repair pool per engagement (50 by default)
+		- When landing after incurring dadmage, DP*hullLevel is deducted from this pool
+		- Once exhausted, repairs cannot be made, but CR / AMMO can still be recovered
+		- Can be toggled back to infinite repair by LL
+	- Deployment
+		- Added slight delay to Strikecraft launching from carriers initially
+		- Removed cap to number of Strikecraft that can launch from carriers on deployment
 - Ceylon
 	- Fixed AI only using system at minimum range
+
+- Cataphract S-II
+	- S-Mod Bonus varies based on unit being piloted by an officer
+		- Officer Bonus:
+			- Increases damage to Cruisers / Capitals by up to 10% / 20% based on pilot level
+			- Increases Flux dissipation, turning rate, and autofire accuracy by 2% per level
+			- Increases DP Cost
+		- Non Officer Bonus:
+			- DP cost reduced by 20% (up to 10 points)
+			- 50% reduced chance to acquire D Mods
+			- +10% combat readiness
+		- When below 35% hull, gain +25% speed / maneuverability and +25% weapon flux cost for 5s.
+		
+		
 
 - Watchdog
 	- Improved(?) AI
@@ -63,17 +96,26 @@ V3.2.6
 	- Increase spawn rate of drones during first mission
 	- Revised some fx
 
+- Descent
+	- Rajanya will now appear during this mission
+	- Revised some fx
+
 - Removed Leynos (RS)
 
 - Aleste (Wing)
 	- Wing Size: 2->1
-	- Speed: 150->180
+	- Speed: 150->125
+	- Laser Blade
+		- Damage: 1800-> 1000
+		- EMP Damage: 0 -> 400
+	- Ship System: Claw Drone -> Plasma Jets
+	- Replacement Rate: 20->25
 - Aleste
 	- script perf enhancements
 	- Laser Blade
-		- Damage: 1800 -> 1400
+		- Damage: 1800 -> 1000
+		- EMP Damage: 0 -> 400
 	- Fixed head using needler sounds and projectiles instead of Vulcan
-	- Armor: 225->200
 	- Speed: 180->150
 	- Ship System: Fuller Auto -> Plasma Jets
 
@@ -117,13 +159,12 @@ V3.2.6
 			- Completed Descent
 			- Reached Level 15
 - VX Custom
-	- 
+	- Ship System: Mjets -> Fuller Auto
 
 - Panther (XIV) -> Caracal
 	- Phase Cloak -> Havoc Drive
 	- DP: 8->10
 	- Shield
-		- ..also has a shield
 		- EMP Emitter -> Flare Launcher
 
 - New unit: Ashura
@@ -133,14 +174,15 @@ V3.2.6
 
 - New unit: Panther
 	- Same slots as Panther(XIV), but energy-oriented
-	- DP: 13
+	- DP: 15
 	- System: Mirage Shroud
 		- Creates two duplicates that have 25% of the originals HP/Armor for 6 seconds
 		- Copies only deal 40% of the original's damage
 		- Player can cancel the system early to swap positions with one of the clones
-- New ship: Viator
 
-- New ship: Bellator
+- New ship: Viator (Thanks Selkie!)
+
+- New ship: Bellator (Thanks Selkie!)
 
 - Zanac:
 	- Ship System: Booster -> Displacer (Standard)
@@ -148,6 +190,11 @@ V3.2.6
 	- Shield Arc: 300->120
 	- Shield Type: FRONT->OMNI
 	- Shield Efficiency: 0.80->0.75
+
+- Juno Mk. II
+	- OP 16->13 
+	- range 1000->800
+
 
 V3.2.5.1
 ------

@@ -15,8 +15,6 @@
     0,
     0
   ],
-  "specialWeaponGlowHeight": 0,
-  "specialWeaponGlowWidth": 0,
   "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
@@ -25,7 +23,7 @@
     49,
     -15.5,
     49,
-    -8.5,
+    -10,
     49,
     -13.5
   ],
@@ -45,7 +43,7 @@
   "frameRate": 0,
   "fringeColor": [
     255,
-   155,
+    155,
     155,
     0
   ],

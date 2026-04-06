@@ -10,7 +10,6 @@ import java.util.List;
 
 public class armaa_valkazardListener extends BaseCampaignEventListenerAndScript {
 
-    private long days;
 
     public armaa_valkazardListener() {
 

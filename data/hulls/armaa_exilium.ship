@@ -1,0 +1,277 @@
+{
+  "hullName": "Exilium",
+  "hullId": "armaa_exilium",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/armaa/ships/caymon/armaa_cpp_caymon.png",
+  "style": "MIDLINE",
+  "coversColor": "255,255,255,255",
+  "height": 248,
+  "width": 133,
+  "center": [61, 123],
+  "collisionRadius": 167,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 158,
+  "viewOffset": 0,
+  "builtInMods": [
+    "missile_autoloader",
+    "defensive_targeting_array",
+    "ground_support",
+    "armaa_serviceBays"
+  ],
+  "builtInWings": [
+    "armaa_musham3_wing"
+  ],
+  "builtInWeapons": {
+    "DECO": "armaa_caymon_deco",
+    "POD": "dragonpod",
+    "WS0010": "armaa_deco_valkyrie"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 005",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 0,
+      "locations": [52.5, -15]
+    },
+    {
+      "id": "WS 008",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [
+        34.5, -39,
+        17.5, -43,
+        -0.5, -43,
+        -19.5, -38
+      ]
+    },
+    {
+      "id": "WS 009",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 155,
+      "locations": [-99, 29]
+    },
+    {
+      "id": "WS 010",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 205,
+      "locations": [-99, -29]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [1, 36]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [80, 26]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [80, -27]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 0,
+      "locations": [34, 31]
+    },
+    {
+      "id": "POD",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [88.5, 0],
+      "renderOrderMod": 300
+    },
+    {
+      "id": "DECO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [95.5, -0],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 205,
+      "locations": [-47, -48]
+    },
+    {
+      "id": "WS0006",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [-78.5, 55.5],
+      "renderOrderMod": 400
+    },
+    {
+      "id": "WS0007",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [-23.5, 55],
+      "renderOrderMod": 400
+    },
+    {
+      "id": "WS0008",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": -130,
+      "locations": [-81, -58.5],
+      "renderOrderMod": 400
+    },
+    {
+      "id": "WS0009",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [110.5, 0]
+    },
+    {
+      "id": "WS0010",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 190,
+      "angle": 90,
+      "locations": [5, -0.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-122, 43],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-121, 35],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-120, 23],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-119, 13],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-119, -14],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-120, -25],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-121, -36],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-122, -45],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    125, -0,
+    124, 19,
+    86, 23,
+    86, 31,
+    34, 42,
+    12, 54,
+    -62.5, 59,
+    -65, 54.5,
+    -115.5, 51.5,
+    -123, 46,
+    -120, 9,
+    -86, 7.5,
+    -86, -9.5,
+    -120, -11,
+    -123, -49,
+    -116.5, -53.5,
+    -91.5, -53,
+    -69, -68.5,
+    -1.5, -55,
+    49.5, -52,
+    56.5, -32,
+    84, -32.5,
+    84, -23,
+    124, -19
+  ]
+}

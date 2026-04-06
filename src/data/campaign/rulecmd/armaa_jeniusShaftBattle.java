@@ -8,9 +8,9 @@ import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogPlugin;
 import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.DataForEncounterSide;
-import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.FleetMemberData;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
+import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 
@@ -25,21 +25,21 @@ import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Drops;
-import com.fs.starfarer.api.impl.campaign.ids.Tags;
-import com.fs.starfarer.api.loading.WeaponSpecAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.procgen.SalvageEntityGenDataSpec.DropData;
 import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
+import com.fs.starfarer.api.impl.campaign.ids.Abilities;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
+
+import org.magiclib.util.MagicCampaign;
 
 public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
 
@@ -53,9 +53,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                 removedShips.add(member);
                 crew += member.getCrewComposition().getCrewInt();
                 Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_" + member.getId(), crew);
-            }
-            else
-            {
+            } else {
                 continue;
             }
         }
@@ -65,7 +63,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                 "armaarmatura_arusthai",
                 null,
                 FleetTypes.PATROL_SMALL,
-                Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() * 1.1f, // combatPts
+                Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() * 0.85f, // combatPts
                 0f, // freighterPts 
                 0f, // tankerPts
                 0f, // transportPts
@@ -75,9 +73,6 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         );
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
         FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet, fparams, new Random());
-        enemyFleet.getFleetData().addFleetMember("armaa_viator_variant");
-        enemyFleet.getFleetData().addFleetMember("armaa_viator_variant");
-        enemyFleet.getFleetData().addFleetMember("armaa_viator_variant");
         //FleetFactoryV3.applyDamageToFleet(enemyFleet, 0.50f, true, new Random());
         final SectorEntityToken entity = dialog.getInteractionTarget();
         Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.REMNANTS, 1f, 100, 200));
@@ -181,7 +176,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                         member.getCrewComposition().setCrew(crew);
                     }
                 }
-                Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");
+                Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");   
             }
 
             @Override
@@ -200,68 +195,11 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                     return;
                 }
 
-                float playerContribMult = context.computePlayerContribFraction();
-
                 List<DropData> dropRandom = new ArrayList<DropData>();
                 List<DropData> dropValue = new ArrayList<DropData>();
 
                 float valueMultFleet = Global.getSector().getPlayerFleet().getStats().getDynamic().getValue(Stats.BATTLE_SALVAGE_MULT_FLEET);
                 float valueModShips = context.getSalvageValueModPlayerShips();
-
-                for (FleetMemberData data : winner.getEnemyCasualties()) {
-                    // add at least one of each weapon that was present on the OMEGA ships, since these
-                    // are hard to get; don't want them to be too RNG
-                    if (data.getMember() != null && context.getBattle() != null) {
-                        CampaignFleetAPI fleet = context.getBattle().getSourceFleet(data.getMember());
-
-                        if (fleet != null && fleet.getFaction().getId().equals(Factions.OMEGA)) {
-                            for (String slotId : data.getMember().getVariant().getNonBuiltInWeaponSlots()) {
-                                String weaponId = data.getMember().getVariant().getWeaponId(slotId);
-                                if (weaponId == null) {
-                                    continue;
-                                }
-                                if (salvage.getNumWeapons(weaponId) <= 0) {
-                                    WeaponSpecAPI spec = Global.getSettings().getWeaponSpec(weaponId);
-                                    if (spec.hasTag(Tags.NO_DROP)) {
-                                        continue;
-                                    }
-
-                                    salvage.addWeapons(weaponId, 1);
-                                }
-                            }
-                        }
-
-                        if (fleet != null
-                                && fleet.getFaction().getCustomBoolean(Factions.CUSTOM_NO_AI_CORES_FROM_AUTOMATED_DEFENSES)) {
-                            continue;
-                        }
-                    }
-                    if (config.salvageRandom.nextFloat() < playerContribMult) {
-                        DropData drop = new DropData();
-                        drop.chances = 1;
-                        drop.value = -1;
-                        switch (data.getMember().getHullSpec().getHullSize()) {
-                            case CAPITAL_SHIP:
-                                drop.group = Drops.AI_CORES3;
-                                drop.chances = 2;
-                                break;
-                            case CRUISER:
-                                drop.group = Drops.AI_CORES3;
-                                break;
-                            case DESTROYER:
-                                drop.group = Drops.AI_CORES2;
-                                break;
-                            case FIGHTER:
-                            case FRIGATE:
-                                drop.group = Drops.AI_CORES1;
-                                break;
-                        }
-                        if (drop.group != null) {
-                            dropRandom.add(drop);
-                        }
-                    }
-                }
-
                 float fuelMult = Global.getSector().getPlayerFleet().getStats().getDynamic().getValue(Stats.FUEL_SALVAGE_VALUE_MULT_FLEET);
                 //float fuel = salvage.getFuel();
                 //salvage.addFuel((int) Math.round(fuel * fuelMult));

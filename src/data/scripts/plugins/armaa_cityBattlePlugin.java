@@ -17,8 +17,9 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.dweller.WarpingSpriteRendererUtilV2;
-import com.fs.starfarer.api.mission.FleetSide;
 import org.lazywizard.lazylib.MathUtils;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL14;
 
 public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
@@ -29,10 +30,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
     private final IntervalUtil cloudInterval2 = new IntervalUtil(1f, 1f);
     private final IntervalUtil interval2 = new IntervalUtil(1f, 3f);
     private final IntervalUtil interval3 = new IntervalUtil(5f, 5f);
-    private final IntervalUtil spinInterval = new IntervalUtil(0.08f, 0.08f);
 
     private float ratio = 0f;
-    private float spin = 0f;
 
     public final static Map MANUVER_MALUS = new HashMap();
     boolean reinforcementsTriggered = false, wave2Triggered = false, timeUp = false;
@@ -53,8 +52,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
     private float phaseElapsed = 0f;
 // battlespace conveyor sizing
     // Ratio triggers (ratio = elapsedInContactWithEnemy / 100)
-    private static final float RATIO_START_TRANS = 0.35f;
-    private static final float RATIO_START_CITY = 1f;
+    private static final float RATIO_START_TRANS = 0.5f;
+    private static final float RATIO_START_CITY = 1.5f;
     // Durations
 
     private static final float DUR_CITY_DROP = 2f;
@@ -62,14 +61,13 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
     // City spin
     private float citySpin = 0f;
     private float citySpinVel = 0f;
-    private static final float CITY_SPIN_ACCEL = 0.20f;
-    private static final float CITY_SPIN_MAX_VEL = 0.35f;
+    private static final float CITY_SPIN_ACCEL = 0.10f;
+    private static final float CITY_SPIN_MAX_VEL = 0.15f;
     // --- scrolling state (tile conveyor) ---
     private String bgCurr;
     private String bgNext;
 // Scroll timing: one full tile passes in this many seconds
-    private static final float SECONDS_PER_TILE = 10f;
-    private SpriteAPI oceanSpr;
+    private static final float SECONDS_PER_TILE = 15f;
 // 0..1 progress through the current tile (fractional scroll)
     private float bgScrollFrac = 0f;
 // one-shot transition control
@@ -91,6 +89,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         MANUVER_MALUS.put(HullSize.CAPITAL_SHIP, 0.40f);
     }
     private WarpingSpriteRendererUtilV2 ocean;
+    private OceanWarpRenderer foam;
 
     public Color shiftColor(Color start, Color end) {
         int steps = 100;
@@ -113,9 +112,22 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         }
 
         if (!reinforcementsTriggered) {
-            engine.setHyperspaceMode();
+            SpriteAPI oceanSpr = Global.getSettings().getSprite("misc", SPR_OCEAN);
+            oceanSpr.setSize(oceanSpr.getWidth(), oceanSpr.getHeight());
+            oceanSpr.setCenter(oceanSpr.getWidth() / 2f, oceanSpr.getHeight() / 2f);
+
+            SpriteAPI foamSpr = Global.getSettings().getSprite("misc", "slipstream_edge33");
+            foamSpr.setSize(foamSpr.getWidth(), foamSpr.getHeight());
+            foamSpr.setCenter(foamSpr.getWidth() / 2f, foamSpr.getHeight() / 2f);
+            SpriteAPI depthSpr = Global.getSettings().getSprite("misc", "slipstream2");
+            CombatEntityAPI e = Global.getCombatEngine().addLayeredRenderingPlugin(new OceanBackgroundPlugin(oceanSpr, foamSpr, depthSpr));
+            e.getLocation().set(engine.getViewport().getCenter());
             oceanSpr = Global.getSettings().getSprite("misc", SPR_OCEAN);
-            ocean = new WarpingSpriteRendererUtilV2(oceanSpr, 10, 10, 10f, 15f, 1f);
+            float width = oceanSpr.getWidth();   // or * some scale factor
+            float height = oceanSpr.getHeight();
+            float warpAmt = width * 0.04f;       // 4% of width, same as the source
+            oceanSpr.setCenter(width / 2f, height / 2f);  // ← THE MISSING PIECE
+            ocean = new WarpingSpriteRendererUtilV2(oceanSpr, 10, 10, warpAmt, warpAmt * 1.4f, 1f);
             engine.setBackgroundGlowColor(shiftColor(new Color(50, 50, 50, 80), new Color(75, 50, 0, 25)));
             engine.getFleetManager(0).setSuppressDeploymentMessages(true);
             Global.getSoundPlayer().playCustomMusic(1, 1, "music_armaa_citybattle", true);
@@ -244,11 +256,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
             cloudInterval.advance(amount);
             cloudInterval2.advance(amount);
-            spinInterval.advance(amount);
-            if (spinInterval.intervalElapsed()) {
-                spin++;
-            }
-
             // Clouds
             if (cloudInterval.intervalElapsed() && (ratio >= .01f && ratio < 0.80f || ratio > 1f)) {
                 float xVel = (float) (MathUtils.getRandomNumberInRange(-100, 100));
@@ -286,11 +293,11 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                             CombatEngineLayers.ABOVE_SHIPS_LAYER
                     );
                 }
-            } else if (ratio >= .8f && ratio <= 1f) {
+            } else if (ratio >= 1.3f && ratio <= 1.6f) {
                 float r = ratio;
                 // start introducing clouds earlier
-                float start = 0.80f;
-                float full = 0.90f;
+                float start = 1.3f;
+                float full = 1.5f;
 
                 // 0 at 0.80, 1 at 0.90+
                 float t = Math.max(0f, Math.min(1f, (r - start) / (full - start)));
@@ -322,7 +329,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                                 CombatEngineLayers.ABOVE_SHIPS_LAYER
                         );
                         cloudSize = 6000f * t;
-                        Color cloudColor = ratio > 0.90f ? new Color(200f / 255f, 1f, 1f, 1f * t) : new Color(115f / 255f, 157f / 255f, 240f / 255f, 1f * t);
+                        Color cloudColor = ratio > 1.5f ? new Color(200f / 255f, 1f, 1f, 1f * t) : new Color((115f / 255f), (157f / 255f), 240f / 255f, 1f * t);
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud2"),
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX),
@@ -582,8 +589,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         s1 = Math.max(s1, minCover);
 
         Vector2f bgsize = new Vector2f(s1, s1);
-        WarpingSpriteRendererUtilV2 ocean = new WarpingSpriteRendererUtilV2(Global.getSettings().getSprite("misc", spriteKey), 500, 500, 10f, 500f, 1f);
-        ocean.renderAtCenter(engine.getViewport().getCenter().x, engine.getViewport().getCenter().y);
 
         MagicRender.screenspace(
                 Global.getSettings().getSprite("misc", spriteKey),
@@ -717,20 +722,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             s1 = Math.max(s1, minCover);
 
             Vector2f bgsize = new Vector2f(s1, s1);
-            MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "slipstream_edge33"),
-                    MagicRender.positioning.CENTER,
-                    new Vector2f((-bgScrollFrac * s1) / 2f, -bgScrollFrac * s1),
-                    new Vector2f(0f, 0f),
-                    bgsize,
-                    new Vector2f(0f, 0f),
-                    0f, 0f,
-                    new Color(200, 255, 255, 100),
-                    false,
-                    0f, 0f, 0f, 0f, 0f, 0f,
-                    -1, 0f,
-                    CombatEngineLayers.CLOUD_LAYER
-            );
             if (Math.random() <= 0.10) {
                 MagicRender.battlespace(
                         Global.getSettings().getSprite("backgrounds", "star2"),
@@ -753,20 +744,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                         CombatEngineLayers.BELOW_SHIPS_LAYER
                 );
             }
-            MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "slipstream_edge33"),
-                    MagicRender.positioning.CENTER,
-                    new Vector2f((-bgScrollFrac * s1 + s1) / 2f, -bgScrollFrac * s1 + s1),
-                    new Vector2f(0f, 0f),
-                    bgsize,
-                    new Vector2f(0f, 0f),
-                    0f, 0f,
-                    new Color(200, 255, 255, 100),
-                    false,
-                    0f, 0f, 0f, 0f, 0f, 0f,
-                    -1, 0f,
-                    CombatEngineLayers.CLOUD_LAYER
-            );
             MagicRender.screenspace(
                     Global.getSettings().getSprite("misc", "slipstream_edge2"),
                     MagicRender.positioning.CENTER,
@@ -823,13 +800,13 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
     }
 
     private void renderBattlespaceSquare(String spriteKey, Vector2f center, float yOffset, float size, float angle, Color color) {
+        if (bgCurr == SPR_OCEAN) {
+            return;
+        }
         Vector2f loc = new Vector2f(center.x, center.y + yOffset);
-        //Vector2f bgsize = new Vector2f(s1, s1);
-        //ocean.renderAtCenter(engine.getViewport().getCenter().x, engine.getViewport().getCenter().y);
-
         SpriteAPI spr = Global.getSettings().getSprite("misc", spriteKey);
         MagicRender.battlespace(
-                oceanSpr,
+                spr,
                 loc,
                 new Vector2f(0f, 0f), // vel (we control motion via yOffset/bgScroll)
                 new Vector2f(size, size), // size in WORLD units
@@ -844,8 +821,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 0f, // fadeout
                 CombatEngineLayers.CLOUD_LAYER
         );
-        ocean.advance(engine.getElapsedInLastFrame());
-        //ocean.renderAtCenter(engine.getViewport().getCenter().x, engine.getViewport().getCenter().y);
     }
 
     private Color tintForSprite(String spr, Color cForest, Color cTrans, Color cOcean) {
@@ -878,5 +853,215 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         transArmed = false;
         oceanCommitted = false;
         bgScrollFrac = 0f;
+    }
+
+    public class OceanBackgroundPlugin extends BaseCombatLayeredRenderingPlugin {
+
+        private OceanWarpRenderer ocean;
+        private OceanWarpRenderer foam;
+        private OceanWarpRenderer depth;
+
+        public OceanBackgroundPlugin(SpriteAPI oceanSpr, SpriteAPI foamSpr, SpriteAPI depthSpr) {
+            ocean = new OceanWarpRenderer(oceanSpr);
+            ocean.setWaveParams(100f, 800f, 60f, 20f, 450f, 50f);
+            oceanSpr.setColor(new Color(150, 150, 150, 255));
+            depthSpr.setSize(oceanSpr.getWidth(), oceanSpr.getWidth());
+            depthSpr.setColor(new Color(120, 150, 155, 50)); // blue tint, more visible
+            //depthSpr.setAlphaMult(2f); // punch it up
+            depth = new OceanWarpRenderer(depthSpr);
+            depth.setWaveParams(20f, 1200f, 15f, 10f, 800f, 80f);
+            depth.setScrollSpeed(0.02f, 0.04f);
+            foamSpr.setSize(oceanSpr.getWidth(), oceanSpr.getWidth());
+            foamSpr.setColor(new Color(40, 40, 40, 80)); // dark blue, low opacity
+            foam = new OceanWarpRenderer(foamSpr);
+            foam.setScrollSpeed(0.04f, 0.07f); // barely moves
+            foam.setWaveParams(100f, 800f, 60f, 20f, 450f, 50f);
+            //foam.setWaveParams(20f, 1200f, 15f, 10f, 800f, 20f); // very slow, very large
+        }
+
+        @Override
+        public EnumSet<CombatEngineLayers> getActiveLayers() {
+            return EnumSet.of(CombatEngineLayers.CLOUD_LAYER);
+        }
+
+        @Override
+        public float getRenderRadius() {
+            return Float.MAX_VALUE; // always render
+        }
+
+        @Override
+        public boolean isExpired() {
+            return bgPhase == BgPhase.CITY_DROP;
+        }
+
+        @Override
+        public void advance(float amount) {
+            if (Global.getCombatEngine().isPaused()) {
+                return;
+            }
+            ocean.advance(amount);
+            depth.advance(amount);
+            foam.advance(amount);
+        }
+
+        @Override
+        public void render(CombatEngineLayers layer, ViewportAPI viewport) {
+            if (bgCurr != SPR_OCEAN) {
+                return;
+            }
+            if (layer == CombatEngineLayers.CLOUD_LAYER) {
+                Vector2f center = viewport.getCenter(); // locked to camera
+                ocean.renderAtCenter(center.x, center.y);
+                // Render ship reflections
+                for (ShipAPI ship : Global.getCombatEngine().getShips()) {
+                    if (ship.isHulk()) {
+                        continue;
+                    }
+                    if (!MagicRender.screenCheck(0.1f, ship.getLocation())) {
+                        continue;
+                    }
+
+                    renderShipReflection(ship);
+                }
+                // Set additive blend DIRECTLY via GL before foam renders           
+                GL11.glEnable(GL11.GL_BLEND);
+                GL14.glBlendEquation(GL14.GL_FUNC_ADD);
+                GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
+                depth.renderAtCenter(center.x, center.y);
+                foam.renderAtCenter(center.x, center.y);
+                // Restore normal blend after
+                GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+                GL14.glBlendEquation(GL14.GL_FUNC_ADD);
+            }
+        }
+    }
+
+    private void renderShipReflection(ShipAPI ship) {
+        // Higher altitude feel - reflection is offset and slightly larger
+        float altitude = 200f; // how high above water the ship "is"
+        float sunAngle = 45f;  // light direction in degrees
+        Vector2f sunDir = Misc.getUnitVectorAtDegreeAngle(sunAngle);
+
+        float reflX = ship.getLocation().x + sunDir.x * altitude;
+        float reflY = ship.getLocation().y - sunDir.y * altitude;
+        SpriteAPI reflectionSpr = Global.getSettings().getSprite(ship.getHullSpec().getSpriteName());
+        reflectionSpr.setColor(new Color(0, 0, 25, 75)); // cool blue-white
+        reflectionSpr.setAngle(ship.getFacing() - 90f);
+        reflectionSpr.renderAtCenter(reflX, reflY);
+
+    }
+
+    public class OceanWarpRenderer {
+
+        private SpriteAPI sprite;
+        private float elapsed = 0f;
+
+        // Wave parameters
+        private int cols = 20;  // mesh resolution
+        private int rows = 20;
+        private float waveHeight = 15f;   // vertical displacement
+        private float waveLength = 400f;  // horizontal wave period
+        private float waveSpeed = 80f;    // how fast waves scroll
+        private float waveHeight2 = 8f;   // second wave layer
+        private float waveLength2 = 250f; // different frequency
+        private float waveSpeed2 = 120f;  // different speed
+        private float scrollU = 0f;  // horizontal scroll
+        private float scrollV = 0f;  // vertical scroll
+        private float scrollSpeedU = 0.02f;  // slight right
+        private float scrollSpeedV = 0.06f;  // upward    
+
+        public OceanWarpRenderer(SpriteAPI sprite) {
+            this.sprite = sprite;
+        }
+
+        public void advance(float amount) {
+            elapsed += amount;
+            scrollU += scrollSpeedU * amount;
+            scrollV += scrollSpeedV * amount;
+            // Wrap to avoid float precision issues over long battles
+            if (scrollU > 1f) {
+                scrollU -= 1f;
+            }
+            if (scrollV > 1f) {
+                scrollV -= 1f;
+            }
+        }
+
+        public void setScrollSpeed(float u, float v) {
+            scrollSpeedU = u;
+            scrollSpeedV = v;
+        }
+
+        public void setWaveParams(float h1, float l1, float s1, float h2, float l2, float s2) {
+            waveHeight = h1;
+            waveLength = l1;
+            waveSpeed = s1;
+            waveHeight2 = h2;
+            waveLength2 = l2;
+            waveSpeed2 = s2;
+        }
+
+        public SpriteAPI getSprite() {
+            return sprite;
+        }
+
+        public void renderAtCenter(float cx, float cy) {
+            float w = sprite.getWidth();
+            float h = sprite.getHeight();
+            float left = cx - w / 2f;
+            float top = cy - h / 2f;
+
+            float texW = 1f / cols;
+            float texH = 1f / rows;
+
+            sprite.bindTexture();
+            GL11.glBegin(GL11.GL_QUADS);
+
+            float[] color = sprite.getColor().getRGBComponents(null);
+            GL11.glColor4f(color[0], color[1], color[2], sprite.getAlphaMult());
+
+            for (int row = 0; row < rows; row++) {
+                for (int col = 0; col < cols; col++) {
+                    // Four corners of this quad
+                    float[] xs = {
+                        left + (col) * (w / cols),
+                        left + (col + 1) * (w / cols),
+                        left + (col + 1) * (w / cols),
+                        left + (col) * (w / cols)
+                    };
+                    float[] ys = {
+                        top + (row) * (h / rows),
+                        top + (row) * (h / rows),
+                        top + (row + 1) * (h / rows),
+                        top + (row + 1) * (h / rows)
+                    };
+
+                    // Apply sine displacement to each corner
+                    for (int i = 0; i < 4; i++) {
+                        float wave1 = (float) Math.sin((xs[i] / waveLength) + elapsed * waveSpeed * 0.01f) * waveHeight;
+                        float wave2 = (float) Math.sin((xs[i] / waveLength2) + elapsed * waveSpeed2 * 0.01f + 1.3f) * waveHeight2;
+                        ys[i] += wave1 + wave2;
+
+                        // Add lateral displacement using Y position as input instead of X
+                        float lateral1 = (float) Math.sin((ys[i] / waveLength) + elapsed * waveSpeed * 0.008f + 0.7f) * waveHeight * 0.4f;
+                        float lateral2 = (float) Math.sin((ys[i] / waveLength2) + elapsed * waveSpeed2 * 0.008f + 2.1f) * waveHeight2 * 0.4f;
+                        xs[i] += lateral1 + lateral2;
+                    }
+
+                    // Emit quad
+                    GL11.glTexCoord2f((col) * texW + scrollU, (row) * texH + scrollV);
+                    GL11.glVertex2f(xs[0], ys[0]);
+                    GL11.glTexCoord2f((col + 1) * texW + scrollU, (row) * texH + scrollV);
+                    GL11.glVertex2f(xs[1], ys[1]);
+                    GL11.glTexCoord2f((col + 1) * texW + scrollU, (row + 1) * texH + scrollV);
+                    GL11.glVertex2f(xs[2], ys[2]);
+                    GL11.glTexCoord2f((col) * texW + scrollU, (row + 1) * texH + scrollV);
+                    GL11.glVertex2f(xs[3], ys[3]);
+
+                }
+            }
+
+            GL11.glEnd();
+        }
     }
 }

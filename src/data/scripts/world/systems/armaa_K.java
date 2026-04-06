@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 import static com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.DebrisFieldParams;
 import static com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.DebrisFieldSource;
+import data.scripts.fleets.armaa_LuddObserverFleetScript;
 import static data.scripts.world.ARMAAWorldGen.addMarketplace;
 import org.magiclib.util.MagicCampaign;
 
@@ -90,7 +91,7 @@ public class armaa_K {
                 0.3f,
                 false,
                 true);
-        meshanii.setInteractionImage("illustrations", "armaa_newmeshan_illus");
+        meshanii.setInteractionImage("illustrations", "urban03");
         meshanii.setCustomDescriptionId("armaa_homeworld");
         meshaniiMarket.getIndustry(Industries.BATTLESTATION_MID).setAICoreId(Commodities.ALPHA_CORE);
 
@@ -129,9 +130,10 @@ public class armaa_K {
                 "terrain", "nebula_blue", 4, 4, null));
 
         L5_nebula.setCircularOrbit(pg_Star, 70, 15000, 820);
-        PlanetAPI nekki1 = system.addPlanet("nekki1", nekki_Star, "Jenius", "jungle", 0, 230, 3000, 400);
-        nekki1.getSpec().setPlanetColor(new Color(225, 225, 255, 255));
-        MarketAPI jeniusMarket = addMarketplace("pirates", nekki1, null,
+        PlanetAPI nekki1 = system.addPlanet("nekki1", nekki_Star, "Jenius", "jungle", 0, 180, 3000, 400);
+        
+        nekki1.getSpec().setPlanetColor(new Color(255, 255, 255, 255));
+        MarketAPI jeniusMarket = addMarketplace("armaarmatura_arusthai", nekki1, null,
                  nekki1.getName(), 4,
                 new ArrayList<>(
                         Arrays.asList(
@@ -151,7 +153,7 @@ public class armaa_K {
                                 "armaa_orbitalFabricator"
                         )),
                 0.3f,
-                false,
+                true,
                 true);
         jeniusMarket.getMemory().set("$story_critical", true);
         nekki1.setCustomDescriptionId("armaa_jenius");
@@ -203,6 +205,7 @@ public class armaa_K {
         nekki3.getSpec().setUseReverseLightForGlow(true);
         nekki3.applySpecChanges();
 
+        
         SectorEntityToken nekki3_field = system.addTerrain(Terrain.MAGNETIC_FIELD,
                 new MagneticFieldParams(nekki3.getRadius() + 160f, // terrain effect band width 
                         (nekki3.getRadius() + 160f) / 2f, // terrain effect middle radius
@@ -219,6 +222,7 @@ public class armaa_K {
                         new Color(20, 0, 130),
                         new Color(10, 0, 150)));
         nekki3_field.setCircularOrbit(nekki3, 0, 0, 100);
+        nekki3_field.setId("armaa_nekki_field");
         MarketAPI meshanMarket = meshan.getMarket();
         meshanMarket.addCondition(Conditions.RUINS_EXTENSIVE);
         meshanMarket.addCondition(Conditions.TOXIC_ATMOSPHERE);
@@ -329,6 +333,32 @@ public class armaa_K {
         mrcGuardFleet.getMemoryWithoutUpdate().set("$canOnlyBeEngagedWhenVisibleToPlayer", true);
         mrcGuardFleet.addTag("armaa_guardfleet");
         mrcGuardFleet.setFaction("armaarmatura_pirates");
+        
+
+        final CampaignFleetAPI luddicKnightsFleet = (CampaignFleetAPI) MagicCampaign.createFleetBuilder()
+                .setFleetName("Knights of Ludd Task Force")
+                .setFleetFaction("luddic_church")
+                .setFleetType("taskForce")
+                .setFlagshipName("R-2")
+                .setFlagshipVariant("invictus_standard")
+                .setFlagshipAlwaysRecoverable(true)
+                .setQualityOverride(3f)
+                //.setCaptain((PersonAPI)Global.getSector().getImportantPeople().getPerson(BBPlus_People.OLIVER))
+                .setMinFP(250)
+                .setReinforcementFaction("luddic_church")
+                .setAssignment(FleetAssignment.ORBIT_AGGRESSIVE)
+                .setSpawnLocation(meshanii)
+                .setSupportAutofit(true)
+                .setIsImportant(false)
+                .create();
+        luddicKnightsFleet.setDiscoverable(true);
+        luddicKnightsFleet.getMemoryWithoutUpdate().set("$canOnlyBeEngagedWhenVisibleToPlayer", true);
+        //mrcGuardFleet.addTag("armaa_guardfleet");
+        luddicKnightsFleet.setFaction("luddic_church");
+        armaa_LuddObserverFleetScript src = new armaa_LuddObserverFleetScript(luddicKnightsFleet);
+        luddicKnightsFleet.addEventListener(src);
+        luddicKnightsFleet.addScript(src);  
+        luddicKnightsFleet.setId("armaa_luddicMeshanFleet");
         cleanup(system);
     }
 
@@ -341,4 +371,6 @@ public class armaa_K {
         editor.clearArc(system.getLocation().x, system.getLocation().y, 0, radius + minRadius * 0.5f, 0, 360f);
         editor.clearArc(system.getLocation().x, system.getLocation().y, 0, radius + minRadius, 0, 360f, 0.25f);
     }
+    
+    
 }

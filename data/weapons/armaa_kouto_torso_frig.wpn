@@ -1,27 +1,21 @@
 {
   "id": "armaa_kouto_torso_frig",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_missile",
+  "projectileSpecId": "pilum_second_stage",
   "type": "MISSILE",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
   "turretSprite": "graphics/armaa/ships/kouto/armaa_koutoBody.png",
   "hardpointSprite": "",
   "turretOffsets": [
-    -8,
-    -8,
-    -8,
-    8,
-    -9,
-    5,
-    -9,
-    -5
+    -15,
+    10,
+    -15,
+    -10
   ],
   "turretAngleOffsets": [
-    -65,
-    65,
-    90,
-    -90
+    68,
+    -68
   ],
   "hardpointOffsets": [
     -5,

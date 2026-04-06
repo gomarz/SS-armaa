@@ -7,8 +7,6 @@ import com.fs.starfarer.api.impl.campaign.econ.impl.*;
 import com.fs.starfarer.api.campaign.BattleAPI;
 import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.PersonImportance;
-import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.campaign.FactionAPI.ShipPickMode;
 import com.fs.starfarer.api.campaign.econ.CommodityOnMarketAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
@@ -43,12 +41,12 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
 
     @Override
     public boolean isHidden() {
-        return !market.getFactionId().equals(Factions.PIRATES) && !market.getFactionId().equals("armaarmatura_arusthai");
+        return false;
     }
 
     @Override
     public boolean isFunctional() {
-        return super.isFunctional() && (market.getFactionId().equals(Factions.PIRATES) || market.getFactionId().equals("armaarmatura_arusthai"));
+        return super.isFunctional();
     }
 
     public void apply() {
@@ -59,15 +57,6 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         MemoryAPI memory = market.getMemoryWithoutUpdate();
         Misc.setFlagWithReason(memory, MemFlags.MARKET_PATROL, getModId(), true, -1);
         Misc.setFlagWithReason(memory, MemFlags.MARKET_MILITARY, getModId(), true, -1);
-
-        /*if (isFunctional()) {
-            supply.clear();
-            if (market.getCommDirectory().getEntryForPerson("armaa_mrcLiason") != null) {
-                market.getCommDirectory().getEntryForPerson("armaa_mrcLiason").setHidden(true);
-            }
-            unapply();
-        }
-         */
     }
 
     @Override
@@ -320,7 +309,7 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         fleet.setNoFactionInName(true);
 
         fleet.addEventListener(this);
-
+        fleet.addTag("armaa_arusthai_droneFleet");
         if (!fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PATROLS_HAVE_NO_PATROL_MEMORY_KEY)) {
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_FLEET, true);
             if (type == PatrolType.FAST || type == PatrolType.COMBAT) {

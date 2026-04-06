@@ -40,7 +40,7 @@ Targeting Core,armaa_targetingCore,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_targ
 Precludes the installation of a Dedicated Targeting Core or an Integrated Targeting Unit.",Greatly extends non-missile weapon range.,,
 Targeting Disruptor,armaa_targetingDisruptor,,,Arma Armatura,special,Defenses,,,,,5,10,15,20,data.hullmods.armaa_targetingDisruptor,"Increases damage received from Frigates and Destroyers by %s.
 
-Decreases damage received from Cruisers and Capital Ships by %s, and reduces autoaim accuracy by up to %s based on proximity.
+Decreases damage received from Cruisers and Capital Ships by %s, and reduces their autoaim accuracy by up to %s based on proximity.
 
 Fully negates extra damage taken from ships with PD enhancing skills.",,,graphics/armaa/hullmods/armaa_targetingDisruptor.png
 SERAPH,seraph,,,????,,,,,TRUE,TRUE,-6,-12,-18,-30,data.hullmods.seraph,"Armor is increased by %s standard units, and %s increase in speed and maneuverability. Exceptionally well-tuned energy systems increase flux throughput and capacity by %s over standard examples of this hull.",,,graphics/icons/markets/rogue_ai.png
@@ -73,6 +73,11 @@ AI Core Utility Script,armaa_aicoreutilityscript,,,,,,,,TRUE,TRUE,0,0,0,0,data.h
 AI Pilot Utility Script,armaa_acsutilityscript,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_acsutilityscript,This should not be visible.,Spaghetti scripts.,,graphics/icons/markets/headquarters.png
 Versatile Frame,armaa_altagraveWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_altagrave,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_weaponSwap_monitor,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap_monitor,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
+,,,,,,,,,,,,,,,,,,,
+# KSHATRIYA,,,,,,,,,,,,,,,,,,,
+R ARM: PULVERIZER,armaa_selector_pulverizer,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_lrifle,,,,graphics/armaa/hullmods/hand_r.png
+R ARM: HEAT AXE,armaa_selector_axe,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_flamer,,,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,,
 # ALESTE WEAPON SELECTOR,,,,,,,,,,,,,,,,,,,
 Versatile Frame,armaa_weaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_weaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 Versatile Frame,armaa_kshatriyaweaponSwap,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_kshatriyaweaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
@@ -119,12 +124,14 @@ R ARM:MINIGUN,armaa_selector_minigun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmo
 
 The %s fires a barrage of energy bolts with minor anti-armor capabilities.
 %s",,,graphics/armaa/hullmods/hand_r.png
+,,,,,,,,,,,,,,,,,,,
 Melee,armaa_melee,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_melee,I cast fist,,,graphics/armaa/hullmods/hand_r.png
 Scav Unit,armaa_scavUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_scavUnit,"HAND weapons can be changed to better suit the pilot's preferences. 
 
 The %s fires a barrage of energy bolts with minor anti-armor capabilities.
 %s",,,graphics/armaa/hullmods/hand_r.png
 Safety Overrides(FTR),armaa_so_ftr,,,,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_so_ftr,,,,
+,,,,,,,,,,,,,,,,,,,
 #LEYNOS WEAPON SELECTOR,,,,,no_build_in,,,,,,,,,,,,,,
 Versatile Frame,armaa_leynosWeaponSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_leynosWeaponSwap,This machine can be customized.,,,graphics/icons/markets/rogue_ai.png
 R ARM:SHOTGUN,armaa_selector_shotgun,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.selector.armaa_selector_shotgun,"HAND weapons can be changed to better suit the pilot's preferences. 
@@ -302,3 +309,4 @@ When shooting down enemy aircraft, it triggers a complex series of microthermal 
 Repair Kit,armaa_repair_kit,,,Arma Armatura,"special,no_drop",Special,,FALSE,TRUE,,0,0,0,0,data.hullmods.armaa_repair_kit_subsystem,,,,
 Spare Chassis,armaa_spare_chassis,,,Arma Armatura,"special,no_drop",Special,,,TRUE,,0,0,0,0,data.hullmods.armaa_spareChassis,"This unit is simple enough for multiple spare chassis to be produced prior to combat. If the current ship is destroyed, a spare will be deployed. Due to the ease of manufacture, damaged units will simply be recycled for a new frame. Receives no D-Mods.",,,
 Spare Chassis Storage,armaa_spare_chassis_storage,,,Arma Armatura,"special,no_drop",Special,,TRUE,,,0,0,0,0,data.hullmods.armaa_spareChassisStorage,"This unit is simple enough for multiple spare chassis to be produced prior to combat. If the current ship is destroyed, a spare will be deployed. Due to the ease of manufacture, damaged units will simply be recycled for a new frame. Receives no D-Mods.",,,
+Reactive Carapace,armaa_reactiveCarapace,,,Arma Armatura,"special,no_drop",,,TRUE,TRUE,,0,0,0,0,data.hullmods.armaa_reactiveCarapace,Carries a physical shield.,Carries a physical shield.,,graphics/hullmods/ablative_armor.png

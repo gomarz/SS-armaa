@@ -2,7 +2,7 @@
   "hullName": "Caymon",
   "hullId": "armaa_caymon",
   "hullSize": "CRUISER",
-  "spriteName": "graphics/armaa/ships/armaa_caymon.png",
+  "spriteName": "graphics/armaa/ships/caymon/armaa_caymon.png",
   "style": "MIDLINE",
   "coversColor": "255,255,255,255",
   "height": 249,

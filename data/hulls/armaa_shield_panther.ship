@@ -15,7 +15,8 @@
     "WS0001": "armaa_shield_controller"
   },
   "builtInMods": [
-    "novent"
+    "novent",
+    "ablative_armor"
   ],
   "weaponSlots": [
     {

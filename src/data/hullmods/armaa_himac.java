@@ -77,9 +77,7 @@ public class armaa_himac extends BaseHullMod {
 
         String subsysID = ""; // empty like my soul
         boolean runOnce = false;
-        boolean holdButtonBefore = false;
         float activeTime = 0f;
-        float maxActiveTime = 0f;
         float cooldown = 25f;
         float maxcooldown = 0f;
         boolean keyPressed = false;
@@ -147,8 +145,6 @@ public class armaa_himac extends BaseHullMod {
             data.assaultBoostCharged = true;
             data.assaultBoostCharging = false;
             Color ENGINE_COLOR = ship.getEngineController().getShipEngines().get(0).getEngineColor();
-            Color CONTRAIL_COLOR = new Color(100, 100, 100, 25);
-            Color BOOST_COLOR = new Color(255, 175, 175, 200);
             Color bigBoostColor = new Color(
                     armaa_utils.clamp255(Math.round(0.1f * ENGINE_COLOR.getRed())),
                     armaa_utils.clamp255(Math.round(0.1f * ENGINE_COLOR.getGreen())),
@@ -229,7 +225,6 @@ public class armaa_himac extends BaseHullMod {
         boostVisualDir = MathUtils.clampAngle(VectorUtils.getFacing(direction) - 90f);
         Color ENGINE_COLOR = ship.getEngineController().getFlameColorShifter().getCurr().getAlpha() == 0 ? ship.getEngineController().getShipEngines().get(0).getEngineColor() : ship.getEngineController().getFlameColorShifter().getCurr();
         //Color ENGINE_COLOR = ship.getEngineController().getShipEngines().get(0).getEngineColor();
-        Color CONTRAIL_COLOR = new Color(100, 100, 100, 25);
         Color BOOST_COLOR = new Color(255, 175, 175, 200);
         for (ShipEngineAPI eng : ship.getEngineController().getShipEngines()) {
             float level = 1f;
@@ -427,7 +422,6 @@ public class armaa_himac extends BaseHullMod {
             data.runOnce = true;
             data.subsysID = this.getClass().getName() + "_" + ship.getId();
             data.maxcooldown = armaa_himacsubsys(ship);
-            data.maxActiveTime = OVERLOAD_ENEMY_DURATION; // the duration of enemy overload
         }
         if (!data.assaultBoostEnabled && data.cooldown < data.maxcooldown && data.activeTime <= 0f && ship.getCurrentCR() > 0f && !ship.getFluxTracker().isOverloadedOrVenting()) {
             float bonus = 1f;
@@ -631,8 +625,6 @@ public class armaa_himac extends BaseHullMod {
         // (At 1.0 hull -> 0 danger, at 0.0 hull -> 1 danger)
         float hullDanger = 1f - ship.getHullLevel();
         hullDanger = hullDanger * hullDanger; // square it to emphasize low hull
-
-        float qualifier = Math.max(fluxDanger, hullDanger);
         player = ship == Global.getCombatEngine().getPlayerShip();
         if (ship.getAI() != null) {
             final ShipwideAIFlags flags = ship.getAIFlags();
@@ -656,7 +648,7 @@ public class armaa_himac extends BaseHullMod {
             boolean isLargeShip = ship.isCapital() || ship.isCruiser();
             p = clamp01(p);
             if (!player && !ship.isPhased() && data.aiTracker.intervalElapsed() && data.cooldown >= 5f && !ship.getFluxTracker().isOverloaded()) {
-                if((isLargeShip|| flags.hasFlag(AIFlags.MOVEMENT_DEST) || flags.hasFlag(AIFlags.PURSUING)) && !data.assaultBoostEnabled && data.cooldown >= 5f) {
+                if(!ship.areAnyEnemiesInRange() && (isLargeShip|| flags.hasFlag(AIFlags.MOVEMENT_DEST) || flags.hasFlag(AIFlags.PURSUING)) && !data.assaultBoostEnabled && data.cooldown >= 5f) {
                     data.assaultBoostCharging = true;
                 } else if (data.assaultBoostEnabled && (ship.getEngineController().isDecelerating() || armaa_utils.estimateIncomingDamage(ship) > 1.5f * minDmgToDodge)) {
                     data.assaultBoostEnabled = false;

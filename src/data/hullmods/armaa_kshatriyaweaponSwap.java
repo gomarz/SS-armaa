@@ -30,8 +30,8 @@ public class armaa_kshatriyaweaponSwap extends BaseHullMod{
     
     private final Map<Integer,String> RIGHTSWITCH = new HashMap<>();
     {
-        RIGHTSWITCH.put(0,"armaa_selector_heavyrifle");
-        RIGHTSWITCH.put(1,"armaa_selector_lrifle");
+        RIGHTSWITCH.put(0,"armaa_selector_pulverizer");
+        RIGHTSWITCH.put(1,"armaa_selector_axe");
     }    
     
     private final String rightslotID = "A_GUN2";     

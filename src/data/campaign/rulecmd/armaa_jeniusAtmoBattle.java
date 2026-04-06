@@ -83,7 +83,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
                 0f, // utilityPts
                 0.1f // qualityMod
         );
-
+        fparams.maxShipSize = 3;
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
         FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet, fparams, new Random());
         FleetMemberAPI boss = enemyFleet.getFleetData().addFleetMember("guardian_Standard");

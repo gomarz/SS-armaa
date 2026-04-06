@@ -30,6 +30,7 @@
   "hitGlowRadius": 0,
   "id": "armaa_garegga_xiv_carrier_rightPauldron",
   "noImpactSounds": false,
+  "everyFrameEffect": "data.scripts.weapons.armaa_bakraidDecoEffect",
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
   "pixelsPerTexel": 5,

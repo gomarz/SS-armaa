@@ -85,14 +85,11 @@ public class armaa_fluxBeam implements BeamEffectPlugin {
             VectorUtils.rotate(offset, weapon.getCurrAngle(), offset);
             Vector2f.add(offset, origin, origin);
 
-            float shipFacing = weapon.getCurrAngle();
-            Vector2f shipVelocity = weapon.getShip().getVelocity();
             Vector2f dir = Vector2f.sub(beam.getTo(), beam.getFrom(), new Vector2f());
             if (dir.lengthSquared() > 0) {
                 dir.normalise();
             }
             dir.scale(50f);
-            Vector2f point = Vector2f.sub(beam.getTo(), dir, new Vector2f());
             if (weapon.isFiring() || (weapon.getChargeLevel() > 0f)) {
                 float radius = 30f + (weapon.getChargeLevel() * weapon.getChargeLevel() * MathUtils.getRandomNumberInRange(25f, 75f));
                 //Color color = new Color(200, 200, 200, 255);
@@ -164,22 +161,7 @@ public class armaa_fluxBeam implements BeamEffectPlugin {
                     //After that, we calculate our velocity
                     Vector2f velocity = new Vector2f(ship.getVelocity().x * PARTICLE_INERTIA_MULT, ship.getVelocity().y * PARTICLE_INERTIA_MULT);
                     velocity = MathUtils.getRandomPointInCircle(velocity, PARTICLE_DRIFT);
-                    /*
-					if((float) Math.random() <= 0.05f)
-					{
-						MagicLensFlare.createSharpFlare(
-							engine,
-							beam.getSource(),
-							spawnPoint,
-							4,
-							150,
-							beam.getWeapon().getCurrAngle(),
-							new Color (255,255,255,150),
-							new Color(255,255,255,255)
-						);
-					}
-                     */
-                    //And finally spawn the particle
+
                     engine.addSmoothParticle(spawnPoint, velocity, MathUtils.getRandomNumberInRange(PARTICLE_SIZE_MIN, PARTICLE_SIZE_MAX), weapon.getChargeLevel(),
                             MathUtils.getRandomNumberInRange(PARTICLE_DURATION_MIN, PARTICLE_DURATION_MAX), PARTICLE_COLOR);
                 }

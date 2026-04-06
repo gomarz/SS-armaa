@@ -5,17 +5,17 @@
   "type": "ENERGY",
   "size": "SMALL",
   "everyFrameEffect": "data.scripts.weapons.armaa_crusherEffect",
-  "turretSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_turret.png",
-  "turretGunSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_barrel.png",
-  "hardpointSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_turret.png",
-  "hardpointGunSprite": "graphics/armaa/ships/musha/armaa_musha_javelin_barrel.png",
+  "turretSprite": "graphics/armaa/ships/musha/armaa_musha_right_arm.png",
+  "turretGunSprite": "graphics/armaa/ships/musha/armaa_musha_right_arm_recoil.png",
+  "hardpointSprite": "graphics/armaa/ships/musha/armaa_musha_right_arm.png",
+  "hardpointGunSprite": "graphics/armaa/ships/musha/armaa_musha_right_arm_recoil.png",
   "visualRecoil": 5,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    11.5,
-    1
+    18,
+    -12
   ],
   "turretAngleOffsets": [
     0

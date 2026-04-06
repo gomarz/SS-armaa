@@ -33,8 +33,11 @@
 		"music_armaa_gravionbattle":[
 			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
 		],
-		"music_armaa_gravionbattle2":[
-			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":1,"randomStart":true},
+		"music_armaa_rajanya_boss":[
+			{"file":"inexpressible_emotions.ogg","source":"sounds/armaa/music/factions","volume":0.35,"randomStart":true},
+		],
+		"music_armaa_bar":[
+			{"file":"armaa_bar.ogg","source":"sounds/armaa/music","volume":0.5,"randomStart":true},
 		],
 		"music_armaa_briefing":[
 			{"file":"clenched_fist.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},

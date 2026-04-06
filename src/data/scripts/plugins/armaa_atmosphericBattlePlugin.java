@@ -16,6 +16,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import data.scripts.missions.armaa_ReentryEffect;
 
 public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     // for atmo battle
@@ -28,17 +29,20 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     private IntervalUtil attackInterval = new IntervalUtil(2f, 2f);
     private IntervalUtil cutsceneTextInterval = new IntervalUtil(2f, 2f);
     private IntervalUtil cutsceneInterval = new IntervalUtil(3f, 3f);
+    private final IntervalUtil spinInterval = new IntervalUtil(0.05f, 0.05f);
+    armaa_ReentryEffect fx;
     private boolean runOnce = false;
     private float spin = 0f, ratioMod = 0f;
     private boolean playedMusic = false;
     private boolean perfMode = false;
     private boolean showedTitle = false;
+    private boolean startedFade = false;
     boolean cutsceneOver = false;
     boolean hidCutscene = false;
     private float bossStage = 1f, ratio = 0f, bgStage = 0f;
     private float battleStr = -99f;
     private boolean bossLine1, bossLine2, bossLine3, firstContact = false, stationAlive = true;
-    private boolean spawnedBoss = false, spawnedCorpse = false;
+    private boolean spawnedBoss = false;
     private int diagLine = 0;
     public static Map MANUVER_MALUS = new HashMap();
     FleetMemberAPI largest = null;
@@ -87,6 +91,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         if (!runOnce) {
             engine.getFleetManager(0).setSuppressDeploymentMessages(true);
             engine.getCombatUI().hideShipInfo();
+
             Global.getSoundPlayer().playCustomMusic(1, 1, "music_encounter_mysterious_non_aggressive", true);
             runOnce = true;
 
@@ -160,7 +165,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         float diag = (float) Math.sqrt(w * w + h * h);
         float minCover = diag * 1.05f;
 
-        float base = w * (1.2f + 3f * ratio);
+        float base = w * (1.2f + 3f * Math.min(2f,ratio));
 
         // actual size with zoom response
         float s1 = base * inv;
@@ -467,6 +472,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             );
         }
         if (bgStage > 0.50f) {
+            if (!startedFade) {
+                fx.beginFadeOut();
+                startedFade = true;
+            }
             viewMult = engine.getViewport().getViewMult();
             float rawInv = 1f / viewMult;
             // background size
@@ -544,14 +553,17 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             }
             interval3.advance(amount);
             bgInterval.advance(amount);
+            spinInterval.advance(amount);
             float mult = engine.getViewport().getViewMult();
             //Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem3", "graphics/ui/icons/icon_repair_refit.png", "mult",""+ ratio,false);
             float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
             float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport
             float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
             float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport
-            spin += amount / 2;
-
+            if(spinInterval.intervalElapsed())
+            {
+                spin += 0.02f;
+            }
             ShipAPI bossEne = null;
             if (engine.getCustomData().containsKey("armaa_atmo_boss")) {
                 bossEne = (ShipAPI) engine.getCustomData().get("armaa_atmo_boss");
@@ -883,6 +895,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         stationAlive = false;
                         Global.getSector().getMemoryWithoutUpdate().set("$armaa_killedJeniusGuardian", true);
                         Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);
+                        fx = new armaa_ReentryEffect();
+                        Global.getCombatEngine().addLayeredRenderingPlugin(fx);
                         engine.getCombatUI().addMessage(1, ship, Color.white, "Obstacle eliminated. Proceeding into lower orbit...");
                         if (!ship.isAlive()) {
                             engine.removeEntity(ship);
@@ -952,51 +966,131 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         MagicTrailPlugin.AddTrailMemberSimple(ship, id, Global.getSettings().getSprite("fx", "beam_trail_cel"), leftPos, speed, ship.getFacing() + 180f + 12f, 1f, 10f, new Color(150, 150, 150, 225), 0.8f, 0.1f, 1f, 0.6f, true);
                         MagicTrailPlugin.AddTrailMemberSimple(ship, id + 1, Global.getSettings().getSprite("fx", "beam_trail_cel"), rightPos, speed, ship.getFacing() + 180f - 12f, 1f, 10f, new Color(150, 150, 150, 225), 0.8f, 0.1f, 1f, 0.6f, true);
                     }
+
+                    float facingRad = (float) Math.toRadians(ship.getFacing());
+                    float cosF = (float) Math.cos(facingRad);
+                    float sinF = (float) Math.sin(facingRad);
+
+
+                    Vector2f nosePos = new Vector2f(
+                            ship.getLocation().x + cosF * r * 0.6f,
+                            ship.getLocation().y + sinF * r * 0.6f
+                    );
+
+
+                    float spawnOffset = MathUtils.getRandomNumberInRange(0f, r * 0.4f);
+                    Vector2f fireSpawn = new Vector2f(
+                            nosePos.x - cosF * spawnOffset,
+                            nosePos.y - sinF * spawnOffset
+                    );
+
+
+                    float trailSpeed = MathUtils.getRandomNumberInRange(600, 900);
+                    float spread = (float) (Math.random() - 0.5f) * r * 3f;
+                    float fireVx = -cosF * trailSpeed + sinF * spread + velX;
+                    float fireVy = -sinF * trailSpeed - cosF * spread + velY;
+
+
+                    float smokeOffset = MathUtils.getRandomNumberInRange(r * 0.3f, r * 1.5f);
+                    Vector2f smokeSpawn = new Vector2f(
+                            nosePos.x - cosF * smokeOffset,
+                            nosePos.y - sinF * smokeOffset
+                    );
+                    float smokeSpeed = MathUtils.getRandomNumberInRange(200, 500);
+                    float smokeVx = -cosF * smokeSpeed + velX;
+                    float smokeVy = -sinF * smokeSpeed + velY;
+
+
                     if (Math.random() <= 1f - ratio && ratio >= 0.20f && ratio <= 0.60f) {
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-                                MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()),
-                                new Vector2f(MathUtils.getRandomNumberInRange(-ship.getCollisionRadius() * 5, ship.getCollisionRadius() * 5) + velX, (-MathUtils.getRandomNumberInRange(600, 800) + velY) * (1f - ratio)),
-                                new Vector2f(MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2, ship.getCollisionRadius() * 3), MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 3f, ship.getCollisionRadius() * 4f)),
-                                new Vector2f(ship.getCollisionRadius(), ship.getCollisionRadius() * 3f),
+                                fireSpawn,
+                                new Vector2f(fireVx, fireVy),
+                                new Vector2f(
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2f, ship.getCollisionRadius() * 3f),
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 3f, ship.getCollisionRadius() * 4f)
+                                ),
+                                new Vector2f(ship.getCollisionRadius() * 0.3f, ship.getCollisionRadius() * 0.3f),
                                 0f,
                                 0f,
-                                shiftColor(getBrighterReentryColor(0.3f), getBrighterReentryColor(1f), bgStage + 0.40f),
+                                shiftColor(getBrighterReentryColor(0.3f), new Color(0.5f, 0.5f, 0.5f, 1f - ratio), bgStage + 0.40f),
                                 true,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0.1f,
-                                Math.max(0.1f, (1f - ratio) - 0.5f),
+                                0f, 0f, 0f, 0f, 0f,
+                                0.05f,
+                                Math.max(0.1f, (1f - ratio) - 0.4f),
                                 0.1f,
                                 CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
                         );
                     }
+
+
                     if (Math.random() <= 1f - ratio && ratio >= 0.15f && ratio <= 0.70f) {
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-                                MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()),
-                                new Vector2f(MathUtils.getRandomNumberInRange(-ship.getCollisionRadius() * 5, ship.getCollisionRadius() * 5) + velX, (-MathUtils.getRandomNumberInRange(600, 800) + velY) * (1f - ratio)),
-                                new Vector2f(MathUtils.getRandomNumberInRange(ship.getCollisionRadius(), ship.getCollisionRadius() * 3), MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2f, ship.getCollisionRadius() * 4f)),
-                                new Vector2f(ship.getCollisionRadius(), ship.getCollisionRadius() * 3f),
+                                smokeSpawn,
+                                new Vector2f(smokeVx, smokeVy),
+                                new Vector2f(
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius(), ship.getCollisionRadius() * 3f),
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2f, ship.getCollisionRadius() * 4f)
+                                ),
+                                new Vector2f(ship.getCollisionRadius() * 1.5f, ship.getCollisionRadius() * 1.5f),
                                 0f,
                                 0f,
-                                shiftColor(getRandomBottomCloudColor(0.1f), new Color(0.5f, 0.5f, 0.5f, 0f), bgStage + 0.20f),
+                                shiftColor(getRandomBottomCloudColor(0.1f), new Color(0.5f, 0.5f, 0.5f, 1f - ratio), bgStage + 0.20f),
                                 false,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
+                                0f, 0f, 0f, 0f, 0f,
                                 0.1f,
-                                Math.max(0.1f, (1f - ratio) - 0.5f),
-                                0.1f,
+                                Math.max(0.1f, (1f - ratio) - 0.3f),
+                                0.2f,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER
                         );
                     }
+
+                    if (ratio >= 0.20f && ratio <= 0.60f && interval.intervalElapsed()) {
+                        float minParticleSize = 8f; // never smaller than this regardless of ship size    
+                        float particleSpeed = MathUtils.getRandomNumberInRange(800f, 1400f);
+                        spread = (float) (Math.random() - 0.5f) * r * 0.4f;
+
+                        // Tight bright core particles — white/yellow, small, fast
+                        for (int i = 0; i < 3; i++) {
+                            float s = (float) (Math.random() - 0.5f) * r * 0.3f;
+                            Global.getCombatEngine().addSmoothParticle(
+                                    new Vector2f(nosePos.x + sinF * s, nosePos.y - cosF * s), // slight lateral spread
+                                    new Vector2f(
+                                            -cosF * (particleSpeed + MathUtils.getRandomNumberInRange(-200f, 200f)) + velX,
+                                            -sinF * (particleSpeed + MathUtils.getRandomNumberInRange(-200f, 200f)) + velY
+                                    ),
+                                    MathUtils.getRandomNumberInRange(
+                                            Math.max(minParticleSize, r * 0.05f),
+                                            Math.max(minParticleSize * 2f, r * 0.15f)
+                                    ),
+                                    MathUtils.getRandomNumberInRange(0.6f, 1.0f), // brightness
+                                    MathUtils.getRandomNumberInRange(0.2f, 0.5f), // lifetime
+                                    shiftColor(new Color(1.0f, 0.8f + (float) Math.random() * 0.2f, 0.3f, 1f), new Color(0.5f, 0.5f, 0.5f, 1f - ratio), bgStage) // white-yellow
+                            );
+                        }
+
+                        // Outer plasma particles — orange/red, larger, slightly slower
+                        for (int i = 0; i < 2; i++) {
+                            float s = (float) (Math.random() - 0.5f) * r * 0.8f;
+                            Global.getCombatEngine().addSmoothParticle(
+                                    new Vector2f(nosePos.x + sinF * s, nosePos.y - cosF * s),
+                                    new Vector2f(
+                                            -cosF * (particleSpeed * 0.6f + MathUtils.getRandomNumberInRange(-100f, 100f)) + velX,
+                                            -sinF * (particleSpeed * 0.6f + MathUtils.getRandomNumberInRange(-100f, 100f)) + velY
+                                    ),
+                                    MathUtils.getRandomNumberInRange(
+                                            Math.max(minParticleSize * 1.5f, r * 0.1f),
+                                            Math.max(minParticleSize * 3f, r * 0.25f)
+                                    ),
+                                    MathUtils.getRandomNumberInRange(0.4f, 0.8f),
+                                    MathUtils.getRandomNumberInRange(0.3f, 0.7f),
+                                    new Color(1.0f, 0.3f + (float) Math.random() * 0.2f, 0.0f, 1f)
+                            );
+                        }
+                    }
                 }
+
                 String key = ship.getId() + "_atmo";
                 if (!ship.getMutableStats().getMaxSpeed().getMultMods().containsKey(key)) {
                     float malus = (float) MANUVER_MALUS.get(ship.getHullSize());

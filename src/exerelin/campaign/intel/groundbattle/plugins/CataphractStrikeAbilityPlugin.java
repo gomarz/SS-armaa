@@ -385,7 +385,7 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
     }
 
     public boolean isCataphract(FleetMemberAPI member) {
-        return member.getHullSpec().getTags().contains("armaa_nexGroundCapable");
+        return member.getHullSpec().getBuiltInMods().contains("cataphract2") || member.getHullSpec().getBuiltInMods().contains("cataphract") || member.getHullSpec().getTags().contains("armaa_nexGroundCapable");
     }
 
     public boolean haveEnoughCR(FleetMemberAPI member) {

@@ -1,19 +1,29 @@
 package data.scripts.util;
 
+import com.fs.starfarer.api.Global;
 import java.util.*;
 
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.input.Keyboard;
 
+import lunalib.lunaSettings.LunaSettings;
+
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.loading.WeaponSlotAPI;
 
 public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
+
+    private static float REPAIR_POOL_DEFAULT = 50f;
+    private static final String REPAIR_POOL_TAG_PREFIX = "armaa_repairPool_";
+    private static final float REPAIR_POOL_MIN_COST_FRACTION = 0.1f;
+    // Pool threshold as fraction of DP to allow hull/CR repair (half a "full repair")
+    private static final float REPAIR_POOL_HULLCR_THRESHOLD_FRACTION = 0.5f;
 
     private final IntervalUtil BASE_REFIT = new IntervalUtil(25f, 25f);
     private CombatFleetManagerAPI fleetManager;
@@ -26,6 +36,9 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
     private String timer = "0";
     private final float BaseTimer = .30f;
 
+    private float arrivalHull = 1f;
+    private float arrivalCR = 1f;
+
     public armaa_strikeCraftRepairTracker(ShipAPI ship, ShipAPI carrier, Vector2f landingLocation, int bayNo) {
         this.carrier = carrier;
         this.ship = ship;
@@ -34,24 +47,116 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         fleetManager = Global.getCombatEngine().getFleetManager(ship.getOwner());
     }
 
+    private float getInitialPool(ShipAPI ship) {
+        for (String tag : ship.getHullSpec().getTags()) {
+            if (tag.startsWith(REPAIR_POOL_TAG_PREFIX)) {
+                try {
+                    return Float.parseFloat(tag.substring(REPAIR_POOL_TAG_PREFIX.length()));
+                } catch (NumberFormatException e) {
+                }
+            }
+        }
+            if (Global.getSettings().getModManager().isModEnabled("lunalib") == true) 
+            {
+                REPAIR_POOL_DEFAULT = LunaSettings.getInt("armaa", "armaa_repairPool");
+            }
+        return REPAIR_POOL_DEFAULT;
+    }
+
+    private float getDP(ShipAPI ship) {
+        if (ship.getFleetMember() == null) {
+            return 10f; // allback
+        }
+        return Math.max(1f, ship.getFleetMember().getDeploymentPointsCost());
+    }
+
+    // Called by armaa_strikeCraft for AI gating and UI display
+    public static float getRepairPool(ShipAPI ship) {
+        String poolKey = "armaa_repairPool_" + ship.getId();
+        Object obj = Global.getCombatEngine().getCustomData().get(poolKey);
+        // guh 
+        if (Global.getSettings().getModManager().isModEnabled("lunalib") == true) 
+        {
+            REPAIR_POOL_DEFAULT = LunaSettings.getInt("armaa", "armaa_repairPool");
+        }        
+        return (obj instanceof Float) ? (float) obj : REPAIR_POOL_DEFAULT;
+    }
+
+    public static int getRepairsRemaining(ShipAPI ship) {
+        if (ship.getFleetMember() == null) {
+            return 99;
+        }
+        float pool = getRepairPool(ship);
+        float dp = Math.max(1f, ship.getFleetMember().getDeploymentPointsCost());
+        return (int) Math.floor(pool / dp);
+    }
+
+    private void initPoolIfAbsent(ShipAPI ship) {
+        String poolKey = "armaa_repairPool_" + ship.getId();
+        if (!Global.getCombatEngine().getCustomData().containsKey(poolKey)) {
+            Global.getCombatEngine().getCustomData().put(poolKey, getInitialPool(ship));
+        }
+    }
+
+    private void deductRepairCost(ShipAPI ship, boolean abort) {
+        if (ship.getFleetMember() == null) {
+            return;
+        }
+
+        initPoolIfAbsent(ship);
+        String poolKey = "armaa_repairPool_" + ship.getId();
+
+        float dp = getDP(ship);
+        float damageFraction = Math.max(0f, 1f - arrivalHull);
+        float maxCR = Math.max(0.01f, armaa_utils.getMaxCRRepair(ship));
+        float crFraction = Math.max(0f, 1f - (arrivalCR / maxCR)) * 0.5f;
+        float cost = dp * (damageFraction + crFraction);
+        float minCost = dp * REPAIR_POOL_MIN_COST_FRACTION;
+        cost = Math.max(cost, minCost);
+
+        if (abort) {
+            float repairProgress = BASE_REFIT.getElapsed() / BASE_REFIT.getMaxInterval();
+            cost = Math.max(cost * repairProgress, minCost);
+        }
+
+        float currentPool = (float) Global.getCombatEngine().getCustomData().get(poolKey);
+        Global.getCombatEngine().getCustomData().put(poolKey, Math.max(0f, currentPool - cost));
+    }
+
+    public static boolean canRepairHullCR(ShipAPI ship) {
+        if (ship.getFleetMember() == null) {
+            return true;
+        }
+        float pool = getRepairPool(ship);
+        float dp = Math.max(1f, ship.getFleetMember().getDeploymentPointsCost());
+        return pool >= dp * REPAIR_POOL_HULLCR_THRESHOLD_FRACTION;
+    }
+
+    public static boolean canRepairAmmo(ShipAPI ship) {
+        if (ship.getFleetMember() == null) {
+            return true;
+        }
+        float pool = getRepairPool(ship);
+        float dp = Math.max(1f, ship.getFleetMember().getDeploymentPointsCost());
+        return pool >= dp * REPAIR_POOL_MIN_COST_FRACTION;
+    }
+
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
         if (Global.getCombatEngine().isPaused()) {
             return;
         }
-        for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) 
-        {
-            if (fleetManager.getShipFor(member) == carrier) {               
+        for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) {
+            if (fleetManager.getShipFor(member) == carrier) {
                 fleetManager.addToReserves(ship.getFleetMember());
-                ship.setRetreating(true,false);
+                ship.setRetreating(true, false);
                 ship.getLocation().set(0, -1000000f);
                 Global.getCombatEngine().removePlugin(this);
-                return;              
+                return;
             }
         }
 
-        if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) 
-        {
+        if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) {
             takeOff(ship, landingLocation, true);
             armaa_utils.destroy(ship);
         }
@@ -75,8 +180,12 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
         if (!hasLanded) {
             hasLanded = true;
+            arrivalHull = ship.getHullLevel();
+            arrivalCR = ship.getCurrentCR();
+            initPoolIfAbsent(ship);
             Global.getCombatEngine().getCustomData().put("armaa_hangarIsOpen" + carrier.getId() + "_" + bayNo, true);
         }
+
         float refitMod = getCarrierRefitRate();
         if (carrier.getVariant().hasHullMod("armaa_serviceBays")) {
             refitMod += .5f;
@@ -94,34 +203,37 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.setShipAI(null);
         }
         BASE_REFIT.advance(adjustedRate);
-        if(ship.getHullSize() != HullSize.FIGHTER)
+        if (ship.getHullSize() != HullSize.FIGHTER) {
             ship.setHullSize(HullSize.FIGHTER);
+        }
         float elapsed = BASE_REFIT.getElapsed();
         float maxinterval = BASE_REFIT.getMaxInterval();
         float refit_timer = Math.round((elapsed / maxinterval) * 100f);
         timer = String.valueOf(refit_timer);
 
-        float crLevel = ship.getCurrentCR() / 1f; // range from 0 to 1
-        float remainder = (armaa_utils.getMaxHPRepair(ship) - ship.getHitpoints()) * ((adjustedRate / maxinterval) * elapsed);
+        // Only do gradual hull/CR restoration if pool supports it
+        boolean poolAllowsHullCR = canRepairHullCR(ship);
 
-        float crRemainder;
-        crRemainder = (1f - ship.getCurrentCR()) * crLevel * ((adjustedRate / maxinterval) * elapsed);
-        float currArmor = armaa_utils.getArmorPercent(ship);
-        float CRRefit = Math.min(ship.getCurrentCR() + crRemainder * amount, armaa_utils.getMaxCRRepair(ship)); //Add CRrestored up to the maximum
-        //prevent (noticeable)cr loss while docked
+        if (poolAllowsHullCR) {
+            float crLevel = ship.getCurrentCR() / 1f;
+            float remainder = (armaa_utils.getMaxHPRepair(ship) - ship.getHitpoints()) * ((adjustedRate / maxinterval) * elapsed);
+            float crRemainder = (1f - ship.getCurrentCR()) * crLevel * ((adjustedRate / maxinterval) * elapsed);
+            float currArmor = armaa_utils.getArmorPercent(ship);
+            float CRRefit = Math.min(ship.getCurrentCR() + crRemainder * amount, armaa_utils.getMaxCRRepair(ship));
+
+            ship.setHitpoints(Math.min(ship.getHitpoints() + remainder * (elapsed / maxinterval), ship.getMaxHitpoints()));
+            armaa_utils.setArmorPercentage(ship, currArmor + ((1f - currArmor) * (adjustedRate / maxinterval)) * elapsed * amount);
+            if ((ship.getCurrentCR() < armaa_utils.getMaxCRRepair(ship))) {
+                ship.setCurrentCR(CRRefit);
+            }
+        }
+
         ship.getMutableStats().getCRLossPerSecondPercent().modifyMult(ship.getId(), 0.001f);
-
-        if(hasLanded)
-        {
+        if (hasLanded) {
             ship.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
             ship.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
         }
 
-        ship.setHitpoints(Math.min(ship.getHitpoints() + remainder * (elapsed / maxinterval), ship.getMaxHitpoints()));
-        armaa_utils.setArmorPercentage(ship, currArmor + ((1f - currArmor) * (adjustedRate / maxinterval)) * elapsed * amount); //Armor to 100%
-        if ((ship.getCurrentCR() < armaa_utils.getMaxCRRepair(ship))) {
-            ship.setCurrentCR(CRRefit);
-        }
         //reduce bay repl rate
         if (carrier.getLaunchBaysCopy() != null && carrier.getLaunchBaysCopy().size() - 1 >= bayNo) {
             carrier.getLaunchBaysCopy().get(bayNo).setCurrRate(carrier.getLaunchBaysCopy().get(bayNo).getCurrRate() - (amount * (adjustedRate)));
@@ -129,11 +241,14 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
         String abortString = "";
         ShipAPI playerShip = Global.getCombatEngine().getPlayerShip();
-        if (ship == playerShip && BASE_REFIT.getElapsed() >= 0f) //Display count down timer
-        {
+        if (ship == playerShip && BASE_REFIT.getElapsed() >= 0f) {
             Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem2", "graphics/ui/icons/icon_repair_refit.png", getBlinkyString("REPAIR STATUS"), String.valueOf(ship.getHullLevel() * 100f) + "%", true);
             abortString = Global.getSettings().getControlStringForEnumName("C2_TOGGLE_AUTOPILOT");
-            Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem", "graphics/ui/icons/icon_repair_refit.png", "RESTORING PPT/AMMO (PRESS " + abortString + ")to abort", timer + "%", true);
+            Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem", "graphics/ui/icons/icon_repair_refit.png", "RESTORING PPT/AMMO (PRESS " + abortString + " to abort)", timer + "%", true);
+            // Show repair pool status to player
+            int repairsLeft = getRepairsRemaining(ship);
+            String poolDisplay = repairsLeft > 0 ? "REPAIR CAPACITY: " + repairsLeft : "REPAIR CAPACITY EXHAUSTED";
+            Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem3", "graphics/ui/icons/icon_repair_refit.png", poolDisplay, "", false);
         }
 
         boolean abort = Keyboard.isKeyDown(Keyboard.getKeyIndex(abortString));
@@ -167,6 +282,8 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
     }
 
     private void takeOff(ShipAPI ship, Vector2f landingLocation, boolean abort) {
+        deductRepairCost(ship, abort);
+
         Global.getSoundPlayer().playSound("fighter_takeoff", 1f, 1f, ship.getLocation(), new Vector2f());
         ship.setInvalidTransferCommandTarget(false);
         ship.setCollisionClass(CollisionClass.SHIP);
@@ -180,24 +297,26 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         armaa_utils.setLocation(ship, landingLocation); //set to location of carrier in case of drift
 
         if (!abort) {
-            if ((ship.getCurrentCR() <= armaa_utils.getMaxCRRepair(ship))) {
-                ship.setCurrentCR(Math.max(ship.getCurrentCR(),armaa_utils.getMaxCRRepair(ship)));
-            }
-            // I'm not sure how this interact with some effect added by mods that alters
-            // malfunction chances, but it might be okay
-            ship.getMutableStats().getWeaponMalfunctionChance().unmodify("cr_effect");
-            ship.getMutableStats().getCriticalMalfunctionChance().unmodify("cr_effect");
-            ship.getMutableStats().getEngineMalfunctionChance().unmodify("cr_effect");
-            ship.getMutableStats().getShieldMalfunctionChance().unmodify("cr_effect");
-            ship.clearDamageDecals();
-            ship.setHitpoints(Math.max(ship.getHitpoints(),armaa_utils.getMaxHPRepair(ship))); //Hull to 100%
-            ship.getVariant().getHullSpec().getNoCRLossTime();             
-            if (ship.getMutableStats().getPeakCRDuration().computeEffective(0f) < ship.getTimeDeployedForCRReduction()) {
-                ship.getMutableStats().getPeakCRDuration().modifyFlat(ship.getId(), ship.getTimeDeployedForCRReduction());
+            boolean poolAllowsHullCR = canRepairHullCR(ship);
+
+            if (poolAllowsHullCR) {
+                if ((ship.getCurrentCR() <= armaa_utils.getMaxCRRepair(ship))) {
+                    ship.setCurrentCR(Math.max(ship.getCurrentCR(), armaa_utils.getMaxCRRepair(ship)));
+                }
+                ship.getMutableStats().getWeaponMalfunctionChance().unmodify("cr_effect");
+                ship.getMutableStats().getCriticalMalfunctionChance().unmodify("cr_effect");
+                ship.getMutableStats().getEngineMalfunctionChance().unmodify("cr_effect");
+                ship.getMutableStats().getShieldMalfunctionChance().unmodify("cr_effect");
+                ship.clearDamageDecals();
+                ship.setHitpoints(Math.max(ship.getHitpoints(), armaa_utils.getMaxHPRepair(ship)));
+                ship.getVariant().getHullSpec().getNoCRLossTime();
+                if (ship.getMutableStats().getPeakCRDuration().computeEffective(0f) < ship.getTimeDeployedForCRReduction()) {
+                    ship.getMutableStats().getPeakCRDuration().modifyFlat(ship.getId(), ship.getTimeDeployedForCRReduction());
+                }
+                ship.clearDamageDecals();
+                armaa_utils.setArmorPercentage(ship, 100f);
             }
 
-            ship.clearDamageDecals();
-            armaa_utils.setArmorPercentage(ship, 100f); //Armor to 100%
             List<WeaponAPI> weapons = ship.getAllWeapons();
             for (WeaponAPI w : weapons) {
                 if (w.usesAmmo()) {
@@ -205,6 +324,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 }
             }
         }
+
         ((ShipAPI) ship).setAnimatedLaunch();
         ship.setControlsLocked(false);
         ship.setShipSystemDisabled(false);
@@ -214,7 +334,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             modules.getFluxTracker().stopOverload();
             modules.getFluxTracker().setCurrFlux(0f);
             modules.clearDamageDecals();
-            armaa_utils.setArmorPercentage(modules, 100f); //Armor to 100%
+            armaa_utils.setArmorPercentage(modules, 100f);
             modules.setAnimatedLaunch();
         }
         if (ship.isRetreating()) {
@@ -225,12 +345,25 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 ship.setShipTarget(null);
             }
         }
-        ship.setHullSize(HullSize.FRIGATE); //Einhander AI fix, fighter hullsize cannot resetDefaultAI, will crash        
-        ship.getFluxTracker().ventFlux();        
+        if (ship.isDefenseDisabled()) {
+            ship.setDefenseDisabled(false);
+        }
+        if (ship.getEngineFractionPermanentlyDisabled() > 0) {
+            for (ShipEngineAPI engine : ship.getEngineController().getShipEngines()) {
+                if (engine.isPermanentlyDisabled()) {
+                    engine.repair();
+                }
+            }
+        }
+        ship.setHullSize(HullSize.FRIGATE); //Einhander AI fix, fighter hullsize cannot resetDefaultAI, will crash
+        ship.getFluxTracker().ventFlux();
         ship.resetDefaultAI();
         Global.getCombatEngine().getCustomData().remove("armaa_repairTracker_" + ship.getId());
+        Global.getCombatEngine().getCustomData().put("armaa_cachedNeedsRefit_" + ship.getId(), false);
+        Global.getCombatEngine().getCustomData().put("armaa_cachedCarrier_" + ship.getId(), null);
+        Global.getCombatEngine().getCustomData().put("armaa_strikecraftLanded" + ship.getId(), false);
         ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
-        ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");        
+        ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
         Global.getCombatEngine().removePlugin(this);
     }
 }

@@ -2,7 +2,7 @@
   "animationType": "NONE",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "vajra_fire",
-  "everyFrameEffect": "data.scripts.weapons.armaa_counterShieldScript",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_counterShieldScript",
   "glowColor": [
     50,
     142,

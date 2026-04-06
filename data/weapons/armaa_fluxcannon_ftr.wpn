@@ -1,6 +1,5 @@
 {
   "beamEffect": "data.scripts.weapons.armaa_fluxBeam",
-   # "everyFrameEffect": "data.scripts.weapons.armaa_ortypeEffect",
    "beamFireOnlyOnFullCharge": true,
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
@@ -10,7 +9,7 @@
     255,
     255
   ],
-  "everyFrameEffect": "data.scripts.weapons.armaa_ortypeEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_fluxBeamEffect",
   "fireSoundOne": "beambangM",
   "fireSoundTwo": "beamfireM",
   "fringeColor": [
@@ -59,7 +58,7 @@
     0
   ],
   "turretOffsets": [
-    18,
+    29,
     0
   ],
   "turretSprite": "graphics/armaa/weapons/armaa_fluxcannon_turret_base.png",

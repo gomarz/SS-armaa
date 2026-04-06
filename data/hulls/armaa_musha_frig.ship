@@ -19,7 +19,7 @@
     "armaa_wingCommander"
   ],
   "builtInWings": [
-    "armaa_musha_wing"
+    "armaa_musha_bomber_wing"
   ],
   "builtInWeapons": {
     "HEAD": "armaa_mushaHead",
