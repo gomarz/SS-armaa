@@ -14,6 +14,7 @@
   "builtInMods": [
     "phasefield",
     "strikeCraft",
+    "delicate",
     "cataphract",
     "armaa_strikeCraftFrig"
   ],

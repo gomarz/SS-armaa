@@ -20,9 +20,10 @@
     "armaa_wingCommander"
   ],
   "builtInWings": [
-    "armaa_morgana_wing"
+    "armaa_morganab_wing"
   ],
   "builtInWeapons": {
+   "PD": "pdburst_fighter",
     "DECO": "armaa_morganaa_deco",
     "DECOL": "armaa_morganaa_deco_l",
     "DECOR": "armaa_morganaa_deco_r"
@@ -113,6 +114,15 @@
       "arc": 0,
       "angle": -0,
       "locations": [0, -70]
+    },
+    {
+      "id": "PD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": -0,
+      "locations": [15, -0]
     }
   ],
   "engineSlots": [

@@ -3,6 +3,7 @@ package data.scripts.weapons;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.magiclib.util.MagicRender;
 import org.magiclib.plugins.MagicTrailPlugin;
@@ -118,7 +119,7 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
                             dmg *= Math.max(0.5f, beam.getWeapon().getOriginalSpec().getMaxRange() / beam.getLength());
                         }
 
-                        engine.applyDamage(enemy, beam.getTo(), dmg, weapon.getDamageType(), dmg / 2, false, softFlux, weapon.getShip());
+                        engine.applyDamage(enemy, beam.getTo(), dmg, weapon.getDamageType(), beam.getDamage().getFluxComponent(), false, softFlux, weapon.getShip());
                         hitTargets.add(enemy);
                     }
                 }
@@ -157,7 +158,7 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
                 Color color = beam.getFringeColor();
                 Color core = beam.getCoreColor();
                 Color particolor = Math.random() > 0.50f ? color : PARTICLE_COLOR;
-                for (int i = 0; i <= PARTICLE_COUNT/2; i++) {
+                for (int i = 0; i <= PARTICLE_COUNT / 2; i++) {
                     point = beam.getTo();
                     float speed = 500f;
                     float facing = beam.getWeapon().getCurrAngle();
@@ -196,35 +197,59 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
                 }
             }
             if (!firstStrike) {
+
+                boolean hitShield = target.getShield() != null && target.getShield().isWithinArc(beam.getRayEndPrevFrame());
+                float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.1f;
+                pierceChance *= ship.getMutableStats().getDynamic().getValue(Stats.SHIELD_PIERCED_MULT);
+
+                boolean piercedShield = hitShield && (float) Math.random() < pierceChance;
+                //piercedShield = true;
+
+                if (!hitShield || piercedShield) {
+                    Vector2f empPoint = beam.getRayEndPrevFrame();
+                    float emp = beam.getDamage().getFluxComponent() * 1f;
+                    float dam = beam.getDamage().getDamage() * 1f;
+                    engine.spawnEmpArcPierceShields(
+                            beam.getSource(), empPoint, beam.getDamageTarget(), beam.getDamageTarget(),
+                            DamageType.ENERGY,
+                            dam, // damage
+                            emp, // emp 
+                            100000f, // max range 
+                            "tachyon_lance_emp_impact",
+                            beam.getWidth() + 9f,
+                            beam.getFringeColor(),
+                            beam.getCoreColor()
+                    );
+                }
                 float variance = MathUtils.getRandomNumberInRange(-0.3f, .3f);
                 Global.getSoundPlayer().playSound("armaa_saber_slash", 1.1f + variance, 1f + variance, point, ZERO);
                 firstStrike = true;
-                        MagicLensFlare.createSharpFlare(
-                                Global.getCombatEngine(),
-                                ship,
-                                point,
-                                5,
-                                500f,
-                                weapon.getCurrAngle(),
-                                beam.getFringeColor(),
-                                Color.white
-                        );
-                        for (int i = 0; i < PARTICLE_COUNT; i++) {
-                            float speed = 400f;
-                            float facing = weapon.getCurrAngle();
-                            float angle = MathUtils.getRandomNumberInRange(facing - A_2,
-                                    facing + A_2);
-                            float vel = MathUtils.getRandomNumberInRange(speed * -VEL_MIN,
-                                    speed * -VEL_MAX);
-                            Vector2f vector = MathUtils.getPointOnCircumference(null,
-                                    vel,
-                                    angle);
-                            if (Math.random() > 0.25f) {
-                                Global.getCombatEngine().spawnDebrisMedium(point, vector, 1, angle, 15f, 10f, 25f, 50f);
-                            } else {
-                                Global.getCombatEngine().spawnDebrisSmall(point, vector, 1, angle, 15f, 10f, 25f, 50f);
-                            }
-                        }                
+                MagicLensFlare.createSharpFlare(
+                        Global.getCombatEngine(),
+                        ship,
+                        point,
+                        5,
+                        500f,
+                        weapon.getCurrAngle(),
+                        beam.getFringeColor(),
+                        Color.white
+                );
+                for (int i = 0; i < PARTICLE_COUNT; i++) {
+                    float speed = 400f;
+                    float facing = weapon.getCurrAngle();
+                    float angle = MathUtils.getRandomNumberInRange(facing - A_2,
+                            facing + A_2);
+                    float vel = MathUtils.getRandomNumberInRange(speed * -VEL_MIN,
+                            speed * -VEL_MAX);
+                    Vector2f vector = MathUtils.getPointOnCircumference(null,
+                            vel,
+                            angle);
+                    if (Math.random() > 0.25f) {
+                        Global.getCombatEngine().spawnDebrisMedium(point, vector, 1, angle, 15f, 10f, 25f, 50f);
+                    } else {
+                        Global.getCombatEngine().spawnDebrisSmall(point, vector, 1, angle, 15f, 10f, 25f, 50f);
+                    }
+                }
                 if (!tinyBoi) {
                     CombatUtils.applyForce(weapon.getShip(), weapon.getShip().getFacing() - 180f, Math.min(target.getMass() / 4, BLADE_KNOCKBACK_MAX));
                 }

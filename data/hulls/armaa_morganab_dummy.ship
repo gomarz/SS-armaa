@@ -19,6 +19,7 @@
     "reduced_explosion"
   ],
   "builtInWeapons": {
+   "PD": "pdburst_fighter",
     "DECO": "armaa_morganaa_deco"
   },
   "weaponSlots": [
@@ -71,13 +72,13 @@
       "renderOrderMod": 100
     },
     {
-      "id": "WS0003",
+      "id": "PD",
       "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "HIDDEN",
-      "arc": 5,
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 270,
       "angle": 0,
-      "locations": [20, -0]
+      "locations": [15, -0]
     },
     {
       "id": "WS0004",

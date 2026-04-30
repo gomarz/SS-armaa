@@ -3,26 +3,25 @@
   "hullId": "armaa_morganamp",
   "displayName": "Standard",
   "goalVariant": false,
-  "fluxCapacitors": 7,
-  "fluxVents": 10,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [
-    "insulatedengine",
-    "heavyarmor",
-    "safetyoverrides",
-    "eccm"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "atropos",
-        "TRUE_GUN2": "atropos",
-        "WS0003": "railgun",
-        "WS0004": "railgun"
+        "TRUE_GUN": "swarmer",
+        "TRUE_GUN2": "swarmer",
+        "WS0003": "pdburst_fighter"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "modules": [],

@@ -30,6 +30,7 @@
   "modules": [
     {
       "MODULE": "armaa_panther_standard_xiv"
+      #"MODULE": "wolf_hegemony_Assault"
     }
   ],
   "wings": []

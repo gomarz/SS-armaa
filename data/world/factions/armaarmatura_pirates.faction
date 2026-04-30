@@ -1,6 +1,12 @@
 {
 	id:"armaarmatura_pirates",
-	"color":[252,71,75,255],
+	"color":[252,100,100,255],
+	"secondaryUIColor":[255,0,0,255],
+	"secondarySegments":5,	
+	"baseUIColor":[252,100,100,255],
+	"darkUIColor":[85,0,0,175],
+	"gridUIColor":[255,0,0,75],
+	"brightUIColor":[231,98,103,255],
 	"displayName":"MRC",
 	"displayNameWithArticle":"The MRC",
 	"displayNameLong":"Meshan Reprisal Coalition",
@@ -85,6 +91,7 @@
 		"tags":["armaa_cataphract_bp","armaa_mobilearmor"],
 		"hulls":[	
 				"armaa_einhander_plus",
+				"armaa_viator",
 				"armaa_record_frig",
 				"armaa_valkenx_frig",
 				"armaa_garegga",
@@ -286,7 +293,7 @@
 		"simulatorData":{
 			"showInSimulator":true,
 		},
-		"offerMissionsWhenHostile":false,
+		"offerMissionsWhenHostile":true,
 		"allowsTransponderOffTrade":true,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":true, # for fleet behavior
@@ -302,7 +309,7 @@
 			"vsFreePort":false,
 			"canBombard":true,
 			"territorial":false,
-			"canSendWithoutMilitaryBase":false,
+			"canSendWithoutMilitaryBase":true,
 		},
 	},
 	"fleetTypeNames":{

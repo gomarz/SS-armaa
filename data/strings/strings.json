@@ -7,6 +7,11 @@
 		"fake_fighter":"Used distinguishing playable fighters from fighter wings",
 		"no_wingcom_docking":"Ship's fighters will not land on the ship for resupply, but seek other carriers",
 	},
+	#K:V didnt work wat the fuk
+	"armaa_wingCommander": {
+		"dialogueFont": "graphics/fonts/orbitron16.fnt",
+	},
+
 	"armaa_notifications":{
 		"armaa_planet_approaching_text_jangala":"\"Ain't Jangala a beauty?\n\nThose megastorms might keep her secrets well-hidden, but underneath, there's a world teeming with bounty. Farms, seas..it's a place revered by the Luddic faithful.\n\nMakes you wonder about the mysteries hidden beneath those swirling storms, where folks can't venture.\"", #detect bugs or whatever
 		"armaa_planet_approaching_title_jangala":"Transmission from Dawn",
@@ -27,5 +32,4 @@
 		"fake_fighter":"Used distinguishing playable fighters from fighter wings",
 		"no_wingcom_docking":"Ship's fighters will not land on the ship for resupply, but seek other carriers",
 	},
-}
 }

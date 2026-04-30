@@ -199,23 +199,7 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
                         target1 = target;
                     }
                 }
-                /*MagicFakeBeam.spawnFakeBeam(
-					engine,
-					ship.getLocation(),
-					10000,
-					VectorUtils.getAngle(ship.getLocation(),target1.getLocation()),
-					40f,
-					amount,
-					1f,
-					80f,
-					new Color(255,255,255),
-					new Color(255,0,255),
-					200f,
-					DamageType.ENERGY,
-					0f,
-					ship
-				);
-                 */
+
                 DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, "armaa_curvyLaser", MathUtils.getRandomPointInCircle(weapon.getLocation(), 10f), ship.getFacing(), new Vector2f());
                 gauge -= 9999f;
                 maxDamage -= 99999f;

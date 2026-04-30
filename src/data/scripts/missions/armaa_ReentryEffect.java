@@ -27,28 +27,28 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
     private static final float RAMP_IN_DURATION  = 30.0f;  // seconds to reach full intensity
     private static final float FADE_OUT_DURATION = 20.0f;  // seconds to fade out once triggered
 
-    // Edge vignette — deep red/orange ring around screen
+    // Edge  deep red/orange ring around screen
     private static final float VIGNETTE_R = 0.85f;
     private static final float VIGNETTE_G = 0.18f;
     private static final float VIGNETTE_B = 0.02f;
     private static final float VIGNETTE_ALPHA_MAX = 0.5f; // peak alpha at screen edges
 
-    // Center glow — softer orange tint across the whole screen
+    // Center glow  softer orange tint across the whole screen
     private static final float GLOW_R = 0.70f;
     private static final float GLOW_G = 0.12f;
     private static final float GLOW_B = 0.0f;
     private static final float GLOW_ALPHA_MAX = 0.30f; // subtle center tint
 
-    // Flicker — very subtle brightness variation to sell heat
+    // Flicker  very subtle brightness variation to sell heat
     private static final float FLICKER_SPEED     = 7.5f;
     private static final float FLICKER_MAGNITUDE = 0.04f; // fraction of vignette alpha
 
-    // Streak lines — bright horizontal streaks at screen edges suggesting plasma
+    // Streak lines bright horizontal streaks at screen edges suggesting plasma
     private static final int   STREAK_COUNT      = 6;
     private static final float STREAK_ALPHA_MAX  = 0.35f;
     private static final float STREAK_HEIGHT     = 0.015f; // fraction of screen height
 
-    // Static interference — horizontal bands and noise simulating EM interference
+    // Static interference horizontal bands and noise simulating EM interference
     private static final float STATIC_ALPHA_MAX   = 0.12f; // max alpha of interference bands
     private static final int   STATIC_BAND_COUNT  = 8;     // number of scanline bands
     private static final float STATIC_FLICKER_CHANCE = 0.015f; // chance of a full screen flicker per frame
@@ -69,7 +69,7 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
         return EnumSet.of(CombatEngineLayers.JUST_BELOW_WIDGETS);
     }
 
-    /** Call this to begin fading both the overlay and the fireball out. */
+    /** Call this to begin fading the overlay out. */
     public void beginFadeOut() {
         fadingOut = true;
         fadeOutT  = 0f;
@@ -101,8 +101,6 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
 
         float sw = Global.getSettings().getScreenWidth();
         float sh = Global.getSettings().getScreenHeight();
-        float vx = 0f;
-        float vy = 0f;
 
         // Master intensity
         float intensity;

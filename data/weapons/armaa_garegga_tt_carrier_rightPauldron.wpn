@@ -1,10 +1,33 @@
 {
+  "id": "armaa_garegga_tt_carrier_rightPauldron",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_bakraidDecoEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "coreColor": [
-    255,
-    255,
-    255,
+  "turretSprite": "graphics/armaa/ships/garegga/armaa_garegga_tt_rightShoulder_carrier.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    -26,
+    13
+  ],
+  "turretAngleOffsets": [
+    90
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
     0
   ],
   "fringeColor": [
@@ -13,41 +36,14 @@
     255,
     0
   ],
-  "glowColor": [
-    0,
-    0,
-    0,
+  "coreColor": [
+    255,
+    255,
+    255,
     0
   ],
-  "hardpointAngleOffsets": [
-    0
-  ],
-  "hardpointOffsets": [
-    0,
-    0
-  ],
-  "hardpointSprite": "",
-  "hitGlowRadius": 0,
-  "id": "armaa_garegga_tt_carrier_rightPauldron",
-  "everyFrameEffect": "data.scripts.weapons.armaa_bakraidDecoEffect",
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "showDamageWhenDecorative": true,
-  "noShieldImpactSounds": false,
-  "pixelsPerTexel": 5,
-  "renderAboveAllWeapons": 0,
-  "size": "MEDIUM",
-  "specClass": "beam",
-  "textureScrollSpeed": 1,
+  "width": 10,
   "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretOffsets": [
-    -18,
-    -29
-  ],
-  "turretSprite": "graphics/armaa/ships/garegga/armaa_garegga_tt_rightShoulder_carrier.png",
-  "type": "DECORATIVE",
-  "width": 10
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 5
 }

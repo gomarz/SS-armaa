@@ -1,6 +1,7 @@
 {
   "combatSmall": {
 "armaa_garegga_tt_standard":1,
+"armaa_viator_standard":1,
 "armaa_ashura_frig_standard":1,
 "armaa_garegga_tt_assault":1,
 "armaa_garegga_tt_carrier_standard":1,
@@ -11,7 +12,6 @@
 	"armaa_record_frig_standard":1,
 	"armaa_record_frig_support":1,
         "armaa_record_frig_dem":0,
-	"armaa_morganamp_standard":1,
 	"armaa_musha_frig_sniper_standard":1,
 	"armaa_musha_frig_standard":1,
 	"armaa_aleste_swordsman":1,

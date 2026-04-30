@@ -1,0 +1,151 @@
+{
+  "hullName": "Bakraid",
+  "hullId": "armaa_garegga_ml_carrier",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/garegga/ml/armaa_garegga_ml_body_carrier.png",
+  "style": "MIDLINE",
+  "height": 132,
+  "width": 110,
+  "center": [55, 66],
+  "collisionRadius": 78,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 79,
+  "viewOffset": 50,
+  "builtInMods": [
+    "armaa_comboUnit"
+  ],
+  "builtInWeapons": {
+    "E_LSHOULDER": "armaa_garegga_ml_carrier_leftPauldron",
+    "E_RSHOULDER": "armaa_garegga_ml_carrier_rightPauldron"
+  },
+  "weaponSlots": [
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [18, -0]
+    },
+    {
+      "id": "MAIN_GUN",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-17, -0],
+      "renderOrderMod": -99998
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [42, 34]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [42, -34]
+    },
+    {
+      "id": "E_LSHOULDER",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [19, 5]
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [19, -5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-57, 28],
+      "length": 48,
+      "width": 24,
+      "angle": 180,
+      "contrailSize": 24,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-57, -28],
+      "length": 48,
+      "width": 24,
+      "angle": -180,
+      "contrailSize": 24,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53, 10],
+      "length": 24,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-57, 28],
+      "length": 34.941002,
+      "width": 10.886052,
+      "angle": 145,
+      "contrailSize": 10.886052,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-57, -28],
+      "length": 34.941002,
+      "width": 10.886052,
+      "angle": -145,
+      "contrailSize": 10.886052,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53, -12],
+      "length": 24,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    36.5, -7,
+    37, -22.5,
+    46, -27.5,
+    45, -43,
+    28, -44.5,
+    -12, -49.5,
+    -39, -50.5,
+    -56.5, -39.5,
+    -52, -26.5,
+    -49.5, -19,
+    -49.5, 19,
+    -52, 26.5,
+    -55, 37.5,
+    -44, 40.5,
+    -42, 51,
+    -7, 52,
+    23, 45,
+    45, 43,
+    46, 27.5,
+    37, 22.5,
+    36, 6
+  ]
+}

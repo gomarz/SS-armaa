@@ -70,7 +70,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 4]
+      "locations": [1, 3]
     },
     {
       "id": "D_PAULDRONR",
@@ -79,7 +79,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -4]
+      "locations": [1, -3]
     },
     {
       "id": "E_HEAD",

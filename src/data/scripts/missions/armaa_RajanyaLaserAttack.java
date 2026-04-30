@@ -49,6 +49,7 @@ public class armaa_RajanyaLaserAttack extends BaseCombatLayeredRenderingPlugin {
     private Vector2f lastCenter = null;
 
     public armaa_RajanyaLaserAttack(int owner, int count) {
+        // hacky
         this.sourceShip = Global.getCombatEngine().getFleetManager(owner).spawnShipOrWing("broadsword_wing", new Vector2f(-10000, -10000), 0f);
         this.totalCount = count;
         this.owner = owner;

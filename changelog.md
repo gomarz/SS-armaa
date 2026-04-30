@@ -1,6 +1,9 @@
 V3.2.6
 ------
+- Rewrote all(most?) dialogue
+- Removed the random Invictus with plasma burn in a spawned fleet
 - Fixed armaa_anime portraits for Kade, Imelda, Deadeye not appearing
+- Fixed bug that caused more officers to appear in markets
 - Fixed corsair xiv standard variant being under OP
 - Fixed valkazard standard variant being over OP
 - lowered bg rotation / scroll speed
@@ -25,9 +28,12 @@ V3.2.6
 - Added extra conditional to "Ace" skill to prevent Dawn voice lines from playing
 - Added floaty text when reinforcements appear during Crown of Cinders
 - New Meshan AA market should offer more AA specific ships
+- Added missing Dawn-Sedge event scene(s)
 - Added an industry on New Meshan that spawns fleets using mostly AA gear
+- Added ability to swap out core unit for bakraid
 - Added an industry on Jenius that spawns derelict patrols initially
 - Added new event after docking at Jenius post-CoC
+- Added delicate hullmod to all phase units
 - Added new event after completing Descent (occurs after end of month)
 - Added 2 new quests
 	- Red Earth, Iron Cages
@@ -41,6 +47,7 @@ V3.2.6
 - Increased armor for VX Custom and Aleste by 50, Leynos, Spriggan Powered, and Kouto ECM by 100
 - Slightly reduce max turn rate / accel across the board for cataphracts
 - Revised some mission battles
+- perf enhancements for custom battles
 
 - WINGCOM
 	- DP of unit with hullmod now increased based on fighter OP cost
@@ -49,9 +56,9 @@ V3.2.6
 	- Repairs
 		- Repairs are now finite
 		- Each unit has a static, non replenishable repair pool per engagement (50 by default)
-		- When landing after incurring dadmage, DP*hullLevel is deducted from this pool
+		- When landing after incurring damage, DP*hullLevel is deducted from this pool
 		- Once exhausted, repairs cannot be made, but CR / AMMO can still be recovered
-		- Can be toggled back to infinite repair by LL
+		- Can be toggled back to effectively infinite repair by LL
 	- Deployment
 		- Added slight delay to Strikecraft launching from carriers initially
 		- Removed cap to number of Strikecraft that can launch from carriers on deployment
@@ -120,7 +127,7 @@ V3.2.6
 	- Ship System: Fuller Auto -> Plasma Jets
 
 - Kouto
-	- 
+	- Fixed missing torso weapon
 - Rajanya
 	- Updated melee effects
 	- Added ARU as built-in
@@ -138,6 +145,7 @@ V3.2.6
 	- Speed: 110 -> 140
 	- Medium slot is now Large
 	- removed 1x missile slot
+	- core unit can be swapped out at markets
 
 - GuarDUAL
 	- fixed shield arc progressively decreasing after transformation
@@ -178,7 +186,7 @@ V3.2.6
 	- System: Mirage Shroud
 		- Creates two duplicates that have 25% of the originals HP/Armor for 6 seconds
 		- Copies only deal 40% of the original's damage
-		- Player can cancel the system early to swap positions with one of the clones
+		- Player can cancel the system early to swap positions with one of the duplicates
 
 - New ship: Viator (Thanks Selkie!)
 
@@ -189,7 +197,6 @@ V3.2.6
 	- Ship System: Firebolt Feeder -> Fuller Auto (MRC)
 	- Shield Arc: 300->120
 	- Shield Type: FRONT->OMNI
-	- Shield Efficiency: 0.80->0.75
 
 - Juno Mk. II
 	- OP 16->13 

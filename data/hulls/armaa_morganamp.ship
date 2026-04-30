@@ -1,9 +1,9 @@
 {
   "hullName": "Morgana",
   "hullId": "armaa_morganamp",
-  "hullSize": "FRIGATE",
+  "hullSize": "FIGHTER",
   "spriteName": "graphics/armaa/ships/morgana/armaa_morganamp.png",
-  "style": "armaa_valkazard",
+  "style": "MIDLINE",
   "height": 62,
   "width": 52,
   "center": [26, 31.5],
@@ -11,11 +11,6 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 43.5,
   "viewOffset": 0,
-  "builtInMods": [
-    "strikeCraft",
-    "armaa_aaf",
-    "armaa_morganaBonus",
-  ],
   "weaponSlots": [
     {
       "id": "TRUE_GUN",
@@ -24,7 +19,7 @@
       "mount": "HIDDEN",
       "arc": 0,
       "angle": -0,
-      "locations": [-4, -19],
+      "locations": [-11, -13.5],
       "renderOrderMod": 100
     },
     {
@@ -34,7 +29,7 @@
       "mount": "HIDDEN",
       "arc": 0,
       "angle": -0,
-      "locations": [-4, 19],
+      "locations": [-11, 13.5],
       "renderOrderMod": 100
     },
     {
@@ -42,18 +37,18 @@
       "size": "SMALL",
       "type": "HYBRID",
       "mount": "HIDDEN",
-      "arc": 5,
-      "angle": -0,
-      "locations": [6, 8]
+      "arc": 360,
+      "angle": 0,
+      "locations": [15, -0]
     },
     {
       "id": "WS0004",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "DECORATIVE",
       "mount": "HIDDEN",
       "arc": 5,
-      "angle": 0,
-      "locations": [6, -8]
+      "angle": -0,
+      "locations": [6.5, -6.5]
     },
     {
       "id": "DECOL",
@@ -62,7 +57,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": -0,
-      "locations": [-9.5, 18],
+      "locations": [-14.5, -0],
       "renderOrderMod": 100
     },
     {
@@ -72,7 +67,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-9.5, -18],
+      "locations": [-8.5, -0],
       "renderOrderMod": 100
     },
     {

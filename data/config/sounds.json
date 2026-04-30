@@ -8,9 +8,10 @@
 "music":{
 		"music_armaa_market_neutral":[
 			{"file":"old_city.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"maintenance.ogg","source":"sounds/armaa/music","volume":0.5,"randomStart":true},
 		],
 		"music_armaa_system":[
-			{"file":"cave_of_regret.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"trip.ogg","source":"sounds/armaa/music/","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_pirate_encounter_neutral":[
 			{"file":"black_magic.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
@@ -34,10 +35,10 @@
 			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_rajanya_boss":[
-			{"file":"inexpressible_emotions.ogg","source":"sounds/armaa/music/factions","volume":0.35,"randomStart":true},
+			{"file":"boundless_remorse.ogg","source":"sounds/armaa/music/descent","volume":0.5,"randomStart":true},
 		],
 		"music_armaa_bar":[
-			{"file":"armaa_bar.ogg","source":"sounds/armaa/music","volume":0.5,"randomStart":true},
+			{"file":"maintenance.ogg","source":"sounds/armaa/music","volume":0.5,"randomStart":true},
 		],
 		"music_armaa_briefing":[
 			{"file":"clenched_fist.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
@@ -207,6 +208,11 @@
 	"beamchargeM":[							
 			{"file":"sounds/armaa/beamchargeM.ogg","pitch":1,"volume":0.95},
 	],
+	"beamchargeL":[							
+			{"file":"sounds/armaa/beamchargeL.ogg","pitch":1,"volume":1},
+			{"file":"sounds/armaa/beamchargeL.ogg","pitch":1,"volume":0.95},
+			{"file":"sounds/armaa/beamchargeL.ogg","pitch":1,"volume":1.05},
+	],
 	"beambang":[							
 			{"file":"sounds/armaa/beambang.ogg","pitch":1,"volume":0.6},
 	],
@@ -218,6 +224,9 @@
 	],
 	"beamfireM":[							
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
+	],
+	"beamfireL":[							
+			{"file":"sounds/armaa/beamfireL.ogg","pitch":1,"volume":0.95},
 	],
 	"beamchargeMeso":[							
 			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":1,"volume":1},

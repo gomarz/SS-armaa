@@ -3,7 +3,7 @@
   "specClass": "beam",
   "type": "DECORATIVE",
   "size": "MEDIUM",
-  "everyFrameEffect": "data.scripts.weapons.armaa_zanacDummyWeapon2",
+  "everyFrameEffect": "data.scripts.weapons.armaa_pantherHardpointEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/panther/ht/armaa_panther_launcher.png",
@@ -36,9 +36,15 @@
   ],
   "hardpointOffsets": [
     26,
+    0,
+    27.5,
+    0,
+    27.5,
     0
   ],
   "hardpointAngleOffsets": [
+    0,
+    0,
     0
   ],
   "fringeColor": [

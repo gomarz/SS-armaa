@@ -5,12 +5,11 @@
   "goalVariant": false,
   "fluxCapacitors": 20,
   "fluxVents": 20,
-  "quality": 1,
+  "quality": 2,
   "permaMods": [],
   "hullMods": [
     "heavyarmor",
-    "armaa_sykoStims",
-    "armaa_himac"
+    "hardenedshieldemitter"
   ],
   "weaponGroups": [
     {

@@ -1,0 +1,32 @@
+{
+  "variantId": "armaa_garegga_ml_carrier_standard",
+  "hullId": "armaa_garegga_ml_carrier",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 5,
+  "fluxVents": 5,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [
+    {
+      "MODULE": "armaa_valkenx_frig_support"
+    }
+  ],
+  "wings": []
+}

@@ -23,11 +23,12 @@
     {
       "id": "TRUE_GUN",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 180,
+      "arc": 45,
       "angle": 45,
-      "locations": [0, 37]
+      "locations": [0, 37],
+      "renderOrderMod": 100
     },
     {
       "id": "MODULE",
@@ -36,13 +37,13 @@
       "mount": "TURRET",
       "arc": 150,
       "angle": 0,
-      "locations": [17, -0]
+      "locations": [18, -0]
     },
     {
       "id": "MAIN_GUN",
       "size": "MEDIUM",
-      "type": "COMPOSITE",
-      "mount": "TURRET",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
       "arc": 360,
       "angle": 0,
       "locations": [-17, -0],
@@ -51,16 +52,17 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 180,
+      "arc": 45,
       "angle": -45,
-      "locations": [0, -37]
+      "locations": [0, -37],
+      "renderOrderMod": 100
     },
     {
       "id": "WS0002",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "size": "SMALL",
+      "type": "COMPOSITE",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -68,8 +70,8 @@
     },
     {
       "id": "WS0003",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "size": "SMALL",
+      "type": "COMPOSITE",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -146,23 +148,25 @@
   ],
   "bounds": [
     36.5, -7,
-    45.5, -3.5,
+    37, -22.5,
+    46, -27.5,
     45, -43,
     28, -44.5,
     -12, -49.5,
     -39, -50.5,
     -56.5, -39.5,
-    -46.5, -27,
+    -52, -26.5,
     -49.5, -19,
     -49.5, 19,
-    -43.5, 29,
+    -52, 26.5,
     -55, 37.5,
     -44, 40.5,
     -42, 51,
     -7, 52,
     23, 45,
     45, 43,
-    45.5, 3.5,
+    46, 27.5,
+    37, 22.5,
     36, 6
   ]
 }
