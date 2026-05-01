@@ -9,6 +9,7 @@ V3.2.7
 - fixed misspelled rules trigger for kato dialogue
 - fixed misnamed file that would cause ctd on case sensitive OS
 - fixed missing fx in ocean battle
+- fixed broken rules option during end of REIC
 V3.2.6
 ------
 - Rewrote all(most?) dialogue
