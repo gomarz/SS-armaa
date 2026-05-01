@@ -10,8 +10,11 @@ import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.OfficerDataAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.BarCMD;
+import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.armaa_dawnListener;
+import data.scripts.util.armaa_utils;
 import java.util.ArrayList;
 import java.util.List;
 import lunalib.lunaSettings.LunaSettings;
@@ -36,10 +39,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnHireDate", timestamp);
             return true;
         }
-        if ("setInteractionTimestamp".equals(action)) {
-            if (Global.getSector().getMemoryWithoutUpdate().get("$armaa_dawnBarTimestamp") != null) {
-                return false;
-            }           
+        if ("setInteractionTimestamp".equals(action)) {      
             long timestamp = Global.getSector().getClock().getTimestamp();
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnBarTimestamp", timestamp);
             return true;
@@ -110,6 +110,20 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             Global.getSector().getCampaignUI().suppressMusic(0f);
             return true;
 
+        }
+        else if ("initDawn".equals(action))
+        {
+            Global.getSector().getEconomy().getMarket("armaa_meshanii_market").getCommDirectory().getEntryForPerson(Global.getSector().getImportantPeople().getPerson("armaa_dawn")).setHidden(false);
+                OfficerManagerEvent event = armaa_utils.getOfficerManagerEvent();
+                PersonAPI dawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
+                OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(dawn, "armaa_meshanii_market", 4000, 1000);
+                dawn.getMemoryWithoutUpdate().set("$ome_hireable", true);
+                dawn.getMemoryWithoutUpdate().set("$ome_eventRef", event);
+                dawn.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
+                dawn.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
+                event.addAvailable(f);
+
+                return true;
         }
         return false;
     }

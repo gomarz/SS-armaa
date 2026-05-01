@@ -198,28 +198,30 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
             }
             if (!firstStrike) {
 
-                boolean hitShield = target.getShield() != null && target.getShield().isWithinArc(beam.getRayEndPrevFrame());
-                float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.1f;
-                pierceChance *= ship.getMutableStats().getDynamic().getValue(Stats.SHIELD_PIERCED_MULT);
+                if (target instanceof ShipAPI) {
+                    boolean hitShield = target.getShield() != null && target.getShield().isWithinArc(beam.getRayEndPrevFrame());
+                    float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.1f;
+                    pierceChance *= ship.getMutableStats().getDynamic().getValue(Stats.SHIELD_PIERCED_MULT);
 
-                boolean piercedShield = hitShield && (float) Math.random() < pierceChance;
-                //piercedShield = true;
+                    boolean piercedShield = hitShield && (float) Math.random() < pierceChance;
+                    //piercedShield = true;
 
-                if (!hitShield || piercedShield) {
-                    Vector2f empPoint = beam.getRayEndPrevFrame();
-                    float emp = beam.getDamage().getFluxComponent() * 1f;
-                    float dam = beam.getDamage().getDamage() * 1f;
-                    engine.spawnEmpArcPierceShields(
-                            beam.getSource(), empPoint, beam.getDamageTarget(), beam.getDamageTarget(),
-                            DamageType.ENERGY,
-                            dam, // damage
-                            emp, // emp 
-                            100000f, // max range 
-                            "tachyon_lance_emp_impact",
-                            beam.getWidth() + 9f,
-                            beam.getFringeColor(),
-                            beam.getCoreColor()
-                    );
+                    if (!hitShield || piercedShield) {
+                        Vector2f empPoint = beam.getRayEndPrevFrame();
+                        float emp = beam.getDamage().getFluxComponent() * 1f;
+                        float dam = beam.getDamage().getDamage() * 1f;
+                        engine.spawnEmpArcPierceShields(
+                                beam.getSource(), empPoint, beam.getDamageTarget(), beam.getDamageTarget(),
+                                DamageType.ENERGY,
+                                dam, // damage
+                                emp, // emp 
+                                100000f, // max range 
+                                "tachyon_lance_emp_impact",
+                                beam.getWidth() + 9f,
+                                beam.getFringeColor(),
+                                beam.getCoreColor()
+                        );
+                    }
                 }
                 float variance = MathUtils.getRandomNumberInRange(-0.3f, .3f);
                 Global.getSoundPlayer().playSound("armaa_saber_slash", 1.1f + variance, 1f + variance, point, ZERO);

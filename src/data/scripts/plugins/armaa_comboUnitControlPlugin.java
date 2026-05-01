@@ -5,6 +5,7 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
@@ -132,7 +133,9 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                     Global.getSoundPlayer().playSound("disabled_large_crit", 1f, 1f, ship.getLocation(), ZERO);
                                     //WeaponslotAPI slot = module.
                                     module.getFluxTracker().showOverloadFloatyIfNeeded("Emergency Purge!", Color.blue, 4f, true);
-                                    FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP, module.getVariant().clone());
+                                    ShipVariantAPI var = module.getVariant().clone();
+                                    var.removePermaMod("armaa_dpReduction");        
+                                    FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
 
                                     //If you're one of the player's ships, we should set commander to player
                                     //Else, default behavior

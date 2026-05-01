@@ -45,8 +45,8 @@ public class armaa_DescentMission extends HubMissionWithSearch {
         setStageOnGlobalFlag(Stage.GO_TO_VARYNS, "$armaaWFStarted");
         setStageOnGlobalFlag(Stage.GO_TO_MESHAN, "$armaaWFSpokeToSettlement");
         makeImportant(Global.getSector().getEntityById("nekki2"), "$armaaWFSpokeToSettlement", Stage.GO_TO_MESHAN);
-        setStageOnGlobalFlag(Stage.DESCENT, "$armaa_capturedMorgana");
-        makeImportant(Global.getSector().getEntityById("nekki3"), "$armaa_capturedMorgana", Stage.DESCENT);
+        setStageOnGlobalFlag(Stage.DESCENT, "$armaa_defeatedRajanya");
+        makeImportant(Global.getSector().getEntityById("nekki3"), "$armaa_defeatedRajanya", Stage.DESCENT);
         setStageOnGlobalFlag(Stage.DEBRIEF, "$armaaWFGravionBattleComplete");
         makeImportant(nekki1.getAdmin(), "$armaaWFGravionBattleComplete", Stage.DEBRIEF);
         setStageOnGlobalFlag(Stage.COMPLETED, "$armaa_des_Completed");

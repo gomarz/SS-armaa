@@ -219,12 +219,16 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
                     weapon.setCurrAngle(global + (sineA * (TORSO_OFFSET) + aim * 0.3f) + currentRotateR);
 
                     if (trueWeapon != null && trueWeapon.getCooldown() > 0) {
-                        gun.getSprite().setCenterY(originalRArmPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
-                        pauldronR.getSprite().setCenterY(originalRShoulderPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
+                        float t = trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown();                        
+                        gun.getSprite().setCenterY(originalRArmPos + (2 * t*t));
+                        pauldronR.getSprite().setCenterY(originalRShoulderPos + (1.5f * t*t));
 
                         if (sinceB >= 0.95) {
-                            armL.getSprite().setCenterY(originalArmPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
-                            pauldronL.getSprite().setCenterY(originalShoulderPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
+                            // t*t eases out
+                            armL.getSprite().setCenterY(originalArmPos + (1.5f * t * t));
+                            pauldronL.getSprite().setCenterY(originalShoulderPos + (1.0f * t * t));                            
+                            //armL.getSprite().setCenterY(originalArmPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
+                            //pauldronL.getSprite().setCenterY(originalShoulderPos + (1.8f * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
 
                         }
 

@@ -25,8 +25,6 @@ import org.magiclib.util.MagicCampaign;
 
 public class armaa_K {
 
-    boolean hasIndEvo = false;
-
     public void generate(SectorAPI sector) {
         //create a star system
         StarSystemAPI system = sector.createStarSystem("Gamlin");
@@ -35,7 +33,6 @@ public class armaa_K {
         //set background image
         system.setBackgroundTextureFilename("graphics/armaa/backgrounds/armaa_homesystem.jpg");
         if (Global.getSettings().getModManager().isModEnabled("deconomics")) {
-            hasIndEvo = true;
         }
 
         //the star
@@ -318,7 +315,7 @@ public class armaa_K {
                 .setFleetFaction("armaarmatura_pirates")
                 .setFleetType("taskForce")
                 .setFlagshipName("R-2")
-                .setFlagshipVariant("armaa_kshatriya_boss")
+                .setFlagshipVariant("armaa_exilium_custom")
                 .setFlagshipAlwaysRecoverable(true)
                 .setQualityOverride(3f)
                 //.setCaptain((PersonAPI)Global.getSector().getImportantPeople().getPerson(BBPlus_People.OLIVER))
@@ -334,17 +331,16 @@ public class armaa_K {
         mrcGuardFleet.addTag("armaa_guardfleet");
         mrcGuardFleet.setFaction("armaarmatura_pirates");
         
-
+        String faction = Global.getSettings().getModManager().isModEnabled("knights_of_ludd") ? "knights_of_selkie" : "luddic_church";
+        String fleetName = Global.getSettings().getModManager().isModEnabled("knights_of_ludd") ? "Hallowed Sword of the Watcher" :"Knights of Ludd Task Force";
         final CampaignFleetAPI luddicKnightsFleet = (CampaignFleetAPI) MagicCampaign.createFleetBuilder()
-                .setFleetName("Knights of Ludd Task Force")
-                .setFleetFaction("luddic_church")
+                .setFleetName(fleetName)
+                .setFleetFaction(faction)
                 .setFleetType("taskForce")
-                .setFlagshipName("R-2")
-                .setFlagshipVariant("invictus_standard")
                 .setFlagshipAlwaysRecoverable(true)
                 .setQualityOverride(3f)
                 //.setCaptain((PersonAPI)Global.getSector().getImportantPeople().getPerson(BBPlus_People.OLIVER))
-                .setMinFP(250)
+                .setMinFP(150)
                 .setReinforcementFaction("luddic_church")
                 .setAssignment(FleetAssignment.ORBIT_AGGRESSIVE)
                 .setSpawnLocation(meshanii)
@@ -354,7 +350,6 @@ public class armaa_K {
         luddicKnightsFleet.setDiscoverable(true);
         luddicKnightsFleet.getMemoryWithoutUpdate().set("$canOnlyBeEngagedWhenVisibleToPlayer", true);
         //mrcGuardFleet.addTag("armaa_guardfleet");
-        luddicKnightsFleet.setFaction("luddic_church");
         armaa_LuddObserverFleetScript src = new armaa_LuddObserverFleetScript(luddicKnightsFleet);
         luddicKnightsFleet.addEventListener(src);
         luddicKnightsFleet.addScript(src);  

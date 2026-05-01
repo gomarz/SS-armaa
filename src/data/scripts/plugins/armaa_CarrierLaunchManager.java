@@ -100,42 +100,40 @@ public class armaa_CarrierLaunchManager extends BaseEveryFrameCombatPlugin {
         }
     }
  
-    private void fireLaunch(ShipAPI ship, ShipAPI carrier) {
-        // Restore collision
-        ship.setControlsLocked(false);      
- 
-        // Find a free launch bay slot on the carrier
-        Vector2f takeOffLoc = null;
-        for (com.fs.starfarer.api.loading.WeaponSlotAPI wep : carrier.getHullSpec().getAllWeaponSlotsCopy()) {
-            if (Global.getCombatEngine().getCustomData()
-                    .get("armaa_launchSlots" + carrier.getId() + "_" + wep.getId()) != null) {
-                continue;
-            }
-            if (wep.getWeaponType() == com.fs.starfarer.api.combat.WeaponAPI.WeaponType.LAUNCH_BAY) {
-                if (Global.getCombatEngine().getPlayerShip() == ship) {
-                    Global.getSoundPlayer().playSound("ui_noise_static", 1f, 1f,
-                            carrier.getLocation(), new Vector2f());
-                    carrier.getFluxTracker().showOverloadFloatyIfNeeded(
-                            "Good luck out there!", Color.white, 2f, true);
-                }
-                ship.setFacing(carrier.getFacing() + wep.getAngle());
-                takeOffLoc = new Vector2f(wep.computePosition(carrier));
-                Global.getCombatEngine().getCustomData()
-                        .put("armaa_launchSlots" + carrier.getId() + "_" + wep.getId(), "-");
-                break;
-            }
+private void fireLaunch(ShipAPI ship, ShipAPI carrier) {
+    ship.setControlsLocked(false);
+
+    // Collect all launch bay slots
+    List<com.fs.starfarer.api.loading.WeaponSlotAPI> launchBays = new ArrayList<>();
+    for (com.fs.starfarer.api.loading.WeaponSlotAPI wep : carrier.getHullSpec().getAllWeaponSlotsCopy()) {
+        if (wep.getWeaponType() == com.fs.starfarer.api.combat.WeaponAPI.WeaponType.LAUNCH_BAY) {
+            launchBays.add(wep);
         }
- 
-        if (takeOffLoc == null) {
-            takeOffLoc = new Vector2f(carrier.getLocation());
-        }
- 
-        ship.setLaunchingShip(carrier);
-        armaa_utils.setLocation(ship, takeOffLoc);
-        ship.setAnimatedLaunch();
-        Global.getSoundPlayer().playSound("fighter_takeoff", 1f, 1f, ship.getLocation(), new Vector2f());
-        CombatUtils.applyForce(
-                ship, ship.getFacing(),
-                (float) Math.random() * carrier.getMaxSpeed() * 0.50f);
     }
+
+    Vector2f takeOffLoc;
+    if (!launchBays.isEmpty()) {
+        com.fs.starfarer.api.loading.WeaponSlotAPI slot = 
+            launchBays.get((int)(Math.random() * launchBays.size()));
+        
+        if (Global.getCombatEngine().getPlayerShip() == ship) {
+            Global.getSoundPlayer().playSound("ui_noise_static", 1f, 1f,
+                    carrier.getLocation(), new Vector2f());
+            carrier.getFluxTracker().showOverloadFloatyIfNeeded(
+                    "Good luck out there!", Color.white, 2f, true);
+        }
+        ship.setFacing(carrier.getFacing() + slot.getAngle());
+        takeOffLoc = new Vector2f(slot.computePosition(carrier));
+    } else {
+        takeOffLoc = new Vector2f(carrier.getLocation());
+    }
+
+    ship.setLaunchingShip(carrier);
+    armaa_utils.setLocation(ship, takeOffLoc);
+    ship.setAnimatedLaunch();
+    Global.getSoundPlayer().playSound("fighter_takeoff", 1f, 1f, ship.getLocation(), new Vector2f());
+    CombatUtils.applyForce(
+            ship, ship.getFacing(),
+            (float) Math.random() * carrier.getMaxSpeed() * 0.50f);
+}
 }

@@ -1,6 +1,8 @@
 package data.scripts.util;
 
+import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.events.CampaignEventManagerAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
@@ -18,6 +20,7 @@ import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
@@ -848,9 +851,9 @@ public class armaa_utils {
                                     0f,
                                     0f,
                                     0f,
-                              0.1f,
-                                0.5f,
-                                0.5f,
+                                    0.1f,
+                                    0.5f,
+                                    0.5f,
                                     CombatEngineLayers.BELOW_SHIPS_LAYER);
                         }
                     }
@@ -878,7 +881,7 @@ public class armaa_utils {
                                 0f,
                                 0f,
                                 0f,
-                              0.1f,
+                                0.1f,
                                 0.5f,
                                 0.5f,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER);
@@ -1131,6 +1134,19 @@ public class armaa_utils {
         return newPersonality;
     }
 
+    public static OfficerManagerEvent getOfficerManagerEvent() 
+    {
+        OfficerManagerEvent ome = null;
+        for (EveryFrameScript script : Global.getSector().getScripts()) {
+            Global.getLogger(armaa_utils.class).info(script.getClass().getCanonicalName());
+            if (script instanceof OfficerManagerEvent) {
+                ome = (OfficerManagerEvent) script;
+                break;
+            }
+        }
+        return ome;
+    }
+
     public static String getLessAggressivePersonality(FleetMemberAPI member, ShipAPI ship) {
         if (ship == null) {
             return Personalities.CAUTIOUS;
@@ -1187,6 +1203,13 @@ public class armaa_utils {
         }
 
         return newPersonality;
+    }
+    
+    public static String getMinuteString()
+    {
+            int currentMinute = Global.getSector().getClock().getCal().get(java.util.Calendar.MINUTE);
+            String minuteStr = currentMinute < 10 ? "0" + currentMinute : "" + currentMinute;
+        return minuteStr;
     }
 
 }

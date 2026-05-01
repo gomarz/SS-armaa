@@ -48,9 +48,9 @@ public class armaa_counterShieldScript extends BaseEveryFrameCombatPlugin {
 
 	// Homing degrades over projectile lifetime.
 	// HOMING_DEGRADATION_MIN: fraction of TURN_RATE remaining at end of life (0.1 = 10% turn rate at expiry)
-	// HOMING_DEGRADATION_CURVE: >1 falls off faster early, <1 stays sharp longer, 1 = linear
-	private static final float HOMING_DEGRADATION_MIN   = 0.5f;
-	private static final float HOMING_DEGRADATION_CURVE = 0.5f;
+	// HOMING_DEGRADATION_CURVE: <1 falls off faster early, >1 stays sharp longer, 1 = linear
+	private static final float HOMING_DEGRADATION_MIN   = 0.50f;
+	private static final float HOMING_DEGRADATION_CURVE = 1.6f;
 
 	private static final float SWAY_AMOUNT_PRIMARY    = 1f;
 	private static final float SWAY_AMOUNT_SECONDARY  = 1f;

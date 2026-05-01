@@ -11,7 +11,7 @@ public class armaa_kshatriyaBinderEffect implements EveryFrameWeaponEffectPlugin
     private float currentRotateR = 0;
     private float sway = 0f;
     private final float maxbinderrotate = 40f;
-    public static float SHIELD_BONUS = 5f;
+    public static float SHIELD_BONUS = 10f;
     public boolean init = false;
 
     @Override
@@ -34,8 +34,8 @@ public class armaa_kshatriyaBinderEffect implements EveryFrameWeaponEffectPlugin
                     numModules++;
                     if (!init) {
                         m.setHullSize(ShipAPI.HullSize.FRIGATE);
+                        m.setCollisionClass(CollisionClass.FIGHTER);
                         m.resetDefaultAI();
-                        m.setHullSize(ShipAPI.HullSize.FIGHTER);
                         init = true;
                     }
                     if (ship.getSystem().isActive()) {
@@ -83,6 +83,8 @@ public class armaa_kshatriyaBinderEffect implements EveryFrameWeaponEffectPlugin
             }
         }
         ship.getMutableStats().getShieldDamageTakenMult().modifyMult(ship.getId() + "_binders", 1f - SHIELD_BONUS * numModules * 0.01f);
+        ship.getMutableStats().getAcceleration().modifyPercent(ship.getId() + "_binders", 10f * numModules);
+        ship.getMutableStats().getMaxSpeed().modifyPercent(ship.getId() + "_binders", 15f * numModules);
 
     }
 

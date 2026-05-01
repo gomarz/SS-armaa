@@ -10,7 +10,6 @@ import com.fs.starfarer.api.campaign.InteractionDialogPlugin;
 import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin.DataForEncounterSide;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
-import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 
@@ -31,7 +30,6 @@ import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
-import com.fs.starfarer.api.impl.campaign.ids.Abilities;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
 
 import java.util.List;
@@ -39,19 +37,20 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
 
-import org.magiclib.util.MagicCampaign;
 
 public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
         ArrayList<FleetMemberAPI> removedShips = new ArrayList();
+        float modifier = 0f;
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             if (member.isCapital() || member.isCruiser()) {
                 float crew = 0f;
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
                 crew += member.getCrewComposition().getCrewInt();
+                modifier+= member.getFleetPointCost();
                 Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_" + member.getId(), crew);
             } else {
                 continue;
@@ -60,20 +59,21 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
         FleetParamsV3 fparams = new FleetParamsV3(
                 Global.getSector().getEntityById("nekki1").getLocationInHyperspace(),
-                "armaarmatura_arusthai",
+                "mercenary",
                 null,
                 FleetTypes.PATROL_SMALL,
-                Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() * 0.85f, // combatPts
+                Global.getSector().getPlayerFleet().getFleetData().getFleetPointsUsed()-modifier, // combatPts
                 0f, // freighterPts 
                 0f, // tankerPts
                 0f, // transportPts
                 0f, // linerPts
                 0f, // utilityPts
-                .25f // qualityMod
+                -1f // qualityMod
         );
+        fparams.maxShipSize = 1;
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
         FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet, fparams, new Random());
-        //FleetFactoryV3.applyDamageToFleet(enemyFleet, 0.50f, true, new Random());
+        FleetFactoryV3.applyDamageToFleet(enemyFleet, 0.25f, true, new Random());
         final SectorEntityToken entity = dialog.getInteractionTarget();
         Misc.setDefenderOverride(entity, new DefenderDataOverride(Factions.REMNANTS, 1f, 100, 200));
         final MemoryAPI memory = getEntityMemory(memoryMap);
@@ -81,6 +81,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         enemyFleet.getMemoryWithoutUpdate().set("$inShaftBattle", "-");
         final FIDConfig config = new FIDConfig();
         config.leaveAlwaysAvailable = true;
+        config.lootCredits = true;
         config.showCommLinkOption = false;
         config.showEngageText = false;
         config.showFleetAttitude = false;
@@ -92,7 +93,6 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         config.pullInAllies = true;
         config.pullInEnemies = true;
         config.pullInStations = false;
-        config.lootCredits = false;
         config.firstTimeEngageOptionText = "Engage the automated defenses";
         config.afterFirstTimeEngageOptionText = "Re-engage the automated defenses";
         config.noSalvageLeaveOptionText = "Continue";

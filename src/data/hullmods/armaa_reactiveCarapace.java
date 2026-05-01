@@ -17,7 +17,7 @@ public class armaa_reactiveCarapace extends BaseHullMod {
  
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        // No stats applied here — effects are handled by the shield module's weapon script
+        // No stats applied here.  effects are handled by the shield module's weapon script
     }
  
     @Override

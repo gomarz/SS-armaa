@@ -25,7 +25,6 @@ public class armaa_localFCSStats extends BaseShipSystemScript {
     public float bonusPercent = 0f;
     //private Color color = new Color(100,255,100,255);
     private Color color = new Color(255, 0, 115, 255);
-    private ShipAPI shipTarget;
     public static Color TEXT_COLOR = new Color(255, 55, 55, 255);
     public static Object KEY_SHIP = new Object();
     public static Object KEY_TARGET = new Object();

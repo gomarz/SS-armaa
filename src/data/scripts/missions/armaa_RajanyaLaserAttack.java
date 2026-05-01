@@ -45,20 +45,23 @@ public class armaa_RajanyaLaserAttack extends BaseCombatLayeredRenderingPlugin {
     private int spawnedCount = 0;
     private float spawnTimer = 0f;
     private int owner = 0;
-
+    private float startDelay = 0f;
+    private Vector2f originOffset = new Vector2f();
     private Vector2f lastCenter = null;
 
-    public armaa_RajanyaLaserAttack(int owner, int count) {
+    public armaa_RajanyaLaserAttack(int owner, int count, Vector2f originOffset, ShipAPI sourceShip, float startDelay) {
         // hacky
-        this.sourceShip = Global.getCombatEngine().getFleetManager(owner).spawnShipOrWing("broadsword_wing", new Vector2f(-10000, -10000), 0f);
+        this.sourceShip = sourceShip == null ? Global.getCombatEngine().getFleetManager(owner).spawnShipOrWing("thunder_wing", new Vector2f(-10000, -10000), 0f):sourceShip;
         this.totalCount = count;
         this.owner = owner;
+        this.originOffset = originOffset;
+        this.startDelay = startDelay;
     }
 
     @Override
     public boolean isExpired() {
         if (expired) {
-            Global.getCombatEngine().removeEntity(sourceShip);
+            //Global.getCombatEngine().removeEntity(sourceShip);
         }
         return expired;
     }
@@ -83,7 +86,10 @@ public class armaa_RajanyaLaserAttack extends BaseCombatLayeredRenderingPlugin {
         if (player == null) {
             return;
         }
-
+        if (startDelay > 0f) {
+            startDelay -= amount;
+            return;
+        }
         Vector2f center = Global.getCombatEngine().getViewport().getCenter();
 
         if (lastCenter == null) {
@@ -258,11 +264,14 @@ public class armaa_RajanyaLaserAttack extends BaseCombatLayeredRenderingPlugin {
 
     private void spawnLaser(Vector2f center) {
         FakeLaser laser = new FakeLaser();
-
+        Vector2f spawnCenter = new Vector2f(
+            center.x + originOffset.x,
+            center.y + originOffset.y
+        );
         float angle = (float) (Math.random() * Math.PI * 2f);
         float radius = (float) (Math.random() * SPAWN_RADIUS);
-        laser.x = center.x + (float) Math.cos(angle) * radius;
-        laser.y = center.y + (float) Math.sin(angle) * radius;
+        laser.x = spawnCenter.x + (float) Math.cos(angle) * radius;
+        laser.y = spawnCenter.y + (float) Math.sin(angle) * radius;
 
         float burstAngle = (float) (Math.random() * Math.PI * 2f);
         laser.vx = (float) Math.cos(burstAngle) * BURST_SPEED;

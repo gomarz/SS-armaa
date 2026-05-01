@@ -12,6 +12,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import data.scripts.util.armaa_strikeCraftRepairTracker;
 import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.magiclib.util.MagicLensFlare;
@@ -173,7 +174,6 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                     continue;
                 }
             }
-            float hullThreshold = 0.50f;
             if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
                 // someone wanted option to not be recalled  unless holding fire..so sure
                 boolean armaa_recallOnlyWhenHoldFire = LunaSettings.getBoolean("armaa", "armaa_recallOnlyWhenHoldFire");
@@ -183,9 +183,12 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                     }
                 }
                 // why is this a double anyway
-                if (LunaSettings.getDouble("armaa", "armaa_repairLevel") != null) {
-                    hullThreshold = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
+                if (LunaSettings.getFloat("armaa", "armaa_repairLevel") != null) {
+                    LunaSettings.getFloat("armaa", "armaa_repairLevel");
                 }
+                
+                if(armaa_strikeCraftRepairTracker.getRepairsRemaining(ship) <= 0)
+                    continue;
                 if (ship.getHitpoints() >= armaa_utils.getMaxHPRepair(ship) && ship.getCurrentCR() >= armaa_utils.getMaxCRRepair(ship)) {
                     continue;
                 }

@@ -77,10 +77,9 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
         );
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
         enemyFleet.getFleetData().addFleetMember("berserker_Assault");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             enemyFleet.getFleetData().addFleetMember("kite_pirates_Raider");
             enemyFleet.getFleetData().addFleetMember("kite_Standard");
-            enemyFleet.getFleetData().addFleetMember("armaa_morganamp_standard");
             enemyFleet.getFleetData().addFleetMember("picket_Assault");
             enemyFleet.getFleetData().addFleetMember("sentry_FS");
             enemyFleet.getFleetData().addFleetMember("warden_Defense");

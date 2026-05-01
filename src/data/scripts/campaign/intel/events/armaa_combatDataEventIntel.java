@@ -27,6 +27,7 @@ import com.fs.starfarer.api.impl.campaign.intel.events.HAShipsDestroyedFactor;
 import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI.TooltipCreator;
+import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.TimeoutTracker;
 
@@ -48,7 +49,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     public static float RANGE_PER_MAKESHIFT_SENSOR_ARRAY = 1f;
     public static int MAX_SENSOR_ARRAYS = 3;
     public static float WAYSTATION_BONUS = 2f;
-
+    private IntervalUtil advanceInterval = new IntervalUtil(1f, 10f);
     public static float SLIPSTREAM_FUEL_MULT = 0.25f;
     public static float HYPER_BURN_BONUS = 3f;
 
@@ -167,7 +168,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 info.addPara("New hullmods unlocked", initPad, tc, h, "MORGANA", "GAMLIN");
             }
             if (esd.id == Stage.PROTOTYPE_BREAKTHROUGH) {
-                info.addPara("Fighters %s and %s delivered to %s for use", initPad, tc, h, "MORGANA","GUARDUAL", "GAMLIN");
+                info.addPara("Fighters %s and %s delivered to %s for use", initPad, tc, h, "MORGANA", "GUARDUAL", "GAMLIN");
             }
             if (esd.id == Stage.DATA_DELIVERY) {
                 info.addPara("New hullmods unlocked", tc, initPad);
@@ -250,7 +251,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             );
         } else if (stageId == Stage.ADVANCED_TELEMETRY) {
             info.addPara("Ships with the %s hullmod and piloted by officers have enhanced performance: "
-                    + "%s and %s are improved by %s. Shield Efficiency increased by %s.",
+                    + "Development of the Panther phase cataphract is available",
                     initPad, Misc.getHighlightColor(),
                     "STRIKECRAFT",
                     "Flux Dissipation",
@@ -390,6 +391,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             //if (!Global.getSector().getPlayerFaction().isHostileTo(otherFleet.getFaction())) continue;
             for (FleetMemberAPI loss : Misc.getSnapshotMembersLost(otherFleet)) {
                 fpDestroyed += loss.getFleetPointCost();
+                //anomalous stuff gets bonus points
+                if (loss.getHullSpec().hasTag("omega") || loss.getHullSpec().getManufacturer().equals("Threat") || loss.getHullSpec().getManufacturer().equals("Shrouded Dweller")) {
+                    fpDestroyed += loss.getFleetPointCost();
+                }
                 if (first == null) {
                     first = otherFleet;
                 }
@@ -433,9 +438,42 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
         super.advanceImpl(amount);
         applyFleetEffects();
         float days = Global.getSector().getClock().convertToDays(amount);
-        if(getMaxProgress() >= PROGRESS_MAX)
-            if(!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacCompleted"))
-                Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacCompleted",true);
+        advanceInterval.advance(amount);
+        if (advanceInterval.intervalElapsed()) {
+            if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacRajanyaBonusGranted")) {
+                boolean hasRajanya = false;
+                for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+                    if (member.getHullSpec().getHullId().contains("armaa_kshatriya")) {
+                        hasRajanya = true;
+                        break;
+                    }
+                }
+                if (hasRajanya) {
+                    addFactor(new armaa_oneTimeEventFactor(100, "Rajanya"));
+                    Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacRajanyaBonusGranted", true);
+                }
+            }
+
+            if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacValkBonusGranted")) {
+
+                boolean hasValk = false;
+                for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+                    if (member.getHullSpec().getHullId().contains("armaa_valkazard")) {
+                        hasValk = true;
+                        break;
+                    }
+                }
+                if (hasValk) {
+                    addFactor(new armaa_oneTimeEventFactor(100, "Valkazard"));
+                    Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacValkBonusGranted", true);
+                }
+            }
+        }
+        if (getMaxProgress() >= PROGRESS_MAX) {
+            if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacCompleted")) {
+                Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacCompleted", true);
+            }
+        }
         recent.advance(days);
 
         //setProgress(getProgress() + 10);
@@ -464,6 +502,12 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 
         if (stage.id == Stage.ADVANCED_TELEMETRY) {
             Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_strikeCraftBuff", 1);
+            if (!Global.getSector().getPlayerFaction().knowsShip("armaa_panther_frig")) {
+                //Global.getSector().getPlayerFleet().getCargo().addSpecial(sid, 0);
+                Global.getSector().getPlayerFaction().addKnownShip("armaa_panther_frig", false);
+                Global.getSector().getFaction("armaarmatura_atac").addKnownShip("armaa_panther_frig", false);
+                Global.getSector().getFaction("armaarmatura_market").addKnownShip("armaa_panther_frig", false);
+            }
         }
 
         if (stage.id == Stage.PROTOTYPE_BREAKTHROUGH) // what if seraph doesn't exist tho??
@@ -474,10 +518,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_hasMorgana")) {
                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
                             Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_morgana_standard", "Morgana");
-                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
-                             Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_guardual_standard", "GD-42");
-                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
-                             Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing",2);                     
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_guardual_standard", "GD-42");
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing", 2);
                     Global.getSector().getMemoryWithoutUpdate().set("$armaa_hasMorgana", true);
                 }
             }

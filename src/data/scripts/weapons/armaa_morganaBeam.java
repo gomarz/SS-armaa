@@ -7,250 +7,374 @@ import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.BeamEffectPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
+import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.DamagingProjectileAPI;
+import com.fs.starfarer.api.graphics.SpriteAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.IntervalUtil;
+import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
-
 import org.magiclib.util.MagicRender;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.CollisionUtils;
-
+import org.dark.shaders.distortion.DistortionShader;
+import org.dark.shaders.distortion.RippleDistortion;
 
 public class armaa_morganaBeam implements BeamEffectPlugin {
 
-	private IntervalUtil fireInterval = new IntervalUtil(0.2f, 0.3f);
-	private boolean wasZero = true;
-	
-	private final Vector2f ZERO = new Vector2f();
-    private float CHARGEUP_PARTICLE_ANGLE_SPREAD = 150f;
-	private final float A_2 = CHARGEUP_PARTICLE_ANGLE_SPREAD / 2;
-    private float CHARGEUP_PARTICLE_BRIGHTNESS = 1f;
-    private float CHARGEUP_PARTICLE_DISTANCE_MAX = 150f;
-    private float CHARGEUP_PARTICLE_DISTANCE_MIN = 100f;
-    private float CHARGEUP_PARTICLE_DURATION = 0.5f;
-    private float CHARGEUP_PARTICLE_SIZE_MAX = 5f;
-    private float CHARGEUP_PARTICLE_SIZE_MIN = 1f;
-    public float TURRET_OFFSET = 20f;
-	//sliver cannon charging fx
-    private boolean charging = false;
-    private boolean cooling = false;
-    private boolean firing = false;
-    private final IntervalUtil interval = new IntervalUtil(0.015f, 0.015f);
-    private final IntervalUtil beamTick = new IntervalUtil(0.05f, 0.05f);
-    private final IntervalUtil interval2 = new IntervalUtil(0.075f, 0.075f);
-    private float level = 0f;
-	    // constant that effects the lower end of the particle velocity
-    private final float VEL_MIN = 1f;
-    // constant that effects the upper end of the particle velocity
-    private final float VEL_MAX = 1.5f;
-	//private WeaponAPI weapon;
-	private boolean runOnce = false;
-	
-	//beam particles
-	private static final Color PARTICLE_COLOR = new Color(0, 255, 200, 255);
+    private static final float CORE_SIZE_MIN = 10f;
+    private static final float CORE_SIZE_MAX = 50f;
+    private static final float CORE_FLICKER_CHANCE = 0.55f;
+    private static final float CORE_BRIGHTNESS_MIN = 0.4f;
+    private static final float CORE_BRIGHTNESS_MAX = 1.0f;
+    private static final float CORE_DURATION = 0.06f;
+    private static final Color CORE_COLOR_INNER = new Color(255, 255, 240, 255);
+    private static final Color CORE_COLOR_OUTER = new Color(0, 220, 180, 200);
+
+    private static final int STREAK_COUNT_MAX = 6;
+    private static final float STREAK_SPAWN_RADIUS_MIN = 40f;
+    private static final float STREAK_SPAWN_RADIUS_MAX = 200f;
+    private static final float STREAK_SIZE_HEAD = 4f;
+    private static final float STREAK_SIZE_TAIL = 2f;
+    private static final int STREAK_TAIL_STEPS = 6;
+    private static final float STREAK_DURATION = 0.12f;
+    private static final Color STREAK_COLOR = new Color(0, 240, 190, 255);
+
+    private static final float GLOW_CHANCE = 0.4f;
+    private static final float GLOW_SIZE_MIN = 8f;
+    private static final float GLOW_SIZE_MAX = 22f;
+    private static final float GLOW_DURATION_MIN = 0.15f;
+    private static final float GLOW_DURATION_MAX = 0.35f;
+    private static final Color GLOW_COLOR = new Color(0, 200, 160, 120);
+
+    private static final float CHARGEUP_PARTICLE_ANGLE_SPREAD = 150f;
+    private static final float CHARGEUP_PARTICLE_BRIGHTNESS = 1f;
+    private static final float CHARGEUP_PARTICLE_DISTANCE_MAX = 150f;
+    private static final float CHARGEUP_PARTICLE_DISTANCE_MIN = 100f;
+    private static final float CHARGEUP_PARTICLE_DURATION = 0.5f;
+    private static final float CHARGEUP_PARTICLE_SIZE_MAX = 5f;
+    private static final float CHARGEUP_PARTICLE_SIZE_MIN = 1f;
+    private static final float VEL_MIN = 1f;
+    private static final float VEL_MAX = 1.5f;
+
+    private static final Color PARTICLE_COLOR = new Color(0, 255, 200, 255);
     private static final float PARTICLE_SIZE_MIN = 5f;
     private static final float PARTICLE_SIZE_MAX = 10f;
     private static final float PARTICLE_DURATION_MIN = 0.4f;
     private static final float PARTICLE_DURATION_MAX = 0.9f;
-    private static final float PARTICLE_INERTIA_MULT = 0.5f; //This is how much the particles retain their spawning ship's velocity; 0f means no retained velocity, 1f means full retained velocity.
-    private static final float PARTICLE_DRIFT = 50f; //This is how much the particles "move" in a random direction when spawned, at most; their actual speed is between 0 and this value (plus any inertia, see above)
-    private static final float PARTICLE_DENSITY = 0.05f; //Measured in particles per SU^2 (area unit) and second; lower means less particles. This is multiplied by charge level, too
-    private static final float PARTICLE_SPAWN_WIDTH_MULT = 0.5f; //Multiplier for how wide the particles are allowed to spawn from the beam center; at 1f, it's equal to beam width, at 0f they only spawn in the center. Note that true beam width is usually much bigger than the visual beam width
-	private float originalWidth = 0;
-	
-	
-	
-	public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) 
-	{
-		CombatEntityAPI target = beam.getDamageTarget();
-		WeaponAPI weapon = beam.getWeapon();
-		ShipAPI ship = weapon.getShip();
-		float beamBonus = 0f;
-		ship.setJitterUnder(ship, new Color(0.8f*weapon.getChargeLevel(),0,0.2f,(200f/255f)*weapon.getChargeLevel()), 1f*weapon.getChargeLevel(),4, 10f*weapon.getChargeLevel());
-		ShipAPI buddy = ship.getAllWings().get(0).getLeader();
-		
-		if(buddy != null)
-		{
-			buddy.setJitterUnder(buddy, new Color(0.2f,0,0.8f*weapon.getChargeLevel(),(200f/255f)*weapon.getChargeLevel()), 1f*weapon.getChargeLevel(),4, 10f*weapon.getChargeLevel());		
-		}
-		if(weapon.getChargeLevel() >= 1f)
-		{
-				if (!runOnce)
-				{
-					runOnce = true;
-					originalWidth = beam.getWidth();
-				}
-			beamTick.advance(amount);
-			if(beamTick.intervalElapsed())
-			{
-				Object bonus = Global.getCombatEngine().getCustomData().get("armaa_morgana_bonus_"+ship.getId());
-				if(bonus instanceof Float)
-					beamBonus = (float)bonus;
-				if(beamBonus > 0)
-					weapon.setAmmo(9999);
-				if (beamBonus < 0 || ship.getSystem().isCoolingDown())
-				{
-					weapon.setAmmo(0);					
-				}
-				if((ship.getSystem().isCoolingDown() || beamBonus <= 0) && !ship.getFluxTracker().isOverloaded())
-				{
-					float overloadDur = beamBonus <= 0 ? ship.getSystem().getCooldownRemaining() : 0.1f;
-					if(beamBonus <= 0)
-					{
-						weapon.disable();
-					}
-					ship.getFluxTracker().forceOverload(overloadDur); 
-				}
-				beam.setWidth((originalWidth*(1f+Math.max(0f,Math.min(1f,beamBonus/100f))*2))*beam.getBrightness());
-				if(beam.getWidth() > 0 && beamBonus > 0)
-					Global.getCombatEngine().getCustomData().put("armaa_morgana_bonus_"+ship.getId(),beamBonus-(amount+0.4f));
-				
-				List<DamagingProjectileAPI> possibleTargets = new ArrayList<>(100);
-				possibleTargets.addAll(CombatUtils.getMissilesWithinRange(ship.getLocation(), beam.getLength()));
-				possibleTargets.addAll(CombatUtils.getProjectilesWithinRange(ship.getLocation(), beam.getLength()));
+    private static final float PARTICLE_INERTIA_MULT = 0.5f;
+    private static final float PARTICLE_DRIFT = 50f;
+    private static final float PARTICLE_DENSITY = 0.05f;
+    private static final float PARTICLE_SPAWN_WIDTH_MULT = 0.5f;
 
-				for (DamagingProjectileAPI proj : possibleTargets) 
-				{
-					if(proj.getOwner() == ship.getOwner())
-						continue;
-					if(CollisionUtils.getCollides(beam.getFrom(),beam.getTo(),proj.getLocation(),proj.getCollisionRadius()))
-					{
-						Global.getCombatEngine().removeEntity(proj);
-					}
-				}
-			}
-		}
-		
-		float beamWidth = beam.getWidth();
-		
-		if(!MagicRender.screenCheck(0.2f, weapon.getLocation()) || Global.getCombatEngine().isPaused())
-		{
-			return;
-		}
-		if (target instanceof CombatEntityAPI) 
-		{
-			float dur = beam.getDamage().getDpsDuration();
-			// needed because when the ship is in fast-time, dpsDuration will not be reset every frame as it should be
-			if (!wasZero) dur = 0;
-			wasZero = beam.getDamage().getDpsDuration() <= 0;
-			fireInterval.advance(dur);
+    private static final int IMPACT_STREAK_COUNT = 10;
+    private static final float IMPACT_STREAK_CONE = 35f;
+    private static final float IMPACT_STREAK_SPD_MIN = 300f;
+    private static final float IMPACT_STREAK_SPD_MAX = 600f;
+    private static final float IMPACT_STREAK_FADE_OUT = 0.2f;
+    private static final Color IMPACT_STREAK_COLOR = new Color(200, 255, 240, 180);
 
-				Vector2f origin = new Vector2f(weapon.getLocation());
-				Vector2f offset = new Vector2f(TURRET_OFFSET, -0f);
-				VectorUtils.rotate(offset, weapon.getCurrAngle(), offset);
-				Vector2f.add(offset, origin, origin);
+    public float TURRET_OFFSET = 20f;
 
-				float shipFacing = weapon.getCurrAngle();
-				Vector2f shipVelocity = weapon.getShip().getVelocity();
-				Vector2f dir = Vector2f.sub(beam.getTo(), beam.getFrom(), new Vector2f());
-				if (dir.lengthSquared() > 0) dir.normalise();
-				dir.scale(50f);
-				Vector2f point = Vector2f.sub(beam.getTo(), dir, new Vector2f());
-			if(weapon.isFiring() || (weapon.getChargeLevel() > 0f))
-			{
-				float radius = beamWidth + (weapon.getChargeLevel() * weapon.getChargeLevel()* MathUtils.getRandomNumberInRange(25f, 75f));
-				//Color color = new Color(200, 200, 200, 255);
-				
-				float facing = beam.getWeapon().getCurrAngle();
-					if((float) Math.random() <= 0.5f)
-					{
-						int count = 1 + (int) (weapon.getChargeLevel() * 3);
-                        for (int i = 0; i < count; i++) 
-						{
-							Color color = Math.random() <= 0.75f ? beam.getFringeColor() : new Color(255, 255, 200, 255);
-									float distance = MathUtils.getRandomNumberInRange(CHARGEUP_PARTICLE_DISTANCE_MIN+1f,
-                                    CHARGEUP_PARTICLE_DISTANCE_MAX+1f)
-                                    * weapon.getChargeLevel();
-							
-							float speed = 0.75f * distance / CHARGEUP_PARTICLE_DURATION*weapon.getChargeLevel();
+    // ── State ────────────────────────────────────────────────────────────────
+    private boolean runOnce = false;
+    private boolean wasZero = true;
+    private boolean firstStrike = false;
+    private final IntervalUtil fireInterval = new IntervalUtil(0.6f, 0.6f);
 
-							float angle = MathUtils.getRandomNumberInRange(facing - A_2,
-									facing + A_2);
-							float vel = MathUtils.getRandomNumberInRange(speed * -VEL_MIN,
-									speed * -VEL_MAX);
-							Vector2f vector = MathUtils.getPointOnCircumference(null,
-									vel,
-									angle);
+    // ── Helpers ──────────────────────────────────────────────────────────────
+    private Vector2f getMuzzlePos(WeaponAPI weapon) {
+        Vector2f origin = new Vector2f(weapon.getLocation());
+        Vector2f offset;
+        if (weapon.getSlot().isTurret()) {
+            offset = new Vector2f(weapon.getSpec().getTurretFireOffsets().get(0));
+        } else {
+            offset = new Vector2f(weapon.getSpec().getHardpointFireOffsets().get(0));
+        }
+        VectorUtils.rotate(offset, weapon.getCurrAngle(), offset);
+        Vector2f.add(offset, origin, origin);
+        return origin;
+    }
 
-                            float size = MathUtils.getRandomNumberInRange(CHARGEUP_PARTICLE_SIZE_MIN+1f, CHARGEUP_PARTICLE_SIZE_MAX+5f)*weapon.getChargeLevel();
-                           // float angle = MathUtils.getRandomNumberInRange(-0.5f * CHARGEUP_PARTICLE_ANGLE_SPREAD, 0.5f
-                             //       * CHARGEUP_PARTICLE_ANGLE_SPREAD);
-                           // Vector2f particleVelocity = MathUtils.getPointOnCircumference(shipVelocity, speed, angle + shipFacing
-                                  //  + 180f);
-                            engine.addHitParticle(beam.getTo(), vector, size, CHARGEUP_PARTICLE_BRIGHTNESS * Math.min(
-                                    weapon.getChargeLevel() + 0.5f, 1f)
-                                            * MathUtils.getRandomNumberInRange(0.75f, 1.25f), CHARGEUP_PARTICLE_DURATION,
-                                    new Color(color.getRed()/255,color.getGreen()/255,color.getBlue()/255,(color.getAlpha()/255)*weapon.getChargeLevel()));
-                        }
-					}
-	
-				if(Math.random() <= 0.05f)
-				{
-					engine.addHitParticle(beam.getTo(), ZERO, (radius*1.75f), 0.1f + weapon.getChargeLevel() * 0.3f, 0.2f, beam.getCoreColor());
-				}
-			}
+    private void spawnInwardStreak(CombatEngineAPI engine, Vector2f from, Vector2f to, float charge) {
+        Vector2f dir = Vector2f.sub(to, from, new Vector2f());
+        float len = dir.length();
+        if (len < 1f) {
+            return;
+        }
+        dir.scale(1f / len);
 
-			if (cooling) 
-			{
-				if (weapon.getChargeLevel() <= 0f) 
-				{
-					cooling = false;
-					//Global.getSoundPlayer().playSound("beamfire", 1f, 1f, origin, weapon.getShip().getVelocity());
-				}
-			} 
-		}
-            level = weapon.getChargeLevel();
-			
-			//yoinked from LoA
-        if (runOnce) 
-		{
-            //Calculate how many particles should be spawned this frame
-            float particleCount = beamWidth * PARTICLE_SPAWN_WIDTH_MULT * MathUtils.getDistance(beam.getTo(), beam.getFrom()) * amount * PARTICLE_DENSITY * weapon.getChargeLevel();
+        for (int s = 0; s < STREAK_TAIL_STEPS; s++) {
+            float t = (float) s / (STREAK_TAIL_STEPS - 1);
+            Vector2f pos = new Vector2f(
+                    from.x + dir.x * len * t,
+                    from.y + dir.y * len * t
+            );
+            float size = STREAK_SIZE_TAIL + (STREAK_SIZE_HEAD - STREAK_SIZE_TAIL) * t;
+            float brightness = (0.4f + 0.6f * t) * charge;
+            float alpha = (0.3f + 0.7f * t) * charge;
+            engine.addHitParticle(pos, new Vector2f(), size, brightness, STREAK_DURATION,
+                    new Color(
+                            STREAK_COLOR.getRed() / 255f,
+                            STREAK_COLOR.getGreen() / 255f,
+                            STREAK_COLOR.getBlue() / 255f,
+                            alpha
+                    ));
+        }
+    }
 
-            //Generate the particles and assign them their random characteristics
-			if(Math.random() <0.5f)
-            for (int i = 0; i < particleCount; i++) 
-			{
-                //First, get a random point on the beam's line
-                Vector2f spawnPoint = MathUtils.getRandomPointOnLine(beam.getFrom(), beam.getTo());
+    private void spawnOutwardStreaks(CombatEngineAPI engine, WeaponAPI weapon, Vector2f muzzle) {
+        float facing = weapon.getCurrAngle() + 180f;
+        SpriteAPI sprite = null;
+        Color color = Math.random() < 0.30f ? new Color(0, 0, 0, 1) : IMPACT_STREAK_COLOR;
+        boolean additive = !color.equals(new Color(0, 0, 0, 1)) ? true : false;
+        // could be one loop but after how long this took, fuk it
+        if (Math.random() < 0.50f) {
+            for (int i = 0; i < IMPACT_STREAK_COUNT / 2f; i++) {
+                float angle = facing + MathUtils.getRandomNumberInRange(-25f, 25f);
+                float speed = MathUtils.getRandomNumberInRange(IMPACT_STREAK_SPD_MIN, IMPACT_STREAK_SPD_MAX);
+                Vector2f vel = MathUtils.getPointOnCircumference(null, speed, angle);
 
-                //Then, we offset that depending on width
-                spawnPoint = MathUtils.getRandomPointInCircle(spawnPoint, beamWidth * PARTICLE_SPAWN_WIDTH_MULT);
+                sprite = Global.getSettings().getSprite("misc", "armaa_streak");
+                MagicRender.battlespace(
+                        sprite,
+                        new Vector2f(muzzle),
+                        new Vector2f(vel),
+                        new Vector2f(sprite.getWidth(), sprite.getHeight()),
+                        new Vector2f(0f, 0f), // no growth
+                        angle + 90f, // rotate sprite to align with travel direction
+                        0f, // no spin
+                        color,
+                        additive, // additive blend
+                        0f, // no fade in
+                        0.1f, // no full duration, just fade
+                        IMPACT_STREAK_FADE_OUT
+                );
 
-                //If this point is too far off-screen, we go on to the next particle instead
-                if (!Global.getCombatEngine().getViewport().isNearViewport(spawnPoint, PARTICLE_SIZE_MAX * 3f)) 
-				{
-                    continue;
-                }
-
-                //After that, we calculate our velocity
-                Vector2f velocity = new Vector2f(ship.getVelocity().x*PARTICLE_INERTIA_MULT, ship.getVelocity().y*PARTICLE_INERTIA_MULT);
-                velocity = MathUtils.getRandomPointInCircle(velocity, PARTICLE_DRIFT);
-				/*
-					if((float) Math.random() <= 0.05f)
-					{
-						MagicLensFlare.createSharpFlare(
-							engine,
-							beam.getSource(),
-							spawnPoint,
-							4,
-							150,
-							beam.getWeapon().getCurrAngle(),
-							new Color (255,255,255,150),
-							new Color(255,255,255,255)
-						);
-					}
-				*/
-                //And finally spawn the particle
-                engine.addSmoothParticle(spawnPoint, velocity, MathUtils.getRandomNumberInRange(PARTICLE_SIZE_MIN, PARTICLE_SIZE_MAX), weapon.getChargeLevel(),
-                        MathUtils.getRandomNumberInRange(PARTICLE_DURATION_MIN, PARTICLE_DURATION_MAX), PARTICLE_COLOR);
             }
         }
-	}
+        float leftie = 1f;
+        for (int i = 0; i < IMPACT_STREAK_COUNT; i++) {
+            float angle = facing + MathUtils.getRandomNumberInRange(0f, 45f) * leftie;
+            float speed = MathUtils.getRandomNumberInRange(IMPACT_STREAK_SPD_MIN, IMPACT_STREAK_SPD_MAX);
+            Vector2f vel = MathUtils.getPointOnCircumference(null, speed, angle);
+
+            // Get perpendicular direction to weapon facing
+            // Actually just do it manually:
+            float perpX = (float) Math.sin(Math.toRadians(weapon.getCurrAngle())) * leftie;
+            float perpY = -(float) Math.cos(Math.toRadians(weapon.getCurrAngle())) * leftie;
+            float offsetDist = MathUtils.getRandomNumberInRange(20f, 25f);
+            Vector2f spawnPos = new Vector2f(
+                    muzzle.x + perpX * offsetDist,
+                    muzzle.y + perpY * offsetDist
+            );
+            sprite = Global.getSettings().getSprite("misc", "armaa_streak");
+            MagicRender.battlespace(
+                    sprite,
+                    new Vector2f(spawnPos),
+                    new Vector2f(vel),
+                    new Vector2f(sprite.getWidth(), sprite.getHeight()),
+                    new Vector2f(0f, 0f), // no growth
+                    angle + leftie * 90f, // rotate sprite to align with travel direction
+                    0f, // no spin
+                    color,
+                    true, // additive blend
+                    0f, // no fade in
+                    0.1f, // no full duration, just fade
+                    IMPACT_STREAK_FADE_OUT
+            );
+            leftie *= -1f;
+        }
+    }
+
+    @Override
+    public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
+
+        WeaponAPI weapon = beam.getWeapon();
+        ShipAPI ship = weapon.getShip();
+        float charge = weapon.getChargeLevel();
+
+        ship.setJitterUnder(ship,
+                new Color(0.8f * charge, 0f, 0.2f, (200f / 255f) * charge),
+                1f * charge, 4, 10f * charge);
+
+        if (charge >= 1f && !runOnce) {
+            runOnce = true;
+            beam.getWidth();
+        }
+
+        // Reset streak when weapon finishes firing cycle
+        if (charge <= 0f) {
+        }
+
+        if (!MagicRender.screenCheck(0.2f, weapon.getLocation()) || engine.isPaused()) {
+            return;
+        }
+
+        Vector2f muzzle = getMuzzlePos(weapon);
+
+        // ═════════════════════════════════════════════════════════════════════
+        // BLOCK A — Charge-up FX (runs whenever charge > 0, NO target needed)
+        // ═════════════════════════════════════════════════════════════════════
+        if (charge > 0f) {
+
+            if (Math.random() < CORE_FLICKER_CHANCE) {
+                float coreSize = (CORE_SIZE_MIN + (CORE_SIZE_MAX - CORE_SIZE_MIN) * charge)
+                        * (0.75f + (float) Math.random() * 0.5f);
+                float brightness = CORE_BRIGHTNESS_MIN
+                        + (CORE_BRIGHTNESS_MAX - CORE_BRIGHTNESS_MIN) * charge;
+
+                engine.addHitParticle(muzzle, new Vector2f(),
+                        coreSize * 1.8f, brightness * 0.35f, CORE_DURATION * 2f, CORE_COLOR_OUTER);
+                engine.addHitParticle(muzzle, new Vector2f(),
+                        coreSize, brightness, CORE_DURATION, CORE_COLOR_INNER);
+            }
+
+            int streakCount = (int) (charge * STREAK_COUNT_MAX);
+            if (charge > 0.9f) {
+                streakCount += 3;
+            }
+
+            for (int i = 0; i < streakCount; i++) {
+                float spawnRadius = MathUtils.getRandomNumberInRange(
+                        STREAK_SPAWN_RADIUS_MIN + (1f - charge) * 60f,
+                        STREAK_SPAWN_RADIUS_MAX
+                );
+                float spawnAngle = MathUtils.getRandomNumberInRange(0f, 360f);
+                Vector2f tail = MathUtils.getPointOnCircumference(muzzle, spawnRadius, spawnAngle);
+
+                float headFrac = 0.6f + charge * 0.35f;
+                Vector2f head = new Vector2f(
+                        tail.x + (muzzle.x - tail.x) * headFrac,
+                        tail.y + (muzzle.y - tail.y) * headFrac
+                );
+                spawnInwardStreak(engine, tail, head, charge);
+            }
+
+            if (Math.random() < GLOW_CHANCE * charge) {
+                Vector2f glowPos = muzzle;
+                engine.addSmoothParticle(glowPos, new Vector2f(),
+                        MathUtils.getRandomNumberInRange(GLOW_SIZE_MIN, GLOW_SIZE_MAX),
+                        charge,
+                        MathUtils.getRandomNumberInRange(GLOW_DURATION_MIN, GLOW_DURATION_MAX),
+                        GLOW_COLOR);
+            }
+            if (Math.random() < 0.40f) {
+                spawnOutwardStreaks(engine, weapon, muzzle);
+            }
+        }
+
+        CombatEntityAPI target = beam.getDamageTarget();
+        if (target != null) {
+
+            float dur = beam.getDamage().getDpsDuration();
+            if (!wasZero) {
+                dur = 0;
+            }
+            wasZero = beam.getDamage().getDpsDuration() <= 0;
+            fireInterval.advance(dur);
+            if (target instanceof ShipAPI && fireInterval.intervalElapsed()) {
+                boolean hitShield = target.getShield() != null && target.getShield().isWithinArc(beam.getRayEndPrevFrame());
+                if (hitShield) {
+                    float fluxLevel = ((ShipAPI) target).getHardFluxLevel();
+                    float pierceChance = (1f - fluxLevel) * 0.9f;
+                    boolean piercedShield = hitShield && (float) Math.random() < pierceChance;
+                    //if (!firstStrike) {
+                        if (piercedShield) {
+
+                            if (Global.getSettings().getModManager().isModEnabled("shaderLib")) {
+                                float time = 1.25f;
+                                RippleDistortion ripple = new RippleDistortion(beam.getTo(), new Vector2f());
+                                ripple.setSize(400f);
+                                ripple.setIntensity(100f * 1.25f);
+                                ripple.setFrameRate(60f / (time));
+                                ripple.fadeInSize(time);
+                                ripple.fadeOutIntensity(time);
+                                DistortionShader.addDistortion(ripple);
+                            }
+                            firstStrike = true;
+                            engine.applyDamage(target, beam.getTo(), beam.getDamage().getDamage() * 0.25f, DamageType.KINETIC, 0f, false, false, ship);
+                            Global.getSoundPlayer().playSound("hit_shield_heavy_gun", 1f, 1f, beam.getTo(), new Vector2f());
+                        }
+                    //}
+                }
+            }
+            float facing = weapon.getCurrAngle();
+            float A_2 = CHARGEUP_PARTICLE_ANGLE_SPREAD / 2f;
+
+            if ((float) Math.random() <= 0.5f) {
+                int count = 1 + (int) (charge * 3);
+                for (int i = 0; i < count; i++) {
+                    Color color = Math.random() <= 0.75f
+                            ? beam.getFringeColor()
+                            : new Color(255, 255, 200, 255);
+
+                    float distance = MathUtils.getRandomNumberInRange(
+                            CHARGEUP_PARTICLE_DISTANCE_MIN + 1f,
+                            CHARGEUP_PARTICLE_DISTANCE_MAX + 1f) * charge;
+
+                    float speed = 0.75f * distance / CHARGEUP_PARTICLE_DURATION * charge;
+                    float angle = MathUtils.getRandomNumberInRange(facing - A_2, facing + A_2);
+                    float vel = MathUtils.getRandomNumberInRange(speed * -VEL_MIN, speed * -VEL_MAX);
+
+                    Vector2f vector = MathUtils.getPointOnCircumference(null, vel, angle);
+                    float size = MathUtils.getRandomNumberInRange(
+                            CHARGEUP_PARTICLE_SIZE_MIN + 1f,
+                            CHARGEUP_PARTICLE_SIZE_MAX + 5f) * charge;
+
+                    engine.addHitParticle(beam.getTo(), vector, size,
+                            CHARGEUP_PARTICLE_BRIGHTNESS
+                            * Math.min(charge + 0.5f, 1f)
+                            * MathUtils.getRandomNumberInRange(0.75f, 1.25f),
+                            CHARGEUP_PARTICLE_DURATION,
+                            new Color(
+                                    color.getRed() / 255f,
+                                    color.getGreen() / 255f,
+                                    color.getBlue() / 255f,
+                                    (color.getAlpha() / 255f) * charge
+                            ));
+                }
+            }
+
+            // B2 — Hit-point flash
+            if (Math.random() <= 0.05f) {
+                float beamWidth = beam.getWidth();
+                engine.addHitParticle(beam.getTo(), new Vector2f(),
+                        beamWidth * 1.75f,
+                        0.1f + charge * 0.3f,
+                        0.2f,
+                        beam.getCoreColor());
+            }
+        }
+
+        if (runOnce) {
+            float beamWidth = beam.getWidth();
+            float particleCount = beamWidth * PARTICLE_SPAWN_WIDTH_MULT
+                    * MathUtils.getDistance(beam.getTo(), beam.getFrom())
+                    * amount * PARTICLE_DENSITY * charge;
+
+            if (Math.random() < 0.5f) {
+                for (int i = 0; i < (int) particleCount; i++) {
+                    Vector2f spawnPoint = MathUtils.getRandomPointOnLine(beam.getFrom(), beam.getTo());
+                    spawnPoint = MathUtils.getRandomPointInCircle(spawnPoint, beamWidth * PARTICLE_SPAWN_WIDTH_MULT);
+
+                    if (!engine.getViewport().isNearViewport(spawnPoint, PARTICLE_SIZE_MAX * 3f)) {
+                        continue;
+                    }
+
+                    Vector2f velocity = new Vector2f(
+                            ship.getVelocity().x * PARTICLE_INERTIA_MULT,
+                            ship.getVelocity().y * PARTICLE_INERTIA_MULT
+                    );
+                    velocity = MathUtils.getRandomPointInCircle(velocity, PARTICLE_DRIFT);
+
+                    engine.addSmoothParticle(spawnPoint, velocity,
+                            MathUtils.getRandomNumberInRange(PARTICLE_SIZE_MIN, PARTICLE_SIZE_MAX),
+                            charge,
+                            MathUtils.getRandomNumberInRange(PARTICLE_DURATION_MIN, PARTICLE_DURATION_MAX),
+                            PARTICLE_COLOR);
+                }
+            }
+        }
+    }
 }

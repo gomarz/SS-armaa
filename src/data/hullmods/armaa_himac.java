@@ -411,6 +411,8 @@ public class armaa_himac extends BaseHullMod {
         if (engine == null || !engine.isEntityInPlay(ship) || !ship.isAlive()) {
             return;
         }
+        if(ship.isStationModule())
+            return;
         String key = DATA_KEY + "_" + ship.getId();
         String id = "armaa_assaultBoost_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) engine.getCustomData().get(key);

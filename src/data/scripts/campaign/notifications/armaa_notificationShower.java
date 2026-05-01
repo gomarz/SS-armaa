@@ -23,15 +23,18 @@ public class armaa_notificationShower implements EveryFrameScript {
     private static final List<String> validEntities = new ArrayList<>();
     private static final List<String> validKeys = new ArrayList<>();
     private static final List<String> validSingleKeys = new ArrayList<>();
+
     static {
         validEntities.add("station_galatia_academy");
         validEntities.add("mazalot");
         validEntities.add("volturn");
-
+        validEntities.add("kantas_den");
         validKeys.add("$anh_inProgress");
         validKeys.add("$encounteredDweller");
         validKeys.add("$pk_recovered");
-        
+        validKeys.add("$bffi_goMeetMenesYaribay");
+
+        // ??? Why is this seperate?
         validSingleKeys.add("$armaa_engagedValkHunters");
         validSingleKeys.add("$armaa_cassianReadyToChat");
     }

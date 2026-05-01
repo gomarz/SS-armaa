@@ -48,14 +48,19 @@ public class armaa_assaultPodKiller extends BaseHullMod {
             Global.getCombatEngine().headInDirectionWithoutTurning(ship, VectorUtils.getAngle(ship.getLocation(), target.getLocation()), ship.getMaxSpeed());          
             break;
         }
-        boolean justDie = ship.getHullLevel() <= 0.50f || Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId()) != null;
+        boolean justDie = ship.getHullLevel() <= 0.80f || Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId()) != null;
         IntervalUtil dieTimer = null;
 
         Global.getCombatEngine().getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(false);
-        if ((ship.getSharedFighterReplacementRate() < 0.95f || ship.getHullLevel() < 0.50f) && !justDie) {
+        if (ship.getSharedFighterReplacementRate() < 0.95f && Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId()) == null) {
             Global.getCombatEngine().getCustomData().put("armaa_killPod_" + ship.getId(), new IntervalUtil(0.5f, 0.5f));
         } else if (justDie) {
             dieTimer = (IntervalUtil) Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId());
+            if(dieTimer == null)
+            {
+                Global.getCombatEngine().getCustomData().put("armaa_killPod_" + ship.getId(), new IntervalUtil(0.5f, 0.5f));
+                return;
+            }
             dieTimer.advance(amount);
             float elapsed = dieTimer.getElapsed();
             float maxInterval = dieTimer.getMaxInterval();
@@ -73,7 +78,7 @@ public class armaa_assaultPodKiller extends BaseHullMod {
                     75,
                     800f,
                     400f,
-                    CollisionClass.MISSILE_FF,
+                    CollisionClass.MISSILE_NO_FF,
                     CollisionClass.PROJECTILE_FIGHTER,
                     5,
                     10,

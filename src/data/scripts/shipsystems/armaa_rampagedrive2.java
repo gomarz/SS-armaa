@@ -121,7 +121,11 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
         }
 
         ShipAPI target = ship.getShipTarget();
-
+                for(ShipAPI module : ship.getChildModulesCopy())
+                {
+                    module.setJitter(new Object(), new Color(255,165,90,155), effectLevel, 2, 0,5);
+                    module.setJitterUnder(new Object(), new Color(155,25,3,55), effectLevel, 25, 0,7);
+                }
         float turnrate = ship.getMaxTurnRate() * 1.6f;
         if (ship.getShield() != null && ship.getShield().isOn()) {
             ship.getShield().toggleOff();
@@ -259,6 +263,19 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             stats.getHardFluxDissipationFraction().modifyPercent(id, (Float) 1.25f);
             stats.getBallisticRoFMult().modifyMult(id, ROF_MULT);
             stats.getEnergyRoFMult().modifyMult(id, ROF_MULT);
+            for (ShipAPI module : ship.getChildModulesCopy()) {
+                
+                module.getMutableStats().getMaxSpeed().modifyFlat(id, (Float) SPEED_BOOST.get(ship.getHullSize()) * bonus);
+                module.getMutableStats().getAcceleration().modifyFlat(id, (Float) SPEED_BOOST.get(ship.getHullSize()) * 4);
+                module.getMutableStats().getEmpDamageTakenMult().modifyMult(id, (Float) DAMAGE_MULT.get(ship.getHullSize()));
+                module.getMutableStats().getArmorDamageTakenMult().modifyMult(id, (Float) DAMAGE_MULT.get(ship.getHullSize()));
+                module.getMutableStats().getHullDamageTakenMult().modifyMult(id, (Float) DAMAGE_MULT.get(ship.getHullSize()));
+                module.getMutableStats().getMaxTurnRate().modifyMult(id, 0.50f);
+                module.getMutableStats().getFluxDissipation().modifyPercent(id, (Float) 1.25f);
+                module.getMutableStats().getHardFluxDissipationFraction().modifyPercent(id, (Float) 1.25f);
+                module.getMutableStats().getBallisticRoFMult().modifyMult(id, ROF_MULT);
+                module.getMutableStats().getEnergyRoFMult().modifyMult(id, ROF_MULT);
+            }
             if (!DidRam) {
                 Vector2f from = ship.getLocation();
                 float angle = ship.getFacing();
@@ -318,7 +335,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                                 CombatUtils.applyForce(ship, angleAB + 180f, 3f * ship.getMass() * pushRammer);
                                 CombatUtils.applyForce(e, angleAB, 3f * ship.getMass() * pushTarget);
                                 Global.getSoundPlayer().playSound("collision_ships", 1f, 0.5f, ship.getLocation(), ship.getVelocity());
-                                ship.getSystem().deactivate();                                                              
+                                ship.getSystem().deactivate();
                                 //engine.addFloatingText(ship.getLocation(), "Yamete!", 25f, Color.WHITE, ship, 1f, 0.5f);
                             }
                         }
@@ -359,6 +376,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
                 float trueOffsetX = (float) FastTrig.cos(Math.toRadians(ship.getFacing() - 90f)) * offsetX - (float) FastTrig.sin(Math.toRadians(ship.getFacing() - 90f)) * offsetY;
                 float trueOffsetY = (float) FastTrig.sin(Math.toRadians(ship.getFacing() - 90f)) * offsetX + (float) FastTrig.cos(Math.toRadians(ship.getFacing() - 90f)) * offsetY;
+
                 if (!ship.isHulk()) {
                     for (WeaponAPI w : ship.getAllWeapons()) {
                         if (!w.getSlot().isBuiltIn() && !w.getSlot().isDecorative()) {
@@ -478,7 +496,18 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
         if (ship.getMass() != mass) {
             ship.setMass(mass);
         }
-
+        for (ShipAPI module : ship.getChildModulesCopy()) {
+            module.getMutableStats().getMaxSpeed().unmodify(id);
+            module.getMutableStats().getAcceleration().unmodify(id);
+            module.getMutableStats().getEmpDamageTakenMult().unmodify(id);
+            module.getMutableStats().getHullDamageTakenMult().unmodify(id);
+            module.getMutableStats().getArmorDamageTakenMult().unmodify(id);
+            module.getMutableStats().getBallisticRoFMult().unmodify(id);
+            module.getMutableStats().getEnergyRoFMult().unmodify(id);
+            module.getMutableStats().getFluxDissipation().unmodify(id);
+            module.getMutableStats().getHardFluxDissipationFraction().unmodify(id);
+            module.getMutableStats().getMaxTurnRate().unmodify(id);
+        }
         stats.getMaxSpeed().unmodify(id);
         stats.getAcceleration().unmodify(id);
         stats.getEmpDamageTakenMult().unmodify(id);

@@ -295,6 +295,7 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
                 0f, // utilityPts
                 0f // qualityMod - since the Lion's Guard is in a different-faction market, counter that penalty
         );
+        params.maxShipSize = 3;
         params.timestamp = route.getTimestamp();
         params.random = random;
         params.modeOverride = Misc.getShipPickMode(market,"derelict");

@@ -17,6 +17,8 @@ import org.lazywizard.lazylib.MathUtils;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import data.scripts.missions.armaa_ReentryEffect;
+import data.scripts.missions.armaa_titleSplash;
+import data.scripts.util.armaa_utils;
 
 public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     // for atmo battle
@@ -113,13 +115,13 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         Color endColorBG = new Color(100, 100, 100, 255);
 
-        if (diagLine < 5 && !engine.isPaused()) {
+        if (diagLine < 3 && !engine.isPaused()) {
             cutsceneTextInterval.advance(amount);
             for (ShipAPI ship : engine.getAllShips()) {
                 ship.blockCommandForOneFrame(ShipCommand.ACCELERATE);
-                ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
-                ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
-                ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
+               // ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
+               // ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
+               // ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
                 ship.getVelocity().set(0, 0);
             }
             if (engine.getPlayerShip() != null && Math.random() < 0.10f) {
@@ -130,7 +132,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             playAtmosphericEntryLine(engine, diagLine);
             diagLine++;
 
-            if (diagLine == 1 && !showedTitle) {
+            if (diagLine == 3 && !showedTitle) {
+                /*
                 SpriteAPI spr = Global.getSettings().getSprite("mission_splash", "armaa_acoc_splash");
                 MagicRender.screenspace(
                         spr,
@@ -154,6 +157,11 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         CombatEngineLayers.ABOVE_PARTICLES
                 );
                 showedTitle = true;
+                */
+            String minuteStr = armaa_utils.getMinuteString();
+            Global.getCombatEngine().addLayeredRenderingPlugin(
+                    new armaa_titleSplash("JENIUS - STAGING POINT A  " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
+                            " Automated defense perimeter"));                
             }
         }
         float viewMult = engine.getViewport().getViewMult();
@@ -610,8 +618,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     engine.addFloatingText(engine.getPlayerShip().getLocation(), "Reinforcements approaching from the north and soutj!", 36f, Color.yellow, engine.getPlayerShip(), 1f, 1f);
                 }
                 ShipAPI boss = engine.getFleetManager(1).spawnShipOrWing(bossStr, new Vector2f(0, 10000), 270f, 0f);
-                engine.getFleetManager(1).spawnShipOrWing(chaffStr, new Vector2f(-100, 10000), 270f, 5f);
-                engine.getFleetManager(1).spawnShipOrWing(chaffStr, new Vector2f(100, 10000), 270f, 5f);
+                engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(-100, 10000), 270f, 5f);
+                engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(100, 10000), 270f, 5f);
                 boss.setCaptain(pilot);
                 Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
                 engine.getCombatUI().addMessage(1, boss, Color.red, boss.getName(), Color.white, ":", Color.cyan, "Unknown IFF detected; offworld origin. You've entered restricted space. Power down your weapons and surrender immediately, or face swift destruction. This is your only warning.");
@@ -754,7 +762,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                 }
                 if (Math.random() <= 0.50 && ratio > 0.10f && ratio < 0.80f) {
                     MagicRender.battlespace(
-                            Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+                            Global.getSettings().getSprite("misc", "armaa_atmo_cloud2"),
                             new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX), engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                             new Vector2f(xVel, -MathUtils.getRandomNumberInRange(800, 1000) * mult),
                             new Vector2f(MathUtils.getRandomNumberInRange(cloudSize * 1.25f, cloudSize * 3f), MathUtils.getRandomNumberInRange(cloudSize * 1.25f, cloudSize * 3f)),
@@ -911,7 +919,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                             s.setAnimatedLaunch();
                             s = engine.getFleetManager(1).spawnShipOrWing("broadsword_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
                             s.setAnimatedLaunch();
-                            s = engine.getFleetManager(1).spawnShipOrWing("gladius_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
+                            s = engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
                             s.setAnimatedLaunch();
                             s = engine.getFleetManager(1).spawnShipOrWing("talon_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
                             s.setAnimatedLaunch();
@@ -1024,7 +1032,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     }
 
 
-                    if (Math.random() <= 1f - ratio && ratio >= 0.15f && ratio <= 0.70f) {
+                    if (Math.random() <= 1f - ratio-0.15f && ratio >= 0.15f && ratio-0.15f <= 0.70f) {
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
                                 smokeSpawn,
@@ -1119,7 +1127,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     // Method to generate a random color for the bottom (darker) cloud layer
     private Color getRandomBottomCloudColor(float ratio) {
         Random rand = new Random();
-        float r = rand.nextFloat() * 0.15f + 0.1f; // Random red value from 0 to 1
+        float r = rand.nextFloat() * 0.25f + 0.1f; // Random red value from 0 to 1
         float g = rand.nextFloat() * 0.05f; // Random green value from 0.35 to 1.0 for yellow-orange range
         float b = rand.nextFloat() * 0.05f; // Random blue value from 0 to 0.5 for warmer, less cool tones
 
@@ -1140,6 +1148,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     }
 
     public static void playAtmosphericEntryLine(CombatEngineAPI engine, int id) {
+        /*
         switch (id) {
             case 0:
                 engine.getCombatUI().addMessage(
@@ -1183,7 +1192,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         "Hold steady."
                 );
                 break;
-        }
+            */
+        //}
     }
 
     @Override

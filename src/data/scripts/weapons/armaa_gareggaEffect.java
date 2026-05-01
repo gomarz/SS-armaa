@@ -4,7 +4,6 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import org.lazywizard.lazylib.MathUtils;
 
 public class armaa_gareggaEffect implements EveryFrameWeaponEffectPlugin {

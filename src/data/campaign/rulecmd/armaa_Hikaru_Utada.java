@@ -32,11 +32,14 @@ import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import data.scripts.campaign.intel.armaa_liberationIntel;
 import data.scripts.world.systems.armaa_nekki;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import com.fs.starfarer.api.campaign.events.CampaignEventManagerAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent.AvailableOfficer;
 import java.util.List;
 import java.util.ArrayList;
 import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.events.armaa_combatDataEventIntel;
+import data.scripts.util.armaa_utils;
 import exerelin.campaign.SectorManager;
 //wtf i love MOOD RUNES
 // endless if else if else is peak efficiency
@@ -119,13 +122,15 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                         memory.set("$armaa_dawnHomeId", randomMarket.getName(), 1f);
                         ContactIntel intel = new ContactIntel(member.getCaptain(), randomMarket);
                         Global.getSector().getIntelManager().addIntel(intel, false, dialog.getTextPanel());
-                        OfficerManagerEvent event = new OfficerManagerEvent();
-                        OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(member.getCaptain(), randomMarket.getId(), 10, 1000);
+
+                        OfficerManagerEvent officerManager = armaa_utils.getOfficerManagerEvent();
+
+                        AvailableOfficer f = new AvailableOfficer(member.getCaptain(), randomMarket.getId(), 10, 1000);
                         member.getCaptain().getMemoryWithoutUpdate().set("$ome_hireable", true);
-                        member.getCaptain().getMemoryWithoutUpdate().set("$ome_eventRef", event);
+                        member.getCaptain().getMemoryWithoutUpdate().set("$ome_eventRef", officerManager);
                         member.getCaptain().getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
                         member.getCaptain().getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
-                        event.addAvailable(f);
+                        officerManager.addAvailable(f);
                         //member.getCaptain().setPostId(Ranks.POST_MERCENARY);
                         member.getCaptain().getMemoryWithoutUpdate().set("$postId", "officer_for_hire");
                     }
@@ -393,7 +398,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             gravion.getContainingLocation().removeEntity(gravion);
             gravion.getContainingLocation().removeEntity(gravion.getContainingLocation().getEntityById("armaa_nekki_field"));
             SectorEntityToken research_station = magec_gate.getContainingLocation().addCustomEntity("armaa_gravion_station", "Abandoned Research Station", "station_side07", "neutral");
-            research_station.setCircularOrbitPointingDown(magec_gate, 90, 50, 25);
+            research_station.setCircularOrbitPointingDown(magec_gate, 200, 150, 25);
             research_station.setCustomDescriptionId("armaa_station_research");
             research_station.setInteractionImage("illustrations", "abandoned_station");
             research_station.setId("armaa_gravion_station");
@@ -417,11 +422,12 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             return true;
         } else if ("getShipDummy".equals(action)) {
             String id = params.get(1).getString(memoryMap);
-            if (id == null) {
+            if (id == null || params.size() <= 1) {
                 return false;
             }
 
             FleetMemberAPI dummy = Global.getFactory().createFleetMember(FleetMemberType.SHIP, Global.getSettings().getVariant(id));
+            dialog.flickerStatic(1f, 5f);
             dialog.getVisualPanel().showFleetMemberInfo(dummy, true);
             return true;
             // memory.set("$armaa_dummy_ship", dummy);        

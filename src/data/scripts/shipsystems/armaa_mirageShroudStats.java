@@ -12,11 +12,13 @@ import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState;
 import org.lwjgl.input.Keyboard;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.input.InputEventAPI;
+import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.util.armaa_utils;
 import java.awt.Color;
@@ -29,6 +31,7 @@ import org.magiclib.util.MagicLensFlare;
 // This currently is hard coded to work only with the panther
 // well, I guess it would work elsewhere, it'd just spawn panthers
 // we could update strikecraft hullmod to just return based on customdata.. ?
+
 public class armaa_mirageShroudStats extends BaseShipSystemScript {
 
     private static final int NUM_CLONES = 2;
@@ -45,12 +48,13 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
             Global.getCombatEngine().addPlugin(new armaa_mirageShroudEveryFramePlugin(ship));
             ship.getCustomData().put(SHROUD_KEY + id, true);
         }
+        armaa_utils.makeAfterImages(ship, 0.5f, Global.getCombatEngine().getElapsedInLastFrame()/ Global.getCombatEngine().getTimeMult().getModifiedValue(), new Color(155, 75, 155, 75)); // cyan                
+
     }
 
     @Override
-    public void unapply(MutableShipStatsAPI stats, String id) 
-    {
-                ShipAPI ship = (ShipAPI) stats.getEntity();
+    public void unapply(MutableShipStatsAPI stats, String id) {
+        ShipAPI ship = (ShipAPI) stats.getEntity();
         activated = false;
         ship.getCustomData().remove(SHROUD_KEY + id);
     }
@@ -59,6 +63,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
 
         private ShipAPI ship;
         private ShipAPI clone;
+        private IntervalUtil cloneLifeTime;
         private ArrayList<ShipAPI> clones = new ArrayList();
         private boolean isSpawned = false;
         Color MUZZLE_FLASH_COLOR = new Color(200, 25, 150, 155);
@@ -66,6 +71,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
 
         public armaa_mirageShroudEveryFramePlugin(ShipAPI ship) {
             this.ship = ship;
+            cloneLifeTime = new IntervalUtil(ship.getSystem().getChargeActiveDur(), ship.getSystem().getChargeActiveDur());
         }
 
         private ShipAPI getCloneOnSide(boolean wantLeft) {
@@ -216,16 +222,16 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
 
         private void spawnParticles(ShipAPI ship) {
             Global.getSoundPlayer().playSound("phase_anchor_vanish", 1.1f, 1f, ship.getLocation(), ship.getVelocity());
-                MagicLensFlare.createSmoothFlare(
-                        Global.getCombatEngine(),
-                        ship,
-                        new Vector2f(ship.getLocation()),
-                        5f,
-                        100f,
-                        0,
-                        Color.red,
-                        MUZZLE_FLASH_COLOR_ALT
-                );
+            MagicLensFlare.createSmoothFlare(
+                    Global.getCombatEngine(),
+                    ship,
+                    new Vector2f(ship.getLocation()),
+                    5f,
+                    100f,
+                    0,
+                    Color.red,
+                    MUZZLE_FLASH_COLOR_ALT
+            );
 
             for (int x = 0; x < 8; x++) {
                 Vector2f vel = MathUtils.getPointOnCircumference(null,
@@ -253,7 +259,9 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
         }
 
         @Override
-        public void advance(float f, List<InputEventAPI> list) {
+        public void advance(float amount, List<InputEventAPI> list) {
+            if(Global.getCombatEngine().isPaused())
+                return;
             if (!isSpawned) {
                 for (int i = 0; i < NUM_CLONES; i++) {
                     ShipVariantAPI var = ship.getVariant().clone();
@@ -276,7 +284,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                     clone.setFacing(ship.getFacing());
                     clone.getVelocity().set(new Vector2f(ship.getVelocity()));
                     Global.getCombatEngine().spawnEmpArcVisual(ship.getLocation(), ship, vec, clone, 25f, ship.getSystem().getSpecAPI().getJitterEffectColor(), Color.white);
-
+                    
                     // spawn particles
                     spawnParticles(clone);
                     //
@@ -290,6 +298,17 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                     clone.setCollisionClass(CollisionClass.FIGHTER);
                     clones.add(clone);
                     armaa_utils.setArmorPercentage(clone, 0.25f);
+                    for(WeaponAPI sourceWep : ship.getAllWeapons())
+                    {
+                        for(WeaponAPI wep : clone.getAllWeapons())
+                        {
+
+                            if(wep.getId() == sourceWep.getId())
+                            {
+                                wep.setAmmo(sourceWep.getAmmo());
+                            }
+                        }
+                    }
                     for (ShipAPI module : clone.getChildModulesCopy()) {
                         module.setHitpoints(1f);
                         armaa_utils.setArmorPercentage(module, 0.25f);
@@ -297,11 +316,15 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                 }
                 isSpawned = true;
             }
+            if (isSpawned) {
+                cloneLifeTime.advance(amount);
+            }
             for (ShipAPI clone : clones) {
                 clone.setAlphaMult(0.5f);
                 clone.setJitter(new Object(), new Color(255, 175, 255, 100), 1f, 2, 8f);
                 clone.setJitterUnder(new Object(), new Color(255, 175, 255, 50), 1f, 5, 5f);
                 clone.fadeToColor(new Object(), new Color(255, 0, 255, 225), 1f, 0f, 1f);
+                armaa_utils.makeAfterImages(clone, 0.5f, Global.getCombatEngine().getElapsedInLastFrame()/ Global.getCombatEngine().getTimeMult().getModifiedValue(), new Color(155, 75, 155, 75)); // cyan                
                 if (clone.getFluxTracker().getFluxLevel() > 0.25f && clone.isPhased()) {
                     clone.blockCommandForOneFrame(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK);
                     clone.getPhaseCloak().forceState(SystemState.COOLDOWN, 10f);
@@ -320,15 +343,15 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                 }
             }
             boolean isPlayer = Global.getCombatEngine().getPlayerShip() == ship;
-            boolean toggledOff = (isPlayer && Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_USE_SYSTEM"))));
+            boolean toggledOff = (ship.getSystem().isActive() && isPlayer && Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_USE_SYSTEM"))));
             if (toggledOff) {
                 boolean wantsLeft = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_STRAFE_LEFT_NOTURN"))) ? true : false;
                 ShipAPI chosenClone = getCloneOnSide(wantsLeft);
                 swapWithClone(chosenClone);
                 cleanUp();
-            } else if (!ship.getSystem().isOn()) {
+            } else if (cloneLifeTime.intervalElapsed()) {
                 cleanUp();
-                
+
             }
 
         }

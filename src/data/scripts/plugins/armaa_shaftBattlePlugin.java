@@ -17,6 +17,8 @@ import data.scripts.missions.armaa_RajanyaLaserAttack;
 import data.scripts.missions.armaa_ShaftCylinderRenderer;
 import data.scripts.missions.armaa_ShaftDescentRenderer;
 import data.scripts.missions.armaa_WarningMessage;
+import data.scripts.missions.armaa_rajanyaBossPlugin;
+import data.scripts.missions.armaa_titleSplash;
 import org.lazywizard.lazylib.MathUtils;
 
 public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
@@ -71,6 +73,18 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
         Global.getCombatEngine().maintainStatusForPlayerShip(
                 "atmo", "graphics/ui/icons/icon_repair_refit.png",
                 "EM Interference", "Sensor range reduced", true);
+        float initialWidth = Global.getSettings().getScreenWidth();
+        // Always-present black fill
+        MagicRender.screenspace(
+                Global.getSettings().getSprite("misc", "armaa_cutscene"),
+                MagicRender.positioning.CENTER,
+                new Vector2f(0, 0), new Vector2f(0, 0),
+                new Vector2f(initialWidth * 2, initialWidth * 2),
+                new Vector2f(0, 0), 0f, 0f,
+                new Color(0, 0, 0, 255),
+                false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
+                CombatEngineLayers.CLOUD_LAYER
+        );
         if (engine.isPaused()) {
             return;
         }
@@ -82,7 +96,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
         if (playSecondPhase && !reversing) {
             if (warningMessage == null || warningMessage.isExpired()) {
                 if (attack == null) {
-                    attack = new armaa_RajanyaLaserAttack(1, 36);
+                    attack = new armaa_RajanyaLaserAttack(1, 36, new Vector2f(), null, 0f);
                     Global.getCombatEngine().addLayeredRenderingPlugin(attack);
                 }
 
@@ -132,9 +146,23 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             PersonAPI pilot = Misc.getAICoreOfficerPlugin("alpha_core").createPerson("alpha_core", "armaarmatura", new Random());
             pilot.setPortraitSprite("graphics/armaa/portraits/armaa_ironking.png");
             boss.setCaptain(pilot);
+            boss.setName("Unit S3-1K13");
             for (ShipAPI module : boss.getChildModulesCopy()) {
                 module.setCaptain(pilot);
             }
+            Global.getCombatEngine().addLayeredRenderingPlugin(new armaa_WarningMessage("A@#%TFC!", "Registry: ERROR - Threat assessment: UNRESOLVED", null));
+            Global.getSoundPlayer().playUISound("armaa_boss_warning", 0.85f, 1.1f);
+            armaa_rajanyaBossPlugin.Config cfg = new armaa_rajanyaBossPlugin.Config();
+            cfg.phase1Threshold = 0.75f;
+            cfg.phase1Attacks = 3;
+            cfg.phase2Threshold = 0.40f;
+            cfg.phase2Attacks = 5;
+            cfg.shrinkDuration = 2f;
+            cfg.driftDuration = 5f;
+            cfg.maxForegroundTime = 15f;
+            cfg.ghostTint = Color.WHITE;
+
+            engine.addPlugin(new armaa_rajanyaBossPlugin(boss, cfg));
             engine.setDoNotEndCombat(false);
         }
 
@@ -145,8 +173,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             playSecondPhase = true;
         }
 
-        if (engine.getFleetManager(1).getCurrStrength() < 100f && !showLights && engine.getElapsedInContactWithEnemy() > 10f) {
-            engine.setDoNotEndCombat(true);
+        if (engine.getFleetManager(1).getCurrStrength() < 50f && !showLights && engine.getTotalElapsedTime(false) > 20f) {
             showLights = true;
             Global.getSoundPlayer().pauseCustomMusic();
             warningMessage = new armaa_WarningMessage("W A R N I N G", "UNKNOWN ENEMY APPROACHING. PREPARE FOR PRE-EMPTIVE ATTACK", null);
@@ -154,6 +181,8 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             Global.getCombatEngine().addLayeredRenderingPlugin(warningMessage);
             // fires 60 homing projectiles over an interval of 0.15s that rise from above then fire at target's location
             // not quite accurate and should be easily evaded
+            Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(0, -10000), 270f, 30f);
+            Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(-500, -10000), 270f, 30f);    
             targetScrollSpeed = 0f;
             if (cylinderRenderer != null) {
                 cylinderRenderer.setSpeed(0f);
@@ -162,13 +191,22 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         if (!startedMusic) {
             startedMusic = true;
+            engine.setDoNotEndCombat(true);
             Global.getSoundPlayer().playCustomMusic(0, 0, "music_armaa_mission_descent", true);
             particleRenderer = new armaa_ShaftDescentRenderer();
             Global.getCombatEngine().addLayeredRenderingPlugin(particleRenderer);
             cylinderRenderer = new armaa_ShaftCylinderRenderer();
             Global.getCombatEngine().addLayeredRenderingPlugin(cylinderRenderer);
             hulkRenderer = new armaa_HulkRenderer();
-            Global.getCombatEngine().addLayeredRenderingPlugin(hulkRenderer);            
+            Global.getCombatEngine().addLayeredRenderingPlugin(hulkRenderer);
+            int randomMinute = (int) (Math.random() * 60);
+
+            int currentMinute = Global.getSector().getClock().getCal().get(java.util.Calendar.MINUTE);
+            String minuteStr = currentMinute < 10 ? "0" + currentMinute : "" + currentMinute;
+
+            Global.getCombatEngine().addLayeredRenderingPlugin(
+                    new armaa_titleSplash("\"FORT ARDENT\" - " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
+                            " Fallen research facility"));
         }
 
         if (reversing) {
@@ -191,25 +229,12 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
         engine.setBackgroundGlowColor(bgColor);
         engine.setBackgroundColor(bgColor);
 
-        float initialWidth = Global.getSettings().getScreenWidth();
-
         if (!reversing || ascended) {
             effectInterval.advance(amount);
         }
         float cloudSize = MathUtils.getRandomNumberInRange(300, 600);
 
         if (!ascended) {
-            // Always-present black fill
-            MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "armaa_cutscene"),
-                    MagicRender.positioning.CENTER,
-                    new Vector2f(0, 0), new Vector2f(0, 0),
-                    new Vector2f(initialWidth * 2, initialWidth * 2),
-                    new Vector2f(0, 0), 0f, 0f,
-                    new Color(0, 0, 0, 255),
-                    false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
-                    CombatEngineLayers.CLOUD_LAYER
-            );
 
             if (reversing && !ascended && !warning) {
                 warning = true;
@@ -218,7 +243,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
 
             if (attackInterval2.intervalElapsed() && reversing && warning) {
                 if (attack == null || attack.isExpired()) {
-                    attack = new armaa_RajanyaLaserAttack(1, 20);
+                    attack = new armaa_RajanyaLaserAttack(1, 20, new Vector2f(), null, 0f);
                     Global.getCombatEngine().addLayeredRenderingPlugin(attack);
                 }
                 warning = false;
@@ -305,10 +330,8 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
                         true, 0f, 0f, 0f, 0f, 0f, .5f, 1f, 1f,
                         CombatEngineLayers.ABOVE_SHIPS_LAYER
                 );
-            }
-            else if(ascended && effectInterval.intervalElapsed())
-            {
-                 MagicRender.screenspace(
+            } else if (ascended && effectInterval.intervalElapsed()) {
+                /*MagicRender.screenspace(
                         Global.getSettings().getSprite("misc", "armaa_atmo_cloud2"),
                         MagicRender.positioning.CENTER,
                         new Vector2f(0 + MathUtils.getRandomNumberInRange(-100, 100), 0), new Vector2f(0, 0),
@@ -317,24 +340,32 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
                         shiftColor(new Color(25, 15, 5, 150), new Color(0, 0, 0, 100)),
                         false, 0f, 0f, 0f, 0f, 0f, .5f, 3f, 1f,
                         CombatEngineLayers.BELOW_SHIPS_LAYER
-                );               
+                );*/
             }
         }
 
         if (!engine.isPaused()) {
-            if(hulkCheckInterval.intervalElapsed())
-            for (CombatEntityAPI asteroid : engine.getAsteroids()) {
-                engine.removeEntity(asteroid);
+            if (hulkCheckInterval.intervalElapsed()) {
+                for (CombatEntityAPI asteroid : engine.getAsteroids()) {
+                    engine.removeEntity(asteroid);
+                }
             }
-            if(hulkCheckInterval.intervalElapsed())
             for (ShipAPI ship : engine.getShips()) {
-                if (!ship.isAlive() || ship.isHulk() || !engine.isEntityInPlay(ship)) {
-                    boolean ascending = Math.random() < 0.30f;
+                if (reversing && !ascended) {
+                    float rb = redLevel.getBrightness();
+                    ship.fadeToColor(ship, new Color(rb, rb, rb, 1f), redLevel.getDurationIn(), redLevel.getDurationOut(), 0.9f);
+                }
+            }
+            if (hulkCheckInterval.intervalElapsed()) {
+                for (ShipAPI ship : engine.getShips()) {
+                    if (!ship.isAlive() || ship.isHulk() || !engine.isEntityInPlay(ship)) {
+                        boolean ascending = Math.random() < 0.30f;
                         if (hulkRenderer != null) {
                             hulkRenderer.addHulk(ship, ascending);
                         }
-                    engine.removeEntity(ship);
-                    continue;
+                        engine.removeEntity(ship);
+                        continue;
+                    }
                 }
             }
         }

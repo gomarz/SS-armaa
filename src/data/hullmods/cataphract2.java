@@ -44,16 +44,15 @@ public class cataphract2 extends BaseHullMod {
     public static float CRUISER_DAMAGE_BONUS = 10f;
     public static float CAPITAL_DAMAGE_BONUS = 20f;
     //  S-mod no-officer bonuses 
-    private static final float NO_OFFICER_DP_REDUCTION_PCT = 0.20f;  // 20%
-    private static final float NO_OFFICER_DP_REDUCTION_MAX = 10f;    // cap at 10 pts
-    private static final float NO_OFFICER_DMOD_CHANCE_MULT = 0.50f;  // 50% reduction
+    private static final float NO_OFFICER_DP_REDUCTION_PCT = 0.20f;  
+    private static final float NO_OFFICER_DP_REDUCTION_MAX = 10f;    
     private static final float NO_OFFICER_CR_BONUS = 0.10f;  // +10% max CR
 
     //  Panic burst
-    private static final float PANIC_HULL_THRESHOLD = 0.35f;   // triggers at 25% hull
-    private static final float PANIC_SPEED_BONUS = 25f;     // % speed boost
-    private static final float PANIC_MANEUVER_BONUS = 25f;     // % turn/accel boost
-    private static final float PANIC_FLUX_COST_MULT = 1.25f;   // +25% weapon flux cost
+    private static final float PANIC_HULL_THRESHOLD = 0.35f;   
+    private static final float PANIC_SPEED_BONUS = 25f;     
+    private static final float PANIC_MANEUVER_BONUS = 25f;     
+    private static final float PANIC_FLUX_COST_MULT = 1.25f;   //
     private static final float PANIC_DURATION = 5f;      // seconds active
     private static final float BACK_OFF_DURATION = 10f;     // seconds of BACK_OFF hint
 
@@ -133,10 +132,6 @@ public class cataphract2 extends BaseHullMod {
             float baseCost = stats.getSuppliesToRecover().getBaseValue();
             float reduction = Math.min(NO_OFFICER_DP_REDUCTION_MAX, baseCost * NO_OFFICER_DP_REDUCTION_PCT);
             stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id, -reduction);
-
-            // D-mod chance reduction: -50%
-            stats.getDynamic().getMod(Stats.DMOD_ACQUIRE_PROB_MOD)
-                    .modifyMult(id, NO_OFFICER_DMOD_CHANCE_MULT);
 
             // +10% max combat readiness
             stats.getMaxCombatReadiness().modifyFlat(id, NO_OFFICER_CR_BONUS, "Combat Customization");
@@ -229,7 +224,6 @@ public class cataphract2 extends BaseHullMod {
                 startBurst(stats, engine);
             }
 
-            // ── Player HUD status ─────────────────────────────────────────────
             if (burstActive && engine.getPlayerShip() == ship) {
                 engine.maintainStatusForPlayerShip(
                         modId,
@@ -291,7 +285,6 @@ public class cataphract2 extends BaseHullMod {
         }
     }
 
-    // ── Tooltip / description ─────────────────────────────────────────────────
     @Override
     public boolean isSModEffectAPenalty() {
         return false;
@@ -318,7 +311,7 @@ public class cataphract2 extends BaseHullMod {
             level = ship.getCaptain().isDefault() ? 0f : ship.getCaptain().getStats().getLevel();
         }
 
-        float n2 = ship.getFleetMember() != null ? ship.getFleetMember().getDeploymentPointsCost() : 15f;
+        float n2 = ship != null && ship.getFleetMember() != null ? ship.getFleetMember().getDeploymentPointsCost() : 15f;
         if (ship != null && GROUND_BONUS.get(ship.getHullSpec().getHullId()) != null) {
             n2 = GROUND_BONUS.get(ship.getHullSpec().getHullId());
         }
@@ -404,7 +397,6 @@ public class cataphract2 extends BaseHullMod {
 
         float value = SMOD_BONUS;
 
-        // Always-active s-mod effect (panic burst)
         tooltip.addPara("%s When hull drops below %s, gain +%s speed and maneuverability"
                 + " for %s. Weapon flux cost is increased by %s.",
                 pad, color, Misc.getHighlightColor(),
@@ -438,9 +430,6 @@ public class cataphract2 extends BaseHullMod {
                     "\u2022",
                     (int) (NO_OFFICER_DP_REDUCTION_PCT * 100f) + "%",
                     (int) NO_OFFICER_DP_REDUCTION_MAX + "");
-            tooltip.addPara("%s %s reduced chance of acquiring D-mods when recovered.",
-                    pad, color, Misc.getHighlightColor(),
-                    "\u2022", (int) (NO_OFFICER_DMOD_CHANCE_MULT * 100f) + "%");
             tooltip.addPara("%s +%s maximum combat readiness.",
                     pad, color, Misc.getHighlightColor(),
                     "\u2022", (int) (NO_OFFICER_CR_BONUS * 100f) + "%");

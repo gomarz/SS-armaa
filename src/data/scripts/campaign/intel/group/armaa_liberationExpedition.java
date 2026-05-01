@@ -150,7 +150,6 @@ public class armaa_liberationExpedition extends BlockadeFGI implements EconomyTi
             if (size >= 8) {
                 fleet.setName("Planetfall Task Force");
                 fleet.setNoFactionInName(true);
-                fleet.getFleetData().addFleetMember("invictus_Support");
                 fleet.getFleetData().addFleetMember("brawler_pather_Raider");
                 fleet.getFleetData().addFleetMember("brawler_pather_Raider");
                 fleet.getFleetData().addFleetMember("brawler_pather_Raider");

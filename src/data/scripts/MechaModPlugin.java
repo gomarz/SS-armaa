@@ -59,6 +59,8 @@ import data.scripts.fleets.ArmaaFleetManager;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import data.scripts.campaign.armaa_cataphractGBListener;
 import data.scripts.campaign.armaa_satBombListener;
+import data.scripts.util.armaa_utils;
+import java.io.IOException;
 
 import java.util.*;
 import lunalib.lunaSettings.LunaSettings;
@@ -181,7 +183,11 @@ private void removeScript(Object s) {
             TextureData.readTextureDataCSV("data/lights/armaa_texture.csv");
         } catch (ClassNotFoundException ex) {
         }
-
+        try {
+            Global.getSettings().loadFont(Global.getSettings().getString("armaa_wingCommander","dialogueFont"));
+        } catch (IOException e) {
+            Global.getLogger(MechaModPlugin.class).error("Failed to load orbitron font", e);
+        }
         //modSettings loader:
         KARMA_IMMUNE = MagicSettings.getList("armaarmatura", "missile_resist_karma");
 
@@ -364,7 +370,7 @@ private void removeScript(Object s) {
             ironKing.setFaction("domain");
             ironKing.setGender(FullName.Gender.FEMALE);
             ironKing.setPostId(Ranks.POST_ADMINISTRATOR);
-            ironKing.setRankId(Ranks.CITIZEN);
+            ironKing.setRankId(Ranks.UNKNOWN);
             ironKing.getName().setFirst("IRON");
             ironKing.getName().setLast("KING");
             ironKing.setFaction("armaarmatura");
@@ -528,8 +534,8 @@ private void removeScript(Object s) {
             market.addPerson(admin);
             if (!Global.getSector().getImportantPeople().containsPerson(admin)) {
                 admin.getMemoryWithoutUpdate().set(MemFlags.SUSPECTED_AI, true);
-                OfficerManagerEvent event = new OfficerManagerEvent();
-                PersonAPI secretary = event.createOfficer(Global.getSector().getFaction("armaarmatura"), 1, true);
+
+                PersonAPI secretary = Global.getFactory().createPerson();
                 secretary.setRankId(Ranks.PILOT);
                 secretary.setPostId(Ranks.POST_MERCENARY);
                 if (haveAnime) {
@@ -546,31 +552,19 @@ private void removeScript(Object s) {
                 secretary.setImportanceAndVoice(PersonImportance.LOW, new Random());
                 secretary.setVoice(Voices.FAITHFUL);
                 secretary.setPersonality("aggressive");
-                OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(secretary, "armaa_meshanii_market", 4000, 1000);
-                secretary.getMemoryWithoutUpdate().set("$ome_hireable", true);
-                secretary.getMemoryWithoutUpdate().set("$ome_eventRef", event);
-                secretary.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
-                secretary.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
-                event.addAvailable(f);
+                //OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(secretary, "armaa_meshanii_market", 4000, 1000);
+                //secretary.getMemoryWithoutUpdate().set("$ome_hireable", true);
+                //secretary.getMemoryWithoutUpdate().set("$ome_eventRef", event);
+                //secretary.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
+                //secretary.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
+                secretary.getStats().setSkillLevel("armaa_AcePilot", 2);
+                //event.addAvailable(f);
                 market.getCommDirectory().addPerson(secretary, 99);
                 market.getCommDirectory().getEntryForPerson(secretary).setHidden(true);
                 Global.getSector().getImportantPeople().addPerson(admin);
                 Global.getSector().getImportantPeople().addPerson(secretary);
                 if (haveNex && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura")) {
                     //ContactIntel.addPotentialContact(1f, secretary, admin.getMarket(), null);
-                }
-            }
-            for (PersonAPI secretary : market.getPeopleCopy()) {
-                if (secretary.getId().equals("armaa_dawn")) {
-                    secretary.getStats().setSkillLevel("armaa_AcePilot", 2);
-                    OfficerManagerEvent event = new OfficerManagerEvent();
-                    OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(secretary, "armaa_meshanii_market", 4000, 1000);
-                    secretary.getMemoryWithoutUpdate().set("$ome_hireable", true);
-                    secretary.getMemoryWithoutUpdate().set("$ome_eventRef", event);
-                    secretary.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
-                    secretary.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
-                    event.addAvailable(f);
-
                 }
             }
         }

@@ -21,14 +21,7 @@ import org.magiclib.util.MagicRender;
 import org.magiclib.util.MagicTargeting;
 
 public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin implements MissileAIPlugin, GuidedMissileAI {
-    //This script combines the cyroflamer script with the Projectile Tracking script developed by Nicke535
-    //Modified by shoi
 
-    //////////////////////
-    //     SETTINGS     //
-    //////////////////////
-
-    //Damping of the turn speed when closing on the desired aim. The smaller the snappier.
     private final float DAMPING = 0.1f;
 
     //max speed of the missile after modifiers.
@@ -43,32 +36,19 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
     private IntervalUtil trailtimer = new IntervalUtil(0.15f, 0.15f);
     private IntervalUtil timer = new IntervalUtil(0.2f, 0.3f);
     private IntervalUtil empTimer = new IntervalUtil(1f, 2f);
-    private IntervalUtil fireTimer = new IntervalUtil(1f, 1f);
-    private IntervalUtil armingTimer = new IntervalUtil(2f, 4f);
     private static final Color MUZZLE_FLASH_COLOR = new Color(128, 180, 242, 50);
     private static final Color MUZZLE_FLASH_COLOR_END = new Color(199, 0, 0, 100);
     private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(140, 200, 255, 100);
-    private static final Color MUZZLE_FLASH_COLOR_ALT_END = new Color(200, 0, 0, 100);
     private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(0, 150, 200, 50);
     private static final Color MUZZLE_FLASH_COLOR_GLOW_END = new Color(255, 0, 0, 100);
     private static final float MUZZLE_FLASH_DURATION = 0.10f;
     private static final float MUZZLE_FLASH_SIZE = 40.0f;
+    //The number of projectiles making up the stream;
+    // number of proj's that have been created;
 
-    private boolean inRange = false;
-    private int count = 0; // number of proj's that have been created;
-    private int total = 0;
-    private int beamLength = 1; //The number of projectiles making up the stream;
-    private int beamNo = 0;
     private boolean primed = false;
     private float fluxLevel = 0f;
-    private float angle = 0f;
-    private float angleIncrease = 0f;
-    private int side = 1;
-    private String targetPointKey;
-    private static final float CONE_ANGLE = 180f;
-    // one half of the angle. used internally, don't mess with thos
-    private static final float A_2 = CONE_ANGLE / 2;
-    private List<MissileAPI> alreadyRegisteredProjectiles = new ArrayList<MissileAPI>();
+
 
     public armaa_curvyLaserAI(MissileAPI missile, ShipAPI launchingShip) {
 
@@ -76,17 +56,54 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             this.engine = Global.getCombatEngine();
         }
         this.missile = missile;
-        moveTarget = missile.getSource();
-        armingTimer = new IntervalUtil(missile.getArmingTime(), missile.getArmingTime());
+        // hack so they dont follow the boss
+        moveTarget = launchingShip.getHullSpec().getHullId().equals("armaa_kshatriya") ? null : missile.getSource();
+        if(moveTarget == null)
+        {
+            reacquireTarget();
+            setTarget((CombatEntityAPI) MagicTargeting.pickTarget(missile, MagicTargeting.targetSeeking.NO_RANDOM, (int) missile.getWeapon().getRange(), 90, 0, 1, 1, 1, 1, false));
+                if (target != moveTarget && target != null) {
+                    missile.setArmingTime(0f);
+
+                    EmpArcParams params = new EmpArcParams();
+
+                    params.segmentLengthMult = 8f;
+                    params.zigZagReductionFactor = 0.15f;
+                    params.brightSpotFullFraction = 0.5f;
+                    params.brightSpotFadeFraction = 0.5f;
+
+                    float dist = Misc.getDistance(missile.getSource().getLocation(), target.getLocation());
+                    params.flickerRateMult = 0.6f - dist / 3000f;
+                    if (params.flickerRateMult < 0.3f) {
+                        params.flickerRateMult = 0.3f;
+                    }
+                    float emp = 0;
+                    float dam = 0;
+        Color colorGlow = armaa_utils.shiftColor(MUZZLE_FLASH_COLOR_GLOW, MUZZLE_FLASH_COLOR_GLOW_END, missile.getFlightTime() / missile.getMaxFlightTime());
+                    
+                    EmpArcEntityAPI arc = (EmpArcEntityAPI) engine.spawnEmpArc(missile.getSource(), missile.getSource().getLocation(), missile.getSource(), target,
+                            DamageType.ENERGY,
+                            dam,
+                            emp, // emp
+                            100000f, // max range
+                            "tachyon_lance_emp_impact",
+                            40f, // thickness
+                            //new Color(100,165,255,255),
+                            colorGlow,
+                            new Color(255, 255, 255, 255),
+                            params
+                    );
+                    arc.setCoreWidthOverride(30f);
+
+                    //arc.setFadedOutAtStart(true);
+                    //arc.setRenderGlowAtStart(false);
+                    arc.setSingleFlickerMode(true);
+                }            
+            moveTarget=target;
+        }
         fluxLevel = launchingShip.getFluxTracker().getFluxLevel();
-        WeaponAPI weapon = missile.getWeapon();
         MAX_SPEED = missile.getMaxSpeed();
         missile.setCollisionClass(CollisionClass.MISSILE_NO_FF);
-        if (Math.random() > 0.5f) {
-            angle = (MathUtils.getRandomNumberInRange(missile.getFacing() - A_2, missile.getFacing() + A_2)) * side;
-        }
-        targetPointKey = "armaa_beamTarget_" + weapon.getShip().getId() + "_" + weapon.getSlot().getId() + "_" + beamNo;
-
     }
 
     @Override
@@ -146,16 +163,17 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             return;
         }
         if (launch) {
+                if (!missile.getSource().getHullSpec().getHullId().equals("armaa_kshatriya")) {
             setTarget((CombatEntityAPI) MagicTargeting.pickTarget(missile, MagicTargeting.targetSeeking.NO_RANDOM, (int) missile.getWeapon().getRange(), 90, 0, 1, 1, 1, 1, false));
+                }
             timer.forceIntervalElapsed();
+            missile.setArmingTime(0f);
             launch = false;
         }
 
         trailtimer.advance(amount);
         empTimer.advance(amount);
         if (!missile.isArmed()) {
-
-            armingTimer.advance(amount);
             missile.giveCommand(ShipCommand.ACCELERATE);
             if (Math.random() > 0.75) {
                 engine.spawnExplosion(missile.getLocation(), missile.getVelocity(), MUZZLE_FLASH_COLOR_ALT, MUZZLE_FLASH_SIZE * 0.10f, MUZZLE_FLASH_DURATION);
@@ -173,7 +191,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
             }
             engine.addSmoothParticle(missile.getLocation(), missile.getVelocity(), MUZZLE_FLASH_SIZE * 3f * fluxLevel, 1f, MUZZLE_FLASH_DURATION * 2f * fluxLevel, colorGlow);
         }
-        if (missile.getSource().getSystem().isOn()) {
+        if (!missile.getSource().getHullSpec().getHullId().equals("armaa_kshatriya") && missile.getSource().getSystem().isOn()) {
             ShipAPI ship = missile.getSource();
             boolean isRobot = engine.getCustomData().get("armaa_tranformState_" + ship.getId()) != null
                     ? (Boolean) engine.getCustomData().get("armaa_tranformState_" + ship.getId()) : false;
@@ -267,7 +285,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
         if (empTimer.intervalElapsed()) {
             int maxStrikes = 4;
             float fluxWeighted = fluxLevel * (maxStrikes - 1);  // 0.0 to 3.0
-            int baseStrikes = 1 + (int)(fluxWeighted + Math.random());  
+            int baseStrikes = 1 + (int) (fluxWeighted + Math.random());
             float numStrikes = Math.min(baseStrikes, maxStrikes);
             for (MissileAPI target : CombatUtils.getMissilesWithinRange(missile.getLocation(), 800f)) {
                 if (target.getOwner() == missile.getSource().getOwner()) {
@@ -349,7 +367,7 @@ public class armaa_curvyLaserAI extends BaseCombatLayeredRenderingPlugin impleme
     private void reacquireTarget() {
         List<CombatEntityAPI> potentialTargets = new ArrayList<>();
         CombatEntityAPI newTarget = null;
-        for (ShipAPI potTarget : CombatUtils.getShipsWithinRange(missile.getLocation(), 1000f)) {
+        for (ShipAPI potTarget : CombatUtils.getShipsWithinRange(missile.getLocation(), 10000f)) {
             if (potTarget.getOwner() == missile.getOwner()
                     || Math.abs(VectorUtils.getAngle(missile.getLocation(), potTarget.getLocation()) - missile.getFacing()) > 1000f
                     || potTarget.isHulk()) {

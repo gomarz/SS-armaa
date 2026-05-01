@@ -1,6 +1,5 @@
 package data.scripts.util;
 
-import com.fs.starfarer.api.Global;
 import java.util.*;
 
 import org.lwjgl.util.vector.Vector2f;
@@ -38,9 +37,10 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
     private float arrivalHull = 1f;
     private float arrivalCR = 1f;
-
+    private FleetMemberAPI carrierMember;
     public armaa_strikeCraftRepairTracker(ShipAPI ship, ShipAPI carrier, Vector2f landingLocation, int bayNo) {
         this.carrier = carrier;
+        this.carrierMember = carrier.getFleetMember();
         this.ship = ship;
         this.landingLocation = landingLocation;
         this.bayNo = bayNo;
@@ -147,7 +147,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             return;
         }
         for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) {
-            if (fleetManager.getShipFor(member) == carrier) {
+            if (member == carrierMember) {
                 fleetManager.addToReserves(ship.getFleetMember());
                 ship.setRetreating(true, false);
                 ship.getLocation().set(0, -1000000f);
@@ -155,7 +155,15 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 return;
             }
         }
-
+        /* No longer needed. Probably
+        if (carrier == null && carrierMember != null && fleetManager.getRetreatedCopy().contains(carrierMember)) {
+            Global.getCombatEngine().getFleetManager(ship.getOwner()).getTaskManager(true).orderRetreat(fleetManager.getDeployedFleetMember(ship), false, false);
+            ship.getLocation().setY(-1000000);
+            Global.getCombatEngine().removePlugin(this);
+            return;
+        }\
+        */
+        
         if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) {
             takeOff(ship, landingLocation, true);
             armaa_utils.destroy(ship);
@@ -171,9 +179,6 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             ship.setFacing(w.computeMidArcAngle(carrier));
         } else {
             landingLocation = carrier.getLocation();
-        }
-        if (carrier != null && fleetManager.getRetreatedCopy().contains(carrier.getFleetMember())) {
-            Global.getCombatEngine().getFleetManager(ship.getOwner()).getTaskManager(true).orderRetreat(fleetManager.getDeployedFleetMember(ship), false, false);
         }
 
         Global.getCombatEngine().getCustomData().put("armaa_hangarIsOpen" + carrier.getId() + "_" + bayNo, true);

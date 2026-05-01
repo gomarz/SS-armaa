@@ -96,8 +96,13 @@ public class armaa_strikeCraft extends BaseHullMod {
     }
 
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        armaa_utils.applyFlatMod(stats.getZeroFluxMinimumFluxLevel(), id, -114514f);
-        armaa_utils.applyMultMod(stats.getAllowZeroFluxAtAnyLevel(), id, -114514f);
+        if (stats.getFleetMember() != null) {
+            // UAF compat
+            if (!stats.getFleetMember().getCaptain().isAICore()) {
+                armaa_utils.applyFlatMod(stats.getZeroFluxMinimumFluxLevel(), id, -114514f);
+                armaa_utils.applyMultMod(stats.getAllowZeroFluxAtAnyLevel(), id, -114514f);
+            }
+        }
         stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
         stats.getSensorProfile().modifyMult(id, 0.5f);
         stats.getSensorStrength().modifyMult(id, 0.5f);
@@ -107,7 +112,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             boolean carrierBonus = false;
             boolean independent = stats.getVariant().getHullSpec().getTags().contains("independent_of_carrier");
             boolean hasSupportingShip = false;
-            fleet.syncIfNeeded();
+            //fleet.syncIfNeeded();
             for (FleetMemberAPI ship : fleet.getMembersListCopy()) {
                 if (ship == stats.getFleetMember()) {
                     continue;
@@ -622,7 +627,6 @@ public class armaa_strikeCraft extends BaseHullMod {
             }
         }
 
-        // Player warning UI - only show if pool allows at least ammo restock
         repairInterval.advance(amount);
         if (cachedNeedsRefit && cachedCanRefit) {
             if (repairInterval.intervalElapsed()) {
@@ -637,6 +641,18 @@ public class armaa_strikeCraft extends BaseHullMod {
                             repairCapStr + " (PRESS " + Global.getSettings().getControlStringForEnumName("C2_TOGGLE_AUTOPILOT") + ")",
                             true);
                 }
+            }
+        } else {
+            if (Global.getCombatEngine().getPlayerShip() == ship && !ship.isFinishedLanding()) {
+                int repairsLeft = armaa_strikeCraftRepairTracker.getRepairsRemaining(ship);
+                String repairCapStr = repairsLeft > 0
+                        ? "" + repairsLeft + " REPAIR(S) REMAINING"
+                        : "HULL/CR REPAIRS EXHAUSTED";
+                Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem1",
+                        "graphics/ui/icons/icon_repair_refit.png",
+                        "/ - STATUS - /",
+                        repairCapStr,
+                        false);
             }
         }
 

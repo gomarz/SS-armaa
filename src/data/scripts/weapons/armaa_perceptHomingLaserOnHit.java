@@ -5,12 +5,10 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
-import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.OnHitEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 
 import org.magiclib.util.MagicRender;
-import org.magiclib.util.MagicLensFlare;
 
 import org.lwjgl.util.vector.Vector2f;
 
@@ -19,20 +17,19 @@ import org.lazywizard.lazylib.MathUtils;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import com.fs.starfarer.api.util.Misc;
 
 public class armaa_perceptHomingLaserOnHit implements OnHitEffectPlugin {
 
     // -- stuff for tweaking particle characteristics ------------------------
     // color of spawned particles
-    private static final Color PARTICLE_COLOR = new Color(100, 150, 255, 255);
+    private static final Color PARTICLE_COLOR = new Color(100, 150, 255, 155);
     // size of spawned particles (possibly in pixels?)
-    private static final float PARTICLE_SIZE = 10f;
+    private static final float PARTICLE_SIZE = 8f;
     // brightness of spawned particles (i have no idea what this ranges from)
     private static final float PARTICLE_BRIGHTNESS = 150f;
     // how long the particles last (i'm assuming this is in seconds)
     private static final float PARTICLE_DURATION = 1f;
-    private static final int PARTICLE_COUNT = 15;
+    private static final int PARTICLE_COUNT = 5;
 
     // -- particle geometry --------------------------------------------------
     // cone angle in degrees
@@ -54,9 +51,10 @@ public class armaa_perceptHomingLaserOnHit implements OnHitEffectPlugin {
             CombatEngineAPI engine) {
             // do visual effects ---------------------------------------------
                 if (MagicRender.screenCheck(0.2f, point)) {
-            engine.spawnExplosion(point, new Vector2f(), new Color(100, 200, 255, 200), 100f, 0.1f);
 
-            float speed = Math.max(100f,projectile.getVelocity().length());
+            //engine.spawnExplosion(point, new Vector2f(), new Color(100, 200, 255, 50), 25f, 0.1f);
+
+            float speed = Math.min(100f,projectile.getVelocity().length());
             float facing = projectile.getFacing();
 
             for (int i = 0; i <= PARTICLE_COUNT; i++) {
@@ -74,6 +72,20 @@ public class armaa_perceptHomingLaserOnHit implements OnHitEffectPlugin {
                         PARTICLE_DURATION*(float)(Math.random()),
                         PARTICLE_COLOR);
             }
+                        MagicRender.battlespace(
+                    Global.getSettings().getSprite("misc", "armaa_sfxpulse"),
+                    point,
+                    new Vector2f(),
+                    new Vector2f(projectile.getCollisionRadius(), projectile.getCollisionRadius()),
+                    new Vector2f(300f, 300f),
+                    5f,
+                    5f,
+                    new Color(250, 100, 0, 100),
+                    true,
+                    .1f,
+                    .15f,
+                    .20f
+            );
             if(!(target instanceof ShipAPI))
                 return;
             float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.1f;
