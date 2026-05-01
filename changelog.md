@@ -1,3 +1,12 @@
+V3.2.6RC2
+------
+- fixed Hegemony having access to base panther variant
+- fixed Mirage Shroud spawning phantoms with wrong owner
+- fixed missing tokens
+- fixed reactive carapace having a var cast as int instead of float
+- fixed misspelled rules trigger for kato dialogue
+- fixed misnamed file that would cause ctd on case sensitive OS
+- fixed missing fx in ocean battle
 V3.2.6
 ------
 - Rewrote all(most?) dialogue
