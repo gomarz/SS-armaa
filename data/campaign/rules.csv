@@ -2143,7 +2143,7 @@ FireAll armaa_IKBarOptions
 
 ","""Another hopeful looking to join the ranks, eh?"" the man smiles wryly, and continues without waiting for an answer. ""I've got an opportunity-a bit of a reclamation job. Heard about Jenius, mate? Plenty of profit to be made if you've got the nerve.""
 
-""By the way, the operational area will be in low orbit, so we're going to need ships smaller than cruisers.""",,
+""The operational area will be in low orbit, so we're going to need ships smaller than cruisers.""",,
 armaa_IKBarEventTooWeak,DialogOptionSelected,"$option == armaa_IKBarEvent
 $player.fleetPoints < 50
 !$convincedWorthy","SetStoryOption armaa_IKBarEventTooWeakSP 1 armaa_IKBarEventTooWeakSP combat ""Insisted on your personal skill when scouted for a mission on New Meshan""
@@ -2210,7 +2210,7 @@ His gaze sweeps across the room, sizing up each of you.
 ,,,,,,
 ,,,,,,
 # Arma Armatura,,,,,,
-armaa_barDesc,BarPrintDesc,$market.id == armaa_meshanii_market,ShowImageVisual space_bar,"Patrons entering the bar are greeted by the luminescence of media feeds streaming in from the core worlds, blending harmoniously with the animated conversations and laughter of the diverse crowd. Your gaze catches four security officers discreetly keeping watch, introducing a subtle sense of unease. However, the bustling atmosphere, illuminated by dim lights, persists with patrons immersed in the scent of intoxicating substances and cheap drinks.",,
+armaa_barDesc,BarPrintDesc,$market.id == armaa_meshanii_market,ShowImageVisual space_bar,"Patrons entering the bar are greeted by the luminescence of media feeds streaming in from the core worlds, blending harmoniously with the animated conversations and laughter of the diverse crowd. Your gaze catches four security officers discreetly keeping watch.",,
 # Dawn,,,,,,
 armaa_defaultDawnGreetingFactionMember,PickGreeting,"$id == armaa_dawn
 $player.nex_startingFactionId == armaarmatura
@@ -2521,9 +2521,9 @@ ShowPersonVisual
 $player.metDawnBar2 = true","As you approach, Dawn waves you over with a particular enthusiasm.
 
 ""There you are! Sit down, sit down.""",armaa_dawnBar2Start2:Continue,
-armaa_dawnBar2Start2,DialogOptionSelected,$option == armaa_dawnBar2Start2,armaa_dawnCMD showGuestOfficer,"""You know $armaa_dawnGuestName, right? 'Course you do. Well. We've been havin' a conversation.""
+armaa_dawnBar2Start2,DialogOptionSelected,$option == armaa_dawnBar2Start2,armaa_dawnCMD showGuestOfficer,"""You know $armaa_dawnGuestName, right? 'Course you do. Well. We've been havin' a a little.. conversation.""
 
-She says conversation like it started as one, at least.",armaa_dawnBar2OfficerReact:Continue,
+She says conversation like it no longer fits that term.",armaa_dawnBar2OfficerReact:Continue,
 armaa_dawnBar2OfficerReactAggressiveResp,DialogOptionSelected,"$option == armaa_dawnBar2OfficerReact
 $armaa_dawnGuestPersonality == aggressive",FireAll armaa_dawnBar2QuestionOpts,"$armaa_dawnGuestName raises their glass without a hint of embarrassment.
 
@@ -3692,9 +3692,9 @@ armaa_lppJangalaFirstVisit2c,DialogOptionSelected,"$option == lpp_JangalaFirstVi
 $player.takingDawnToJangala
 armaa_Hikaru_Utada hasOfficer armaa_dawn",,"-At least, judging by the holos available on the public infonet, which are indeed gruesome. A cynical part of you wonders if the authorities allow distribution of these graphic accounts to promote protocol compliance.
 
-Dawn's eyes narrow as she processes the information from the datapad. ""Well, ain't that a revelation,"" she mutters.
+Dawn grimaces. ""Well, ain't that a revelation,"" she mutters.
 
-""Seems like the Jangalan biosphere plays nice as long as you mind your safety steps. But those poor souls caught in the grip of abysmal weather without a backup plan? What a nightmare.""",lpp_JangalaFirstVisit3:Continue,
+""Seems like the Jangalan biosphere plays nice as long as you mind your safety steps.""",lpp_JangalaFirstVisit3:Continue,
 armaa_lppJangalaVisitShrine2,DialogOptionSelected,"$option == lpp_jangalaVisitShrine2
 $player.takingDawnToJangala
 armaa_Hikaru_Utada hasOfficer armaa_dawn","ShrineCMD setVisited
@@ -4067,22 +4067,18 @@ armaa_dawnKantaDenRespAtheisticDeflect,DialogOptionSelected,$option == armaa_daw
 FireBest DialogOptionSelected","""Probably,"" he agrees. ""You don't have to give it.""
 He picks up his notebook again. This time he actually opens it.
 ""Thank you for answering at all,"" he says.",,
-armaa_dawnJethro3,DialogOptionSelected,$option == armaa_dawnJethro3,,"""Can I ask you something,"" Dawn says.
-
-""The graves,"" she says. ""On Mazalot. You were tending them when the Captain found you. People you didn't know.""
+armaa_dawnJethro3,DialogOptionSelected,$option == armaa_dawnJethro3,,"""Can I ask you something,"" Dawn says. ""On Mazalot, you were tending to graves when the Captain found you.""
 
 ""Yes,"" he says.
 
 ""Why?""
 
-He thinks about it properly, the way he seems to think about most things - ""Because someone should,"" he says finally. ""And I was there.""
+He thinks about it properly. ""Because someone should,"" he says finally. ""And I was there.""
 
-""Yeah,"" she says quietly. ""Okay.""
+Dawn lets out a short breath, a combination of an exhale and a laugh.""You sound just like my dad. He kept his hands clean, in a place that made that very difficult. Figured it was performance. Keepin' up appearances for the neighbors, y'know? But eventually I realized he meant it.""
 
-""I grew up around people who believed the right way to honor Ludd was to not touch anything that wasn't yours,"" she says. ""Keep your hands clean. Stay inside the lines. Took me a long time to figure out that wasn't faith. That was just... tidiness.""
-
-""What changed your mind?"" he asks.",armaa_dawnJethro4:Continue,"# this reads a little weird to me, maybe should reframe it  TODO"
-armaa_dawnJethro4,DialogOptionSelected,$option == armaa_dawnJethro4,,"""Kept running into people who were doing the actual work,"" she says. ""Work that isn't always above aboard, if you get my drift."" She glances at you briefly. ""Figured out that's what it actually looks like.""
+""What changed your mind?"" Jethro asks.",armaa_dawnJethro4:Continue,"# this reads a little weird to me, maybe should reframe it  TODO"
+armaa_dawnJethro4,DialogOptionSelected,$option == armaa_dawnJethro4,,"""Kept running into people who claimed to walk the same walk,"" she says. ""Y'know, keep their hands clean, live strictly to the tenets,"" she glances at one of the bottles decorating her stateroom, ""But were all too willing to partake in joyful wickedness. I'll confess it took me a while to figure out who was who.""
 
 Jethro is quiet for a moment.
 ""I was in prison,"" he says. ""When Archcurate Jaspis found me."" He says it the way he says most things - plainly, without asking for a reaction. ""I had done things I am not proud of. She took me in anyway.""
@@ -4091,10 +4087,8 @@ He closes his notebook.
 
 ""I think that's what faith looks like too,"" he says. ""Someone looking at what you've done and not looking away. And then you deciding what to do next. Every day.""
 
-""...Yeah,"" she says finally. ""That's a better way to put it than I've managed.""
-She glances at you, then back at Jethro, with the faint expression of someone who came in expecting one thing and got something else entirely.
-
-""..Alright, this is getting a little too deep for me"" she says. ""Jethro, do you drink?""",defaultLeave:Continue,
+Dawn's expression shifts to something you can't quite label. ""...Yeah,"" she says. ""That's a better way to put it than I've managed."" She looks at him, then picks up the bottle.
+""Jethro. Do you drink?""",defaultLeave:Continue,
 ,,,,,,
 #armaa_BFFImeetMenes4,DialogOptionSelected,"$option == BFFI_meetMenes4
 armaa_Hikaru_Utada hasOfficer armaa_dawn",AdjustRepActivePerson COOPERATIVE 1,"""Oh!"" Menes claps his hands together in delight. ""That would be just the perfect, perfect thing!""
@@ -4197,11 +4191,7 @@ She says it like an insult, but there's no hostility behind it.
 She looks away. ""Alright. Fair.""",armaa_dawnCoF2:Continue,
 armaa_dawnCoFResp2C,DialogOptionSelected,$option == armaa_dawnCoFResp2C,,"Dawn huffs a quiet laugh. She rolls her shoulders like she can shake the thought loose.
 
-""I guess I wanted it to be immediate. Like... do the thing, feel the thing.""
-
-She tilts her head.
-
-""Life don't work like that. Shoulda remembered.""",armaa_dawnCoF2:Continue,
+""I guess I wanted it to be immediate. Like... do the thing, feel the thing. Life don't work like that. Shoulda remembered.""",armaa_dawnCoF2:Continue,
 armaa_dawnCoFRespLuddic2,DialogOptionSelected,$option == armaa_dawnCoFRespLuddic2,,"Dawn goes still for a moment, like you hit closer than you meant to.
 
 ""…Yeah. I do that. With a lotta things.""
@@ -4568,13 +4558,11 @@ ShowPersonVisual
 $player.armaa_shroudmod_event_id = false
 $player.armaa_dawnWarnedShroud = true
 armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile
-AddTextSmall ""Your gut tells you to choose what you say next carefully."" bad","""So it's true, then. You went and rigged one of our ships with demon-tech."" 
+AddTextSmall ""Your gut tells you to choose what you say next carefully."" bad","""Hey, captain. So, uh..what's the story with the demonically glowing ship over there?"" She's quiet for a moment.
 
-""I've seen a lot out here. Ships patched with scrap, held together by prayers and pressure seals. But I ain't never seen someone bolt sin straight onto the hull like it was just another layer of reinforced plating.""
+""I've seen a lot patched onto hulls out here. Scrap, prayer, whatever holds. But that stuff - whatever it is - that's not lostech. It's known, and it's feared for reasons that ain't just superstition.""
 
-""You know what that stuff is, don't you? It ain't lostech. It ain't misunderstood. It's known, and it's feared, for a damn good reason. Whole Church fleets'll light you up just for flyin' it. And if you were still in good standing? You ain't now.""
-
-""We're all tryin' to survive, Captain. I get it. In a world like this, we spacers take every edge we got. But there's lines. And once you cross some of 'em, don't expect to come back the same.""","armaa_dawnShroudModsRespA:""I understand your concern, but this is the best move for the $shipOrFleet.""
+""Whole Church fleets'll light you up if you get near them. You have your reasons, i'm sure, but I can't rightly fly alongside something like that.""","armaa_dawnShroudModsRespA:""I understand your concern, but this is the best move for the $shipOrFleet.""
 armaa_dawnShroudModsRespB:""You're right. This was a mistake.""
 armaa_dawnShroudModsRespC:""If Ludd's got a problem, he can file a complaint with the maintenance crew.""
 armaa_dawnShroudModsRespD:""I don't know. Besides the obviously malevolent aura pulsing off the hull like it wants to devour the stars, everything seems perfectly normal.""",
@@ -4604,33 +4592,33 @@ armaa_dawnShroudModsRespD:""What was the speech?""",
 armaa_dawnShroudModsRespA,DialogOptionSelected,$option == armaa_dawnShroudModsRespA,"AdjustRepActivePerson -50
 armaa_Hikaru_Utada removeDawn
 AddTextSmall ""DAWN HAS PERMANENTLY LEFT YOUR $shipOrFleet"" bad
-AddStoryPoints 1
-armaa_Hikaru_Utada stopMusic","""...Then I guess I was wrong about you.""
-She doesn't shout. Just lowers her gaze and shakes her head, voice low.
-""You know what this means. And you're doin' it anyway. I won't be part of this.""
+AddStoryPoints 5
+armaa_Hikaru_Utada stopMusic","""You know what this means, and you're doin' it anyway. I won't be part of this.""
 She turns to leave, quiet boots echoing on the deck.
-""Hope it's worth it.""
 ",defaultLeave:Continue,
 armaa_dawnShroudModsRespB,DialogOptionSelected,$option == armaa_dawnShroudModsRespB,"Highlight ""it's still there next time I check""
 AdjustRepActivePerson 1
 $player.ethosIdealistic++
-armaa_Hikaru_Utada stopMusic","""...I appreciate you sayin' that.""
+armaa_Hikaru_Utada stopMusic
+$player.armaa_dawnWarnedShroudTimer++
+$player.armaa_dawnWarnedShroudTimer++","""...I appreciate you sayin' that.""
 She exhales slowly, some of the weight in her posture easing.
 ""If you pull that filth off our hulls, I'll stay. But if it's still there next time I check... I'll walk. No second warnings.""",defaultLeave:Continue,
 armaa_dawnShroudModsRespC,DialogOptionSelected,$option == armaa_dawnShroudModsRespC,"AdjustRepActivePerson -200
 armaa_Hikaru_Utada removeDawn
 $player.ethosCocky++
 AddTextSmall ""DAWN HAS PERMANENTLY LEFT YOUR $shipOrFleet"" bad
-AddStoryPoints 1
+AddStoryPoints 5
 armaa_Hikaru_Utada stopMusic","She freezes in place, staring at you like she doesn't recognize the person talking. ""Mockin' Ludd's judgment... in front of me? After what we've seen?""
-Her jaw tightens, and when she speaks again, it's through clenched teeth. ""I ain't ridin' with someone who spits on the Book and calls it clever.""",defaultLeave:Continue,
+Her jaw tightens, and when she speaks again, it's through clenched teeth. ""I won't be a part of this.""",defaultLeave:Continue,
 armaa_dawnShroudModsRespD,DialogOptionSelected,$option == armaa_dawnShroudModsRespD,"AdjustRepActivePerson -100
 armaa_Hikaru_Utada removeDawn
 $player.ethosSarcastic++
 AddTextSmall ""DAWN HAS PERMANENTLY LEFT YOUR $shipOrFleet"" bad
-AddStoryPoints 1
-armaa_Hikaru_Utada stopMusic","She stares at you in stunned silence for a moment, then lets out a bitter, humorless chuckle.
-""You think this is funny? That glow ain't just a warning-it's a mark. We're flying with a curse painted in light for the whole Sector to see. But fine. You think you're clever? Keep laughing."" She steps toward the exit, her voice quiet but final. ""Just don't act surprised when no one's left to hear the punchline.""",defaultLeave:Continue,
+AddStoryPoints 5
+armaa_Hikaru_Utada stopMusic","""Captain. I like you - you're a real stand up $playerManOrWoman. Which is why I'm tellin' you straight - I can't be with this $shipOrFleet. Not while that thing's on it."" She exhales through her nose.
+
+""Look. You want to fly it, that's your call. But I grew up hearin' what that stuff does to people. I ain't stayin' to find out if the stories are right.""",defaultLeave:Continue,
 ,,,,,,
 armaa_dawnShroudModsRespADontCare,DialogOptionSelected,"$option == armaa_dawnShroudModsRespA
 !armaa_dawnCMD dawnCaresAboutHeresy",armaa_Hikaru_Utada stopMusic,"She snorts. ""Don't push it.""",defaultLeave:Continue,
@@ -4657,10 +4645,21 @@ armaa_Hikaru_Utada stopMusic","""That's a fair trade. Just don't expect a blessi
 ,,,,,,
 ,,,,,,
 "# arrived at market, check if player still has shrouded hullmods after dawn gave ultimatum",,,,,,
+armaa_dawn_shroudCheckGrace,MarketPostDock,"$tradeMode != NONE
+PlayerFleetHasShroudedShips
+$player.armaa_dawnWarnedShroud
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.armaa_dawnWarnedShroudTimer > 0","armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile
+Highlight ""You told Dawn that you would remove Shroud tech from your $shipOrFleet"" bad
+SetTextHighlightColors ""255,0,0,0"" ""255,0,0,0"" hColor
+SetTextHighlights NEW SHROUD $player.armaa_dawnWarnedShroudTimer
+AddTextSmall ""Removing Shroud-derived hullmods should be sufficient - weapons are fine."" bad
+$player.armaa_dawnWarnedShroudTimer--",You told Dawn that you would remove SHROUD tech from your $shipOrFleet. You figure you can dock $player.armaa_dawnWarnedShroudTimer more times before she forces the issue.,armaa_dawn_shroudCheck3b:Continue,
 armaa_dawn_shroudCheck,MarketPostDock,"$tradeMode != NONE
 PlayerFleetHasShroudedShips
 $player.armaa_dawnWarnedShroud
-armaa_Hikaru_Utada hasOfficer armaa_dawn",armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile,"As your $shipOrFleet docks at $entityName, you receive a high-priority call from one of the officers in your employment.",armaa_dawn_shroudCheck2:Accept the comm request,
+armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.armaa_dawnWarnedShroudTimer <= 0 score:10",armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile,"As your $shipOrFleet docks at $entityName, you receive a high-priority call from one of the officers in your employment.",armaa_dawn_shroudCheck2:Accept the comm request,
 armaa_dawn_shroudCheck2,DialogOptionSelected,$option == armaa_dawn_shroudCheck2,"BeginConversation armaa_dawn
 ShowPersonVisual
 AdjustRepActivePerson -100
@@ -4674,6 +4673,9 @@ Then she turns, and without waiting for clearance or a final word, ends the conn
 armaa_dawn_shroudCheck3,DialogOptionSelected,$option == armaa_dawn_shroudCheck3,"EndConversation
 ShowDefaultVisual
 FireBest MarketPostDock",,,
+armaa_dawn_shroudCheck3b,DialogOptionSelected,$option == armaa_dawn_shroudCheck3b,"ResumeNormalMusic
+$menuState = main 0
+FireAll PopulateOptions",,,
 ,,,,,,
 # Handing in the PK - Sera,,,,,,
 PKGiveToSeraph,PopulateOptions,"$isPerson
@@ -4749,7 +4751,7 @@ armaa_dataCollectionSel,DialogOptionSelected,$option == armaa_dataCollection,Fir
 
 ""Aegis Tactical Assessment Corps. Arma Armatura's field validation program - pilots, analysts, captains embedded directly with prototype deployments. Live systems, real conditions.""
 
-""We're currently focused on the Series-II Cataphract line. Strong performance curves. Endurance is still being refined."" A slight tilt of her head. ""Which is where the right operator becomes useful.""
+""We're currently focused on the Series-II Cataphract line. Strong performance curves. Endurance is still being refined. Which is where the right operator becomes useful.""
 
 ""Join, and you're flying hardware that isn't on the market yet. High priority assignments. Direct input into development.""
 
@@ -5246,24 +5248,12 @@ armaa_vxGift1b,DialogOptionSelected,$option == armaa_vxGift1b,Highlight SILVERSW
 ""It's truly fascinating technology. While our Garegga-class units also incorporate a similar system, the one in the Valkazard is remarkably more compact and possesses unique enhancements. Ever since, my team and I have been dedicated to unlocking its full potential.""","armaa_vxGift2:""And what have you managed to acheive?""",
 armaa_vxGift2,DialogOptionSelected,$option == armaa_vxGift2,Highlight SILVERSWORD,"$personName's smile widens like a sealed envelope being opened.
 
-""We've partially reverse engineered SILVERSWORD."" She says it the way other executives say 'we beat projections.' ""Not the whole thing. Not the dangerous parts. Not yet.""
+""We've partially recreated SILVERSWORD."" She says it the way other executives say 'we beat projections.'"".
 
-A new holo appears: a simplified architecture, with aggressive redlines carefully boxed away.
-
-""We've integrated a reduced implementation into a limited batch for field validation."" Her eyes lift to you. ""Which is where you come in.""
-
-Then, softer, almost conspiratorial:
-
-""And yes, you'll receive one of the first units.""
-
-She tilts her head, as if anticipating your skepticism.
-
-""We've tested it extensively."" The smile returns. ""Stable enough to be useful. Spectacular enough to be worth the risk.""",armaa_vxGift3:Continue,
+""We've integrated a reduced implementation into a limited batch for field validation."" Her eyes lift to you. ""Which is where you come in. We've tested it extensively."" ",armaa_vxGift3:Continue,
 armaa_vxGift3,DialogOptionSelected,$option == armaa_vxGift3,FireAll armaa_vxGiftQuestionsFinal,"""Consider this a token of appreciation for our partnership and your extraordinary skills,"" she says. 
 
-""A lance of pilots with adequate expertise combined with this new system should be a formidable force on the battlefield. And that, my dear, is a win-win for both of us."" 
-
-You can't help but wonder if there's more to this seemingly generous gesture, knowing how corporate dealings usually work.","armaa_vxGift4:""I'm sold.""",
+""A lance of pilots with adequate expertise combined with this new system should be a formidable force on the battlefield. And that, my dear, is a win-win for both of us."" ","armaa_vxGift4:""I'm sold.""",
 armaa_HCFollowUp,PickGreeting,"$id == armaa_seraph
 $global.HVB_armaa_bounty_legiomech_succeeded
 !$armaa_seraphMentionedHC
@@ -5274,7 +5264,7 @@ FireAll PopulateOptions
 $armaa_seraphMentionedHC = true
 ShowPersonVisual","The comm-link is accepted after a brief pause, resolving to show $personName seated.
 
-""$playerName, I must admit, I didn't anticipate that outcome,"" $personName's voice crackles through the comm link, her voice carrying a hint of regret. ""But let's not dwell on that, shall we? After all, your little victory provided us with some invaluable combat data. I'd even say you did us a favor.""
+""$playerName, I must admit, I didn't anticipate that outcome. But let's not dwell on that. After all, your little victory provided us with some invaluable combat data. I'd even say you did us a favor.""
 
 ""As for my dear friends, they've been quite the generous patrons of our innovations. We wouldn't want anything to jeopardize that, would we? Whoever managed to catch wind of our little collaboration can rest easy, thinking they've successfully disrupted it. You see, it's a win-win scenario for all parties.""
 
@@ -8179,7 +8169,7 @@ The broad one leans forward slightly. ""They move on a rotation."" He stops ther
 
 ""So what are you actually asking, Captain?""","armaa_reicBarOfferWorkResp2Skills:""You know how the details move - do you know how to find a specific one?""",
 armaa_reicBarOfferWorkResp2Skills,DialogOptionSelected,$option == armaa_reicBarOfferWorkResp2Skills,"AddTextSmall ""If recruited, will temporarily join the fleet and assist in combat operations until the next port is reached."" highlight","The woman eyes you like you're a form she's deciding whether to stamp.
-""Restricted routing."" She sets her cup down. ""That's INTSEC-adjacent work. People who ask about that are either on their payroll or they're not.""
+""That's INTSEC-adjacent work. People who ask about that are either on their payroll or they're not.""
 She looks at you steadily. ""Which one are you?""
 
 ""We've done security for the Diktat. Extra bodies that don't ask questions,"" the man chimes in. ""We know what the details look like from the outside. And we know people who've seen them from the inside.""","armaa_reicBarOfferWorkResp2Hire:""I could use that expertise.""(recruit)
@@ -8195,16 +8185,13 @@ He nods toward you. ""Right now you don't have enough to swing a hammer. You've 
 armaa_reicBarOfferWorkResp2Hire,DialogOptionSelected,"$option == armaa_reicBarOfferWorkResp2Hire
 $global.armaa_reicIntelLevel >= 2",,"You don't have a blueprint, but you have something you can plan around: a target area on the train network, a narrow window when the right people and equipment will be concentrated, and a rough idea of what kind of security you're going to smash through.
 
-The thin woman sets her cup down. ""You talkin' ship-to-ship,"" she asks, ""or boots-on-the-ground?"" Both, you say.
-
 A short, humorless smile crosses the broad one's face.
 ""Then here's what we're worth.""
 
 ""We can put bodies where you need them. We can help get your marines in and out without losing half of them to confusion and bad timing,  and we can get you into a few facilities we've run security for.""
 
-The thin woman leans forward, eyes sharp.
 
-""You want us on the payout and the risk? Fine. But understand what you're buying."" her eyes dart to Felix, who wordlessly meets her gaze, before she looks back to you.
+""You want us on the payout and the risk? Fine. But understand what you're buying,"" the thin woman chimes in. Her eyes dart to Felix, who wordlessly meets her gaze, before she looks back to you.
 
 ""4000 credits up front, plus a monthly salary of $reicSalary per month until we reach port.""","armaa_reicBarOfferWorkResp2Hire2:""It's a deal.""
 armaa_reicBarOfferWorkResp2HireCheap:""That's...not a lot.""",
@@ -8264,47 +8251,25 @@ The thin woman doesn't look up from her drink. ""And some corridors just stop ex
 ""Not a secret. Just a rhythm you learn fast, or you don't learn anything after.""",,
 armaa_reicBarBrokeResp2Sympathetic,DialogOptionSelected,$option == armaa_reicBarBrokeResp2Sympathetic,FireAll armaa_reicBarOpts,"The broad one's expression eases, just a fraction.
 
-""...Yeah, the Sector does that. One bad run, one mistake you can't buy back, and suddenly you're counting fuel like it's food.""
-
-The thin woman just looks down at her cup.
-
-""You're not the first captain to show up here pretending it's just business. Cruor's where plans go when they've run out of nicer places to hide.""
-
-The broad one nods toward you.
-
-""All right. If you're trying to dig out - the convoys with extra water and a quiet escort. They move tight around shift change, always through the same back corridors.""
+""...Yeah, the Sector does that. All right. If you're trying to dig out - the convoys with extra water and a quiet escort. They move tight around shift change, always through the same back corridors.""
 
 He keeps his voice level, like he's discussing cargo manifests. 
 
-""Nobody talks about those runs. Nobody bumps them for priority. Nobody files questions about where they're going."" He picks up his cup.
+""You can make yourself useful to them. Or you can stay out of their way. But you didn't hear that from me, and I didn't say anything worth remembering.""",,
+armaa_reicBarBrokeResp2Sympathetic2,DialogOptionSelected,$option == armaa_reicBarBrokeResp2Sympathetic2,,"""Who routes them?"" he repeats.
 
-""You can make yourself useful to them. Or you can stay out of their way. Either one keeps you breathing. But you didn't hear that from me, and I didn't say anything worth remembering.""",,
-armaa_reicBarBrokeResp2Sympathetic2,DialogOptionSelected,$option == armaa_reicBarBrokeResp2Sympathetic2,,"The broad one lets out a short breath ""Who routes them?"" he repeats.
-
-He glances away from the camera  - not looking at anything in particular, just checking the room out of habit - then leans in slightly.
+He glances away  - not looking at anything in particular, just checking the room out of habit - then leans in slightly.
 
 ""Officially? The port office. It's all very clean."" A humorless smile tugs at one corner of his mouth.
 
-""In practice? It's whoever has the stamp that day.""
-
-The thin woman snorts.
-
-""Follow the paperwork and it'll lead you to the same handful of hands,"" she says. 
-
-The broad one nods once.
-
-""If you want a name, you don't ask loud. You watch the queue board. You listen for who people curse when their carts get bumped for 'priority'.""
-
-""I can point you at the one who actually makes the numbers line up - if I decide you're not going to get us searched.""",barHRE_goToNormalBar:Look around the bar,
+""In practice? It's whoever has the stamp that day. Follow the paperwork and it'll lead you to the same handful of hands. ",barHRE_goToNormalBar:Look around the bar,
 armaa_reicBarBrokeResp2Dangerous,DialogOptionSelected,$option == armaa_reicBarBrokeResp2Dangerous,$global.armaa_reic_heat+=1,"The table goes a touch quieter. 
 
-The broad one sets his cup down carefully. ""Uh-huh.""
+""Uh-huh.""
 
-The thin woman watches you like she's deciding whether you're trouble; a drowning $player.manOrWoman who will pull others beneath the surface with them.
+He watches you like he's deciding whether you're trouble; a drowning $player.manOrWoman who will pull others beneath the surface with them.
 
-""Plenty of people come here to disappear,"" she says. ""Some of them stay disappeared.""
-
-The broad one finally shrugs. ""If you're just looking for work, fine. But if you're looking to drag heat onto our table, you picked the wrong corner."" He tilts his chin toward the bar, dismissive.",barHRE_goToNormalBar:Look around the bar,
+""Plenty of people come here to disappear,"" he says. ""Some of them stay disappeared. If you're just looking for work, fine. But if you're looking to drag trouble onto our table, you picked the wrong corner."" He tilts his chin toward the bar, dismissive.",barHRE_goToNormalBar:Look around the bar,
 armaa_reicBarBrokeResp2HalfTruth,DialogOptionSelected,$option == armaa_reicBarBrokeResp2HalfTruth,,"The broad one exhales through his nose. ""A lead,"" he repeats. ""Sure.""
 
 The thin woman taps her cup against the table once.
@@ -8313,9 +8278,9 @@ The thin woman taps her cup against the table once.
 
 The broad one rolls his eyes.
 
-""...All right,"" he says, quieter. ""You're not looking for a lost lover. You're looking for somebody who doesn't get to choose where they sleep.""
+""...All right,"" he says, quieter.
 ",armaa_reicBarBrokeResp2HalfTruth2:Continue,
-armaa_reicBarBrokeResp2HalfTruth2,DialogOptionSelected,$option == armaa_reicBarBrokeResp2HalfTruth2,,"""I've done calls on those rigs. The ones that show up, park in a service segment, and suddenly half the corridor's 'restricted' for a day."" He rubs at the heel of his palm, remembering.
+armaa_reicBarBrokeResp2HalfTruth2,DialogOptionSelected,$option == armaa_reicBarBrokeResp2HalfTruth2,,"""I've done calls on those rigs. The ones that deal in shipments of bodies,"" He rubs at the heel of his palm, remembering.
 
 ""They don't advertise themselves as forced labor camps. They're..."" he snorts. ""... 'work details'. ""
 
@@ -8327,11 +8292,7 @@ FireBest armaa_reicIntelCheck","""…You're not hearing me.""
 
 His eyes flick to the doorway again.
 
-""I have a rough recollection of the route. A time window. That's it.""
-
-""Before shift change. When the escort teams swap out. If you see black trucks and extra water crates, you're close.""
-
-He leans in, voice hard.
+""I have a rough recollection of the route. A time window. That's it."" He slides his TriPad towards you in such a way that it seems almost unintentional. 
 
 ""And if anyone asks where you got that? You didn't.""",barHRE_goToNormalBar:Look around the bar,
 armaa_reicBarBrokeResp2HalfTruth2LeaveBe,DialogOptionSelected,$option == armaa_reicBarBrokeResp2HalfTruth2LeaveBe,"$global.armaa_reicIntelLevel+=1
@@ -8341,7 +8302,7 @@ The thin woman mutters, ""At least he can take a hint.""
 
 You start to pull back - and that's when the broad one speaks again, quieter, almost reluctant.
 
-""Look. If you're going to be stupid about this, be stupid in the right direction. Check the posted maintenance queues. You'll see the same kind of callouts repeat - always with escorts. That's where those sealed units touch the public parts of the train.""",barHRE_goToNormalBar:Look around the bar,
+""Look. If you're going to be stupid about this..."" He slides his TriPad towards you in such a way that it seems almost unintentional. ",barHRE_goToNormalBar:Look around the bar,
 #maybe imoinu is better?,,,,,,
 armaa_reic_standfast,,,,,,
 ,,,,,,

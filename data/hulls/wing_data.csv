@@ -7,7 +7,7 @@ armaa_aleste_wing,armaa_aleste_standard,"fighter6, fighter,high, armaa_advcataph
 armaa_hazard_wing,armaa_hazard_standard,"fighter3,support,stay_in_front_of_ship,rare_bp",2,,5,9,CLAW,3000,500,,3,FIGHTER,Close Support,13,6000,,,,,,,,,,,,,
 armaa_musha_wing,armaa_musha_variant,"support3,support,ind,merc,stay_in_front_of_ship,armaa_cataphract_bp",2,,7,12,V,1000,900,,3,SUPPORT,Fire Support,10,6000,,,,,,,,,,,,,
 armaa_musha_bomber_wing,armaa_musha_bomber_standard,"bomber3, bomber,cataphract,armaa_cataphract_bp,armaa_cataphract_bp",3,,4,18,V,4000,2000,600,3,BOMBER,Bomber,15,10000,,,,,,,,,,,,,1
-armaa_musham3_wing,armaa_musham3_variant,"fighter3,support,ind,merc,low,luddic_church,armaa_cataphract_bp",1,,8,12,V,2500,900,-400,3,FIGHTER,Heavy Fighter,12,9000,,,,,,,,,,,,,
+armaa_musham3_wing,armaa_musham3_variant,"fighter3,support,ind,merc,low,luddic_church,armaa_cataphract_bp",1,,8,12,V,2000,900,-400,3,FIGHTER,Heavy Fighter,12,9000,,,,,,,,,,,,,
 armaa_guardual_wing,armaa_guardual_standard_f,"interceptor6, interceptor, no_sell,wingmen_no_swarm,leader_no_swarm",3,,8,21,BOX,4000,600,,2,INTERCEPTOR,General Purpose,20,30000,,,,,,,,,,,,,4
 armaa_morgana_wing,armaa_morganamp_standard,"interceptor4, interceptor, no_sell",3,,8,12,BOX,4000,600,,2,INTERCEPTOR,Interceptor,12,30000,,,,,,,,,,,,,4
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,

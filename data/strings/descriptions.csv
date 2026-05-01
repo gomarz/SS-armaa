@@ -61,14 +61,14 @@ armaa_hazard,SHIP,"A hardy mining mech re-repurposed for the realities of the Se
 armaa_valkazard,SHIP,"This advanced machine comes with a flexible armament and the powerful SILVERSWORD system that momentarily enhances its performance. Can punch far above it's weight class, but is suprisingly fragile.
 
 Records and limited evidence suggest that a single unit was moved via gate network for extended storage in the Persean Sector before the Collapse. Unfortunately, its whereabouts after the destruction of Meshan in c.94 are unknown, and presumably was destroyed along with most of the planet.",,,,,
-armaa_valkazard_kai,SHIP,Shouldn't be obtainable.,,,,,
-armaa_valkazard_geant,SHIP,Shouldn't be obtainable.,,,,,
+armaa_valkazard_kai,SHIP,Placeholder. Shouldn't be obtainable.,,,,,
+armaa_valkazard_geant,SHIP,Placeholder. Shouldn't be obtainable.,,,,,
 armaa_guardual,SHIP,"A rare and temperamental transforming strikecraft, the GuarDUAL excels in roles requiring both speed and raw close-range firepower. Its dual-mode frame supports rapid shifts between high-mobility and high-durability configurations, with a flux-adaptive cascade emitter that grows more dangerous the closer it is to overload. 
 
 The GuarDUAL's origins are tied to Arma Armatura's long-defunct Experimental Warfare Division, a shadowed branch of the megacorporation dissolved following a still-classified disaster at a major development facility. The event obliterated the site and most associated technical records. Surviving documentation is fragmented and often contradictory.
 
 Due to the extreme complexity of its internal systems-particularly the transformation rig and cascade emitter array-standard maintenance protocols are functionally useless. Only crews trained in lineage-maintained folk procedures or possessing access to Arma's more obscure service archives can reliably keep the unit operational. Even minor structural damage can render the frame inoperative until properly re-synced.",,,,,
-armaa_guardual_bs,SHIP,Shouldn't be obtainable.,,,,,
+armaa_guardual_bs,SHIP,Placeholder. Shouldn't be obtainable.,,,,,
 armaa_guardual_f,SHIP,"Transforming strikecraft built for speed, flexibility, and sustained frontline pressure, the GD-94F offers a more stable but less sophisticated alternative to the genuine article. It can rapidly shift between high-mobility and high-stability configurations, making it suitable various roles.
 ",,,,,
 armaa_morgana,SHIP,A space superiority platform of unknown provenance. The neural interface core is sealed behind composite layering resistant to conventional analysis.,,,,,
@@ -229,8 +229,6 @@ armaa_valkazard_rcl_left,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! 
 armaa_valkazard_torso_ac,WEAPON,A torso-mounted cannon that fires a duo of ionized shells capable of overloading and disabling enemy electronics at medium range.  It is most effective versus enemy shields.,,,,,
 ,,,,,,,
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,,,
-,,,,,,,
-armaa_landingBeacon,WEAPON,Bypasses the restrictions and regulations of landing procedure ordinary pilots follow to land immediately.,,,,,
 ,,,,,,,
 armaa_aleste_blade_LeftArm,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no joke. They use the same damn principle as other beams with a hyperdimensional filter. And let me tell ya, any electronics that ain't straight up disintegrated will be so screwed up, it'll take a tech wizard to fix it. So if some idiot tries to use this thing and gets blasted to scrap by point defenses, at least they can take out their weapons and engines on the way down.
 

@@ -8,7 +8,7 @@ V3.2.6
 - Fixed valkazard standard variant being over OP
 - lowered bg rotation / scroll speed
 - Fixed second Valkazard being spawned at the end of Descent if started with it
-- Made it more clear that while possible, full armaa ships composition is not the intended playstyle
+- Added obvious nudges to gamlin for story content
 - Made it more abundantly clear the main quest doesn't end after the 2 jenius battles
 - Add specification on what tool was used for AI generated art
 - fixed CTD caused by not having LunaLib
@@ -29,13 +29,14 @@ V3.2.6
 - Added floaty text when reinforcements appear during Crown of Cinders
 - New Meshan AA market should offer more AA specific ships
 - Added missing Dawn-Sedge event scene(s)
+- Dawn will now wait 2 market visits before confronting player in certain scenario
 - Added an industry on New Meshan that spawns fleets using mostly AA gear
 - Added ability to swap out core unit for bakraid
 - Added an industry on Jenius that spawns derelict patrols initially
 - Added new event after docking at Jenius post-CoC
 - Added delicate hullmod to all phase units
 - Added new event after completing Descent (occurs after end of month)
-- Added 2 new quests
+- Added 2 new short quests
 	- Red Earth, Iron Cages
 	- Homecoming
 - Valkazard is no longer taken by Sera Pha after letting ArmaA scan it
@@ -44,7 +45,8 @@ V3.2.6
 - Removed Guppy wing
 - Removed Gallant wing
 - Removed Valken(P) wing
-- Increased armor for VX Custom and Aleste by 50, Leynos, Spriggan Powered, and Kouto ECM by 100
+- Removed deprecated landing beacon weapon
+- Increased armor for VX Custom and Aleste by 50, Leynos, Spriggan Powered, sand Kouto ECM by 100
 - Slightly reduce max turn rate / accel across the board for cataphracts
 - Revised some mission battles
 - perf enhancements for custom battles

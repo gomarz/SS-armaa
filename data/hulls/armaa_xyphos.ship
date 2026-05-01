@@ -21,7 +21,6 @@
     "xyphos_wing"
   ],
   "builtInWeapons": {
-    "BEACON": "armaa_landingBeacon",
     "WS 001": "ionpulser",
     "WS 002": "pdburst"
   },

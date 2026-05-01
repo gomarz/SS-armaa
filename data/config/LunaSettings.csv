@@ -1,14 +1,14 @@
 fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
 armaa_campaignHeader,Campaign Header,Header,Campaign settings,,,,,Settings
 armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voicedchatter from Dawn.,,,Settings
-armaa_dawnCaresAboutHeresy,Devil's In The Details,Boolean,True,,"By setting this to false, Dawn will more...creatively interpret her core personal beliefs. Not the intended experience.",,,Settings
+armaa_dawnCaresAboutHeresy,Devil's In The Details - Dawn & Heresy,Boolean,True,,"By setting this to false, Dawn will more...creatively interpret her core personal beliefs. Not the intended experience.",,,Settings
 armaa_enableReprisal,Enable MRC Reprisals,Boolean,False,,Enable MRCs reprisal events,,,Settings
 armaa_combatHeader,Combat,Header,Combat Settings,,,,,Settings
 armaa_performanceMode,Performance Mode,Boolean,False,,Reduce the amount of effects in the custom mission battles,,,Settings
 armaa_limitedRepairs,Limited Hull Repairs,Boolean,True,,Strikecraft can't be repaired over starting HP at deployment.,,,Strikecraft
 armaa_limitedCRRepairs,Limited CR Recovery,Boolean,True,,Strikecraft can't recover over starting CR at deployment.,,,Strikecraft
-armaa_repairPool,Repair Pool,Int,50,,"The higher the value, the more times a Strikecraft can return to a carrier for full repairs. The number of repairs is roughly equivalent to this value divided by the units DP.",0,999,Strikecraft
-armaa_repairLevel,Repair Threshold,Float,0.50,,Hull percentage that strikecraft will return to carrier for repairs. Higher values generally offer more survivability as you progress into the late game.,0.30,0.80,Strikecraft
+armaa_repairPool,Repair Pool,Int,50,,"The higher the value, the more times a Strikecraft can return to a carrier for full repairs. The number of repairs is roughly equivalent to this value divided by the units DP.",0,9999,Strikecraft
+armaa_repairLevel,Repair Threshold,Float,0.60,,Hull percentage that strikecraft will return to carrier for repairs. Higher values generally offer more survivability as you progress into the late game.,0.30,0.80,Strikecraft
 armaa_inputTime,HIMAC Input Delay(MS),Int,300,,"Double Tap time delay to Quick/Assault Boost. The lower the value, the shorter the input window.",100,400,Settings
 armaa_enableWingcom,Enable WINGCOM Chatter,Boolean,True,,Enable chatter from WINGCOM pilots.,,,Settings
 armaa_recallOnlyWhenHoldFire,Recall player only if they are holding fire,Boolean,False,,"By default, ships with recall device will automatically recall the player under certain conditions. If enabled, the ship will recall player only if they are holding fire.",,,Strikecraft

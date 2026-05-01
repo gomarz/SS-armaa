@@ -20,7 +20,6 @@
     "rugged"
   ],
   "builtInWeapons": {
-    "BEACON": "armaa_landingBeacon",
     "B_TORSO": "armaa_leynos_torso",
     "B_TORSO_B": "armaa_leynos_torso_deco_bot",
     "B_TORSO_T": "armaa_leynos_torso_deco_top",

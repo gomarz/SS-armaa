@@ -23,10 +23,10 @@
     "armaa_morganab_wing"
   ],
   "builtInWeapons": {
-   "PD": "pdburst_fighter",
     "DECO": "armaa_morganaa_deco",
     "DECOL": "armaa_morganaa_deco_l",
-    "DECOR": "armaa_morganaa_deco_r"
+    "DECOR": "armaa_morganaa_deco_r",
+    "PD": "armaa_pdburst_fighter"
   },
   "weaponSlots": [
     {
@@ -122,7 +122,7 @@
       "mount": "TURRET",
       "arc": 270,
       "angle": -0,
-      "locations": [15, -0]
+      "locations": [16, -0]
     }
   ],
   "engineSlots": [

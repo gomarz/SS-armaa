@@ -19,7 +19,7 @@
     "reduced_explosion"
   ],
   "builtInWeapons": {
-   "PD": "pdburst_fighter",
+   "PD": "armaa_pdburst_fighter",
     "DECO": "armaa_morganaa_deco"
   },
   "weaponSlots": [

@@ -13,6 +13,7 @@
   "viewOffset": 50,
   "builtInMods": [
     "fourteenth",
+    "armaa_himac",
     "armaa_comboUnit"
   ],
   "builtInWeapons": {
@@ -43,7 +44,7 @@
       "id": "MAIN_GUN",
       "size": "MEDIUM",
       "type": "MISSILE",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 360,
       "angle": 0,
       "locations": [-17, -0],
@@ -61,8 +62,8 @@
     },
     {
       "id": "WS0002",
-      "size": "SMALL",
-      "type": "COMPOSITE",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -70,8 +71,8 @@
     },
     {
       "id": "WS0003",
-      "size": "SMALL",
-      "type": "COMPOSITE",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
