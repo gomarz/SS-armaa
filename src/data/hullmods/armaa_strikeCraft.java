@@ -164,38 +164,6 @@ public class armaa_strikeCraft extends BaseHullMod {
         }
     }
 
-    public boolean canRetreat(ShipAPI ship) {
-        float mapWidth = Global.getCombatEngine().getMapWidth() / 2f;
-        float mapHeight = Global.getCombatEngine().getMapHeight() / 2f;
-        Vector2f rawLL = new Vector2f(-mapWidth, -mapHeight);
-        Vector2f rawUR = new Vector2f(mapWidth, mapHeight);
-        CombatEngineAPI engine = Global.getCombatEngine();
-        BattleCreationContext context = engine.getContext();
-        FleetGoal objective = context.getPlayerGoal();
-        boolean check = false;
-        Vector2f location = ship.getLocation();
-        if (objective == FleetGoal.ESCAPE || ship.getOwner() == 1) {
-            if (location.getY() > rawUR.getY() - RETREAT_AREA_SIZE) {
-                check = true;
-            }
-        }
-        if (objective == FleetGoal.ESCAPE && ship.getOwner() == 1 || ship.getOwner() == 0) {
-            if (location.getY() < RETREAT_AREA_SIZE + rawLL.getY()) {
-                check = true;
-            }
-        }
-        return check;
-    }
-
-    public void getPilotPersonality(ShipAPI ship) {
-        float dangerLevel = .50f;
-        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
-            double d = LunaSettings.getDouble("armaa", "armaa_repairLevel");
-            dangerLevel = (float) d;
-        }
-        Global.getCombatEngine().getCustomData().put("armaa_strikecraftPilot" + ship.getId(), dangerLevel);
-    }
-
     public String getDescriptionParam(int index, HullSize hullSize) {
         if (index == 0) {
             return "activating autopilot. You can also target a specific carrier to land on it.";

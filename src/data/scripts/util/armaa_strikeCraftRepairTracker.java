@@ -148,22 +148,14 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         }
         for (FleetMemberAPI member : fleetManager.getRetreatedCopy()) {
             if (member == carrierMember) {
-                fleetManager.addToReserves(ship.getFleetMember());
+                //fleetManager.addToReserves(ship.getFleetMember());
                 ship.setRetreating(true, false);
                 ship.getLocation().set(0, -1000000f);
                 Global.getCombatEngine().removePlugin(this);
                 return;
             }
         }
-        /* No longer needed. Probably
-        if (carrier == null && carrierMember != null && fleetManager.getRetreatedCopy().contains(carrierMember)) {
-            Global.getCombatEngine().getFleetManager(ship.getOwner()).getTaskManager(true).orderRetreat(fleetManager.getDeployedFleetMember(ship), false, false);
-            ship.getLocation().setY(-1000000);
-            Global.getCombatEngine().removePlugin(this);
-            return;
-        }\
-        */
-        
+
         if (carrier == null || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier) || carrier.isHulk() || carrier.getHitpoints() <= 0 || carrier.getOwner() != ship.getOwner()) {
             takeOff(ship, landingLocation, true);
             armaa_utils.destroy(ship);
@@ -315,8 +307,14 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 ship.clearDamageDecals();
                 ship.setHitpoints(Math.max(ship.getHitpoints(), armaa_utils.getMaxHPRepair(ship)));
                 ship.getVariant().getHullSpec().getNoCRLossTime();
-                if (ship.getMutableStats().getPeakCRDuration().computeEffective(0f) < ship.getTimeDeployedForCRReduction()) {
-                    ship.getMutableStats().getPeakCRDuration().modifyFlat(ship.getId(), ship.getTimeDeployedForCRReduction());
+                float basePeakCR = ship.getHullSpec().getNoCRLossTime(); // actual base peak CR duration
+                float effectivePeakCR = ship.getMutableStats().getPeakCRDuration().computeEffective(basePeakCR);
+
+                if (effectivePeakCR < ship.getTimeDeployedForCRReduction()) {
+                    ship.getMutableStats().getPeakCRDuration().modifyFlat(
+                        ship.getId(),
+                        ship.getTimeDeployedForCRReduction() - effectivePeakCR // only add what's needed
+                    );
                 }
                 ship.clearDamageDecals();
                 armaa_utils.setArmorPercentage(ship, 100f);
