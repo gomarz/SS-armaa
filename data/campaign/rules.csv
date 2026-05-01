@@ -8006,6 +8006,8 @@ The withdrawal stretches longer than planned. Enemy forces converge, the battle 
 
 When the operation finally concludes, Lingfeng is secured-but so are dozens of others who were never meant to leave those camps.",,
 armaa_reicExtractFinishedBLingfeng,armaa_reicExtractFinishedBL,,"BeginConversation armaa_lingfeng
+$global.armaa_reicGotPrisoner = true
+Call $global.armaa_reic_ref updateData
 ShowPersonVisual
 AddTextSmall ""Extracted Lingfeng"" highlight","Later, Lingfeng finds you on the edge of the medical bay doorway. He doesn't step fully in. Doesn't fully step away, either.
 
@@ -8495,7 +8497,7 @@ $HeOrShe holds your gaze.
 The handler's tone returns to flat business.
 
 ""Anything else?""","armaa_reicArrivedMercs:""Actually, there's one other thing.""",
-armaa_reicTurnIn2MercReimburseHighHeat,DialogOptionSelected,"$option == armaa_reicTurnIn2MercReimburse
+armaa_reicTurnIn2MercReimburseHighHeat,DialogOptionSelected,"$option == armaa_reicTurnIn2MercReimburse2
 $global.armaa_reic_heat >= 3","AdjustRepActivePerson SUSPICIOUS -1
 AdjustRepPerson armaa_felix FRIENDLY 5
 AdjustRepPerson armaa_gira FRIENDLY 5

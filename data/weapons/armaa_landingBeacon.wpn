@@ -1,0 +1,59 @@
+{
+  "id": "armaa_landingBeacon",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_karma_pulse",
+  "everyFrameEffect": "data.scripts.weapons.armaa_weaponsPack",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "",
+  "turretGunSprite": "",
+  "hardpointSprite": "",
+  "hardpointGunSprite": "",
+  "visualRecoil": 1,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    40,
+    12,
+    40,
+    12.5,
+    40,
+    12,
+    40,
+    12,
+    40,
+    12.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    -9.5,
+    12,
+    11.5,
+    -8
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "muzzleFlashSpec": {
+    "length": 20,
+    "spread": 10,
+    "particleSizeMin": 18,
+    "particleSizeRange": 24,
+    "particleDuration": 0.1,
+    "particleCount": 11,
+    "particleColor": [
+      255,
+      100,
+      0,
+      200
+    ]
+  },
+  "fireSoundTwo": ""
+}
