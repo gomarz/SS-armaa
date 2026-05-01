@@ -147,6 +147,7 @@
 			"drugs":"graphics/armaa/icons/hullsys/armaa_drugs_icon.png",
 			"ai":"graphics/armaa/icons/hullsys/armaa_ai_core.png",
 			"slipstream_edge33":"graphics/armaa/backgrounds/armaa_sus_water_spec.png",
+			"slipstream_edge2":"graphics/fx/slipstream_edge1.png",
 			"armaa_streak":"graphics/armaa/fx/armaa_streak.png",
 			"armaa_sfxpulse":"graphics/armaa/fx/armaa_pulse.png",
 			"armaa_monitorrad":"graphics/armaa/fx/armaa_monitorrad.png",

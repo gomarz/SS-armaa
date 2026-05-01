@@ -45,6 +45,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
         if (!hasKey && state == State.ACTIVE && !activated) {
             // for some reason itll bug out and spawn dozens of clones without this
             activated = true;
+            ship = (ShipAPI) stats.getEntity();
             Global.getCombatEngine().addPlugin(new armaa_mirageShroudEveryFramePlugin(ship));
             ship.getCustomData().put(SHROUD_KEY + id, true);
         }
@@ -264,6 +265,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                 return;
             if (!isSpawned) {
                 for (int i = 0; i < NUM_CLONES; i++) {
+                    Global.getLogger(armaa_mirageShroudStats.class).info(ship.getOwner());
                     ShipVariantAPI var = ship.getVariant().clone();
                     var.setHullSpecAPI(Global.getSettings().getHullSpec("armaa_panther_frig_mirage"));
                     var.addMod("automated");
@@ -273,12 +275,13 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                     var.removeSuppressedMod("strikeCraft");
                     FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
                     member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat("armaa", -99);
-
+                    member.setOwner(ship.getOwner());
                     member.updateStats();
                     if (ship.getCaptain() != null) {
                         member.setCaptain(ship.getCaptain());
                     }
                     float offset = (i == 0 ? -200f : 200f);
+                    
                     Vector2f vec = new Vector2f(ship.getLocation().x + offset, ship.getLocation().y);
                     clone = Global.getCombatEngine().getFleetManager(ship.getOwner()).spawnFleetMember(member, vec, ship.getFacing(), 0f);
                     clone.setFacing(ship.getFacing());

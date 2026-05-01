@@ -51,7 +51,7 @@ public class armaa_reactiveCarapace extends BaseHullMod {
         tooltip.addPara("%s The shield module gradually regenerates hull and armor"
                 + " at %s per second when not under fire.",
                 pad, Misc.getHighlightColor(),
-                "\u2022", (int)(armaa_linkedSystems.REGEN_HP_PERCENT_PER_SECOND * 100f) + "%");
+                "\u2022", (armaa_linkedSystems.REGEN_HP_PERCENT_PER_SECOND * 100f) + "%");
  
         tooltip.addPara("%s Regeneration is suppressed for %s seconds after taking damage"
                 + " and does not occur while the unit is phased.",

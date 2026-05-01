@@ -7328,7 +7328,7 @@ armaa_KoLInfoDump,DialogOptionSelected,$option == armaa_KoLInfoDump,,"""I'll spe
 ""Anything else that enters their range is another matter. We lost a missionary vessel some cycles past. Good people, faithful people, gone before they could speak a single prayer.  Ludd holds them now. I take comfort in that, when I allow myself to.""","armaa_KoLInfoDumpWhyNotDestroyedResp:""Why hasn't the Church acted?""
 armaa_KoLInfoDumpObstructionsResp:""You mentioned the local government was uncooperative.""
 armaa_KoLInfoDumpEndResp:""I'll keep this in mind. (End)""",
-armaa_KoLInfoDumpWhyNotDestroyedResp,DialogOptionSelected,$option == armaa_KoLInfoDumpWhyNotDestroyedResp,,"""The Excubitor Orbis, in his wisdom, has determined that 'patience' is the proper response to an abomination that has been running unchecked for two hundred years."" A look of contempt washes over $hisorHer face, but the $post almost immediately self corrects.
+armaa_KoLInfoDumpWhyNotDestroyedResp,DialogOptionSelected,$option == armaa_KoLInfoDumpWhyNotDestroyedResp,,"""The Excubitor Orbis, in his wisdom, has determined that 'patience' is the proper response to an abomination that has been running unchecked for two hundred years."" A look of contempt washes over $hisOrHer face, but the $post almost immediately self corrects.
 
 ""I do not say that with disrespect. We must move carefully, and for good reason.  We are not the Path, praise Ludd for that distinction. But I will tell you what I have told my novices: there is no diplomatic solution with a machine. You cannot appeal to its conscience. You cannot offer it redemption. It does not have a soul to save.""
 
@@ -7413,7 +7413,7 @@ FireAll armaa_reicOpts
 
 A file packet pings onto your display. 
 
-""Gù Língfeng. If we're a spine, he is one of the vertebrae. Diktat Intelligence grabbed him three weeks ago and disappeared him into a mobile labor camp on $armaa_reic_marketName. You will get him out, alive, and you will not let them know who sent you.""
+""Gu Lingfeng. If we're a spine, he is one of the vertebrae. Diktat Intelligence grabbed him three weeks ago and disappeared him into a mobile labor camp on the planet. You will get him out, alive, and you will not let them know who sent you.""
 
 $HeOrShe leans in slightly.
 
@@ -8337,7 +8337,7 @@ $judged
 !$expressedSupport",FireAll armaa_reic_imoinuWhatWantOpts,"""Cruor? Of course."" She gives a short, bitter laugh. ""Let me guess - you're here to explain to me how reality works again? I know what happens on Cruor. Everyone on Umbra knows.""
 
 ""So. Out with it. Why are you asking me? Are you scouting targets for some corporate contract? Looking for leverage? Or did someone manage to make it your problem for once?""",,
-armaa_reic_imoinuOptStraightAsk,armaa_reic_imoinuWhatWantOpts,,,,"armaa_reic_imoinuOptStraightAskResp:""Someone was taken to Cruor under a 'work detail'. I need information.""",
+armaa_reic_imoinuOptStraightAsk,armaa_reic_imoinuWhatWantOpts,!$askedStraight,,,"armaa_reic_imoinuOptStraightAskResp:""Someone was taken to Cruor under a 'work detail'. I need information.""",
 #armaa_reic_imoinuOptIdeal,armaa_reic_imoinuWhatWantOpts,,,,"armaa_reic_imoinuOptIdealResp:""I want to jam a wrench into Diktat operations.""",
 armaa_reic_imoinuOptMercenary,armaa_reic_imoinuWhatWantOpts,!$player.helpedUmbraARC,,,"armaa_reic_imoinuOptMercResp:""Got a job. Help me and I'll hurt the Diktat in the process.""",
 armaa_reic_imoinuOptFavor,armaa_reic_imoinuWhatWantOpts,$player.helpedUmbraARC,,,"armaa_reic_imoinuOptFavorResp:""As a friend of the ARC, I need a favor. I'm trying to find one of their camps.""",
@@ -8347,7 +8347,8 @@ armaa_reic_imoinuOptJudgedBackoff,armaa_reic_imoinuWhatWantOpts,"$judged
 armaa_reic_imoinuOptJudgedDD,armaa_reic_imoinuWhatWantOpts,"$judged
 !$expressedSupport",,,"armaa_reic_imoinuOptJudgedDDResp:""Cut the crap. What do you know about the labor camps?""",
 ,,,,,,
-armaa_reic_imoinuOptStraightAskResp,DialogOptionSelected,$option == armaa_reic_imoinuOptStraightAskResp,,"She stares at you a moment, expression flat.
+armaa_reic_imoinuOptStraightAskResp,DialogOptionSelected,$option == armaa_reic_imoinuOptStraightAskResp,"$askedStraight = true
+FireAll armaa_reic_imoinuWhatWantOpts","She stares at you a moment, expression flat.
 
 ""I don't have a neat little map to their cages.""",,
 #armaa_reic_imoinuOptIdealResp,DialogOptionSelected,$option == armaa_reic_imoinuOptIdealResp,"$global.armaa_reicIntelLevel++
@@ -8357,7 +8358,7 @@ FireAll PopulateOptions","""Oh? Then we speak the same language.""
 
 ""I can give you something real - a lead you can act on. But don't waste my time with hero posturing. If you jam that knife in, twist it.""",,
 armaa_reic_imoinuOptMercResp,DialogOptionSelected,$option == armaa_reic_imoinuOptMercResp,"$option = imoinuUmbra_offerHelp
-FireBest DialogeOptionSelected","She snorts. ""Of course you are."" Imoinu's eyes flick over you like you're a stain that might still be useful.
+FireBest DialogOptionSelected","She snorts. ""Of course you are."" Imoinu's eyes flick over you like you're a stain that might still be useful.
 
 ""I don't care what you call yourself as long as the blood of the oppressor is spilt, but I don't hand out intel to random mercs for free. So how can you help me?""",,
 armaa_reic_imoinuOptFavorResp,DialogOptionSelected,$option == armaa_reic_imoinuOptFavorResp,"$global.armaa_reicIntelLevel++

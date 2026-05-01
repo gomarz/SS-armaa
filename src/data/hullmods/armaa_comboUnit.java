@@ -11,10 +11,13 @@ public class armaa_comboUnit extends BaseHullMod
     
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        ShipVariantAPI var = stats.getVariant().getModuleVariant("MODULE").clone();
-        var.addPermaMod("armaa_dpReduction");
-        stats.getVariant().setModuleVariant("MODULE", var);
-        stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id,var.getHullSpec().getFleetPoints());
+        if(stats.getVariant().getModuleVariant("MODULE") != null)
+        {
+            ShipVariantAPI var = stats.getVariant().getModuleVariant("MODULE").clone();
+            var.addPermaMod("armaa_dpReduction");
+            stats.getVariant().setModuleVariant("MODULE", var);
+            stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id, var.getHullSpec().getFleetPoints());
+        }
         
     }
 
