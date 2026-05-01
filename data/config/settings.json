@@ -116,10 +116,6 @@
 			"armaa_analysis_automation":"graphics/armaa/icons/campaign/armaa_analysis_automation.png",
 			"armaa_analysis_data_delivery":"graphics/armaa/icons/campaign/armaa_analysis.png",
 		},
-		"mission_splash":{
-			"armaa_acoc_splash":"graphics/armaa/campaign/armaa_acoc_splash.png",
-			"armaa_at_splash":"graphics/armaa/campaign/armaa_at_splash.png",
-		},
 		"misc":{
 			"armaa_bellator_lights":"graphics/armaa/ships/armaa_bellator_lights.png",
 			"armaa_atmo_station":"graphics/stations/survey_ship.png",

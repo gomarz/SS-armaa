@@ -1,5 +1,7 @@
-V3.2.6RC2
+V3.2.7
 ------
+- Optimized VRAM usage
+- Added icon
 - fixed Hegemony having access to base panther variant
 - fixed Mirage Shroud spawning phantoms with wrong owner
 - fixed missing tokens
