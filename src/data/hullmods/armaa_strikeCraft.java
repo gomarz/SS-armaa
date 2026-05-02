@@ -176,14 +176,18 @@ public class armaa_strikeCraft extends BaseHullMod {
     private final Color E = Global.getSettings().getColor("textEnemyColor");
 
     public String getRefitMode(ShipAPI ship) {
-        Collection<String> tags = ship.getHullSpec().getTags();
-        if (tags.contains(RefitMode.REFIT_WHEN_SAFE.value)) {
-            return "refit when no enemies are nearby, or completely out of ammo";
-        } else if (tags.contains(RefitMode.REFIT_ASAP.value)) {
-            return "refit as soon as a weapon runs out of ammo.";
-        } else {
-            return "only refit when CR or Hull is low.";
+        if(ship != null)
+        {
+            Collection<String> tags = ship.getHullSpec().getTags();
+            if (tags.contains(RefitMode.REFIT_WHEN_SAFE.value)) {
+                return "refit when no enemies are nearby, or completely out of ammo";
+            } else if (tags.contains(RefitMode.REFIT_ASAP.value)) {
+                return "refit as soon as a weapon runs out of ammo.";
+            } else {
+                return "only refit when CR or Hull is low.";
+            }
         }
+        return "";
     }
 
     @Override
@@ -194,10 +198,13 @@ public class armaa_strikeCraft extends BaseHullMod {
         Color[] arr2 = {Misc.getHighlightColor(), E};
         Color[] arr3 = {Misc.getHighlightColor(), Misc.getHighlightColor(), E};
         String size = "";
-        if (ship.getHullSpec().hasTag("strikecraft_medium")) {
-            size = "can only land on ships larger than destroyers";
-        } else if (ship.getHullSpec().hasTag("strikecraft_large")) {
-            size = "can only land on capital ships";
+        if(ship != null)
+        {
+            if (ship.getHullSpec().hasTag("strikecraft_medium")) {
+                size = "can only land on ships larger than destroyers";
+            } else if (ship.getHullSpec().hasTag("strikecraft_large")) {
+                size = "can only land on capital ships";
+            }
         }
 
         tooltip.addSectionHeading("Details", Alignment.MID, 10);
@@ -209,12 +216,13 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022", "frigates");
         tooltip.addSectionHeading("Point Defense Vulnerability", Alignment.MID, 10);
         TooltipMakerAPI pdWarning = tooltip.beginImageWithText("graphics/armaa/icons/hullsys/armaa_pdWarning.png", 64);
-        pdWarning.addPara("%s " + "Receives extra damage ships/weapons would deal to fighters, up %s. The visual indicator to the left will appear over such vessels.", padS, Misc.getHighlightColor(), "\u2022", "25%", "visual indicator");
+        pdWarning.addPara("%s " + "Receives extra damage ships/weapons would deal to fighters, up %s.", padS, Misc.getHighlightColor(), "\u2022", "25%");
         UIPanelAPI temp = tooltip.addImageWithText(10f);
 
         tooltip.addSectionHeading("Refit Mode", Alignment.MID, 10);
         tooltip.addPara("Ship will " + getRefitMode(ship), pad, arr, "\u2022");
         tooltip.addSectionHeading("Carrier Bonuses", Alignment.MID, 10);
+        if(ship != null)
         if (ship.getMutableStats().getDynamic().getStat(Stats.CORONA_EFFECT_MULT).getMultMods().containsKey("armaa_carrierStorageHyper")) {
             tooltip.addPara("%s " + "Friendly carriers present for storage during travel: Receives %s from hyperspace storms and coronas outside of combat.", pad, arr, "\u2022", "no damage");
         }

@@ -4860,13 +4860,11 @@ At the far end, a simple composite desk. Unadorned, functional, fixed to the flo
 The woman behind it looks up as you approach and lifts one hand, palm open.","armaa_firstVisitIntro4:Move forward
 ",
 armaa_firstVisitIntro4,DialogOptionSelected,$option == armaa_firstVisitIntro4,"PauseMusic
-BeginConversation armaa_seraph","""Fort Exsedol. Officially lawless, unofficially crowded with every flavor of opportunist this sector still produces."" Another smooth gesture.
+BeginConversation armaa_seraph","""Captain $player.lastName, is it? I appreciate your prompt arrival. I imagine you've had... a complicated reentry into the Sector."" She inclines her head slightly, a gesture somewhere between courtesy and evaluation.
 
-""Jenius. They shut themselves off after their collapse. What remains of their people keep to themselves now."" Her eyes return to you- appraising. ""And then, of course-"" she continues, voice softening just slightly, ""-there are the ones who never really let go of what was lost. The Meshan Reprisal Coalition."" She lets the words settle like a dropped coin.
+""You've brought with you a very old machine. One with a history that intersects - rather directly - with certain long-standing interests that I am tasked with managing.""
 
-""Exsedol is their home now. Descendents of survivors, veterans... angry people. People who still believe the loss of Meshan was not simply unfortunate, but an offense worth answering."" Her tone lowers, almost conspiratorial.
-
-""And now, into all of this... you arrive. A bit of a historical anomaly, and a very interesting one.""","armaa_firstVisitIntro5:""You seem rather well-informed.""
+""But before we discuss specifics, allow me to extend the formal welcome of New Meshan- and my thanks for honoring the invitation.""","armaa_firstVisitIntro5:""You seem rather well-informed.""
 armaa_firstVisitIntro5b:""Let's skip to the part where you tell me exactly why I'm here"".",
 armaa_firstVisitIntro5,DialogOptionSelected,$option == armaa_firstVisitIntro5,,"Sera allows the faintest hint of a smile. ""I make it my business to stay informed, Captain.""
 
@@ -4888,22 +4886,22 @@ Her gaze holds yours.
 ""Re-emerging with equipment of that era - and that classification - is not something that typically goes unnoticed. Nor without interest.""
 
 ""But I have no intention of threatening you. Quite the opposite.""",armaa_firstVisitIntro7:Continue,
-armaa_firstVisitIntro7,DialogOptionSelected,$option == armaa_firstVisitIntro7,armaa_Hikaru_Utada playMusic music_armaa_briefing,"""Fort Exsedol. Officially lawless, unofficially crowded with every flavor of opportunist this sector still produces."" Another smooth gesture.
+armaa_firstVisitIntro7,DialogOptionSelected,$option == armaa_firstVisitIntro7,armaa_Hikaru_Utada playMusic music_armaa_briefing,"""The Coalition controls most of Exsedol's lower districts."" She said it flatly, like she was deciding how much to give you. ""Meshan survivors. Or people who claim to carry on their will.""
 
-""Jenius. They shut themselves off after their collapse. What remains of their people keep to themselves now."" Her eyes return to you- appraising. ""And then, of course-"" she continues, voice softening just slightly, ""-there are the ones who never really let go of what was lost. The Meshan Reprisal Coalition."" She lets the words settle like a dropped coin.
+What do they want, you ask.
 
-""Exsedol is their home now. Descendents of survivors, veterans... angry people. People who still believe the loss of Meshan was not simply unfortunate, but an offense worth answering."" Her tone lowers, almost conspiratorial.
+""What do you think?"" She replies. 
 
-""And now, into all of this... you arrive. A bit of a historical anomaly, and a very interesting one.""",armaa_firstVisitIntro8:Continue,
+""The same thing angry people always want. Someone to answer for it. Interesting timing,"" she says, ""for someone like you to show up.""",armaa_firstVisitIntro8:Continue,
 armaa_firstVisitIntro8,DialogOptionSelected,$option == armaa_firstVisitIntro8,,"""You see, Captain, your situation is uniquely valuable.""
 
-""The Valkazard- a fully functional Cataphract from the First AI War- is more than just a machine. It's a symbol. And you- one of Meshan's own, pulled from cryosleep, carrying both the hardware and the history - are a symbol as well.""
+""The Valkazard- a fully functional Cataphract from the First AI War- is more than just a machine. It's a symbol. And you- one of Meshan's own, carrying both the hardware and the history - are a symbol as well.""
 
 She lets that thought hang for a moment, studying your expression.
 
 ""The leadership of the Reprisal Coalition - they are many things. But above all: desperate for legitimacy.""
 
-""Someone like you? A Sleeper from the time of Meshan's fall, piloting a weapon directly tied to that conflict? They may see you as more than simply a survivor."" Her voice softens further, almost a whisper. ""They may see you as something worth rallying behind. And influence, Captain... influence is a very useful thing to have.""",armaa_firstVisitIntro9:Continue,
+""Someone like you? They may see you as more than simply a survivor. They may see you as something worth rallying behind. And influence, Captain... influence is a very useful thing to have.""",armaa_firstVisitIntro9:Continue,
 armaa_firstVisitIntro9,DialogOptionSelected,$option == armaa_firstVisitIntro9,,"""I won't pretend I don't have an interest, Captain."" Her voice is calm, measured. ""The Coalition is unstable. Some dream of igniting a war, others build little empires on Exsedol."" 
 
 ""What they lack is a center. A unifying figure who can turn that into something useful- for them, for this system... for you."" She holds your eyes now. ""You, Captain. A Sleeper, tied directly to Meshan. Carrying the Valkazard- the very image they romanticize.""
@@ -5660,9 +5658,7 @@ armaa_HCEncounterInquire,armaa_seraphBountyTalk,"$armaa_legioMechToldBounty
 armaa_HCEncounterDiplomaticApproach,armaa_seraphBountyTalk,$armaa_legioMechToldBounty,,,"armaa_HCEncounterDiplomaticResp:""Perhaps we can solve this peacefully?""",
 armaa_HCEncounterInquireResp,DialogOptionSelected,$option == armaa_HCEncounterInquireResp,"$armaa_legioMechInquired = true
 FireAll armaa_seraphBountyTalk
-","""The ones who've always sought to control, to dominate,"" she replied cryptically. ""Those who fear progress and the unknown. Those who want to silence innovation and bend it to their own purposes.""
-
-",,
+","""The ones who've always sought to control, to dominate,"" she replied cryptically.",,
 armaa_HCEncounterDiplomaticResp,DialogOptionSelected,$option == armaa_HCEncounterDiplomaticResp,"AdjustRepPerson armaa_seraph FAVORABLE 1
 $entity.ignorePlayerCommRequests = true
 FireAll PopulateOptions","""A Peaceful resolution."" she mused, her voice softening. ""A noble thought, my friend. I suppose we could provide your employers with doctored logs, videos.""
@@ -8783,7 +8779,7 @@ She doesn't elaborate further. It's enough.",armaa_bellatorSeraClose:Continue,
 armaa_bellatorRespDidntExpect,DialogOptionSelected,$option == armaa_bellatorRespDidntExpect,,"""Neither did we, honestly."" She glances briefly offscreen - at her crew, or at something else. ""Here we are.""",armaa_bellatorSeraClose:Continue,
 armaa_bellatorSeraClose,DialogOptionSelected,$option == armaa_bellatorSeraClose,"armaa_Hikaru_Utada giveBellator
 AddShip $armaa_giftMech
-$player.armaa_gotBellator
+$player.armaa_gotBellator = true
 EndConversation
 FireBest MarketPostDock","Sera Pha closes the channel once the terms are settled. She sits with the quiet for a moment before looking back at you.
 

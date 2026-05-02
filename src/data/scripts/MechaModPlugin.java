@@ -19,7 +19,6 @@ import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.campaign.PersonImportance;
 import com.fs.starfarer.api.campaign.FactionAPI;
-import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
 
@@ -40,7 +39,6 @@ import data.scripts.world.ARMAAWorldGen;
 import data.scripts.campaign.notifications.armaa_notificationShower;
 import data.hullmods.cataphract;
 
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
@@ -59,7 +57,6 @@ import data.scripts.fleets.ArmaaFleetManager;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import data.scripts.campaign.armaa_cataphractGBListener;
 import data.scripts.campaign.armaa_satBombListener;
-import data.scripts.util.armaa_utils;
 import java.io.IOException;
 
 import java.util.*;
@@ -490,7 +487,7 @@ private void removeScript(Object s) {
             fleet.setLocation(loc.getLocation().x, loc.getLocation().y);
             fleet.setId("armaa_valkDefender");
             fleet.addTag("armaa_valkDefender");
-            fleet.getFleetData().addFleetMember("armaa_panther_standard_shield");
+            fleet.getFleetData().addFleetMember("armaa_garegga_tt_carrier_standard");
             fleet.getFleetData().addFleetMember("armaa_panther_standard_shield");
             fleet.getFleetData().addFleetMember("brawler_tritachyon_Standard");
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PURSUE_PLAYER, true);
@@ -499,6 +496,7 @@ private void removeScript(Object s) {
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MISSION_IMPORTANT, true);
+            fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY, true);
             fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, loc, 500f);
 
         }

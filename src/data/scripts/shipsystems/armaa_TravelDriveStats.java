@@ -58,6 +58,8 @@ public class armaa_TravelDriveStats extends BaseShipSystemScript {
                     }
                     Global.getCombatEngine().getCustomData()
                             .put("armaa_carrierDeployDone_" + ship.getId(), true);
+                    Global.getCombatEngine().getCustomData()
+                            .put("armaa_strikeCraft_pptSnapshot_" + ship.getId(), ship.getMutableStats().getPeakCRDuration().createCopy());                    
                     runOnce = true;
                 }
             }
@@ -134,7 +136,11 @@ public class armaa_TravelDriveStats extends BaseShipSystemScript {
                     && candidate.getLaunchBaysCopy().isEmpty()) {
                 continue;
             }
-
+            
+            //prioritize this ship
+            if(candidate.getVariant().hasHullMod("armaa_exclusive_hangar_assignment"))
+                return candidate;
+        
             candidates.add(candidate);
         }
 

@@ -38,6 +38,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
     private float arrivalHull = 1f;
     private float arrivalCR = 1f;
     private FleetMemberAPI carrierMember;
+
     public armaa_strikeCraftRepairTracker(ShipAPI ship, ShipAPI carrier, Vector2f landingLocation, int bayNo) {
         this.carrier = carrier;
         this.carrierMember = carrier.getFleetMember();
@@ -56,10 +57,9 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 }
             }
         }
-            if (Global.getSettings().getModManager().isModEnabled("lunalib") == true) 
-            {
-                REPAIR_POOL_DEFAULT = LunaSettings.getInt("armaa", "armaa_repairPool");
-            }
+        if (Global.getSettings().getModManager().isModEnabled("lunalib") == true) {
+            REPAIR_POOL_DEFAULT = LunaSettings.getInt("armaa", "armaa_repairPool");
+        }
         return REPAIR_POOL_DEFAULT;
     }
 
@@ -75,10 +75,9 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         String poolKey = "armaa_repairPool_" + ship.getId();
         Object obj = Global.getCombatEngine().getCustomData().get(poolKey);
         // guh 
-        if (Global.getSettings().getModManager().isModEnabled("lunalib") == true) 
-        {
+        if (Global.getSettings().getModManager().isModEnabled("lunalib") == true) {
             REPAIR_POOL_DEFAULT = LunaSettings.getInt("armaa", "armaa_repairPool");
-        }        
+        }
         return (obj instanceof Float) ? (float) obj : REPAIR_POOL_DEFAULT;
     }
 
@@ -306,16 +305,18 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 ship.getMutableStats().getShieldMalfunctionChance().unmodify("cr_effect");
                 ship.clearDamageDecals();
                 ship.setHitpoints(Math.max(ship.getHitpoints(), armaa_utils.getMaxHPRepair(ship)));
-                ship.getVariant().getHullSpec().getNoCRLossTime();
-                float basePeakCR = ship.getHullSpec().getNoCRLossTime(); // actual base peak CR duration
-                float effectivePeakCR = ship.getMutableStats().getPeakCRDuration().computeEffective(basePeakCR);
-
-                if (effectivePeakCR < ship.getTimeDeployedForCRReduction()) {
-                    ship.getMutableStats().getPeakCRDuration().modifyFlat(
-                        ship.getId(),
-                        ship.getTimeDeployedForCRReduction() - effectivePeakCR // only add what's needed
-                    );
+                // restore PPT UP TO the maximum PPT
+                // this doesnt work if PPT is modified tho
+                if(Global.getCombatEngine().getCustomData().get("armaa_strikeCraft_pptSnapshot_"+ship.getId()) != null)
+                {
+                    StatBonus snapshot = (StatBonus)Global.getCombatEngine().getCustomData()
+                            .get("armaa_strikeCraft_pptSnapshot_" + ship.getId());    
+                    ship.getMutableStats().getPeakCRDuration().unmodify();                    
+                    ship.getMutableStats().getPeakCRDuration().applyMods(snapshot);
                 }
+                else                    
+                    ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_strikeCraftRepair_"+ship.getId(), ship.getTimeDeployedForCRReduction());
+
                 ship.clearDamageDecals();
                 armaa_utils.setArmorPercentage(ship, 100f);
             }

@@ -53,6 +53,11 @@ public class armaa_spareChassis extends BaseHullMod {
                 if (!target.isAlive()) {
                     continue;
                 }
+                if(ship.getOwner() == 1 || ship.getOwner() == 0 && ship.isAlly())
+                {
+                    if(carrier == null)
+                        carrier = target;
+                }
                 if (target.getVariant().hasHullMod("armaa_spare_chassis_storage")) {
                     carrier = target;
                 }
