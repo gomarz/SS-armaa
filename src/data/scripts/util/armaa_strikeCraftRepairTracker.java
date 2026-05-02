@@ -313,8 +313,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                             .get("armaa_strikeCraft_pptSnapshot_" + ship.getId());    
                     ship.getMutableStats().getPeakCRDuration().unmodify();                    
                     ship.getMutableStats().getPeakCRDuration().applyMods(snapshot);
-                }
-                else                    
+                }                  
                     ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_strikeCraftRepair_"+ship.getId(), ship.getTimeDeployedForCRReduction());
 
                 ship.clearDamageDecals();

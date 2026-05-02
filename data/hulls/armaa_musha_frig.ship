@@ -30,8 +30,8 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "COMPOSITE",
-      "mount": "HARDPOINT",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
       "arc": 50,
       "angle": 20,
       "locations": [-9, 9],
@@ -40,7 +40,7 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 45,
       "angle": -10,
