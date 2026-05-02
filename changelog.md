@@ -15,6 +15,7 @@ V3.2.7
 - added "Spare Chassis" hullmod to Trident, Broadsword, Sarissa
 - added "Exclusive Hangar Assignment" hullmod
 	- launches all ships with strikecraft hullmod from a specific carrier(cruiser+)
+- replaced standard AI portraits used by Dawn, Imelda, Kade, Sera
 
 V3.2.6
 ------
