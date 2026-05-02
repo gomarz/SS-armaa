@@ -11,7 +11,7 @@ V3.2.7
 - fixed missing fx in ocean battle
 - fixed broken rules option during end of REIC
 - fixed Bellator acquisition loop
-- fixed NPE when checking strikecraft hullmod
+- fixed NPE when checking strikecraft hullmod in codex
 - added "Spare Chassis" hullmod to Trident, Broadsword, Sarissa
 - added "Exclusive Hangar Assignment" hullmod
 	- launches all ships with strikecraft hullmod from a specific carrier(cruiser+)
