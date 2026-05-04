@@ -184,9 +184,14 @@ public class armaa_AcePilot {
                     ship.getCaptain() != null && ship.getCaptain().getId().equals("armaa_dawn")) {
                 chatterEnabled = LunaSettings.getBoolean("armaa", "armaa_enableDawnVoice");
             }
+            
             if (interval.intervalElapsed() && !runOnce && !ship.isStationModule() && chatterEnabled && ship.getOwner() == 0) {
-                Global.getSoundPlayer().playUISound("armaa_dawn_intro", 1, 0.90f);
-                runOnce = true;
+                if(!Global.getCombatEngine().getCustomData().containsKey("armaa_dawnChattered"))
+                {
+                    Global.getCombatEngine().getCustomData().put("armaa_dawnChattered","-");
+                    Global.getSoundPlayer().playUISound("armaa_dawn_intro", 1, 0.90f);
+                    runOnce = true;
+                }
             }
 
             String id = ship.getId();

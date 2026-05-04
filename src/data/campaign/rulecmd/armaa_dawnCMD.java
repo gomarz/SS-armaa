@@ -33,13 +33,13 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             if (Global.getSector().getMemoryWithoutUpdate().get("$armaa_dawnHireDate") != null) {
                 return false;
             }
-            Global.getLogger(this.getClass()).info("Adding Dawn Listener..");            
+            Global.getLogger(this.getClass()).info("Adding Dawn Listener..");
             Global.getSector().getListenerManager().addListener(new armaa_dawnListener());
             long timestamp = Global.getSector().getClock().getTimestamp();
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnHireDate", timestamp);
             return true;
         }
-        if ("setInteractionTimestamp".equals(action)) {      
+        if ("setInteractionTimestamp".equals(action)) {
             long timestamp = Global.getSector().getClock().getTimestamp();
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnBarTimestamp", timestamp);
             return true;
@@ -49,7 +49,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
                 startDate = params.get(2).getString(memoryMap);
             }
             float days = params.get(1).getFloat(memoryMap);
-            long timestamp = startDate == null ? (Long) Global.getSector().getMemoryWithoutUpdate().get("$armaa_dawnHireDate") : (Long) Global.getSector().getMemoryWithoutUpdate().get("$"+startDate);
+            long timestamp = startDate == null ? (Long) Global.getSector().getMemoryWithoutUpdate().get("$armaa_dawnHireDate") : (Long) Global.getSector().getMemoryWithoutUpdate().get("$" + startDate);
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnElapsedDays", Global.getSector().getClock().getElapsedDaysSince(timestamp));
             if (Global.getSector().getClock().getElapsedDaysSince(timestamp) >= days) {
                 return true;
@@ -110,20 +110,20 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             Global.getSector().getCampaignUI().suppressMusic(0f);
             return true;
 
-        }
-        else if ("initDawn".equals(action))
-        {
+        } else if ("initDawn".equals(action)) {
             Global.getSector().getEconomy().getMarket("armaa_meshanii_market").getCommDirectory().getEntryForPerson(Global.getSector().getImportantPeople().getPerson("armaa_dawn")).setHidden(false);
-                OfficerManagerEvent event = armaa_utils.getOfficerManagerEvent();
-                PersonAPI dawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
-                OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(dawn, "armaa_meshanii_market", 4000, 1000);
-                dawn.getMemoryWithoutUpdate().set("$ome_hireable", true);
-                dawn.getMemoryWithoutUpdate().set("$ome_eventRef", event);
-                dawn.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
-                dawn.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
-                event.addAvailable(f);
+            //runcode
+            OfficerManagerEvent event = armaa_utils.getOfficerManagerEvent();
+            PersonAPI dawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
+            OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(dawn, "armaa_meshanii_market", 4000, 1000);
+            f.timeRemaining = 9999999999999999999999999999999999999f;
+            dawn.getMemoryWithoutUpdate().set("$ome_hireable", true);
+            dawn.getMemoryWithoutUpdate().set("$ome_eventRef", event);
+            dawn.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
+            dawn.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
+            event.addAvailable(f);
 
-                return true;
+            return true;
         }
         return false;
     }

@@ -93,8 +93,8 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         config.pullInAllies = true;
         config.pullInEnemies = true;
         config.pullInStations = false;
-        config.firstTimeEngageOptionText = "Engage the automated defenses";
-        config.afterFirstTimeEngageOptionText = "Re-engage the automated defenses";
+        config.firstTimeEngageOptionText = "Engage the underground facility defenses";
+        config.afterFirstTimeEngageOptionText = "Re-engage underground facility defenses";
         config.noSalvageLeaveOptionText = "Continue";
         config.dismissOnLeave = false;
         config.printXPToDialog = true;

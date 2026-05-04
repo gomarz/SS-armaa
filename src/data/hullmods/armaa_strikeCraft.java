@@ -212,6 +212,8 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addPara("%s " + "Most weapons %s.", padS, Misc.getHighlightColor(), "\u2022", "fire over allied ships");
         tooltip.addPara("%s " + "No %s.", padS, Misc.getHighlightColor(), "\u2022", "zero-flux speed bonus");
         tooltip.addPara("%s " + "Combat Readiness decreases %s faster.", padS, arr2, "\u2022", (int) DEGRADE_INCREASE_PERCENT + "%");
+        if(ship != null)
+            tooltip.addPara("%s " + "Can dock at carriers to resupply %s times", padS, Misc.getHighlightColor(), "\u2022");
         tooltip.addPara("%s " + "Docking replenishes PPT, armor, hull, and ammo.", padS, Misc.getHighlightColor(), "\u2022");
         tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022", "frigates");
         tooltip.addSectionHeading("Point Defense Vulnerability", Alignment.MID, 10);

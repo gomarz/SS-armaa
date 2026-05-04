@@ -1,0 +1,64 @@
+{
+  "id": "armaa_kshatriya_binder_chaosburst",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_kshatriyaParticleCannonEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/kshatriya/armaa_kshatriya_body.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    255,
+    255,
+    0,
+    255
+  ],
+  "hitGlowRadius": 1,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    0,
+    0,
+    200
+  ],
+  "coreColor": [
+    255,
+    0,
+    0,
+    200
+  ],
+  "width": 5,
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF,
+    ASTEROID
+  ],
+  "fireSoundOne": "beambangMeso",
+  "fireSoundTwo": "beamfireMeso"
+}

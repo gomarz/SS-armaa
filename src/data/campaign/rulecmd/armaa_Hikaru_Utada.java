@@ -191,6 +191,10 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
         } else if ("giveKshatriya".equals(action)) {
             String variantId = "armaa_kshatriya_boss";
             ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
+            variant.removeMod("heavyarmor");
+            variant.removeMod("hardenedshieldemitter");
+            variant.addPermaMod("faulty_grid");
+            variant.addPermaMod("damaged_mounts");
             FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
             member.getRepairTracker().applyCREvent(-100f, "Destroyed in battle");
             memory.set("$armaa_giftMech", member, 1f);
@@ -427,7 +431,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             }
 
             FleetMemberAPI dummy = Global.getFactory().createFleetMember(FleetMemberType.SHIP, Global.getSettings().getVariant(id));
-            dialog.flickerStatic(1f, 5f);
+            dialog.flickerStatic(1f, 1f);
             dialog.getVisualPanel().showFleetMemberInfo(dummy, true);
             return true;
             // memory.set("$armaa_dummy_ship", dummy);        

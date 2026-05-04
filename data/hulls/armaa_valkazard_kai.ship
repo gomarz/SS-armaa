@@ -121,22 +121,22 @@
     },
     {
       "id": "WS0001",
-      "size": "SMALL",
-      "type": "UNIVERSAL",
+      "size": "MEDIUM",
+      "type": "MISSILE",
       "mount": "TURRET",
       "arc": 90,
       "angle": 45,
-      "locations": [-18, 16],
+      "locations": [-10, 25],
       "renderOrderMod": 100
     },
     {
       "id": "WS0002",
-      "size": "SMALL",
-      "type": "UNIVERSAL",
+      "size": "MEDIUM",
+      "type": "MISSILE",
       "mount": "TURRET",
       "arc": 90,
       "angle": -45,
-      "locations": [-18, -16],
+      "locations": [-10, -25],
       "renderOrderMod": 100
     },
     {
@@ -145,8 +145,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 0,
-      "locations": [-6, 8]
+      "angle": 20,
+      "locations": [-14, 12]
     },
     {
       "id": "BAY2",
@@ -154,8 +154,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -0,
-      "locations": [-6, -8]
+      "angle": -20,
+      "locations": [-14, -12]
     }
   ],
   "engineSlots": [

@@ -264,6 +264,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
             if(Global.getCombatEngine().isPaused())
                 return;
             if (!isSpawned) {
+                Global.getCombatEngine().getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(true);
                 for (int i = 0; i < NUM_CLONES; i++) {
                     Global.getLogger(armaa_mirageShroudStats.class).info(ship.getOwner());
                     ShipVariantAPI var = ship.getVariant().clone();
@@ -317,6 +318,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                         armaa_utils.setArmorPercentage(module, 0.25f);
                     }
                 }
+                Global.getCombatEngine().getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(false);                
                 isSpawned = true;
             }
             if (isSpawned) {

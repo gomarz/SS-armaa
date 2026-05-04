@@ -627,7 +627,7 @@ public class armaa_himac extends BaseHullMod {
         // (At 1.0 hull -> 0 danger, at 0.0 hull -> 1 danger)
         float hullDanger = 1f - ship.getHullLevel();
         hullDanger = hullDanger * hullDanger; // square it to emphasize low hull
-        player = ship == Global.getCombatEngine().getPlayerShip();
+        player = ship == Global.getCombatEngine().getPlayerShip() && ship.getAI() == null;
         if (ship.getAI() != null) {
             final ShipwideAIFlags flags = ship.getAIFlags();
             data.aiTracker.advance(amount);

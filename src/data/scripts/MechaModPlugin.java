@@ -515,6 +515,7 @@ private void removeScript(Object s) {
             admin.getName().setFirst("Sera");
             admin.getName().setLast("Pha");
             admin.setImportanceAndVoice(PersonImportance.HIGH, new Random());
+            admin.setMarket(market);
             if (haveAnime) {
                 admin.setPortraitSprite("graphics/armaa/portraits/armaa_seraph_anim.png");
             } else {
@@ -556,8 +557,9 @@ private void removeScript(Object s) {
                 //secretary.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
                 //secretary.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
                 secretary.getStats().setSkillLevel("armaa_AcePilot", 2);
+                secretary.setMarket(market);
                 //event.addAvailable(f);
-                market.getCommDirectory().addPerson(secretary, 99);
+                market.getCommDirectory().addPerson(secretary, 1);
                 market.getCommDirectory().getEntryForPerson(secretary).setHidden(true);
                 Global.getSector().getImportantPeople().addPerson(admin);
                 Global.getSector().getImportantPeople().addPerson(secretary);

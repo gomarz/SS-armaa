@@ -16,6 +16,15 @@ V3.2.7
 - added "Exclusive Hangar Assignment" hullmod
 	- launches all ships with strikecraft hullmod from a specific carrier(cruiser+)
 - replaced standard AI portraits used by Dawn, Imelda, Kade, Sera
+- fixed dawn being removed from market 
+- minor typo fixes
+- descent bg scales by screen size
+- city cloud cover scales by screen size
+- fixed dawn kanta's den dialogue using mazalot dialogue
+- shrunk shadows cast in city battle by 20%
+- fixed axe floaters
+- trimmed some cassian dialogue
+- added armaa_traveldrive to aleste e-type
 
 V3.2.6
 ------

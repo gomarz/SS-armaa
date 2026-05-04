@@ -19,8 +19,8 @@
     "armaa_bit_kshatriya_wing"
   ],
   "builtInWeapons": {
-    "WS0001": "armaa_kshatriya_torso_chaosburst",
-    "WS0002": "armaa_kshatriya_torso_chaosburst"
+    "WS0001": "armaa_kshatriya_binder_chaosburst",
+    "WS0002": "armaa_kshatriya_binder_chaosburst"
   },
   "weaponSlots": [
     {
@@ -46,7 +46,7 @@
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "HIDDEN",
-      "arc": 45,
+      "arc": 180,
       "angle": 45,
       "locations": [63.5, 29]
     },
@@ -55,7 +55,7 @@
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "HIDDEN",
-      "arc": -45,
+      "arc": 180,
       "angle": -45,
       "locations": [63.5, -29]
     }

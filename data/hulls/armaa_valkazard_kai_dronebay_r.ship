@@ -6,7 +6,7 @@
   "style": "MIDLINE",
   "height": 56,
   "width": 36,
-  "center": [1, 52],
+  "center": [9, 33],
   "collisionRadius": 42.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 42,
@@ -22,16 +22,16 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [23, -3]
+      "locations": [42, 5]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    -32, -14.5,
-    -0.5, 0.5,
-    -3, -9.5,
-    -15, -18.5,
-    -50, -32,
-    -30, -17.5
+    -13, -6.5,
+    18.5, 8.5,
+    16, -1.5,
+    4, -10.5,
+    -31, -24,
+    -11, -9.5
   ]
 }

@@ -73,18 +73,41 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
         Global.getCombatEngine().maintainStatusForPlayerShip(
                 "atmo", "graphics/ui/icons/icon_repair_refit.png",
                 "EM Interference", "Sensor range reduced", true);
-        float initialWidth = Global.getSettings().getScreenWidth();
-        // Always-present black fill
-        MagicRender.screenspace(
-                Global.getSettings().getSprite("misc", "armaa_cutscene"),
-                MagicRender.positioning.CENTER,
-                new Vector2f(0, 0), new Vector2f(0, 0),
-                new Vector2f(initialWidth * 2, initialWidth * 2),
-                new Vector2f(0, 0), 0f, 0f,
-                new Color(0, 0, 0, 255),
-                false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
-                CombatEngineLayers.CLOUD_LAYER
-        );
+        if(ascended)
+        {
+            // Always-present black fill
+                float startScale = 4f;
+                float endScale = 1f;
+                ascentRatio += 0.15f * engine.getElapsedInLastFrame();
+                if (ascentRatio > 1f) {
+                    ascentRatio = 1f;
+                }
+                float scale = startScale + (endScale - startScale) * ascentRatio;
+                SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_shaft_top");
+                MagicRender.screenspace(
+                        spr, MagicRender.positioning.CENTER,
+                        new Vector2f(0, 0), new Vector2f(0, 0),
+                        new Vector2f(Global.getSettings().getScreenWidth() * scale, Global.getSettings().getScreenWidth() * scale),
+                        new Vector2f(0, 0), 0f, spin,
+                        new Color(0.25f * ascentRatio, 0.25f * ascentRatio, 0.25f * ascentRatio, 1f),
+                        false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
+                        CombatEngineLayers.CLOUD_LAYER
+                );
+        }
+        else
+        {
+            float initialWidth = Global.getSettings().getScreenWidth();
+            MagicRender.screenspace(
+                    Global.getSettings().getSprite("misc", "armaa_cutscene"),
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(0, 0), new Vector2f(0, 0),
+                    new Vector2f(initialWidth * 2, initialWidth * 2),
+                    new Vector2f(0, 0), 0f, 0f,
+                    new Color(0, 0, 0, 255),
+                    false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+        }
         if (engine.isPaused()) {
             return;
         }
@@ -261,7 +284,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             MagicRender.screenspace(
                     spr, MagicRender.positioning.CENTER,
                     new Vector2f(0, 0), new Vector2f(0, 0),
-                    new Vector2f(spr.getWidth() * scale, spr.getHeight() * scale),
+                    new Vector2f(Global.getSettings().getScreenWidth() * scale, Global.getSettings().getScreenWidth() * scale),
                     new Vector2f(0, 0), 0f, spin,
                     new Color(0.25f * ascentRatio, 0.25f * ascentRatio, 0.25f * ascentRatio, 1f),
                     false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,

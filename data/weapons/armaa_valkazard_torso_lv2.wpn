@@ -1,7 +1,7 @@
 {
   "id": "armaa_valkazard_torso_lv2",
   "specClass": "projectile",
-  "projectileSpecId": "cryoblaster_shot",
+  "projectileSpecId": "devastator_shot",
   "type": "ENERGY",
   "size": "SMALL",
   # "everyFrameEffect": "data.scripts.weapons.armaa_blunderbuss_effect",

@@ -47,15 +47,18 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
         ArrayList<FleetMemberAPI> removedShips = new ArrayList();
         String action = params.size() > 0 ? params.get(0).getString(memoryMap) : "";
+        float modifier = 0f;
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             float crew = 0f;
             //member.getVariant().hasTag(action)
             if (member.isCapital()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
+                modifier+= member.getFleetPointCost();
             } else if ((member.isCruiser()) && member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).isUnmodified()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
+                modifier+= member.getFleetPointCost();
             } else {
                 continue;
             }
@@ -64,12 +67,15 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         }
         Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
         String faction = "derelict";
-        float str = Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() * 0.7f;
+        //also subtract guardians DP
+        float str = (Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()-modifier-40f) * 0.7f;
+        //not used?
+        /*
         if ("kade".equals(action)) {
             str = Math.max(200f, Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() * 0.80f);
             faction = "armaarmatura_boss";
 
-        }
+        }*/
         FleetParamsV3 fparams = new FleetParamsV3(
                 Global.getSector().getEntityById("nekki1").getLocationInHyperspace(),
                 faction,

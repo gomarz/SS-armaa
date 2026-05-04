@@ -162,7 +162,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             */
             String minuteStr = armaa_utils.getMinuteString();
             Global.getCombatEngine().addLayeredRenderingPlugin(
-                    new armaa_titleSplash("NIKOPOLIS  - CITY APPROACH - " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
+                    new armaa_titleSplash("NIKOPOLIS - CITY APPROACH | " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
                             " THE COASTAL CAPITAL"));
             PersonAPI pilot3 = Global.getSector().getImportantPeople().getPerson("armaa_redeye");
             ShipAPI f;
@@ -307,11 +307,11 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                             CombatEngineLayers.ABOVE_SHIPS_LAYER
                     );
                 }
-            } else if (ratio >= 1.3f && ratio <= 1.6f) {
+            } else if (ratio >= 1.2f && ratio <= 1.5f) {
                 float r = ratio;
                 // start introducing clouds earlier
-                float start = 1.3f;
-                float full = 1.5f;
+                float start = 1.2f;
+                float full = 1.3f;
 
                 // 0 at 0.80, 1 at 0.90+
                 float t = Math.max(0f, Math.min(1f, (r - start) / (full - start)));
@@ -326,14 +326,14 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
                 if (cloudInterval2.intervalElapsed()) {
                     if ((float) Math.random() < p) {
-                        float cloudSize = (float) (MathUtils.getRandomNumberInRange(1200, 1800)) * t;
+                        float cloudX = (float) Global.getSettings().getScreenWidth()*2f*ratio;// * t;                        
+                        float cloudY = (float) Global.getSettings().getScreenHeight()*2f*ratio;// * t;
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX),
                                         engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                                 new Vector2f(0, ratio * (-MathUtils.getRandomNumberInRange(800, 1000) * mult) / 2),
-                                new Vector2f(MathUtils.getRandomNumberInRange(cloudSize * 1.25f * ratio, cloudSize * ratio),
-                                        MathUtils.getRandomNumberInRange(cloudSize * 1.25f * ratio, cloudSize * ratio)),
+                                new Vector2f(cloudX,cloudY),
                                 new Vector2f(25f, 25f),
                                 0f, 0f,
                                 new Color(200, 255, 255, 150),
@@ -342,15 +342,13 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                                 0.1f, 5f, 5f,
                                 CombatEngineLayers.ABOVE_SHIPS_LAYER
                         );
-                        cloudSize = 6000f * t;
                         Color cloudColor = ratio > 1.5f ? new Color(200f / 255f, 1f, 1f, 1f * t) : new Color((115f / 255f), (157f / 255f), 240f / 255f, 1f * t);
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud2"),
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX),
                                         engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                                 new Vector2f(0, -MathUtils.getRandomNumberInRange(400, 800)),
-                                new Vector2f(MathUtils.getRandomNumberInRange(cloudSize * 1.25f, cloudSize),
-                                        MathUtils.getRandomNumberInRange(cloudSize * 1.25f, cloudSize)),
+                                new Vector2f(cloudX,cloudY),
                                 new Vector2f(25f, 25f),
                                 0f, 0f,
                                 cloudColor,
@@ -942,16 +940,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 Vector2f center = viewport.getCenter(); // locked to camera             
                 //ocean.renderAtCenter(center.x, center.y, oceanAlpha);
                 // Render ship reflections
-                for (ShipAPI ship : Global.getCombatEngine().getShips()) {
-                    if (ship.isHulk()) {
-                        continue;
-                    }
-                    if (!MagicRender.screenCheck(0.1f, ship.getLocation())) {
-                        continue;
-                    }
 
-                    renderShipReflection(ship);
-                }
                 // Set additive blend DIRECTLY via GL before foam renders           
                 GL11.glEnable(GL11.GL_BLEND);
                 GL14.glBlendEquation(GL14.GL_FUNC_ADD);
@@ -962,6 +951,16 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 // Restore normal blend after
                 GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
                 GL14.glBlendEquation(GL14.GL_FUNC_ADD);
+                for (ShipAPI ship : Global.getCombatEngine().getShips()) {
+                    if (ship.isHulk()) {
+                        continue;
+                    }
+                    if (!MagicRender.screenCheck(0.1f, ship.getLocation())) {
+                        continue;
+                    }
+
+                    renderShipReflection(ship);
+                }                
             }
         }
     }
@@ -975,6 +974,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         float reflX = ship.getLocation().x + sunDir.x * altitude;
         float reflY = ship.getLocation().y - sunDir.y * altitude;
         SpriteAPI reflectionSpr = Global.getSettings().getSprite(ship.getHullSpec().getSpriteName());
+        reflectionSpr.setWidth(ship.getSpriteAPI().getWidth()*0.70f);
+        reflectionSpr.setHeight(ship.getSpriteAPI().getHeight()*0.70f);        
         reflectionSpr.setColor(new Color(0, 0, 25, 75)); // cool blue-white
         reflectionSpr.setAngle(ship.getFacing() - 90f);
         reflectionSpr.renderAtCenter(reflX, reflY);

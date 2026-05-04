@@ -6,13 +6,11 @@
   "style": "LOW_TECH",
   "height": 56,
   "width": 36,
-  "center": [35, 52],
+  "center": [27, 33],
   "collisionRadius": 42.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 42,
   "viewOffset": 0,
-  "builtInMods": [
-  ],
   "builtInWings": [
     "armaa_bit_wing"
   ],
@@ -24,14 +22,14 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [23, 31]
+      "locations": [42, 23]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    -26.5, 22.5,
-    0.5, 5,
-    -1.5, 0,
-    -49.5, 33
+    -7.5, 14.5,
+    19.5, -3,
+    17.5, -8,
+    -30.5, 25
   ]
 }

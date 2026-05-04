@@ -1712,7 +1712,7 @@ Polities, claims of sovereignty, domain-era infrastructure status, AI prohibitio
 
 ""So,"" they finish, voice dry. ""He knows what he's looking for."" They look at you, then back to the door controls.",,
 armaa_cassianPost8,DialogOptionSelected,$option == armaa_cassianPost8,"BeginConversation armaa_cassian true
-armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile
+armaa_Hikaru_Utada playMusic music_encounter_mysterious
 ShowPersonVisual","The door cycles with a soft hiss. Warm air rolls out of the bay - carrying that sharp antiseptic bite that sticks in the back of your throat.
 
 He reaches for the TriPad on the cot and taps the screen awake. A Sector map blooms in dull colors. ""Petty crowns on a graveyard. Your people told me my pod was recovered above Gravion.""
@@ -1758,22 +1758,20 @@ FireBest DialogOptionSelected","Cassian studies you for a long moment, then give
 FireBest DialogOptionSelected",,,
 armaa_cassianPost10,DialogOptionSelected,$option == armaa_cassianPost10,"BeginMission armaa_hc false
 Call $global.armaa_hc_ref updateData
-Call $global.armaa_hc_ref showMap ""New Meshan""","""Alright,"" he says. ""That gives me a silhouette."" He looks past you, not at the door, not at the cameras - at nothing in particular. His eyes come back to you.
+Call $global.armaa_hc_ref showMap ""New Meshan""","He looks past you - at nothing in particular. His eyes come back to you.
 
 ""I don't need her biography,"" Cassian continues. ""I need to see."" He taps the side of his temple with two fingers - near the fused port - as if indicating a point of failure. ""Because my name is not something you wear by accident. And if she is wearing it,"" he says, voice even, ""then she is either the heir to a system I built, or some creature that crawled out of it.""
 
-He watches for a reaction. If there is one, he doesn't comment. ""You said she does business,"" Cassian goes on slowly. ""Good. Then she understands terms."" He reaches for the TriPad again, brings up the Sector map, then zooms in with a slow pinch gesture until the jumble of factions resolves into a familiar patchwork.
+""You said she does business,"" Cassian goes on slowly. ""Good. Then she understands terms."" He reaches for the TriPad again, brings up the Sector map, then zooms in with a slow pinch gesture until the jumble of factions resolves into a familiar patchwork.
 
 New Meshan sits there like a bruise that never fully healed. Cassian's thumb hovers over it. ""Take me here,"" he says. ""I will speak with Sera Pha in person.""",armaa_cassianPost11:Continue,
 armaa_cassianPost11,DialogOptionSelected,$option == armaa_cassianPost11,"$global.armaa_hc_tookTheJob = true
 armaa_Hikaru_Utada stopMusic
-AcceptMission","""And before you say it: yes, I understand the risk. To her, and to you. That's the point. If this is a message, then the only way to read it is to put it in her hands and watch what she does with it."" He lets the tri-pad go dark and folds his hands over the blanket. ""I will pay for transport,"" he adds, almost casually.
+AcceptMission","""And before you say it: yes, I understand the risk. If this is a message, then the only way to read it is to put it in her hands and watch what she does with it. I will pay for transport,"" he adds, almost casually.
 
-""I had holdings. Certain… long-term instruments designed to outlive the kind of men who make them."" His eyes lift. ""It seems the Sector has been generous while I slept.""
+His eyes lift. ""It seems the Sector has been generous while I slept. Compound interest is one of the few things that still behaves predictably."" Cassian relaxes back against the cot, the posture of someone making a reasonable request of a service provider - as if this isn't a century-spanning identity crisis being delivered to a corporate throne.
 
-He gives a small, thoughtful nod, more to himself than to you. ""Compound interest is one of the few things that still behaves predictably."" Cassian relaxes back against the cot, the posture of someone making a reasonable request of a service provider - as if this isn't a century-spanning identity crisis being delivered to a corporate throne.
-
-""New Meshan,"" he repeats. ""I want a seat on your ship. A cabin."" 
+""New Meshan,"" he repeats. ""I want a seat on your ship. A stateroom."" 
 
 ""And Captain?"" He meets your gaze directly. ""If you intend to lie to her about me, do it well. If you intend to sell me, do it openly. If you intend to protect her, understand you may be protecting her from herself."" His voice stays level, but the weight behind it is unmistakable.
 
@@ -1809,12 +1807,11 @@ Her voice is smooth and unhurried, with that specific cadence people use when th
 
 Her eyes flick once, subtly, to the side of her display - reading metadata. She's doing it as she speaks.",armaa_hcArrived4:Continue,
 armaa_hcArrived4Like,DialogOptionSelected,"$option == armaa_hcArrived4
-$rel > 0.25","$option = armaa_hcArrived5
+$rel > 0.25 score:10","$option = armaa_hcArrived5
 FireBest DialogOptionSelected","""And you didn't even say hello first. I'm wounded.""
 
 ""Talk to me. What did you bring home?""",,
-armaa_hcArrived4Neutral,DialogOptionSelected,"$option == armaa_hcArrived4
-$rel < 0.10","$option = armaa_hcArrived5
+armaa_hcArrived4Neutral,DialogOptionSelected,$option == armaa_hcArrived4,"$option = armaa_hcArrived5
 FireBest DialogOptionSelected","Her smile sharpens. 
 
 ""You're not one of my usual captains. That means you either have very good reasons… or very bad ones.""
@@ -1846,7 +1843,7 @@ $market.id == armaa_meshanii_market
 $menuState == main
 !$global.armaa_hc_Completed",,,armaa_hcChalet:Take a shuttle to visit Sera Pha with Cassian,
 armaa_hcChalet,DialogOptionSelected,$option == armaa_hcChalet,"ShowLargePlanet
-armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","New Meshan's lights slide beneath you in neat grids and stubborn clusters, the city's scars softened by altitude until they look like design choices.
+armaa_Hikaru_Utada playMusic music_encounter_mysterious","New Meshan's lights slide beneath you in neat grids and stubborn clusters, the city's scars softened by altitude until they look like design choices.
 
 The coordinates for the rendevous point take you away from the docks and into the hills.
 
@@ -1906,7 +1903,7 @@ The, slowly, he pulls the chair out. ""Then convince me,"" he says.
 
 Sera's smile widens by a fraction.",armaa_hcChalet6:Continue,
 armaa_hcChalet6,DialogOptionSelected,$option == armaa_hcChalet6,"ShowLargePlanet
-armaa_Hikaru_Utada playMusic music_dweller_encounter_hostile","A few meters down the hall, a woman in a skirt stands like a statue that learned to breathe, hands folded at the waist. She doesn't introduce herself. After a minute, she speaks anyway-eyes on a point over your shoulder, voice low and unhurried.
+armaa_Hikaru_Utada playMusic music_encounter_mysterious","A few meters down the hall, a woman in a skirt stands like a statue that learned to breathe, hands folded at the waist. She doesn't introduce herself. After a minute, she speaks anyway-eyes on a point over your shoulder, voice low and unhurried.
 
 ""You're not required to stand still, Captain. Please, make yourself comfortable while you wait.""
 
@@ -1915,8 +1912,7 @@ From behind the door, you hear nothing. The room might be empty, for all your se
 A second figure appears soundlessly from an adjacent corridor: an aide with a tri-pad and a tray, dressed in soft fabric that looks like it never wrinkles. They stop at a polite distance and hold the tray out without speaking.
 
 A glass. Something amber in a small cup that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again like a ghost that's been paid by the hour.",armaa_hcChalet7:Continue,
-armaa_hcChalet7,DialogOptionSelected,$option == armaa_hcChalet7,"ResumeNormalMusic
-BeginConversation armaa_cassian
+armaa_hcChalet7,DialogOptionSelected,$option == armaa_hcChalet7,"BeginConversation armaa_cassian
 ShowPersonVisual","* * *
 
 Cassian steps out first. He looks the same at a glance- blanket-coat, drawn face, careful posture; but his calm has changed shape. His face carries a strange expression; you'd almost say it looks like defeat. His eyes find you immediately.
@@ -2105,6 +2101,7 @@ armaa_hcChalet10,DialogOptionSelected,$option == armaa_hcChalet10,"$global.armaa
 Call $global.armaa_hc_ref updateData
 AddCredits 25000
 AddXP 1500
+ResumeNormalMusic
 EndConversation
 ShowDefaultVisual
 FireAll PopulateOptions","Cassian stands there, waiting as if he never moved. He looks between you and Sera. His posture is unchanged, but his eyes are sharper than when he went in.
@@ -2115,7 +2112,7 @@ Cassian inclines his head. Barely. ""Sera.""
 
 Not a greeting - more like a mutual recognition of an unresolved equation. Sera turns to you.
 
-""Captain's leaving,"" she says, as if you're a courier completing a delivery. ""They'll return tomorrow. Or $player.heOrShe won't. Either way, their contract is honored.""
+""Captain's leaving,"" she says, as if you're a courier completing a delivery. ""
 
 Cassian watches you for a moment longer than necessary.
 
@@ -2371,9 +2368,9 @@ FireBest DialogOptionSelected
 $player.ethosKnowledge++",,,
 armaa_dawnMeeting4,DialogOptionSelected,$option == armaa_dawn_barEvent4,"AdjustRepActivePerson COOPERATIVE 5
 BarCMD returnFromEvent false
-SetPersonHidden armaa_dawn false
 armaa_dawnCMD initDawn
-AddPotentialContact armaa_dawn","Dawn studies you a moment longer. ""Well. You've got your road."" A slight shrug, not unkind. 
+AddPotentialContact armaa_dawn
+SetPersonHidden armaa_dawn false","Dawn studies you a moment longer. ""Well. You've got your road."" A slight shrug, not unkind. 
 
 ""Maybe they run alongside someday. If they do, let's hope we're pointed the same direction.""
 
@@ -2382,6 +2379,7 @@ She stands, lifts her tankard once in your direction. ""Got drinks need finishin
 armaa_dawnBarEvent,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 !$player.metDawnAtBar
+armaa_dawnCMD checkDaysElapsed 30
 RollProbability 0.5
 ","AddBarEvent armaa_dawnAsk ""Take a seat with Dawn"" ""You see Dawn knocking back a few drinks in a hazy corner.""",,,
 armaa_dawnBarEventStart,DialogOptionSelected,$option == armaa_dawnAsk,"BeginConversation armaa_dawn
@@ -2510,8 +2508,8 @@ armaa_dawnBarEvent2Trigger,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 $player.metDawnAtBar
 !$player.metDawnBar2
-armaa_dawnCMD checkDaysElapsed 30
-#RollProbability 0.5
+armaa_dawnCMD checkDaysElapsed 60
+RollProbability 0.5
 !$market.armaa_shownDawnBarEvent","AddBarEvent armaa_dawnBar2Ask ""Join Dawn and one of your officers"" ""You spot Dawn and what you believe to be another officer of the fleet debating something."" highlight",,,
 armaa_dawnBar2Start,DialogOptionSelected,$option == armaa_dawnBar2Ask,"armaa_dawnCMD supressBarSupression
 BeginConversation armaa_dawn
@@ -4428,11 +4426,11 @@ armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_kantas_den_event_id = false","Dawn's voice cuts into comms unprompted.
 
-""Theree it is--""
-","armaa_dawnMazalotRespA:Sounds like Mazalot's got its fair share of challenges.
-armaa_dawnMazalotRespB:The League should be about freedom for everyone, not just the privileged few.
-armaa_dawnMazalotRespC:Typical League passivity, huh? That's nothing new.
-armaa_dawnMazalotRespD:If the League won't act, maybe it's time someone did. The Luddics in Mazalot deserve justice.",
+""There it is--""
+","armaa_dawnKantaDenRespA:""A pirate den. What exactly do you like about it?""
+armaa_dawnKantaDenRespB:""I'll take your word for it.""
+armaa_dawnKantaDenRespC:""It's a terrible place.""
+armaa_dawnKantaDenRespD:""I can already tell you're about to tell me a story about this place.""",
 armaa_dawnKantaDenRespA,DialogOptionSelected,$option == armaa_dawnKantaDenRespA,,"""Honest,"" she says simply. ""Place doesn't pretend to be something it's not. You know what you're walking into, you know what people want from you, nobody's got the energy to lie about it.""
 
 ""There's something restful about that, actually. We got the time, mind hittin' port?""",defaultLeave:Continue,
@@ -6433,7 +6431,8 @@ armaa_btsExecAsk3,DialogOptionSelected,$option == armaa_btsExecAsk3,,"""Felner's
 armaa_btsExecAsk4,DialogOptionSelected,$option == armaa_btsExecAsk4,"$global.armaa_btsMetDrunkExec = true
 SetPersonHidden armaa_felner false
 AddTextSmall ""Received comms-id for Felner"" highlight
-Call $global.armaa_bts_ref updateData","""Because I've been passed over for, for two cycles and, I... like watching the dominoes fall."" A sip. A grin. Then, more seriously:
+Call $global.armaa_bts_ref updateData
+SetPersonHidden armaa_felner false","""Because I've been passed over for, for two cycles and, I... like watching the dominoes fall."" A sip. A grin. Then, more seriously:
 
 ""The name's Chalet Theta-5. That's all I've got. You didn't hear it from me, and I don't want to see your ship tagged on the outbound registry. You didn't come here for a chat, right? You're just another spacer burning fuel."" He waves you off, and his attention drifts back to the empty glass in his hand like he forgot it was his.",barHRE_goToNormalBar:Look around the bar,
 ,,,,,,
@@ -7318,7 +7317,10 @@ armaa_KoLCuriosityResp,DialogOptionSelected,$option == armaa_KoLCuriosityResp,"$
 FireBest DialogOptionSelected","$heOrShe almost smiles.
 
 ""Talk with me a moment. What you've heard and what's actually out there are likely two different things.""",,
-,,,,,,
+armaa_KoLCuriosityRespB,DialogOptionSelected,$option == armaa_KoLCuriosity2Resp,"$option = armaa_KoLInfoDump
+FireBest DialogOptionSelected","$heOrShe almost smiles.
+
+""Talk with me a moment. What you've heard and what's actually out there are likely two different things.""",,
 armaa_KoLInfoDump,DialogOptionSelected,$option == armaa_KoLInfoDump,,"""I'll speak plainly. This system is rife with the taint of Moloch. You have the data for Jenius on your charts, yes?  The unholy relics of the Domain still patrol their skies. The local population they leave unmolested - the Creator's mercy working through strange instruments, perhaps.""
 
 ""Anything else that enters their range is another matter. We lost a missionary vessel some cycles past. Good people, faithful people, gone before they could speak a single prayer.  Ludd holds them now. I take comfort in that, when I allow myself to.""","armaa_KoLInfoDumpWhyNotDestroyedResp:""Why hasn't the Church acted?""
@@ -8761,11 +8763,11 @@ armaa_bellatorCaelderIntro,DialogOptionSelected,$option == armaa_bellatorCaelder
 
 She doesn't offer anything further immediately. Whatever she's about to say, she's chosen her words carefully.
 
-""My..former CO submitted his final report before we lost contact with the station."" Her jaw tightens slightly. ""You had us dead to rights at intercept. You stood down.""
+""My..former CO submitted his final report before we lost contact with the station."" Her jaw tightens slightly. 
 
 ""Our mission was the preservation of Sovereignty assets and continuity of command. That mission is..."" She looks at you directly. ""We're sitting in deep space with a capital ship, no orders, and a chain of command that ends somewhere I don't have clearance to look at directly. The former captain had no complaints, but I don't like not knowing who I'm actually working for.""
 
-""What I do know is that their report described someone who made choices that didn't have to be made. And that Administrator Pha saw fit to make this introduction rather than leave us out there. I'm not a mercenary. Neither is my crew. But we're brigands either. The Bellator needs a commission it can stand behind. I'm told you might be in a position to offer one.""","armaa_bellatorRespWord:""You have my word the Bellator will be treated accordingly.""
+""What I do know is that their report described someone who made choices that didn't have to be made. And that Administrator Pha saw fit to make this introduction rather than leave us out there. The Bellator needs a commission it can stand behind. I'm told you might be in a position to offer one.""","armaa_bellatorRespWord:""You have my word the Bellator will be treated accordingly.""
 armaa_bellatorRespWhatChanged:""What changed your mind?""
 armaa_bellatorRespDidntExpect:""I didn't expect to see the Bellator again.""",
 armaa_bellatorRespWord,DialogOptionSelected,$option == armaa_bellatorRespWord,,"Something in their posture settles - not relief, but the particular quality of someone who made a judgment call and has decided to live with it.

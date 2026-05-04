@@ -5,7 +5,6 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
-import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import java.util.List;
 import java.util.Map;
@@ -17,9 +16,7 @@ import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScript {
 
-    private IntervalUtil interval = new IntervalUtil(1f, 1f);
     private long days = Global.getSector().getClock().getTimestamp();
-    private final float DAYS_MONTH = 30f;
     private int maxWait = 24; // Maximum cooldown in months
     private int minWait = 6;  // Minimum cooldown in months
     private int minHQs = 1;   // Minimum HQ count
