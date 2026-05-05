@@ -139,7 +139,7 @@ public class armaa_strikeCraft extends BaseHullMod {
                 stats.getMaxBurnLevel().unmodify("armaa_carrierStorage");
             }
 
-            if (carrierBonus && (!Global.getSector().getPersistentData().containsKey("armaa_hyperSpaceBuff"))) {
+            if (carrierBonus) {
                 stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).modifyMult("armaa_carrierStorageHyper", CORONA_EFFECT_REDUCTION);
             }
         }
@@ -176,8 +176,7 @@ public class armaa_strikeCraft extends BaseHullMod {
     private final Color E = Global.getSettings().getColor("textEnemyColor");
 
     public String getRefitMode(ShipAPI ship) {
-        if(ship != null)
-        {
+        if (ship != null) {
             Collection<String> tags = ship.getHullSpec().getTags();
             if (tags.contains(RefitMode.REFIT_WHEN_SAFE.value)) {
                 return "refit when no enemies are nearby, or completely out of ammo";
@@ -198,8 +197,7 @@ public class armaa_strikeCraft extends BaseHullMod {
         Color[] arr2 = {Misc.getHighlightColor(), E};
         Color[] arr3 = {Misc.getHighlightColor(), Misc.getHighlightColor(), E};
         String size = "";
-        if(ship != null)
-        {
+        if (ship != null) {
             if (ship.getHullSpec().hasTag("strikecraft_medium")) {
                 size = "can only land on ships larger than destroyers";
             } else if (ship.getHullSpec().hasTag("strikecraft_large")) {
@@ -212,8 +210,9 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addPara("%s " + "Most weapons %s.", padS, Misc.getHighlightColor(), "\u2022", "fire over allied ships");
         tooltip.addPara("%s " + "No %s.", padS, Misc.getHighlightColor(), "\u2022", "zero-flux speed bonus");
         tooltip.addPara("%s " + "Combat Readiness decreases %s faster.", padS, arr2, "\u2022", (int) DEGRADE_INCREASE_PERCENT + "%");
-        if(ship != null)
-            tooltip.addPara("%s " + "Can dock at carriers to resupply %s times", padS, Misc.getHighlightColor(), "\u2022");
+        if (ship != null) {
+            tooltip.addPara("%s " + "Can dock at carriers to resupply %s times", padS, Misc.getHighlightColor(), "\u2022", "" + (armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost()));
+        }
         tooltip.addPara("%s " + "Docking replenishes PPT, armor, hull, and ammo.", padS, Misc.getHighlightColor(), "\u2022");
         tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022", "frigates");
         tooltip.addSectionHeading("Point Defense Vulnerability", Alignment.MID, 10);
@@ -224,9 +223,15 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addSectionHeading("Refit Mode", Alignment.MID, 10);
         tooltip.addPara("Ship will " + getRefitMode(ship), pad, arr, "\u2022");
         tooltip.addSectionHeading("Carrier Bonuses", Alignment.MID, 10);
-        if(ship != null)
-        if (ship.getMutableStats().getDynamic().getStat(Stats.CORONA_EFFECT_MULT).getMultMods().containsKey("armaa_carrierStorageHyper")) {
-            tooltip.addPara("%s " + "Friendly carriers present for storage during travel: Receives %s from hyperspace storms and coronas outside of combat.", pad, arr, "\u2022", "no damage");
+        if (ship != null) {
+            if (ship.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
+                for (FleetMemberAPI member : ship.getFleetMember().getFleetData().getMembersListCopy()) {
+                    if (member.isCarrier()) {
+                        tooltip.addPara("%s " + "Friendly carriers present for storage during travel: Receives %s from hyperspace storms and coronas outside of combat.", pad, arr, "\u2022", "no damage");
+                        break;
+                    }
+                }
+            }
         }
 
         tooltip.addSectionHeading("Refit Penalties", Alignment.MID, 10);
@@ -554,17 +559,12 @@ public class armaa_strikeCraft extends BaseHullMod {
             int side = ship.getOwner() == 1 ? 0 : 1;
             boolean safeToRetreat = !ship.areAnyEnemiesInRange() || !CombatUtils.isVisibleToSide(ship, side);
             boolean needsPPTRefit = lowPPT && safeToRetreat;
-            // Pull pool state for AI gating
-            float dp = ship.getFleetMember() != null ? Math.max(1f, ship.getFleetMember().getDeploymentPointsCost()) : 10f;
-            float minCostThreshold = dp * 0.1f;
-            float hullCRThreshold = dp * 0.5f;
-            float currentPool = armaa_strikeCraftRepairTracker.getRepairPool(ship);
-            boolean poolCanRepairHullCR = currentPool >= hullCRThreshold;
+            boolean poolCanRepairHullCR = armaa_strikeCraftRepairTracker.canRepairHullCR(ship);
 
             // Gate needs-refit on pool state so AI stops cycling when pool is exhausted
             boolean freshNeedsRefit = (armaa_utils.canRestoreHPOrCR(ship) && poolCanRepairHullCR)
                     || (needsReload(ship))
-                    || needsPPTRefit
+                    || needsPPTRefit && poolCanRepairHullCR
                     || selectedCarrier;
 
             Global.getCombatEngine().getCustomData().put("armaa_cachedCarrier_" + ship.getId(), freshCarrier);
@@ -609,10 +609,8 @@ public class armaa_strikeCraft extends BaseHullMod {
         if (cachedNeedsRefit && cachedCanRefit) {
             if (repairInterval.intervalElapsed()) {
                 if (Global.getCombatEngine().getPlayerShip() == ship && !ship.isFinishedLanding()) {
-                    int repairsLeft = armaa_strikeCraftRepairTracker.getRepairsRemaining(ship);
-                    String repairCapStr = repairsLeft > 0
-                            ? "REFIT NEEDED - " + repairsLeft + " REPAIR(S) REMAINING"
-                            : "REFIT NEEDED - HULL/CR REPAIRS EXHAUSTED";
+
+                    String repairCapStr = getRepairCapacityString(ship);
                     Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem1",
                             "graphics/ui/icons/icon_repair_refit.png",
                             "/ - WARNING - /",
@@ -622,10 +620,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             }
         } else {
             if (Global.getCombatEngine().getPlayerShip() == ship && !ship.isFinishedLanding()) {
-                int repairsLeft = armaa_strikeCraftRepairTracker.getRepairsRemaining(ship);
-                String repairCapStr = repairsLeft > 0
-                        ? "" + repairsLeft + " REPAIR(S) REMAINING"
-                        : "HULL/CR REPAIRS EXHAUSTED";
+                String repairCapStr = getRepairCapacityString(ship);
                 Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem1",
                         "graphics/ui/icons/icon_repair_refit.png",
                         "/ - STATUS - /",
@@ -650,6 +645,19 @@ public class armaa_strikeCraft extends BaseHullMod {
                     Global.getSettings().getBasePlayerColor(),
                     true, 0f, 2f, 2f, true
             );
+        }
+
+    }
+
+    private String getRepairCapacityString(ShipAPI ship) {
+        int repairsLeft = armaa_strikeCraftRepairTracker.getRepairsRemaining(ship);
+        float pool = armaa_strikeCraftRepairTracker.getRepairPool(ship);
+        if (repairsLeft > 0) {
+            return repairsLeft + " REPAIR(S) REMAINING";
+        } else if (pool > 0) {
+            return "PARTIAL REPAIR AVAILABLE";
+        } else {
+            return "HULL/CR REPAIRS EXHAUSTED";
         }
     }
 

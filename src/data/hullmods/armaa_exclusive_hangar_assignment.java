@@ -8,6 +8,7 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 
 public class armaa_exclusive_hangar_assignment extends BaseHullMod {
 
+    @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
     }

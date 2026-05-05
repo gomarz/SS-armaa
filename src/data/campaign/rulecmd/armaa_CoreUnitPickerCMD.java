@@ -26,6 +26,16 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
 
         String action = params.get(0).getString(memoryMap);
         MemoryAPI memory = memoryMap.get(MemKeys.LOCAL);
+        if("hasSwappableUnit".equals(action))
+        {
+            for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
+                    .getFleetData().getMembersListCopy()) {
+                if (member.getVariant().hasHullMod("armaa_comboUnit")) {
+                    return true;
+                }
+            }
+            return false;
+        }
         if ("pickCoreUnit".equals(action)) {
             // Build core unit pool - strikecraft, not flagship
             List<FleetMemberAPI> coreUnitPool = new ArrayList<>();

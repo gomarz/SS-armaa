@@ -8193,7 +8193,7 @@ A short, humorless smile crosses the broad one's face.
 
 ""You want us on the payout and the risk? Fine. But understand what you're buying,"" the thin woman chimes in. Her eyes dart to Felix, who wordlessly meets her gaze, before she looks back to you.
 
-""4000 credits up front, plus a monthly salary of $reicSalary per month until we reach port.""","armaa_reicBarOfferWorkResp2Hire2:""It's a deal.""
+""4000 credits up front, plus a monthly salary of 1000 credits per month until we reach port.""","armaa_reicBarOfferWorkResp2Hire2:""It's a deal.""
 armaa_reicBarOfferWorkResp2HireCheap:""That's...not a lot.""",
 armaa_reicBarOfferWorkResp2HireCheap,DialogOptionSelected,$option == armaa_reicBarOfferWorkResp2HireCheap,,"Gira taps the table once.
 
@@ -8803,7 +8803,8 @@ FireBest MarketPostDock",The dominant polity is hostile to spacers here; trading
 ,,,,,,
 ,,,,,,
 armaa_coreUnitSelectOption,PopulateOptions,"$market.id == armaa_meshanii_market
-$menuState == main",,,"armaa_coreUnitSelectOptionResp:""Assign unit to Mobile Armor""",
+$menuState == main
+armaa_CoreUnitPickerCMD hasSwappableUnit",,,99:armaa_coreUnitSelectOptionResp:Assign unit to Mobile Armor,
 armaa_coreUnitSelectOptionResp,DialogOptionSelected,$option == armaa_coreUnitSelectOptionResp,armaa_CoreUnitPickerCMD pickCoreUnit,Core unit assignment modifies the Mobile Armor's integrated frame. Select a qualifying strikecraft to serve as the core unit. The previous core unit will be returned to the fleet roster.,armaa_MASelectOptionResp:Select Mobile Armor,
 armaa_MASelectOptionResp,DialogOptionSelected,$option == armaa_MASelectOptionResp,armaa_CoreUnitPickerCMD pickMobileArmor,,cutCommLink:Cut the comm link,
 ,,,,,,
