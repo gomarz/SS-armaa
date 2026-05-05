@@ -198,7 +198,7 @@ $hailing = false 0
 
 It doesn't look quite the way you remember. Had it been deployed while you slept? Damaged and repaired by unfamiliar hands? The questions churn unanswered in the fog of cryosleep lingering in your mind.
 
-""Power systems stabilizing!"" a crewmember calls from the scaffold interface. ""You'll need to monitor flux manually."" ""Loadouts prepped. No time for fine-tuning,"" Another adds. ""Weapons as-is."" Davos shouts from above. ""You're good to detach when ready."" 
+""Power systems stabilizing!"" a crewmember calls out. ""You'll need to monitor flux manually."" ""Loadouts prepped. No time for fine-tuning,"" Another adds. ""Weapons as-is."" Davos shouts from above. ""You're good to detach when ready."" 
 
 Your atrophied legs feel leaden as you step into the EVA rig, muscles protesting after long disuse. Cryosleep spared your life but exacted its toll. The suit's servo-assist compensates, but you can feel the unsteadiness beneath every movement. Thrusters engage with a faint jolt, and you cross the short gap, drifting toward the Valkazard's broad chest plate. The hull plating bears new scoring,  evidence of events you weren't awake to witness. Your gloved fingers stumble slightly on the manual override.","armaa_valkHunterSt1HostileResp2:""Come on...""",x
 armaa_valkHunterSt1HostileResp2,DialogOptionSelected,$option == armaa_valkHunterSt1HostileResp2,"$global.armaa_engagedValkHunters = true
@@ -222,14 +222,14 @@ armaa_valkHunterSt1Why,armaa_valkHunterSt1Options,!$armaa_valkHunterSt1_askedWhy
 armaa_valkHunterSt1WhyResp,DialogOptionSelected,$option == armaa_valkHunterSt1WhyResp,"Highlight ""consequences""
 $armaa_valkHunterSt1_askedWhy = true
 FireAll armaa_valkHunterSt1Options
-","""You see, dear interloper,"" $heOrShe begins, pacing slowly across the bridge. 
+","""You see, dear interloper,"" $HeOrShe begins, pacing slowly across the bridge. 
 
 ""There are certain realities you may not fully appreciate. What you view as personal property is, in fact, a matter of significant corporate interest. And obstruction, I'm afraid, carries consequences that tend to escalate in unpleasant ways. Tri-Tachyon possesses both the reach and the resolve to ensure compliance- one way or another.""
 
-$HeOrShe lets the weight of $hisOrher threat settle. ""That said, there's no need for this encounter to turn regrettable. Cooperation would allow us to resolve this discrepancy amicably; but opposition?"" 
+$HeOrShe lets the weight of the threat settle. ""That said, there's no need for this encounter to turn regrettable. Cooperation would allow us to resolve this discrepancy amicably; but opposition?"" 
 
 A predatory smirk forms. ""There is little refuge for those who misstep in such matters."" $HeOrShe halts, standing exactly where the pacing began, eyes fixed on you once more. ""So: consider carefully. The current favors those who know when to yield.""",,x
-armaa_valkHunterSt1Agree,armaa_valkHunterSt1Options,,FireAll armaa_valkHunterSt1OptionsCheck,,armaa_valkHunterSt1AgreeResp:Accept $hisOrHer demands,
+armaa_valkHunterSt1Agree,armaa_valkHunterSt1Options,,FireAll armaa_valkHunterSt1OptionsCheck,,armaa_valkHunterSt1AgreeResp:Accept their demands,
 armaa_valkHuntersAgreeCheck,armaa_valkHunterSt1OptionsCheck,,"SetEnabled armaa_valkHunterSt1AgreeResp false
 SetTooltip armaa_valkHunterSt1AgreeResp ""You consider it. Perhaps surrender could spare the handful of lives left- perhaps even buy your own survival. But as the thought lingers, so too does the weight of what the VALKAZARD represents. In Tri-Tachyon's hands, it would become yet another tool for profit, coercion, and escalation- another ember feeding the slow fire that is destroying the Sector. No good will come from handing this over. Not for you. Not for anyone.""",,,
 ,,,,,,

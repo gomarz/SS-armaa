@@ -8,6 +8,7 @@
 	},
 	"variantOverrides":{
 		"armaa_valkyrie_hegemony":10,
+		"armaa_valkyrie_standard":0,
 	},
 	"knownShips":{
 		"hulls":[	

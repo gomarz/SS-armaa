@@ -226,8 +226,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 timeUp = true;
             }
 
-            if (!wave2Triggered && ((ratio > 0.1f && engine.getFleetManager(1).getCurrStrength() < 25)
-                    || ratio >= 2f || engine.getFleetManager(1).getCurrStrength() < 25)) {
+            if (!wave2Triggered && ((Global.getCombatEngine().getTotalElapsedTime(false) > 20f  && engine.getFleetManager(1).getCurrStrength() < 25)
+                    || ratio >= 2f )) {
 
                 boolean losing = engine.getFleetManager(1).getCurrStrength() < 25;
                 PersonAPI pilot = (PersonAPI) MagicCampaign.createCaptainBuilder(Factions.MERCENARY)

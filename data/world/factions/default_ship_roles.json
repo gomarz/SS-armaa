@@ -1,11 +1,9 @@
 {
   "combatSmall": {
 "armaa_garegga_tt_standard":1,
-"armaa_viator_standard":1,
-"armaa_ashura_frig_standard":1,
+"armaa_ashura_frig_standard":0.8,
+"armaa_aleste_frig_classic_standard":1.2,
 "armaa_garegga_tt_assault":1,
-"armaa_garegga_tt_carrier_standard":1,
-"armaa_garegga_tt_carrier_aleste":0.5,
     "armaa_garegga_standard":1,
 	"armaa_aleste_as_f":0.8,
 	"armaa_aleste_friendly_f":1,
@@ -16,8 +14,8 @@
 	"armaa_musha_frig_standard":1,
 	"armaa_aleste_swordsman":1,
         "armaa_valkenx_frig_standard":1,
-        "armaa_valkenx_frig_assault":1,
-        "armaa_valkenx_frig_support":1,
+        "armaa_valkenx_frig_assault":3,
+        "armaa_valkenx_frig_support":5,
 	"armaa_xyphos_standard":1,
 	"armaa_leynos_standard":1,
 	"armaa_einhander_Overclocked": 0.9,
@@ -26,10 +24,14 @@
   },
   "combatMedium": {
     "armaa_altagrave_standard":.8,
+"armaa_viator_standard":1,
+"armaa_garegga_tt_carrier_standard":0.7,
+"armaa_garegga_ml_carrier_standard":0.7,
+"armaa_garegga_tt_carrier_aleste":0.5,
     "armaa_altagrave_c_Standard":.5,
     "armaa_monitor_standard":1,
     "armaa_monitor_support":1,
-    "armaa_garegga_xiv_carrier_standard":1,
+    "armaa_garegga_xiv_carrier_standard":0.7,
     "armaa_corsair_xiv_standard":1,
     "armaa_corsair_xiv_overdriven":1,
     "armaa_monitor_standard_xiv":1,
@@ -49,6 +51,10 @@
 	"combatCapital":{
 
 		"armaa_atlas2_Standard":0,
+	},
+	"carrierSmall":{
+		"armaa_valkyrie_standard":5,
+		"armaa_valkyrie_sniper":10,
 	},
 	"carrierMedium":{
 		"armaa_whitebase_standard":0.5,
