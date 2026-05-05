@@ -317,7 +317,8 @@ As the edges of the world go dark, you hear the woman speak into a comm in her c
 ""Tell them the asset was awake long enough to confirm identity.""
 
 A crackle of reply, satisfied. And then the Sector moves on without you.",armaa_valkHunterPostBadEnd8:Stop fighting,x
-armaa_valkHunterPostBadEnd8,DialogOptionSelected,$option == armaa_valkHunterPostBadEnd8,armaa_Hikaru_Utada gameOver,,,
+armaa_valkHunterPostBadEnd8,DialogOptionSelected,$option == armaa_valkHunterPostBadEnd8,"armaa_Hikaru_Utada gameOver
+EndConversation",,,
 ,,,,,,
 ArmaaRobberyCheck,BeginFleetEncounter,"$faction.id == armaarmatura_pirates score:100
 $faction.relValue <= -0.50
@@ -1161,11 +1162,11 @@ armaa_bellatorInterceptedCommsOpen,OpenCommLink,"$entity.id == armaa_escapingBel
 !$entity.ignorePlayerCommRequests","$entity.ignorePlayerCommRequests = true 1
 $hailing = false 0
 FireAll armaa_bellatorInterceptOpts
-armaa_Hikaru_Utada playMusic music_armaa_bar","The feed resolves into a $manOrWoman in late middle age, a cane in his right hand - old, worn, part of him. Behind him, the Bellator's bridge is dim.
+armaa_Hikaru_Utada playMusic music_armaa_bar","The feed resolves into a $manOrWoman in late middle age, a cane in $HisOrHer right hand - old, worn, part of them. Behind them, the Bellator's bridge is dim.
 
 ""Commander $player.lastName. I am $rank $personName, commanding officer of the DAS Bellator. You've gone to considerable effort to intercept us.""
 
-He places is left hand on the cane. His thumb moves across the handle. Back and forth.
+$HeOrShe places is left hand on the cane. $HisOrHer thumb moves across the handle. Back and forth.
 
 ""I will not insult your intelligence by pretending we are in a position to dictate terms. Nor will I insult mine by pretending this conversation has only one possible outcome.""
 
@@ -1203,7 +1204,7 @@ armaa_bellatorInterceptOptWhatCarryingMech,DialogOptionSelected,$option == armaa
 
 ""The Rajanya."" $HeOrShe says the name like he's confirming something $heOrShe already knew but needed to hear aloud. ""Yes. I assumed as much when it didn't follow.""
 
-""It served its purpose,"" heOrShe says. 
+""It served its purpose,"" $heOrShe says. 
 
 ""And the facility itself? What did your salvage teams recover beyond the machine?""",,
 armaa_bellatorInterceptOptWhatCarryingVague,DialogOptionSelected,$option == armaa_bellatorInterceptOptWhatCarryingVague,FireAll armaa_bellatorInterceptOpts,"$personName regards you for a moment with the expression of someone who has just been handed an obviously incomplete report by a subordinate who knows it's incomplete.
@@ -1339,7 +1340,8 @@ armaaWFInteractionPostBattleGravion2,OpenInteractionDialog,"$global.armaa_des_mi
 $id == armaa_gravion_station score:2000
 ","$rediscoveredGravion = true
 armaa_Hikaru_Utada expireToken armaa_gravion_station
-FireAll armaa_gravionInvestigationOpts","""Commander."" Her voice is careful. ""The station. It's here.""
+FireAll armaa_gravionInvestigationOpts
+ShowImageVisual orbital","""Commander."" Her voice is careful. ""The station. It's here.""
 
 It sits at the edge of your formation's sensor range, exactly where it was above Gravion. Same hull profile, same minimal power output, same absence of transponder or registry ping. Nothing about it suggests it moved at all.
 
@@ -1350,7 +1352,8 @@ armaaWFInteractionPostBattleGravion,OpenInteractionDialog,"$global.armaaWFGravio
 $id == armaa_gravion_station score:2000
 ","$rediscoveredGravion = true
 armaa_Hikaru_Utada expireToken armaa_gravion_station
-FireAll armaa_gravionInvestigationOpts","""Commander."" Her voice is careful. ""The station. It's here.""
+FireAll armaa_gravionInvestigationOpts
+ShowImageVisual orbital","""Commander."" Her voice is careful. ""The station. It's here.""
 
 It sits at the edge of your formation's sensor range, exactly where it was above Gravion. Same hull profile, same minimal power output, same absence of transponder or registry ping. Nothing about it suggests it moved at all.
 
@@ -1403,15 +1406,15 @@ armaa_gravionBellatorDestroyedDidntKnow,DialogOptionSelected,$option == armaa_gr
 armaa_gravionInvestigationOptStation,armaa_gravionInvestigationOpts,!$investigatedStation,,,armaa_gravionInvestigationOptStationRespStart:Dispatch salvors to the station.,
 ,,,,,,
 armaa_gravionInvestigationOptStationRespStart,DialogOptionSelected,$option == armaa_gravionInvestigationOptStationRespStart,"$investigatedStation = true
-armaa_Hikaru_Utada pauseMusic","Your forward elements sweep the docking corridor without incident. The primary operations chamber is still active. Displays cycle through status readouts on a rotation that hasn't been interrupted in what your salvors estimate as tens of cycles. Most of it is noise - atmospheric data, gravitational mapping of Gravion's upper cloud layers, sensor logs that stopped updating when the station lost its last maintenance crew.
+armaa_Hikaru_Utada pauseMusic
+ShowImageVisual abandoned_station3","Your forward elements sweep the docking corridor without incident. The primary operations chamber is still active. Displays cycle through status readouts on a rotation that hasn't been interrupted in what your salvors estimate as tens of cycles. Most of it is noise - atmospheric data, gravitational mapping of Gravion's upper cloud layers, sensor logs that stopped updating when the station lost its last maintenance crew.
 
 One display isn't noise.
 
 Designation: DAS Bellator. Entries exist stretching back to around the onset of the First AI War, the most recent entry being within the last cycle. Someone has been - or was - watching the Bellator from here for a very long time.",armaa_gravionInvestigationOptStationResp:Continue,# TODOo illustration
-armaa_gravionInvestigationOptStationResp,DialogOptionSelected,$option == armaa_gravionInvestigationOptStationResp,,"The only thing noteworthy discovered is a sealed cryopod. You watch through a salvor's feed as the pod activates mid-transit - a hiss, and it begins to open. Inside, a man. His eyes flick open, unfocused at first - then suddenly sharp, almost too sharp, as they lock onto yours. Or rather, the salvor's.
+armaa_gravionInvestigationOptStationResp,DialogOptionSelected,$option == armaa_gravionInvestigationOptStationResp,ShowImageVisual salvor_ruins,"The only thing noteworthy discovered is a sealed cryopod. You watch through a salvor's feed as the pod activates mid-transit - a hiss, and it begins to open. Inside, a man. His eyes flick open, unfocused at first - then suddenly sharp, almost too sharp, as they lock onto yours. Or rather, the salvor's.
 
-He mumbles something incoherent. The feed cuts.
-The ship's lights flicker violently. Warning tones chime and die. All systems go dark.
+He mumbles something incoherent, then the feed cuts. On your flagship, warning tones chime and die as all systems go dark.
 
 Then - static. A low grinding interference rattles into the comms, and one by one, every display in the CIC blinks back to life.",armaa_gravionInvestigationOptStationResp2:Continue,
 armaa_gravionInvestigationOptStationResp2,DialogOptionSelected,$option == armaa_gravionInvestigationOptStationResp2,"BeginConversation armaa_ironking
@@ -1616,37 +1619,22 @@ The avatar stills for what feels like a  long time, but is seconds at best.
 ""I find myself uncertain whether you are here to break the pattern. Or repeat it.""",,
 armaa_gravionIKProb3bIKPlansResp,DialogOptionSelected,$option == armaa_gravionIKProb3bIKPlansResp,"$askedAboutIK = true
 $numQuestions--
-FireAll armaaa_IKQuestions","The emblem flickers then expands for a split second, before collapsing back into a loose representation of a humanoid shape.
+FireAll armaaa_IKQuestions","""You would describe my current state as frustration, or annoyance."" The rings drift, then realign. ""My projections were disrupted. That is inconvenient, but not terminal.""
 
-""You would describe my current state as frustration. Perhaps annoyance. Not anger.""
-
-The rings drift, then realign.
-
-""My projections were disrupted. That is inconvenient. But not terminal.""
-
-""You are asking because you believe I may oppose you. Correct?""
-
-Its gaze - if it can be called that - lingers.
-
-""I am not interested in you.. as a target. I am interested in outcomes. Specifically- human continuity.""
+""You are asking because you believe I may oppose you. Correct?"" Its gaze - if it can be called that - lingers. ""I am not interested in you.. as a target. I am interested in outcomes. Specifically- human continuity.""
 
 ""You are not presently in conflict with that objective. Even if you were..""
-
 The symbol brightens faintly.
 
 ""I am uncertain I could remove an irregular such as yourself with efficiency.""",,
-armaa_gravionIKProb4,DialogOptionSelected,$option == armaa_gravionIKProbQuestion4,EndConversation,"The transmission cuts without warning.
+armaa_gravionIKProb4,DialogOptionSelected,$option == armaa_gravionIKProbQuestion4,"EndConversation
+armaa_Hikaru_Utada stopMusic
+ShowImageVisual dead_gate
+ResumeNormalMusic","The transmission cuts without warning. Your flagships ambient hum surges back into prominence; suddenly loud, as though reality has resumed after being muted.
 
-Your flagships ambient hum surges back into prominence; suddenly loud, as though reality has resumed after being muted.
+Your gaze drifts to the biometric display tied to the pod. The occupant remains stable.
 
-Several junior officers stare at blank monitors, waiting for the symbol to return.
-
-Somewhere behind you, someone clears their throat.
-
-Your gaze drifts to the biometric display tied to the pod.
-
-The occupant remains sedated.
-""That one..."" your engineer mutters, eyes fixed on the sealed bay feed. ""No tags, no implants I can see. I, uh, I swept him before we locked down."" She hesitates, glancing up at the flickering warning lights overhead. ""B-but something got through. Whatever cracked our systems - it didn't come in on anything... standard?""
+""That one..."" an engineer mutters, eyes fixed on the restored feed. ""I, uh, I swept him before we locked down."" She hesitates, glancing up at the flickering warning lights overhead. ""B-but something got through. Whatever cracked our systems - it didn't come in on anything... standard?""
 
 At the edge of the bridge, the med tech shifts, arms folded tight, voice low. ""What does that mean? Are you saying it used him?""","armaa_gravionIKProbQuestion5:""What are you saying?""",
 armaa_gravionIKProb5,DialogOptionSelected,$option == armaa_gravionIKProbQuestion5,"$global.armaa_metIronKing = true
@@ -1782,7 +1770,8 @@ armaa_hcArrived,MarketPostDock,"$tradeMode != NONE
 $market.id == armaa_meshanii_market
 $global.armaa_hc_tookTheJob
 !$global.armaa_hcArrived
-","BeginConversation armaa_cassian
+!$global.armaa_hc_Completed","BeginConversation armaa_cassian
+$global.armaa_hcArrived = true
 ShowPersonVisual","The docking clamps bite with a dull, mechanical certainty. New Meshan fills the viewport - familiar angles, familiar scars, a city that never quite decided whether it was rebuilding or just learning to live with the damage.
 
 Cassian stands at the bridge edge, wrapped in a coat that hangs wrong on him. He watches like he's reading a balance sheet.
@@ -1822,8 +1811,7 @@ She inclines her head slightly, almost looking down at you.
 armaa_hcArrived5,DialogOptionSelected,$option == armaa_hcArrived5,,,"armaa_hcArrived6:""Found a sleeper pod containing a Cassian Pha. They're asking for you.""",
 armaa_hcArrivedOptRelatives,armaa_hcArrivedOpts,,,,,
 #armaa_hcArrivedOptRelatives,armaa_hcArrivedOpts,,,,,
-armaa_hcArrived6,DialogOptionSelected,$option == armaa_hcArrived6,"$global.armaa_hcArrived = true
-Call $global.armaa_hc_ref updateData
+armaa_hcArrived6,DialogOptionSelected,$option == armaa_hcArrived6,"Call $global.armaa_hc_ref updateData
 EndConversation
 ShowDefaultVisual
 FireBest MarketPostDock","""Coherent, is he."" she states. ""That's generous of him."" Her eyes dart to the side of her display again.
@@ -1838,7 +1826,7 @@ FireBest MarketPostDock","""Coherent, is he."" she states. ""That's generous of 
 
 Not a moment sooner, you're notified that the location has been transferred. You're free to depart via shuttle at your command.",,
 ,,,,,,
-armaa_hcChaletStart,PopulateOptions,"$global.armaa_hcArrived
+armaa_hcChaletStart,PopulateOptions,"$global.armaa_hcArrived == true
 $market.id == armaa_meshanii_market
 $menuState == main
 !$global.armaa_hc_Completed",,,armaa_hcChalet:Take a shuttle to visit Sera Pha with Cassian,
@@ -1914,30 +1902,19 @@ A second figure appears soundlessly from an adjacent corridor: an aide with a tr
 A glass. Something amber in a small cup that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again like a ghost that's been paid by the hour.",armaa_hcChalet7:Continue,
 armaa_hcChalet7,DialogOptionSelected,$option == armaa_hcChalet7,"BeginConversation armaa_cassian
 ShowPersonVisual","* * *
-
-Cassian steps out first. He looks the same at a glance- blanket-coat, drawn face, careful posture; but his calm has changed shape. His face carries a strange expression; you'd almost say it looks like defeat. His eyes find you immediately.
-
-""She's very good,"" he says. Cassian's gaze flicks once to the door behind him, then back.
+Cassian steps out first. He looks the same at a glance - but his calm has changed shape. His face carries a strange expression; you'd almost say it looks like defeat. His eyes find you immediately. ""She's very good,"" he says. Cassian's gaze flicks once to the door behind him, then back.
 
 ""She offered me truth in measured portions,"" he continues. ""And she refused to answer the only question that matters. Which is its own answer, I suppose.""
 
-The staffer's mouth twitches, almost a smile.
+The staffer's mouth twitches, almost a smile. ""Ms. Pha will see you now,"" she says, as if you're arriving for an appointment that didn't involve a century-old identity crisis.
 
-""Ms. Pha will see you now,"" she says, as if you're arriving for an appointment that didn't involve a century-old identity crisis.
-
-Cassian doesn't move to let you pass. He leans in just slightly, lowering his voice.
-
-""Captain,"" he says, carefully, ""whatever she is… she is not surprised I came here."" He straightens back up, expression neutral again.
-
-""That means someone told her in advance,"" he adds. ""Or she already knew.""
+Cassian doesn't move to let you pass. He leans in just slightly, lowering his voice. ""Captain,"" he says, carefully, ""whatever she is… she is not surprised I came here."" He straightens back up, expression neutral again. ""That means someone told her in advance,"" he adds. ""Or she already knew.""
 
 The staffer steps aside, smooth as a door mechanism.
 
 ""Inside,"" she says. ""Please.""","armaa_hcChalet8:Enter the room
 armaa_hcChalet7b:Ask Cassian what she said",
-armaa_hcChalet7b,DialogOptionSelected,$option == armaa_hcChalet7b,,"Cassian leans in just enough that his voice doesn't carry cleanly down the hall.
-
-""She didn't threaten me,"" he says. ""That would be simple. She did something clever: she refused to confirm whether she carries my name because she inherited it… or because she stole it.""
+armaa_hcChalet7b,DialogOptionSelected,$option == armaa_hcChalet7b,,"""She didn't threaten me,"" he says. ""That would be simple. She did something clever: she refused to confirm whether she carries my name because she inherited it… or because she stole it.""
 
 Cassian's eyes narrow, not angry, focused.
 
@@ -1954,27 +1931,14 @@ He glances toward the door. ""She isn't.""
 
 Cassian steps back, giving you room. ""Now you go in,"" he says.",,
 armaa_hcChalet8,DialogOptionSelected,$option == armaa_hcChalet8,"BeginConversation armaa_seraph
-$global.armaa_hcArrived = true
 ShowPersonVisual
-FireAll armaa_hcChaletOpts","The staffer steps aside, smooth as a machine.
+FireAll armaa_hcChaletOpts","The staffer steps aside, smooth as a machine. The door cycles shut behind you with the same soft, expensive hiss. Inside, Sera is already seated. Her smile arrives on schedule.
 
-""Captain,"" she says. ""Ms. Pha is expecting you.""
+""Captain,"" she says, as if this is the first conversation tonight. ""Thank you for indulging my preference."" She gestures to the chair opposite her.
 
-The door cycles shut behind you with the same soft, expensive hiss.
+Her eyes flick once toward the door- not to check if it's sealed, but to acknowledge what it represents. ""You chose the version of this where I speak freely,"" Sera continues. ""So.""
 
-Inside, Sera is already seated. Her smile arrives on schedule.
-
-""Captain,"" she says, as if this is the first conversation tonight. ""Thank you for indulging my preference.""
-
-She gestures to the chair opposite her.
-
-Her eyes flick once toward the door- not to check if it's sealed, but to acknowledge what it represents.
-
-""You chose the version of this where I speak freely,"" Sera continues. ""So.""
-
-""Tell me what you want out of this,"" she says. ""And tell me what you believe Cassian wants.""
-
-She folds her hands.
+""Tell me what you want out of this,"" she says. ""And tell me what you believe Cassian wants."" She folds her hands.
 
 ""And then,"" Sera adds, pleasantly, ""we'll decide together how much truth he can afford.""",,
 ,,,,,,
@@ -2015,23 +1979,15 @@ armaa_hcChaletOptDirectResp,DialogOptionSelected,"$option == armaa_hcChaletOptDi
 $rel < 0.25","$askedHCDirect = true
 FireAll armaa_hcChaletOpts","Sera's smile thins into something more professional. ""Fair.""
 
-She speaks like she's reading from a briefing that only she can see.
+""The danger is not Cassian himself. Physically, he's a man who has been asleep since the First AI War and woke up into a Sector that would rather forget that era existed. The danger is what he represents."" She sets her hands flat on the table, not quite a gesture of honesty, more like a way to anchor the room.
 
-""The danger is not Cassian himself. Physically, he's a man who has been asleep since the First AI War and woke up into a Sector that would rather forget that era existed. The danger is what he represents.""
-
-She sets her hands flat on the table, not quite a gesture of honesty, more like a way to anchor the room.
-
-""He carries a legacy some would rather leave buried. Systems recognize it. People will recognize it, too, once it circulates."" Her eyes lift.
-
-""That attracts predators.""
+""He carries a legacy some would rather leave buried. Systems recognize it. People will recognize it, too, once it circulates."" Her eyes lift. ""That attracts predators.""
 
 A pause, then a small, controlled shrug.
 
 ""As for the Iron King: I don't see a direct threat in the act itself. If it wanted Cassian dead, he'd be dead. If it wanted me dead, you wouldn't be sitting here.""
 
-Her smile returns, mild.
-
-""It released him because it expected him to come here. The reason it cares about that… is still unclear. That doesn't mean it's harmless, mind.""",,
+Her smile returns, mild. ""It released him because it expected him to come here. The reason it cares about that… is still unclear. That doesn't mean it's harmless, mind.""",,
 armaa_hcChaletOptDirectRespHigh,DialogOptionSelected,$option == armaa_hcChaletOptDirectResp,"$askedHCDirect = true
 FireAll armaa_hcChaletOpts","Sera studies you like she's deciding how much candor you've earned, then sighs lightly - ""Alright. Cassian is not the sword, but it's sheath. Which means whoever carries him is assumed to have the blade.""
 
@@ -2080,31 +2036,23 @@ Then Sera's smile softens, almost companionable, as if she'd only been discussin
 ""That's a joke. Also,"" she adds, lightly, ""I try not to kill family on the first meeting.""",,
 armaa_hcChalet9,DialogOptionSelected,$option == armaa_hcChalet9,,"Her tone stays pleasant, almost conversational, as if she's outlining shipping arrangements instead of deciding the shape of a man's second life.
 
-""Tonight, Cassian sleeps. He eats something that isn't nutrient gel. Medical keeps him under observation, and I keep him out of sight.""
-
 ""Once he can stand without shaking and speak without sounding like a man reading an obituary, I'll let him walk the grounds. Then the facility. Then, if he insists, the city.""
 
-""The more complicated part is not keeping him alive,"" Sera continues. ""The more complicated part is integrating him into a modern corporation without turning him into a spectacle.""
+""The more complicated part is not keeping him alive,"" Sera continues. ""The more complicated part is integrating him into a modern corporation without turning him into a spectacle."" Her fingers tap the table once. Thoughtful.
 
-Her fingers tap the table once. Thoughtful.
-
-""Arma Armatura has an executive board, of course. They are capable people. They are also... easily spooked.""
-
-A soft exhale that could almost be a laugh.
-
-""Imagine how they'll react when I tell them the company's former CEO just walked into my office."" She meets your eyes.
+""Arma Armatura has an executive board, of course. They are capable people. They are also... easily spooked. Imagine how they'll react when I tell them the company's former CEO just walked into my office."" She meets your eyes.
 
 She stands, smooth and unhurried, as if the conversation has already been filed and archived.
 
 ""Either way, Captain… you did the difficult part. You got him here intact."" She steps toward the door and opens it.",armaa_hcChalet10:Continue,
 armaa_hcChalet10,DialogOptionSelected,$option == armaa_hcChalet10,"$global.armaa_hc_Completed = true
-Call $global.armaa_hc_ref updateData
 AddCredits 25000
 AddXP 1500
 ResumeNormalMusic
 EndConversation
 ShowDefaultVisual
-FireAll PopulateOptions","Cassian stands there, waiting as if he never moved. He looks between you and Sera. His posture is unchanged, but his eyes are sharper than when he went in.
+FireAll PopulateOptions
+Call $global.armaa_hc_ref updateData","Cassian stands there, waiting as if he never moved. He looks between you and Sera. His posture is unchanged, but his eyes are sharper than when he went in.
 
 Sera's expression turns gently approving. ""Cassian,"" she says.
 

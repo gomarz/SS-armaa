@@ -32,7 +32,7 @@
 			{"file":"escape_from_control.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_gravionbattle":[
-			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
+			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.65,"randomStart":true},
 		],
 		"music_armaa_rajanya_boss":[
 			{"file":"boundless_remorse.ogg","source":"sounds/armaa/music/descent","volume":0.5,"randomStart":true},

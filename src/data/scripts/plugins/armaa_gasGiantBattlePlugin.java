@@ -6,17 +6,19 @@ import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import java.util.*;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
 import java.awt.Color;
-import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import data.scripts.missions.armaa_TransitionExplosion;
+import data.scripts.missions.armaa_WarningMessage;
+import data.scripts.missions.armaa_titleSplash;
+import data.scripts.util.armaa_utils;
 
 public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
     // for atmo battle
@@ -65,13 +67,22 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
             Global.getSoundPlayer().playCustomMusic(1, 1, "music_encounter_mysterious", true);
             playedMusic = true;
             engine.setDoNotEndCombat(true);
+            String minuteStr = armaa_utils.getMinuteString();
+            Global.getCombatEngine().addLayeredRenderingPlugin(
+                    new armaa_titleSplash("GRAVION - HIGH ORBIT | " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
+                            " NO DATA AVAILABLE"));            
             engine.getCombatUI().addMessage(1, "", Color.red, "=INTERCEPTED TRANSMISSION=", Color.cyan, ":", Color.cyan, "" + Global.getSector().getPlayerPerson().getRank() + " " + Global.getSector().getPlayerPerson().getName().getLast() + "? Here? Lock down the station - full lockdown! We're compromised!");
         } else if (!playedMusicSt2) {
             float effectLevel = collapseInterval.getElapsed() / collapseInterval.getIntervalDuration();
-            if (effectLevel > 0.90f) {
+            if (effectLevel > 0.95f) {
                 try {
-                    Global.getSoundPlayer().playCustomMusic(0, 0, null, true);
-                    Global.getSoundPlayer().playCustomMusic(0, 0, "music_armaa_gravionbattle2", true);
+                    //a faint melody begins to rise like a broken music box echoing across time and space
+                    //Global.getSoundPlayer().playCustomMusic(0, 0, null, true);
+                    //Global.getSoundPlayer().
+                    Global.getCombatEngine().addLayeredRenderingPlugin(
+                            new armaa_titleSplash("????? | " + "??" + ":" + "??" + " | " + Global.getSector().getClock().getDateString(),
+                                    " a faint melody begins to rise, echoing across time and space"));                           
+                    Global.getSoundPlayer().playCustomMusic(0, 1, "music_armaa_gravionbattle", true);
                 } catch (Exception e) {
 
                 }
@@ -83,7 +94,8 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                     float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
                     float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport				
                     Vector2f loc = new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX), MathUtils.getRandomNumberInRange(minY, maxY));
-                    engine.spawnExplosion(loc, new Vector2f(), new Color(250, 200, 75, 150), 200f, 1f);
+                    armaa_TransitionExplosion.spawn(MathUtils.getRandomPointInCircle(loc, 50f));
+
                     Global.getSoundPlayer().playUISound("gate_explosion", MathUtils.getRandomNumberInRange(0.5f, 1.5f), 10f);
                 }
             }
@@ -99,6 +111,8 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
         engine.setBackgroundColor(new Color(150, 125, 0, 255));
         float anomalySize = collapsing ? Math.min(1f, (engine.getTotalElapsedTime(false) / 100) - 0.50f) : 0;
         float mapMult = (engine.getTotalElapsedTime(false) / 100);
+        if(engine.getFleetManager(1).getCurrStrength() < 10f && collapsing)
+            anomalySize = 1f;
         if (!collapsedAftermath) {
             MagicRender.screenspace(
                     Global.getSettings().getSprite("misc", "armaa_gravion"),
@@ -271,7 +285,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX), engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
-                                new Vector2f(xVel, -MathUtils.getRandomNumberInRange(800, 1000) * mult),
+                                new Vector2f(xVel, -MathUtils.getRandomNumberInRange(400, 1000) * mult),
                                 new Vector2f(MathUtils.getRandomNumberInRange(cloudSize * 0.7f, cloudSize * 1.25f), MathUtils.getRandomNumberInRange(cloudSize * 0.70f, cloudSize * 1.25f)),
                                 new Vector2f(0f, 0f),
                                 0f,
@@ -285,12 +299,12 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                                 0f,
                                 (0.2f) * mult,
                                 (0.5f + 0.80f) * mult,
-                                (0.5f + 0.80f) * mult,
+                                (1f + 0.80f) * mult,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER
                         );
                     }
 
-                    if ((!collapseAftermathInterval.intervalElapsed() && Math.random() < 0.03 || (collapsedAftermath && attackInterval.intervalElapsed()))) {
+                    if ((!collapseAftermathInterval.intervalElapsed() && Math.random() < 0.04 || (collapsedAftermath && attackInterval.intervalElapsed()))) {
                         engine.spawnAsteroid(MathUtils.getRandomNumberInRange(1, 3), MathUtils.getRandomNumberInRange(-10000, 10000),
                                 10000,
                                 MathUtils.getRandomNumberInRange(-500, 500),
@@ -323,7 +337,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                     float cloudSize = (float) (MathUtils.getRandomNumberInRange(1500, 2000) * (Math.random() * 2));
                     if (!collapseAftermathInterval.intervalElapsed()) {
                         MagicRender.battlespace(
-                                Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+                                Global.getSettings().getSprite("misc", "armaa_atmo_cloud2"),
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX), engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                                 new Vector2f(xVel, -MathUtils.getRandomNumberInRange(800, 1000) * mult),
                                 new Vector2f(MathUtils.getRandomNumberInRange(cloudSize * 0.7f, cloudSize * 1.25f), MathUtils.getRandomNumberInRange(cloudSize * 0.70f, cloudSize * 1.25f)),
@@ -497,7 +511,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
             if (engine.getCustomData().containsKey("armaa_atmo_boss")) {
                 bossEne = (ShipAPI) engine.getCustomData().get("armaa_atmo_boss");
             }
-            if (!collapseBegan && ((engine.getTotalElapsedTime(false) / 100) > 0.50f || currentStr < initialStr / 2f)) {
+            if (!collapseBegan && ((engine.getTotalElapsedTime(false) / 100) > 0.50f ||engine.getFleetManager(1).getCurrStrength() < 50f && engine.getTotalElapsedTime(false) > 20f)) {
                 Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);
                 engine.getCombatUI().addMessage(1, "", Color.red, "=INTERCEPTED TRANSMISSION=", Color.cyan, ":", Color.cyan,
                         "Forget it! Activate the device. We can't let our progress go to waste.");
@@ -681,9 +695,9 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
         ship.setCaptain(pilot);
         ship = engine.getFleetManager(1).spawnShipOrWing("armaa_tesseract_boss", new Vector2f(0, -10000), 90f, 15f);
         ship.setCaptain(pilot);
-        Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
-        engine.getCombatUI().addMessage(1, "", Color.white, "", Color.white, "", new Color(255, 0, 235, 255), "Something shifts. From deep within the churning black void, a faint melody begins to rise like a broken music box echoing across time and space.");
-        engine.getCombatUI().addMessage(1, "", Color.white, "", Color.white, "", new Color(255, 0, 235, 255), "The sound is wrong. Melancholic, almost human, but undeniably alien. Then you see it. A jagged shape in the haze, massive and gliding.");
+            armaa_WarningMessage warningMessage = new armaa_WarningMessage("W A R N I N G", "UNKNOWN ENEMY APPROACHING", null);
+            Global.getSoundPlayer().playUISound("armaa_boss_warning", 0.85f, 1.1f);
+            Global.getCombatEngine().addLayeredRenderingPlugin(warningMessage);            
         if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_engagedValkHunters")) {
             ShipAPI valkazard = engine.getFleetManager(1).spawnShipOrWing("armaa_valkazard_boss", new Vector2f(500, -10000), 90f, 2f);
             valkazard.setCaptain(Global.getSector().getImportantPeople().getPerson("armaa_redeye"));

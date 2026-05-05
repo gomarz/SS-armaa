@@ -73,6 +73,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             }
         }
         if ("gameOver".equals(action)) {
+            dialog.dismissAsCancel();
             Global.getSector().getCampaignUI().cmdExitWithoutSaving();
         }
         if ("getPlayerFleetId".equals(action)) {
