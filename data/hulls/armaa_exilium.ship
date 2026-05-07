@@ -15,7 +15,7 @@
   "builtInMods": [
     "missile_autoloader",
     "defensive_targeting_array",
-    "ground_support",
+    "advanced_ground_support",
     "armaa_serviceBays"
   ],
   "builtInWings": [

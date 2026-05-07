@@ -1769,8 +1769,8 @@ His eyes lift. ""It seems the Sector has been generous while I slept. Compound i
 armaa_hcArrived,MarketPostDock,"$tradeMode != NONE
 $market.id == armaa_meshanii_market
 $global.armaa_hc_tookTheJob
-!$global.armaa_hcArrived
-!$global.armaa_hc_Completed","BeginConversation armaa_cassian
+$global.armaa_hcArrived == false
+!$global.armaa_hc_missionCompleted","BeginConversation armaa_cassian
 $global.armaa_hcArrived = true
 ShowPersonVisual","The docking clamps bite with a dull, mechanical certainty. New Meshan fills the viewport - familiar angles, familiar scars, a city that never quite decided whether it was rebuilding or just learning to live with the damage.
 
@@ -1829,7 +1829,7 @@ Not a moment sooner, you're notified that the location has been transferred. You
 armaa_hcChaletStart,PopulateOptions,"$global.armaa_hcArrived == true
 $market.id == armaa_meshanii_market
 $menuState == main
-!$global.armaa_hc_Completed",,,armaa_hcChalet:Take a shuttle to visit Sera Pha with Cassian,
+!$global.armaa_hc_missionCompleted",,,armaa_hcChalet:Take a shuttle to visit Sera Pha with Cassian,
 armaa_hcChalet,DialogOptionSelected,$option == armaa_hcChalet,"ShowLargePlanet
 armaa_Hikaru_Utada playMusic music_encounter_mysterious","New Meshan's lights slide beneath you in neat grids and stubborn clusters, the city's scars softened by altitude until they look like design choices.
 
@@ -2051,8 +2051,8 @@ AddXP 1500
 ResumeNormalMusic
 EndConversation
 ShowDefaultVisual
-FireAll PopulateOptions
-Call $global.armaa_hc_ref updateData","Cassian stands there, waiting as if he never moved. He looks between you and Sera. His posture is unchanged, but his eyes are sharper than when he went in.
+Call $global.armaa_hc_ref updateData
+FireAll PopulateOptions","Cassian stands there, waiting as if he never moved. He looks between you and Sera. His posture is unchanged, but his eyes are sharper than when he went in.
 
 Sera's expression turns gently approving. ""Cassian,"" she says.
 
@@ -2458,6 +2458,7 @@ $player.metDawnAtBar
 !$player.metDawnBar2
 armaa_dawnCMD checkDaysElapsed 60
 RollProbability 0.5
+armaa_dawnCMD hasOfficerForBarEvent
 !$market.armaa_shownDawnBarEvent","AddBarEvent armaa_dawnBar2Ask ""Join Dawn and one of your officers"" ""You spot Dawn and what you believe to be another officer of the fleet debating something."" highlight",,,
 armaa_dawnBar2Start,DialogOptionSelected,$option == armaa_dawnBar2Ask,"armaa_dawnCMD supressBarSupression
 BeginConversation armaa_dawn
@@ -2634,7 +2635,9 @@ armaa_dawnBarEvent2Q2Trigger,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 $player.metDawnBar2
 !$player.metDawnBar2Q2
-armaa_dawnCMD checkDaysElapsed 100 armaa_dawnBarTimestamp
+armaa_dawnCMD checkDaysElapsed 100
+armaa_dawnCMD hasOfficerForBarEvent
+armaa_dawnBarTimestamp
 RollProbability 0.5","AddBarEvent armaa_dawnBar2Q2Ask ""Join Dawn and one of your officers"" ""You spot Dawn and one of your crew in a corner, deep in some kind of debate."" highlight",,,
 ,,,,,,
 armaa_dawnBar2Q2IntroArgument,armaa_dawnBar2Q2Intros,,$armaa_argueIntro = true 1,"You catch the tail end of it before Dawn notices you.
@@ -2967,6 +2970,20 @@ FireBest DialogOptionSelected","$armaa_dawnGuestName blinks.
 
 ""...Could you maybe help?""",,
 ,,,,,,
+armaa_dawnBar2Q2OfficerReactFallback,DialogOptionSelected,$option == armaa_dawnBar2Q2OfficerReact,FireAll armaa_dawnBar2Q2QuestionOpts,"They straighten slightly - not quite snapping to attention, but close. The drink in their hand suddenly looks like evidence.
+
+""Captain. I was just - we were discussing..."" They glance at Dawn.
+
+Dawn helpfully offers: ""Navigation philosophy.""
+
+""That is not what we were discussing.""
+
+""It could have been.""
+
+Dawn sets her glass down with the dexterity of someone who has had enough to drink that precision now requires effort.
+
+""All right. Different question."" She looks between you and the officer. ""Best port you've ever been in. Go.""",,
+,,,,,,
 armaa_dawnBar2Q2QuestionPlace,armaa_dawnBar2Q2QuestionOpts,,,,armaa_dawnBar2Q2RespPlace:Name a place,
 armaa_dawnBar2Q2QuestionHere,armaa_dawnBar2Q2QuestionOpts,,,,"armaa_dawnBar2Q2RespHere:""Wherever I am right now.""",
 armaa_dawnBar2Q2QuestionDontRemember,armaa_dawnBar2Q2QuestionOpts,,,,"armaa_dawnBar2Q2RespDontRemember:""I don't remember.""",
@@ -2977,7 +2994,7 @@ armaa_dawnBar2Q2PlaceAggressive,armaa_dawnBar2Q2PlaceOfficerReacts,$armaa_dawnGu
 
 Dawn rolls her eyes. ""Here we go.""",,
 armaa_dawnBar2Q2PlaceReckless,armaa_dawnBar2Q2PlaceOfficerReacts,$armaa_dawnGuestPersonality == reckless,FireAll armaa_dawnBar2Q2Breakpoint,"""Oh, I've been there! Or - wait. No. Similar name."" $armaa_dawnGuestName thinks about it. ""Actually I'm not sure where I've been.""",,
-armaa_dawnBar2Q2PlaceSteady,armaa_dawnBar2Q2PlaceOfficerReacts,$armaa_dawnGuestPersonality == steady,FireAll armaa_dawnBar2Q2Breakpoint,"A small, genuine smile. $armaa_dawnGuestName returns one of their own without being asked - small too, but real. ""Good choice."" 
+armaa_dawnBar2Q2PlaceSteady,armaa_dawnBar2Q2PlaceOfficerReacts,,FireAll armaa_dawnBar2Q2Breakpoint,"A small, genuine smile. $armaa_dawnGuestName returns one of their own without being asked - small too, but real. ""Good choice."" 
 
 They offer their own choice without being asked. Somewhere specific, remembered clearly.",,
 armaa_dawnBar2Q2PlaceCautious,armaa_dawnBar2Q2PlaceOfficerReacts,$armaa_dawnGuestPersonality == cautious,FireAll armaa_dawnBar2Q2Breakpoint,"""I'd have to think about it,"" $armaa_dawnGuestName says. 
@@ -2987,7 +3004,7 @@ armaa_dawnBar2Q2PlaceTimid,armaa_dawnBar2Q2PlaceOfficerReacts,$armaa_dawnGuestPe
 armaa_dawnBar2Q2RespHereResp,DialogOptionSelected,$option == armaa_dawnBar2Q2RespHere,FireAll armaa_dawnBar2Q2HereOfficerReacts,"Dawn points at you. ""Diplomatic.""",,
 armaa_dawnBar2Q2HereAggressive,armaa_dawnBar2Q2HereOfficerReacts,$armaa_dawnGuestPersonality == aggressive,FireAll armaa_dawnBar2Q2Breakpoint,"$armaa_dawnGuestName shoots a look at Dawn before eyeing you suspiciously. ""Hah, for real? Is present company a factor?""",,
 armaa_dawnBar2Q2HereReckless,armaa_dawnBar2Q2HereOfficerReacts,$armaa_dawnGuestPersonality == reckless,FireAll armaa_dawnBar2Q2Breakpoint,"""Mmm. That's either very wise or you haven't been anywhere good yet.""  $armaa_dawnGuestName studies you. ""Which is it?""",,
-armaa_dawnBar2Q2HereSteady,armaa_dawnBar2Q2HereOfficerReacts,$armaa_dawnGuestPersonality == steady,FireAll armaa_dawnBar2Q2Breakpoint,"$armaa_dawnGuestName smiles. ""That's either true or a very good deflection."" They don't push it either way.",,
+armaa_dawnBar2Q2HereSteady,armaa_dawnBar2Q2HereOfficerReacts,,FireAll armaa_dawnBar2Q2Breakpoint,"$armaa_dawnGuestName smiles. ""That's either true or a very good deflection."" They don't push it either way.",,
 armaa_dawnBar2Q2HereCautious,armaa_dawnBar2Q2HereOfficerReacts,$armaa_dawnGuestPersonality == cautious,FireAll armaa_dawnBar2Q2Breakpoint,"""Safe answer,"" $armaa_dawnGuestName says. ""I respect that.""",,
 armaa_dawnBar2Q2HereTimid,armaa_dawnBar2Q2HereOfficerReacts,$armaa_dawnGuestPersonality == timid,FireAll armaa_dawnBar2Q2Breakpoint,$armaa_dawnGuestName looks at you like you've said something unexpectedly kind.,,
 armaa_dawnBar2Q2RespDontRememberResp,DialogOptionSelected,$option == armaa_dawnBar2Q2RespDontRemember,FireAll armaa_dawnBar2Q2DontRememberOfficerReacts,"""...Huh.""
@@ -2995,7 +3012,7 @@ armaa_dawnBar2Q2RespDontRememberResp,DialogOptionSelected,$option == armaa_dawnB
 She refills her glass without comment.",,
 armaa_dawnBar2Q2DontRememberAggressive,armaa_dawnBar2Q2DontRememberOfficerReacts,$armaa_dawnGuestPersonality == aggressive,FireAll armaa_dawnBar2Q2Breakpoint,"""How do you not remember?"" $armaa_dawnGuestName asks.",,
 armaa_dawnBar2Q2DontRememberReckless,armaa_dawnBar2Q2DontRememberOfficerReacts,$armaa_dawnGuestPersonality == reckless,FireAll armaa_dawnBar2Q2Breakpoint,"""Same, honestly,"" $armaa_dawnGuestName says. They don't seem bothered by this.",,
-armaa_dawnBar2Q2DontRememberSteady,armaa_dawnBar2Q2DontRememberOfficerReacts,$armaa_dawnGuestPersonality == steady,FireAll armaa_dawnBar2Q2Breakpoint,"$armaa_dawnGuestName looks at you for a moment. They just nod once, like they've filed something away.",,
+armaa_dawnBar2Q2DontRememberSteady,armaa_dawnBar2Q2DontRememberOfficerReacts,,FireAll armaa_dawnBar2Q2Breakpoint,"$armaa_dawnGuestName looks at you for a moment. They just nod once, like they've filed something away.",,
 armaa_dawnBar2Q2DontRememberCautious,armaa_dawnBar2Q2DontRememberOfficerReacts,$armaa_dawnGuestPersonality == cautious,FireAll armaa_dawnBar2Q2Breakpoint,"""Was it bad, or just a long time ago?"", $armaa_dawnGuestName asks. ""Genuine question, not prying.""",,
 armaa_dawnBar2Q2DontRememberTimid,armaa_dawnBar2Q2DontRememberOfficerReacts,$armaa_dawnGuestPersonality == timid,FireAll armaa_dawnBar2Q2Breakpoint,"""Me too,"" $armaa_dawnGuestName adds.",,
 ,,,,,,
@@ -3046,8 +3063,7 @@ BarCMD showOptions","$armaa_dawnGuestName tips their glass toward you with a gri
 ""Let's do this again, $playerSirOrMadam. That was fun.""
 
 They're already turning back to Dawn before you're fully gone.",,
-armaa_dawnBar2Q2EndSteady,DialogOptionSelected,"$option == armaa_dawnBar2Q2End
-$armaa_dawnGuestPersonality == steady","AdjustRepActivePerson 1
+armaa_dawnBar2Q2EndSteady,DialogOptionSelected,$option == armaa_dawnBar2Q2End,"AdjustRepActivePerson 1
 EndConversation DO_NOT_FIRE
 RestoreSavedVisual
 BarCMD showOptions","$armaa_dawnGuestName smiles the smile of an individual who is all busy, even on this particular night out.
@@ -3067,11 +3083,18 @@ RestoreSavedVisual
 BarCMD showOptions","$armaa_dawnGuestName hesitates, staring at you blankly before giving you a small nod.
 
 ""Captain… thank you. I, uh-I appreciated that.""",,
+armaa_dawnBar2Q2EndFallback,DialogOptionSelected,$option == armaa_dawnBar2Q2End,"AdjustRepActivePerson 1
+EndConversation DO_NOT_FIRE
+RestoreSavedVisual
+BarCMD showOptions","$armaa_dawnGuestName hesitates, staring at you blankly before giving you a small nod.
+
+""Captain… thank you. I, uh-I appreciated that.""",,
 ,,,,,,
 armaa_dawnBarEvent2Q3Trigger,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 $player.metDawnBar2Q2
 !$player.metDawnBar2Q3
+armaa_dawnCMD hasOfficerForBarEvent
 armaa_dawnCMD checkDaysElapsed 200 armaa_dawnBarTimestamp
 RollProbability 0.5","AddBarEvent armaa_dawnBar2Q3Ask ""Join Dawn and one of your officers"" ""You spot Dawn and one of your crew in a corner, deep in some kind of debate."" highlight",,,
 armaa_dawnBar2Q3Start,DialogOptionSelected,$option == armaa_dawnBar2Q3Ask,"armaa_dawnCMD supressBarSupression
@@ -3127,8 +3150,7 @@ The bottle makes another round. Dawn watches it go with quiet satisfaction.
 ""Alrigh- no, wait. One more."" She settles back. ""You could drop everything tomorrow. No fleet, no contracts, no obligations. Just go.""
 
 ""Where do you go?""",,
-armaa_dawnBar2Q3OfficerReactSteady,DialogOptionSelected,"$option == armaa_dawnBar2Q3OfficerReact
-$armaa_dawnGuestPersonality == steady",FireAll armaa_dawnBar2Q3QuestionOpts,"$armaa_dawnGuestName exhales slowly, like this has been going in circles for a while.
+armaa_dawnBar2Q3OfficerReactSteady,DialogOptionSelected,$option == armaa_dawnBar2Q3OfficerReact,FireAll armaa_dawnBar2Q3QuestionOpts,"$armaa_dawnGuestName exhales slowly, like this has been going in circles for a while.
 
 Their collar's slightly off, one button undone; nothing dramatic, but $armaa_dawnGuestName certainly looks... less put-together than usual.
 
@@ -3192,7 +3214,7 @@ armaa_dawnBar2Q3QuestionNowhere,armaa_dawnBar2Q3QuestionOpts,,,,armaa_dawnBar2Q3
 armaa_dawnBar2Q3RespNeverBeenResp,DialogOptionSelected,$option == armaa_dawnBar2Q3RespNeverBeen,FireAll armaa_dawnBar2Q3NeverBeenOfficerReacts,"Dawn grins. ""Now we're talkin'.""",,
 armaa_dawnBar2Q3NeverBeenAggressive,armaa_dawnBar2Q3NeverBeenOfficerReacts,$armaa_dawnGuestPersonality == aggressive,FireAll armaa_dawnBar2Q3Breakpoint,"""Frontier. Somewhere nobody's mapped properly yet.""  $armaa_dawnGuestName says it like a challenge to the universe.",,
 armaa_dawnBar2Q3NeverBeenReckless,armaa_dawnBar2Q3NeverBeenOfficerReacts,$armaa_dawnGuestPersonality == reckless,FireAll armaa_dawnBar2Q3Breakpoint,"""Yes. Exactly. Pick a direction and burn.""  $armaa_dawnGuestName makse a gesture indicating the entire galaxy. ""All of it.""",,
-armaa_dawnBar2Q3NeverBeenSteady,armaa_dawnBar2Q3NeverBeenOfficerReacts,$armaa_dawnGuestPersonality == steady,FireAll armaa_dawnBar2Q3Breakpoint,"""There's a system I've had marked for a while.""  $armaa_dawnGuestName doesn't elaborate immediately.  
+armaa_dawnBar2Q3NeverBeenSteady,armaa_dawnBar2Q3NeverBeenOfficerReacts,,FireAll armaa_dawnBar2Q3Breakpoint,"""There's a system I've had marked for a while.""  $armaa_dawnGuestName doesn't elaborate immediately.  
 
 ""Just to see.""",,
 armaa_dawnBar2Q3NeverBeenCautious,armaa_dawnBar2Q3NeverBeenOfficerReacts,$armaa_dawnGuestPersonality == cautious,FireAll armaa_dawnBar2Q3Breakpoint,"""I'd research it first. But yes. Somewhere new."" 
@@ -3204,7 +3226,7 @@ armaa_dawnBar2Q3AlreadyBeenAggressive,armaa_dawnBar2Q3AlreadyBeenOfficerReacts,$
 armaa_dawnBar2Q3AlreadyBeenReckless,armaa_dawnBar2Q3AlreadyBeenOfficerReacts,$armaa_dawnGuestPersonality == reckless,FireAll armaa_dawnBar2Q3Breakpoint,"""Both? There was this one station...""  
 
 $armaa_dawnGuestName starts a story that clearly has no ending yet.",,
-armaa_dawnBar2Q3AlreadyBeenSteady,armaa_dawnBar2Q3AlreadyBeenOfficerReacts,$armaa_dawnGuestPersonality == steady,FireAll armaa_dawnBar2Q3Breakpoint,"""Comfortable,""  $armaa_dawnGuestName says. ""And someone I should have written to.""",,
+armaa_dawnBar2Q3AlreadyBeenSteady,armaa_dawnBar2Q3AlreadyBeenOfficerReacts,,FireAll armaa_dawnBar2Q3Breakpoint,"""Comfortable,""  $armaa_dawnGuestName says. ""And someone I should have written to.""",,
 armaa_dawnBar2Q3AlreadyBeenCautious,armaa_dawnBar2Q3AlreadyBeenOfficerReacts,$armaa_dawnGuestPersonality == cautious,FireAll armaa_dawnBar2Q3Breakpoint,"""Somewhere I know the layout.... and the exits.""  $armaa_dawnGuestName says.",,
 armaa_dawnBar2Q3AlreadyBeenTimid,armaa_dawnBar2Q3AlreadyBeenOfficerReacts,$armaa_dawnGuestPersonality == timid,FireAll armaa_dawnBar2Q3Breakpoint,"""Home. Or - or, what's left of it.""  $armaa_dawnGuestName doesn't elaborate, and neither you or Dawn push.",,
 armaa_dawnBar2Q3RespNowhereResp,DialogOptionSelected,$option == armaa_dawnBar2Q3RespNowhere,"AdjustRepActivePerson 1
@@ -3217,7 +3239,7 @@ She pours you a drink without asking.
 ""Either way.""",,
 armaa_dawnBar2Q3NowhereAggressive,armaa_dawnBar2Q3NowhereOfficerReacts,$armaa_dawnGuestPersonality == aggressive,FireAll armaa_dawnBar2Q3Breakpoint,"""That can't be right.""  $armaa_dawnGuestName studies you like you're a puzzle. ""Everybody's got somewhere.""",,
 armaa_dawnBar2Q3NowhereReckless,armaa_dawnBar2Q3NowhereOfficerReacts,$armaa_dawnGuestPersonality == reckless,FireAll armaa_dawnBar2Q3Breakpoint,"""I don't believe you,"" $armaa_dawnGuestName says cheerfully. ""But I respect it.""",,
-armaa_dawnBar2Q3NowhereSteady,armaa_dawnBar2Q3NowhereOfficerReacts,$armaa_dawnGuestPersonality == steady,FireAll armaa_dawnBar2Q3Breakpoint,$armaa_dawnGuestName says nothing. They look at you like this is something they'll remember.,,
+armaa_dawnBar2Q3NowhereSteady,armaa_dawnBar2Q3NowhereOfficerReacts,,FireAll armaa_dawnBar2Q3Breakpoint,$armaa_dawnGuestName says nothing. They look at you like this is something they'll remember.,,
 armaa_dawnBar2Q3NowhereCautious,armaa_dawnBar2Q3NowhereOfficerReacts,$armaa_dawnGuestPersonality == cautious,FireAll armaa_dawnBar2Q3Breakpoint,"$armaa_dawnGuestName looks at their drink. Then at you. They don't say anything, but something in their expression suggests they understand exactly what you mean.",,
 armaa_dawnBar2Q3NowhereTimid,armaa_dawnBar2Q3NowhereOfficerReacts,$armaa_dawnGuestPersonality == timid,FireAll armaa_dawnBar2Q3Breakpoint,"""W-well... the fleet is somewhere,"" $armaa_dawnGuestName offers carefully. ""If that counts.""
 
@@ -3277,7 +3299,7 @@ BarCMD showOptions","$armaa_dawnGuestName is already mid-thought as you leave.
 
 ""...Nah. Never mind. Good shift, Captain.""",,
 armaa_dawnBar2Q3EndSteady,DialogOptionSelected,"$option == armaa_dawnBar2Q3End
-$armaa_dawnGuestPersonality == steady","AdjustRepActivePerson 1
+","AdjustRepActivePerson 1
 EndConversation DO_NOT_FIRE
 RestoreSavedVisual
 BarCMD showOptions","$armaa_dawnGuestName nods. ""Captain.""",,
@@ -8756,3 +8778,79 @@ armaa_CoreUnitPickerCMD hasSwappableUnit",,,99:armaa_coreUnitSelectOptionResp:As
 armaa_coreUnitSelectOptionResp,DialogOptionSelected,$option == armaa_coreUnitSelectOptionResp,armaa_CoreUnitPickerCMD pickCoreUnit,Core unit assignment modifies the Mobile Armor's integrated frame. Select a qualifying strikecraft to serve as the core unit. The previous core unit will be returned to the fleet roster.,armaa_MASelectOptionResp:Select Mobile Armor,
 armaa_MASelectOptionResp,DialogOptionSelected,$option == armaa_MASelectOptionResp,armaa_CoreUnitPickerCMD pickMobileArmor,,cutCommLink:Cut the comm link,
 ,,,,,,
+# custom production - player orders stuff from contact,,,,,,
+armaa_cpcBlurb1,armaa_cpc_blurb,,,"""I have a few spare nanoforge slots opening up due to a canceled order. You could arrange for a custom production job; ships, weapons, you name it.""",,
+armaa_cpcOfferOption1,armaa_cpc_option,,,,armaa_cpc_start:Ask about the ArmaA nanoforge production opportunity.,
+cpcOfferTextContact1,DialogOptionSelected,"$option == armaa_cpc_start
+$cpc_trade","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""The slots are valid for up to $cpc_maxCapacity credits worth of industrial production capacity, and I'll let you use them for a very reasonable $cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""
+
+$HeOrShe gives you a million-credit smile and says, ""It's a good opportunity, captain.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+contact_decline:Decline",
+cpcOfferTextBar1,DialogOptionSelected,"$option == cpc_startBar
+$cpc_trade","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","As you approach, the well-dressed $manOrWoman abruptly concludes their comms-call, and sensing your approach, looks you over with an assessor's eye.
+
+""Captain, I presume,"" $heOrShe says, offering the next seat. ""And I presume you overheard my conversation so let me waste no time in laying out terms.""
+
+""You have needs; starships, weapons, and so on. I can provide access to $cpc_maxCapacity credits worth of nanoforge production and I'm willing to input your orders at $cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+contact_declineBarNoContinue:Decline",
+cpcOfferTextContact2,DialogOptionSelected,"$option == cpc_start
+$cpc_military score:10","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""I'm not here to make a sales pitch, captain, so I shall simply state the terms then let you decide. $cpc_maxCapacity credits worth of military-grade nanoforge production at $cpc_costPercent of base cost with delivery of product within $cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+cpc_pickContactBP:See what blueprints they have available
+contact_decline:Decline",
+cpcOfferTextBar2,DialogOptionSelected,"$option == cpc_startBar
+$cpc_military score:10","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""The other patron shakes their head and stands as you approach, making a civilian attempt at a salute as they leave.
+
+The $personRank rolls $hisOrHer eyes then offers you a place at the table. ""You're interested in the production slots, captain"" $heOrShe says without greeting.
+
+""It's beneath my dignity to make a sales pitch, so I shall simply state the terms. $cpc_maxCapacity credits worth of military-grade nanoforge production at $cpc_costPercent of base cost. Delivery of product within $cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+cpc_pickContactBP:See what blueprints they have available
+contact_declineBarNoContinue:Decline",
+cpcOfferTextContact4,DialogOptionSelected,"$option == cpc_start
+$cpc_armsDealer score:20","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""My supplier can provide access to custom production of up to $cpc_maxCapacity credits worth of rare ships and weapons of great interest to a collector such as yourself. Discretion doesn't come cheap of course, and there's the matter of finders' fees and certain bureaucrats to... "" $heOrShe pauses, considering, ""...encourage to mind their other duties, let's say. Oh, and delivery of product is guaranteed within $cpc_days days.""
+
+""I can get you a good deal here - let's call it a mere $cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","cpc_pickContactBP:Make a selection
+contact_decline:Decline",
+,,,,,,
+cpcPickPlayerBP,DialogOptionSelected,$option == cpc_pickPlayerBP,Call $cpc_ref pickPlayerBP,,,
+cpcPickContactBP,DialogOptionSelected,$option == cpc_pickContactBP,Call $cpc_ref pickContactBP,,,
+cpcBPPicked,CPCBlueprintsPicked,,"$option = contact_accept 0
+FireBest DialogOptionSelected
+Call $cpc_ref repSuccess
+Call $cpc_ref addContacts",,,
+cpcBPPickedBar,CPCBlueprintsPicked,$cpc_barEvent,"$option = contact_acceptBar 0
+FireBest DialogOptionSelected
+Call $cpc_ref repSuccess
+Call $cpc_ref addContacts",,,
+armaa_cpcOfferTextContact1,DialogOptionSelected,"$option == armaa_cpc_start
+$id == armaa_seraph
+$cpc_trade","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""The slots are valid for up to $cpc_maxCapacity credits worth of industrial production capacity, and I'll let you use them for a very reasonable $cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""
+
+$HeOrShe gives you a million-credit smile and says, ""It's a good opportunity, captain.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+contact_decline:Decline",
+armaa_cpcOfferTextContact2,DialogOptionSelected,"$option == armaa_cpc_start
+$id == armaa_seraph
+$cpc_military score:10","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""I'm not here to make a sales pitch, captain, so I shall simply state the terms then let you decide. $cpc_maxCapacity credits worth of military-grade nanoforge production at $cpc_costPercent of base cost with delivery of product within $cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+cpc_pickContactBP:See what blueprints they have available
+contact_decline:Decline",
+armaa_cpcOfferTextContact4,DialogOptionSelected,"$option == armaa_cpc_start
+$id == armaa_seraph
+$cpc_armsDealer score:20","$missionId = armaa_cpc
+SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""I can provide access to custom production of up to $cpc_maxCapacity credits worth of merchandise. Discretion doesn't come cheap of course, and there's the matter of finders' fees and certain bureaucrats to... "" $heOrShe pauses, considering, ""...encourage to mind their other duties, let's say. Oh, and delivery of product is guaranteed within $cpc_days days.""
+
+""I can get you a good deal here - let's call it a mere $cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","cpc_pickContactBP:Make a selection
+contact_decline:Decline",

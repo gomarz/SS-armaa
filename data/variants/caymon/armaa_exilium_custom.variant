@@ -3,7 +3,7 @@
   "hullId": "armaa_exilium",
   "displayName": "Anti-Rain",
   "goalVariant": true,
-  "fluxCapacitors": 10,
+  "fluxCapacitors": 13,
   "fluxVents": 25,
   "quality": 1,
   "permaMods": [],
@@ -11,8 +11,6 @@
     "targetingunit",
     "hardenedshieldemitter"
   ],
-  "sMods": ["expanded_deck_crew","defensive_targeting_array","missleracks"
-    ],
   "weaponGroups": [
     {
       "autofire": false,
@@ -68,13 +66,12 @@
     }
   ],
   "modules": [
-        {
-      "WS0006": "armaa_einhander_plus_subprime",
+    {
+      "WS0006": "armaa_einhander_plus_subprime"
     },
     {
-      "WS0008": "armaa_kouto_frig_standard",
-    },
-      #"WS0007": "armaa_valkenx_frig_standard",
+      "WS0008": "armaa_kouto_frig_standard"
+    }
   ],
   "wings": [
     "armaa_musham3_wing",

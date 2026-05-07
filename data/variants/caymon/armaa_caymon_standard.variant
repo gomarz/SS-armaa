@@ -1,0 +1,74 @@
+{
+  "variantId": "armaa_caymon_standard",
+  "hullId": "armaa_caymon",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 7,
+  "fluxVents": 12,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "missleracks",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "taclaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "atropos",
+        "WS0003": "atropos"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "irautolance"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 009": "mininglaser",
+        "WS 010": "mininglaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "armaa_fluxcannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "POD": "armaa_armorPod"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "WS0009": "armaa_aleste_frig_classic_standard"
+    }
+  ],
+  "wings": [
+    "armaa_valkenx_wing",
+    "armaa_musham3_wing"
+  ]
+}

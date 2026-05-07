@@ -172,6 +172,9 @@ armaa_corsair_p,SHIP,Shouldn't probably be visible/obtainable,,,,,
 armaa_kshatriya,SHIP,No data available. Please update yout TriPad with the latest software to ensure reliability!,,,,,
 armaa_ceylon,SHIP,"The carrier is outfitted with an advanced airborne early warning and control system, which enables it to detect and exploit vulnerabilities in enemy vessels while bolstering its own fleet. The carrier relies heavily on three support drones that constantly relay combat information to the bridge crew, allowing them to administer these effects. However, if the support drones are disabled, the effectiveness of the carrier is significantly reduced.",,,,,
 armaa_bassline,SHIP,"Designed as a multi-role combat carrier, the Bassline-class was developed to bridge the gap between traditional fleet carriers and front-line warships. Unlike the Heron, which prioritizes fighter coordination, the Bassline boasts a formidable direct fire arsenal, allowing it to engage enemy ships head-on while maintaining fighter support.",,,,,
+armaa_exilium,SHIP,"A older heavily modified Caymon-class carrier, many of its systems and technology has been overhauled and upgraded over the years to boost its combat ability beyond the normal production model, featuring more powerful flux grids and the full complement of bays of the Heron to let it handle more flux hungry weaponry. The launch module and its associated boarding pods had been scrapped in favor of being able to use more convenient large weapons such as the Dragonfire Pod.
+
+Additionally, it carries a Einhander (MRC) and Kouto Cataphract that rides in on its hull along with a wing of MUSHA M3s to make up for the limited weapon slots",,,,,
 armaa_awacs,SHIP_SYSTEM,"Marks selected object as a priority target while analyzing it for potential vulnerabilities. The target takes +25% damage for 7 seconds. Base range is 500 SU, which scales with each deployed drone (up to a maximum range of 2000 SU)",,,,,
 ,,,,,,,
 ,,,,,,,

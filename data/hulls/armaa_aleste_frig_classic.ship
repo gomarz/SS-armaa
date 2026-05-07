@@ -14,8 +14,8 @@
   "builtInMods": [
     "cataphract2",
     "strikeCraft",
-    "armaa_repair_kit",
-    "armaa_weaponSwap"
+    "armaa_weaponSwap",
+    "armaa_spare_chassis"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_aleste_torso",
