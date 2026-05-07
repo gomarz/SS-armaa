@@ -101,7 +101,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersInPriorityOrder()) {
                 if (largest == null && (member.isCruiser() || member.isCapital()) && !member.isCivilian()) {
                     largest = member;
-                } else if (member.isCapital() && (!largest.isCapital())) {
+                } else if (member.isCapital() && (largest != null && !largest.isCapital())) {
                     largest = member;
                 }
             }
