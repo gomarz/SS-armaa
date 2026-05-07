@@ -268,14 +268,14 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         String fleetType = type.getFleetType();
         switch (type) {
             case FAST:
-                combat = Math.round(20f + (float) random.nextFloat() * 2f) * 5f;
+                combat = Math.round(10f + (float) random.nextFloat() * 2f) * 3f;
                 break;
             case COMBAT:
-                combat = Math.round(40f + (float) random.nextFloat() * 3f) * 5f;
+                combat = Math.round(20f + (float) random.nextFloat() * 3f) * 3f;
                 tanker = Math.round((float) random.nextFloat()) * 5f;
                 break;
             case HEAVY:
-                combat = Math.round(60f + (float) random.nextFloat() * 5f) * 5f;
+                combat = Math.round(40f + (float) random.nextFloat() * 5f) * 3f;
                 tanker = Math.round((float) random.nextFloat()) * 10f;
                 freighter = Math.round((float) random.nextFloat()) * 10f;
                 break;
@@ -284,7 +284,7 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         FleetParamsV3 params = new FleetParamsV3(
                 market,
                 null, // loc in hyper; don't need if have market
-                "derelict",
+                "armaa_derelict",
                 route.getQualityOverride(), // quality override
                 fleetType,
                 combat, // combatPts
@@ -293,12 +293,12 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
                 0f, // transportPts
                 0f, // linerPts
                 0f, // utilityPts
-                0f // qualityMod - since the Lion's Guard is in a different-faction market, counter that penalty
+                0f // qualityMod
         );
-        params.maxShipSize = 3;
+        params.maxShipSize = 2;
         params.timestamp = route.getTimestamp();
         params.random = random;
-        params.modeOverride = Misc.getShipPickMode(market,"derelict");
+        params.modeOverride = Misc.getShipPickMode(market,"armaa_derelict");
         params.modeOverride = ShipPickMode.ALL;
         CampaignFleetAPI fleet = FleetFactoryV3.createFleet(params);
 

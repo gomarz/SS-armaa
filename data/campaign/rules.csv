@@ -2635,9 +2635,8 @@ armaa_dawnBarEvent2Q2Trigger,AddBarEvents,"!$market.isHidden
 armaa_Hikaru_Utada hasOfficer armaa_dawn
 $player.metDawnBar2
 !$player.metDawnBar2Q2
-armaa_dawnCMD checkDaysElapsed 100
+armaa_dawnCMD checkDaysElapsed 100 armaa_dawnBarTimestamp
 armaa_dawnCMD hasOfficerForBarEvent
-armaa_dawnBarTimestamp
 RollProbability 0.5","AddBarEvent armaa_dawnBar2Q2Ask ""Join Dawn and one of your officers"" ""You spot Dawn and one of your crew in a corner, deep in some kind of debate."" highlight",,,
 ,,,,,,
 armaa_dawnBar2Q2IntroArgument,armaa_dawnBar2Q2Intros,,$armaa_argueIntro = true 1,"You catch the tail end of it before Dawn notices you.

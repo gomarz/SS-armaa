@@ -94,7 +94,7 @@ public class armaa_JeniusMission extends HubMissionWithSearch {
                 }
                 FleetParamsV3 fparams = new FleetParamsV3(
                         Global.getSector().getEntityById("armaa_research_station").getLocationInHyperspace(),
-                        "derelict",
+                        "armaa_derelict",
                         null,
                         FleetTypes.PATROL_SMALL,
                         fleetpoints, // combatPts
@@ -115,7 +115,7 @@ public class armaa_JeniusMission extends HubMissionWithSearch {
                 loc.getContainingLocation().spawnFleet(
                         loc, 25, 25, fleet);
                 fleet.setLocation(loc.getLocation().x, loc.getLocation().y);
-                fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, loc, 600f);
+                fleet.addAssignment(FleetAssignment.DEFEND_LOCATION, loc, 600f);
                 fleet.setFaction("armaarmatura_arusthai", false);
                 fleet.getMemoryWithoutUpdate().set("$armaa_liberationDefenders", "-");
                 Misc.makeImportant(fleet, "$armaa_liberationDefenders");

@@ -125,6 +125,12 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
 
             return true;
         }
+        else if("hasOfficerForBarEvent".equals(action))
+        {
+            if(Misc.getNumNonMercOfficers(Global.getSector().getPlayerFleet()) > 1)
+                return true;
+            return false;
+        }
         return false;
     }
 }

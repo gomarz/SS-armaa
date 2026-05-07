@@ -66,7 +66,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
             Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_" + member.getId(), crew);
         }
         Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
-        String faction = "derelict";
+        String faction = "armaa_derelict";
         //also subtract guardians DP
         float str = (Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()-modifier-40f) * 0.7f;
         //not used?
