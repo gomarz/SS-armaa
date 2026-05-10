@@ -269,6 +269,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                     Global.getLogger(armaa_mirageShroudStats.class).info(ship.getOwner());
                     ShipVariantAPI var = ship.getVariant().clone();
                     var.setHullSpecAPI(Global.getSettings().getHullSpec("armaa_panther_frig_mirage"));
+                    
                     var.addMod("automated");
                     var.addMod("do_not_back_off");
                     var.removePermaMod("strikeCraft");
@@ -286,6 +287,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                     Vector2f vec = new Vector2f(ship.getLocation().x + offset, ship.getLocation().y);
                     clone = Global.getCombatEngine().getFleetManager(ship.getOwner()).spawnFleetMember(member, vec, ship.getFacing(), 0f);
                     clone.setFacing(ship.getFacing());
+                    clone.setShipSystemDisabled(true);
                     clone.getVelocity().set(new Vector2f(ship.getVelocity()));
                     Global.getCombatEngine().spawnEmpArcVisual(ship.getLocation(), ship, vec, clone, 25f, ship.getSystem().getSpecAPI().getJitterEffectColor(), Color.white);
                     

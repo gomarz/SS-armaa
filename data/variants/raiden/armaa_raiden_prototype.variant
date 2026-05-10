@@ -1,0 +1,18 @@
+{
+  "variantId": "armaa_raiden_prototype",
+  "hullId": "armaa_raiden_carrier",
+  "displayName": "Prototype",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [
+    {
+      "MODULE": "armaa_aleste_friendly_f"
+    }
+  ],
+  "wings": []
+}

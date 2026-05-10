@@ -1,0 +1,49 @@
+{
+  "id": "armaa_raiden_rightPauldron",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.armaa_bakraidDecoEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/garegga/raiden/armaa_raiden_rightShoulder.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    -26,
+    13
+  ],
+  "turretAngleOffsets": [
+    90
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "width": 10,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 1,
+  "pixelsPerTexel": 5
+}

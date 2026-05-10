@@ -177,7 +177,10 @@
     "priorityShips":{
         "tags":["armaa_cataphract_bp","armaa_mobilearmor","armaa_advcataphract_bp"],
         "hulls":[
-
+				"armaa_bassline",
+				"armaa_whitebase",
+				"armaa_valkyrie",
+				"armaa_caymon",
         ],
     },
 	"knownHullMods":{

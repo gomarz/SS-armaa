@@ -141,7 +141,7 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             return false;
         }
 
-        if (!setPersonMissionRef(person, "$cpc_ref")) {
+        if (!setPersonMissionRef(person, "$armaa_cpc_ref")) {
             return false;
         }
 
@@ -422,6 +422,8 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             for (int i = 0; i < num && !picker.isEmpty(); i++) {
                 fighters.add(picker.pickAndRemove());
             }
+            if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
+                fighters.add(Global.getSettings().getFighterWingSpec("armaa_guardual_wing").getId());
         }
     }
 
@@ -460,15 +462,15 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
     }
 
     protected void updateInteractionDataImpl() {
-        set("$cpc_military", getPerson().hasTag(Tags.CONTACT_MILITARY));
-        set("$cpc_trade", getPerson().hasTag(Tags.CONTACT_TRADE));
-        set("$cpc_armsDealer", armsDealer);
+        set("$armaa_cpc_military", getPerson().hasTag(Tags.CONTACT_MILITARY));
+        set("$armaa_cpc_trade", getPerson().hasTag(Tags.CONTACT_TRADE));
+        set("$armaa_cpc_armsDealer", armsDealer);
 
-        set("$cpc_barEvent", isBarEvent());
-        set("$cpc_manOrWoman", getPerson().getManOrWoman());
-        set("$cpc_maxCapacity", Misc.getWithDGS(maxCapacity));
-        set("$cpc_costPercent", (int) Math.round(costMult * 100f) + "%");
-        set("$cpc_days", "" + (int) PROD_DAYS);
+        set("$armaa_cpc_barEvent", isBarEvent());
+        set("$armaa_cpc_manOrWoman", getPerson().getManOrWoman());
+        set("$armaa_cpc_maxCapacity", Misc.getWithDGS(maxCapacity));
+        set("$armaa_cpc_costPercent", (int) Math.round(costMult * 100f) + "%");
+        set("$armaa_cpc_days", "" + (int) PROD_DAYS);
     }
 
     @Override

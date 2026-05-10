@@ -213,7 +213,7 @@ public class armaa_AWACSSys extends BaseShipSystemScript {
     }
 
     public static float getMaxRange(ShipAPI ship) {
-        ShipAPI droneBase = ship.getChildModulesCopy() != null  && ship.getChildModulesCopy().get(0) != null ? ship.getChildModulesCopy().get(0) : ship;
+        ShipAPI droneBase = ship.getChildModulesCopy() != null && ship.getChildModulesCopy().size() > 0 && ship.getChildModulesCopy().get(0) != null ? ship.getChildModulesCopy().get(0) : ship;
 
         float effectLevel = armaa_AWACS.getEffectLevel(droneBase);
         return ship.getMutableStats().getSystemRangeBonus().computeEffective(RANGE * effectLevel);

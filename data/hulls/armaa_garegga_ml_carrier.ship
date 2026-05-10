@@ -27,7 +27,7 @@
       "mount": "TURRET",
       "arc": 150,
       "angle": 0,
-      "locations": [18, -0]
+      "locations": [19, -0]
     },
     {
       "id": "MAIN_GUN",

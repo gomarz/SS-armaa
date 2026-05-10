@@ -3094,7 +3094,7 @@ armaa_Hikaru_Utada hasOfficer armaa_dawn
 $player.metDawnBar2Q2
 !$player.metDawnBar2Q3
 armaa_dawnCMD hasOfficerForBarEvent
-armaa_dawnCMD checkDaysElapsed 200 armaa_dawnBarTimestamp
+armaa_dawnCMD checkDaysElapsed 100 armaa_dawnBarTimestamp
 RollProbability 0.5","AddBarEvent armaa_dawnBar2Q3Ask ""Join Dawn and one of your officers"" ""You spot Dawn and one of your crew in a corner, deep in some kind of debate."" highlight",,,
 armaa_dawnBar2Q3Start,DialogOptionSelected,$option == armaa_dawnBar2Q3Ask,"armaa_dawnCMD supressBarSupression
 BeginConversation armaa_dawn
@@ -4803,9 +4803,7 @@ $global.firstSleeperSeraInvite
 !$player.didSeraFirstMeeting",,,2:armaa_visitSeraOptDirect:Take a shuttle to visit Sera Pha,
 armaa_firstVisitStart,DialogOptionSelected,$option == armaa_visitSeraOptDirect,ShowLargePlanet,"Your shuttle descends through the upper reaches of New Meshan's thin, dust-laden atmosphere. Red-gold haze streaks past the viewport, the dry air shimmering from the heat of re-entry.
 
-The flight path diverts from the general approach lanes without comment, bypassing the standard commercial queues managed by the Port Authority. No tolls or transaction notices accompany the shift- just a quiet override ping acknowledging priority clearance.
-
-Far below, the clustered spires of New Meshan's primary arcology rise from the desert flats, surrounded by wind-battered defensive walls and sprawling industrial platforms. The sun glints sharply off polished alloy and glass, broken only by the swirling eddies of airborne grit.",armaa_firstVisitIntro1:Continue,
+The flight path diverts from the general approach lanes without comment, bypassing the standard commercial queues managed by the Port Authority. No tolls or transaction notices accompany the shift- just a quiet override ping acknowledging priority clearance.",armaa_firstVisitIntro1:Continue,
 armaa_firstVisitIntro1,DialogOptionSelected,$option == armaa_firstVisitIntro1,ShowImageVisual eochu_bres_landing,"Far below, the clustered spires of New Meshan's primary arcology rise from the desert flats, surrounded by wind-battered defensive walls and sprawling industrial platforms. The sun catches polished alloy and glass in hard flashes, broken by swirling eddies of airborne grit.
 
 You pass over what your triPad identifies as the Royal Palace - a squat, angular fortress complex nested within high retaining walls of pale stone and composite plating. Ceremonial banners ripple in the dry crosswinds, briefly visible before slipping from view.
@@ -8780,61 +8778,11 @@ armaa_MASelectOptionResp,DialogOptionSelected,$option == armaa_MASelectOptionRes
 # custom production - player orders stuff from contact,,,,,,
 armaa_cpcBlurb1,armaa_cpc_blurb,,,"""I have a few spare nanoforge slots opening up due to a canceled order. You could arrange for a custom production job; ships, weapons, you name it.""",,
 armaa_cpcOfferOption1,armaa_cpc_option,,,,armaa_cpc_start:Ask about the ArmaA nanoforge production opportunity.,
-cpcOfferTextContact1,DialogOptionSelected,"$option == armaa_cpc_start
-$cpc_trade","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""The slots are valid for up to $cpc_maxCapacity credits worth of industrial production capacity, and I'll let you use them for a very reasonable $cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""
-
-$HeOrShe gives you a million-credit smile and says, ""It's a good opportunity, captain.""","cpc_pickPlayerBP:Make a selection from your own blueprints
-contact_decline:Decline",
-cpcOfferTextBar1,DialogOptionSelected,"$option == cpc_startBar
-$cpc_trade","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","As you approach, the well-dressed $manOrWoman abruptly concludes their comms-call, and sensing your approach, looks you over with an assessor's eye.
-
-""Captain, I presume,"" $heOrShe says, offering the next seat. ""And I presume you overheard my conversation so let me waste no time in laying out terms.""
-
-""You have needs; starships, weapons, and so on. I can provide access to $cpc_maxCapacity credits worth of nanoforge production and I'm willing to input your orders at $cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""","cpc_pickPlayerBP:Make a selection from your own blueprints
-contact_declineBarNoContinue:Decline",
-cpcOfferTextContact2,DialogOptionSelected,"$option == cpc_start
-$cpc_military score:10","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""I'm not here to make a sales pitch, captain, so I shall simply state the terms then let you decide. $cpc_maxCapacity credits worth of military-grade nanoforge production at $cpc_costPercent of base cost with delivery of product within $cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
-cpc_pickContactBP:See what blueprints they have available
-contact_decline:Decline",
-cpcOfferTextBar2,DialogOptionSelected,"$option == cpc_startBar
-$cpc_military score:10","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""The other patron shakes their head and stands as you approach, making a civilian attempt at a salute as they leave.
-
-The $personRank rolls $hisOrHer eyes then offers you a place at the table. ""You're interested in the production slots, captain"" $heOrShe says without greeting.
-
-""It's beneath my dignity to make a sales pitch, so I shall simply state the terms. $cpc_maxCapacity credits worth of military-grade nanoforge production at $cpc_costPercent of base cost. Delivery of product within $cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
-cpc_pickContactBP:See what blueprints they have available
-contact_declineBarNoContinue:Decline",
-cpcOfferTextContact4,DialogOptionSelected,"$option == cpc_start
-$cpc_armsDealer score:20","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""My supplier can provide access to custom production of up to $cpc_maxCapacity credits worth of rare ships and weapons of great interest to a collector such as yourself. Discretion doesn't come cheap of course, and there's the matter of finders' fees and certain bureaucrats to... "" $heOrShe pauses, considering, ""...encourage to mind their other duties, let's say. Oh, and delivery of product is guaranteed within $cpc_days days.""
-
-""I can get you a good deal here - let's call it a mere $cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","cpc_pickContactBP:Make a selection
-contact_decline:Decline",
-,,,,,,
-cpcPickPlayerBP,DialogOptionSelected,$option == cpc_pickPlayerBP,Call $cpc_ref pickPlayerBP,,,
-cpcPickContactBP,DialogOptionSelected,$option == cpc_pickContactBP,Call $cpc_ref pickContactBP,,,
-cpcBPPicked,CPCBlueprintsPicked,,"$option = contact_accept 0
-FireBest DialogOptionSelected
-Call $cpc_ref repSuccess
-Call $cpc_ref addContacts",,,
-cpcBPPickedBar,CPCBlueprintsPicked,$cpc_barEvent,"$option = contact_acceptBar 0
-FireBest DialogOptionSelected
-Call $cpc_ref repSuccess
-Call $cpc_ref addContacts",,,
 armaa_cpcOfferTextContact1,DialogOptionSelected,"$option == armaa_cpc_start
 $id == armaa_seraph
 $cpc_trade","$missionId = armaa_cpc
 SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""The slots are valid for up to $cpc_maxCapacity credits worth of industrial production capacity, and I'll let you use them for a very reasonable $cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""The slots are valid for up to $armaa_cpc_maxCapacity credits worth of industrial production capacity, and I'll let you use them for a very reasonable $armaa_cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""
 
 $HeOrShe gives you a million-credit smile and says, ""It's a good opportunity, captain.""","cpc_pickPlayerBP:Make a selection from your own blueprints
 contact_decline:Decline",
@@ -8842,14 +8790,14 @@ armaa_cpcOfferTextContact2,DialogOptionSelected,"$option == armaa_cpc_start
 $id == armaa_seraph
 $cpc_military score:10","$missionId = armaa_cpc
 SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""I'm not here to make a sales pitch, captain, so I shall simply state the terms then let you decide. $cpc_maxCapacity credits worth of military-grade nanoforge production at $cpc_costPercent of base cost with delivery of product within $cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""I'm not here to make a sales pitch, captain, so I shall simply state the terms then let you decide. $armaa_cpc_maxCapacity credits worth of military-grade nanoforge production at $armaa_cpc_costPercent of base cost with delivery of product within $armaa_cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
 cpc_pickContactBP:See what blueprints they have available
 contact_decline:Decline",
 armaa_cpcOfferTextContact4,DialogOptionSelected,"$option == armaa_cpc_start
 $id == armaa_seraph
 $cpc_armsDealer score:20","$missionId = armaa_cpc
 SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
-DoCanAffordCheck 0 cpc_pickPlayerBP false","""I can provide access to custom production of up to $cpc_maxCapacity credits worth of merchandise. Discretion doesn't come cheap of course, and there's the matter of finders' fees and certain bureaucrats to... "" $heOrShe pauses, considering, ""...encourage to mind their other duties, let's say. Oh, and delivery of product is guaranteed within $cpc_days days.""
+DoCanAffordCheck 0 cpc_pickPlayerBP false","""I can provide access to custom production of up to $armaa_cpc_maxCapacity credits worth of merchandise. Discretion doesn't come cheap of course, and there's the matter of finders' fees and certain bureaucrats to... "" $heOrShe pauses, considering, ""...encourage to mind their other duties, let's say. Oh, and delivery of product is guaranteed within $armaa_cpc_days days.""
 
-""I can get you a good deal here - let's call it a mere $cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","cpc_pickContactBP:Make a selection
+""I can get you a good deal here - let's call it a mere $armaa_cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","cpc_pickContactBP:Make a selection
 contact_decline:Decline",

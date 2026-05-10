@@ -35,7 +35,9 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
     Map<FleetMemberAPI, ShipAPI> memberToShip = new HashMap<>();
 
     public void putMapping(ShipAPI ship, FleetMemberAPI member) {
-        if (ship == null || member == null) return;
+        if (ship == null || member == null) {
+            return;
+        }
 
         // If this fleet member is already associated with a different ShipAPI, remove the old key.
         ShipAPI oldShip = memberToShip.put(member, ship);
@@ -134,7 +136,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                     //WeaponslotAPI slot = module.
                                     module.getFluxTracker().showOverloadFloatyIfNeeded("Emergency Purge!", Color.blue, 4f, true);
                                     ShipVariantAPI var = module.getVariant().clone();
-                                    var.removePermaMod("armaa_dpReduction");        
+                                    var.removePermaMod("armaa_dpReduction");
                                     FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
 
                                     //If you're one of the player's ships, we should set commander to player
@@ -174,13 +176,13 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                     s.setControlsLocked(false);
                                     f = null;
                                     if (!engine.isSimulation() && ship.getOwner() == 0 && !ship.isAlly()) {
-                                        putMapping(s,module.getFleetMember());
+                                        putMapping(s, module.getFleetMember());
                                     }
 
                                     ship.setControlsLocked(true);
                                     module.setControlsLocked(true);
-                                    module.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible",0f);
-                                    module.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible",0f);                                    
+                                    module.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
+                                    module.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
                                     if (s.getCaptain() != ship.getCaptain()) {
                                         s.setCaptain(ship.getCaptain());
                                     }
@@ -235,7 +237,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                         module.setControlsLocked(false);
                                         module.setCaptain(ship.getCaptain());
                                         module.getMutableStats().getHullDamageTakenMult().unmodify();
-                                        module.getMutableStats().getArmorDamageTakenMult().unmodify();  
+                                        module.getMutableStats().getArmorDamageTakenMult().unmodify();
                                     }
                                 }
                                 for (ShipAPI modules : ship.getChildModulesCopy()) {

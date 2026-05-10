@@ -12,19 +12,17 @@ import java.util.EnumSet;
 /**
  * Fullscreen atmospheric reentry heat effect.
  *
- * Renders a vignette + color overlay suggesting heat buildup.
- * No shader required — pure GL blending.
+ * Renders a vignette + color overlay suggesting heat buildup. No shader
+ * required — pure GL blending.
  *
- * Usage:
- *   armaa_ReentryEffect fx = new armaa_ReentryEffect();
- *   Global.getCombatEngine().addLayeredRenderingPlugin(fx);
- *   // later, to begin fading out:
- *   fx.beginFadeOut();
+ * Usage: armaa_ReentryEffect fx = new armaa_ReentryEffect();
+ * Global.getCombatEngine().addLayeredRenderingPlugin(fx); // later, to begin
+ * fading out: fx.beginFadeOut();
  */
 public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
 
     // --- Tunables ---
-    private static final float RAMP_IN_DURATION  = 30.0f;  // seconds to reach full intensity
+    private static final float RAMP_IN_DURATION = 30.0f;  // seconds to reach full intensity
     private static final float FADE_OUT_DURATION = 20.0f;  // seconds to fade out once triggered
 
     // Edge  deep red/orange ring around screen
@@ -40,39 +38,48 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
     private static final float GLOW_ALPHA_MAX = 0.30f; // subtle center tint
 
     // Flicker  very subtle brightness variation to sell heat
-    private static final float FLICKER_SPEED     = 7.5f;
+    private static final float FLICKER_SPEED = 7.5f;
     private static final float FLICKER_MAGNITUDE = 0.04f; // fraction of vignette alpha
 
     // Streak lines bright horizontal streaks at screen edges suggesting plasma
-    private static final int   STREAK_COUNT      = 6;
-    private static final float STREAK_ALPHA_MAX  = 0.35f;
-    private static final float STREAK_HEIGHT     = 0.015f; // fraction of screen height
+    private static final int STREAK_COUNT = 6;
+    private static final float STREAK_ALPHA_MAX = 0.35f;
+    private static final float STREAK_HEIGHT = 0.015f; // fraction of screen height
 
     // Static interference horizontal bands and noise simulating EM interference
-    private static final float STATIC_ALPHA_MAX   = 0.12f; // max alpha of interference bands
-    private static final int   STATIC_BAND_COUNT  = 8;     // number of scanline bands
-    private static final float STATIC_FLICKER_CHANCE = 0.015f; // chance of a full screen flicker per frame
-    private static final float STATIC_GLITCH_CHANCE  = 0.04f;  // chance of a glitch band per frame
-    private static final int   STATIC_NOISE_DOTS  = 40;    // random bright noise dots per frame
+    private static final float STATIC_ALPHA_MAX = 0.060f; // max alpha of interference bands
+    private static final int STATIC_BAND_COUNT = 8;     // number of scanline bands
+    private static final float STATIC_FLICKER_CHANCE = 0.003f; // chance of a full screen flicker per frame
+    private static final float STATIC_GLITCH_CHANCE = 0.0002f;  // chance of a glitch band per frame
+    private static final int STATIC_NOISE_DOTS = 40;    // random bright noise dots per frame
 
     // ---- State ----
-    private float   elapsed    = 0f;
-    private boolean fadingOut  = false;
-    private float   fadeOutT   = 0f;
-    private boolean expired    = false;
+    private float elapsed = 0f;
+    private boolean fadingOut = false;
+    private float fadeOutT = 0f;
+    private boolean expired = false;
 
-    @Override public boolean isExpired()       { return expired; }
-    @Override public float   getRenderRadius() { return Float.MAX_VALUE; }
+    @Override
+    public boolean isExpired() {
+        return expired;
+    }
+
+    @Override
+    public float getRenderRadius() {
+        return Float.MAX_VALUE;
+    }
 
     @Override
     public EnumSet<CombatEngineLayers> getActiveLayers() {
         return EnumSet.of(CombatEngineLayers.JUST_BELOW_WIDGETS);
     }
 
-    /** Call this to begin fading the overlay out. */
+    /**
+     * Call this to begin fading the overlay out.
+     */
     public void beginFadeOut() {
         fadingOut = true;
-        fadeOutT  = 0f;
+        fadeOutT = 0f;
     }
 
     @Override
@@ -82,8 +89,12 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
 
     @Override
     public void render(CombatEngineLayers layer, ViewportAPI viewport) {
-        if (layer != CombatEngineLayers.JUST_BELOW_WIDGETS) return;
-        if (expired) return;
+        if (layer != CombatEngineLayers.JUST_BELOW_WIDGETS) {
+            return;
+        }
+        if (expired) {
+            return;
+        }
 
         // Track time
         if (!Global.getCombatEngine().isPaused()) {
@@ -110,11 +121,13 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
             float holdIntensity = Math.min(1f, (elapsed - fadeOutT) / RAMP_IN_DURATION);
             intensity = holdIntensity * (1f - easeOut(fadeOutT / FADE_OUT_DURATION));
         }
-        if (intensity <= 0f) return;
+        if (intensity <= 0f) {
+            return;
+        }
 
         // Subtle flicker
         float flicker = 1f + FLICKER_MAGNITUDE * (float) Math.sin(elapsed * FLICKER_SPEED)
-                            + FLICKER_MAGNITUDE * 0.5f * (float) Math.sin(elapsed * FLICKER_SPEED * 2.3f);
+                + FLICKER_MAGNITUDE * 0.5f * (float) Math.sin(elapsed * FLICKER_SPEED * 2.3f);
 
         GL11.glPushAttrib(GL11.GL_ALL_ATTRIB_BITS);
         GL11.glMatrixMode(GL11.GL_PROJECTION);
@@ -139,14 +152,14 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
 
         // --- Edge vignette gradient quads on each side ---
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        float va = VIGNETTE_ALPHA_MAX * intensity * flicker;
+        float va  = VIGNETTE_ALPHA_MAX * intensity * flicker;
         float vigW = sw * 0.25f;
         float vigH = sh * 0.35f;
 
-        vignetteBottom(0, 0,        sw, vigH, va); // bottom edge fades upward
-        vignetteTop   (0, sh - vigH, sw, vigH, va); // top edge fades downward
-        vignetteLeft  (0, 0,        vigW, sh, va); // left edge fades rightward
-        vignetteRight (sw - vigW, 0, vigW, sh, va); // right edge fades leftward
+        vignetteBottom(0, 0, sw, vigH, va); // bottom edge fades upward
+        vignetteTop(0, sh - vigH, sw, vigH, va); // top edge fades downward
+        vignetteLeft(0, 0, vigW, sh, va); // left edge fades rightward
+        vignetteRight(sw - vigW, 0, vigW, sh, va); // right edge fades leftward
 
         // --- Plasma streaks along top and bottom ---
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
@@ -155,30 +168,30 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
 
         // Streaks are at fixed seed positions, flickering independently
         for (int i = 0; i < STREAK_COUNT; i++) {
-            float seed  = i * 1.37f + 0.5f;
+            float seed = i * 1.37f + 0.5f;
             float xFrac = (seed % 1.0f);
-            float xPos  = xFrac * sw;
+            float xPos = xFrac * sw;
             float width = sw * (0.05f + (((seed * 7.3f) % 1f) * 0.15f));
             float aFlic = streakA * (0.6f + 0.4f * (float) Math.sin(elapsed * (3f + seed * 2f)));
 
             // Bottom streak
             GL11.glBegin(GL11.GL_QUADS);
             GL11.glColor4f(1f, 0.4f, 0.05f, aFlic);
-            GL11.glVertex2f(xPos,         0f);
+            GL11.glVertex2f(xPos, 0f);
             GL11.glVertex2f(xPos + width, 0f);
             GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, 0f);
             GL11.glVertex2f(xPos + width, streakH);
-            GL11.glVertex2f(xPos,         streakH);
+            GL11.glVertex2f(xPos, streakH);
             GL11.glEnd();
 
             // Top streak (mirrored)
             GL11.glBegin(GL11.GL_QUADS);
             GL11.glColor4f(0f, 0f, 0f, 0f);
-            GL11.glVertex2f(xPos,         sh - streakH);
+            GL11.glVertex2f(xPos, sh - streakH);
             GL11.glVertex2f(xPos + width, sh - streakH);
             GL11.glColor4f(1f, 0.4f, 0.05f, aFlic);
             GL11.glVertex2f(xPos + width, sh);
-            GL11.glVertex2f(xPos,         sh);
+            GL11.glVertex2f(xPos, sh);
             GL11.glEnd();
         }
 
@@ -201,9 +214,9 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
             // Each band has a fixed Y position that drifts slowly over time
             float drift = (elapsed * (0.4f + i * 0.07f)) % 1.0f;
             float yFrac = ((i / (float) STATIC_BAND_COUNT) + drift) % 1.0f;
-            float y     = yFrac * sh;
-            float h     = 1.5f + (i % 3); // 1.5 to 4.5px thick
-            float a     = bandAlpha * (0.4f + 0.6f * (float) Math.sin(elapsed * (2f + i * 0.5f)));
+            float y = yFrac * sh;
+            float h = 1.5f + (i % 3); // 1.5 to 4.5px thick
+            float a = bandAlpha * (0.4f + 0.6f * (float) Math.sin(elapsed * (2f + i * 0.5f)));
             GL11.glColor4f(0.7f, 0.8f, 1.0f, a); // slight blue tint like CRT
             fillRect(0, y, sw, h);
         }
@@ -214,17 +227,14 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
             float h = (float) Math.random() * sh * 0.04f + 2f;
             float a = (float) Math.random() * 0.18f * intensity;
             // Alternate between darkening and brightening glitch
-            if (Math.random() < 0.5f) {
-                GL11.glColor4f(0f, 0f, 0f, a * 2f);  // dark glitch
-            } else {
-                GL11.glColor4f(0.9f, 0.85f, 1.0f, a); // bright glitch
-            }
+            GL11.glColor4f(0.9f, 0.85f, 1.0f, a); // bright glitch
+
             fillRect(0, y, sw, h);
         }
 
         // --- Random noise dots --- additive bright specks
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-        int dotCount = (int)(STATIC_NOISE_DOTS * intensity);
+        int dotCount = (int) (STATIC_NOISE_DOTS * intensity);
         for (int i = 0; i < dotCount; i++) {
             float x = (float) Math.random() * sw;
             float y = (float) Math.random() * sh;
@@ -252,11 +262,11 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
     private void vignetteBottom(float x, float y, float w, float h, float alpha) {
         GL11.glBegin(GL11.GL_QUADS);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, alpha);
-        GL11.glVertex2f(x,     y);
+        GL11.glVertex2f(x, y);
         GL11.glVertex2f(x + w, y);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, 0f);
         GL11.glVertex2f(x + w, y + h);
-        GL11.glVertex2f(x,     y + h);
+        GL11.glVertex2f(x, y + h);
         GL11.glEnd();
     }
 
@@ -264,11 +274,11 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
     private void vignetteTop(float x, float y, float w, float h, float alpha) {
         GL11.glBegin(GL11.GL_QUADS);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, 0f);
-        GL11.glVertex2f(x,     y);
+        GL11.glVertex2f(x, y);
         GL11.glVertex2f(x + w, y);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, alpha);
         GL11.glVertex2f(x + w, y + h);
-        GL11.glVertex2f(x,     y + h);
+        GL11.glVertex2f(x, y + h);
         GL11.glEnd();
     }
 
@@ -276,12 +286,12 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
     private void vignetteLeft(float x, float y, float w, float h, float alpha) {
         GL11.glBegin(GL11.GL_QUADS);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, alpha);
-        GL11.glVertex2f(x,     y);
+        GL11.glVertex2f(x, y);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, 0f);
         GL11.glVertex2f(x + w, y);
         GL11.glVertex2f(x + w, y + h);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, alpha);
-        GL11.glVertex2f(x,     y + h);
+        GL11.glVertex2f(x, y + h);
         GL11.glEnd();
     }
 
@@ -289,21 +299,21 @@ public class armaa_ReentryEffect extends BaseCombatLayeredRenderingPlugin {
     private void vignetteRight(float x, float y, float w, float h, float alpha) {
         GL11.glBegin(GL11.GL_QUADS);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, 0f);
-        GL11.glVertex2f(x,     y);
+        GL11.glVertex2f(x, y);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, alpha);
         GL11.glVertex2f(x + w, y);
         GL11.glVertex2f(x + w, y + h);
         GL11.glColor4f(VIGNETTE_R, VIGNETTE_G, VIGNETTE_B, 0f);
-        GL11.glVertex2f(x,     y + h);
+        GL11.glVertex2f(x, y + h);
         GL11.glEnd();
     }
 
     private void fillRect(float x, float y, float w, float h) {
         GL11.glBegin(GL11.GL_QUADS);
-        GL11.glVertex2f(x,     y);
+        GL11.glVertex2f(x, y);
         GL11.glVertex2f(x + w, y);
         GL11.glVertex2f(x + w, y + h);
-        GL11.glVertex2f(x,     y + h);
+        GL11.glVertex2f(x, y + h);
         GL11.glEnd();
     }
 

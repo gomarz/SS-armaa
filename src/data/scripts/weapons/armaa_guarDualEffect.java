@@ -233,9 +233,8 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 else if (forcedToMech && isRobot && !ship.getFluxTracker().isVenting() && ship.getFluxLevel() == 0) {
                     transforming = true;
                     forcedToMech = false;
-                } else if (ship.isFighter() && Math.random() < 0.40f && transformInterval.intervalElapsed()) {
-                    transforming = true;
                 }
+                handleFighterAI(engine);
                 if (transforming) {
                     Global.getSoundPlayer().playSound("mechmoveRev", MathUtils.getRandomNumberInRange(1.1f, 1.25f), 1f, ship.getLocation(), ship.getVelocity());
                 }
@@ -580,4 +579,42 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
         cleared = true;
         ship.syncWeaponDecalsWithArmorDamage();
     }
+private void handleFighterAI(CombatEngineAPI engine) {
+    if (!ship.isFighter() || ship.getShipAI() == null || transforming) return;
+    if (!transformInterval.intervalElapsed()) return;
+
+    ShipwideAIFlags flags = ship.getAIFlags();
+    
+    boolean inDanger = flags.hasFlag(AIFlags.HAS_INCOMING_DAMAGE);
+    for (BeamAPI beam : engine.getBeams()) {
+        if (beam.getDamageTarget() == ship) { inDanger = true; break; }
+    }
+
+    boolean missilesReady = (lMissile != null && lMissile.getAmmo() > 0 && lMissile.getCooldownRemaining() <= 0)
+                         || (rMissile != null && rMissile.getAmmo() > 0 && rMissile.getCooldownRemaining() <= 0);
+    boolean missilesSpent = (lMissile == null || lMissile.getAmmo() == 0)
+                         && (rMissile == null || rMissile.getAmmo() == 0);
+    boolean wantsToReposition = flags.hasFlag(AIFlags.BACK_OFF)
+            || flags.hasFlag(AIFlags.BACKING_OFF)
+            || flags.hasFlag(AIFlags.RUN_QUICKLY)
+            || flags.hasFlag(AIFlags.HARASS_MOVE_IN);
+    boolean closingIn = flags.hasFlag(AIFlags.PURSUING)
+            || flags.hasFlag(AIFlags.MOVEMENT_DEST);
+
+    if (isRobot) {
+        if (wantsToReposition || (missilesReady && !inDanger && ship.getFluxLevel() < 0.5f)) {
+            transforming = true;
+        }
+    } else {
+        if (inDanger || missilesSpent || (closingIn && !missilesReady)) {
+            transforming = true;
+        }
+    }
+
+    if (transforming) {
+        Global.getSoundPlayer().playSound("mechmoveRev",
+            MathUtils.getRandomNumberInRange(1.1f, 1.25f), 1f,
+            ship.getLocation(), ship.getVelocity());
+    }
+}
 }

@@ -1,7 +1,13 @@
-V3.2.7
+V3.3.0
 ------
 - Optimized VRAM usage
 - Added icon
+- switched derelict faction used in jenius to whitelisted version
+- Caymon
+	- Now carries aleste e-type
+
+	- DP: 17->20
+- added special custom procurement once at friendly rep for Sera - should pull from all unrestricted arma BPs
 - fixed Hegemony having access to base panther variant
 - fixed Mirage Shroud spawning phantoms with wrong owner
 - fixed missing tokens
