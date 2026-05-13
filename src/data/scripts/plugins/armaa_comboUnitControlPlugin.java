@@ -7,6 +7,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
+import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.input.InputEventAPI;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.lazywizard.lazylib.MathUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 /**
  *
@@ -103,7 +105,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                         toRemove.add(ship);
                         continue;
                     }
-                    boolean doubletapped = armaa_utils.isKeyDoubleTapped(ship, engine);
+                    boolean doubletapped = armaa_utils.isKeyDoubleTapped(ship, engine) || engine.getCustomData().containsKey("armaa_autoEject_"+ship.getId());
                     if (!doubletapped && engine.getPlayerShip() == ship) {
                         continue;
                     }
@@ -125,69 +127,12 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                     toRemove.add(ship);
                                     ship.resetDefaultAI();
                                 }
-                                if (doubletapped || engine.getPlayerShip() != ship && (ship.getHullLevel() < 0.50f || ship.getFluxTracker().isOverloaded())) {
-                                    for (int x = 0; x < 30; x++) {
-                                        engine.addNebulaSmokeParticle(module.getLocation(),
-                                                MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 100f), (float) Math.random() * 360f),
-                                                45f, 1.5f, .1f, 1f, MathUtils.getRandomNumberInRange(1f, 1.5f), Color.white);
-                                    }
-                                    // play some sound here
-                                    Global.getSoundPlayer().playSound("disabled_large_crit", 1f, 1f, ship.getLocation(), ZERO);
-                                    //WeaponslotAPI slot = module.
-                                    module.getFluxTracker().showOverloadFloatyIfNeeded("Emergency Purge!", Color.blue, 4f, true);
-                                    ShipVariantAPI var = module.getVariant().clone();
-                                    var.removePermaMod("armaa_dpReduction");
-                                    FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
-
-                                    //If you're one of the player's ships, we should set commander to player
-                                    //Else, default behavior
-                                    PersonAPI commander = ship.getCaptain();
-                                    if (ship.getFleetMember().getFleetData() != null) {
-                                        commander = ship.getOwner() == 0 && !ship.isAlly() ? Global.getSector().getPlayerPerson() : ship.getFleetMember().getFleetData().getCommander();
-                                    }
-                                    f.setFleetCommanderForStats(commander, ship.getFleetMember().getFleetDataForStats());
-                                    f.setCaptain(ship.getCaptain());
-                                    f.setOwner(ship.getOwner());
-                                    ship.getFleetMember().getCrewComposition().transfer(2, f.getCrewComposition());
-                                    f.getRepairTracker().setCR(Math.min(1f, ship.getCRAtDeployment()));
-                                    f.updateStats();
-                                    if (ship.getOwner() == 0 && !ship.isAlly()) {
-                                        engine.getFleetManager(ship.getOwner()).addToReserves(f);
-                                        if (module.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
-                                            ship.getFleetMember().getFleetData().removeFleetMember(module.getFleetMember());
-                                        }
-                                    }
-                                    ShipAPI s = null;
-                                    engine.getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(true);
-                                    s = engine.getFleetManager(ship.getOwner()).spawnFleetMember(f, module.getLocation(), module.getFacing(), 0f);
-                                    engine.getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(false);
-                                    s.setCurrentCR(ship.getCRAtDeployment());
-                                    s.addListener(new armaa_comboUnitListener(s, module));
-                                    if (ship.isAlly()) {
-                                        s.setAlly(true);
-                                    }
-                                    s.setHitpoints(module.getHitpoints());
-                                    if (engine.getPlayerShip() == ship) {
-                                        engine.setShipPlayerLastTransferredCommandTo(s);
-                                        engine.setPlayerShipExternal(s);
-                                    }
-
-                                    //module.fadeToColor(module, new Color(0, 0, 0, 0), 1f, 1f, 1f);
-                                    s.setControlsLocked(false);
-                                    f = null;
+                                if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f)) {
+                                    ShipAPI s = createShipFromModule(ship, module, engine);
+                                    //toRemove.add(ship);
                                     if (!engine.isSimulation() && ship.getOwner() == 0 && !ship.isAlly()) {
                                         putMapping(s, module.getFleetMember());
                                     }
-
-                                    ship.setControlsLocked(true);
-                                    module.setControlsLocked(true);
-                                    module.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
-                                    module.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
-                                    if (s.getCaptain() != ship.getCaptain()) {
-                                        s.setCaptain(ship.getCaptain());
-                                    }
-                                    ship.setCaptain(null);
-                                    //toRemove.add(ship);
                                 }
                             }
                         }
@@ -199,6 +144,69 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
             cataphrachtii.removeAll(toRemove);
         }
 
+    }
+
+    public static ShipAPI createShipFromModule(ShipAPI ship, ShipAPI module, CombatEngineAPI engine) {
+        for (int x = 0; x < 30; x++) {
+            engine.addNebulaSmokeParticle(module.getLocation(),
+                    MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 100f), (float) Math.random() * 360f),
+                    45f, 1.5f, .1f, 1f, MathUtils.getRandomNumberInRange(1f, 1.5f), Color.white);
+        }
+        // play some sound here
+        Global.getSoundPlayer().playSound("disabled_large_crit", 1f, 1f, ship.getLocation(), ZERO);
+        //WeaponslotAPI slot = module.
+        module.getFluxTracker().showOverloadFloatyIfNeeded("Emergency Purge!", Color.blue, 4f, true);
+        ShipVariantAPI var = module.getVariant().clone();
+        var.removePermaMod("armaa_dpReduction");
+        FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
+
+        //If you're one of the player's ships, we should set commander to player
+        //Else, default behavior
+        PersonAPI commander = ship.getCaptain();
+        if (ship.getFleetMember().getFleetData() != null) {
+            commander = ship.getOwner() == 0 && !ship.isAlly() ? Global.getSector().getPlayerPerson() : ship.getFleetMember().getFleetData().getCommander();
+        }
+        f.setFleetCommanderForStats(commander, ship.getFleetMember().getFleetDataForStats());
+        f.setCaptain(ship.getCaptain());
+        f.setOwner(ship.getOwner());
+        ship.getFleetMember().getCrewComposition().transfer(2, f.getCrewComposition());
+        f.getRepairTracker().setCR(Math.min(1f, ship.getCRAtDeployment()));
+        f.updateStats();
+        if (ship.getOwner() == 0 && !ship.isAlly()) {
+            engine.getFleetManager(ship.getOwner()).addToReserves(f);
+            if (module.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
+                ship.getFleetMember().getFleetData().removeFleetMember(module.getFleetMember());
+            }
+        }
+        ShipAPI s = null;
+        engine.getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(true);
+        s = engine.getFleetManager(ship.getOwner()).spawnFleetMember(f, module.getLocation(), module.getFacing(), 0f);
+        f = null;
+        engine.getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(false);
+        s.setCurrentCR(ship.getCRAtDeployment());
+        s.addListener(new armaa_comboUnitListener(s, module));
+        if (ship.isAlly()) {
+            s.setAlly(true);
+        }
+        s.setHitpoints(module.getHitpoints());
+        if (engine.getPlayerShip() == ship) {
+            engine.setShipPlayerLastTransferredCommandTo(s);
+            engine.setPlayerShipExternal(s);
+        }
+
+        //module.fadeToColor(module, new Color(0, 0, 0, 0), 1f, 1f, 1f);
+        s.setControlsLocked(false);
+        if (!ship.getVariant().hasHullMod("neural_interface")) {
+            ship.setControlsLocked(true);
+        }
+        module.setControlsLocked(true);
+        module.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
+        module.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
+        if (s.getCaptain() != ship.getCaptain()) {
+            s.setCaptain(ship.getCaptain());
+        }
+        ship.setCaptain(null);
+        return s;
     }
 
     protected static class armaa_comboUnitListener implements AdvanceableListener {
@@ -217,6 +225,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
             if (Global.getCombatEngine().isEntityInPlay(ship)) {
                 trueShip.fadeToColor(trueShip, new Color(0, 0, 0, 0), 1f, amount, 1f);
             }
+            //redock logic
             if (ship.getShipTarget() != null && ship.getShipTarget().getOwner() == ship.getOwner()) {
                 ShipAPI target = ship.getShipTarget();
                 if (target.getVariant().hasHullMod("armaa_comboUnit")) {

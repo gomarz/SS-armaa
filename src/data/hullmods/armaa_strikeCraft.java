@@ -10,7 +10,6 @@ import com.fs.starfarer.api.characters.*;
 import com.fs.starfarer.api.ui.UIPanelAPI;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.campaign.FleetDataAPI;
-import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.ui.Alignment;
@@ -32,7 +31,6 @@ import data.scripts.util.armaa_strikeCraftRepairTracker;
 import data.scripts.MechaModPlugin;
 import org.magiclib.util.MagicRender;
 import org.magiclib.util.MagicIncompatibleHullmods;
-import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_strikeCraft extends BaseHullMod {
 
@@ -527,7 +525,8 @@ public class armaa_strikeCraft extends BaseHullMod {
         if (Global.getCombatEngine().isPaused()) {
             return;
         }
-
+        if(ship.isStationModule())
+            return;
         if (ship.getShipAI() == null && Global.getCombatEngine().getPlayerShip() == ship) {
             Global.getCombatEngine().getCustomData().remove("armaa_strikecraftisLanding" + ship.getId());
         }

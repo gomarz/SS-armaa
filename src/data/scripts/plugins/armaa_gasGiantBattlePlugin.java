@@ -36,6 +36,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
     // 1 - 100% HP
     private boolean playedMusic, playedMusicSt2 = false;
     private boolean bossSpawn = false;
+    private boolean bossSpawning = false;
     private float initialStr = 0f;
     private float currentStr = 99999f;
     private boolean collapsing, collapseBegan, collapsed, collapsedAftermath = false;
@@ -477,8 +478,13 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                             CombatEngineLayers.CLOUD_LAYER
                     );
                 }
-                if (!bossSpawn && engine.getFleetManager(1).getCurrStrength() <= 0) {
+                if (!bossSpawn && engine.getFleetManager(1).getCurrStrength() <= 0 || bossSpawning) {
                     //start moving tessie to the foreground
+                    if(!bossSpawning)
+                    {
+                        bossSpawning = true;
+                        engine.getFleetManager(1).spawnShipOrWing("aspect_shock_wing", new Vector2f(-10000,-10000), size);
+                    }
                     bossInterval.advance(amount);
                     if (bossInterval.intervalElapsed() || bossRatio >= 0.90f) {
                         bossSpawn = true;

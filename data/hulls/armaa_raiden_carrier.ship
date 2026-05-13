@@ -20,8 +20,6 @@
     "E_RSHOULDER": "armaa_raiden_rightPauldron"
   },
   "builtInWings": [
-    "armaa_bit_wing",
-    "armaa_bit_wing"
   ],
   "weaponSlots": [
     {

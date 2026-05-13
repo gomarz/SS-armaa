@@ -1,31 +1,20 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamageType;
-import com.fs.starfarer.api.combat.DamagingProjectileAPI;
-import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
-import com.fs.starfarer.api.combat.MissileAPI;
-import com.fs.starfarer.api.combat.OnFireEffectPlugin;
-import com.fs.starfarer.api.combat.ShieldAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipCommand;
-import com.fs.starfarer.api.combat.ShipwideAIFlags;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.util.armaa_guardualBladeParticleEffect;
+import data.scripts.util.armaa_utils;
+import org.magiclib.util.MagicAnim;
+import org.magiclib.util.MagicFakeBeam;
 import org.magiclib.util.MagicLensFlare;
 import java.awt.Color;
 import java.util.ArrayList;
-import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicAnim;
-import org.magiclib.util.MagicFakeBeam;
 
 public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
 
@@ -37,47 +26,22 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
     private boolean swinging = false;
     private boolean cooldownR = false;
     private boolean beamFired = false;
-    private IntervalUtil animInterval = new IntervalUtil(0.012f, 0.012f);
-    private ArrayList<CombatEntityAPI> targets = new ArrayList();
+    private final IntervalUtil animInterval = new IntervalUtil(0.012f, 0.012f);
+    private final ArrayList<CombatEntityAPI> targets = new ArrayList<>();
     private final float TORSO_OFFSET = -45;
 
-    public void init() {        
+    public void init() {
         runOnce = true;
         for (WeaponAPI w : ship.getAllWeapons()) {
             switch (w.getSlot().getId()) {
                 case "B_TORSO":
-                    if (torso == null) {
-                        torso = w;
-                        limbInit++;
-                    }
+                    if (torso == null) { torso = w; limbInit++; }
                     break;
                 case "D_PAULDRONR":
-                    if (pauldronR == null) {
-                        pauldronR = w;
-                        pauldronR.getSprite().getCenterY();
-                        limbInit++;
-                    }
+                    if (pauldronR == null) { pauldronR = w; limbInit++; }
                     break;
             }
         }
-    }
-
-    public boolean getWeaponSide(Vector2f center, float facing, Vector2f weaponPosition) {
-        // Calculate forward direction vector
-        float facingRadians = (float) Math.toRadians(facing);
-        Vector2f forward = new Vector2f((float) Math.cos(facingRadians), (float) Math.sin(facingRadians));
-
-        // Calculate relative vector from center to weapon
-        Vector2f centerToWeapon = new Vector2f(weaponPosition.x - center.x, weaponPosition.y - center.y);
-
-        // Compute cross product
-        float crossProduct = forward.x * centerToWeapon.y - forward.y * centerToWeapon.x;
-
-        // Determine side
-        if (crossProduct > 0) {
-            return true;
-        }
-        return false;
     }
 
     @Override
@@ -85,235 +49,176 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
         ship = weapon.getShip();
         if (!runOnce) {
             init();
-            weapon.ensureClonedSpec();    
+            weapon.ensureClonedSpec();
         }
 
-        if (engine.isPaused()) {
-            return;
-        }
-        if (!ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.BACKING_OFF) && !ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.DO_NOT_PURSUE)) {
-            if (ship.getShipTarget() != null && MathUtils.getDistance(ship, ship.getShipTarget()) < 500 && !weapon.isDisabled()) {
-                if (ship.getAI() != null) {
-                    ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
-                    engine.headInDirectionWithoutTurning(ship, weapon.getCurrAngle(), ship.getMaxSpeed());
-                }
+        if (engine.isPaused()) return;
+
+        // AI movement push
+        if (!ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.BACKING_OFF)
+                && !ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.DO_NOT_PURSUE)) {
+            if (ship.getShipTarget() != null
+                    && MathUtils.getDistance(ship, ship.getShipTarget()) < 500
+                    && !weapon.isDisabled()
+                    && ship.getAI() != null) {
+                ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
+                engine.headInDirectionWithoutTurning(ship, weapon.getCurrAngle(), ship.getMaxSpeed());
             }
-        }        
+        }
 
-        float sineC = 0f;
-        float global = ship.getFacing();
-        // this might be useful for better aim
-        float aim = MathUtils.getShortestRotation(global, weapon.getCurrAngle());
+        if (ship.getFluxTracker().isOverloadedOrVenting()) return;
 
-        if (weapon != null) {
-            if (weapon.getChargeLevel() < 1) {
-                sineC = MagicAnim.smoothNormalizeRange(weapon.getChargeLevel(), 0.3f, 0.9f);
-                MagicAnim.smoothNormalizeRange(weapon.getChargeLevel(), 0.3f, 1f);
+        float sineC;
+        if (weapon.getChargeLevel() < 1f) {
+            sineC = MagicAnim.smoothNormalizeRange(weapon.getChargeLevel(), 0.3f, 0.9f);
+        } else {
+            sineC = 1f;
+        }
+
+        boolean leftie = armaa_utils.getWeaponSide(ship.getLocation(), ship.getFacing(), weapon.getLocation());
+        float mult = leftie ? 1f : -1f;
+
+        if (weapon.getCooldownRemaining() <= 0f && !weapon.isFiring()) {
+            cooldownR = false;
+        }
+
+        if (!swinging && !cooldownR && weapon.getChargeLevel() > 0f) {
+            weapon.setCurrAngle(weapon.getCurrAngle() + (sineC * (mult * TORSO_OFFSET) * 0.30f) * weapon.getChargeLevel());
+        }
+
+        if (weapon.getChargeLevel() >= 1f) {
+            swinging = true;
+        }
+
+        if (swinging && Math.abs(weapon.getCurrAngle() - (ship.getFacing() - (mult * 45f))) > 0.1f) {
+            animInterval.advance(amount);
+            if (mult == 1f) {
+                weapon.setCurrAngle((float) Math.min(weapon.getCurrAngle() + swingLevel, weapon.getCurrAngle() + weapon.getArc() / 2f));
             } else {
-                sineC = 1;
-            }
-            boolean leftie = getWeaponSide(ship.getLocation(), ship.getFacing(), weapon.getLocation());
-            float mult = -1f;
-            if (leftie) {
-                mult = 1f;
-            }
-            if (weapon.getCooldownRemaining() <= 0f && !weapon.isFiring()) {
-                cooldownR = false;
-            }
-
-            if (!swinging && !cooldownR && weapon.getChargeLevel() > 0f) {
-                weapon.setCurrAngle(weapon.getCurrAngle() + (sineC * (mult * TORSO_OFFSET) * 0.30f) * weapon.getChargeLevel());
-            }
-            if (weapon.getChargeLevel() >= 1f) {
-                swinging = true;
-            }
-
-            if (swinging && Math.abs(weapon.getCurrAngle() - (weapon.getShip().getFacing() - (mult * 45f))) > 0.1f) {
-                animInterval.advance(amount);
-
-                if (mult == 1) {
-                    // Left swing: use min to limit the angle correctly
-                    weapon.setCurrAngle((float) Math.min(weapon.getCurrAngle() + swingLevel, weapon.getCurrAngle() + weapon.getArc() / 2));
-                } else {
-                    // Right swing: use max to limit the angle correctly
-                    weapon.setCurrAngle((float) Math.max(weapon.getCurrAngle() - swingLevel, weapon.getCurrAngle() - weapon.getArc() / 2));
-                }
-            }
-
-            if (swinging == true && (weapon.getChargeLevel() <= 0f)) {
-                swinging = false;
-                swingLevel = 0f;
-                cooldownR = true;
-            }
-
-            if (animInterval.intervalElapsed() && !beamFired) {
-                swingLevel += 0.5;
-            }
-
-            if (swingLevel > 9) {
-                swingLevel = 9;
-            }
-            if (swinging == false) {
-                swingLevel = 0f;
-            }
-            float chargeLevel = weapon.getCooldownRemaining()/weapon.getCooldown();
-            if(swingLevel >= 9 && chargeLevel > 0.5f)
-            {
-                beamFired = true;
-            }
-            if(beamFired && swingLevel > 0)
-                swingLevel-=0.25f;
-            if( chargeLevel > 0.5f && weapon.isFiring() && (!beamFired || (beamFired && swingLevel >= 5)))
-            {
-                MagicFakeBeam.spawnFakeBeam(engine, weapon.getFirePoint(0), 50f, weapon.getCurrAngle(), 20f, amount, 0.15f*chargeLevel, 20f, new Color(.9f,1f,.9f,1f*chargeLevel), new Color(0f,1f,0.75f,.9f*chargeLevel), 0f, DamageType.ENERGY, 0f, ship);
-                Vector2f point = getBeamEndpoint(weapon.getFirePoint(0),weapon.getCurrAngle(),50f);
-                for(CombatEntityAPI target : CombatUtils.getEntitiesWithinRange(weapon.getFirePoint(0), 55f))
-                {
-                    if(target instanceof DamagingProjectileAPI)
-                        continue;
-                    if(targets.contains(target))
-                        continue;
-                    if(target.getOwner() == ship.getOwner())
-                        continue;
-                    // need to be careful here and make sure
-                    // we dont spawn projs where it isnt needed
-                    if(target instanceof MissileAPI)
-                    {
-                       MissileAPI missile = (MissileAPI) target;
-                       engine.removeEntity(missile);
-                       continue;
-                    }
-                        
-                    // 1) try shield
-                    Vector2f shieldHit = intersectShield(target, weapon.getFirePoint(0), point);
-                    Vector2f targetPoint = CollisionUtils.getCollisionPoint(weapon.getFirePoint(0), point, target);                    
-                    if (shieldHit != null) {
-                        // do shield hit effects / spawn projectile at shield surface
-                        engine.spawnProjectile(ship, weapon, "armaa_alestePilebunkerLeft_s", shieldHit, weapon.getCurrAngle(), new Vector2f());
-                        targets.add(target);
-                        float variance = MathUtils.getRandomNumberInRange(-0.3f, .3f);
-                        engine.addFloatingText(point, "point", 25f, Color.yellow, null, 1f, 1f);
-                        Global.getSoundPlayer().playSound("armaa_saber_slash",1.1f+variance,1f+variance,point,new Vector2f());
-                        //continue; // tbh, could prob do if/else also
-                    }                                        
-                    else if(targetPoint != null && CollisionUtils.isPointWithinBounds(targetPoint, target))
-                    {   
-                        engine.spawnProjectile(ship, weapon, "armaa_alestePilebunkerLeft_s", targetPoint, weapon.getCurrAngle(), new Vector2f());
-                        float variance = MathUtils.getRandomNumberInRange(-0.3f, .3f);
-                        Global.getSoundPlayer().playSound("armaa_saber_slash",1.1f+variance,1f+variance,point,new Vector2f());                        
-                         engine.addFloatingText(point, "no shield point", 25f, Color.yellow, null, 1f, 1f);                       
-                        targets.add(target);
-                    }
-                }
-            }
-            
-            if (chargeLevel <= 0 && beamFired)
-            {
-                beamFired = false;
-                engine.addFloatingText(ship.getLocation(), "emptying target list", 25f, Color.yellow, null, 1f, 1f);                       
-                if(!targets.isEmpty())
-                    targets.clear();
+                weapon.setCurrAngle((float) Math.max(weapon.getCurrAngle() - swingLevel, weapon.getCurrAngle() - weapon.getArc() / 2f));
             }
         }
+
+        if (swinging && weapon.getChargeLevel() <= 0f) {
+            swinging = false;
+            swingLevel = 0f;
+            cooldownR = true;
+        }
+
+        if (animInterval.intervalElapsed() && !beamFired) {
+            swingLevel += 0.5f;
+        }
+        if (swingLevel > 9f) swingLevel = 9f;
+        if (!swinging) swingLevel = 0f;
+
+        // The dual blade uses cooldownRemaining/cooldown as its chargeLevel proxy
+        float chargeLevel = weapon.getCooldown() > 0f ? weapon.getCooldownRemaining() / weapon.getCooldown() : 0f;
+
+        if (swingLevel >= 9f && chargeLevel > 0.5f) {
+            beamFired = true;
+        }
+        if (beamFired && swingLevel > 0f) {
+            swingLevel -= 0.25f;
+        }
+
+        if (chargeLevel > 0.5f && weapon.isFiring() && (!beamFired || swingLevel >= 5f)) {
+            MagicFakeBeam.spawnFakeBeam(engine, weapon.getFirePoint(0), 50f, weapon.getCurrAngle(),
+                    20f, amount, 0.15f * chargeLevel, 20f,
+                    new Color(.9f, 1f, .9f, 1f * chargeLevel),
+                    new Color(0f, 1f, 0.75f, .9f * chargeLevel),
+                    0f, DamageType.ENERGY, 0f, ship);
+
+            Vector2f origin = weapon.getFirePoint(0);
+            Vector2f point = armaa_utils.getBeamEndpoint(origin, weapon.getCurrAngle(), 50f);
+
+            for (CombatEntityAPI target : CombatUtils.getEntitiesWithinRange(origin, 55f)) {
+                if (target.getOwner() == ship.getOwner()) continue;
+                if (targets.contains(target)) continue;
+                if (target instanceof DamagingProjectileAPI && !(target instanceof MissileAPI)) continue;
+
+                // Arc check — same early-out as naginata
+                float angleToTarget = VectorUtils.getAngle(origin, target.getLocation());
+                float diff = MathUtils.getShortestRotation(weapon.getCurrAngle(), angleToTarget);
+                if (Math.abs(diff) > weapon.getArc() * 0.5f) continue;
+
+                if (target instanceof MissileAPI) {
+                    engine.removeEntity((MissileAPI) target);
+                    continue;
+                }
+
+                if (target instanceof ShipAPI) {
+                    ShipAPI shipTarget = (ShipAPI) target;
+                    if (shipTarget.isPhased() || shipTarget.getCollisionClass() == CollisionClass.NONE) continue;
+                }
+
+                float finalDamage = weapon.getDamage().getDamage()*2f;
+                float variance = MathUtils.getRandomNumberInRange(-0.3f, 0.3f);
+
+                // 1) Shield check
+                Vector2f shieldHit = armaa_utils.intersectShield(target, origin, point);
+                if (shieldHit != null) {
+                    engine.applyDamage(target, shieldHit, finalDamage, weapon.getDamageType(), 0f, false, false, ship, true);
+                    Global.getSoundPlayer().playSound("armaa_saber_slash", 1.1f + variance, 1f + variance, shieldHit, new Vector2f());
+                    MagicLensFlare.createSharpFlare(engine, ship, shieldHit, 4f, 150f, weapon.getCurrAngle(),
+                            new Color(0, 255, 0, 150), new Color(200, 255, 200, 255));
+                    targets.add(target);
+                    continue;
+                }
+
+                // 2) Hull precise check
+                Vector2f hullHit = armaa_utils.preciseHitCheck(weapon, target);
+                if (hullHit != null) {
+                    engine.applyDamage(target, hullHit, finalDamage, weapon.getDamageType(), 0f, false, false, ship, true);
+                    Global.getSoundPlayer().playSound("armaa_saber_slash", 1.1f + variance, 1f + variance, hullHit, new Vector2f());
+                    MagicLensFlare.createSharpFlare(engine, ship, hullHit, 4f, 150f, weapon.getCurrAngle(),
+                            new Color(0, 255, 0, 150), new Color(200, 255, 200, 255));
+                    targets.add(target);
+                }
+            }
+        }
+
+        if (chargeLevel <= 0f && beamFired) {
+            beamFired = false;
+            targets.clear();
+        }
     }
-    //Probably a func for this in lazy lib, but fug it
-    public Vector2f getBeamEndpoint(Vector2f origin, float angleRadians, float length) {
-        float dx = length * (float) Math.cos(angleRadians);
-        float dy = length * (float) Math.sin(angleRadians);
-        return new Vector2f(origin.x + dx, origin.y + dy);
-    }
-    
+
     @Override
     public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) {
-        String weaponId = "armaa_guardual_bs_arm_left_bullet";
         projectile.setDamageAmount(0f);
         Vector2f vector = projectile.getVelocity();
         Vector2f loc = weapon.getFirePoint(0);
 
-        MagicLensFlare.createSharpFlare(
-                engine,
-                weapon.getShip(),
-                projectile.getLocation(),
-                4f,
-                150f,
-                projectile.getFacing(),
-                new Color (0,255,0,150),
-                new Color(200,255,200,255)
-        );
-            engine.spawnExplosion(weapon.getLocation(), new Vector2f(), new Color (0,111,50,150), 75f, 0.25f);
-            engine.spawnExplosion(weapon.getLocation(), new Vector2f(), Color.white, 25f, .1f);
-            engine.addNebulaParticle(projectile.getLocation(),
-                    new Vector2f(),
-                    20f * (0.75f + (float) Math.random() * 0.5f),
-                    5f + 3f * Misc.getHitGlowSize(100f, projectile.getDamage().getBaseDamage(),null ) / 100f,
-                    0f,
-                    0f,
-                    1f,
-                    new Color (41,239,111,150),
-                    true);
-        engine.addNebulaSmoothParticle(loc, vector, 25f * 4f, 1.5f, 0.5f, 1f, 1f, new Color (0,111,50,150), true);
-        float targetArc = weapon.distanceFromArc(ship.getMouseTarget()) == 0 ? VectorUtils.getAngle(weapon.getFirePoint(0),ship.getMouseTarget()) : ship.getFacing(); 
-        DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, weaponId, weapon.getFirePoint(0),targetArc, weapon.getShip().getVelocity());
+        MagicLensFlare.createSharpFlare(engine, weapon.getShip(), projectile.getLocation(),
+                4f, 150f, projectile.getFacing(),
+                new Color(0, 255, 0, 150), new Color(200, 255, 200, 255));
+        engine.spawnExplosion(weapon.getLocation(), new Vector2f(), new Color(0, 111, 50, 150), 75f, 0.25f);
+        engine.spawnExplosion(weapon.getLocation(), new Vector2f(), Color.white, 25f, 0.1f);
+        engine.addNebulaParticle(projectile.getLocation(), new Vector2f(),
+                20f * (0.75f + (float) Math.random() * 0.5f),
+                5f + 3f * Misc.getHitGlowSize(100f, projectile.getDamage().getBaseDamage(), null) / 100f,
+                0f, 0f, 1f, new Color(41, 239, 111, 150), true);
+        engine.addNebulaSmoothParticle(loc, vector, 100f, 1.5f, 0.5f, 1f, 1f, new Color(0, 111, 50, 150), true);
+
+        float targetArc = weapon.distanceFromArc(ship.getMouseTarget()) == 0
+                ? VectorUtils.getAngle(weapon.getFirePoint(0), ship.getMouseTarget())
+                : ship.getFacing();
+        DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(
+                ship, weapon, "armaa_guardual_bs_arm_left_bullet",
+                weapon.getFirePoint(0), targetArc, ship.getVelocity());
+
         for (int i = 0; i < 10; i++) {
             float angle = (float) (Math.random() * 360f);
-            float dx = (float) Math.cos(Math.toRadians(angle));
-            float dy = (float) Math.sin(Math.toRadians(angle));
-            Vector2f dir = new Vector2f(dx, dy);
-            float speed = 150f + (float) Math.random() * 150f; // tweak these numbers
-            Vector2f vel = new Vector2f(dir.x * speed, dir.y * speed);
-            engine.addHitParticle(weapon.getFirePoint(0), vel, (float)Math.random()*10f, 1f, 1f, Color.green);
-        }        
-        engine.spawnEmpArcVisual(weapon.getFirePoint(0), null, proj.getLocation(), null, 25f, new Color (0,111,50,150), Color.white);        
+            float speed = 150f + (float) Math.random() * 150f;
+            Vector2f vel = new Vector2f(
+                    (float) Math.cos(Math.toRadians(angle)) * speed,
+                    (float) Math.sin(Math.toRadians(angle)) * speed);
+            engine.addHitParticle(weapon.getFirePoint(0), vel, (float) Math.random() * 10f, 1f, 1f, Color.green);
+        }
+
+        engine.spawnEmpArcVisual(weapon.getFirePoint(0), null, proj.getLocation(), null,
+                25f, new Color(0, 111, 50, 150), Color.white);
         engine.addPlugin(new armaa_guardualBladeParticleEffect(proj));
         engine.removeEntity(projectile);
     }
-    
-    /** Returns the first intersection point of segment [A,B] with target's shield, or null if no shield hit. */
-    public static Vector2f intersectShield(CombatEntityAPI target, Vector2f A, Vector2f B) {
-        if (target == null) return null;
-        if(!(target instanceof ShipAPI))
-            return null;
-        ShieldAPI sh = target.getShield();
-        if (sh == null || sh.isOff() || sh.getActiveArc() <= 0f) return null;
-
-        // Shield circle
-        final Vector2f C = sh.getLocation();   // center
-        final float R = sh.getRadius();        // radius
-
-        // Segment parametric: P(t) = A + t*(B - A), t in [0,1]
-        final float dx = B.x - A.x;
-        final float dy = B.y - A.y;
-
-        // Solve |A + t*d - C|^2 = R^2  =>  (d·d) t^2 + 2 d·(A-C) t + |A-C|^2 - R^2 = 0
-        final float fx = A.x - C.x;
-        final float fy = A.y - C.y;
-
-        final float a = dx*dx + dy*dy;
-        final float b = 2f * (dx*fx + dy*fy);
-        final float c = fx*fx + fy*fy - R*R;
-
-        final float disc = b*b - 4f*a*c;
-        if (disc < 0f || a <= 1e-6f) return null; // no intersection or degenerate segment
-
-        final float s = (float) Math.sqrt(disc);
-        // two roots, pick the closest valid t in [0,1]
-        float t1 = (-b - s) / (2f * a);
-        float t2 = (-b + s) / (2f * a);
-
-        Float bestT = null;
-        if (t1 >= 0f && t1 <= 1f) bestT = t1;
-        if (t2 >= 0f && t2 <= 1f) {
-            if (bestT == null || t2 < bestT) bestT = t2;
-        }
-        if (bestT == null) return null;
-
-        Vector2f hit = new Vector2f(A.x + dx * bestT, A.y + dy * bestT);
-
-        // Verify the point lies within the shield's current arc
-        if (!sh.isWithinArc(hit)) return null;
-
-        return hit;
-    }
-    
-
 }

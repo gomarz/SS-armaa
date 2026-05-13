@@ -1,14 +1,11 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamageAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
-import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
 import data.scripts.util.armaa_utils;
 import org.lwjgl.util.vector.Vector2f;
@@ -32,13 +29,13 @@ public class armaa_linkedSystems implements EveryFrameWeaponEffectPlugin {
     private float lastArmorFraction = 1f;
     private float regenPauseTimer = REGEN_PAUSE_DURATION;
 
-    private class ShieldModuleDeathListener implements AdvanceableListener, HullDamageAboutToBeTakenListener {
+    private class armaa_ShieldModuleDeathListener implements AdvanceableListener, HullDamageAboutToBeTakenListener {
 
         private final ShipAPI module;
         private final ShipAPI parent;
         private final String key;
 
-        ShieldModuleDeathListener(ShipAPI module, ShipAPI parent, String key) {
+        armaa_ShieldModuleDeathListener(ShipAPI module, ShipAPI parent, String key) {
             this.module = module;
             this.parent = parent;
             this.key = key;
@@ -83,7 +80,7 @@ public class armaa_linkedSystems implements EveryFrameWeaponEffectPlugin {
         }
 
         if (!listenerAdded) {
-            parent.addListener(new ShieldModuleDeathListener(ship, parent, SHIELD_KEY));
+            parent.addListener(new armaa_ShieldModuleDeathListener(ship, parent, SHIELD_KEY));
             listenerAdded = true;
         }
 

@@ -80,7 +80,7 @@ public class armaa_morganaBeam implements BeamEffectPlugin {
     private boolean runOnce = false;
     private boolean wasZero = true;
     private boolean firstStrike = false;
-    private final IntervalUtil fireInterval = new IntervalUtil(0.6f, 0.6f);
+    private final IntervalUtil fireInterval = new IntervalUtil(1.2f, 1.2f);
 
     // ── Helpers ──────────────────────────────────────────────────────────────
     private Vector2f getMuzzlePos(WeaponAPI weapon) {
@@ -293,7 +293,7 @@ public class armaa_morganaBeam implements BeamEffectPlugin {
                                 DistortionShader.addDistortion(ripple);
                             }
                             firstStrike = true;
-                            engine.applyDamage(target, beam.getTo(), beam.getDamage().getDamage() * 0.25f, DamageType.KINETIC, 0f, false, false, ship);
+                            engine.applyDamage(target, beam.getTo(), beam.getDamage().getDamage() * 0.05f, DamageType.KINETIC, 0f, false, false, ship);
                             Global.getSoundPlayer().playSound("hit_shield_heavy_gun", 1f, 1f, beam.getTo(), new Vector2f());
                         }
                     //}

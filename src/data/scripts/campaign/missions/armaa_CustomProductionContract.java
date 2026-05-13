@@ -157,7 +157,7 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
 
         armsDealer = getPerson().hasTag(Tags.CONTACT_UNDERWORLD);
 
-        maxCapacity = getRoundNumber(MIN_CAPACITY + (MAX_CAPACITY - MIN_CAPACITY) * getQuality());
+        maxCapacity = getRoundNumber(MIN_CAPACITY + (MAX_CAPACITY - MIN_CAPACITY) * getQuality()*(person.getRelToPlayer().getRel()+1f));
 
         float capMult = market.getCommodityData(Commodities.SHIPS).getMaxSupply() / MAX_PROD_CAPACITY_AT_SHIP_UNITS;
         if (capMult > 1) {
@@ -391,7 +391,7 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
         }
 
         if (add[2]) {
-            WeightedRandomPicker<String> picker = new WeightedRandomPicker<String>(genRandom);
+            WeightedRandomPicker<String> picker = new WeightedRandomPicker<String>(genRandom);      
             for (FighterWingSpecAPI spec : Global.getSettings().getAllFighterWingSpecs()) {
                 //if (!spec.hasTag(Items.TAG_RARE_BP) && !spec.hasTag(Items.TAG_DEALER)) continue;
 //				if (spec.hasTag(Tags.NO_DROP)) continue;
@@ -422,8 +422,6 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             for (int i = 0; i < num && !picker.isEmpty(); i++) {
                 fighters.add(picker.pickAndRemove());
             }
-            if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
-                fighters.add(Global.getSettings().getFighterWingSpec("armaa_guardual_wing").getId());
         }
     }
 
@@ -439,6 +437,10 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             //if (spec.isDHull()) continue;
             ships.add(id);
         }
+             if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
+             {
+                ships.add("armaa_panther_frig");   
+             }
         for (String id : faction.getKnownWeapons()) {
             WeaponSpecAPI spec = Global.getSettings().getWeaponSpec(id);
             if (spec.hasTag(Tags.NO_DROP)) {
@@ -449,6 +451,7 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             }
             weapons.add(id);
         }
+
         for (String id : faction.getKnownFighters()) {
             FighterWingSpecAPI spec = Global.getSettings().getFighterWingSpec(id);
             if (spec.hasTag(Tags.NO_DROP)) {
@@ -459,6 +462,8 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             }
             fighters.add(id);
         }
+            if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
+                fighters.add("armaa_guardual_wing");        
     }
 
     protected void updateInteractionDataImpl() {

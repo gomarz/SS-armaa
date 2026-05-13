@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   "displayArcRadius": 250,
-  "fireSoundTwo": "vulcan_fire",
+  "fireSoundTwo": "vulcan_cannon_fire",
   "hardpointAngleOffsets": [
     0
   ],

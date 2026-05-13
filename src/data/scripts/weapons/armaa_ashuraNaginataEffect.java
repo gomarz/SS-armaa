@@ -139,7 +139,7 @@ public class armaa_ashuraNaginataEffect implements EveryFrameWeaponEffectPlugin,
                 float angDeg = weapon.getCurrAngle();
                 Vector2f origin = new Vector2f(weapon.getFirePoint(0));
 
-                Vector2f point = getBeamEndpoint(origin, (float) Math.toRadians(angDeg), weapon.getRange() + 10f);
+                Vector2f point = armaa_utils.getBeamEndpoint(origin, (float) Math.toRadians(angDeg), weapon.getRange() + 10f);
 
                 //Vector2f point = getBeamEndpoint(weapon.getFirePoint(0), weapon.getCurrAngle(), weapon.getRange());
                 if (MagicRender.screenCheck(0.2f, weapon.getFirePoint(0)) && trailInterval.intervalElapsed()) {
@@ -189,7 +189,7 @@ public class armaa_ashuraNaginataEffect implements EveryFrameWeaponEffectPlugin,
                     // we dont spawn projs where it isnt needed
                     if (target instanceof MissileAPI) {
                         MissileAPI missile = (MissileAPI) target;
-                        if (preciseHitCheck(weapon, target) != null) {
+                        if (armaa_utils.preciseHitCheck(weapon, target) != null) {
                             MagicLensFlare.createSharpFlare(
                                     Global.getCombatEngine(),
                                     ship,
@@ -212,7 +212,7 @@ public class armaa_ashuraNaginataEffect implements EveryFrameWeaponEffectPlugin,
                     }
                     // only precise check where its needed
                     // 1) try shield. dont need to be precise here since shield is a bubble
-                    Vector2f shieldHit = intersectShield(target, weapon.getFirePoint(0), point);
+                    Vector2f shieldHit = armaa_utils.intersectShield(target, weapon.getFirePoint(0), point);
                     if (shieldHit != null) {
                         engine.applyDamage(target, shieldHit, weapon.getDamage().getDamage(), weapon.getDamageType(), 0f, false, false, ship, true);
                         falseOnHit(weapon, target, shieldHit);
@@ -232,7 +232,7 @@ public class armaa_ashuraNaginataEffect implements EveryFrameWeaponEffectPlugin,
                         continue;
 
                     }
-                    Vector2f preciseHit = preciseHitCheck(weapon, target);
+                    Vector2f preciseHit = armaa_utils.preciseHitCheck(weapon, target);
                     if (preciseHit != null) {
                         engine.applyDamage(target, preciseHit, weapon.getDamage().getDamage(), weapon.getDamageType(), 0f, false, false, ship, true);
                         falseOnHit(weapon, target, preciseHit);
@@ -284,76 +284,12 @@ public class armaa_ashuraNaginataEffect implements EveryFrameWeaponEffectPlugin,
         }
     }
 
-    //Probably a func for this in lazy lib, but fug it
-    public Vector2f getBeamEndpoint(Vector2f origin, float angleRadians, float length) {
-        float dx = length * (float) Math.cos(angleRadians);
-        float dy = length * (float) Math.sin(angleRadians);
-        return new Vector2f(origin.x + dx, origin.y + dy);
-    }
 
     /**
      * Returns the first intersection point of segment [A,B] with target's
      * shield, or null if no shield hit.
      */
-    public static Vector2f intersectShield(CombatEntityAPI target, Vector2f A, Vector2f B) {
-        if (target == null) {
-            return null;
-        }
-        if (!(target instanceof ShipAPI)) {
-            return null;
-        }
-        ShieldAPI sh = target.getShield();
-        if (sh == null || sh.isOff() || sh.getActiveArc() <= 0f) {
-            return null;
-        }
 
-        // Shield circle
-        final Vector2f C = sh.getLocation();
-        final float R = sh.getRadius();
-
-        // Segment parametric: P(t) = A + t*(B - A), t in [0,1]
-        final float dx = B.x - A.x;
-        final float dy = B.y - A.y;
-
-        // Solve |A + t*d - C|^2 = R^2
-        final float fx = A.x - C.x;
-        final float fy = A.y - C.y;
-
-        final float a = dx * dx + dy * dy;
-        final float b = 2f * (dx * fx + dy * fy);
-        final float c = fx * fx + fy * fy - R * R;
-
-        final float disc = b * b - 4f * a * c;
-        if (disc < 0f || a <= 1e-6f) {
-            return null; // no intersection or degenerate segment
-        }
-        final float s = (float) Math.sqrt(disc);
-        // two roots, pick the closest valid t in [0,1]
-        float t1 = (-b - s) / (2f * a);
-        float t2 = (-b + s) / (2f * a);
-
-        Float bestT = null;
-        if (t1 >= 0f && t1 <= 1f) {
-            bestT = t1;
-        }
-        if (t2 >= 0f && t2 <= 1f) {
-            if (bestT == null || t2 < bestT) {
-                bestT = t2;
-            }
-        }
-        if (bestT == null) {
-            return null;
-        }
-
-        Vector2f hit = new Vector2f(A.x + dx * bestT, A.y + dy * bestT);
-
-        // Verify the point lies within the shield's current arc
-        if (!sh.isWithinArc(hit)) {
-            return null;
-        }
-
-        return hit;
-    }
     private final Color PARTICLE_COLOR = new Color(200, 200, 200);
     private final float PARTICLE_SIZE = 8f;
     private final float PARTICLE_BRIGHTNESS = 150;
@@ -441,43 +377,6 @@ public class armaa_ashuraNaginataEffect implements EveryFrameWeaponEffectPlugin,
         projectile.setCollisionClass(CollisionClass.NONE);
         projectile.setHitpoints(0f); // optional; will let engine clean it up
 
-    }
-
-    public Vector2f preciseHitCheck(WeaponAPI weapon, CombatEntityAPI target) {
-        Vector2f fire = weapon.getFirePoint(0);
-        float angDeg = weapon.getCurrAngle();
-        float angRad = (float) Math.toRadians(angDeg);
-
-        // how thick the blade is
-        float width = 18f;
-        int samples = 5;
-
-        // perpendicular vector to blade
-        Vector2f perp = new Vector2f(
-                (float) Math.cos(angRad + (float) Math.PI / 2f),
-                (float) Math.sin(angRad + (float) Math.PI / 2f)
-        );
-
-        for (int i = -samples; i <= samples; i++) {
-            float offset = (i / (float) samples) * width;
-
-            // shifted blade origin
-            Vector2f origin = new Vector2f(
-                    fire.x + perp.x * offset,
-                    fire.y + perp.y * offset
-            );
-
-            // end of blade swing ray
-            Vector2f end = getBeamEndpoint(origin, angRad, weapon.getRange() + 10f);
-
-            // 🔥 LazyLib does the hard work for us
-            Vector2f hit = CollisionUtils.getCollisionPoint(origin, end, target);
-
-            if (hit != null && CollisionUtils.isPointWithinBounds(hit, target)) {
-                return hit;
-            }
-        }
-        return null;
     }
 
     public static float distanceFromSegment(Vector2f A, Vector2f B, Vector2f P) {

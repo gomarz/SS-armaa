@@ -18,7 +18,6 @@
     "armaa_SilverSwordHM"
   ],
   "builtInWings": [
-    "armaa_bit_kshatriya_wing"
   ],
   "builtInWeapons": {
     "C_ARMR": "armaa_sprigganRightArm",
@@ -121,22 +120,22 @@
     },
     {
       "id": "WS0001",
-      "size": "MEDIUM",
-      "type": "MISSILE",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 45,
-      "locations": [-10, 25],
+      "angle": 29,
+      "locations": [-14, 16],
       "renderOrderMod": 100
     },
     {
       "id": "WS0002",
-      "size": "MEDIUM",
-      "type": "MISSILE",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -45,
-      "locations": [-10, -25],
+      "angle": -29,
+      "locations": [-14, -16],
       "renderOrderMod": 100
     },
     {

@@ -12,11 +12,12 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.util.Misc.Token;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
-import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import starship_legends.RepRecord;
+import starship_legends.hullmods.Reputation;
 
 public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
 
@@ -26,8 +27,7 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
 
         String action = params.get(0).getString(memoryMap);
         MemoryAPI memory = memoryMap.get(MemKeys.LOCAL);
-        if("hasSwappableUnit".equals(action))
-        {
+        if ("hasSwappableUnit".equals(action)) {
             for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
                     .getFleetData().getMembersListCopy()) {
                 if (member.getVariant().hasHullMod("armaa_comboUnit")) {
@@ -37,11 +37,11 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
             return false;
         }
         if ("pickCoreUnit".equals(action)) {
-            // Build core unit pool - strikecraft, not flagship
+            // Build core unit pool
             List<FleetMemberAPI> coreUnitPool = new ArrayList<>();
             for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
                     .getFleetData().getMembersListCopy()) {
-                if (member.getVariant().hasHullMod("strikeCraft") && !member.isFlagship()) {
+                if (member.getVariant().hasHullMod("strikeCraft")) {
                     coreUnitPool.add(member);
                 }
             }
@@ -135,7 +135,10 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
         // Save the current module variant from the bakraid
         ShipVariantAPI oldModuleVariant = mobileArmor.getVariant()
                 .getModuleVariant(moduleSlotId);
-
+        FleetMemberAPI oldModuleFleetMember = Global.getSettings().getModManager()
+                .isModEnabled("sun_starship_legends")
+                ? Reputation.moduleMap.get(oldModuleVariant.getHullVariantId())
+                : null;
         // Set the bakraid's module to the chosen core unit's variant
         ShipVariantAPI newModuleVariant = coreUnit.getVariant().clone();
         newModuleVariant.setSource(VariantSource.REFIT);
@@ -149,6 +152,17 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
             Global.getSector().getPlayerFleet().getFleetData()
                     .addFleetMember(returnedShip);
             returnedShip.setCaptain(maPilot);
+            mobileArmor.updateStats();
+            if (Global.getSettings().getModManager().isModEnabled("sun_starship_legends")) {
+                RepRecord.transfer(mobileArmor, returnedShip);
+                RepRecord.transfer(coreUnit, mobileArmor);
+                newModuleVariant.removePermaMod("sun_sl_notable_1");
+                //FleetMemberAPI newModuleFM = Reputation.moduleMap.get(newModuleVariant.getHullVariantId());
+                //if (newModuleFM != null) {
+                //    RepRecord.transfer(coreUnit, newModuleFM);
+                //}
+            }
+
         }
 
         // Remove the chosen core unit from fleet
@@ -159,6 +173,5 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
                 coreUnit.getShipName() + " has been integrated as the core unit of "
                 + mobileArmor.getShipName() + ".");
         Global.getSoundPlayer().playUISound("ui_refit_slot_filled_ballistic_large", 1f, 1f);
-        mobileArmor.updateStats();
     }
 }

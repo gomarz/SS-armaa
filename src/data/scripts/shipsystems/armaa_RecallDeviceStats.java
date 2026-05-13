@@ -162,6 +162,8 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
             if (ship.getOwner() != carrier.getOwner()) {
                 continue;
             }
+            if(ship.isStationModule())
+                continue;
             if (!ship.getVariant().hasHullMod("strikeCraft")) {
                 continue;
             }

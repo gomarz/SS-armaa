@@ -413,6 +413,11 @@ public class armaa_himac extends BaseHullMod {
         }
         if(ship.isStationModule())
             return;
+        if(ship.isPhased())
+            return;
+        
+        if(ship.getFluxTracker().isOverloadedOrVenting())
+            return;
         String key = DATA_KEY + "_" + ship.getId();
         String id = "armaa_assaultBoost_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) engine.getCustomData().get(key);
@@ -766,7 +771,7 @@ public class armaa_himac extends BaseHullMod {
 
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        return true;
+        return ship.isFrigate() || ship.isDestroyer();
     }
 
     public String getUnapplicableReason(ShipAPI ship) {

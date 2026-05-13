@@ -2,7 +2,6 @@ package data.scripts.util;
 
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.events.CampaignEventManagerAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
@@ -1212,4 +1211,106 @@ public class armaa_utils {
         return minuteStr;
     }
 
+    public static Vector2f preciseHitCheck(WeaponAPI weapon, CombatEntityAPI target) {
+        Vector2f fire = weapon.getFirePoint(0);
+        float angDeg = weapon.getCurrAngle();
+        float angRad = (float) Math.toRadians(angDeg);
+
+        // how thick the blade is
+        float width = 18f;
+        int samples = 5;
+
+        // perpendicular vector to blade
+        Vector2f perp = new Vector2f(
+                (float) Math.cos(angRad + (float) Math.PI / 2f),
+                (float) Math.sin(angRad + (float) Math.PI / 2f)
+        );
+
+        for (int i = -samples; i <= samples; i++) {
+            float offset = (i / (float) samples) * width;
+
+            // shifted blade origin
+            Vector2f origin = new Vector2f(
+                    fire.x + perp.x * offset,
+                    fire.y + perp.y * offset
+            );
+
+            // end of blade swing ray
+            Vector2f end = getBeamEndpoint(origin, angRad, weapon.getRange() + 10f);
+
+            // 🔥 LazyLib does the hard work for us
+            Vector2f hit = CollisionUtils.getCollisionPoint(origin, end, target);
+
+            if (hit != null && CollisionUtils.isPointWithinBounds(hit, target)) {
+                return hit;
+            }
+        }
+        return null;
+    }
+    
+   public static Vector2f getBeamEndpoint(Vector2f origin, float angleRadians, float length) {
+        float dx = length * (float) Math.cos(angleRadians);
+        float dy = length * (float) Math.sin(angleRadians);
+        return new Vector2f(origin.x + dx, origin.y + dy);
+    }
+   
+   public static Vector2f intersectShield(CombatEntityAPI target, Vector2f A, Vector2f B) {
+        if (target == null) {
+            return null;
+        }
+        if (!(target instanceof ShipAPI)) {
+            return null;
+        }
+        ShieldAPI sh = target.getShield();
+        if (sh == null || sh.isOff() || sh.getActiveArc() <= 0f) {
+            return null;
+        }
+
+        // Shield circle
+        final Vector2f C = sh.getLocation();
+        final float R = sh.getRadius();
+
+        // Segment parametric: P(t) = A + t*(B - A), t in [0,1]
+        final float dx = B.x - A.x;
+        final float dy = B.y - A.y;
+
+        // Solve |A + t*d - C|^2 = R^2
+        final float fx = A.x - C.x;
+        final float fy = A.y - C.y;
+
+        final float a = dx * dx + dy * dy;
+        final float b = 2f * (dx * fx + dy * fy);
+        final float c = fx * fx + fy * fy - R * R;
+
+        final float disc = b * b - 4f * a * c;
+        if (disc < 0f || a <= 1e-6f) {
+            return null; // no intersection or degenerate segment
+        }
+        final float s = (float) Math.sqrt(disc);
+        // two roots, pick the closest valid t in [0,1]
+        float t1 = (-b - s) / (2f * a);
+        float t2 = (-b + s) / (2f * a);
+
+        Float bestT = null;
+        if (t1 >= 0f && t1 <= 1f) {
+            bestT = t1;
+        }
+        if (t2 >= 0f && t2 <= 1f) {
+            if (bestT == null || t2 < bestT) {
+                bestT = t2;
+            }
+        }
+        if (bestT == null) {
+            return null;
+        }
+
+        Vector2f hit = new Vector2f(A.x + dx * bestT, A.y + dy * bestT);
+
+        // Verify the point lies within the shield's current arc
+        if (!sh.isWithinArc(hit)) {
+            return null;
+        }
+
+        return hit;
+    }
 }

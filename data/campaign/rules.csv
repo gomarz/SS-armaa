@@ -3671,7 +3671,9 @@ $player.takingDawnToJangala = false
 $player.dawnVisitedShrines++","At their feet, more forms come into focus; covered by a quilt of mosses and mycelium, or whatever alien equivalent, which obscures the feet of the statues. Bones. Or are they fallen branches and overgrown rocks? The final wish for some terminally-devoted fanatics, or your imagination set loose?
 
 The green churns not quite imperceptibly in the course of the minutes you watch, all-consuming, ferociously regenerative, a cycle of life that could be born of Earth or an alien world.",lpp_jangalaShrineLeave:Return to the reception hall,
-armaa_lppJangalaAttendantFoolish,DialogOptionSelected,$option == lpp_jangalaattendantFoolish,AdjustRepPerson armaa_dawn VENGEFUL -3,,,
+armaa_lppJangalaAttendantFoolish,DialogOptionSelected,"armaa_Hikaru_Utada hasOfficer armaa_dawn
+$player.takingDawnToJangala
+$option == lpp_jangalaattendantFoolish",AdjustRepPerson armaa_dawn VENGEFUL -3,,,
 armaa_lppJangalaShrineVisitAgain,DialogOptionSelected,"$option == lpp_jangalaShrineVisitAgain
 $player.takingDawnToJangala
 armaa_Hikaru_Utada hasOfficer armaa_dawn","ShowImageVisual jangala_shrine
@@ -7312,43 +7314,64 @@ armaa_KoLInfoDumpEndResp,DialogOptionSelected,$option == armaa_KoLInfoDumpEndRes
 ""Blessings be. If you learn anything of consequence - you know where to find us.""",,
 ,,,,,,
 #Valkazard Custom - WIP,,,,,,
-#armaa_vzardGift,PopulateOptions,"$id == armaa_seraph score: 5000
+armaa_vzardGift,PopulateOptions,"$id == armaa_seraph score: 5000
 !$givenValkazard2
-#$player.atacCompleted
-$givenCustomVXCustom",,,armaa_vzardSel:Discuss the Valkazard,
-armaa_vzardSel,DialogOptionSelected,$option == armaa_vzardSel,FireAll armaa_vzardGiftQuestionsFinal,"""We've been busy these past cycles, studying the Valken III's trial data and cross-referencing it with the data from ATAC."" Her gaze returns to you, sharper now. ""And naturally, we applied it where it mattered most.""
+armaa_valkazardCMD canGetUpgradeForValk
+$rel >= 0.80
+$givenCustomVXCustom","SetOptionColor armaa_vzardSel 152,171,75,255",,armaa_vzardSel: Discuss the Valkazard,
+armaa_vzardGiftAlt,PopulateOptions,"$id == armaa_seraph score: 5000
+!$givenValkazard2
+$global.armaa_hasRaiden
+$givenCustomVXCustom","SetOptionColor armaa_vzardSel 152,171,75,255",,armaa_vzardSel: Discuss the Valkazard,
+armaa_vzardSel,DialogOptionSelected,$option == armaa_vzardSel,FireAll armaa_vzardGiftQuestionsFinal,"""We've been cross-referencing the Valken III trial data with what came out of ATAC. Productive work. But your machine -"" she rubs her chin, ""- that's a different problem entirely.""
 
-She folds her arms, the corner of her mouth lifting in that familiar, knowing way. ""I've spent some time going through your Valkazard's systems since you turned it over. It's... fascinating- and a little troubling. Several of its subsystems were behaving erratically. At first, I thought it was damage from overuse.""
+""Several subsystems were behaving in ways I couldn't account for. My first assumption was damage, or overuse.""She sets one hand flat on the desk. ""It wasn't.""
 
-Her tone cools, more deliberate now. 
-""But after cross-referencing the architecture with surviving records from the First AI War, I started to suspect something else. The Valkazard you recovered isn't a complete unit. Parts of its original configuration were... stripped, or lost. Maybe during the war, maybe long before it.""",,
-armaa_vzardTesting,armaa_vzardGiftQuestionsFinal,,,,"armaa_vzardGift1b:""Busy improving another war machine, I take it?""",
-armaa_vzardGift1,armaa_vzardGiftQuestionsFinal,!$armaa_vxSarcastic,,,armaa_vzardGift1Resp:[Remain silent],
-armaa_vzardGift1Resp,DialogOptionSelected,$option == armaa_vzardGift1Resp,"$player.ethosSarcastic++
-$armaa_vxSarcastic = true
+""How do I put this? What you brought me isn't a complete unit.  Something was stripped out of it. Now, whether that happened during the war or long before it, I haven't been able to determine.""",,
+armaa_vzardTesting,armaa_vzardGiftQuestionsFinal,,,,"armaa_vzardGift1Resp:""I found it that way.""",
+armaa_vzardGift1,armaa_vzardGiftQuestionsFinal,!$armaa_vxSarcastic,,,"armaa_vzardGift1b:""Can it be fixed?""",
+armaa_vzardGift1Resp,DialogOptionSelected,$option == armaa_vzardGift1Resp,,"Sera creates an apologetic expression.
 
-FireAll armaa_vzardGiftQuestions",blahblahblahblah valkazard exposition,"armaa_vzardGift2:""And what have you managed to acheive?""",
-armaa_vzardGift1b,DialogOptionSelected,$option == armaa_vzardGift1b,Highlight SILVERSWORD Valkazard,"""Fortunately, Arma Armatura doesn't let sleeping machines lie. My engineers managed to recover several corrupted archives buried deep in the system's auxiliary banks. With some work, we've restored a great deal of its lost functionality, and while we were in there, made a few improvements of our own.""
+""I'm not blaming you, mind. I'm telling you because you've been fielding it.""","armaa_vzardGift1b:""Can it be fixed?""",
+armaa_vzardGift1b,DialogOptionSelected,$option == armaa_vzardGift1b,,"""That depends on what you mean by fixed."" She picks up her TriPad, not looking at it. 
 
-""I don't have much need for it anymore, though. We'll integrate what we learned into the production model Valken III's, so...you can have it back. Actually, i've already arranged to have it delivered to your fleet.""","armaa_vzardGift2:""And what have you managed to acheive?""",
-armaa_vzardGift2,DialogOptionSelected,$option == armaa_vzardGift2,Highlight SILVERSWORD,"$personName's confidence radiated as she revealed her achievement. ""We succeeded in partially recreating SILVERSWORD,"" she declared, her voice tinged with pride. ""Not only that, we've already integrated a simplified version into a select few units for thorough testing. And of course, I wouldn't pass up the opportunity to offer you a unit from the very first batch.""
+""If you mean restored to original spec?"" She laughs.  ""Not by us. Possibly not by anyone currently operating in this Sector. I don't have the full picture of what's missing.""
 
-""Rest assured, we've conducted extensive tests,"" she says, ""It's perfectly stable. The results have been... spectacular.""",armaa_vzardGift3:Continue,
-armaa_vzardGift3,DialogOptionSelected,$option == armaa_vzardGift3,,"""Consider this a token of appreciation for our partnership and your extraordinary skills,"" she says. 
+""What I have is a working theory and access to the best fabrication capability on New Meshan. So.. not exactly. But,"" she smiles, ""Close enough.""","armaa_vzardGift2:""You said you have a theory.""",
+armaa_vzardGift2,DialogOptionSelected,$option == armaa_vzardGift2,,"""ATAC data we cross-referenced with what we pulled from the Valkazard's systems painted an interesting picture.""
 
-""A lance of pilots with adequate expertise combined with this new system should be a formidable force on the battlefield. And that, my dear, is a win-win for both of us."" 
+""Whatever the oldest deployment it had logged involved, it wasn't the kind of ...work you've been putting it through. The original configuration was designed for a single extended operation. Something meant to end a specific problem permanently.""
 
-You can't help but wonder if there's more to this seemingly generous gesture, knowing how corporate dealings usually work.","armaa_vzardGift4bResp:""What's your true endgame in all of this?""
-",
-armaa_vzardGift4b,armaa_vzardGiftQuestionsFinal,"
-!$armaa_vxGiftQuestionIntent",$armaa_vxGiftQuestionIntent = true,,"armaa_vzardGift4bResp:""What's your true endgame in all of this?""
-",
-armaa_vzardGift4bResp,DialogOptionSelected,$option == armaa_vzardGift4bResp,"armaa_Hikaru_Utada giveValkazard2
-AddShip $armaa_giftMech
+""My theory? It didn't. And after that- whoever had it next did what they could with what was left.""
+""Which explains the patchwork, and the gaps.""",armaa_vzardGift3:Continue,
+armaa_vzardGift3,DialogOptionSelected,$option == armaa_vzardGift3,FireAll armaa_vzardGiftQuestionsFinal2,"""You're probably wondering what we can improve, right?""
+
+""Well, the current power core seems to have been a substitute. Whoever had it last did what they could, but it was never the right fit."" A slight shrug. ""We can source a better one.""
+
+""With that, we should be able to improve the performance of most of its primary weapons, shield coverage..."" She perks up suddenly. ""Oh, and the head unit - the original, as far as I can tell, just served as a housing for the main sensors. Seems wasteful, so we should make it modular.""",,
+armaa_vzardGiftInvested,armaa_vzardGiftQuestionsFinal2,,,,"armaa_vzardGiftInvestedResp:""You seem invested in this specifically.""",
+armaa_vzardGiftAngle,armaa_vzardGiftQuestionsFinal2,,,,"armaa_vzardGiftAngleResp:""What do you get out of this?""",
+,,,,,,
+armaa_vzardGiftInvestedResp,DialogOptionSelected,$option == armaa_vzardGiftInvestedResp,,"She considers the question.
+
+""Arma Armatura was capable of building things like this, once.""  She gestures vaguely, ostensibly referring to the Valkazard.
+
+""Most of what we made then is gone, or we simply no longer have the knowledge or means to reproduce it."" 
+
+""This one survived. In whatever state it's in - it survived."" She looks back at you. ""So yes. I suppose I am.""",armaa_vzardGiftFinal:Continue,
+armaa_vzardGiftAngleResp,DialogOptionSelected,$option == armaa_vzardGiftAngleResp,,"""What do I get out of this?"" She covers her mouth with the back of her hand and laughs.
+
+""I've already gotten what I wanted."" A wink. ""You've done good work - on ATAC, and elsewhere. Consider this a return on that investment.""
+
+""Besides,"" she adds, almost to herself. ""I'm curious to see what it can do.""",armaa_vzardGiftFinal:Continue,
+,,,,,,
+armaa_vzardGiftFinal,DialogOptionSelected,$option == armaa_vzardGiftFinal,"armaa_valkazardCMD upgradeValk
 $givenValkazard2 = true
-FireAll PopulateOptions","""Fortunately, Arma Armatura doesn't let sleeping machines lie. My engineers managed to recover several corrupted archives buried deep in the system's auxiliary banks. With some work, we've restored a great deal of its lost functionality, and while we were in there, made a few improvements of our own.""
+EndConversation
+ShowLargePlanet","* * *
 
-""I don't have much need for it anymore, though. We'll integrate what we learned into the production model Valken III's, so...you can have it back. Actually, i've already arranged to have it delivered to your fleet.""",,
+You authorized the transport of the Valkazard to a New Meshan facility. Sera only asked that you remain nearby - the refurbishment, she promised, would take only a few hours.
+You're midway through the routine business of running a $shipOrFleet when a junior officer appears at your shoulder. The work is done. The Valkazard is on its way back.",cutCommLink:Return to other matters,
 ,,,,,,
 "#red earth, iron cage",,,,,,
 armaa_mrcLiason_firstMeetingSleeper,PickGreeting,"$id == armaa_mrcLiason
@@ -8303,16 +8326,16 @@ armaa_reic_imoinuOptionHostileJudged,DialogOptionSelected,"$option == armaa_reic
 $judged
 !$expressedSupport",FireAll armaa_reic_imoinuWhatWantOpts,"""Cruor? Of course."" She gives a short, bitter laugh. ""Let me guess - you're here to explain to me how reality works again? I know what happens on Cruor. Everyone on Umbra knows.""
 
-""So. Out with it. Why are you asking me? Are you scouting targets for some corporate contract? Looking for leverage? Or did someone manage to make it your problem for once?""",,
+""Out with it. Why are you asking me? Did someone manage to make it your problem for once?""",,
 armaa_reic_imoinuOptStraightAsk,armaa_reic_imoinuWhatWantOpts,!$askedStraight,,,"armaa_reic_imoinuOptStraightAskResp:""Someone was taken to Cruor under a 'work detail'. I need information.""",
 #armaa_reic_imoinuOptIdeal,armaa_reic_imoinuWhatWantOpts,,,,"armaa_reic_imoinuOptIdealResp:""I want to jam a wrench into Diktat operations.""",
 armaa_reic_imoinuOptMercenary,armaa_reic_imoinuWhatWantOpts,!$player.helpedUmbraARC,,,"armaa_reic_imoinuOptMercResp:""Got a job. Help me and I'll hurt the Diktat in the process.""",
 armaa_reic_imoinuOptFavor,armaa_reic_imoinuWhatWantOpts,$player.helpedUmbraARC,,,"armaa_reic_imoinuOptFavorResp:""As a friend of the ARC, I need a favor. I'm trying to find one of their camps.""",
 armaa_reic_imoinuOptLiarHonest,armaa_reic_imoinuWhatWantOpts,$player.sdtu_liedToImoinuAboutAgent,,,"armaa_reic_imoinuOptLiarHonestResp:""I'm extracting an agent that was captured.""",
 armaa_reic_imoinuOptJudgedBackoff,armaa_reic_imoinuWhatWantOpts,"$judged
-!$expressedSupport",,,"armaa_reic_imoinuOptJudgedBackoffResp:""I didn't comm to lecture you. I commed because you might know how Cruor hides people.""",
+!$expressedSupport",!$didJudgedOpt,,"armaa_reic_imoinuOptJudgedBackoffResp:""I didn't comm to lecture you. I commed because you might know how Cruor hides people.""",
 armaa_reic_imoinuOptJudgedDD,armaa_reic_imoinuWhatWantOpts,"$judged
-!$expressedSupport",,,"armaa_reic_imoinuOptJudgedDDResp:""Cut the crap. What do you know about the labor camps?""",
+!$expressedSupport",!$didJudgedOpt,,"armaa_reic_imoinuOptJudgedDDResp:""Cut the crap. What do you know about the labor camps?""",
 ,,,,,,
 armaa_reic_imoinuOptStraightAskResp,DialogOptionSelected,$option == armaa_reic_imoinuOptStraightAskResp,"$askedStraight = true
 FireAll armaa_reic_imoinuWhatWantOpts","She stares at you a moment, expression flat.
@@ -8350,12 +8373,18 @@ She leans forward.
 ""I'll give you a thread. You pull it yourself. If you come back asking for more, you bring something worth the risk.""",,
 armaa_reic_imoinuOptJudgedDDResp,DialogOptionSelected,$option == armaa_reic_imoinuOptJudgedDDResp,"$ignorePlayerCommRequests = true 30
 AdjustRepActivePerson VENGEFUL -10
+$didJudgedOpt = true
 EndConversation
 ShowDefaultVisual","""...Who do you think you are? You want to lecture me about resistance from the bridge of a warship? You want to call me weak because I won't endanger my people to satisfy your curiosity?""
 
 ""Go find your own answers on Cruor. Ask INTSEC nicely. I'm sure they'll give you a tour.""
 
 There's a hard click as she cuts the channel.",,
+armaa_reic_imoinuOptJudgedBackOffResp,DialogOptionSelected,$option == armaa_reic_imoinuOptJudgedDDResp,"$option = imoinuUmbra_offerHelp
+$didJudgedOpt = true
+FireBest DialogOptionSelected","Imoinu's eyes flick over you like you're a stain that might still be useful.
+
+""I don't care what you call yourself as long as the blood of the oppressor is spilt, but I don't hand out intel to random mercs for free. So how can you help me?""",,
 ,,,,,,
 armaa_reicPatrolDefeated,armaa_reicPatrolDefeated,$someShipsDestroyed,"$global.armaa_foughtPatrol = true
 $global.armaa_reicIntelLevel++
@@ -8713,7 +8742,7 @@ FireAll PopulateOptions","""You delivered,"" she agrees. ""Walk if you need to."
 
 The smile returns. Small, edged. ""My door stays open. That's the only speech you're getting.""",,
 ,,,,,,
-armaa_bellatorIntro,MarketPostDock,"$global.armaa_hc_Completed
+armaa_bellatorIntro,MarketPostDock,"$global.armaa_hc_missionCompleted
 $global.armaa_bellatorEscaped
 !$player.armaa_gotBellator",BeginConversation armaa_seraph,"You receive a high-priorty comms request.
 
@@ -8780,24 +8809,32 @@ armaa_cpcBlurb1,armaa_cpc_blurb,,,"""I have a few spare nanoforge slots opening 
 armaa_cpcOfferOption1,armaa_cpc_option,,,,armaa_cpc_start:Ask about the ArmaA nanoforge production opportunity.,
 armaa_cpcOfferTextContact1,DialogOptionSelected,"$option == armaa_cpc_start
 $id == armaa_seraph
-$cpc_trade","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+$armaa_cpc_trade","$missionId = armaa_cpc
+SetTextHighlights $armaa_cpc_maxCapacity $cpc_costPercent $armaa_cpc_days
 DoCanAffordCheck 0 cpc_pickPlayerBP false","""The slots are valid for up to $armaa_cpc_maxCapacity credits worth of industrial production capacity, and I'll let you use them for a very reasonable $armaa_cpc_costPercent of base cost. You would have to provide your own blueprints, of course.""
 
 $HeOrShe gives you a million-credit smile and says, ""It's a good opportunity, captain.""","cpc_pickPlayerBP:Make a selection from your own blueprints
 contact_decline:Decline",
 armaa_cpcOfferTextContact2,DialogOptionSelected,"$option == armaa_cpc_start
 $id == armaa_seraph
-$cpc_military score:10","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+$armaa_cpc_military score:10","$missionId = armaa_cpc
+SetTextHighlights $armaa_cpc_maxCapacity $armaa_cpc_costPercent $armaa_cpc_days
 DoCanAffordCheck 0 cpc_pickPlayerBP false","""I'm not here to make a sales pitch, captain, so I shall simply state the terms then let you decide. $armaa_cpc_maxCapacity credits worth of military-grade nanoforge production at $armaa_cpc_costPercent of base cost with delivery of product within $armaa_cpc_days days. You can take the slots and provide your own blueprints, or we can input the order under my authority, in which case you would use mine. One or the other.""","cpc_pickPlayerBP:Make a selection from your own blueprints
 cpc_pickContactBP:See what blueprints they have available
 contact_decline:Decline",
+,,,,,,
 armaa_cpcOfferTextContact4,DialogOptionSelected,"$option == armaa_cpc_start
 $id == armaa_seraph
-$cpc_armsDealer score:20","$missionId = armaa_cpc
-SetTextHighlights $cpc_maxCapacity $cpc_costPercent $cpc_days
+$armaa_cpc_armsDealer score:20","$missionId = armaa_cpc
+SetTextHighlights $armaa_cpc_maxCapacity $armaa_cpc_costPercent $cpc_days
 DoCanAffordCheck 0 cpc_pickPlayerBP false","""I can provide access to custom production of up to $armaa_cpc_maxCapacity credits worth of merchandise. Discretion doesn't come cheap of course, and there's the matter of finders' fees and certain bureaucrats to... "" $heOrShe pauses, considering, ""...encourage to mind their other duties, let's say. Oh, and delivery of product is guaranteed within $armaa_cpc_days days.""
 
-""I can get you a good deal here - let's call it a mere $armaa_cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","cpc_pickContactBP:Make a selection
+""I can get you a good deal here - let's call it a mere $armaa_cpc_costPercent of base cost. Just say the word and I can give you a little manifest we've put together.""","armaa_cpc_pickContactBP:Make a selection
 contact_decline:Decline",
+,,,,,,
+armaa_cpcPickPlayerBP,DialogOptionSelected,$option == armaa_cpc_pickPlayerBP,Call $armaa_cpc_ref pickPlayerBP,,,
+armaa_cpcPickContactBP,DialogOptionSelected,$option == armaa_cpc_pickContactBP,Call $armaa_cpc_ref pickContactBP,,,
+armaa_cpcBPPicked,CPCBlueprintsPicked,,"$option = contact_accept 0
+FireBest DialogOptionSelected
+Call $armaa_cpc_ref repSuccess
+Call $armaa_cpc_ref addContacts",,,

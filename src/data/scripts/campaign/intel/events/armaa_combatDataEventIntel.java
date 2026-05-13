@@ -251,13 +251,15 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             );
         } else if (stageId == Stage.ADVANCED_TELEMETRY) {
             info.addPara("Ships with the %s hullmod and piloted by officers have enhanced performance: "
-                    + "Development of the Panther phase cataphract is available",
+                    + "\n\n Procurement of the %s phase cataphract is available from %s",
                     initPad, Misc.getHighlightColor(),
                     "STRIKECRAFT",
                     "Flux Dissipation",
                     "Flux Capacity",
                     "15%", //dont hardcode it
-                    "10%" //dont hardoced this either
+                    "10%", //dont hardoced this either
+                    "PANTHER",
+                    "SERA PHA"
             );
         } else if (stageId == Stage.PROTOTYPE_BREAKTHROUGH) {
             info.addPara("The reverse-engineered fighter %s, and %s has been left in storage "
@@ -280,12 +282,15 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             info.addPara("Data gleaned from your ops "
                     + "has prompted the design of several new technologies "
                     + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s.", initPad,
+                    + "%s,%s,%s."+"\n\n The mobile weapons platform %s and the carrier %s has been left in storage at %s for use, at your discretion.", initPad,
                     Misc.getHighlightColor(),
                     "STRIKECRAFT",
                     "Hi-Manuever System",
                     "Emergency Recall Device",
-                    "OVERLORD SUITE[ALPHA]"
+                    "OVERLORD SUITE[ALPHA]",
+                    "RAIDEN",
+                    "EXILIUM",
+                    "GAMLIN"                    
             );
         }
     }
@@ -502,9 +507,9 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 
         if (stage.id == Stage.ADVANCED_TELEMETRY) {
             Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_strikeCraftBuff", 1);
-            if (!Global.getSector().getPlayerFaction().knowsShip("armaa_panther_frig")) {
+            if (!Global.getSector().getFaction("armaarmatura_atac").knowsShip("armaa_panther_frig")) {
                 //Global.getSector().getPlayerFleet().getCargo().addSpecial(sid, 0);
-                Global.getSector().getPlayerFaction().addKnownShip("armaa_panther_frig", false);
+                //Global.getSector().getPlayerFaction().addKnownShip("armaa_panther_frig", false);
                 Global.getSector().getFaction("armaarmatura_atac").addKnownShip("armaa_panther_frig", false);
                 Global.getSector().getFaction("armaarmatura_market").addKnownShip("armaa_panther_frig", false);
             }
@@ -548,6 +553,17 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_skyMindAlpha")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_skyMindAlpha");
             }
+            if (Global.getSector().getImportantPeople().getPerson("armaa_seraph") != null && Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket() != null) {
+                if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_hasRaiden")) {
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_raiden_prototype", "Raiden");
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_exilium_custom", "AASV Gekko");
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing", 2);
+                    Global.getSector().getMemoryWithoutUpdate().set("$armaa_hasRaiden", true);
+                }
+            }            
         }
     }
 
