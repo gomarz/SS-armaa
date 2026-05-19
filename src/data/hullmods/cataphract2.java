@@ -34,24 +34,23 @@ public class cataphract2 extends BaseHullMod {
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
     public static final Map<String, Float> GROUND_BONUS = new HashMap<>();
 
-
-    private final float EMP_RESIST = 33f;
+    private final float EMP_RESIST = 50f;
     private final float DISABLE_RESIST = 66f;
+    public static float REPAIR_BONUS = 25f;
     private static final float CR_PENALTY = 0.10f;
-
 
     public static float SMOD_BONUS = 2f;
     public static float CRUISER_DAMAGE_BONUS = 10f;
     public static float CAPITAL_DAMAGE_BONUS = 20f;
     //  S-mod no-officer bonuses 
-    private static final float NO_OFFICER_DP_REDUCTION_PCT = 0.20f;  
-    private static final float NO_OFFICER_DP_REDUCTION_MAX = 10f;    
+    private static final float NO_OFFICER_DP_REDUCTION_PCT = 0.20f;
+    private static final float NO_OFFICER_DP_REDUCTION_MAX = 10f;
     private static final float NO_OFFICER_CR_BONUS = 0.10f;  // +10% max CR
 
     //  Panic burst
-    private static final float PANIC_HULL_THRESHOLD = 0.35f;   
-    private static final float PANIC_SPEED_BONUS = 25f;     
-    private static final float PANIC_MANEUVER_BONUS = 25f;     
+    private static final float PANIC_HULL_THRESHOLD = 0.35f;
+    private static final float PANIC_SPEED_BONUS = 25f;
+    private static final float PANIC_MANEUVER_BONUS = 25f;
     private static final float PANIC_FLUX_COST_MULT = 1.25f;   //
     private static final float PANIC_DURATION = 5f;      // seconds active
     private static final float BACK_OFF_DURATION = 10f;     // seconds of BACK_OFF hint
@@ -99,7 +98,9 @@ public class cataphract2 extends BaseHullMod {
         stats.getEmpDamageTakenMult().modifyMult(id, (100f - EMP_RESIST) / 100f);
         stats.getEngineDamageTakenMult().modifyMult(id, (100f - DISABLE_RESIST) / 100f);
         stats.getWeaponDamageTakenMult().modifyMult(id, (100f - DISABLE_RESIST) / 100f);
-
+        float bonus = REPAIR_BONUS;
+        stats.getCombatEngineRepairTimeMult().modifyMult(id, 1f - bonus * 0.01f);
+        stats.getCombatWeaponRepairTimeMult().modifyMult(id, 1f - bonus * 0.01f);
         boolean sMod = stats.getVariant().getSModdedBuiltIns().contains("cataphract2") || isSMod(stats);
         if (!sMod) {
             return;
@@ -137,7 +138,6 @@ public class cataphract2 extends BaseHullMod {
             stats.getMaxCombatReadiness().modifyFlat(id, NO_OFFICER_CR_BONUS, "Combat Customization");
         }
     }
-
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
@@ -195,16 +195,14 @@ public class cataphract2 extends BaseHullMod {
 
             MutableShipStatsAPI stats = ship.getMutableStats();
 
-
             if (burstActive) {
                 burstTimer -= amount;
-                armaa_utils.makeAfterImages(ship, 0.35f, Global.getCombatEngine().getElapsedInLastFrame()/ engine.getTimeMult().getModifiedValue(), new Color(100, 200, 255, 185)); // cyan
+                armaa_utils.makeAfterImages(ship, 0.35f, Global.getCombatEngine().getElapsedInLastFrame() / engine.getTimeMult().getModifiedValue(), new Color(100, 200, 255, 185)); // cyan
 
                 if (burstTimer <= 0f) {
                     endBurst(stats);
                 }
             }
-
 
             if (backOffActive) {
                 backOffTimer -= amount;
@@ -213,11 +211,9 @@ public class cataphract2 extends BaseHullMod {
                 }
             }
 
-
             if (triggered && ship.getHullLevel() > PANIC_HULL_THRESHOLD) {
                 triggered = false;
             }
-
 
             if (!triggered && !burstActive && ship.getHullLevel() <= PANIC_HULL_THRESHOLD) {
                 triggered = true;
@@ -322,6 +318,8 @@ public class cataphract2 extends BaseHullMod {
                 Misc.getHighlightColor(), "\u2022", (int) EMP_RESIST + "%");
         tooltip.addPara("%s Weapons and engines are %s less likely to be disabled.", padS,
                 Misc.getHighlightColor(), "\u2022", (int) DISABLE_RESIST + "%");
+        tooltip.addPara("%s Weapons and engines repair %s faster when disabled.", padS,
+                Misc.getHighlightColor(), "\u2022", (int) REPAIR_BONUS + "%");        
         tooltip.addPara("%s While marines are present, increases effective strength of ground ops by Level*Deploy Cost: %s.", padS,
                 Misc.getHighlightColor(), "\u2022", Integer.toString(n));
         if (ship != null) {

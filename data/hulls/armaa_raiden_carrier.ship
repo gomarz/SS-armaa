@@ -7,20 +7,19 @@
   "height": 132,
   "width": 110,
   "center": [55, 66],
-  "collisionRadius": 78,
+  "collisionRadius": 84.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 79,
+  "shieldRadius": 85,
   "viewOffset": 50,
   "builtInMods": [
     "armaa_comboUnit",
     "armaa_himac"
   ],
   "builtInWeapons": {
+    "DECO": "armaa_raiden_deco",
     "E_LSHOULDER": "armaa_raiden_leftPauldron",
     "E_RSHOULDER": "armaa_raiden_rightPauldron"
   },
-  "builtInWings": [
-  ],
   "weaponSlots": [
     {
       "id": "E_LSHOULDER",
@@ -29,7 +28,8 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [19, 5]
+      "locations": [19, 5],
+      "renderOrderMod": 110
     },
     {
       "id": "E_RSHOULDER",
@@ -38,7 +38,8 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -0,
-      "locations": [19, -5]
+      "locations": [19, -5],
+      "renderOrderMod": 110
     },
     {
       "id": "SYS1",
@@ -65,7 +66,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [18, -0]
+      "locations": [15, -0]
     },
     {
       "id": "WS0003",
@@ -75,7 +76,7 @@
       "arc": 120,
       "angle": 20,
       "locations": [0, 37],
-	  "renderOrderMod": 100
+      "renderOrderMod": 120
     },
     {
       "id": "WS0004",
@@ -85,7 +86,7 @@
       "arc": 120,
       "angle": -20,
       "locations": [0, -37],
-	  "renderOrderMod": 100
+      "renderOrderMod": 120
     },
     {
       "id": "WS0001",
@@ -95,7 +96,7 @@
       "arc": 210,
       "angle": 0,
       "locations": [-17, -0],
-	  "renderOrderMod": -99998
+      "renderOrderMod": 100
     },
     {
       "id": "WS0002",
@@ -132,6 +133,15 @@
       "arc": 360,
       "angle": 0,
       "locations": [-25, -39]
+    },
+    {
+      "id": "DECO",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-17, -0]
     }
   ],
   "engineSlots": [
@@ -217,26 +227,26 @@
     }
   ],
   "bounds": [
-    36.5, -7,
+    18, -14,
+    35, -16,
     37, -22.5,
-    46, -27.5,
-    45, -43,
+    46, -25.5,
+    45.5, -43,
     28, -44.5,
     -12, -49.5,
     -39, -50.5,
-    -56.5, -39.5,
-    -52, -26.5,
+    -52, -41,
+    -54, -23.5,
     -49.5, -19,
     -49.5, 19,
     -52, 26.5,
-    -55, 37.5,
-    -44, 40.5,
+    -52, 35,
+    -48.5, 44.5,
     -42, 51,
     -7, 52,
     23, 45,
-    45, 43,
-    46, 27.5,
-    37, 22.5,
-    36, 6
+    44.5, 46.5,
+    44.5, 16.5,
+    18, 14
   ]
 }

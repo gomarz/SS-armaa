@@ -44,21 +44,23 @@ public class armaa_spareChassisStorage extends BaseHullMod {
         }
         return null;
     }
+
     public boolean isApplicableToShip(ShipAPI ship) {
-        if(ship.getFleetMember() != null && ship.getFleetMember().getFleetData() != null)
-        {
-            for(FleetMemberAPI member :ship.getFleetMember().getFleetData().getMembersListCopy())
-            {
-                if(member.getVariant().hasHullMod("armaa_exclusive_hangar_assignment"))
+        if (ship.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
+            for (FleetMemberAPI member : ship.getFleetMember().getFleetData().getMembersListCopy()) {
+                if (member.getVariant().hasHullMod("armaa_exclusive_hangar_assignment")) {
                     return false;
+                }
             }
         }
-        if(ship.isCapital() || ship.isCruiser() || ship.isDestroyer())
-            if(ship.hasLaunchBays())
+        if (ship.isCapital() || ship.isCruiser() || ship.isDestroyer()) {
+            if (ship.hasLaunchBays()) {
                 return true;
+            }
+        }
         return false;
     }
-    
+
     @Override
     public String getUnapplicableReason(ShipAPI ship) {
         if (ship != null && ship.getHullSize() == HullSize.FRIGATE) {
@@ -67,10 +69,10 @@ public class armaa_spareChassisStorage extends BaseHullMod {
         return null;
     }
 
-    public int getChassisContribution(ShipAPI ship) 
-    {
-        if(ship == null)
+    public int getChassisContribution(ShipAPI ship) {
+        if (ship == null) {
             return 0;
+        }
         int fleetTotal = 0;
         switch (ship.getHullSize()) {
             case DESTROYER:
@@ -89,8 +91,9 @@ public class armaa_spareChassisStorage extends BaseHullMod {
     }
 
     public int getChassisContribution(FleetMemberAPI member) {
-        if(member == null)
+        if (member == null) {
             return 0;
+        }
         int fleetTotal = 0;
         switch (member.getHullSpec().getHullSize()) {
             case DESTROYER:
@@ -123,9 +126,10 @@ public class armaa_spareChassisStorage extends BaseHullMod {
 
         float pad = 10f;
         tooltip.addSectionHeading("Spare Chassis Storage", Alignment.MID, pad);
-        tooltip.addPara("Increases capacity for spare chassis replacement by hull size, from %s/%s/%s/%s", pad, Misc.getHighlightColor(), "0","1","2","3");
-        if(ship != null)            
-        tooltip.addPara("This ship carries %s spare chassis, available to any ship in the fleet equipped with the Spare Chassis hullmod.", pad, Misc.getHighlightColor(), ""+fleetAddition);
+        tooltip.addPara("Increases capacity for spare chassis replacement by hull size, from %s/%s/%s/%s", pad, Misc.getHighlightColor(), "0", "1", "2", "3");
+        if (ship != null) {
+            tooltip.addPara("This ship carries %s spare chassis, available to any ship in the fleet equipped with the Spare Chassis hullmod.", pad, Misc.getHighlightColor(), "" + fleetAddition);
+        }
         tooltip.addPara("Fleet-wide spare chassis available per engagement: %s", pad, Misc.getHighlightColor(), "" + fleetTotal);
     }
 

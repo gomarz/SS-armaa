@@ -55,6 +55,7 @@
 	"carrierSmall":{
 		"armaa_valkyrie_standard":5,
 		"armaa_valkyrie_sniper":10,
+		"armaa_valkyrie2_standard":1,
 	},
 	"carrierMedium":{
 		"armaa_whitebase_standard":0.5,

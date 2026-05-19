@@ -251,15 +251,12 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             );
         } else if (stageId == Stage.ADVANCED_TELEMETRY) {
             info.addPara("Ships with the %s hullmod and piloted by officers have enhanced performance: "
-                    + "\n\n Procurement of the %s phase cataphract is available from %s",
+                    + "\n\n Procurement of the %s phase cataphract is available from %s \n %s hullmod is unlocked",
                     initPad, Misc.getHighlightColor(),
                     "STRIKECRAFT",
-                    "Flux Dissipation",
-                    "Flux Capacity",
-                    "15%", //dont hardcode it
-                    "10%", //dont hardoced this either
                     "PANTHER",
-                    "SERA PHA"
+                    "SERA PHA",
+                    "\"Emergency Recall Device\""
             );
         } else if (stageId == Stage.PROTOTYPE_BREAKTHROUGH) {
             info.addPara("The reverse-engineered fighter %s, and %s has been left in storage "
@@ -282,11 +279,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             info.addPara("Data gleaned from your ops "
                     + "has prompted the design of several new technologies "
                     + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s."+"\n\n The mobile weapons platform %s and the carrier %s has been left in storage at %s for use, at your discretion.", initPad,
+                    + "%s."+"\n\n The mobile weapons platform %s and the carrier %s has been left in storage at %s for use, at your discretion.", initPad,
                     Misc.getHighlightColor(),
                     "STRIKECRAFT",
                     "Hi-Manuever System",
-                    "Emergency Recall Device",
                     "OVERLORD SUITE[ALPHA]",
                     "RAIDEN",
                     "EXILIUM",
@@ -505,7 +501,11 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             }
         }
 
-        if (stage.id == Stage.ADVANCED_TELEMETRY) {
+        if (stage.id == Stage.ADVANCED_TELEMETRY) 
+        {
+            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
+                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
+            }            
             Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_strikeCraftBuff", 1);
             if (!Global.getSector().getFaction("armaarmatura_atac").knowsShip("armaa_panther_frig")) {
                 //Global.getSector().getPlayerFleet().getCargo().addSpecial(sid, 0);
@@ -544,9 +544,6 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             }
         }
         if (stage.id == Stage.DATA_DELIVERY) {
-            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
-                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
-            }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_himac")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_himac");
             }

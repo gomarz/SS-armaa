@@ -3,8 +3,8 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "SMALL",
-  "beamEffect": "com.fs.starfarer.api.impl.combat.GravitonBeamEffect",
-  "collisionClass": "RAY",
+  "beamEffect": "data.scripts.weapons.armaa_valkTargetingLaserEffect",
+  "collisionClass": "RAY_FIGHTER",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_head_pd.png",
   "turretGlowSprite": "graphics/armaa/ships/leynos/armaa_leynosheadglow.png",
@@ -32,19 +32,19 @@
     0
   ],
   "fringeColor": [
-    255,
-    100,
     0,
+    100,
+    255,
     255
   ],
   "coreColor": [
+    155,
+    155,
     255,
-    155,
-    155,
     255
   ],
-  "convergeOnPoint": true,
-  "width": 6,
+  "convergeOnPoint": false,
+  "width": 12,
   "textureType": [
     "graphics/armaa/fx/armaa_parax_beam_fringe.png",
     "graphics/armaa/fx/armaa_ppa_beam_core.png"

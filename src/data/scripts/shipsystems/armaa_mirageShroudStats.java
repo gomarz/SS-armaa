@@ -110,9 +110,6 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                 // side: negative = left, positive = right (relative to ship facing)
                 float side = to.x * right.x + to.y * right.y;
 
-                // Optional: avoid swapping to a clone that is way out in front (feels less like a "sidestep")
-                // float fwd = to.x * forward.x + to.y * forward.y;
-                // if (fwd > 450f) continue; // tune this threshold
                 float d2 = to.x * to.x + to.y * to.y;
                 if (d2 < bestDist2) {
                     bestDist2 = d2;
@@ -132,8 +129,6 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                 }
             }
 
-            // If we found a "proper side" clone and it's not basically centerline, use it.
-            // If it's near centerline (side ~ 0), swapping can feel arbitrary, so fall back to closest.
             if (bestSide != null) {
                 // Side threshold: if |side| is very small, clone is roughly in front/behind, not clearly left/right
                 float absSide = Math.abs(bestSideVal);
@@ -266,15 +261,16 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
             if (!isSpawned) {
                 Global.getCombatEngine().getFleetManager(ship.getOwner()).setSuppressDeploymentMessages(true);
                 for (int i = 0; i < NUM_CLONES; i++) {
-                    Global.getLogger(armaa_mirageShroudStats.class).info(ship.getOwner());
+                    //Global.getLogger(armaa_mirageShroudStats.class).info(ship.getOwner());
                     ShipVariantAPI var = ship.getVariant().clone();
-                    var.setHullSpecAPI(Global.getSettings().getHullSpec("armaa_panther_frig_mirage"));
+                    var.setHullSpecAPI((ship.getHullSpec()));
                     
                     var.addMod("automated");
                     var.addMod("do_not_back_off");
                     var.removePermaMod("strikeCraft");
                     var.removeMod("strikeCraft");
                     var.removeSuppressedMod("strikeCraft");
+                    var.addTag("armaa_strikecraft_refit_never");
                     FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
                     member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat("armaa", -99);
                     member.setOwner(ship.getOwner());

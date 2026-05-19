@@ -12,13 +12,10 @@ import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import java.util.*;
 import com.fs.starfarer.api.characters.*;
 
-import com.fs.starfarer.api.characters.MutableCharacterStatsAPI.*;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.MissionCompletionRep;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.*;
-import com.fs.starfarer.api.campaign.ReputationActionResponsePlugin.ReputationAdjustmentResult;
 import com.fs.starfarer.api.campaign.RepLevel;
 import org.lazywizard.lazylib.MathUtils;
 
@@ -158,7 +155,6 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
             fpDestroyed += fp;
         }
 
-        // --- PERF FIX (item 5): getMembersListCopy() allocates — call it once, store result ---
         List<FleetMemberAPI> playerMembers =
                 Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy();
 
@@ -166,7 +162,6 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
             float fp = member.getFleetPointCost();
             fp *= 1f + member.getCaptain().getStats().getLevel() / 5f;
 
-            // --- PERF FIX (item 3): hoist captain ID before the wingman key lookup ---
             final String captainId = member.getCaptain().getId();
             final String sizeKey   = "armaa_wingCommander_squadSize_" + captainId;
 

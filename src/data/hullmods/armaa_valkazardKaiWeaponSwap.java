@@ -13,15 +13,13 @@ import org.lazywizard.lazylib.MathUtils;
 //Original code by Tartiflette
 public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
 
-
     public Map<Integer, String> LEFT_SELECTOR = new HashMap<>();
 
     {
         LEFT_SELECTOR.put(0, "armaa_valkazard_harpoon");
-        LEFT_SELECTOR.put(4, "armaa_valkazard_rcl_left");
+        LEFT_SELECTOR.put(4, "armaa_valkazard_rcl_left_lv2");
         LEFT_SELECTOR.put(5, "armaa_valkazard_blade_lv2");
-        if(1==1)
-        {
+        if (1 == 1) {
             LEFT_SELECTOR.put(2, "armaa_valkazard_pulse_rifle_left_lv2");
             LEFT_SELECTOR.put(1, "armaa_valkazard_shotgun_left_lv2");
             LEFT_SELECTOR.put(3, "armaa_valkazard_machinegun_left_lv2");
@@ -31,11 +29,10 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
     public Map<Integer, String> RIGHT_SELECTOR = new HashMap<>();
 
     {
-        RIGHT_SELECTOR.put(0, "armaa_valkazard_rcl");
+        RIGHT_SELECTOR.put(0, "armaa_valkazard_rcl_lv2");
         RIGHT_SELECTOR.put(3, "armaa_valkazard_machinegun_right_lv2");
 
-        if(1==1)
-        {
+        if (1 == 1) {
             RIGHT_SELECTOR.put(1, "armaa_valkazard_chaingun_lv2");
             RIGHT_SELECTOR.put(2, "armaa_valkazard_pulse_rifle_right_lv2");
             RIGHT_SELECTOR.put(4, "armaa_valkazard_shotgun_right_lv2");
@@ -47,10 +44,9 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
     {
         SWITCH_TO_LEFT.put("armaa_valkazard_harpoon", 5);
         SWITCH_TO_LEFT.put("armaa_valkazard_blade_lv2", 4);
-        SWITCH_TO_LEFT.put("armaa_valkazard_rcl_left", 3);
+        SWITCH_TO_LEFT.put("armaa_valkazard_rcl_left_lv2", 3);
 
-        if(1==1)
-        {
+        if (1 == 1) {
             SWITCH_TO_LEFT.put("armaa_valkazard_shotgun_left_lv2", 0);
             SWITCH_TO_LEFT.put("armaa_valkazard_pulse_rifle_left_lv2", 1);
             SWITCH_TO_LEFT.put("armaa_valkazard_machinegun_left_lv2", 2);
@@ -58,16 +54,15 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
     }
 
     private final Map<String, Integer> SWITCH_TO_RIGHT = new HashMap<>();
+
     {
-        if(1==1)
-        {
+        if (1 == 1) {
             SWITCH_TO_RIGHT.put("armaa_valkazard_chaingun_lv2", 0);
             SWITCH_TO_RIGHT.put("armaa_valkazard_shotgun_right_lv2", 3);
             SWITCH_TO_RIGHT.put("armaa_valkazard_pulse_rifle_right_lv2", 1);
         }
-        SWITCH_TO_RIGHT.put("armaa_valkazard_rcl", 4);
+        SWITCH_TO_RIGHT.put("armaa_valkazard_rcl_lv2", 4);
         SWITCH_TO_RIGHT.put("armaa_valkazard_machinegun_right_lv2", 2);
-
 
     }
 
@@ -98,8 +93,7 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
         CORE_SELECTOR.put(0, "armaa_valkazard_torso_lv2");
         CORE_SELECTOR.put(1, "armaa_valkazard_torso_shield_lv2");
 
-        if(1==1)
-        {
+        if (1 == 1) {
             CORE_SELECTOR.put(2, "armaa_valkazard_torso_boson_lv2");
             CORE_SELECTOR.put(3, "armaa_valkazard_torso_chaosburst_lv2");
             CORE_SELECTOR.put(4, "armaa_valkazard_torso_ac_lv2");
@@ -112,11 +106,10 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
         SWITCH_TO_CORE.put("armaa_valkazard_torso_lv2", 4);
         SWITCH_TO_CORE.put("armaa_valkazard_torso_shield_lv2", 0);
 
-        if(1==1)
-        {
-            SWITCH_TO_CORE.put("armaa_valkazard_torso_boson_lv2",1);
-            SWITCH_TO_CORE.put("armaa_valkazard_torso_chaosburst_lv2",2);
-            SWITCH_TO_CORE.put("armaa_valkazard_torso_ac_lv2",3);
+        if (1 == 1) {
+            SWITCH_TO_CORE.put("armaa_valkazard_torso_boson_lv2", 1);
+            SWITCH_TO_CORE.put("armaa_valkazard_torso_chaosburst_lv2", 2);
+            SWITCH_TO_CORE.put("armaa_valkazard_torso_ac_lv2", 3);
         }
 
     }
@@ -145,9 +138,9 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
 
     {
         SWITCH_TO_HEAD.put("armaa_valkazard_head_assault", 0);
-        SWITCH_TO_HEAD.put("armaa_valkazard_head_pd",1);
-        SWITCH_TO_HEAD.put("armaa_valkazard_head_lance",2);
-        SWITCH_TO_HEAD.put("armaa_valkazard_head_lv2",3);
+        SWITCH_TO_HEAD.put("armaa_valkazard_head_pd", 1);
+        SWITCH_TO_HEAD.put("armaa_valkazard_head_lance", 2);
+        SWITCH_TO_HEAD.put("armaa_valkazard_head_lv2", 3);
     }
 
     private final Map<Integer, String> HEADSWITCH = new HashMap<>();
@@ -163,6 +156,7 @@ public class armaa_valkazardKaiWeaponSwap extends BaseHullMod {
     private final String rightslotID = "A_GUN";
     private final String coreslotID = "B_TORSO";
     private final String headslotID = "E_HEAD";
+
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 

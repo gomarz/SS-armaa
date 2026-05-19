@@ -208,8 +208,7 @@ public class armaa_emergencyRecallDevice extends BaseHullMod {
         if (ship.getVariant().hasHullMod(HullMods.PHASE_ANCHOR)) {
             return false;
         }
-
-        return true;
+        return ship.getVariant().hasHullMod("strikeCraft");
     }
 
     @Override

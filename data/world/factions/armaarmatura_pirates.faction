@@ -87,7 +87,7 @@
 		],
 	},
 	"knownShips":{
-		"tags":["armaa_cataphract_bp","armaa_mobilearmor"],
+		"tags":["armaa_cataphract_bp"],
 		"hulls":[	
 				"armaa_einhander_plus",
 				"armaa_viator",

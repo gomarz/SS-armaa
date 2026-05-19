@@ -113,7 +113,7 @@ public class armaa_AWACS implements EveryFrameWeaponEffectPlugin {
                     new Vector2f(loc.getX(), loc.getY()),
                     new Vector2f(radius, radius),
                     rotation,
-                    ship.getOwner() == 0 ? COLOR : new Color(215, 21, 16, 186),
+                    ship.getOwner() == 0 ? COLOR : new Color(215, 21, 16, 100),
                     false,
                     CombatEngineLayers.BELOW_SHIPS_LAYER
             );

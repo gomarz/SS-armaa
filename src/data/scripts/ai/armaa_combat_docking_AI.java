@@ -332,7 +332,7 @@ public class armaa_combat_docking_AI extends BaseShipAI {
                             fighterbay = fighter;
                             carrier = potentialCarrier;
                             target = carrier;
-                            if (fighter.getWing() != null || fighter.getWing().getSource() != null || fighter.getWing().getSource().getLandingLocation(fighter) != null) {
+                            if (fighter.getWing() != null && fighter.getWing().getSource() != null && fighter.getWing().getSource().getLandingLocation(fighter) != null) {
                                 targetOffset = armaa_utils.toRelative(carrier, fighter.getWing().getSource().getLandingLocation(fighter));
                                 landingLoc = fighter.getWing().getSource().getLandingLocation(fighter);
                                 landingLoc = fighter.getWing().getSource().getLandingLocation(fighter);

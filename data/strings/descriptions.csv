@@ -61,7 +61,9 @@ armaa_hazard,SHIP,"A hardy mining mech re-repurposed for the realities of the Se
 armaa_valkazard,SHIP,"This advanced machine comes with a flexible armament and the powerful SILVERSWORD system that momentarily enhances its performance. Can punch far above it's weight class, but is suprisingly fragile.
 
 Records and limited evidence suggest that a single unit was moved via gate network for extended storage in the Persean Sector before the Collapse. Unfortunately, its whereabouts after the destruction of Meshan in c.94 are unknown, and presumably was destroyed along with most of the planet.",,,,,
-armaa_valkazard_kai,SHIP,Placeholder. Shouldn't be obtainable.,,,,,
+armaa_valkazard_kai,SHIP,"A extensively refurbished variant of an already unconventional machine, with improved primary weapon output and expanded shield coverage, it comes with a flexible armament and the powerful SILVERSWORD system that momentarily enhances its performance. Can punch far above it's weight class.
+
+Records and limited evidence suggest that a single unit was moved via gate network for extended storage in the Persean Sector before the Collapse. Unfortunately, its whereabouts after the destruction of Meshan in c.94 are unknown, and presumably was destroyed along with most of the planet.",,,,,
 armaa_valkazard_geant,SHIP,Placeholder. Shouldn't be obtainable.,,,,,
 armaa_guardual,SHIP,"A rare and temperamental transforming strikecraft, the GuarDUAL excels in roles requiring both speed and raw close-range firepower. Its dual-mode frame supports rapid shifts between high-mobility and high-durability configurations, with a flux-adaptive cascade emitter that grows more dangerous the closer it is to overload. 
 
@@ -128,7 +130,7 @@ The R-Type was left to languish in an unmarked hangar for some time until an ent
 armaa_aleste_frig,SHIP,"The Aleste S-II is tailored for close-quarters combat. Its design favors rapid, high-intensity strikes at the cost of structural resilience, leaving little margin for error. A chest-mounted ""Harpoon"" system allows the frame to reel in lighter prey or launch itself bodily against larger targets, where it is free to devastate it's target with the range of melee weapons available for the left arm.
 
 The Aleste was first deployed just over a decade ago, on the eve of the First AI War. Where the Einhander represented a pre-Collapse ideal of singular, irreplaceable quality, the Aleste reflected harsher realities: a bleeding-edge strikecraft intended to narrow the gap against Tri-Tachyon's numerically and technologically superior fleets, but tempered with a pragmatism that allowed for wider deployment. Arma Armatura sanctioned the design as a calculated risk- fewer exotic systems, greater adaptability, and a focus on leveraging pilot skill over rare technology.",,,,,
-armaa_aleste_frig_classic,SHIP,"A stripped down (or perhaps older) version of the Aleste. Cheap and unshieled, but uncharacteristically overarmed like its descendent.",,,,,
+armaa_aleste_frig_classic,SHIP,A stripped down (or perhaps older) version of the Aleste. Cheap and uncharacteristically overarmed like its descendent.,,,,,
 ,,,,,,,
 armaa_record,SHIP,"The Spriggan is outfitted with a powerful recoilless rifle, making it an ideal choice for delivering a devastating blow that other Cataphract models cannot match. Must get up close to its target to fully unleash its firepower, in contrast to conventional bombers.
 
@@ -202,34 +204,36 @@ armaa_kshatriya_head,WEAPON,Head-mounted Ion Beam. Capable of disrupting systems
 armaa_valkazard_harpoon,WEAPON,"Modified mining pike, and arguably a testament to pirate ingenuity. While near useless against shields, the projectile making contact with hull produces a near constant cascading EMP effect that will rapidly disable weapons and other vital systems.",,,,,
 ,,,,,,,
 armaa_valkazard_shotgun_right,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however.",,,,,
-,,,,,,,
+armaa_valkazard_shotgun_right_lv2,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however.",,,,,
 armaa_valkazard_shotgun_left,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however",,,,,
+armaa_valkazard_shotgun_left_lv2,WEAPON,"A close-quarters energy shotgun. Compared to the Assault Chaingun, it has slightly greater range and is significantly more effective at taxing shield generators; reduced flux-efficiency and limited capacity make it a more difficult weapon to master, however",,,,,
 ,,,,,,,
 armaa_valkazard_torso,WEAPON,"Fires dense spread of shots that handily obliterate fighters and missiles. Doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,,,
-,,,,,,,
+armaa_valkazard_torso_lv2,WEAPON,"The internal housing has been replaced with a wepaon with performance similar to a Devastator Cannon - doubles as an effective assault weapon against lightly-armored targets, but range is limited.",,,,,
 armaa_valkazard_torso_chaosburst,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,,,
-,,,,,,,
+armaa_valkazard_torso_chaosburst_lv2,WEAPON,"An mid-range, high damage energy beam cannon. Secondary explosions generated along the beams length inflict additional damage and allow it to double as weapon capable of thinning fighter swarms.",,,,,
 armaa_valkazard_torso_boson,WEAPON,"Akin to the Sector-standard Heavy Blaster - fires bolts of energy at enemy targets, but up to a burst of three. With high damage and flux costs, the particle cannon is one of the most damaging weapons that can be mounted on a Cataphract.",,,,,
-,,,,,,,
+armaa_valkazard_torso_boson_lv2,WEAPON,"Akin to the Sector-standard Heavy Blaster - fires bolts of energy at enemy targets, but up to a burst of three. With high damage and flux costs, the particle cannon is one of the most damaging weapons that can be mounted on a Cataphract.",,,,,
 ,,,,,,,
 armaa_valkazard_torso_shield,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,,,
+armaa_valkazard_torso_shield_lv2,WEAPON,"Stockpiles damage inflicted against shield for future weaponization. Once the criteria is met, releases a barrage of homing energy projectiles.",,,,,
 ,,,,,,,
 armaa_valkazard_machinegun_left,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,,,
-,,,,,,,
+armaa_valkazard_machinegun_left_lv2,WEAPON,"Features a slower burst-oriented firing mechanism as compared to the original MAG-47, the Hydra MG fires significantly more slugs at once with better armor penetration.",,,,,
 armaa_valkazard_machinegun_right,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,,,
-,,,,,,,
+armaa_valkazard_machinegun_right_lv2,WEAPON,"Derivative of the ubiquitous rapid-fire machine gun category of weapons, the MAG-47 is effective against both small and medium-sized targets.",,,,,
 armaa_valkazard_chaingun,WEAPON,"A 'melee' captain's favorite tool, the Assault Chaingun delivers high-explosive shaped charge rounds on target at nearly 400 shells per minute. Features electrically driven feed and ejector systems and an advanced nano cooling unit built right into the barrel.",,,,,
-,,,,,,,
+armaa_valkazard_chaingun_lv2,WEAPON,A chaingun that fires larger and more potent explosive shaped charges than a standard Assault Chaingun. All in all a straight upgrade with some loss in rate of fire.,,,,,
 armaa_valkazard_pulse_rifle_left,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,,,
-,,,,,,,
+armaa_valkazard_pulse_rifle_left_lv2,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,,,
 armaa_valkazard_pulse_rifle_right,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,,,
-,,,,,,,
+armaa_valkazard_pulse_rifle_right_lv2,WEAPON,"Fires repeating bolts of energy, favoring the medium-range combatant that has the flux reserves and wants to put constant pressure on the enemy.",,,,,
 armaa_valkazard_rcl,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,,,
 ,,,,,,,
 armaa_valkazard_rcl_left,WEAPON,"""Damnit, 'low recoil' does not mean 'gentle'! The countermass ejected from the rear of that gun is the only thing saving the 'mech from having its arm torn clean off after firing even a single shot!""",- Chief Mechanic,,,,
 ,,,,,,,
 armaa_valkazard_torso_ac,WEAPON,A torso-mounted cannon that fires a duo of ionized shells capable of overloading and disabling enemy electronics at medium range.  It is most effective versus enemy shields.,,,,,
-,,,,,,,
+armaa_valkazard_torso_ac_lv2,WEAPON,A torso-mounted cannon that fires a duo of ionized shells capable of overloading and disabling enemy electronics at medium range.  It is most effective versus enemy shields.,,,,,
 armaa_alesteLeftArm,WEAPON,"""... and with that, I would like to reiterate that the proposed weapon is infinitely more effective if the spike is -fired-. We are exploring options on how to convert the projectile into a payload for explosives that detonate once breaching hull ... ""","- R&D memo, C.187",,,,
 ,,,,,,,
 armaa_aleste_blade_LeftArm,WEAPON,"""I'm tellin' ya, these 'laser swords' ain't no joke. They use the same damn principle as other beams with a hyperdimensional filter. And let me tell ya, any electronics that ain't straight up disintegrated will be so screwed up, it'll take a tech wizard to fix it. So if some idiot tries to use this thing and gets blasted to scrap by point defenses, at least they can take out their weapons and engines on the way down.
@@ -402,7 +406,7 @@ armaa_flare_decoy,SHIP_SYSTEM,"Launches flares that interfere with point-defense
 armaa_rampagedrive,SHIP_SYSTEM,"Diverts all shield and some weapon power to the ship's engines and dampeners for a short time. Will attempt to ram targets, otherwise charges straight forward. Reduced damage taken and halved weapon rate of fire while active.",Movement,"Diverts all shield and some weapon power to the ship's engines and dampeners for a short time. Will attempt to ram targets, otherwise charges straight forward. A successful ram will deal a bonus 1500 High Explosive damage on impact. -66% damage taken and halved weapon rate of fire while active.",1500 High Explosive | -66%,,
 armaa_rampagedrive2,SHIP_SYSTEM,"Disables shields, reduces damage taken and rate of fire. Will attempt to ram targets, otherwise charges straight forward. If the target is destroyed while the system is active, a used charge is refunded.",Movement,"Disables shields and rapidly close in on targets, otherwise charges straight forward. A successful ram will deal a bonus 1500 High Explosive damage on impact. -66% damage taken and halved weapon rate of fire while active. If the target is destroyed while the system is in ACTIVE state, a spent charge is refunded.",1500 High Explosive | -66%,,
 armaa_drns,SHIP_SYSTEM,"Disables weapons, increasing shield absorbtion by 5x. Once duration ends or is cancelled, fires a barrage of missiles based on how much damage was sustained while active. If the GUARD bar is depleted, the system becomes unusable until it fully recharges.",Special,"Disables weapons, increasing shield absorbtion by 5x. Once duration ends or is cancelled, fires a barrage of Kinetic and High Explosive missiles based on how much damage was sustained while active. If the GUARD bar is depleted, the system becomes unusable until it fully recharges.",5x | Kinetic | High Explosive | GUARD | unusable until it fully recharges,,
-armaa_mirageShroud,SHIP_SYSTEM,Creates two extradimensional phantoms using the same equipment as the source unit at 25% it's HP and dealing 40% of it's damage. Can swap position with a phantom by toggling the system while active.,Special,"Disables weapons, increasing shield absorbtion by 5x. Once duration ends or is cancelled, fires a barrage of Kinetic and High Explosive missiles based on how much damage was sustained while active. If the GUARD bar is depleted, the system becomes unusable until it fully recharges.",5x | Kinetic | High Explosive | GUARD | unusable until it fully recharges,,
+armaa_mirageShroud,SHIP_SYSTEM,Creates two extradimensional phantoms using the same equipment as the source unit at 25% it's HP and dealing 40% of it's damage. Can swap position with a phantom by toggling the system while active.,Special,Creates %s extradimensional phantoms using the same equipment as the source unit at %s% it's HP and dealing %s% of it's damage. Can swap position with a phantom by toggling the system while active.,2 | 25 | 40 | GUARD | unusable until it fully recharges,,
 #CAMPAIGN STUFF,,,,,,,
 armaarmatura_pirates,FACTION,"The Meshan Reprisal Coalition (MRC) is the evolution of an initially peaceful minor political movement aimed to hold accountable those responsible for the catastrophic misuse of Domain-era planetkillers throughout the AI Wars. These days, however, they are only viewed slightly more favorably than the common pirate.
 

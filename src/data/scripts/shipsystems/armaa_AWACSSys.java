@@ -117,7 +117,7 @@ public class armaa_AWACSSys extends BaseShipSystemScript {
                                     0f,
                                     25f,
                                     true,
-                                    new Color(215, 21, 16, 255),
+                                    new Color(215, 21, 16, 155),
                                     true,
                                     .2f,
                                     1f,

@@ -23,9 +23,9 @@
 
 	"startShipsCarrierSmall":
 	[
-		["armaa_musha_frig_sniper", "armaa_valkyrie_standard"],
-		["armaa_valkenx_frig_assault","gemini_Standard"],
-		["armaa_aleste_as_f","hermes_d_Standard"],
+		["armaa_leynos_standard", "armaa_valkyrie2_standard"],
+		["armaa_ashura_frig_standard","gemini_Standard"],
+		["armaa_aleste_frig_classic_standard","armaa_valkyrie_standard"],
 	],
 
 	"startShipsCombatSmall":

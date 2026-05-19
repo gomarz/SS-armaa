@@ -78,13 +78,15 @@ public class armaa_siegeModeStats extends BaseShipSystemScript {
         float scale = Global.getSettings().getScreenScaleMult();
         float radius = 1000f * effectLevel * scale;
         final Vector2f loc = ship.getLocation();
+    int screenWidth  = (int) Global.getSettings().getScreenWidth();
+    int screenHeight = (int) Global.getSettings().getScreenHeight();
         if (view.isNearViewport(loc, radius)) {
             SpriteAPI sprite = Global.getSettings().getSprite("ceylon", "armaa_ceylonrad");
             glPushAttrib(GL_ENABLE_BIT);
             glMatrixMode(GL_PROJECTION);
             glPushMatrix();
-            glViewport(0, 0, Display.getWidth(), Display.getHeight());
-            glOrtho(0.0, Display.getWidth(), 0.0, Display.getHeight(), -1.0, 1.0);
+    glViewport(0, 0, screenWidth, screenHeight);
+    glOrtho(0.0, screenWidth, 0.0, screenHeight, -1.0, 1.0);
             glEnable(GL_TEXTURE_2D);
             glEnable(GL_BLEND);
             radius = (radius * 2f) / view.getViewMult();

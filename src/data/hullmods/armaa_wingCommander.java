@@ -142,7 +142,8 @@ public class armaa_wingCommander extends BaseHullMod {
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        if (1 == 1) {
+        boolean builtIn = stats.getVariant().getPermaMods().contains("armaa_wingCommander");        
+        if (builtIn) {
             float dpMod = computeDPModifier(getFighterOPCost(stats));
             if (dpMod > 0) {
                 stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id, dpMod);

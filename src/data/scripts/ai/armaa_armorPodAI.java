@@ -49,6 +49,7 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
 
                     cfm.setSuppressDeploymentMessages(false);
                     engine.removeEntity(missile);
+                    break;
                 }
             }
         }

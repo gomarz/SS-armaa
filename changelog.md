@@ -1,3 +1,60 @@
+V3.3.1
+------
+Bakraid(s)
+- fixed bug where core unit could be destroyed and bakraid controls would not lock
+- fixed bug where core unit's legs could still be visible after ejecting
+- fixed bug where core unit would remain invisible after redocking
+- fixed "bug" that would have core unit take damage in situation where bakraid's shields logically should prevent it
+- small sprite adjustment to the bakraid(s) central module hardpoint
+
+- Kouto ECM
+	- fixed bug where AFCSS would only apply to one target instead of every ship that failed the ECCM check
+
+- fixed bug that would spawn dozens of assault pods when firing the weapon
+
+- Emergency recall device unlocks at 400pts ATAC instead of 1000pts
+	- Fixed bug where ERD would state it only can be installed on strikecraft, but could be installed on anything
+
+- Increase hull priority of caymon, bassline, Fenris by .50
+
+- Bellator
+	- Add Spare Chassis Stroage, Specialized Service Bays
+
+- guarDUAL
+	- Top Speed: 240->280
+
+- guarDUAL (wing)
+	- Top Speed: 240->280
+
+- Spriggan Powered
+	- Added Spare Chassis
+	- Speed: 130->140
+- Caymon, Fenris
+	- Added Spare Chassis Storage
+
+- valkazard kai
+	- update desc
+	- updated most weapon descs (RCL2 still not in)
+	- fixed all head hullmods to properly display functionality
+	- All head units have some sort of gimmick(effects may not be final):
+	- TL-11 EWAR Laser
+		- +3% ECM rating
+		- on painted target:
+			- Reduced autoaim by 50%
+			- increase damage to weapons by 14%
+			- increase damage to engines by 10%
+			- has chance to generate shield piercing EMP arcs based on target hard flux level
+	- AMWS (Commander)
+		- +25% sensor range & sight radius
+		- +25% Command point regen
+		- Increase performance of up to 10 units within 1000 SU by 10%
+	- Adversity:
+		- Enable 0-flux speed boost
+		- As the number of enemies within 2000 su increase, Ballistic & energy weapon damage increases
+		- the bonus decreases based on the number of friendly ships using same formula
+		- +10% ship system recharge rate
+
+
 V3.3.0
 ------
 - Optimized VRAM usage

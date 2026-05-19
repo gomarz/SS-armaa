@@ -444,7 +444,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                             new Vector2f(0, 0),
                             spin * 6 + 30 * bossRatio,
                             0f,
-                            new Color(Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), 1f),
+                            new Color(Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), 1f*bossRatio),
                             false,
                             0f,
                             0f,
@@ -478,7 +478,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                             CombatEngineLayers.CLOUD_LAYER
                     );
                 }
-                if (!bossSpawn && engine.getFleetManager(1).getCurrStrength() <= 0 || bossSpawning) {
+                if (!bossSpawn && engine.getFleetManager(1).getCurrStrength() <= 0 || bossSpawning && !bossSpawn) {
                     //start moving tessie to the foreground
                     if(!bossSpawning)
                     {

@@ -16,6 +16,11 @@
     "WS0001": "guardian",
     "WS0002": "guardian"
   },
+  "builtInMods": [
+    "armaa_serviceBays",
+    "armaa_spare_chassis_storage",
+    "ground_support"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",

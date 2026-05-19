@@ -105,13 +105,9 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                         toRemove.add(ship);
                         continue;
                     }
-                    boolean doubletapped = armaa_utils.isKeyDoubleTapped(ship, engine) || engine.getCustomData().containsKey("armaa_autoEject_"+ship.getId());
-                    if (!doubletapped && engine.getPlayerShip() == ship) {
-                        continue;
-                    }
+                    boolean doubletapped = armaa_utils.isKeyDoubleTapped(ship, engine) || engine.getCustomData().containsKey("armaa_autoEject_" + ship.getId());
 
                     List<ShipAPI> children = ship.getChildModulesCopy();
-
                     if (children == null || children.size() == 0) {
                         continue;
                     }
@@ -119,13 +115,12 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                         for (ShipAPI module : children) {
                             module.ensureClonedStationSlotSpec();
                             if (module.getStationSlot() != null && !module.controlsLocked()) {
-                                if (!module.isAlive() || module.getLocation().getY() == -1000000f) {
-                                    module.setControlsLocked(true);
-                                    ship.getFluxTracker().showOverloadFloatyIfNeeded("Core unit destroyed! Controls locked!", Color.red, 10f, true);
-                                    ship.setControlsLocked(true);
-                                    module.setStationSlot(null);
+                                if (!module.isAlive() || module.isHulk() || module.getLocation().getY() == -1000000f) {
                                     toRemove.add(ship);
                                     ship.resetDefaultAI();
+                                }
+                                if (!doubletapped && engine.getPlayerShip() == ship) {
+                                    continue;
                                 }
                                 if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f)) {
                                     ShipAPI s = createShipFromModule(ship, module, engine);
@@ -223,7 +218,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         @Override
         public void advance(float amount) {
             if (Global.getCombatEngine().isEntityInPlay(ship)) {
-                trueShip.fadeToColor(trueShip, new Color(0, 0, 0, 0), 1f, amount, 1f);
+                trueShip.setAnimatedLaunch();
             }
             //redock logic
             if (ship.getShipTarget() != null && ship.getShipTarget().getOwner() == ship.getOwner()) {

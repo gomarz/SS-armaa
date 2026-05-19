@@ -180,15 +180,14 @@ public class armaa_AcePilot {
                 interval.advance(amount);
             }
             boolean chatterEnabled = true;
-            if (Global.getSettings().getModManager().isModEnabled("lunalib") && 
-                    ship.getCaptain() != null && ship.getCaptain().getId().equals("armaa_dawn")) {
+            if (Global.getSettings().getModManager().isModEnabled("lunalib")
+                    && ship.getCaptain() != null && ship.getCaptain().getId().equals("armaa_dawn")) {
                 chatterEnabled = LunaSettings.getBoolean("armaa", "armaa_enableDawnVoice");
             }
-            
+
             if (interval.intervalElapsed() && !runOnce && !ship.isStationModule() && chatterEnabled && ship.getOwner() == 0) {
-                if(!Global.getCombatEngine().getCustomData().containsKey("armaa_dawnChattered"))
-                {
-                    Global.getCombatEngine().getCustomData().put("armaa_dawnChattered","-");
+                if (!Global.getCombatEngine().getCustomData().containsKey("armaa_dawnChattered")) {
+                    Global.getCombatEngine().getCustomData().put("armaa_dawnChattered", "-");
                     Global.getSoundPlayer().playUISound("armaa_dawn_intro", 1, 0.90f);
                     runOnce = true;
                 }
