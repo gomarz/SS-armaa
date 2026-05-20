@@ -1,7 +1,7 @@
 {
 	"id":"armaa_mirageShroud",
 	"type":"STAT_MOD",
-	"aiType":"CUSTOM",
+	"aiType":"WEAPON_BOOST",
 	"aiScript":"data.scripts.shipsystems.ai.armaa_karmaAI",
 	"statsScript":"data.scripts.shipsystems.armaa_mirageShroudStats",
 	"canUseWhileRightClickSystemOn":true,	

@@ -439,7 +439,8 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
         }
              if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
              {
-                ships.add("armaa_panther_frig");   
+                ships.add("armaa_panther_frig");
+                ships.add("armaa_guardual_frig");
              }
         for (String id : faction.getKnownWeapons()) {
             WeaponSpecAPI spec = Global.getSettings().getWeaponSpec(id);
@@ -463,7 +464,10 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
             fighters.add(id);
         }
             if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
-                fighters.add("armaa_guardual_wing");        
+            {
+                fighters.add("armaa_guardual_wing");     
+                fighters.add("armaa_morgana_wing");
+            }
     }
 
     protected void updateInteractionDataImpl() {

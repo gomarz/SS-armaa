@@ -34,17 +34,21 @@ public class armaa_spareChassis extends BaseHullMod {
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 
     }
+
     @Override
-    public void advanceInCombat(ShipAPI ship, float amount) 
-    {
-        if(Global.getCombatEngine() == null || Global.getCombatEngine().isPaused())
-            if(ship.getOwner() < 0)
-                return;
+    public void advanceInCombat(ShipAPI ship, float amount) {
+        if (Global.getCombatEngine() == null || Global.getCombatEngine().isPaused()) {
+            return;
+        }
+        if (ship.getOriginalOwner() < 0) {
+            return;
+        }
         if (!ship.hasListenerOfClass(armaa_chassisReplacementTracker.class)) {
             ship.addListener(new armaa_chassisReplacementTracker(ship));
             initPoolIfNeeded(ship);
         }
     }
+
     @Override
     public String getDescriptionParam(int index, HullSize hullSize) {
         return null;
@@ -52,8 +56,9 @@ public class armaa_spareChassis extends BaseHullMod {
 
     static void initPoolIfNeeded(ShipAPI ship) {
         CombatEngineAPI engine = Global.getCombatEngine();
-        if(engine == null || engine.isPaused())
+        if (engine == null || engine.isPaused()) {
             return;
+        }
         boolean ai = ship.getOriginalOwner() == 1 || ship.getOriginalOwner() == 0 && ship.isAlly();
         if (!ai && engine.getCustomData().containsKey(POOL_INITIALIZED_KEY)) {
             return;
@@ -63,27 +68,28 @@ public class armaa_spareChassis extends BaseHullMod {
 
         int fleetTotal = 0;
         if (!ai) {
-            if(Global.getSector().getPlayerFleet() != null)
-            for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
-                    .getFleetData().getMembersListCopy()) {
-                if (member.getVariant() == null) {
-                    continue;
-                }
-                if (!member.getVariant().hasHullMod("armaa_spare_chassis_storage")) {
-                    continue;
-                }
-                switch (member.getHullSpec().getHullSize()) {
-                    case DESTROYER:
-                        fleetTotal += 1;
-                        break;
-                    case CRUISER:
-                        fleetTotal += 2;
-                        break;
-                    case CAPITAL_SHIP:
-                        fleetTotal += 3;
-                        break;
-                    default:
-                        break;
+            if (Global.getSector().getPlayerFleet() != null) {
+                for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
+                        .getFleetData().getMembersListCopy()) {
+                    if (member.getVariant() == null) {
+                        continue;
+                    }
+                    if (!member.getVariant().hasHullMod("armaa_spare_chassis_storage")) {
+                        continue;
+                    }
+                    switch (member.getHullSpec().getHullSize()) {
+                        case DESTROYER:
+                            fleetTotal += 1;
+                            break;
+                        case CRUISER:
+                            fleetTotal += 2;
+                            break;
+                        case CAPITAL_SHIP:
+                            fleetTotal += 3;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         } else {
@@ -108,21 +114,22 @@ public class armaa_spareChassis extends BaseHullMod {
         if (ship.getOwner() == 0 && !ship.isAlly()) {
             engine.getCustomData().put(GLOBAL_POOL_KEY, fleetTotal);
         } else {
-            if(fleetTotal > 10)
+            if (fleetTotal > 10) {
                 fleetTotal = 10;
+            }
             engine.getCustomData().put(GLOBAL_POOL_KEY + "_" + ship.getOriginalOwner(), fleetTotal);
         }
         if (!ai) {
             engine.getCustomData().put(POOL_INITIALIZED_KEY, true);
         } else {
-            
+
             engine.getCustomData().put(POOL_INITIALIZED_KEY + ship.getOriginalOwner(), true);
         }
 
         if (!ai) {
-            engine.getCombatUI().addMessage(1, Global.getSettings().getBrightPlayerColor(),fleetTotal + " spare chassis available.");
+            engine.getCombatUI().addMessage(1, Global.getSettings().getBrightPlayerColor(), fleetTotal + " spare chassis available.");
         } else if (ship.getOriginalOwner() == 1) {
-            engine.getCombatUI().addMessage(1,Misc.getNegativeHighlightColor(), "Enemy spare chassis available: " + fleetTotal);
+            engine.getCombatUI().addMessage(1, Misc.getNegativeHighlightColor(), "Enemy spare chassis available: " + fleetTotal);
         }
     }
 
@@ -136,6 +143,7 @@ public class armaa_spareChassis extends BaseHullMod {
         }
         return (Integer) val;
     }
+
     //int message = (String)Global.getCombatEngine().getCustomData().get("armaa_globalSpareChassisCount" + "_" + 1);
     //Global.getCombatEngine().getCombatUI().addMessage(0,message+"");
     static void deductFromPool(ShipAPI ship) {
@@ -282,7 +290,7 @@ public class armaa_spareChassis extends BaseHullMod {
             if (location != null) {
                 ShipAPI replacement = Global.getCombatEngine().getFleetManager(member.getOwner()).spawnFleetMember(member, location, facing, 0f);
                 replacement.setAnimatedLaunch();
-                replacement.setName(replacement.getName() + " [spare]");
+                replacement.setName(replacement.getName() + "-"+member.getOwner()+" [spare]");
 
                 spawnedShip = true;
             }

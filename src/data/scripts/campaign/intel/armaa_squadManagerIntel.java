@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_squadManagerIntel extends BaseIntelPlugin {
     public static Logger log = Global.getLogger(armaa_squadManagerIntel.class);
@@ -241,8 +242,11 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         int maxElite = (int) Global.getSettings().getInt("officerMaxEliteSkills")
                 + (int) playerStats.getDynamic().getMod(Stats.OFFICER_MAX_ELITE_SKILLS_MOD).computeEffective(0);
         int maxLevel = 2;
-
-        // Squadron rename row — field and button both flow into info so they
+        if(Global.getSettings().getModManager().isModEnabled("lunalib"))
+        {
+           maxLevel = LunaSettings.getInt("armaa", "armaa_wingcomMaxLevel");
+        }
+        // Squadron rename row - field and button both flow into info so they
         // stay visually adjacent rather than on separate containers.
         List<Object> squadParams = new ArrayList<Object>();
         TextFieldAPI squadName = info.addTextField(200f, pad);
