@@ -304,4 +304,5 @@ Spare Chassis Storage,armaa_spare_chassis_storage,,,Arma Armatura,"special,no_dr
 ,,,,,,,,,,,,,,,,,,,
 Reactive Carapace,armaa_reactiveCarapace,,,Arma Armatura,"special,no_drop",,,TRUE,TRUE,,0,0,0,0,data.hullmods.armaa_reactiveCarapace,Carries a physical shield.,Carries a physical shield.,,graphics/hullmods/ablative_armor.png
 ,,,,,,,,,,,,,,,,,,,
-DP Reducer,armaa_dpReduction,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_dpReduction,,,,
+DP Reducer,armaa_dpReduction,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_dpReduction,,,,
+Supplies Reducer,armaa_noSupplies,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noSupplies,this unit does not require supplies for maintenance or recovery,,,

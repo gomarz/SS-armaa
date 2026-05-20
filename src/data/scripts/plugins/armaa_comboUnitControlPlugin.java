@@ -191,9 +191,9 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
 
         //module.fadeToColor(module, new Color(0, 0, 0, 0), 1f, 1f, 1f);
         s.setControlsLocked(false);
-        if (!ship.getVariant().hasHullMod("neural_interface")) {
-            ship.setControlsLocked(true);
-        }
+        //if (!ship.getVariant().hasHullMod("neural_interface")) {
+        //    ship.setControlsLocked(true);
+        //}
         module.setControlsLocked(true);
         module.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
         module.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
