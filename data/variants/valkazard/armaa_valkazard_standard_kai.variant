@@ -44,6 +44,14 @@
       "weapons": {}
     }
   ],
-  "modules": [],
+  "modules": [
+{
+      "BAY1": "armaa_valkazard_kai_dronebay_l_variant",
+},
+{
+      "BAY2": "armaa_valkazard_kai_dronebay_r_variant"
+}
+
+],
   "wings": []
 }

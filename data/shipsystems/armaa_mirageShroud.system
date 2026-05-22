@@ -2,7 +2,7 @@
 	"id":"armaa_mirageShroud",
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
-	"aiScript":"data.scripts.shipsystems.ai.armaa_karmaAI",
+	#"aiScript":"data.scripts.shipsystems.ai.armaa_karmaAI",
 	"statsScript":"data.scripts.shipsystems.armaa_mirageShroudStats",
 	"canUseWhileRightClickSystemOn":true,	
 	"jitterColor":[255,0,255,50],
@@ -11,11 +11,4 @@
 	"jitterRangeRadiusFraction":0.05,
 	"useSound":"system_interdictor",
 	"outOfUsesSound":"system_phase_cloak_collision",
-
-	"aiHints":{
-		"threatRange":1500,
-		"threatAmount":10,
-		"threatAngle":0,
-		"threatArc":360,
-	}
 }
