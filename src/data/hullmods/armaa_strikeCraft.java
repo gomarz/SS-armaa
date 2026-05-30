@@ -316,7 +316,12 @@ public class armaa_strikeCraft extends BaseHullMod {
         int loadedWeps = 0;
         int dryWeps = 0;
 
-        for (ShipAPI module : target.getChildModulesCopy()) {
+        for (ShipAPI module : target.getChildModulesCopy()) 
+        {
+            if(module.getCollisionClass() != target.getCollisionClass())
+            {
+                module.setCollisionClass(target.getCollisionClass());
+            }
             String key = "moduleRepair_isDestroyed" + "_" + module.getId();
             if (Global.getCombatEngine().getCustomData().containsKey(key)) {
                 return true;
@@ -325,6 +330,9 @@ public class armaa_strikeCraft extends BaseHullMod {
 
         boolean check = false;
         int side = target.getOwner() == 1 ? 0 : 1;
+        if (target.getVariant().hasTag(RefitMode.REFIT_NEVER.value)) {
+            return check;
+        }
         ShipHullSpecAPI spec = target.getVariant().getHullSpec();
         if (target.getVariant().getHullSpec().isDHull() && target.getHullSpec().getDParentHull() != null) {
             spec = target.getHullSpec().getDParentHull();
@@ -371,19 +379,19 @@ public class armaa_strikeCraft extends BaseHullMod {
                 return false;
             }
         }
+        if (ship.getVariant().hasTag(RefitMode.REFIT_NEVER.value)) {
+            return false;
+        }
+        ShipHullSpecAPI spec = ship.getVariant().getHullSpec();
+        if (ship.getVariant().getHullSpec().isDHull() && ship.getHullSpec().getDParentHull() != null) {
+            spec = ship.getHullSpec().getDParentHull();
+        }
+        if (spec.getTags().contains(RefitMode.REFIT_NEVER.value)) {
+            return false;
+        }
         for (ShipAPI carrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 10000.0F)) {
-            if (carrier.getOwner() != ship.getOwner() || carrier.isFighter() || carrier.isFrigate()) {
+            if(!armaa_utils.isValidCarrierFor(ship, carrier))
                 continue;
-            }
-            if (carrier.isHulk()) {
-                continue;
-            }
-            if (ship.getHullSpec().hasTag("strikecraft_medium") && carrier.isDestroyer()) {
-                continue;
-            }
-            if (ship.getHullSpec().hasTag("strikecraft_large") && (carrier.isCruiser() || carrier.isDestroyer())) {
-                continue;
-            }
             if (carrier.getNumFighterBays() > 0) {
                 return true;
             }
@@ -395,34 +403,15 @@ public class armaa_strikeCraft extends BaseHullMod {
         ShipAPI potCarrier = null;
         float distance = 99999f;
         for (ShipAPI carrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 100000f)) {
-            if (carrier == ship) {
+            if(!armaa_utils.isValidCarrierFor(ship, carrier))
                 continue;
-            }
-            if (carrier.getVariant().hasHullMod("strikeCraft")) {
-                continue;
-            }
-            if (carrier.getHullSpec().hasTag("no_wingcom_docking")) {
-                continue;
-            }
-            if (carrier.getOwner() != ship.getOwner()) {
-                continue;
-            }
-            if (!carrier.getHullSpec().hasTag("strikecraft_with_bays") && (carrier.isFighter() || carrier.isFrigate()) && !carrier.isStationModule()) {
-                continue;
-            }
-            if (carrier == ship) {
-                continue;
-            }
-            if (carrier.isHulk() || !carrier.isAlive() || !Global.getCombatEngine().isEntityInPlay(carrier)) {
-                continue;
-            }
-            if (carrier.getNumFighterBays() > 0) {
-                float dist = MathUtils.getDistance(ship, carrier);
-                if (dist < distance) {
-                    distance = dist;
-                    potCarrier = carrier;
+                if (carrier.getNumFighterBays() > 0 || carrier.hasLaunchBays()) {
+                    float dist = MathUtils.getDistance(ship, carrier);
+                    if (dist < distance) {
+                        distance = dist;
+                        potCarrier = carrier;
+                    }
                 }
-            }
         }
         return potCarrier;
     }
@@ -525,8 +514,9 @@ public class armaa_strikeCraft extends BaseHullMod {
         if (Global.getCombatEngine().isPaused()) {
             return;
         }
-        if(ship.isStationModule())
+        if (ship.isStationModule()) {
             return;
+        }
         if (ship.getShipAI() == null && Global.getCombatEngine().getPlayerShip() == ship) {
             Global.getCombatEngine().getCustomData().remove("armaa_strikecraftisLanding" + ship.getId());
         }
@@ -642,7 +632,7 @@ public class armaa_strikeCraft extends BaseHullMod {
                     new Vector2f(30, 30), new Vector2f(-1f, -1f),
                     0f, 90f, false,
                     Global.getSettings().getBasePlayerColor(),
-                    true, 0f, 2f, 2f, true
+                    true, 0f, 2f, 1f, true
             );
         }
 

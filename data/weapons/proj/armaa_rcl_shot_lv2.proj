@@ -1,0 +1,19 @@
+{
+	"id":"armaa_rcl_shot_lv2",
+	"onHitEffect":"data.scripts.weapons.armaa_rcl_effect",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":80.0,
+	"hitGlowRadius":100,
+	"width":10,
+	"fadeTime":0.6,
+	"fringeColor":[255,100,30,175],
+	"coreColor":[255,255,255,255],
+	"glowColor":[255,25,25,105],
+	"glowRadius":25,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/shell_hellbore.png"
+}

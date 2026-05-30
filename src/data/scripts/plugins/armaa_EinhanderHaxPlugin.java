@@ -47,7 +47,7 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin {
                 boolean isBounty = false;
                 for (String tag : tags) {
                     if (tag.contains("armaa_bounty")) {
-                        engine.getCombatUI().addMessage(0, "foo");
+                        //engine.getCombatUI().addMessage(0, "foo");
                         isBounty = true;
                         engine.getCustomData().put("armaa_fightingBounty", isBounty);
                         break;

@@ -50,7 +50,8 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         float modifier = 0f;
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             float crew = 0f;
-            //member.getVariant().hasTag(action)
+            if(member.getHullSpec().hasTag("Moci_MobileSuits") || member.getHullSpec().hasTag("Moci_MobileArmour"))
+                continue;
             if (member.isCapital()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);

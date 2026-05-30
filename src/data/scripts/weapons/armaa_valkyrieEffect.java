@@ -2,10 +2,14 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.fleet.FleetMemberType;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import java.awt.Color;
 import java.util.List;
 import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.util.IntervalUtil;
+import org.lwjgl.util.vector.Vector2f;
 
 public class armaa_valkyrieEffect implements EveryFrameWeaponEffectPlugin {
 
@@ -20,19 +24,26 @@ public class armaa_valkyrieEffect implements EveryFrameWeaponEffectPlugin {
         interval.advance(amount);
         if (children != null) {
             for (ShipAPI m : children) {
-                if (m.getStationSlot() == null) {
+                if (m.getStationSlot() == null || m.getShipAI() == null) {
                     continue;
                 }
-                if(!m.getVariant().hasHullMod("armaa_noSupplies"))
+                ShipVariantAPI var = m.getVariant().clone();
+                /*
+                if(!m.getVariant().hasHullMod("armaa_autoModuleRepair"));
                 {
-                    ShipVariantAPI var = m.getVariant().clone();
+                    var.addPermaMod("armaa_autoModuleRepair");
+                    m.getParentStation().getVariant().setModuleVariant(m.getStationSlot().getId(), var);
+
+                }
+                 */
+                if (!m.getVariant().hasHullMod("armaa_noSupplies")) {
                     var.addPermaMod("armaa_noSupplies");
-                    var.addPermaMod("armaa_dpReduction");                   
+                    var.addPermaMod("armaa_dpReduction");
+                    var.addPermaMod("armaa_autoModuleRepair");
                     m.getParentStation().getVariant().setModuleVariant(m.getStationSlot().getId(), var);
                 }
                 if (m.controlsLocked() == false) {
                     m.setControlsLocked(true);
-                    m.setShipAI(null);
 
                 } else {
                     for (WeaponAPI wep : m.getAllWeapons()) {
@@ -41,7 +52,7 @@ public class armaa_valkyrieEffect implements EveryFrameWeaponEffectPlugin {
                         }
                     }
                 }
-                if (ship.areAnyEnemiesInRange() && interval.intervalElapsed() && Math.random() > 0.70f) {
+                if (ship.areAnyEnemiesInRange() && interval.intervalElapsed() && Math.random() > 0.50f) {
                     float variance = MathUtils.getRandomNumberInRange(-0.2f, 0.2f);
                     Global.getSoundPlayer().playSound("disabled_small_crit", 1f + variance, 1f, m.getLocation(), m.getVelocity());
                     engine.addNebulaSmokeParticle(
@@ -53,13 +64,35 @@ public class armaa_valkyrieEffect implements EveryFrameWeaponEffectPlugin {
                             0f,
                             1f,
                             Color.white);
-                    m.resetDefaultAI();
+                    /*
                     if (m.isRetreating()) {
                         m.setRetreating(false, false);
                     }
-                    m.setControlsLocked(false);
-                    m.setStationSlot(null);
-                    new Color(155, 155, 155, 200);
+                     */
+                    //m.setControlsLocked(false);
+                    m.beginLandingAnimation(m);
+                    m.fadeToColor(m, new Color(0, 0, 0, 0), 0.05f, 999999f, 1f);
+                    //engine.getFleetManager(ship.getOriginalOwner()).getRetreatedCopy().add(m);
+                    m.getMutableStats().getHullDamageTakenMult().modifyMult(ship.getId(), 0f);
+                    m.getMutableStats().getArmorDamageTakenMult().modifyMult(ship.getId(), 0f);
+                    FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
+                    member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat("armaa", -99);
+                    member.setOwner(ship.getOriginalOwner());
+                    member.getCrewComposition().addCrew(m.getHullSpec().getMinCrew()+m.getMutableStats().getMinCrewMod().computeEffective(1f));
+                    member.updateStats();
+                    member.getRepairTracker().setCR(m.getCurrentCR());
+                    if (ship.getCaptain() != null) {
+                        member.setCaptain(ship.getCaptain());
+                    }
+                    // float offset = (i == 0 ? -200f : 200f);
+                    Vector2f vec = new Vector2f(m.getLocation().x, m.getLocation().y);
+                    ShipAPI module = Global.getCombatEngine().getFleetManager(ship.getOwner()).spawnFleetMember(member, vec, ship.getFacing(), 0f);
+                    module.setFacing(m.getFacing());
+                    module.getVelocity().set(new Vector2f(ship.getVelocity()));
+                    module.setControlsLocked(false);
+                    module.setCurrentCR(m.getCurrentCR());
+                    m.setRetreating(true, true);
+                    m.setShipAI(null);
 
                 }
 

@@ -40,10 +40,12 @@ armaa_syrinx3,armaa_mrm,beam_trail_smooth,10,0,1,0.5,20,20,"[44,188,245]","[0,0,
 trails_barretta,armaa_barretta_shot,nottahlan_trail_dhelix,8,0,0.1,0.5,4,30,"[200,200,200]","[125,125,125]",1,256,0,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,TRUE
 trails_barretta2,armaa_barretta_shot,beam_trail_smooth,8,0,0.1,0.5,4,20,"[255,200,200]","[200,125,125]",1,128,10,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
+trails_rcl2,armaa_rcl_shot_lv2,base_trail_heavyBurn,8,0,0.1,0.5,16,30,"[255,25,25]","[200,0,0]",0.8,256,-5,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,TRUE
+trails_rcl3,armaa_rcl_shot_lv2,base_trail_zap,12,0,0.1,0.5,6,20,"[255,200,200]","[200,125,125]",0.5,128,10,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-armaa_chain_trail2,armaa_chaingun_shot2,base_trail_heavyBurn,10,0.1,0.1,0.5,6,12,"[255,150,100]","[128,128,128]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
-armaa_rrifle_trail2,armaa_rrifle_shot2,base_trail_heavyBurn,20,0.05,0.1,0.15,4,8,"[200,200,200]","[120,120,120]",0.75,32,512,35,0,1,TRUE,FALSE,TRUE,100,50,0.25,180,180,90,TRUE,
+armaa_chain_trail2,armaa_chaingun_shot2,base_trail_heavyBurn,10,0.1,0.1,0.5,6,12,"[255,120,75]","[255,128,128]",0.6,32,512,25,0,1,TRUE,FALSE,TRUE,70,10,0.1,180,90,180,TRUE,TRUE
+armaa_rrifle_trail2,armaa_rrifle_shot2,base_trail_heavyBurn,20,0.05,0.1,0.15,8,24,"[200,200,200]","[120,120,120]",0.75,32,512,35,0,1,TRUE,FALSE,TRUE,100,50,0.25,180,180,90,TRUE,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

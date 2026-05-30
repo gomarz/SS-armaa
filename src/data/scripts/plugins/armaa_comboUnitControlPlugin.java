@@ -7,11 +7,11 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
-import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.util.Misc;
 import static com.fs.starfarer.api.util.Misc.ZERO;
 import data.scripts.util.armaa_utils;
 import java.awt.Color;
@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.lazywizard.lazylib.MathUtils;
-import org.lwjgl.util.vector.Vector2f;
 
 /**
  *
@@ -70,7 +69,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                         member.getStatus().repairFully();
                         member.updateStats();
                     }
-                    Global.getLogger(this.getClass()).info("test");
+                    //Global.getLogger(this.getClass()).info("test");
                     modulesToUpdate.remove(ship);
 
                 }
@@ -122,9 +121,15 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                 if (!doubletapped && engine.getPlayerShip() == ship) {
                                     continue;
                                 }
-                                if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f)) {
+                                if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f)) {
                                     ShipAPI s = createShipFromModule(ship, module, engine);
-                                    //toRemove.add(ship);
+                                    if (engine.getPlayerShip() != ship && ship.getOwner() == 0) 
+                                    {
+                                        float variance = MathUtils.getRandomNumberInRange(-0.2f, 0.2f);
+                                        Global.getSoundPlayer().playUISound("cr_allied_warning", 1f,1f);
+
+                                        Global.getCombatEngine().getCombatUI().addMessage(0, Misc.getPositiveHighlightColor(), s.getName() + "(" + s.getHullSpec().getHullNameWithDashClass() + ")",Color.white, " has ejected from " + ship.getName());
+                                    }
                                     if (!engine.isSimulation() && ship.getOwner() == 0 && !ship.isAlly()) {
                                         putMapping(s, module.getFleetMember());
                                     }
@@ -217,6 +222,13 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
 
         @Override
         public void advance(float amount) {
+            if (ship.isHulk() || !ship.isAlive()) {
+                trueShip.setStationSlot(null);
+                trueShip.getLocation().set(-10000000, -10000000);
+                armaa_utils.destroy(trueShip);
+                ship.removeListener(this);
+
+            }
             if (Global.getCombatEngine().isEntityInPlay(ship)) {
                 trueShip.setAnimatedLaunch();
             }

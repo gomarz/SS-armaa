@@ -1,35 +1,47 @@
 {
   "hullName": "armaa_dronebay",
   "hullId": "armaa_valkazard_kai_dronebay_l",
-  "hullSize": "FIGHTER",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valkazard/armaa_valkazard_kai_dronebay_l.png",
   "style": "LOW_TECH",
   "height": 56,
   "width": 36,
-  "center": [27, 33],
+  "center": [17, 50],
   "collisionRadius": 42.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 42,
+  "shieldRadius": 74.5,
   "viewOffset": 0,
   "builtInWings": [
-    "armaa_bit_wing"
+    "armaa_bit_blade_wing"
   ],
+  "builtInWeapons": {
+    "CONTROLLER": "armaa_valkazard_mirror_deco"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "SMALL",
       "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 180,
+      "locations": [-18, -0]
+    },
+    {
+      "id": "CONTROLLER",
+      "size": "SMALL",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 0,
-      "angle": 0,
-      "locations": [42, 23]
+      "angle": 180,
+      "locations": [-10, -0]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    -7.5, 14.5,
-    19.5, -3,
-    17.5, -8,
-    -30.5, 25
+    -0.5, 11.5,
+    -0.5, -5.5,
+    -32.5, -8.5,
+    -32.5, 3.5
   ]
 }

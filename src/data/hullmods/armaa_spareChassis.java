@@ -40,12 +40,15 @@ public class armaa_spareChassis extends BaseHullMod {
         if (Global.getCombatEngine() == null || Global.getCombatEngine().isPaused()) {
             return;
         }
+        //Global.getCombatEngine().getCombatUI().addMessage(0, Global.getCombatEngine().getCustomData().containsKey("armaa_globalSpareChassisInitialized"));
         if (ship.getOriginalOwner() < 0) {
             return;
         }
-        if (!ship.hasListenerOfClass(armaa_chassisReplacementTracker.class)) {
-            ship.addListener(new armaa_chassisReplacementTracker(ship));
-            initPoolIfNeeded(ship);
+        if (Global.getCombatEngine().getTotalElapsedTime(false) > 50) {
+            if (!ship.isStationModule() && !ship.hasListenerOfClass(armaa_chassisReplacementTracker.class)) {
+                ship.addListener(new armaa_chassisReplacementTracker(ship));
+                initPoolIfNeeded(ship);
+            }
         }
     }
 
@@ -62,7 +65,7 @@ public class armaa_spareChassis extends BaseHullMod {
         boolean ai = ship.getOriginalOwner() == 1 || ship.getOriginalOwner() == 0 && ship.isAlly();
         if (!ai && engine.getCustomData().containsKey(POOL_INITIALIZED_KEY)) {
             return;
-        } else if (engine.getCustomData().containsKey(POOL_INITIALIZED_KEY + ship.getOriginalOwner())) {
+        } else if (ai && engine.getCustomData().containsKey(POOL_INITIALIZED_KEY + ship.getOriginalOwner())) {
             return;
         }
 
@@ -111,7 +114,7 @@ public class armaa_spareChassis extends BaseHullMod {
                 }
             }
         }
-        if (ship.getOwner() == 0 && !ship.isAlly()) {
+        if (ship.getOriginalOwner() == 0 && !ship.isAlly()) {
             engine.getCustomData().put(GLOBAL_POOL_KEY, fleetTotal);
         } else {
             if (fleetTotal > 10) {
@@ -130,7 +133,10 @@ public class armaa_spareChassis extends BaseHullMod {
             engine.getCombatUI().addMessage(1, Global.getSettings().getBrightPlayerColor(), fleetTotal + " spare chassis available.");
         } else if (ship.getOriginalOwner() == 1) {
             engine.getCombatUI().addMessage(1, Misc.getNegativeHighlightColor(), "Enemy spare chassis available: " + fleetTotal);
+        } else if (ship.isAlly()) {
+            engine.getCombatUI().addMessage(1, Misc.getHighlightColor(), "Ally spare chassis available: " + fleetTotal);
         }
+
     }
 
     static int getPool(ShipAPI ship) {
@@ -209,6 +215,8 @@ public class armaa_spareChassis extends BaseHullMod {
             if (Global.getCombatEngine() == null || Global.getCombatEngine().isPaused()) {
                 return;
             }
+            if(hasRespawned)
+                return;
             poolCheckTrack.advance(amount);
             if (poolCheckTrack.intervalElapsed() && getPool(ship) <= 0) {
                 ship.removeListener(this);
@@ -236,25 +244,30 @@ public class armaa_spareChassis extends BaseHullMod {
                 return;
             }
 
-            if (member == null && ship.getCaptain() != null) {
+            if (member == null) {
                 member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, ship.getVariant().clone());
-                PersonAPI commander = ship.getCaptain().getFleet() == null
-                        ? Global.getCombatEngine().getFleetManager(ship.getOriginalOwner()).getFleetCommander()
-                        : ship.getCaptain().getFleet().getCommander();
-                if (commander.getFleet() != null) {
-                    member.setFleetCommanderForStats(commander, commander.getFleet().getFlagship().getFleetDataForStats());
+                if(ship.getCaptain() != null)
+                {
+                    PersonAPI commander = ship.getCaptain().getFleet() == null
+                            ? Global.getCombatEngine().getFleetManager(ship.getOriginalOwner()).getFleetCommander()
+                            : ship.getCaptain().getFleet().getCommander();
+                    if (commander.getFleet() != null) {
+                        member.setFleetCommanderForStats(commander, commander.getFleet().getFlagship().getFleetDataForStats());
+                    }
+                    member.setCaptain(ship.getCaptain());
                 }
-                member.setCaptain(ship.getCaptain());
                 member.setOwner(ship.getOriginalOwner());
                 member.getCrewComposition().setCrew(member.getMinCrew());
                 member.getRepairTracker().setCR(Math.min(1f, ship.getCRAtDeployment()));
                 member.getRepairTracker().performRepairsFraction(1f);
                 member.updateStats();
+                member.setAlly(ship.isAlly());
             }
 
             Global.getCombatEngine().getFleetManager(ship.getOriginalOwner()).addToReserves(member);
-            Global.getCombatEngine().addPlugin(new armaa_spareChassisSpawner(member, carrier.getLocation(), ship.getFacing(), ship.getOriginalOwner(), isPlayerShip));
+            Global.getCombatEngine().addPlugin(new armaa_spareChassisSpawner(member, carrier.getLocation(), ship.getFacing(), ship.getOriginalOwner(), ship.isAlly()));
             deductFromPool(ship);
+            hasRespawned = true;
             ship.removeListener(this);
         }
 
@@ -275,11 +288,13 @@ public class armaa_spareChassis extends BaseHullMod {
         private final Vector2f location;
         private final float facing;
         private boolean spawnedShip = false;
+        private boolean isAlly;
 
-        public armaa_spareChassisSpawner(FleetMemberAPI member, Vector2f location, float facing, int owner, boolean isPlayerShip) {
+        public armaa_spareChassisSpawner(FleetMemberAPI member, Vector2f location, float facing, int owner, boolean isAlly) {
             this.member = member;
             this.location = location;
             this.facing = facing;
+            this.isAlly = isAlly;
         }
 
         @Override
@@ -290,7 +305,8 @@ public class armaa_spareChassis extends BaseHullMod {
             if (location != null) {
                 ShipAPI replacement = Global.getCombatEngine().getFleetManager(member.getOwner()).spawnFleetMember(member, location, facing, 0f);
                 replacement.setAnimatedLaunch();
-                replacement.setName(replacement.getName() + "-"+member.getOwner()+" [spare]");
+                replacement.setAlly(isAlly);
+                replacement.setName(replacement.getName() + "-" + member.getOwner() + " [spare]");
 
                 spawnedShip = true;
             }

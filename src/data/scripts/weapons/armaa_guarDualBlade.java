@@ -24,8 +24,10 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
     private int limbInit = 0;
     private float swingLevel = 0f;
     private boolean swinging = false;
+    private boolean windedBack = false;
     private boolean cooldownR = false;
     private boolean beamFired = false;
+    private float prevChargeLevel = 0f;
     private final IntervalUtil animInterval = new IntervalUtil(0.012f, 0.012f);
     private final ArrayList<CombatEntityAPI> targets = new ArrayList<>();
     private final float TORSO_OFFSET = -45;
@@ -53,6 +55,12 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
         }
 
         if (engine.isPaused()) return;
+
+        // Detect start of a new charge cycle and reset windedBack
+        if (prevChargeLevel <= 0f && weapon.getChargeLevel() > 0f && !swinging) {
+            windedBack = false;
+        }
+        prevChargeLevel = weapon.getChargeLevel();
 
         // AI movement push
         if (!ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.BACKING_OFF)
@@ -82,14 +90,25 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
             cooldownR = false;
         }
 
-        if (!swinging && !cooldownR && weapon.getChargeLevel() > 0f) {
-            weapon.setCurrAngle(weapon.getCurrAngle() + (sineC * (mult * TORSO_OFFSET) * 0.30f) * weapon.getChargeLevel());
+        // Phase 1: weapon is charging but hasn't wound back yet — snap to rightmost arc limit
+        if (!swinging && !cooldownR && weapon.getChargeLevel() > 0f && !windedBack) {
+            float windBackTarget = ship.getFacing() - (mult * weapon.getArc() / 2f);
+            float diff = MathUtils.getShortestRotation(weapon.getCurrAngle(), windBackTarget);
+            if (Math.abs(diff) > 10f) {
+                float step = Math.min(Math.abs(diff), 6f);
+                weapon.setCurrAngle(weapon.getCurrAngle() + Math.signum(diff) * step);
+            } else {
+                weapon.setCurrAngle(windBackTarget);
+                windedBack = true;
+            }
         }
 
-        if (weapon.getChargeLevel() >= 1f) {
+        // Phase 2: fully charged and wound back — begin swing
+        if (weapon.getChargeLevel() >= 1f && windedBack) {
             swinging = true;
         }
 
+        // Original swing logic, untouched
         if (swinging && Math.abs(weapon.getCurrAngle() - (ship.getFacing() - (mult * 45f))) > 0.1f) {
             animInterval.advance(amount);
             if (mult == 1f) {
@@ -103,9 +122,10 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
             swinging = false;
             swingLevel = 0f;
             cooldownR = true;
+            // windedBack intentionally NOT reset here — prevChargeLevel handles it on next charge
         }
 
-        if (animInterval.intervalElapsed() && !beamFired) {
+        if (animInterval.intervalElapsed() && !beamFired && windedBack) {
             swingLevel += 0.5f;
         }
         if (swingLevel > 9f) swingLevel = 9f;
@@ -122,21 +142,23 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
         }
 
         if (chargeLevel > 0.5f && weapon.isFiring() && (!beamFired || swingLevel >= 5f)) {
-            MagicFakeBeam.spawnFakeBeam(engine, weapon.getFirePoint(0), 50f, weapon.getCurrAngle(),
+            float beamRange = 80f + ship.getMutableStats().getBeamPDWeaponRangeBonus().computeEffective(1f)
+                    + ship.getMutableStats().getBeamWeaponRangeBonus().computeEffective(1f)
+                    + ship.getMutableStats().getEnergyWeaponRangeBonus().computeEffective(1f);
+            MagicFakeBeam.spawnFakeBeam(engine, weapon.getFirePoint(0), beamRange, weapon.getCurrAngle(),
                     20f, amount, 0.15f * chargeLevel, 20f,
                     new Color(.9f, 1f, .9f, 1f * chargeLevel),
                     new Color(0f, 1f, 0.75f, .9f * chargeLevel),
                     0f, DamageType.ENERGY, 0f, ship);
 
             Vector2f origin = weapon.getFirePoint(0);
-            Vector2f point = armaa_utils.getBeamEndpoint(origin, weapon.getCurrAngle(), 50f);
-
+            Vector2f point = armaa_utils.getBeamEndpoint(origin, weapon.getCurrAngle(), beamRange);
+            boolean hit = false;
             for (CombatEntityAPI target : CombatUtils.getEntitiesWithinRange(origin, 55f)) {
                 if (target.getOwner() == ship.getOwner()) continue;
                 if (targets.contains(target)) continue;
                 if (target instanceof DamagingProjectileAPI && !(target instanceof MissileAPI)) continue;
 
-                // Arc check — same early-out as naginata
                 float angleToTarget = VectorUtils.getAngle(origin, target.getLocation());
                 float diff = MathUtils.getShortestRotation(weapon.getCurrAngle(), angleToTarget);
                 if (Math.abs(diff) > weapon.getArc() * 0.5f) continue;
@@ -151,10 +173,9 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
                     if (shipTarget.isPhased() || shipTarget.getCollisionClass() == CollisionClass.NONE) continue;
                 }
 
-                float finalDamage = weapon.getDamage().getDamage()*2f;
+                float finalDamage = weapon.getDamage().getDamage() * 2f;
                 float variance = MathUtils.getRandomNumberInRange(-0.3f, 0.3f);
 
-                // 1) Shield check
                 Vector2f shieldHit = armaa_utils.intersectShield(target, origin, point);
                 if (shieldHit != null) {
                     engine.applyDamage(target, shieldHit, finalDamage, weapon.getDamageType(), 0f, false, false, ship, true);
@@ -162,10 +183,13 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
                     MagicLensFlare.createSharpFlare(engine, ship, shieldHit, 4f, 150f, weapon.getCurrAngle(),
                             new Color(0, 255, 0, 150), new Color(200, 255, 200, 255));
                     targets.add(target);
+                    if (!hit) {
+                        hit = true;
+                        CombatUtils.applyForce(weapon.getShip(), weapon.getShip().getFacing() - 180f, Math.min(target.getMass() / 4, 120));
+                    }
                     continue;
                 }
 
-                // 2) Hull precise check
                 Vector2f hullHit = armaa_utils.preciseHitCheck(weapon, target);
                 if (hullHit != null) {
                     engine.applyDamage(target, hullHit, finalDamage, weapon.getDamageType(), 0f, false, false, ship, true);
@@ -173,6 +197,10 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
                     MagicLensFlare.createSharpFlare(engine, ship, hullHit, 4f, 150f, weapon.getCurrAngle(),
                             new Color(0, 255, 0, 150), new Color(200, 255, 200, 255));
                     targets.add(target);
+                    if (!hit) {
+                        hit = true;
+                        CombatUtils.applyForce(weapon.getShip(), weapon.getShip().getFacing() - 180f, Math.min(target.getMass() / 4, 120));
+                    }
                 }
             }
         }

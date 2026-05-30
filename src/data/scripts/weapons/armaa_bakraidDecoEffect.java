@@ -131,8 +131,12 @@ public class armaa_bakraidDecoEffect implements EveryFrameWeaponEffectPlugin {
             for (ShipAPI module : children) {
                 module.ensureClonedStationSlotSpec();
                 if (module.getStationSlot() != null) {
+                    if(module.getSystem().getSpecAPI().hasTag("movement"))
+                    {
+                        module.blockCommandForOneFrame(ShipCommand.USE_SYSTEM);
+                        module.setShipSystemDisabled(true);
+                    }
                     module.blockCommandForOneFrame(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK);
-                    module.blockCommandForOneFrame(ShipCommand.USE_SYSTEM);
                     if (ship.getFluxTracker().isOverloaded() && !module.getFluxTracker().isOverloaded()) {
                         module.getFluxTracker().beginOverloadWithTotalBaseDuration(
                                 ship.getFluxTracker().getOverloadTimeRemaining());

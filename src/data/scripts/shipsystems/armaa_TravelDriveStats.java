@@ -7,6 +7,7 @@ import com.fs.starfarer.api.Global;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import com.fs.starfarer.api.combat.ShipAPI;
 import data.scripts.plugins.armaa_CarrierLaunchManager;
+import data.scripts.util.armaa_utils;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,34 +109,8 @@ public class armaa_TravelDriveStats extends BaseShipSystemScript {
         List<ShipAPI> candidates = new ArrayList<>();
 
         for (ShipAPI candidate : CombatUtils.getShipsWithinRange(ship.getLocation(), 20000f)) {
-            if (candidate.getOwner() != ship.getOwner()) {
+            if(!armaa_utils.isValidCarrierFor(ship, candidate))
                 continue;
-            }
-            if (candidate.isFighter() || candidate.isFrigate() || candidate == ship) {
-                continue;
-            }
-            if (candidate.isDestroyer() && (!candidate.getVariant().hasHullMod("converted_hangar")
-                    && candidate.getHullSpec().getFighterBays() <= 0)) {
-                continue;
-            }
-            if (candidate.isHulk()) {
-                continue;
-            }
-            if (candidate.isAlly() && !ship.isAlly()) {
-                continue;
-            }
-            if (ship.getHullSpec().hasTag("strikecraft_medium") && candidate.isDestroyer()) {
-                continue;
-            }
-            if (ship.getHullSpec().hasTag("strikecraft_large")
-                    && (candidate.isCruiser() || candidate.isDestroyer())) {
-                continue;
-            }
-            if (candidate.getNumFighterBays() <= 0
-                    && candidate.getHullSpec().getFighterBays() <= 0
-                    && candidate.getLaunchBaysCopy().isEmpty()) {
-                continue;
-            }
             
             //prioritize this ship
             if(candidate.getVariant().hasHullMod("armaa_exclusive_hangar_assignment"))

@@ -2,7 +2,7 @@
   "variantId": "armaa_valkazard_standard_kai",
   "hullId": "armaa_valkazard_kai",
   "displayName": "Standard",
-  "goalVariant": true,
+  "goalVariant": false,
   "fluxCapacitors": 9,
   "fluxVents": 10,
   "quality": 1,
@@ -22,26 +22,6 @@
         "WS0001": "gorgon",
         "WS0002": "gorgon"
       }
-    },
-    {
-      "autofire": false,
-      "mode": "ALTERNATING",
-      "weapons": {}
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {}
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {}
-    },
-    {
-      "autofire": false,
-      "mode": "ALTERNATING",
-      "weapons": {}
     }
   ],
   "modules": [

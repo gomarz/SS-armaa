@@ -250,7 +250,8 @@ public class armaa_K {
                                 Submarkets.SUBMARKET_OPEN,
                                 Submarkets.GENERIC_MILITARY,
                                 Submarkets.SUBMARKET_BLACK,
-                                Submarkets.SUBMARKET_STORAGE
+                                Submarkets.SUBMARKET_STORAGE,
+                                "armaa_mrcMarket"
                         )),
                 new ArrayList<>(
                         Arrays.asList(

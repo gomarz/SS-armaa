@@ -95,8 +95,7 @@ public class armaa_combat_docking_AI extends BaseShipAI {
         }
     }
 
-    private void abortOp(ShipAPI ship) 
-    {
+    private void abortOp(ShipAPI ship) {
         //ship.getFluxTracker().showOverloadFloatyIfNeeded("Landing aborted", Color.yellow, 2f, true);
         ship.abortLanding();
         ship.setShipSystemDisabled(false);
@@ -307,41 +306,38 @@ public class armaa_combat_docking_AI extends BaseShipAI {
                 return;
             }
             //not valid if not on same side
-            if (potentialCarrier.getOwner() == ship.getOwner()) {
-                if ((!potentialCarrier.isFrigate() || potentialCarrier.isStationModule() || potentialCarrier.getHullSpec().hasTag("strikecraft_with_bays"))
-                        && potentialCarrier != ship && potentialCarrier.getCurrentCR() > 0) {
-                    if (potentialCarrier.hasLaunchBays()) {
-                        //Random rand = new Random();
-                        //int size = rand.nextInt(potentialCarrier.getLaunchBaysCopy().size());
-                        ShipAPI fighter = null;
-                        boolean isTaken = false;
-                        for (int i = 0; i < potentialCarrier.getNumFighterBays(); i++) {
-                            if (potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing() != null) {
-                                if (Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen" + potentialCarrier.getId() + "_" + i) instanceof Boolean) {
-                                    isTaken = (boolean) Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen" + potentialCarrier.getId() + "_" + i);
-                                }
-                                if (isTaken) {
-                                    continue;
-                                }
-                                bayNo = i;
-                                fighter = potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing().getLeader();
-                                break;
+            if (armaa_utils.isValidCarrierFor(ship, potentialCarrier)) {
+                if (potentialCarrier.hasLaunchBays()) {
+                    //Random rand = new Random();
+                    //int size = rand.nextInt(potentialCarrier.getLaunchBaysCopy().size());
+                    ShipAPI fighter = null;
+                    boolean isTaken = false;
+                    for (int i = 0; i < potentialCarrier.getNumFighterBays(); i++) {
+                        if (potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing() != null) {
+                            if (Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen" + potentialCarrier.getId() + "_" + i) instanceof Boolean) {
+                                isTaken = (boolean) Global.getCombatEngine().getCustomData().get("armaa_hangarIsOpen" + potentialCarrier.getId() + "_" + i);
                             }
-                        }
-                        if (fighter != null) {
-                            fighterbay = fighter;
-                            carrier = potentialCarrier;
-                            target = carrier;
-                            if (fighter.getWing() != null && fighter.getWing().getSource() != null && fighter.getWing().getSource().getLandingLocation(fighter) != null) {
-                                targetOffset = armaa_utils.toRelative(carrier, fighter.getWing().getSource().getLandingLocation(fighter));
-                                landingLoc = fighter.getWing().getSource().getLandingLocation(fighter);
-                                landingLoc = fighter.getWing().getSource().getLandingLocation(fighter);
-                            } else {
-                                targetOffset = carrier.getLocation();
-                                landingLoc = carrier.getLocation();
+                            if (isTaken) {
+                                continue;
                             }
-                            hasTargettedCarrier = true;
+                            bayNo = i;
+                            fighter = potentialCarrier.getLaunchBaysCopy().get(bayNo).getWing().getLeader();
+                            break;
                         }
+                    }
+                    if (fighter != null) {
+                        fighterbay = fighter;
+                        carrier = potentialCarrier;
+                        target = carrier;
+                        if (fighter.getWing() != null && fighter.getWing().getSource() != null && fighter.getWing().getSource().getLandingLocation(fighter) != null) {
+                            targetOffset = armaa_utils.toRelative(carrier, fighter.getWing().getSource().getLandingLocation(fighter));
+                            landingLoc = fighter.getWing().getSource().getLandingLocation(fighter);
+                            landingLoc = fighter.getWing().getSource().getLandingLocation(fighter);
+                        } else {
+                            targetOffset = carrier.getLocation();
+                            landingLoc = carrier.getLocation();
+                        }
+                        hasTargettedCarrier = true;
                     }
                 }
             }
@@ -351,29 +347,8 @@ public class armaa_combat_docking_AI extends BaseShipAI {
             //Works, land in carrier bay by referencing a fighter from that carrier. Unable to grab location data from the carrier it itself.
 
             for (ShipAPI potentialCarrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 10000.0F)) {
-                if (potentialCarrier.getOwner() != ship.getOwner()) {
+                if(!armaa_utils.isValidCarrierFor(ship, potentialCarrier))
                     continue;
-                }
-
-                if (potentialCarrier.isFighter() || potentialCarrier.isFrigate() && (!potentialCarrier.isStationModule()
-                        || !potentialCarrier.getHullSpec().hasTag("strikecraft_with_bays")) || potentialCarrier == ship || potentialCarrier.getCurrentCR() <= 0
-                        || !potentialCarrier.isAlive()) {
-                    continue;
-                }
-
-                if (ship.getHullSpec().hasTag("strikecraft_medium")) {
-                    if (potentialCarrier.isDestroyer()) {
-                        continue;
-                    }
-                } else if (ship.getHullSpec().hasTag("strikecraft_large")) {
-                    if (potentialCarrier.isCruiser() || potentialCarrier.isDestroyer()) {
-                        return;
-                    }
-                }
-
-                if (!Global.getCombatEngine().isEntityInPlay(potentialCarrier)) {
-                    continue;
-                }
 
                 if (MathUtils.getDistance(ship, potentialCarrier) > nearest) {
                     continue;

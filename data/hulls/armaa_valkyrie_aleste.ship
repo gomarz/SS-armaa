@@ -1,6 +1,6 @@
 {
   "hullName": "Valkyrie",
-  "hullId": "armaa_valkyrie",
+  "hullId": "armaa_valkyrie_aleste",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/armaa_valkyrie_ca.png",
   "style": "MIDLINE",

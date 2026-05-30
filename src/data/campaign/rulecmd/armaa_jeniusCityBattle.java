@@ -49,6 +49,9 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
         ArrayList<FleetMemberAPI> removedShips = new ArrayList();
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             float crew = 0f;
+            if (member.getHullSpec().hasTag("Moci_MobileSuits") || member.getHullSpec().hasTag("Moci_MobileArmour")) {
+                continue;
+            }
             if (member.isCapital()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);

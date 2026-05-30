@@ -358,8 +358,8 @@ public class armaa_utils {
         if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float) {
             HPPercent = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId());
         }
-        if (Global.getSettings().getModManager().isModEnabled("lunalib") && LunaSettings.getFloat("armaa", "armaa_repairLevel") != null) {
-            HPPercent = LunaSettings.getFloat("armaa", "armaa_repairLevel").floatValue();
+        if (Global.getSettings().getModManager().isModEnabled("lunalib") && LunaSettings.getDouble("armaa", "armaa_repairLevel") != null) {
+            HPPercent = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
         }
         return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent)
                 || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);
@@ -1133,8 +1133,7 @@ public class armaa_utils {
         return newPersonality;
     }
 
-    public static OfficerManagerEvent getOfficerManagerEvent() 
-    {
+    public static OfficerManagerEvent getOfficerManagerEvent() {
         OfficerManagerEvent ome = null;
         for (EveryFrameScript script : Global.getSector().getScripts()) {
             Global.getLogger(armaa_utils.class).info(script.getClass().getCanonicalName());
@@ -1203,11 +1202,10 @@ public class armaa_utils {
 
         return newPersonality;
     }
-    
-    public static String getMinuteString()
-    {
-            int currentMinute = Global.getSector().getClock().getCal().get(java.util.Calendar.MINUTE);
-            String minuteStr = currentMinute < 10 ? "0" + currentMinute : "" + currentMinute;
+
+    public static String getMinuteString() {
+        int currentMinute = Global.getSector().getClock().getCal().get(java.util.Calendar.MINUTE);
+        String minuteStr = currentMinute < 10 ? "0" + currentMinute : "" + currentMinute;
         return minuteStr;
     }
 
@@ -1247,14 +1245,14 @@ public class armaa_utils {
         }
         return null;
     }
-    
-   public static Vector2f getBeamEndpoint(Vector2f origin, float angleRadians, float length) {
+
+    public static Vector2f getBeamEndpoint(Vector2f origin, float angleRadians, float length) {
         float dx = length * (float) Math.cos(angleRadians);
         float dy = length * (float) Math.sin(angleRadians);
         return new Vector2f(origin.x + dx, origin.y + dy);
     }
-   
-   public static Vector2f intersectShield(CombatEntityAPI target, Vector2f A, Vector2f B) {
+
+    public static Vector2f intersectShield(CombatEntityAPI target, Vector2f A, Vector2f B) {
         if (target == null) {
             return null;
         }
@@ -1312,5 +1310,52 @@ public class armaa_utils {
         }
 
         return hit;
+    }
+
+    public static boolean isValidCarrierFor(ShipAPI ship, ShipAPI carrier) {
+        if (carrier == null || carrier == ship) {
+            return false;
+        }
+        if (carrier.getHullSpec().hasTag("no_wingcom_docking")) {
+            return false;
+        }
+        if (carrier.getOwner() != ship.getOwner()) {
+            return false;
+        }
+        if (carrier.isFighter()) {
+            return false;
+        }
+        if (carrier.isHulk() || !carrier.isAlive()
+                || !Global.getCombatEngine().isEntityInPlay(carrier)) {
+            return false;
+        }
+        if (carrier.getCurrentCR() <= 0) {
+            return false;
+        }
+
+        // Frigates only qualify as station modules
+        if (carrier.isFrigate() && !carrier.isStationModule()) {
+            return false;
+        }
+
+        if (carrier.isStationModule() && carrier.getParentStation() != null && carrier.getParentStation().getHullSize() == HullSize.FRIGATE) // Size gating for larger strikecraft
+        {
+            if (ship.getHullSpec().hasTag("strikecraft_medium")) {
+                if (carrier.isDestroyer()) {
+                    return false;
+                }
+            } else if (ship.getHullSpec().hasTag("strikecraft_large")) {
+                if (carrier.isCruiser() || carrier.isDestroyer()) {
+                    return false;
+                }
+            }
+        }
+
+        // Must actually have somewhere to land
+        if (carrier.getNumFighterBays() <= 0) {
+            return false;
+        }
+
+        return true;
     }
 }

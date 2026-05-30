@@ -39,7 +39,7 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
     private IntervalUtil forceTransformTimer = new IntervalUtil(0.5f, 5f);
     private final IntervalUtil animUpdateInterval = new IntervalUtil(0.033f, 0.05f);
     private Vector2f ogPosL, ogPosR, ogPosRArm, ogPosLArm, ogPosLWing, ogPosRWing, ogPosGunF, ogPosLMissile, ogPosRMissile;
-    private final float TORSO_OFFSET = -150, LEFT_ARM_OFFSET = -65, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
+    private final float TORSO_OFFSET = -150, LEFT_ARM_OFFSET = -90, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
 
     public void init() {
         runOnce = true;
@@ -209,11 +209,11 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                         }
                     } else if (isRobot) {
                         if (flags.hasFlag(AIFlags.BACK_OFF) || flags.hasFlag(AIFlags.BACKING_OFF)
-                                || flags.hasFlag(AIFlags.HARASS_MOVE_IN)) {
+                                || flags.hasFlag(AIFlags.HARASS_MOVE_IN) || flags.hasFlag(AIFlags.NEEDS_HELP)) {
                             transforming = true;
                         }
                         if (flags.hasFlag(AIFlags.MANEUVER_TARGET) || flags.hasFlag(AIFlags.MOVEMENT_DEST)
-                                || flags.hasFlag(AIFlags.PURSUING) || flags.hasFlag(AIFlags.RUN_QUICKLY)) {
+                                || flags.hasFlag(AIFlags.PURSUING) || flags.hasFlag(AIFlags.RUN_QUICKLY) || ship.getHardFluxLevel() >= 0.75f) {
                             transforming = true;
                         }
                     }

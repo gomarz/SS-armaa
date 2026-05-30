@@ -273,7 +273,7 @@ public class armaa_valkazardEffect implements EveryFrameWeaponEffectPlugin {
                 weapon.getSprite().setCenterY(gun.getBarrelSpriteAPI().getCenterY() - 23f);
             }
 
-            if (pauldronL != null) {
+            if (pauldronL != null && armL != null) {
                 pauldronL.setCurrAngle(torso.getCurrAngle() + LPAULDRONOFFSET * sineA + ((sineC * (TORSO_OFFSET * .5f))) + MathUtils.getShortestRotation(torso.getCurrAngle(), armL.getCurrAngle()) * 0.70f);
                 pauldronL.getSprite().setCenterY(originalShoulderPos - (8 * sinceB));
             }

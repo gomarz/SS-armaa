@@ -29,7 +29,7 @@ public class armaa_AWACSCeylon implements EveryFrameWeaponEffectPlugin {
     private static final float DAMAGE_MALUS = .80f;
     private static float EFFECT_RANGE = 2000f;
     public static final float ROTATION_SPEED = 5f;
-    public static final Color COLOR = new Color(15, 215, 55, 200);
+    public static final Color COLOR = new Color(15, 215, 55, 100);
     private static final String AWACS_ID = "AWACS_ID";
 
     private float rotation = 0f;

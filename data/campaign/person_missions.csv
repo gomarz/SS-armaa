@@ -5,5 +5,5 @@ armaa_bts,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_bts.png,data.scripts
 armaa_rtc,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_bts.png,data.scripts.campaign.missions.armaa_RobbingTheCradleMission
 armaa_hc,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_hc.png,data.scripts.campaign.missions.armaa_Homecoming
 armaa_reic,,,,,,,,,,,,,,,graphics/armaa/icons/missions/armaa_hc.png,data.scripts.campaign.missions.armaa_RedEarthIronCages
-armaa_cpc,armaa_seraph,,,,,10,30,60,FRIENDLY,,,,,,graphics/icons/missions/custom_production.png,data.scripts.campaign.missions.armaa_CustomProductionContract
+armaa_cpc,armaa_seraph,,,,,50,30,60,FRIENDLY,,,,,,graphics/icons/missions/custom_production.png,data.scripts.campaign.missions.armaa_CustomProductionContract
 "# note: if person id, tagsAll, tagsAny, and tagsNotAny are all blank, the mission will not be offered by any contact without specific scripting to make it so (via BeginMission, etc). Otherwise, the mission may be offered by any contact that meets the conditions specified by these columns.",,,,,,,,,,,,,,,,

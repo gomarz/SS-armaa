@@ -5451,6 +5451,7 @@ Both hands come up to her face for a moment. Exasperation? You're not sure.
 armaa_seraLoreDumpEnd,armaa_seraLoreDumpOpts,,,,"armaa_seraLoreDumpEndF:""There's something else I wanted to talk about.""(back)",
 armaa_seraLoreDumpEndF,DialogOptionSelected,$option == armaa_seraLoreDumpEndF,FireAll PopulateOptions,,,
 ,,,,,,
+armaa_valkLoreOptasdf,PopulateOptions,$id == armaa_seraph,armaa_valkazardCMD upgradeValkKai,,armaa_valkLore:Inquire about the Valkazard,
 armaa_valkLoreOpt,PopulateOptions,"$id == armaa_seraph
 $armaa_gaveSeraphValk score: 1000
 !$armaa_askedValkLore
@@ -5487,29 +5488,19 @@ FireAll armaa_valkLoreQuestions","""Correct."" She lifts one shoulder in a small
 armaa_valkLoreATGResp,DialogOptionSelected,$option == armaa_valkLoreATGResp,"$armaa_askedAboutJanusDevice = true
 FireAll armaa_valkLoreQuestions","""Yes,"" Sera Pha said, as if you'd referenced an earnings report instead of a sector-shaking event. ""The Janus Device.""
 
-""I'm aware you were present for its first live demonstration. It would have been difficult to miss. Footage of your fleet passing through was circulating across the Sector within hours - enthusiastic, terrified, and heavily edited depending on who was doing the sharing.""
-
-A faint smile. Not quite approval.
+""I'm aware you were present for its first live demonstrationFootage of your fleet passing through was circulating across the Sector within hours - enthusiastic, terrified, and heavily edited depending on who was doing the sharing.""
 
 ""People hear 'Gate' and assume anything that bends distance is the same endeavor. It isn't.""
 
 She tapped the Valkazard readout again.
 
-""The Janus Device is a key turned in a lock that already exists. Whatever else it is - genius, heresy, miracle - it's still exploiting pre-Collapse infrastructure and pre-Collapse tolerances.""
+""The Janus Device is a key turned in a lock that already exists. Whatever else it is - genius, heresy, miracle - it's still exploiting pre-Collapse infrastructure and pre-Collapse tolerances. Our work is not a key. It is an attempt to manufacture another door.""
 
-Her expression sharpened.
-
-""Our work is not a key. It is an attempt to manufacture another door.""
-
-""Gate technology is a network problem. Addressing, synchronization, destination stability - all of it built atop something the Domain spent centuries refining. SILVERSWORD-class systems are containment problems. Local apertures. Anchors without endpoints.""
-
-She leaned back, composed again.",,
+""Gate technology is a network problem, all of it built atop something the Domain spent centuries refining. SILVERSWORD-class systems are containment problems.""",,
 armaa_valkLoreWhyLegsResp,DialogOptionSelected,$option == armaa_valkLoreWhyLegsResp,"$armaa_askedAboutLegs = true
-FireAll armaa_valkLoreQuestions","""Because appearances matter,"" Sera Pha replies almost instantaneously. ""Even in engineering.""
+FireAll armaa_valkLoreQuestions","She lets the holo rotate, the legs highlighted like an indulgence.
 
-She lets the holo rotate, the legs highlighted like an indulgence.
-
-""Valkazard could have been a pod, a brick, or a flying power core with thrusters stapled to it. Legs do not make it function. Legs make it legible - to investors, to officers, to whatever committee the company needed convincing that this was a weapons platform and not an expensive physics experiment.""
+""Valkazard could have been a pod, a brick, or a flying power core with thrusters stapled to it. Legs do not make it function. Legs make it legible to whatever committee the company needed convincing that this was a weapons platform and not an expensive physics experiment.""
 
 She smiles faintly. ""They're theater. Very expensive theater.""",,
 armaa_valkLoreWhatDoWithScanResp,DialogOptionSelected,$option == armaa_valkLoreWhatDoWithScanResp,"$armaa_askedAboutScan = true

@@ -118,6 +118,7 @@
 		},
 		"misc":{
 			"armaa_bellator_lights":"graphics/armaa/ships/armaa_bellator_lights.png",
+			"armaa_claw_top":"graphics/armaa/ships/armaa_claw_old.png",
 			"armaa_atmo_station":"graphics/stations/survey_ship.png",
 			"armaa_cutscene":"graphics/armaa/backgrounds/armaa_cutscene.jpg",
 			"armaa_atmo_fire":"graphics/fx/torpedoray32.png",

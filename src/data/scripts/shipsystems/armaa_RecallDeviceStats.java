@@ -162,9 +162,13 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
             if (ship.getOwner() != carrier.getOwner()) {
                 continue;
             }
-            if(ship.isStationModule())
+            if (ship.isStationModule()) {
                 continue;
+            }
             if (!ship.getVariant().hasHullMod("strikeCraft")) {
+                continue;
+            }
+            if (ship.getVariant().hasTag("armaa_strikecraft_refit_never")) {
                 continue;
             }
             if (ship.getVariant().hasHullMod("armaa_emergencyRecallDevice")) {
@@ -185,12 +189,13 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                     }
                 }
                 // why is this a double anyway
-                if (LunaSettings.getFloat("armaa", "armaa_repairLevel") != null) {
-                    LunaSettings.getFloat("armaa", "armaa_repairLevel");
+                if (LunaSettings.getDouble("armaa", "armaa_repairLevel") != null) {
+                    LunaSettings.getDouble("armaa", "armaa_repairLevel");
                 }
-                
-                if(armaa_strikeCraftRepairTracker.getRepairsRemaining(ship) <= 0)
+
+                if (armaa_strikeCraftRepairTracker.getRepairsRemaining(ship) <= 0) {
                     continue;
+                }
                 if (ship.getHitpoints() >= armaa_utils.getMaxHPRepair(ship) && ship.getCurrentCR() >= armaa_utils.getMaxCRRepair(ship)) {
                     continue;
                 }

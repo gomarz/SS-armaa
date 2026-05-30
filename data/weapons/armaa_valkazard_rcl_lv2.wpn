@@ -28,7 +28,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "armaa_rcl_shot",
+  "projectileSpecId": "armaa_rcl_shot_lv2",
   "renderAboveAllWeapons": 0,
   "renderHints": [
     RENDER_BARREL_BELOW

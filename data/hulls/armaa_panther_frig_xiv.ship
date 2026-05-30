@@ -117,7 +117,7 @@
     {
       "id": "E_HEAD",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,

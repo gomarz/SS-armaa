@@ -17,8 +17,6 @@
     "armaa_valkazardKaiWeaponSwap",
     "armaa_SilverSwordHM"
   ],
-  "builtInWings": [
-  ],
   "builtInWeapons": {
     "C_ARMR": "armaa_sprigganRightArm",
     "D_PAULDRONL": "armaa_valkazard_leftshoulder",
@@ -125,7 +123,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 29,
-      "locations": [-14, 16],
+      "locations": [-18, 16],
       "renderOrderMod": 100
     },
     {
@@ -135,7 +133,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -29,
-      "locations": [-14, -16],
+      "locations": [-18, -16],
       "renderOrderMod": 100
     },
     {
@@ -144,8 +142,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 20,
-      "locations": [-14, 12]
+      "angle": -75,
+      "locations": [-18, 8]
     },
     {
       "id": "BAY2",
@@ -153,8 +151,8 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -20,
-      "locations": [-14, -12]
+      "angle": 75,
+      "locations": [-18, -8]
     }
   ],
   "engineSlots": [

@@ -1,26 +1,22 @@
 {
   "id": "armaa_pantherHead_xiv",
-  "specClass": "beam",
-  "type": "DECORATIVE",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_panther_head_shot",
+  "fireSoundTwo":"light_mass_driver_fire",
+  "type": "BALLISTIC",
   "size": "SMALL",
-  "collisionClass": "RAY",
-  "collisionClassByFighter": "RAY_FIGHTER",
-  "displayArcRadius": 250,
-  #"everyFrameEffect": "data.scripts.weapons.armaa_headTrackerPanther",
   "turretSprite": "graphics/armaa/ships/panther/armaa_pantherHead.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",
-  "glowColor": [
-    255,
-    255,
-    255,
-    255
-  ],
-  "hitGlowRadius": 0,
+  "glowColor": [255,0,0,150],
+  "turretGlowSprite": "graphics/armaa/ships/kouto/armaa_koutoheadglow.png",
   "turretOffsets": [
-    0.5,
-    3.5
+    3,
+    2,
+    3,
+    -2
   ],
   "turretAngleOffsets": [
+    0,
     0
   ],
   "hardpointOffsets": [
@@ -30,22 +26,20 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "fringeColor": [
-    255,
-    0,
-    0,
-    255
-  ],
-  "coreColor": [
-    255,
-    0,
-    0,
-    255
-  ],
-  "darkCore": true,
-  #"convergeOnPoint": true,
-  "width": 2,
-  "textureType": SMOOTH,
-  "textureScrollSpeed": 64,
-  "pixelsPerTexel": 1
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 10,
+    "spread": 5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 5,
+    "particleDuration": 0.2,
+    "particleCount": 6,
+    "particleColor": [
+      255,
+      100,
+      100,
+      200
+    ]
+  }
 }

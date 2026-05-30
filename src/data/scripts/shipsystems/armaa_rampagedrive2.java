@@ -121,11 +121,10 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
         }
 
         ShipAPI target = ship.getShipTarget();
-                for(ShipAPI module : ship.getChildModulesCopy())
-                {
-                    module.setJitter(new Object(), new Color(255,165,90,155), effectLevel, 2, 0,5);
-                    module.setJitterUnder(new Object(), new Color(155,25,3,55), effectLevel, 25, 0,7);
-                }
+        for (ShipAPI module : ship.getChildModulesCopy()) {
+            module.setJitter(new Object(), new Color(255, 165, 90, 155), effectLevel, 2, 0, 5);
+            module.setJitterUnder(new Object(), new Color(155, 25, 3, 55), effectLevel, 25, 0, 7);
+        }
         float turnrate = ship.getMaxTurnRate() * 1.6f;
         if (ship.getShield() != null && ship.getShield().isOn()) {
             ship.getShield().toggleOff();
@@ -228,9 +227,6 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                     }
                     float targetJitterLevel = effectLevel;
 
-                    float maxRangeBonus = 50f;
-                    float jitterRangeBonus = shipJitterLevel * maxRangeBonus;
-
                     if (targetJitterLevel > 0) {
                         //target.setJitterUnder(KEY_TARGET, JITTER_UNDER_COLOR, targetJitterLevel, 5, 0f, 15f);
                         targetData.target.setJitter(new Object(), color, targetJitterLevel, 3, 0f, 5f);
@@ -264,7 +260,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             stats.getBallisticRoFMult().modifyMult(id, ROF_MULT);
             stats.getEnergyRoFMult().modifyMult(id, ROF_MULT);
             for (ShipAPI module : ship.getChildModulesCopy()) {
-                
+
                 module.getMutableStats().getMaxSpeed().modifyFlat(id, (Float) SPEED_BOOST.get(ship.getHullSize()) * bonus);
                 module.getMutableStats().getAcceleration().modifyFlat(id, (Float) SPEED_BOOST.get(ship.getHullSize()) * 4);
                 module.getMutableStats().getEmpDamageTakenMult().modifyMult(id, (Float) DAMAGE_MULT.get(ship.getHullSize()));
@@ -292,8 +288,6 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                         Vector2f col = new Vector2f(1000000, 1000000);
                         if (e instanceof ShipAPI) {
                             if (e != ship && ((ShipAPI) e).getParentStation() != e && (e.getCollisionClass() != CollisionClass.NONE) && CollisionUtils.getCollides(ship.getLocation(), end, e.getLocation(), e.getCollisionRadius())) {
-                                //&&
-                                //!(e.getCollisionClass()==CollisionClass.FIGHTER && e.getOwner()==ship.getOwner() && !((ShipAPI)e).getEngineController().isFlamedOut())
                                 ShipAPI s = (ShipAPI) e;
                                 Vector2f hitPoint = (Vector2f) getShipCollisionPoint(from, end, s, angle);
                                 if (hitPoint != null) {
@@ -332,6 +326,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
                                 // clamp extremes so nothing becomes ridiculous
                                 pushTarget = Math.min(pushTarget, 4f);   // yeet small ships but not to space
+                                if(!ship.isFrigate() && !ship.isFighter() )
                                 CombatUtils.applyForce(ship, angleAB + 180f, 3f * ship.getMass() * pushRammer);
                                 CombatUtils.applyForce(e, angleAB, 3f * ship.getMass() * pushTarget);
                                 Global.getSoundPlayer().playSound("collision_ships", 1f, 0.5f, ship.getLocation(), ship.getVelocity());
