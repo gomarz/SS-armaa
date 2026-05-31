@@ -7,12 +7,16 @@
   "height": 56,
   "width": 36,
   "center": [19, 50],
-  "collisionRadius": 42.5,
+  "collisionRadius": 95,
   "shieldCenter": [0, -0],
-  "shieldRadius": 68,
+  "shieldRadius": 95.5,
   "viewOffset": 0,
   "builtInWings": [
     "armaa_bit_blade_wing"
+  ],
+  "builtInMods": [
+    "novent",
+    "ablative_armor"
   ],
   "builtInWeapons": {
     "CONTROLLER": "armaa_valkazard_mirror_deco"

@@ -3,16 +3,20 @@
   "hullId": "armaa_valkazard_kai_dronebay_l",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valkazard/armaa_valkazard_kai_dronebay_l.png",
-  "style": "LOW_TECH",
+  "style": "MIDLINE",
   "height": 56,
   "width": 36,
   "center": [17, 50],
-  "collisionRadius": 42.5,
+  "collisionRadius": 86.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 74.5,
+  "shieldRadius": 86.5,
   "viewOffset": 0,
   "builtInWings": [
     "armaa_bit_blade_wing"
+  ],
+  "builtInMods": [
+    "novent",
+    "ablative_armor"
   ],
   "builtInWeapons": {
     "CONTROLLER": "armaa_valkazard_mirror_deco"

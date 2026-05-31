@@ -40,7 +40,7 @@
     },
     {
       "id": "TRUE_GUN",
-      "size": "MEDIUM",
+      "size": "LARGE",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 90,
