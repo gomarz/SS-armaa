@@ -20,6 +20,10 @@ import com.fs.starfarer.api.ui.Alignment;
 import data.scripts.util.armaa_utils;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.CargoAPI.CargoItemType;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.impl.campaign.HullModItemManager;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.loading.FighterWingSpecAPI;
 import data.scripts.MechaModPlugin;
@@ -148,8 +152,8 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
             if (wing == null) {
                 tooltip.addPara(
                         "No wing assigned.",
-                         10,
-                         Misc.getHighlightColor()
+                        10,
+                        Misc.getHighlightColor()
                 );
 
             } else {
@@ -188,19 +192,58 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
         }
     }
 
-    public static void removePlayerCommodity(final String id) {
-        final CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
-        if (playerFleet == null) {
-            return;
-        }
-        final List<CargoStackAPI> playerCargoStacks = playerFleet.getCargo().getStacksCopy();
-        for (final CargoStackAPI cargoStack : playerCargoStacks) {
-            if (cargoStack.isCommodityStack() && cargoStack.getCommodityId().equals(id)) {
-                cargoStack.subtract(1);
-                if (cargoStack.getSize() <= 0) {
-                    playerFleet.getCargo().removeStack(cargoStack);
+    @Override
+    public CargoStackAPI getRequiredItem() {
+        return Global.getSettings().createCargoStack(CargoItemType.RESOURCES, ITEM, null);
+    }
+
+    @Override
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+
+        return super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+
+    }
+
+    @Override
+    public void addRequiredItemSection(TooltipMakerAPI tooltip, FleetMemberAPI member, ShipVariantAPI currentVariant, MarketAPI dockedAt, float width, boolean isForModSpec) {
+        CargoStackAPI req = getRequiredItem();
+        if (req != null) {
+            float opad = 2f;
+            if (isForModSpec || Global.CODEX_TOOLTIP_MODE) {
+                Color color = Misc.getBasePlayerColor();
+                if (isForModSpec) {
+                    color = Misc.getHighlightColor();
                 }
-                return;
+                String name = req.getDisplayName();
+                String aOrAn = Misc.getAOrAnFor(name);
+                //tooltip.addPara("Requires " + aOrAn + " %s to install.", opad, color, name);
+                final TooltipMakerAPI text = tooltip.beginImageWithText(Global.getSettings().getCommoditySpec(ITEM).getIconName(), 20f);
+                text.addPara("Requires " + aOrAn + " %s to install.", opad, color, name);
+                tooltip.addImageWithText(5f);
+            } else if (currentVariant != null && member != null) {
+                if (currentVariant.hasHullMod(spec.getId())) {
+                    if (!currentVariant.getHullSpec().getBuiltInMods().contains(spec.getId())) {
+                        Color color = Misc.getPositiveHighlightColor();
+                        //tooltip.addPara("Using item: " + req.getDisplayName(), color, opad);
+                        final TooltipMakerAPI text2 = tooltip.beginImageWithText(Global.getSettings().getCommoditySpec(ITEM).getIconName(), 20f);
+                        text2.addPara("Using item: " + req.getDisplayName(), color, opad);
+                        tooltip.addImageWithText(5f);
+                    }
+                } else {
+                    int available = HullModItemManager.getInstance().getNumAvailableMinusUnconfirmed(req, member, currentVariant, dockedAt);
+                    Color color = Misc.getPositiveHighlightColor();
+                    if (available < 1) {
+                        color = Misc.getNegativeHighlightColor();
+                    }
+                    if (available < 0) {
+                        available = 0;
+                    }
+                    final TooltipMakerAPI text3 = tooltip.beginImageWithText(Global.getSettings().getCommoditySpec(ITEM).getIconName(), 20f);
+                    text3.addPara("Requires item: " + req.getDisplayName() + " (" + available + " available)", color, opad);
+                    tooltip.addImageWithText(5f);
+//                        tooltip.addPara("Requires item: " + req.getDisplayName() + " (" + available + " available)",
+//                                                                color, opad);
+                }
             }
         }
     }
@@ -224,7 +267,6 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
         }
         tracker2.advance(amount);
         if (!member.getVariant().hasHullMod("armaa_aicoreutilityscript")) {
-            removePlayerCommodity(ITEM);
             data.put(DATA_PREFIX + member.getId(), "_");
             member.getVariant().addPermaMod("armaa_aicoreutilityscript");
         }
