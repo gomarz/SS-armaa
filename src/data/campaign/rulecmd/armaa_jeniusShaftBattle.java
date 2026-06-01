@@ -31,15 +31,24 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import data.scripts.util.armaa_utils;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 
 public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
+    public static final Set<String> MISSION_TEXTURES_SHAFT = new HashSet<>();
 
+    static {         
+        MISSION_TEXTURES_SHAFT.add(Global.getSettings().getString("armaa_missionBGs","armaa_shaft"));
+        MISSION_TEXTURES_SHAFT.add(Global.getSettings().getString("armaa_missionBGs","armaa_shaft_top"));
+
+    }
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
         ArrayList<FleetMemberAPI> removedShips = new ArrayList();
@@ -79,6 +88,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         final MemoryAPI memory = getEntityMemory(memoryMap);
         dialog.setInteractionTarget(enemyFleet);
         enemyFleet.getMemoryWithoutUpdate().set("$inShaftBattle", "-");
+        //armaa_utils.loadMissionTextures(MISSION_TEXTURES_SHAFT);        
         final FIDConfig config = new FIDConfig();
         config.leaveAlwaysAvailable = true;
         config.lootCredits = true;
@@ -111,7 +121,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                 // there's a "standing down" assignment given after a battle is finished that we don't care about
                 enemyFleet.clearAssignments();
                 enemyFleet.deflate();
-
+                armaa_utils.unloadMissionTextures(MISSION_TEXTURES_SHAFT);
                 dialog.setPlugin(originalPlugin);
                 dialog.setInteractionTarget(entity);
 

@@ -72,6 +72,17 @@ public class armaa_valkazardCMD extends BaseCommandPlugin {
             }
             return false;
         }
+        if("CheckValkKaiHasNoWings".equals(action))
+        {
+            for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+                if (member.getHullId().contains("armaa_valkazard_kai")) 
+                {
+                    if(member.getVariant().getModuleSlots().isEmpty())
+                        return true;
+                }
+            }
+            return false;
+        }
         if ("upgradeValkKai".equals(action)) {
             for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
                 if (member.getHullId().contains("armaa_valkazard_kai")) {

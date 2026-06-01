@@ -23,12 +23,14 @@ import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import lunalib.lunaSettings.LunaSettings;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.FastTrig;
@@ -58,6 +60,9 @@ public class armaa_utils {
         baseOverloadTimes.put(HullSize.DEFAULT, 6f);
     }
 
+
+    
+    
     private static class armaa_purgedata {
 
         boolean ejectKeyPressed = false;
@@ -1310,6 +1315,26 @@ public class armaa_utils {
         }
 
         return hit;
+    }
+
+    public static void loadMissionTextures(Set<String> textures) {
+        for (String tex : textures) {
+            try {
+                Global.getSettings().loadTexture(tex);
+            } catch (IOException e) {
+                Global.getLogger(armaa_utils.class).error("Failed to load tex " + tex + ":" + e.toString());
+            }
+        }
+
+    }
+
+    public static void unloadMissionTextures(Set<String> textures) {
+        for (String tex : textures) {
+
+            Global.getSettings().unloadTexture(tex);
+            Global.getLogger(armaa_utils.class).info("Unloaded tex " + tex);
+        }
+
     }
 
     public static boolean isValidCarrierFor(ShipAPI ship, ShipAPI carrier) {

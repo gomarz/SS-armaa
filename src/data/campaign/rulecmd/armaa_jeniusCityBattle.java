@@ -35,13 +35,25 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import data.scripts.util.armaa_utils;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class armaa_jeniusCityBattle extends BaseCommandPlugin {
+
+    public static final Set<String> MISSION_TEXTURES_CITY = new HashSet<>();
+    static {
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo3"));
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo4"));
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo5"));
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_city"));
+
+    }
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
@@ -78,6 +90,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
                 0f, // utilityPts
                 2f // qualityMod
         );
+        //armaa_utils.loadMissionTextures(MISSION_TEXTURES_CITY);
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
         enemyFleet.getFleetData().addFleetMember("berserker_Assault");
         for (int i = 0; i < 5; i++) {
@@ -131,7 +144,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 
                 dialog.setPlugin(originalPlugin);
                 dialog.setInteractionTarget(entity);
-
+                armaa_utils.unloadMissionTextures(MISSION_TEXTURES_CITY);
                 //Global.getSector().getCampaignUI().clearMessages();
                 if (plugin.getContext() instanceof FleetEncounterContext) {
                     FleetEncounterContext context = (FleetEncounterContext) plugin.getContext();

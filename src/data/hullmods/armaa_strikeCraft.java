@@ -640,6 +640,11 @@ public class armaa_strikeCraft extends BaseHullMod {
 
     private String getRepairCapacityString(ShipAPI ship) {
         int repairsLeft = armaa_strikeCraftRepairTracker.getRepairsRemaining(ship);
+        if(ship.getCustomData().containsKey("armaa_repairsExpended"))
+        {
+            if(ship.getOwner() == 0 && !ship.isAlly())
+                Global.getCombatEngine().getCombatUI().addMessage(0,ship,Misc.getPositiveHighlightColor(),ship.getName(),Color.white," has expended all repairs.");
+        }
         float pool = armaa_strikeCraftRepairTracker.getRepairPool(ship);
         if (repairsLeft > 0) {
             return repairsLeft + " REPAIR(S) REMAINING";

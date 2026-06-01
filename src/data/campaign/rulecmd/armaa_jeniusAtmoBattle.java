@@ -4,7 +4,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.BattleCreationContext;
-import com.fs.starfarer.api.impl.combat.BattleCreationPluginImpl;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogPlugin;
@@ -35,13 +34,24 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import data.scripts.util.armaa_utils;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
+
+    public static final Set<String> MISSION_TEXTURES_ATMO = new HashSet<>();
+
+    static {
+        MISSION_TEXTURES_ATMO.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo"));
+        MISSION_TEXTURES_ATMO.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo2"));
+
+    }
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
@@ -50,16 +60,17 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         float modifier = 0f;
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             float crew = 0f;
-            if(member.getHullSpec().hasTag("Moci_MobileSuits") || member.getHullSpec().hasTag("Moci_MobileArmour"))
+            if (member.getHullSpec().hasTag("Moci_MobileSuits") || member.getHullSpec().hasTag("Moci_MobileArmour")) {
                 continue;
+            }
             if (member.isCapital()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
-                modifier+= member.getFleetPointCost();
+                modifier += member.getFleetPointCost();
             } else if ((member.isCruiser()) && member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).isUnmodified()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
-                modifier+= member.getFleetPointCost();
+                modifier += member.getFleetPointCost();
             } else {
                 continue;
             }
@@ -69,7 +80,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
         String faction = "armaa_derelict";
         //also subtract guardians DP
-        float str = (Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()-modifier-40f) * 0.7f;
+        float str = (Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() - modifier - 40f) * 0.7f;
         //not used?
         /*
         if ("kade".equals(action)) {
@@ -110,6 +121,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         } else {
             enemyFleet.getMemoryWithoutUpdate().set("$inAtmoBattle", "-");
         }
+        //armaa_utils.loadMissionTextures(MISSION_TEXTURES_ATMO);
         final FIDConfig config = new FIDConfig();
         config.leaveAlwaysAvailable = true;
         config.showCommLinkOption = false;
@@ -145,7 +157,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
 
                 dialog.setPlugin(originalPlugin);
                 dialog.setInteractionTarget(entity);
-
+                armaa_utils.unloadMissionTextures(MISSION_TEXTURES_ATMO);
                 //Global.getSector().getCampaignUI().clearMessages();
                 if (plugin.getContext() instanceof FleetEncounterContext) {
                     FleetEncounterContext context = (FleetEncounterContext) plugin.getContext();

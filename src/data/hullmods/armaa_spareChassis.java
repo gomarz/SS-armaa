@@ -32,7 +32,6 @@ public class armaa_spareChassis extends BaseHullMod {
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-
     }
 
     @Override
@@ -40,14 +39,19 @@ public class armaa_spareChassis extends BaseHullMod {
         if (Global.getCombatEngine() == null || Global.getCombatEngine().isPaused()) {
             return;
         }
+        if(!ship.isAlive() || ship.isHulk())
+            return;
         //Global.getCombatEngine().getCombatUI().addMessage(0, Global.getCombatEngine().getCustomData().containsKey("armaa_globalSpareChassisInitialized"));
         if (ship.getOriginalOwner() < 0) {
             return;
         }
         if (Global.getCombatEngine().getTotalElapsedTime(false) > 50) {
             if (!ship.isStationModule() && !ship.hasListenerOfClass(armaa_chassisReplacementTracker.class)) {
-                ship.addListener(new armaa_chassisReplacementTracker(ship));
-                initPoolIfNeeded(ship);
+                if (!ship.getCustomData().containsKey("armaa_addedReplacementTracker")) {
+                    ship.addListener(new armaa_chassisReplacementTracker(ship));
+                    initPoolIfNeeded(ship);
+                    ship.getCustomData().put("armaa_addedReplacementTracker", "-");
+                }
             }
         }
     }
@@ -215,8 +219,10 @@ public class armaa_spareChassis extends BaseHullMod {
             if (Global.getCombatEngine() == null || Global.getCombatEngine().isPaused()) {
                 return;
             }
-            if(hasRespawned)
+            if (hasRespawned) {
+                ship.removeListener(this);                
                 return;
+            }
             poolCheckTrack.advance(amount);
             if (poolCheckTrack.intervalElapsed() && getPool(ship) <= 0) {
                 ship.removeListener(this);
@@ -246,8 +252,7 @@ public class armaa_spareChassis extends BaseHullMod {
 
             if (member == null) {
                 member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, ship.getVariant().clone());
-                if(ship.getCaptain() != null)
-                {
+                if (ship.getCaptain() != null) {
                     PersonAPI commander = ship.getCaptain().getFleet() == null
                             ? Global.getCombatEngine().getFleetManager(ship.getOriginalOwner()).getFleetCommander()
                             : ship.getCaptain().getFleet().getCommander();

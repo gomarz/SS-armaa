@@ -15,6 +15,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import static data.campaign.rulecmd.armaa_gravionBattle.MISSION_TEXTURES_GRAVION;
 import data.scripts.missions.armaa_TransitionExplosion;
 import data.scripts.missions.armaa_WarningMessage;
 import data.scripts.missions.armaa_titleSplash;
@@ -43,8 +44,8 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
 
     public Color shiftColor(Color start, Color end, float ratio) {
         Color intermediateColor = Color.WHITE;
-        int steps = 100; // Number of steps in the transition
-        long duration = 1500; // Duration of the transition in milliseconds		
+        // Number of steps in the transition
+        // Duration of the transition in milliseconds		
         if (ratio >= 1) {
             return end;
         }
@@ -71,7 +72,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
             String minuteStr = armaa_utils.getMinuteString();
             Global.getCombatEngine().addLayeredRenderingPlugin(
                     new armaa_titleSplash("GRAVION - HIGH ORBIT | " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
-                            " NO DATA AVAILABLE"));            
+                            " NO DATA AVAILABLE"));
             engine.getCombatUI().addMessage(1, "", Color.red, "=INTERCEPTED TRANSMISSION=", Color.cyan, ":", Color.cyan, "" + Global.getSector().getPlayerPerson().getRank() + " " + Global.getSector().getPlayerPerson().getName().getLast() + "? Here? Lock down the station - full lockdown! We're compromised!");
         } else if (!playedMusicSt2) {
             float effectLevel = collapseInterval.getElapsed() / collapseInterval.getIntervalDuration();
@@ -82,7 +83,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                     //Global.getSoundPlayer().
                     Global.getCombatEngine().addLayeredRenderingPlugin(
                             new armaa_titleSplash("????? | " + "??" + ":" + "??" + " | " + Global.getSector().getClock().getDateString(),
-                                    " a faint melody begins to rise, echoing across time and space"));                           
+                                    " a faint melody begins to rise, echoing across time and space"));
                     Global.getSoundPlayer().playCustomMusic(0, 1, "music_armaa_gravionbattle", true);
                 } catch (Exception e) {
 
@@ -112,11 +113,14 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
         engine.setBackgroundColor(new Color(150, 125, 0, 255));
         float anomalySize = collapsing ? Math.min(1f, (engine.getTotalElapsedTime(false) / 100) - 0.50f) : 0;
         float mapMult = (engine.getTotalElapsedTime(false) / 100);
-        if(engine.getFleetManager(1).getCurrStrength() < 10f && collapsing)
+        if (engine.getFleetManager(1).getCurrStrength() < 10f && collapsing) {
             anomalySize = 1f;
+        }
         if (!collapsedAftermath) {
+            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_gravion");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);            
             MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "armaa_gravion"),
+                    spr,
                     MagicRender.positioning.CENTER,
                     new Vector2f(0 + MathUtils.getRandomNumberInRange(-1, 1) * 3f * (anomalySize), 0 + MathUtils.getRandomNumberInRange(-1, 1) * 3f * (anomalySize)),
                     new Vector2f(0, 0),
@@ -137,8 +141,11 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                     CombatEngineLayers.CLOUD_LAYER
             );
         } else {
+                        String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_gravion2");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);    
             MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "armaa_gravion2"),
+                    
+                    spr,
                     MagicRender.positioning.CENTER,
                     new Vector2f(0, 0),
                     new Vector2f(0, 0),
@@ -444,7 +451,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                             new Vector2f(0, 0),
                             spin * 6 + 30 * bossRatio,
                             0f,
-                            new Color(Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), 1f*bossRatio),
+                            new Color(Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), Math.max(0.1f, 1f * bossRatio), 1f * bossRatio),
                             false,
                             0f,
                             0f,
@@ -480,10 +487,9 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                 }
                 if (!bossSpawn && engine.getFleetManager(1).getCurrStrength() <= 0 || bossSpawning && !bossSpawn) {
                     //start moving tessie to the foreground
-                    if(!bossSpawning)
-                    {
+                    if (!bossSpawning) {
                         bossSpawning = true;
-                        engine.getFleetManager(1).spawnShipOrWing("aspect_shock_wing", new Vector2f(-10000,-10000), size);
+                        engine.getFleetManager(1).spawnShipOrWing("aspect_shock_wing", new Vector2f(-10000, -10000), size);
                     }
                     bossInterval.advance(amount);
                     if (bossInterval.intervalElapsed() || bossRatio >= 0.90f) {
@@ -517,7 +523,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
             if (engine.getCustomData().containsKey("armaa_atmo_boss")) {
                 bossEne = (ShipAPI) engine.getCustomData().get("armaa_atmo_boss");
             }
-            if (!collapseBegan && ((engine.getTotalElapsedTime(false) / 100) > 0.50f ||engine.getFleetManager(1).getCurrStrength() < 50f && engine.getTotalElapsedTime(false) > 20f)) {
+            if (!collapseBegan && ((engine.getTotalElapsedTime(false) / 100) > 0.50f || engine.getFleetManager(1).getCurrStrength() < 50f && engine.getTotalElapsedTime(false) > 20f)) {
                 Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);
                 engine.getCombatUI().addMessage(1, "", Color.red, "=INTERCEPTED TRANSMISSION=", Color.cyan, ":", Color.cyan,
                         "Forget it! Activate the device. We can't let our progress go to waste.");
@@ -691,8 +697,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
         return min + random.nextInt(max - min + 1);
     }
 
-    private void spawnBoss() 
-    {
+    private void spawnBoss() {
         if (Misc.getAICoreOfficerPlugin(Commodities.OMEGA_CORE) == null) {
             return;
         }
@@ -701,9 +706,9 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
         ship.setCaptain(pilot);
         ship = engine.getFleetManager(1).spawnShipOrWing("armaa_tesseract_boss", new Vector2f(0, -10000), 90f, 15f);
         ship.setCaptain(pilot);
-            armaa_WarningMessage warningMessage = new armaa_WarningMessage("W A R N I N G", "UNKNOWN ENEMY APPROACHING", null);
-            Global.getSoundPlayer().playUISound("armaa_boss_warning", 0.85f, 1.1f);
-            Global.getCombatEngine().addLayeredRenderingPlugin(warningMessage);            
+        armaa_WarningMessage warningMessage = new armaa_WarningMessage("W A R N I N G", "UNKNOWN ENEMY APPROACHING", null);
+        Global.getSoundPlayer().playUISound("armaa_boss_warning", 0.85f, 1.1f);
+        Global.getCombatEngine().addLayeredRenderingPlugin(warningMessage);
         if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_engagedValkHunters")) {
             ShipAPI valkazard = engine.getFleetManager(1).spawnShipOrWing("armaa_valkazard_boss", new Vector2f(500, -10000), 90f, 2f);
             valkazard.setCaptain(Global.getSector().getImportantPeople().getPerson("armaa_redeye"));
@@ -716,6 +721,7 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
 
     @Override
     public void init(CombatEngineAPI engine) {
+        armaa_utils.loadMissionTextures(MISSION_TEXTURES_GRAVION);
         this.engine = engine;
     }
 }

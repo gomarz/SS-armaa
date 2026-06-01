@@ -87,7 +87,8 @@ public class armaa_ShaftCylinderRenderer extends BaseCombatLayeredRenderingPlugi
 
         // Fetch texture ID once and cache it
         if (cachedTexId < 0) {
-            SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_shaft");
+            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_shaft");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             cachedTexId = spr.getTextureId();
         }
 

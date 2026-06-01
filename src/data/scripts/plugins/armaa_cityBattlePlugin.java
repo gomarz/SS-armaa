@@ -13,12 +13,12 @@ import java.awt.Color;
 
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
-import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.combat.dweller.WarpingSpriteRendererUtilV2;
+import data.campaign.rulecmd.armaa_jeniusCityBattle;
 import data.scripts.missions.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
@@ -79,11 +79,10 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
     private boolean transConsumed = false;
     private boolean transArmed = false;       
     private boolean oceanCommitted = false;   
-
-    private static final String SPR_FOREST = "armaa_atmo3";          // phase 1 scrolling
-    private static final String SPR_TRANS = "armaa_atmo4";          // single transition tile (forest->ocean)
-    private static final String SPR_OCEAN = "armaa_atmo5";          // phase 2 scrolling
-    private static final String SPR_CITY = "armaa_city2";          // city
+    private static final String SPR_FOREST = Global.getSettings().getString("armaa_missionBGs","armaa_atmo3");          // phase 1 scrolling
+    private static final String SPR_TRANS = Global.getSettings().getString("armaa_missionBGs","armaa_atmo4");         // single transition tile (forest->ocean)
+    private static final String SPR_OCEAN = Global.getSettings().getString("armaa_missionBGs","armaa_atmo5");       // phase 2 scrolling
+    private static final String SPR_CITY = Global.getSettings().getString("armaa_missionBGs","armaa_city");         // city
 
     // --------------------------------------------------------------
     static {
@@ -109,7 +108,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         int alpha = (int) (start.getAlpha() * (1 - r) + end.getAlpha() * r);
         return new Color(red, green, blue, alpha);
     }
-
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
         if (engine == null) {
@@ -117,7 +115,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         }
 
         if (!reinforcementsTriggered) {
-            SpriteAPI oceanSpr = Global.getSettings().getSprite("misc", SPR_OCEAN);
+            SpriteAPI oceanSpr = Global.getSettings().getSprite(SPR_OCEAN);
             oceanSpr.setSize(oceanSpr.getWidth(), oceanSpr.getHeight());
             oceanSpr.setCenter(oceanSpr.getWidth() / 2f, oceanSpr.getHeight() / 2f);
 
@@ -127,7 +125,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             SpriteAPI depthSpr = Global.getSettings().getSprite("misc", "slipstream2");
             CombatEntityAPI e = Global.getCombatEngine().addLayeredRenderingPlugin(new OceanBackgroundPlugin(oceanSpr, foamSpr, depthSpr));
             e.getLocation().set(engine.getViewport().getCenter());
-            oceanSpr = Global.getSettings().getSprite("misc", SPR_OCEAN);
+            oceanSpr = Global.getSettings().getSprite(SPR_OCEAN);
             float width = oceanSpr.getWidth();   // or * some scale factor
             float height = oceanSpr.getHeight();
             float warpAmt = width * 0.04f;       // 4% of width, same as the source
@@ -550,7 +548,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         float y0 = -bgScrollFrac * tileSize;
         float y1 = y0 + tileSize;
         MagicRender.screenspace(
-                Global.getSettings().getSprite("misc", spriteKey),
+                Global.getSettings().getSprite(spriteKey),
                 MagicRender.positioning.CENTER,
                 new Vector2f(0f, y0),
                 new Vector2f(0f, 0f),
@@ -566,7 +564,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 CombatEngineLayers.CLOUD_LAYER
         );
         MagicRender.screenspace(
-                Global.getSettings().getSprite("misc", spriteKey),
+                Global.getSettings().getSprite(spriteKey),
                 MagicRender.positioning.CENTER,
                 new Vector2f(0f, y1),
                 new Vector2f(0f, 0f),
@@ -603,7 +601,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         Vector2f bgsize = new Vector2f(s1, s1);
 
         MagicRender.screenspace(
-                Global.getSettings().getSprite("misc", spriteKey),
+                Global.getSettings().getSprite(spriteKey),
                 MagicRender.positioning.CENTER,
                 new Vector2f(0f, 0f + centerY),
                 new Vector2f(0f, 0f),
@@ -813,10 +811,10 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
     private void renderBattlespaceSquare(String spriteKey, Vector2f center, float yOffset, float size, float angle, Color color) {
         if (bgCurr == SPR_OCEAN) {
-            spriteKey = "armaa_cutscene";
+            spriteKey = "graphics/armaa/backgrounds/armaa_cutscene.jpg";
         }
         Vector2f loc = new Vector2f(center.x, center.y + yOffset);
-        SpriteAPI spr = Global.getSettings().getSprite("misc", spriteKey);
+        SpriteAPI spr = Global.getSettings().getSprite(spriteKey);
         MagicRender.battlespace(
                 spr,
                 loc,
@@ -831,7 +829,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 0f, // fadein
                 engine.getElapsedInLastFrame(), // full (-1 means "forever" in MagicRender)
                 0f, // fadeout
-                CombatEngineLayers.CLOUD_LAYER
+                CombatEngineLayers.ABOVE_PLANETS
         );
     }
 
@@ -865,6 +863,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         transArmed = false;
         oceanCommitted = false;
         bgScrollFrac = 0f;
+        armaa_utils.loadMissionTextures(armaa_jeniusCityBattle.MISSION_TEXTURES_CITY);        
     }
 
     public class OceanBackgroundPlugin extends BaseCombatLayeredRenderingPlugin {

@@ -16,6 +16,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import static data.campaign.rulecmd.armaa_jeniusAtmoBattle.MISSION_TEXTURES_ATMO;
 import data.scripts.missions.armaa_ReentryEffect;
 import data.scripts.missions.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
@@ -182,7 +183,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         Vector2f bgsize = new Vector2f(s1, s1);
         if (ratio >= 0.1f) {
-            SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_atmo2");
+            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_atmo2");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);            
             MagicRender.screenspace(
                     spr,
                     MagicRender.positioning.CENTER,
@@ -208,7 +210,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         int a = Math.max(0, 255 - (int) (ratio * 255f));
         Color bg2Color = new Color(200, 155, 155, a);
         if (ratio < 0.45f && hidCutscene) {
-            SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_atmo");
+            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_atmo");        
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
                     spr,
                     MagicRender.positioning.CENTER,
@@ -234,7 +237,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         if (!hidCutscene) {
             float level = cutsceneInterval.getElapsed() / cutsceneInterval.getIntervalDuration();
-            SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_atmo");
+            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_atmo");        
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
                     spr,
                     MagicRender.positioning.CENTER,
@@ -1199,5 +1203,6 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     @Override
     public void init(CombatEngineAPI engine) {
         this.engine = engine;
+        armaa_utils.loadMissionTextures(MISSION_TEXTURES_ATMO);
     }
 }

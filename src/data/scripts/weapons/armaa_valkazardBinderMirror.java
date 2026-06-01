@@ -38,20 +38,10 @@ public class armaa_valkazardBinderMirror implements EveryFrameWeaponEffectPlugin
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
-        if(1==1)
-            return;
         if(weapon.getShip().getParentStation() == null)
             return;
-        if (!runOnce) {
-            init(weapon);
-        }
-        if(stationWep == null || shipWep == null)
-            return;
-        //MagicRender.singleframe(stationWep.getSprite(), stationWep.getLocation(), engine, amount, Color.yellow, runOnce, weapon);
-        weapon.getShip().blockCommandForOneFrame(ShipCommand.FIRE);
-        shipWep.setAmmo(stationWep.getAmmo());
-        shipWep.setRemainingCooldownTo(stationWep.getCooldownRemaining());
-        shipWep.setCurrAngle(stationWep.getCurrAngle());
+        if(weapon.getShip().getCollisionClass() != weapon.getShip().getParentStation().getCollisionClass())
+            weapon.getShip().setCollisionClass( weapon.getShip().getParentStation().getCollisionClass());
 
     }
 }

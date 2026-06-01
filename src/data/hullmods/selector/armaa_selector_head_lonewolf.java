@@ -28,7 +28,7 @@ public class armaa_selector_head_lonewolf extends BaseHullMod {
     public static final float THREAT_RANGE = 2000f;
 
     private static final String MOD_ID = "armaa_head_lonewolf";
-    private final IntervalUtil timer = new IntervalUtil(0.5f, 0.5f);
+    private final IntervalUtil timer = new IntervalUtil(0.05f, 0.05f);
 
     @Override
     public int getDisplaySortOrder() {

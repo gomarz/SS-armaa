@@ -307,14 +307,13 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
                 ship.setHitpoints(Math.max(ship.getHitpoints(), armaa_utils.getMaxHPRepair(ship)));
                 // restore PPT UP TO the maximum PPT
                 // this doesnt work if PPT is modified tho
-                if(Global.getCombatEngine().getCustomData().get("armaa_strikeCraft_pptSnapshot_"+ship.getId()) != null)
-                {
-                    StatBonus snapshot = (StatBonus)Global.getCombatEngine().getCustomData()
-                            .get("armaa_strikeCraft_pptSnapshot_" + ship.getId());    
-                    ship.getMutableStats().getPeakCRDuration().unmodify();                    
+                if (Global.getCombatEngine().getCustomData().get("armaa_strikeCraft_pptSnapshot_" + ship.getId()) != null) {
+                    StatBonus snapshot = (StatBonus) Global.getCombatEngine().getCustomData()
+                            .get("armaa_strikeCraft_pptSnapshot_" + ship.getId());
+                    ship.getMutableStats().getPeakCRDuration().unmodify();
                     ship.getMutableStats().getPeakCRDuration().applyMods(snapshot);
-                }                  
-                    ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_strikeCraftRepair_"+ship.getId(), ship.getTimeDeployedForCRReduction());
+                }
+                ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_strikeCraftRepair_" + ship.getId(), ship.getTimeDeployedForCRReduction());
 
                 ship.clearDamageDecals();
                 armaa_utils.setArmorPercentage(ship, 100f);

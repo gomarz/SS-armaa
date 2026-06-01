@@ -276,17 +276,11 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                     "OVERLORD SUITE[BETA]"
             );
         } else if (stageId == Stage.DATA_DELIVERY) {
-            info.addPara("Data gleaned from your ops "
-                    + "has prompted the design of several new technologies "
-                    + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s."+"\n\n The mobile weapons platform %s and the carrier %s has been left in storage at %s for use, at your discretion.", initPad,
+            info.addPara("The mobile weapons platform %s and the carrier %s have been left in storage at %s for use, at your discretion.", initPad,
                     Misc.getHighlightColor(),
-                    "STRIKECRAFT",
-                    "Hi-Manuever System",
-                    "OVERLORD SUITE[ALPHA]",
                     "RAIDEN",
                     "EXILIUM",
-                    "GAMLIN"                    
+                    "GAMLIN"
             );
         }
     }
@@ -441,6 +435,11 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
         float days = Global.getSector().getClock().convertToDays(amount);
         advanceInterval.advance(amount);
         if (advanceInterval.intervalElapsed()) {
+            if (getMaxProgress() >= PROGRESS_2) {
+                if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
+                    Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
+                }
+            }
             if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacRajanyaBonusGranted")) {
                 boolean hasRajanya = false;
                 for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
@@ -501,11 +500,10 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             }
         }
 
-        if (stage.id == Stage.ADVANCED_TELEMETRY) 
-        {
+        if (stage.id == Stage.ADVANCED_TELEMETRY) {
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
-            }            
+            }
             Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_strikeCraftBuff", 1);
             if (!Global.getSector().getFaction("armaarmatura_atac").knowsShip("armaa_panther_frig")) {
                 //Global.getSector().getPlayerFleet().getCargo().addSpecial(sid, 0);
@@ -560,7 +558,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                             Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing", 2);
                     Global.getSector().getMemoryWithoutUpdate().set("$armaa_hasRaiden", true);
                 }
-            }            
+            }
         }
     }
 

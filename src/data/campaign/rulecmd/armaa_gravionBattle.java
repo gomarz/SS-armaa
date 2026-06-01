@@ -35,20 +35,28 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class armaa_gravionBattle extends BaseCommandPlugin {
+    public static final Set<String> MISSION_TEXTURES_GRAVION = new HashSet<>();
 
+    static {
+        MISSION_TEXTURES_GRAVION.add(Global.getSettings().getString("armaa_missionBGs","armaa_gravion"));
+        MISSION_TEXTURES_GRAVION.add(Global.getSettings().getString("armaa_missionBGs","armaa_gravion2"));
+
+    }
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
-        CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
         FleetParamsV3 fparams = new FleetParamsV3(
-                Global.getSector().getEntityById("nekki3").getLocationInHyperspace(),
+                Global.getSector().getPlayerFleet().getLocationInHyperspace(),
                 "pirates",
                 null,
                 FleetTypes.TASK_FORCE,
@@ -108,7 +116,7 @@ public class armaa_gravionBattle extends BaseCommandPlugin {
 
                 dialog.setPlugin(originalPlugin);
                 dialog.setInteractionTarget(entity);
-
+                //armaa_utils.unloadMissionTextures(MISSION_TEXTURES_GRAVION);
                 //Global.getSector().getCampaignUI().clearMessages();
                 if (plugin.getContext() instanceof FleetEncounterContext) {
                     FleetEncounterContext context = (FleetEncounterContext) plugin.getContext();

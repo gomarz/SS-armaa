@@ -132,7 +132,6 @@ public class armaa_skyMindSuiteBeta extends BaseHullMod {
         tooltip.addSectionHeading("Details", Alignment.MID, 10);
         tooltip.addPara("%s " + "Assigning an AI Core to this vessel %s.", pad, arr, "\u2022", "will grant it's wing all the skills the core possesses");
         tooltip.addPara("%s " + "Only applicable with %s fighters.", pad, arrB, "\u2022", "automated");
-        tooltip.addPara("%s " + "If this ship is destroyed in combat, the assigned core will be %s.", pad, arr2, "\u2022", "permanently lost");
 
         if (ship == null) {
             return;

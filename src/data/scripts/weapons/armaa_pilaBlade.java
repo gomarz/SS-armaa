@@ -117,7 +117,7 @@ public class armaa_pilaBlade implements BeamEffectPlugin {
                         hitTargets.add(enemy);
                         if (enemy instanceof ShipAPI) {
                             ShipAPI enemyShip = (ShipAPI) target;
-                            if (!enemyShip.isFighter() && enemyShip.isAlive()) {
+                            if (!enemyShip.isFighter()) {
                                 CombatUtils.applyForce(weapon.getShip(), weapon.getShip().getFacing() - 180f, Math.max(enemy.getMass(), BLADE_KNOCKBACK_MAX));
                             }
                         }
@@ -233,7 +233,7 @@ public class armaa_pilaBlade implements BeamEffectPlugin {
                         ship,
                         point,
                         5,
-                        500f,
+                        250f,
                         weapon.getCurrAngle(),
                         beam.getFringeColor(),
                         Color.white

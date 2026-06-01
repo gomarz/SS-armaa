@@ -121,7 +121,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                 if (!doubletapped && engine.getPlayerShip() == ship) {
                                     continue;
                                 }
-                                if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f)) {
+                                if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f || ship.getHullLevel()< 0.10f)) {
                                     ShipAPI s = createShipFromModule(ship, module, engine);
                                     if (engine.getPlayerShip() != ship && ship.getOwner() == 0) 
                                     {
@@ -224,7 +224,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         public void advance(float amount) {
             if (ship.isHulk() || !ship.isAlive()) {
                 trueShip.setStationSlot(null);
-                trueShip.getLocation().set(-10000000, -10000000);
+                //trueShip.getLocation().set(-10000000, -10000000);
                 armaa_utils.destroy(trueShip);
                 ship.removeListener(this);
 

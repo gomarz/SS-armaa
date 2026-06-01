@@ -79,7 +79,7 @@
     {
       "id": "TRUE_GUN2",
       "size": "MEDIUM",
-      "type": "UNIVERSAL",
+      "type": "MISSILE",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,

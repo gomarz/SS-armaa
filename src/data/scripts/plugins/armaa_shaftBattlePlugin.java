@@ -12,6 +12,7 @@ import org.magiclib.util.MagicRender;
 import java.awt.Color;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
+import data.campaign.rulecmd.armaa_jeniusShaftBattle;
 import data.scripts.missions.armaa_HulkRenderer;
 import data.scripts.missions.armaa_RajanyaLaserAttack;
 import data.scripts.missions.armaa_ShaftCylinderRenderer;
@@ -19,6 +20,7 @@ import data.scripts.missions.armaa_ShaftDescentRenderer;
 import data.scripts.missions.armaa_WarningMessage;
 import data.scripts.missions.armaa_rajanyaBossPlugin;
 import data.scripts.missions.armaa_titleSplash;
+import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
 
 public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
@@ -73,29 +75,27 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
         Global.getCombatEngine().maintainStatusForPlayerShip(
                 "atmo", "graphics/ui/icons/icon_repair_refit.png",
                 "EM Interference", "Sensor range reduced", true);
-        if(ascended)
-        {
+        if (ascended) {
             // Always-present black fill
-                float startScale = 4f;
-                float endScale = 1f;
-                ascentRatio += 0.15f * engine.getElapsedInLastFrame();
-                if (ascentRatio > 1f) {
-                    ascentRatio = 1f;
-                }
-                float scale = startScale + (endScale - startScale) * ascentRatio;
-                SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_shaft_top");
-                MagicRender.screenspace(
-                        spr, MagicRender.positioning.CENTER,
-                        new Vector2f(0, 0), new Vector2f(0, 0),
-                        new Vector2f(Global.getSettings().getScreenWidth() * scale, Global.getSettings().getScreenWidth() * scale),
-                        new Vector2f(0, 0), 0f, spin,
-                        new Color(0.25f * ascentRatio, 0.25f * ascentRatio, 0.25f * ascentRatio, 1f),
-                        false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
-                        CombatEngineLayers.CLOUD_LAYER
-                );
-        }
-        else
-        {
+            float startScale = 4f;
+            float endScale = 1f;
+            ascentRatio += 0.15f * engine.getElapsedInLastFrame();
+            if (ascentRatio > 1f) {
+                ascentRatio = 1f;
+            }
+            float scale = startScale + (endScale - startScale) * ascentRatio;
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_shaft_top");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
+            MagicRender.screenspace(
+                    spr, MagicRender.positioning.CENTER,
+                    new Vector2f(0, 0), new Vector2f(0, 0),
+                    new Vector2f(Global.getSettings().getScreenWidth() * scale, Global.getSettings().getScreenWidth() * scale),
+                    new Vector2f(0, 0), 0f, spin,
+                    new Color(0.25f * ascentRatio, 0.25f * ascentRatio, 0.25f * ascentRatio, 1f),
+                    false, 0f, 0f, 0f, 0f, 0f, 0f, -1, 0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+        } else {
             float initialWidth = Global.getSettings().getScreenWidth();
             MagicRender.screenspace(
                     Global.getSettings().getSprite("misc", "armaa_cutscene"),
@@ -205,7 +205,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             // fires 60 homing projectiles over an interval of 0.15s that rise from above then fire at target's location
             // not quite accurate and should be easily evaded
             Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(0, -10000), 270f, 30f);
-            Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(-500, -10000), 270f, 30f);    
+            Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(-500, -10000), 270f, 30f);
             targetScrollSpeed = 0f;
             if (cylinderRenderer != null) {
                 cylinderRenderer.setSpeed(0f);
@@ -280,7 +280,9 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
                 ascentRatio = 1f;
             }
             float scale = startScale + (endScale - startScale) * ascentRatio;
-            SpriteAPI spr = Global.getSettings().getSprite("misc", "armaa_shaft_top");
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_shaft_top");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
+
             MagicRender.screenspace(
                     spr, MagicRender.positioning.CENTER,
                     new Vector2f(0, 0), new Vector2f(0, 0),
@@ -397,6 +399,8 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
     @Override
     public void init(CombatEngineAPI engine) {
         this.engine = engine;
+        armaa_utils.loadMissionTextures(armaa_jeniusShaftBattle.MISSION_TEXTURES_SHAFT);
+
     }
 
     private float clamp01(float x) {

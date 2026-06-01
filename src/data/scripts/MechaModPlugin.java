@@ -39,7 +39,6 @@ import data.scripts.world.ARMAAWorldGen;
 import data.scripts.campaign.notifications.armaa_notificationShower;
 import data.hullmods.cataphract;
 
-
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.characters.FullName;
@@ -47,7 +46,6 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 
 import data.scripts.campaign.armaa_wingmanPromotion;
-import data.scripts.campaign.armaa_skyMindBattleResultListener;
 import data.scripts.campaign.armaa_drugsAreBad;
 import data.scripts.campaign.armaa_lootCleaner;
 import data.scripts.campaign.armaa_hyperSpaceImmunity;
@@ -55,8 +53,13 @@ import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.armaa_squadManagerIntel;
 import data.scripts.fleets.ArmaaFleetManager;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import data.campaign.rulecmd.armaa_gravionBattle;
+import data.campaign.rulecmd.armaa_jeniusAtmoBattle;
+import data.campaign.rulecmd.armaa_jeniusCityBattle;
+import data.campaign.rulecmd.armaa_jeniusShaftBattle;
 import data.scripts.campaign.armaa_cataphractGBListener;
 import data.scripts.campaign.armaa_satBombListener;
+import data.scripts.util.armaa_utils;
 import java.io.IOException;
 
 import java.util.*;
@@ -109,19 +112,20 @@ public class MechaModPlugin extends BaseModPlugin {
     private armaa_drugsAreBad copiumScript;
     private armaa_hyperSpaceImmunity hyperScript;
     private armaa_mrcReprisalListener reprisalScript;
-    private armaa_skyMindBattleResultListener resultListener;
     private armaa_notificationShower notificationScript;
     private armaa_cataphractGBListener GBScript;
 
-private void removeScript(Object s) {
-    if (s == null) return;
-    if (s instanceof EveryFrameScript) {
-        Global.getSector().removeTransientScript((EveryFrameScript) s);
+    private void removeScript(Object s) {
+        if (s == null) {
+            return;
+        }
+        if (s instanceof EveryFrameScript) {
+            Global.getSector().removeTransientScript((EveryFrameScript) s);
+        }
+        if (s instanceof CampaignEventListener) {
+            Global.getSector().removeListener((CampaignEventListener) s);
+        }
     }
-    if (s instanceof CampaignEventListener) {
-        Global.getSector().removeListener((CampaignEventListener) s);
-    }
-}
 
     @Override
     public void onNewGame() {
@@ -181,7 +185,7 @@ private void removeScript(Object s) {
         } catch (ClassNotFoundException ex) {
         }
         try {
-            Global.getSettings().loadFont(Global.getSettings().getString("armaa_wingCommander","dialogueFont"));
+            Global.getSettings().loadFont(Global.getSettings().getString("armaa_wingCommander", "dialogueFont"));
         } catch (IOException e) {
             Global.getLogger(MechaModPlugin.class).error("Failed to load orbitron font", e);
         }
@@ -228,7 +232,6 @@ private void removeScript(Object s) {
     @Override
     public void beforeGameSave() {
         //TODO: Why do I do this twice?
-        removeScript(resultListener);
         removeScript(script);
         removeScript(copiumScript);
         removeScript(hyperScript);
@@ -240,7 +243,6 @@ private void removeScript(Object s) {
     @Override
     public void afterGameSave() {
         Global.getSector().addTransientScript(script = new armaa_wingmanPromotion());
-        Global.getSector().addTransientScript(resultListener = new armaa_skyMindBattleResultListener());
         Global.getSector().addTransientScript(copiumScript = new armaa_drugsAreBad());
         Global.getSector().addTransientScript(hyperScript = new armaa_hyperSpaceImmunity());
         Global.getSector().addTransientScript(reprisalScript = new armaa_mrcReprisalListener());
@@ -253,8 +255,11 @@ private void removeScript(Object s) {
         boolean haveAnime = Global.getSettings().getModManager().isModEnabled("zzarmaa_anime");
         boolean haveTahlan = Global.getSettings().getModManager().isModEnabled("tahlan");
         boolean havePAGSM = Global.getSettings().getModManager().isModEnabled("PAGSM");
-
-        removeScript(resultListener);
+        
+        armaa_utils.unloadMissionTextures(armaa_jeniusAtmoBattle.MISSION_TEXTURES_ATMO);
+        armaa_utils.unloadMissionTextures(armaa_jeniusCityBattle.MISSION_TEXTURES_CITY);
+        armaa_utils.unloadMissionTextures(armaa_jeniusShaftBattle.MISSION_TEXTURES_SHAFT);
+        armaa_utils.unloadMissionTextures(armaa_gravionBattle.MISSION_TEXTURES_GRAVION);        
         removeScript(script);
         removeScript(copiumScript);
         removeScript(hyperScript);
@@ -278,7 +283,6 @@ private void removeScript(Object s) {
         Global.getSector().getListenerManager().addListener(new armaa_lootCleaner(), true);
         Global.getSector().getListenerManager().addListener(new armaa_raid(), true);
         Global.getSector().addTransientScript(script = new armaa_wingmanPromotion());
-        Global.getSector().addTransientScript(resultListener = new armaa_skyMindBattleResultListener());
         Global.getSector().addTransientScript(copiumScript = new armaa_drugsAreBad());
         Global.getSector().addTransientScript(hyperScript = new armaa_hyperSpaceImmunity());
         Global.getSector().addTransientScript(reprisalScript = new armaa_mrcReprisalListener());

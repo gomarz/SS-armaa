@@ -28,18 +28,9 @@ public class armaa_valkyrieEffect implements EveryFrameWeaponEffectPlugin {
                     continue;
                 }
                 ShipVariantAPI var = m.getVariant().clone();
-                /*
-                if(!m.getVariant().hasHullMod("armaa_autoModuleRepair"));
-                {
-                    var.addPermaMod("armaa_autoModuleRepair");
-                    m.getParentStation().getVariant().setModuleVariant(m.getStationSlot().getId(), var);
-
-                }
-                 */
                 if (!m.getVariant().hasHullMod("armaa_noSupplies")) {
                     var.addPermaMod("armaa_noSupplies");
                     var.addPermaMod("armaa_dpReduction");
-                    var.addPermaMod("armaa_autoModuleRepair");
                     m.getParentStation().getVariant().setModuleVariant(m.getStationSlot().getId(), var);
                 }
                 if (m.controlsLocked() == false) {
