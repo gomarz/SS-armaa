@@ -111,9 +111,9 @@ $valkazard score:1000",ShowDefaultVisual,,,
 armaa_nex_NGCPickStartingShips_SC,ExerelinNGCStep3,"$playerFaction == armaarmatura
 !$armaa_ChangeMind
 $corvusMode","ARMAAMissionImage logo armaa_start
-AddText ""Not a true faction by any means, Arma Armatura specializes in overgunned yet fragile units such as their Mobile Armors and Cataphracts. These machines grant bonuses toward ground operations and possess certain unique characteristics, but they excel best when used in mixed fleets that can cover their shortcomings.""
+AddText ""Not a true faction by any means, Arma Armatura specializes in overgunned yet fragile units such as their Mobile Armors and Cataphracts. These machines grant bonuses toward ground operations and possess certain unique characteristics, but they excel best when used in mixed fleets that can cover their shortcomings. Due to their high mobility, you may find them easier to pilot using the cursor facing control scheme. (SHIFT key)""
 SetTextHighlightColors hColor hColor hColor hColor
-SetTextHighlights CATAPHRACT S-IIs CATAPHRACT-STRIKE STRIKECRAFT
+SetTextHighlights CATAPHRACT S-IIs CATAPHRACT-STRIKE STRIKECRAFT ""you may find them easier to pilot using the cursor facing control scheme. (SHIFT key)""
 
 AddText ""You will start in orbit of NEW MESHAN, the home of the corporation at the GAMLIN star system.""
 SetTextHighlightColors ""152,171,75,255"" ""152,171,75,255"" hColor
@@ -1202,7 +1202,7 @@ armaa_bellatorInterceptOptWhatCarryingHonest,DialogOptionSelected,$option == arm
 ""As for Gravion - I would counsel patience, Commander. There are layers to what you're approaching that are not apparent from your current position. I don't say that as a warning. I say it as a professional courtesy to someone who has clearly earned one.""",,
 armaa_bellatorInterceptOptWhatCarryingMech,DialogOptionSelected,$option == armaa_bellatorInterceptOptWhatCarryingMech,FireAll armaa_bellatorInterceptOpts,"$personName is still for a moment.
 
-""The Rajanya."" $HeOrShe says the name like he's confirming something $heOrShe already knew but needed to hear aloud. ""Yes. I assumed as much when it didn't follow.""
+""The Rajanya."" $HeOrShe says the name as if confirming something $heOrShe already knew but needed to hear aloud. ""Yes. I assumed as much when it didn't follow.""
 
 ""It served its purpose,"" $heOrShe says. 
 
@@ -1255,29 +1255,27 @@ armaa_bellatorInterceptOptSleeperDeflect,DialogOptionSelected,$option == armaa_b
 
 ""It matters to me because it suggests you understand the weight of what you're looking at. Which means this conversation has been something other than what I initially assessed it to be.""",,
 armaa_bellatorInterceptOptSleeperAway,DialogOptionSelected,$option == armaa_bellatorInterceptOptSleeperAway,FireAll armaa_bellatorInterceptOpts,"""Away,"" $heOrShe repeats.
-$HeOrShe looks at you - really looks, in a way he hasn't quite done before. Taking in something beyond tactical assessment.
+$HeOrShe looks at you - really looks, in a way $heOrShe hasn't quite done before. Taking in something beyond tactical assessment.
 
 ""How long?"" 
 
-Whatever your answer - or non-answer - produces, he absorbs it without expression. When he speaks again his voice is measured, but there's something underneath it that wasn't there before.
+Whatever your answer - or non-answer - produces, he absorbs it without expression. When $heOrShe speaks again it is measured, but there's something underneath it that wasn't there before.
 
 ""Then we may have more in common than this engagement suggests, Commander."" 
 
 ""I hope that proves relevant, rather than merely interesting.""",,
-armaa_bellatorInterceptOptSleeperHonest,DialogOptionSelected,$option == armaa_bellatorInterceptOptSleeperHonest,# FireAll armaa_bellatorInterceptOpts,"The silence that follows is different from his previous pauses.
+armaa_bellatorInterceptOptSleeperHonest,DialogOptionSelected,$option == armaa_bellatorInterceptOptSleeperHonest,# FireAll armaa_bellatorInterceptOpts,"The silence that follows is different from $hisOrHer previous pauses.
 
 $HeOrShe looks at you for a long moment. The bridge behind $himOrHer continues its quiet efficiency - no one reacts, no one turns. They haven't heard, or they've been trained not to show it.
 
-""Before Meshan,"" he says finally. Carefully.
+""Before Meshan,"" $heOrShe says finally. Carefully.
 
 ""Then you understand what this vessel is. What it represents. And you understand why we cannot simply hand it over to someone operating under Kade's commission - regardless of the tactical situation.""
-
-He holds your gaze.
 
 ""I'll ask you something in return, and I'd ask you answer it honestly. Does your employer know of your background?""","armaa_bellatorInterceptOptSleeperHonestYes:""Yes.""(lie)
 armaa_bellatorInterceptOptSleeperHonestNo:""No.""",
 armaa_bellatorInterceptOptSleeperHonestYes,DialogOptionSelected,$option == armaa_bellatorInterceptOptSleeperHonestYes,"FireAll armaa_bellatorInterceptOpts
-$player.ethosLiar++","""I see,"" he says. ""Then I'll leave that where it is.""","armaa_bellatorInterceptOptSleeperHonestYes:""Yes.""(lie)
+$player.ethosLiar++","""I see,"" $heOrShe says. ""Then I'll leave that where it is.""","armaa_bellatorInterceptOptSleeperHonestYes:""Yes.""(lie)
 armaa_bellatorInterceptOptSleeperHonestNo:""No.""",
 armaa_bellatorInterceptOptSleeperHonestNo,DialogOptionSelected,$option == armaa_bellatorInterceptOptSleeperHonestNo,"FireAll armaa_bellatorInterceptOpts
 $player.ethosHonorable++","""Keep it that way. For now.""",,
@@ -4645,6 +4643,123 @@ FireBest MarketPostDock",,,
 armaa_dawn_shroudCheck3b,DialogOptionSelected,$option == armaa_dawn_shroudCheck3b,"ResumeNormalMusic
 $menuState = main 0
 FireAll PopulateOptions",,,
+,,,,,# maybe we just ddont feel like dealing with her RN,
+armaa_dawnPlayerHasAICoreCaptain,PopulateOptions,"$player.armaa_$dawnNoticedAI_event_id == true
+armaa_Hikaru_Utada getPlayerFleetId score:1000
+armaa_dawnCMD getAICoreForDawnEvent","$player.armaa_$dawnNoticedAI_event_id = false
+ShowImageVisual hound_hangar
+","Following a strategic meeting with your command staff, you find Dawn at a viewscreen, replaying the earlier engagement.  She seems focused on one particular ship.","armaa_dawnPlayerHasAICoreCaptain2:Approach Dawn
+defaultLeave:Leave",
+armaa_dawnPlayerHasAICoreCaptain2,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain2,"BeginConversation armaa_dawn
+SetTextHighlights ""$armaa_dawnEventShipName""","""That one there,"" she gestures at the $armaa_dawnEventShipName, ""flew pretty, didn't it. Almost too pretty.""
+
+""Don't take a genius to know what's flyin' it. Bit rude, doin' somethin' so sinful right in front of me."" She shoots you a straight-faced, sidelong glance. Whether that's the joke or the truth of it, you can't quite tell.
+
+","armaa_dawnPlayerHasAICoreCaptain2A:""Does it actually bother you?""
+armaa_dawnPlayerHasAICoreCaptain2B:""They're not so bad, you know.""
+armaa_dawnPlayerHasAICoreCaptain2C:""This is just a means to an end."" 
+armaa_dawnPlayerHasAICoreCaptain2D:""It's shackled. It can't do anything I don't allow."" 
+",
+armaa_dawnPlayerHasAICoreCaptain2A,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain2A,"$option = armaa_dawnPlayerHasAICoreCaptain3
+FireBest DialogOptionSelected","She stares at you for a moment before looking back. ""...you really want me to answer that?""",,
+armaa_dawnPlayerHasAICoreCaptain2B,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain2B,"$option = armaa_dawnPlayerHasAICoreCaptain3
+FireBest DialogOptionSelected","""Mm. Or maybe it just wants you to think that."" She runs a hand through her hair, considering it. ""That's the trouble with 'em, aye? Can't ever tell. Thing's built to look like it's on your side. Maybe it is. That's almost worse.""",,
+armaa_dawnPlayerHasAICoreCaptain2C,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain2C,"$option = armaa_dawnPlayerHasAICoreCaptain3
+FireBest DialogOptionSelected","""Spoken like the one with the bigger picture in mind."" It almost sounds like a compliment. ""S'pose that's the difference between us. You see a tool.""",,
+armaa_dawnPlayerHasAICoreCaptain2D,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain2D,"$option = armaa_dawnPlayerHasAICoreCaptain3
+FireBest DialogOptionSelected","""...Right. That's the part i'll be losin' sleep over. Wasn't worried it'd bite, $playerSirOrMadam.""",,
+,,,,,,
+armaa_dawnPlayerHasAICoreCaptain3,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3,FireAll armaa_dawnPlayerHasAICoreCaptain3Opts,"""Here's the long and short of it. A thing like that... you can't ever really know it. Not the way you know a person. Might be it's exactly what it looks like, might not. And you'll never get to be sure either way."" She shrugs.
+ 
+ ""That's what they drilled into us, anyhow. Reckon some of it stuck.""",,
+armaa_dawnPlayerHasAICoreCaptain3Deflect,armaa_dawnPlayerHasAICoreCaptain3Opts,,,,"armaa_dawnPlayerHasAICoreCaptain3A:""Never been sure of anything in my life. Why start now?""",
+armaa_dawnPlayerHasAICoreCaptain3Trust,armaa_dawnPlayerHasAICoreCaptain3Opts,,,,"armaa_dawnPlayerHasAICoreCaptain3B:""It's earned its place out there, same as you.""",
+armaa_dawnPlayerHasAICoreCaptain3Leader,armaa_dawnPlayerHasAICoreCaptain3Opts,,,,"armaa_dawnPlayerHasAICoreCaptain3C:""That's my risk to carry, not yours.""",
+armaa_dawnPlayerHasAICoreCaptain3PB,armaa_dawnPlayerHasAICoreCaptain3Opts,,,,"armaa_dawnPlayerHasAICoreCaptain3D:""Sounds pretty sure for someone who says you can't be sure."" ",
+armaa_dawnPlayerHasAICoreCaptain3Ack,armaa_dawnPlayerHasAICoreCaptain3Opts,,,,"armaa_dawnPlayerHasAICoreCaptain3E:""...Yeah. I hear you.""",
+armaa_dawnPlayerHasAICoreCaptain3LuddicOptF,armaa_dawnPlayerHasAICoreCaptain3Opts,$player.mostLuddicEthosFaithful,,,"armaa_dawnPlayerHasAICoreCaptain3LuddicOptFResp:""Worse things were built for worse reasons, and people turned them to good after. What matters is the hand on it, and whose ends it serves.""",
+armaa_dawnPlayerHasAICoreCaptain3LuddicOptP,armaa_dawnPlayerHasAICoreCaptain3Opts,$player.mostLuddicEthosPather,,,"armaa_dawnPlayerHasAICoreCaptain3LuddicOptPResp:""It serves -me-. That's the order of things restored - man over machine, not machine over man.""",
+armaa_dawnPlayerHasAICoreCaptain3A,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3A,"$option = armaa_dawnPlayerHasAICoreCaptain4
+FireBest DialogOptionSelected","Dawn laughs, ""Now that I believe.""",,
+armaa_dawnPlayerHasAICoreCaptain3B,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3B,"$option = armaa_dawnPlayerHasAICoreCaptain4
+FireBest DialogOptionSelected","""Same as me? Generous. Or insultin'. Haven't decided.""",,
+armaa_dawnPlayerHasAICoreCaptain3C,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3C,"$option = armaa_dawnPlayerHasAICoreCaptain4
+FireBest DialogOptionSelected","""...Aye, Reckon it is. Your $shipOrFleet, your call.""",,
+armaa_dawnPlayerHasAICoreCaptain3D,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3D,"$option = armaa_dawnPlayerHasAICoreCaptain4
+FireBest DialogOptionSelected","That gets a real grin out of her. ""I...Hah. Caught me."" She doesn't look remotely sorry. ""Maybe I just like the company of my own doubts. Don't make 'em wrong.""",,
+,,,,,,
+armaa_dawnPlayerHasAICoreCaptain3LuddicOptFResp,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3LuddicOptFResp,"$option = armaa_dawnPlayerHasAICoreCaptain4
+FireBest DialogOptionSelected","""Whose ends it serves. Anyone ever tell you that's a mighty strange way to read the Book?"" She pauses for a moment, before adding quickly, ""Not that you're wrong, mind.""
+
+""Wouldn't repeat it to anyone else in the flock, though. They'd have you excommunicated before you clossed the comm link.""",,
+armaa_dawnPlayerHasAICoreCaptain3LuddicOptPResp,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain3LuddicOptPResp,"$option = armaa_dawnPlayerHasAICoreCaptain4
+FireBest DialogOptionSelected","She studies you a moment. ""Ain't my business to sort your soul out. But that particular knot's been tied before.""",,
+,,,,,,
+armaa_dawnPlayerHasAICoreCaptain4,DialogOptionSelected,$option == armaa_dawnPlayerHasAICoreCaptain4,"SetTextHighlights ""$armaa_dawnEventCoreName""
+AddStoryPoints 1
+","Dawn pushes off the rail. ""Listen to us philosophizin' like a couple of old monks."" She's already turning to go. ""It flew pretty."" She looks back, dry as anything. ""I'll be sure to give ol' $armaa_dawnEventCoreName a gold star.""",defaultLeave:Return to your duties,
+,,,,,,
+armaa_dawnOutpaced,PopulateOptions,"$player.armaa_$dawnOutpaced_event_id == true
+armaa_Hikaru_Utada getPlayerFleetId score:1000","$player.armaa_$dawnOutpaced_event_id = false
+ShowImageVisual hound_hangar
+","The fleet settles into the rhythm it always does between destinations. You take a meal in your flagship's mess: reconstituted something, eaten standing half the time. 
+
+The crew likes seeing you down here, and you've learned they're right to.",armaa_dawnOutpaced2:Take a break,
+armaa_dawnOutpaced2,DialogOptionSelected,$option == armaa_dawnOutpaced2,"BeginConversation armaa_dawn
+ShowPersonVisual","Dawn unceremoniously drops into the seat across from you. She pushes a tray of what could dubiously be called ""nourishment"" towards you, reclining backwards into her chair.
+
+""Good shift, cap'n. Hope you're not skippin' meals again."" She nudges the tray another inch toward you.","armaa_dawnOutpaced2A:""Hard to skip meals when you keep ambushing me with them.""
+armaa_dawnOutpaced2B:""Can't argue with the results. Fleet's never run better.""
+armaa_dawnOutpaced2C:""Someone's got to keep you all in line.""",
+armaa_dawnOutpaced2A,DialogOptionSelected,$option == armaa_dawnOutpaced2A,FireAll armaa_dawnOutpacedOpts,"Dawn smiles. ""Should have seen it coming, $playerSirOrMadam.""",,
+armaa_dawnOutpaced2B,DialogOptionSelected,$option == armaa_dawnOutpaced2B,FireAll armaa_dawnOutpacedOpts,"Dawn tips her head, almost proud. ""Yeah, I'd say that's fair.""",,
+armaa_dawnOutpaced2C,DialogOptionSelected,$option == armaa_dawnOutpaced2C,FireAll armaa_dawnOutpacedOpts,"""Hah. That what you call it?""",,
+,,,,,,
+armaa_dawnOutpacedOptsCompetitive,armaa_dawnOutpacedOpts,,,"""You've got hands on you these days. Reckon you'd take me in a one-on-one in the simulator now? Honest answer.""","armaa_dawnOutpacedOptsCompetitiveResp:""Only one way to find out.""",
+armaa_dawnOutpacedOptsCocky,armaa_dawnOutpacedOpts,,,,"armaa_dawnOutpacedOptsCockyResp:""On my worst day.""",
+armaa_dawnOutpacedOptsHumble,armaa_dawnOutpacedOpts,,,,"armaa_dawnOutpacedOptsHumbleResp:""Not a chance. You'd wipe the floor with me.""",
+armaa_dawnOutpacedOptsObservant,armaa_dawnOutpacedOpts,,,,"armaa_dawnOutpacedOptsObservantResp:""Where's this coming from?""",
+armaa_dawnOutpacedOptsLeader,armaa_dawnOutpacedOpts,,,,"armaa_dawnOutpacedOptsLeaderResp:""Flying's your department. I just point the fleet.""",
+armaa_dawnOutpacedOptsBanter,armaa_dawnOutpacedOpts,,,,"armaa_dawnOutpacedOptsBanterResp:""Why, you looking for a rematch?""",
+armaa_dawnOutpacedOptsCompetitiveResp,DialogOptionSelected,$option == armaa_dawnOutpacedOptsCompetitiveResp,FireBest armaa_dawnOutpacedResolve,"Dawn huffs a short laugh. ""That's the spirit.""",,
+armaa_dawnOutpacedOptsCockyResp,DialogOptionSelected,$option == armaa_dawnOutpacedOptsCockyResp,FireBest armaa_dawnOutpacedResolve,"""Hah. Were you always this cocky, or'd you grow into it?""",,
+armaa_dawnOutpacedOptsHumbleResp,DialogOptionSelected,"$option == armaa_dawnOutpacedOptsHumbleResp
+!armaa_dawnCMD hasMoreCombatSkillsThanDawn",FireBest armaa_dawnOutpacedResolve,"""Smart enough to know it, at least."" She nudges the tray again. ""Sit. Eat.""",,
+armaa_dawnOutpacedOptsHumbleRespLiar,DialogOptionSelected,"$option == armaa_dawnOutpacedOptsHumbleResp
+armaa_dawnCMD hasMoreCombatSkillsThanDawn",FireBest armaa_dawnOutpacedResolve,"Dawn's eyes narrow, half a grin in it. ""Liar. I've watched you fly - you'd have me in the first thirty seconds. But it's good of you to say.""",,
+armaa_dawnOutpacedOptsObservantResp,DialogOptionSelected,$option == armaa_dawnOutpacedOptsObservantResp,FireBest armaa_dawnOutpacedResolve,"""You say that like I'm beatin' around the bush."" She sets the glass down. ""...Which, fair. I am.""",,
+armaa_dawnOutpacedOptsLeaderResp,DialogOptionSelected,"$option == armaa_dawnOutpacedOptsLeaderResp
+!armaa_dawnCMD hasMoreCombatSkillsThanDawn",FireBest armaa_dawnOutpacedResolve,"Dawn tips her head, conceding it. ""Fair. Somebody's gotta.""",,
+armaa_dawnOutpacedOptsLeaderRespHighCombat,DialogOptionSelected,"$option == armaa_dawnOutpacedOptsLeaderResp
+armaa_dawnCMD hasMoreCombatSkillsThanDawn",FireBest armaa_dawnOutpacedResolve,"One eyebrow goes up. ""That so?"" There's a dry tilt to it, like she's decided not to argue but doesn't exactly believe you either. ""Was true once, maybe. You've come a ways since, though.""",,
+armaa_dawnOutpacedOptsBanterResp,DialogOptionSelected,$option == armaa_dawnOutpacedOptsBanterResp,FireBest armaa_dawnOutpacedResolve,"Dawn grins. ""Maybe I am.""",,
+armaa_dawnOutpacedHigh,armaa_dawnOutpacedResolve,armaa_dawnCMD hasMoreCombatSkillsThanDawn,,"""When I signed on, you were rough. Promisin', but rough. Figured I'd keep pace easy. Teach you a thing or two, even. Somewhere along the line that stopped bein' true, and I didn't clock the day it happened. Just looked up one stretch and you were somewhere I couldn't follow.""","armaa_dawnOutpacedConfessFalter:""When one of us falters, the other picks up the pace. That's the whole arrangement.""
+armaa_dawnOutpacedConfessTogether:""I'm not getting to the top on my own.""
+armaa_dawnOutpacedConfessBlunt:""You're still useful. That's reason enough.""
+armaa_dawnOutpacedConfessDismiss:""You decided you were behind. I never did.""
+armaa_dawnOutpacedConfessDeflect:""Who else is going to push trays of mystery protein at me?""",
+armaa_dawnOutpacedLow,armaa_dawnOutpacedResolve,!armaa_dawnCMD hasMoreCombatSkillsThanDawn,FireBest armaa_dawnOutpacedClose,"She waves her fork at you. ""Don't matter, though.""
+
+""You see the whole board. Where every ship oughta be, when to pull 'em. I just blow up what you point me at."" A shrug. ""That's a unit. Two halves doin' the one job. Always has been.""",,
+armaa_dawnOutpacedConfessFalter,DialogOptionSelected,$option == armaa_dawnOutpacedConfessFalter,"FireBest armaa_dawnOutpacedClose
+AdjustRepActivePerson  COOPERATIVE 3","""...Heh. The whole arrangement?"" She shakes her head.",,
+armaa_dawnOutpacedConfessDismiss,DialogOptionSelected,$option == armaa_dawnOutpacedConfessDismiss,"FireBest armaa_dawnOutpacedClose
+AdjustRepActivePerson  COOPERATIVE 3","""...That right."" She turns it over. ""Guess I built that whole case on my own, then.""",,
+armaa_dawnOutpacedConfessTogether,DialogOptionSelected,$option == armaa_dawnOutpacedConfessTogether,"FireBest armaa_dawnOutpacedClose
+AdjustRepActivePerson  COOPERATIVE 3","She looks at you, and a grin creeps across her face. Small, but real. ""Alright. To the top, then.""",,
+armaa_dawnOutpacedConfessBlunt,DialogOptionSelected,$option == armaa_dawnOutpacedConfessBlunt,"FireBest armaa_dawnOutpacedClose
+AdjustRepActivePerson  COOPERATIVE 3","""Can't argue that. Don't know why I figured you'd say different.""",,
+armaa_dawnOutpacedConfessDeflect,DialogOptionSelected,$option == armaa_dawnOutpacedConfessDeflect,"FireBest armaa_dawnOutpacedClose
+AdjustRepActivePerson  COOPERATIVE 3","""Nobody. You'd starve in a week.""",,
+,,,,,,
+armaa_dawnOutpacedClose,armaa_dawnOutpacedClose,,"$player.dawnConfidedOutpaced = true
+armaa_dawnCMD increaseLevelCap
+AddStoryPoints 1
+#PlaySound ui_survey_found_3","""...Anyhow. Enough of that.""
+
+She picks her fork back up, and that's the end of it. The conversation wanders off to simpler topics: a supply run gone sideways, a bet she's got going with the deck crew, the unlikely question of what's actually in the mess hall coffee.
+
+By the time your tray's empty, it's like the whole thing never came up. Which, you suspect, is exactly how she wanted it.",defaultLeave:Return to your duties,
 ,,,,,,
 # Handing in the PK - Sera,,,,,,
 PKGiveToSeraph,PopulateOptions,"$isPerson
@@ -7274,14 +7389,10 @@ armaa_KoLSupplies2Resp,DialogOptionSelected,$option == armaa_KoLSupplies2Resp,"$
 FireBest DialogOptionSelected","""Fair enough. New Meshan's a decent waystation if you don't mind it's debauchery."" $heOrShe says it without warmth.
 
 ""Before you make port, there's something you should know about this system. Won't take long. Consider it a toll for the road.""",,
-armaa_KoLCuriosityResp,DialogOptionSelected,$option == armaa_KoLCuriosityResp,"$option = armaa_KoLInfoDump
+armaa_KoLCuriousity2Resp,DialogOptionSelected,$option == armaa_KoLCuriousity2Resp,"$option = armaa_KoLInfoDump
 FireBest DialogOptionSelected","$heOrShe almost smiles.
 
-""Talk with me a moment. What you've heard and what's actually out there are likely two different things.""",,
-armaa_KoLCuriosityRespB,DialogOptionSelected,$option == armaa_KoLCuriosity2Resp,"$option = armaa_KoLInfoDump
-FireBest DialogOptionSelected","$heOrShe almost smiles.
-
-""Talk with me a moment. What you've heard and what's actually out there are likely two different things.""",,
+""Talk with me a moment. What you've heard and what's out there are likely two different things.""",,
 armaa_KoLInfoDump,DialogOptionSelected,$option == armaa_KoLInfoDump,,"""I'll speak plainly. This system is rife with the taint of Moloch. You have the data for Jenius on your charts, yes?  The unholy relics of the Domain still patrol their skies. The local population they leave unmolested - the Creator's mercy working through strange instruments, perhaps.""
 
 ""Anything else that enters their range is another matter. We lost a missionary vessel some cycles past. Good people, faithful people, gone before they could speak a single prayer.  Ludd holds them now. I take comfort in that, when I allow myself to.""","armaa_KoLInfoDumpWhyNotDestroyedResp:""Why hasn't the Church acted?""
@@ -7310,11 +7421,13 @@ armaa_vzardGift,PopulateOptions,"$id == armaa_seraph score: 5000
 !$givenValkazard2
 armaa_valkazardCMD canGetUpgradeForValk
 $rel >= 0.80
-$givenCustomVXCustom","SetOptionColor armaa_vzardSel 152,171,75,255",,armaa_vzardSel: Discuss the Valkazard,
+$givenCustomVXCustom
+!armaa_valkazardCMD hasValkKai","SetOptionColor armaa_vzardSel 152,171,75,255",,armaa_vzardSel: Discuss the Valkazard,
 armaa_vzardGiftAlt,PopulateOptions,"$id == armaa_seraph score: 5000
 !$givenValkazard2
 $global.armaa_hasRaiden
-$givenCustomVXCustom","SetOptionColor armaa_vzardSel 152,171,75,255",,armaa_vzardSel: Discuss the Valkazard,
+$givenCustomVXCustom
+!armaa_valkazardCMD hasValkKai","SetOptionColor armaa_vzardSel 152,171,75,255",,armaa_vzardSel: Discuss the Valkazard,
 armaa_vzardSel,DialogOptionSelected,$option == armaa_vzardSel,FireAll armaa_vzardGiftQuestionsFinal,"""We've been cross-referencing the Valken III trial data with what came out of ATAC. Productive work. But your machine -"" she rubs her chin, ""- that's a different problem entirely.""
 
 ""Several subsystems were behaving in ways I couldn't account for. My first assumption was damage, or overuse.""She sets one hand flat on the desk. ""It wasn't.""
@@ -7434,13 +7547,13 @@ FireAll armaa_reicOpts","""I am. Because I don't trust you yet. If this goes lou
 armaa_reicOptMercenaryResp,DialogOptionSelected,$option == armaa_reicOptMercenaryResp,"$armaa_askedAboutCompensation = true
 FireAll armaa_reicOpts","""Fair. Retainer now, balance on delivery - plus fuel and supplies to cover the run. Bring Lingfeng back clean, and you get clearance on Exsedol. That's worth more than a bonus out here.""",,
 armaa_reicOptAcceptResp,DialogOptionSelected,$option == armaa_reicOptAcceptResp,"AcceptMission
-SetTextHighlights Umbra
+SetTextHighlights ""The ARC may know something, so Umbra is a good start"" ""Drawing attention to yourself will only make this even more difficult""
 Highlight Umbra
 FireAll PopulateOptions","""Good. And now the part you won't like: we don't have a pin for the camp. Cruor's work camps move where they're needed. If we had eyes that close, Lingfeng wouldn't be in a cage. That said, i'd suggest asking around for more info. The ARC may know something, so Umbra is a good start.""
 
 ""So you'll have to find his location the old fashioned way. Bar talk, A crooked officer with debts. Whatever you can pry loose without putting your name on it.""
 
-""...And Captain? Keep your heat down.""
+""...And Captain? Keep your heat down. Drawing attention to yourself will only make this even more difficult.""
 
 ""Get in, get Lingfeng, get out. If you feel the situation tipping... walk away and try again. The only thing worse than losing him is giving them a reason to start looking for us.""",,
 armaa_reicOptDenyResp,DialogOptionSelected,$option == armaa_reicOptDenyResp,"AdjustRepActivePerson HOSTILE -10
@@ -7639,7 +7752,7 @@ armaa_reicInfiltrationOption,PopulateOptions,"!$global.armaa_reicDidInfiltration
 $global.armaa_reicHiredMercs
 $armaa_reic_marketId == $market.id
 $menuState == main
-$global.armaa_reicIntelLevel == 2",,,2:armaa_reicInfiltrationStart:Consider Infiltration the resuppy point for intel,
+$global.armaa_reicIntelLevel == 2",,,2:armaa_reicInfiltrationStart:Consider Infiltrating the resuppy point for intel,
 armaa_reicInfiltrationStart,DialogOptionSelected,$option ==armaa_reicInfiltrationStart,"BeginConversation armaa_gira
 ShowSecondPerson armaa_felix","A portable holo-table hums between you, projecting a rough schematic of Cruor's transit network. Your tactical officer leans over it with the focused expression of someone who doesn't like what they're looking at.
 
@@ -7980,9 +8093,9 @@ By the time local commanders begin to understand what has happened, your forces 
 armaa_reicExtractFinishedAEveryone,armaa_reicExtractFinishedA,,"AdjustRep sindrian_diktat HOSTILE -10
 AdjustRep luddic_church FRIENDLY 1
 AdjustRep luddic_path FRIENDLY 2
-AdjustRep pirates FRIENDLY 2","The plan shifts from infiltration to controlled chaos. Multiple teams insert simultaneously, striking simultaneously to fracture coordination before it can solidify. Heavy weapons are kept to a minimum, but violence is unavoidable. Prisoners scatter in uneven waves, some following guides, others fleeing blindly into the terrain.
+AdjustRep pirates FRIENDLY 2","The plan shifts from infiltration to controlled chaos. Multiple teams insert, striking simultaneously to fracture coordination before it can solidify. Heavy weapons are kept to a minimum, but violence is unavoidable. Prisoners scatter in uneven waves, some following guides, others fleeing blindly into the terrain.
 
-The withdrawal stretches longer than planned. Enemy forces converge, the battle escalating into a brutal siege. Your $shipOrFleet provides cover where it can, electronic warfare fighting to keep corridors open as long as possible. Not everyone makes it out together. Some evacuees arrive late, shaken, wounded, or alone.
+The withdrawal stretches longer than planned. Your $shipOrFleet provides cover where it can, electronic warfare fighting to keep corridors open as long as possible. Not everyone makes it out together. 
 
 When the operation finally concludes, Lingfeng is secured-but so are dozens of others who were never meant to leave those camps.",,
 armaa_reicExtractFinishedBLingfeng,armaa_reicExtractFinishedBL,,"BeginConversation armaa_lingfeng
@@ -8718,7 +8831,7 @@ $armaa_hadPostReicChat = true
 FireAll  PopulateOptions",,,
 ,,,,,,
 # $armaa_gaveSeraphValk = true here,,,,,,
-armaa_seraPostReicOptResourcesResp,DialogOptionSelected,$option == armaa_seraPostReicOptResources,"AdjustRepActivePerson COOPERATIVE 2
+armaa_seraPostReicOptResourcesResp,DialogOptionSelected,$option == armaa_seraPostReicOptResourcesResp,"AdjustRepActivePerson COOPERATIVE 2
 $armaa_hadPostReicChat = true
 AddCredits 40000
 FireAll PopulateOptions","""Practical,"" she says. The approval in her voice is real.
@@ -8734,7 +8847,8 @@ FireAll PopulateOptions","""You delivered,"" she agrees. ""Walk if you need to."
 
 The smile returns. Small, edged. ""My door stays open. That's the only speech you're getting.""",,
 ,,,,,,
-armaa_bellatorIntro,MarketPostDock,"$global.armaa_hc_missionCompleted
+armaa_bellatorIntro,MarketPostDock,"$market.id == armaa_meshanii_market
+$global.armaa_hc_missionCompleted
 $global.armaa_bellatorEscaped
 !$player.armaa_gotBellator",BeginConversation armaa_seraph,"You receive a high-priorty comms request.
 
@@ -8763,7 +8877,7 @@ armaa_bellatorRespWord,DialogOptionSelected,$option == armaa_bellatorRespWord,,"
 ""Then we have an understanding, Commander."" A pause. ""My crew will need time to adjust to the arrangement. I'd ask you respect that.""
 
 ""Don't make me regret this.""",armaa_bellatorSeraClose:Continue,
-armaa_bellatorRespWhatChanged,DialogOptionSelected,$option == armaa_bellatorRespWhatChanged,,"""Nothing changed my mind,"" she says. ""I made a decision with the information I had."" A fractional pause. ""Vael trusted his read of you. He didn't trust easily. That carried weight.""
+armaa_bellatorRespWhatChanged,DialogOptionSelected,$option == armaa_bellatorRespWhatChanged,,"""Nothing changed my mind,"" she says. ""I made a decision with the information I had. Our CO trusted their read of you.""
 
 She doesn't elaborate further. It's enough.",armaa_bellatorSeraClose:Continue,
 armaa_bellatorRespDidntExpect,DialogOptionSelected,$option == armaa_bellatorRespDidntExpect,,"""Neither did we, honestly."" She glances briefly offscreen - at her crew, or at something else. ""Here we are.""",armaa_bellatorSeraClose:Continue,

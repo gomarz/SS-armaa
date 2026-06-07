@@ -4,4 +4,4 @@ armaa_market,Arma Armatura,armaarmatura_atac,"Trade with Arma Armatura HQ.
 Equipment sold here is considered unconventional by most standard militaries and generally does not see much use outside of independent fleet commanders. As a result this location is often the best bet to find such wares.",data.scripts.campaign.submarkets.armaa_subMarketPlugin,,800.05
 armaa_mrcMarket,MRC,armaarmatura_pirates,"Trade with Arma Armatura HQ.
 
-Equipment sold here is considered unconventional by most standard militaries and generally does not see much use outside of independent fleet commanders. As a result this location is often the best bet to find such wares.",data.scripts.campaign.submarkets.armaa_subMarketPlugin,,800.05
+Equipment sold here is considered unconventional by most standard militaries and generally does not see much use outside of independent fleet commanders. As a result this location is often the best bet to find such wares.",data.scripts.campaign.submarkets.armaa_mrcSubMarketPlugin,,800.05

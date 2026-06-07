@@ -16,7 +16,8 @@
   ],
   "builtInMods": [
     "novent",
-    "ablative_armor"
+    "ablative_armor",
+    "expanded_deck_crew"
   ],
   "builtInWeapons": {
     "CONTROLLER": "armaa_valkazard_mirror_deco"

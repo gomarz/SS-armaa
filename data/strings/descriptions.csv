@@ -111,6 +111,11 @@ armaa_warthog,SHIP,"A Warthog equipped with the WINGCOM system. Only mildly more
 ,,,,,,,
 armaa_bit,SHIP,"Customizable gunpods capable of omnidirectional, high-speed attacks. While primarily operated autonomously, the Einhander's secondary pilot can also freely direct them. The majority of the frame is reserved for housing installed weaponry and propulsion systems - as a result, despite being capable of bringing a tremendous amount of firepower to bear, they are mired by limited operational range and durability.",,,,,
 armaa_bit_blade,SHIP,"Fast drones equipped with four downsized beam emitters following the same design philosophy of ArmaA's 'laser blades'. They rapidly spin up when enemies are detected and attempt to ram into the enemy as a sort of improvised melee weapon. Can cut through swathes of lightly armored targets, but somewhat hindered by short range and poor acceleration.",,,,,
+armaa_blade_pila,WEAPON,"""Don't let the size fool ya neither - same hyperdimensional filter, just quartered. Won't carve a capital, but a wing of fighters or some flimsy frigate? They'll go through 'em like a thresher through wheat. Problem is they gotta get close, and they accelerate like a drunk pushin' a fridge uphill, so half of 'em eat a flak burst before they ever land a cut.
+
+...Worth it, though. You should see what's left.
+
+Boss? You writin' this down?""",- Chief Mechanic,,,,
 armaa_alesteBit,SHIP,"Simplified versions of the drones utilized by the Altagrave. They serve as cheap and disposable point defense amplifiers, and are small enough that even Cataphract-sized vessels can house a forge small enough to produce and replenish them during combat.",,,,,
 ,,,,,,,
 armaa_xyphos,SHIP,"Upgraded with expanded sensor arrays and modified targeting software, this Xyphos variant is capable of limited autonomous operation and comes equipped with an Ion Pulser-trading traditional suppression duties for a more aggressive role in disabling enemy systems. Additional coordination subroutines allow the pilot to direct a Xyphos wing in concert, turning a single command fighter into a compact electronic warfare platform.

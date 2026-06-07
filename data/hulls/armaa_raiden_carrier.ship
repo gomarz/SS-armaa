@@ -15,6 +15,10 @@
     "armaa_comboUnit",
     "armaa_himac"
   ],
+  "builtInWings": [
+    "armaa_bit_blade_wing",
+    "armaa_bit_blade_wing"
+  ],
   "builtInWeapons": {
     "DECO": "armaa_raiden_deco",
     "E_LSHOULDER": "armaa_raiden_leftPauldron",

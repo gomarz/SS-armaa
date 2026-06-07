@@ -36,6 +36,7 @@
 	},
 	"variantOverrides":{
 		"armaa_atlas2_Standard":10,
+		"armaa_valkyrie_sniper":10,
 	},
 	"hullFrequency":{
 			"hulls":
@@ -86,8 +87,26 @@
 		"fighters":[
 		],
 	},
+    "priorityShips":{
+        "tags":[],
+        "hulls":[
+				"armaa_monitor",
+				"armaa_leynos_frig",
+				"armaa_broadsword",
+				"armaa_bassline",
+				"armaa_sarissa",
+				"armaa_valkyrie",
+				"armaa_valkenx_frig",
+				"armaa_valkyrie",
+				"armaa_caymon",
+				"armaa_zanac",
+				"armaa_musha_frig",
+				"armaa_aleste_frig_classic",
+				"armaa_musha_frig_sniper",
+        ],
+    },
 	"knownShips":{
-		"tags":["armaa_cataphract_bp"],
+		"tags":["armaa_cataphract_bp","pirates","pirate_bp"],
 		"hulls":[	
 				"armaa_einhander_plus",
 				"armaa_viator",
@@ -128,7 +147,7 @@
 				"armaa_musha_frig_sniper",
 				"drover",
 				"armaa_valkyrie",
-				"armaa_valkyrie_aleste",
+				"armaa_bassline",
 				"armaa_ashura_frig",
 
 			],

@@ -2,7 +2,7 @@
   "hullName": "Trident (WINGCOM)",
   "hullId": "armaa_trident",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/ships/trident.png",
+  "spriteName": "graphics/armaa/ships/armaa_trident.png",
   "style": "HIGH_TECH",
   "height": 34,
   "width": 38,
@@ -21,8 +21,8 @@
     "trident_wing"
   ],
   "builtInWeapons": {
-    #"WS 004": "atropos_single",
-    #"WS 005": "atropos_single"
+    "WS 004": "sabot_single",
+    "WS 005": "sabot_single"
   },
   "weaponSlots": [
     {
@@ -37,7 +37,7 @@
     {
       "id": "WS 004",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "HIDDEN",
       "arc": 5,
       "angle": 0,
@@ -46,7 +46,7 @@
     {
       "id": "WS 005",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "HIDDEN",
       "arc": 5,
       "angle": 0,

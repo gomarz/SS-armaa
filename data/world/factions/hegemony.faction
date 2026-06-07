@@ -17,7 +17,13 @@
     			"armaa_monitor_xiv",
 			"armaa_valkyrie",
 			"armaa_panther_frig_xiv",
-			"armaa_musha_frig_sniper"
+			"armaa_musha_frig_sniper",
 			],
+	},
+	"knownFighters":{
+		"fighters":[
+			"armaa_musha_bomber_wing",
+			"armaa_musha_wing",
+		],
 	},
 },	

@@ -1,22 +1,25 @@
 {
-  "variantId": "armaa_bit_blade_variant",
-  "hullId": "armaa_bit_blade",
+  "variantId": "armaa_sarissa_standard",
+  "hullId": "armaa_sarissa",
   "displayName": "Standard",
   "goalVariant": false,
   "fluxCapacitors": 0,
   "fluxVents": 0,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [],
+  "hullMods": [
+    "defensive_targeting_array",
+    "unstable_injector",
+    "blast_doors",
+    "auxiliarythrusters"
+  ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "armaa_blade_pila",
-        "WS0002": "armaa_blade_pila",
-        "WS0003": "armaa_blade_pila",
-        "BLADE": "armaa_blade_pila"
+        "WS 000": "lightac",
+        "WS 001": "lightac"
       }
     }
   ],

@@ -7,8 +7,8 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_pilaBladeEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/aleste/armaa_alesteRightArm_blade.png",
-  "hardpointSprite": "",
+  "turretSprite": "graphics/armaa/ships/armaa_claw_old.png",
+  "hardpointSprite": "graphics/fx/empty.png",
   "showDamageWhenDecorative": true,
   "glowColor": [
     255,

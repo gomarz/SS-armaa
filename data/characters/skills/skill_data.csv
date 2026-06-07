@@ -1,7 +1,8 @@
 id,name,order,tier,description,author,combat officer,admiral,admin,tags,icon
 # LEADERSHIP,,,,,,,,,,
 armaa_cataphract,Cataphract Command,10001,0,Morning! How's it feel to be strapped to a walking metal coffin at six AM? Bet you wish you studied harder in school! Heh heh heh... Hit that throttle. We're going to be killing people before breakfast today.,"Savarin Johnson, pilot",,,,"npc_only,dummy",graphics/icons/skills/phase_corps.png
-armaa_AcePilot,Ace,10001,0,Morning! How's it feel to be strapped to a metal coffin at six AM? Bet you wish you studied harder in school! Heh heh heh... Hit the throttle. We're going to be killing people before breakfast today.,"Savarin Johnson, pilot",TRUE,,,"npc_only,dummy",graphics/armaa/icons/skills/armaa_ace.png
+armaa_AcePilot,Ace Pilot,10001,0,"There are old pilots and there are bold pilots, but there are no old, bold pilots. I'm the exception they warn you about.","""Halcyon"" Reyes, Hegemony Aerospace Command",TRUE,,,"npc_only,dummy",graphics/armaa/icons/skills/armaa_ace.png
+armaa_VeteranPilot,Veteran Pilot,10001,0,"You don't get old and good by accident. You get there by not dying, over and over, on purpose.","Tessa Cyrene, independent contract pilot",TRUE,,,"npc_only,dummy",graphics/armaa/icons/skills/armaa_ace.png
 armaa_strikeCraftBuff,Reactive Motion Sheath,0,1,"Legacy firmware treated high flux as a failure state, triggering corrective routines that often compounded pilot error under fire.
 
 The revised ATAC suite reframes flux saturation as a transitional combat phase, prioritizing evasive mobility and controlled power shedding over brute stabilization. Strikecraft are no longer punished for operating near their limits, but trained to exit those limits intact.

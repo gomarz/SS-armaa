@@ -16,7 +16,6 @@
     "armaa_autoModuleRepair"
   ],
   "builtInWings": [
-    "armaa_valkenmp_wing",
     "armaa_valkenmp_wing"
   ],
   "builtInWeapons": {

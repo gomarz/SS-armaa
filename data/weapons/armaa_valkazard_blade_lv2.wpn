@@ -9,6 +9,7 @@
   "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_blade_left_lvl2.png",
   "hardpointSprite": "graphics/fx/empty.png",
   "showDamageWhenDecorative": true,
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
   "visualRecoil": 5,
   "renderHints": [
     RENDER_BARREL_BELOW
