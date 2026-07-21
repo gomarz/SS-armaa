@@ -64,7 +64,7 @@ V3.3.2
 
 - Blink
 	- Max uses: 2->1
-	- Cooldown: 1->10
+	- Cooldown: 1->8
 
 Raiden EX
 	- added tag "armaa_core_independent"
