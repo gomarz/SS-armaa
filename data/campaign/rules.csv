@@ -2415,6 +2415,8 @@ armaa_dawnBarMeetingEvent,AddBarEvents,"$market.id == armaa_meshanii_market
 !$player.armaa_metDawnInitial
 !armaa_Hikaru_Utada hasOfficer armaa_dawn","AddBarEvent armaa_dawnMeeting ""Approach the rugged woman"" "" In one corner, a mercenary-type nursing a tankard of ale catches your eye."" highlight",,,
 armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConversation armaa_dawn
+armaa_dawnCMD supressBarSupression
+armaa_Hikaru_Utada playMusic music_armaa_bar
 ShowPersonVisual
 $player.armaa_metDawnInitial = true","Dawn glances up as you approach. ""Pulled up a chair. Good."" She nods at the seat opposite.
 
