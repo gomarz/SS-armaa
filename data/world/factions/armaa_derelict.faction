@@ -1,16 +1,16 @@
 {
 	id:"armaa_derelict",
-	"displayName":"Derelict",
-	"displayNameWithArticle":"the derelict",
-	"displayNameLong":"Domain Exploration Derelict",
-	"displayNameLongWithArticle":"the Domain Exploration Derelict",
+	"displayName":"Jenius Derelicts",
+	"displayNameWithArticle":"the Jenius Derelict",
+	"displayNameLong":"Jenius Derelict",
+	"displayNameLongWithArticle":"the Jenius Derelict",
 	"entityNamePrefix":"",
 	"personNamePrefix":"",
 	"personNamePrefixAOrAn":"a",
 	"displayNameIsOrAre":"are",
 	
-	"logo":"graphics/factions/domain_explorarium.png",
-	"crest":"graphics/factions/crest_domain_explorarium.png",
+	"logo":"graphics/armaa/factions/armaa_arusthai.png",
+	"crest":"graphics/armaa/factions/armaa_logo01_crest.png",
 	"shipNamePrefix":"DSS",
 	
 	"color":[100,100,100,255],
@@ -172,7 +172,7 @@
 		
 		"shipSize":3,
 		
-		"aggression":2,
+		"aggression":4,
 		
 		"combatFreighterProbability":0,     				# instead of some portion of the freighters in a fleet
 		"combatFreighterCombatUseFraction":1,				# as part of the normal combat lineup

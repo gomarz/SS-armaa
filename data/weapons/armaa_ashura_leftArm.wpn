@@ -34,7 +34,7 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "GLOW_AND_FLASH",
-  "requiresFullCharge": false,
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
   "muzzleFlashSpec": {
     "length": 50,
     "spread": 2,

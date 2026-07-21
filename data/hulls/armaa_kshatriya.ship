@@ -103,7 +103,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 67,
-      "locations": [10, 52]
+      "locations": [18, 60]
     },
     {
       "id": "BINDER_02",
@@ -112,7 +112,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 138,
-      "locations": [-32, 30]
+      "locations": [-40, 40]
     },
     {
       "id": "BINDER_03",
@@ -121,7 +121,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -138,
-      "locations": [-32, -30]
+      "locations": [-40, -40]
     },
     {
       "id": "WS0001",
@@ -148,7 +148,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -67,
-      "locations": [10, -52]
+      "locations": [18, -60]
     },
     {
       "id": "WS0004",

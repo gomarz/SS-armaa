@@ -1,7 +1,7 @@
 {
   "id": "armaa_pantherHead_xiv",
   "specClass": "projectile",
-  "projectileSpecId": "armaa_panther_head_shot",
+  "projectileSpecId": "armaa_light_flechette_shot",
   "fireSoundTwo":"light_mass_driver_fire",
   "type": "BALLISTIC",
   "size": "SMALL",

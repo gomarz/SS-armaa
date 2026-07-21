@@ -1,0 +1,50 @@
+{
+  "id": "armaa_ashura_leftArm_g_return",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_boostHammer_missile_returning",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_leftArmDummyWeapon",
+  "turretSprite": "graphics/armaa/ships/ashura/armaa_ashura_leftArm.png",
+  "hardpointSprite": "graphics/fx/empty.png",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    235,
+    255,
+    215,
+    255
+  ],
+  "visualRecoil": 2,
+  "turretOffsets": [
+    29,
+    11
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "requiresFullCharge": false,
+  "muzzleFlashSpec": {
+    "length": 50,
+    "spread": 2,
+    "particleSizeMin": 10,
+    "particleSizeRange": 14,
+    "particleDuration": 0.15,
+    "particleCount": 16,
+    "particleColor": [
+      255,
+      255,
+      255,
+      175
+    ]
+  },
+  "fireSoundTwo": "light_mass_driver_fire"
+}

@@ -9,58 +9,47 @@
   "permaMods": [],
   "hullMods": [
     "armaa_spare_chassis_storage",
-    "ballistic_rangefinder",
     "targetingunit",
     "turretgyros",
-    "armaa_himac",
-    "reinforcedhull",
-    "heavyarmor",
-    "fluxdistributor",
-    "fluxcoil",
     "extendedshieldemitter",
-    "ecm",
-    "eccm",
-    "armaa_wingCommander",
-    "armoredweapons",
-    "advancedshieldemitter"
+    "advancedshieldemitter",
+    "armaa_himac"
   ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0009": "devastator",
+        "WS0003": "assaying_rift",
+        "WS0004": "assaying_rift",
+        "WS0005": "assaying_rift",
+        "WS0006": "assaying_rift",
+        "WS0007": "hveldriver",
+        "WS0008": "dualflak",
+        "WS0009": "vpdriver",
         "WS0010": "devastator",
-        "WS0015": "heavy_adjudicator",
+        "WS0011": "ionbeam",
+        "WS0013": "hveldriver",
+        "WS0014": "dualflak",
+        "WS0015": "armaa_morgana_beam",
         "WS0016": "mjolnir",
-        "WS0017": "heavyneedler"
+        "WS0017": "hveldriver"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS0003": "armaa_armorPod",
-        "WS0004": "armaa_armorPod",
-        "WS0005": "armaa_armorPod",
-        "WS0006": "armaa_armorPod"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {
-        "WS0007": "heavyneedler",
-        "WS0011": "armaa_fluxcannon",
-        "WS0013": "armaa_fluxcannon"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {
-        "WS0008": "heavyneedler"
-      }
+      "weapons": {}
     },
     {
       "autofire": true,
@@ -68,8 +57,7 @@
       "weapons": {
         "WS0001": "guardian",
         "WS0002": "guardian",
-        "WS0012": "heavyburst",
-        "WS0014": "heavyburst"
+        "WS0012": "heavyburst"
       }
     }
   ],

@@ -1,7 +1,7 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
 armaa_kouto_wing,armaa_kouto_Standard,"fighter4, fighter, armaa_advcataphract_bp,cataphract,rare_bp,stay_in_front_of_ship",2,,5,14,BOX,4000,600,-400,2,FIGHTER,Hvy Fighter (Kinetic),16,9000,,,,,,,,,,,,,1
 armaa_valkenx_wing,armaa_valkenx_standard,"fighter3, fighter, armaa_cataphract_bp,cataphract,merc,rare_bp, hist1t",1,,4,11,V,4000,500,,2,FIGHTER,Close Combat(HE),10,8000,,,,,,,,,,,,,4
-armaa_record_wing,armaa_record_juno,"bomber3, bomber,cataphract,armaa_cataphract_bp",3,,4,18,V,4000,2000,600,3,BOMBER,Bomber,15,10000,,,,,,,,,,,,,1
+armaa_record_wing,armaa_record_juno,"bomber3, bomber,cataphract,armaa_cataphract_bp",3,,4,18,V,4000,1000,600,3,BOMBER,Bomber,15,10000,,,,,,,,,,,,,1
 armaa_valkenmp_wing,armaa_valkenmp_standard,"interceptor1,interceptor,armaa_cataphract_bp,cataphract,merc,ind",0,,3,3,V,4000,300,,3,INTERCEPTOR,Interceptor/Coffin,6,4250,,,,,,,,,,,,,
 armaa_aleste_wing,armaa_aleste_standard,"fighter6, fighter,high, armaa_advcataphract_bp,cataphract,merc,rare_bp, hist1t",3,,5,20,BOX,4000,600,500,1,FIGHTER,General Purpose,25,25000,,,,,,,,,,,,,4
 armaa_hazard_wing,armaa_hazard_standard,"fighter3,support,stay_in_front_of_ship,rare_bp",2,,5,9,CLAW,3000,500,,3,FIGHTER,Close Support,13,6000,,,,,,,,,,,,,

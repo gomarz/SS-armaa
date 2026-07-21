@@ -13,14 +13,21 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "A_GUN": "lightmg",
+        "A_GUN": "armaa_pa_mid_leftArm"
       }
     },
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "C_ARMR": "lightmg",
+        "C_ARMR": "armaa_pa_mid_rightArm"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "MINE": "fragbomb"
       }
     }
   ],

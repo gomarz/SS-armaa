@@ -4,7 +4,7 @@
   "projectileSpecId": "vulcan_shot",
   "type": "DECORATIVE",
   "size": "SMALL",
-  "everyFrameEffect": "data.scripts.weapons.armaa_guarDualEffect",
+  "everyFrameEffect": "data.scripts.weapons.armaa_guarDualEffect2",
   "displayArcRadius": 250,
   "turretSprite": "graphics/armaa/ships/guardual/bs/armaa_guardual_head.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXHead.png",

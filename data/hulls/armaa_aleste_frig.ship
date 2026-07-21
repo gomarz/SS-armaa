@@ -17,11 +17,15 @@
     "strikeCraft",
     "armaa_variableRifle",
     "armaa_himac",
-    "armaa_alesteMeleeSwap",
-    "armaa_alesteSkinSwap"
+    "armaa_alesteMeleeSwap"
   ],
   "builtInWeapons": {
+    "A_GUN": "armaa_aleste_variablerifle",
+    "B_TORSO": "armaa_aleste_torso_ace",
     "C_ARMR": "armaa_sprigganRightArm",
+    "D_PAULDRONL": "armaa_aleste_leftPauldron",
+    "D_PAULDRONR": "armaa_aleste_rightPauldron",
+    "E_HEAD": "armaa_alesteHead",
     "F_LEGS": "armaa_ht_legs",
     "HARPOON": "armaa_aleste_harpoon"
   },
@@ -33,7 +37,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-      "locations": [0, -6]
+      "locations": [0, -7]
     },
     {
       "id": "TRUE_GUN",
@@ -42,7 +46,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -10,
-      "locations": [0, -6],
+      "locations": [0, -7],
       "renderOrderMod": -900
     },
     {
@@ -70,7 +74,7 @@
       "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -26.5,
+      "angle": -39.5,
       "locations": [-15, -11],
       "renderOrderMod": 99999
     },
@@ -80,7 +84,7 @@
       "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 26.5,
+      "angle": 39.5,
       "locations": [-15, 11],
       "renderOrderMod": 99999
     },
@@ -109,7 +113,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -10,
-      "locations": [0, -6]
+      "locations": [-6, -6]
     },
     {
       "id": "D_PAULDRONL",
@@ -118,7 +122,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 10,
-      "locations": [0, 6]
+      "locations": [0, 7]
     },
     {
       "id": "D_PAULDRONR",
@@ -127,7 +131,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -10,
-      "locations": [0, -6]
+      "locations": [0, -7]
     },
     {
       "id": "E_HEAD",
@@ -136,7 +140,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [3, -0],
+      "locations": [0, -0],
       "renderOrderMod": 100
     },
     {

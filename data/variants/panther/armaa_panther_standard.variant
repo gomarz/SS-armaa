@@ -3,13 +3,12 @@
   "hullId": "armaa_panther_frig",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 5,
+  "fluxCapacitors": 8,
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "targetingunit",
-    "hardened_subsystems",
     "heavyarmor"
   ],
   "weaponGroups": [

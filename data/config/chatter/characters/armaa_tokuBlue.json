@@ -1,0 +1,88 @@
+{
+	"name":"armaa_tokuBlue",
+	"personalities":["steady", "cautious"],
+	"gender":["m","f"],
+	"chance":0,
+	"talkativeness":0.9,
+	"categoryTags":["armaa"],
+
+	"lines":{
+		"start":[
+			{"text":"Engagement confirmed. Billing timer starts now."},
+			{"text":"Per section three of our agreement, combat pay is now in effect."},
+			{"text":"Noting for the record: they escalated first."},
+			{"text":"Deploying. Collateral is billed at cost, plus handling."},
+			{"text":"Time to leverage some core competencies."},
+			{"text":"Rise and grind."},
+		],
+		"start_boss":[
+			{"text":"This one looks dangerous. Escalating to enterprise pricing."},
+			{"text":"Flagging this one as a hazard surcharge."},
+		],
+		"retreat":[
+			{"text":"Divesting from this engagement."},
+			{"text":"Withdrawing. My last employer taught me to recognize a restructuring."},
+		],
+		"victory":[
+			{"text":"Wrapping up. Itemized invoice to follow."},
+			{"text":"Everyone log your billables."},
+			{"text":"Victory confirmed. Salvage is in escrow until it's inventoried."},
+			{"text":"Humbled and grateful to announce a successful engagement."},
+			{"text":"Grateful to everyone who made this explosion possible."},
+			{"text":"This will make a strong TriLink post. 'What today's ambush taught me about teamwork.'"},
+		],
+		"victory_boss":[
+			{"text":"Kill confirmed. I'll let Red do the speech."},
+			{"text":"The flagship has been... off-boarded."},
+			{"text":"Adding 'capital ship removal' to my skills section. Endorsements welcome."},
+		],
+		"pursuing":[
+			{"text":"They're running. Standard rates still apply."},
+			{"text":"Pursuing. Their exit strategy is poor."},
+			{"text":"Following up, per my last transmission."},
+		],
+		"running":[
+			{"text":"Disengaging. Martyrdom is out of my scope."},
+			{"text":"Too many. Filing this under unacceptable risk exposure."},
+			{"text":"Open to new opportunities. Effective immediately."},
+		],
+		"need_help":[
+			{"text":"Requesting support."},
+			{"text":"I need backup. It's a time-sensitive action item."},
+			{"text":"Looking to connect with anyone in the immediate area."},
+		],
+		"out_of_missiles":[
+			{"text":"Racks empty. Noting the shortfall in the log."},
+			{"text":"Out of missiles. Procurement will be hearing about this."},
+		],
+		"engaged":[
+			{"text":"Engaging. Hold my calls."},
+			{"text":"Target acquired. Beginning the off-boarding process."},
+			{"text":"Consider this your termination notice."},
+			{"text":"Your profile caught my eye. Unfortunately."},
+		],
+		"hull_90":[
+			{"text":"Minor damage. Below the deductible."},
+			{"text":"Cosmetic. Depreciation covers it."},
+		],
+		"hull_50":[
+			{"text":"Hull at half. Adjusting my risk tolerance."},
+			{"text":"Taking real damage. This engagement is underperforming."},
+			{"text":"Treating this as a growth opportunity."},
+		],
+		"hull_30":[
+			{"text":"Hull critical. Someone will be hearing from legal."},
+			{"text":"Critical damage... I hate this job."},
+			{"text":"This is becoming a story about resilience."},
+		],
+		"overload":[
+			{"text":"Overloaded. Wonderful."},
+			{"text":"Flux exceeded parameters. Escalating internally."},
+		],
+		"death":[
+			{"text":"Ejecting. The invoice... stands..."},
+			{"text":"Frame's a write-off... it was fully depreciated anyway..."},
+			{"text":"Recover the black box... it has the receipts..."},
+		],
+	}
+}

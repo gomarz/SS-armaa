@@ -2,7 +2,7 @@
   "hullName": "pod",
   "hullId": "armaa_assaultPod_hull",
   "hullSize": "FIGHTER",
-  "spriteName": "graphics/armaa/ships/armaa_pod.png",
+  "spriteName": "graphics/armaa/ships/armaa_pod_attached.png",
   "style": "LOW_TECH",
   "height": 38,
   "width": 28,

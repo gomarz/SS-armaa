@@ -1,0 +1,9 @@
+{
+	"ranks":{
+		#Mercenaries
+		"armaa_tokuMerc":{"name":"Ally of Justice"},
+	},
+	"posts":{
+		"armaa_administrator":{"name":"Custodian"},
+},
+}

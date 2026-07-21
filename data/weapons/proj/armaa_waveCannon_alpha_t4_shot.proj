@@ -1,0 +1,20 @@
+{
+	"id":"armaa_waveCannon_alpha_t4_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	
+	"glowRadius":100,
+	"hitGlowRadius":200,
+	"length":125.0,
+	"width":20.0,
+	"fadeTime":0.3,
+	"passThroughMissiles":true,
+	"passThroughFighters":true,
+	"fringeColor":[90, 180, 255, 255],
+	"coreColor":[220, 240, 255, 255],
+	"glowColor":[90, 180, 255,100],
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0
+}

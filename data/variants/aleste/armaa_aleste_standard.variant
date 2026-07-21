@@ -10,7 +10,7 @@
   "hullMods": [],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
         "A_GUN": "armaa_aleste_rightArm"

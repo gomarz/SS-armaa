@@ -1,9 +1,9 @@
 {
   "id": "armaa_pa_mid_rightArm",
   "specClass": "beam",
-  "beamEffect": "data.scripts.weapons.armaa_valkenBlade",
-  "everyFrameEffect": "data.scripts.weapons.armaa_paEffect",
-"beamFireOnlyOnFullCharge": true,
+  #"beamEffect": "data.scripts.weapons.armaa_valkenBlade",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_paEffect",
+"beamFireOnlyOnFullCharge": false,
   "type": "ENERGY",
   "size": "SMALL",
   "collisionClass": "RAY",
@@ -39,18 +39,18 @@
     0
   ],
   "fringeColor": [
-    100,
     255,
+    100,
     0,
     255
   ],
   "coreColor": [
-    200,
     255,
     200,
+    100,
     255
   ],
-  "width": 7,
+  "width": 8,
   "textureType": [
     "graphics/armaa/fx/armaa_parax_beam_fringe.png",
     "graphics/armaa/fx/armaa_ppa_beam_core.png"

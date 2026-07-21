@@ -2,8 +2,9 @@ name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hid
 AAF,armaa_aaf,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_aaf,Increases Fire Rate,,,graphics/hullmods/targeting_core.png
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
-HI-MAC Manuever System,armaa_himac,6,0,,"special,no_drop","Engines, Special",,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
-Specialized Service Bays,armaa_serviceBays,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
+HI-MAC Manuever System,armaa_himac,6,0,Arma Armatura,"special,no_drop","Engines, Special",,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
+Specialized Service Bays,armaa_serviceBays,,,Arma Armatura,"special,no_drop",,,FALSE,,,1,1,1,1,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
+,,,,,,,,,,,,,,,,,,,
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
 Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,,graphics/armaa/hullmods/armaa_assaultpods.png
 Assault Pod Killer,armaa_assaultPodKiller,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPodKiller,Shouldn't be visible. Kills BA Pods at end of combat.,,,graphics/armaa/hullmods/armaa_assaultpods.png
@@ -285,7 +286,7 @@ Versatile Frame,armaa_alesteMeleeSwap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,data.h
 L ARM: BLADE,armaa_aleste_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_aleste_blade,Standard,Standard High-Tech appearance with blue accents,,graphics/armaa/hullmods/armaa_paint.png
 L ARM: PILEBUNKER,armaa_alestePilebunker,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alestePilebunker,[REDACTED],Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
 ,,,,,,,,,,,,,,,,,,,
-Compound Unit,armaa_comboUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_comboUnit,"A Panther-class Cataphract is coupled with the Bakraid-class Mobile Armor, embodying a fusion of close-range phase capability and fire support. The Cataphract can detach for independent operations with the [%s] button, switching control to it and causing the Bakraid to retreat.",,,
+Compound Unit,armaa_comboUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_comboUnit,"The attached unit can detach for independent operations with the [%s] button, switching control to it. Approaching the unit and double tapping the [%s] can be used to reattach.",,,
 Variable Unit,armaa_variableUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_variableUnit,This unit can switch between modes by double-tapping the [%s] button.,,,
 #CEYLON,,,,,,,,,,,,,,,,,,,
 AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,
@@ -302,8 +303,17 @@ Exclusive Hangar Assignment,armaa_exclusive_hangar_assignment,,,Arma Armatura,"s
 Spare Chassis,armaa_spare_chassis,,,Arma Armatura,"special,no_drop",Special,,,TRUE,,0,0,0,0,data.hullmods.armaa_spareChassis,"This unit is simple enough for multiple spare chassis to be produced prior to combat. If the current ship is destroyed, a spare will be deployed. Due to the ease of manufacture, damaged units will simply be recycled for a new frame. Receives no D-Mods.",,,
 Spare Chassis Storage,armaa_spare_chassis_storage,,,Arma Armatura,"special,no_drop",Special,,TRUE,,,0,2,4,6,data.hullmods.armaa_spareChassisStorage,This ship forges spare hulls for Strikecraft with the %s hullmod.,,,
 ,,,,,,,,,,,,,,,,,,,
-Reactive Carapace,armaa_reactiveCarapace,,,Arma Armatura,"special,no_drop",,,TRUE,TRUE,,0,0,0,0,data.hullmods.armaa_reactiveCarapace,Carries a physical shield.,Carries a physical shield.,,graphics/hullmods/ablative_armor.png
+Reactive Carapace,armaa_reactiveCarapace,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_reactiveCarapace,Carries a physical shield.,Carries a physical shield.,,graphics/hullmods/ablative_armor.png
 ,,,,,,,,,,,,,,,,,,,
 DP Reducer,armaa_dpReduction,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_dpReduction,,,,
 Supplies Reducer,armaa_noSupplies,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noSupplies,this unit does not require supplies for maintenance or recovery,,,
 Auto Repair,armaa_autoModuleRepair,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_autoModuleRepair,this unit does not require supplies for maintenance or recovery,,,
+Aegis Field,armaa_bellatorAegis,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_bellatorAegis,"Projects a barrier lattice attuned to the transponder codes of allied strike craft, extending to a radius of %s su. 
+
+Covered strike craft take up to %s less damage from all sources; the deflected energy is shunted back along the lattice and absorbed by this ship's flux grid as hard flux, at a rate of %s flux per point of damage absorbed. Damage taken on the strike craft's own shields is not affected.
+
+The lattice also stabilizes covered drive fields: strike craft within the field maintain their zero-flux engine boost at up to %s flux.
+All effects of the field (damage mitigation, engine boost strength, and the flux threshold at which the boost is maintained) weaken as this ship's hard flux rises, failing entirely at %s hard flux or while venting or overloaded.
+
+Overlapping fields do not stack; the strongest applies.",,,
+,,,,,,,,,,,,,,,,,,,

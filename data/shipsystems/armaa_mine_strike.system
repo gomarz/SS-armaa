@@ -1,0 +1,25 @@
+{
+	"id":"armaa_mine_strike",
+	"type":"STAT_MOD",
+	"aiType":"MINE_STRIKE",
+	#"aiType":"CUSTOM",
+	#"aiScript":"data.scripts.shipsystems.ai.armaa_MineStrikeAI",	
+	"statsScript":"data.scripts.shipsystems.armaa_MineStrikeStats",
+
+	"canUseWhileRightClickSystemOn":true,
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_interdictor",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"threatRange":1500,
+		"threatAmount":10,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}
+
+
+
+

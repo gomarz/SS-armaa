@@ -8,9 +8,9 @@
 	"size":[28,38],	
 	"center":[14,19],
 	"collisionRadius":30,
-	"collisionClass":"MISSILE_FF",
+	"collisionClass":"MISSILE_NO_FF",
 	"explosionColor":[255,165,75,255],  # purely visual, will get a white additively blended core on top of this color
-	"explosionRadius":400, 
+	"explosionRadius":100, 
         "maxFlightTime":10,
         "armingTime":7,	
 	"engineSpec":{
@@ -24,7 +24,7 @@
 	"noEngineGlowTime":0.05, # time spent without the engine glow being rendered
 	"engineSlots":[{
                         "id":"ES1",
-			"loc":[0, 0],
+			"loc":[-14, 0],
 			"style":"CUSTOM",
 			"styleSpec":{
                             "mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
@@ -40,27 +40,7 @@
                             "type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 			},
 			"width":10.0,
-			"length":0,
+			"length":15,
 			"angle":180.0}],
-	"behaviorSpec":{
-                        "behavior":"PROXIMITY_FUSE",
-			"slowToMaxSpeed":false,
-                        "range":0,
 
-                        "delay":5,
-
-                        "explosionSpec":{
-                            "duration":0.9f,
-                            "radius":500,
-                            "coreRadius":10, # full damage within core radius - also equal to proximity fuse range
-                            "collisionClass":PROJECTILE_FF,
-                            "collisionClassByFighter":PROJECTILE_FIGHTER,
-                            "particleSizeMin":3.0,
-                            "particleSizeRange":4.0,
-                            "particleDuration":3,
-                            "particleCount":100,
-                            "particleColor":[255,165,70,255],
-                            "explosionColor":[255,200,100,255],
-                            "sound":"devastator_explosion"},
-                        }
 }

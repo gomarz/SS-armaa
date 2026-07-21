@@ -1,0 +1,44 @@
+{
+  "variantId": "armaa_panther_merc",
+  "hullId": "armaa_panther_frig",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 8,
+  "fluxVents": 8,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "heavyarmor",
+    "adaptive_coils"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN2": "jackhammer"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN": "ionpulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "E_HEAD": "armaa_pantherHead"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "SHIELD": "armaa_shield_panther_standard"
+    }
+  ],
+  "wings": []
+}

@@ -71,8 +71,6 @@
 				"vanguard",
 				"armaa_aleste_frig",
 				"gremlin",
-				"armaa_altagrave",
-				"armaa_morganamp",
 				"hermes",
 				"kite",
 				"lasher",
@@ -106,14 +104,6 @@
 	"knownWeapons":{
 		"tags":["pirates","ind","independent"],
 		"weapons":[
-		"armaa_fluxcannon",
-			"gorgon",
-			"gorgonpod",
-			"gazer",
-			"gazerpod",
-			"dragon",
-			"dragonpod",
-			"hydra",
 		
 		],
 	},
@@ -151,9 +141,9 @@
 		"market_neutral":"music_pirates_market_neutral",
 		"market_hostile":"music_pirates_market_hostile",
 		"market_friendly":"music_pirates_market_friendly",
-		"encounter_neutral":"music_armaa_pirate_encounter_neutral",
-		"encounter_hostile":"music_armaa_pirate_encounter_hostile",
-		"encounter_friendly":"music_armaa_pirate_encounter_friendly",
+		"encounter_neutral":"music_none",
+		"encounter_hostile":"music_none",
+		"encounter_friendly":"music_none",
 	},
 	"portraits":{
 		"standard_male":[
@@ -241,8 +231,9 @@
 		"ignoreTradeWithEnemiesForReputation":true,
 		"postsNoBounties":true,
 		"offerMissionsWhenHostile":false,
-		"allowsTransponderOffTrade":false,
+		"allowsTransponderOffTrade":true,
 		"offersCommissions":false,
+		#"pirateBehavior":false, # for fleet behavior
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
 		"punitiveExpeditionData":{

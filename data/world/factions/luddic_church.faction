@@ -1,7 +1,16 @@
 {
+	"knownShips":{
+		"tags":[],
+		"hulls":[	
+				"armaa_ashura_frig",
+				"armaa_sarissa",
+				
+			],
+	},
 	"knownFighters":{
 		"fighters":[
 			"armaa_musham3_wing",
+			"armaa_musha_wing",
 			"armaa_musha_bomber_wing",
 		],
 	},

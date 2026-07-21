@@ -39,6 +39,7 @@
 	"startShipsSuper":
 	[
 		["armaa_guardual_skirmisher","wayfarer_Standard"],
+		["armaa_exilium_needler"],
 		["armaa_einhander_Strike", "gemini_Standard"],
 	],
 	"startSpecialItems":[

@@ -15,7 +15,8 @@
     "advancedoptics",
     "strikeCraft",
     "armaa_wingCommander",
-	"reduced_explosion"
+    "armaa_spare_chassis",
+    "reduced_explosion"
   ],
   "builtInWings": [
     "xyphos_wing"

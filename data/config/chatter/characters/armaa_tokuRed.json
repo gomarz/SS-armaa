@@ -1,0 +1,89 @@
+{
+	"name":"armaa_tokuRed",
+	"personalities":["aggressive", "steady"],
+	"gender":["m","f"],
+	"chance":0,
+	"talkativeness":1.5,
+	"categoryTags":["armaa"],
+
+	"lines":{
+		"start":[
+			{"text":"Starfar Red! Deploying!"},
+			{"text":"Evil never rests. Fortunately - neither do we!"},
+			{"text":"The stage is set! Let justice be swift!"},
+			{"text":"For every innocent that cried out - we have answered!"},
+			{"text":"Stay behind us, citizens! This is our battlefield now!"},
+			{"text":"Born from the dreams of humanity! My life - my fists are for those dreams!"},
+			{"text":"You can change a person into a tree, but you can never change a heart that loves justice!"},
+		],
+		"start_boss":[
+			{"text":"So the true enemy reveals itself at last!"},
+			{"text":"A worthy foe! Witness us at our finest!"},
+			{"text":"This is the battle we were forged for!"},
+		],
+		"retreat":[
+			{"text":"This is not defeat! It is the end of the first act!"},
+			{"text":"Remember this day, villains! It will cost you dearly in the rematch!"},
+			{"text":"We withdraw - and return stronger! That is how it always goes!"},
+		],
+		"victory":[
+			{"text":"Justice prevails! As it always must!"},
+			{"text":"And so the lanes grow safer once more!"},
+			{"text":"Stand down, everyone. The day is won!"},
+			{"text":"Let this victory light the way for the downtrodden!"},
+			{"text":"Alone, we are pilots. Together - we are STARFARER!"},
+		],
+		"victory_boss":[
+			{"text":"Even the mightiest darkness kneels before the dawn!"},
+			{"text":"Tell your masters, wherever they hide: these lanes are protected!"},
+		],
+		"pursuing":[
+			{"text":"You cannot outrun justice!"},
+			{"text":"Flee, then! Villains always flee before the finale!"},
+			{"text":"Every step you run is a confession!"},
+		],
+		"running":[
+			{"text":"A hero knows when to bide their time!"},
+			{"text":"Regrouping! Even legends must draw breath!"},
+		],
+		"need_help":[
+			{"text":"Comrades! Now is the moment for combination tactics!"},
+			{"text":"To me, allies! Together, we are unbreakable!"},
+		],
+		"out_of_missiles":[
+			{"text":"My arrows are spent - my spirit is not!"},
+			{"text":"The warhead was never my true weapon!"},
+		],
+		"engaged":[
+			{"text":"Face me, agent of darkness!"},
+			{"text":"CRIMSON... METEOR... BREAKER!"},
+			{"text":"SCARLET... JUSTICE... STRIKE!"},
+			{"text":"You stand before the red blade of the righteous!"},
+			{"text":"If you are not a friend of justice..then you are mankind's enemy!"},
+		],
+		"hull_90":[
+			{"text":"Ha! A scratch upon the paint - nothing more!"},
+			{"text":"You will have to try harder than that, villain!"},
+		],
+		"hull_50":[
+			{"text":"Now you have drawn blood! Now the true battle begins!"},
+			{"text":"This is getting serious. Good!"},
+		],
+		"hull_30":[
+			{"text":"Is this... the darkest hour? Then dawn is close!"},
+			{"text":"My armor breaks! My will does not!"},
+		],
+		"overload":[
+			{"text":"Ngh - regathering my strength!"},
+			{"text":"A moment! Heroes are permitted... one moment!"},
+		],
+		"death":[
+			{"text":"Comrades... carry on... without me..."},
+			{"text":"So falls the red star..."},
+			{"text":"Remember me... at my brightest..."},
+	{"text":"You've broken my blade but not my resolve! We WILL meet again!"},
+	{"text":"Ejecting! Evil wins no victory today.. only a delay."},
+	{"text":"Carry me clear, old friend... you've earned your rest."},
+		],
+	}
+}

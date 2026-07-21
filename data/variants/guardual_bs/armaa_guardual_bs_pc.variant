@@ -1,0 +1,55 @@
+{
+  "variantId": "armaa_guardual_bs_pc",
+  "hullId": "armaa_guardual_bs",
+  "displayName": "Heroic",
+  "goalVariant": false,
+  "fluxCapacitors": 7,
+  "fluxVents": 8,
+  "quality": 1,
+  "tags": ["ML_paintjob-armaa_guardual_bs_firebomber"],
+  "sMods": ["eccm"],
+  "hullMods": [
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "amblaster"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0002": "sabot_single",
+        "WS0004": "sabot_single"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "breach",
+        "WS0005": "breach"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN": "ionpulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "C_ARML": "armaa_energyLash"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

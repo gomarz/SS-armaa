@@ -1,0 +1,16 @@
+{
+	"id":"armaa_chargeCannon",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.armaa_heavyChargeCannonAI",
+	"statsScript":"data.scripts.shipsystems.armaa_heavyChargeCannon",
+	
+	"aiHints":{
+		"threatRange":1000,
+		"threatAmount":4,
+		"threatAngle":0,
+		"threatArc":360,
+	},
+	"loopSound":"system_fortress_shield_loop",
+	"outOfUsesSound":"gun_out_of_ammo",	
+}

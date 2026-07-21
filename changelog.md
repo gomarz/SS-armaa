@@ -1,3 +1,70 @@
+V3.3.1pr
+------
+- Strikecraft
+	- Fixed strikecraft not repairing if only a certain % of HP could be restored
+	- Fixed CR not being restored once repair pool was exhausted
+- Fixed Bellator captain being referred to with male pronouns regardless of gender
+- fixed typo that prevented a dialog option with gamlin luddic fleet from firing
+- fixed typo that prevented a dialog option with Sera post REIC from firing
+- Fixed MRC market having no ships for sale
+- Updated priority ships for MRC
+- WINGCOM
+  - Completely reworked squadron pilot progression
+  - Pilots now have an individual, persistent XP stat that increases based on
+    their ship's combat contribution each battle, scaled by loyalty and other factors
+  - Reaching a level grants the pilot a new skill; progression is now deterministic
+    rather than random
+  - Once a pilot reaches max level and is sufficiently loyal, they have a chance to
+    upgrade an existing skill to Elite (if not already at the Elite limit)
+  - WINGCOM pilots can now gain the "Veteran Pilot" skill:
+    - Any pilot at max level can be promoted to Veteran by spending a story point
+    - Additionally, some pilots have a hidden knack for flying and may distinguish
+      themselves unexpectedly, at any point in their career
+    - Only a limited number of veterans can serve in a fleet at once
+
+- added 2 dawn event: 
+- ai core(s) piloting ship in fleet 
+- one succeeding the last bar event (this one silently raises level cap +3)
+
+Valkyrie (AA)
+DP: 8->10
+Bays: 2->1
+
+Valkyrie (AA)(Aleste)
+DP: 8->12
+Bays: 2->1
+
+- MUSHA
+    -slightly adjusted MUSHA sprite and added blinkers
+    - Support Range: 1000 -> 2500
+    - removed invisible vulcan weapon
+
+- Valkazard Kai
+    - Fixed half-charging MOONLIGHT
+    - removed dock requirement for swapping core
+    - Removed shields on modules
+        - System: Recall Device
+    - increased shield radius to encompass modules
+    - Lone Wolf
+        - Damage bonus cap: 40%->25%
+        - Weight for bonus calculation was reduced
+        - Fighters: 0.25->0.05
+        - Frigates: 0.5-> 0.25
+        - Destroyers: 1 -> 0.8
+        - Cruisers: 1.5->1.5
+        - Capitals: 2->2
+
+- Havoc Drive
+    - Top Speed: +300 -> +150
+
+- Raiden EX
+    - Added back the 2 built-in drone bays it initially came with
+    - Uses same drones as Valk Kai, as previously
+- Hi-MAC
+    - Added fix for compatibility with Absolute Movement (thanks to Android9k)
+    - Canceling functionality is now also added to decelerate key (thanks to Android9k)
+    - Boost charge now regenerates ~20% slower
+
 V3.3.1
 ------
 Bakraid(s)

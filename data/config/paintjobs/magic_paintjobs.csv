@@ -1,0 +1,5 @@
+id,hullIds,name,paintjobFamily,spriteId,unlockedAutomatically,tags,unlockConditions,description
+armaa_guardual_bs_gunmetal,armaa_guardual_bs,Gunmetal,gunmetal,graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual.png,true,,,
+armaa_guardual_bs_firebomber,armaa_guardual_bs,Fire Bomber,firebomber,graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual.png,true,,,
+armaa_guardual_bs_midline,armaa_guardual_bs,GD-43A,midline,graphics/armaa/ships/guardual/bs/midline/armaa_guardual.png,true,,,
+armaa_aleste_sephira,armaa_aleste_frig,Sephira,sephira,graphics/armaa/ships/valkenx/armaa_valkenxHips.png,true,,,

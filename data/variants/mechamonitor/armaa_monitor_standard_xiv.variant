@@ -24,8 +24,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0003": "jackhammer",
-        "WS0001": "jackhammer"
+        "WS0005": "jackhammer",
+        "WS0007": "jackhammer"
 		}
 	}
   ]
