@@ -38,6 +38,7 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
     private final IntervalUtil animInterval = new IntervalUtil(0.012f, 0.012f);
     private final ArrayList<CombatEntityAPI> targets = new ArrayList<>();
     private final float TORSO_OFFSET = -45;
+    
 
     public void init() {
         runOnce = true;
@@ -141,12 +142,6 @@ public class armaa_guarDualBlade implements EveryFrameWeaponEffectPlugin, OnFire
             }
         }
 
-        // Swing lifetime is self-contained: it ends when the post-peak taper
-        // finishes, NOT when the weapon's charge clock hits zero. A swing that
-        // starts after chargedown has ended (late wind-back) would otherwise be
-        // cancelled on its first frame  which is what caused the every-other-
-        // swing dropout: a completed swing parks the blade at the far arc limit,
-        // making the next wind-back slow enough to outlive chargedown.
         if (swinging) {
             swingTime += amount;
             if ((beamFired && swingLevel <= 0f) || swingTime >= MAX_SWING_DURATION) {

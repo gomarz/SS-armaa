@@ -65,7 +65,7 @@ public class armaa_SPAtmoShipPicker extends BaseCommandPlugin {
                     Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atmoBattleSparedHull", members.get(0).getId(),15);
                     dialog.getOptionPanel().clearOptions();
                     String rule = "armaa_WFRendevous6Begin";
-                    if(params.get(1) != null)
+                    if(params.size() > 1 && params.get(1) != null)
                     {
                         rule = params.get(1).getString(memoryMap);
                     }

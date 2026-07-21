@@ -363,7 +363,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     }
 
     public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
-        if (getMaxProgress() >= PROGRESS_MAX) {
+        if (getProgress() >= PROGRESS_MAX) {
             return;
         }
         if (isEnded() || isEnding()) {
@@ -467,7 +467,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 }
             }
         }
-        if (getMaxProgress() >= PROGRESS_MAX) {
+        if (getProgress() >= PROGRESS_MAX) {
             if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacCompleted")) {
                 Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacCompleted", true);
             }
