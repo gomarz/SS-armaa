@@ -104,19 +104,6 @@ public class cataphract extends BaseHullMod {
 
     @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
-        float level = member.getCaptain().isDefault() ? 1 : member.getCaptain().getStats().getLevel();
-
-        if (member.getRepairTracker().getBaseCR() >= getCRPenalty(member.getVariant()) && member.getFleetData().getFleet() != null) {
-            if (GROUND_BONUS.get(member.getHullSpec().getBaseHullId()) != null) {
-                member.getFleetData().getFleet().getStats().getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).modifyFlat("armaa_"+member.getId(), (GROUND_BONUS.get(member.getHullSpec().getBaseHullId()))*(level), member.getShipName());     
-            }
-            else
-            {
-                member.getFleetData().getFleet().getStats().getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).modifyFlat("armaa_"+member.getId(), (member.getFleetPointCost())*(level), member.getShipName());                
-            }
-        } else {
-            member.getStats().getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).unmodify("armaa_"+member.getId());
-        }
     }
 
     @Override

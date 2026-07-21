@@ -32,7 +32,6 @@ import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import data.scripts.campaign.intel.armaa_liberationIntel;
 import data.scripts.world.systems.armaa_nekki;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
-import com.fs.starfarer.api.campaign.events.CampaignEventManagerAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent.AvailableOfficer;
 import java.util.List;
@@ -322,6 +321,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
         } else if ("setJeniusOwner".equals(action)) {
             SectorEntityToken jenius = Global.getSector().getEntityById("nekki1");
             jenius.getMarket().setFactionId("independent");
+            jenius.getMarket().setHidden(false);
             jenius.getMarket().addPerson(Global.getSector().getImportantPeople().getPerson("armaa_redeye"));
             jenius.getMarket().getCommDirectory().addPerson(Global.getSector().getImportantPeople().getPerson("armaa_redeye"), 999);
             if (Misc.isMilitary(jenius.getMarket())
@@ -472,7 +472,6 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                     target.addSubmarket(Submarkets.GENERIC_MILITARY);
                 }
             }
-            target.addCondition(Conditions.DISSIDENT);
             //RecentUnrest.get(target).setPenalty(0);
             target.getMemoryWithoutUpdate().unset("$playerHostileTimeout");
             target.getMemoryWithoutUpdate().unset("$playerHostileTimeoutStr");

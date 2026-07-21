@@ -40,15 +40,16 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-
 public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
+
     public static final Set<String> MISSION_TEXTURES_SHAFT = new HashSet<>();
 
-    static {         
-        MISSION_TEXTURES_SHAFT.add(Global.getSettings().getString("armaa_missionBGs","armaa_shaft"));
-        MISSION_TEXTURES_SHAFT.add(Global.getSettings().getString("armaa_missionBGs","armaa_shaft_top"));
+    static {
+        MISSION_TEXTURES_SHAFT.add(Global.getSettings().getString("armaa_missionBGs", "armaa_shaft"));
+        MISSION_TEXTURES_SHAFT.add(Global.getSettings().getString("armaa_missionBGs", "armaa_shaft_top"));
 
     }
+
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
         ArrayList<FleetMemberAPI> removedShips = new ArrayList();
@@ -56,10 +57,13 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             if (member.isCapital() || member.isCruiser()) {
                 float crew = 0f;
+                if (member.getId().equals(Global.getSector().getPlayerMemoryWithoutUpdate().get("$armaa_atmoBattleSparedHull"))) {
+                    continue;
+                }
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
                 crew += member.getCrewComposition().getCrewInt();
-                modifier+= member.getFleetPointCost();
+                modifier += member.getFleetPointCost();
                 Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShipsCrew_" + member.getId(), crew);
             } else {
                 continue;
@@ -71,7 +75,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                 "mercenary",
                 null,
                 FleetTypes.PATROL_SMALL,
-                Global.getSector().getPlayerFleet().getFleetData().getFleetPointsUsed()-modifier, // combatPts
+                Global.getSector().getPlayerFleet().getFleetData().getFleetPointsUsed() - modifier, // combatPts
                 0f, // freighterPts 
                 0f, // tankerPts
                 0f, // transportPts
@@ -186,7 +190,7 @@ public class armaa_jeniusShaftBattle extends BaseCommandPlugin {
                         member.getCrewComposition().setCrew(crew);
                     }
                 }
-                Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");   
+                Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().unset("$nonAtmoShips");
             }
 
             @Override

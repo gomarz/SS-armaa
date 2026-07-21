@@ -64,6 +64,11 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
                     if (members == null || members.isEmpty()) {
                         return;
                     }
+                    if(members.get(0) == null)
+                    {
+                        dialog.getTextPanel().addParagraph("No Core unit found.");   
+                        return;
+                    }
                     memory.set("$coreUnit", members.get(0), 1);
                     dialog.getTextPanel().addParagraph(
                             members.get(0).getShipName() + " has been selected as the core unit.");

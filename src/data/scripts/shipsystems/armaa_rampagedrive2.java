@@ -84,6 +84,17 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
     private Float mass = null;
 
+    // === MID-DASH BAILOUT TUNABLES ==========================================
+    // While a dash is active (AI ships only), re-scan nearby enemy threat and
+    // cut the dash short via deactivate(). Attack dashes bail when threat is too
+    // high; escape dashes end once threat drops low enough. The gap between the
+    // two thresholds is hysteresis so the AI's re-dash logic doesn't flap.
+    private final IntervalUtil bailoutCheck = new IntervalUtil(0.1f, 0.1f);
+    private static final float BAILOUT_SCAN_RADIUS = 1400f; // threat scan radius while dashing
+    private static final float BAILOUT_MAX_THREAT  = 7.0f;  // attack dash bails if threat > this
+    private static final float ESCAPE_SAFE_THREAT  = 2.5f;  // escape dash ends once threat < this
+    // ========================================================================
+
     public static class TargetData {
 
         public ShipAPI ship;
@@ -241,7 +252,32 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             stats.getEnergyRoFMult().unmodify(id);
             ship.setMass(mass);
             DidRam = false;
+            ship.getCustomData().remove("armaa_rampageHeading"); // clear escape heading
+            ship.getCustomData().remove("armaa_isEscaping");
+            ship.getCustomData().remove("armaa_rampageFlankOffset");
         } else {
+            // --- Mid-dash bailout (AI ships only) ---------------------------
+            // Re-scan threat while dashing and cut it short. Attack dashes bail
+            // if we blundered into too much fire; escape dashes end once we're
+            // clear (no point flying away for the full duration). Player ships
+            // are never auto-cut.
+            if (!ship.isAlive() || ship != Global.getCombatEngine().getPlayerShip()) {
+                bailoutCheck.advance(Global.getCombatEngine().getElapsedInLastFrame());
+                if (bailoutCheck.intervalElapsed() && ship.getSystem() != null
+                        && ship.getSystem().isActive() && !ship.isDirectRetreat()) {
+                    boolean escaping = ship.getCustomData().get("armaa_isEscaping") != null;
+                    float threat = enemyThreatNear(ship.getLocation(), BAILOUT_SCAN_RADIUS, ship.getOwner());
+                    if (escaping) {
+                        if (threat < ESCAPE_SAFE_THREAT) {
+                            ship.getSystem().deactivate();
+                            return;
+                        }
+                    } else if (!DidRam && threat > BAILOUT_MAX_THREAT) {
+                        ship.getSystem().deactivate();
+                        return;
+                    }
+                }
+            }
             if (ship.getMass() == mass) {
                 ship.setMass(mass * MASS_MULT);
             }
@@ -339,16 +375,33 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             }
             if (ship.isDirectRetreat() && ship.getSystem().isActive()) {
                 ship.setAngularVelocity(Math.min(turnrate, Math.max(-turnrate, MathUtils.getShortestRotation(ship.getFacing(), ship.getOwner() == 0 ? Global.getCombatEngine().getFleetManager(ship.getOwner()).getGoal() == FleetGoal.ESCAPE ? 90f : 270f : Global.getCombatEngine().getFleetManager(ship.getOwner()).getGoal() == FleetGoal.ESCAPE ? 270f : 90f) * 2)));
+            } else if (ship.getCustomData().get("armaa_rampageHeading") != null && ship.getSystem().isActive()) {
+                // Escape mode: AI set a heading to flee along. Steer toward it
+                // directly rather than toward a ship target.
+                float wantHeading = (Float) ship.getCustomData().get("armaa_rampageHeading");
+                float facing = MathUtils.getShortestRotation(ship.getFacing(), wantHeading);
+                ship.setAngularVelocity(Math.min(turnrate, Math.max(-turnrate, facing * 5)));
             } else if ((target != null && target.isAlive()) && ship.getSystem().isActive()) {
                 float facing = ship.getFacing();
                 if ((target.isFighter() || target.isDrone()) && target.getWing() != null && target.getWing().getSourceShip() != null && target.getWing().getSourceShip().isAlive()) {
                     facing = MathUtils.getShortestRotation(facing, VectorUtils.getAngle(ship.getLocation(), target.getWing().getSourceShip().getLocation()));
                 } else {
                     //if ((target.isFighter() || target.isDrone()) && ship.getAIFlags().getCustom(AIFlags.MANEUVER_TARGET) instanceof ShipAPI) {engine.addFloatingText(ship.getLocation(), "My Life For Ava!", 15f, Color.WHITE, ship, 1f, 0.5f);ship.setShipTarget((ShipAPI) ship.getAIFlags().getCustom(AIFlags.MANEUVER_TARGET));}
-                    facing = MathUtils.getShortestRotation(
-                            facing,
-                            VectorUtils.getAngle(ship.getLocation(), target.getLocation())
-                    );
+                    float aimAngle = VectorUtils.getAngle(ship.getLocation(), target.getLocation());
+                    // Apply the AI's flank offset, faded out as we close so the
+                    // ram lands straight on. Offset is 0 once within straightenDist.
+                    Object offObj = ship.getCustomData().get("armaa_rampageFlankOffset");
+                    if (offObj != null && !target.isFighter() && !target.isDrone()) {
+                        float offset = (Float) offObj;
+                        float dist = MathUtils.getDistance(ship.getLocation(), target.getLocation());
+                        float straightenDist = target.getCollisionRadius() + 150f;
+                        float fadeRange = (Float) bugs.get(ship.getHullSize());
+                        // 0 at/below straightenDist, ramps to 1 by straightenDist+fadeRange
+                        float t = (dist - straightenDist) / Math.max(1f, fadeRange);
+                        t = Math.max(0f, Math.min(1f, t));
+                        aimAngle = aimAngle + offset * t;
+                    }
+                    facing = MathUtils.getShortestRotation(facing, aimAngle);
                 }
                 if (!target.isFighter() && !target.isDrone()) {
                     ship.setAngularVelocity(Math.min(turnrate, Math.max(-turnrate, facing * 5)));
@@ -536,6 +589,46 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
         return poopystinky3;
     }
 
+    /**
+     * Sums ONLY enemy threat weight near a point (allies excluded). Mirrors the
+     * AI script's threat scoring so the mid-dash bailout uses the same scale.
+     */
+    private float enemyThreatNear(Vector2f point, float radius, int selfOwner) {
+        float danger = 0f;
+        for (ShipAPI s : CombatUtils.getShipsWithinRange(point, radius)) {
+            if (s == null || !s.isAlive() || s.isHulk() || s.isFighter()) {
+                continue;
+            }
+            if (s.getOwner() == selfOwner) {
+                continue; // skip allies and self
+            }
+            danger += threatWeightOf(s);
+        }
+        return danger;
+    }
+
+    private float threatWeightOf(ShipAPI s) {
+        float w;
+        if (s.isFrigate()) {
+            w = 1f;
+        } else if (s.isDestroyer()) {
+            w = 2f;
+        } else if (s.isCruiser()) {
+            w = 3f;
+        } else if (s.isCapital()) {
+            w = 4f;
+        } else {
+            w = 0.25f;
+        }
+        if (s.getFluxTracker().isOverloaded() || s.getFluxTracker().isVenting()) {
+            w *= 0.5f;
+        }
+        if (s.getEngineController().isFlamedOut()) {
+            w *= 0.7f;
+        }
+        return w;
+    }
+
     public static class RampageDriveListener implements DamageTakenModifier {
 
         @Override
@@ -546,11 +639,12 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
                 if (proj.getDamageType().equals(DamageType.HIGH_EXPLOSIVE)
                         && proj.getProjectileSpecId() == null
+                        && proj.getSource() != null
                         && !proj.getSource().isAlive()
                         && proj.getSpawnType().equals(ProjectileSpawnType.OTHER)
                         && MathUtils.getDistance(proj.getSpawnLocation(), proj.getSource().getLocation()) < 150f) {
 
-                    damage.getModifier().modifyMult(this.getClass().getName(), 0.1f);
+                    damage.getModifier().modifyMult(this.getClass().getName(), 0.05f);
 
                 }
             }

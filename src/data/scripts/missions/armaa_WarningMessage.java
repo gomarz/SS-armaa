@@ -153,7 +153,7 @@ public class armaa_WarningMessage extends BaseCombatLayeredRenderingPlugin {
         }
         ensureFonts();
 
-        // Use screen pixel dimensions — not viewport world coords — so the banner
+        // Use screen pixel dimensions so the banner
         // stays the same size regardless of zoom level.
         float vx = 0f;
         float vy = 0f;

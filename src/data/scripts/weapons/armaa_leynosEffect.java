@@ -249,7 +249,7 @@ public class armaa_leynosEffect extends BaseCombatLayeredRenderingPlugin impleme
 //
         if (pauldronR != null) {
             pauldronR.setCurrAngle(global + sineA * (TORSO_OFFSET) - (sinceG * TORSO_OFFSET) + ((sineC * (TORSO_OFFSET))) * 0.5f + aim * 0.75f + RIGHT_ARM_OFFSET * 0.5f + currentRotateR * 0.75f);
-            if (gun.getBarrelSpriteAPI() != null) {
+            if (gun.getBarrelSpriteAPI() != null && ship.getHullSpec().getHullId().contains("leynos")) {
                 pauldronR.getSprite().setCenterY(gun.getBarrelSpriteAPI().getCenterY() - 40f);
             }
 

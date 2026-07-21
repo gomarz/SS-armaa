@@ -242,10 +242,9 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             info.addPara("Data gleaned from your ops "
                     + "has prompted the design of several new technologies "
                     + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s.", initPad,
+                    + "%s,%s.", initPad,
                     Misc.getHighlightColor(),
                     "STRIKECRAFT",
-                    "C-Stim Dispatcher",
                     "Thermoflux Drive",
                     "Targeting Disruptor"
             );
@@ -268,11 +267,12 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             info.addPara("Data gleaned from your ops "
                     + "has prompted the design of several new technologies "
                     + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s.", initPad,
+                    + "%s,%s,%s,%s", initPad,
                     Misc.getHighlightColor(),
                     "STRIKECRAFT",
                     "Automaton Control Shell",
                     "OVERLORD SUITE[GAMMA]",
+                    "C-Stim Dispatcher",
                     "OVERLORD SUITE[BETA]"
             );
         } else if (stageId == Stage.DATA_DELIVERY) {
@@ -302,7 +302,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                     } else if (esd.id == Stage.PROTOTYPE_BREAKTHROUGH) {
                         tooltip.addTitle("Prototype Breakthroughs");
                     } else if (esd.id == Stage.AUTOMATION) {
-                        tooltip.addTitle("Automation");
+                        tooltip.addTitle("Automation & Artificial Enhancement");
                     } else if (esd.id == Stage.DATA_DELIVERY) {
                         tooltip.addTitle("Strategic Convergence");
                     }
@@ -363,6 +363,9 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     }
 
     public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
+        if (getMaxProgress() >= PROGRESS_MAX) {
+            return;
+        }
         if (isEnded() || isEnding()) {
             return;
         }
@@ -435,11 +438,6 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
         float days = Global.getSector().getClock().convertToDays(amount);
         advanceInterval.advance(amount);
         if (advanceInterval.intervalElapsed()) {
-            if (getMaxProgress() >= PROGRESS_2) {
-                if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
-                    Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
-                }
-            }
             if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacRajanyaBonusGranted")) {
                 boolean hasRajanya = false;
                 for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
@@ -489,9 +487,6 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     protected void notifyStageReached(EventStageData stage) {
         //applyFleetEffects();
         if (stage.id == Stage.MINOR_INSIGHTS) {
-            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_sykoStims")) {
-                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_sykoStims");
-            }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_targetingDisruptor")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_targetingDisruptor");
             }
@@ -531,6 +526,9 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
         }
 
         if (stage.id == Stage.AUTOMATION) {
+            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_sykoStims")) {
+                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_sykoStims");
+            }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_automatedCognitionShell")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_automatedCognitionShell");
             }
@@ -542,6 +540,9 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             }
         }
         if (stage.id == Stage.DATA_DELIVERY) {
+            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_serviceBays")) {
+                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_serviceBays");
+            }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_himac")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_himac");
             }

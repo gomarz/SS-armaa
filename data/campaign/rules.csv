@@ -5148,8 +5148,10 @@ FireAll PopulateOptions","""Excellent."" She taps a command on the interface. ""
 armaa_marketPostSleeper,MarketPostDock,"$market.id == armaa_meshanii_market
 !$player.receivedSeraphInvite
 $global.armaa_engagedValkHunters",FireBest armaa_marketPostSleeperCheck,,,
-armaa_marketPostSleeper2,armaa_marketPostSleeperCheck,"#PlayerFleetHasShipWithBaseHull armaa_valkazard
-$global.armaa_engagedValkHunters","BeginConversation POST:portmaster
+armaa_marketPostSleeperAlt,MarketPostDock,"$market.id == armaa_meshanii_market
+!$player.receivedSeraphInvite
+$player.armaa_isSleeper",FireBest armaa_marketPostSleeperCheck,,,
+armaa_marketPostSleeper2,armaa_marketPostSleeperCheck,#PlayerFleetHasShipWithBaseHull armaa_valkazard,"BeginConversation POST:portmaster
 $option = armaa_marketPostSleeperStart 0
 FireBest DialogOptionSelected",,,
 armaa_marketPostSleeperStart,DialogOptionSelected,$option ==  armaa_marketPostSleeperStart,$player.receivedSeraphInvite = true,"Your comms officer forwards the link to your personal interface. The channel opens with a flicker, stabilizing on the image of a composed station official seated behind a minimalist desk.

@@ -8,28 +8,26 @@ import com.fs.starfarer.api.combat.OnHitEffectPlugin;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import data.scripts.weapons.armaa_harpoonProjectileScript;
-public class armaa_harpoonEffect implements OnHitEffectPlugin {
-    
-    private final String ID="armaa_harpoonSecondary";
-    
-    @Override
-        public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine)  {
-          if(!projectile.isFading())
-		{
-            if(!shieldHit)
-			{
-				
-				((armaa_harpoonThrowerEffect) projectile.getWeapon().getEffectPlugin()).putHIT(target);
-				DamagingProjectileAPI proj =(DamagingProjectileAPI)engine.spawnProjectile(
-								projectile.getSource(),
-								projectile.getWeapon(),
-								ID,
-								point,
-								projectile.getFacing(),
-								target.getVelocity()
-				);
-							engine.addPlugin(new armaa_harpoonProjectileScript(proj,projectile.getSource(),target));
 
+public class armaa_harpoonEffect implements OnHitEffectPlugin {
+
+    private final String ID = "armaa_harpoonSecondary";
+
+    @Override
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
+        if (!projectile.isFading()) {
+            if (!shieldHit) {
+
+                ((armaa_harpoonThrowerEffect) projectile.getWeapon().getEffectPlugin()).putHIT(target);
+                DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(
+                        projectile.getSource(),
+                        projectile.getWeapon(),
+                        ID,
+                        point,
+                        projectile.getFacing(),
+                        target.getVelocity()
+                );
+                    engine.addPlugin(new armaa_harpoonProjectileScript(proj, projectile.getSource(), target));  // the original, untouched
             }
         }
     }

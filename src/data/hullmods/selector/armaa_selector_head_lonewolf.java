@@ -16,12 +16,12 @@ import java.awt.Color;
 public class armaa_selector_head_lonewolf extends BaseHullMod {
 
     public static final float DAMAGE_BONUS_PER_THREAT = 0.03f; // 3% per weighted threat
-    public static final float DAMAGE_BONUS_MAX = 0.40f;        // cap at 40%
+    public static final float DAMAGE_BONUS_MAX = 0.25f;        // cap at 25%
     public static final float SYSTEM_REGEN_BONUS = 10f;        // % faster system regen
 
-    public static final float WEIGHT_FIGHTER = 0.25f;
-    public static final float WEIGHT_FRIGATE = 0.5f;
-    public static final float WEIGHT_DESTROYER = 1.0f;
+    public static final float WEIGHT_FIGHTER = 0.05f;
+    public static final float WEIGHT_FRIGATE = 0.25f;
+    public static final float WEIGHT_DESTROYER = 0.8f;
     public static final float WEIGHT_CRUISER = 1.5f;
     public static final float WEIGHT_CAPITAL = 2.0f;
 

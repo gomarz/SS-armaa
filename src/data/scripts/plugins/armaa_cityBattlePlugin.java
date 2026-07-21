@@ -44,7 +44,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
     //TODO refactor this and create helper functions for what we can reuse here
     // in other plugins
-
     private enum BgPhase {
         FOREST_SCROLL,
         FOREST_OCEAN_TRANS,
@@ -77,12 +76,12 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
     private float bgScrollFrac = 0f;
 // one-shot transition control
     private boolean transConsumed = false;
-    private boolean transArmed = false;       
-    private boolean oceanCommitted = false;   
-    private static final String SPR_FOREST = Global.getSettings().getString("armaa_missionBGs","armaa_atmo3");          // phase 1 scrolling
-    private static final String SPR_TRANS = Global.getSettings().getString("armaa_missionBGs","armaa_atmo4");         // single transition tile (forest->ocean)
-    private static final String SPR_OCEAN = Global.getSettings().getString("armaa_missionBGs","armaa_atmo5");       // phase 2 scrolling
-    private static final String SPR_CITY = Global.getSettings().getString("armaa_missionBGs","armaa_city");         // city
+    private boolean transArmed = false;
+    private boolean oceanCommitted = false;
+    private static final String SPR_FOREST = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo3");          // phase 1 scrolling
+    private static final String SPR_TRANS = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo4");         // single transition tile (forest->ocean)
+    private static final String SPR_OCEAN = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo5");       // phase 2 scrolling
+    private static final String SPR_CITY = Global.getSettings().getString("armaa_missionBGs", "armaa_city");         // city
 
     // --------------------------------------------------------------
     static {
@@ -108,6 +107,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         int alpha = (int) (start.getAlpha() * (1 - r) + end.getAlpha() * r);
         return new Color(red, green, blue, alpha);
     }
+
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
         if (engine == null) {
@@ -130,7 +130,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             float height = oceanSpr.getHeight();
             float warpAmt = width * 0.04f;       // 4% of width, same as the source
             oceanSpr.setCenter(width / 2f, height / 2f);  // ← THE MISSING PIECE
-            ocean = new WarpingSpriteRendererUtilV2(oceanSpr, 10, 10, warpAmt, warpAmt * 1.4f, 1f);
+            //ocean = new WarpingSpriteRendererUtilV2(oceanSpr, 10, 10, warpAmt, warpAmt * 1.4f, 1f);
             engine.setBackgroundGlowColor(shiftColor(new Color(50, 50, 50, 80), new Color(75, 50, 0, 25)));
             engine.getFleetManager(0).setSuppressDeploymentMessages(true);
             Global.getSoundPlayer().playCustomMusic(1, 1, "music_armaa_citybattle", true);
@@ -157,7 +157,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                     1f,
                     CombatEngineLayers.ABOVE_PARTICLES
             );
-            */
+             */
             String minuteStr = armaa_utils.getMinuteString();
             Global.getCombatEngine().addLayeredRenderingPlugin(
                     new armaa_titleSplash("NIKOPOLIS - CITY APPROACH | " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
@@ -165,7 +165,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             PersonAPI pilot3 = Global.getSector().getImportantPeople().getPerson("armaa_redeye");
             ShipAPI f;
 
-            f = engine.getFleetManager(0).spawnShipOrWing("armaa_xyphos_standard", new Vector2f(-500, 0), 270f, 0f);
+            f = engine.getFleetManager(0).spawnShipOrWing("armaa_garegga_tt_carrier_aleste", new Vector2f(-500, 0), 270f, 0f);
             f.setOwner(0);
             f.setOriginalOwner(0);
             f.setAlly(true);
@@ -193,7 +193,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             f = engine.getFleetManager(0).spawnShipOrWing("heron_Attack2", new Vector2f(-500, 0), 80f, 3f);
             f.setAlly(true);
 
-            f = engine.getFleetManager(0).spawnShipOrWing("armaa_leynos_jeniusCity", new Vector2f(-500, 1050), 90f, 0f);
+            f = engine.getFleetManager(0).spawnShipOrWing("armaa_monitor_standard_xiv", new Vector2f(-500, 1050), 90f, 0f);
             f.setAlly(true);
             engine.getFleetManager(0).setSuppressDeploymentMessages(false);
             reinforcementsTriggered = true;
@@ -205,8 +205,9 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             interval3.advance(amount);
             interval2.advance(amount);
 
-            // NEW background flow
-            advanceBackground(amount, ratio);
+            // Background state update (rendering happens in BackgroundRendererPlugin,
+            // which runs every frame — paused included — so no paused branch is needed)
+            updateBackground(amount, ratio);
 
             float mult = engine.getViewport().getViewMult();
             float minX = engine.getViewport().getLLX();
@@ -224,8 +225,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 timeUp = true;
             }
 
-            if (!wave2Triggered && ((Global.getCombatEngine().getTotalElapsedTime(false) > 20f  && engine.getFleetManager(1).getCurrStrength() < 25)
-                    || ratio >= 2f )) {
+            if (!wave2Triggered && ((Global.getCombatEngine().getTotalElapsedTime(false) > 20f && engine.getFleetManager(1).getCurrStrength() < 25)
+                    || ratio >= 2f)) {
 
                 boolean losing = engine.getFleetManager(1).getCurrStrength() < 25;
                 PersonAPI pilot = (PersonAPI) MagicCampaign.createCaptainBuilder(Factions.MERCENARY)
@@ -235,10 +236,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                         .create();
 
                 ShipAPI f = engine.getFleetManager(1).spawnShipOrWing("armaa_ceylon_boss", new Vector2f(0, 10000), 270f, 30f);
-                engine.getFleetManager(1).spawnShipOrWing("berserker_Assault", new Vector2f(-200, 10000), 270f, 45f);
-                engine.getFleetManager(1).spawnShipOrWing("berserker_Assault", new Vector2f(400, 10000), 270f, 45f);
-                engine.getFleetManager(1).spawnShipOrWing("armaa_bassline_standard", new Vector2f(-400, 10000), 270f, 45f);
-
                 f.setName("DAS Ceylon");
                 f.setCaptain(pilot);
 
@@ -250,7 +247,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                             "DAS Ceylon inbound. Scum in the outskirts put up a fight.. pointless, of course. Still more trash to clear. Beginning approach.");
                 }
 
-                for (int i = 0; i < 12; i++) {
+                for (int i = 0; i < 4; i++) {
                     f = engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing",
                             new Vector2f(MathUtils.getRandomNumberInRange(-2000, 2000),
                                     MathUtils.getRandomNumberInRange(-10000, 10000)),
@@ -324,14 +321,14 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
                 if (cloudInterval2.intervalElapsed()) {
                     if ((float) Math.random() < p) {
-                        float cloudX = (float) Global.getSettings().getScreenWidth()*2f*ratio;// * t;                        
-                        float cloudY = (float) Global.getSettings().getScreenHeight()*2f*ratio;// * t;
+                        float cloudX = (float) Global.getSettings().getScreenWidth() * 2f * ratio;// * t;                        
+                        float cloudY = (float) Global.getSettings().getScreenHeight() * 2f * ratio;// * t;
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX),
                                         engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                                 new Vector2f(0, ratio * (-MathUtils.getRandomNumberInRange(800, 1000) * mult) / 2),
-                                new Vector2f(cloudX,cloudY),
+                                new Vector2f(cloudX, cloudY),
                                 new Vector2f(25f, 25f),
                                 0f, 0f,
                                 new Color(200, 255, 255, 150),
@@ -346,7 +343,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                                 new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX),
                                         engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                                 new Vector2f(0, -MathUtils.getRandomNumberInRange(400, 800)),
-                                new Vector2f(cloudX,cloudY),
+                                new Vector2f(cloudX, cloudY),
                                 new Vector2f(25f, 25f),
                                 0f, 0f,
                                 cloudColor,
@@ -360,18 +357,23 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
             }
 
-        } else {
-            // still render bg while paused
-
-            advanceBackground(0f, ratio);
         }
 
         // cleanup + atmosphere stat malus section
         if (!engine.isPaused()) {
-            if (interval2.intervalElapsed() && Global.getSector().getMemoryWithoutUpdate().get("$armaa_ceylonEscaped") == null) {
+            if (interval2.intervalElapsed() && Global.getSector().getMemoryWithoutUpdate().get("$armaa_ceylonEscaped") == null && Global.getSector().getMemoryWithoutUpdate().get("$armaa_ceylonDestroyedEarly") == null) {
                 for (FleetMemberAPI member : engine.getFleetManager(1).getRetreatedCopy()) {
                     if (member.getHullSpec().getBaseHullId().equals("armaa_ceylon")) {
                         Global.getSector().getMemoryWithoutUpdate().set("$armaa_ceylonEscaped", true);
+                    }
+                }
+                for (FleetMemberAPI member : engine.getFleetManager(1).getDestroyedCopy()) {
+                    if (member.getHullSpec().getBaseHullId().equals("armaa_ceylon")) {
+                        if(ratio <= 1.5f)
+                        {
+                            Global.getSector().getMemoryWithoutUpdate().set("$armaa_ceylonDestroyedEarly", true);
+                            
+                        }
                     }
                 }
             }
@@ -520,113 +522,18 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         return a + (b - a) * t;
     }
 
-    private float getSquareBgSize(float mult) {
-        float w = Global.getSettings().getScreenWidth();
-        float h = Global.getSettings().getScreenHeight();
-        return Math.max(w, h) * mult;
-    }
+    // ---------------------------------------------------------------------------
+    // State-only update. Called from advance() inside the !isPaused() block.
+    // NO rendering in here — all drawing lives in BackgroundRendererPlugin.render(),
+    // which runs every frame (paused included) against the live viewport.
+    // ---------------------------------------------------------------------------
+    private void updateBackground(float amount, float ratio) {
 
-    private void renderScreenspaceSquarePaused(String spriteKey, float centerY, float sizeMult, float angle, Color color) {
-        float viewMult = engine.getViewport().getViewMult();
-        float inv = 1f / viewMult;
-
-        float w = Global.getSettings().getScreenWidth();
-        float h = Global.getSettings().getScreenHeight();
-
-        float diag = (float) Math.sqrt(w * w + h * h);
-        float minCover = diag * 1.05f;
-
-        float base = w * (1.2f);
-
-        // actual size with zoom response
-        float s1 = base * inv;
-
-        s1 = Math.max(s1, minCover);
-
-        Vector2f bgsize = new Vector2f(s1, s1);
-        float tileSize = getBgTileSizeWorld(1.0f, ratio);
-        float y0 = -bgScrollFrac * tileSize;
-        float y1 = y0 + tileSize;
-        MagicRender.screenspace(
-                Global.getSettings().getSprite(spriteKey),
-                MagicRender.positioning.CENTER,
-                new Vector2f(0f, y0),
-                new Vector2f(0f, 0f),
-                bgsize,
-                new Vector2f(0f, 0f),
-                angle,
-                0f,
-                color,
-                false,
-                0f, 0f, 0f, 0f, 0f, 0f,
-                -1,
-                0f,
-                CombatEngineLayers.CLOUD_LAYER
-        );
-        MagicRender.screenspace(
-                Global.getSettings().getSprite(spriteKey),
-                MagicRender.positioning.CENTER,
-                new Vector2f(0f, y1),
-                new Vector2f(0f, 0f),
-                bgsize,
-                new Vector2f(0f, 0f),
-                angle,
-                0f,
-                color,
-                false,
-                0f, 0f, 0f, 0f, 0f, 0f,
-                -1,
-                0f,
-                CombatEngineLayers.CLOUD_LAYER
-        );
-    }
-
-    private void renderScreenspaceSquare(String spriteKey, float centerY, float sizeMult, float angle, Color color) {
-        float viewMult = engine.getViewport().getViewMult();
-        float inv = 1f / viewMult;
-
-        float w = Global.getSettings().getScreenWidth();
-        float h = Global.getSettings().getScreenHeight();
-
-        float diag = (float) Math.sqrt(w * w + h * h);
-        float minCover = diag * 1.05f;
-
-        float base = w * (1.2f);
-
-        // actual size with zoom response
-        float s1 = base * inv;
-
-        s1 = Math.max(s1, minCover);
-
-        Vector2f bgsize = new Vector2f(s1, s1);
-
-        MagicRender.screenspace(
-                Global.getSettings().getSprite(spriteKey),
-                MagicRender.positioning.CENTER,
-                new Vector2f(0f, 0f + centerY),
-                new Vector2f(0f, 0f),
-                bgsize,
-                new Vector2f(0f, 0f),
-                angle,
-                0f,
-                color,
-                false,
-                0f, 0f, 0f, 0f, 0f, 0f,
-                -1,
-                0f,
-                CombatEngineLayers.CLOUD_LAYER
-        );
-    }
-
-    private void advanceBackground(float amount, float ratio) {
-
-        // ratio-driven phase switching
         // ratio/time-driven phase switching (but DO NOT cut a tile mid-scroll)
         if (!transArmed && bgPhase == BgPhase.FOREST_SCROLL && ratio >= RATIO_START_TRANS) {
             transArmed = true;
             setPhase(BgPhase.FOREST_OCEAN_TRANS);
         }
-
         // Don't commit to ocean until AFTER the TRANS tile has fully passed (tile boundary)
         if (bgPhase == BgPhase.FOREST_OCEAN_TRANS && oceanCommitted) {
             setPhase(BgPhase.OCEAN_SCROLL);
@@ -639,33 +546,29 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         phaseElapsed += amount;
 
-        Color cForest = new Color(100, 100, 100, 255);
-        Color cTrans = new Color(100, 100, 100, 255);
-        Color cOcean = new Color(110, 110, 110, 255);
-        Color cCity = new Color(175, 175, 175, 255);
-
         switch (bgPhase) {
             case FOREST_SCROLL, FOREST_OCEAN_TRANS, OCEAN_SCROLL -> {
-                Color tCurr = tintForSprite(bgCurr, cForest, cTrans, cOcean);
-                Color tNext = tintForSprite(bgNext, cForest, cTrans, cOcean);
-                if (!engine.isPaused()) {
-                    renderScrollConveyor(amount, tCurr, tNext);
-                } else {
-                    renderScreenspaceSquarePaused(bgCurr, 0f, 1.2f, 0f, tCurr);
+                // advance in TILE FRACTION, not world units
+                bgScrollFrac += amount / SECONDS_PER_TILE;
+
+                if (bgScrollFrac >= 1f) {
+                    bgScrollFrac -= 1f;
+
+                    bgCurr = bgNext;
+                    bgNext = chooseNextBgSprite();
+
+                    // If we have already consumed TRANS and we just stepped onto an OCEAN tile,
+                    // that means TRANS has fully completed and we can safely commit to ocean phase.
+                    if (transConsumed && SPR_OCEAN.equals(bgCurr)) {
+                        oceanCommitted = true;
+                    }
                 }
 
+                // transient FX only — fine to skip while paused
+                spawnOceanFX();
             }
             case CITY_DROP -> {
-                float t = easeOutCubic(phaseElapsed / DUR_CITY_DROP);
-
-                float size = getSquareBgSize(1.2f);
-                float screenH = Global.getSettings().getScreenHeight();
-                float yStart = (screenH * 0.5f + size * 0.5f);
-                float y = lerp(yStart, 0f, t);
-
-                renderScreenspaceSquare(SPR_CITY, y, 1.2f, 0f, cCity);
-
-                if (t >= 1f) {
+                if (easeOutCubic(phaseElapsed / DUR_CITY_DROP) >= 1f) {
                     setPhase(BgPhase.CITY_HOLD);
                 }
             }
@@ -675,114 +578,78 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                     citySpinVel = CITY_SPIN_MAX_VEL;
                 }
                 citySpin += citySpinVel * amount;
-                renderScreenspaceSquare(SPR_CITY, 0f, 1.2f, citySpin, cCity);
             }
         }
     }
 
-    private void renderScrollConveyor(float amount, Color cCurr, Color cNext) {
-
-        // 1) Compute tile size in WORLD units so it naturally zooms with viewport
-        float tileSize = getBgTileSizeWorld(1.0f, ratio); // WORLD units, zoom-aware
-
-        // advance in TILE FRACTION, not world units
-        bgScrollFrac += amount / SECONDS_PER_TILE;
-
-        if (bgScrollFrac >= 1f) {
-            bgScrollFrac -= 1f;
-
-            bgCurr = bgNext;
-            bgNext = chooseNextBgSprite();
-
-            // If we have already consumed TRANS and we just stepped onto an OCEAN tile,
-            // that means TRANS has fully completed and we can safely commit to ocean phase.
-            if (transConsumed && SPR_OCEAN.equals(bgCurr)) {
-                oceanCommitted = true;
-            }
+    // Transient ocean-phase effects (star flecks + slipstream seam overlays).
+    // Was the bottom half of the old renderScrollConveyor.
+    private void spawnOceanFX() {
+        if (!SPR_OCEAN.equals(bgCurr)) {
+            return;
         }
 
-        float y0 = -bgScrollFrac * tileSize;
-        float y1 = y0 + tileSize;
+        float w = Global.getSettings().getScreenWidth();
+        float h = Global.getSettings().getScreenHeight();
 
-        Vector2f vpCenter = engine.getViewport().getCenter();
+        float diag = (float) Math.sqrt(w * w + h * h);
+        float minCover = diag * 1.05f;
 
-        renderBattlespaceSquare(bgCurr, vpCenter, y0, tileSize, 0f, cCurr);
-        renderBattlespaceSquare(bgNext, vpCenter, y1, tileSize, 0f, cNext);
+        float base = w * (1.2f);
+        float s1 = Math.max(base, minCover);
 
-        // IMPORTANT:
-        // any effects that used scrollSpeed should now use (tileSize / SECONDS_PER_TILE)
-        //float scrollSpeedWorld = tileSize / SECONDS_PER_TILE;
-        // slipstream overlays can choose which phases
-        if (bgCurr == SPR_OCEAN) {
+        Vector2f bgsize = new Vector2f(s1, s1);
 
-            float viewMult = engine.getViewport().getViewMult();
-            float inv = 1f / viewMult;
-
-            float w = Global.getSettings().getScreenWidth();
-            float h = Global.getSettings().getScreenHeight();
-
-            float diag = (float) Math.sqrt(w * w + h * h);
-            float minCover = diag * 1.05f;
-
-            float base = w * (1.2f);
-
-            // actual size with zoom response
-            float s1 = base;
-
-            s1 = Math.max(s1, minCover);
-
-            Vector2f bgsize = new Vector2f(s1, s1);
-            if (Math.random() <= 0.10) {
-                MagicRender.battlespace(
-                        Global.getSettings().getSprite("backgrounds", "star2"),
-                        new Vector2f(MathUtils.getRandomNumberInRange(0, w), MathUtils.getRandomNumberInRange(0, h)),
-                        new Vector2f(0, 0),
-                        new Vector2f(15f, 15f),
-                        new Vector2f(0f, 0f),
-                        0f,
-                        0f,
-                        new Color(200, 255, 255, 225),
-                        true,
-                        0f,
-                        0f,
-                        0f,
-                        0f,
-                        0f,
-                        0.1f,
-                        0.15f,
-                        0.15f,
-                        CombatEngineLayers.BELOW_SHIPS_LAYER
-                );
-            }
-            MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "slipstream_edge2"),
-                    MagicRender.positioning.CENTER,
-                    new Vector2f(10f, -bgScrollFrac * s1),
+        if (Math.random() <= 0.10) {
+            MagicRender.battlespace(
+                    Global.getSettings().getSprite("backgrounds", "star2"),
+                    new Vector2f(MathUtils.getRandomNumberInRange(0, w), MathUtils.getRandomNumberInRange(0, h)),
+                    new Vector2f(0, 0),
+                    new Vector2f(15f, 15f),
                     new Vector2f(0f, 0f),
-                    bgsize,
-                    new Vector2f(0f, 0f),
-                    0f, 0f,
-                    new Color(200, 255, 255, 100),
+                    0f,
+                    0f,
+                    new Color(200, 255, 255, 225),
                     true,
-                    0f, 0f, 0f, 0f, 0f, 0f,
-                    -1, 0f,
-                    CombatEngineLayers.CLOUD_LAYER
-            );
-            MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "slipstream_edge2"),
-                    MagicRender.positioning.CENTER,
-                    new Vector2f(10f, -bgScrollFrac * s1 + s1),
-                    new Vector2f(0f, 0f),
-                    bgsize,
-                    new Vector2f(0f, 0f),
-                    0f, 0f,
-                    new Color(200, 255, 255, 100),
-                    true,
-                    0f, 0f, 0f, 0f, 0f, 0f,
-                    -1, 0f,
-                    CombatEngineLayers.CLOUD_LAYER
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0.1f,
+                    0.15f,
+                    0.15f,
+                    CombatEngineLayers.BELOW_SHIPS_LAYER
             );
         }
+        MagicRender.screenspace(
+                Global.getSettings().getSprite("misc", "slipstream_edge2"),
+                MagicRender.positioning.CENTER,
+                new Vector2f(10f, -bgScrollFrac * s1),
+                new Vector2f(0f, 0f),
+                bgsize,
+                new Vector2f(0f, 0f),
+                0f, 0f,
+                new Color(200, 255, 255, 100),
+                true,
+                0f, 0f, 0f, 0f, 0f, 0f,
+                -1, 0f,
+                CombatEngineLayers.CLOUD_LAYER
+        );
+        MagicRender.screenspace(
+                Global.getSettings().getSprite("misc", "slipstream_edge2"),
+                MagicRender.positioning.CENTER,
+                new Vector2f(10f, -bgScrollFrac * s1 + s1),
+                new Vector2f(0f, 0f),
+                bgsize,
+                new Vector2f(0f, 0f),
+                0f, 0f,
+                new Color(200, 255, 255, 100),
+                true,
+                0f, 0f, 0f, 0f, 0f, 0f,
+                -1, 0f,
+                CombatEngineLayers.CLOUD_LAYER
+        );
     }
 
     private String chooseNextBgSprite() {
@@ -809,30 +676,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         }
     }
 
-    private void renderBattlespaceSquare(String spriteKey, Vector2f center, float yOffset, float size, float angle, Color color) {
-        if (bgCurr == SPR_OCEAN) {
-            spriteKey = "graphics/armaa/backgrounds/armaa_cutscene.jpg";
-        }
-        Vector2f loc = new Vector2f(center.x, center.y + yOffset);
-        SpriteAPI spr = Global.getSettings().getSprite(spriteKey);
-        MagicRender.battlespace(
-                spr,
-                loc,
-                new Vector2f(0f, 0f), // vel (we control motion via yOffset/bgScroll)
-                new Vector2f(size, size), // size in WORLD units
-                new Vector2f(0f, 0f), // growth
-                angle,
-                0f, // spin handled externally if needed
-                color,
-                false,
-                0f, 0f, 0f, 0f, 0f,
-                0f, // fadein
-                engine.getElapsedInLastFrame(), // full (-1 means "forever" in MagicRender)
-                0f, // fadeout
-                CombatEngineLayers.ABOVE_PLANETS
-        );
-    }
-
     private Color tintForSprite(String spr, Color cForest, Color cTrans, Color cOcean) {
         if (SPR_TRANS.equals(spr)) {
             return cTrans;
@@ -841,17 +684,6 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             return cOcean;
         }
         return cForest;
-    }
-
-    private float getBgTileSizeWorld(float baseMult, float ratio) {
-        float vw = engine.getViewport().getVisibleWidth();
-        float vh = engine.getViewport().getVisibleHeight();
-
-        float diag = (float) Math.sqrt(vw * vw + vh * vh);
-        float minCover = diag * 1.05f;
-
-        float base = vw * baseMult; // NO ratio term
-        return Math.max(base, minCover);
     }
 
     @Override
@@ -863,7 +695,109 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         transArmed = false;
         oceanCommitted = false;
         bgScrollFrac = 0f;
-        armaa_utils.loadMissionTextures(armaa_jeniusCityBattle.MISSION_TEXTURES_CITY);        
+        armaa_utils.loadMissionTextures(armaa_jeniusCityBattle.MISSION_TEXTURES_CITY);
+
+        // Persistent background renderer, draws every frame (paused included)
+        CombatEntityAPI e = engine.addLayeredRenderingPlugin(new BackgroundRendererPlugin());
+        e.getLocation().set(0f, 0f); // irrelevant with MAX_VALUE render radius
+    }
+
+    // ---------------------------------------------------------------------------
+    // The renderer. render() runs every frame regardless of pause and reads the
+    // CURRENT viewport, so zoom/pan while paused always stays covered. Immediate-
+    // mode SpriteAPI draw = exactly one render per frame, no sprite accumulation.
+    // ---------------------------------------------------------------------------
+    public class BackgroundRendererPlugin extends BaseCombatLayeredRenderingPlugin {
+
+        private static final Color C_FOREST = new Color(100, 100, 100, 255);
+        private static final Color C_TRANS = new Color(100, 100, 100, 255);
+        private static final Color C_OCEAN = new Color(110, 110, 110, 255);
+        private static final Color C_CITY = new Color(175, 175, 175, 255);
+
+        @Override
+        public float getRenderRadius() {
+            return Float.MAX_VALUE; // same trick as the ocean plugin: never culled
+        }
+
+        @Override
+        public EnumSet<CombatEngineLayers> getActiveLayers() {
+            // tiles on ABOVE_PLANETS (matches old battlespace calls),
+            // city on CLOUD_LAYER (matches old screenspace calls)
+            return EnumSet.of(CombatEngineLayers.ABOVE_PLANETS, CombatEngineLayers.CLOUD_LAYER);
+        }
+
+        @Override
+        public boolean isExpired() {
+            return false; // lives for the whole battle
+        }
+
+        @Override
+        public void render(CombatEngineLayers layer, ViewportAPI viewport) {
+            switch (bgPhase) {
+                case FOREST_SCROLL, FOREST_OCEAN_TRANS, OCEAN_SCROLL -> {
+                    if (layer != CombatEngineLayers.ABOVE_PLANETS) {
+                        return;
+                    }
+
+                    // size from the LIVE viewport, every frame — this is the fix
+                    float tileSize = coverSize(viewport, 1.0f);
+                    float y0 = -bgScrollFrac * tileSize;
+                    Vector2f c = viewport.getCenter();
+
+                    drawTile(bgCurr, c, y0, tileSize, 0f,
+                            tintForSprite(bgCurr, C_FOREST, C_TRANS, C_OCEAN));
+                    drawTile(bgNext, c, y0 + tileSize, tileSize, 0f,
+                            tintForSprite(bgNext, C_FOREST, C_TRANS, C_OCEAN));
+                }
+                case CITY_DROP -> {
+                    if (layer != CombatEngineLayers.CLOUD_LAYER) {
+                        return;
+                    }
+
+                    float size = coverSize(viewport, 1.2f);
+                    float t = easeOutCubic(phaseElapsed / DUR_CITY_DROP);
+                    float yStart = viewport.getVisibleHeight() * 0.5f + size * 0.5f;
+                    float y = lerp(yStart, 0f, t);
+
+                    drawSized(SPR_CITY, viewport.getCenter(), y, size, 0f, C_CITY);
+                }
+                case CITY_HOLD -> {
+                    if (layer != CombatEngineLayers.CLOUD_LAYER) {
+                        return;
+                    }
+                    float size = coverSize(viewport, 1.2f);
+                    drawSized(SPR_CITY, viewport.getCenter(), 0f, size, citySpin, C_CITY);
+                }
+            }
+        }
+
+        // guaranteed screen coverage at any zoom: max(width-based, diagonal * 1.05)
+        private float coverSize(ViewportAPI viewport, float baseMult) {
+            float vw = viewport.getVisibleWidth();
+            float vh = viewport.getVisibleHeight();
+            float diag = (float) Math.sqrt(vw * vw + vh * vh);
+            return Math.max(vw * baseMult, diag * 1.05f);
+        }
+
+        private void drawTile(String spriteKey, Vector2f center, float yOffset,
+                float size, float angle, Color color) {
+            // preserve the ocean substitute hack from the old renderBattlespaceSquare
+            if (SPR_OCEAN.equals(bgCurr)) {
+                spriteKey = "graphics/armaa/backgrounds/armaa_cutscene.jpg";
+            }
+            drawSized(spriteKey, center, yOffset, size, angle, color);
+        }
+
+        private void drawSized(String spriteKey, Vector2f center, float yOffset,
+                float size, float angle, Color color) {
+            SpriteAPI spr = Global.getSettings().getSprite(spriteKey);
+            spr.setSize(size, size);
+            spr.setCenter(size / 2f, size / 2f);
+            spr.setColor(color);
+            spr.setAngle(angle);
+            spr.setAlphaMult(1f);
+            spr.renderAtCenter(center.x, center.y + yOffset);
+        }
     }
 
     public class OceanBackgroundPlugin extends BaseCombatLayeredRenderingPlugin {
@@ -922,9 +856,11 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         @Override
         public void render(CombatEngineLayers layer, ViewportAPI viewport) {
-            boolean oceanOnScreen = SPR_OCEAN.equals(bgCurr) || 
-                (SPR_OCEAN.equals(bgNext) && bgScrollFrac > 0.6f);
-            if (!oceanOnScreen) return;
+            boolean oceanOnScreen = SPR_OCEAN.equals(bgCurr)
+                    || (SPR_OCEAN.equals(bgNext) && bgScrollFrac > 0.6f);
+            if (!oceanOnScreen) {
+                return;
+            }
 
             if (layer == CombatEngineLayers.CLOUD_LAYER) {
                 // Fade in from 0 once ocean becomes current
@@ -935,7 +871,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 if (!Global.getCombatEngine().isPaused()) {
                     oceanFadeElapsed += Global.getCombatEngine().getElapsedInLastFrame();
                 }
-                oceanAlpha = Math.min(1f, oceanFadeElapsed / OCEAN_FADE_IN_DURATION);                
+                oceanAlpha = Math.min(1f, oceanFadeElapsed / OCEAN_FADE_IN_DURATION);
                 Vector2f center = viewport.getCenter(); // locked to camera             
                 //ocean.renderAtCenter(center.x, center.y, oceanAlpha);
                 // Render ship reflections
@@ -944,7 +880,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                 GL11.glEnable(GL11.GL_BLEND);
                 GL14.glBlendEquation(GL14.GL_FUNC_ADD);
                 GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-                ocean.renderAtCenter(center.x, center.y, oceanAlpha);                
+                ocean.renderAtCenter(center.x, center.y, oceanAlpha);
                 depth.renderAtCenter(center.x, center.y, oceanAlpha);
                 foam.renderAtCenter(center.x, center.y, oceanAlpha);
                 // Restore normal blend after
@@ -959,7 +895,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
                     }
 
                     renderShipReflection(ship);
-                }                
+                }
             }
         }
     }
@@ -973,8 +909,8 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
         float reflX = ship.getLocation().x + sunDir.x * altitude;
         float reflY = ship.getLocation().y - sunDir.y * altitude;
         SpriteAPI reflectionSpr = Global.getSettings().getSprite(ship.getHullSpec().getSpriteName());
-        reflectionSpr.setWidth(ship.getSpriteAPI().getWidth()*0.70f);
-        reflectionSpr.setHeight(ship.getSpriteAPI().getHeight()*0.70f);        
+        reflectionSpr.setWidth(ship.getSpriteAPI().getWidth() * 0.70f);
+        reflectionSpr.setHeight(ship.getSpriteAPI().getHeight() * 0.70f);
         reflectionSpr.setColor(new Color(0, 0, 25, 75)); // cool blue-white
         reflectionSpr.setAngle(ship.getFacing() - 90f);
         reflectionSpr.renderAtCenter(reflX, reflY);

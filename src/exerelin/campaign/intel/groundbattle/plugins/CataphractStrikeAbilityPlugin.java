@@ -6,6 +6,7 @@ import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.combat.StatBonus;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.rulecmd.Nex_VisualCustomPanel;
@@ -58,8 +59,13 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
     public transient FleetMemberAPI cataphract;
 
     public float getDamage(FleetMemberAPI cataphract) {
+        float planetaryOpsMod = cataphract.getStats() 
+                .getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).computeEffective(1f);
+        float groundSupportBonus = cataphract.getStats()
+                .getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).computeEffective(1f);
+        float groundMod = planetaryOpsMod > groundSupportBonus ? planetaryOpsMod : groundSupportBonus;
         float damage = BASE_DAMAGE + (cataphract.getFleetPointCost()+cataphract.getMemberStrength()) +
-                cataphract.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).getFlatBonus();
+                groundMod;
         if (!cataphract.getCaptain().isDefault())
             damage += cataphract.getCaptain().getStats().getLevel() * 1.5f;
         if (cataphract.getStats().getEnergyWeaponDamageMult().getPercentMods().get("cr_effect") != null)

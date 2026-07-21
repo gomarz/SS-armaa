@@ -65,8 +65,8 @@ public class armaa_reactiveCarapace extends BaseHullMod {
  
         tooltip.addPara("%s", 12f, flavor, new String[]{
             "\"The carapace isn't armor in any traditional sense."
-            + " It's a sacrifice. You're not protecting the pilot —"
-            + " you're giving the enemy something cheaper to kill first.\""
+            + " It's a sacrifice, y'know? You're not protecting the pilot. "
+            + " You're giving the enemy something cheaper to kill first.\""
         }).italicize();
         tooltip.addPara("%s", 1f, flavor,
                 new String[]{"         \u2014 Field Notes on Mech Combat Doctrine, author unknown"});

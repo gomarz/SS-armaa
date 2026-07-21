@@ -76,13 +76,11 @@ public class armaa_morganaBeam implements BeamEffectPlugin {
 
     public float TURRET_OFFSET = 20f;
 
-    // ── State ────────────────────────────────────────────────────────────────
     private boolean runOnce = false;
     private boolean wasZero = true;
     private boolean firstStrike = false;
     private final IntervalUtil fireInterval = new IntervalUtil(1.2f, 1.2f);
 
-    // ── Helpers ──────────────────────────────────────────────────────────────
     private Vector2f getMuzzlePos(WeaponAPI weapon) {
         Vector2f origin = new Vector2f(weapon.getLocation());
         Vector2f offset;
@@ -213,9 +211,7 @@ public class armaa_morganaBeam implements BeamEffectPlugin {
 
         Vector2f muzzle = getMuzzlePos(weapon);
 
-        // ═════════════════════════════════════════════════════════════════════
-        // BLOCK A — Charge-up FX (runs whenever charge > 0, NO target needed)
-        // ═════════════════════════════════════════════════════════════════════
+
         if (charge > 0f) {
 
             if (Math.random() < CORE_FLICKER_CHANCE) {

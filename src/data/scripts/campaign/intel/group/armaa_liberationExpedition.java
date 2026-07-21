@@ -39,8 +39,10 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.intel.group.*;
 import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Tags;
 
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.campaign.CampaignUtils;
 
 public class armaa_liberationExpedition extends BlockadeFGI implements EconomyTickListener {
 
@@ -168,16 +170,23 @@ public class armaa_liberationExpedition extends BlockadeFGI implements EconomyTi
         MarketAPI target = blockadeParams.specificMarket;
         if (target.getStarSystem() != null && spawnedDefenders && !defeated) {
             boolean defeatedEnemies = true;
-
             for (CampaignFleetAPI fleet : target.getStarSystem().getFleets()) {
                 if (fleet.getFaction().getId().equals("armaarmatura_arusthai")) {
                     if (fleet.getFaction().getRelationship("armaarmatura_arusthai") < 1) {
                         fleet.getFaction().setRelationship("armaarmatura_arusthai", 1);
                     }
                 }
+
                 MemoryAPI mem = fleet.getMemoryWithoutUpdate();
                 if (mem.contains("$armaa_liberationDefenders")) {
-                    if (fleet.getFleetPoints() < 50) {
+                    boolean notNearPlanet = MathUtils.getDistance(fleet, target.getPlanetEntity()) > 5000f;
+                    Object timestamp = mem.get("$armaa_liberationDefenders");
+                    long t = -1;
+                    if(timestamp instanceof Long)
+                    {
+                        t = (Long) timestamp;
+                    }
+                    if (notNearPlanet || fleet.getFleetPoints() < 50 || Global.getSector().getClock().getElapsedDaysSince(t) > 90) {
 
                         mem.unset("$armaa_liberationDefenders");
                         Misc.makeUnimportant(fleet, "$armaa_liberationDefenders");

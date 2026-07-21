@@ -66,7 +66,7 @@ public class armaa_koutoDummyWeapon implements EveryFrameWeaponEffectPlugin {
         }
 
         if (trueWeapon.getSprite() != null) {
-            trueWeapon.getSprite().setSize(0, 0);
+            trueWeapon.getSprite().setSize(1, 1);
             trueWeapon.getSprite().setColor(invis);
         }
 

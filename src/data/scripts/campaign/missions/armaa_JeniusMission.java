@@ -105,7 +105,7 @@ public class armaa_JeniusMission extends HubMissionWithSearch {
                         0f, // utilityPts
                         .1f // qualityMod
                 );
-                fparams.maxShipSize = 3;
+                fparams.maxShipSize = 2;
                 CampaignFleetAPI fleet = FleetFactoryV3.createFleet(fparams);
                 if (i == 6 || Math.random() > 0.50f) {
                     FleetFactoryV3.addCommanderAndOfficersV2(fleet, fparams, new Random());
@@ -117,7 +117,7 @@ public class armaa_JeniusMission extends HubMissionWithSearch {
                 fleet.setLocation(loc.getLocation().x, loc.getLocation().y);
                 fleet.addAssignment(FleetAssignment.DEFEND_LOCATION, loc, 600f);
                 fleet.setFaction("armaarmatura_arusthai", false);
-                fleet.getMemoryWithoutUpdate().set("$armaa_liberationDefenders", "-");
+                fleet.getMemoryWithoutUpdate().set("$armaa_liberationDefenders", Global.getSector().getClock().getTimestamp());
                 Misc.makeImportant(fleet, "$armaa_liberationDefenders");
             }
         }

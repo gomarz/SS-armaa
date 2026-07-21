@@ -15,6 +15,7 @@ import com.fs.starfarer.api.characters.OfficerDataAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.util.WeightedRandomPicker;
 import data.scripts.campaign.armaa_lingfengListener;
 import java.util.List;
 
@@ -49,51 +50,42 @@ public class armaa_reicCMD extends BaseCommandPlugin {
             fm.setCaptain(gira);
             playerFleet.addFleetMember(fm);
             fm = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "armaa_kouto_frig_standard");
-            fm.setCaptain(felix);        
+            fm.setCaptain(felix);
             fm.setId("armaa_felix");
             playerFleet.addFleetMember(fm);
             Misc.setUnremovable(gira, true);
-            Misc.setUnremovable(felix, true);               
+            Misc.setUnremovable(felix, true);
 
             return true;
-        } 
-        else if ("removeFelixNGira".equals(action)) {
+        } else if ("removeFelixNGira".equals(action)) {
             PersonAPI felix = Global.getSector().getImportantPeople().getPerson("armaa_felix");
             PersonAPI gira = Global.getSector().getImportantPeople().getPerson("armaa_gira");
-            for(FleetMemberAPI member: Global.getSector().getPlayerFleet().getMembersWithFightersCopy())
-            {
-                if(member.getCaptain() == felix || member.getCaptain() == gira)
-                   Global.getSector().getPlayerFleet().getFleetData().removeFleetMember(member);
+            for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
+                if (member.getCaptain() == felix || member.getCaptain() == gira) {
+                    Global.getSector().getPlayerFleet().getFleetData().removeFleetMember(member);
+                }
             }
-            Global.getSector().getPlayerFleet().getFleetData().removeOfficer(felix);            
-            Global.getSector().getPlayerFleet().getFleetData().removeOfficer(gira);  
+            Global.getSector().getPlayerFleet().getFleetData().removeOfficer(felix);
+            Global.getSector().getPlayerFleet().getFleetData().removeOfficer(gira);
             return true;
-        } 
-        else if ("CheckMercStatus".equals(action)) 
-        {
+        } else if ("CheckMercStatus".equals(action)) {
             boolean hasGira = false;
             boolean hasFelix = false;
-            for(OfficerDataAPI officer : Global.getSector().getPlayerFleet().getFleetData().getOfficersCopy())
-            {
-                if(officer.getPerson().getId().equals("armaa_gira"))
+            for (OfficerDataAPI officer : Global.getSector().getPlayerFleet().getFleetData().getOfficersCopy()) {
+                if (officer.getPerson().getId().equals("armaa_gira")) {
                     hasGira = true;
-                else if(officer.getPerson().getId().equals("armaa_felix"))
-                {
+                } else if (officer.getPerson().getId().equals("armaa_felix")) {
                     hasFelix = true;
                 }
-                
+
             }
-            if(!hasFelix && hasGira)
-            {
-                memory.set("$armaa_reicOnlyGira",true,1);
-            }
-            else if(hasFelix && !hasGira)
-            {
-                memory.set("$armaa_reicOnlyFelix",true,1);
+            if (!hasFelix && hasGira) {
+                memory.set("$armaa_reicOnlyGira", true, 1);
+            } else if (hasFelix && !hasGira) {
+                memory.set("$armaa_reicOnlyFelix", true, 1);
             }
             return true;
-        }        
-        else if ("getRaidDiffREIC".equals(action)) {
+        } else if ("getRaidDiffREIC".equals(action)) {
 
             if (params.size() > 1) {
                 String initStr = params.get(1).getString(memoryMap);
@@ -103,8 +95,18 @@ public class armaa_reicCMD extends BaseCommandPlugin {
 
             }
 
-        }
-        else if ("addTracker".equals(action)) {
+        } else if ("setQMMood".equals(action)) {
+
+            if (memory.contains("$armaa_reicQMMood")) {
+                return true;   // one-time
+            }
+            WeightedRandomPicker<String> p = new WeightedRandomPicker<>();
+            p.add("friendly", 25f);
+            p.add("sus", 40f);
+            p.add("broke", 35f);
+            memory.set("$armaa_reicQMMood", p.pick());
+            return true;
+        } else if ("addTracker".equals(action)) {
             Global.getSector().addListener(new armaa_lingfengListener());
             return true;
         }

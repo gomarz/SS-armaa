@@ -2,12 +2,18 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.CombatEntityAPI;
+import com.fs.starfarer.api.combat.DamageAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
+import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import data.scripts.util.MagicRender;
 import java.awt.Color;
+import org.lwjgl.util.vector.Vector2f;
 
 public class armaa_valkazardBinderMirror implements EveryFrameWeaponEffectPlugin {
 
@@ -25,23 +31,59 @@ public class armaa_valkazardBinderMirror implements EveryFrameWeaponEffectPlugin
             }
 
         }
-        if(stationWep == null)
+        if (stationWep == null) {
             return;
+        }
         for (WeaponAPI w : weapon.getShip().getAllWeapons()) {
             if (w.getId() == stationWep.getId()) {
                 shipWep = w;
                 break;
             }
         }
-                runOnce = true;
+        runOnce = true;
     }
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
-        if(weapon.getShip().getParentStation() == null)
+        if (weapon.getShip().getParentStation() == null) {
             return;
-        if(weapon.getShip().getCollisionClass() != weapon.getShip().getParentStation().getCollisionClass())
-            weapon.getShip().setCollisionClass( weapon.getShip().getParentStation().getCollisionClass());
+        }
+        if(!runOnce)
+        {
+            weapon.getShip().addListener(new armaa_valkModuleListener(weapon.getShip()));
+        }
+        if (weapon.getShip().getCollisionClass() != weapon.getShip().getParentStation().getCollisionClass()) {
+            weapon.getShip().setCollisionClass(weapon.getShip().getParentStation().getCollisionClass());
+        }
 
+    }
+
+    private class armaa_valkModuleListener implements AdvanceableListener, DamageTakenModifier {
+
+        private final ShipAPI ship;
+
+        armaa_valkModuleListener(ShipAPI ship) {
+            this.ship = ship;
+        }
+
+        @Override
+        public void advance(float f) {
+            if (!ship.isAlive() || ship.getLocation().getY() == -1000000f) {
+                ship.removeListener(this);
+            }
+
+        }
+
+        @Override
+        public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
+            ShipAPI parent = (ShipAPI) target;
+            parent = parent.getParentStation();
+            if (parent.getShield() != null && parent.getShield().isOn()) {
+                damage.setDamage(0f);
+                return "armaa_shieldprotection";
+
+            }
+            return "";
+        }
     }
 }

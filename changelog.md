@@ -1,3 +1,144 @@
+V3.3.2
+------
+-- Fixes
+- Fixed bug where Valkazard Kai wouldn't be recognized for some things due to being a module
+- Fixed bug that wouldn't tick up dawn # of shrine visits properly
+- Removed non-armaa gear from armaa market priority ship lists
+- Fixed strikecraft losing CR / PPT from corona's / black hole terrain effect on campaign layer when carriers were present
+- Fixed bug that would cause soft lock of CoC if player started the mission from the bar hint instead of Kade directly
+- Fixed bug that would cause Meshan Vigil Fleet & Arusthai fleet to pursue each other off map
+- Fixed CTD that would occur when trying to view MagicLib paintjobs by the intel menu (Thanks to Histidine for diagnosing this!) 
+- fixed 0 wep flux / sec bug on hel corsair
+- added additional null check for core unit selection
+- fixed strikecraft hullmod displaying irrelevant sections in codex
+- fixed variableUnit hullmod ctd
+- fixed visual bug that could occur at non standard WINGCOM pilot levels
+- Increased hullfrequency of Einhander, bassline, Bakraid, einhander+
+- Fixed ATAC "Hostile Ships destroyed" check when already at max
+- Specialized Service Bays refit % is no longer hardcoded +50%, and now uses dynamic stat armaa_strikeCraftRefitMod
+	- For the most part, this is irrelevant to 90% of the people who read this, but it means you can create hullmod for carrier
+	 that increases/decreases strikecraft refit rate for submods / when i externalize this functionality
+
+
+-- Additions
+- add mem key to track if player began with sleeper start
+	- dont ask me why this wasn't in place already
+- A small number of Pather ships will appear to assist during the first COC mission
+
+- ATAC
+	- Specialized Service Bays is now obtainable at 1000 progress
+	- C-Stim Dispatcher has been moved from unlock at 200 pts to 800 pts
+- added tag "armaa_core_independent"
+	- For stuff like bakraid - if core unit gets destroyed, will not lock controls of the ship
+	- this behavior also automatically applies to any unit that has automated hullmod or skeleton crew of 0
+- Added small bar event variant if player opted not to bring a weapon during SDTU
+- Added post market dock event if Dawn is present and Yunifer(PAGSM) was recruited under certain conditions
+- Added nex mercenary company, Primary Colors
+	- Added dawn bar event variations with each member
+
+- Bellator
+	- Increased all weapon arcs by 40 deg except for front and rear mounts
+	- added passive aura - grants 0flux bonus to all strikecraft within 4000 su, up to 70% of their flux
+	- effect diminishes as Bellators hard flux increases
+	- Ship System: Booster -> Mine Strike
+	
+
+- Gamlin
+	- Orbital Fabricator industry on Jenius now supplies heavy machinery & some other things
+	- Fixed patrols spawned by the Orbital Fabricator not using their custom dialogue / asking about transponder
+	- Nekki was changed from a yellow start to brown dwarf
+	- Nekki now has a Corona
+	- Jenius was moved out of Nekki's orbit into Gamlin's orbit
+	- Jenius starts the game marked as "hidden" to prevent it being selected for mission targets / etc
+		- Set to unhidden once it becomes an official indie planet
+	- Added toxic planet at the edge of gamlin orbit
+
+- Misc
+	- made it even more obvious that being reckless during REIC will make the final raid more difficult
+	- hiring the mercenaries during REIC now also provides some marines
+        - fixed bug where REIC mercenaries departure dialog wouldn't fire
+	- added portraits by roque for reic mercs
+
+- Einhänder
+	- Cataphract hullmod was replaced with Cataphract2 hullmod
+
+- Blink
+	- Max uses: 2->1
+	- Cooldown: 1->10
+
+Raiden EX
+	- added tag "armaa_core_independent"
+
+Panther:
+	- DP: 15->14
+	- Capacity: 2600->3000
+
+Assault Boarding Pod
+	- Reworked mechanics
+	- Latches onto the target's hull, dealing EMP Damage minor hull damage. Cannot penetrate shields. 
+	- Will attempt to sabotages weapons and engines, starting insertion point and propagating outwards. 
+	- While attached, each pod increases weapon malfunction chance by 1% per shot, and engine malfunction chance by 3%. 
+	- If the pod fails to attach to a target, it will deploy the battle armors as a fighter wing and attempt to detonate near the closest enemy
+	- Fixed assault pod explosion killing it's own fighters
+	- Only 3 boarding pods can attach to the same target at any time, inflicting a maximum engine malfunction chance of 9% and weapon malfunction chance of 3%
+
+Aleste:
+	- Adjusted some mount positions
+	- Left arm can now be swapped with all of the old modular aleste weapons, and not just the melee ones
+	- convert paintjob to magicpaintjob
+
+Caymon
+	- added SHIP_WITH_MODULES tag
+
+WINGCOM:
+	- Ships with built-in wingcom gain one extra wing member
+	- Squadron size should properly scale with modifiers that increase the number of extra craft in a wing
+		- This has only been tested with Diable and reserve deployment, so may have some weird edge cases
+	- fixed potential bug that would prevent empty squad slots from being refreshed
+	- Removed the block on bomber LPCs for Frigate/Strikecraft
+	- Reduced Engagement range penalty
+	- Capitals:
+		- 20% -> 15%
+	- Cruisers: 
+		- 30% -> 15%
+	- Destroyers:
+		- 40% -> 15%
+	- Frigates:
+		- 70% -> 50%
+
+- Kouto ECM
+	- Capacity: 1500->2000
+
+- Nexerelin
+	- Added Exilium as super ship start
+
+- Valkazard Kai
+	- Fixed bug where blade hitbox did not match it's actual length
+
+- GuarDUAL
+	- PERCEPT homing shots no longer deal near guaranteed EMP piercing damage
+	- Chance: 90% near target max flux -> 70%
+	- fixed most graphical jitter bugs
+
+- Rajanya
+	- Increased angular velocity imparted on user and target from axe swings (in other words, hit stuff -> make it spin)
+	- removed some redundant weapon logic
+	- Increased damage resistance to explosions from 90% to 95%
+	- CR per deployment: 20(I actually dont remember what it was originally lel) -> 45%
+
+- Adjusted Rajanya AI
+	- Should better evaluates threat near landing zone before committing
+	- AI ships will try to charge in at an angle instead of directly head on
+	- should use system defensively where appropriate
+	- AI will cut short system usage mid-flight when appropriate (offensive uses should abort if they blunder into too much firepower / defensive uses end early once the ship is clear)
+	- Fixed the AI charging at very high flux when it should be retreating
+	- Fixed a freeze where a ship with no nearby ally would get stuck unable to attack or flee
+	- Fixed a potential NPE in the damage listener
+
+- Ashura
+	- swings/attacks impart angular velocity on user & target like Rajanya (though much lower)
+	- added slight knockback to melee attacks
+	- Fixed AI being somewhat apprehensive about throwing the boost hammer
 V3.3.1pr
 ------
 - Strikecraft

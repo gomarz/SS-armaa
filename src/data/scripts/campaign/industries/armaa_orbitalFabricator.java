@@ -53,7 +53,13 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         super.apply(true);
         int size = market.getSize();
         modifyStabilityWithBaseMod();
-
+        //supply(Commodities.HAND_WEAPONS, size);
+        supply(Commodities.HEAVY_MACHINERY, size);
+        supply(Commodities.SUPPLIES, size);
+        supply(Commodities.DOMESTIC_GOODS, size);
+        supply(Commodities.LUXURY_GOODS, size);
+        supply(Commodities.SHIPS, size);
+        //supply(Commodities.LUXURY_GOODS,size); 
         MemoryAPI memory = market.getMemoryWithoutUpdate();
         Misc.setFlagWithReason(memory, MemFlags.MARKET_PATROL, getModId(), true, -1);
         Misc.setFlagWithReason(memory, MemFlags.MARKET_MILITARY, getModId(), true, -1);
@@ -62,11 +68,16 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
     @Override
     public void unapply() {
         super.unapply();
-
+        int size = market.getSize();
         MemoryAPI memory = market.getMemoryWithoutUpdate();
         Misc.setFlagWithReason(memory, MemFlags.MARKET_PATROL, getModId(), false, -1);
         Misc.setFlagWithReason(memory, MemFlags.MARKET_MILITARY, getModId(), false, -1);
         unmodifyStabilityWithBaseMod();
+        supply(Commodities.HEAVY_MACHINERY, size);
+        supply(Commodities.SUPPLIES, size);
+        supply(Commodities.DOMESTIC_GOODS, size);
+        supply(Commodities.LUXURY_GOODS, size);
+        supply(Commodities.SHIPS, size);
     }
 
     protected boolean hasPostDemandSection(boolean hasDemand, IndustryTooltipMode mode) {
@@ -168,9 +179,9 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
             int medium = getCount(PatrolType.COMBAT);
             int heavy = getCount(PatrolType.HEAVY);
 
-            int maxLight = 6;
-            int maxMedium = 6;
-            int maxHeavy = 1;
+            int maxLight = 3;
+            int maxMedium = 1;
+            int maxHeavy = 0;
 
             WeightedRandomPicker<PatrolType> picker = new WeightedRandomPicker<PatrolType>();
             picker.add(PatrolType.HEAVY, maxHeavy - heavy);
@@ -219,13 +230,13 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
 
     public int getMaxPatrols(PatrolType type) {
         if (type == PatrolType.FAST) {
-            return 4;
+            return 1;
         }
         if (type == PatrolType.COMBAT) {
-            return 5;
+            return 1;
         }
         if (type == PatrolType.HEAVY) {
-            return 4;
+            return 0;
         }
         return 0;
     }
@@ -298,7 +309,7 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         params.maxShipSize = 2;
         params.timestamp = route.getTimestamp();
         params.random = random;
-        params.modeOverride = Misc.getShipPickMode(market,"armaa_derelict");
+        params.modeOverride = Misc.getShipPickMode(market, "armaa_derelict");
         params.modeOverride = ShipPickMode.ALL;
         CampaignFleetAPI fleet = FleetFactoryV3.createFleet(params);
 
@@ -313,9 +324,7 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
         fleet.addTag("armaa_arusthai_droneFleet");
         if (!fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PATROLS_HAVE_NO_PATROL_MEMORY_KEY)) {
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_FLEET, true);
-            if (type == PatrolType.FAST || type == PatrolType.COMBAT) {
-                fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_CUSTOMS_INSPECTOR, true);
-            }
+            fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_ALLOW_TOFF, true);
         } else if (fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PIRATE_BEHAVIOR)) {
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PIRATE, true);
 
@@ -326,11 +335,8 @@ public class armaa_orbitalFabricator extends BaseIndustry implements RouteFleetS
             }
         }
         fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true, 0.3f);
-
-        if (type == PatrolType.FAST || type == PatrolType.COMBAT) {
-            fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_CUSTOMS_INSPECTOR, true);
-        }
-
+        fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_FIGHT_TO_THE_LAST, true);
+        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);        
         String postId = Ranks.POST_PATROL_COMMANDER;
         String rankId = Ranks.SPACE_COMMANDER;
         switch (type) {

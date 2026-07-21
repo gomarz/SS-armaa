@@ -104,13 +104,27 @@ public class ARMAAWorldGen implements SectorGeneratorPlugin {
         mek.setRelationship(Factions.LUDDIC_CHURCH, 0f); // tacit support from some officials?
         mek.setRelationship(Factions.LUDDIC_PATH, 0.05f);  // 
         mek.setRelationship(Factions.PERSEAN, -0.4f);		//
-        mek.setRelationship("armaarmatura", -0.10f);		//	
+        mek.setRelationship("armaarmatura", -0f);		//	
         mek.setRelationship("armaarmatura_market", -0.10f);		//			
         mek.setRelationship(Factions.INDEPENDENT, -0.30f);	//
         mek.setRelationship(Factions.PIRATES, 0.05f);	// connections with some elements of the pirate groups
         mek.setRelationship(Factions.TRITACHYON, -1f);	// planetkillers
         mek.setRelationship(Factions.REMNANTS, -1f);	// tritachyon equipment
         mek.setRelationship(Factions.DIKTAT, -1f);		// despots
-        mek.setRelationship(Factions.HEGEMONY, -0.4f);		// funding from some officials?	
+        mek.setRelationship(Factions.HEGEMONY, -0.25f);		// funding from some officials?	
+        
+        mek = sector.getFaction("armaarmatura_arusthai");
+
+        mek.setRelationship(Factions.LUDDIC_CHURCH, -1f); // tacit support from some officials?
+        mek.setRelationship(Factions.LUDDIC_PATH, -1f);  // 
+        mek.setRelationship(Factions.PERSEAN, -1f);		//
+        mek.setRelationship("armaarmatura", -1f);		//	
+        mek.setRelationship("armaarmatura_market", -1f);		//			
+        mek.setRelationship(Factions.INDEPENDENT, -1f);	//
+        mek.setRelationship(Factions.PIRATES, 0.05f);	// connections with some elements of the pirate groups
+        mek.setRelationship(Factions.TRITACHYON, -1f);	// planetkillers
+        mek.setRelationship(Factions.REMNANTS, 0f);	// tritachyon equipment
+        mek.setRelationship(Factions.DIKTAT, -1f);		// despots
+        mek.setRelationship(Factions.HEGEMONY, -1f);		// funding from some officials?	
     }
 }

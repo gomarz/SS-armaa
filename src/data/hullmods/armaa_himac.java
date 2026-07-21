@@ -25,6 +25,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.plugins.armaa_ghostTrail;
 import lunalib.lunaSettings.LunaSettings;
 // Made by Timid
 // Adulterated by Mayu
@@ -89,6 +90,7 @@ public class armaa_himac extends BaseHullMod {
         boolean assaultBoostCharging = false;
         boolean assaultBoostCharged = false;
         boolean burnedOut = false;
+        float carryTimer = 0f;
         IntervalUtil chargeInterval = new IntervalUtil(1.5f, 1.5f);
         IntervalUtil tracker = new IntervalUtil(5f, 5f);
         IntervalUtil aiTracker = new IntervalUtil(0.05f, 1f);
@@ -330,6 +332,11 @@ public class armaa_himac extends BaseHullMod {
         float deltaV = (BASE_DV + ship.getMaxSpeedWithoutBoost() * SPEED_SCALE) * hullMult * bonus;
 
         applyQuickBoostImpulse(ship, angleDegrees, deltaV);
+        if(!assaultBoost)
+        {
+            data.carryTimer = 0.15f;
+            armaa_ghostTrail.spawn(ship, 0.15f);
+        }
     }
 
     public void isKeyPressed(ShipAPI ship) {
@@ -337,15 +344,20 @@ public class armaa_himac extends BaseHullMod {
         boolean aPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_TURN_LEFT")));
         boolean sPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_ACCELERATE_BACKWARDS")));
         boolean dPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_TURN_RIGHT")));
+        boolean cPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_DECELERATE")));
 
         String key = DATA_KEY + "_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) Global.getCombatEngine().getCustomData().get(key);
+
+        boolean absoluteMovementEnabled = Boolean.TRUE.equals(
+                ship.getCustomData().get("absolute_movement_mode_enabled")
+        );
 
         // Check if *any* movement key is pressed
         data.keyPressed = wPressed || aPressed || sPressed || dPressed;
 
         // Disable assault boost if moving backward
-        if (sPressed && data.assaultBoostEnabled) {
+        if (data.assaultBoostEnabled && (cPressed || (!absoluteMovementEnabled && sPressed))) {
             data.assaultBoostEnabled = false;
         }
 
@@ -411,13 +423,9 @@ public class armaa_himac extends BaseHullMod {
         if (engine == null || !engine.isEntityInPlay(ship) || !ship.isAlive()) {
             return;
         }
-        if(ship.isStationModule())
+        if (ship.isStationModule()) {
             return;
-        if(ship.isPhased())
-            return;
-        
-        if(ship.getFluxTracker().isOverloadedOrVenting())
-            return;
+        }
         String key = DATA_KEY + "_" + ship.getId();
         String id = "armaa_assaultBoost_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) engine.getCustomData().get(key);
@@ -430,10 +438,30 @@ public class armaa_himac extends BaseHullMod {
             data.subsysID = this.getClass().getName() + "_" + ship.getId();
             data.maxcooldown = armaa_himacsubsys(ship);
         }
+        if (data.carryTimer > 0f) {
+            data.carryTimer -= amount;
+            float t = Math.max(0f, data.carryTimer / 0.35f); // 1 -> 0
+            ship.getMutableStats().getDeceleration().modifyMult(ID, 1f - t); // 0 during carry, ramps back
+            ship.getMutableStats().getMaxSpeed().modifyFlat(ID, 300f * t);   // legalize the overspeed
+            if (data.carryTimer <= 0f) {
+                ship.getMutableStats().getDeceleration().unmodify(ID);
+                ship.getMutableStats().getMaxSpeed().unmodify(ID);
+            }
+        }
+        if (ship.isPhased()) {
+            return;
+        }
+        if (ship.isLanding() || ship.controlsLocked()) {
+            return;
+        }
+        if (ship.getFluxTracker().isOverloadedOrVenting()) {
+            return;
+        }
+
         if (!data.assaultBoostEnabled && data.cooldown < data.maxcooldown && data.activeTime <= 0f && ship.getCurrentCR() > 0f && !ship.getFluxTracker().isOverloadedOrVenting()) {
-            float bonus = 1f;
+            float bonus = 0.7f;
             if (data.burnedOut) {
-                bonus = 0.5f;
+                bonus = 0.25f;
             }
             data.cooldown += amount * bonus;
         }
@@ -655,7 +683,7 @@ public class armaa_himac extends BaseHullMod {
             boolean isLargeShip = ship.isCapital() || ship.isCruiser();
             p = clamp01(p);
             if (!player && !ship.isPhased() && data.aiTracker.intervalElapsed() && data.cooldown >= 5f && !ship.getFluxTracker().isOverloaded()) {
-                if(!ship.areAnyEnemiesInRange() && (isLargeShip|| flags.hasFlag(AIFlags.MOVEMENT_DEST) || flags.hasFlag(AIFlags.PURSUING)) && !data.assaultBoostEnabled && data.cooldown >= 5f) {
+                if (!ship.areAnyEnemiesInRange() && (isLargeShip || flags.hasFlag(AIFlags.MOVEMENT_DEST) || flags.hasFlag(AIFlags.PURSUING)) && !data.assaultBoostEnabled && data.cooldown >= 5f) {
                     data.assaultBoostCharging = true;
                 } else if (data.assaultBoostEnabled && (ship.getEngineController().isDecelerating() || armaa_utils.estimateIncomingDamage(ship) > 1.5f * minDmgToDodge)) {
                     data.assaultBoostEnabled = false;
@@ -673,28 +701,28 @@ public class armaa_himac extends BaseHullMod {
                     return;
                 }
                 // Never be too picky about tiny chip, and never ignore big spikes
-                minDmgToDodge = MathUtils.clamp(minDmgToDodge, 25f, 400f);                
+                minDmgToDodge = MathUtils.clamp(minDmgToDodge, 25f, 400f);
                 List<DamagingProjectileAPI> possibleTargets = new ArrayList<>(100);
                 possibleTargets.addAll(CombatUtils.getMissilesWithinRange(ship.getLocation(), 500f));
-                possibleTargets.addAll(CombatUtils.getProjectilesWithinRange(ship.getLocation(), 500f));                
+                possibleTargets.addAll(CombatUtils.getProjectilesWithinRange(ship.getLocation(), 500f));
                 for (DamagingProjectileAPI proj : possibleTargets) {
                     if (proj == null || !engine.isEntityInPlay(proj)) {
                         continue;
                     }
                     float dodgeChance = clamp01(0.10f + 0.80f * q); // simple
-
                     if (Math.random() < dodgeChance || ship.getFluxLevel() > 0.70f) {
                         if (armaa_utils.getHitChance(proj, ship) > 0.8f) {
-                            if (proj.getLocation().getX() < ship.getLocation().getX()) {
-                                boost(ship.getFacing() + 90f, ship, false);
-                                break;
-                            } else if (proj.getLocation().getX() > ship.getLocation().getX()) {
-                                boost(ship.getFacing() - 90f, ship, false);
-                                break;
+                            float projHeading;
+                            if (proj.getVelocity().lengthSquared() > 100f) { // moving faster than ~10 su/s
+                                projHeading = VectorUtils.getFacing(proj.getVelocity());
                             } else {
-                                boost(ship.getFacing() - 180f, ship, false);
-                                break;
+                                // barely moving (fresh guided launch): treat its bearing to us as the threat line
+                                projHeading = VectorUtils.getAngle(proj.getLocation(), ship.getLocation());
                             }
+                            float side = MathUtils.getShortestRotation(projHeading,
+                                    VectorUtils.getAngle(proj.getLocation(), ship.getLocation()));
+                            boost(projHeading + (side >= 0f ? 90f : -90f), ship, false);
+                            break;
                         }
                     }
                 }

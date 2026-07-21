@@ -42,6 +42,7 @@ public class armaa_wingCommander extends BaseHullMod {
     private static final float FIGHTER_RATE = 1.25f;
     private static final float CREW_LOSS_MULT = 0.25f;
     private IntervalUtil tracker = new IntervalUtil(0.5f, 1.0f);
+    private boolean runOnce = false;
 
     // --- PERF FIX (item 6): valid skill list is static final ---
     // Was: getValidSkillList() allocated a new ArrayList on every call.
@@ -70,19 +71,17 @@ public class armaa_wingCommander extends BaseHullMod {
     private static String rd = "rd";
     private static String th = "th";
 
-    private final ArrayList<String> squadChatter_villain = new ArrayList<>();
-    private final ArrayList<String> squadChatter_soldier = new ArrayList<>();
     private final WeightedRandomPicker<String> voices = new WeightedRandomPicker<>();
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
     public static float FIGHTER_OP_PER_DP = 5;
     public static int MIN_DP = 1;
 
     static {
-        ENGAGEMENT_REDUCTION.put(HullSize.FIGHTER, 0.7f);
-        ENGAGEMENT_REDUCTION.put(HullSize.FRIGATE, 0.7f);
-        ENGAGEMENT_REDUCTION.put(HullSize.DESTROYER, 0.4f);
-        ENGAGEMENT_REDUCTION.put(HullSize.CRUISER, 0.3f);
-        ENGAGEMENT_REDUCTION.put(HullSize.CAPITAL_SHIP, 0.2f);
+        ENGAGEMENT_REDUCTION.put(HullSize.FIGHTER, 0.5f);
+        ENGAGEMENT_REDUCTION.put(HullSize.FRIGATE, 0.5f);
+        ENGAGEMENT_REDUCTION.put(HullSize.DESTROYER, 0.15f);
+        ENGAGEMENT_REDUCTION.put(HullSize.CRUISER, 0.15f);
+        ENGAGEMENT_REDUCTION.put(HullSize.CAPITAL_SHIP, 0.15f);
     }
 
     {
@@ -142,7 +141,7 @@ public class armaa_wingCommander extends BaseHullMod {
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        boolean builtIn = stats.getVariant().getPermaMods().contains("armaa_wingCommander");        
+        boolean builtIn = stats.getVariant().getPermaMods().contains("armaa_wingCommander");
         if (builtIn) {
             float dpMod = computeDPModifier(getFighterOPCost(stats));
             if (dpMod > 0) {
@@ -155,21 +154,11 @@ public class armaa_wingCommander extends BaseHullMod {
                 stats.getSuppliesToRecover().modifyFlat(id, dpMod);
             }
         }
-        int extraCrew = 0;
         if (stats.getVariant().getHullSpec().getFighterBays() == 0) {
-            for (int i = 0; i < stats.getVariant().getWings().size(); i++) {
-                if (stats.getVariant().getWing(i) != null) {
-                    extraCrew += stats.getVariant().getWing(i).getVariant().getHullSpec().getMinCrew()
-                            * stats.getVariant().getWing(i).getNumFighters();
-                }
-            }
-            stats.getMinCrewMod().modifyFlat(id, extraCrew);
-            // BUG FIX: was applied twice (copy-paste leftover)
-            stats.getDynamic().getMod(Stats.BOMBER_COST_MOD).modifyFlat(id, BOMBER_COST_MOD);
+
             if (stats.getNumFighterBays().isUnmodified()) {
                 stats.getNumFighterBays().modifyFlat(id, 1f);
             }
-            stats.getDynamic().getStat(Stats.REPLACEMENT_RATE_DECREASE_MULT).modifyMult(id, 1f + FIGHTER_REPLACEMENT_TIME_MULT);
         }
         stats.getFighterWingRange().modifyMult(id, 1f - ENGAGEMENT_REDUCTION.get(hullSize));
         stats.getDynamic().getStat(Stats.REPLACEMENT_RATE_DECREASE_MULT).modifyMult(id, 1f + FIGHTER_REPLACEMENT_TIME_MULT);
@@ -191,6 +180,11 @@ public class armaa_wingCommander extends BaseHullMod {
                 }
             }
         }
+
+        if (ship.getMutableStats().getFighterRefitTimeMult().getPercentStatMod("wingcombonus") == null) {
+            //used as a check to add all the extra fighters upon deployment
+            ship.getMutableStats().getFighterRefitTimeMult().modifyPercent("wingcombonus", 1);
+        }        
     }
 
     @Override
@@ -291,17 +285,19 @@ public class armaa_wingCommander extends BaseHullMod {
                             + ". If this officer is assigned to another unit with WINGCOM, they will follow.",
                             10, HL, squadName, ship.getCaptain().getNameString());
 
+                    int solidaritySize = armaa_utils.getBaseWingSize(ship);
                     float squadLevel = 0;
-                    // --- PERF FIX (item 3): hoist captain ID out of loop ---
                     String captainId = ship.getCaptain().getId();
-                    for (int i = 0; i < wingSize; i++) {
+                    for (int i = 0; i < solidaritySize; i++) {
                         Object p = Global.getSector().getPersistentData()
                                 .get("armaa_wingCommander_wingman_" + i + "_" + captainId);
                         if (p instanceof PersonAPI) {
                             squadLevel += ((PersonAPI) p).getRelToPlayer().getRel();
                         }
                     }
-                    squadLevel /= wingSize;
+                    if (solidaritySize > 0) {
+                        squadLevel /= solidaritySize;
+                    }
 
                     tooltip.addPara("Unit solidarity is at %s, increasing fighter defensive capabilities "
                             + "by %s and offensive by %s. ", pad, F,
@@ -311,10 +307,10 @@ public class armaa_wingCommander extends BaseHullMod {
 
                     createPilots(ship.getCaptain(), ship, true);
 
-                    }
                 }
             }
         }
+    }
 
     @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
@@ -341,9 +337,9 @@ public class armaa_wingCommander extends BaseHullMod {
         if (ship.isStationModule() && ship.getStationSlot() != null) {
             return;
         }
-        
-        if(ship.getVariant().hasHullMod("converted_hangar"))
+        if (ship.getVariant().hasHullMod("converted_hangar")) {
             return;
+        }
         if ((ship.getHullSpec().getFighterBays() > 0 && !ship.isFrigate() && !ship.isFighter())
                 || ship.getHullSpec().hasTag("strikecraft_with_bays")) {
             return;
@@ -356,7 +352,35 @@ public class armaa_wingCommander extends BaseHullMod {
                 }
             }
         }
+        if(!runOnce)
+        {
+         if (ship.getHullSpec().getBuiltInMods().contains("armaa_wingCommander")) {
+            for (FighterLaunchBayAPI bay : ship.getLaunchBaysCopy()) {
+                if (bay.getWing() != null) {
+                    runOnce = true;
+                    FighterWingSpecAPI wingSpec = bay.getWing().getSpec();
+                    int deployed = bay.getWing().getWingMembers().size();
+                    int maxTotal = wingSpec.getNumFighters() + 1;
+                    int actualAdd = maxTotal - deployed;
 
+                    if (actualAdd > 0) {
+                        bay.setExtraDeployments(actualAdd);
+                        bay.setExtraDeploymentLimit(maxTotal);
+                        bay.setExtraDuration(9999999);
+                    } else {
+                        bay.setExtraDeployments(0);
+                        bay.setExtraDeploymentLimit(0);
+                        bay.setFastReplacements(0);
+                    }
+
+                    if (ship.getMutableStats().getFighterRefitTimeMult().getPercentStatMod("wingcombonus") == null && actualAdd != 0) {
+                        //instantly add all the required fighters upon deployment
+                        bay.setFastReplacements(actualAdd);
+                    }
+                }
+            }
+        }           
+        }
         FighterLaunchBayAPI bay = ship.getLaunchBaysCopy().get(0);
 
         if (ship.isLanding()) {
@@ -368,16 +392,11 @@ public class armaa_wingCommander extends BaseHullMod {
         }
 
         if (bay.getWing() != null && !bay.getWing().getWingMembers().isEmpty()) {
-            // --- PERF FIX (item 7): cache map bounds once per advanceInCombat call ---
-            // Was: computed inside per-fighter loop on every frame a fighter is lifting off.
-            // Half-extents only needed if we fall through to the "no carrier" fallback,
-            // but computing them here is still cheaper than recomputing per fighter.
             final float mapHalfW = Global.getCombatEngine().getMapWidth() / 2f;
             final float mapHalfH = Global.getCombatEngine().getMapHeight() / 2f;
             final Vector2f rawLL = new Vector2f(-mapHalfW, -mapHalfH);
             final Vector2f rawUR = new Vector2f(mapHalfW, mapHalfH);
 
-            // --- PERF FIX (item 1): hoist ship ID string — used in every key below ---
             final String shipId = ship.getId();
 
             List<ShipAPI> wingMembers = bay.getWing().getWingMembers();
@@ -387,7 +406,7 @@ public class armaa_wingCommander extends BaseHullMod {
                     continue;
                 }
 
-                // --- PERF FIX (item 1+2): build the "set" key once, do single map lookup ---
+                //build the "set" key once, do single map lookup ---
                 final String setKey = "armaa_wingCommander_landingLocation_" + fighter.getId() + "_set";
                 Object setFlag = Global.getCombatEngine().getCustomData().get(setKey);
                 boolean done = setFlag instanceof Boolean && (Boolean) setFlag;
@@ -395,7 +414,7 @@ public class armaa_wingCommander extends BaseHullMod {
                 if (fighter.isLiftingOff() && !done) {
                     Vector2f landingLoc = null;
 
-                    // --- PERF FIX (item 1): build per-index key once ---
+                    // build per-index key once ---
                     final String indexKey = "armaa_wingCommander_landingLocation_" + shipId + "_" + i;
 
                     ShipAPI potentialLaunchPoint = (ShipAPI) Global.getCombatEngine()
@@ -464,72 +483,79 @@ public class armaa_wingCommander extends BaseHullMod {
     }
 
     public void assignPilotToFighters(int count, ShipAPI fighter, ShipAPI ship, boolean persistent) {
-        float squadLevel = 0;
-        PersonAPI pilot = null;
-
-        final String captainId = ship.getCaptain().getId();
-
-        if (persistent) {
-            for (int j = 0; j < count; j++) {
-                final String pilotKey = "armaa_wingCommander_wingman_" + j + "_" + captainId;
-                final String assignedKey = "armaa_wingCommander_wingman_" + j + "_wasAssigned_" + captainId;
-
-                Object pilotObj = Global.getSector().getPersistentData().get(pilotKey);
-                if (!(pilotObj instanceof PersonAPI)
-                        || fighter.getWing().getSpec().getVariant().getHullSpec().getMinCrew() <= 0) {
-                    continue;
-                }
-
-                Object assignedFlag = Global.getCombatEngine().getCustomData().get(assignedKey);
-                boolean wasAssigned = assignedFlag instanceof Boolean && (Boolean) assignedFlag;
-
-                pilot = (PersonAPI) pilotObj;
-                squadLevel += pilot.getRelToPlayer().getRel();
-
-                if (!wasAssigned) {
-                    String callsign = (String) Global.getSector().getPersistentData()
-                            .get("armaa_wingCommander_wingman_" + j + "_callsign_" + captainId);
-                    fighter.setCaptain(pilot);
-                    Global.getCombatEngine().getCustomData().put(assignedKey, true);
-                    Global.getCombatEngine().addPlugin(new armaa_pilotTracker(fighter, callsign, j));
-                    break;
-                }
-            }
-        } else {
-            for (int j = 0; j < count; j++) {
-                final String pilotKey = "armaa_wingCommander_wingman_" + j + "_" + captainId;
-                final String assignedKey = "armaa_wingCommander_wingman_" + j + "_wasAssigned_" + captainId;
-
-                Object pilotObj = Global.getCombatEngine().getCustomData().get(pilotKey);
-                if (!(pilotObj instanceof PersonAPI)
-                        || fighter.getWing().getSpec().getVariant().getHullSpec().getMinCrew() <= 0) {
-                    continue;
-                }
-
-                Object assignedFlag = Global.getCombatEngine().getCustomData().get(assignedKey);
-                boolean wasAssigned = assignedFlag instanceof Boolean && (Boolean) assignedFlag;
-
-                pilot = (PersonAPI) pilotObj;
-                squadLevel += (pilot.getStats().getLevel() / ship.getCaptain().getStats().getLevel()) * .3f;
-
-                if (!wasAssigned) {
-                    String callsign = (String) Global.getCombatEngine().getCustomData()
-                            .get("armaa_wingCommander_wingman_" + j + "_callsign_" + captainId);
-                    fighter.setCaptain(pilot);
-                    Global.getCombatEngine().getCustomData().put(assignedKey, true);
-                    Global.getCombatEngine().addPlugin(new armaa_pilotTrackerNP(fighter, callsign, j));
-                    break;
-                }
-            }
+        // Crew check is a property of the fighter, not the loop index. hoist it.
+        if (fighter.getWing() == null
+                || fighter.getWing().getSpec().getVariant().getHullSpec().getMinCrew() <= 0) {
+            return;
         }
 
+        final String captainId = ship.getCaptain().getId();
+        final int baseSize = fighter.getWing().getSpec().getNumFighters();
+
+        // --- PART 1: Solidarity. core roster only (indices 0..baseSize-1).
+        // RD spares on the bench don't factor into the average.
+        float squadLevel = 0;
+        int solidarityCount = Math.min(count, baseSize);
+        for (int j = 0; j < solidarityCount; j++) {
+            final String pilotKey = "armaa_wingCommander_wingman_" + j + "_" + captainId;
+            Object pilotObj = persistent
+                    ? Global.getSector().getPersistentData().get(pilotKey)
+                    : Global.getCombatEngine().getCustomData().get(pilotKey);
+            if (!(pilotObj instanceof PersonAPI)) {
+                continue;
+            }
+            PersonAPI p = (PersonAPI) pilotObj;
+            if (persistent) {
+                squadLevel += p.getRelToPlayer().getRel();
+            } else {
+                squadLevel += (p.getStats().getLevel()
+                        / ship.getCaptain().getStats().getLevel()) * .3f;
+            }
+        }
+        if (baseSize > 0) {
+            squadLevel /= baseSize;
+        }
+
+        //Assignment
+        for (int j = 0; j < count; j++) {
+            final String pilotKey = "armaa_wingCommander_wingman_" + j + "_" + captainId;
+            final String assignedKey = "armaa_wingCommander_wingman_" + j + "_wasAssigned_" + captainId;
+            final String callsignKey = "armaa_wingCommander_wingman_" + j + "_callsign_" + captainId;
+
+            Object pilotObj = persistent
+                    ? Global.getSector().getPersistentData().get(pilotKey)
+                    : Global.getCombatEngine().getCustomData().get(pilotKey);
+            if (!(pilotObj instanceof PersonAPI)) {
+                continue;
+            }
+
+            Object assignedFlag = Global.getCombatEngine().getCustomData().get(assignedKey);
+            boolean wasAssigned = assignedFlag instanceof Boolean && (Boolean) assignedFlag;
+            if (wasAssigned) {
+                continue;
+            }
+
+            PersonAPI pilot = (PersonAPI) pilotObj;
+            String callsign;
+            fighter.setCaptain(pilot);
+            Global.getCombatEngine().getCustomData().put(assignedKey, true);
+            if (persistent) {
+                callsign = (String) Global.getSector().getPersistentData().get(callsignKey);
+                Global.getCombatEngine().addPlugin(new armaa_pilotTracker(fighter, callsign, j));
+            } else {
+                callsign = (String) Global.getCombatEngine().getCustomData().get(callsignKey);
+                Global.getCombatEngine().addPlugin(new armaa_pilotTrackerNP(fighter, callsign, j));
+            }
+            break;
+        }
+
+        // Buffs. every fighter in the wing gets the same core-derived
+        // solidarity. Spares benefit from it without contributing to it.
         if (fighter.getCaptain() == null || fighter.getCaptain().isDefault()) {
             return;
         }
 
-        squadLevel /= fighter.getWing().getSpec().getNumFighters();
         float mult = Math.min(squadLevel, 0.15f);
-
         MutableShipStatsAPI stats = fighter.getMutableStats();
 
         stats.getHullDamageTakenMult().modifyMult("armaa_wingCommander", (1f - mult));
@@ -618,36 +644,53 @@ public class armaa_wingCommander extends BaseHullMod {
     }
 
     public int getWingSize(ShipAPI ship) {
-        FighterWingSpecAPI wing = ship.getVariant().getWing(0);
         int wingSize = 0;
-        boolean crewedWing = false;
-        if (wing != null) {
+        boolean countedFromBays = false;
+
+        // Combat path: live bays (own + modules) see RD-raised limits.
+        List<ShipAPI> hulls = new ArrayList<>();
+        hulls.add(ship);
+        for (ShipAPI module : ship.getChildModulesCopy()) {
+            if (module.getVariant().hasHullMod("armaa_wingCommander")) {
+                hulls.add(module);
+            }
+        }
+        for (ShipAPI hull : hulls) {
+            for (FighterLaunchBayAPI bay : hull.getLaunchBaysCopy()) {
+                FighterWingAPI w = bay.getWing();
+                if (w == null) {
+                    continue;
+                }
+                if (w.getSpec().getVariant().getHullSpec().getMinCrew() <= 0) {
+                    continue;
+                }
+                wingSize += Math.max(w.getSpec().getNumFighters(), bay.getExtraDeploymentLimit());
+                countedFromBays = true;
+            }
+        }
+
+        if (!countedFromBays) {
+            // Refit/campaign fallback: variant specs, own wings + module wings.
             for (int i = 0; i < ship.getVariant().getWings().size(); i++) {
                 FighterWingSpecAPI w = ship.getVariant().getWing(i);
-                if (w == null) {
-                    continue;
-                }
-                crewedWing = w.getVariant().getHullSpec().getMinCrew() > 0;
-                if (crewedWing) {
+                if (w != null && w.getVariant().getHullSpec().getMinCrew() > 0) {
                     wingSize += w.getNumFighters();
                 }
             }
-        }
-        for (String slot : ship.getVariant().getModuleSlots()) {
-            if (!ship.getVariant().getModuleVariant(slot).hasHullMod("armaa_wingCommander")) {
-                continue;
-            }
-            for (int i = 0; i < ship.getVariant().getModuleVariant(slot).getWings().size(); i++) {
-                FighterWingSpecAPI w = ship.getVariant().getModuleVariant(slot).getWing(i);
-                if (w == null) {
+            for (String slot : ship.getVariant().getModuleSlots()) {
+                ShipVariantAPI mv = ship.getVariant().getModuleVariant(slot);
+                if (!mv.hasHullMod("armaa_wingCommander")) {
                     continue;
                 }
-                crewedWing = w.getVariant().getHullSpec().getMinCrew() > 0;
-                if (crewedWing) {
-                    wingSize += w.getNumFighters();
+                for (int i = 0; i < mv.getWings().size(); i++) {
+                    FighterWingSpecAPI w = mv.getWing(i);
+                    if (w != null && w.getVariant().getHullSpec().getMinCrew() > 0) {
+                        wingSize += w.getNumFighters();
+                    }
                 }
             }
         }
+
         return wingSize;
     }
 
@@ -672,19 +715,19 @@ public class armaa_wingCommander extends BaseHullMod {
 
     public void createPilots(PersonAPI commander, ShipAPI ship, boolean persistent) {
         int size = getWingSize(ship);
-        int currentSize = size;
-        // --- PERF FIX (item 3): hoist commander ID ---
+        // hoist commander ID ---
         final String cmdId = commander.getId();
         final String sizeKey = "armaa_wingCommander_squadSize_" + cmdId;
-
-        Object existingSize = Global.getSector().getPersistentData().get(sizeKey);
+        Object existingSize;
+        if (persistent) {
+            existingSize = Global.getSector().getPersistentData().get(sizeKey);
+        } else {
+            existingSize = Global.getCombatEngine().getCustomData().get(sizeKey);
+        }
         if (existingSize instanceof Integer) {
-            currentSize = (int) existingSize;
-            if (size == currentSize || size == 0) {
+            int currentSize = (Integer) existingSize;
+            if (size <= currentSize || size == 0) {
                 return;
-            }
-            if (currentSize > 100) {
-                currentSize = 0; // drone-wing safety cap
             }
         }
 
@@ -733,7 +776,7 @@ public class armaa_wingCommander extends BaseHullMod {
         }
 
         if (persistent) {
-            Global.getSector().getPersistentData().put(sizeKey, currentSize + Math.abs(currentSize - size));
+            Global.getSector().getPersistentData().put(sizeKey, size);
         } else {
             Global.getCombatEngine().getCustomData().put(sizeKey, size);
         }
@@ -767,18 +810,20 @@ public class armaa_wingCommander extends BaseHullMod {
         final String captainId = ship.getCaptain().getId();
         final String sizeKey = "armaa_wingCommander_squadSize_" + captainId;
 
-        Object sizeObj = Global.getSector().getPersistentData().get(sizeKey);
-        if (sizeObj instanceof Integer) {
-            assignPilotToFighters((Integer) sizeObj, fighter, ship, true);
-        } else {
-            if (ship.isAlly() || ship.getOwner() == 1) {
-                if (!hasSquad(ship.getCaptain(), false)) {
-                    createPilots(ship.getCaptain(), ship, false);
-                }
-                Object combatSize = Global.getCombatEngine().getCustomData().get(sizeKey);
-                if (combatSize instanceof Integer) {
-                    assignPilotToFighters((Integer) combatSize, fighter, ship, false);
-                }
+        if (hasSquad(ship.getCaptain(), true)) {
+            // Grow roster if extra deployments raised the wing size, then assign.
+            createPilots(ship.getCaptain(), ship, true);
+            Object sizeObj = Global.getSector().getPersistentData().get(sizeKey);
+            if (sizeObj instanceof Integer) {
+                assignPilotToFighters((Integer) sizeObj, fighter, ship, true);
+            }
+        } else if (ship.isAlly() || ship.getOwner() == 1) {
+            if (!hasSquad(ship.getCaptain(), false)) {
+                createPilots(ship.getCaptain(), ship, false);
+            }
+            Object combatSize = Global.getCombatEngine().getCustomData().get(sizeKey);
+            if (combatSize instanceof Integer) {
+                assignPilotToFighters((Integer) combatSize, fighter, ship, false);
             }
         }
     }
@@ -836,15 +881,13 @@ public class armaa_wingCommander extends BaseHullMod {
                         DockingAI.init();
                     }
                 } else {
-                    // --- PERF FIX (item 2): single lookup, cast once ---
                     final String retreatKey = "armaa_wingCommander_fighterRetreat_" + fighter.getId();
                     Object retreatFlag = fighter.getCustomData().get(retreatKey);
                     boolean alreadyHasAI = retreatFlag instanceof Boolean && (Boolean) retreatFlag;
                     if (!alreadyHasAI) {
                         armaa_combat_retreat_AI_fighter RetreatAI
                                 = new armaa_combat_retreat_AI_fighter(fighter);
-                        // BUG FIX: was   if (fighter.getShipAI() != RetreatAI);
-                        // Semicolon made block unconditional — removed.
+
                         if (fighter.getShipAI() != RetreatAI) {
                             fighter.setShipAI(RetreatAI);
                             fighter.getCustomData().put(retreatKey, true);

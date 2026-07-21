@@ -200,7 +200,7 @@ public class armaa_BossRetreatTransitionPlugin extends BaseEveryFrameCombatPlugi
     }
 
     // -----------------------------------------------------------------------
-    // Internal — capture offsets
+    // Internal
     // -----------------------------------------------------------------------
 
     private void captureOffsets(Vector2f origin) {
@@ -225,7 +225,7 @@ public class armaa_BossRetreatTransitionPlugin extends BaseEveryFrameCombatPlugi
     }
 
     // -----------------------------------------------------------------------
-    // Internal — rendering
+    // Internal
     // -----------------------------------------------------------------------
 
     private void renderGhost(float scale, float brightness, Vector2f screenPos, float swayAngle) {

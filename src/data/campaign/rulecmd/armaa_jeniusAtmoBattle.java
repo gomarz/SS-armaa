@@ -48,8 +48,8 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
     public static final Set<String> MISSION_TEXTURES_ATMO = new HashSet<>();
 
     static {
-        MISSION_TEXTURES_ATMO.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo"));
-        MISSION_TEXTURES_ATMO.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo2"));
+        MISSION_TEXTURES_ATMO.add(Global.getSettings().getString("armaa_missionBGs", "armaa_atmo"));
+        MISSION_TEXTURES_ATMO.add(Global.getSettings().getString("armaa_missionBGs", "armaa_atmo2"));
 
     }
 
@@ -63,6 +63,8 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
             if (member.getHullSpec().hasTag("Moci_MobileSuits") || member.getHullSpec().hasTag("Moci_MobileArmour")) {
                 continue;
             }
+            if(member.getId().equals(Global.getSector().getPlayerMemoryWithoutUpdate().get("$armaa_atmoBattleSparedHull")))
+                continue;
             if (member.isCapital()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
@@ -80,7 +82,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$nonAtmoShips", removedShips);
         String faction = "armaa_derelict";
         //also subtract guardians DP
-        float str = (Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength() - modifier - 40f) * 0.7f;
+        float str = Math.min(200f, (Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength()) * 0.7f);
         //not used?
         /*
         if ("kade".equals(action)) {
@@ -101,7 +103,7 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
                 0f, // utilityPts
                 0.1f // qualityMod
         );
-        fparams.maxShipSize = 3;
+        fparams.maxShipSize = 2;
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
         FleetFactoryV3.addCommanderAndOfficersV2(enemyFleet, fparams, new Random());
         FleetMemberAPI boss = enemyFleet.getFleetData().addFleetMember("guardian_Standard");
@@ -141,10 +143,10 @@ public class armaa_jeniusAtmoBattle extends BaseCommandPlugin {
         config.noSalvageLeaveOptionText = "Continue";
         config.dismissOnLeave = false;
         config.printXPToDialog = true;
+        
         long seed = memory.getLong(MemFlags.SALVAGE_SEED);
         config.salvageRandom = Misc.getRandom(seed, 75);
         final FleetInteractionDialogPluginImpl plugin = new FleetInteractionDialogPluginImpl(config);
-
         final InteractionDialogPlugin originalPlugin = dialog.getPlugin();
         config.delegate = new BaseFIDDelegate() {
             @Override

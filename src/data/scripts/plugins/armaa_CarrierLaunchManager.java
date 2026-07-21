@@ -78,7 +78,7 @@ public class armaa_CarrierLaunchManager extends BaseEveryFrameCombatPlugin {
         while (it.hasNext()) {
             LaunchEntry entry = it.next();
             entry.ship.setAnimatedLaunch();
-            // Sanity check — carrier or ship may have died while waiting
+            // Sanity check
             if (!Global.getCombatEngine().isEntityInPlay(entry.ship)
                     || !Global.getCombatEngine().isEntityInPlay(entry.carrier)
                     || entry.carrier.isHulk()) {
@@ -87,7 +87,7 @@ public class armaa_CarrierLaunchManager extends BaseEveryFrameCombatPlugin {
             }
  
             if (entry.delay > 0f) {
-                // Still waiting — keep ship parked on carrier
+                // Still waiting
                 armaa_utils.setLocation(entry.ship, entry.carrier.getLocation());
                 entry.ship.getVelocity().set(entry.carrier.getVelocity());
                             entry.delay -= amount;

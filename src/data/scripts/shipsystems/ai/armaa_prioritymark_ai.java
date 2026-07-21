@@ -158,7 +158,7 @@ public class armaa_prioritymark_ai implements ShipSystemAIScript {
     private float getDynamicRange() {
         ShipAPI droneBase = ship.getChildModulesCopy() != null  && ship.getChildModulesCopy().get(0) != null ? ship.getChildModulesCopy().get(0) : ship;
         float r = MAX_RANGE * armaa_AWACS.getEffectLevel(droneBase);
-        Global.getLogger(this.getClass()).info(r);
+        //Global.getLogger(this.getClass()).info(r);
         return Math.min(r, MAX_RANGE);
     }
 

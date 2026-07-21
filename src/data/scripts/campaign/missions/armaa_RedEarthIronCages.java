@@ -67,7 +67,7 @@ public class armaa_RedEarthIronCages extends HubMissionWithSearch {
         makeImportant(market, "$armaa_gotReicLoc", Stage.RETRIEVE_TARGET);
         //
         beginEnteredLocationTrigger(market.getStarSystem(), false, Stage.RETRIEVE_TARGET);
-        triggerCreateFleet(FleetSize.MEDIUM, FleetQuality.DEFAULT, Factions.LIONS_GUARD, FleetTypes.PATROL_MEDIUM, market.getStarSystem());
+        triggerCreateFleet(FleetSize.MEDIUM, FleetQuality.DEFAULT, Factions.DIKTAT, FleetTypes.PATROL_MEDIUM, market.getStarSystem());
         triggerAutoAdjustFleetStrengthMajor();
         triggerMakeHostileAndAggressive();
         triggerFleetAllowLongPursuit();

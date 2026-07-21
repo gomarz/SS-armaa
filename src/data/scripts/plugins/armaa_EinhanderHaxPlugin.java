@@ -1,6 +1,7 @@
 package data.scripts.plugins;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.FleetDataAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.input.InputEventAPI;
 import java.util.*;
@@ -8,6 +9,8 @@ import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.MissileAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
 
@@ -25,49 +28,22 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin {
         }
 
         if (!engine.isPaused()) {
-            if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inAtmoBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
-                engine.addPlugin(new armaa_atmosphericBattlePlugin());
-                engine.getCustomData().put("armaa_atmoPlugin", "-");
-            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inAtmoBossBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
-                engine.addPlugin(new armaa_atmosphericBossBattlePlugin());
-                engine.getCustomData().put("armaa_atmoPlugin", "-");
-            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inCityBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
-                engine.addPlugin(new armaa_cityBattlePlugin());
-                engine.getCustomData().put("armaa_atmoPlugin", "-");
-            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inShaftBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
-                engine.addPlugin(new armaa_shaftBattlePlugin());
-                engine.getCustomData().put("armaa_atmoPlugin", "-");
-            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inGravionBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
-                engine.addPlugin(new armaa_gasGiantBattlePlugin());
-                engine.getCustomData().put("armaa_atmoPlugin", "-");
-              // im not going thru the effort of converting to magicbounties lol
-            } else if (engine.getContext().getOtherFleet() != null && engine.getCustomData().get("armaa_fightingBounty") == null) {
-                        CombatEngineAPI engine = Global.getCombatEngine();                
-                Collection<String> tags = engine.getContext().getOtherFleet().getMemoryWithoutUpdate().getKeys();
-                boolean isBounty = false;
-                for (String tag : tags) {
-                    if (tag.contains("armaa_bounty")) {
-                        //engine.getCombatUI().addMessage(0, "foo");
-                        isBounty = true;
-                        engine.getCustomData().put("armaa_fightingBounty", isBounty);
-                        break;
-                    }
-                }
-                if (!isBounty) {
-                    engine.getCustomData().put("armaa_fightingBounty", false);
 
-                }
-
-            }
 
             interval.advance(amount);
             if (interval.intervalElapsed()) {
-                if(engine.getCustomData().get("armaa_fightingBounty") != null && (Boolean)engine.getCustomData().get("armaa_fightingBounty") == true)
-                {
-                    if(engine.getFleetManager(1).getCurrStrength() <= 0 && engine.getTotalElapsedTime(false) > 25)
-                        
+                if (engine.getCustomData().get("armaa_fightingBounty") != null && (Boolean) engine.getCustomData().get("armaa_fightingBounty") == true) {
+                    if (engine.getFleetManager(1).getCurrStrength() <= 0 && engine.getTotalElapsedTime(false) > 25) {
                         engine.endCombat(5, FleetSide.PLAYER);
-                        //engine.getFleetManager(1).spawnFleetMember(fmapi, vctrf, amount, amount)
+                    }
+                    //engine.getFleetManager(1).spawnFleetMember(fmapi, vctrf, amount, amount)
+                }
+                if(engine.getCustomData().get("armaa_atmoPlugin") == null)
+                {
+                    // inside init(...) of your mission script:
+                    // List<EveryFrameCombatPlugin> plugins = engine.getEveryFrameCombatPlugins();
+                    // plugins.removeIf(p -> p != null
+                    //    && p.getClass().getName().equals("data.scripts.combat.FoilerCombatPlugin"));
                 }
                 for (MissileAPI missile : engine.getMissiles()) {
                     if (missile.getWeapon() != null) {
@@ -104,5 +80,54 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin {
     @Override
     public void init(CombatEngineAPI engine) {
         this.engine = engine;
+        if ( engine == null || engine.getContext() == null) {
+            return;
+        }
+            if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inAtmoBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
+                engine.addPlugin(new armaa_atmosphericBattlePlugin());
+                engine.getCustomData().put("armaa_atmoPlugin", "-");
+            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inAtmoBossBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
+                engine.addPlugin(new armaa_atmosphericBossBattlePlugin());
+                engine.getCustomData().put("armaa_atmoPlugin", "-");
+            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inCityBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
+                engine.addPlugin(new armaa_cityBattlePlugin());
+                engine.getCustomData().put("armaa_atmoPlugin", "-");
+            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inShaftBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
+                engine.addPlugin(new armaa_shaftBattlePlugin());
+                engine.getCustomData().put("armaa_atmoPlugin", "-");
+            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inGravionBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
+                engine.addPlugin(new armaa_gasGiantBattlePlugin());
+                engine.getCustomData().put("armaa_atmoPlugin", "-");
+                // im not going thru the effort of converting to magicbounties lol
+            } else if (engine.getContext().getOtherFleet() != null && engine.getCustomData().get("armaa_fightingBounty") == null) {
+                Collection<String> tags = engine.getContext().getOtherFleet().getMemoryWithoutUpdate().getKeys();
+                boolean isBounty = false;
+                for (String tag : tags) {
+                    if (tag.contains("armaa_bounty")) {
+                        //engine.getCombatUI().addMessage(0, "foo");
+                        isBounty = true;
+                        engine.getCustomData().put("armaa_fightingBounty", isBounty);
+                        break;
+                    }
+                }
+                if (!isBounty) {
+                    engine.getCustomData().put("armaa_fightingBounty", false);
+
+                }
+
+            }
+    }
+
+    private void stripImmunity(FleetDataAPI fleet) {
+        if (fleet == null) {
+            return;
+        }
+        for (FleetMemberAPI ship : fleet.getMembersInPriorityOrder()) {
+            if (!ship.getVariant().hasHullMod("strikeCraft")) {
+                continue;
+            }
+            ship.getStats().getDynamic().getStat(Stats.CORONA_EFFECT_MULT)
+                    .unmodify("armaa_carrierStorageHyper");
+        }
     }
 }

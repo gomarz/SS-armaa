@@ -5,6 +5,7 @@ import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.CargoAPI.CargoItemType;
+import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.OfficerDataAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
@@ -23,20 +24,29 @@ public class armaa_notificationShower implements EveryFrameScript {
     private static final List<String> validEntities = new ArrayList<>();
     private static final List<String> validKeys = new ArrayList<>();
     private static final List<String> validSingleKeys = new ArrayList<>();
+    // The only notifications that do NOT require Dawn in the fleet
+    // (this is why validSingleKeys is a separate list)
+    private static final Set<String> DAWN_EXEMPT_ENTITIES = new HashSet<>();
 
     static {
+        DAWN_EXEMPT_ENTITIES.add("valkHunter");
+        DAWN_EXEMPT_ENTITIES.add("cassianReadyToChat");
+
         validEntities.add("station_galatia_academy");
         validEntities.add("mazalot");
         validEntities.add("volturn");
         validEntities.add("kantas_den");
         validKeys.add("$anh_inProgress");
         validKeys.add("$encounteredDweller");
+        validKeys.add("$dawnOutpaced");
+        validKeys.add("$dawnNoticedAI");
         validKeys.add("$pk_recovered");
         validKeys.add("$bffi_goMeetMenesYaribay");
 
         // ??? Why is this seperate?
         validSingleKeys.add("$armaa_engagedValkHunters");
         validSingleKeys.add("$armaa_cassianReadyToChat");
+        
     }
 
     public void showNotificationOnce(String id) {
@@ -56,12 +66,45 @@ public class armaa_notificationShower implements EveryFrameScript {
     public void addNotification(final String entity) {
         String id = "armaa_" + entity + "_event_id";
         if (!notifications.containsKey(id)) {
-            notifications.put(id, new armaa_NotificationBase(id) {
+            armaa_NotificationBase notif = new armaa_NotificationBase(id) {
                 @Override
                 public InteractionDialogPlugin create() {
                     return new armaa_approachingPlanetNotification(entity);
                 }
-            });
+            };
+            notif.requiresDawn = !DAWN_EXEMPT_ENTITIES.contains(entity);
+            notifications.put(id, notif);
+        }
+    }
+
+    // transient: never serialized into the save, so the sweep runs once per game session
+    private transient boolean recoverySweepDone = false;
+
+    /**
+     * Backwards compatibility for saves affected by the old bug. Any
+     * $player.armaa_*_event_id flag that is still true was set by showNotification()
+     * but never flipped back to false by its rules.csv rule -- meaning the dialog
+     * never actually displayed, even if wasNotificationShown got stamped true.
+     * Reset the persistent flag and re-queue it.
+     */
+    private void recoverUnshownNotifications() {
+        recoverySweepDone = true;
+        MemoryAPI mem = Global.getSector().getPlayerMemoryWithoutUpdate();
+        for (String key : new ArrayList<>(mem.getKeys())) {
+            if (!key.startsWith("$armaa_") || !key.endsWith("_event_id")) {
+                continue;
+            }
+            if (!mem.getBoolean(key)) {
+                continue; // rules.csv set it false -> genuinely shown, leave it alone
+            }
+            String id = key.substring(1); // strip "$" -> "armaa_..._event_id"
+            String entity = id.substring("armaa_".length(), id.length() - "_event_id".length());
+
+            Global.getSector().getPersistentData().put("$" + id + "wasNotificationShown", false);
+            addNotification(entity); // no-ops if already in the map
+            showNotificationOnce(id);
+            Global.getLogger(armaa_notificationShower.class).info(
+                    "Recovering notification " + id + " that was consumed without displaying");
         }
     }
 
@@ -83,6 +126,11 @@ public class armaa_notificationShower implements EveryFrameScript {
             return;
         }
 
+        // One-time per session: rescue notifications the old code ate
+        if (!recoverySweepDone) {
+            recoverUnshownNotifications();
+        }
+
         timer.advance(amount);
         if (timer.intervalElapsed()) {
             CampaignFleetAPI flt = Global.getSector().getPlayerFleet();
@@ -96,8 +144,9 @@ public class armaa_notificationShower implements EveryFrameScript {
             entities.addAll(CampaignUtils.getNearbyEntitiesWithTag(flt, 1000f, Tags.CRYOSLEEPER));
 
             // Single-time event
-            if (notifications.get("armaa_valkHunter_event_id") == null
-                    && Global.getSector().getMemoryWithoutUpdate().contains("$armaa_engagedValkHunters")) {
+            String valkHunters = (String)Global.getSector().getMemoryWithoutUpdate().get("$armaa_engagedValkHunters");
+            if (valkHunters != null && notifications.get("armaa_valkHunter_event_id") == null
+                    && valkHunters.equals("true")) {
                 addNotification("valkHunter");
                 showNotificationOnce("armaa_valkHunter_event_id");
             }
@@ -183,9 +232,22 @@ public class armaa_notificationShower implements EveryFrameScript {
             }
         }
 
+        // Confirmation watchdog: anything that fired showRuleDialog() but whose
+        // $player.<id> flag is still true (rule never fired) gets re-queued after a timeout
+        for (armaa_NotificationBase notif : notifications.values()) {
+            notif.advanceConfirmation(amount);
+        }
+
         // Show next notification if none is showing
         if (!Global.getSector().getCampaignUI().isShowingDialog() && !notificationQueue.isEmpty()) {
             armaa_NotificationBase next = notificationQueue.remove(0);
+            // Re-verify gating at show time: a retried or recovered notification may
+            // have been armed while Dawn was aboard but popped after she left.
+            // shouldBeShownOnce is still true here, so the interval loop re-queues
+            // it and it fires once she's back in the fleet. Nothing is consumed.
+            if (next.requiresDawn && !dawnIsPresent()) {
+                return;
+            }
             next.showIfRequested();
         }
     }

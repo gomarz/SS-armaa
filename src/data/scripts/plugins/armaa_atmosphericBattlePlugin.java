@@ -94,8 +94,15 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         if (!runOnce) {
             engine.getFleetManager(0).setSuppressDeploymentMessages(true);
             engine.getCombatUI().hideShipInfo();
-
+            ShipAPI ally;
+            ally = engine.getFleetManager(0).spawnShipOrWing("brawler_pather_Raider", new Vector2f(-100, -10000), 0f, 10f);
+            ally.setAlly(true);
+            ally = engine.getFleetManager(0).spawnShipOrWing("gremlin_luddic_path_Strike", new Vector2f(0, -10000), 0f, 10f);
+            ally.setAlly(true);
+            ally = engine.getFleetManager(0).spawnShipOrWing("manticore_luddic_path_Strike", new Vector2f(100, -10000), 0f, 10f);
+            ally.setAlly(true);
             Global.getSoundPlayer().playCustomMusic(1, 1, "music_encounter_mysterious_non_aggressive", true);
+            engine.getFleetManager(0).setSuppressDeploymentMessages(false);
             runOnce = true;
 
             //let's get the largest ship in player fleet, that can't be deployed
@@ -120,9 +127,9 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             cutsceneTextInterval.advance(amount);
             for (ShipAPI ship : engine.getAllShips()) {
                 ship.blockCommandForOneFrame(ShipCommand.ACCELERATE);
-               // ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
-               // ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
-               // ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
+                // ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
+                // ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
+                // ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
                 ship.getVelocity().set(0, 0);
             }
             if (engine.getPlayerShip() != null && Math.random() < 0.10f) {
@@ -158,11 +165,11 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         CombatEngineLayers.ABOVE_PARTICLES
                 );
                 showedTitle = true;
-                */
-            String minuteStr = armaa_utils.getMinuteString();
-            Global.getCombatEngine().addLayeredRenderingPlugin(
-                    new armaa_titleSplash("JENIUS - STAGING POINT A  " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
-                            " Automated defense perimeter"));                
+                 */
+                String minuteStr = armaa_utils.getMinuteString();
+                Global.getCombatEngine().addLayeredRenderingPlugin(
+                        new armaa_titleSplash("JENIUS - STAGING POINT A  " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
+                                " Automated defense perimeter"));
             }
         }
         float viewMult = engine.getViewport().getViewMult();
@@ -174,7 +181,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         float diag = (float) Math.sqrt(w * w + h * h);
         float minCover = diag * 1.05f;
 
-        float base = w * (1.2f + 3f * Math.min(2f,ratio));
+        float base = w * (1.2f + 3f * Math.min(2f, ratio));
 
         // actual size with zoom response
         float s1 = base * inv;
@@ -183,8 +190,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         Vector2f bgsize = new Vector2f(s1, s1);
         if (ratio >= 0.1f) {
-            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_atmo2");
-            SpriteAPI spr = Global.getSettings().getSprite(spriteName);            
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo2");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
                     spr,
                     MagicRender.positioning.CENTER,
@@ -210,7 +217,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         int a = Math.max(0, 255 - (int) (ratio * 255f));
         Color bg2Color = new Color(200, 155, 155, a);
         if (ratio < 0.45f && hidCutscene) {
-            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_atmo");        
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo");
             SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
                     spr,
@@ -237,7 +244,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
         if (!hidCutscene) {
             float level = cutsceneInterval.getElapsed() / cutsceneInterval.getIntervalDuration();
-            String spriteName = Global.getSettings().getString("armaa_missionBGs","armaa_atmo");        
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo");
             SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
                     spr,
@@ -572,8 +579,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport
             float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
             float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport
-            if(spinInterval.intervalElapsed())
-            {
+            if (spinInterval.intervalElapsed()) {
                 spin += 0.02f;
             }
             ShipAPI bossEne = null;
@@ -617,13 +623,11 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                 battleStr = engine.getFleetManager(0).getCurrStrength();
                 PersonAPI pilot = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, "remnant", new Random());
                 String bossStr = "hyperion_Attack";
-                String chaffStr = "armaa_morganamp_standard";
                 if (engine.getPlayerShip() != null) {
                     engine.addFloatingText(engine.getPlayerShip().getLocation(), "Reinforcements approaching from the north and soutj!", 36f, Color.yellow, engine.getPlayerShip(), 1f, 1f);
                 }
                 ShipAPI boss = engine.getFleetManager(1).spawnShipOrWing(bossStr, new Vector2f(0, 10000), 270f, 0f);
                 engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(-100, 10000), 270f, 5f);
-                engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(100, 10000), 270f, 5f);
                 boss.setCaptain(pilot);
                 Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
                 engine.getCombatUI().addMessage(1, boss, Color.red, boss.getName(), Color.white, ":", Color.cyan, "Unknown IFF detected; offworld origin. You've entered restricted space. Power down your weapons and surrender immediately, or face swift destruction. This is your only warning.");
@@ -916,14 +920,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         if (engine.getPlayerShip() != null) {
                             engine.addFloatingText(engine.getPlayerShip().getLocation(), "Reinforcements approaching from below us! South!", 36f, Color.yellow, engine.getPlayerShip(), 1f, 1f);
                         }
-                        for (int i = 0; i < 6; i++) {
+                        for (int i = 0; i < 3; i++) {
                             float randomPosX = MathUtils.getRandomNumberInRange(-10000f, 10000f);
                             float randomPosY = MathUtils.getRandomNumberInRange(-10000f, 10000f);
                             ShipAPI s = engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(randomPosX, randomPosY), 270f, 0f);
-                            s.setAnimatedLaunch();
-                            s = engine.getFleetManager(1).spawnShipOrWing("broadsword_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
-                            s.setAnimatedLaunch();
-                            s = engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
                             s.setAnimatedLaunch();
                             s = engine.getFleetManager(1).spawnShipOrWing("talon_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
                             s.setAnimatedLaunch();
@@ -983,12 +983,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     float cosF = (float) Math.cos(facingRad);
                     float sinF = (float) Math.sin(facingRad);
 
-
                     Vector2f nosePos = new Vector2f(
                             ship.getLocation().x + cosF * r * 0.6f,
                             ship.getLocation().y + sinF * r * 0.6f
                     );
-
 
                     float spawnOffset = MathUtils.getRandomNumberInRange(0f, r * 0.4f);
                     Vector2f fireSpawn = new Vector2f(
@@ -996,12 +994,10 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                             nosePos.y - sinF * spawnOffset
                     );
 
-
                     float trailSpeed = MathUtils.getRandomNumberInRange(600, 900);
                     float spread = (float) (Math.random() - 0.5f) * r * 3f;
                     float fireVx = -cosF * trailSpeed + sinF * spread + velX;
                     float fireVy = -sinF * trailSpeed - cosF * spread + velY;
-
 
                     float smokeOffset = MathUtils.getRandomNumberInRange(r * 0.3f, r * 1.5f);
                     Vector2f smokeSpawn = new Vector2f(
@@ -1011,7 +1007,6 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     float smokeSpeed = MathUtils.getRandomNumberInRange(200, 500);
                     float smokeVx = -cosF * smokeSpeed + velX;
                     float smokeVy = -sinF * smokeSpeed + velY;
-
 
                     if (Math.random() <= 1f - ratio && ratio >= 0.20f && ratio <= 0.60f) {
                         MagicRender.battlespace(
@@ -1035,8 +1030,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         );
                     }
 
-
-                    if (Math.random() <= 1f - ratio-0.15f && ratio >= 0.15f && ratio-0.15f <= 0.70f) {
+                    if (Math.random() <= 1f - ratio - 0.15f && ratio >= 0.15f && ratio - 0.15f <= 0.70f) {
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
                                 smokeSpawn,
@@ -1063,7 +1057,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         float particleSpeed = MathUtils.getRandomNumberInRange(800f, 1400f);
                         spread = (float) (Math.random() - 0.5f) * r * 0.4f;
 
-                        // Tight bright core particles — white/yellow, small, fast
+                        // Tight bright core particle
                         for (int i = 0; i < 3; i++) {
                             float s = (float) (Math.random() - 0.5f) * r * 0.3f;
                             Global.getCombatEngine().addSmoothParticle(
@@ -1082,7 +1076,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                             );
                         }
 
-                        // Outer plasma particles — orange/red, larger, slightly slower
+                        // Outer plasma particle
                         for (int i = 0; i < 2; i++) {
                             float s = (float) (Math.random() - 0.5f) * r * 0.8f;
                             Global.getCombatEngine().addSmoothParticle(
@@ -1196,7 +1190,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         "Hold steady."
                 );
                 break;
-            */
+         */
         //}
     }
 

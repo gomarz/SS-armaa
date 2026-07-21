@@ -173,7 +173,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             for (ShipAPI module : boss.getChildModulesCopy()) {
                 module.setCaptain(pilot);
             }
-            Global.getCombatEngine().addLayeredRenderingPlugin(new armaa_WarningMessage("A@#%TFC!", "Registry: ERROR - Threat assessment: UNRESOLVED", null));
+            Global.getCombatEngine().addLayeredRenderingPlugin(new armaa_WarningMessage("NO DATA", "Registry: ERROR - Threat assessment: UNRESOLVED", null));
             Global.getSoundPlayer().playUISound("armaa_boss_warning", 0.85f, 1.1f);
             armaa_rajanyaBossPlugin.Config cfg = new armaa_rajanyaBossPlugin.Config();
             cfg.phase1Threshold = 0.75f;
@@ -204,8 +204,6 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
             Global.getCombatEngine().addLayeredRenderingPlugin(warningMessage);
             // fires 60 homing projectiles over an interval of 0.15s that rise from above then fire at target's location
             // not quite accurate and should be easily evaded
-            Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(0, -10000), 270f, 30f);
-            Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("hyperion_Attack", new Vector2f(-500, -10000), 270f, 30f);
             targetScrollSpeed = 0f;
             if (cylinderRenderer != null) {
                 cylinderRenderer.setSpeed(0f);

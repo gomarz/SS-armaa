@@ -285,6 +285,7 @@ public class armaa_mirageShroudStats extends BaseShipSystemScript {
                     clone.setFacing(ship.getFacing());
                     clone.setShipSystemDisabled(true);
                     clone.getVelocity().set(new Vector2f(ship.getVelocity()));
+                    //clone.setWing(fwapi);
                     Global.getCombatEngine().spawnEmpArcVisual(ship.getLocation(), ship, vec, clone, 25f, ship.getSystem().getSpecAPI().getJitterEffectColor(), Color.white);
                     
                     // spawn particles

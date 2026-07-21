@@ -31,7 +31,7 @@ public class armaa_RajanyaLaserAttack extends BaseCombatLayeredRenderingPlugin {
     private static final int TRAIL_LENGTH = 72;
     private static final float SPAWN_INTERVAL = 0.15f;
 
-    // Phase 3 arc tuning — lower steer = wider, more sweeping arc
+    // Phase 3 arc tuning
     private static final float PHASE3_STEER_RATE = 0.22f; // reduced for gentler arc
 
     private static final float BRIGHTNESS_SIZE_MIN = 0.1f;

@@ -17,6 +17,7 @@ import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.util.Misc;
+import java.awt.Color;
 import java.util.List;
 import org.lazywizard.lazylib.combat.CombatUtils;
 
@@ -45,7 +46,7 @@ public class armaa_spareChassis extends BaseHullMod {
         if (ship.getOriginalOwner() < 0) {
             return;
         }
-        if (Global.getCombatEngine().getTotalElapsedTime(false) > 50) {
+        if (Global.getCombatEngine().getTotalElapsedTime(false) > 1) {
             if (!ship.isStationModule() && !ship.hasListenerOfClass(armaa_chassisReplacementTracker.class)) {
                 if (!ship.getCustomData().containsKey("armaa_addedReplacementTracker")) {
                     ship.addListener(new armaa_chassisReplacementTracker(ship));
@@ -81,7 +82,7 @@ public class armaa_spareChassis extends BaseHullMod {
                     if (member.getVariant() == null) {
                         continue;
                     }
-                    if (!member.getVariant().hasHullMod("armaa_spare_chassis_storage")) {
+                    if (!member.getVariant().getHullMods().contains("armaa_spare_chassis_storage")) {
                         continue;
                     }
                     switch (member.getHullSpec().getHullSize()) {
@@ -164,9 +165,9 @@ public class armaa_spareChassis extends BaseHullMod {
             Global.getCombatEngine().getCustomData().put(GLOBAL_POOL_KEY, newVal);
         }
         if (newVal <= 0 && ship.getOriginalOwner() == 0 && !ship.isAlly()) {
-            Global.getCombatEngine().getCombatUI().addMessage(1, "All spare chassis have been expended.");
+            Global.getCombatEngine().getCombatUI().addMessage(1,Color.red, "All spare chassis have been expended.");
         } else if (newVal <= 0 && ship.getOriginalOwner() == 1) {
-            Global.getCombatEngine().getCombatUI().addMessage(1, "All enemy spare chassis have been expended.");
+            Global.getCombatEngine().getCombatUI().addMessage(1,Misc.getPositiveHighlightColor(), "All enemy spare chassis have been expended.");
         }
     }
 
@@ -205,7 +206,8 @@ public class armaa_spareChassis extends BaseHullMod {
                 if (carrier == null) {
                     continue;
                 }
-                if (target.getVariant().hasHullMod("armaa_spare_chassis_storage") || !isPlayerShip) {
+                // Why does this matter? If they have enough spares, just spawn it from any carrier
+                if (target.hasLaunchBays()) {
                     //Global.getLogger(this.getClass()).info("Found carrier for: " + ship.getName() + " " + owner + " vs " + ship.getOriginalOwner());
                     carrier = target;
                     break;
@@ -270,8 +272,11 @@ public class armaa_spareChassis extends BaseHullMod {
             }
 
             Global.getCombatEngine().getFleetManager(ship.getOriginalOwner()).addToReserves(member);
-            Global.getCombatEngine().addPlugin(new armaa_spareChassisSpawner(member, carrier.getLocation(), ship.getFacing(), ship.getOriginalOwner(), ship.isAlly()));
+            Global.getCombatEngine().addPlugin(new armaa_spareChassisSpawner(member, carrier.getLocation(), ship.getFacing(), ship.getOriginalOwner(), member.isAlly()));
             deductFromPool(ship);
+            if(ship.getOriginalOwner() == 0 && !ship.isAlly())
+            Global.getCombatEngine().getCombatUI().addMessage(0,ship,Global.getSettings().getBrightPlayerColor(), "Consumed spare chassis for " + ship.getHullSpec().getHullNameWithDashClass()+", " + getPool(ship) + " remain.");
+
             hasRespawned = true;
             ship.removeListener(this);
         }

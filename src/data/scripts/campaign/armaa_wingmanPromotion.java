@@ -35,10 +35,23 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
     private int numEngagements = 0;
     RepLevel rewardLimitPerson = null;
     RepLevel penaltyLimitPerson = null;
-    transient int memberToPromote;
     transient boolean isWin = false;
     private transient Map<FleetMemberAPI, List<Integer>> promoteablePilots = new HashMap<>();
+    private transient Map<String, Float> damageThisBattle = new HashMap<String, Float>();
     transient EngagementResultAPI batResult;
+    // XP tuning: base XP needed for the first level; scales linearly with level.
+    public static float XP_BASE = 250f;
+    // How much a battle contributes: flat floor + scaled by the ship's hull damage output.
+    public static float XP_FLAT_PER_BATTLE = 10f;
+    public static float XP_PER_DAMAGE = 2.0f;
+    public static float XP_PER_ENGAGEMENT = 5f;
+    public static float XP_MAX_BATTLE_FRACTION = 0.5f;
+    // Latent-talent Ace awakening: per-engagement chance, gated behind the latent
+    // tag (rolled at pilot creation) and the fleet-wide Ace cap.
+    public static float ACE_AWAKEN_CHANCE_PER_ENGAGEMENT = 0.03f;
+    // Loyalty floor for the awakening roll. Low (vs the 0.50 at-cap elite gate) so
+    // a promising rookie can surprise the player early rather than only at max level.
+    public static float ACE_AWAKEN_MIN_REL = 0.25f;
 
     public static long getReAdjustedXp() {
         return Global.getSector().getPlayerStats().getXP()
@@ -124,11 +137,36 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
     public void reportPlayerEngagement(EngagementResultAPI result) {
         batResult = result;
         numEngagements++;
+        if (damageThisBattle == null) {
+            damageThisBattle = new HashMap<String, Float>();
+        }
+
+        CombatDamageData dmgData = result.getLastCombatDamageData();
+        if (dmgData == null) {
+            return;
+        }
+
+        for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
+                .getFleetData().getMembersListCopy()) {
+            if (dmgData.getDealtBy(member) == null
+                    || dmgData.getDealtBy(member).getDamage() == null) {
+                continue;
+            }
+            float rawHull = 0f;
+            for (CombatDamageData.DamageToFleetMember f
+                    : dmgData.getDealtBy(member).getDamage().values()) {
+                rawHull += f.hullDamage;
+            }
+            String key = member.getId();
+            float prev = damageThisBattle.containsKey(key) ? damageThisBattle.get(key) : 0f;
+            damageThisBattle.put(key, prev + rawHull);
+        }
     }
 
     @Override
     public void reportBattleOccurred(CampaignFleetAPI primaryWinner, BattleAPI battle) {
         if (!battle.isPlayerInvolved() || batResult == null) {
+            clearBattleState();
             return;
         }
 
@@ -138,6 +176,7 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
         List<DataForEncounterSide> sideData = new ArrayList<DataForEncounterSide>();
         long xpEarned = getReAdjustedXp();
         if (xpEarned <= 0) {
+            clearBattleState();
             return;
         }
 
@@ -151,11 +190,7 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
         DataForEncounterSide sideOne = winnerData;
         DataForEncounterSide sideTwo = loserData;
 
-        DataForEncounterSide player = sideOne;
-        DataForEncounterSide enemy = sideTwo;
         if (battle.isPlayerSide(battle.getSideFor(sideTwo.getFleet()))) {
-            player = sideTwo;
-            enemy = sideOne;
         }
 
         EngagementResultForFleetAPI enemyFleet = loserResult.isPlayer() ? winnerResult : loserResult;
@@ -207,14 +242,10 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
             }
 
             float damageDealt = 0f;
-            if (batResult.getLastCombatDamageData() != null
-                    && batResult.getLastCombatDamageData().getDealtBy(member).getDamage() != null) {
-                for (CombatDamageData.DamageToFleetMember f
-                        : batResult.getLastCombatDamageData().getDealtBy(member).getDamage().values()) {
-                    damageDealt += f.hullDamage;
-                }
-                damageDealt = damageDealt / member.getMemberStrength() / 5f;
+            if (damageThisBattle != null && damageThisBattle.containsKey(member.getId())) {
+                damageDealt = damageThisBattle.get(member.getId());
             }
+            damageDealt = damageDealt / member.getMemberStrength() / 5f;
             adjustRelations(member, allyCasualties, damageDealt);
         }
 
@@ -269,12 +300,10 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
                 promoteablePilots.clear();
             }
         }
-
-        batResult = null;
-        previousXP = Global.getSector().getPlayerStats().getXP();
         enemyCasualties.clear();
         allyCasualties.clear();
-        numEngagements = 0;
+        previousXP = Global.getSector().getPlayerStats().getXP();
+        clearBattleState();
     }
 
     private void adjustRelations(FleetMemberAPI member, List<FleetMemberAPI> members, float damageDealt) {
@@ -330,10 +359,9 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
                             completionRepPerson, null, true, false),
                     pilot);
 
-            levelUpIfApplicable(pilot, j, callsign, member);
+            levelUpIfApplicable(pilot, j, callsign, member, damageDealt);
 
             if (pilot.getRelToPlayer().getRel() >= .70f) {
-                memberToPromote = j;
                 pilots.add(j);
             }
         }
@@ -367,76 +395,156 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
     }
 
     // -------------------------------------------------------------------------
-    // levelUpIfApplicable — rebalanced + perf-fixed
+    // levelUpIfApplicable fork:
+    //   (always)   -> latent-talent pilots roll for Ace awakening at ANY level
+    //   below cap  -> deterministic XP accumulation (loyalty scales the rate)
+    //   at/above   -> RNG elite skill upgrades (requires loyalty)
     // -------------------------------------------------------------------------
-    public void levelUpIfApplicable(PersonAPI pilot, int j, String callsign, FleetMemberAPI member) {
-        int PILOT_LEVEL_CAP = 2;
-        if(Global.getSettings().getModManager().isModEnabled("lunalib"))
-        {
-           PILOT_LEVEL_CAP = LunaSettings.getInt("armaa", "armaa_wingcomMaxLevel");
+    public void levelUpIfApplicable(PersonAPI pilot, int j, String callsign,
+            FleetMemberAPI member, float damageDealt) {
+        int levelCap = 2;
+        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
+            levelCap = LunaSettings.getInt("armaa", "armaa_wingcomMaxLevel");
         }
-        // --- PERF FIX (item 6): reference static final list, no allocation ---
-        // (armaa_wingCommander.VALID_SKILLS is an unmodifiable static list)
-        if (pilot.getStats().getLevel() >= PILOT_LEVEL_CAP) {
-            MutableCharacterStatsAPI playerStats = Global.getSector().getPlayerFleet()
-                    .getFleetData().getCommander().getStats();
-            int maxElite = (int) Global.getSettings().getInt("officerMaxEliteSkills")
-                    + (int) playerStats.getDynamic().getMod(Stats.OFFICER_MAX_ELITE_SKILLS_MOD).computeEffective(0);
+        final String captainId = member.getCaptain().getId();
 
-            if (pilot.getRelToPlayer().getRel() < 0.50f) {
-                return;
-            }
-            if (Misc.getNumEliteSkills(pilot) >= maxElite) {
-                return;
-            }
+        // Latent-talent Ace awakening can fire at ANY level. Hidden from the player:
+        // no UI marker distinguishes these pilots, and the SP "Promote to Ace" button
+        // is gated to max level for everyone, so it reveals nothing. The only tell is
+        // that a latent pilot may unexpectedly become an Ace early in its career.
+        if (tryLatentAwakening(pilot, j, callsign, captainId)) {
+            return; // awakening is the event this battle; skip XP/elite this turn
+        }
 
-            float eliteChance = 0.05f * numEngagements;
-            if (Math.random() > eliteChance) {
-                return;
-            }
+        if (pilot.getStats().getLevel() < levelCap) {
+            accrueXp(pilot, j, callsign, captainId, damageDealt, levelCap);
+        } else {
+            tryEliteUpgrade(pilot, j, callsign, captainId);
+        }
+    }
 
+    // --- LATENT AWAKENING: rare per-battle roll, any level, low loyalty floor so a
+    //     promising rookie can surprise the player early. Returns true if it fired. ---
+    private boolean tryLatentAwakening(PersonAPI pilot, int j, String callsign, String captainId) {
+        if (!pilot.hasTag("armaa_latentTalent")
+                || armaa_AceUtil.hasAce(pilot)
+                || !armaa_AceUtil.canGrantAce()) {
+            return false;
+        }
+        if (pilot.getRelToPlayer().getRel() < ACE_AWAKEN_MIN_REL) {
+            return false;
+        }
+        if (Math.random() >= ACE_AWAKEN_CHANCE_PER_ENGAGEMENT * numEngagements) {
+            return false;
+        }
+        if (!armaa_AceUtil.grantAce(pilot)) {
+            return false; // cap raced out from under us between check and grant
+        }
+        pilot.removeTag("armaa_latentTalent");
+        Global.getSector().getCampaignUI().addMessage(
+                "Pilot, callsign \"" + callsign + "\" has awakened as an ACE PILOT!",
+                Misc.getHighlightColor());
+        Global.getSector().getPersistentData().put(
+                "armaa_wingCommander_wingman_" + j + "_" + captainId, pilot);
+        return true;
+    }
+
+    // --- BELOW CAP: deterministic XP. Loyalty scales the rate; it never blocks. ---
+    private void accrueXp(PersonAPI pilot, int j, String callsign,
+            String captainId, float damageDealt, int levelCap) {
+        final String xpKey = "armaa_wingCommander_wingman_" + j + "_xp_" + captainId;
+        float xp = 0f;
+        Object xpObj = Global.getSector().getPersistentData().get(xpKey);
+        if (xpObj instanceof Float) {
+            xp = (Float) xpObj;
+        }
+
+        int level = pilot.getStats().getLevel();
+        float threshold = XP_BASE * (level + 1);
+
+        float loyaltyMult = Math.max(0.25f, 0.5f + pilot.getRelToPlayer().getRel());
+
+        // Damage is the primary driver; engagements are a minor nudge.
+        float battleKick = damageDealt * XP_PER_DAMAGE + numEngagements * XP_PER_ENGAGEMENT;
+        // Ceiling scales with the level requirement, so big battles stay rewarding
+        // at every level but can never one-shot a level.
+        float maxPerBattle = threshold * XP_MAX_BATTLE_FRACTION;
+        float gained = (XP_FLAT_PER_BATTLE + Math.min(battleKick, maxPerBattle)) * loyaltyMult;
+        xp += gained;
+
+        while (level < levelCap && xp >= threshold) {
             MutableCharacterStatsAPI stats = pilot.getStats();
-            for (MutableCharacterStatsAPI.SkillLevelAPI skill : stats.getSkillsCopy()) {
-                if (!armaa_wingCommander.VALID_SKILLS.contains(skill.getSkill().getId())) {
-                    continue;
-                }
-                if ((int) stats.getSkillLevel(skill.getSkill().getId()) == 1) {
-                    Global.getSector().getCampaignUI().addMessage(
-                            "Pilot, callsign \"" + callsign + "\"'s aptitude in "
-                            + skill.getSkill().getName() + " increased to Elite!",
-                            Misc.getHighlightColor());
-                    stats.increaseSkill(skill.getSkill().getId());
-                    Global.getSector().getPersistentData().put(
-                            "armaa_wingCommander_wingman_" + j + "_" + member.getCaptain().getId(), pilot);
-                    break;
-                }
+            String newSkill = OfficerManagerEvent.pickSkill(
+                    pilot, armaa_wingCommander.VALID_SKILLS,
+                    OfficerManagerEvent.SkillPickPreference.YES_ENERGY_YES_BALLISTIC_YES_MISSILE_YES_DEFENSE,
+                    0, new Random());
+
+            if (newSkill == null || stats.hasSkill(newSkill)) {
+                break; // no skill to grant; stop, leave xp banked at/above threshold
             }
-            return;
-        }
 
-        float levelUpChance = (PILOT_LEVEL_CAP - pilot.getStats().getLevel()) * 0.10f * numEngagements;
-        if (Math.random() > levelUpChance) {
-            return;
-        }
-        if (pilot.getRelToPlayer().getRel() < 0.25f) {
-            return;
-        }
-
-        MutableCharacterStatsAPI stats = pilot.getStats();
-        String newSkill = OfficerManagerEvent.pickSkill(
-                pilot, armaa_wingCommander.VALID_SKILLS,
-                OfficerManagerEvent.SkillPickPreference.YES_ENERGY_YES_BALLISTIC_YES_MISSILE_YES_DEFENSE,
-                0, new Random());
-
-        if (newSkill != null && !stats.hasSkill(newSkill)) {
+            xp -= threshold;
             String skillName = Global.getSettings().getSkillSpec(newSkill).getName();
             Global.getSector().getCampaignUI().addMessage(
                     "Pilot, callsign \"" + callsign + "\" learned " + skillName + "!",
                     Misc.getHighlightColor());
             stats.increaseSkill(newSkill);
             stats.setLevel(stats.getLevel() + 1);
-            Global.getSector().getPersistentData().put(
-                    "armaa_wingCommander_wingman_" + j + "_" + member.getCaptain().getId(), pilot);
+
+            level = stats.getLevel();
+            threshold = XP_BASE * (level + 1);
+        }
+
+        // If we've reached the cap, dump any leftover overflow it can't be spent
+        // (at-cap pilots progress via the RNG elite path, not XP).
+        if (level >= levelCap) {
+            xp = 0f;
+        }
+
+        Global.getSector().getPersistentData().put(xpKey, xp);
+        Global.getSector().getPersistentData().put(
+                "armaa_wingCommander_wingman_" + j + "_" + captainId, pilot);
+    }
+
+    private void tryEliteUpgrade(PersonAPI pilot, int j, String callsign, String captainId) {
+        if (pilot.getRelToPlayer().getRel() < 0.50f) {
+            return;
+        }
+
+        MutableCharacterStatsAPI playerStats = Global.getSector().getPlayerFleet()
+                .getFleetData().getCommander().getStats();
+        int maxElite = (int) Global.getSettings().getInt("officerMaxEliteSkills")
+                + (int) playerStats.getDynamic().getMod(Stats.OFFICER_MAX_ELITE_SKILLS_MOD).computeEffective(0);
+        if (Misc.getNumEliteSkills(pilot) >= maxElite) {
+            return;
+        }
+        if (Math.random() > 0.05f * numEngagements) {
+            return;
+        }
+
+        MutableCharacterStatsAPI stats = pilot.getStats();
+        for (MutableCharacterStatsAPI.SkillLevelAPI skill : stats.getSkillsCopy()) {
+            if (!armaa_wingCommander.VALID_SKILLS.contains(skill.getSkill().getId())) {
+                continue;
+            }
+            if ((int) stats.getSkillLevel(skill.getSkill().getId()) == 1) {
+                Global.getSector().getCampaignUI().addMessage(
+                        "Pilot, callsign \"" + callsign + "\"'s aptitude in "
+                        + skill.getSkill().getName() + " increased to Elite!",
+                        Misc.getHighlightColor());
+                stats.increaseSkill(skill.getSkill().getId());
+                Global.getSector().getPersistentData().put(
+                        "armaa_wingCommander_wingman_" + j + "_" + captainId, pilot);
+                break;
+            }
+        }
+    }
+
+    private void clearBattleState() {
+        batResult = null;
+        numEngagements = 0;
+        if (damageThisBattle != null) {
+            damageThisBattle.clear();
         }
     }
 }

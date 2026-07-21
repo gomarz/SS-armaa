@@ -26,7 +26,8 @@ public class armaa_pilaBladeEffect implements EveryFrameWeaponEffectPlugin {
         if (!MagicRender.screenCheck(0.1f, weapon.getLocation()) || Global.getCombatEngine().isPaused()) {
             return;
         }
-
+		weapon.getShip().getMutableStats().getWeaponRangeThreshold().modifyFlat("armaa_noLongBeams_"+weapon.getShip().getId(), 20f);
+		weapon.getShip().getMutableStats().getWeaponRangeMultPastThreshold().modifyMult("armaa_noLongBeams_"+weapon.getShip().getId(), 0.05f);
         ShipAPI ship = weapon.getShip();
 
         if (!ship.isAlive()) {

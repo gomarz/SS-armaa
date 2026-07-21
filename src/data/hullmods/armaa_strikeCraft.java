@@ -1,7 +1,11 @@
 package data.hullmods;
 
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignFleetAPI;
+import com.fs.starfarer.api.campaign.CampaignTerrainAPI;
+import com.fs.starfarer.api.campaign.CampaignTerrainPlugin;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.*;
@@ -10,6 +14,7 @@ import com.fs.starfarer.api.characters.*;
 import com.fs.starfarer.api.ui.UIPanelAPI;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.campaign.FleetDataAPI;
+import com.fs.starfarer.api.campaign.TerrainAIFlags;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.ui.Alignment;
@@ -17,6 +22,7 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.combat.listeners.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
+import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin;
 
 import org.lazywizard.lazylib.MathUtils;
 import org.magiclib.util.MagicUI;
@@ -101,17 +107,22 @@ public class armaa_strikeCraft extends BaseHullMod {
                 armaa_utils.applyMultMod(stats.getAllowZeroFluxAtAnyLevel(), id, -114514f);
             }
         }
+        CombatEngineAPI engine = Global.getCombatEngine();
+        //ShipAPI entity = stats.getEntity() == null ? null : (ShipAPI)stats.getEntity();
+        //Global.getSector().getCampaignUI().getCurrentCoreTab();
+        //if(entity != null)
+        //Global.getLogger(this.getClass()).info("Current State: "+ Global.getCurrentState() + "Combat Engine?:" + Global.getCombatEngine() + "Owner:" + entity.getOwner());
         stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
         stats.getSensorProfile().modifyMult(id, 0.5f);
         stats.getSensorStrength().modifyMult(id, 0.5f);
-
+        boolean carrierBonus = false;
         if (stats.getFleetMember() != null && stats.getFleetMember().getFleetData() != null) {
             FleetDataAPI fleet = stats.getFleetMember().getFleetData();
-            boolean carrierBonus = false;
             boolean independent = stats.getVariant().getHullSpec().getTags().contains("independent_of_carrier");
             boolean hasSupportingShip = false;
             //fleet.syncIfNeeded();
             for (FleetMemberAPI ship : fleet.getMembersListCopy()) {
+                //Global.getLogger(this.getClass()).info(ship.getHullId());
                 if (ship == stats.getFleetMember()) {
                     continue;
                 }
@@ -136,22 +147,56 @@ public class armaa_strikeCraft extends BaseHullMod {
             } else {
                 stats.getMaxBurnLevel().unmodify("armaa_carrierStorage");
             }
-
-            if (carrierBonus) {
-                stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).modifyMult("armaa_carrierStorageHyper", CORONA_EFFECT_REDUCTION);
-            }
         }
 
-        if (Global.getCombatEngine() != null || (Global.getSector() != null && Global.getSector().getCampaignUI() != null && Global.getSector().getCampaignUI().isShowingDialog())) {
-            stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).unmodify("armaa_carrierStorageHyper");
-        }
         if (stats.getVariant().getHullSpec().hasTag("armaa_launches_from_ships")) {
             stats.getVariant().getHullSpec().setTravelDriveId("armaa_traveldrive");
         }
+
+        if (Global.getCurrentState() == GameState.COMBAT && engine != null && !engine.isSimulation()) {
+
+            //Global.getLogger(this.getClass()).info("unapplying corona effect.");
+            stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).unmodify("armaa_carrierStorageHyper");
+            //omg
+            CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
+            if (pf != null) {
+
+                float worstMult = 1f;
+                for (CampaignTerrainAPI terrain : pf.getContainingLocation().getTerrainCopy()) {
+                    CampaignTerrainPlugin plugin = terrain.getPlugin();
+                    if (plugin == null) {
+                        continue;
+                    }
+                    if (!(plugin instanceof StarCoronaTerrainPlugin)) {
+                        continue;
+                    }
+                    StarCoronaTerrainPlugin t = (StarCoronaTerrainPlugin) plugin;
+                    float intensity = t.getIntensityAtPoint(pf.getLocation());
+                    if (intensity <= 0) {
+                        continue;
+                    }
+                    float peakFraction = 1f / Math.max(1.3333f, 1f + t.getParams().crLossMult * intensity);
+                    worstMult = Math.min(worstMult, peakFraction);
+                }
+                // actually apply the penalty
+                if (worstMult < 1f) {
+                    stats.getPeakCRDuration().modifyMult("armaa_coronaPPTpenalty", worstMult);
+                } else {
+                    stats.getPeakCRDuration().unmodify("armaa_coronaPPTpenalty");
+                }                
+            }
+
+        } else if (carrierBonus) {
+            stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).modifyMult("armaa_carrierStorageHyper", 0.0f);
+            stats.getPeakCRDuration().unmodify("armaa_coronaPPTpenalty");
+        }
+        //Global.getLogger(this.getClass()).info(stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).getPercentMods() + " mult " + stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).getMultMods() + "" + stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).getFlatMods());
+
     }
 
     @Override
-    public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id
+    ) {
         for (String tmp : BLOCKED_HULLMODS) {
             if (ship.getVariant().getHullMods().contains(tmp)) {
                 MagicIncompatibleHullmods.removeHullmodWithWarning(ship.getVariant(), tmp, "cataphract");
@@ -160,6 +205,8 @@ public class armaa_strikeCraft extends BaseHullMod {
         if (!ship.hasListenerOfClass(armaa_strikeCraft.StrikeCraftDeathMod.class)) {
             ship.addListener(new StrikeCraftDeathMod(ship));
         }
+        Global.getCombatEngine().getCustomData()
+                .put("armaa_strikeCraft_pptSnapshot_" + ship.getId(), ship.getMutableStats().getPeakCRDuration().createCopy());
     }
 
     public String getDescriptionParam(int index, HullSize hullSize) {
@@ -209,19 +256,19 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addPara("%s " + "No %s.", padS, Misc.getHighlightColor(), "\u2022", "zero-flux speed bonus");
         tooltip.addPara("%s " + "Combat Readiness decreases %s faster.", padS, arr2, "\u2022", (int) DEGRADE_INCREASE_PERCENT + "%");
         if (ship != null) {
-            tooltip.addPara("%s " + "Can dock at carriers to resupply %s times", padS, Misc.getHighlightColor(), "\u2022", "" + (armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost()));
+            tooltip.addPara("%s " + "Can dock at carriers to fully restore PPT, armor, and hull %s times", padS, Misc.getHighlightColor(), "\u2022", "" + (armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost()));
         }
-        tooltip.addPara("%s " + "Docking replenishes PPT, armor, hull, and ammo.", padS, Misc.getHighlightColor(), "\u2022");
+        tooltip.addPara("%s " + "Docking always restores CR and ammo, even if repairs are exhausted.", padS, Misc.getHighlightColor(), "\u2022");
         tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022", "frigates");
         tooltip.addSectionHeading("Point Defense Vulnerability", Alignment.MID, 10);
         TooltipMakerAPI pdWarning = tooltip.beginImageWithText("graphics/armaa/icons/hullsys/armaa_pdWarning.png", 64);
         pdWarning.addPara("%s " + "Receives extra damage ships/weapons would deal to fighters, up %s.", padS, Misc.getHighlightColor(), "\u2022", "25%");
         UIPanelAPI temp = tooltip.addImageWithText(10f);
-
+        if (ship != null) {
         tooltip.addSectionHeading("Refit Mode", Alignment.MID, 10);
         tooltip.addPara("Ship will " + getRefitMode(ship), pad, arr, "\u2022");
         tooltip.addSectionHeading("Carrier Bonuses", Alignment.MID, 10);
-        if (ship != null) {
+
             if (ship.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
                 for (FleetMemberAPI member : ship.getFleetMember().getFleetData().getMembersListCopy()) {
                     if (member.isCarrier()) {
@@ -230,10 +277,10 @@ public class armaa_strikeCraft extends BaseHullMod {
                     }
                 }
             }
-        }
+
 
         tooltip.addSectionHeading("Refit Penalties", Alignment.MID, 10);
-        if (ship != null && ship.getVariant() != null) {
+
             if (size.length() > 1) {
                 tooltip.addPara("%s " + "Large Strikecraft: %s", pad, arr2, "\u2022", size);
             }
@@ -316,10 +363,8 @@ public class armaa_strikeCraft extends BaseHullMod {
         int loadedWeps = 0;
         int dryWeps = 0;
 
-        for (ShipAPI module : target.getChildModulesCopy()) 
-        {
-            if(module.getCollisionClass() != target.getCollisionClass())
-            {
+        for (ShipAPI module : target.getChildModulesCopy()) {
+            if (module.getCollisionClass() != target.getCollisionClass()) {
                 module.setCollisionClass(target.getCollisionClass());
             }
             String key = "moduleRepair_isDestroyed" + "_" + module.getId();
@@ -390,8 +435,9 @@ public class armaa_strikeCraft extends BaseHullMod {
             return false;
         }
         for (ShipAPI carrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 10000.0F)) {
-            if(!armaa_utils.isValidCarrierFor(ship, carrier))
+            if (!armaa_utils.isValidCarrierFor(ship, carrier)) {
                 continue;
+            }
             if (carrier.getNumFighterBays() > 0) {
                 return true;
             }
@@ -403,15 +449,16 @@ public class armaa_strikeCraft extends BaseHullMod {
         ShipAPI potCarrier = null;
         float distance = 99999f;
         for (ShipAPI carrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 100000f)) {
-            if(!armaa_utils.isValidCarrierFor(ship, carrier))
+            if (!armaa_utils.isValidCarrierFor(ship, carrier)) {
                 continue;
-                if (carrier.getNumFighterBays() > 0 || carrier.hasLaunchBays()) {
-                    float dist = MathUtils.getDistance(ship, carrier);
-                    if (dist < distance) {
-                        distance = dist;
-                        potCarrier = carrier;
-                    }
+            }
+            if (carrier.getNumFighterBays() > 0 || carrier.hasLaunchBays()) {
+                float dist = MathUtils.getDistance(ship, carrier);
+                if (dist < distance) {
+                    distance = dist;
+                    potCarrier = carrier;
                 }
+            }
         }
         return potCarrier;
     }
@@ -548,7 +595,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             int side = ship.getOwner() == 1 ? 0 : 1;
             boolean safeToRetreat = !ship.areAnyEnemiesInRange() || !CombatUtils.isVisibleToSide(ship, side);
             boolean needsPPTRefit = lowPPT && safeToRetreat;
-            boolean poolCanRepairHullCR = armaa_strikeCraftRepairTracker.canRepairHullCR(ship);
+            boolean poolCanRepairHullCR = armaa_strikeCraftRepairTracker.hasRepairPool(ship);
 
             // Gate needs-refit on pool state so AI stops cycling when pool is exhausted
             boolean freshNeedsRefit = (armaa_utils.canRestoreHPOrCR(ship) && poolCanRepairHullCR)
@@ -640,17 +687,18 @@ public class armaa_strikeCraft extends BaseHullMod {
 
     private String getRepairCapacityString(ShipAPI ship) {
         int repairsLeft = armaa_strikeCraftRepairTracker.getRepairsRemaining(ship);
-        if(ship.getCustomData().containsKey("armaa_repairsExpended"))
-        {
-            if(ship.getOwner() == 0 && !ship.isAlly())
-                Global.getCombatEngine().getCombatUI().addMessage(0,ship,Misc.getPositiveHighlightColor(),ship.getName(),Color.white," has expended all repairs.");
-        }
         float pool = armaa_strikeCraftRepairTracker.getRepairPool(ship);
         if (repairsLeft > 0) {
             return repairsLeft + " REPAIR(S) REMAINING";
         } else if (pool > 0) {
             return "PARTIAL REPAIR AVAILABLE";
         } else {
+            if (!ship.getCustomData().containsKey("armaa_repairsExpended")) {
+                if (ship.getOwner() == 0 && !ship.isAlly()) {
+                    Global.getCombatEngine().getCombatUI().addMessage(0, ship, Misc.getPositiveHighlightColor(), ship.getName(), Color.white, " has expended all repairs.");
+                }
+                ship.getCustomData().put("armaa_repairsExpended", true);
+            }
             return "HULL/CR REPAIRS EXHAUSTED";
         }
     }

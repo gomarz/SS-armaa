@@ -3,6 +3,7 @@
     "startingFaction":true,
     "corvusCompatible":true,
     "noHomeworld":true,
+    "noRandomStartLocation":true, 
     "showIntelEvenIfDead":true,
     #"freeStart":true,
     #"spawnAsFactionId":"player",

@@ -53,8 +53,8 @@ public class armaa_linkedSystems implements EveryFrameWeaponEffectPlugin {
                 parent.getMutableStats().getMaxSpeed().unmodifyMult(key);
                 parent.getMutableStats().getMaxTurnRate().unmodifyMult(key);
                 parent.getMutableStats().getWeaponTurnRateBonus().unmodifyMult(key);
-                parent.removeListener(this);
-                return true;
+                ship.removeListener(this);
+                //return true;
             }
             return false;
         }
@@ -80,7 +80,7 @@ public class armaa_linkedSystems implements EveryFrameWeaponEffectPlugin {
         }
 
         if (!listenerAdded) {
-            parent.addListener(new armaa_ShieldModuleDeathListener(ship, parent, SHIELD_KEY));
+            ship.addListener(new armaa_ShieldModuleDeathListener(ship, parent, SHIELD_KEY));
             listenerAdded = true;
         }
 

@@ -171,10 +171,10 @@ public class armaa_drugsAreBad extends BaseCampaignEventListener implements Ever
 		int numDrugs = 0;
 		for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) 
 		{
-			if(member.getHullId().equals("armaa_valkazard") || member.getVariant().hasHullMod("armaa_sykoStims"))
+			if(member.getHullId().contains("armaa_valkazard") || member.getVariant().hasHullMod("armaa_sykoStims"))
 				if(Global.getSector().getPlayerFleet().getCargo().getCommodityQuantity(Commodities.DRUGS) > 0 && (playerFleet.getDeployed().contains(member) || allyCasualties.contains(member)))
 				{
-					numDrugs += (member.getHullId().equals("armaa_valkazard") ? 1 : armaa_sykoStims.DRUGS_CONSUMED);
+					numDrugs += (member.getHullId().contains("armaa_valkazard") ? 1 : armaa_sykoStims.DRUGS_CONSUMED);
 				}
 		}
 		if(numDrugs > 0)

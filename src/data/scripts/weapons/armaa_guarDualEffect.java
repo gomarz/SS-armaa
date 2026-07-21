@@ -22,13 +22,15 @@ import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
 import org.magiclib.util.MagicRender;
 
+
+//ugh crossing streams - refactor
 public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
 
     private boolean runOnce = false, cleared = false;
     private ShipAPI ship;
     private float sineD = 0f;
     // 1 = Plane, 0 = Robot
-    private float transformLevel = 0f, originalRArmPos = 0f, originalShoulderPos = 0f, originalRShoulderPos = 0f;
+    private float transformLevel = 0f, originalRArmPos = 0f;
     private boolean isRobot = true, transforming = false, forcedToMech, transformBlock = false;
     ;
     private SpriteAPI sprite;
@@ -38,9 +40,10 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
     private IntervalUtil transformInterval = new IntervalUtil(3f, 5f);
     private IntervalUtil forceTransformTimer = new IntervalUtil(0.5f, 5f);
     private final IntervalUtil animUpdateInterval = new IntervalUtil(0.033f, 0.05f);
-    private Vector2f ogPosL, ogPosR, ogPosRArm, ogPosLArm, ogPosLWing, ogPosRWing, ogPosGunF, ogPosLMissile, ogPosRMissile;
+    private Vector2f ogPosL,ogRArmSize, ogPosR, ogPosRArm, ogPosLArm, ogPosLWing, ogPosRWing, ogPosGunF, ogPosLMissile, ogPosRMissile;
     private final float TORSO_OFFSET = -150, LEFT_ARM_OFFSET = -90, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
-
+    private Vector2f ogGunFSize;
+    
     public void init() {
         runOnce = true;
         for (WeaponAPI w : ship.getAllWeapons()) {
@@ -66,14 +69,14 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                 case "D_PAULDRONL":
                     if (pauldronL == null) {
                         pauldronL = w;
-                        originalShoulderPos = pauldronL.getSprite().getCenterY();
+                        pauldronL.getSprite().getCenterY();
                         ogPosL = new Vector2f(pauldronL.getSprite().getCenterX(), pauldronL.getSprite().getCenterY());
                     }
                     break;
                 case "D_PAULDRONR":
                     if (pauldronR == null) {
                         pauldronR = w;
-                        originalRShoulderPos = pauldronL.getSprite().getCenterY();
+                        pauldronL.getSprite().getCenterY();
                         ogPosR = new Vector2f(pauldronR.getSprite().getCenterX(), pauldronR.getSprite().getCenterY());
                     }
                     break;
@@ -90,6 +93,8 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                         gun = w;
                         originalRArmPos = w.getSprite().getCenterY();
                         ogPosRArm = new Vector2f(gun.getSprite().getCenterX(), gun.getSprite().getCenterY());
+                        ogRArmSize = new Vector2f(gun.getSprite().getWidth(), gun.getSprite().getHeight());
+
                     }
                     break;
                 case "TRUE_GUN":
@@ -109,6 +114,8 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
                         }
 
                         ogPosGunF = new Vector2f(gunF.getSprite().getCenterX(), gunF.getSprite().getCenterY());
+                         ogGunFSize = new Vector2f(gunF.getSprite().getWidth(), gunF.getSprite().getHeight());
+                       
                     }
                     break;
                 case "WS0002":
@@ -453,8 +460,9 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             return;
         }
         if (gun != null) {
-            gun.getSprite().setCenterY(ogPosRArm.getY() + 6 * sineC);
-            gun.getSprite().setCenterX(ogPosRArm.getX() + 4 * sineC);
+            gun.getSprite().setCenterY(ogPosRArm.getY() - 24 * sineC);
+            gun.getSprite().setCenterX(ogPosRArm.getX() - 25 * sineC);
+            gun.getSprite().setSize(ogRArmSize.x * (1f - sineC), ogRArmSize.y * (1f - sineC));            
             if (realGun != null) {
                 if (!isRobot) {
                     if (realGun.getCurrAngle() < global - 5) {
@@ -504,8 +512,9 @@ public class armaa_guarDualEffect implements EveryFrameWeaponEffectPlugin {
             gun.getSprite().setColor(new Color((red) * (1f - transformLevel), (green) * (1f - transformLevel), (blue) * (1f - transformLevel), newAlpha));
             gunF.getSprite().setColor(new Color((red) * (transformLevel), green * transformLevel, blue * transformLevel, sineC));
             //gunF.getSprite().setCenterY(ogPosGunF.getY()-4*sineC);
-            gunF.getSprite().setCenterX(ogPosGunF.getX() - 6 * (1f - sineC));
-            gunF.getSprite().setCenterY(ogPosGunF.getY() + 0 * (1f - sineC));
+            gunF.getSprite().setCenterX(ogPosGunF.getX() - 27 * (1f - sineC));
+            gunF.getSprite().setCenterY(ogPosGunF.getY() - 42 * (1f - sineC));
+            gunF.getSprite().setSize(ogGunFSize.x * sineC, ogGunFSize.y * sineC);            
         }
 
         if (pauldronL != null) {

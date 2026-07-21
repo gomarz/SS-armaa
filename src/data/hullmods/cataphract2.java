@@ -165,7 +165,7 @@ public class cataphract2 extends BaseHullMod {
                     .getContrailColor().setBase(new Color(0f, 0f, 0f, 0f));
             member.getFleetData().getFleet().getViewForMember(member)
                     .getEngineColor().setBase(new Color(0f, 0f, 0f, 0f));
-            member.setSpriteOverride("");
+            member.setSpriteOverride("graphics/fx/empty.png");
         }
         // we track the ground bonuses in data.scripts.campaign.armaa_cataphractGBListener
     }

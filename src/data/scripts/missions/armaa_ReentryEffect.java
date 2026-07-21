@@ -11,10 +11,6 @@ import java.util.EnumSet;
 
 /**
  * Fullscreen atmospheric reentry heat effect.
- *
- * Renders a vignette + color overlay suggesting heat buildup. No shader
- * required — pure GL blending.
- *
  * Usage: armaa_ReentryEffect fx = new armaa_ReentryEffect();
  * Global.getCombatEngine().addLayeredRenderingPlugin(fx); // later, to begin
  * fading out: fx.beginFadeOut();

@@ -6,7 +6,6 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.combat.StatBonus;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import static data.hullmods.cataphract2.GROUND_BONUS;
 import static data.hullmods.cataphract2.getCRPenalty;
 import java.util.ArrayList;
 
@@ -25,19 +24,24 @@ public class armaa_cataphractGBListener extends BaseCampaignEventListenerAndScri
         }
 
         // Reapply from current fleet
-        if(Global.getSector().getPlayerFleet().getCargo().getMarines() < 0)
+        if (Global.getSector().getPlayerFleet().getCargo().getMarines() < 0) {
             return;
+        }
         for (FleetMemberAPI f : Global.getSector().getPlayerFleet()
                 .getFleetData().getMembersListCopy()) {
-            if(!f.getVariant().hasHullMod("cataphract") && !f.getVariant().hasHullMod("cataphract2"))
+            if (!f.getVariant().hasHullMod("cataphract") 
+                    && !f.getVariant().hasHullMod("cataphract2") 
+                    && !f.getVariant().hasHullMod("armaa_variableUnit")
+                    && (!f.getVariant().hasHullMod("armaa_comboUnit"))) {
                 continue;
+            }
             if (f.getRepairTracker().getBaseCR() >= getCRPenalty(f.getVariant())
                     && f.getFleetData().getFleet() != null) {
                 float level = f.getCaptain().isDefault() ? 1f
                         : f.getCaptain().getStats().getLevel();
-                Float groundVal = GROUND_BONUS.get(f.getHullSpec().getBaseHullId());
-                float bonus = (groundVal != null) ? groundVal : f.getDeploymentPointsCost();
-                mod.modifyFlat("armaa_" + f.getId(), bonus * level, f.getShipName());
+                Float groundVal = f.getDeploymentPointsCost();
+                float bonus = (groundVal != null) ? groundVal : f.getFleetPointCost();
+                mod.modifyFlat("armaa_" + f.getId(), Math.min(325f, bonus * level), f.getShipName());
             }
         }
     }

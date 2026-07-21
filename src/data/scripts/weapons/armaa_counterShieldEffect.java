@@ -161,7 +161,6 @@ public class armaa_counterShieldEffect implements EveryFrameWeaponEffectPlugin {
 
             if (interval.intervalElapsed() && gauge >= 1f && isFiring) {
                 String weaponId = "armaa_valkazard_countershield_secondary";
-                Vector2f muzzleLocation = weapon.getSpec().getTurretFireOffsets().get(0);
                 for (int i = 0; i < 1; i++) {
 
                     ShipAPI target1 = null;

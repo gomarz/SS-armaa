@@ -22,10 +22,14 @@ import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.loading.FighterWingSpecAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Sounds;
 import com.fs.starfarer.api.impl.campaign.ids.Voices;
+import com.fs.starfarer.api.impl.campaign.rulecmd.SetStoryOption.BaseOptionStoryPointActionDelegate;
+import com.fs.starfarer.api.impl.campaign.rulecmd.SetStoryOption.StoryOptionParams;
+import data.hullmods.armaa_wingCommander;
 import data.scripts.MechaModPlugin;
-
-import data.scripts.campaign.intel.armaa_promoteWingman;
+import data.scripts.campaign.armaa_AceUtil;
+import data.scripts.campaign.armaa_wingmanPromotion;
 
 import org.apache.log4j.Logger;
 
@@ -37,20 +41,21 @@ import java.util.Set;
 import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_squadManagerIntel extends BaseIntelPlugin {
+
     public static Logger log = Global.getLogger(armaa_squadManagerIntel.class);
 
     public static final boolean DISPLAY_ONLY = false;
-    public static final Tab BUTTON_FLEET   = Tab.FLEET;
+    public static final Tab BUTTON_FLEET = Tab.FLEET;
     public static final Tab BUTTON_PORTRAIT = Tab.PORTRAIT;
-    public static final Tab BUTTON_HELP    = Tab.HELP;
+    public static final Tab BUTTON_HELP = Tab.HELP;
     public static final String BUTTON_INSURE_ALL = "btn_insureAll";
 
-    // Prefix constants — keeps all the string keys in one place so they
+    // Prefix constants
     // can't silently diverge between createSquadView and buttonPressConfirmed
-    private static final String ACT_PORTRAIT  = "portrait";
+    private static final String ACT_PORTRAIT = "portrait";
     private static final String ACT_SKILL_SWAP = "skillSwap";
-    private static final String ACT_PROMOTE   = "promote";
-
+    private static final String ACT_PROMOTE = "promote";
+    private static final String ACT_ACE = "grantAce";   // <-- add
     protected transient Tab currentTab;
     protected PersonAPI member;
     protected int pilot;
@@ -71,32 +76,44 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         return Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy();
     }
 
-    public float getCredits() { return 1; }
+    public float getCredits() {
+        return 1;
+    }
 
     @Override
-    public String getSmallDescriptionTitle() { return "getName"; }
+    public String getSmallDescriptionTitle() {
+        return "getName";
+    }
 
     protected String getName() {
-        if (listInfoParam != null && listInfoParam instanceof List)
+        if (listInfoParam != null && listInfoParam instanceof List) {
             return "titleV2Expire";
+        }
         return "WINGCOM Management";
     }
 
-    @Override public boolean hasSmallDescription()  { return false; }
-    @Override public boolean hasLargeDescription()  { return true; }
-    @Override public boolean isPlayerVisible()       { return true; }
+    @Override
+    public boolean hasSmallDescription() {
+        return false;
+    }
 
-    public static int TAB_BUTTON_HEIGHT   = 20;
-    public static int TAB_BUTTON_WIDTH    = 180;
-    public static int ENTRY_HEIGHT        = 80;
-    public static int ENTRY_WIDTH         = 300;
-    public static int IMAGE_WIDTH         = 80;
+    @Override
+    public boolean hasLargeDescription() {
+        return true;
+    }
+
+    @Override
+    public boolean isPlayerVisible() {
+        return true;
+    }
+
+    public static int TAB_BUTTON_HEIGHT = 20;
+    public static int TAB_BUTTON_WIDTH = 180;
+    public static int ENTRY_HEIGHT = 80;
+    public static int ENTRY_WIDTH = 300;
+    public static int IMAGE_WIDTH = 80;
     public static int MANAGE_BUTTON_WIDTH = 120;
-    public static int IMAGE_DESC_GAP      = 12;
-
-    // -------------------------------------------------------------------------
-    // Image helpers
-    // -------------------------------------------------------------------------
+    public static int IMAGE_DESC_GAP = 12;
 
     public TooltipMakerAPI createPersonImageForPanel(CustomPanelAPI panel,
             PersonAPI person, float width, float height) {
@@ -123,36 +140,19 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Valid skill list — mirrors the one in armaa_wingmanPromotion so both
-    // the auto-learn system and the manual swap UI offer the same pool.
-    // -------------------------------------------------------------------------
+
     private static List<String> getValidSkillList() {
-        List<String> skills = new ArrayList<String>();
-        skills.add(Skills.COMBAT_ENDURANCE);
-        skills.add(Skills.HELMSMANSHIP);
-        skills.add(Skills.ENERGY_WEAPON_MASTERY);
-        skills.add(Skills.BALLISTIC_MASTERY);
-        skills.add(Skills.FIELD_MODULATION);
-        skills.add(Skills.TARGET_ANALYSIS);
-        skills.add(Skills.IMPACT_MITIGATION);
-        skills.add(Skills.DAMAGE_CONTROL);
-        skills.add(Skills.POLARIZED_ARMOR);
-        skills.add(Skills.POINT_DEFENSE);
-        skills.add(Skills.MISSILE_SPECIALIZATION);
-        skills.add(Skills.SYSTEMS_EXPERTISE);
-        return skills;
+        return armaa_wingCommander.VALID_SKILLS;
     }
 
-    // -------------------------------------------------------------------------
-    // FLEET VIEW — list of commanders with established squadrons
-    // -------------------------------------------------------------------------
     protected void createFleetView(CustomPanelAPI panel, TooltipMakerAPI info, float width) {
-        float pad  = 3;
+        float pad = 3;
         float opad = 10;
         Color h = Misc.getHighlightColor();
         CampaignFleetAPI player = Global.getSector().getPlayerFleet();
-        if (player == null) return;
+        if (player == null) {
+            return;
+        }
 
         PersonAPI playerChar = player.getFleetData().getCommander();
         boolean addPlayer = Global.getSector().getPersistentData()
@@ -161,14 +161,21 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         List<PersonAPI> officers = new ArrayList<PersonAPI>();
         for (OfficerDataAPI od : player.getFleetData().getOfficersCopy()) {
             if (!(Global.getSector().getPersistentData()
-                    .get("armaa_wingCommander_squadronName_" + od.getPerson().getId()) instanceof String))
+                    .get("armaa_wingCommander_squadronName_" + od.getPerson().getId()) instanceof String)) {
                 continue;
-            if (player.getFleetData().getMemberWithCaptain(od.getPerson()) == null) continue;
+            }
+            if (player.getFleetData().getMemberWithCaptain(od.getPerson()) == null) {
+                continue;
+            }
             FleetMemberAPI assignedShip = player.getFleetData().getMemberWithCaptain(od.getPerson());
-            if (!assignedShip.getVariant().hasHullMod("armaa_wingCommander")) continue;
+            if (!assignedShip.getVariant().hasHullMod("armaa_wingCommander")) {
+                continue;
+            }
             officers.add(od.getPerson());
         }
-        if (addPlayer) officers.add(0, playerChar);
+        if (addPlayer) {
+            officers.add(0, playerChar);
+        }
 
         float heightPerItem = ENTRY_HEIGHT + opad;
         float itemPanelHeight = heightPerItem * Math.max(officers.size(), 1);
@@ -220,15 +227,32 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         member = null;
     }
 
-    // -------------------------------------------------------------------------
-    // SQUAD VIEW — pilots in a commander's squadron
-    // -------------------------------------------------------------------------
+private float computeRowHeight(PersonAPI pilot, float opad) {
+    int swappableSkills = 0;
+    for (MutableCharacterStatsAPI.SkillLevelAPI skill : pilot.getStats().getSkillsCopy()) {
+        if (skill.getLevel() <= 0) {
+            continue;
+        }
+        if (armaa_AceUtil.ACE_SKILL_ID.equals(skill.getSkill().getId())) {
+            continue;
+        }
+        swappableSkills++;
+    }
+    // skill header (20) + one row per swappable skill (22 each)
+    // + ace button/label (22) + callsign button (20) + gap (3) + callsign field (22)
+    float skillColHeight = 20 + swappableSkills * 22 + 22 + 20 + 3 + 22;
+    // left column: portrait (ENTRY_HEIGHT) + 'Portrait' label button (~21)
+    float leftColHeight = ENTRY_HEIGHT + 21;
+    return Math.max(skillColHeight, leftColHeight) + opad;
+}    
     protected void createSquadView(CustomPanelAPI panel, TooltipMakerAPI info,
             float width, PersonAPI squadLeader) {
-        float pad  = 3;
+        float pad = 3;
         float opad = 10;
         Color h = Misc.getHighlightColor();
-        if (squadLeader == null || squadLeader.getId() == null) return;
+        if (squadLeader == null || squadLeader.getId() == null) {
+            return;
+        }
 
         int numItems = 0;
         if (Global.getSector().getPersistentData()
@@ -242,9 +266,8 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         int maxElite = (int) Global.getSettings().getInt("officerMaxEliteSkills")
                 + (int) playerStats.getDynamic().getMod(Stats.OFFICER_MAX_ELITE_SKILLS_MOD).computeEffective(0);
         int maxLevel = 2;
-        if(Global.getSettings().getModManager().isModEnabled("lunalib"))
-        {
-           maxLevel = LunaSettings.getInt("armaa", "armaa_wingcomMaxLevel");
+        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
+            maxLevel = LunaSettings.getInt("armaa", "armaa_wingcomMaxLevel");
         }
         // Squadron rename row - field and button both flow into info so they
         // stay visually adjacent rather than on separate containers.
@@ -254,16 +277,25 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         squadParams.add(squadName);
         info.addButton("Rename Squadron", squadParams, 160, 20, pad);
 
-        // Row height: portrait height + rel bar + callsign row + padding + 10px extra gap.
-        float heightPerItem = ENTRY_HEIGHT + 82; // extra 22px for callsign field below button
-        float itemPanelHeight = heightPerItem * numItems + opad;
+        float itemPanelHeight = opad;
+        for (int i = 0; i < numItems; i++) {
+            PersonAPI hp = (PersonAPI) Global.getSector().getPersistentData()
+                    .get("armaa_wingCommander_wingman_" + i + "_" + squadLeader.getId());
+            if (hp == null) {
+                continue;
+            }
+            itemPanelHeight += computeRowHeight(hp, opad);
+        }
         CustomPanelAPI itemPanel = panel.createCustomPanel(width, itemPanelHeight, null);
         float yPos = opad;
 
         for (int i = 0; i < numItems; i++) {
             PersonAPI pilot = (PersonAPI) Global.getSector().getPersistentData()
                     .get("armaa_wingCommander_wingman_" + i + "_" + squadLeader.getId());
-            if (pilot == null) continue;
+            if (pilot == null) {
+                continue;
+            }
+            float heightPerItem = computeRowHeight(pilot, opad);
 
             String callsign = (String) Global.getSector().getPersistentData()
                     .get("armaa_wingCommander_wingman_" + i + "_callsign_" + squadLeader.getId());
@@ -298,8 +330,27 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             entry.addPara("Callsign: " + callsign, pad, h, callsign);
 
             int pilotLevel = pilot.getStats().getLevel();
-            if (maxLevel < pilotLevel) maxLevel = pilotLevel;
+            if (maxLevel < pilotLevel) {
+                maxLevel = pilotLevel;
+            }
             entry.addPara("Level: " + pilotLevel + " / " + maxLevel, pad, h, String.valueOf(pilotLevel));
+            if (pilotLevel < maxLevel) {
+                final String xpKey = "armaa_wingCommander_wingman_" + i + "_xp_" + squadLeader.getId();
+                Object xo = Global.getSector().getPersistentData().get(xpKey);
+                float xpVal = (xo instanceof Float) ? (Float) xo : 0f;
+                float need = armaa_wingmanPromotion.XP_BASE * (pilotLevel + 1);
+                float frac = need > 0f ? Math.max(0f, Math.min(1f, xpVal / need)) : 0f;
+
+                int segments = 10;
+                int filled = Math.round(frac * segments);
+                StringBuilder bar = new StringBuilder();
+                for (int s = 0; s < segments; s++) {
+                    bar.append(s < filled ? "|" : ".");
+                }
+
+                entry.addPara("XP [" + bar + "] " + (int) xpVal + "/" + (int) need,
+                        pad, h, "[" + bar + "]");
+            }
             entry.addRelationshipBar(pilot, 5f);
             itemPanel.addUIElement(entry).rightOfTop(image, IMAGE_DESC_GAP);
 
@@ -309,8 +360,8 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             // Skills the pilot doesn't have yet show as greyed-out "empty slot" buttons so the
             // player can see how many they have left and fill them manually.
             MutableCharacterStatsAPI stats = pilot.getStats();
-            List<MutableCharacterStatsAPI.SkillLevelAPI> skillList =
-                    new ArrayList<MutableCharacterStatsAPI.SkillLevelAPI>(stats.getSkillsCopy());
+            List<MutableCharacterStatsAPI.SkillLevelAPI> skillList
+                    = new ArrayList<MutableCharacterStatsAPI.SkillLevelAPI>(stats.getSkillsCopy());
 
             float skillColX = 4 + IMAGE_WIDTH + IMAGE_DESC_GAP + ENTRY_WIDTH / 2 + opad;
             TooltipMakerAPI skillsHeader = itemPanel.createUIElement(MANAGE_BUTTON_WIDTH + opad * 2, 16, false);
@@ -320,10 +371,16 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
 
             float skillBtnY = yPos + 20;
             for (MutableCharacterStatsAPI.SkillLevelAPI skill : skillList) {
-                if (skill.getLevel() <= 0) continue;
-
+                if (skill.getLevel() <= 0) {
+                    continue;
+                }
+                if (armaa_AceUtil.ACE_SKILL_ID.equals(skill.getSkill().getId())) {
+                    continue; // not swappable
+                }
                 String skillLabel = skill.getSkill().getName();
-                if (skill.getLevel() >= 2) skillLabel += " +";
+                if (skill.getLevel() >= 2) {
+                    skillLabel += " +";
+                }
 
                 // Params for skill swap: [commander PersonAPI, pilot index int, skill id String]
                 List<Object> swapParams = new ArrayList<Object>();
@@ -337,7 +394,31 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
                 itemPanel.addUIElement(skillBtn).inTL(skillColX, skillBtnY);
                 skillBtnY += 22;
             }
+            // --- Promote to Veteran (SP) ---
+            // Enabled only at max level, when the pilot lacks veteran, and the fleet-wide
+            // ace cap hasn't been reached.
+            boolean aceEligible = pilotLevel >= maxLevel
+                    && !armaa_AceUtil.hasAce(pilot)
+                    && armaa_AceUtil.canGrantAce();
 
+            if (!armaa_AceUtil.hasAce(pilot)) {
+                List<Object> aceParams = new ArrayList<Object>();
+                aceParams.add(squadLeader);
+                aceParams.add(i);
+                aceParams.add(ACT_ACE);
+
+                TooltipMakerAPI aceBtn = itemPanel.createUIElement(MANAGE_BUTTON_WIDTH + opad * 2, 20, false);
+                ButtonAPI b = aceBtn.addButton("Promote to Veteran", aceParams,
+                        MANAGE_BUTTON_WIDTH + opad * 2, 20, 0);
+                b.setEnabled(aceEligible);
+                itemPanel.addUIElement(aceBtn).inTL(skillColX, skillBtnY);
+                skillBtnY += 22;
+            } else {
+                TooltipMakerAPI aceLbl = itemPanel.createUIElement(MANAGE_BUTTON_WIDTH + opad * 2, 20, false);
+                aceLbl.addPara("ACE PILOT", Misc.getHighlightColor(), pad);
+                itemPanel.addUIElement(aceLbl).inTL(skillColX, skillBtnY);
+                skillBtnY += 22;
+            }
             // --- Right column: dialogue only ---
             // setParaFont with a raw path crashes because Starsector expects a registered
             // font ID, not a file path. Use setParaFontInsignia which is a known safe call
@@ -409,17 +490,19 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
     }
 
     // -------------------------------------------------------------------------
-    // SKILL VIEW — pick a replacement skill for one slot
+    // SKILL VIEW
     // -------------------------------------------------------------------------
     protected void createSkillView(CustomPanelAPI panel, TooltipMakerAPI info,
             float width, PersonAPI squadLeader, int pilotIndex, String replacingSkillId) {
-        float pad  = 3;
+        float pad = 3;
         float opad = 10;
         Color h = Misc.getHighlightColor();
 
         PersonAPI pilot = (PersonAPI) Global.getSector().getPersistentData()
                 .get("armaa_wingCommander_wingman_" + pilotIndex + "_" + squadLeader.getId());
-        if (pilot == null) return;
+        if (pilot == null) {
+            return;
+        }
 
         String callsign = (String) Global.getSector().getPersistentData()
                 .get("armaa_wingCommander_wingman_" + pilotIndex + "_callsign_" + squadLeader.getId());
@@ -443,7 +526,9 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         int idx = 0;
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
-                if (idx >= validSkills.size()) break;
+                if (idx >= validSkills.size()) {
+                    break;
+                }
                 String skillId = validSkills.get(idx++);
                 SkillSpecAPI spec = Global.getSettings().getSkillSpec(skillId);
                 boolean alreadyHas = pilot.getStats().hasSkill(skillId)
@@ -461,7 +546,9 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
                 TooltipMakerAPI btn = skillPanel.createUIElement(btnW, btnH, false);
                 ButtonAPI b = btn.addButton(label, alreadyHas ? null : confirmParams,
                         (int) btnW, (int) btnH, 0);
-                if (alreadyHas) b.setEnabled(false);
+                if (alreadyHas) {
+                    b.setEnabled(false);
+                }
 
                 float xPos = opad + c * (btnW + opad);
                 float yPos = opad + r * (btnH + pad);
@@ -483,16 +570,18 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
     }
 
     // -------------------------------------------------------------------------
-    // PORTRAIT VIEW — grid of portraits to pick from
+    // PORTRAIT VIEW
     // -------------------------------------------------------------------------
     protected void createPortraitView(CustomPanelAPI panel, TooltipMakerAPI info,
             float width, PersonAPI squadLeader, int squadMember) {
-        float pad  = 3;
+        float pad = 3;
         float opad = 10;
 
         PersonAPI pilot = (PersonAPI) Global.getSector().getPersistentData()
                 .get("armaa_wingCommander_wingman_" + squadMember + "_" + squadLeader.getId());
-        if (pilot == null) return;
+        if (pilot == null) {
+            return;
+        }
 
         List<String> portraits = new ArrayList<String>();
         for (Gender gender : Gender.values()) {
@@ -502,7 +591,9 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             }
             portraitList.addAll(Global.getSector().getPlayerFaction().getPortraits(gender).getItems());
             for (String p : portraitList) {
-                if (!portraits.contains(p)) portraits.add(p);
+                if (!portraits.contains(p)) {
+                    portraits.add(p);
+                }
             }
         }
 
@@ -517,7 +608,9 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         for (int r = 0; r < rows; r++) {
             float xPos = opad;
             for (int c = 0; c < cols; c++) {
-                if (li > portraits.size() - 1) break;
+                if (li > portraits.size() - 1) {
+                    break;
+                }
                 String portraitPath = portraits.get(li++);
 
                 // Button FIRST (hit-test registration), image SECOND (renders on top).
@@ -548,65 +641,70 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         info.addCustom(itemPanel, 0);
     }
 
-    // -------------------------------------------------------------------------
-    // HELP VIEW
-    // -------------------------------------------------------------------------
     protected void createHelpView(TooltipMakerAPI info) {
         float opad = 15;
-        float pad  = 3;
+        float pad = 3;
         Color h = Misc.getHighlightColor();
 
-        TooltipMakerAPI help = info.beginImageWithText("graphics/icons/skills/best_of_the_best.png", 52f);
+        TooltipMakerAPI help = info.beginImageWithText("graphics/icons/skills/best_of_the_best.png", 64f);
         help.setParaInsigniaLarge();
         help.addPara("About WINGCOM", opad);
         help.setParaFontDefault();
         help.setBulletedListMode(BaseIntelPlugin.BULLET);
         help.addPara("When an officer is assigned to a unit with WINGCOM, the crew drafted for the "
                 + "squadron can be reviewed here.", pad);
-        help.addPara("Squadron Members are generally drafted from the fleets best pilots, often %s "
+        help.addPara("Squadron Members are generally drafted from the fleet's best pilots, often %s "
                 + "than their compatriots.", pad, h, "possessing greater skills");
-        help.addPara("By engaging in many battles, these squad members can eventually be %s.", pad, h,
-                "promoted to full fledged officers");
+        help.addPara("Through combat experience, these squad members can be %s.", pad, h,
+                "promoted to full-fledged officers");
         help.setBulletedListMode(BaseIntelPlugin.BULLET);
         UIPanelAPI temp = info.addImageWithText(pad);
         unindent(info);
 
-        TooltipMakerAPI help2 = info.beginImageWithText("graphics/icons/skills/crew_training.png", 82f);
+        TooltipMakerAPI help2 = info.beginImageWithText("graphics/icons/skills/crew_training.png", 64f);
         help2.setParaInsigniaLarge();
-        help2.addPara("Squad Enhancement", opad);
+        help2.addPara("Gaining Experience", opad);
         help2.setParaFontDefault();
         help2.setBulletedListMode(BaseIntelPlugin.BULLET);
-        help2.addPara("Squadrons combat performance will fluctuate based on two simple factors.", pad);
-        help2.addPara("Winning battles will generally increase the squadrons performance by a random amount.", pad, h);
-        help2.addPara("Once a pilot reaches their level cap, there is a small chance they can exceed it by one.", pad, h);
-        help2.addPara("If the squadron leader is shot down or forced to retreat, performance will suffer.", pad);
-        help2.setBulletedListMode(BaseIntelPlugin.BULLET);
+        help2.addPara("Pilots gain experience by fighting. The more a pilot's ship contributes to a "
+                + "battle, the more %s it earns.", pad, h, "experience");
+        help2.addPara("A pilot's %s also matters: loyal pilots learn faster, while disgruntled ones "
+                + "make slower progress.", pad, h, "loyalty");
+        help2.addPara("Once enough experience is accumulated, a pilot %s, learning a new skill.", pad, h,
+                "gains a level");
+        help2.addPara("Once a pilot reaches their level cap, they may instead develop an %s, or, if "
+                + "exceptionally gifted, something rarer still.", pad, h, "elite skill");
+        help2.addPara("If the squadron leader is shot down or forced to retreat, the whole squadron's "
+                + "progress suffers.", pad);
+        help2.setBulletedListMode(null);
         help2.setParaInsigniaLarge();
         help2.addPara("Promoting Pilots", opad);
         help2.setParaFontDefault();
         help2.setBulletedListMode(BaseIntelPlugin.BULLET);
-        help2.addPara("Squad members can be promoted once their relationship exceeds %s points.", pad, h, "70");
-        help2.addPara("If a squad member is promoted, a new pilot will fill in their vacant position.", pad);
+        help2.addPara("Squad members can be promoted to officers once their relationship exceeds %s points.",
+                pad, h, "70");
+        help2.addPara("If a squad member is promoted, a new pilot will fill their vacant position.", pad);
         help2.addPara("You can also simply %s for promotion.", pad, h, "pass them over");
         help2.setBulletedListMode(BaseIntelPlugin.BULLET);
-        unindent(info);
         temp = info.addImageWithText(pad);
+        unindent(info);        
 
-        TooltipMakerAPI help3 = info.beginImageWithText("graphics/icons/skills/tactical_drills.png", 52f);
+        TooltipMakerAPI help3 = info.beginImageWithText("graphics/icons/skills/crew_training.png", 64f);
         help3.setParaInsigniaLarge();
-        help3.addPara("Managing Skills", opad);
+        help3.addPara("Managing Skills & Aces", opad);
         help3.setParaFontDefault();
         help3.setBulletedListMode(BaseIntelPlugin.BULLET);
         help3.addPara("Click any skill button next to a pilot to replace it with a different one.", pad);
+        help3.addPara("A pilot who has reached their level cap can be promoted to an %s for a story point.",
+                pad, h, "Ace");
+        help3.addPara("Aces are exceptional combatants, but only a limited number can serve in your "
+                + "fleet at once.", pad);
         help3.addPara("Click a pilot's portrait to change their appearance.", pad);
         help3.setBulletedListMode(BaseIntelPlugin.BULLET);
-        unindent(info);
         temp = info.addImageWithText(pad);
+        unindent(info);        
     }
 
-    // -------------------------------------------------------------------------
-    // Tab buttons
-    // -------------------------------------------------------------------------
     public TooltipMakerAPI generateTabButton(CustomPanelAPI buttonRow, String nameId, Tab tab,
             Color base, Color bg, Color bright, TooltipMakerAPI rightOf) {
         TooltipMakerAPI holder = buttonRow.createUIElement(TAB_BUTTON_WIDTH, TAB_BUTTON_HEIGHT, false);
@@ -625,20 +723,19 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         FactionAPI fc = getFactionForUIColors();
         Color base = fc.getBaseUIColor(), bg = fc.getDarkUIColor(), bright = fc.getBrightUIColor();
         TooltipMakerAPI btnHolder1 = generateTabButton(panel, "Squadrons", BUTTON_FLEET, base, bg, bright, null);
-        TooltipMakerAPI btnHolder3 = generateTabButton(panel, "Info",       BUTTON_HELP, base, bg, bright, btnHolder1);
+        TooltipMakerAPI btnHolder3 = generateTabButton(panel, "Info", BUTTON_HELP, base, bg, bright, btnHolder1);
         return btnHolder1;
     }
 
-    // -------------------------------------------------------------------------
-    // createLargeDescription — routes to the correct view
-    // -------------------------------------------------------------------------
     @Override
     public void createLargeDescription(CustomPanelAPI panel, float width, float height) {
         float opad = 10;
-        float pad  = 3;
+        float pad = 3;
         Color h = Misc.getHighlightColor();
 
-        if (currentTab == null) currentTab = Tab.FLEET;
+        if (currentTab == null) {
+            currentTab = Tab.FLEET;
+        }
 
         TooltipMakerAPI info = panel.createUIElement(width, height - TAB_BUTTON_HEIGHT - 4, true);
         FactionAPI faction = Global.getSector().getPlayerFaction();
@@ -674,9 +771,6 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         panel.addUIElement(info).belowLeft(buttonHolder, pad);
     }
 
-    // -------------------------------------------------------------------------
-    // Button routing
-    // -------------------------------------------------------------------------
     @Override
     public void buttonPressConfirmed(Object buttonId, IntelUIAPI ui) {
 
@@ -712,7 +806,9 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         // All List-based button params
         if (buttonId instanceof List) {
             List<Object> params = (List<Object>) buttonId;
-            if (params.isEmpty()) return;
+            if (params.isEmpty()) {
+                return;
+            }
 
             // --- Skill swap: cancel ---
             if (params.size() == 3 && ACT_SKILL_SWAP.equals(params.get(2))) {
@@ -729,10 +825,10 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             // --- Skill swap: initiation (open the skill picker) ---
             // params: [PersonAPI squadLeader, Integer pilotIndex, String skillId, "skillSwap"]
             if (params.size() == 4 && ACT_SKILL_SWAP.equals(params.get(3))) {
-                member           = (PersonAPI) params.get(0);
-                pilot            = (int) params.get(1);
+                member = (PersonAPI) params.get(0);
+                pilot = (int) params.get(1);
                 skillBeingReplaced = (String) params.get(2);
-                currentTab       = Tab.SKILL;
+                currentTab = Tab.SKILL;
                 ui.updateUIForItem(this);
                 return;
             }
@@ -742,10 +838,17 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             //          String newSkillId, "skillSwap_confirm"]
             if (params.size() == 5 && (ACT_SKILL_SWAP + "_confirm").equals(params.get(4))) {
                 PersonAPI squadLeader = (PersonAPI) params.get(0);
-                int       pilotIdx   = (int) params.get(1);
-                String    oldSkill   = (String) params.get(2);
-                String    newSkill   = (String) params.get(3);
-
+                int pilotIdx = (int) params.get(1);
+                String oldSkill = (String) params.get(2);
+                String newSkill = (String) params.get(3);
+                // Ace is never a valid swap source or target.
+                if (armaa_AceUtil.ACE_SKILL_ID.equals(oldSkill)
+                        || armaa_AceUtil.ACE_SKILL_ID.equals(newSkill)) {
+                    skillBeingReplaced = null;
+                    currentTab = Tab.SQUAD;
+                    ui.updateUIForItem(this);
+                    return;
+                }
                 PersonAPI p = (PersonAPI) Global.getSector().getPersistentData()
                         .get("armaa_wingCommander_wingman_" + pilotIdx + "_" + squadLeader.getId());
                 if (p != null) {
@@ -760,7 +863,7 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
                     // Add the new skill at level 1
                     stats.increaseSkill(newSkill);
                     // Adjust pilot level to stay consistent (level = number of skills)
-                    // We don't change level here — the skill count is what matters mechanically.
+                    // We don't change level here the skill count is what matters mechanically.
                     Global.getSector().getPersistentData().put(
                             "armaa_wingCommander_wingman_" + pilotIdx + "_" + squadLeader.getId(), p);
                 }
@@ -787,7 +890,7 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             // params: [PersonAPI squadLeader, TextFieldAPI nameField]  (size == 2)
             if (params.size() == 2) {
                 PersonAPI squadLeader = (PersonAPI) params.get(0);
-                TextFieldAPI newName  = (TextFieldAPI) params.get(1);
+                TextFieldAPI newName = (TextFieldAPI) params.get(1);
                 Global.getSector().getPersistentData().put(
                         "armaa_wingCommander_squadronName_" + squadLeader.getId(), newName.getText());
                 currentTab = Tab.SQUAD;
@@ -801,8 +904,8 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             if (params.size() == 3 && params.get(2) instanceof String
                     && !((String) params.get(2)).startsWith("cancel")) {
                 PersonAPI squadLeader = (PersonAPI) params.get(0);
-                int pilotIdx          = (int) params.get(1);
-                String portraitPath   = (String) params.get(2);
+                int pilotIdx = (int) params.get(1);
+                String portraitPath = (String) params.get(2);
                 PersonAPI p = (PersonAPI) Global.getSector().getPersistentData()
                         .get("armaa_wingCommander_wingman_" + pilotIdx + "_" + squadLeader.getId());
                 if (p != null) {
@@ -819,8 +922,8 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
             // params: [PersonAPI squadLeader, Integer pilotIndex, TextFieldAPI nameField]
             if (params.size() == 3 && params.get(2) instanceof TextFieldAPI) {
                 PersonAPI squadLeader = (PersonAPI) params.get(0);
-                int pilotIdx          = (int) params.get(1);
-                TextFieldAPI text     = (TextFieldAPI) params.get(2);
+                int pilotIdx = (int) params.get(1);
+                TextFieldAPI text = (TextFieldAPI) params.get(2);
                 Global.getSector().getPersistentData().put(
                         "armaa_wingCommander_wingman_" + pilotIdx + "_callsign_" + squadLeader.getId(),
                         text.getText());
@@ -836,19 +939,32 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
     // -------------------------------------------------------------------------
     @Override
     public void createConfirmationPrompt(Object buttonId, TooltipMakerAPI prompt) {
-        if (buttonId == BUTTON_INSURE_ALL) { }
-        if (buttonId instanceof FleetMemberAPI) { }
+        if (buttonId == BUTTON_INSURE_ALL) {
+        }
+        if (buttonId instanceof FleetMemberAPI) {
+        }
     }
 
     @Override
     public boolean doesButtonHaveConfirmDialog(Object buttonId) {
-        if (buttonId == BUTTON_INSURE_ALL) return true;
-        if (buttonId instanceof FleetMemberAPI) return true;
+        if (buttonId == BUTTON_INSURE_ALL) {
+            return true;
+        }
+        if (buttonId instanceof FleetMemberAPI) {
+            return true;
+        }
         return false;
     }
 
-    @Override public String getConfirmText(Object buttonId) { return super.getConfirmText(buttonId); }
-    @Override public String getCancelText(Object buttonId)  { return super.getCancelText(buttonId); }
+    @Override
+    public String getConfirmText(Object buttonId) {
+        return super.getConfirmText(buttonId);
+    }
+
+    @Override
+    public String getCancelText(Object buttonId) {
+        return super.getCancelText(buttonId);
+    }
 
     @Override
     public Set<String> getIntelTags(SectorMapAPI map) {
@@ -857,8 +973,15 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         return tags;
     }
 
-    @Override public String getIcon()     { return "graphics/icons/markets/headquarters.png"; }
-    @Override public boolean isHidden()   { return false; }
+    @Override
+    public String getIcon() {
+        return "graphics/icons/markets/headquarters.png";
+    }
+
+    @Override
+    public boolean isHidden() {
+        return false;
+    }
 
     @Override
     protected void notifyEnded() {
@@ -866,7 +989,9 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         Global.getSector().removeScript(this);
     }
 
-    protected static String getString(String id) { return "GetString"; }
+    protected static String getString(String id) {
+        return "GetString";
+    }
 
     // -------------------------------------------------------------------------
     // Pilot dialogue helper
@@ -916,12 +1041,6 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         // Work on a copy so we never mutate the source list
         List<String> pool = new ArrayList<String>(basePool);
 
-        // --- Step 2: resolve special wing line for this pilot's wing ---
-        // Walk crewed wings in order accumulating fighter counts, mirroring
-        // the sequential assignment in createPilots. Non-crewed wings are
-        // skipped with the same guard as getWingSize.
-        // If found, add the special line into the pool with extra weight (3x)
-        // so it comes up more often than a regular line but isn't guaranteed.
         if (member != null) {
             FleetMemberAPI assignedShip = Global.getSector().getPlayerFleet()
                     .getFleetData().getMemberWithCaptain(member);
@@ -932,12 +1051,16 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
                 FighterWingSpecAPI resolvedWing = null;
                 for (int w = 0; w < variant.getWings().size(); w++) {
                     FighterWingSpecAPI wingSpec = variant.getWing(w);
-                    if (wingSpec == null) continue;
-                    if (wingSpec.getVariant().getHullSpec().getMinCrew() <= 0) continue;
+                    if (wingSpec == null) {
+                        continue;
+                    }
+                    if (wingSpec.getVariant().getHullSpec().getMinCrew() <= 0) {
+                        continue;
+                    }
                     int fighters = wingSpec.getNumFighters();
                     if (index < accumulated + fighters) {
                         resolvedHullId = wingSpec.getVariant().getHullSpec().getHullId();
-                        resolvedWing   = wingSpec;
+                        resolvedWing = wingSpec;
                         break;
                     }
                     accumulated += fighters;
@@ -960,6 +1083,61 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
 
         // --- Step 3: pick from the combined pool ---
         return pool.get(rand.nextInt(pool.size()));
+    }
+
+    @Override
+    public StoryPointActionDelegate getButtonStoryPointActionDelegate(Object buttonId) {
+        if (!(buttonId instanceof List)) {
+            return null;
+        }
+        List<Object> params = (List<Object>) buttonId;
+        if (params.size() != 3 || !ACT_ACE.equals(params.get(2))) {
+            return null;
+        }
+
+        final PersonAPI squadLeader = (PersonAPI) params.get(0);
+        final int pilotIdx = (int) params.get(1);
+        final PersonAPI p = (PersonAPI) Global.getSector().getPersistentData()
+                .get("armaa_wingCommander_wingman_" + pilotIdx + "_" + squadLeader.getId());
+
+        if (p == null || armaa_AceUtil.hasAce(p) || !armaa_AceUtil.canGrantAce()) {
+            return null; // button won't spend an SP if ineligible
+        }
+
+        String callsign = (String) Global.getSector().getPersistentData()
+                .get("armaa_wingCommander_wingman_" + pilotIdx + "_callsign_" + squadLeader.getId());
+
+        StoryOptionParams sp = new StoryOptionParams(buttonId, 1, "armaa_grantAce",
+                Sounds.STORY_POINT_SPEND_LEADERSHIP,
+                "Promoted pilot \"" + callsign + "\" to Veteran");
+
+        return new BaseOptionStoryPointActionDelegate(null, sp) {
+            @Override
+            public void confirm() {
+                if (armaa_AceUtil.grantAce(p)) {
+                    p.removeTag("armaa_latentTalent");
+                    Global.getSector().getPersistentData().put(
+                            "armaa_wingCommander_wingman_" + pilotIdx + "_" + squadLeader.getId(), p);
+                }
+            }
+
+            @Override
+            public String getTitle() {
+                return null;
+            }
+
+            @Override
+            public void createDescription(TooltipMakerAPI info) {
+                info.setParaInsigniaLarge();
+                super.createDescription(info);
+            }
+        };
+    }
+
+    @Override
+    public void storyActionConfirmed(Object buttonId, IntelUIAPI ui) {
+        // confirm() already did the granting; just refresh.
+        ui.updateUIForItem(this);
     }
 
     public static enum Tab {

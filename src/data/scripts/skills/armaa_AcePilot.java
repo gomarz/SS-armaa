@@ -17,6 +17,7 @@ import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.impl.campaign.skills.*;
 import com.fs.starfarer.api.combat.listeners.*;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.combat.DefenseUtils;
@@ -41,13 +42,16 @@ public class armaa_AcePilot {
             if (stats.getEntity() != null) {
                 ShipAPI ship = (ShipAPI) stats.getEntity();
                 if (ship.getHullSpec().getMinCrew() <= CREW_THRESHOLD) {
-                    stats.getFluxDissipation().modifyMult(id, BUFF_FACTOR);
-                    stats.getFluxCapacity().modifyMult(id, BUFF_FACTOR);
-                    stats.getMaxSpeed().modifyMult(id, BUFF_FACTOR);
-                    stats.getAcceleration().modifyMult(id, BUFF_FACTOR);
-                    stats.getAutofireAimAccuracy().modifyMult(id, BUFF_FACTOR);
-                    stats.getShieldDamageTakenMult().modifyMult(id, 1 / BUFF_FACTOR);
-                    stats.getPeakCRDuration().modifyFlat(id, stats.getVariant().getHullSpec().getNoCRLossSeconds() * .20f);
+                    float pct = (BUFF_FACTOR - 1f) * 100f; // 1.2f -> +20%
+                    stats.getFluxDissipation().modifyPercent(id, pct);
+                    stats.getFluxCapacity().modifyPercent(id, pct);
+                    stats.getMaxSpeed().modifyPercent(id, pct);
+                    stats.getAcceleration().modifyPercent(id, pct);
+                    stats.getTurnAcceleration().modifyPercent(id, pct);
+                    stats.getMaxTurnRate().modifyPercent(id, pct);
+                    stats.getDamageToFighters().modifyPercent(id, pct);
+                    stats.getShieldDamageTakenMult().modifyMult(id, 1f - (BUFF_FACTOR - 1f));
+                    stats.getPeakCRDuration().modifyPercent(id, 20f);
                 }
             }
 
@@ -61,10 +65,17 @@ public class armaa_AcePilot {
             stats.getAutofireAimAccuracy().unmodify(id);
             stats.getShieldDamageTakenMult().unmodify(id);
             stats.getPeakCRDuration().unmodify(id);
+            stats.getTurnAcceleration().unmodify(id);
+            stats.getMaxTurnRate().unmodify(id);
+            stats.getDamageToFighters().unmodify(id);          
         }
 
         public String getEffectDescription(float level) {
-            return "+" + (BUFF_FACTOR) + "x performance when assigned to a ship with skeleton crew of 20 or less";
+            int pct = (int) ((BUFF_FACTOR - 1f) * 100f);
+            int crPct = 20;
+            return "On a ship with a skeleton crew of " + CREW_THRESHOLD + " or less:\n +" + pct
+                    + "% flux capacity and dissipation, speed, acceleration, and damage to fighters\n-"
+                    + pct + "% shield damage taken\n+" + crPct + "% peak performance time";
         }
 
         public String getEffectPerLevelDescription() {
@@ -176,9 +187,6 @@ public class armaa_AcePilot {
             if (!inited) {
                 init();
             }
-            if (!runOnce) {
-                interval.advance(amount);
-            }
             boolean chatterEnabled = true;
             if (Global.getSettings().getModManager().isModEnabled("lunalib")
                     && ship.getCaptain() != null && ship.getCaptain().getId().equals("armaa_dawn")) {
@@ -194,7 +202,6 @@ public class armaa_AcePilot {
             }
 
             String id = ship.getId();
-            boolean player = ship == Global.getCombatEngine().getPlayerShip();
 
             interval.advance(amount);
             interval2.advance(amount);
@@ -236,7 +243,6 @@ public class armaa_AcePilot {
 
         public static class PeacekeeperDeatMod implements DamageDealtModifier, AdvanceableListener {
 
-            float multiplier = 1f;
             protected ShipAPI ship;
 
             public PeacekeeperDeatMod(ShipAPI ship) {
@@ -265,8 +271,6 @@ public class armaa_AcePilot {
                 }
                 String id = "strikecraft_death";
                 float damageVal = damage.getDamage();
-                float armor = DefenseUtils.getArmorValue(s, point);
-                multiplier = damageVal;
                 if (damageVal >= s.getHitpoints() && s.getHitpoints() > 0) {
                     s.setHitpoints(0f);
                     float fp = s.getWing() != null ? (float) s.getWing().getSpec().getFleetPoints() / (float) s.getWing().getSpec().getNumFighters() : INCREASE_AMT;

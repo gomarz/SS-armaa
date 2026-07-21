@@ -44,27 +44,49 @@ public class armaa_zanacDummyWeapon2 implements EveryFrameWeaponEffectPlugin {
         }
         Color invis = new Color(0f, 0f, 0f, 0f);
         trueWeapon.ensureClonedSpec();
-        int size = trueWeapon.getSpec().getTurretFireOffsets().size();
-        trueWeapon.getSpec().getTurretFireOffsets().clear();
-        trueWeapon.getSpec().getTurretAngleOffsets().clear();
-        boolean odd = false;
-        for (int i = 0; i < size; i++) {
-            if (size <= 1) {
-                trueWeapon.getSpec().getTurretFireOffsets().add(falseWeapon.getSpec().getTurretFireOffsets().get(2));
-                trueWeapon.getSpec().getTurretAngleOffsets().add(falseWeapon.getSpec().getTurretAngleOffsets().get(2));
-            } else {
-                if (!odd) {
-                    trueWeapon.getSpec().getTurretFireOffsets().add(falseWeapon.getSpec().getTurretFireOffsets().get(0));
-                    trueWeapon.getSpec().getTurretAngleOffsets().add(falseWeapon.getSpec().getTurretAngleOffsets().get(0));
-                    odd = true;
+        if (trueWeapon.getSlot().isTurret()) {
+            int size = trueWeapon.getSpec().getTurretFireOffsets().size();
+            trueWeapon.getSpec().getTurretFireOffsets().clear();
+            trueWeapon.getSpec().getTurretAngleOffsets().clear();
+            boolean odd = false;
+            for (int i = 0; i < size; i++) {
+                if (size <= 1) {
+                    trueWeapon.getSpec().getTurretFireOffsets().add(falseWeapon.getSpec().getTurretFireOffsets().get(2));
+                    trueWeapon.getSpec().getTurretAngleOffsets().add(falseWeapon.getSpec().getTurretAngleOffsets().get(2));
                 } else {
-                    trueWeapon.getSpec().getTurretFireOffsets().add(falseWeapon.getSpec().getTurretFireOffsets().get(1));
-                    trueWeapon.getSpec().getTurretAngleOffsets().add(falseWeapon.getSpec().getTurretAngleOffsets().get(1));
+                    if (!odd) {
+                        trueWeapon.getSpec().getTurretFireOffsets().add(falseWeapon.getSpec().getTurretFireOffsets().get(0));
+                        trueWeapon.getSpec().getTurretAngleOffsets().add(falseWeapon.getSpec().getTurretAngleOffsets().get(0));
+                        odd = true;
+                    } else {
+                        trueWeapon.getSpec().getTurretFireOffsets().add(falseWeapon.getSpec().getTurretFireOffsets().get(1));
+                        trueWeapon.getSpec().getTurretAngleOffsets().add(falseWeapon.getSpec().getTurretAngleOffsets().get(1));
+                    }
                 }
+
             }
+        } else if (trueWeapon.getSlot().isHardpoint()) {
+            int size = trueWeapon.getSpec().getHardpointFireOffsets().size();
+            trueWeapon.getSpec().getHardpointFireOffsets().clear();
+            trueWeapon.getSpec().getHardpointAngleOffsets().clear();
+            boolean odd = false;
+            for (int i = 0; i < size; i++) {
+                if (size <= 1) {
+                    trueWeapon.getSpec().getHardpointFireOffsets().add(falseWeapon.getSpec().getHardpointFireOffsets().get(0));
+                    trueWeapon.getSpec().getHardpointAngleOffsets().add(falseWeapon.getSpec().getHardpointAngleOffsets().get(0));
+                } else {
+                    if (!odd) {
+                        trueWeapon.getSpec().getHardpointFireOffsets().add(falseWeapon.getSpec().getHardpointFireOffsets().get(0));
+                        trueWeapon.getSpec().getHardpointAngleOffsets().add(falseWeapon.getSpec().getHardpointAngleOffsets().get(0));
+                        odd = true;
+                    } else {
+                        trueWeapon.getSpec().getHardpointFireOffsets().add(falseWeapon.getSpec().getHardpointFireOffsets().get(0));
+                        trueWeapon.getSpec().getHardpointAngleOffsets().add(falseWeapon.getSpec().getHardpointAngleOffsets().get(0));
+                    }
+                }
 
+            }
         }
-
         if (trueWeapon.getSprite() != null) {
             trueWeapon.getSprite().setColor(invis);
         }

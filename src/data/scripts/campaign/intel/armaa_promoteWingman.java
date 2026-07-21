@@ -202,6 +202,12 @@ public class armaa_promoteWingman extends BaseIntelPlugin {
                     //remove them from squad roster
                     Global.getSector().getPersistentData().put("armaa_wingCommander_wingman_" + wingmanNo + "_" + captain.getId(), null);
                     Global.getSector().getPersistentData().put("armaa_wingCommander_wingman_" + wingmanNo + "_" + "callsign_" + captain.getId(), null);
+                    Global.getSector().getPersistentData().put("armaa_wingCommander_wingman_" + wingmanNo + "_xp_" + captain.getId(), null);
+                    String sizeKey = "armaa_wingCommander_squadSize_" + captain.getId();
+                    Object sz = Global.getSector().getPersistentData().get(sizeKey);
+                    if (sz instanceof Integer) {
+                        Global.getSector().getPersistentData().put(sizeKey, Math.max(0, (Integer) sz - 1));
+                    }
                 }
 
                 @Override

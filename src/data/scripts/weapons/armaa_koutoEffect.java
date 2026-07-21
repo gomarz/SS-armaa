@@ -6,8 +6,6 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import java.awt.Color;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
@@ -121,7 +119,7 @@ public class armaa_koutoEffect implements EveryFrameWeaponEffectPlugin {
         }
 
         if (torso != null) {
-            float desired = weapon.getCurrAngle()*0.95f;
+            float desired = weapon.getCurrAngle() * 0.95f;
             float current = torso.getCurrAngle();
 
             float delta = MathUtils.getShortestRotation(current, desired);
@@ -141,11 +139,11 @@ public class armaa_koutoEffect implements EveryFrameWeaponEffectPlugin {
         }
 
         if (pauldronR != null) {
-            float pauldronR_desired = torso.getCurrAngle() +
-                    MathUtils.getShortestRotation(torso.getCurrAngle(), armR.getCurrAngle()) * 0.6f;
+            float pauldronR_desired = torso.getCurrAngle()
+                    + MathUtils.getShortestRotation(torso.getCurrAngle(), armR.getCurrAngle()) * 0.6f;
 
             float pauldronR_current = pauldronR.getCurrAngle();
-            float pauldronR_delta   = MathUtils.getShortestRotation(pauldronR_current, pauldronR_desired);
+            float pauldronR_delta = MathUtils.getShortestRotation(pauldronR_current, pauldronR_desired);
 
             pauldronR.setCurrAngle(pauldronR_current + pauldronR_delta * 0.4f);
         }
@@ -158,13 +156,13 @@ public class armaa_koutoEffect implements EveryFrameWeaponEffectPlugin {
         Vector2f.add(offset, origin, origin);
 
         if (pauldronL != null) {
-            float pauldronL_desired = torso.getCurrAngle() +
-                    MathUtils.getShortestRotation(torso.getCurrAngle(), armL.getCurrAngle()) * 0.6f;
+            float pauldronL_desired = torso.getCurrAngle()
+                    + MathUtils.getShortestRotation(torso.getCurrAngle(), armL.getCurrAngle()) * 0.6f;
 
             float pauldronL_current = pauldronL.getCurrAngle();
-            float pauldronL_delta   = MathUtils.getShortestRotation(pauldronL_current, pauldronL_desired);
+            float pauldronL_delta = MathUtils.getShortestRotation(pauldronL_current, pauldronL_desired);
 
-            pauldronL.setCurrAngle(pauldronL_current + pauldronL_delta * 0.4f);        
+            pauldronL.setCurrAngle(pauldronL_current + pauldronL_delta * 0.4f);
         }
 
     }

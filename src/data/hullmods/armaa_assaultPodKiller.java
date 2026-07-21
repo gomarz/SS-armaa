@@ -38,14 +38,15 @@ public class armaa_assaultPodKiller extends BaseHullMod {
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
-       if(ship.getCollisionClass() != CollisionClass.SHIP)
-           ship.setCollisionClass(CollisionClass.SHIP);
+        if (ship.getCollisionClass() != CollisionClass.SHIP) {
+            ship.setCollisionClass(CollisionClass.SHIP);
+        }
         ship.setHitpoints(ship.getHitpoints() - amount * 6);
         for (ShipAPI target : CombatUtils.getShipsWithinRange(ship.getLocation(), 1000f)) {
             if (ship.getOwner() == target.getOwner()) {
                 continue;
             }
-            Global.getCombatEngine().headInDirectionWithoutTurning(ship, VectorUtils.getAngle(ship.getLocation(), target.getLocation()), ship.getMaxSpeed());          
+            Global.getCombatEngine().headInDirectionWithoutTurning(ship, VectorUtils.getAngle(ship.getLocation(), target.getLocation()), ship.getMaxSpeed());
             break;
         }
         boolean justDie = ship.getHullLevel() <= 0.80f || Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId()) != null;
@@ -56,8 +57,7 @@ public class armaa_assaultPodKiller extends BaseHullMod {
             Global.getCombatEngine().getCustomData().put("armaa_killPod_" + ship.getId(), new IntervalUtil(0.5f, 0.5f));
         } else if (justDie) {
             dieTimer = (IntervalUtil) Global.getCombatEngine().getCustomData().get("armaa_killPod_" + ship.getId());
-            if(dieTimer == null)
-            {
+            if (dieTimer == null) {
                 Global.getCombatEngine().getCustomData().put("armaa_killPod_" + ship.getId(), new IntervalUtil(0.5f, 0.5f));
                 return;
             }
@@ -73,13 +73,13 @@ public class armaa_assaultPodKiller extends BaseHullMod {
 
         if (dieTimer != null && dieTimer.intervalElapsed()) {
             DamagingExplosionSpec boom = new DamagingExplosionSpec(
-                    1f ,
-                    150,
+                    1f,
+                    100,
                     75,
                     800f,
                     400f,
                     CollisionClass.MISSILE_NO_FF,
-                    CollisionClass.PROJECTILE_FIGHTER,
+                    CollisionClass.MISSILE_NO_FF,
                     5,
                     10,
                     5,
@@ -87,10 +87,10 @@ public class armaa_assaultPodKiller extends BaseHullMod {
                     Color.yellow,
                     Color.yellow
             );
-            boom.setDamageType(DamageType.HIGH_EXPLOSIVE);
+            boom.setDamageType(DamageType.FRAGMENTATION);
             boom.setShowGraphic(false);
             boom.setSoundSetId("mine_explosion");
-            Global.getCombatEngine().spawnDamagingExplosion(boom, ship, ship.getLocation(), false);            
+            Global.getCombatEngine().spawnDamagingExplosion(boom, ship, ship.getLocation(), false);
             Global.getCombatEngine().applyDamage(ship, ship.getLocation(), 100000f, DamageType.ENERGY, 0f, true, false, ship, false);
         }
         if (Global.getCombatEngine().isCombatOver() || Global.getCombatEngine().getFleetManager(0).getTaskManager(false).isInFullRetreat() || Global.getCombatEngine().isEnemyInFullRetreat()) {

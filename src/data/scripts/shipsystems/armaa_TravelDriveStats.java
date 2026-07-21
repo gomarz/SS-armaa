@@ -58,9 +58,7 @@ public class armaa_TravelDriveStats extends BaseShipSystemScript {
                         manager.queueLaunch(ship, carrier);
                     }
                     Global.getCombatEngine().getCustomData()
-                            .put("armaa_carrierDeployDone_" + ship.getId(), true);
-                    Global.getCombatEngine().getCustomData()
-                            .put("armaa_strikeCraft_pptSnapshot_" + ship.getId(), ship.getMutableStats().getPeakCRDuration().createCopy());                    
+                            .put("armaa_carrierDeployDone_" + ship.getId(), true);                   
                     runOnce = true;
                 }
             }

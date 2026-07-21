@@ -24,7 +24,7 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
     public static final Color JITTER_COLOR = new Color(100, 165, 255, 155);
     private static final Color BASIC_FLASH_COLOR = new Color(184, 155, 218, 200);
     private static final Color BASIC_GLOW_COLOR = new Color(180, 161, 255, 200);
-
+    private HashMap foo;
     public static String getKeyByValue(Map<String, String> map, String value) {
         for (Entry<String, String> entry : map.entrySet()) {
             if (entry.getValue().equals(value)) {

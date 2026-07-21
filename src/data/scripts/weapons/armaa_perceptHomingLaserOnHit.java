@@ -88,7 +88,8 @@ public class armaa_perceptHomingLaserOnHit implements OnHitEffectPlugin {
             );
             if(!(target instanceof ShipAPI))
                 return;
-            float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.1f;
+            
+            float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.3f;
             pierceChance *= projectile.getSource().getMutableStats().getDynamic().getValue(Stats.SHIELD_PIERCED_MULT);
             ShipAPI ship = projectile.getSource();
             boolean piercedShield = shieldHit && (float) Math.random() < pierceChance;
@@ -100,7 +101,7 @@ public class armaa_perceptHomingLaserOnHit implements OnHitEffectPlugin {
                         projectile.getSource(), point, target, target,
                         DamageType.ENERGY,
                         dam, // damage
-                        emp*(fluxLevel*2f), // emp
+                        emp*(fluxLevel*1.3f), // emp
                         100000f, // max range
                         "tachyon_lance_emp_impact",
                         4f + 4f,

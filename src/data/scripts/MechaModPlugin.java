@@ -502,6 +502,7 @@ public class MechaModPlugin extends BaseModPlugin {
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MISSION_IMPORTANT, true);
             fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY, true);
             fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, loc, 500f);
+            Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_isSleeper", true);
 
         }
         MarketAPI market = Global.getSector().getEconomy().getMarket("armaa_meshanii_market");
@@ -555,14 +556,10 @@ public class MechaModPlugin extends BaseModPlugin {
                 secretary.setImportanceAndVoice(PersonImportance.LOW, new Random());
                 secretary.setVoice(Voices.FAITHFUL);
                 secretary.setPersonality("aggressive");
-                //OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(secretary, "armaa_meshanii_market", 4000, 1000);
-                //secretary.getMemoryWithoutUpdate().set("$ome_hireable", true);
-                //secretary.getMemoryWithoutUpdate().set("$ome_eventRef", event);
-                //secretary.getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
-                //secretary.getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
+
                 secretary.getStats().setSkillLevel("armaa_AcePilot", 2);
                 secretary.setMarket(market);
-                //event.addAvailable(f);
+
                 market.getCommDirectory().addPerson(secretary, 1);
                 market.getCommDirectory().getEntryForPerson(secretary).setHidden(true);
                 Global.getSector().getImportantPeople().addPerson(admin);

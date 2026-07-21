@@ -16,11 +16,13 @@ import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
+import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
+import com.fs.starfarer.api.loading.FighterWingSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import java.io.IOException;
@@ -60,9 +62,6 @@ public class armaa_utils {
         baseOverloadTimes.put(HullSize.DEFAULT, 6f);
     }
 
-
-    
-    
     private static class armaa_purgedata {
 
         boolean ejectKeyPressed = false;
@@ -1214,7 +1213,7 @@ public class armaa_utils {
         return minuteStr;
     }
 
-    public static Vector2f preciseHitCheck(WeaponAPI weapon, CombatEntityAPI target) {
+    public static Vector2f preciseHitCheck(WeaponAPI weapon, CombatEntityAPI target, float wepRecoilMax, float recoil) {
         Vector2f fire = weapon.getFirePoint(0);
         float angDeg = weapon.getCurrAngle();
         float angRad = (float) Math.toRadians(angDeg);
@@ -1239,7 +1238,7 @@ public class armaa_utils {
             );
 
             // end of blade swing ray
-            Vector2f end = getBeamEndpoint(origin, angRad, weapon.getRange() + 10f);
+            Vector2f end = getBeamEndpoint(origin, angRad, weapon.getRange() + 10f - wepRecoilMax + recoil);
 
             // 🔥 LazyLib does the hard work for us
             Vector2f hit = CollisionUtils.getCollisionPoint(origin, end, target);
@@ -1382,5 +1381,28 @@ public class armaa_utils {
         }
 
         return true;
+    }
+
+    public static int getBaseWingSize(ShipAPI ship) {
+        int wingSize = 0;
+        for (int i = 0; i < ship.getVariant().getWings().size(); i++) {
+            FighterWingSpecAPI w = ship.getVariant().getWing(i);
+            if (w != null && w.getVariant().getHullSpec().getMinCrew() > 0) {
+                wingSize += w.getNumFighters();
+            }
+        }
+        for (String slot : ship.getVariant().getModuleSlots()) {
+            ShipVariantAPI mv = ship.getVariant().getModuleVariant(slot);
+            if (!mv.hasHullMod("armaa_wingCommander")) {
+                continue;
+            }
+            for (int i = 0; i < mv.getWings().size(); i++) {
+                FighterWingSpecAPI w = mv.getWing(i);
+                if (w != null && w.getVariant().getHullSpec().getMinCrew() > 0) {
+                    wingSize += w.getNumFighters();
+                }
+            }
+        }
+        return wingSize;
     }
 }

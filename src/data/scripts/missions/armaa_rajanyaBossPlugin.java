@@ -233,14 +233,14 @@ public class armaa_rajanyaBossPlugin extends BaseEveryFrameCombatPlugin {
     }
 
     // -----------------------------------------------------------------------
-    // Re-entry position — falls back gracefully if player is absent
+    // Re-entry position
     // -----------------------------------------------------------------------
     /**
      * Returns the best world position for the boss to re-enter at.
      *
-     * Priority: 1. Player ship is alive and piloting — use viewport center 2.
-     * No player — nearest living enemy ship to map center 3. No enemies at all
-     * — map center (0,0)
+     * Priority: 1. Player ship is alive and piloting use viewport center 2.
+     * No player nearest living enemy ship to map center 3. No enemies at all
+     *  map center (0,0)
      */
     private Vector2f getReEntryPosition() {
         CombatEngineAPI engine = Global.getCombatEngine();
@@ -269,7 +269,7 @@ public class armaa_rajanyaBossPlugin extends BaseEveryFrameCombatPlugin {
             return new Vector2f(nearest.getLocation());
         }
 
-        // 3. Nothing — map center
+        // 3. Nothing - map center
         return mapCenter;
     }
 
@@ -306,7 +306,6 @@ public class armaa_rajanyaBossPlugin extends BaseEveryFrameCombatPlugin {
         // enrage / hardmode?
         //if(retreatCount == 2)
         //{
-        Global.getCombatEngine().getFleetManager(1).spawnShipOrWing("armaa_exilium_custom", new Vector2f(0, 10000), 270f, 30f);
         //}
     }
 }
