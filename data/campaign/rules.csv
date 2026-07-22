@@ -9237,7 +9237,7 @@ FireBest MarketPostDock
 ShowDefaultVisual
 ResumeNormalMusic",You have other matters to attend to.,,
 armaa_cardGameIntro2,DialogOptionSelected,$option == armaa_cardGameIntro2,"FireBest armaa_yuniCardGameIntro
-sfcplaymusic ""runi_encounter_friendly""","Inside, the wardroom's near empty. Two people are the exception, off in a corner.
+armaa_Hikaru_Utada playMusic runi_encounter_friendly","Inside, the wardroom's near empty. Two people are the exception, off in a corner.
 
 Some kind of small wooden case sits between them, with a deck of cards next to it. Dawn glances at you, and nods at an empty chair. ""I'm teachin' Yuni how to lose money. Let's hope she's a natural."" 
 
