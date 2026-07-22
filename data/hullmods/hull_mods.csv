@@ -3,7 +3,7 @@ AAF,armaa_aaf,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_aaf,Increases Fire Rate,,
 Strikecraft,strikeCraft,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_strikeCraft,"This vehicle depends on larger ships for support, maintenance, and long-range travel. Enables docking at ships larger than Frigates by %s.",Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 Strikecraft(Frigate),armaa_strikeCraftFrig,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_strikeCraftFrig,Used in tandem with strikecraft hullmod to maintain frigate hullsize in cmbat.,Has fighter characteristics,,graphics/armaa/hullmods/armaa_strikecraft.png
 HI-MAC Manuever System,armaa_himac,6,0,Arma Armatura,"special,no_drop","Engines, Special",,FALSE,,,8,12,24,36,data.hullmods.armaa_himac,Experimental hullmod.,[REDACTED],,graphics/icons/hullsys/infernium_injector.png
-Specialized Service Bays,armaa_serviceBays,,,Arma Armatura,"special,no_drop",,,FALSE,,,1,1,1,1,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
+Specialized Service Bays,armaa_serviceBays,,,Arma Armatura,"special,no_drop",,,FALSE,,,4,8,12,20,data.hullmods.armaa_serviceBays,Ships with the %s hullmod that dock aboard this vessel refit %s faster.,,,graphics/armaa/hullmods/armaa_serviceBays.png
 ,,,,,,,,,,,,,,,,,,,
 Module Repair,armaa_moduleRepair,,,,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_moduleRepair,Shouldn't be visible.,,,graphics/icons/markets/shipbreaking.png
 Cataphract Assault Pods,armaa_assaultPods,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_assaultPods,Enables the %s ability during ground invasions.,,,graphics/armaa/hullmods/armaa_assaultpods.png
