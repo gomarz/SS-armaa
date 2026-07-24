@@ -282,16 +282,16 @@ public class armaa_variableUnit extends BaseHullMod {
             if (fighterMode) {
                 Global.getCombatEngine().maintainStatusForPlayerShip(
                         "armaa_missilemode",
-                        "graphics/.../some_icon.png",
-                        "Fighter Configuration",
-                        "Forward missiles online \u2014 broadside mounts offline",
+                        "graphics/icons/hullsys/missile_racks.png",
+                        "FIGHTER Configuration",
+                        "Forward missiles online || Broadside missiles offline",
                         false);  // false = not a debuff/positive coloring as appropriate
             } else {
                 Global.getCombatEngine().maintainStatusForPlayerShip(
                         "armaa_missilemode",
-                        "graphics/.../some_icon.png",
-                        "Soldier Configuration",
-                        "Broadside missiles online \u2014 forward mounts offline",
+                        "graphics/icons/hullsys/missile_racks.png",
+                        "SOLDIER Configuration",
+                        "Broadside missiles online || Forward missiles offline",
                         false);
             }
         }

@@ -28,7 +28,7 @@ private static final float REFIT_BONUS = 50f;
     //Built-in only
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        return false;
+        return !ship.isFrigate() && ship.hasLaunchBays();
     }
 
     @Override

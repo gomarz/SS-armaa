@@ -364,7 +364,9 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
 
     public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
         if (getProgress() >= PROGRESS_MAX) {
-            return;
+            if(Global.getSector().getPersistentData().get("armaa_completedATAC") == null)
+                Global.getSector().getPersistentData().put("armaa_completedATAC", true);
+           return;
         }
         if (isEnded() || isEnding()) {
             return;
@@ -390,7 +392,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             for (FleetMemberAPI loss : Misc.getSnapshotMembersLost(otherFleet)) {
                 fpDestroyed += loss.getFleetPointCost();
                 //anomalous stuff gets bonus points
-                if (loss.getHullSpec().hasTag("omega") || loss.getHullSpec().getManufacturer().equals("Threat") || loss.getHullSpec().getManufacturer().equals("Shrouded Dweller")) {
+                if (loss.getHullSpec().hasTag("monster") || loss.getHullSpec().hasTag("dweller")  || loss.getHullSpec().hasTag("omega") || loss.getHullSpec().getManufacturer().equals("Threat") || loss.getHullSpec().getManufacturer().equals("Shrouded Dweller")) {
                     fpDestroyed += loss.getFleetPointCost();
                 }
                 if (first == null) {
@@ -398,7 +400,11 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 }
             }
         }
-
+        if(Global.getSector().getPersistentData().containsKey("armaa_completedATAC"))
+        {
+            fpDestroyed*=2;
+            Global.getLogger(this.getClass()).info("fffff");
+        }
         int points = computeProgressPoints(fpDestroyed);
         if (points > 0) {
             //points = 700;

@@ -18,18 +18,21 @@ import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 /**
- * Energy Lash embedded-spike AI (self-contained; diverged from armaa_harpoonAI by Tartiflette).
+ * Energy Lash embedded-spike AI (self-contained; diverged from armaa_harpoonAI
+ * by Tartiflette).
  *
- * Behavior: on spawn, latches to the nearest hit target from the thrower's HIT list, then
- * rigidly tracks (sticks to) that anchor with a fixed offset for a FIXED DURATION, then
- * auto-releases (applyDetonation) which lets the rope retract.
+ * Behavior: on spawn, latches to the nearest hit target from the thrower's HIT
+ * list, then rigidly tracks (sticks to) that anchor with a fixed offset for a
+ * FIXED DURATION, then auto-releases (applyDetonation) which lets the rope
+ * retract.
  *
- * DIVERGENCE FROM ORIGINAL:
- *  - The ACCELERATION-based tear-off is REMOVED (the lash's own pull would trip it).
- *  - Added an OVER-RANGE tear-off: the pinned spike does NOT expire from range on its own (the AI
- *    force-sets its position every frame, so it never travels), so without this the rope extends
- *    infinitely. This enforces the tether's max length = the weapon's range.
- *  - Embed duration is a named constant (EMBED_DURATION) instead of the magic "99".
+ * DIVERGENCE FROM ORIGINAL: - The ACCELERATION-based tear-off is REMOVED (the
+ * lash's own pull would trip it). - Added an OVER-RANGE tear-off: the pinned
+ * spike does NOT expire from range on its own (the AI force-sets its position
+ * every frame, so it never travels), so without this the rope extends
+ * infinitely. This enforces the tether's max length = the weapon's range. -
+ * Embed duration is a named constant (EMBED_DURATION) instead of the magic
+ * "99".
  */
 public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
 
@@ -50,11 +53,11 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
     // Fixed embed duration (seconds) before auto-release. Tune to match the EMP-over-time window.
     private static final float EMBED_DURATION = 4f;
 
-    // The target can break the embed by getting its shield arc over the spike -- counterplay for the
+    // The target can break the embed by getting its shield arc over the spike. counterplay for the
     // EMP lock (AI keeps shields up, so this frequently severs the embed against shielded targets,
     // turning the lash into a punish-the-shields-down tool). A short grace period guarantees SOME
     // payoff for landing the embed before the target can shield it off.
-    private static final float SHIELD_SEVER_GRACE = 0.6f;
+    private static final float SHIELD_SEVER_GRACE = 1f;
 
     public armaa_energyLashAI(MissileAPI missile, ShipAPI launchingShip) {
         this.missile = missile;
@@ -72,8 +75,8 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
 
         if (!runOnce) {
             runOnce = true;
-            List<CombatEntityAPI> list =
-                    ((armaa_energyLashThrowerEffect) missile.getWeapon().getEffectPlugin()).getHITS();
+            List<CombatEntityAPI> list
+                    = ((armaa_energyLashThrowerEffect) missile.getWeapon().getEffectPlugin()).getHITS();
 
             if (list.isEmpty()) {
                 missile.flameOut();
@@ -112,9 +115,9 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
         }
 
         // ---- legitimate break conditions (acceleration check intentionally removed) ----
-        boolean fooled    = (target != anchor);
-        boolean escaped   = (anchor.getCollisionClass() == CollisionClass.NONE);
-        boolean emped     = missile.isFizzling();
+        boolean fooled = (target != anchor);
+        boolean escaped = (anchor.getCollisionClass() == CollisionClass.NONE);
+        boolean emped = missile.isFizzling();
         boolean outlasted = missile.isFading();
         boolean dead = target.getOwner() > 1;
         boolean overloaded = launchingShip.getFluxTracker().isOverloaded();
@@ -140,9 +143,15 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
 
         if (fooled || escaped || emped || outlasted || overRange || shielded || dead || overloaded) {
             tearOff = true;
-            missile.setArmingTime(missile.getElapsed() + 0.25f);
-            missile.setCollisionClass(CollisionClass.MISSILE_FF);
-            missile.flameOut();
+            if (shielded) {
+                missile.setArmingTime(missile.getElapsed() + 0.25f);
+                missile.setCollisionClass(CollisionClass.MISSILE_FF);                
+                missile.explode();
+            } else {
+                missile.setArmingTime(missile.getElapsed() + 0.25f);
+                missile.setCollisionClass(CollisionClass.MISSILE_FF);
+                missile.flameOut();
+            }
             if (missile.getSource() != null) {
                 String msg = shielded ? "Lash deflected!" : "Lash severed!";
                 Global.getCombatEngine().addFloatingText(missile.getSource().getLocation(),
@@ -202,5 +211,6 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
         this.target = target;
     }
 
-    public void init(CombatEngineAPI engine) {}
+    public void init(CombatEngineAPI engine) {
+    }
 }

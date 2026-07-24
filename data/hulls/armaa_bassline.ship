@@ -11,6 +11,10 @@
   "shieldCenter": [1, -0],
   "shieldRadius": 135.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "armaa_wingCommander",
+    "armaa_wingClipper2"
+  ],
   "weaponSlots": [
     {
       "id": "WS0002",

@@ -44,7 +44,7 @@ public class armaa_aegisPlugin extends BaseEveryFrameCombatPlugin {
 
             if (!ship.getCustomData().containsKey("armaa_aegis_ring")) {
                 ship.getCustomData().put("armaa_aegis_ring", Boolean.TRUE);
-                engine.addLayeredRenderingPlugin(new armaa_aegisRenderer(ship));
+                //engine.addLayeredRenderingPlugin(new armaa_aegisRenderer(ship));
             }
         }
 

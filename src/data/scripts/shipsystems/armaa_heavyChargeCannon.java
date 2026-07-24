@@ -156,7 +156,7 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
 
         if (charging) {
             stats.getMaxSpeed().modifyMult(STAT_ID, mix(1f, COMMIT_SPEED_MULT, effectLevel));
-            stats.getShieldDamageTakenMult().modifyMult(STAT_ID, mix(1f, COMMIT_SHIELD_TAKEN_MULT, effectLevel));
+            //stats.getShieldDamageTakenMult().modifyMult(STAT_ID, mix(1f, COMMIT_SHIELD_TAKEN_MULT, effectLevel));
             String slotId = MUZZLE_SLOT_BETA;
             WeaponAPI w = findWeapon(ship, slotId);
             float facing = w.getCurrAngle();
@@ -273,7 +273,8 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
         }
         float damage = TIER_DAMAGE[Math.max(0, Math.min(TIER_DAMAGE.length - 1, tier - 1))];
 
-        float cd = TIER_COOLDOWN[tier - 1];
+        float cd = ship.getMutableStats().getSystemCooldownBonus()
+                .computeEffective(TIER_COOLDOWN[tier - 1]);
         ShipSystemAPI sys = ship.getSystem();
         if (sys != null) {
             sys.setCooldown(cd);

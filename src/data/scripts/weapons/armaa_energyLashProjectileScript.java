@@ -15,7 +15,7 @@ import org.magiclib.util.MagicRender;
 import com.fs.starfarer.api.util.IntervalUtil;
 
 /**
- * Energy Lash tether + pull script (self-contained energyLash family).
+ * Energy Lash tether + pull script
  *
  * Two clearly-typed far-end references, only one active at a time:
  *   primary  (DamagingProjectileAPI) - the fired projectile; valid in FLIGHT, null after handoff.
@@ -40,7 +40,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
     private float retractElapsed = 0f;
     private final Vector2f lastFarEnd = new Vector2f();
 
-    private final IntervalUtil fireInterval = new IntervalUtil(0.05f, 0.1f);
+    private final IntervalUtil fireInterval = new IntervalUtil(0.1f, 0.1f);
     private static final float AT_MAX_RANGE = 0.5f;
     private static final float PUSH_CONSTANT = 2000f;
     private static final float MISSILE_SCALAR = 0.2f;
@@ -207,7 +207,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
         float myMass = ((ShipAPI) source).getMassWithModules();
         float targetMass;
 
-        fireInterval.advance(0.05f);
+        fireInterval.advance(engine.getElapsedInLastFrame());
         if (!fireInterval.intervalElapsed()) {
             return;
         }
@@ -225,11 +225,14 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
 
             if (Math.random() > EMP_PROC_CHANCE) {
                 spawnEmpAlongRope(engine);
+            }
+            if(Math.random() < EMP_PROC_CHANCE)
+            {
                 float dam = embedded.getWeapon().getDamage().getDamage() * 0.2f;
                 float emp = embedded.getWeapon().getDamage().getFluxComponent();
                 engine.spawnEmpArc((ShipAPI) source, embedded.getLocation(), empTarget, empTarget,
-                        DamageType.ENERGY, dam, emp, 10000f,
-                        "system_emp_emitter_impact", 2f, EMP_FRINGE, EMP_CORE);
+                        DamageType.ENERGY, dam, emp, embedded.getWeapon().getRange()/2f,
+                        "system_emp_emitter_impact", 5f, EMP_FRINGE, EMP_CORE);
             }
         } else {
             targetMass = target.getMass() * MISSILE_SCALAR;
@@ -255,11 +258,6 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
         float pushMe  = PUSH_CONSTANT / myMass * (1f - relativeMass) * momentumMult;
         float pushYou = PUSH_CONSTANT / targetMass * relativeMass * momentumMult;
 
-        // --- swing: BOTH aim-sweep AND hull rotation sweep the attachment point around us ---
-        // Aim-sweep is a deliberate player input (the AI can't do it); hull rotation is something
-        // both player and AI do constantly while maneuvering. Folding in hull angular velocity makes
-        // the swing work for AI ships too, and unifies the physics. The rate becomes a tangential
-        // FORCE (below), divided by mass -> light things swing, heavy things won't budge.
         float aimRate = 0f;
         if (embedded.getWeapon() != null && !Float.isNaN(lastWeaponAngle)) {
             aimRate = MathUtils.getShortestRotation(lastWeaponAngle, embedded.getWeapon().getCurrAngle()) / 0.05f;
@@ -267,14 +265,12 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
         float hullRate = ((ShipAPI) source).getAngularVelocity(); // out of the weapon guard now
         float swingRate = Math.max(-SWING_MAX_RATE, Math.min(SWING_MAX_RATE, aimRate + hullRate));
 
-        if (distance > 100) {
+        if (distance > 200) {
             // radial pull (momentum-scaled)
             Vector2f.add((Vector2f) new Vector2f(dir).scale(pushMe * distanceModifier * -1f), source.getVelocity(), source.getVelocity());
             Vector2f.add((Vector2f) new Vector2f(dir).scale(pushYou * distanceModifier), target.getVelocity(), target.getVelocity());
 
-            // --- swing: tangential force ÷ sqrt(mass) = acceleration (weighty, but visible across
-            // the full mass range -- sqrt compresses the 40x mass span to ~6x so light things swing
-            // briskly, heavy things sluggishly, and nothing is invisible or launched). ---
+            // --- swing: tangential force ÷ sqrt(mass) = acceleration
             if (Math.abs(swingRate) > 0.001f) {
                 Vector2f perp = new Vector2f(dir.y, -dir.x); // perpendicular to rope; flipped so target swings WITH your rotation
                 float swingForce = SWING_FORCE * (swingRate / SWING_MAX_RATE); // signed magnitude
@@ -286,9 +282,8 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
                 Vector2f.add((Vector2f) new Vector2f(perp).scale(-accelMe), source.getVelocity(), source.getVelocity());
             }
 
-            // --- target spin: lever-arm torque ONLY (off-center pull = real torque) ---
-            // No "rotate facing to follow the swing" -- a swung mass translates, it doesn't spin on
-            // its own axis. The only rotation is from the embedded spike being yanked off-center.
+            // --- target spin(off-center pull = real torque) ---
+
             if (target instanceof ShipAPI) {
                 Vector2f lever = Vector2f.sub(targetLoc, target.getLocation(), new Vector2f());
                 Vector2f force = new Vector2f(dir.x * pushYou * distanceModifier, dir.y * pushYou * distanceModifier);

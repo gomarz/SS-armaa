@@ -164,6 +164,9 @@ public class armaa_wingCommander extends BaseHullMod {
         stats.getDynamic().getStat(Stats.REPLACEMENT_RATE_DECREASE_MULT).modifyMult(id, 1f + FIGHTER_REPLACEMENT_TIME_MULT);
         stats.getFighterRefitTimeMult().modifyMult(id, FIGHTER_RATE);
         stats.getDynamic().getStat(Stats.FIGHTER_CREW_LOSS_MULT).modifyMult(id, CREW_LOSS_MULT);
+        stats.getFighterRefitTimeMult().unmodify("wingcombonus");
+
+        
     }
 
     @Override
@@ -181,10 +184,10 @@ public class armaa_wingCommander extends BaseHullMod {
             }
         }
 
-        if (ship.getMutableStats().getFighterRefitTimeMult().getPercentStatMod("wingcombonus") == null) {
+        //if (ship.getMutableStats().getFighterRefitTimeMult().getPercentStatMod("wingcombonus") == null) {
             //used as a check to add all the extra fighters upon deployment
-            ship.getMutableStats().getFighterRefitTimeMult().modifyPercent("wingcombonus", 1);
-        }        
+            //ship.getMutableStats().getFighterRefitTimeMult().modifyPercent("wingcombonus", 1);
+        //}        
     }
 
     @Override
@@ -352,12 +355,12 @@ public class armaa_wingCommander extends BaseHullMod {
                 }
             }
         }
-        if(!runOnce)
+        boolean allDeployed = true, ranOnce = false;
+        if(!ranOnce && tracker.intervalElapsed())
         {
          if (ship.getHullSpec().getBuiltInMods().contains("armaa_wingCommander")) {
             for (FighterLaunchBayAPI bay : ship.getLaunchBaysCopy()) {
                 if (bay.getWing() != null) {
-                    runOnce = true;
                     FighterWingSpecAPI wingSpec = bay.getWing().getSpec();
                     int deployed = bay.getWing().getWingMembers().size();
                     int maxTotal = wingSpec.getNumFighters() + 1;
@@ -379,7 +382,11 @@ public class armaa_wingCommander extends BaseHullMod {
                     }
                 }
             }
-        }           
+        }
+         if (ship.getMutableStats().getFighterRefitTimeMult().getPercentStatMod("wingcombonus") == null && allDeployed && ranOnce) {
+            //used as a check to add all the extra fighters upon deployment
+            ship.getMutableStats().getFighterRefitTimeMult().modifyPercent("wingcombonus", 1);
+        }        
         }
         FighterLaunchBayAPI bay = ship.getLaunchBaysCopy().get(0);
 

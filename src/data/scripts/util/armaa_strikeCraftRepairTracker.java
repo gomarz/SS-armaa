@@ -20,7 +20,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
     private static float REPAIR_POOL_DEFAULT = 50f;
     private static final String REPAIR_POOL_TAG_PREFIX = "armaa_repairPool_";
-
+private static final float BAY_DRAIN_PER_SERVICE = 0.4f; // total repl rate consumed
     private final IntervalUtil BASE_REFIT = new IntervalUtil(25f, 25f);
     private CombatFleetManagerAPI fleetManager;
     private ShipAPI carrier;
@@ -184,8 +184,6 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         }
 
         float refitMod = getCarrierRefitRate();
-        refitMod*= carrier.getMutableStats().getDynamic().getStat("armaa_strikeCraftRefitMod").getModifiedValue();
-
         float wepMalus = 0f;
 
         if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + ship.getId()) instanceof Float) {
@@ -195,6 +193,8 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         float hullBonus = (float) Math.max(ship.getHullLevel() * 1.5f, 1f);
         float refitRate = (amount * hullBonus) * (1f - wepMalus) * refitMod;
         float adjustedRate = (float) Math.max(refitRate, amount * BaseTimer);
+                adjustedRate*= carrier.getMutableStats().getDynamic().getStat("armaa_strikeCraftRefitMod").getModifiedValue();
+
         if (ship.isStationModule()) {
             ship.setShipAI(null);
         }
@@ -244,7 +244,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
         //reduce bay repl rate
         if (carrier.getLaunchBaysCopy() != null && carrier.getLaunchBaysCopy().size() - 1 >= bayNo) {
-            carrier.getLaunchBaysCopy().get(bayNo).setCurrRate(carrier.getLaunchBaysCopy().get(bayNo).getCurrRate() - (amount * (adjustedRate)));
+            carrier.getLaunchBaysCopy().get(bayNo).setCurrRate(carrier.getLaunchBaysCopy().get(bayNo).getCurrRate() - adjustedRate * (BAY_DRAIN_PER_SERVICE / BASE_REFIT.getMaxInterval()));
         }
 
         String abortString = "";

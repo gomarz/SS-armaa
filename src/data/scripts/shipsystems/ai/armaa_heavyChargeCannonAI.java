@@ -44,7 +44,10 @@ public class armaa_heavyChargeCannonAI implements ShipSystemAIScript {
     private static final float FIRE_ARC_HALF = 15f;       // degrees off-facing the target may be to count as "lined up" (AoE forgives imprecision)
     private static final float RANGE = 600f;              // must match BETA_HITSCAN_RANGE / alpha range
     private static final float RANGE_SLACK = 1.25f;       // allow targets a touch beyond nominal range when deciding to start
-
+// vs fighters/drones, tier 2 (500 HE blast + EMP splash) already wrecks a wing;
+// charging to 4 wastes ~3s pinned slow and eats the 18s cooldown on a target
+// that dies to tier 2, leaving the cannon down for whatever they were screening.
+    private static final int FIGHTER_TIER = 2;
     // flux safety: don't commit to charging (slow + extra shield damage) when near overload
     private static final float MAX_FLUX_TO_START = 0.50f; // above this hard-flux, don't START a charge
     private static final float ABORT_FLUX = 0.70f;        // above this hard-flux while charging, bail
@@ -190,7 +193,7 @@ public class armaa_heavyChargeCannonAI implements ShipSystemAIScript {
         // we fire if things went bad (might as well get the shot we paid for) OR if
         // we've reached our target tier OR the firing window is closing.
         boolean windowClosing = isWindowClosing(target);
-        boolean reachedTargetTier = tier >= TARGET_TIER;
+boolean reachedTargetTier = tier >= desiredTier(target);   // was: tier >= TARGET_TIER
 
         // failsafe: we've sat at max charge too long without a clean release -> just fire.
         // stops the "stuck full-charge, pinned slow, can't line up" loiter.
@@ -202,18 +205,21 @@ public class armaa_heavyChargeCannonAI implements ShipSystemAIScript {
         return KEEP;
     }
 
-    // ---- helpers --------------------------------------------------------------
-    /**
-     * Reads the tier published by the effect/system script; 0 if absent.
-     */
+
     private int readTier() {
         Object v = engine.getCustomData().get("armaa_chargeCannonTier_" + ship.getId());
         return (v instanceof Integer) ? (Integer) v : 0;
     }
 
-    /**
-     * Target within firing range and roughly in front (within the fire arc).
-     */
+    private boolean isFighterTarget(ShipAPI target) {
+        return target != null && (target.isFighter() || target.isDrone());
+    }
+
+    private int desiredTier(ShipAPI target) {
+        return isFighterTarget(target) ? FIGHTER_TIER : TARGET_TIER;
+    }
+
+ 
     private boolean isLinedUp(ShipAPI target, float range) {
         if (target == null) {
             return false;

@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -36,6 +37,8 @@ public class armaa_guarDualTransformAI implements AdvanceableListener {
     private float commitLockout = 0f;
     private static final float COMMIT_LOCKOUT_TIME = 2f;
     private static final float ESCAPE_EMERGENCY_FLUX = 0.7f;
+    private float blockedHeldFor = 0f;                       // accumulator: how long the blocked-missile condition has held
+    private static final float BLOCKED_CONFIRM_TIME = 0.8f;  // must hold this long before the nudge fires
 
     public armaa_guarDualTransformAI(ShipAPI ship) {
         this.ship = ship;
@@ -139,7 +142,28 @@ public class armaa_guarDualTransformAI implements AdvanceableListener {
                 reason = "retank";
             }
         }
-
+        // WEAPON-BLOCKED nudge: the AI's actively selected weapon is a missile the current
+        // mode suppresses. Good-faith assumption: selected = wants to use.
+        boolean blockedMissileSelected = false;
+        if (ship.getSelectedGroupAPI() != null) {
+            WeaponAPI active = ship.getSelectedGroupAPI().getActiveWeapon();
+            if (active != null
+                    && active.getType() == WeaponAPI.WeaponType.MISSILE
+                    && (!active.usesAmmo() || active.getAmmo() > 0)
+                    && active.isForceNoFireOneFrame()) {
+                blockedMissileSelected = true;
+            }
+        }
+        if (blockedMissileSelected && !emergency) {
+            blockedHeldFor += amount;
+        } else {
+            blockedHeldFor = 0f;
+        }
+        if (!wantsTransform && intervalReady && blockedHeldFor >= BLOCKED_CONFIRM_TIME) {
+            wantsTransform = true;
+            reason = "weapon_blocked";
+            blockedHeldFor = 0f;
+        }
         // in fighter, target helpless, safe -> flip to mech to punish.
         boolean commitConditionRaw = false;
         if (!isRobot) {

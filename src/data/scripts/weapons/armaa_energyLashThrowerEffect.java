@@ -78,7 +78,11 @@ public class armaa_energyLashThrowerEffect implements EveryFrameWeaponEffectPlug
     }
 
     @Override
-    public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) {
+    public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) 
+    {
+            for (CombatEntityAPI anchored : new ArrayList<>(detonation.keySet())) {
+        applyDetonation(anchored); // one live tether per weapon
+    }
         // Spawn the rope trailing the freshly-fired PRIMARY projectile.
         armaa_energyLashProjectileScript rope =
                 new armaa_energyLashProjectileScript(projectile, weapon.getShip(), null);
