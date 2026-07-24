@@ -1,3 +1,12 @@
+V3.3.3
+------
+- Zwei
+	- should more frequently transform to use the missile slot manually selected instead of attempting to fruitlessly fire them while disabled
+	- Added goal variants
+	- Fixed Sys Ex not properly reducing cooldown time
+- After completing ATAC for the first time, progress from destroying ships is doubled
+- fixed zwei not appearing in procurement / market
+
 V3.3.2
 ------
 -- Fixes
