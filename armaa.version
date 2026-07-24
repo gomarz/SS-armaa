@@ -6,8 +6,8 @@
 	{
 		"major":3,
 		"minor":3,
-		"patch":2,
+		"patch":3,
 	},
 	"starsectorVersion":"0.98",
-	"directDownloadURL":"https://github.com/gomarz/SS-armaa/releases/download/v3.3.2/armaa-3.3.2.zip",
+	"directDownloadURL":"https://github.com/gomarz/SS-armaa/releases/download/v3.3.3/armaa-3.3.3.zip",
 }
