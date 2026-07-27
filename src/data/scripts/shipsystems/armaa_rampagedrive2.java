@@ -35,7 +35,6 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
     private static float AFTERIMAGE_THRESHOLD = 0.09f;
     private static final float CONE_ANGLE = 150f;
     // one half of the angle. used internally, don't mess with thos
-    private static final float A_2 = CONE_ANGLE / 2;
     private static final Color MUZZLE_FLASH_COLOR = new Color(250, 146, 0, 255);
     private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(255, 255, 255, 100);
     private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(255, 0, 0, 100);
@@ -84,15 +83,10 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
     private Float mass = null;
 
-    // === MID-DASH BAILOUT TUNABLES ==========================================
-    // While a dash is active (AI ships only), re-scan nearby enemy threat and
-    // cut the dash short via deactivate(). Attack dashes bail when threat is too
-    // high; escape dashes end once threat drops low enough. The gap between the
-    // two thresholds is hysteresis so the AI's re-dash logic doesn't flap.
     private final IntervalUtil bailoutCheck = new IntervalUtil(0.1f, 0.1f);
     private static final float BAILOUT_SCAN_RADIUS = 1400f; // threat scan radius while dashing
-    private static final float BAILOUT_MAX_THREAT  = 7.0f;  // attack dash bails if threat > this
-    private static final float ESCAPE_SAFE_THREAT  = 2.5f;  // escape dash ends once threat < this
+    private static final float BAILOUT_MAX_THREAT = 7.0f;  // attack dash bails if threat > this
+    private static final float ESCAPE_SAFE_THREAT = 2.5f;  // escape dash ends once threat < this
     // ========================================================================
 
     public static class TargetData {
@@ -256,11 +250,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             ship.getCustomData().remove("armaa_isEscaping");
             ship.getCustomData().remove("armaa_rampageFlankOffset");
         } else {
-            // --- Mid-dash bailout (AI ships only) ---------------------------
-            // Re-scan threat while dashing and cut it short. Attack dashes bail
-            // if we blundered into too much fire; escape dashes end once we're
-            // clear (no point flying away for the full duration). Player ships
-            // are never auto-cut.
+
             if (!ship.isAlive() || ship != Global.getCombatEngine().getPlayerShip()) {
                 bailoutCheck.advance(Global.getCombatEngine().getElapsedInLastFrame());
                 if (bailoutCheck.intervalElapsed() && ship.getSystem() != null
@@ -362,8 +352,9 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
                                 // clamp extremes so nothing becomes ridiculous
                                 pushTarget = Math.min(pushTarget, 4f);   // yeet small ships but not to space
-                                if(!ship.isFrigate() && !ship.isFighter() )
-                                CombatUtils.applyForce(ship, angleAB + 180f, 3f * ship.getMass() * pushRammer);
+                                if (!ship.isFrigate() && !ship.isFighter()) {
+                                    CombatUtils.applyForce(ship, angleAB + 180f, 3f * ship.getMass() * pushRammer);
+                                }
                                 CombatUtils.applyForce(e, angleAB, 3f * ship.getMass() * pushTarget);
                                 Global.getSoundPlayer().playSound("collision_ships", 1f, 0.5f, ship.getLocation(), ship.getVelocity());
                                 ship.getSystem().deactivate();
@@ -651,20 +642,4 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             return null;
         }
     }
-    /*protected ShipAPI findTarget(ShipAPI ship) {
-        ShipAPI target = ship.getShipTarget();
-        if(
-                target!=null
-                        &&
-                        (!target.isDrone()||!target.isFighter())
-                        &&
-                        MathUtils.isWithinRange(ship, target, RANGE)
-                        &&
-                        target.getOwner()!=ship.getOwner()
-                ){
-            return target;
-        } else {
-            return null;
-        }
-    }*/
 }

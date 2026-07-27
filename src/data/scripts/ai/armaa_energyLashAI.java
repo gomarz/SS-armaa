@@ -57,7 +57,7 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
     // EMP lock (AI keeps shields up, so this frequently severs the embed against shielded targets,
     // turning the lash into a punish-the-shields-down tool). A short grace period guarantees SOME
     // payoff for landing the embed before the target can shield it off.
-    private static final float SHIELD_SEVER_GRACE = 1f;
+    private static final float SHIELD_SEVER_GRACE = 0.7f;
 
     public armaa_energyLashAI(MissileAPI missile, ShipAPI launchingShip) {
         this.missile = missile;

@@ -2,6 +2,8 @@ package data.scripts.util;
 
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
@@ -22,12 +24,17 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
+import com.fs.starfarer.api.impl.campaign.missions.hub.HubMission;
 import com.fs.starfarer.api.loading.FighterWingSpecAPI;
+import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.hullmods.armaa_strikeCraft;
+import data.scripts.MechaModPlugin;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,6 +49,7 @@ import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -1329,7 +1337,8 @@ public class armaa_utils {
 
     public static void unloadMissionTextures(Set<String> textures) {
         for (String tex : textures) {
-
+            // need the id? 
+            //GL11.glDeleteTextures(tex.);
             Global.getSettings().unloadTexture(tex);
             Global.getLogger(armaa_utils.class).info("Unloaded tex " + tex);
         }
@@ -1404,5 +1413,78 @@ public class armaa_utils {
             }
         }
         return wingSize;
+    }
+
+    public static void getRefitRate(ShipAPI target) {
+        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + target.getId()) != null) {
+            return;
+        }
+        float totalRate = 0f;
+        String wepName = "";
+        List<WeaponAPI> weapons = target.getAllWeapons();
+        Map<String, Float> MALUSES = new HashMap<>();
+        for (WeaponAPI w : weapons) {
+            float adjustedRate = 0f;
+            if (MechaModPlugin.MISSILE_REFIT_MALUS.get(w.getId()) != null) {
+                adjustedRate = MechaModPlugin.MISSILE_REFIT_MALUS.get(w.getId());
+                totalRate += adjustedRate;
+                if (MALUSES.containsKey(w.getDisplayName())) {
+                    MALUSES.put(w.getDisplayName(), MALUSES.get(w.getDisplayName()) + adjustedRate);
+                } else {
+                    MALUSES.put(w.getDisplayName(), adjustedRate);
+                }
+            } else if (w.getType() == WeaponAPI.WeaponType.MISSILE) {
+                float damage = w.getDerivedStats().getDamagePerShot();
+                if (damage > armaa_strikeCraft.MISSILE_DAMAGE_THRESHOLD) {
+                    float penalty = damage / armaa_strikeCraft.MISSILE_DAMAGE_THRESHOLD;
+                    if (penalty < 1) {
+                        continue;
+                    }
+                    penalty = penalty / 10f;
+                    float newRate = (float) Math.min(.5f, penalty);
+                    wepName = w.getDisplayName();
+                    adjustedRate = newRate;
+                    totalRate += adjustedRate;
+                    if (MALUSES.containsKey(wepName)) {
+                        MALUSES.put(wepName, MALUSES.get(wepName) + adjustedRate);
+                    } else {
+                        MALUSES.put(wepName, adjustedRate);
+                    }
+                }
+            }
+        }
+        for (HullModSpecAPI spec : Global.getSettings().getAllHullModSpecs()) {
+            if (MechaModPlugin.HULLMOD_REFIT_MALUS.get(spec.getId()) == null) {
+                continue;
+            }
+            if (!target.getVariant().getHullMods().contains(spec.getId())) {
+                continue;
+            }
+            String hullmod = spec.getId();
+            String name = spec.getDisplayName();
+            float adjustedRate = MechaModPlugin.HULLMOD_REFIT_MALUS.get(hullmod);
+            totalRate += adjustedRate;
+            if (MALUSES.containsKey(name)) {
+                MALUSES.put(name, MALUSES.get(name) + adjustedRate);
+            } else {
+                MALUSES.put(name, adjustedRate);
+            }
+        }
+        totalRate = Math.min(totalRate, 0.75f);
+        Global.getCombatEngine().getCustomData().put("armaa_strikecraftTotalMalus" + target.getId(), totalRate);
+        Global.getCombatEngine().getCustomData().put("armaa_strikecraftMalus" + "_" + target.getId(), MALUSES);
+    }
+
+    public static boolean hasActiveMissionsFrom(PersonAPI person) {
+        for (IntelInfoPlugin curr : Global.getSector().getIntelManager().getIntel()) {
+            if (!(curr instanceof HubMission)) {
+                continue;
+            }
+            HubMission m = (HubMission) curr;
+            if (m.getPerson() == person) {
+                return true;
+            }
+        }
+        return false;
     }
 }

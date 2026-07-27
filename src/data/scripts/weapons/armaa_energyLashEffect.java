@@ -22,7 +22,7 @@ import org.lwjgl.util.vector.Vector2f;
  */
 public class armaa_energyLashEffect implements OnHitEffectPlugin {
 
-    private final String SECONDARY_ID = "armaa_harpoonSecondary"; // TODO: replace with energyLash secondary when ready
+    private final String SECONDARY_ID = "armaa_energyLashSecondary"; // TODO: replace with energyLash secondary when ready
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point,

@@ -57,6 +57,8 @@ public class armaa_guarDualTransformAI implements AdvanceableListener {
         if (ship.getShipAI() == null) {
             return;
         }
+        if(ship.isFinishedLanding())
+            return;
         if (ship.getFluxTracker().isOverloadedOrVenting()) {
             return;
         }

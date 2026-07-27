@@ -151,6 +151,15 @@
       "angle": -0,
       "locations": [-10, -16],
       "renderOrderMod": -1000
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 180,
+      "locations": [-8, -0]
     }
   ],
   "engineSlots": [

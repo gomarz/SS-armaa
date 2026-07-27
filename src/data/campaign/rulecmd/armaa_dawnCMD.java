@@ -2,10 +2,10 @@ package data.campaign.rulecmd;
 
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.FleetDataAPI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.VisualPanelAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.util.Misc.Token;
 import java.util.Map;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
@@ -17,6 +17,8 @@ import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import com.fs.starfarer.api.impl.campaign.ids.Conditions;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.BarCMD;
@@ -28,6 +30,7 @@ import com.fs.starfarer.api.util.WeightedRandomPicker;
 import data.scripts.campaign.armaa_dawnListener;
 import data.scripts.util.armaa_utils;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import lunalib.lunaSettings.LunaSettings;
 
@@ -69,6 +72,16 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
         if ("setInteractionTimestamp".equals(action)) {
             long timestamp = Global.getSector().getClock().getTimestamp();
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnBarTimestamp", timestamp);
+            return true;
+        } else if ("situationTopic".equals(action)) {
+            String topic = resolveTopic(dialog);
+            if (topic.equals(memory.getString("$armaa_dawnLastTopic"))) {
+                topic = "repeat";
+            } else {
+                memory.set("$armaa_dawnLastTopic", topic, 1f);
+            }
+            memory.set("$armaa_dawnTopic", topic, 1f);
+            memory.set("$armaa_dawnMarket", dialog.getInteractionTarget().getMarket().getName(), 1f);
             return true;
         } else if ("checkDaysElapsed".equals(action)) {
             String startDate = null;
@@ -293,6 +306,116 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             return true;
         }
         return false;
+    }
+    private static final String SAID_PREFIX = "$armaa_dawnSaid_";
+
+    private String resolveTopic(InteractionDialogAPI dialog) {
+        MemoryAPI global = Global.getSector().getMemoryWithoutUpdate();
+
+        String beat = resolveStoryBeat(global);
+        if (beat != null) {
+            return beat;
+        }
+
+        MarketAPI market = resolveMarket(dialog);
+        if (market != null) {
+            return classifyMarket(market);
+        }
+
+        return "idle";
+    }
+
+    /**
+     * if several beats are unacknowledged she leads with the furthest along.
+     */
+    private String resolveStoryBeat(MemoryAPI global) {
+        if (unsaid(global, "gates") && global.contains("$gaATG_completed")) {
+            return "gates";
+        }
+        if (unsaid(global, "kanta") && global.contains("$gaATG_gotKantaToken")) {
+            return "kanta";
+        }
+        if (unsaid(global, "daud") && global.contains("$gaATG_gotDaudDeal")) {
+            return "daud";
+        }
+        if (unsaid(global, "ZGR") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metZGR")) {
+            return "ZGR";
+        }
+        if (unsaid(global, "sedge") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$killedSedge")) {
+            return "sedge";
+        }
+        return null;
+    }
+
+    private boolean unsaid(MemoryAPI global, String id) {
+        return !global.getBoolean(SAID_PREFIX + id);
+    }
+
+    private MarketAPI resolveMarket(InteractionDialogAPI dialog) {
+        if (dialog != null && dialog.getInteractionTarget() != null) {
+            MarketAPI m = dialog.getInteractionTarget().getMarket();
+            if (m != null) {
+                return m;
+            }
+        }
+        // fall back to whatever armaa_dawnListener last cached on dock
+        String cached = Global.getSector().getMemoryWithoutUpdate().getString("$armaa_dawnLastMarket");
+        if (cached != null) {
+            return Global.getSector().getEconomy().getMarket(cached);
+        }
+        return null;
+    }
+
+    private String classifyMarket(MarketAPI m) {
+        String named = NAMED_WORLDS.get(m.getId());
+        if (named != null) {
+            return named;
+        }
+
+        String fid = m.getFactionId();
+
+        if (m.hasCondition(Conditions.DECIVILIZED)) {
+            return "deciv";
+        }
+        if (Factions.LUDDIC_PATH.equals(fid)) {
+            return "path";
+        }
+        if (Factions.LUDDIC_CHURCH.equals(fid)) {
+            return "church";
+        }
+        // Luddic population
+        if (m.hasCondition(Conditions.LUDDIC_MAJORITY)) {
+            return "luddicUnderRule";
+        }
+        if (Factions.DIKTAT.equals(fid)) {
+            return "diktat";
+        }
+        if (Factions.PIRATES.equals(fid)) {
+            return "pirates";
+        }
+        if (m.hasCondition(Conditions.FREE_PORT)) {
+            return "freeport";
+        }
+        if (Factions.HEGEMONY.equals(fid)) {
+            return "hegemony";
+        }
+        if (Factions.TRITACHYON.equals(fid)) {
+            return "tritachyon";
+        }
+        if (m.hasCondition(Conditions.POLLUTION)) {
+            return "poisoned";
+        }
+        if (!m.hasCondition(Conditions.HABITABLE)) {
+            return "inhospitable";
+        }
+        return "generic";
+    }
+
+    private static final Map<String, String> NAMED_WORLDS = new HashMap<>();
+
+    static {
+        NAMED_WORLDS.put("baetis", "baetis");   // home
+        NAMED_WORLDS.put("jangala", "jangala");
     }
 
     /**

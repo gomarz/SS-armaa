@@ -101,14 +101,6 @@ public class armaa_AceUtil {
         return countPlayerAces() < getAceCap();
     }
 
-    /**
-     * Grants the veteran skill (additive - does not consume an existing slot).
-     * Returns false if the pilot already has it or the cap is reached.
-     *
-     * NOTE: this does not persist the PersonAPI back into persistent data
-     * the caller should re-put the pilot object afterward, matching the
-     * existing pattern in the WINGCOM code.
-     */
     public static boolean grantAce(PersonAPI pilot) {
         if (pilot == null) return false;
         if (hasAce(pilot)) return false;

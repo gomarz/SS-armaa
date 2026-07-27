@@ -6,15 +6,12 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.CampaignTerrainAPI;
 import com.fs.starfarer.api.campaign.CampaignTerrainPlugin;
-import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.characters.*;
 import com.fs.starfarer.api.ui.UIPanelAPI;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.campaign.FleetDataAPI;
-import com.fs.starfarer.api.campaign.TerrainAIFlags;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.ui.Alignment;
@@ -34,7 +31,6 @@ import java.util.*;
 import java.awt.Color;
 import data.scripts.util.armaa_utils;
 import data.scripts.util.armaa_strikeCraftRepairTracker;
-import data.scripts.MechaModPlugin;
 import org.magiclib.util.MagicRender;
 import org.magiclib.util.MagicIncompatibleHullmods;
 
@@ -43,14 +39,12 @@ public class armaa_strikeCraft extends BaseHullMod {
     private float DEGRADE_INCREASE_PERCENT = 50f;
     public float CORONA_EFFECT_REDUCTION = 0.00001f;
 
-    public MagicUI ui;
-    private static final float RETREAT_AREA_SIZE = 2100f;
     private IntervalUtil textInterval = new IntervalUtil(.5f, .5f);
     private IntervalUtil repairInterval = new IntervalUtil(5f, 5f);
     private IntervalUtil refitInterval = new IntervalUtil(.01f, .05f);
     private IntervalUtil carrierCacheInterval = new IntervalUtil(0.5f, 0.5f);
 
-    private float MISSILE_DAMAGE_THRESHOLD = 750f;
+    public static final float MISSILE_DAMAGE_THRESHOLD = 750f;
     public final ArrayList<String> landingLines_Good = new ArrayList<>();
     public final ArrayList<String> landingLines_Fair = new ArrayList<>();
     public final ArrayList<String> landingLines_Critical = new ArrayList<>();
@@ -256,7 +250,7 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addPara("%s " + "No %s.", padS, Misc.getHighlightColor(), "\u2022", "zero-flux speed bonus");
         tooltip.addPara("%s " + "Combat Readiness decreases %s faster.", padS, arr2, "\u2022", (int) DEGRADE_INCREASE_PERCENT + "%");
         if (ship != null) {
-            tooltip.addPara("%s " + "Can dock at carriers to fully restore PPT, armor, and hull %s times", padS, Misc.getHighlightColor(), "\u2022", "" + (armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost()));
+            tooltip.addPara("%s " + "Can dock at carriers to fully restore PPT, armor, and hull %s times", padS, Misc.getHighlightColor(), "\u2022", "" + String.format("%.2f",(armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost())));
         }
         tooltip.addPara("%s " + "Docking always restores CR and ammo, even if repairs are exhausted.", padS, Misc.getHighlightColor(), "\u2022");
         tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022", "frigates");
@@ -284,7 +278,7 @@ public class armaa_strikeCraft extends BaseHullMod {
             if (size.length() > 1) {
                 tooltip.addPara("%s " + "Large Strikecraft: %s", pad, arr2, "\u2022", size);
             }
-            getRefitRate(ship);
+            armaa_utils.getRefitRate(ship);
             Map<String, Float> MALUSES = (Map) Global.getCombatEngine().getCustomData().get("armaa_strikecraftMalus_" + ship.getId());
             if (MALUSES == null || MALUSES.isEmpty()) {
                 tooltip.addPara("No refit penalty.", 10, F);
@@ -300,62 +294,6 @@ public class armaa_strikeCraft extends BaseHullMod {
                 }
             }
         }
-    }
-
-    private void getRefitRate(ShipAPI target) {
-        float totalRate = 0f;
-        String wepName = "";
-        List<WeaponAPI> weapons = target.getAllWeapons();
-        Map<String, Float> MALUSES = new HashMap<>();
-        for (WeaponAPI w : weapons) {
-            float adjustedRate = 0f;
-            if (MechaModPlugin.MISSILE_REFIT_MALUS.get(w.getId()) != null) {
-                adjustedRate = MechaModPlugin.MISSILE_REFIT_MALUS.get(w.getId());
-                totalRate += adjustedRate;
-                if (MALUSES.containsKey(w.getDisplayName())) {
-                    MALUSES.put(w.getDisplayName(), MALUSES.get(w.getDisplayName()) + adjustedRate);
-                } else {
-                    MALUSES.put(w.getDisplayName(), adjustedRate);
-                }
-            } else if (w.getType() == WeaponType.MISSILE) {
-                float damage = w.getDerivedStats().getDamagePerShot();
-                if (damage > MISSILE_DAMAGE_THRESHOLD) {
-                    float penalty = damage / MISSILE_DAMAGE_THRESHOLD;
-                    if (penalty < 1) {
-                        continue;
-                    }
-                    penalty = penalty / 10f;
-                    float newRate = (float) Math.min(.5f, penalty);
-                    wepName = w.getDisplayName();
-                    adjustedRate = newRate;
-                    totalRate += adjustedRate;
-                    if (MALUSES.containsKey(wepName)) {
-                        MALUSES.put(wepName, MALUSES.get(wepName) + adjustedRate);
-                    } else {
-                        MALUSES.put(wepName, adjustedRate);
-                    }
-                }
-            }
-        }
-        for (HullModSpecAPI spec : Global.getSettings().getAllHullModSpecs()) {
-            if (MechaModPlugin.HULLMOD_REFIT_MALUS.get(spec.getId()) == null) {
-                continue;
-            }
-            if (!target.getVariant().getHullMods().contains(spec.getId())) {
-                continue;
-            }
-            String hullmod = spec.getId();
-            String name = spec.getDisplayName();
-            float adjustedRate = MechaModPlugin.HULLMOD_REFIT_MALUS.get(hullmod);
-            totalRate += adjustedRate;
-            if (MALUSES.containsKey(name)) {
-                MALUSES.put(name, MALUSES.get(name) + adjustedRate);
-            } else {
-                MALUSES.put(name, adjustedRate);
-            }
-        }
-        Global.getCombatEngine().getCustomData().put("armaa_strikecraftTotalMalus" + target.getId(), totalRate);
-        Global.getCombatEngine().getCustomData().put("armaa_strikecraftMalus" + "_" + target.getId(), MALUSES);
     }
 
     private boolean needsReload(ShipAPI target) {

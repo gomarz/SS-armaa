@@ -13,6 +13,6 @@
 	"textureType":"ROUGH",  # only needed for BEAM spawnType
 	"textureScrollSpeed":-256.0,
 	"pixelsPerTexel":1.0,
-	"bulletSprite":"graphics/armaa/weapons/armaa_spikeP.png",
+	"bulletSprite":"graphics/armaa/ships/guardual/bs/weapons/armaa_emSpikeP.png",
 	"onHitEffect":"data.scripts.weapons.armaa_energyLashEffect",
 }

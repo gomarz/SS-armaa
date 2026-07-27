@@ -7,6 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import data.scripts.util.armaa_utils;
 import org.magiclib.util.MagicAnim;
 import java.awt.Color;
@@ -139,6 +140,8 @@ private float transformCooldown = 0f;
         if (ship == null) {
             ship = weapon.getShip();
         }
+        if(ship.isHulk())
+            return;
         if (!runOnce) {
             if (ship.getShield() != null) {
                 engine.getCustomData().put("armaa_transformState_sArc_" + ship.getId(), ship.getShield().getArc());
@@ -586,7 +589,7 @@ private float transformCooldown = 0f;
                     w.getGlowSpriteAPI().setSize(1f, 1f);
                     w.getGlowSpriteAPI().setColor(invis);
                 }
-                if (w.getSlot().getId().equals("WS0003") || w.getSlot().getId().equals("WS0005")) {
+                if (w.getSlot().getWeaponType().equals(WeaponType.MISSILE)) {
                     if (w.getMissileRenderData() != null) {
                         for (int i = 0; i < w.getMissileRenderData().size(); i++) {
                             w.getMissileRenderData().get(i).getSprite().setSize(1f, 1f);

@@ -44,9 +44,6 @@ public class armaa_wingCommander extends BaseHullMod {
     private IntervalUtil tracker = new IntervalUtil(0.5f, 1.0f);
     private boolean runOnce = false;
 
-    // --- PERF FIX (item 6): valid skill list is static final ---
-    // Was: getValidSkillList() allocated a new ArrayList on every call.
-    // Now: one allocation at class-load time, shared by all code paths.
     public static final List<String> VALID_SKILLS;
 
     static {
@@ -154,7 +151,7 @@ public class armaa_wingCommander extends BaseHullMod {
                 stats.getSuppliesToRecover().modifyFlat(id, dpMod);
             }
         }
-        if (stats.getVariant().getHullSpec().getFighterBays() == 0) {
+        if (stats.getVariant().getHullSpec().getFighterBays() == 0 && stats.getVariant().getHullSpec().getHullSize() == HullSize.FRIGATE) {
 
             if (stats.getNumFighterBays().isUnmodified()) {
                 stats.getNumFighterBays().modifyFlat(id, 1f);
@@ -232,7 +229,7 @@ public class armaa_wingCommander extends BaseHullMod {
         tooltip.addPara("%s " + "Fighter crew losses are reduced by %s.", pad, arrB,
                 "\u2022", (int) ((1f - CREW_LOSS_MULT) * 100f) + "%");
         tooltip.addPara("%s " + "Only applicable with %s fighters.", pad, arrB, "\u2022", "crewed");
-
+        tooltip.addPara("%s " + "On hulls with the %s hullmod, increases wing size by %s.", pad, arrB, "\u2022","Spare chassis", "1");
         if (ship == null) {
             tooltip.addPara("%s " + "Fighter engagement range decreased by %s.", pad, arr2,
                     "\u2022", "70/60/50/40" + " percent");
@@ -358,7 +355,7 @@ public class armaa_wingCommander extends BaseHullMod {
         boolean allDeployed = true, ranOnce = false;
         if(!ranOnce && tracker.intervalElapsed())
         {
-         if (ship.getHullSpec().getBuiltInMods().contains("armaa_wingCommander")) {
+         if (ship.getHullSpec().getBuiltInMods().contains("armaa_wingCommander") && ship.getHullSpec().getBuiltInMods().contains("armaa_spareChassis")) {
             for (FighterLaunchBayAPI bay : ship.getLaunchBaysCopy()) {
                 if (bay.getWing() != null) {
                     FighterWingSpecAPI wingSpec = bay.getWing().getSpec();

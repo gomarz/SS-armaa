@@ -408,10 +408,6 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
         }
         final String captainId = member.getCaptain().getId();
 
-        // Latent-talent Ace awakening can fire at ANY level. Hidden from the player:
-        // no UI marker distinguishes these pilots, and the SP "Promote to Ace" button
-        // is gated to max level for everyone, so it reveals nothing. The only tell is
-        // that a latent pilot may unexpectedly become an Ace early in its career.
         if (tryLatentAwakening(pilot, j, callsign, captainId)) {
             return; // awakening is the event this battle; skip XP/elite this turn
         }
@@ -423,8 +419,6 @@ public class armaa_wingmanPromotion extends BaseCampaignEventListener implements
         }
     }
 
-    // --- LATENT AWAKENING: rare per-battle roll, any level, low loyalty floor so a
-    //     promising rookie can surprise the player early. Returns true if it fired. ---
     private boolean tryLatentAwakening(PersonAPI pilot, int j, String callsign, String captainId) {
         if (!pilot.hasTag("armaa_latentTalent")
                 || armaa_AceUtil.hasAce(pilot)

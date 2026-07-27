@@ -20,7 +20,7 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
 
     private static float REPAIR_POOL_DEFAULT = 50f;
     private static final String REPAIR_POOL_TAG_PREFIX = "armaa_repairPool_";
-private static final float BAY_DRAIN_PER_SERVICE = 0.4f; // total repl rate consumed
+    private static final float BAY_DRAIN_PER_SERVICE = 0.4f; // total repl rate consumed
     private final IntervalUtil BASE_REFIT = new IntervalUtil(25f, 25f);
     private CombatFleetManagerAPI fleetManager;
     private ShipAPI carrier;
@@ -186,15 +186,19 @@ private static final float BAY_DRAIN_PER_SERVICE = 0.4f; // total repl rate cons
         float refitMod = getCarrierRefitRate();
         float wepMalus = 0f;
 
-        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + ship.getId()) instanceof Float) {
-            wepMalus = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + ship.getId());
-        }
+        armaa_utils.getRefitRate(ship);
+        Object malus = Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + ship.getId());
+        wepMalus = (malus instanceof Float) ? (Float) malus : 0f;
+
+        Global.getLogger(this.getClass()).info("WepMalus:" + wepMalus);
 
         float hullBonus = (float) Math.max(ship.getHullLevel() * 1.5f, 1f);
-        float refitRate = (amount * hullBonus) * (1f - wepMalus) * refitMod;
+        float refitRate = (amount * hullBonus) * refitMod;
         float adjustedRate = (float) Math.max(refitRate, amount * BaseTimer);
-                adjustedRate*= carrier.getMutableStats().getDynamic().getStat("armaa_strikeCraftRefitMod").getModifiedValue();
-
+        adjustedRate *= (1f - wepMalus);
+        Global.getLogger(this.getClass()).info(adjustedRate);
+        adjustedRate *= carrier.getMutableStats().getDynamic().getStat("armaa_strikeCraftRefitMod").getModifiedValue();
+        Global.getLogger(this.getClass()).info(adjustedRate);
         if (ship.isStationModule()) {
             ship.setShipAI(null);
         }
@@ -312,7 +316,7 @@ private static final float BAY_DRAIN_PER_SERVICE = 0.4f; // total repl rate cons
                 if (w.usesAmmo()) {
                     w.resetAmmo();
                 }
-            }            
+            }
         }
         // PPT always recovers, regardless of pool or abort.
         if (Global.getCombatEngine().getCustomData().get("armaa_strikeCraft_pptSnapshot_" + ship.getId()) != null) {

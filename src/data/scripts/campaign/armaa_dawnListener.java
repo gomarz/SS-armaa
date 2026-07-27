@@ -2,10 +2,12 @@ package data.scripts.campaign;
 
 import com.fs.starfarer.api.campaign.BaseCampaignEventListenerAndScript;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.PersonImportance;
 import com.fs.starfarer.api.campaign.RepLevel;
 import com.fs.starfarer.api.campaign.ReputationActionResponsePlugin.ReputationAdjustmentResult;
 import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
-import com.fs.starfarer.api.characters.OfficerDataAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.campaign.listeners.ColonyInteractionListener;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
@@ -13,10 +15,9 @@ import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.CustomRepImpact;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.RepActionEnvelope;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.RepActions;
 import com.fs.starfarer.api.impl.campaign.intel.contacts.ContactIntel;
+import data.scripts.util.armaa_utils;
 
-public class armaa_dawnListener extends BaseCampaignEventListenerAndScript {
-
-    private static float REP_CAP_1 = 0.30f;
+public class armaa_dawnListener extends BaseCampaignEventListenerAndScript implements ColonyInteractionListener  {
 
     public armaa_dawnListener() {
         //this.days = Global.getSector().getClock().getTimestamp();
@@ -27,16 +28,15 @@ public class armaa_dawnListener extends BaseCampaignEventListenerAndScript {
     public void reportEconomyTick(int iterindex) {
         long timestamp = (Long) Global.getSector().getMemoryWithoutUpdate().get("$armaa_dawnHireDate");
         Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnElapsedDays", Global.getSector().getClock().getElapsedDaysSince(timestamp));
-        for (IntelInfoPlugin curr : Global.getSector().getIntelManager().getIntel(ContactIntel.class)) {
-            ContactIntel intel = (ContactIntel) curr;
-            if (intel.isEnding() || intel.isEnded() || intel.getState() == ContactIntel.ContactState.POTENTIAL) {
-                continue;
-            }
+        PersonAPI dawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
+        ContactIntel existing = ContactIntel.getContactIntel(dawn);          // null if none
 
-            if (intel.getPerson().getId().equals("armaa_dawn")) {
-                intel.loseContact(null);
-            }
+        if (existing == null) {
+            ContactIntel intel = new ContactIntel(dawn, Global.getSector().getEconomy().getMarket("armaa_meshanii_market"));
+            Global.getSector().getIntelManager().addIntel(intel, false);  // true = no notification ping
+            intel.develop(null);  // → NON_PRIORITY state, adds her to comm directory, market people list, and gives her a BaseMissionHub
         }
+
         boolean feltOutgrown = Global.getSector().getPlayerMemoryWithoutUpdate().contains("$dawnConfidedOutpaced");
 
         if (Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metDawnBar2Q3") && !feltOutgrown) {
@@ -67,7 +67,31 @@ public class armaa_dawnListener extends BaseCampaignEventListenerAndScript {
             }*/
         }
     }
-
+    @Override
+    public void reportPlayerOpenedMarket(MarketAPI market) {
+        if(market.isHidden())
+            return;
+        
+        if(!market.hasSpaceport())
+            return;
+        if(market.getFaction().isHostileTo("player"))
+            return;
+        
+        if(market.getFactionId().equals("sindrian_diktat"))
+            return;
+        PersonAPI dawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
+        if (dawn == null) return;
+        if(armaa_utils.hasActiveMissionsFrom(dawn))
+            return;
+        ContactIntel intel = ContactIntel.getContactIntel(dawn);
+        if (intel == null || market == dawn.getMarket()) return;
+        if(Global.getSector().getPlayerFleet().getFleetData().getOfficerData(dawn) == null)
+            return;
+        PersonImportance imp = dawn.getImportance();
+        intel.relocateToMarket(market, true);
+        dawn.setImportance(imp);
+        Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnLastMarket",market.getId());
+    }
     @Override
     public void reportEconomyMonthEnd() {
         boolean hasDawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn").getFleet() != null && Global.getSector().getImportantPeople().getPerson("armaa_dawn").getFleet() == Global.getSector().getPlayerFleet();
