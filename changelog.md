@@ -1,3 +1,37 @@
+V3.3.4
+------
+- fixed refit penalty not being applied in combat
+- repair count now rounds up to 2 decimals
+- fixed exploit(?) from adding converted hangar, adding wingcom, then removing CH to keep the added wing
+- fixed graphical bug on guardual and Zwei missiles caused by jitter effects
+- fixed graphical bug on destroyed guardual and Zwei
+- fixed Zwei repeatedly transforming while landed on a carrier
+- removed Zwei restricted tag, which was preventing it from appearing in markets / CPC
+- armaa CPC is now marked as a priority mission 
+- EM Lash
+	- Better clarified weapon mechanics
+	- reduced EMP Arc range from ~300 su to 50
+	- EMP damage 100->500
+	- EMP Arc interval 0.1s->0.25s (EMP/s 2400->1600)
+	- intent is for a more localized emp effect near point of impact vs something that disables an entire ship
+- Dawn
+	- Dawn will no longer be removed as a contact on recruitment
+	- will "relocate" to market player docks at so long as it is valid and not hostile to player
+	- will not relocate while player has an active mission from her
+	- will not relocate to diktat markets
+	- fixed random option in bar event 3 triggering bar event 2 again
+- GuarDUAL (LPC)
+	- adjusted AI
+	- SCTR-40F Minigun
+		- damage: 25 -> 35
+		- max spread 10 → 5, 
+		- spread decay 3 → 10
+		- turn rate 30-> 80
+
+- Rajanya
+	- Updated binder sprite & bounds
+
+
 V3.3.3
 ------
 - Zwei
