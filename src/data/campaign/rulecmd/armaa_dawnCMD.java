@@ -329,6 +329,8 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
      * if several beats are unacknowledged she leads with the furthest along.
      */
     private String resolveStoryBeat(MemoryAPI global) {
+        //dont feel like doing it rn
+        /*
         if (unsaid(global, "gates") && global.contains("$gaATG_completed")) {
             return "gates";
         }
@@ -338,6 +340,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
         if (unsaid(global, "daud") && global.contains("$gaATG_gotDaudDeal")) {
             return "daud";
         }
+        */
         if (unsaid(global, "ZGR") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metZGR")) {
             return "ZGR";
         }
