@@ -403,7 +403,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
         if(Global.getSector().getPersistentData().containsKey("armaa_completedATAC"))
         {
             fpDestroyed*=2;
-            Global.getLogger(this.getClass()).info("fffff");
+            //Global.getLogger(this.getClass()).info("fffff");
         }
         int points = computeProgressPoints(fpDestroyed);
         if (points > 0) {

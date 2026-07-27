@@ -190,15 +190,15 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
         Object malus = Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + ship.getId());
         wepMalus = (malus instanceof Float) ? (Float) malus : 0f;
 
-        Global.getLogger(this.getClass()).info("WepMalus:" + wepMalus);
+        //Global.getLogger(this.getClass()).info("WepMalus:" + wepMalus);
 
         float hullBonus = (float) Math.max(ship.getHullLevel() * 1.5f, 1f);
         float refitRate = (amount * hullBonus) * refitMod;
         float adjustedRate = (float) Math.max(refitRate, amount * BaseTimer);
         adjustedRate *= (1f - wepMalus);
-        Global.getLogger(this.getClass()).info(adjustedRate);
+        //Global.getLogger(this.getClass()).info(adjustedRate);
         adjustedRate *= carrier.getMutableStats().getDynamic().getStat("armaa_strikeCraftRefitMod").getModifiedValue();
-        Global.getLogger(this.getClass()).info(adjustedRate);
+        //Global.getLogger(this.getClass()).info(adjustedRate);
         if (ship.isStationModule()) {
             ship.setShipAI(null);
         }

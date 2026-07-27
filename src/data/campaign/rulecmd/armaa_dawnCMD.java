@@ -182,7 +182,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
                     playerCombatLevel += sl.getLevel();
                 }
             }
-            Global.getLogger(this.getClass()).info(playerCombatLevel + " vs " + dawnCombatLevel);
+            //Global.getLogger(this.getClass()).info(playerCombatLevel + " vs " + dawnCombatLevel);
             return playerCombatLevel > dawnCombatLevel;
 
         } else if ("increaseLevelCap".equals(action)) {
@@ -194,7 +194,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             // CONDITIONS-column command: must be a pure check, no side effects.
             // It gets evaluated during rule matching, potentially more than once.
             String opt = memory.getString("$option");
-            Global.getLogger(this.getClass()).info(opt);
+            //Global.getLogger(this.getClass()).info(opt);
             return opt != null && opt.startsWith(GUEST_PICK_PREFIX);
         } else if ("applyPickedGuest".equals(action)) {
             String opt = memory.getString("$option");
