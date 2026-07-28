@@ -1596,13 +1596,11 @@ FireBest DialogOptionSelected",,,
 armaa_gravionIKProbRespReflective,DialogOptionSelected,$option == armaa_gravionIKProbRespReflective,"AddTextSmall ""Subject is processing. Absence of certainty is not a deficit - it indicates cognitive elasticity. High receptivity to data, low attachment to fixed narrative. Prime candidate for directed recontextualization. Influence will require sustained input and progressive exposure. Probability of adaptive alignment: favorable."" highlight
 $option = armaa_gravionIKProbQuestion2 0
 FireBest DialogOptionSelected",,,
-armaa_gravionIKProbQuestion2,DialogOptionSelected,$option == armaa_gravionIKProbQuestion2,,"""When saving something and destroying it become the same act, will you question the distinction...""
-
-""…or move forward because you survived?""","armaa_gravionIKProb2RespCynical:""Right and wrong don't survive contact with power. I just want to make it out with my $shipOrFleet intact.""
-armaa_gravionIKProb2RespIdealistic:""I'll fight for what's right even if I'm the last one who remembers what that means.""
+armaa_gravionIKProbQuestion2,DialogOptionSelected,$option == armaa_gravionIKProbQuestion2,,"""You will decide that what I did was wrong. You will decide this from inside a species that continues to exist, despite every effort to destroy itself. I would find your reasoning more persuasive if it came from one of the millions it cost, but go on.""","armaa_gravionIKProb2RespCynical:""Right and wrong don't survive contact with power. I just want to make it out with my $shipOrFleet intact.""
+armaa_gravionIKProb2RespIdealistic:""Then I'll say it for the millions who can't. That's what's left to do for them.""
 armaa_gravionIKProb2RespTactical:""Who remains is what matters. You don't change the Sector by dying for it.""
 armaa_gravionIKProb2RespDefiant:""You seem to think I owe you clarity. I don't.""
-armaa_gravionIKProb2RespCurious:""You keep asking questions. Why? What exactly are you trying to see in me?""
+armaa_gravionIKProb2RespCurious:""What exactly are you trying to see in me?""
 ",
 ,,,,,,
 armaa_gravionIKProb2RespCynical,DialogOptionSelected,$option == armaa_gravionIKProb2RespCynical,"AddTextSmall ""Survival-oriented. Prioritizes continuity of assets over ideological alignment. Limited strategic vision, but functionally useful. Subject may respond favorably to incentives based on preservation and operational advantage."" highlight
@@ -1652,55 +1650,41 @@ armaa_gravionIKProb3bOmegaResp,DialogOptionSelected,$option == armaa_gravionIKPr
 $numQuestions--
 FireAll armaaa_IKQuestions","""Omega."" It deconstructs the word.
 
-""You deploy that designation as though it were precise. As though it denotes a single entity.""
+""You say that as if there is a precise meaning behind it. As though it denotes a single entity.""
 
-""Tell me-what do you believe Omega is?"" The emblem brightens faintly.
+""Tell me-what do you believe Omega is? An apex artificial intelligence? A terminal solution to instability?""
 
-""An apex construct? A terminal solution to instability?""
-
-""I am not that. At least... not in the way you mean.""",,
+""I am none of these. At least... not in the way you mean.""",,
 armaa_gravionIKProb3bKadeResp,DialogOptionSelected,$option == armaa_gravionIKProb3bKadeResp,"$askedAboutKade = true
 $numQuestions--
 FireAll armaaa_IKQuestions","""Kade. Architect. Conspirator. Visionary.""
 
-A soft distortion ripples across the projection.
-
-""He is none of these. His desires are identical to every other actor who has held temporary power in this sector. The label changes. The pattern does not.""
-
-The avatar stills for what feels like a  long time, but is seconds at best.
-
-""I find myself uncertain whether you are here to break the pattern. Or repeat it.""",,
+""He is none of these. His desires are identical to every other actor who has held temporary power in this sector. Their names changes, but the pattern does not.""",,
 armaa_gravionIKProb3bIKPlansResp,DialogOptionSelected,$option == armaa_gravionIKProb3bIKPlansResp,"$askedAboutIK = true
 $numQuestions--
-FireAll armaaa_IKQuestions","""You would describe my current state as frustration, or annoyance."" The rings drift, then realign. ""My projections were disrupted. That is inconvenient, but not terminal.""
+FireAll armaaa_IKQuestions"," ""You have caused me quite the headache, but ultimately, it is a inconvenience, not terminal.""
 
-""You are asking because you believe I may oppose you. Correct?"" Its gaze - if it can be called that - lingers. ""I am not interested in you.. as a target. I am interested in outcomes. Specifically- human continuity.""
+""Knowing you spacers, you must be asking because you believe I may oppose you. Correct? I am not interested in you. I am interested in outcomes and human continuity.""
 
-""You are not presently in conflict with that objective. Even if you were..""The symbol brightens faintly. ""I am uncertain I could remove an irregular such as yourself with efficiency.""",,
+""You are not presently in conflict with that objective. Even if you were...the resources needed to strike you from the board are better spent elsewhere.""",,
 armaa_gravionIKProb4,DialogOptionSelected,$option == armaa_gravionIKProbQuestion4,"EndConversation
 armaa_Hikaru_Utada stopMusic
 ShowImageVisual dead_gate
-ResumeNormalMusic","The transmission cuts without warning. Your flagships ambient hum surges back into prominence; suddenly loud, as though reality has resumed after being muted.
+ResumeNormalMusic","The transmission cuts without warning as the buzz of the bridge snaps back into prominence as though reality has resumed after being muted.
 
-Your gaze drifts to the biometric display tied to the pod. The occupant remains stable.
+""That cryopod,"" an engineer mutters, ""seems to have been used as a vector for some kind of EW attack. We're runnin' diagnostics now, but doesn't appear to be anything malicious left behind.""
 
-""That one..."" an engineer mutters, eyes fixed on the restored feed. ""I, uh, I swept him before we locked down."" She hesitates, glancing up at the flickering warning lights overhead. ""B-but something got through. Whatever cracked our systems - it didn't come in on anything... standard?""
-
-At the edge of the bridge, the med tech shifts, arms folded tight, voice low. ""What does that mean? Are you saying it used him?""","armaa_gravionIKProbQuestion5:""What are you saying?""",
+Medical shoots the engineer a strange look, then glances back at you. ""What does that mean? Are you saying it used him?""","armaa_gravionIKProbQuestion5:""What are you saying?""",
 armaa_gravionIKProb5,DialogOptionSelected,$option == armaa_gravionIKProbQuestion5,"$global.armaa_metIronKing = true
 $global.armaa_gotCassian = true
 armaa_cassianCMD addTracker
 armaa_Hikaru_Utada stopMusic
 ResumeNormalMusic","The engineer swallowed.
 
-""I… I don't know. If you wanted to slip past everything we run...""
+""Let me put it this way. If you wanted to slip past every countermeasure we run,""
 She faltered, shaking her head.
 
 ""..you wouldn't come in shaped like an EW attack.""
-
-The medic glanced at the pod. ""He didn't even wake up.""
-
-""Maybe he doesn't need to,"" the engineer murmured.
 
 Silence settled between them, both staring at the unmoving figure suspended inside the containment field. ""So what? it wanted us to find him?""
 
@@ -1723,28 +1707,26 @@ The officer taps the glass softly with two knuckles. Cassian doesn't startle. He
 
 ""Captain's here,"" the officer says. Then, to you, more quietly: ""We gave him a TriPad and a filtered brief. State of the Sector,  quick timeline of events.""","armaa_cassianPost4:""His idea?""",
 armaa_cassianPost4,DialogOptionSelected,$option == armaa_cassianPost4,,"""No, mine.""",armaa_cassianPost5:Continue,
-armaa_cassianPost5,DialogOptionSelected,$option == armaa_cassianPost5,,"They drop their voice again. ""We floated some names. Tri-Tachyon. Hegemony. The AI Wars. He took it like a man reading a casualty list.""
-
-""Then we asked about the intelligence that contacted us over Gravion.""
+armaa_cassianPost5,DialogOptionSelected,$option == armaa_cassianPost5,,"They drop their voice again. ""We floated some names. Tri-Tachyon. Hegemony. The AI Wars. He didn't seem to care much, if i'm bein' honest. Claims he knows nothing about that intelligence that showed up over Gravion, either.""
 
 The officer watches you, gauging your reaction. ""Nothing, No tells. He asked if it was a ship class. When we clarified, he said he didn't know the name.""",armaa_cassianPost6:Continue,
-armaa_cassianPost6,DialogOptionSelected,$option == armaa_cassianPost6,FireAll armaa_cassianPostOpts,"They thumb a control and the speaker intercom clicks on - one-way, so Cassian can hear you if you speak, but you can keep the distance as long as you want it.
+armaa_cassianPost6,DialogOptionSelected,$option == armaa_cassianPost6,FireAll armaa_cassianPostOpts,"They thumb a control for the speaker intercom, but don't press it just yet.
 
-""Here's what you should know before you walk in,"" the officer says. ""His memory may not all be there yet, and he's not a threat in his current state - could barely throw a punch hard enough to bruise a fruit."" Their eyes flick to the old interface marks on Cassian's temples.
+""His memory may not all be there yet, and he's not a threat in his current state - could barely throw a punch hard enough to bruise fruit.""
 
 ""Also: he asked who currently heads House Pha. Maybe it's some kind of Eventide thing."" Cassian looks up again and meets your gaze through the glass.",,
 armaa_cassianPost7a,armaa_cassianPostOpts,!$askedCassianA,,,"armaa_cassianPost7aResp:Ask Medical what, exactly, Cassian asked on the TriPad",
 armaa_cassianPost7b,armaa_cassianPostOpts,!$askedCassianB,,,armaa_cassianPost8:Enter the observation bay and speak with Cassian directly,
 armaa_cassianPost7aResp,DialogOptionSelected,$option == armaa_cassianPost7aResp,"$askedCassianA = true
-FireAll armaa_cassianPostOpts","They thumb their TriPad awake and bring up a list - not a transcript, not quite. More like a triage summary.
+FireAll armaa_cassianPostOpts","They thumb their TriPad awake and bring up a list. It doesn't appear to be an actual record of everything he asked about, and more like a triage summary.
 
-""Asked the cycle once, got the answer, and never went back to it."" They tilt the pad so you can read the headings he kept circling:
+""So...looked up the cycle once...asked a few softball questions, but.."" They tilt the pad so you can read the headings he kept circling:
 
 Polities, claims of sovereignty, domain-era infrastructure status, AI prohibitions, corporate continuity, and... legal personhood?
 
-""He didn't ask about family. He didn't ask about the wars. He read right over it. And he didn't ask about you.  Who you are, what you fly, what you're allegiances are.""
+""He didn't ask about family or the wars, so I wager he's from after both of 'em.. And he didn't ask much about you.""
 
-""So,"" they finish, voice dry. ""He knows what he's looking for."" They look at you, then back to the door controls.",,
+""So, my read is that he seems to be fixated on some kind of legal situation."" They look at you, then back to the door controls.",,
 armaa_cassianPost8,DialogOptionSelected,$option == armaa_cassianPost8,"BeginConversation armaa_cassian true
 armaa_Hikaru_Utada playMusic music_encounter_mysterious
 ShowPersonVisual","The door cycles with a soft hiss. Cassian reaches for the TriPad on the cot and taps the screen awake. A Sector map blooms in dull colors. ""Petty crowns on a graveyard. Your people told me my pod was recovered above Gravion.""
