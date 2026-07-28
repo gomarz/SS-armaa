@@ -1729,28 +1729,20 @@ Polities, claims of sovereignty, domain-era infrastructure status, AI prohibitio
 ""So, my read is that he seems to be fixated on some kind of legal situation."" They look at you, then back to the door controls.",,
 armaa_cassianPost8,DialogOptionSelected,$option == armaa_cassianPost8,"BeginConversation armaa_cassian true
 armaa_Hikaru_Utada playMusic music_encounter_mysterious
-ShowPersonVisual","The door cycles with a soft hiss. Cassian reaches for the TriPad on the cot and taps the screen awake. A Sector map blooms in dull colors. ""Petty crowns on a graveyard. Your people told me my pod was recovered above Gravion.""
+ShowPersonVisual","Cassian reaches for the TriPad on the cot and taps the screen awake the moment you step inside. Even from where you are, you see the Sector map bloom to life in ugly colors. ""Petty crowns on a graveyard. Your people told me my pod was recovered above Gravion.""
 
-""They did not tell me why a ship was in a position to recover it, or why it was there. And they did not tell me why the pod survived a planetary displacement event intact."" He looks back at you.
+""They did not tell me why a ship was in a position to recover it, or why it was there."" He looks back at you.
 
-""I imagine you have not heard of my surname, and If you have, you heard it attached to a company. As you are aware, I was put in that pod a century ago.""
+""I imagine you have not heard of my surname, and If you have, you heard it attached to a company. I have been..asleep, for quite some time.""
 
-""Pick your preferred lie. I agreed to it because the alternative was becoming a liability to the people who claimed to need me.""
-
-His eyes narrow by a fraction. The first real emotion you've seen, and it isn't fear.
+""Pick your preferred lie. All you need to know is that the alternative was becoming a liability to individuals who claimed to need me."" He almost spits the last sentence out, and it's the first real emotion you've seen. It doesn't read as fear, or disappointment - no.
 
 It's irritation.",armaa_cassianPost9:Continue,
 armaa_cassianPost9,DialogOptionSelected,$option == armaa_cassianPost9,FireAll armaa_cassianPostOpts2,"""Sera Pha,"" he says at last, enunciating it like he's reading it off a bill of lading. ""Your TriPad lists her as the Chief Executive of Arma Armatura.""
 
-The calm cracks. ""I have no siblings,"" Cassian says. ""Nor legitimate children. No extended family.""
+""I have no siblings,"" Cassian says. ""Nor legitimate children So you will help me understand."" He holds the gaze for another moment, then continues as if he hasn't just demanded an answer. 
 
-""So you will explain this to me."" He holds the gaze for another moment, then continues as if he hasn't just demanded an answer. 
-
-""Before you try to trade stories,"" he adds, ""understand that I am not asking to reclaim anything. I am asking to understand what has been built on top of my name."" His eyes flick to the side, to where the pod debris would be stored.
-
-""And I am asking,"" he says, voice still even, ""because something out there took hold of my pod, and placed it where your hands would find it.""
-
-""And I know why such a mind would keep a man asleep for a century and then wake him in front of an audience."" Cassian sets the TriPad, slow and deliberate.
+""Before you answer,"" he adds, ""understand that I am not asking to reclaim anything. I only want to know what been built on top of my name.
 
 ""So,"" he says, ""tell me, Captain."" ""Who is Sera Pha?""",,
 armaa_cassianPost9a,armaa_cassianPostOpts2,,,,"armaa_cassianPost9aResp:""Sera Pha is the public CEO of Arma Armatura. That's all I know.""",
@@ -1767,73 +1759,48 @@ FireBest DialogOptionSelected","""Then she survives by being useful to people wh
 armaa_cassianPost9cResp,DialogOptionSelected,$option == armaa_cassianPost9cResp,"$option = armaa_cassianPost10
 FireBest DialogOptionSelected","Cassian studies you for a long moment, then gives a small, almost polite nod. ""Understood."" Then, colder:
 
-""That tells me enough.""He taps the tri-pad once. ""If you have intimacy with her, and you refuse to speak of it, then you believe she would be harmed by the truth… or you would.""",,
+""That tells me enough.""He taps the tri-pad once. ""If you have intimacy with her, and you refuse to speak of it, then you must have a reason.""",,
 #armaa_cassianPost9dResp,DialogOptionSelected,$option == armaa_cassianPost9dResp,"$option = armaa_cassianPost10
 FireBest DialogOptionSelected",,,
 armaa_cassianPost10,DialogOptionSelected,$option == armaa_cassianPost10,"BeginMission armaa_hc false
 Call $global.armaa_hc_ref updateData
 Call $global.armaa_hc_ref showMap ""New Meshan""","He looks past you - at nothing in particular. His eyes come back to you.
 
-""I don't need her biography,"" Cassian continues. ""I need to see."" He taps the side of his temple with two fingers - near the fused port - as if indicating a point of failure. ""Because my name is not something you wear by accident. And if she is wearing it,"" he says, voice even, ""then she is either the heir to a system I built, or some creature that crawled out of it.""
+""I need to see for myself. She is either the heir to a system I built, or a pretender.""
 
-""You said she does business,"" Cassian goes on slowly. ""Good. Then she understands terms."" He reaches for the TriPad again, brings up the Sector map, then zooms in with a slow pinch gesture until the jumble of factions resolves into a familiar patchwork.
-
-New Meshan sits there like a bruise that never fully healed. Cassian's thumb hovers over it. ""Take me here,"" he says. ""I will speak with Sera Pha in person.""",armaa_cassianPost11:Continue,
+""You said she does business,"" Cassian goes on slowly. ""Good."" He reaches for the TriPad again, brings up the Sector map, then zooms in with a slow pinch gesture until the jumble of factions resolves into a more familiar patchwork of planets. New Meshan sits there in the center; a scarred ball of mud. ""Take me here,"" he says. ""I will speak with Sera Pha in person.""",armaa_cassianPost11:Continue,
 armaa_cassianPost11,DialogOptionSelected,$option == armaa_cassianPost11,"$global.armaa_hc_tookTheJob = true
 armaa_Hikaru_Utada stopMusic
-AcceptMission","""And before you say it: yes, I understand the risk. If this is a message, then the only way to read it is to put it in her hands and watch what she does with it. I will pay for transport,"" he adds, almost casually.
-
-His eyes lift. ""It seems the Sector has been generous while I slept. Compound interest is one of the few things that still behaves predictably."" Cassian relaxes back against the cot, the posture of someone making a reasonable request of a service provider - as if this isn't a century-spanning identity crisis being delivered to a corporate throne.
-
-""New Meshan,"" he repeats. ""I want a seat on your ship. A stateroom."" 
-
-""And Captain?"" He meets your gaze directly. ""If you intend to lie to her about me, do it well. If you intend to sell me, do it openly. If you intend to protect her, understand you may be protecting her from herself."" His voice stays level, but the weight behind it is unmistakable.
-
-""Either way, we leave soon.""",defaultLeave:Leave,
+AcceptMission","""I will pay for transport to this 'New Meshan,'"", he repeats. ""Would you be so kind as to give me lodging? A stateroom. It seems the Sector has been generous while I slept. Compound interest is one of the few things that still behaves predictably."" Cassian relaxes back against the cot, like a vacationer making a reasonable request of a service provider.",defaultLeave:Leave,
 ,,,,,,
-# Arriving to new meshan with cassian,,,,,,
+# Arriving to new meshan with cassian,,,,"New Meshan fills the viewport. Cassian has been a (mostly) reasonable guest, though some of the bridge crew have made it clear they'd prefer him off the bridge of your flagship.",,
 armaa_hcArrived,MarketPostDock,"$tradeMode != NONE
 $market.id == armaa_meshanii_market
 $global.armaa_hc_tookTheJob
 $global.armaa_hcArrived == false
 !$global.armaa_hc_missionCompleted","BeginConversation armaa_cassian
 $global.armaa_hcArrived = true
-ShowPersonVisual","The docking clamps bite with a dull, mechanical certainty. New Meshan fills the viewport - familiar angles, familiar scars, a city that never quite decided whether it was rebuilding or just learning to live with the damage.
+ShowPersonVisual","New Meshan fills the viewport. Cassian has been a (mostly) reasonable guest, though some of the bridge crew have made it clear they'd prefer him off the bridge of your flagship.",armaa_hcArrived2:Continue,
+armaa_hcArrived2,DialogOptionSelected,$option == armaa_hcArrived2,,"Cassian half turns towards you so that he is still able to look at the planet.
 
-Cassian stands at the bridge edge, wrapped in a coat that hangs wrong on him. He watches like he's reading a balance sheet.
-",armaa_hcArrived2:Continue,
-armaa_hcArrived2,DialogOptionSelected,$option == armaa_hcArrived2,,"""Alright. This is the part where you stop being a courier and start being the hand that knocks."" Cassian turns slightly - not quite facing you, but acknowledging your presence.
-
-""I need a line to the one carrying my name. Raise Sera Pha on comms.""
-
-He says it like a routine instruction. But his fingers flex once at his side, the smallest tell you've seen yet.",armaa_hcArrived3:Continue,
+""Raise Sera Pha on comms."" He says it like a routine instruction. But his fingers flex once at his side, the smallest tell you've seen yet. ""..if you would be so kind, Captain."" His final words almost sound like an afterthought, and they probably are.",armaa_hcArrived3:Continue,
 armaa_hcArrived3,DialogOptionSelected,$option == armaa_hcArrived3,"BeginConversation armaa_seraph
-ShowSecondPerson armaa_cassian","You nod to your comms officer, who raises the appropriatae channel. New Meshan's local routing tags populate the list, a maze of corporate relays and polite dead ends.
+ShowSecondPerson armaa_cassian","You nod to your comms officer, who raises the appropriate channel.
 
-You request a channel.
+Sera Pha appears under warm light. Impeccably put together.  ""Captain,"" she says, in a tone one might use when they want you to feel like you've interrupted something more important.
 
-There's a pause - just long enough to feel intentional - and then the feed resolves into a clean, expensive frame.
-
-Sera Pha appears under warm light. Impeccably put together.  ""Captain.""
-
-Her voice is smooth and unhurried, with that specific cadence people use when they want you to feel like you've intruded into their schedule.
-
-""I hear you've arrived in-system with something interesting in your hold.""
-
-Her eyes flick once, subtly, to the side of her display - reading metadata. She's doing it as she speaks.",armaa_hcArrived4:Continue,
+""I hear you've arrived in-system with something interesting in your hold.""",armaa_hcArrived4:Continue,
 armaa_hcArrived4Like,DialogOptionSelected,"$option == armaa_hcArrived4
 $rel > 0.25 score:10","$option = armaa_hcArrived5
 FireBest DialogOptionSelected","""And you didn't even say hello first. I'm wounded.""
 
 ""Talk to me. What did you bring home?""",,
 armaa_hcArrived4Neutral,DialogOptionSelected,$option == armaa_hcArrived4,"$option = armaa_hcArrived5
-FireBest DialogOptionSelected","Her smile sharpens. 
-
-""You're not one of my usual captains. That means you either have very good reasons… or very bad ones.""
+FireBest DialogOptionSelected","Her smile sharpens.  ""You're not one of my usual captains. That means you either have very good reasons… or very bad ones.""
 
 She inclines her head slightly, almost looking down at you.
 
-""Which is it?""",,
+""Which is it, I wonder?""",,
 armaa_hcArrived5,DialogOptionSelected,$option == armaa_hcArrived5,,,"armaa_hcArrived6:""Found a sleeper pod containing a Cassian Pha. They're asking for you.""",
 armaa_hcArrivedOptRelatives,armaa_hcArrivedOpts,,,,,
 #armaa_hcArrivedOptRelatives,armaa_hcArrivedOpts,,,,,
@@ -1842,7 +1809,7 @@ EndConversation
 ShowDefaultVisual
 FireBest MarketPostDock","""Coherent, is he."" she states. ""That's generous of him."" Her eyes dart to the side of her display again.
 
-""Captain, you understand what you've just said to me. Is he with you, physically? On your ship. Right now."" She exhales, slow, and the warmth comes back like a curtain rising. 
+""Captain, you understand what you've just said to me. Is he with you, physically?"" 
 
 ""Alright. Here are the rules."" She flicks a finger and a new overlay appears.
 
@@ -1857,71 +1824,53 @@ $market.id == armaa_meshanii_market
 $menuState == main
 !$global.armaa_hc_missionCompleted",,,armaa_hcChalet:Take a shuttle to visit Sera Pha with Cassian,
 armaa_hcChalet,DialogOptionSelected,$option == armaa_hcChalet,"ShowLargePlanet
-armaa_Hikaru_Utada playMusic music_encounter_mysterious","New Meshan's lights slide beneath you in neat grids and stubborn clusters, the city's scars softened by altitude until they look like design choices.
-
-The coordinates for the rendevous point take you away from the docks and into the hills.
-
-The chalet sits above the city in a pocket of cultivated darkness - glass, stone, and clean lines; exterior lights are low and warm, positioned to flatter the structure rather than illuminate it. A thin perimeter fence traces the property. 
+armaa_Hikaru_Utada playMusic music_encounter_mysterious","New Meshan's skyline slides below before giving way to more agrarian clusters. The coordinates for the rendevous point take you away from the spaceport and into the hills.
 
 The landing pad is private and immaculate. A woman waits at the edge of the pad, standing there under the low pad lights with her arms crossed.",armaa_hcChalet2:Continue,
 armaa_hcChalet2,DialogOptionSelected,$option == armaa_hcChalet2,"BeginConversation armaa_seraph
 ShowPersonVisual
 ShowSecondPerson armaa_cassian","Sera Pha smiles as you disembark.
 
-""Captain,"" she says, and the way she says it makes the title sound like a personal favor.
+""Captain,"" she says, and her eyes flick once to Cassian. Her smile doesn't change, but the temperature behind it does. ""Cassian Pha.""
 
-Her eyes flick once to Cassian, and the smile doesn't change. Only the temperature behind it does. ""Cassian Pha.""
-
-Cassian steps down slowly. He doesn't look around. His attention stays on her like he's afraid the outline might change if he blinks. ""You built a nice perch,"" he says.
+His attention stays on her like he's afraid the outline might change if he blinks. ""Nice place,"" he says.
 
 Sera's smile brightens. ""New Meshan has its charms. Some of them even survive contact with reality.""
 
 She turns slightly, angling herself so the chalet's entrance is behind her. ""Come inside,"" she says. ""It's colder up here than people expect.""",armaa_hcChalet3:Continue,
-armaa_hcChalet3,DialogOptionSelected,$option == armaa_hcChalet3,,"Inside, the space is tastefully minimal. A wall display shows a slow-moving Sector map in muted tones, more art piece than tactical tool.
+armaa_hcChalet3,DialogOptionSelected,$option == armaa_hcChalet3,,"Sera leads you down a short hall to a door with no markings. She stops there and turns back to face you and Cassian.
 
-Sera leads you down a short hall to a door with no markings. She stops there and turns back to face you and Cassian.
+""This room is shielded,"" she says conversationally. ""No surprises. I'm sure you'll still assume the opposite."" She opens the door.
 
-""This room is shielded,"" she says conversationally. ""No surprises. I'm sure you'll still assume the opposite.""
-
-""And you?"" he asks. ""Do you assume the opposite too?""
-
-Her smile doesn't falter. ""I assume everyone is lying to me until they prove they're not."" She opens the door.
-
-A small meeting room. Simple table, three chairs and a carafe of water. The lighting is warm and even, flattering in a way that feels intentional.
+Inside is a small and totally unremarkable room. A simple table, long table sits in the center, with three chairs and a carafe of water already prepared.
 
 Sera steps inside first and takes one of the seats. She folds her hands neatly.",armaa_hcChalet4:Continue,
-armaa_hcChalet4,DialogOptionSelected,$option == armaa_hcChalet4,,"Cassian doesn't sit right away. He stands across from her, and for a moment he looks absurdly out of place in the room; a relic of a different era brought into a modern corporate set. Then he looks exactly like he belongs.
+armaa_hcChalet4,DialogOptionSelected,$option == armaa_hcChalet4,,"Cassian doesn't sit right away. He stands across from her, a weak shadow of his former self, and for a moment he looks absurdly out of place in the room; a relic of a different era brought into a modern corporate set. Then, as if an invisible switch has been flicked, he looks exactly like he belongs.
 
-""You're using  my surname."" Cassian says, and the calm in his voice is the calm of someone holding a vibroknife behind their back.
+""You're using my surname."" Cassian says. ""On the surface, it comes across as a calm, matter of fact statement. In reality, there is an unusual intensity behind it.
 
-""Am I?"" she replies, softly, pleasantly. Cassian's gaze doesn't move. ""I woke up and found you in a registry,"" he says. ""A person i've never met, who claims authority over the company I built."" Sera's smile doesn't falter. Her voice stays warm as she pretends to examine her nails, ""Arma Armatura has been many things across many crises,"" she says. ""Titles change, people die. But systems persist.""
+""So I am,"" she replies. 
 
-Cassian steps closer to the table, stops just short of sitting. ""Do you intend to beat around the bush?"" he asks. ""Or do you want to answer the question?""
+Sera's voice maintains its faux warmth as she pretends to examine her nails, ""Arma Armatura has been many things across many cycles,"" she says. ""Titles change and people die.""
 
-""Which question, Cassian?""
+Cassian steps closer to the table, stops just short of sitting. ""Do you intend to beat around the bush?"" he asks. ""Or do you want to answer the question? Who are you?""",armaa_hcChalet5:Continue,
+armaa_hcChalet5,DialogOptionSelected,$option == armaa_hcChalet5,PauseMusic,"The room goes still. Sera's expression dims along with it, and she holds the silence for exactly long enough to make it clear it was a choice. Then her smile reassembles - but this time, it's different.
 
-Cassian's eyes narrow, finally. ""Who are you?""",armaa_hcChalet5:Continue,
-armaa_hcChalet5,DialogOptionSelected,$option == armaa_hcChalet5,PauseMusic,"The room goes still. Sera's expression goes along with it, and she holds the silence for exactly long enough to make it clear it was her choice. Then her smile reassembles - the same rehearsed smile.
+It's the smile of a predator.
 
-And for the first time, it looks like a weapon being primed.
-
-""Who I need to be,"" she says plainly. She glances toward you, brief and assessing - like you are a variable in an equation that just became interesting.
+""I,"" she says icily, ""am who I need to be."" She glances toward you, brief and assessing.
 
 Then her eyes return to Cassian. ""And tonight,"" Sera Pha says, ""I need to be someone who convinces you,"" her eyes flick to the nearby seat, ""to sit down.""
 
-Cassian stares at her for a long time.
-
-The, slowly, he pulls the chair out. ""Then convince me,"" he says.
+Cassian stares at her for a long time. Then, slowly, he pulls the chair out. ""Then convince me,"" he says.
 
 Sera's smile widens by a fraction.",armaa_hcChalet6:Continue,
 armaa_hcChalet6,DialogOptionSelected,$option == armaa_hcChalet6,"ShowLargePlanet
-armaa_Hikaru_Utada playMusic music_encounter_mysterious","You step outside to give the two time to speak privately. A few meters down the hall, a woman in a skirt that could be mistaken for a statue in her stillness waits, hands folded at the waist. She doesn't introduce herself. After a minute, she speaks anyway-eyes on a point over your shoulder, voice low and unhurried.
+armaa_Hikaru_Utada playMusic music_encounter_mysterious","You step outside to give the two time to speak privately. A few meters across from you, a woman in a skirt who has barely moved and seemingly finds the wall behind you more interesting than anything else in the room stands at attention. After painfully awkward silence, she speaks-eyes on a point over your shoulder.
 
 ""You're not required to remain here, Captain. Please, make yourself comfortable while you wait.""
 
-From behind the door, you hear nothing. The room might be empty, for all your senses can prove. A second figure appears soundlessly from an adjacent corridor: an aide with a tri-pad and a tray, dressed in soft fabric that looks like it never wrinkles. They stop at a polite distance and hold the tray out without speaking.
-
-A glass. Something amber in a small cup that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again.",armaa_hcChalet7:Continue,
+From behind the door, you hear nothing. The room might be empty, for all your senses can prove. Another person - an employee, clearly - rounds the corner and approaches you. They stop at a polite distance and hold the tray out without speaking, offering a single glass with something amber in it that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again.",armaa_hcChalet7:Continue,
 armaa_hcChalet7,DialogOptionSelected,$option == armaa_hcChalet7,"BeginConversation armaa_cassian
 ShowPersonVisual","* * *
 Cassian steps out first. He looks the same at a glance - but his calm has changed shape. His face carries a strange expression; you'd almost say it looks like defeat. His eyes find you immediately. ""She's very good,"" he says. Cassian's gaze flicks once to the door behind him, then back.
