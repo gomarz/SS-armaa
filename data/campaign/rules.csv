@@ -1873,37 +1873,31 @@ armaa_Hikaru_Utada playMusic music_encounter_mysterious","You step outside to gi
 From behind the door, you hear nothing. The room might be empty, for all your senses can prove. Another person - an employee, clearly - rounds the corner and approaches you. They stop at a polite distance and hold the tray out without speaking, offering a single glass with something amber in it that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again.",armaa_hcChalet7:Continue,
 armaa_hcChalet7,DialogOptionSelected,$option == armaa_hcChalet7,"BeginConversation armaa_cassian
 ShowPersonVisual","* * *
-Cassian steps out first. He looks the same at a glance - but his calm has changed shape. His face carries a strange expression; you'd almost say it looks like defeat. His eyes find you immediately. ""She's very good,"" he says. Cassian's gaze flicks once to the door behind him, then back.
 
-""She offered me truth in measured portions,"" he continues. ""And she refused to answer the only question that matters. Which is its own answer, I suppose.""
+Cassian steps out first. He looks the same at a glance - but his shoulders have rounded slightly, and his face carries a strange expression; you'd almost say it looks like defeat. His eyes find you immediately. ""Oh, she's very... good,"" he says. ""Truth in measured portions, which is its own answer, I suppose.""
 
-""Ms. Pha will see you now,"" The unmoving staffer from earlier interjects.
+""Ms. Pha will see you now,"" The unmoving, and some what creepy staffer from earlier interjects.
 
-Cassian doesn't move to let you pass. He leans in just slightly, lowering his voice. ""Captain,"" he says, carefully, ""whatever she is… she is not surprised I came here."" He straightens back up, expression neutral again. ""That means someone told her in advance,"" he adds. ""Or she already knew.""
+Cassian doesn't move to let you pass. He leans in just slightly, lowering his voice. ""Captain,"" he says, carefully, ""she is not surprised I came here. That means someone told her in advance,"" he adds. ""Or she already knew.""
 
 The staffer steps aside, smooth as a door mechanism.
 
-""Inside,"" she says. ""Please.""","armaa_hcChalet8:Enter the room
+""Inside,"" she reiterates. ""Please.""","armaa_hcChalet8:Enter the room
 armaa_hcChalet7b:Ask Cassian what she said",
-armaa_hcChalet7b,DialogOptionSelected,$option == armaa_hcChalet7b,,"""She didn't threaten me,"" he says. ""She did something clever: she refused to confirm whether she carries my name because she inherited it, or because she stole it.""
+armaa_hcChalet7b,DialogOptionSelected,$option == armaa_hcChalet7b,,"""She refused to confirm whether she carries my name because she inherited it, or because she stole it. Cryptic nonsense. Covering her bases, I suppose.""
 
-Cassian's eyes narrow, not angry, focused. ""She kept insisting on 'continuity.' Cryptic nonsense.""
-
-""And the part that changed my perception,"" He exhales once. ""She said she wasn't surprised to see me.""
-
-Cassian watches your reaction like a man reading an instrument panel. ""Ah - those were not her words,"" he corrects, precise. ""Her words were: 'You're earlier than I expected.'"" Cassian lowers his voice another fraction. ""...Captain. If this were some kind of trick, she should be panicking right now.""
-He glances toward the door. ""She isn't.""
+""What changed my perception is that she said she wasn't surprised to see me. Ah - those were not her words, her words were: 'You're earlier than I expected.' If this were some kind of scheme, she should be panicking right now.""
 
 Cassian steps back, giving you room. ""Now you go in,"" he says.",,
 armaa_hcChalet8,DialogOptionSelected,$option == armaa_hcChalet8,"BeginConversation armaa_seraph
 ShowPersonVisual
 FireAll armaa_hcChaletOpts","The door cycles shut behind you with the same soft hiss. Inside, Sera is already seated. Her smile arrives on schedule.
 
-""Captain,"" she says, ""Thank you for indulging my preference."" She gestures to the chair opposite her.
+""Captain,"" she says, ""Thank you for your help."" She gestures to the chair opposite her.
 
-Her eyes flick once toward the door- not to check if it's sealed, but to acknowledge what it represents. ""You chose the version of this where I speak freely,"" Sera continues. ""Tell me what you want out of this,"" she says. ""And tell me what you believe Cassian wants.""
+""We can speak freely,"" Sera continues. ""Tell me what you want out of this,"" she says. ""And tell me what you believe Cassian wants.""
 
-""And then,"" Sera adds, pleasantly, ""we'll decide together how much truth he can afford.""",,
+""And then,"" Sera adds, pleasantly, ""we'll decide together how we can come to an understanding.""",,
 ,,,,,,
 ,,,,,,
 #Add ethos check for mercenary,,,,,,
@@ -1918,20 +1912,13 @@ SetTooltip armaa_hcChaletOptIdealResp ""You're not going to play guardian now. W
 armaa_hcChaletOptMercResp,DialogOptionSelected,"$option == armaa_hcChaletOptMercResp
 $rel < 0.25","$askedHCMerc = true
 AddCredits 20000
-FireAll armaa_hcChaletOpts","She taps her TriPad once. You get a clean transfer prompt. 
+FireAll armaa_hcChaletOpts","She taps her TriPad once.
 
-""You've delivered a volatile package without breaking it. That has value."" A brief pause.
-
-""You'll leave this room with compensation, and you'll leave this property with your shuttle. Cassian will remain here. And because you're thinking it: no, I'm not going to 'disappear' him. If I wanted him gone, he wouldn't have made it past the shuttle pad."" She folds her hands again, neat and patient.
-
-""As for Gravion - and your Iron King - I don't have the courtesy of certainty. But I do have a working read: you were used to deliver him to New Meshan. That's all.""",,
+""You'll leave with compensation. Cassian will remain here. And because you're thinking it: no, I'm not going to 'disappear' him. If I wanted him gone, he wouldn't have made it past the shuttle pad."" 
+",,
 armaa_hcChaletOptMercRespHigh,DialogOptionSelected,$option == armaa_hcChaletOptMercResp,"$askedHCMerc = true
 AddCredits 30000
-FireAll armaa_hcChaletOpts","Sera's expression warms by a degree, like she's indulging a habit she knows you have. ""Of course you do."" She flicks her tri-pad.
-
-""You're not wrong. This isn't your business. It just... landed on your deck. But don't confuse 'not your business' with 'not your problem.' You can walk away from this, $player.firstName. It won't necessarily walk away from you.""
-
-""Cassian isn't in danger. I expected him, eventually. Names like ours don't stay buried forever."" The word ours is soft, almost casual. Then she moves past it.",,
+FireAll armaa_hcChaletOpts","""Of course you do."" She flicks her tri-pad. ""You're not wrong. This isn't your business. It just... landed on your lap. But don't confuse 'not your business' with 'not your problem.' You can walk away from this, $player.firstName. It won't necessarily walk away from you.""",,
 armaa_hcChaletOptDirectResp,DialogOptionSelected,"$option == armaa_hcChaletOptDirectResp
 $rel < 0.25","$askedHCDirect = true
 FireAll armaa_hcChaletOpts","Sera's smile thins into something more professional. ""Fair.""
@@ -1944,45 +1931,33 @@ FireAll armaa_hcChaletOpts","Sera's smile thins into something more professional
 
 Her smile returns, mild. ""It released him because it expected him to come here. The reason it cares about that… is still unclear. That doesn't mean it's harmless, mind.""",,
 armaa_hcChaletOptDirectRespHigh,DialogOptionSelected,$option == armaa_hcChaletOptDirectResp,"$askedHCDirect = true
-FireAll armaa_hcChaletOpts","Sera studies you like she's deciding how much candor you've earned, then sighs lightly - ""Alright. Cassian is not the sword, but it's sheath. Which means whoever carries him is assumed to have the blade.""
+FireAll armaa_hcChaletOpts","""I love metaphors, so how about this - let's say that Cassian is a... sheathe. You know what that is, right? Well, the presence of a sheath reasonably implies the presence of a blade, right?""
 
-""He's a piece of legitimacy that certain systems still obey. That means there are factions in this Sector who would pay obscene sums to control him, and others who would kill him on principle.""
+""He possesses a piece of legitimacy that certain systems still only obey. That means there are factions in this Sector who would pay obscene sums to control him, and others who would simply kill him for their principles.""
 
-""And if they can't get to him, they'll get to whoever carried him. Which is you."" She reclines again, smile faint. ""This is why I wish to keep him in my orbit.""
+""And if they can't get to him, they'll get to whoever carried him. Which would be you, if you decided to keep him around."" She reclines and spins around in her chair. ""This is why I wish to keep him in my orbit.""
 
 ""As for IRON KING… I think it's placing pieces on a chess board."" She looks past you for a moment.
 
 ""It let you find him because it knew where he'd go: New Meshan. Or more accurately, to me."" Sera's eyes return to you. ""I don't know why it wants that. But I don't feel threatened by the gesture.""",,
 armaa_hcChaletOptIdealResp,DialogOptionSelected,"$option == armaa_hcChaletOptIdealResp
 $rel < 0.25","$askedHCIdeal = true
-FireAll armaa_hcChaletOpts","Sera's smile turns polite in a way that makes it clear you've pushed the room into formal negotiation.
+FireAll armaa_hcChaletOpts","""That's cute. And unrealistic. Your 'protection' ends here, because this is my jurisdiction, on my world, under my roof."" She holds your gaze. ""However, I will make some concessions, if it puts you at ease.""
 
-""That's cute. And unrealistic."" She simply states. ""Your 'protection' ends at my door, Captain. Not because I wish it to - because this is my jurisdiction, on my world, under my roof."" She holds your gaze. ""However."" The word arrives like a concession placed carefully on a table.
-
-""I will not harm him, and I will not confine him against his will. He may leave when he chooses.""
-
-""If you're worried about quiet endings, understand this: I gain nothing from one. So here's what you get: you may remain within the premises. Your crew may keep eyes on the perimeter. And if you want proof he eventually walks out of this building on his own feet some day, you'll have it.""",,
+""He may leave when he chooses, and you are free to return at your leisure.""",,
 armaa_hcChaletOptIdealRespHigh,DialogOptionSelected,$option == armaa_hcChaletOptIdealResp,"$askedHCIdeal = true
 FireAll armaa_hcChaletOpts","""$player.firstName, please. You don't need to posture with me, of all people.""
 
-""I'm not going to dispose of him. I've planned for him, yes. That's not the same thing as wanting him."" She glances toward the closed door as if she can see through it.
+""Let's say we have a common history, the details of which aren't mine to share. If you want to protect him, protect him from the Sector. Stay on the premises if it helps, keep your people at the perimeter. I won't object. If I meant him harm, I could've found a creative way to kill him at least six times by now.""
 
-""Let's say we have a common history, the details of which aren't mine to share. If you want to protect him, protect him from the Sector. Stay on the premises if it helps, keep your people at the perimeter. I won't object.""
+""That's a joke. Also,"" she adds, lightly, ""I try not to kill family on the first meeting.""",,
+armaa_hcChalet9,DialogOptionSelected,$option == armaa_hcChalet9,,"""Once he's fully recovered, we'll need to get him to undertake physical therapy.""
 
-""But you don't get to supervise the conversation. That's his price for the truth, and mine for keeping it contained.""
+""The more complicated part is not keeping him alive, though."" Sera continues. ""It'll be reintegrating him into a modern corporation without turning him into a spectacle."" Her fingers tap the table once.
 
-""Besides. If I meant him harm, you wouldn't have gotten an invitation. You'd have gotten an invoice - for hazard pay, and the privilege of not asking questions.""
+""Arma Armatura has an executive board, of course. They are capable people. They are also... easily spooked. Imagine how they'll react when I tell them the company's former CEO just walked into my office, ha-ha.""
 
-Then Sera's smile softens, almost companionable, as if she'd only been discussing docking fees. ""That's a joke. Also,"" she adds, lightly, ""I try not to kill family on the first meeting.""",,
-armaa_hcChalet9,DialogOptionSelected,$option == armaa_hcChalet9,,"Her tone stays pleasant, almost conversational, as if she's outlining shipping arrangements instead of deciding the shape of a man's second life.
-
-""Once he can stand without shaking and speak without sounding like a man reading an obituary, I'll let him walk the grounds. Then, if he insists, the city.""
-
-""The more complicated part is not keeping him alive,"" Sera continues. ""The more complicated part is integrating him into a modern corporation without turning him into a spectacle."" Her fingers tap the table once.
-
-""Arma Armatura has an executive board, of course. They are capable people. They are also... easily spooked. Imagine how they'll react when I tell them the company's former CEO just walked into my office.""
-
-She stands, smooth and unhurried, as if the conversation has already been filed and archived. ""Either way, Captain… you did the difficult part. You got him here intact."" She steps toward the door and opens it.",armaa_hcChalet10:Continue,
+""Either way, Captain… you did the difficult part. You got him here intact."" She steps toward the door and opens it.",armaa_hcChalet10:Continue,
 armaa_hcChalet10,DialogOptionSelected,$option == armaa_hcChalet10,"$global.armaa_hc_Completed = true
 AddCredits 25000
 AddXP 1500
@@ -1990,13 +1965,11 @@ ResumeNormalMusic
 EndConversation
 ShowDefaultVisual
 Call $global.armaa_hc_ref updateData
-FireAll PopulateOptions","Cassian stands wheree you left him - his posture is unchanged, but his eyes are sharper than when you went in.
+FireAll PopulateOptions","Cassian still stands where you left him, having taken up your mantle of staring off against the woman against the wall.
 
-Sera's expression turns gently approving. ""Cassian,"" she says. Cassian inclines his head. Barely. ""Sera."" It feels less like a greeting, and more like a mutual recognition of an unresolved equation. Sera turns to you.
+""Cassian,"" Sera says. Cassian inclines his head, ""Sera."" ""The captain's leaving,"" she says. 
 
-""The captain's leaving,"" she says, as if you're a courier completing a delivery. "" Cassian watches you for a moment longer than necessary.
-
-""You did what you said you'd do,"" he says. ""You brought me to the door."" He goes briefly still - interfacing with something, probably. Sure enough, your TriPad chimes with a notification of your payment.
+Cassian watches you for a moment longer than necessary. ""You did what you said you'd do,"" he says. He goes briefly still - interfacing with something, probably. Sure enough, your TriPad chimes with a notification of your payment.
 
 For a moment, you can almost pretend this is normal: a contact meeting, a handoff, a problem that belongs to someone else now. The shuttle ride back to your $shipOrFleet is uneventful.",,
 ,,,,,,
@@ -2150,7 +2123,7 @@ FireAll PopulateOptions","$armaa_dawnMarket...
 
 ""Far as I recall, local law here fell apart some time back."" She shrugs. ""Which is to say... stay near the port and you'll likely be fine. Stray off it, that's your business.""
 
-""Nobody's even countin' heads down there anymore. Survivors, scavengers, whoever's holdin' the rifle this week... I don't envy whoever'd have to take that census.""",,
+""Nobody's even countin' heads down there anymore, so no telling what types are lurking about. I don't envy whoever'd have to take that census, to be honest.""",,
 armaa_dawnSit1,armaa_DawnSituationComment,$armaa_dawnTopic == church,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
@@ -2166,7 +2139,7 @@ FireAll PopulateOptions","$armaa_dawnMarket...
 
 ""Most folks here seem to share the faith. Ain't a Church world, though.""
 
-""Come out this far and you can pray how you like, nobody takin' attendance."" She glances away from the display. ""Place may even run better for it, too. Make of that what you will.""",,
+""Come out this far and you can pray how you like, nobody takin' attendance."" She glances away from the display. ""Place may even run better for it, too.""",,
 armaa_dawnSit4,armaa_DawnSituationComment,$armaa_dawnTopic == idle,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
@@ -2213,14 +2186,13 @@ armaa_dawnSitBaetis,armaa_DawnSituationComment,$armaa_dawnTopic == baetis,"SetTe
 FireAll PopulateOptions","""$armaa_dawnMarket...the ol' stomping grounds."" She pulls something up on her end, scanning it instead of looking at you. ""...not much else to it. Well..there is, but it's a story for another day.""",,
 armaa_dawnSitBaetis2,armaa_DawnSituationComment,"$armaa_dawnTopic == baetis
 $player.metDawnBar2Q3","SetTextHighlights $armaa_dawnMarket
-FireAll PopulateOptions","""What's there to say about $armaa_dawnMarket? Rock got caught on its way through the system and never left. Sat in Tartessus' shadow ever since."" She almost smiles. ""Fittin' place to dump the people you don't want.""
-""That's what it is, mind. Exiles, out-of-system folk, anybody Tartessus decided didn't fit. I'd hang out around the landing bays with the holos promisin' whatever you'd pay for.""
+FireAll PopulateOptions","""What's there to say about $armaa_dawnMarket? Fittin' place to dump the people you don't want.""
+
+""That's what it is, mind. I'd hang out around the landing bays with the holos promisin' whatever you'd pay for.""
 
 OR
 
-""What's there to say about $armaa_dawnMarket? Rock got caught on its way through the system and never left. Sat in Tartessus' shadow ever since."" She almost smiles.
-
-""Best part was the pilgrims. They'd come through on Church business and make a whole production of not goin' in. Stand out front of a place, talk loud about temptation, make sure somebody was takin' note. We knew which ones meant it.""",,
+""What's there to say about $armaa_dawnMarket? Best part was the pilgrims. They'd come through on Church business and make a whole production of not goin' in. Stand out front of a place, talk loud about temptation, make sure somebody was takin' note.""",,
 ,,,,,,
 armaa_dawnSitZGR,armaa_DawnSituationComment,$armaa_dawnTopic == ZGR,"SetTextHighlights $armaa_dawnMarket
 FireAll armaa_DawnSituationCommentZGR
@@ -2253,11 +2225,9 @@ armaa_dawnSitZGRChurchWarnedResp,DialogOptionSelected,$option == armaa_dawnSitZG
 ""....maybe. Ain't gonna be the one to say it, though.""
 
 ""I fly a war machine for coin. Verdicts ain't mine to hand out. Ask me if she's dangerous and I'll say yes. Leave the rest to somebody cleaner.""",armaa_dawnSitZGRChurchResp:She's everything the Church warned about,
-armaa_dawnSitZGRChurchWarnedFaithfulResp,DialogOptionSelected,$option == armaa_dawnSitZGRChurchFaithfulResp,FireAll PopulateOptions,"She doesn't answer right away.
+armaa_dawnSitZGRChurchWarnedFaithfulResp,DialogOptionSelected,$option == armaa_dawnSitZGRChurchFaithfulResp,FireAll PopulateOptions,"""There's always someone who thinks they can mess with the thing unmolested, 'cause they're smarter 'n the last fool.""
 
-""Aye. She is, perhaps. You've seen what's out there past the light. Somebody reached for that once and it reached back.""
-
-""Easier sayin' that to you than to most. ...won't pretend it costs me nothin', $playerBrotherOrSister. Neither of us is standin' on clean ground.""",armaa_dawnSitZGRChurchFaithfulResp:She's everything Ludd warned about,
+""So? Yeah, it'll probably blow up in her face, and it'll probably cost people when it does, but I won't pretend it costs me nothin', $playerBrotherOrSister. Neither of us is standin' on clean ground.""",armaa_dawnSitZGRChurchFaithfulResp:She's everything Ludd warned about,
 ,,,,,,
 ,,,,,,
 armaa_dawnSitSedge,armaa_DawnSituationComment,"$armaa_dawnTopic == sedge
@@ -2327,11 +2297,9 @@ EndConversation",,,
 armaa_dawnAskForContactDenyFirstTime,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk
 !$askedForSeraph","AddPotentialContact
-$askedForSeraph = true","""That's a big ask."" She flicks open a datapad, thumbing in a few notes. ""I'll log it. Can't promise much.""
+$askedForSeraph = true","""That's a big ask. I'll log it, but honestly? Don't expect much.""
 
-She glances up. ""You know what I actually handle around here - the scraps, the leftover gigs nobody else wants. Nothing glamorous."" A slight tilt of her head.
-
-""Clear some of those out for me and maybe I can move things along for you. Fair's fair.""",,
+She glances up. ""I don't got the pull to arrange those types of things without reason. Clear some of those out for me and maybe I can move things along for you. Fair's fair.""",,
 armaa_dawnAskForContactDeny,DialogOptionSelected,"$option == armaa_dawnAskForContact
 !$hasValk",,"""Sorry, still can't do. I'll log your request, though.""",,
 ,,,,,,
@@ -2365,23 +2333,17 @@ armaa_dawnSmallTalkNeutral,DialogOptionSelected,$option == armaa_dawnSmallTalkNe
 $askedDawnAboutName = true
 FireAll PopulateOptions","$personName half smiles, ""Gotta make a living, same as everyone else. Now then, anything else you need?""",,
 armaa_dawnSmallTalkPather,DialogOptionSelected,$option == armaa_dawnSmallTalkPather,"$player.luddicAttitudePather++
-$askedDawnAboutName = true","$personName eyes you for a moment, head tilted.
-
-""Guess you could say there's a bit of a.. contradiction in what I do, considerin' I still hold to the Church."" She exhales. ""But life don't always deal you a clean hand. Gotta make choices - keep a roof overhead, keep food on the plate."" She gives you a small, knowing smirk.
+$askedDawnAboutName = true","""Guess you could say there's a bit of a.. contradiction in what I do, considerin' I still hold to the Church."" She exhales. ""But life don't always deal you a clean hand. Gotta keep a roof overhead, keep food on the plate."" She gives you a small, knowing smirk.
 
 ""Reckon you know how that goes yourself, $playerSirOrMadam - considerin' the business you're in.""",armaa_dawnSmallTalkPather2:Continue,
-armaa_dawnSmallTalkPather2,DialogOptionSelected,$option == armaa_dawnSmallTalkPather2,,"""Oh, sure. Sometimes I catch myself dreamin'. Livin' out in the middle o' nowhere, some beat-up homestead where the dirt meets the sky and the wind hums you to sleep at night."" She gives a dry little chuckle, glancing around  her surroundings. 
-
-""But here I am. Metal, noise, and too many people packed into too little space. Gotta bloom where you're planted, they say."" Her gaze drifts upward, eyes half-lidded, like she's either ponderin' some great truth or checking for a hidden recorder.
+armaa_dawnSmallTalkPather2,DialogOptionSelected,$option == armaa_dawnSmallTalkPather2,,"""Gotta bloom where you're planted, they say."" Her gaze drifts upward, eyes half-lidded, like she's either ponderin' some great truth or checking for a hidden recorder.
 
 ""Maybe one day I'll find my way back to greener ground. But for now?"" She shrugs. ""I'll keep plantin' what seeds I can, wherever I end up.""",armaa_dawnSmallTalkPather3:Continue,
 armaa_dawnSmallTalkPather3,DialogOptionSelected,$option == armaa_dawnSmallTalkPather3,"FireAll PopulateOptions
 AdjustRepActivePerson FRIENDLY 5
 AdjustRep luddic_path FRIENDLY 2
 AdjustRep armaarmatura SUSPICIOUS -2
-$greetedDawnAsALuddicMaybePather = true","""My mama used to say even a little pebble can start an avalanche. Or somethin' like that. Point is, small things still matter."" She flashes a crooked grin. 
-
-""So I just keep at it. Who knows.""
+$greetedDawnAsALuddicMaybePather = true","""My mama used to say even a little pebble can start an avalanche. Or somethin' like that. Point is, small things still matter. So I just keep at it. Who knows.""
 
 You're not sure if she's being earnest or taking the piss. Either way, you steer the conversation somewhere else.",,
 armaa_dawnSmallTalkFaith,DialogOptionSelected,$option == armaa_dawnSmallTalkFaith,"AdjustRepActivePerson FRIENDLY 2
@@ -2394,9 +2356,7 @@ FireAll PopulateOptions","""Huh."" She looks at you for a moment, reassessing so
 armaa_dawnSmallTalkFriendlyWithChurch,,RepGTE luddic_church FAVORABLE,,,,
 ,,,,,,
 armaa_loreDump1,DialogOptionSelected,$option == armaa_loreDump1,,"""Yeah, um...where is that- ah!""",armaa_loreDump2: Continue,
-armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"Arma Armatura weathered the Collapse longer than most - until the First AI War gutted its factories and scattered its holdings. What rebuilt from that wreckage is smaller, but still present: mechs, exosuits, work drones, construction platforms. Hardware that shows up in warzones and work crews alike, often interchangeably.
-
-Headquartered on New Meshan now. The promotional feed talk sabout stability and prosperity. The production lines tell a different story.",armaa_loreDump3: Continue,
+armaa_loreDump2,DialogOptionSelected,$option == armaa_loreDump2,,"Arma Armatura weathered the Collapse longer than most before a catastrophic event during the First AI War. What rebuilt from that is smaller, but still present. The promotional feed talk about stability and prosperity and goes to great lengths to paint the corporation in a positive light.",armaa_loreDump3: Continue,
 armaa_loreDump3,DialogOptionSelected,$option == armaa_loreDump3,"AddTextSmall ""Received \""ArmaA Product Portfolio (c.200 Edition)\"""" highlight
 $armaa_gotBrochure = true
 FireAll PopulateOptions","""Got any burning questions or wanna dig into a specific product? Don't hold back, just shoot. I'll toss you our brochure for the nitty-gritty details,"" she gruffly states.",,
@@ -2408,11 +2368,9 @@ armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConver
 armaa_dawnCMD supressBarSupression
 armaa_Hikaru_Utada playMusic music_armaa_bar
 ShowPersonVisual
-$player.armaa_metDawnInitial = true","Dawn glances up as you approach. ""Pulled up a chair. Good."" She nods at the seat opposite.
+$player.armaa_metDawnInitial = true","The two of you trade stories for a while - matching contrasting encounters with pirates ,pathers and smugglers. 
 
-The two of you trade stories for a while - some offered freely, others left where they landed. The scars on her face say plenty. She leaves the worst of it unsaid, and doesn't ask you to do differently.
-
-""Sounds like you could use work. Or advice. Maybe both."" A slight tilt of her head. ""I might be able to help. Depends on the sort of person you are.""","armaa_dawn_barEvent1:""See you around.""
+""Sounds like you could use work. Or advice. Maybe both. I might be able to help. Depends on the sort of person you are.""","armaa_dawn_barEvent1:""See you around.""
 armaa_dawn_barEvent2:""Thanks. I appreciate it.""
 armaa_dawn_barEvent3:""I'll look you up if i'm in the area.""",
 armaa_dawnMeeting1,DialogOptionSelected,$option == armaa_dawn_barEvent1,"$option = armaa_dawn_barEvent4 0
