@@ -1,345 +1,543 @@
-# V3.3.4
-
-## New Units
-
-- **Bellator** *(sprite by Selkie)*
-- **Viator** *(sprite by Selkie)*
-- **Valkazard Kai**
-- **Zwei**
-- **Raiden EX** *(credit to Bass & Selkie)*
-- **Bakraid**
-- **Bakraid (XIV)** technically not new, but loadout and  function has been completely revised 
-- **Bakraid (TT)** ditto
-- **Panther** - energy-oriented, same slot layout as the old Panther (XIV). DP 15.
-  - System: **Mirage Shroud** creates two duplicates with 25% of the original's HP/armor for 6 seconds. Copies deal 40% of the original's damage. The system can be cancelled early to swap positions with one of the duplicates.
-- **Ashura**
-  - Built-in Hammer plus two melee weapons. The Hammer has light tracking and will attempt to return on impact.
-  - 1x small ballistic, 2x small composite.
-
-> **Note:** the old **Panther (XIV)** has been renamed **Caracal** to free the Panther name for the new unit. See Balance & Changes for its stat changes.
-
-## New Content
-
-**Presentation / QoL**
-
-- Rewrote most dialogue.
-- Replaced the standard AI portraits used by Dawn, Imelda, Kade, and Sera.
-- Added MS Paint portraits for Dawn, Imelda, and Kade.
-- Descent background and city cloud cover now scale by screen size.
-- Lowered background rotation and scroll speed.
-- Removed non-ArmaA gear from ArmaA market priority ship lists.
-- The New Meshan AA market now offers more AA-specific ships.
-- Optimized VRAM usage.
-- Performance improvements for custom battles and Aleste scripts.
-- Fixed an unnecessary method call in the strikecraft hullmod that could cause a performance hit.
-- Lowered the quality of some backgrounds to trim file size.
-- Added a memory key to track whether the player began with a sleeper start. *(Don't ask why this wasn't already in place.)*
-- Added the `armaa_core_independent` tag. If a tagged unit's core is destroyed, controls of the ship are not locked. useful for units like the Bakraid. This behavior also applies automatically to any unit with the automated hullmod or a skeleton crew of 0.
-- Specialized Service Bays now uses the dynamic stat `armaa_strikeCraftRefitMod` rather than a hardcoded +50%. This is irrelevant to most players, but it means you can build a carrier hullmod that modifies strikecraft refit rate for submods, or for when this functionality gets externalized.
-- Switched the derelict faction used on Jenius to a whitelisted version.
-
-**Quests**
-
-- Added two new short quests: **Red Earth, Iron Cages** and **Homecoming**.
-
-**Events & Scenes**
-
-- Added a new event after docking at Jenius post-Crown of Cinders.
-- Added a new event after completing Descent (fires after the end of the month).
-- Added an alternate event if the player completely loses against the TT fleet at the Valkazard start.
-- Added minor permutations to the Valkazard turn-in event if Homecoming was completed beforehand.
-- Added missing Dawn–Sedge event scene(s).
-- Added a small bar event variant if the player opted not to bring a weapon during SDTU.
-- Added a post-market-dock event if Dawn is present and Yunifer (PAGSM) was recruited under certain conditions.
-- Added two new Dawn events: one for AI core(s) piloting a ship in the fleet, and one following the last bar event.
-- Added slightly alternate dialogue with Imelda during Crown of Cinders if the player is friendly to the Path.
-- Valken III retrieval is now a selectable dialogue option that appears once conditions are met.
-- If the player gives the Valkazard back to Sera, she can eventually return an upgraded, overpowered power fantasy version. Requires any one of: completing ATAC, completing Descent, or reaching Level 15.
-- A small number of Pather ships will appear to assist during the first Crown of Cinders mission.
-
-**Factions & Markets**
-
-- Added the Nexerelin mercenary company **Primary Colors**, with Dawn bar event variations for each member.
-- Added **Exilium** as a Nexerelin super ship start.
-- Added a special custom procurement at friendly reputation with Sera, pulling from all unrestricted ArmaA blueprints.
-- Added an industry on New Meshan that spawns fleets using mostly ArmaA gear.
-- Added an industry on Jenius that spawns derelict patrols initially.
-- Added **Immelmann**, a toxic planet at the edge of Gamlin's orbit.
-- Added portraits for the REIC mercenaries *(thanks roquetherogue)*.
-
-**Hullmods**
-
-- Added **Exclusive Hangar Assignment** — launches all ships with the strikecraft hullmod from a specific carrier (cruiser and above).
-- Added the **Delicate** hullmod to all phase units.
-- WINGCOM pilots can now gain the **Veteran Pilot** skill (see Balance & Changes).
-
-## Balance & Changes
-
-### WINGCOM
-
-- **Pilot progression reworked.** Pilots now track XP stat that increases based on their ship's combat contribution each battle, scaled by their reputation and other factors. Skills can be changed at any time in the intel screen, but elite skills will be downgraded.
-- Once a pilot reaches max level and has a high reputation level, they have a chance to upgrade an existing skill to Elite, if not already at the Elite limit.
-- **Veteran Pilot skill added.** Any pilot at max level can be promoted to Veteran by spending a story point. Some pilots also have a hidden knack for flying and may distinguish themselves unexpectedly at any point in their career. Only a limited number of veterans can serve in a fleet at once.
-- Ships with built-in WINGCOM and the Spare Chassis hullmod gain one extra wing member.
-- Squadron size now scales properly with modifiers that increase the number of extra craft in a wing. *(Tested with Diable and Reserve Deployment; edge cases may remain.)*
-- Removed the block on bomber LPCs for Frigate/Strikecraft.
-- DP of a unit with the hullmod now increases based on fighter OP cost.
-- Engagement range penalty reduced:
-  - Capitals: 20% → 15%
-  - Cruisers: 30% → 15%
-  - Destroyers: 40% → 15%
-  - Frigates: 70% → 50%
-
-### Strikecraft
-
-- **Repairs are now finite.** Each unit has a non-replenishable repair pool per engagement (50 by default). When landing after incurring damage, `DP * hullLevel` is deducted from the pool. Once exhausted, repairs cannot be made, but CR and ammo can still be recovered. Can be toggled back to effectively infinite repair via LunaLib.
-- Added a slight delay to strikecraft launching from carriers initially.
-- Removed the cap on the number of strikecraft that can launch from carriers on deployment.
-- Specialized Service Bays' refit bonus is no longer hardcoded at +50% and now uses the dynamic stat `armaa_strikeCraftRefitMod`.
-
-### ATAC
-
-- Specialized Service Bays is now obtainable at 1000 progress.
-- C-Stim Dispatcher moved from 200 points to 800 points.
-- After completing ATAC for the first time, progress from destroying ships is doubled.
-- Progress from destroying end game enemies, and enemies with the MONSTER tag, is doubled.
-### Ground Operations
-
-- Ground capable units interact with raids differently: they provide a flat bonus to raid strength as long as the player has at least one marine in the fleet. New formula is `fleetpoints * officer level`.
-
-### Cataphract S-II
-
-- S-Mod bonus now varies based on whether the unit is piloted by an officer.
-  - **Officer:** increases damage to cruisers/capitals by up to 10%/20% based on pilot level; increases flux dissipation, turn rate, and autofire accuracy by 2% per level; increases DP cost.
-  - **Non-officer:** DP cost reduced by 20% (up to 10 points); 50% reduced chance to acquire D-mods; +10% combat readiness.
-  - Below 35% hull, gain +25% speed/maneuverability and +25% weapon flux cost for 5s.
-
-### Ship Systems
-
-- **Executioner's Mark**
-  - Charges: 2 → 1
-  - Turn rate: 100% → 50%
-  - Cooldown: 10 → 5
-  - Flux per use: 0 → 0.1 base capacity
-  - Can now be toggled like Burn Drive.
-- **Blink**
-  - Max uses: 2 → 1
-  - Cooldown: 1 → 8
-- **Havoc Drive**
-  - Top speed: +300 → +150
-- **Hi-MAC**
-  - Boost charge now regenerates ~40% slower.
-  - Cancelling functionality added to the decelerate key *(thanks Android9k)*.
-  - Added compatibility fix for Absolute Movement *(thanks Android9k)*.
-- **Kouto ECM**
-  - Capacity: 1500 → 2000
-
-### Assault Boarding Pod
-
-- **Mechanics reworked.** The pod latches onto the target's hull, dealing EMP and minor hull damage. Cannot penetrate shields.
-- Once attached, it sabotages weapons and engines, starting at the insertion point and propagating outwards. Each attached pod increases weapon malfunction chance by 1% per shot and engine malfunction chance by 3%.
-- Only three pods can attach to the same target at once, for a maximum of 9% engine and 3% weapon malfunction chance.
-- If the pod fails to attach, it deploys its battle armors as a fighter wing and attempts to detonate near the closest enemy.
-
-### Units
-
-**Aleste**
-
-- Speed: 180 → 150
-- System: Fuller Auto → Plasma Jets
-- Laser Blade: damage 1800 → 1000, EMP damage 0 → 400
-- Adjusted some mount positions.
-- The left arm can now be swapped with all of the old modular Aleste weapons, not just the melee ones.
-- Converted paintjob to MagicPaintjob.
-
-**Aleste (Wing)**
-
-- Wing size: 2 → 1
-- Speed: 150 → 125
-- Replacement rate: 20 → 25
-- System: Claw Drone → Plasma Jets
-- Laser Blade: damage 1800 → 1000, EMP damage 0 → 400
-
-**Rajanya**
-
-- CR per deployment: 20 → 45
-- Damage resistance to explosions: 90% → 95%
-- Increased the angular velocity imparted on user and target from axe swings. (In other words: hit stuff, make it spin.)
-- Updated melee effects.
-- Updated binder sprite and bounds.
-- ARU is now built-in.
-- **Bit:** refit time 8 → 5; system None → Plasma Jets
-- **Binders (module):** no longer have shields. Each intact binder instead contributes 5% shield efficiency to the core unit, for +25% total.
-- **AI adjustments:**
-  - Better evaluates threats near the landing zone before committing.
-  - AI ships now charge in at an angle rather than directly head-on.
-  - Uses its system defensively where appropriate.
-  - Cuts system usage short mid-flight when appropriate so that offensive uses abort if seen as too risky, and defensive uses end early once clear.
-
-**Bakraid**
-
-- HP: 1500 → 2500
-- Armor: 200 → 250
-- Dissipation: 180 → 225
-- Speed: 110 → 140
-- Medium slot is now Large; removed 1x missile slot.
-- Core unit can now be swapped out at markets. Anything with the 'Strikecraft' hullmod counts as a core unit.
-
-**GuarDUAL**
-
-- PERCEPT homing shots no longer deal near-guaranteed EMP piercing damage. Chance near target max flux: 90% → 70%.
-
-**GuarDUAL FV (Wing)**
-
-- Minigun chargeup: 0.35 → 0.1
-- Swarmer SRM → Breach SRM (Fighter)
-- Added ECCM hullmod.
-
-**Caracal** *(formerly Panther (XIV))*
-
-- DP: 8 → 10
-- Phase Cloak → Havoc Drive
-- Shield: EMP Emitter → Flare Launcher
-
-**Caymon**
-
-- DP: 17 → 20
-- Now carries the Aleste E-type.
-- Added `SHIP_WITH_MODULES` tag.
-
-**Valkyrie (AA)**
-
-- DP: 8 → 10
-- Bays: 2 → 1
-
-**MUSHA**
-
-- Support range: 1000 → 2500
-- Slightly adjusted sprite and added blinkers.
-
-**Watchdog**
-
-- Shield efficiency: 1.05 → 1.00
-- Increased base speed.
-- AI improvements.
-
-**Zanac**
-
-- Shield arc: 300 → 120
-- Shield type: Front → Omni
-- System: Booster → Displacer (standard)
-- MRC ver System: Firebolt Feeder → Fuller Auto (MRC)
-
-**Juno Mk. II**
-
-- OP: 16 → 13
-- Range: 1000 → 800
-
-**VX Custom**
-
-- System: Plasma Jets → Fuller Auto
-
-**Einhänder**
-
-- Cataphract hullmod replaced with Cataphract2.
-
-**Global**
-
-- Increased armor by 50 for VX Custom and Aleste; by 100 for Leynos, Spriggan Powered, and Kouto ECM.
-- Slightly reduced max turn rate and acceleration across the board for cataphracts.
-- Increased hull frequency of Einhänder, Bassline, Bakraid, and Einhänder+.
-
-### Campaign & Story
-
-**Gamlin System**
-
-- Nekki changed from a yellow star to a brown dwarf and now has a corona.
-- Jenius moved out of Nekki's orbit into Gamlin's orbit.
-- Jenius now starts the game marked as hidden to prevent it being selected as a mission target, and is unhidden once it becomes an official independent planet.
-- The Orbital Fabricator industry on Jenius now supplies heavy machinery and other goods.
-- Added obvious nudges toward Gamlin for story content.
-
-**Dawn**
-
-- Dawn is no longer removed as a contact on recruitment.
-- She will now relocate to the market the player docks at, so long as it is valid and not hostile to the player.
-- She will not relocate while the player has an active mission from her, and will not relocate to Diktat markets.
-- Added some random bar revents.
-- Dawn will now wait two market visits before confronting the player in certain scenarios.
-
-**Missions**
-
-- **Crown of Cinders:** added a slightly expanded opening "cinematic"; increased drone spawn rate during the first mission; revised some FX; added floaty text when reinforcements appear; added clarification on fleet size requirements.
-- **Descent:** Rajanya now appears during this mission. Revised some FX.
-- **REIC:** made it even more obvious that being reckless will make the final raid more difficult. Hiring the mercenaries now also provides some marines.
-- Made it more abundantly clear that the main quest doesn't end after the two Jenius battles.
-- Revised some mission battles.
-
-## Removals
-
-- Removed Guppy wing.
-- Removed Gallant wing.
-- Removed Valken (P) wing.
-- Removed Leynos (RS).
-- Removed the deprecated landing beacon weapon.
-- Removed the invisible Vulcan weapon from MUSHA.
-- Removed redundant weapon logic from Rajanya.
-
-## Fixes
-
-**Combat**
-
-- Fixed the refit penalty not being applied in combat.
-- Fixed strikecraft losing CR/PPT from corona and black hole terrain effects on the campaign layer when carriers were present.
-- Fixed 0 weapon flux/sec bug on the Hel Corsair.
-- Fixed the assault pod explosion killing its own fighters.
-- Fixed Executioner's Mark massively increasing the targeted ship's defensive stats.
-- Fixed the GuarDUAL shield arc progressively decreasing after transformation.
-- Fixed the AI spamming GuarDUAL transformation when no enemies were present.
-- Fixed most GuarDUAL graphical jitter bugs.
-- Fixed the Ceylon AI only using its system at minimum range.
-- Fixed the Rajanya AI charging at very high flux when it should be retreating.
-- Fixed a Rajanya AI freeze where a ship with no nearby ally would get stuck unable to attack or flee.
-- Fixed a potential NPE in the Rajanya damage listener.
-- Fixed the Aleste head using needler sounds and projectiles instead of Vulcan.
-- Fixed the Kouto's missing torso weapon.
-- Fixed the Juno III continuously playing its chargeup sound.
-- Fixed the ATAC "hostile ships destroyed" check when already at max.
-
-**Crashes**
-
-- Fixed a CTD when viewing MagicLib paintjobs from the intel menu *(thanks to Histidine for diagnosing this)*.
-- Fixed a CTD caused by not having LunaLib installed.
-- Fixed a CTD caused by an unused variable.
-- Fixed the variableUnit hullmod CTD.
-
-**Campaign & Story**
-
-- Fixed a softlock in Crown of Cinders if the player started the mission from the bar hint instead of from Kade directly.
-- Fixed the first Crown of Cinders map being partially transparent.
-- Fixed the Meshan Vigil Fleet and Arusthai fleet pursuing each other off-map.
-- Fixed patrols spawned by the Orbital Fabricator not using their custom dialogue or asking about the transponder.
-- Fixed the Jangala shrine scene with Dawn being missable because LPP hadn't started yet.
-- Fixed Dawn's Kanta's Den dialogue using Mazalot dialogue.
-- Fixed the random option in Dawn bar event 3 triggering bar event 2 again.
-- Fixed the shrine visit counter for Dawn not ticking up properly.
-- Fixed the REIC mercenaries' departure dialogue not firing.
-- Fixed a second Valkazard spawning at the end of Descent if the player started with it.
-- Fixed submarkets not transferring properly on Jenius post-Crown of Cinders.
-- Fixed `armaa_anime` portraits for Kade, Imelda, and Deadeye not appearing.
-- Fixed more officers than intended appearing in markets.
-- Added an extra condition to the "Ace" skill to prevent Dawn voice lines from playing.
-- Valkazard is no longer taken by Sera Pha after letting ArmaA scan it.
-
-**Other**
-
-- Fixed an exploit from adding Converted Hangar, adding WINGCOM, then removing Converted Hangar to keep the added wing.
-- Fixed a potential bug preventing empty WINGCOM squad slots from being refreshed.
-- Fixed the strikecraft hullmod displaying irrelevant sections in the codex.
-- Fixed the Corsair XIV standard variant being under OP.
-- Fixed the Valkazard standard variant being over OP.
-- Fixed compound units' detached ship not being set as the last ship the player transferred to.
-- Fixed ships with the `independent_of_carrier` tag being unable to move on the campaign map when no other ships were present.
+V3.3.4
+------
+- fixed refit penalty not being applied in combat
+- repair count now rounds up to 2 decimals
+- fixed exploit(?) from adding converted hangar, adding wingcom, then removing CH to keep the added wing
+- fixed graphical bug on guardual and Zwei missiles caused by jitter effects
+- fixed graphical bug on destroyed guardual and Zwei
+- fixed Zwei repeatedly transforming while landed on a carrier
+- removed Zwei restricted tag, which was preventing it from appearing in markets / CPC
+- armaa CPC is now marked as a priority mission 
+- EM Lash
+	- Better clarified weapon mechanics
+	- reduced EMP Arc range from ~300 su to 50
+	- EMP damage 100->500
+	- EMP Arc interval 0.1s->0.25s (EMP/s 2400->1600)
+	- intent is for a more localized emp effect near point of impact vs something that disables an entire ship
+- Dawn
+	- Dawn will no longer be removed as a contact on recruitment
+	- will "relocate" to market player docks at so long as it is valid and not hostile to player
+	- will not relocate while player has an active mission from her
+	- will not relocate to diktat markets
+	- fixed random option in bar event 3 triggering bar event 2 again
+
+- Rajanya
+	- Updated binder sprite & bounds
+
+
+V3.3.3
+------
+- Zwei
+	- should more frequently transform to use the missile slot manually selected instead of attempting to fruitlessly fire them while disabled
+	- Added goal variants
+	- Fixed Sys Ex not properly reducing cooldown time
+- After completing ATAC for the first time, progress from destroying ships is doubled
+- fixed zwei not appearing in procurement / market
+
+V3.3.2
+------
+-- Fixes
+- Fixed bug where Valkazard Kai wouldn't be recognized for some things due to being a module
+- Fixed bug that wouldn't tick up dawn # of shrine visits properly
+- Removed non-armaa gear from armaa market priority ship lists
+- Fixed strikecraft losing CR / PPT from corona's / black hole terrain effect on campaign layer when carriers were present
+- Fixed bug that would cause soft lock of CoC if player started the mission from the bar hint instead of Kade directly
+- Fixed bug that would cause Meshan Vigil Fleet & Arusthai fleet to pursue each other off map
+- Fixed CTD that would occur when trying to view MagicLib paintjobs by the intel menu (Thanks to Histidine for diagnosing this!) 
+- fixed 0 wep flux / sec bug on hel corsair
+- added additional null check for core unit selection
+- fixed strikecraft hullmod displaying irrelevant sections in codex
+- fixed variableUnit hullmod ctd
+- fixed visual bug that could occur at non standard WINGCOM pilot levels
+- Increased hullfrequency of Einhander, bassline, Bakraid, einhander+
+- Fixed ATAC "Hostile Ships destroyed" check when already at max
+- Specialized Service Bays refit % is no longer hardcoded +50%, and now uses dynamic stat armaa_strikeCraftRefitMod
+	- For the most part, this is irrelevant to 90% of the people who read this, but it means you can create hullmod for carrier
+	 that increases/decreases strikecraft refit rate for submods / when i externalize this functionality
+
+
+-- Additions
+- add mem key to track if player began with sleeper start
+	- dont ask me why this wasn't in place already
+- A small number of Pather ships will appear to assist during the first COC mission
+
+- ATAC
+	- Specialized Service Bays is now obtainable at 1000 progress
+	- C-Stim Dispatcher has been moved from unlock at 200 pts to 800 pts
+- added tag "armaa_core_independent"
+	- For stuff like bakraid - if core unit gets destroyed, will not lock controls of the ship
+	- this behavior also automatically applies to any unit that has automated hullmod or skeleton crew of 0
+- Added small bar event variant if player opted not to bring a weapon during SDTU
+- Added post market dock event if Dawn is present and Yunifer(PAGSM) was recruited under certain conditions
+- Added nex mercenary company, Primary Colors
+	- Added dawn bar event variations with each member
+
+- Bellator
+	- Increased all weapon arcs by 40 deg except for front and rear mounts
+	- added passive aura - grants 0flux bonus to all strikecraft within 4000 su, up to 70% of their flux
+	- effect diminishes as Bellators hard flux increases
+	- Ship System: Booster -> Mine Strike
+	
+
+- Gamlin
+	- Orbital Fabricator industry on Jenius now supplies heavy machinery & some other things
+	- Fixed patrols spawned by the Orbital Fabricator not using their custom dialogue / asking about transponder
+	- Nekki was changed from a yellow start to brown dwarf
+	- Nekki now has a Corona
+	- Jenius was moved out of Nekki's orbit into Gamlin's orbit
+	- Jenius starts the game marked as "hidden" to prevent it being selected for mission targets / etc
+		- Set to unhidden once it becomes an official indie planet
+	- Added toxic planet at the edge of gamlin orbit
+
+- Misc
+	- made it even more obvious that being reckless during REIC will make the final raid more difficult
+	- hiring the mercenaries during REIC now also provides some marines
+        - fixed bug where REIC mercenaries departure dialog wouldn't fire
+	- added portraits by roque for reic mercs
+
+- Einhänder
+	- Cataphract hullmod was replaced with Cataphract2 hullmod
+
+- Blink
+	- Max uses: 2->1
+	- Cooldown: 1->8
+
+Raiden EX
+	- added tag "armaa_core_independent"
+
+Panther:
+	- DP: 15->14
+	- Capacity: 2600->3000
+
+Assault Boarding Pod
+	- Reworked mechanics
+	- Latches onto the target's hull, dealing EMP Damage minor hull damage. Cannot penetrate shields. 
+	- Will attempt to sabotages weapons and engines, starting insertion point and propagating outwards. 
+	- While attached, each pod increases weapon malfunction chance by 1% per shot, and engine malfunction chance by 3%. 
+	- If the pod fails to attach to a target, it will deploy the battle armors as a fighter wing and attempt to detonate near the closest enemy
+	- Fixed assault pod explosion killing it's own fighters
+	- Only 3 boarding pods can attach to the same target at any time, inflicting a maximum engine malfunction chance of 9% and weapon malfunction chance of 3%
+
+Aleste:
+	- Adjusted some mount positions
+	- Left arm can now be swapped with all of the old modular aleste weapons, and not just the melee ones
+	- convert paintjob to magicpaintjob
+
+Caymon
+	- added SHIP_WITH_MODULES tag
+
+WINGCOM:
+	- Ships with built-in wingcom gain one extra wing member
+	- Squadron size should properly scale with modifiers that increase the number of extra craft in a wing
+		- This has only been tested with Diable and reserve deployment, so may have some weird edge cases
+	- fixed potential bug that would prevent empty squad slots from being refreshed
+	- Removed the block on bomber LPCs for Frigate/Strikecraft
+	- Reduced Engagement range penalty
+	- Capitals:
+		- 20% -> 15%
+	- Cruisers: 
+		- 30% -> 15%
+	- Destroyers:
+		- 40% -> 15%
+	- Frigates:
+		- 70% -> 50%
+
+- Kouto ECM
+	- Capacity: 1500->2000
+
+- Nexerelin
+	- Added Exilium as super ship start
+
+- Valkazard Kai
+	- Fixed bug where blade hitbox did not match it's actual length
+
+- GuarDUAL
+	- PERCEPT homing shots no longer deal near guaranteed EMP piercing damage
+	- Chance: 90% near target max flux -> 70%
+	- fixed most graphical jitter bugs
+
+- Rajanya
+	- Increased angular velocity imparted on user and target from axe swings (in other words, hit stuff -> make it spin)
+	- removed some redundant weapon logic
+	- Increased damage resistance to explosions from 90% to 95%
+	- CR per deployment: 20(I actually dont remember what it was originally lel) -> 45%
+
+- Adjusted Rajanya AI
+	- Should better evaluates threat near landing zone before committing
+	- AI ships will try to charge in at an angle instead of directly head on
+	- should use system defensively where appropriate
+	- AI will cut short system usage mid-flight when appropriate (offensive uses should abort if they blunder into too much firepower / defensive uses end early once the ship is clear)
+	- Fixed the AI charging at very high flux when it should be retreating
+	- Fixed a freeze where a ship with no nearby ally would get stuck unable to attack or flee
+	- Fixed a potential NPE in the damage listener
+
+- Ashura
+	- swings/attacks impart angular velocity on user & target like Rajanya (though much lower)
+	- added slight knockback to melee attacks
+	- Fixed AI being somewhat apprehensive about throwing the boost hammer
+V3.3.1pr
+------
+- Strikecraft
+	- Fixed strikecraft not repairing if only a certain % of HP could be restored
+	- Fixed CR not being restored once repair pool was exhausted
+- Fixed Bellator captain being referred to with male pronouns regardless of gender
+- fixed typo that prevented a dialog option with gamlin luddic fleet from firing
+- fixed typo that prevented a dialog option with Sera post REIC from firing
+- Fixed MRC market having no ships for sale
+- Updated priority ships for MRC
+- WINGCOM
+  - Completely reworked squadron pilot progression
+  - Pilots now have an individual, persistent XP stat that increases based on
+    their ship's combat contribution each battle, scaled by loyalty and other factors
+  - Reaching a level grants the pilot a new skill; progression is now deterministic
+    rather than random
+  - Once a pilot reaches max level and is sufficiently loyal, they have a chance to
+    upgrade an existing skill to Elite (if not already at the Elite limit)
+  - WINGCOM pilots can now gain the "Veteran Pilot" skill:
+    - Any pilot at max level can be promoted to Veteran by spending a story point
+    - Additionally, some pilots have a hidden knack for flying and may distinguish
+      themselves unexpectedly, at any point in their career
+    - Only a limited number of veterans can serve in a fleet at once
+
+- added 2 dawn event: 
+- ai core(s) piloting ship in fleet 
+- one succeeding the last bar event (this one silently raises level cap +3)
+
+Valkyrie (AA)
+DP: 8->10
+Bays: 2->1
+
+Valkyrie (AA)(Aleste)
+DP: 8->12
+Bays: 2->1
+
+- MUSHA
+    -slightly adjusted MUSHA sprite and added blinkers
+    - Support Range: 1000 -> 2500
+    - removed invisible vulcan weapon
+
+- Valkazard Kai
+    - Fixed half-charging MOONLIGHT
+    - removed dock requirement for swapping core
+    - Removed shields on modules
+        - System: Recall Device
+    - increased shield radius to encompass modules
+    - Lone Wolf
+        - Damage bonus cap: 40%->25%
+        - Weight for bonus calculation was reduced
+        - Fighters: 0.25->0.05
+        - Frigates: 0.5-> 0.25
+        - Destroyers: 1 -> 0.8
+        - Cruisers: 1.5->1.5
+        - Capitals: 2->2
+
+- Havoc Drive
+    - Top Speed: +300 -> +150
+
+- Raiden EX
+    - Added back the 2 built-in drone bays it initially came with
+    - Uses same drones as Valk Kai, as previously
+- Hi-MAC
+    - Added fix for compatibility with Absolute Movement (thanks to Android9k)
+    - Canceling functionality is now also added to decelerate key (thanks to Android9k)
+    - Boost charge now regenerates ~20% slower
+
+V3.3.1
+------
+Bakraid(s)
+- fixed bug where core unit could be destroyed and bakraid controls would not lock
+- fixed bug where core unit's legs could still be visible after ejecting
+- fixed bug where core unit would remain invisible after redocking
+- fixed "bug" that would have core unit take damage in situation where bakraid's shields logically should prevent it
+- small sprite adjustment to the bakraid(s) central module hardpoint
+
+- Kouto ECM
+	- fixed bug where AFCSS would only apply to one target instead of every ship that failed the ECCM check
+
+- fixed bug that would spawn dozens of assault pods when firing the weapon
+
+- Emergency recall device unlocks at 400pts ATAC instead of 1000pts
+	- Fixed bug where ERD would state it only can be installed on strikecraft, but could be installed on anything
+
+- Increase hull priority of caymon, bassline, Fenris by .50
+
+- Bellator
+	- Add Spare Chassis Stroage, Specialized Service Bays
+
+- guarDUAL
+	- Top Speed: 240->280
+
+- guarDUAL (wing)
+	- Top Speed: 240->280
+
+- Spriggan Powered
+	- Added Spare Chassis
+	- Speed: 130->140
+- Caymon, Fenris
+	- Added Spare Chassis Storage
+
+- valkazard kai
+	- update desc
+	- updated most weapon descs (RCL2 still not in)
+	- fixed all head hullmods to properly display functionality
+	- All head units have some sort of gimmick(effects may not be final):
+	- TL-11 EWAR Laser
+		- +3% ECM rating
+		- on painted target:
+			- Reduced autoaim by 50%
+			- increase damage to weapons by 14%
+			- increase damage to engines by 10%
+			- has chance to generate shield piercing EMP arcs based on target hard flux level
+	- AMWS (Commander)
+		- +25% sensor range & sight radius
+		- +25% Command point regen
+		- Increase performance of up to 10 units within 1000 SU by 10%
+	- Adversity:
+		- Enable 0-flux speed boost
+		- As the number of enemies within 2000 su increase, Ballistic & energy weapon damage increases
+		- the bonus decreases based on the number of friendly ships using same formula
+		- +10% ship system recharge rate
+
+
+V3.3.0
+------
+- Optimized VRAM usage
+- Added icon
+- switched derelict faction used in jenius to whitelisted version
+- Caymon
+	- Now carries aleste e-type
+
+	- DP: 17->20
+- added special custom procurement once at friendly rep for Sera - should pull from all unrestricted arma BPs
+- fixed Hegemony having access to base panther variant
+- fixed Mirage Shroud spawning phantoms with wrong owner
+- fixed missing tokens
+- fixed reactive carapace having a var cast as int instead of float
+- fixed misspelled rules trigger for kato dialogue
+- fixed misnamed file that would cause ctd on case sensitive OS
+- fixed missing fx in ocean battle
+- fixed broken rules option during end of REIC
+- fixed Bellator acquisition loop
+- fixed NPE when checking strikecraft hullmod in codex
+- added "Spare Chassis" hullmod to Trident, Broadsword, Sarissa
+- added "Exclusive Hangar Assignment" hullmod
+	- launches all ships with strikecraft hullmod from a specific carrier(cruiser+)
+- replaced standard AI portraits used by Dawn, Imelda, Kade, Sera
+- fixed dawn being removed from market 
+- minor typo fixes
+- descent bg scales by screen size
+- city cloud cover scales by screen size
+- fixed dawn kanta's den dialogue using mazalot dialogue
+- shrunk shadows cast in city battle by 20%
+- fixed axe floaters
+- trimmed some cassian dialogue
+- added armaa_traveldrive to aleste e-type
+
+V3.2.6
+------
+- Rewrote all(most?) dialogue
+- Removed the random Invictus with plasma burn in a spawned fleet
+- Fixed armaa_anime portraits for Kade, Imelda, Deadeye not appearing
+- Fixed bug that caused more officers to appear in markets
+- Fixed corsair xiv standard variant being under OP
+- Fixed valkazard standard variant being over OP
+- lowered bg rotation / scroll speed
+- Fixed second Valkazard being spawned at the end of Descent if started with it
+- Added obvious nudges to gamlin for story content
+- Made it more abundantly clear the main quest doesn't end after the 2 jenius battles
+- Add specification on what tool was used for AI generated art
+- fixed CTD caused by not having LunaLib
+- fixed CTD caused by unused var
+- fixed dawn not immediately being removed as a contact if hired
+- fixed unnecessary method call in strikecraft hullmod that could cause a perf hit
+- fixed ships with independent_of_carrier tag not being able to move in campaign map if no other ships were present
+- fixed submarkets not properly being transferred on Jenius post CoC
+- Fixed compound units detached ship not being set as the last ship player transferred to
+- fixed bug where Juno III would continuously play chargeup sound
+- lowered quality of some backgrounds to trim file size
+- Valk III retrieval is now a selectable dialog option that appears once conditions are met
+- Fixed bug where Jangala shrine scene with Dawn could be missed since LPP hadn't "started" yet
+- Added a bit more clarification on fleet size requirements for Crown of Cinders
+	- Added slightly alternate dialogue with Imelda if player is friendly to the Path
+- Achievements - Defeat Ceylon before it retreats, Visit all shrines with Dawn, Lose Dawn, Join ATAC, Get Valkazard
+- Added extra conditional to "Ace" skill to prevent Dawn voice lines from playing
+- Added floaty text when reinforcements appear during Crown of Cinders
+- New Meshan AA market should offer more AA specific ships
+- Added missing Dawn-Sedge event scene(s)
+- Dawn will now wait 2 market visits before confronting player in certain scenario
+- Added an industry on New Meshan that spawns fleets using mostly AA gear
+- Added ability to swap out core unit for bakraid
+- Added an industry on Jenius that spawns derelict patrols initially
+- Added new event after docking at Jenius post-CoC
+- Added delicate hullmod to all phase units
+- Added new event after completing Descent (occurs after end of month)
+- Added 2 new short quests
+	- Red Earth, Iron Cages
+	- Homecoming
+- Valkazard is no longer taken by Sera Pha after letting ArmaA scan it
+- added minor permutations to valkazard turn-in event if Homecoming is completed beforehand
+- Added alternate event if player completely loses against TT fleet at Valkazard start
+- Removed Guppy wing
+- Removed Gallant wing
+- Removed Valken(P) wing
+- Removed deprecated landing beacon weapon
+- Increased armor for VX Custom and Aleste by 50, Leynos, Spriggan Powered, sand Kouto ECM by 100
+- Slightly reduce max turn rate / accel across the board for cataphracts
+- Revised some mission battles
+- perf enhancements for custom battles
+
+- WINGCOM
+	- DP of unit with hullmod now increased based on fighter OP cost
+
+- Strikecraft
+	- Repairs
+		- Repairs are now finite
+		- Each unit has a static, non replenishable repair pool per engagement (50 by default)
+		- When landing after incurring damage, DP*hullLevel is deducted from this pool
+		- Once exhausted, repairs cannot be made, but CR / AMMO can still be recovered
+		- Can be toggled back to effectively infinite repair by LL
+	- Deployment
+		- Added slight delay to Strikecraft launching from carriers initially
+		- Removed cap to number of Strikecraft that can launch from carriers on deployment
+- Ceylon
+	- Fixed AI only using system at minimum range
+
+- Cataphract S-II
+	- S-Mod Bonus varies based on unit being piloted by an officer
+		- Officer Bonus:
+			- Increases damage to Cruisers / Capitals by up to 10% / 20% based on pilot level
+			- Increases Flux dissipation, turning rate, and autofire accuracy by 2% per level
+			- Increases DP Cost
+		- Non Officer Bonus:
+			- DP cost reduced by 20% (up to 10 points)
+			- 50% reduced chance to acquire D Mods
+			- +10% combat readiness
+		- When below 35% hull, gain +25% speed / maneuverability and +25% weapon flux cost for 5s.
+		
+		
+
+- Watchdog
+	- Improved(?) AI
+	- Shield Efficiency: 1.05 -> 1.00
+	- Increased Base Speed
+
+- Ground Operations
+	- Units with Cataphract S-I / Cataphract S-II hullmods interact with raids a little bit differently
+	- Now provide flat bonus to raid strength as long as player has at least 1 marine in the fleet
+		- new formula is fleetpoints * 2 * officer level
+
+- Ship Systems
+	- Executioners Mark
+		- Fixed bug that would massively increase targeted ships defensive stats
+		- Charges: 2 -> 1
+		- Turn Rate: 100%->50%
+		- Can now be toggled like Burn Drive
+		- Cooldown: 10->5
+		- Flux / Use: 0 -> 0.1 base cap
+- Crown of Cinders
+	- Fixed first map being partially transparent
+	- Added slightly expanded opening "cinematic" to missions
+	- Increase spawn rate of drones during first mission
+	- Revised some fx
+
+- Descent
+	- Rajanya will now appear during this mission
+	- Revised some fx
+
+- Removed Leynos (RS)
+
+- Aleste (Wing)
+	- Wing Size: 2->1
+	- Speed: 150->125
+	- Laser Blade
+		- Damage: 1800-> 1000
+		- EMP Damage: 0 -> 400
+	- Ship System: Claw Drone -> Plasma Jets
+	- Replacement Rate: 20->25
+- Aleste
+	- script perf enhancements
+	- Laser Blade
+		- Damage: 1800 -> 1000
+		- EMP Damage: 0 -> 400
+	- Fixed head using needler sounds and projectiles instead of Vulcan
+	- Speed: 180->150
+	- Ship System: Fuller Auto -> Plasma Jets
+
+- Kouto
+	- Fixed missing torso weapon
+- Rajanya
+	- Updated melee effects
+	- Added ARU as built-in
+	- Bit
+		- Refit Time: 8->5
+		- Ship System: None -> Plasma Jets
+	- Binders (Module)
+		- No longer have shields
+		- Each binder contributes extra 5% shield efficiency to the core unit while intact (+25% shield efficiency total)
+
+- Bakraid
+	- HP: 1500-> 2500
+	- Armor: 200->250
+	- Dissipation: 180 -> 225
+	- Speed: 110 -> 140
+	- Medium slot is now Large
+	- removed 1x missile slot
+	- core unit can be swapped out at markets
+
+- GuarDUAL
+	- fixed shield arc progressively decreasing after transformation
+	- fixed AI spamming guarDUAL transformation when no enemies present
+
+- GuarDUAL FV (Wing)
+	- Minigun
+		- Chargeup: 0.35->0.1
+	- Swarmer SRM -> Breach SRM (Fighter)
+	- Added ECCM hullmod
+
+- Gunhed
+	- Revised sprite
+
+- Valkazard
+	- If player elects to give Valkazard back to Sera, she will eventually return an upgraded version of it
+		- Conditions (only one needed):
+			- Completed ATAC
+			- Completed Descent
+			- Reached Level 15
+- VX Custom
+	- Ship System: Mjets -> Fuller Auto
+
+- Panther (XIV) -> Caracal
+	- Phase Cloak -> Havoc Drive
+	- DP: 8->10
+	- Shield
+		- EMP Emitter -> Flare Launcher
+
+- New unit: Ashura
+	- Built-in Hammer + 2 melee weapons
+		- Hammer has light tracking abilities and will (try) to return on impact
+	- 1x small ballistic, 2x small composite
+
+- New unit: Panther
+	- Same slots as Panther(XIV), but energy-oriented
+	- DP: 15
+	- System: Mirage Shroud
+		- Creates two duplicates that have 25% of the originals HP/Armor for 6 seconds
+		- Copies only deal 40% of the original's damage
+		- Player can cancel the system early to swap positions with one of the duplicates
+
+- New ship: Viator (Thanks Selkie!)
+
+- New ship: Bellator (Thanks Selkie!)
+
+- Zanac:
+	- Ship System: Booster -> Displacer (Standard)
+	- Ship System: Firebolt Feeder -> Fuller Auto (MRC)
+	- Shield Arc: 300->120
+	- Shield Type: FRONT->OMNI
+
+- Juno Mk. II
+	- OP 16->13 
+	- range 1000->800
 
 
 V3.2.5.1

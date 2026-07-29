@@ -9,7 +9,6 @@ import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 import java.util.ArrayList;
-import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.magiclib.plugins.MagicTrailPlugin;

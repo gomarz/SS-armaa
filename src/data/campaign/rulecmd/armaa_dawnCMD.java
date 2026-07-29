@@ -415,10 +415,11 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
     }
 
     private static final Map<String, String> NAMED_WORLDS = new HashMap<>();
-
+    // why is this a map tho
     static {
         NAMED_WORLDS.put("baetis", "baetis");   // home
         NAMED_WORLDS.put("jangala", "jangala");
+        NAMED_WORLDS.put("mazalot", "mazalot");
     }
 
     /**
