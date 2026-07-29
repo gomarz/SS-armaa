@@ -1965,6 +1965,7 @@ ResumeNormalMusic
 EndConversation
 ShowDefaultVisual
 Call $global.armaa_hc_ref updateData
+AddTextSmall ""Congrats! You've completed all of the main story content for Arma Armatura that exists. Please look forward to the conclusion!'"" highlight
 FireAll PopulateOptions","Cassian still stands where you left him, having taken up your mantle of staring off against the woman against the wall.
 
 ""Cassian,"" Sera says. Cassian inclines his head, ""Sera."" ""The captain's leaving,"" she says. 
