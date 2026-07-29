@@ -6,15 +6,10 @@
   <a href="https://github.com/gomarz/SS-armaa/releases" target="_blank">
     <img alt="downloads" src="https://img.shields.io/github/downloads/gomarz/SS-armaa/total?color=4166f5&style=flat-square" />
   </a>
-  <a href="https://github.com/gomarz/SS-armaa/blob/main/LICENSE" target="_blank">
-    <img alt="license" src="https://img.shields.io/github/license/gomarz/SS-armaa?color=4166f5&style=flat-square" />
-  </a>
 </p>
-A large-scale content and systems mod for [Starsector](http://fractalsoftworks.com), built in Java against the game's modding API.
+A large-scale content and systems mod for Starsector(http://fractalsoftworks.com)
 
 ArmaA adds game mechanics that emulate the behavior of fighters to a certain degree, as well as several new ships with custom ship systems and AI, a pilot progression system that gives every fighter wing a named crew that levels up, and custom missions / narrative campaign content.
-
-![Arma Armatura strikecraft in combat](https://i.imgur.com/f1p780A.png)
 
 **[Download the latest release](https://github.com/gomarz/SS-armaa/releases)** · **[Forum thread](https://fractalsoftworks.com/forum/index.php?topic=18751.0)** · Compatible with Starsector `0.98`
 
@@ -40,13 +35,12 @@ maritumix - Campaign Music, Battle Music
 BONESAW - Battle Music
 +TEK - Music
 HzDev, Mycophobia, Zeta04, zaz168 - CN Translation
-MesoTroniK - Consult, some SFX
+MesoTroniK - some SFX
 Tartiflette - Initial mech script
 Harupea - Initial Docking System
 Nia Tahl - Scripting, trail patterns, notWhiteBase
 Dark.Revenant - Scripting
 Selkie - Some sprites
-Lukas04 - I may have copied his forum post format  ;)
 Avanitia,Bass, Alex_Sans, WMGreymind, Randall, Phantasia, Karleen, Finn, Unit9461, TheSoldier, Caymon Joestar, Selkie - Feedback / Testing
 
 License
