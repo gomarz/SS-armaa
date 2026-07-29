@@ -3,6 +3,12 @@
   <a href="https://github.com/gomarz/SS-armaa/releases" target="_blank">
     <img alt="release" src="https://img.shields.io/github/v/release/gomarz/SS-armaa?color=4166f5&style=flat-square" />
   </a>
+  <a href="https://github.com/gomarz/SS-armaa/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/downloads/gomarz/SS-armaa/total?color=4166f5&style=flat-square" />
+  </a>
+  <a href="https://github.com/gomarz/SS-armaa/blob/main/LICENSE" target="_blank">
+    <img alt="license" src="https://img.shields.io/github/license/gomarz/SS-armaa?color=4166f5&style=flat-square" />
+  </a>
 </p>
 A large-scale content and systems mod for [Starsector](http://fractalsoftworks.com), built in Java against the game's modding API.
 
