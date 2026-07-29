@@ -24,7 +24,7 @@ public class armaa_karmaAI implements ShipSystemAIScript {
     private ShipAPI ship;
 
     private final IntervalUtil tracker = new IntervalUtil(0.25f, 1f);
-	private final float BASE_RANGE = 600f;
+    private final float BASE_RANGE = 600f;
 
     @Override
     public void advance(float amount, Vector2f missileDangerDir, Vector2f collisionDangerDir, ShipAPI target) {
@@ -34,26 +34,25 @@ public class armaa_karmaAI implements ShipSystemAIScript {
 
         if (engine.isPaused()) {
             return;
-        }		
-		tracker.advance(amount);
+        }
+        tracker.advance(amount);
 
         if (ship.getFluxTracker().getFluxLevel() >= 0.60f) {
             flags.setFlag(AIFlags.BACK_OFF, 1f);
-			flags.setFlag(AIFlags.DO_NOT_USE_FLUX,1f);
+            flags.setFlag(AIFlags.DO_NOT_USE_FLUX, 1f);
         }
 
         if (tracker.intervalElapsed()) {
             if (!AIUtils.canUseSystemThisFrame(ship)) {
                 return;
             }
-			
-			float range = BASE_RANGE;
-			boolean hasSysExpertise = ship.getCaptain() != null ? ship.getCaptain().getStats().getSkillLevel(Skills.SYSTEMS_EXPERTISE) > 0 ? true : false : false;
 
-			if(hasSysExpertise)
-			{
-				range = range*1.50f;
-			}				
+            float range = BASE_RANGE;
+            boolean hasSysExpertise = ship.getCaptain() != null ? ship.getCaptain().getStats().getSkillLevel(Skills.SYSTEMS_EXPERTISE) > 0 ? true : false : false;
+
+            if (hasSysExpertise) {
+                range = range * 1.50f;
+            }
             List<DamagingProjectileAPI> possibleTargets = new ArrayList<>(100);
             possibleTargets.addAll(CombatUtils.getMissilesWithinRange(ship.getLocation(), range));
             possibleTargets.addAll(CombatUtils.getProjectilesWithinRange(ship.getLocation(), range));

@@ -1,0 +1,29 @@
+id,paintjobFamilies,weaponIds,spriteMap
+armaa_guardual_bs_gm_pauldron_l,gunmetal,armaa_guardual_bs_pauldron_l,graphics/armaa/ships/guardual/bs/armaa_guardual_pauldron_l.png -> graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual_pauldron_l.png 
+armaa_guardual_bs_gm_pauldron_r,gunmetal,armaa_guardual_bs_pauldron_r,graphics/armaa/ships/guardual/bs/armaa_guardual_pauldron_r.png -> graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual_pauldron_r.png 
+armaa_guardual_bs_gm_head,gunmetal,armaa_guardual_bs_head,graphics/armaa/ships/guardual/bs/armaa_guardual_head.png -> graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual_head.png 
+armaa_guardual_bs_gm_leftArm_lash,gunmetal,armaa_energyLash,graphics/armaa/ships/guardual/bs/armaa_guardual_lash.png -> graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual_lash.png 
+armaa_guardual_bs_gm_rightArm,gunmetal,armaa_guardual_bs_arm_right,graphics/armaa/ships/guardual/bs/armaa_guardual_arm_right.png -> graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual_arm_right.png
+armaa_guardual_bs_gm_nose,gunmetal,armaa_guardual_bs_variablerifle,graphics/armaa/ships/guardual/bs/armaa_guardual_gunpod_f00.png -> graphics/armaa/ships/guardual/bs/gunmetal/armaa_guardual_gunpod_f00.png
+armaa_guardual_bs_fb_pauldron_l,firebomber,armaa_guardual_bs_pauldron_l,graphics/armaa/ships/guardual/bs/armaa_guardual_pauldron_l.png -> graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual_pauldron_l.png 
+armaa_guardual_bs_fb_pauldron_r,firebomber,armaa_guardual_bs_pauldron_r,graphics/armaa/ships/guardual/bs/armaa_guardual_pauldron_r.png -> graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual_pauldron_r.png 
+armaa_guardual_bs_fb_head,firebomber,armaa_guardual_bs_head,graphics/armaa/ships/guardual/bs/armaa_guardual_head.png -> graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual_head.png 
+armaa_guardual_bs_fb_leftArm_lash,firebomber,armaa_energyLash,graphics/armaa/ships/guardual/bs/armaa_guardual_lash.png -> graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual_lash.png 
+armaa_guardual_bs_fb_rightArm,firebomber,armaa_guardual_bs_arm_right,graphics/armaa/ships/guardual/bs/armaa_guardual_arm_right.png -> graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual_arm_right.png
+armaa_guardual_bs_fb_nose,firebomber,armaa_guardual_bs_variablerifle,graphics/armaa/ships/guardual/bs/armaa_guardual_gunpod_f00.png -> graphics/armaa/ships/guardual/bs/firebomber/armaa_guardual_gunpod_f00.png
+,,,
+armaa_guardual_bs_ml_pauldron_l,midline,armaa_guardual_bs_pauldron_l,graphics/armaa/ships/guardual/bs/armaa_guardual_pauldron_l.png -> graphics/armaa/ships/guardual/bs/midline/armaa_guardual_pauldron_l.png 
+armaa_guardual_bs_ml_pauldron_r,midline,armaa_guardual_bs_pauldron_r,graphics/armaa/ships/guardual/bs/armaa_guardual_pauldron_r.png -> graphics/armaa/ships/guardual/bs/midline/armaa_guardual_pauldron_r.png 
+armaa_guardual_bs_ml_head,midline,armaa_guardual_bs_head,graphics/armaa/ships/guardual/bs/armaa_guardual_head.png -> graphics/armaa/ships/guardual/bs/midline/armaa_guardual_head.png 
+armaa_guardual_bs_ml_leftArm_lash,midline,armaa_energyLash,graphics/armaa/ships/guardual/bs/armaa_guardual_lash.png -> graphics/armaa/ships/guardual/bs/midline/armaa_guardual_lash.png 
+armaa_guardual_bs_ml_rightArm,midline,armaa_guardual_bs_arm_right,graphics/armaa/ships/guardual/bs/armaa_guardual_arm_right.png -> graphics/armaa/ships/guardual/bs/midline/armaa_guardual_arm_right.png
+armaa_guardual_bs_ml_nose,midline,armaa_guardual_bs_variablerifle,graphics/armaa/ships/guardual/bs/armaa_guardual_gunpod_f00.png -> graphics/armaa/ships/guardual/bs/midline/armaa_guardual_gunpod_f00.png
+,,,
+armaa_aleste_sephira_torso,sephira,armaa_aleste_torso_ace,graphics/armaa/ships/aleste/armaa_aleste_torso.png -> graphics/armaa/ships/aleste/bbplus/armaa_aleste_torso.png
+armaa_aleste_sephira_head,sephira,armaa_alesteHead,graphics/armaa/ships/aleste/armaa_aleste_head.png -> graphics/armaa/ships/aleste/bbplus/armaa_aleste_head.png
+armaa_aleste_sephira_pauldron_l,sephira,armaa_aleste_leftPauldron,graphics/armaa/ships/aleste/armaa_alesteLeftShoulder.png -> graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftShoulder.png
+armaa_aleste_sephira_pauldron_r,sephira,armaa_aleste_rightPauldron,graphics/armaa/ships/aleste/armaa_alesteRightShoulder.png -> graphics/armaa/ships/aleste/bbplus/armaa_alesteRightShoulder.png
+armaa_aleste_sephira_blade,sephira,armaa_aleste_blade_LeftArm,graphics/armaa/ships/aleste/armaa_alesteLeftArm_blade.png -> graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftArm_blade.png
+armaa_aleste_sephira_pilebunker,sephira,armaa_alestePilebunkerLeft,graphics/armaa/ships/aleste/armaa_alesteLeftArm.png -> graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftArm.png
+armaa_aleste_sephira_vrifle,sephira,armaa_aleste_variablerifle,graphics/armaa/weapons/armaa_aleste_variablerifle_00.png -> graphics/armaa/weapons/armaa_aleste_sephira_variablerifle_00.png
+armaa_aleste_sephira_stake,sephira,armaa_alesteLeftArm,graphics/armaa/ships/aleste/armaa_alesteLeftArm.png -> graphics/armaa/ships/aleste/bbplus/armaa_alesteLeftArm.png

@@ -18,12 +18,10 @@ import java.util.Map;
 import java.util.Random;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
-import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
-import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.characters.OfficerDataAPI;
@@ -34,12 +32,15 @@ import data.scripts.campaign.intel.armaa_liberationIntel;
 import data.scripts.world.systems.armaa_nekki;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent.AvailableOfficer;
 import java.util.List;
 import java.util.ArrayList;
 import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.events.armaa_combatDataEventIntel;
+import data.scripts.util.armaa_utils;
 import exerelin.campaign.SectorManager;
 //wtf i love MOOD RUNES
+// endless if else if else is peak efficiency
 
 public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 
@@ -61,9 +62,37 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                 }
             }
         }
+        if ("findGuarDUAL".equals(action)) {
+            for (FleetMemberAPI member : pf.getFleetData().getMembersListCopy()) {
+                if (member.getHullSpec().getBaseHullId().equals("armaa_guardual") || member.getHullSpec().getHullId().equals("armaa_guardual")) {
+                    memory.set("$foundGuardualName", member.getShipName(), 1f);
+                    return true;
+                }
+            }
+        }
+        if ("gameOver".equals(action)) {
+            dialog.dismissAsCancel();
+            Global.getSector().getCampaignUI().cmdExitWithoutSaving();
+        }
         if ("getPlayerFleetId".equals(action)) {
             memory.set("$armaa_playerFleetId", pf.getId(), 1f);
             return pf.getId().equals(dialog.getInteractionTarget().getId());
+        } else if ("removeDawnContact".equals(action)) {
+            for (OfficerDataAPI officer : Global.getSector().getPlayerFleet().getFleetData().getOfficersCopy()) {
+                if (officer.getPerson().getId().equals("armaa_dawn")) {
+                    for (IntelInfoPlugin curr : Global.getSector().getIntelManager().getIntel(ContactIntel.class)) {
+                        ContactIntel intel = (ContactIntel) curr;
+                        if (intel.isEnding() || intel.isEnded() || intel.getState() == ContactState.POTENTIAL) {
+                            continue;
+                        }
+
+                        if (intel.getPerson().getId().equals("armaa_dawn")) {
+                            intel.loseContact(null);
+                        }
+                    }
+
+                }
+            }
         }
 
         if ("removeDawn".equals(action)) {
@@ -92,13 +121,15 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                         memory.set("$armaa_dawnHomeId", randomMarket.getName(), 1f);
                         ContactIntel intel = new ContactIntel(member.getCaptain(), randomMarket);
                         Global.getSector().getIntelManager().addIntel(intel, false, dialog.getTextPanel());
-                        OfficerManagerEvent event = new OfficerManagerEvent();
-                        OfficerManagerEvent.AvailableOfficer f = new OfficerManagerEvent.AvailableOfficer(member.getCaptain(), randomMarket.getId(), 10, 1000);
+
+                        OfficerManagerEvent officerManager = armaa_utils.getOfficerManagerEvent();
+
+                        AvailableOfficer f = new AvailableOfficer(member.getCaptain(), randomMarket.getId(), 10, 1000);
                         member.getCaptain().getMemoryWithoutUpdate().set("$ome_hireable", true);
-                        member.getCaptain().getMemoryWithoutUpdate().set("$ome_eventRef", event);
+                        member.getCaptain().getMemoryWithoutUpdate().set("$ome_eventRef", officerManager);
                         member.getCaptain().getMemoryWithoutUpdate().set("$ome_hiringBonus", Misc.getWithDGS(f.hiringBonus));
                         member.getCaptain().getMemoryWithoutUpdate().set("$ome_salary", Misc.getWithDGS(f.salary));
-                        event.addAvailable(f);
+                        officerManager.addAvailable(f);
                         //member.getCaptain().setPostId(Ranks.POST_MERCENARY);
                         member.getCaptain().getMemoryWithoutUpdate().set("$postId", "officer_for_hire");
                     }
@@ -115,8 +146,6 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                     continue;
                 }
 
-                int importance = intel.getPerson().getImportance().ordinal();
-                float rel = intel.getPerson().getRelToPlayer().getRel();
                 if (intel.getPerson().getId().equals("armaa_dawn")) {
                     intel.loseContact(dialog);
                 }
@@ -131,46 +160,60 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             String variantId = "armaa_vx_silversword_Hull";
             ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
             FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
-            //assignShipName(member, Factions.INDEPENDENT);
             memory.set("$armaa_giftMech", member, 1f);
-            //memory.set("$foundValkClass", member.getHullSpec().getNameWithDesignationWithDashClass());
-            //memory.set("$foundValkName", member.getShipName());
+
+            return true;
+        } else if ("giveValkazard2".equals(action)) {
+            String variantId = "armaa_valkazard_standard_kai";
+            ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
+            FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
+
+            memory.set("$armaa_giftMech", member, 1f);
+
             return true;
         } else if ("giveGuarDual".equals(action)) {
             String variantId = "armaa_guardual_Hull";
             ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
             FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
-            //assignShipName(member, Factions.INDEPENDENT);
+
             memory.set("$armaa_giftMech", member, 1f);
-            //memory.set("$foundValkClass", member.getHullSpec().getNameWithDesignationWithDashClass());
-            //memory.set("$foundValkName", member.getShipName());
+
+            return true;
+
+        } else if ("giveBellator".equals(action)) {
+            String variantId = "armaa_bellator_Hull";
+            ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
+            FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
+            memory.set("$armaa_giftMech", member, 1f);
+
+            return true;
+        } else if ("giveKshatriya".equals(action)) {
+            String variantId = "armaa_kshatriya_boss";
+            ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
+            variant.removeMod("heavyarmor");
+            variant.removeMod("hardenedshieldemitter");
+            variant.addPermaMod("faulty_grid");
+            variant.addPermaMod("damaged_mounts");
+            FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
+            member.getRepairTracker().applyCREvent(-100f, "Destroyed in battle");
+            memory.set("$armaa_giftMech", member, 1f);
+
             return true;
         } else if ("giveCeylon".equals(action)) {
             String variantId = "armaa_ceylon_Hull";
             ShipVariantAPI variant = Global.getSettings().getVariant(variantId).clone();
             FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant);
-            //assignShipName(member, Factions.INDEPENDENT);
+
             memory.set("$armaa_giftCeylong", member, 1f);
-            //memory.set("$foundValkClass", member.getHullSpec().getNameWithDesignationWithDashClass());
-            //memory.set("$foundValkName", member.getShipName());
+
             return true;
-        } /*
-		else if ("spawnValkHunters".equals(action))
-		{
-			if (!Global.getSector().hasScript(ArmaaHunterFleetManager.class))
-			{
-				Global.getSector().addScript(new ArmaaHunterFleetManager());
-				Global.getSector().getCampaignUI().addMessage("You get an ominous feeling..");
-			}
-			return true;
-		}
-         */ else if ("addIntel".equals(action)) {
+        } else if ("addIntel".equals(action)) {
             SectorEntityToken entity = dialog.getInteractionTarget();
             if (params.size() > 1) {
                 String id = params.get(1).getString(memoryMap);
                 entity = armaa_liberationIntel.getEntity(id);
             }
-            //armaa_liberationIntel.addIntelIfNeeded(entity, dialog.getTextPanel());
+
             armaa_liberationIntel.startExpedition(dialog.getInteractionTarget().getMarket(), entity.getMarket(), new Random());
             return true;
         } else if ("startReprisal".equals(action)) {
@@ -181,7 +224,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             } else {
                 List<MarketAPI> potMarkets = new ArrayList();
                 potMarkets = Global.getSector().getEconomy().getMarketsCopy();
-                //potMarkets.shuffle();
+
                 for (MarketAPI market : potMarkets) {
                     if (!Global.getSector().getFaction("armaarmatura_pirates").isHostileTo(market.getFaction())) {
                         continue;
@@ -214,8 +257,6 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             }
             memory.set("$armaa_mrcFunds", (String) funds, 1f);
             memory.set("$armaa_mrcRep", Global.getSector().getFaction("armaarmatura_pirates").getRelToPlayer().getRel());
-            //armaa_liberationIntel.addIntelIfNeeded(entity, dialog.getTextPanel());
-            //armaa_liberationIntel.startExpedition(dialog.getInteractionTarget().getMarket(),entity.getMarket(),new Random());
             return true;
         } else if ("setReprisalDaysLeft".equals(action)) {
             int daysLeft = 0;
@@ -228,7 +269,6 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             armaa_mrcReprisalListener.setDaysLeft(daysLeft);
             return true;
         } else if ("restoreFleet".equals(action)) {
-            CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
             ArrayList<FleetMemberAPI> removedShips = new ArrayList();
             if (Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().contains("$nonAtmoShips")) {
                 removedShips = (ArrayList<FleetMemberAPI>) Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().get("$nonAtmoShips");
@@ -246,13 +286,6 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             }
             cost = cost / 12;
             memory.set("$armaa_mercCost", cost, 1f);
-            return true;
-        } else if ("followMe".equals(action)) {
-            CampaignFleetAPI fleet = (CampaignFleetAPI) dialog.getInteractionTarget();
-            if (Global.getSector().getPlayerFleet() != null) {
-                fleet.removeFirstAssignment();
-            }
-            fleet.addAssignmentAtStart(FleetAssignment.ORBIT_PASSIVE, Global.getSector().getPlayerFleet(), 10f, "Following player", null);
             return true;
         } else if ("getSeraphRel".equals(action)) {
             String id = params.get(1).getString(memoryMap);
@@ -283,13 +316,31 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             }
         } else if ("AddATACIntel".equals(action)) {
             armaa_combatDataEventIntel foo = new armaa_combatDataEventIntel(dialog.getTextPanel(), true);
-
             return true;
         } else if ("setJeniusOwner".equals(action)) {
             SectorEntityToken jenius = Global.getSector().getEntityById("nekki1");
-            jenius.getMarket().setFactionId("pirates");
+            jenius.getMarket().setFactionId("independent");
+            jenius.getMarket().setHidden(false);
+            jenius.getMarket().addPerson(Global.getSector().getImportantPeople().getPerson("armaa_redeye"));
+            jenius.getMarket().getCommDirectory().addPerson(Global.getSector().getImportantPeople().getPerson("armaa_redeye"), 999);
+            if (Misc.isMilitary(jenius.getMarket())
+                    || jenius.getMarket().hasIndustry(Industries.MILITARYBASE)
+                    || jenius.getMarket().hasIndustry(Industries.HIGHCOMMAND)) {
+                if (!jenius.getMarket().hasSubmarket(Submarkets.GENERIC_MILITARY)) {
+                    jenius.getMarket().addSubmarket(Submarkets.GENERIC_MILITARY);
+                } else {
+                    jenius.getMarket().removeSubmarket(Submarkets.GENERIC_MILITARY);
+                    jenius.getMarket().addSubmarket(Submarkets.GENERIC_MILITARY);
+                }
+            }
+            if (!jenius.getMarket().hasSubmarket(Submarkets.SUBMARKET_OPEN)) {
+                jenius.getMarket().addSubmarket(Submarkets.SUBMARKET_OPEN);
+            } else {
+                jenius.getMarket().removeSubmarket(Submarkets.SUBMARKET_OPEN);
+                jenius.getMarket().addSubmarket(Submarkets.SUBMARKET_OPEN);
+            }
             for (SectorEntityToken curr : jenius.getMarket().getConnectedEntities()) {
-                curr.setFaction("pirates");
+                curr.setFaction("independent");
             }
 
             return true;
@@ -308,7 +359,7 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             }
 
             //Spawn Valk if player didn't have it at the startExpedition
-            if (!Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().contains("$nex_startingFactionId") || !Global.getSector().getPlayerPerson().getMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates")) {
+            if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_engagedValkHunters")) {
                 SectorEntityToken valkazard = armaa_nekki.addDerelict(magec_gate.getStarSystem(), "armaa_valkazard_standard", magec_gate.getOrbit(), ShipRecoverySpecial.ShipCondition.GOOD, true, null);
                 // Debris
                 DebrisFieldParams param = new DebrisFieldParams(
@@ -345,26 +396,45 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             for (NascentGravityWellAPI token : gamlin.getGravityWells()) {
                 if (token.getTarget() == gravion) {
                     gamlin.removeEntity(token);
-                    //token.getContainingLocation().removeEntity(token);
-                    //Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(token);
-                    //token.setLocation(Global.getSector().getEntityById("magec_gate").getStarSystem().getLocation().x,Global.getSector().getEntityById("magec_gate").getStarSystem().getLocation().y);
 
                 }
             }
             gravion.getContainingLocation().removeEntity(gravion);
-            Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
-            //gravion.getStarSystem().autogenerateHyperspaceJumpPoints(true,true);
-            gravion.setLocation(Global.getSector().getEntityById("magec_gate").getLocation().x, Global.getSector().getEntityById("magec_gate").getLocation().y);
-            gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(), 90, 9000, 365);
+            gravion.getContainingLocation().removeEntity(gravion.getContainingLocation().getEntityById("armaa_nekki_field"));
+            SectorEntityToken research_station = magec_gate.getContainingLocation().addCustomEntity("armaa_gravion_station", "Abandoned Research Station", "station_side07", "neutral");
+            research_station.setCircularOrbitPointingDown(magec_gate, 200, 150, 25);
+            research_station.setCustomDescriptionId("armaa_station_research");
+            research_station.setInteractionImage("illustrations", "abandoned_station");
+            research_station.setId("armaa_gravion_station");
+            Misc.makeImportant(research_station, "plot");
+            //Global.getSector().getEntityById("magec_gate").getContainingLocation().addEntity(gravion);
+            //gravion.setLocation(Global.getSector().getEntityById("magec_gate").getLocation().x, Global.getSector().getEntityById("magec_gate").getLocation().y);
+            //gravion.setCircularOrbit(Global.getSector().getEntityById("magec_gate").getStarSystem().getCenter(), 90, 9000, 365);
             for (SectorEntityToken token : Global.getSector().getHyperspace().getEntitiesWithTag("jump_point")) {
                 if (token.getName().contains("Gravion")) {
                     Global.getSector().getHyperspace().removeEntity(token);
                     Global.getSector().getCampaignUI().addMessage(token.getName() + "", Misc.getNegativeHighlightColor());
                 }
-                //JumpPointAPI jp = (JumpPointAPI)token;
+            }
+        } else if ("expireToken".equals(action)) {
+            String id = params.get(1).getString(memoryMap);
+            if (id == null) {
+                return false;
+            }
+            SectorEntityToken token = Global.getSector().getEntityById(id);
+            token.setExpired(true);
+            return true;
+        } else if ("getShipDummy".equals(action)) {
+            String id = params.get(1).getString(memoryMap);
+            if (id == null || params.size() <= 1) {
+                return false;
             }
 
-            //doHyperspaceTransition(CampaignFleetAPI fleet, SectorEntityToken jumpLocation, JumpPointAPI.JumpDestination dest)
+            FleetMemberAPI dummy = Global.getFactory().createFleetMember(FleetMemberType.SHIP, Global.getSettings().getVariant(id));
+            dialog.flickerStatic(1f, 1f);
+            dialog.getVisualPanel().showFleetMemberInfo(dummy, true);
+            return true;
+            // memory.set("$armaa_dummy_ship", dummy);        
         } else if ("checkKadeOnMarket".equals(action)) {
             MarketAPI target = Global.getSector().getEntityById("nekki1").getMarket();
             if (target.getAdmin().getId().equals("armaa_kade")) {
@@ -401,7 +471,6 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
                     target.addSubmarket(Submarkets.GENERIC_MILITARY);
                 }
             }
-            target.addCondition(Conditions.DISSIDENT);
             //RecentUnrest.get(target).setPenalty(0);
             target.getMemoryWithoutUpdate().unset("$playerHostileTimeout");
             target.getMemoryWithoutUpdate().unset("$playerHostileTimeoutStr");

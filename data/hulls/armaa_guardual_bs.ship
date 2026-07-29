@@ -1,0 +1,233 @@
+{
+  "hullName": "guarDUAL Mk. II",
+  "hullId": "armaa_guardual_bs",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/guardual/bs/armaa_guardual.png",
+  "style": "MIDLINE",
+  "height": 46,
+  "width": 40,
+  "center": [20, 23],
+  "collisionRadius": 36,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 44,
+  "viewOffset": 0,
+  "builtInMods": [
+    "strikeCraft",
+    "armaa_variableUnit",
+    "delicate",
+    "cataphract2",
+    "eccm"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_guardual_bs_arm_right",
+    "C_ARML": "armaa_energyLash",
+    "D_PAULDRONL": "armaa_guardual_bs_pauldron_l",
+    "D_PAULDRONR": "armaa_guardual_bs_pauldron_r",
+    "E_HEAD": "armaa_guardual_bs_head",
+    "F_GPOD": "armaa_guardual_bs_variablerifle",
+    "F_LEGS": "armaa_gd_legs",
+    "WINGL": "armaa_guardual_bs_wing_l",
+    "WINGR": "armaa_guardual_bs_wing_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "F_LEGS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-6, -0],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [6, -8]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [6, -8],
+      "renderOrderMod": -900
+    },
+    {
+      "id": "C_ARML",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [5, 4]
+    },
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [4, 2]
+    },
+    {
+      "id": "WINGL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [4, 6],
+      "renderOrderMod": -900
+    },
+    {
+      "id": "D_PAULDRONR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [4, -2]
+    },
+    {
+      "id": "WINGR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [4, -6],
+      "renderOrderMod": -900
+    },
+    {
+      "id": "E_HEAD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [3, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [3, 0],
+      "renderOrderMod": -900
+    },
+    {
+      "id": "F_GPOD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [5, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-4, 14],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-4, -14],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 25,
+      "angle": 90,
+      "locations": [-10, 7]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 25,
+      "angle": -90,
+      "locations": [-10, -7]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-16, -0],
+      "length": 12,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-17, 7],
+      "length": 6,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-17, -7],
+      "length": 6,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-20, 13],
+      "length": 6,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-20, -13],
+      "length": 6,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    17, -6,
+    13.5, -10.5,
+    0.5, -10.5,
+    -21.5, -20,
+    -18.5, -10.5,
+    -16, -9.5,
+    -14, -3.5,
+    -14, 3.5,
+    -16, 9.5,
+    -21.5, 20,
+    0.5, 10.5,
+    13.5, 10.5,
+    17, 5
+  ]
+}

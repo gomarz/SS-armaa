@@ -2,11 +2,11 @@
   "hullName": "Bit",
   "hullId": "armaa_bit_blade",
   "hullSize": "FIGHTER",
-  "spriteName": "graphics/armaa/ships/armaa_claw_old.png",
+  "spriteName": "graphics/armaa/ships/armaa_claw_lower.png",
   "style": "HIGH_TECH",
-  "height": 32,
-  "width": 26,
-  "center": [13, 15],
+  "height": 30,
+  "width": 16,
+  "center": [8, 15],
   "collisionRadius": 16.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 14.5,
@@ -21,38 +21,47 @@
       "size": "SMALL",
       "type": "HYBRID",
       "mount": "HIDDEN",
-      "arc": 10,
-      "angle": 0,
-      "locations": [8, -0]
-    }
-  ],
-  "engineSlots": [
-    {
-      "location": [-14.5, 0.5],
-      "length": 14.5,
-      "width": 9,
+      "arc": 360,
       "angle": 180,
-      "contrailSize": 9,
-      "style": "HIGH_TECH"
+      "locations": [0, -0]
     },
     {
-      "location": [-15, 0.5],
-      "length": 20.5,
-      "width": 6,
-      "angle": 180,
-      "contrailSize": 6,
-      "style": "CUSTOM",
-      "styleId": "VALKAZARD_ENGINE"
+      "id": "BLADE",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 90,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": -90,
+      "locations": [0, 0]
     }
   ],
+  "engineSlots": [],
   "bounds": [
-    14.5, -4,
-    5, -4.5,
-    3.5, -12,
-    -13.5, -4,
-    -14, 3.5,
-    3.5, 12,
-    5, 4.5,
-    14.5, 4
+    14.5, -9,
+    5, -9.5,
+    3.5, -17,
+    -13.5, -9,
+    -14, -1.5,
+    3.5, 7,
+    5, -0.5,
+    14.5, -1
   ]
 }

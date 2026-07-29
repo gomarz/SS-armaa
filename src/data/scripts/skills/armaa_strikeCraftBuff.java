@@ -1,6 +1,5 @@
 package data.scripts.skills;
 
-
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.impl.campaign.skills.*;
 import com.fs.starfarer.api.characters.FleetTotalItem;
@@ -11,162 +10,193 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
-import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.characters.AfterShipCreationSkillEffect;
+import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 public class armaa_strikeCraftBuff {
-	
-	public static float DISSIPATION_BONUS = 15f;	
-	public static float CAPACITY_BONUS = 10f;	
 
-	public static boolean isStrikecraftAndOfficer(MutableShipStatsAPI stats) {
-		if (stats.getEntity() instanceof ShipAPI) {
-			ShipAPI ship = (ShipAPI) stats.getEntity();
-			if (!ship.getVariant().hasHullMod("strikeCraft")) return false;
-			return !ship.getCaptain().isDefault();
-		} else {
-			FleetMemberAPI member = stats.getFleetMember();
-			if (member == null) return false;
-			if (!member.getVariant().hasHullMod("strikeCraft")) return false;
-			return !member.getCaptain().isDefault();
-		}
-	}
+    public static final float SPEED_BONUS = 25f;
+    private static final float BEAM_RESISTANCE = 25f;
+    public static final float OVERLOAD_MULT = 0.25f;
+    public static final float VENT_MULT = 0.25f;
+    private static final float NO_DMOD_CHANCE_MULT = 0.50f;
 
-	public static class Level1 implements ShipSkillEffect {
-		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+    public static boolean isStrikecraft(MutableShipStatsAPI stats) {
+        if (stats.getEntity() instanceof ShipAPI) {
+            ShipAPI ship = (ShipAPI) stats.getEntity();
+            return ship.getVariant().hasHullMod("strikeCraft");
 
-		}
-		
-		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+        } else {
+            FleetMemberAPI member = stats.getFleetMember();
+            if (member == null) {
+                return false;
+            }
+            return member.getVariant().hasHullMod("strikeCraft");
 
-		}
-		
-		public String getEffectPerLevelDescription() {
-			return null;
-		}		
-		
-		public String getEffectDescription(float level) {
-			return "- Increases Flux dissipation by " + (int)(DISSIPATION_BONUS-1f)+"% " + "and capacity by " + (int)(CAPACITY_BONUS-1f)+"%";
-		}
-				
-		public ScopeDescription getScopeDescription() {
-			return ScopeDescription.ALL_SHIPS;
-		}
-	}		
-	
-	public static class Level2 implements ShipSkillEffect {
-		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+        }
+    }
 
-		}
-		
-		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+    public static class Level1 implements ShipSkillEffect {
 
-		}	
-		
-		public String getEffectDescription(float level) {
-			return "- reduces damage taken to shields by " + (int)(CAPACITY_BONUS-1f)+"%" +"\n- When flux is over 80%, speed increases by 30%, rapidly degrading over 3s. This effect can only trigger once ever 8s.";
-		}
-		
-		public String getEffectPerLevelDescription() {
-			return null;
-		}
-		
-		public ScopeDescription getScopeDescription() {
-			return ScopeDescription.ALL_SHIPS;
-		}
-	}	
-	public static class Level3 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource, AfterShipCreationSkillEffect {
-		
-		public FleetTotalItem getFleetTotalItem() {
-			return getPhaseOPTotal();
-		}
-		public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-			if(isStrikecraftAndOfficer(ship.getMutableStats()))
-				ship.addListener(new DeadmansDash(ship));
-		}
+        @Override
+        public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
 
-		public void unapplyEffectsAfterShipCreation(ShipAPI ship, String id) {
-			ship.removeListenerOfClass(DeadmansDash.class);
-		}		
-		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) 
-		{
-			if (isStrikecraftAndOfficer(stats) && !isCivilian(stats)) 
-			{		
-				stats.getFluxDissipation().modifyPercent(id, DISSIPATION_BONUS);	
-				stats.getFluxCapacity().modifyPercent(id, CAPACITY_BONUS);									
-				stats.getShieldDamageTakenMult().modifyMult(id, 1f - 0.1f);					
-			}
-		}
-		
-		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
-			stats.getFluxDissipation().unmodifyPercent(id);	
-			stats.getFluxCapacity().unmodifyPercent(id);			
-			stats.getShieldDamageTakenMult().unmodifyMult(id);
-		}
-		
-		public String getEffectDescription(float level) {
-			return "- When flux is over 80%, speed increases by 30%, rapidly degrading over 3s. This effect can only trigger once ever 8s.";
-		}
-		
-		//public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill, 
-		//									TooltipMakerAPI info, float width) {
-		//
-		//}
-		
-		public ScopeDescription getScopeDescription() {
-			return ScopeDescription.ALL_SHIPS;
-		}
-	}
+        }
 
-	public static class DeadmansDash implements AdvanceableListener {
-		protected ShipAPI ship;
-		protected IntervalUtil upInterval = new IntervalUtil(3f, 3f);
-		protected IntervalUtil downInterval = new IntervalUtil(8f, 8f);		
-		protected boolean triggered = false;
-		protected boolean cooldown = false;
-		public DeadmansDash(ShipAPI ship) {
-			this.ship = ship;
-		}
-				
-		public void advance(float amount) {
-			
-			String id = ship.getId();
-			boolean player = ship == Global.getCombatEngine().getPlayerShip();		
-			float ratio = upInterval.getElapsed()/upInterval.getMaxInterval();
-			MutableShipStatsAPI stats = ship.getMutableStats();
-			if(ship.getFluxLevel() >= 0.80f && !triggered && !cooldown)
-			{
-				triggered = true;				
-			}
-			if(ratio >= 1 && triggered && !cooldown)
-			{
-				cooldown = true;
-				triggered = false;
-				stats.getMaxSpeed().unmodify(id);
-				stats.getMaxTurnRate().unmodify(id);					
-			}
-			if(triggered)
-			{
-				stats.getMaxSpeed().modifyPercent(id, 30f * (1f - ratio));
-				stats.getMaxTurnRate().modifyPercent(id, 30f * (1f - ratio));				
-				upInterval.advance(amount);
-			}
-			if(cooldown)
-			{
-				downInterval.advance(amount);
-				if(downInterval.intervalElapsed())
-				{
-					cooldown = false;
-					downInterval.setInterval(8f,8f);
-					upInterval.setInterval(3f,3f);
-				}
-			}
-			if(player)
-			{
-				String deadString = triggered ? "ACTIVE" : "INACTIVE";
-				if(triggered)
-					Global.getCombatEngine().maintainStatusForPlayerShip("armaa_dd", "graphics/icons/tactical/engine_boost2.png","Deadman's Dash -" + deadString, String.valueOf(25f * (1f - ratio))+"%" ,triggered);		
-			}
-		}
-	}
-}	
+        @Override
+        public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+
+        }
+
+        @Override
+        public String getEffectPerLevelDescription() {
+            return null;
+        }
+
+        @Override
+        public String getEffectDescription(float level) {
+            return "- -" + (int) (NO_DMOD_CHANCE_MULT * 100) + "% chance to acquire DMods\n"
+                    + "- -" + (int) (BEAM_RESISTANCE)+ "% damage received from beam weapons\n"
+                    + "- As hull level decreases (reaching full effect at or below 45% hull):\n"
+                    + "- up to +" + (int) SPEED_BONUS + "% max speed\n"
+                    + "- up to +" + (int) (OVERLOAD_MULT * 100) + "% shorter overload time, and " + (int) (VENT_MULT * 100) + "% faster active vent rate";
+        }
+
+        @Override
+        public ScopeDescription getScopeDescription() {
+            return ScopeDescription.ALL_SHIPS;
+        }
+    }
+
+    public static class Level2 implements ShipSkillEffect {
+
+        @Override
+        public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+            stats.getBeamDamageTakenMult().modifyMult(id, 1f - (BEAM_RESISTANCE / 100f));
+            stats.getBeamShieldDamageTakenMult().modifyMult(id, 1f - (BEAM_RESISTANCE / 100f));
+        }
+
+        @Override
+        public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+            stats.getBeamDamageTakenMult().unmodify(id);
+            stats.getBeamShieldDamageTakenMult().unmodify(id);
+        }
+
+        @Override
+        public String getEffectDescription(float level) {
+            return "";
+        }
+
+        @Override
+        public String getEffectPerLevelDescription() {
+            return null;
+        }
+
+        @Override
+        public ScopeDescription getScopeDescription() {
+            return ScopeDescription.ALL_SHIPS;
+        }
+    }
+
+    public static class Level3 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource, AfterShipCreationSkillEffect {
+
+        @Override
+        public FleetTotalItem getFleetTotalItem() {
+            return getPhaseOPTotal();
+        }
+
+        @Override
+        public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+
+            // D-mod chance reduction: -50%
+            if (isStrikecraft(stats)) {
+                stats.getDynamic().getMod(Stats.DMOD_ACQUIRE_PROB_MOD)
+                        .modifyMult(id, NO_DMOD_CHANCE_MULT);
+            }
+        }
+
+        @Override
+        public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+            if (isStrikecraft(stats)) {
+                stats.getDynamic().getMod(Stats.DMOD_ACQUIRE_PROB_MOD)
+                        .unmodify(id);
+            }
+
+        }
+
+        @Override
+        public String getEffectDescription(float level) {
+            return "";
+        }
+
+        //public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill, 
+        //									TooltipMakerAPI info, float width) {
+        //
+        //}
+        @Override
+        public ScopeDescription getScopeDescription() {
+            return ScopeDescription.ALL_SHIPS;
+        }
+
+        @Override
+        public void applyEffectsAfterShipCreation(ShipAPI ship, String string) {
+            if (isStrikecraft(ship.getMutableStats()) == false) {
+                return;
+            }
+            ship.addListener(new armaa_strikeCraftBuffListener(ship));
+
+        }
+
+        @Override
+        public void unapplyEffectsAfterShipCreation(ShipAPI ship, String string) {
+            if (isStrikecraft(ship.getMutableStats()) == false) {
+                return;
+            }
+            ship.removeListenerOfClass(armaa_strikeCraftBuffListener.class);
+        }
+    }
+
+    public static class armaa_strikeCraftBuffListener implements AdvanceableListener {
+
+        public String modId;
+        public ShipAPI ship;
+
+        public armaa_strikeCraftBuffListener(ShipAPI ship) {
+            this.ship = ship;
+            // Use a stable id that won't collide with other ship systems
+            this.modId = "armaa_strikeCraftBuffListener_" + ship.getId();
+        }
+
+        @Override
+        public void advance(float amount) {
+            CombatEngineAPI engine = Global.getCombatEngine();
+            if (engine == null) {
+                return;
+            }
+            if (ship == null || !ship.isAlive() || ship.isHulk()) {
+                return;
+            }
+            float t = (1f - ship.getHullLevel()) / (1f - 0.45f); // 0 at full HP, 1 at 45% HP
+            t = Math.min(t, 1f); // cap at 1 below 45%
+            float speedBonus = t * SPEED_BONUS;
+            ship.getMutableStats().getMaxSpeed().modifyPercent(modId, speedBonus);
+            // t goes 0->1 as hull drops, so bonus scales up with damage
+            float overloadMult = 1f - (t * OVERLOAD_MULT);  // 1.0 at full HP (no change), 0.75 at low HP (half duration)
+            float ventMult = 1f + (t * VENT_MULT);      // 1.0 at full HP (no change), 1.25 at low HP (50% faster)
+
+            ship.getMutableStats().getOverloadTimeMod().modifyMult(modId, overloadMult);
+            ship.getMutableStats().getVentRateMult().modifyMult(modId, ventMult);
+            if (engine.getPlayerShip() == ship) {
+                String label = "+" + speedBonus + "% top speed";
+                Global.getCombatEngine().maintainStatusForPlayerShip(
+                        modId,
+                        "graphics/icons/tactical/engine_boost2.png",
+                        "Reactive Motion Sheath",
+                        label,
+                        false
+                );
+            }
+        }
+    }
+}

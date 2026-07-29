@@ -15,24 +15,22 @@
     255,
     255
   ],
-  "specialWeaponGlowHeight": 20,
-  "specialWeaponGlowWidth": 10,
   "hitGlowRadius": 0,
   "renderHints": [
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
     49,
-    -15.5,
+    -16,
     49,
-    -8.5,
+    -11,
     49,
     -13.5
   ],
   "turretAngleOffsets": [
+    0,
     1,
-    1,
-    .8
+    1
   ],
   "hardpointOffsets": [
     17,

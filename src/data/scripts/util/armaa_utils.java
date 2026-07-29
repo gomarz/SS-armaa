@@ -1,6 +1,9 @@
 package data.scripts.util;
 
+import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
@@ -9,16 +12,26 @@ import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.DeployedFleetMemberAPI;
+import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.MutableStat;
+import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
+import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Personalities;
+import com.fs.starfarer.api.impl.campaign.missions.hub.HubMission;
+import com.fs.starfarer.api.loading.FighterWingSpecAPI;
+import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.hullmods.armaa_strikeCraft;
+import data.scripts.MechaModPlugin;
 import java.awt.Color;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -26,6 +39,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import lunalib.lunaSettings.LunaSettings;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.FastTrig;
@@ -35,6 +49,7 @@ import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -55,37 +70,37 @@ public class armaa_utils {
         baseOverloadTimes.put(HullSize.DEFAULT, 6f);
     }
 
-    private static class armaa_purgedata 
-    {
+    private static class armaa_purgedata {
 
         boolean ejectKeyPressed = false;
         long startTime = System.currentTimeMillis();
     }
-    
+
     public static boolean isMiddleMouseClicked(ShipAPI ship, CombatEngineAPI engine) {
-            if (engine.getPlayerShip() != ship)
-                    return false;
+        if (engine.getPlayerShip() != ship) {
+            return false;
+        }
 
-            boolean mmbDown = Mouse.isButtonDown(2);  // 2 = Middle Mouse Button
+        boolean mmbDown = Mouse.isButtonDown(2);  // 2 = Middle Mouse Button
 
-            boolean result = false;           
-            String key = "armaa_mmbTransform" + "_" + ship.getId();
-            armaa_purgedata data = (armaa_purgedata) engine.getCustomData().get(key);
-            if (data == null) {
-                    data = new armaa_purgedata();
-                    engine.getCustomData().put(key, data);
-            }
-
-            // Detect "just pressed" – was not down last frame, is down this frame
-            if (mmbDown && !data.ejectKeyPressed) {
-                    result = true;
-            }
-            // Update the state tracking
-            data.ejectKeyPressed = mmbDown;
-
+        boolean result = false;
+        String key = "armaa_mmbTransform" + "_" + ship.getId();
+        armaa_purgedata data = (armaa_purgedata) engine.getCustomData().get(key);
+        if (data == null) {
+            data = new armaa_purgedata();
             engine.getCustomData().put(key, data);
-            return result;
-    }    
+        }
+
+        // Detect "just pressed" – was not down last frame, is down this frame
+        if (mmbDown && !data.ejectKeyPressed) {
+            result = true;
+        }
+        // Update the state tracking
+        data.ejectKeyPressed = mmbDown;
+
+        engine.getCustomData().put(key, data);
+        return result;
+    }
 
     public static boolean isKeyDoubleTapped(ShipAPI ship, CombatEngineAPI engine) {
         if (engine.getPlayerShip() != ship) {
@@ -324,44 +339,44 @@ public class armaa_utils {
         return winner;
     }
 
-    public static float getMaxHPRepair(ShipAPI ship)
-    {
+    public static float getMaxHPRepair(ShipAPI ship) {
         boolean limitedRepair = true;
-        if (Global.getSettings().getModManager().isModEnabled("lunalib")) 
-        {
+        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
             limitedRepair = LunaSettings.getBoolean("armaa", "armaa_limitedRepairs");
         }
-        if(limitedRepair)
-            return ship.getHullLevelAtDeployment()*ship.getMaxHitpoints();
+        if (limitedRepair) {
+            return ship.getHullLevelAtDeployment() * ship.getMaxHitpoints();
+        }
 
         return ship.getMaxHitpoints();
     }
-    public static float getMaxCRRepair(ShipAPI ship)
-    {
-         boolean limitedCRRepair = true;
-        if(Global.getSettings().getModManager().isModEnabled("lunalib")) 
-        {
+
+    public static float getMaxCRRepair(ShipAPI ship) {
+        boolean limitedCRRepair = true;
+        if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
             limitedCRRepair = LunaSettings.getBoolean("armaa", "armaa_limitedCRRepairs");
         }
-        if(limitedCRRepair)
+        if (limitedCRRepair) {
             return ship.getCRAtDeployment();
+        }
 
-        return ship.getFleetMember().getRepairTracker().getCR();    
+        return ship.getFleetMember().getRepairTracker().getCR();
     }
-    
-    public static boolean canRestoreHPOrCR(ShipAPI ship)
-    {
+
+    public static boolean canRestoreHPOrCR(ShipAPI ship) {
         float CurrentHull = ship.getHitpoints();
         float CurrentCR = ship.getCurrentCR();
         float HPPercent = 0.50f;
-        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float)
+        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId()) instanceof Float) {
             HPPercent = (float) Global.getCombatEngine().getCustomData().get("armaa_strikecraftPilot" + ship.getId());
-        if(LunaSettings.getDouble("armaa", "armaa_repairLevel") != null)
+        }
+        if (Global.getSettings().getModManager().isModEnabled("lunalib") && LunaSettings.getDouble("armaa", "armaa_repairLevel") != null) {
             HPPercent = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
-          return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent) 
-                || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);       
+        }
+        return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent)
+                || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);
     }
-        
+
     public static ShipAPI getFirstShipOnSegment(Vector2f from, Vector2f to) {
         return getFirstShipOnSegment(from, to, null);
     }
@@ -468,9 +483,12 @@ public class armaa_utils {
         float accumulator = 0f;
 
         accumulator += estimateIncomingBeamDamage(ship, damageWindowSeconds);
+        List<DamagingProjectileAPI> projs = new ArrayList<>(Global.getCombatEngine().getProjectiles());
 
-        for (DamagingProjectileAPI proj : Global.getCombatEngine().getProjectiles()) {
-
+        for (DamagingProjectileAPI proj : projs) {
+            if (!Global.getCombatEngine().isEntityInPlay(proj)) {
+                continue;
+            }
             if (proj.getOwner() == ship.getOwner()) {
                 continue; // Ignore friendly projectiles
             }
@@ -513,19 +531,53 @@ public class armaa_utils {
         return accumulator;
     }
 
+    public static boolean getWeaponSide(Vector2f center, float facing, Vector2f weaponPosition) {
+        // Calculate forward direction vector
+        float facingRadians = (float) Math.toRadians(facing);
+        Vector2f forward = new Vector2f((float) Math.cos(facingRadians), (float) Math.sin(facingRadians));
+
+        // Calculate relative vector from center to weapon
+        Vector2f centerToWeapon = new Vector2f(weaponPosition.x - center.x, weaponPosition.y - center.y);
+
+        // Compute cross product
+        float crossProduct = forward.x * centerToWeapon.y - forward.y * centerToWeapon.x;
+
+        // Determine side
+        if (crossProduct > 0) {
+            return true;
+        }
+        return false;
+    }
+
     public static float estimateIncomingBeamDamage(ShipAPI ship, float damageWindowSeconds) {
+        CombatEngineAPI engine = Global.getCombatEngine();
+        if (engine == null) {
+            return 0f;
+        }
+
         float accumulator = 0f;
 
-        for (Iterator iter = Global.getCombatEngine().getBeams().iterator(); iter.hasNext();) {
-            BeamAPI beam = (BeamAPI) iter.next();
-
+        // Snapshot to avoid CME if beams list changes mid-iteration
+        // not sure if this is actually the cause but yolo
+        List<BeamAPI> beams = new ArrayList<>(engine.getBeams());
+        for (BeamAPI beam : beams) {
+            if (beam == null) {
+                continue;
+            }
+            if (!engine.isEntityInPlay((CombatEntityAPI) beam)) {
+                continue; // beams are CombatEntityAPI
+            }
             if (beam.getDamageTarget() != ship) {
                 continue;
             }
 
-            float dps = beam.getWeapon().getDerivedStats().getDamageOver30Sec() / 30;
-            float emp = beam.getWeapon().getDerivedStats().getEmpPerSecond();
+            WeaponAPI w = beam.getWeapon();
+            if (w == null) {
+                continue;
+            }
 
+            float dps = w.getDerivedStats().getDamageOver30Sec() / 30f;
+            float emp = w.getDerivedStats().getEmpPerSecond();
             accumulator += (dps + emp) * damageWindowSeconds;
         }
 
@@ -533,23 +585,40 @@ public class armaa_utils {
     }
 
     public static float estimateIncomingMissileDamage(ShipAPI ship) {
+        CombatEngineAPI engine = Global.getCombatEngine();
+        if (engine == null) {
+            return 0f;
+        }
+
         float accumulator = 0f;
-        DamagingProjectileAPI missile;
 
-        for (Iterator iter = Global.getCombatEngine().getMissiles().iterator(); iter.hasNext();) {
-            missile = (DamagingProjectileAPI) iter.next();
-
+        // Snapshot to avoid CME if missiles list changes mid-iteration
+        List<MissileAPI> missiles = new ArrayList<>(engine.getMissiles());
+        for (MissileAPI missile : missiles) {
+            if (missile == null) {
+                continue;
+            }
+            if (!engine.isEntityInPlay(missile)) {
+                continue;
+            }
             if (missile.getOwner() == ship.getOwner()) {
-                continue; // Ignore friendly missiles
+                continue; // Ignore friendly
             }
             float safeDistance = SAFE_DISTANCE + ship.getCollisionRadius();
             float threat = missile.getDamageAmount() + missile.getEmpAmount();
 
-            if (ship.getShield() != null && ship.getShield().isWithinArc(missile.getLocation())) {
+            ShieldAPI sh = ship.getShield();
+            if (sh != null && sh.isOn() && sh.isWithinArc(missile.getLocation())) {
                 continue;
             }
 
-            accumulator += threat * Math.max(0, Math.min(1, Math.pow(1 - MathUtils.getDistance(missile, ship) / safeDistance, 2)));
+            float dist = MathUtils.getDistance(missile, ship);
+            float t = 1f - dist / safeDistance;
+            if (t <= 0f) {
+                continue;
+            }
+
+            accumulator += threat * (t * t);
         }
 
         return accumulator;
@@ -718,6 +787,10 @@ public class armaa_utils {
     }
 
     public static void makeAfterImages(ShipAPI ship, float AFTERIMAGE_THRESHOLD, float amount) {
+        makeAfterImages(ship, AFTERIMAGE_THRESHOLD, amount, new Color(100, 255, 150, 185));
+    }
+
+    public static void makeAfterImages(ShipAPI ship, float AFTERIMAGE_THRESHOLD, float amount, Color tint) {
         //afterimage shit from tahlan
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerNullerID", -1);
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerID",
@@ -754,7 +827,7 @@ public class armaa_utils {
                                 new Vector2f(0, 0),
                                 ship.getFacing() - 90f,
                                 0f,
-                                new Color(100, 255, 150, 185),
+                                tint,
                                 true,
                                 0f,
                                 0f,
@@ -762,8 +835,8 @@ public class armaa_utils {
                                 0f,
                                 0f,
                                 0.1f,
-                                0.1f,
-                                0.3f,
+                                0.5f,
+                                0.5f,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER);
                     } else {
                         if (w.getAnimation() != null) {
@@ -782,7 +855,7 @@ public class armaa_utils {
                                     new Vector2f(0, 0),
                                     ship.getFacing() - 90f,
                                     0f,
-                                    new Color(100, 255, 150, 185),
+                                    tint,
                                     true,
                                     0f,
                                     0f,
@@ -790,8 +863,8 @@ public class armaa_utils {
                                     0f,
                                     0f,
                                     0.1f,
-                                    0.1f,
-                                    0.3f,
+                                    0.5f,
+                                    0.5f,
                                     CombatEngineLayers.BELOW_SHIPS_LAYER);
                         }
                     }
@@ -812,7 +885,7 @@ public class armaa_utils {
                                 new Vector2f(0, 0),
                                 w.getCurrAngle() - 90f,
                                 0f,
-                                new Color(100, 200, 150, 185),
+                                tint,
                                 true,
                                 0f,
                                 0f,
@@ -820,8 +893,8 @@ public class armaa_utils {
                                 0f,
                                 0f,
                                 0.1f,
-                                0.1f,
-                                0.3f,
+                                0.5f,
+                                0.5f,
                                 CombatEngineLayers.BELOW_SHIPS_LAYER);
                     }
                 }
@@ -1072,6 +1145,18 @@ public class armaa_utils {
         return newPersonality;
     }
 
+    public static OfficerManagerEvent getOfficerManagerEvent() {
+        OfficerManagerEvent ome = null;
+        for (EveryFrameScript script : Global.getSector().getScripts()) {
+            Global.getLogger(armaa_utils.class).info(script.getClass().getCanonicalName());
+            if (script instanceof OfficerManagerEvent) {
+                ome = (OfficerManagerEvent) script;
+                break;
+            }
+        }
+        return ome;
+    }
+
     public static String getLessAggressivePersonality(FleetMemberAPI member, ShipAPI ship) {
         if (ship == null) {
             return Personalities.CAUTIOUS;
@@ -1130,4 +1215,276 @@ public class armaa_utils {
         return newPersonality;
     }
 
+    public static String getMinuteString() {
+        int currentMinute = Global.getSector().getClock().getCal().get(java.util.Calendar.MINUTE);
+        String minuteStr = currentMinute < 10 ? "0" + currentMinute : "" + currentMinute;
+        return minuteStr;
+    }
+
+    public static Vector2f preciseHitCheck(WeaponAPI weapon, CombatEntityAPI target, float wepRecoilMax, float recoil) {
+        Vector2f fire = weapon.getFirePoint(0);
+        float angDeg = weapon.getCurrAngle();
+        float angRad = (float) Math.toRadians(angDeg);
+
+        // how thick the blade is
+        float width = 18f;
+        int samples = 5;
+
+        // perpendicular vector to blade
+        Vector2f perp = new Vector2f(
+                (float) Math.cos(angRad + (float) Math.PI / 2f),
+                (float) Math.sin(angRad + (float) Math.PI / 2f)
+        );
+
+        for (int i = -samples; i <= samples; i++) {
+            float offset = (i / (float) samples) * width;
+
+            // shifted blade origin
+            Vector2f origin = new Vector2f(
+                    fire.x + perp.x * offset,
+                    fire.y + perp.y * offset
+            );
+
+            // end of blade swing ray
+            Vector2f end = getBeamEndpoint(origin, angRad, weapon.getRange() + 10f - wepRecoilMax + recoil);
+
+            // 🔥 LazyLib does the hard work for us
+            Vector2f hit = CollisionUtils.getCollisionPoint(origin, end, target);
+
+            if (hit != null && CollisionUtils.isPointWithinBounds(hit, target)) {
+                return hit;
+            }
+        }
+        return null;
+    }
+
+    public static Vector2f getBeamEndpoint(Vector2f origin, float angleRadians, float length) {
+        float dx = length * (float) Math.cos(angleRadians);
+        float dy = length * (float) Math.sin(angleRadians);
+        return new Vector2f(origin.x + dx, origin.y + dy);
+    }
+
+    public static Vector2f intersectShield(CombatEntityAPI target, Vector2f A, Vector2f B) {
+        if (target == null) {
+            return null;
+        }
+        if (!(target instanceof ShipAPI)) {
+            return null;
+        }
+        ShieldAPI sh = target.getShield();
+        if (sh == null || sh.isOff() || sh.getActiveArc() <= 0f) {
+            return null;
+        }
+
+        // Shield circle
+        final Vector2f C = sh.getLocation();
+        final float R = sh.getRadius();
+
+        // Segment parametric: P(t) = A + t*(B - A), t in [0,1]
+        final float dx = B.x - A.x;
+        final float dy = B.y - A.y;
+
+        // Solve |A + t*d - C|^2 = R^2
+        final float fx = A.x - C.x;
+        final float fy = A.y - C.y;
+
+        final float a = dx * dx + dy * dy;
+        final float b = 2f * (dx * fx + dy * fy);
+        final float c = fx * fx + fy * fy - R * R;
+
+        final float disc = b * b - 4f * a * c;
+        if (disc < 0f || a <= 1e-6f) {
+            return null; // no intersection or degenerate segment
+        }
+        final float s = (float) Math.sqrt(disc);
+        // two roots, pick the closest valid t in [0,1]
+        float t1 = (-b - s) / (2f * a);
+        float t2 = (-b + s) / (2f * a);
+
+        Float bestT = null;
+        if (t1 >= 0f && t1 <= 1f) {
+            bestT = t1;
+        }
+        if (t2 >= 0f && t2 <= 1f) {
+            if (bestT == null || t2 < bestT) {
+                bestT = t2;
+            }
+        }
+        if (bestT == null) {
+            return null;
+        }
+
+        Vector2f hit = new Vector2f(A.x + dx * bestT, A.y + dy * bestT);
+
+        // Verify the point lies within the shield's current arc
+        if (!sh.isWithinArc(hit)) {
+            return null;
+        }
+
+        return hit;
+    }
+
+    public static void loadMissionTextures(Set<String> textures) {
+        for (String tex : textures) {
+            try {
+                Global.getSettings().loadTexture(tex);
+            } catch (IOException e) {
+                Global.getLogger(armaa_utils.class).error("Failed to load tex " + tex + ":" + e.toString());
+            }
+        }
+
+    }
+
+    public static void unloadMissionTextures(Set<String> textures) {
+        for (String tex : textures) {
+            // need the id? 
+            //GL11.glDeleteTextures(tex.);
+            Global.getSettings().unloadTexture(tex);
+            Global.getLogger(armaa_utils.class).info("Unloaded tex " + tex);
+        }
+
+    }
+
+    public static boolean isValidCarrierFor(ShipAPI ship, ShipAPI carrier) {
+        if (carrier == null || carrier == ship) {
+            return false;
+        }
+        if (carrier.getHullSpec().hasTag("no_wingcom_docking")) {
+            return false;
+        }
+        if (carrier.getOwner() != ship.getOwner()) {
+            return false;
+        }
+        if (carrier.isFighter()) {
+            return false;
+        }
+        if (carrier.isHulk() || !carrier.isAlive()
+                || !Global.getCombatEngine().isEntityInPlay(carrier)) {
+            return false;
+        }
+        if (carrier.getCurrentCR() <= 0) {
+            return false;
+        }
+
+        // Frigates only qualify as station modules
+        if (carrier.isFrigate() && !carrier.isStationModule()) {
+            return false;
+        }
+
+        if (carrier.isStationModule() && carrier.getParentStation() != null && carrier.getParentStation().getHullSize() == HullSize.FRIGATE) // Size gating for larger strikecraft
+        {
+            if (ship.getHullSpec().hasTag("strikecraft_medium")) {
+                if (carrier.isDestroyer()) {
+                    return false;
+                }
+            } else if (ship.getHullSpec().hasTag("strikecraft_large")) {
+                if (carrier.isCruiser() || carrier.isDestroyer()) {
+                    return false;
+                }
+            }
+        }
+
+        // Must actually have somewhere to land
+        if (carrier.getNumFighterBays() <= 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static int getBaseWingSize(ShipAPI ship) {
+        int wingSize = 0;
+        for (int i = 0; i < ship.getVariant().getWings().size(); i++) {
+            FighterWingSpecAPI w = ship.getVariant().getWing(i);
+            if (w != null && w.getVariant().getHullSpec().getMinCrew() > 0) {
+                wingSize += w.getNumFighters();
+            }
+        }
+        for (String slot : ship.getVariant().getModuleSlots()) {
+            ShipVariantAPI mv = ship.getVariant().getModuleVariant(slot);
+            if (!mv.hasHullMod("armaa_wingCommander")) {
+                continue;
+            }
+            for (int i = 0; i < mv.getWings().size(); i++) {
+                FighterWingSpecAPI w = mv.getWing(i);
+                if (w != null && w.getVariant().getHullSpec().getMinCrew() > 0) {
+                    wingSize += w.getNumFighters();
+                }
+            }
+        }
+        return wingSize;
+    }
+
+    public static void getRefitRate(ShipAPI target) {
+        if (Global.getCombatEngine().getCustomData().get("armaa_strikecraftTotalMalus" + target.getId()) != null) {
+            return;
+        }
+        float totalRate = 0f;
+        String wepName = "";
+        List<WeaponAPI> weapons = target.getAllWeapons();
+        Map<String, Float> MALUSES = new HashMap<>();
+        for (WeaponAPI w : weapons) {
+            float adjustedRate = 0f;
+            if (MechaModPlugin.MISSILE_REFIT_MALUS.get(w.getId()) != null) {
+                adjustedRate = MechaModPlugin.MISSILE_REFIT_MALUS.get(w.getId());
+                totalRate += adjustedRate;
+                if (MALUSES.containsKey(w.getDisplayName())) {
+                    MALUSES.put(w.getDisplayName(), MALUSES.get(w.getDisplayName()) + adjustedRate);
+                } else {
+                    MALUSES.put(w.getDisplayName(), adjustedRate);
+                }
+            } else if (w.getType() == WeaponAPI.WeaponType.MISSILE) {
+                float damage = w.getDerivedStats().getDamagePerShot();
+                if (damage > armaa_strikeCraft.MISSILE_DAMAGE_THRESHOLD) {
+                    float penalty = damage / armaa_strikeCraft.MISSILE_DAMAGE_THRESHOLD;
+                    if (penalty < 1) {
+                        continue;
+                    }
+                    penalty = penalty / 10f;
+                    float newRate = (float) Math.min(.5f, penalty);
+                    wepName = w.getDisplayName();
+                    adjustedRate = newRate;
+                    totalRate += adjustedRate;
+                    if (MALUSES.containsKey(wepName)) {
+                        MALUSES.put(wepName, MALUSES.get(wepName) + adjustedRate);
+                    } else {
+                        MALUSES.put(wepName, adjustedRate);
+                    }
+                }
+            }
+        }
+        for (HullModSpecAPI spec : Global.getSettings().getAllHullModSpecs()) {
+            if (MechaModPlugin.HULLMOD_REFIT_MALUS.get(spec.getId()) == null) {
+                continue;
+            }
+            if (!target.getVariant().getHullMods().contains(spec.getId())) {
+                continue;
+            }
+            String hullmod = spec.getId();
+            String name = spec.getDisplayName();
+            float adjustedRate = MechaModPlugin.HULLMOD_REFIT_MALUS.get(hullmod);
+            totalRate += adjustedRate;
+            if (MALUSES.containsKey(name)) {
+                MALUSES.put(name, MALUSES.get(name) + adjustedRate);
+            } else {
+                MALUSES.put(name, adjustedRate);
+            }
+        }
+        totalRate = Math.min(totalRate, 0.75f);
+        Global.getCombatEngine().getCustomData().put("armaa_strikecraftTotalMalus" + target.getId(), totalRate);
+        Global.getCombatEngine().getCustomData().put("armaa_strikecraftMalus" + "_" + target.getId(), MALUSES);
+    }
+
+    public static boolean hasActiveMissionsFrom(PersonAPI person) {
+        for (IntelInfoPlugin curr : Global.getSector().getIntelManager().getIntel()) {
+            if (!(curr instanceof HubMission)) {
+                continue;
+            }
+            HubMission m = (HubMission) curr;
+            if (m.getPerson() == person) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

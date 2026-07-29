@@ -4,7 +4,7 @@
   "projectileSpecId": "armaa_leynos_railgun_shot",
   "type": "ENERGY",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGlowSprite": "graphics/armaa/weapons/armaa_alesteRifle_glow_left.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_leynos_rifle_left.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",

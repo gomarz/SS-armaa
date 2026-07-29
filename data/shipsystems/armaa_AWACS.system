@@ -1,7 +1,8 @@
 {
 	"id":"armaa_awacs",
 	"type":"STAT_MOD",
-	"aiType":"ENTROPY_AMPLIFIER",
+        "aiType":"CUSTOM",
+        "aiScript":"data.scripts.shipsystems.ai.armaa_prioritymark_ai",
 	
 	"statsScript":"data.scripts.shipsystems.armaa_AWACSSys",
 

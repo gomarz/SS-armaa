@@ -1,0 +1,47 @@
+{
+  "id": "armaa_guardual_bs_arm_left",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_ionBuster_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_guarDualBlade",
+  "turretSprite": "graphics/armaa/ships/guardual/bs/armaa_guardual_bs_arm_left.png",
+  "hardpointSprite": "graphics/fx/empty.png",
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    13,
+    17.5
+  ],
+  "turretAngleOffsets": [
+    -1
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 10,
+    "spread": 10,
+    "particleSizeMin": 11,
+    "particleSizeRange": 5,
+    "particleDuration": 0.03,
+    "particleCount": 20,
+    "particleColor": [
+      255,
+      235,
+      150,
+      235
+    ]
+  },
+  "fireSoundTwo": "armaa_saber_loop"
+}

@@ -30,7 +30,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "lightneedler_shot",
+  "projectileSpecId": "vulcan_shot",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "specClass": "projectile",

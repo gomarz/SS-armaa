@@ -7,7 +7,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoEffectmk3",
   "showDamageWhenDecorative":true,
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/panther/armaa_pantherBody.png",
+  "turretSprite": "graphics/armaa/ships/panther/ht/armaa_pantherBody.png",
   "hardpointSprite": "graphics/armaa/ships/valkenx/armaa_valkenXBody.png",
   "glowColor": [
     255,

@@ -1,0 +1,58 @@
+{
+  "id": "armaa_guardual_s_variablerifle",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/guardual/bs/sephira/armaa_guardual_gunpod_f00.png",
+  "hardpointSprite": "graphics/armaa/ships/guardual/bs/sephira/armaa_guardual_gunpod_f00.png",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    155,
+    0,
+    0,
+    0
+  ],
+  "hitGlowRadius": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW,
+    NEVER_RENDER_IN_CAMPAIGN
+  ],
+  "turretOffsets": [
+    29.5,
+    0,
+    29.5,
+    0,
+    29.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    1,
+    -3,
+    0
+  ],
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    155,
+    155,
+    0
+  ],
+  "coreColor": [
+    255,
+    155,
+    155,
+    0
+  ],
+  "width": 1,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
+}

@@ -54,7 +54,7 @@ public class armaa_reload extends BaseShipSystemScript {
                 (int) Math.round(lerp(startColor.getAlpha() * effectLevel, endColor.getAlpha() * effectLevel, sizeRatio)));
 
         rotation += 1f;
-        float radius = ship.getCollisionRadius() * 4; //radius - radius*radius
+        float radius =  target.getCollisionRadius() * 4; //radius - radius*radius
         float newRadius = (radius * 2) - radius * elapsedTime;
         if (Math.abs(radius - newRadius) <= 15) {
             currentColor = Color.GREEN;
@@ -102,7 +102,7 @@ public class armaa_reload extends BaseShipSystemScript {
                     target,
                     new Vector2f(),
                     new Vector2f(),
-                    new Vector2f(radius + 45, radius + 45),
+                    new Vector2f(radius * 1.45f, radius * 1.45f),
                     new Vector2f(0f, 0f),
                     rotation * -1,
                     25f,
@@ -119,7 +119,7 @@ public class armaa_reload extends BaseShipSystemScript {
                     target,
                     new Vector2f(),
                     new Vector2f(),
-                    new Vector2f(radius + 30, radius + 30),
+                    new Vector2f(radius *1.30f, radius * 1.30f),
                     new Vector2f(0f, 0f),
                     rotation,
                     25f,
@@ -136,7 +136,7 @@ public class armaa_reload extends BaseShipSystemScript {
                     target,
                     new Vector2f(),
                     new Vector2f(),
-                    new Vector2f(radius + 15, radius + 15),
+                    new Vector2f(radius * 1.15f, radius *1.15f),
                     new Vector2f(0f, 0f),
                     rotation * -1,
                     25f,
@@ -268,20 +268,16 @@ public class armaa_reload extends BaseShipSystemScript {
         return null;
     }
 
-    public int getHitQuality(float newRadius, float radius) {
-        float delta = Math.abs(radius - newRadius);
-        int hitQuality; // 0 = miss, 1 = okay, 2 = good, 3 = perfect
+    public int getHitQuality(float newRadius, float baseRadius) {
+        if (baseRadius <= 0f) return 0; // guard
 
-        if (delta <= 15) {
-            hitQuality = 3; // perfect
-        } else if (delta <= 30) {
-            hitQuality = 2; // good
-        } else if (delta <= 45) {
-            hitQuality = 1; // okay
-        } else {
-            hitQuality = 0; // miss
-        }
+        // How far from the baseline in relative terms (e.g., 1.45x => diff = 0.45)
+        float diff = Math.abs(newRadius / baseRadius - 1f);
 
-        return hitQuality;
+        if (diff <= 0.15f) return 3; // perfect (<= 1.15x)
+        else if (diff <= 0.30f) return 2; // good (<= 1.30x)
+        else if (diff <= 0.45f) return 1; // okay (<= 1.45x)
+        else return 0; // miss
     }
+
 }

@@ -1,0 +1,53 @@
+{
+  "id": "armaa_ashura_leftArm_g",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_boostHammer_missile",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_ashuraHammerEffect",
+  "turretSprite": "graphics/armaa/ships/ashura/armaa_ashura_leftArm_g.png",
+  "hardpointSprite": "graphics/armaa/ships/ashura/armaa_ashura_mjolnir_proj.png",
+  "showDamageWhenDecorative": true,
+  "glowColor": [
+    235,
+    255,
+    215,
+    255
+  ],
+  "visualRecoil": 2,
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    17.5,
+    16
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+  "muzzleFlashSpec": {
+    "length": 50,
+    "spread": 2,
+    "particleSizeMin": 10,
+    "particleSizeRange": 14,
+    "particleDuration": 0.15,
+    "particleCount": 16,
+    "particleColor": [
+      255,
+      255,
+      255,
+      175
+    ]
+  },
+  "fireSoundTwo": "light_mass_driver_fire"
+}

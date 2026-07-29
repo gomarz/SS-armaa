@@ -4,7 +4,7 @@
   "projectileSpecId": "armaa_smartbazooka_shot_kinetic",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_kouto_bazooka.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_leynos_boostKnuckle_00.png",
   "hardpointGunSprite": "graphics/weapons/assault_chaingun_hardpoint_recoil.png",

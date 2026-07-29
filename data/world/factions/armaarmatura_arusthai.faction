@@ -1,6 +1,8 @@
 {
 	id:"armaarmatura_arusthai",
-	"color":[252,71,75,255],
+	"color":[90,90,252,255],
+	"secondaryUIColor":[175,175,200,255],
+	"secondarySegments":5,	
 	"displayName":"Arusthai",
 	"displayNameWithArticle":"Arusthai",
 	"displayNameLong":"Arusthai Sovereignty",
@@ -31,8 +33,6 @@
 	"hullFrequency":{
 			"hulls":
 			{
-
-	
 				"drover": 0.25,
 				"vanguard_pirates": 0.8,
 				"wolf": 0.5,
@@ -46,7 +46,6 @@
 			"khopesh_wing":1,
 			"armaa_crew":1,
 			"armaa_valkenx_wing":1,
-			"armaa_record_wing":0.5,
 			"armaa_kouto_wing":0.5,
 			"talon_wing":1,
 
@@ -55,6 +54,7 @@
 	"priorityFighters":{
 		"tags":[],
 		"fighters":[
+		"armaa_morgana_wing",
 		],
 	},
 	"knownShips":{
@@ -64,14 +64,13 @@
 				"armaa_valkenx_frig",
 				"armaa_leynos_frig",
 				"armaa_monitor",
+				"armaa_ashura_frig",
 				"vigilance",
 				"cerberus",
 				"gemini",
 				"vanguard",
 				"armaa_aleste_frig",
 				"gremlin",
-				"armaa_altagrave",
-				"armaa_morganamp",
 				"hermes",
 				"kite",
 				"lasher",
@@ -91,24 +90,20 @@
 		"tags":[],
 			"fighters":[
 			"broadsword_wing",
-			"armaa_record_wing",
 			"armaa_valkenmp_wing",
 			"armaa_musha_wing",
+			"armaa_musha_bomber_wing",
+                        "gladius_wing",
+			"hoplon_wing",
+                        "dagger_wing",
 			"wasp_wing",
 			"talon_wing",
+			"armaa_morgana_wing",
 			],
 	},
 	"knownWeapons":{
 		"tags":["pirates","ind","independent"],
 		"weapons":[
-		"armaa_fluxcannon",
-			"gorgon",
-			"gorgonpod",
-			"gazer",
-			"gazerpod",
-			"dragon",
-			"dragonpod",
-			"hydra",
 		
 		],
 	},
@@ -146,9 +141,9 @@
 		"market_neutral":"music_pirates_market_neutral",
 		"market_hostile":"music_pirates_market_hostile",
 		"market_friendly":"music_pirates_market_friendly",
-		"encounter_neutral":"music_armaa_pirate_encounter_neutral",
-		"encounter_hostile":"music_armaa_pirate_encounter_hostile",
-		"encounter_friendly":"music_armaa_pirate_encounter_friendly",
+		"encounter_neutral":"music_none",
+		"encounter_hostile":"music_none",
+		"encounter_friendly":"music_none",
 	},
 	"portraits":{
 		"standard_male":[
@@ -198,15 +193,15 @@
 	},
 	"ranks":{
 		"ranks":{
-			"spaceCommander":{"name":"Doge"},
+			"spaceCommander":{"name":"Autokrator"},
 		},
 		"posts":{
-			"patrolCommander":{"name":"Captain"},
-			"fleetCommander":{"name":"Commando"},
-			"baseCommander":{"name":"Stronghold Boss"},
-			"stationCommander":{"name":"Freeport Captain"},
-			"portmaster":{"name":"Harbor Master"},
-			"administrator":{"name":"Overlord"},
+			"patrolCommander":{"name":"Taxiarchos"},
+			"fleetCommander":{"name":"Droungarios"},
+			"baseCommander":{"name":"Kastrophylax"},
+			"stationCommander":{"name":"Limeniarchos"},
+			"portmaster":{"name":"Logothetes"},
+			"administrator":{"name":"Katepano"},
 		},
 	},
 	"voices":{
@@ -228,16 +223,18 @@
 		},
 	},	
 	"custom":{
-		"decentralized":true,
 		"engageWhenEvenStrength":true,
 		"exemptFromFoodShortages":true,
 		"willTradeWhenHostile":false,
+		"engagesInHostilities":false,
+		"caresAboutAtrocities":false,
 		"ignoreTradeWithEnemiesForReputation":true,
 		"postsNoBounties":true,
 		"offerMissionsWhenHostile":false,
-		"allowsTransponderOffTrade":false,
+		"allowsTransponderOffTrade":true,
+		"offersCommissions":false,
+		#"pirateBehavior":false, # for fleet behavior
 		"patrolsHaveNoPatrolMemoryKey":true,
-		"pirateBehavior":true, # for fleet behavior
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,

@@ -1,101 +1,35 @@
 {
   "hullName": "Garegga",
   "hullId": "armaa_garegga_xiv_carrier",
-  "hullSize": "FRIGATE",
+  "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/garegga/xiv/armaa_garegga_xiv_body_carrier.png",
   "style": "MIDLINE",
   "height": 132,
   "width": 110,
-  "center": [55, 48],
-  "collisionRadius": 62.5,
+  "center": [55, 66],
+  "collisionRadius": 78,
   "shieldCenter": [0, -0],
-  "shieldRadius": 62.5,
+  "shieldRadius": 79,
   "viewOffset": 50,
   "builtInMods": [
     "fourteenth",
+    "armaa_himac",
     "armaa_comboUnit"
   ],
   "builtInWeapons": {
-    "E_LSHOULDER": "armaa_garegga_xiv_leftPauldron",
-    "E_RSHOULDER": "armaa_garegga_xiv_rightPauldron"
+    "E_LSHOULDER": "armaa_garegga_xiv_carrier_leftPauldron",
+    "E_RSHOULDER": "armaa_garegga_xiv_carrier_rightPauldron"
   },
   "weaponSlots": [
-    {
-      "id": "E_LSHOULDER",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": 30,
-      "locations": [4, 20],
-      "renderOrderMod": 100
-    },
-    {
-      "id": "A_GUN",
-      "size": "MEDIUM",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 100,
-      "angle": 10,
-      "locations": [9, 30],
-      "renderOrderMod": -99998
-    },
     {
       "id": "TRUE_GUN",
       "size": "SMALL",
       "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 5,
+      "mount": "TURRET",
+      "arc": 45,
       "angle": 45,
-      "locations": [0, 45]
-    },
-    {
-      "id": "TRUE_GUN2",
-      "size": "SMALL",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 5,
-      "angle": 0,
-      "locations": [16, -34],
-      "renderOrderMod": -9999
-    },
-    {
-      "id": "E_RSHOULDER",
-      "size": "SMALL",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": -30,
-      "locations": [4, -20],
+      "locations": [0, 37],
       "renderOrderMod": 100
-    },
-    {
-      "id": "A_GUN2",
-      "size": "MEDIUM",
-      "type": "DECORATIVE",
-      "mount": "TURRET",
-      "arc": 100,
-      "angle": -10,
-      "locations": [9, -30],
-      "renderOrderMod": -99998
-    },
-    {
-      "id": "SYS1",
-      "size": "SMALL",
-      "type": "SYSTEM",
-      "mount": "HIDDEN",
-      "arc": -165,
-      "angle": 180,
-      "locations": [-19, -21]
-    },
-    {
-      "id": "SYS1",
-      "size": "SMALL",
-      "type": "SYSTEM",
-      "mount": "HIDDEN",
-      "arc": -165,
-      "angle": 180,
-      "locations": [-2, 10]
     },
     {
       "id": "MODULE",
@@ -104,86 +38,136 @@
       "mount": "TURRET",
       "arc": 150,
       "angle": 0,
-      "locations": [7, -0]
+      "locations": [19, -0]
     },
     {
       "id": "MAIN_GUN",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
-      "mount": "HARDPOINT",
-      "arc": 5,
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 360,
       "angle": 0,
-      "locations": [16, 32],
+      "locations": [-17, -0],
       "renderOrderMod": -99998
     },
     {
       "id": "WS0001",
       "size": "SMALL",
       "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": -45,
+      "locations": [0, -37],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "HARDPOINT",
       "arc": 5,
-      "angle": -45,
-      "locations": [0, -45]
+      "angle": 0,
+      "locations": [42, 34]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [42, -34]
+    },
+    {
+      "id": "E_LSHOULDER",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [19, 5]
+    },
+    {
+      "id": "E_RSHOULDER",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [19, -5]
     }
   ],
   "engineSlots": [
     {
-      "location": [-25, 11],
-      "length": 32,
-      "width": 9,
+      "location": [-57, 28],
+      "length": 48,
+      "width": 24,
       "angle": 180,
-      "contrailSize": 9,
+      "contrailSize": 24,
       "style": "LOW_TECH"
     },
     {
-      "location": [-25, -11],
-      "length": 32,
-      "width": 9,
+      "location": [-57, -28],
+      "length": 48,
+      "width": 24,
       "angle": -180,
-      "contrailSize": 9,
+      "contrailSize": 24,
       "style": "LOW_TECH"
     },
     {
-      "location": [-32, -0],
-      "length": 43,
-      "width": 15,
+      "location": [-53, 10],
+      "length": 24,
+      "width": 12,
       "angle": 180,
-      "contrailSize": 15,
+      "contrailSize": 12,
       "style": "LOW_TECH"
     },
     {
-      "location": [-25, 11],
-      "length": 13,
-      "width": 9,
+      "location": [-57, 28],
+      "length": 34.941002,
+      "width": 10.886052,
       "angle": 145,
-      "contrailSize": 9,
+      "contrailSize": 10.886052,
       "style": "LOW_TECH"
     },
     {
-      "location": [-25, -11],
-      "length": 13,
-      "width": 9,
+      "location": [-57, -28],
+      "length": 34.941002,
+      "width": 10.886052,
       "angle": -145,
-      "contrailSize": 9,
+      "contrailSize": 10.886052,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-53, -12],
+      "length": 24,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
       "style": "LOW_TECH"
     }
   ],
   "bounds": [
-    19, -3,
-    22, -10,
-    18, -28,
-    8.5, -32,
-    -12, -16,
-    -22, -13.5,
-    -22.5, -5,
-    -30, -4,
-    -30, 4,
-    -22.5, 5,
-    -21.5, 15.5,
-    -12, 16,
-    8.5, 32,
-    18, 28,
-    22, 10,
-    18, 2.5
+    18, -14,
+    37, -22.5,
+    46, -27.5,
+    45, -43,
+    28, -44.5,
+    -12, -49.5,
+    -39, -50.5,
+    -56.5, -39.5,
+    -52, -26.5,
+    -49.5, -19,
+    -49.5, 19,
+    -52, 26.5,
+    -55, 37.5,
+    -44, 40.5,
+    -42, 51,
+    -7, 52,
+    23, 45,
+    45, 43,
+    46, 27.5,
+    37, 22.5,
+    18, 14
   ]
 }

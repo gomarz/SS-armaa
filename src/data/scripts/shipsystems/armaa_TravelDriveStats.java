@@ -5,165 +5,153 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import com.fs.starfarer.api.Global;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lwjgl.util.vector.Vector2f;
-import org.lazywizard.lazylib.MathUtils;
 import com.fs.starfarer.api.combat.ShipAPI;
+import data.scripts.plugins.armaa_CarrierLaunchManager;
 import data.scripts.util.armaa_utils;
-import java.awt.Color;
-import com.fs.starfarer.api.combat.WeaponAPI.*;
-import com.fs.starfarer.api.loading.WeaponSlotAPI;
+import java.util.ArrayList;
+import java.util.List;
 
 public class armaa_TravelDriveStats extends BaseShipSystemScript {
 
-private boolean carriersNearby = false;
-private boolean runOnce = false;
-private WeaponSlotAPI w;
-private ShipAPI carrier;
+    private boolean runOnce = false;
+    private ShipAPI carrier;
 
-	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) 
-	{
-		if(Global.getCombatEngine().isPaused())
-			return;	
-		
-		ShipAPI ship = (ShipAPI)stats.getEntity();
-		boolean standardDeploy = ship.getFacing() == 90f ? true:false;
-		if(runOnce && !ship.isRetreating() && !ship.isDirectRetreat())
-		{
-			ship.getTravelDrive().deactivate();                        
-			unapply(stats,id);
-                        //if(ship.getAI() != null)
-                        //    ship.getFluxTracker().ventFlux();
-			return;
-		}
-		if(ship.getOwner() == 1)
-			standardDeploy = ship.getFacing() == 270f ? true:false;
-		boolean alreadyDone = Global.getCombatEngine().getCustomData().get("armaa_carrierDeployDone_"+ship.getId()) instanceof Boolean ? true : false;
+    public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
+        if (Global.getCombatEngine().isPaused()) {
+            return;
+        }
 
-		if(getRandomCarrier(ship,true) ==null || ship.isRetreating() || !standardDeploy || alreadyDone)
-		{
-			if (state == ShipSystemStatsScript.State.OUT) {
-				stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
-			} else 
-			{
-				stats.getMaxSpeed().modifyFlat(id, 600f * effectLevel);
-				stats.getAcceleration().modifyFlat(id, 600f * effectLevel);
-			}
-			Global.getCombatEngine().getCustomData().put("armaa_carrierDeployDone_"+ship.getId(),true);
-		}
-		
-		//Carriers detected "launch" from them
-		else
-		{	
-			if(!ship.isLanding()&& !runOnce)
-			{
-				carrier = getRandomCarrier(ship,false);
-				Vector2f takeOffLoc = null;
-				for(WeaponSlotAPI wep:carrier.getHullSpec().getAllWeaponSlotsCopy())
-				{
-					//Vector2f takeOffLoc = carrier.getLocation();
-					if(Global.getCombatEngine().getCustomData().get("armaa_launchSlots"+carrier.getId()+"_"+wep.getId()) != null)
-						continue;
-					if(wep.getWeaponType() == WeaponType.LAUNCH_BAY)
-					{
-						if(Global.getCombatEngine().getPlayerShip() == ship)
-						{
-							Global.getSoundPlayer().playSound("ui_noise_static", 1f+MathUtils.getRandomNumberInRange(-0.3f, .3f), 1f, carrier.getLocation(),new Vector2f());
-							carrier.getFluxTracker().showOverloadFloatyIfNeeded("Good luck out there!", Color.white, 2f, true);
-						}
-						
-						ship.setFacing(carrier.getFacing()+wep.getAngle());
-						takeOffLoc = new Vector2f(wep.computePosition(carrier));				
-						Global.getCombatEngine().getCustomData().put("armaa_launchSlots"+carrier.getId()+"_"+wep.getId(),"-");
-						break;
-					}
-				}
-				
-				if(takeOffLoc == null)
-				{
-					takeOffLoc = carrier.getLocation();
-				}
-				ship.setLaunchingShip(carrier);
-				//VectorUtils.rotate(takeOffLoc,carrier.getFacing());				
-				armaa_utils.setLocation(ship,takeOffLoc);
-				ship.setAnimatedLaunch();
-				Global.getSoundPlayer().playSound("fighter_takeoff", 1f, 1f, ship.getLocation(),new Vector2f());
-				CombatUtils.applyForce(ship,ship.getFacing(),(float)Math.random()*carrier.getMaxSpeed()*0.50f);
-				if(ship.getTravelDrive() != null)
-				{
-					unapply(stats,id);
-				}
-				runOnce = true;
-			}
-		}			
-	}
-	
-	public void unapply(MutableShipStatsAPI stats, String id) 
-	{
-		ShipAPI ship = (ShipAPI)stats.getEntity();
-		stats.getMaxSpeed().unmodify(id);
-		stats.getMaxTurnRate().unmodify(id);
-		stats.getTurnAcceleration().unmodify(id);
-		stats.getAcceleration().unmodify(id);
-		stats.getDeceleration().unmodify(id);
-	}
-	
-	public StatusData getStatusData(int index, State state, float effectLevel) 
-	{
-		if (index == 0) {
-			return new StatusData("increased engine power", false);
-		}
-		return null;
-	}
+        ShipAPI ship = (ShipAPI) stats.getEntity();
 
-	private ShipAPI getRandomCarrier(ShipAPI ship, boolean initial)
-	{
-		ShipAPI potCarrier = null;
-		//float distance = 99999f;
-		for (ShipAPI carrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 20000.0F)) 
-		{
-			int takenSlots = 0;
-			if(Global.getCombatEngine().getCustomData().get("armaa_launchSlots"+carrier.getId()) instanceof Integer)
-			{
-				takenSlots = (int)Global.getCombatEngine().getCustomData().get("armaa_launchSlots"+carrier.getId());
-			}
-			
-			else
-				Global.getCombatEngine().getCustomData().put("armaa_launchSlots"+carrier.getId(),takenSlots);
-			
-			if(ship.getHullSpec().hasTag("strikecraft_medium"))
-			{
-				if(carrier.isDestroyer())
-					continue;
-			}
+        // Ensure launch manager exists
+        ensureLaunchManager();
 
-			else if(ship.getHullSpec().hasTag("strikecraft_large"))
-			{
-				if(carrier.isCruiser() || carrier.isDestroyer())
-					continue;
-			}
-			if(takenSlots >= carrier.getNumFighterBays())
-				continue;
-				
-			if(carrier.getOwner() != ship.getOwner() || carrier.isFighter() || carrier.isFrigate() || carrier == ship)
-				continue;
-			
-			if(carrier.getOwner() == ship.getOwner() && ((carrier.isAlly() && !ship.isAlly())))
-				continue;
-			
-			if(carrier.isHulk())
-				continue;
+        boolean standardDeploy = ship.getOwner() == 1
+                ? ship.getFacing() == 270f
+                : ship.getFacing() == 90f;
 
-			if(carrier.getNumFighterBays() > 0 && carrier.getHullSpec().getFighterBays() > 0 || carrier.getLaunchBaysCopy().size() > 0 )
-			{
-				potCarrier = carrier; 
-				if(!initial)
-				{
-					Global.getCombatEngine().getCustomData().put("armaa_launchSlots"+potCarrier.getId(),takenSlots+1);
-					return potCarrier;
+        if (runOnce && !ship.isRetreating() && !ship.isDirectRetreat()) {
+            ship.getTravelDrive().deactivate();
+            unapply(stats, id);
+            return;
+        }
 
-				}
-			}				
-		}		
-		return potCarrier;
-	}	
+        boolean alreadyDone = Boolean.TRUE.equals(
+                Global.getCombatEngine().getCustomData().get("armaa_carrierDeployDone_" + ship.getId()));
+        carrier = getCarrier(ship);
+        // No carrier, retreating, wrong facing, or already processed just apply speed boost
+        if (carrier == null || ship.isRetreating() || !standardDeploy || alreadyDone) {
+            if (state == ShipSystemStatsScript.State.OUT) {
+                stats.getMaxSpeed().unmodify(id);
+            } else {
+                stats.getMaxSpeed().modifyFlat(id, 600f * effectLevel);
+                stats.getAcceleration().modifyFlat(id, 600f * effectLevel);
+            }
+            Global.getCombatEngine().getCustomData().put("armaa_carrierDeployDone_" + ship.getId(), true);
+        } else {
+            // Carrier found queue staggered launch and hand off to manager
+            if (!alreadyDone) {
+                carrier = getCarrier(ship);
+                if (carrier != null) {
+                    armaa_CarrierLaunchManager manager = getLaunchManager();
+                    if (manager != null) {
+                        manager.queueLaunch(ship, carrier);
+                    }
+                    Global.getCombatEngine().getCustomData()
+                            .put("armaa_carrierDeployDone_" + ship.getId(), true);                   
+                    runOnce = true;
+                }
+            }
+        }
+    }
+
+    public void unapply(MutableShipStatsAPI stats, String id) {
+        ShipAPI ship = (ShipAPI) stats.getEntity();
+        stats.getMaxSpeed().unmodify(id);
+        stats.getMaxTurnRate().unmodify(id);
+        stats.getTurnAcceleration().unmodify(id);
+        stats.getAcceleration().unmodify(id);
+        stats.getDeceleration().unmodify(id);
+    }
+
+    public StatusData getStatusData(int index, State state, float effectLevel) {
+        if (index == 0) {
+            return new StatusData("increased engine power", false);
+        }
+        return null;
+    }
+
+    // ---- Helpers ----
+    private void ensureLaunchManager() {
+        CombatEngineAPI engine = Global.getCombatEngine();
+        if (engine.getCustomData().get("armaa_launchManager") == null) {
+            armaa_CarrierLaunchManager manager = new armaa_CarrierLaunchManager();
+            engine.addPlugin(manager);
+            engine.getCustomData().put("armaa_launchManager", manager);
+        }
+    }
+
+    private armaa_CarrierLaunchManager getLaunchManager() {
+        Object obj = Global.getCombatEngine().getCustomData().get("armaa_launchManager");
+        return obj instanceof armaa_CarrierLaunchManager ? (armaa_CarrierLaunchManager) obj : null;
+    }
+
+    /**
+     * Find the nearest valid carrier for this ship.
+     */
+    /**
+     * Find the nearest valid carrier for this ship.
+     */
+    private ShipAPI getCarrier(ShipAPI ship) {
+        boolean isPlayer = (Global.getCombatEngine().getPlayerShip() == ship);
+        List<ShipAPI> candidates = new ArrayList<>();
+
+        for (ShipAPI candidate : CombatUtils.getShipsWithinRange(ship.getLocation(), 20000f)) {
+            if(!armaa_utils.isValidCarrierFor(ship, candidate))
+                continue;
+            
+            //prioritize this ship
+            if(candidate.getVariant().hasHullMod("armaa_exclusive_hangar_assignment"))
+                return candidate;
+        
+            candidates.add(candidate);
+        }
+
+        if (candidates.isEmpty()) {
+            return null;
+        }
+
+        // Sort largest first
+        candidates.sort((a, b) -> getShipSize(b) - getShipSize(a));
+
+        if (isPlayer) {
+            return candidates.get(0);
+        } else {
+            // Pick randomly within one size tier of the largest
+            int largestSize = getShipSize(candidates.get(0));
+            List<ShipAPI> topTier = new ArrayList<>();
+            for (ShipAPI c : candidates) {
+                if (getShipSize(c) >= largestSize - 1) {
+                    topTier.add(c);
+                }
+            }
+            return topTier.get((int) (Math.random() * topTier.size()));
+        }
+    }
+
+    private int getShipSize(ShipAPI ship) {
+        if (ship.isCapital()) {
+            return 3;
+        }
+        if (ship.isCruiser()) {
+            return 2;
+        }
+        if (ship.isDestroyer()) {
+            return 1;
+        }
+        if (ship.isFrigate()) {
+            return 0;
+        }
+        return -1;
+    }
 }

@@ -1,0 +1,20 @@
+{
+	"id":"armaa_dim_buster_shot",
+	"specClass":"projectile",
+        "onHitEffect":"data.scripts.weapons.armaa_dimEffect",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":70.0,
+	"width":30.0,
+	"fadeTime":0.2,
+	"glowRadius":30,
+	"hitGlowRadius":40,
+	"darkCore":true,
+	"glowColor":[0,18,5,100],
+	"fringeColor":[100,0,200,255],
+	"coreColor":[0,0,25,255],
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-256.0,
+	"pixelsPerTexel":1.0
+}

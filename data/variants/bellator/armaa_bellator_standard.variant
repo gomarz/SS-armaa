@@ -1,0 +1,68 @@
+{
+  "variantId": "armaa_bellator_standard",
+  "hullId": "armaa_bellator",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 37,
+  "fluxVents": 35,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "advancedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "breachpod",
+        "WS0004": "breachpod",
+        "WS0005": "breachpod",
+        "WS0006": "breachpod"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0009": "hil",
+        "WS0011": "ionbeam",
+        "WS0013": "hveldriver",
+        "WS0015": "hil",
+        "WS0016": "mjolnir",
+        "WS0017": "hveldriver"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "hveldriver",
+        "WS0010": "hil",
+        "WS0014": "dualflak"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "guardian",
+        "WS0002": "guardian",
+        "WS0012": "heavyburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "armaa_musham3_wing",
+    "armaa_musham3_wing"
+  ]
+}

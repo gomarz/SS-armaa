@@ -1,0 +1,49 @@
+{
+  "variantId": "armaa_ashura_frig_g",
+  "hullId": "armaa_ashura_frig_green",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "reinforcedhull",
+    "hardenedshieldemitter",
+    "turretgyros"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sabot_fighter",
+        "WS0003": "sabot_fighter"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "C_ARML": "armaa_ashura_leftArm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "SUBARML": "armaa_ashura_leftSubArm_naginata",
+        "SUBARMR": "armaa_ashura_rightSubArm_naginata"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_ashura_head"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

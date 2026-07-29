@@ -3,7 +3,7 @@
   "hullId": "armaa_zanac",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/armaa/ships/zanac/zanac_lowerBody.png",
-  "style": "armaa_valkazard",
+  "style": "MIDLINE",
   "height": 112,
   "width": 136,
   "center": [68, 56],
@@ -13,9 +13,6 @@
   "viewOffset": 0,
   "builtInMods": [
     "unstable_injector"
-  ],
-  "builtInWings": [
-    "armaa_bit_wing_zanac"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_zanac_leftArm",

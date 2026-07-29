@@ -5,36 +5,24 @@
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
   "style": "MIDLINE",
   "height": 154,
-  "width": 64,
-  "center": [32, 15],
-  "collisionRadius": 140.5,
-  "shieldCenter": [0, -0],
-  "shieldRadius": 144.5,
+  "width": 105,
+  "center": [52, 68],
+  "collisionRadius": 70,
+  "shieldCenter": [42, -0],
+  "shieldRadius": 69,
   "viewOffset": 0,
-  "builtInMods": ["fluxshunt"
+  "builtInMods": [
+    "fluxshunt",
+    "no_weapon_flux"
   ],
   "builtInWings": [
     "armaa_bit_kshatriya_wing"
   ],
+  "builtInWeapons": {
+    "WS0001": "armaa_kshatriya_binder_chaosburst",
+    "WS0002": "armaa_kshatriya_binder_chaosburst"
+  },
   "weaponSlots": [
-    {
-      "id": "RETRO_2",
-      "size": "SMALL",
-      "type": "SYNERGY",
-      "mount": "TURRET",
-      "arc": 180,
-      "angle": -90,
-      "locations": [55, -19]
-    },
-    {
-      "id": "RETRO_1",
-      "size": "SMALL",
-      "type": "SYNERGY",
-      "mount": "TURRET",
-      "arc": 180,
-      "angle": 90,
-      "locations": [55, 11]
-    },
     {
       "id": "LB 1",
       "size": "LARGE",
@@ -42,7 +30,7 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [40.5, 14]
+      "locations": [-12.5, 34]
     },
     {
       "id": "LB 2",
@@ -51,25 +39,41 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [40, -15]
+      "locations": [-13, 5]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": 45,
+      "locations": [43, 24]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": -45,
+      "locations": [43, -24]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    14, -27,
-    42, -30,
-    65, -26,
-    132, -8,
-    125.5, -0,
-    137, 8,
-    65, 22.5,
-    35, 30,
-    9.5, 25,
-    -3.5, 13.5,
-    -15, 10.5,
-    -12, 4.5,
-    -6, -0,
-    -12, -11.5,
-    -4.5, -15.5
+    -34, -6.5,
+    -22.5, -14,
+    -2.5, -30.5,
+    10, -40.5,
+    32.5, -39.5,
+    78.5, -10.5,
+    85, -4.5,
+    84.5, 6,
+    85, 4.5,
+    58, 23.5,
+    15.5, 42,
+    -22.5, 14,
+    -33.5, 7.5
   ]
 }

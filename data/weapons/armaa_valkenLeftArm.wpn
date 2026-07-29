@@ -1,4 +1,6 @@
 {
+# this arm is prob used by way more than the valken
+# yay bad dev practices!
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "coreColor": [

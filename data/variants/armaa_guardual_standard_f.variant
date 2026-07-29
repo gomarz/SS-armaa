@@ -9,6 +9,7 @@
   "permaMods": [],
   "hullMods": [
     "pointdefenseai",
+    "eccm",
     "no_weapon_flux"
   ],
   "weaponGroups": [
@@ -16,8 +17,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0002": "swarmer_fighter",
-        "WS0004": "swarmer_fighter"
+        "WS0002": "armaa_breach_fighter",
+        "WS0004": "armaa_breach_fighter"
       }
     },
     {

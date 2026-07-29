@@ -2,7 +2,7 @@
 	"id":"armaa_rangefinder",  # this id must match what's in the spreadsheet
 	"specClass":"projectile",
 	"type":"BALLISTIC",
-	"size":"SMALL",
+	"size":"MEDIUM",
 	"displayArcRadius":250,
 	"turretSprite":"",
 	"hardpointSprite":"",

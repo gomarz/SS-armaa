@@ -4,7 +4,7 @@
   "projectileSpecId": "armaa_mortar_shot",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_aleste_grenade_left.png",
   "hardpointSprite": "graphics/weapons/mg_light_hardpoint_base.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",

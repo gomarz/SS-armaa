@@ -1,0 +1,17 @@
+{
+    "baseHullId":"armaa_panther_frig",
+    "skinHullId":"armaa_panther_frig_mirage",
+    "hullName":"Mirage",
+    "descriptionId":"armaa_panther_frig",
+    "descriptionPrefix":"Shouldnt be visible",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["no_drop","no_sell","restricted","no_dealer"],
+    "removeBuiltInMods":["strikeCraft"],
+    "systemId":"displacer",
+    "tech":"Tri-Tachyon",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],  
+}

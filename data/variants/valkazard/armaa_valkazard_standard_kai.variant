@@ -1,0 +1,37 @@
+{
+  "variantId": "armaa_valkazard_standard_kai",
+  "hullId": "armaa_valkazard_kai",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "hardened_subsystems",
+    "hardenedshieldemitter",
+    "armoredweapons",
+    "turretgyros"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "gorgon",
+        "WS0002": "gorgon"
+      }
+    }
+  ],
+  "modules": [
+{
+      "BAY1": "armaa_valkazard_kai_dronebay_l_variant",
+},
+{
+      "BAY2": "armaa_valkazard_kai_dronebay_r_variant"
+}
+
+],
+  "wings": []
+}

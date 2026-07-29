@@ -25,6 +25,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.plugins.armaa_ghostTrail;
 import lunalib.lunaSettings.LunaSettings;
 // Made by Timid
 // Adulterated by Mayu
@@ -42,38 +43,45 @@ public class armaa_himac extends BaseHullMod {
     // constant that effects the lower end of the particle velocity
     private static float VEL_MIN = 0.5f;
     // constant that effects the upper end of the particle velocity
+    // AC-style quick boost: instantaneous Δv, not a shove.
+    // we can Tune these two for feel:
+    final float BASE_DV = 240f;     // flat QB punch (helps lateral)
+    final float SPEED_SCALE = 0.80f; // QB scales with ship speed
     private static float VEL_MAX = 1f;
     public static final Color JITTER_UNDER_COLOR = new Color(255, 155, 255, 155);
     public static final boolean QUANTUMSETTINGS = false; //boolean for the HUD/status engine
     public boolean cooldownActive = false;
     public final String ID;
-    private static final float TICK_TIME = 0.015f;
-    private static final Map<HullSize, Float> SIZE_MULT = new HashMap<>();
-
-    static {
-        SIZE_MULT.put(HullSize.FIGHTER, 1f);
-        SIZE_MULT.put(HullSize.FRIGATE, 1.2f);
-        SIZE_MULT.put(HullSize.DESTROYER, 0.85f);
-        SIZE_MULT.put(HullSize.CRUISER, 0.50f);
-        SIZE_MULT.put(HullSize.CAPITAL_SHIP, 0.50f);
-    }
 
     private float armaa_himacsubsys(final ShipAPI ship) {
         return SUBSYSTEMCD;
+    }
+
+    private static float hullQBMult(HullSize size) {
+        switch (size) {
+            case FIGHTER:
+                return 1.40f;
+            case FRIGATE:
+                return 1.30f;
+            case DESTROYER:
+                return 1.05f;
+            case CRUISER:
+                return 0.90f;
+            case CAPITAL_SHIP:
+                return 0.80f;
+            default:
+                return 1f;
+        }
     }
 
     private static class armaa_himacdata {
 
         String subsysID = ""; // empty like my soul
         boolean runOnce = false;
-        boolean holdButtonBefore = false;
         float activeTime = 0f;
-        float maxActiveTime = 0f;
         float cooldown = 25f;
         float maxcooldown = 0f;
         boolean keyPressed = false;
-        boolean window = false;
-        long startTime = System.currentTimeMillis();
         boolean moveKeyPressed = false;
         public String lastKeyPressed = null;
         public long lastKeyTime = 0;
@@ -82,15 +90,39 @@ public class armaa_himac extends BaseHullMod {
         boolean assaultBoostCharging = false;
         boolean assaultBoostCharged = false;
         boolean burnedOut = false;
+        float carryTimer = 0f;
         IntervalUtil chargeInterval = new IntervalUtil(1.5f, 1.5f);
         IntervalUtil tracker = new IntervalUtil(5f, 5f);
-        IntervalUtil aiTracker = new IntervalUtil(1f, 1f);
+        IntervalUtil aiTracker = new IntervalUtil(0.05f, 1f);
         IntervalUtil smokeTracker = new IntervalUtil(0.25f, 0.25f);
 
     }
 
     public armaa_himac() {
         this.ID = "ArmaaHIMACThrusters";
+    }
+
+    /**
+     * Adds an instantaneous velocity change in the given direction, with a cap.
+     */
+    private static void applyQuickBoostImpulse(ShipAPI ship, float angleDeg, float deltaV) {
+        Vector2f dir = Misc.getUnitVectorAtDegreeAngle(angleDeg);
+
+        // Prevent insane stacking: only add until a directional speed cap.
+        float along = Vector2f.dot(ship.getVelocity(), dir);
+
+        // Tune this: higher = allows longer lateral slides; lower = tighter control.
+        float cap = ship.getMaxSpeedWithoutBoost() * 2f + 200f;
+
+        float remaining = cap - Math.max(0f, along);
+        float add = Math.min(deltaV, Math.max(0f, remaining));
+        if (add <= 0f) {
+            return;
+        }
+
+        Vector2f dv = new Vector2f(dir);
+        dv.scale(add);
+        Vector2f.add(ship.getVelocity(), dv, ship.getVelocity());
     }
 
     private static float getSystemEngineScale(ShipEngineAPI engine, float direction) {
@@ -115,8 +147,6 @@ public class armaa_himac extends BaseHullMod {
             data.assaultBoostCharged = true;
             data.assaultBoostCharging = false;
             Color ENGINE_COLOR = ship.getEngineController().getShipEngines().get(0).getEngineColor();
-            Color CONTRAIL_COLOR = new Color(100, 100, 100, 25);
-            Color BOOST_COLOR = new Color(255, 175, 175, 200);
             Color bigBoostColor = new Color(
                     armaa_utils.clamp255(Math.round(0.1f * ENGINE_COLOR.getRed())),
                     armaa_utils.clamp255(Math.round(0.1f * ENGINE_COLOR.getGreen())),
@@ -197,7 +227,6 @@ public class armaa_himac extends BaseHullMod {
         boostVisualDir = MathUtils.clampAngle(VectorUtils.getFacing(direction) - 90f);
         Color ENGINE_COLOR = ship.getEngineController().getFlameColorShifter().getCurr().getAlpha() == 0 ? ship.getEngineController().getShipEngines().get(0).getEngineColor() : ship.getEngineController().getFlameColorShifter().getCurr();
         //Color ENGINE_COLOR = ship.getEngineController().getShipEngines().get(0).getEngineColor();
-        Color CONTRAIL_COLOR = new Color(100, 100, 100, 25);
         Color BOOST_COLOR = new Color(255, 175, 175, 200);
         for (ShipEngineAPI eng : ship.getEngineController().getShipEngines()) {
             float level = 1f;
@@ -298,8 +327,16 @@ public class armaa_himac extends BaseHullMod {
             data.cooldown = 0;
             return;
         }
-        //ship.getVelocity().set(0, 0);
-        CombatUtils.applyForce(ship, angleDegrees, (ship.getMaxSpeed() + (ship.getMass() * SIZE_MULT.get(ship.getHullSize())) * bonus));
+        float hullMult = hullQBMult(ship.getHullSize());
+
+        float deltaV = (BASE_DV + ship.getMaxSpeedWithoutBoost() * SPEED_SCALE) * hullMult * bonus;
+
+        applyQuickBoostImpulse(ship, angleDegrees, deltaV);
+        if(!assaultBoost)
+        {
+            data.carryTimer = 0.15f;
+            armaa_ghostTrail.spawn(ship, 0.15f);
+        }
     }
 
     public void isKeyPressed(ShipAPI ship) {
@@ -307,15 +344,20 @@ public class armaa_himac extends BaseHullMod {
         boolean aPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_TURN_LEFT")));
         boolean sPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_ACCELERATE_BACKWARDS")));
         boolean dPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_TURN_RIGHT")));
+        boolean cPressed = Keyboard.isKeyDown(Keyboard.getKeyIndex(Global.getSettings().getControlStringForEnumName("SHIP_DECELERATE")));
 
         String key = DATA_KEY + "_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) Global.getCombatEngine().getCustomData().get(key);
+
+        boolean absoluteMovementEnabled = Boolean.TRUE.equals(
+                ship.getCustomData().get("absolute_movement_mode_enabled")
+        );
 
         // Check if *any* movement key is pressed
         data.keyPressed = wPressed || aPressed || sPressed || dPressed;
 
         // Disable assault boost if moving backward
-        if (sPressed && data.assaultBoostEnabled) {
+        if (data.assaultBoostEnabled && (cPressed || (!absoluteMovementEnabled && sPressed))) {
             data.assaultBoostEnabled = false;
         }
 
@@ -381,6 +423,9 @@ public class armaa_himac extends BaseHullMod {
         if (engine == null || !engine.isEntityInPlay(ship) || !ship.isAlive()) {
             return;
         }
+        if (ship.isStationModule()) {
+            return;
+        }
         String key = DATA_KEY + "_" + ship.getId();
         String id = "armaa_assaultBoost_" + ship.getId();
         armaa_himacdata data = (armaa_himacdata) engine.getCustomData().get(key);
@@ -392,12 +437,31 @@ public class armaa_himac extends BaseHullMod {
             data.runOnce = true;
             data.subsysID = this.getClass().getName() + "_" + ship.getId();
             data.maxcooldown = armaa_himacsubsys(ship);
-            data.maxActiveTime = OVERLOAD_ENEMY_DURATION; // the duration of enemy overload
         }
+        if (data.carryTimer > 0f) {
+            data.carryTimer -= amount;
+            float t = Math.max(0f, data.carryTimer / 0.35f); // 1 -> 0
+            ship.getMutableStats().getDeceleration().modifyMult(ID, 1f - t); // 0 during carry, ramps back
+            ship.getMutableStats().getMaxSpeed().modifyFlat(ID, 300f * t);   // legalize the overspeed
+            if (data.carryTimer <= 0f) {
+                ship.getMutableStats().getDeceleration().unmodify(ID);
+                ship.getMutableStats().getMaxSpeed().unmodify(ID);
+            }
+        }
+        if (ship.isPhased()) {
+            return;
+        }
+        if (ship.isLanding() || ship.controlsLocked()) {
+            return;
+        }
+        if (ship.getFluxTracker().isOverloadedOrVenting()) {
+            return;
+        }
+
         if (!data.assaultBoostEnabled && data.cooldown < data.maxcooldown && data.activeTime <= 0f && ship.getCurrentCR() > 0f && !ship.getFluxTracker().isOverloadedOrVenting()) {
-            float bonus = 1f;
+            float bonus = 0.7f;
             if (data.burnedOut) {
-                bonus = 0.5f;
+                bonus = 0.25f;
             }
             data.cooldown += amount * bonus;
         }
@@ -499,8 +563,8 @@ public class armaa_himac extends BaseHullMod {
             ship.getMutableStats().getMaxSpeed().modifyFlat(id, 100f);
             ship.getMutableStats().getAcceleration().modifyMult(id, 0.5f);
 
-            ship.getMutableStats().getBallisticWeaponDamageMult().modifyMult(id, 1.15f);
-            ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(id, 1.15f);
+            ship.getMutableStats().getBallisticWeaponDamageMult().modifyMult(id, 1.25f);
+            ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(id, 1.25f);
 
             ship.getMutableStats().getHullDamageTakenMult().modifyMult(id, 1f - (1f - .5f));
             ship.getMutableStats().getArmorDamageTakenMult().modifyMult(id, 1f - (1f - .5f));
@@ -590,50 +654,104 @@ public class armaa_himac extends BaseHullMod {
         // AI Conditions goes here, oh god I hate it already
 //        List<ShipAPI> enemyShip = AIUtils.getNearbyEnemies(ship, 500f); // range to scan nearby enemies
         boolean player = false;
-        player = ship == Global.getCombatEngine().getPlayerShip();
+        float fluxDanger = ship.getShield() != null ? ship.getFluxLevel() : 0f;
+
+        // Hull danger ramps up hard near the end.
+        // (At 1.0 hull -> 0 danger, at 0.0 hull -> 1 danger)
+        float hullDanger = 1f - ship.getHullLevel();
+        hullDanger = hullDanger * hullDanger; // square it to emphasize low hull
+        player = ship == Global.getCombatEngine().getPlayerShip() && ship.getAI() == null;
         if (ship.getAI() != null) {
             final ShipwideAIFlags flags = ship.getAIFlags();
             data.aiTracker.advance(amount);
-            if (data.aiTracker.intervalElapsed() && data.cooldown >= 5f && !ship.getFluxTracker().isOverloaded()) {
-                if (!player && ship.getHullLevel() >= 0.5f) {
-                    if ((flags.hasFlag(AIFlags.MOVEMENT_DEST) && !ship.areAnyEnemiesInRange() || flags.hasFlag(AIFlags.PURSUING)) && !data.assaultBoostEnabled && data.cooldown >= 5f) {
-                        data.assaultBoostCharging = true;
-                    }
+            // DOOOOOODGE
+            // q rises with high flux (shielded) or low hull (any ship); 
+            // higher q makes the ship retreat-boost more often and be willing to dodge smaller hits relative 
+            // to its current HP, and if estimated incoming damage crosses that threshold it scans 
+            // nearby projectiles and quick-boosts away from ones that are very likely to hit.
+            float hp = ship.getHitpoints();
+            float q = evasiveQualifier(ship);
+            float p = 0.10f + 0.75f * q;   // 10% baseline, up to 85% at panic
+            // Fraction of current HP that must be threatened before we care.
+            // At safe (q=0): 10% of current HP
+            // At panic (q=1): 2% of current HP (less choosy)
+            float frac = 0.10f - 0.08f * q;   // 0.10 -> 0.02
+            frac = MathUtils.clamp(frac, 0.02f, 0.10f);
 
-                    if (data.assaultBoostEnabled && flags.hasFlag(AIFlags.HAS_INCOMING_DAMAGE)) {
-                        data.assaultBoostEnabled = false;
-                    }
-                    if (ship.getEngineController().isDecelerating() && data.assaultBoostEnabled) {
-                        data.assaultBoostEnabled = false;
-                    }
+            // Absolute damage threshold derived from CURRENT HP
+            float minDmgToDodge = hp * frac;
+            boolean isLargeShip = ship.isCapital() || ship.isCruiser();
+            p = clamp01(p);
+            if (!player && !ship.isPhased() && data.aiTracker.intervalElapsed() && data.cooldown >= 5f && !ship.getFluxTracker().isOverloaded()) {
+                if (!ship.areAnyEnemiesInRange() && (isLargeShip || flags.hasFlag(AIFlags.MOVEMENT_DEST) || flags.hasFlag(AIFlags.PURSUING)) && !data.assaultBoostEnabled && data.cooldown >= 5f) {
+                    data.assaultBoostCharging = true;
+                } else if (data.assaultBoostEnabled && (ship.getEngineController().isDecelerating() || armaa_utils.estimateIncomingDamage(ship) > 1.5f * minDmgToDodge)) {
+                    data.assaultBoostEnabled = false;
+                }
 
-                    List<DamagingProjectileAPI> possibleTargets = new ArrayList<>(100);
-                    possibleTargets.addAll(CombatUtils.getMissilesWithinRange(ship.getLocation(), 500f));
-                    possibleTargets.addAll(CombatUtils.getProjectilesWithinRange(ship.getLocation(), 500f));
-                    if (armaa_utils.estimateIncomingDamage(ship) < 100) {
-                        return;
+                if (!isLargeShip && ship.getEngineController().isDecelerating() && flags.hasFlag(AIFlags.BACKING_OFF) && Math.random() < p) {
+                    boost(ship.getFacing() - 180f, ship, false);
+                }
+                if (!isLargeShip && data.assaultBoostEnabled && flags.hasFlag(AIFlags.HAS_INCOMING_DAMAGE)) {
+                    data.assaultBoostEnabled = false;
+                    return;
+                }
+
+                if (isLargeShip || armaa_utils.estimateIncomingDamage(ship) < minDmgToDodge && ship.getHullLevel() > 0.5f) {
+                    return;
+                }
+                // Never be too picky about tiny chip, and never ignore big spikes
+                minDmgToDodge = MathUtils.clamp(minDmgToDodge, 25f, 400f);
+                List<DamagingProjectileAPI> possibleTargets = new ArrayList<>(100);
+                possibleTargets.addAll(CombatUtils.getMissilesWithinRange(ship.getLocation(), 500f));
+                possibleTargets.addAll(CombatUtils.getProjectilesWithinRange(ship.getLocation(), 500f));
+                for (DamagingProjectileAPI proj : possibleTargets) {
+                    if (proj == null || !engine.isEntityInPlay(proj)) {
+                        continue;
                     }
-                    for (DamagingProjectileAPI proj : possibleTargets) {
-                        if (proj == null) {
-                            continue;
-                        }
+                    float dodgeChance = clamp01(0.10f + 0.80f * q); // simple
+                    if (Math.random() < dodgeChance || ship.getFluxLevel() > 0.70f) {
                         if (armaa_utils.getHitChance(proj, ship) > 0.8f) {
-                            if (proj.getLocation().getX() < ship.getLocation().getX()) {
-                                boost(ship.getFacing() + 90f, ship, false);
-                                break;
-                            } else if (proj.getLocation().getX() > ship.getLocation().getX()) {
-                                boost(ship.getFacing() - 90f, ship, false);
-                                break;
+                            float projHeading;
+                            if (proj.getVelocity().lengthSquared() > 100f) { // moving faster than ~10 su/s
+                                projHeading = VectorUtils.getFacing(proj.getVelocity());
                             } else {
-                                boost(ship.getFacing() - 180f, ship, false);
-                                break;
+                                // barely moving (fresh guided launch): treat its bearing to us as the threat line
+                                projHeading = VectorUtils.getAngle(proj.getLocation(), ship.getLocation());
                             }
+                            float side = MathUtils.getShortestRotation(projHeading,
+                                    VectorUtils.getAngle(proj.getLocation(), ship.getLocation()));
+                            boost(projHeading + (side >= 0f ? 90f : -90f), ship, false);
+                            break;
                         }
                     }
                 }
             }
         }
         Global.getCombatEngine().getCustomData().put(key, data);
+    }
+
+    private float clamp01(float x) {
+        return Math.max(0f, Math.min(1f, x));
+    }
+
+    private float evasiveQualifier(ShipAPI ship) {
+        boolean shielded = ship.getShield() != null;
+
+        float fluxDanger = shielded ? ship.getFluxLevel() : 0f;
+
+        float hull = ship.getHullLevel();
+        float hullDanger = 1f - hull;
+        hullDanger = hullDanger * hullDanger; // emphasize low hull
+
+        float q = Math.max(fluxDanger, hullDanger);
+
+        // Optional: big "I'm in trouble" spikes
+        if (ship.getFluxTracker().isOverloadedOrVenting()) {
+            q = Math.max(q, 0.9f);
+        }
+
+        return clamp01(q);
     }
 
     @Override
@@ -669,7 +787,7 @@ public class armaa_himac extends BaseHullMod {
                     Misc.getRoundedValue(75.0f),
                     "50%"
                 });
-        text3.addPara("%s " + "Increases non-missile damage by %s", 10f, Misc.getPositiveHighlightColor(), "\u2022", "15%");
+        text3.addPara("%s " + "Increases non-missile damage by %s", 10f, Misc.getPositiveHighlightColor(), "\u2022", "25%");
         text3.addPara("%s " + "Increases speed by a flat %s SU.", 10f, Misc.getPositiveHighlightColor(), "\u2022", "100");
         text3.addPara("%s " + "Damage resistance is increased by %s while active.", 10f, Misc.getPositiveHighlightColor(), "\u2022", "50%");
         text3.addPara("%s " + "Reduces turning speed by %s", 10f, Misc.getNegativeHighlightColor(), "\u2022", "65%");
@@ -681,7 +799,7 @@ public class armaa_himac extends BaseHullMod {
 
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        return true;
+        return ship.isFrigate() || ship.isDestroyer();
     }
 
     public String getUnapplicableReason(ShipAPI ship) {

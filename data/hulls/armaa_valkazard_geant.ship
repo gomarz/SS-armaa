@@ -1,0 +1,206 @@
+{
+  "hullName": "Valkazard",
+  "hullId": "armaa_valkazard_geant",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/armaa/ships/valkazard/geant/armaa_valkazard_geant_body.png",
+  "style": "armaa_valkazard",
+  "height": 112,
+  "width": 136,
+  "center": [67, 63],
+  "collisionRadius": 87.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 87,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "CHEST_DECO": "armaa_valkazard_geant_cover",
+    "CORE": "armaa_valkazard_geant_core",
+    "CORE2": "armaa_valkazard_geant_core_lv2",
+    "HEAD": "armaa_valkazard_geant_head",
+    "LARM": "armaa_valkazard_geant_mknuckle_left",
+    "LSHOULDER": "armaa_valkazard_geant_leftshoulder",
+    "RARM": "armaa_valkazard_geant_mknuckle_right",
+    "RSHOULDER": "armaa_valkazard_geant_rightshoulder"
+  },
+  "weaponSlots": [
+    {
+      "id": "LSHOULDER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-11, 50],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "RSHOULDER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-11, -52],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "HEAD",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 0,
+      "locations": [0, 0]
+    },
+    {
+      "id": "LARM",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 29.5,
+      "locations": [10, 42]
+    },
+    {
+      "id": "RARM",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -29.5,
+      "locations": [10, -44]
+    },
+    {
+      "id": "CHEST_DECO",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [32, -1]
+    },
+    {
+      "id": "CORE",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [30, -1]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 35,
+      "locations": [-25, 22],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -35,
+      "locations": [-25, -24],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "CORE2",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [20, -1]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-49, -25],
+      "length": 44,
+      "width": 20,
+      "angle": -180,
+      "contrailSize": 20,
+      "style": "CUSTOM",
+      "styleId": "HIGH_TECH"
+    },
+    {
+      "location": [-49, 23],
+      "length": 44,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 20,
+      "style": "CUSTOM",
+      "styleId": "HIGH_TECH"
+    },
+    {
+      "location": [-49, -25],
+      "length": 32.27988,
+      "width": 8.487477,
+      "angle": -140,
+      "contrailSize": 8.487477,
+      "style": "CUSTOM",
+      "styleId": "HIGH_TECH"
+    },
+    {
+      "location": [-48, -14],
+      "length": 37,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "CUSTOM",
+      "styleId": "HIGH_TECH"
+    },
+    {
+      "location": [-48, 11.5],
+      "length": 37,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "CUSTOM",
+      "styleId": "HIGH_TECH"
+    },
+    {
+      "location": [-32, -1.5],
+      "length": 96.5,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "OMEGA"
+    },
+    {
+      "location": [-49, 23],
+      "length": 36.184982,
+      "width": 8.460974,
+      "angle": 140,
+      "contrailSize": 8.460974,
+      "style": "CUSTOM",
+      "styleId": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -13.5, 51.5,
+    20.5, 53,
+    25.5, 39.5,
+    37.5, 24.5,
+    37, 12,
+    41.5, 4,
+    38, -15.5,
+    37, -32,
+    27, -40.5,
+    20.5, -55.5,
+    -16.5, -54,
+    -17.5, -36,
+    -21, -35.5,
+    -45, -32,
+    -46, -7.5,
+    -33, -1,
+    -46.5, 6,
+    -47.5, 28,
+    -32.5, 30,
+    -19, 35
+  ]
+}

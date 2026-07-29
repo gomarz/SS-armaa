@@ -1,0 +1,14 @@
+{
+	"id":"armaa_mirageShroud",
+	"type":"STAT_MOD",
+	"aiType":"ENTROPY_AMPLIFIER",
+	#"aiScript":"data.scripts.shipsystems.ai.armaa_karmaAI",
+	"statsScript":"data.scripts.shipsystems.armaa_mirageShroudStats",
+	"canUseWhileRightClickSystemOn":true,	
+	"jitterColor":[255,0,255,50],
+	"jitterCopies":2,
+	"jitterRange":5,
+	"jitterRangeRadiusFraction":0.05,
+	"useSound":"system_interdictor",
+	"outOfUsesSound":"system_phase_cloak_collision",
+}

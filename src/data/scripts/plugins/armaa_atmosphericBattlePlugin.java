@@ -7,6 +7,7 @@ import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import java.util.*;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
@@ -15,6 +16,10 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import static data.campaign.rulecmd.armaa_jeniusAtmoBattle.MISSION_TEXTURES_ATMO;
+import data.scripts.missions.armaa_ReentryEffect;
+import data.scripts.missions.armaa_titleSplash;
+import data.scripts.util.armaa_utils;
 
 public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     // for atmo battle
@@ -22,18 +27,28 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     boolean warning = true;
     protected CombatEngineAPI engine;
     private IntervalUtil interval = new IntervalUtil(.025f, .05f);
-    private IntervalUtil interval2 = new IntervalUtil(.05f, .05f);
     private IntervalUtil interval3 = new IntervalUtil(2f, 2f);
-    private IntervalUtil bgInterval = new IntervalUtil(0.05f, 0.5f);
+    private IntervalUtil bgInterval = new IntervalUtil(0.05f, 0.1f);
     private IntervalUtil attackInterval = new IntervalUtil(2f, 2f);
+    private IntervalUtil cutsceneTextInterval = new IntervalUtil(2f, 2f);
+    private IntervalUtil cutsceneInterval = new IntervalUtil(3f, 3f);
+    private final IntervalUtil spinInterval = new IntervalUtil(0.05f, 0.05f);
+    armaa_ReentryEffect fx;
+    private boolean runOnce = false;
     private float spin = 0f, ratioMod = 0f;
     private boolean playedMusic = false;
     private boolean perfMode = false;
+    private boolean showedTitle = false;
+    private boolean startedFade = false;
+    boolean cutsceneOver = false;
+    boolean hidCutscene = false;
     private float bossStage = 1f, ratio = 0f, bgStage = 0f;
     private float battleStr = -99f;
     private boolean bossLine1, bossLine2, bossLine3, firstContact = false, stationAlive = true;
-    private boolean spawnedBoss = false, spawnedCorpse = false;
+    private boolean spawnedBoss = false;
+    private int diagLine = 0;
     public static Map MANUVER_MALUS = new HashMap();
+    FleetMemberAPI largest = null;
 
     static {
         /*mass_mult.put(HullSize.FRIGATE, 3f);
@@ -49,8 +64,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
     public Color shiftColor(Color start, Color end, float ratio) {
         Color intermediateColor = Color.WHITE;
-        int steps = 100; // Number of steps in the transition
-        long duration = 1500; // Duration of the transition in milliseconds
+        // Number of steps in the transition
+        // Duration of the transition in milliseconds
         if (ratio >= 1) {
             return end;
         }
@@ -67,39 +82,122 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
 
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
-        if (!playedMusic) {
+        if (!playedMusic && cutsceneOver) {
             if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
                 perfMode = LunaSettings.getBoolean("armaa", "armaa_performanceMode");
             }
+            engine.setRenderStarfield(false);
             Global.getSoundPlayer().playCustomMusic(1, 1, "music_armaa_ax_bounty", true);
             playedMusic = true;
-            // give player some extra help
-            // depending how things went in the previous stage
-            // killing the guardian even at 50% might be too difficult
-            if (engine.getFleetManager(0).getCurrStrength() < 100 && Global.getSector().getMemoryWithoutUpdate().get("$armaa_killedJeniusGuardian") == null) {
-                ShipAPI ally = engine.getFleetManager(0).spawnShipOrWing("hyperion_Attack", new Vector2f(0, -5000), 0, 5f);
-                ally = engine.getFleetManager(0).spawnShipOrWing("afflictor_Strike", new Vector2f(0, -5000), 0, 5f);
-                ally.setName("ISS Rogue");
-                engine.getCombatUI().addMessage(1, ally, Color.green, ally.getName(), Color.green, ":", Color.white, "Commander, this is the ISS Rogue. We've been retasked to assist. Following your lead.");
-            }
             engine.setDoNotEndCombat(true);
+        }
+        if (!runOnce) {
+            engine.getFleetManager(0).setSuppressDeploymentMessages(true);
+            engine.getCombatUI().hideShipInfo();
+            ShipAPI ally;
+            ally = engine.getFleetManager(0).spawnShipOrWing("brawler_pather_Raider", new Vector2f(-100, -10000), 0f, 10f);
+            ally.setAlly(true);
+            ally = engine.getFleetManager(0).spawnShipOrWing("gremlin_luddic_path_Strike", new Vector2f(0, -10000), 0f, 10f);
+            ally.setAlly(true);
+            ally = engine.getFleetManager(0).spawnShipOrWing("manticore_luddic_path_Strike", new Vector2f(100, -10000), 0f, 10f);
+            ally.setAlly(true);
+            Global.getSoundPlayer().playCustomMusic(1, 1, "music_encounter_mysterious_non_aggressive", true);
+            engine.getFleetManager(0).setSuppressDeploymentMessages(false);
+            runOnce = true;
+
+            //let's get the largest ship in player fleet, that can't be deployed
+            for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersInPriorityOrder()) {
+                if (largest == null && (member.isCruiser() || member.isCapital()) && !member.isCivilian()) {
+                    largest = member;
+                } else if (member.isCapital() && (largest != null && !largest.isCapital())) {
+                    largest = member;
+                }
+            }
         }
         if (engine == null) {
             return;
         }
-        Color startColor = new Color(75, 0, 0, 255); // Starting color: (200, 0, 0)
-        Color endColor = new Color(15, 30, 75, 100);   // Ending color: (0, 0, 200)
-        Color startColorBG = new Color(100, 25, 0, 255); // Starting color: (200, 0, 0)
-        Color endColorBG = new Color(100, 100, 100, 255);   // Ending color: (0, 0, 200)
-        Color endColorBG2 = new Color(175, 175, 175, 0);   // Ending color: (0, 0, 200)
-        engine.setBackgroundColor(new Color(150, 100, 100, 255));
+        Color startColor = new Color(75, 0, 0, 255);
+
+        Color endColor = new Color(15, 30, 75, 100);
+
+        Color endColorBG = new Color(100, 100, 100, 255);
+
+        if (diagLine < 3 && !engine.isPaused()) {
+            cutsceneTextInterval.advance(amount);
+            for (ShipAPI ship : engine.getAllShips()) {
+                ship.blockCommandForOneFrame(ShipCommand.ACCELERATE);
+                // ship.blockCommandForOneFrame(ShipCommand.DECELERATE);
+                // ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
+                // ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
+                ship.getVelocity().set(0, 0);
+            }
+            if (engine.getPlayerShip() != null && Math.random() < 0.10f) {
+
+            }
+        }
+        if (cutsceneTextInterval.intervalElapsed() && diagLine < 5 && !engine.isPaused()) {
+            playAtmosphericEntryLine(engine, diagLine);
+            diagLine++;
+
+            if (diagLine == 3 && !showedTitle) {
+                /*
+                SpriteAPI spr = Global.getSettings().getSprite("mission_splash", "armaa_acoc_splash");
+                MagicRender.screenspace(
+                        spr,
+                        MagicRender.positioning.CENTER,
+                        new Vector2f(0, 0),
+                        new Vector2f(0, 0),
+                        new Vector2f((spr.getWidth()), (spr.getHeight())),
+                        new Vector2f(0, 0),
+                        0f,
+                        0f, //spin
+                        new Color(1f, 1f, 1f, 0.9f),
+                        true,
+                        0f,
+                        0f,
+                        0f,
+                        0f,
+                        0f,
+                        1f,
+                        5f,
+                        1f,
+                        CombatEngineLayers.ABOVE_PARTICLES
+                );
+                showedTitle = true;
+                 */
+                String minuteStr = armaa_utils.getMinuteString();
+                Global.getCombatEngine().addLayeredRenderingPlugin(
+                        new armaa_titleSplash("JENIUS - STAGING POINT A  " + Global.getSector().getClock().getHour() + ":" + minuteStr + " | " + Global.getSector().getClock().getDateString(),
+                                " Automated defense perimeter"));
+            }
+        }
+        float viewMult = engine.getViewport().getViewMult();
+        float inv = 1f / viewMult;
+
+        float w = Global.getSettings().getScreenWidth();
+        float h = Global.getSettings().getScreenHeight();
+
+        float diag = (float) Math.sqrt(w * w + h * h);
+        float minCover = diag * 1.05f;
+
+        float base = w * (1.2f + 3f * Math.min(2f, ratio));
+
+        // actual size with zoom response
+        float s1 = base * inv;
+
+        s1 = Math.max(s1, minCover);
+
+        Vector2f bgsize = new Vector2f(s1, s1);
         if (ratio >= 0.1f) {
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo2");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "armaa_atmo2"),
+                    spr,
                     MagicRender.positioning.CENTER,
                     new Vector2f(0, 0),
                     new Vector2f(0, 0),
-                    new Vector2f(Global.getSettings().getScreenWidth() * (1.2f), Global.getSettings().getScreenWidth() * (1.2f)),
+                    bgsize,
                     new Vector2f(0, 0),
                     spin,
                     0f, //spin
@@ -116,18 +214,21 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     CombatEngineLayers.CLOUD_LAYER
             );
         }
-        Color bg2Color = new Color(200, 155, 155, 0);
-        if (ratio < 0.45f) {
+        int a = Math.max(0, 255 - (int) (ratio * 255f));
+        Color bg2Color = new Color(200, 155, 155, a);
+        if (ratio < 0.45f && hidCutscene) {
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
             MagicRender.screenspace(
-                    Global.getSettings().getSprite("misc", "armaa_atmo"),
+                    spr,
                     MagicRender.positioning.CENTER,
                     new Vector2f(0, 0),
                     new Vector2f(0, 0),
-                    new Vector2f(Global.getSettings().getScreenWidth() * (1.2f + 3f * ratio), Global.getSettings().getScreenWidth() * (1.2f + 3f * ratio)),
-                    new Vector2f(50, 50),
+                    bgsize,
+                    new Vector2f(0, 0),
                     spin,
                     0f, //spin
-                    shiftColor(new Color(155, 100, 100, 200), bg2Color, bgStage),
+                    shiftColor(new Color(155, 100, 100, 255), bg2Color, ratio),
                     false,
                     0f,
                     0,
@@ -140,15 +241,272 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     CombatEngineLayers.CLOUD_LAYER
             );
         }
+
+        if (!hidCutscene) {
+            float level = cutsceneInterval.getElapsed() / cutsceneInterval.getIntervalDuration();
+            String spriteName = Global.getSettings().getString("armaa_missionBGs", "armaa_atmo");
+            SpriteAPI spr = Global.getSettings().getSprite(spriteName);
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(0, 0),
+                    new Vector2f(0, 0),
+                    bgsize,
+                    new Vector2f(0, 0),
+                    spin,
+                    0f, //spin
+                    shiftColor(new Color(255, 255, 255, 255), new Color(155, 100, 100, 255), level),
+                    false,
+                    0f,
+                    0,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+            // im using 'spin' for gradual movement
+            // no idea why past me thought to use this var but, it works
+            // this gets jacked up massively by level as the cutscene starts to end
+            // this way, there shouldnt be any bg ships by the time combat actually starts
+            float rawInv = 1f / viewMult;
+            // background size
+            float bgSize = Math.max(base * rawInv, minCover);
+            // THIS is the key value
+            float effectiveInv = bgSize / base;
+            float mult = effectiveInv;
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("valkyrie").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(300 * mult, 200 + spin * 30 + 1000 * level * mult),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * mult, (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("valkyrie").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(-300 * mult, 200 + spin * 30 + 1000 * level * mult),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * mult, (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("dram").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(-200 * mult, -250 + spin * 50 + 1500 * mult * level),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * mult, (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("phaeton").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(0 * mult, 100 + spin * 25 + 1500 * level * mult),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * mult, (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("dram").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(200 * mult, -250 + spin * 50 + 1000 * level * mult),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * mult, (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("falcon").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(-600 * mult, -200 - spin * 55 - 1000 * level * mult),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * mult, (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+            spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("falcon").getSpriteName());
+            MagicRender.screenspace(
+                    spr,
+                    MagicRender.positioning.CENTER,
+                    new Vector2f(600 * mult, -200 - spin * 50 - 1000 * level * mult),
+                    new Vector2f(0, 0),
+                    new Vector2f((spr.getWidth() / 4f) * (mult), (spr.getHeight() / 4f) * mult),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0.5f, 0.5f, 0.75f, 1f),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.CLOUD_LAYER
+            );
+        }
+        if (engine.isFleetsInContact()) {
+            cutsceneOver = true;
+        }
+        if (cutsceneOver && hidCutscene == false && cutsceneInterval.intervalElapsed()) {
+            engine.getCombatUI().reFanOutShipInfo();
+            hidCutscene = true;
+        }
+        if (!cutsceneInterval.intervalElapsed()) {
+            if (!engine.isPaused() && engine.isFleetsInContact() && !hidCutscene) {
+                cutsceneInterval.advance(amount);
+            }
+            float level = cutsceneInterval.getElapsed() / cutsceneInterval.getIntervalDuration();
+            MagicRender.screenspace(
+                    Global.getSettings().getSprite("misc", "armaa_cutscene"),
+                    MagicRender.positioning.LOW_LEFT,
+                    new Vector2f(0, 0),
+                    new Vector2f(0, 0),
+                    new Vector2f(Global.getSettings().getScreenWidth() * 4f, Global.getSettings().getScreenHeight() / 4f - (Global.getSettings().getScreenHeight() / 4) * level),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0f, 0f, 0f, Math.max(0f, 1f - 1f * level)),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.ABOVE_PARTICLES
+            );
+            MagicRender.screenspace(
+                    Global.getSettings().getSprite("misc", "armaa_cutscene"),
+                    MagicRender.positioning.UP_LEFT,
+                    new Vector2f(0, Global.getSettings().getScreenHeight()),
+                    new Vector2f(0, 0),
+                    new Vector2f(Global.getSettings().getScreenWidth() * 4f, -Global.getSettings().getScreenHeight() / 4 + (Global.getSettings().getScreenHeight() / 4) * level),
+                    new Vector2f(0, 0),
+                    0f,
+                    0f, //spin
+                    new Color(0f, 0f, 0f, Math.max(0f, 1f - 1f * level)),
+                    false,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    -1,
+                    0f,
+                    CombatEngineLayers.ABOVE_PARTICLES
+            );
+        }
         if (bgStage > 0.50f) {
+            if (!startedFade) {
+                fx.beginFadeOut();
+                startedFade = true;
+            }
+            viewMult = engine.getViewport().getViewMult();
+            float rawInv = 1f / viewMult;
+            // background size
+            // THIS is the key value
             float size = Math.min(1f, (bgStage) - 0.50f);
             SpriteAPI spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("station_derelict_survey_mothership").getSpriteName());
             MagicRender.screenspace(
                     spr,
                     MagicRender.positioning.CENTER,
-                    new Vector2f(500 - (500 * size), 0),
+                    new Vector2f(500 * rawInv - 500 * size * rawInv, 0),
                     new Vector2f(0, 0),
-                    new Vector2f(spr.getWidth() * size, spr.getHeight() * size),
+                    new Vector2f(spr.getWidth() * 2f * size * rawInv, spr.getHeight() * 2f * size * rawInv),
                     new Vector2f(0, 0),
                     -spin * 3,
                     0f,
@@ -174,7 +532,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         MagicRender.positioning.CENTER,
                         new Vector2f(500 - (500 * size) - (1000 * rate), 0),
                         new Vector2f(0, 0),
-                        new Vector2f((spr.getWidth() / 12), (spr.getHeight() / 12)),
+                        new Vector2f((spr.getWidth() / 6), (spr.getHeight() / 6)),
                         new Vector2f(0, 0),
                         0 + (45f * size),
                         0f,
@@ -194,7 +552,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         }
         if (!engine.isPaused()) {
 
-            ratio = (float) (engine.getElapsedInContactWithEnemy() / 100);
+            ratio = (float) Math.min(5f, (engine.getElapsedInContactWithEnemy() / 100));
 
             if (!stationAlive) {
                 if (ratioMod >= 0f) {
@@ -206,16 +564,24 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                 ratioMod = 0f;    // Reset `ratioMod` to prevent locking when station is alive
             }
             bgStage = ratio;
-            engine.setBackgroundGlowColor(shiftColor(startColor, endColor, ratio));
+            float level = cutsceneInterval.getElapsed() / cutsceneInterval.getIntervalDuration();
+            if (hidCutscene) {
+                engine.setBackgroundGlowColor(shiftColor(startColor, endColor, ratio));
+            } else {
+                engine.setBackgroundGlowColor(shiftColor(new Color(0, 0, 0, 0), startColor, level));
+            }
             interval3.advance(amount);
+            bgInterval.advance(amount);
+            spinInterval.advance(amount);
             float mult = engine.getViewport().getViewMult();
             //Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem3", "graphics/ui/icons/icon_repair_refit.png", "mult",""+ ratio,false);
             float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
             float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport
             float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
             float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport
-            spin += amount / 2;
-
+            if (spinInterval.intervalElapsed()) {
+                spin += 0.02f;
+            }
             ShipAPI bossEne = null;
             if (engine.getCustomData().containsKey("armaa_atmo_boss")) {
                 bossEne = (ShipAPI) engine.getCustomData().get("armaa_atmo_boss");
@@ -247,7 +613,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     engine.getFleetManager(0).spawnShipOrWing("brawler_pather_Raider", new Vector2f(100, -10000), 0f, 10f);
                 }
             }
-            if ((bgStage >= 0.20f || engine.getFleetManager(1).getCurrStrength() <= 0f) && !spawnedBoss && !stationAlive) {
+            if ((bgStage >= 1.2f || engine.getFleetManager(1).getCurrStrength() <= 0f) && !spawnedBoss && !stationAlive) {
                 // Apparently this can be the case
                 //if (Misc.getAICoreOfficerPlugin(ITEM) != null) {
                 //	return;
@@ -256,19 +622,12 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                 //Global.getSoundPlayer().pauseCustomMusic();
                 battleStr = engine.getFleetManager(0).getCurrStrength();
                 PersonAPI pilot = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, "remnant", new Random());
-                String bossStr = "armaa_valkenx_ss_boss";
-                String chaffStr = "armaa_valkenx_ss_IK";
-                boolean haveNex = Global.getSettings().getModManager().isModEnabled("nexerelin");
-                if (haveNex && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId") != null && Global.getSector().getPlayerMemoryWithoutUpdate().get("$nex_startingFactionId").equals("armaarmatura_pirates")) {
-                    bossStr = "armaa_leynos_cc_standard";
-                    chaffStr = "armaa_valkenx_frig_assault";
+                String bossStr = "hyperion_Attack";
+                if (engine.getPlayerShip() != null) {
+                    engine.addFloatingText(engine.getPlayerShip().getLocation(), "Reinforcements approaching from the north and soutj!", 36f, Color.yellow, engine.getPlayerShip(), 1f, 1f);
                 }
                 ShipAPI boss = engine.getFleetManager(1).spawnShipOrWing(bossStr, new Vector2f(0, 10000), 270f, 0f);
-                engine.getFleetManager(1).spawnShipOrWing(chaffStr, new Vector2f(-100, 10000), 270f, 5f);
-                engine.getFleetManager(1).spawnShipOrWing(chaffStr, new Vector2f(100, 10000), 270f, 5f);
-                engine.getFleetManager(1).spawnShipOrWing("brawler_tritachyon_Standard", new Vector2f(-100, -10000), 270f, 5f);
-                engine.getFleetManager(1).spawnShipOrWing("brawler_tritachyon_Standard", new Vector2f(100, -10000), 270f, 5f);
-                engine.getFleetManager(1).spawnShipOrWing("brawler_tritachyon_Standard", new Vector2f(100, -10000), 270f, 5f);
+                engine.getFleetManager(1).spawnShipOrWing("armaa_morgana_wing", new Vector2f(-100, 10000), 270f, 5f);
                 boss.setCaptain(pilot);
                 Global.getSoundPlayer().playUISound("cr_playership_critical", 0.67f, 10f);
                 engine.getCombatUI().addMessage(1, boss, Color.red, boss.getName(), Color.white, ":", Color.cyan, "Unknown IFF detected; offworld origin. You've entered restricted space. Power down your weapons and surrender immediately, or face swift destruction. This is your only warning.");
@@ -279,7 +638,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
             if (engine.getCustomData().containsKey("armaa_atmo_boss")) {
                 boss = (ShipAPI) engine.getCustomData().get("armaa_atmo_boss");
             }
-            
+
             if (boss != null && boss.isAlive() && (!bossLine1 || !bossLine2 || !bossLine3 || !firstContact)) {
                 if (!firstContact && boss.areAnyEnemiesInRange()) {
                     //Global.getSoundPlayer().playCustomMusic(0,0,"music_armaa_pirate_encounter_hostile",true);
@@ -411,7 +770,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                 }
                 if (Math.random() <= 0.50 && ratio > 0.10f && ratio < 0.80f) {
                     MagicRender.battlespace(
-                            Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+                            Global.getSettings().getSprite("misc", "armaa_atmo_cloud2"),
                             new Vector2f(MathUtils.getRandomNumberInRange(minX, maxX), engine.getViewport().getCenter().y + engine.getViewport().getVisibleHeight()),
                             new Vector2f(xVel, -MathUtils.getRandomNumberInRange(800, 1000) * mult),
                             new Vector2f(MathUtils.getRandomNumberInRange(cloudSize * 1.25f, cloudSize * 3f), MathUtils.getRandomNumberInRange(cloudSize * 1.25f, cloudSize * 3f)),
@@ -447,7 +806,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     new Vector2f(0, 0),
                     new Vector2f(enemySpr.getWidth() * rate, enemySpr.getWidth() * rate),
                     new Vector2f(0, 0),
-                    -10f,
+                    0f,
                     0f,
                     new Color(0.5f * rate, 0.5f * rate, 0.5f * rate, 1f),
                     false,
@@ -457,26 +816,21 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     0f,
                     0f,
                     0f,
-                    -1,
+                    amount,
                     0f,
-                    CombatEngineLayers.CLOUD_LAYER
+                    CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
             );
         }
         if (!engine.isPaused()) {
             interval.advance(amount);
             attackInterval.advance(amount);
 
-            if (attackInterval.intervalElapsed() && bgStage > 0.10f) {
-                float minX = engine.getViewport().getLLX(); // Leftmost X-coordinate of the viewport
-                float maxX = engine.getViewport().getLLX() + engine.getViewport().getVisibleWidth(); // Rightmost X-coordinate of the viewport
-                float minY = engine.getViewport().getLLY(); // Leftmost X-coordinate of the viewport
-                float maxY = engine.getViewport().getLLY() + engine.getViewport().getVisibleHeight(); // Rightmost X-coordinate of the viewport
-                Random rand = new Random();
-                ShipAPI nearbyShip = engine.getShips().get(rand.nextInt(engine.getShips().size()));
-                Vector2f altVector = new Vector2f(0, -10000);
+            if (attackInterval.intervalElapsed() && bgStage > 0.10f) { // Leftmost X-coordinate of the viewport
+                // Leftmost X-coordinate of the viewport
+                Vector2f altVector = new Vector2f(MathUtils.getRandomNumberInRange(-10000, 10000), MathUtils.getRandomNumberInRange(-10000, 10000));
                 for (int i = 0; i < 1; i++) {
                     if (warning && bgStage < 0.60f) {
-                        vec = nearbyShip != null ? new Vector2f(MathUtils.getRandomPointInCircle(nearbyShip.getLocation(), 2000f)) : altVector;
+                        vec = altVector;
                         MagicRender.battlespace(
                                 Global.getSettings().getSprite("ceylon", "armaa_ceylontarget"),
                                 vec,
@@ -493,7 +847,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                                 0f,
                                 0f,
                                 0.2f,
-                                2f,
+                                1f,
                                 0.5f,
                                 CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
                         );
@@ -513,34 +867,12 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                                 0f,
                                 0f,
                                 0.2f,
-                                2f,
+                                1f,
                                 0.5f,
                                 CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
                         );
                         warning = false;
                         engine.getCustomData().put("armaa_atmoWarningLoc" + i, vec);
-                        float size = (ratio) - 0.50f;
-                        SpriteAPI spr = Global.getSettings().getSprite(Global.getSettings().getHullSpec("warden").getSpriteName());
-                        MagicRender.battlespace(
-                                spr,
-                                engine.getViewport().getCenter(),
-                                new Vector2f(-500, 0),
-                                new Vector2f(spr.getWidth() * 0.25f, spr.getHeight() * 0.25f),
-                                new Vector2f(0, 0),
-                                45f,
-                                0f,
-                                new Color(0.5f, 0.5f, 0.5f, 1f),
-                                false,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                -1,
-                                0f,
-                                CombatEngineLayers.BELOW_SHIPS_LAYER
-                        );
                     } else if (!warning && bgStage < 0.60f) {
 
                         for (ShipAPI ship : engine.getShips()) {
@@ -561,92 +893,218 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                 }
 
             }
-            for (CombatEntityAPI asteroid : engine.getAsteroids()) {
-                if (ratio > 0.3) {
-                    engine.removeEntity(asteroid);
+            if (bgInterval.intervalElapsed()) {
+                for (CombatEntityAPI asteroid : engine.getAsteroids()) {
+                    if (ratio > 0.3) {
+                        engine.removeEntity(asteroid);
+                    }
                 }
             }
             for (ShipAPI ship : engine.getShips()) {
-                float velX = ship.getVelocity().getX();
-                float velY = ship.getVelocity().getY();
-                if (MagicRender.screenCheck(0.05f, ship.getLocation()) && interval.intervalElapsed() && !ship.isFighter()) {
-                    if (Math.random() <= 1f - ratio && ratio >= 0.20f && ratio <= 0.60f) {
-                        MagicRender.battlespace(
-                                Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-                                MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()),
-                                new Vector2f(MathUtils.getRandomNumberInRange(-ship.getCollisionRadius() * 5, ship.getCollisionRadius() * 5) + velX, (-MathUtils.getRandomNumberInRange(600, 800) + velY) * (1f - ratio)),
-                                new Vector2f(MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2, ship.getCollisionRadius() * 3), MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 3f, ship.getCollisionRadius() * 4f)),
-                                new Vector2f(ship.getCollisionRadius(), ship.getCollisionRadius() * 3f),
-                                0f,
-                                0f,
-                                shiftColor(getBrighterReentryColor(0.3f), getBrighterReentryColor(1f), bgStage + 0.40f),
-                                true,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0.1f,
-                                Math.max(0.1f, (1f - ratio) - 0.5f),
-                                0.1f,
-                                CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
-                        );
-                    }
-                    if (Math.random() <= 1f - ratio && ratio >= 0.15f && ratio <= 0.70f) {
-                        MagicRender.battlespace(
-                                Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
-                                MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()),
-                                new Vector2f(MathUtils.getRandomNumberInRange(-ship.getCollisionRadius() * 5, ship.getCollisionRadius() * 5) + velX, (-MathUtils.getRandomNumberInRange(600, 800) + velY) * (1f - ratio)),
-                                new Vector2f(MathUtils.getRandomNumberInRange(ship.getCollisionRadius(), ship.getCollisionRadius() * 3), MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2f, ship.getCollisionRadius() * 4f)),
-                                new Vector2f(ship.getCollisionRadius(), ship.getCollisionRadius() * 3f),
-                                0f,
-                                0f,
-                                shiftColor(getRandomBottomCloudColor(0.1f), new Color(0.5f, 0.5f, 0.5f, 0f), bgStage + 0.20f),
-                                false,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0f,
-                                0.1f,
-                                Math.max(0.1f, (1f - ratio) - 0.5f),
-                                0.1f,
-                                CombatEngineLayers.BELOW_SHIPS_LAYER
-                        );
-                    }
-                }
-                if (stationAlive && ship.getName() != null && ship.getName().equals("GR340959F") && ship.isCapital() && ship.getHullLevel() > 0.50f) {
+                if (stationAlive && ship.getName() != null && ship.getName().equals("Damaged Guardian") && ship.isCapital() && ship.getHullLevel() > 0.50f) {
                     ship.setHitpoints(ship.getHitpoints() * 0.65f);
                     ship.setCurrentCR(0.50f);
                 }
 
-                if (stationAlive && ship.getName() != null && ship.getName().equals("GR340959F")) {
+                if (stationAlive && ship.getName() != null && ship.getName().equals("Damaged Guardian")) {
                     if (!ship.isAlive() || ship.isHulk() || !engine.isEntityInPlay(ship) || Global.getSector().getMemoryWithoutUpdate().get("$armaa_killedJeniusGuardian") != null) {
                         stationAlive = false;
                         Global.getSector().getMemoryWithoutUpdate().set("$armaa_killedJeniusGuardian", true);
                         Global.getSoundPlayer().playUISound("cr_allied_critical", 0.77f, 10f);
+                        fx = new armaa_ReentryEffect();
+                        Global.getCombatEngine().addLayeredRenderingPlugin(fx);
                         engine.getCombatUI().addMessage(1, ship, Color.white, "Obstacle eliminated. Proceeding into lower orbit...");
                         if (!ship.isAlive()) {
                             engine.removeEntity(ship);
                         }
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(0, -7000), 270f, 0f);
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(0, -7000), 270f, 0f);
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(7000, -7000), 270f, 0f);
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(-7000, -7000), 270f, 0f);
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(-7000, -6000), 270f, 0f);
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(-7000, -5000), 270f, 0f);
-                        engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(-7000, -4000), 270f, 0f);
+                        if (engine.getPlayerShip() != null) {
+                            engine.addFloatingText(engine.getPlayerShip().getLocation(), "Reinforcements approaching from below us! South!", 36f, Color.yellow, engine.getPlayerShip(), 1f, 1f);
+                        }
+                        for (int i = 0; i < 3; i++) {
+                            float randomPosX = MathUtils.getRandomNumberInRange(-10000f, 10000f);
+                            float randomPosY = MathUtils.getRandomNumberInRange(-10000f, 10000f);
+                            ShipAPI s = engine.getFleetManager(1).spawnShipOrWing("warden_Defense", new Vector2f(randomPosX, randomPosY), 270f, 0f);
+                            s.setAnimatedLaunch();
+                            s = engine.getFleetManager(1).spawnShipOrWing("talon_wing", new Vector2f(randomPosX, randomPosY), 270f, 0f);
+                            s.setAnimatedLaunch();
+
+                        }
 
                     }
                 }
-
+                // early out aggressively
                 if (!ship.isAlive() || ship.isHulk() || !engine.isEntityInPlay(ship)) {
                     engine.removeEntity(ship);
+                    continue;
                 }
-                ship.getMutableStats().getMaxSpeed().modifyMult(ship.getId() + "_atmo", (float) MANUVER_MALUS.get(ship.getHullSize()));
-                ship.getMutableStats().getMaxTurnRate().modifyMult(ship.getId() + "_atmo", (float) MANUVER_MALUS.get(ship.getHullSize()));
-                ship.getMutableStats().getAcceleration().modifyMult(ship.getId() + "_atmo", (float) MANUVER_MALUS.get(ship.getHullSize()));
-                ship.getMutableStats().getTurnAcceleration().modifyMult(ship.getId() + "_atmo", (float) MANUVER_MALUS.get(ship.getHullSize()));
+                if (ship.getStationSlot() != null) {
+                    continue;
+                }
+                float velX = ship.getVelocity().getX();
+                float velY = ship.getVelocity().getY();
+                float id = 0;
+                float id2 = 0;
+                if (ship.getCustomData().get("trail_id") == null) {
+                    id = MagicTrailPlugin.getUniqueID();
+                    ship.getCustomData().put("trail_id", id);
+                    id2 = MagicTrailPlugin.getUniqueID();
+                    ship.getCustomData().put("trail_id2", id2);
+                } else {
+                    id = (Float) ship.getCustomData().get("trail_id");
+                    id2 = (Float) ship.getCustomData().get("trail_id2");
+                }
+
+                float r = ship.getCollisionRadius();
+                float rearDist = r * 0.7f;
+                float sideDist = r * 0.55f;
+
+                Vector2f rearDir = Misc.getUnitVectorAtDegreeAngle(ship.getFacing() + 180f);
+                Vector2f rightDir = Misc.getUnitVectorAtDegreeAngle(ship.getFacing() + 90f); // use -90f if mirrored
+
+                Vector2f leftPos = new Vector2f(
+                        ship.getLocation().x + rearDir.x * rearDist - rightDir.x * sideDist,
+                        ship.getLocation().y + rearDir.y * rearDist - rightDir.y * sideDist
+                );
+
+                Vector2f rightPos = new Vector2f(
+                        ship.getLocation().x + rearDir.x * rearDist + rightDir.x * sideDist,
+                        ship.getLocation().y + rearDir.y * rearDist + rightDir.y * sideDist
+                );
+
+                float speed = ship.getVelocity().length();
+
+                if (MagicRender.screenCheck(0.05f, ship.getLocation()) && interval.intervalElapsed() && !ship.isFighter()) {
+                    if (ratio > 0.45f) {
+                        MagicTrailPlugin.AddTrailMemberSimple(ship, id, Global.getSettings().getSprite("fx", "beam_trail_cel"), leftPos, speed, ship.getFacing() + 180f + 12f, 1f, 10f, new Color(150, 150, 150, 225), 0.8f, 0.1f, 1f, 0.6f, true);
+                        MagicTrailPlugin.AddTrailMemberSimple(ship, id + 1, Global.getSettings().getSprite("fx", "beam_trail_cel"), rightPos, speed, ship.getFacing() + 180f - 12f, 1f, 10f, new Color(150, 150, 150, 225), 0.8f, 0.1f, 1f, 0.6f, true);
+                    }
+
+                    float facingRad = (float) Math.toRadians(ship.getFacing());
+                    float cosF = (float) Math.cos(facingRad);
+                    float sinF = (float) Math.sin(facingRad);
+
+                    Vector2f nosePos = new Vector2f(
+                            ship.getLocation().x + cosF * r * 0.6f,
+                            ship.getLocation().y + sinF * r * 0.6f
+                    );
+
+                    float spawnOffset = MathUtils.getRandomNumberInRange(0f, r * 0.4f);
+                    Vector2f fireSpawn = new Vector2f(
+                            nosePos.x - cosF * spawnOffset,
+                            nosePos.y - sinF * spawnOffset
+                    );
+
+                    float trailSpeed = MathUtils.getRandomNumberInRange(600, 900);
+                    float spread = (float) (Math.random() - 0.5f) * r * 3f;
+                    float fireVx = -cosF * trailSpeed + sinF * spread + velX;
+                    float fireVy = -sinF * trailSpeed - cosF * spread + velY;
+
+                    float smokeOffset = MathUtils.getRandomNumberInRange(r * 0.3f, r * 1.5f);
+                    Vector2f smokeSpawn = new Vector2f(
+                            nosePos.x - cosF * smokeOffset,
+                            nosePos.y - sinF * smokeOffset
+                    );
+                    float smokeSpeed = MathUtils.getRandomNumberInRange(200, 500);
+                    float smokeVx = -cosF * smokeSpeed + velX;
+                    float smokeVy = -sinF * smokeSpeed + velY;
+
+                    if (Math.random() <= 1f - ratio && ratio >= 0.20f && ratio <= 0.60f) {
+                        MagicRender.battlespace(
+                                Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+                                fireSpawn,
+                                new Vector2f(fireVx, fireVy),
+                                new Vector2f(
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2f, ship.getCollisionRadius() * 3f),
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 3f, ship.getCollisionRadius() * 4f)
+                                ),
+                                new Vector2f(ship.getCollisionRadius() * 0.3f, ship.getCollisionRadius() * 0.3f),
+                                0f,
+                                0f,
+                                shiftColor(getBrighterReentryColor(0.3f), new Color(0.5f, 0.5f, 0.5f, 1f - ratio), bgStage + 0.40f),
+                                true,
+                                0f, 0f, 0f, 0f, 0f,
+                                0.05f,
+                                Math.max(0.1f, (1f - ratio) - 0.4f),
+                                0.1f,
+                                CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER
+                        );
+                    }
+
+                    if (Math.random() <= 1f - ratio - 0.15f && ratio >= 0.15f && ratio - 0.15f <= 0.70f) {
+                        MagicRender.battlespace(
+                                Global.getSettings().getSprite("misc", "armaa_atmo_cloud"),
+                                smokeSpawn,
+                                new Vector2f(smokeVx, smokeVy),
+                                new Vector2f(
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius(), ship.getCollisionRadius() * 3f),
+                                        MathUtils.getRandomNumberInRange(ship.getCollisionRadius() * 2f, ship.getCollisionRadius() * 4f)
+                                ),
+                                new Vector2f(ship.getCollisionRadius() * 1.5f, ship.getCollisionRadius() * 1.5f),
+                                0f,
+                                0f,
+                                shiftColor(getRandomBottomCloudColor(0.1f), new Color(0.5f, 0.5f, 0.5f, 1f - ratio), bgStage + 0.20f),
+                                false,
+                                0f, 0f, 0f, 0f, 0f,
+                                0.1f,
+                                Math.max(0.1f, (1f - ratio) - 0.3f),
+                                0.2f,
+                                CombatEngineLayers.BELOW_SHIPS_LAYER
+                        );
+                    }
+
+                    if (ratio >= 0.20f && ratio <= 0.60f && interval.intervalElapsed()) {
+                        float minParticleSize = 8f; // never smaller than this regardless of ship size    
+                        float particleSpeed = MathUtils.getRandomNumberInRange(800f, 1400f);
+                        spread = (float) (Math.random() - 0.5f) * r * 0.4f;
+
+                        // Tight bright core particle
+                        for (int i = 0; i < 3; i++) {
+                            float s = (float) (Math.random() - 0.5f) * r * 0.3f;
+                            Global.getCombatEngine().addSmoothParticle(
+                                    new Vector2f(nosePos.x + sinF * s, nosePos.y - cosF * s), // slight lateral spread
+                                    new Vector2f(
+                                            -cosF * (particleSpeed + MathUtils.getRandomNumberInRange(-200f, 200f)) + velX,
+                                            -sinF * (particleSpeed + MathUtils.getRandomNumberInRange(-200f, 200f)) + velY
+                                    ),
+                                    MathUtils.getRandomNumberInRange(
+                                            Math.max(minParticleSize, r * 0.05f),
+                                            Math.max(minParticleSize * 2f, r * 0.15f)
+                                    ),
+                                    MathUtils.getRandomNumberInRange(0.6f, 1.0f), // brightness
+                                    MathUtils.getRandomNumberInRange(0.2f, 0.5f), // lifetime
+                                    shiftColor(new Color(1.0f, 0.8f + (float) Math.random() * 0.2f, 0.3f, 1f), new Color(0.5f, 0.5f, 0.5f, 1f - ratio), bgStage) // white-yellow
+                            );
+                        }
+
+                        // Outer plasma particle
+                        for (int i = 0; i < 2; i++) {
+                            float s = (float) (Math.random() - 0.5f) * r * 0.8f;
+                            Global.getCombatEngine().addSmoothParticle(
+                                    new Vector2f(nosePos.x + sinF * s, nosePos.y - cosF * s),
+                                    new Vector2f(
+                                            -cosF * (particleSpeed * 0.6f + MathUtils.getRandomNumberInRange(-100f, 100f)) + velX,
+                                            -sinF * (particleSpeed * 0.6f + MathUtils.getRandomNumberInRange(-100f, 100f)) + velY
+                                    ),
+                                    MathUtils.getRandomNumberInRange(
+                                            Math.max(minParticleSize * 1.5f, r * 0.1f),
+                                            Math.max(minParticleSize * 3f, r * 0.25f)
+                                    ),
+                                    MathUtils.getRandomNumberInRange(0.4f, 0.8f),
+                                    MathUtils.getRandomNumberInRange(0.3f, 0.7f),
+                                    new Color(1.0f, 0.3f + (float) Math.random() * 0.2f, 0.0f, 1f)
+                            );
+                        }
+                    }
+                }
+
+                String key = ship.getId() + "_atmo";
+                if (!ship.getMutableStats().getMaxSpeed().getMultMods().containsKey(key)) {
+                    float malus = (float) MANUVER_MALUS.get(ship.getHullSize());
+                    ship.getMutableStats().getMaxSpeed().modifyMult(key, malus);
+                    ship.getMutableStats().getMaxTurnRate().modifyMult(key, malus);
+                    ship.getMutableStats().getAcceleration().modifyMult(key, malus);
+                    ship.getMutableStats().getTurnAcceleration().modifyMult(key, malus);
+                }
                 Global.getCombatEngine().maintainStatusForPlayerShip("atmo", "graphics/ui/icons/icon_repair_refit.png", "In Atmoshpere", "Manuverability reduced", true);
             }
         }
@@ -667,7 +1125,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     // Method to generate a random color for the bottom (darker) cloud layer
     private Color getRandomBottomCloudColor(float ratio) {
         Random rand = new Random();
-        float r = rand.nextFloat() * 0.15f + 0.1f; // Random red value from 0 to 1
+        float r = rand.nextFloat() * 0.25f + 0.1f; // Random red value from 0 to 1
         float g = rand.nextFloat() * 0.05f; // Random green value from 0.35 to 1.0 for yellow-orange range
         float b = rand.nextFloat() * 0.05f; // Random blue value from 0 to 0.5 for warmer, less cool tones
 
@@ -687,8 +1145,58 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
         return new Color(r, g, b, 1.0f - ratio);
     }
 
+    public static void playAtmosphericEntryLine(CombatEngineAPI engine, int id) {
+        /*
+        switch (id) {
+            case 0:
+                engine.getCombatUI().addMessage(
+                        1, Global.getSettings().getColor("yellowTextColor"), "Strike Wing Sigma-3: ", Color.white,
+                        "Sigma-3 on approach. Moving ahead to the target bombardment area."
+                );
+                break;
+
+            case 1:
+                engine.getCombatUI().addMessage(
+                        1, Global.getSettings().getColor("yellowTextColor"), "Kade: ", Color.white,
+                        "Stay on auto-burn. " + Global.getSector().getPlayerPerson().getName().getLast() + " will handle anything headed our way"
+                );
+                break;
+
+            case 2:
+                engine.getCombatUI().addMessage(
+                        1, Global.getSettings().getColor("yellowTextColor"), "Strike Wing Sigma-3: ", Color.white,
+                        "Copy. Drones are tightening the noose... something big behi-"
+                );
+                break;
+
+            case 3:
+                engine.getCombatUI().addMessage(
+                        1, Global.getSettings().getColor("yellowTextColor"), "Strike Wing Sigma-3: ", Color.white,
+                        "[SIGNAL LOST]"
+                );
+                break;
+
+            case 4:
+                engine.getCombatUI().addMessage(
+                        1, Global.getSettings().getColor("yellowTextColor"), "Kade: ", Color.white,
+                        "Other task groups are in contact. Stick to the drop, Captain " + Global.getSector().getPlayerPerson().getName().getLast() + "."
+                );
+                break;
+
+            default:
+                // Fallback line if ID isn't valid
+                engine.getCombatUI().addMessage(
+                        1, "OPSDIR:", Color.white,
+                        "Hold steady."
+                );
+                break;
+         */
+        //}
+    }
+
     @Override
     public void init(CombatEngineAPI engine) {
         this.engine = engine;
+        armaa_utils.loadMissionTextures(MISSION_TEXTURES_ATMO);
     }
 }

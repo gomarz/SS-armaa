@@ -31,7 +31,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "armaa_valkenHead_black"
+        "TRUE_GUN": "armaa_record_head"
       }
     },
     {

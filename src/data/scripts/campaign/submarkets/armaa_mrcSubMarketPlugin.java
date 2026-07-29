@@ -53,7 +53,7 @@ public class armaa_mrcSubMarketPlugin extends BaseSubmarketPlugin {
 
             FactionDoctrineAPI doctrineOverride = submarket.getFaction().getDoctrine().clone();
             addShips(submarket.getFaction().getId(),
-                    225f, // combat
+                    300f, // combat
                     0f, // freighter
                     0f, // tanker
                     0f, // transport

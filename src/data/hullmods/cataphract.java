@@ -104,15 +104,6 @@ public class cataphract extends BaseHullMod {
 
     @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
-        float level = member.getCaptain().isDefault() ? 1 : member.getCaptain().getStats().getLevel() * 1.5f;
-
-        if (member.getRepairTracker().getBaseCR() >= getCRPenalty(member.getVariant())) {
-            if (GROUND_BONUS.get(member.getHullSpec().getBaseHullId()) != null) {
-                member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).modifyFlat("id", GROUND_BONUS.get(member.getHullSpec().getBaseHullId()) + level);
-            }
-        } else {
-            member.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).modifyFlat("id", GROUND_BONUS_DEFAULT + level);
-        }
     }
 
     @Override

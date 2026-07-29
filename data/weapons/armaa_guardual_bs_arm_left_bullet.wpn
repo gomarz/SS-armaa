@@ -1,0 +1,54 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "autocharge": false,
+  "barrelMode": "ALTERNATING",
+  #"everyFrameEffect": "",
+  "fireSoundTwo": "",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "graphics/fx/empty.png",
+  "id": "armaa_guardual_bs_arm_left_bullet",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 10,
+    "particleColor": [
+      255,
+      235,
+      150,
+      235
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.03,
+    "particleSizeMin": 11,
+    "particleSizeRange": 5,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "armaa_guardual_blade_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "showDamageWhenDecorative": true,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    -1
+  ],
+  "turretGunSprite": "graphics/fx/empty.png",
+  "turretOffsets": [
+    22,
+    18.5
+  ],
+  "turretSprite": "graphics/fx/empty.png",
+  "type": "ENERGY",
+  "visualRecoil": 5
+}

@@ -3,24 +3,25 @@
   "hullId": "armaa_morganamp",
   "displayName": "Standard",
   "goalVariant": false,
-  "fluxCapacitors": 7,
-  "fluxVents": 10,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
   "quality": 1,
   "permaMods": [],
-  "hullMods": [
-    "hardenedshieldemitter",
-    "eccm"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "sabot",
-        "TRUE_GUN2": "sabot",
-        "WS0003": "lightag",
-        "WS0004": "lightag"
+        "TRUE_GUN": "swarmer",
+        "TRUE_GUN2": "swarmer",
+        "WS0003": "pdburst_fighter"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "modules": [],

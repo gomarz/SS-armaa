@@ -18,6 +18,7 @@
 	"knownShips":{
 		"hulls":[	
 				"armaa_einhander",
+				"armaa_viator",
 				"armaa_altagrave",
 				"armaa_aleste_frig",
 				"armaa_leynos_frig",
@@ -34,7 +35,6 @@
 			"armaa_kouto_wing",
 			"armaa_valkenx_wing",
 			"armaa_aleste_wing",
-			"armaa_gallant_wing",
 			"armaa_record_wing"
 		],
 	},

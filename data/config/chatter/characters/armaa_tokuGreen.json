@@ -1,0 +1,85 @@
+{
+	"name":"armaa_tokuGreen",
+	"personalities":["reckless", "aggressive"],
+	"gender":["m","f"],
+	"chance":0,
+	"talkativeness":1.75,
+	"categoryTags":["armaa"],
+
+	"lines":{
+		"start":[
+			{"text":"Watch closely! This is what the strongest looks like!"},
+			{"text":"Finally! Entertain me!"},
+			{"text":"The one gracing your battlefield today is Green. A cool guy."},
+			{"text":"Don't expect my best. Winning doesn't require it."},
+			{"text":"You're welcome in advance!"},
+			{"text":"Nobody die out there! It's the one thing I won't forgive!"},
+		],
+		"start_boss":[
+			{"text":"Ooh, a big one! Mine! MINE! Nobody touch it!"},
+			{"text":"Finally, something worth my time!"},
+		],
+		"retreat":[
+			{"text":"This battle is boring. I'm leaving."},
+			{"text":"I'm not retreating, I'm done. There's a difference."},
+			{"text":"This one doesn't count!"},
+		],
+		"victory":[
+			{"text":"See?! SEE?! Who did that? I did that!"},
+			{"text":"All me. Write it down. All. Me."},
+			{"text":"The strongest wins again! Hahahaha!"},
+			{"text":"Gahahahaha. It's my right as the winner. If that bothers you, then get stronger and win!!"},
+		],
+		"victory_boss":[
+			{"text":"The big one was mine! That doubles my share. That's a rule now."},
+			{"text":"Remember what you saw here today!"},
+		],
+		"pursuing":[
+			{"text":"Running from ME? Insulting! Get back here!"},
+			{"text":"No escaping! Your defeat belongs to me!"},
+		],
+		"running":[
+			{"text":"I'm not running! I'm making them chase me! It's a technique!"},
+			{"text":"Too many, even for-- no. No, wait. Still fine. Mostly fine!"},
+		],
+		"need_help":[
+			{"text":"Oi! Come watch me win! ...Quickly!"},
+			{"text":"I don't NEED help. But you're allowed to assist!"},
+			{"text":"Get over here! I'm sharing glory today only!"},
+		],
+		"out_of_missiles":[
+			{"text":"Empty?! Who loaded this thing?! Unacceptable!"},
+			{"text":"Out already? I demand bigger racks!"},
+		],
+		"engaged":[
+			{"text":"Me! You get to fight ME! Lucky you!"},
+			{"text":"Try to be interesting!"},
+{"text":"This is an act of justice."},
+	{"text":"GREEN ATTACK!"},
+	{"text":"GREEN ATTACK! Again!"},
+	{"text":"GREEN... SPECIAL!"},
+		],
+		"hull_90":[
+			{"text":"HEY! Do you know what this paint costs?!"},
+			{"text":"You dented me. That's a fee."},
+			{"text":"Hitting me? Do you know who- no. Clearly you don't. Allow me to educate you."},
+		],
+		"hull_50":[
+			{"text":"Damn rude enemies, shooting whenever they want. Don't they know who keeps this sector interesting?"},
+			{"text":"Okay. OKAY. Now I'm actually annoyed."},
+		],
+		"hull_30":[
+			{"text":"Let's review why this is happening. Red's incompetent. Blue's incompetent. The client's incompetent. ...Yes. That explains it."},
+			{"text":"WHAT IS YOUR PROBLEM, UNIVERSE?!"},
+		],
+		"overload":[
+			{"text":"Not fair! Objection! OBJECTION!"},
+			{"text":"Stupid flux! Stupid ship! One second!"},
+		],
+		"death":[
+			{"text":"This doesn't count! I demand a remat--"},
+			{"text":"Ejecting! For the record, I was winning!"},
+			{"text":"You all saw NOTHING--"},
+		],
+	}
+}

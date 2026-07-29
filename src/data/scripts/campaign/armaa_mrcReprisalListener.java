@@ -5,7 +5,6 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
-import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import java.util.List;
 import java.util.Map;
@@ -16,12 +15,8 @@ import data.scripts.campaign.intel.armaa_reprisalIntel;
 import lunalib.lunaSettings.LunaSettings;
 
 public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScript {
-    //Logger log = Logger.getLogger(armaa_hyperSpaceImmunity.class.getName());
 
-    private IntervalUtil interval = new IntervalUtil(1f, 1f);
-    private IntervalUtil fleetinterval = new IntervalUtil(1f, 1f);
     private long days = Global.getSector().getClock().getTimestamp();
-    private final float DAYS_MONTH = 30f;
     private int maxWait = 24; // Maximum cooldown in months
     private int minWait = 6;  // Minimum cooldown in months
     private int minHQs = 1;   // Minimum HQ count
@@ -310,8 +305,9 @@ public class armaa_mrcReprisalListener extends BaseCampaignEventListenerAndScrip
         // ships in a faction friendly to MRC? I don't know how likely this is, but I guess
         // we can say the MRC would just consider them accessories
         // just dont bother if player is hostile
-        if(Global.getSector().getPlayerFleet().getFaction().getRelationship("armaarmatura_pirates") <= -0.50)
+        if (Global.getSector().getPlayerFleet().getFaction().getRelationship("armaarmatura_pirates") <= -0.50) {
             return;
+        }
         BattleAPI battle = result.getBattle();
         EngagementResultForFleetAPI mrcSide = null;
         EngagementResultForFleetAPI enemySide = null;

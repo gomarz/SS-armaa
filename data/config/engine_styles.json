@@ -83,7 +83,22 @@
 		"contrailCampaignColor":[120,103,33,75]
 		#"type":"GLOW" # GLOW or SMOKE
 },
-
+	"RAIDEN_ENG":{
+		"engineColor":[25,100,255,180],
+		"engineCampaignColor":[25,100,255,180],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":3,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0.5,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[200,90,70,75],
+		"type":"SMOKE",
+		"glowSizeMult":1,
+		"glowAlternateColor":[50,50,255,0],
+		"glowSprite":"graphics/fx/engineglow32b.png",
+		"glowOutline":"graphics/fx/engineflame32b.png"
+	},
 "GUARDUAL_ENGINE":{        
 		"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
 		"contrailDuration":1.25,

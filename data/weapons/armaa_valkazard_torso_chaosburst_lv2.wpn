@@ -1,0 +1,62 @@
+{
+  "id": "armaa_valkazard_torso_chaosburst_lv2",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_chaosBurstEffect",
+  "beamEffect": "data.scripts.weapons.armaa_chaosBurstBeam",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_buster_lv2.png",
+  #"turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_recoil.png",
+  "hardpointSprite": "",
+  "fireSoundOne": "beambangMeso",
+  "fireSoundTwo": "beamfireMeso",
+  "glowColor": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    23,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0,
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  
+  "fringeColor": [
+    255,
+    170,
+    127,
+    255
+  ],
+  "coreColor": [
+    247,
+    226,
+    188,
+    255
+  ],
+  #"darkCore": true,
+  "width": 35,
+  "textureScrollSpeed": 64,
+  "pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER,MISSILE_FF,MISSILE_NO_FF],
+  "textureType": [
+    "graphics/fx/beam_laser_fringe.png",
+    "graphics/fx/beamcorec.png"
+  ],
+  "pixelsPerTexel": 5.0
+}

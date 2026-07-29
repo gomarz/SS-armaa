@@ -12,6 +12,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import data.scripts.util.armaa_strikeCraftRepairTracker;
 import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.magiclib.util.MagicLensFlare;
@@ -23,7 +24,7 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
     public static final Color JITTER_COLOR = new Color(100, 165, 255, 155);
     private static final Color BASIC_FLASH_COLOR = new Color(184, 155, 218, 200);
     private static final Color BASIC_GLOW_COLOR = new Color(180, 161, 255, 200);
-
+    private HashMap foo;
     public static String getKeyByValue(Map<String, String> map, String value) {
         for (Entry<String, String> entry : map.entrySet()) {
             if (entry.getValue().equals(value)) {
@@ -113,9 +114,9 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
             }
 
             if (effectLevel == 1) {
-                if (ship != null) 
-                {
+                if (ship != null) {
                     //fighter.setPhased(false);
+                    ship.getMutableStats().getPeakCRDuration().modifyFlat("armaa_recallDevice", -5f);
                     fighter.getFluxTracker().forceOverload(1f);
                     if (fighter.getSystem() != null) {
                         fighter.getSystem().deactivate();
@@ -157,12 +158,17 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
     public static List<ShipAPI> getFighters(ShipAPI carrier) {
         List<ShipAPI> result = new ArrayList<>();
 
-        for (ShipAPI ship : Global.getCombatEngine().getShips()) 
-        {
+        for (ShipAPI ship : Global.getCombatEngine().getShips()) {
             if (ship.getOwner() != carrier.getOwner()) {
                 continue;
             }
+            if (ship.isStationModule()) {
+                continue;
+            }
             if (!ship.getVariant().hasHullMod("strikeCraft")) {
+                continue;
+            }
+            if (ship.getVariant().hasTag("armaa_strikecraft_refit_never")) {
                 continue;
             }
             if (ship.getVariant().hasHullMod("armaa_emergencyRecallDevice")) {
@@ -174,25 +180,27 @@ public class armaa_RecallDeviceStats extends BaseShipSystemScript {
                     continue;
                 }
             }
-            float hullThreshold = 0.50f;
-            float crThreshold = .30f;
             if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
                 // someone wanted option to not be recalled  unless holding fire..so sure
-                boolean playerRecallEnabled = LunaSettings.getBoolean("armaa", "armaa_playerRecall");
+                boolean armaa_recallOnlyWhenHoldFire = LunaSettings.getBoolean("armaa", "armaa_recallOnlyWhenHoldFire");
                 if (Global.getCombatEngine().getPlayerShip() == ship) {
-                    if (!playerRecallEnabled && !ship.isHoldFire()) {
+                    if (armaa_recallOnlyWhenHoldFire && !ship.isHoldFire()) {
                         continue;
                     }
                 }
                 // why is this a double anyway
-                if(LunaSettings.getDouble("armaa", "armaa_repairLevel") != null)
-                    hullThreshold = LunaSettings.getDouble("armaa", "armaa_repairLevel").floatValue();
-                if(ship.getHitpoints() >= armaa_utils.getMaxHPRepair(ship) && ship.getCurrentCR() >= armaa_utils.getMaxCRRepair(ship))
-                {
+                if (LunaSettings.getDouble("armaa", "armaa_repairLevel") != null) {
+                    LunaSettings.getDouble("armaa", "armaa_repairLevel");
+                }
+
+                if (armaa_strikeCraftRepairTracker.getRepairsRemaining(ship) <= 0) {
                     continue;
-                } 
+                }
+                if (ship.getHitpoints() >= armaa_utils.getMaxHPRepair(ship) && ship.getCurrentCR() >= armaa_utils.getMaxCRRepair(ship)) {
+                    continue;
+                }
             }
-            if (ship.getHullLevel() <= hullThreshold || ship.getCurrentCR() <= crThreshold || ship.getHullLevel() <= 0.50f && ship.getFluxTracker().isOverloaded()) {
+            if (armaa_utils.canRestoreHPOrCR(ship)) {
                 if (ship.isAlive() && MathUtils.getDistance(ship, carrier) > 1000f && !ship.controlsLocked() && !ship.isRetreating() && !isStrikeCraftNearCarrier(ship)) {
                     result.add(ship);
                 }

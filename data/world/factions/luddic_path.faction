@@ -1,7 +1,7 @@
 {
     "knownShips":{
         "hulls":[
-            "armaa_musha_frig_sniper",
+           				"armaa_ashura_frig",
         ],
     },
 
@@ -9,7 +9,8 @@
 		#"tags":["armaa_cataphract_bp"],
 		"fighters":
 		[
-			"armaa_crew_wing"
+			"armaa_crew_wing",
+			"armaa_musham3_wing"
 		],
 	},
 },

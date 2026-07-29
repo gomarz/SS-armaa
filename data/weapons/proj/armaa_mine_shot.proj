@@ -1,0 +1,48 @@
+{
+	"id":"armaa_mine_shot",
+	"specClass":"missile",
+	"missileType":"PHASE_MINE",
+	"sprite":"graphics/armaa/weapons/armaa_smartrocket_shot.png",
+	"glowSprite":"graphics/armaa/weapons/armaa_smartrocket_shot_glow.png",
+	"glowColor":[0,100,255,255],
+	"size":[10,14],	
+	"center":[5,7],
+	"collisionRadius":12,
+	#"armingTime":0.4,
+	"collisionClass":"MISSILE_NO_FF",
+	"flameoutTime":0.1, # total time from flameout to full fadeout
+	"fadeTime":0.1, # fadeout duration
+	"noEngineGlowTime":0.15, # time spent without the engine glow being rendered
+	"explosionColor":[0,100,255,25],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":80, # purely visual
+	"engineSpec":{"turnAcc":10,
+				  "turnRate":10,
+				  "acc":50,
+				  "dec":50},
+	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+					"range":50,
+					"slowToMaxSpeed":true,
+					"delay":1,
+					"pingSound":"mine_ping",
+					"pingColor":[0,100,255,155],
+					"pingRadius":300,
+					"pingDuration":0.25,
+					"windupSound":"mine_windup_light",
+					"windupDelay":0.15,
+					"explosionSpec":{"duration":0.05f,
+									 "radius":100,
+									 "coreRadius":80, # full damage within core radius
+									 "collisionClass":MISSILE_NO_FF,
+									 "collisionClassByFighter":MISSILE_NO_FF,
+									 "particleSizeMin":1.0,
+									 "particleSizeRange":10.0,
+									 "particleDuration":1,
+									 "particleCount":20,
+									 "particleColor":[50,100,255,155],
+									 "explosionColor":[100,100,255,100],
+									 "useDetailedExplosion":true,
+									 "sound":"mine_explosion"},
+					}	
+}
+
+

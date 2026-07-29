@@ -101,7 +101,7 @@ public class armaa_automatedCognitionShell extends BaseHullMod {
         MutableShipStatsAPI stats = ship.getMutableStats();
         if(stats  == null || ship.getOwner() < 0)
             return;
-        if (ship.getCaptain().isDefault()) {
+        if (ship.getCaptain() != null && ship.getCaptain().isDefault()) {
             //Apparently this can be the case
             if (Misc.getAICoreOfficerPlugin("gamma_core") == null) {
                 return;

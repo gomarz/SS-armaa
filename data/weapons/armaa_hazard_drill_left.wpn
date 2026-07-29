@@ -10,7 +10,7 @@
   "hardpointSprite": "graphics/armaa/ships/garegga/xiv/armaa_gareggaxiv_leftArm.png",
   "renderBelowAllWeapons": true,
   "showDamageWhenDecorative": true,
-  "visualRecoil": 40,
+  "visualRecoil": 20,
   "renderHints": [
     "RENDER_BARREL_BELOW",
     "SUSPEND_RECOIL"

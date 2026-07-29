@@ -94,8 +94,7 @@ public class armaa_MRCHQ extends BaseIndustry implements RouteFleetSpawner, Flee
             }
             unapply();
         }
-        */
-
+         */
     }
 
     @Override
@@ -343,7 +342,7 @@ public class armaa_MRCHQ extends BaseIndustry implements RouteFleetSpawner, Flee
                 0f, // transportPts
                 0f, // linerPts
                 0f, // utilityPts
-                0f // qualityMod - since the Lion's Guard is in a different-faction market, counter that penalty
+                (int) Math.random() * 3f // qualityMod - since the Lion's Guard is in a different-faction market, counter that penalty
         );
         params.timestamp = route.getTimestamp();
         params.random = random;
@@ -355,14 +354,26 @@ public class armaa_MRCHQ extends BaseIndustry implements RouteFleetSpawner, Flee
             return null;
         }
 
-        //fleet.setFaction(market.getFactionId(), true);
+        fleet.setFaction(market.getFactionId(), true);
         fleet.setNoFactionInName(true);
 
         fleet.addEventListener(this);
+        //fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_RAIDER, true);
+        if (!fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PATROLS_HAVE_NO_PATROL_MEMORY_KEY)) {
+            fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_FLEET, true);
+            if (type == PatrolType.FAST || type == PatrolType.COMBAT) {
+                fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_CUSTOMS_INSPECTOR, true);
+            }
+        } else if (fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PIRATE_BEHAVIOR)) {
+            fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PIRATE, true);
 
-//		PatrolAssignmentAIV2 ai = new PatrolAssignmentAIV2(fleet, custom);
-//		fleet.addScript(ai);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_FLEET, true);
+            // hidden pather and pirate bases
+            // make them raid so there's some consequence to just having a colony in a system with one of those
+            if (market != null && market.isHidden()) {
+                fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_RAIDER, true);
+            }
+        }
+
         fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true, 0.3f);
 
         if (type == PatrolType.FAST || type == PatrolType.COMBAT) {

@@ -1,0 +1,44 @@
+{
+  "variantId": "armaa_panther_xiv_standard_shield",
+  "hullId": "armaa_panther_frig_xiv",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 8,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "unstable_injector",
+    "hardened_subsystems",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN2": "miningblaster"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "heavymg"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_pantherHead_xiv"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "SHIELD": "armaa_shield_panther_xiv_standard"
+    }
+  ],
+  "wings": []
+}

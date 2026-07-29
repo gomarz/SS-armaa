@@ -35,13 +35,25 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseFIDDelegate;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import data.scripts.util.armaa_utils;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class armaa_jeniusCityBattle extends BaseCommandPlugin {
+
+    public static final Set<String> MISSION_TEXTURES_CITY = new HashSet<>();
+    static {
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo3"));
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo4"));
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_atmo5"));
+        MISSION_TEXTURES_CITY.add(Global.getSettings().getString("armaa_missionBGs","armaa_city"));
+
+    }
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, final Map<String, MemoryAPI> memoryMap) {
@@ -49,6 +61,9 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
         ArrayList<FleetMemberAPI> removedShips = new ArrayList();
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
             float crew = 0f;
+            if (member.getHullSpec().hasTag("Moci_MobileSuits") || member.getHullSpec().hasTag("Moci_MobileArmour")) {
+                continue;
+            }
             if (member.isCapital()) {
                 member.getRepairTracker().setMothballed(true);
                 removedShips.add(member);
@@ -66,7 +81,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
                 Global.getSector().getEntityById("nekki1").getLocationInHyperspace(),
                 "armaarmatura_arusthai",
                 null,
-                FleetTypes.PATROL_SMALL,
+                FleetTypes.PATROL_LARGE,
                 Math.max(400f, Global.getSector().getPlayerFleet().getFleetPoints() * 1.15f), // combatPts
                 0f, // freighterPts
                 0f, // tankerPts
@@ -75,13 +90,16 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
                 0f, // utilityPts
                 2f // qualityMod
         );
+        //armaa_utils.loadMissionTextures(MISSION_TEXTURES_CITY);
         final CampaignFleetAPI enemyFleet = FleetFactoryV3.createFleet(fparams);
-        for(int i = 0; i < 7; i++)
-        {
-            enemyFleet.getFleetData().addFleetMember("armaa_musha_frig_sniper_standard");
-            enemyFleet.getFleetData().addFleetMember("armaa_musha_frig_standard");
+        enemyFleet.getFleetData().addFleetMember("berserker_Assault");
+        for (int i = 0; i < 5; i++) {
+            enemyFleet.getFleetData().addFleetMember("kite_pirates_Raider");
+            enemyFleet.getFleetData().addFleetMember("kite_Standard");
+            enemyFleet.getFleetData().addFleetMember("picket_Assault");
+            enemyFleet.getFleetData().addFleetMember("sentry_FS");
+            enemyFleet.getFleetData().addFleetMember("warden_Defense");
         }
-            enemyFleet.getFleetData().addFleetMember("armaa_altagrave_standard");        
         //FleetFactoryV3.pruneFleet(999,0,enemyFleet,Global.getSector().getPlayerFleet().getFleetData().getEffectiveStrength(),new Random());
         //FleetFactoryV3.applyDamageToFleet(enemyFleet,0.40f,true,new Random());
         //Global.getSector().getPlayerFleet().getMemoryWithoutUpdate().set("$inAtmoBattle", true);
@@ -126,7 +144,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
 
                 dialog.setPlugin(originalPlugin);
                 dialog.setInteractionTarget(entity);
-
+                armaa_utils.unloadMissionTextures(MISSION_TEXTURES_CITY);
                 //Global.getSector().getCampaignUI().clearMessages();
                 if (plugin.getContext() instanceof FleetEncounterContext) {
                     FleetEncounterContext context = (FleetEncounterContext) plugin.getContext();
@@ -196,7 +214,7 @@ public class armaa_jeniusCityBattle extends BaseCommandPlugin {
             public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
                 bcc.aiRetreatAllowed = false;
                 bcc.objectivesAllowed = false;
-                bcc.enemyDeployAll = false;
+                bcc.enemyDeployAll = true;
             }
 
             @Override

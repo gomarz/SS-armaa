@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   "displayArcRadius": 250,
-  "fireSoundTwo": "needler_fire",
+  "fireSoundTwo": "vulcan_cannon_fire",
   "hardpointAngleOffsets": [
     0
   ],
@@ -29,7 +29,7 @@
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "lightneedler_shot",
+  "projectileSpecId": "vulcan_shot",
   "renderAboveAllWeapons": 0,
   "size": "SMALL",
   "specClass": "projectile",

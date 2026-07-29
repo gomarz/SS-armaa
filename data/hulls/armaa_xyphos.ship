@@ -15,13 +15,13 @@
     "advancedoptics",
     "strikeCraft",
     "armaa_wingCommander",
-	"reduced_explosion"
+    "armaa_spare_chassis",
+    "reduced_explosion"
   ],
   "builtInWings": [
     "xyphos_wing"
   ],
   "builtInWeapons": {
-    "BEACON": "armaa_landingBeacon",
     "WS 001": "ionpulser",
     "WS 002": "pdburst"
   },

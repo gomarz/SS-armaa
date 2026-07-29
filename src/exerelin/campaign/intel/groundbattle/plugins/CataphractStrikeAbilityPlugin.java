@@ -6,6 +6,7 @@ import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.combat.StatBonus;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.rulecmd.Nex_VisualCustomPanel;
@@ -58,8 +59,13 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
     public transient FleetMemberAPI cataphract;
 
     public float getDamage(FleetMemberAPI cataphract) {
-        float damage = BASE_DAMAGE + (cataphract.getMemberStrength()) +
-                cataphract.getStats().getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).getFlatBonus();
+        float planetaryOpsMod = cataphract.getStats() 
+                .getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).computeEffective(1f);
+        float groundSupportBonus = cataphract.getStats()
+                .getDynamic().getMod(Stats.FLEET_GROUND_SUPPORT).computeEffective(1f);
+        float groundMod = planetaryOpsMod > groundSupportBonus ? planetaryOpsMod : groundSupportBonus;
+        float damage = BASE_DAMAGE + (cataphract.getFleetPointCost()+cataphract.getMemberStrength()) +
+                groundMod;
         if (!cataphract.getCaptain().isDefault())
             damage += cataphract.getCaptain().getStats().getLevel() * 1.5f;
         if (cataphract.getStats().getEnergyWeaponDamageMult().getPercentMods().get("cr_effect") != null)
@@ -72,12 +78,10 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
         super.activate(dialog, user);
 
         Set<GroundUnit> enemies = new HashSet<>();
-        float totalDamage = 0;
 
         logActivation(user);    // so it displays before the unit destruction messages, if any
         float damageTaken = 0f;
         IndustryForBattle ifb = target;
-        boolean isAttacker = getSide().isAttacker();
         float damage = getDamage(cataphract);
         float attrition = getSide().getDropAttrition().getModifiedValue() / 100;
         damage *= 1 - attrition;
@@ -379,6 +383,7 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
         if (fleet == null) return members;
         for (FleetMemberAPI candidate : fleet.getFleetData().getCombatReadyMembersListCopy()) {
             if (isCataphract(candidate)) {
+                Global.getLogger(this.getClass()).info(candidate.getShipName());
                 members.add(candidate);
             }
         }
@@ -386,7 +391,7 @@ public class CataphractStrikeAbilityPlugin extends AbilityPlugin {
     }
 
     public boolean isCataphract(FleetMemberAPI member) {
-        return !(!member.getVariant().getTags().contains("armaa_nexGroundCapable") && !member.getVariant().hasHullMod("cataphract2") && !member.getVariant().hasHullMod("cataphract") &&!member.getVariant().hasHullMod("armaa_variableUnit"));
+        return member.getHullSpec().getBuiltInMods().contains("cataphract2") || member.getHullSpec().getBuiltInMods().contains("cataphract") || member.getHullSpec().getTags().contains("armaa_nexGroundCapable");
     }
 
     public boolean haveEnoughCR(FleetMemberAPI member) {

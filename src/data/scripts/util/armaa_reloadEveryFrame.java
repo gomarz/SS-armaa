@@ -56,16 +56,18 @@ public class armaa_reloadEveryFrame extends BaseEveryFrameCombatPlugin {
         if (wep.getChargeLevel() == 1) {
             Global.getSoundPlayer().playSound("armaa_rcl_fire", 0.8f, 1f, ship.getLocation(), new Vector2f());
             float angle = 180 + wep.getCurrAngle();
+            float damage = 0f;
             List<DamagingProjectileAPI> toRemove = new ArrayList<>();
             for (DamagingProjectileAPI proj : Global.getCombatEngine().getProjectiles()) {
                 if (proj.getWeapon() == wep) {
                     toRemove.add(proj);
+                    damage = proj.getDamageAmount();
                 }
             }
             for (DamagingProjectileAPI proj : toRemove) {
                 Global.getCombatEngine().removeEntity(proj);
             }
-            toRemove.clear();            
+            toRemove.clear(); 
             Vector2f point = MathUtils.getPoint(wep.getFirePoint(0), 45, angle);
             MagicFakeBeam.spawnFakeBeam(
                     Global.getCombatEngine(),
@@ -78,7 +80,7 @@ public class armaa_reloadEveryFrame extends BaseEveryFrameCombatPlugin {
                     200,
                     Color.white,
                     Color.white,
-                    wep.getDamage().getDamage() * hitStrength,
+                    damage * hitStrength,
                     DamageType.KINETIC,
                     200f*hitStrength,
                     ship);
@@ -179,9 +181,6 @@ public class armaa_reloadEveryFrame extends BaseEveryFrameCombatPlugin {
             recoiling = false;
         }
         if (buffTimer.intervalElapsed() || !ship.isAlive()) {
-            //stats.getBallisticWeaponFluxCostMod().unmodify(ship.getId());
-            stats.getBallisticWeaponDamageMult().unmodify(ship.getId());
-            //stats.getBallisticRoFMult().unmodify(ship.getId());
             ship.setWeaponGlow(0f, new Color(255, 125, 50, 220), EnumSet.of(WeaponAPI.WeaponType.BALLISTIC, WeaponAPI.WeaponType.MISSILE, WeaponAPI.WeaponType.ENERGY));
             Global.getCombatEngine().removePlugin(this);
         }

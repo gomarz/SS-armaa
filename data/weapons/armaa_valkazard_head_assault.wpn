@@ -1,0 +1,50 @@
+{
+  "id": "armaa_valkazard_head_assault",
+  "specClass": "projectile",
+  "projectileSpecId": "dualflak_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "fireSoundTwo":"devastator_fire",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_head_assault.png",
+  "turretGlowSprite": "graphics/armaa/ships/leynos/armaa_leynosheadglow.png",
+  "turretGunSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_head_assault_barrel.png",
+  "hardpointSprite": "",
+  "showDamageWhenDecorative": true,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "visualRecoil": 3,
+  "turretOffsets": [
+    8,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 1,
+    "particleSizeRange": 10,
+    "cloudParticleCount": 1,
+    "cloudDuration": 0.5,
+    "cloudRadius": 5,
+    "blowbackParticleCount": 2,
+    "blowbackDuration": 1,
+    "blowbackLength": 20,
+    "blowbackSpread": 10,
+    "particleColor": [
+      155,
+      155,
+      155,
+      100
+    ]
+  }
+}

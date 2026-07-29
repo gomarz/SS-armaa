@@ -1,0 +1,32 @@
+{
+  "variantId": "armaa_record_juno",
+  "hullId": "armaa_record",
+  "displayName": "Anti-Shield Cataphract",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "no_weapon_flux"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "TRUE_GUN": "armaa_fluxcannon_ftr"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_record_head",
+        "WS0002": "armaa_rangefinder"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

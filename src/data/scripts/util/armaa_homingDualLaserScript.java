@@ -121,13 +121,13 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
                     DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, id, MathUtils.getRandomPointInCircle(weapon.getLocation(), 10f), angle, new Vector2f());
                     float fxAngle = proj.getFacing() + MathUtils.getRandomNumberInRange(-45f, 45f);
                     Vector2f vel = MathUtils.getPointOnCircumference(
-                        null,
-                        MathUtils.getRandomNumberInRange(340f, 520f), // speed = outward punch
-                        fxAngle
+                            null,
+                            MathUtils.getRandomNumberInRange(340f, 520f), // speed = outward punch
+                            fxAngle
                     );
                     Vector2f shipVel = new Vector2f(ship.getVelocity());
-                    shipVel.scale(0.25f);                    
-                    Vector2f.add(vel, (Vector2f) shipVel, vel);                    
+                    shipVel.scale(0.25f);
+                    Vector2f.add(vel, (Vector2f) shipVel, vel);
 
                     for (int x = 0; x < 5; x++) {
                         engine.addHitParticle(proj.getLocation(),
@@ -199,23 +199,7 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
                         target1 = target;
                     }
                 }
-                /*MagicFakeBeam.spawnFakeBeam(
-					engine,
-					ship.getLocation(),
-					10000,
-					VectorUtils.getAngle(ship.getLocation(),target1.getLocation()),
-					40f,
-					amount,
-					1f,
-					80f,
-					new Color(255,255,255),
-					new Color(255,0,255),
-					200f,
-					DamageType.ENERGY,
-					0f,
-					ship
-				);
-                 */
+
                 DamagingProjectileAPI proj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, "armaa_curvyLaser", MathUtils.getRandomPointInCircle(weapon.getLocation(), 10f), ship.getFacing(), new Vector2f());
                 gauge -= 9999f;
                 maxDamage -= 99999f;

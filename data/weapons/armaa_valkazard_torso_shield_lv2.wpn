@@ -1,0 +1,42 @@
+{
+  "id": "armaa_valkazard_torso_shield_lv2",
+  "specClass": "projectile",
+  "projectileSpecId": "armaa_flamer_shot_valkazard",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.weapons.armaa_counterShieldEffect",
+  "turretSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_shield_lv2.png",
+  "turretGlowSprite": "graphics/armaa/ships/valkazard/armaa_valkazard_body_shield_glow.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    55,
+    255,
+    255,
+    75
+  ],
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    9,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    -5,
+    -5,
+    -5,
+    5
+  ],
+  "hardpointAngleOffsets": [
+    -45,
+    45
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW",
+  "interruptibleBurst": true,
+  "requiresFullCharge": false,
+  "fireSoundTwo": "armaa_shotgun_fire_small"
+}

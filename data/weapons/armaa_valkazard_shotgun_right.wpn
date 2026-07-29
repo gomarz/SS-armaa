@@ -4,7 +4,7 @@
   "projectileSpecId": "armaa_energyshotgun_shot",
   "type": "ENERGY",
   "size": "SMALL",
-  "turretSprite": "graphics/armaa/weapons/armaa_machineGunTurret.png",
+  "turretSprite": "graphics/fx/empty.png",
   "turretGunSprite": "graphics/armaa/weapons/armaa_valkazard_shotgun.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_valkazard_shotgun.png",
   "hardpointGunSprite": "graphics/weapons/mg_light_hardpoint_recoil.png",

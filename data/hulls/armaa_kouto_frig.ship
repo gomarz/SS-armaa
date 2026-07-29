@@ -15,8 +15,7 @@
     "cataphract2",
     "strikeCraft",
     "ecm",
-    "hiressensors",
-    "armaa_variableRifle"
+    "hiressensors"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_kouto_variablerifle",
@@ -53,7 +52,7 @@
     {
       "id": "B_TORSO",
       "size": "SMALL",
-      "type": "DECORATIVE",
+      "type": "BUILT_IN",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,

@@ -64,22 +64,23 @@ public class armaa_morganaBonus extends BaseHullMod
 		}
 	}
 	
-	public Color shiftColor(Color start, Color end, float ratio)
-	{
-		Color intermediateColor = Color.WHITE;		
-		if(ratio >= 1)
-			return end;
-		
-		int red = (int) (start.getRed() * (1 - ratio) + end.getRed() * ratio);
-		int green = (int) (start.getGreen() * (1 - ratio) + end.getGreen() * ratio);
-		int blue = (int) (start.getBlue() * (1 - ratio) + end.getBlue() * ratio);
-		int alpha = (int) (start.getAlpha() * (1 - ratio) + end.getAlpha() * ratio);
-		intermediateColor = new Color(red, green, blue, alpha);	
-		
-		return intermediateColor;
-		
-		
-	}
+    public static Color shiftColor(Color start, Color end, float ratio) 
+    {
+        if (start == null || end == null) 
+           return Color.WHITE;
+      
+        // Clamp ratio to [0, 1], handle NaN
+        if (Float.isNaN(ratio)) ratio = 0f;
+        ratio = Math.max(0f, Math.min(1f, ratio));
+
+        int red   = Math.min(255, Math.max(0, Math.round(start.getRed()   + (end.getRed()   - start.getRed())   * ratio)));
+        int green = Math.min(255, Math.max(0, Math.round(start.getGreen() + (end.getGreen() - start.getGreen()) * ratio)));
+        int blue  = Math.min(255, Math.max(0, Math.round(start.getBlue()  + (end.getBlue()  - start.getBlue())  * ratio)));
+        int alpha = Math.min(255, Math.max(0, Math.round(start.getAlpha() + (end.getAlpha() - start.getAlpha()) * ratio)));
+
+        return new Color(red, green, blue, alpha);
+    }
+
 	
     @Override
     public void advanceInCombat(ShipAPI ship, float amount)

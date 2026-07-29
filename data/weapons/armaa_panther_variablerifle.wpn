@@ -6,7 +6,7 @@
   "everyFrameEffect": "data.scripts.weapons.armaa_koutoDummyWeapon",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/armaa/ships/panther/armaa_panther_sniper.png",
+  "turretSprite": "graphics/armaa/ships/panther/ht/armaa_panther_sniper.png",
   "hardpointSprite": "graphics/armaa/weapons/armaa_revx_ml_variablerifle_00.png",
   "showDamageWhenDecorative": true,
   "glowColor": [

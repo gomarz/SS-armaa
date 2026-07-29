@@ -3,28 +3,37 @@
   "hullId": "armaa_corsair_xiv",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 12,
+  "fluxCapacitors": 18,
   "fluxVents": 20,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit"
+    "targetingunit",
+    "hardenedshieldemitter",
+    "converted_hangar",
+    "adaptiveshields"
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "mjolnir",
-        "TRUE_GUN2": "mjolnir"
+        "TRUE_GUN": "mark9",
+        "TRUE_GUN2": "mark9"
       }
     },
     {
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0002": "pdburst",
-        "WS0004": "pdburst"
+        "WS0002": "vulcan"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "vulcan"
       }
     }
   ],

@@ -1,0 +1,28 @@
+{
+  "variantId": "armaa_sarissa_standard",
+  "hullId": "armaa_sarissa",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "defensive_targeting_array",
+    "unstable_injector",
+    "blast_doors",
+    "auxiliarythrusters"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 000": "lightac",
+        "WS 001": "lightac"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

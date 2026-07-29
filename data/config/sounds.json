@@ -8,9 +8,10 @@
 "music":{
 		"music_armaa_market_neutral":[
 			{"file":"old_city.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"maintenance.ogg","source":"sounds/armaa/music","volume":0.5,"randomStart":true},
 		],
 		"music_armaa_system":[
-			{"file":"cave_of_regret.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
+			{"file":"trip.ogg","source":"sounds/armaa/music/","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_pirate_encounter_neutral":[
 			{"file":"black_magic.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
@@ -31,10 +32,13 @@
 			{"file":"escape_from_control.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
 		],
 		"music_armaa_gravionbattle":[
-			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.3,"randomStart":true},
+			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":0.65,"randomStart":true},
 		],
-		"music_armaa_gravionbattle2":[
-			{"file":"unbridled_hate.ogg","source":"sounds/armaa/music/descent","volume":1,"randomStart":true},
+		"music_armaa_rajanya_boss":[
+			{"file":"boundless_remorse.ogg","source":"sounds/armaa/music/descent","volume":0.5,"randomStart":true},
+		],
+		"music_armaa_bar":[
+			{"file":"maintenance.ogg","source":"sounds/armaa/music","volume":0.5,"randomStart":true},
 		],
 		"music_armaa_briefing":[
 			{"file":"clenched_fist.ogg","source":"sounds/armaa/music/factions","volume":0.3,"randomStart":true},
@@ -79,6 +83,14 @@
 	"armaa_silversword_warning":[ 
 		{"file":"sounds/armaa/armaa_silversword_warning.ogg","pitch":1,"volume":0.65},
 	],
+	"armaa_boss_warning":[ 
+		{"file":"sounds/armaa/music/descent/armaa_bellator_warning.ogg","pitch":1,"volume":0.95},
+	],
+	"armaa_polearm":[ 
+		{"file":"sounds/armaa/armaa_polearm_01.ogg","pitch":1,"volume":1},
+		{"file":"sounds/armaa/armaa_polearm_02.ogg","pitch":1.05,"volume":1},
+		{"file":"sounds/armaa/armaa_polearm_03.ogg","pitch":0.95,"volume":1},
+	],	
 	"armaa_flamer_loop":[ 
 		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1,"volume":0.85},
 		{"file":"sounds/armaa/armaa_flamer_loop.ogg","pitch":1.03,"volume":0.88},
@@ -196,6 +208,11 @@
 	"beamchargeM":[							
 			{"file":"sounds/armaa/beamchargeM.ogg","pitch":1,"volume":0.95},
 	],
+	"beamchargeL":[							
+			{"file":"sounds/armaa/beamchargeL.ogg","pitch":1,"volume":1},
+			{"file":"sounds/armaa/beamchargeL.ogg","pitch":1,"volume":0.95},
+			{"file":"sounds/armaa/beamchargeL.ogg","pitch":1,"volume":1.05},
+	],
 	"beambang":[							
 			{"file":"sounds/armaa/beambang.ogg","pitch":1,"volume":0.6},
 	],
@@ -207,6 +224,9 @@
 	],
 	"beamfireM":[							
 			{"file":"sounds/armaa/beamfireM.ogg","pitch":1,"volume":0.95},
+	],
+	"beamfireL":[							
+			{"file":"sounds/armaa/beamfireL.ogg","pitch":1,"volume":0.95},
 	],
 	"beamchargeMeso":[							
 			{"file":"sounds/armaa/armaa_beam_charge.ogg","pitch":1,"volume":1},

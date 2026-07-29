@@ -27,6 +27,7 @@ import com.fs.starfarer.api.impl.campaign.intel.events.HAShipsDestroyedFactor;
 import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI.TooltipCreator;
+import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.TimeoutTracker;
 
@@ -48,7 +49,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     public static float RANGE_PER_MAKESHIFT_SENSOR_ARRAY = 1f;
     public static int MAX_SENSOR_ARRAYS = 3;
     public static float WAYSTATION_BONUS = 2f;
-
+    private IntervalUtil advanceInterval = new IntervalUtil(1f, 10f);
     public static float SLIPSTREAM_FUEL_MULT = 0.25f;
     public static float HYPER_BURN_BONUS = 3f;
 
@@ -167,7 +168,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 info.addPara("New hullmods unlocked", initPad, tc, h, "MORGANA", "GAMLIN");
             }
             if (esd.id == Stage.PROTOTYPE_BREAKTHROUGH) {
-                info.addPara("Fighters %s and %s delivered to %s for use", initPad, tc, h, "MORGANA","GUARDUAL", "GAMLIN");
+                info.addPara("Fighters %s and %s delivered to %s for use", initPad, tc, h, "MORGANA", "GUARDUAL", "GAMLIN");
             }
             if (esd.id == Stage.DATA_DELIVERY) {
                 info.addPara("New hullmods unlocked", tc, initPad);
@@ -241,22 +242,20 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             info.addPara("Data gleaned from your ops "
                     + "has prompted the design of several new technologies "
                     + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s.", initPad,
+                    + "%s,%s.", initPad,
                     Misc.getHighlightColor(),
                     "STRIKECRAFT",
-                    "C-Stim Dispatcher",
                     "Thermoflux Drive",
                     "Targeting Disruptor"
             );
         } else if (stageId == Stage.ADVANCED_TELEMETRY) {
             info.addPara("Ships with the %s hullmod and piloted by officers have enhanced performance: "
-                    + "%s and %s are improved by %s. Shield Efficiency increased by %s.",
+                    + "\n\n Procurement of the %s phase cataphract is available from %s \n %s hullmod is unlocked",
                     initPad, Misc.getHighlightColor(),
                     "STRIKECRAFT",
-                    "Flux Dissipation",
-                    "Flux Capacity",
-                    "15%", //dont hardcode it
-                    "10%" //dont hardoced this either
+                    "PANTHER",
+                    "SERA PHA",
+                    "\"Emergency Recall Device\""
             );
         } else if (stageId == Stage.PROTOTYPE_BREAKTHROUGH) {
             info.addPara("The reverse-engineered fighter %s, and %s has been left in storage "
@@ -268,23 +267,20 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             info.addPara("Data gleaned from your ops "
                     + "has prompted the design of several new technologies "
                     + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s.", initPad,
+                    + "%s,%s,%s,%s", initPad,
                     Misc.getHighlightColor(),
                     "STRIKECRAFT",
                     "Automaton Control Shell",
                     "OVERLORD SUITE[GAMMA]",
+                    "C-Stim Dispatcher",
                     "OVERLORD SUITE[BETA]"
             );
         } else if (stageId == Stage.DATA_DELIVERY) {
-            info.addPara("Data gleaned from your ops "
-                    + "has prompted the design of several new technologies "
-                    + "for %s. Design notes for several hullmods have been transferred to you:\n "
-                    + "%s,%s,%s.", initPad,
+            info.addPara("The mobile weapons platform %s and the carrier %s have been left in storage at %s for use, at your discretion.", initPad,
                     Misc.getHighlightColor(),
-                    "STRIKECRAFT",
-                    "Hi-Manuever System",
-                    "Emergency Recall Device",
-                    "OVERLORD SUITE[ALPHA]"
+                    "RAIDEN",
+                    "EXILIUM",
+                    "GAMLIN"
             );
         }
     }
@@ -306,7 +302,7 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                     } else if (esd.id == Stage.PROTOTYPE_BREAKTHROUGH) {
                         tooltip.addTitle("Prototype Breakthroughs");
                     } else if (esd.id == Stage.AUTOMATION) {
-                        tooltip.addTitle("Automation");
+                        tooltip.addTitle("Automation & Artificial Enhancement");
                     } else if (esd.id == Stage.DATA_DELIVERY) {
                         tooltip.addTitle("Strategic Convergence");
                     }
@@ -367,6 +363,11 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     }
 
     public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
+        if (getProgress() >= PROGRESS_MAX) {
+            if(Global.getSector().getPersistentData().get("armaa_completedATAC") == null)
+                Global.getSector().getPersistentData().put("armaa_completedATAC", true);
+           return;
+        }
         if (isEnded() || isEnding()) {
             return;
         }
@@ -390,12 +391,20 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             //if (!Global.getSector().getPlayerFaction().isHostileTo(otherFleet.getFaction())) continue;
             for (FleetMemberAPI loss : Misc.getSnapshotMembersLost(otherFleet)) {
                 fpDestroyed += loss.getFleetPointCost();
+                //anomalous stuff gets bonus points
+                if (loss.getHullSpec().hasTag("monster") || loss.getHullSpec().hasTag("dweller")  || loss.getHullSpec().hasTag("omega") || loss.getHullSpec().getManufacturer().equals("Threat") || loss.getHullSpec().getManufacturer().equals("Shrouded Dweller")) {
+                    fpDestroyed += loss.getFleetPointCost();
+                }
                 if (first == null) {
                     first = otherFleet;
                 }
             }
         }
-
+        if(Global.getSector().getPersistentData().containsKey("armaa_completedATAC"))
+        {
+            fpDestroyed*=2;
+            //Global.getLogger(this.getClass()).info("fffff");
+        }
         int points = computeProgressPoints(fpDestroyed);
         if (points > 0) {
             //points = 700;
@@ -432,8 +441,43 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     protected void advanceImpl(float amount) {
         super.advanceImpl(amount);
         applyFleetEffects();
-
         float days = Global.getSector().getClock().convertToDays(amount);
+        advanceInterval.advance(amount);
+        if (advanceInterval.intervalElapsed()) {
+            if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacRajanyaBonusGranted")) {
+                boolean hasRajanya = false;
+                for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+                    if (member.getHullSpec().getHullId().contains("armaa_kshatriya")) {
+                        hasRajanya = true;
+                        break;
+                    }
+                }
+                if (hasRajanya) {
+                    addFactor(new armaa_oneTimeEventFactor(100, "Rajanya"));
+                    Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacRajanyaBonusGranted", true);
+                }
+            }
+
+            if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacValkBonusGranted")) {
+
+                boolean hasValk = false;
+                for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+                    if (member.getHullSpec().getHullId().contains("armaa_valkazard")) {
+                        hasValk = true;
+                        break;
+                    }
+                }
+                if (hasValk) {
+                    addFactor(new armaa_oneTimeEventFactor(100, "Valkazard"));
+                    Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacValkBonusGranted", true);
+                }
+            }
+        }
+        if (getProgress() >= PROGRESS_MAX) {
+            if (!Global.getSector().getPlayerMemoryWithoutUpdate().contains("$armaa_atacCompleted")) {
+                Global.getSector().getPlayerMemoryWithoutUpdate().set("$armaa_atacCompleted", true);
+            }
+        }
         recent.advance(days);
 
         //setProgress(getProgress() + 10);
@@ -449,9 +493,6 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
     protected void notifyStageReached(EventStageData stage) {
         //applyFleetEffects();
         if (stage.id == Stage.MINOR_INSIGHTS) {
-            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_sykoStims")) {
-                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_sykoStims");
-            }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_targetingDisruptor")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_targetingDisruptor");
             }
@@ -461,7 +502,16 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
         }
 
         if (stage.id == Stage.ADVANCED_TELEMETRY) {
+            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
+                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
+            }
             Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_strikeCraftBuff", 1);
+            if (!Global.getSector().getFaction("armaarmatura_atac").knowsShip("armaa_panther_frig")) {
+                //Global.getSector().getPlayerFleet().getCargo().addSpecial(sid, 0);
+                //Global.getSector().getPlayerFaction().addKnownShip("armaa_panther_frig", false);
+                Global.getSector().getFaction("armaarmatura_atac").addKnownShip("armaa_panther_frig", false);
+                Global.getSector().getFaction("armaarmatura_market").addKnownShip("armaa_panther_frig", false);
+            }
         }
 
         if (stage.id == Stage.PROTOTYPE_BREAKTHROUGH) // what if seraph doesn't exist tho??
@@ -472,16 +522,19 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
                 if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_hasMorgana")) {
                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
                             Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_morgana_standard", "Morgana");
-                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
-                             Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_guardual_standard", "GD-42");
-                     Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
-                             Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing",2);                     
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_guardual_standard", "GD-42");
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing", 2);
                     Global.getSector().getMemoryWithoutUpdate().set("$armaa_hasMorgana", true);
                 }
             }
         }
 
         if (stage.id == Stage.AUTOMATION) {
+            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_sykoStims")) {
+                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_sykoStims");
+            }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_automatedCognitionShell")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_automatedCognitionShell");
             }
@@ -493,14 +546,25 @@ public class armaa_combatDataEventIntel extends BaseEventIntel implements FleetE
             }
         }
         if (stage.id == Stage.DATA_DELIVERY) {
-            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_emergencyRecallDevice")) {
-                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_emergencyRecallDevice");
+            if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_serviceBays")) {
+                Global.getSector().getPlayerFaction().addKnownHullMod("armaa_serviceBays");
             }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_himac")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_himac");
             }
             if (!Global.getSector().getPlayerFaction().knowsHullMod("armaa_skyMindAlpha")) {
                 Global.getSector().getPlayerFaction().addKnownHullMod("armaa_skyMindAlpha");
+            }
+            if (Global.getSector().getImportantPeople().getPerson("armaa_seraph") != null && Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket() != null) {
+                if (!Global.getSector().getMemoryWithoutUpdate().contains("$armaa_hasRaiden")) {
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_raiden_prototype", "Raiden");
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "armaa_exilium_custom", "AASV Gekko");
+                    Global.getSector().getImportantPeople().getPerson("armaa_seraph").getMarket().getSubmarket(
+                            Submarkets.SUBMARKET_STORAGE).getCargo().addFighters("armaa_guardual_wing", 2);
+                    Global.getSector().getMemoryWithoutUpdate().set("$armaa_hasRaiden", true);
+                }
             }
         }
     }

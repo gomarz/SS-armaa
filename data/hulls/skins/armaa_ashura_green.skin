@@ -1,0 +1,35 @@
+{
+    "baseHullId":"armaa_ashura_frig",
+    "skinHullId":"armaa_ashura_frig_green",
+    "hullName":"Brutal King",
+    "descriptionId":"armaa_ashura_frig",
+    "descriptionPrefix":"",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["no_drop","no_sell","restricted","no_dealer"],
+    #"removeBuiltInMods":["strikeCraft"],
+    #"systemId":"displacer",
+    #"tech":"Tri-Tachyon",
+    "builtInMods":["safetyoverrides","unstable_injector"], 
+    "removeWeaponSlots":["TRUE_GUN"], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInWeapons":[],
+    "builtInWeapons":{
+    "B_TORSO": "armaa_ashura_torso_green",
+    "C_ARML": "armaa_ashura_leftArm_g",
+    "A_GUN": "armaa_ashura_drill_right",
+    "E_HEAD": "armaa_ashura_head_green",
+    "D_PAULDRONL": "armaa_ashura_leftPauldron_green",
+    "D_PAULDRONR": "armaa_ashura_rightPauldron_green",
+},  
+  "weaponSlotChanges":{
+	   "A_GUN":{
+		  "angle": 0,
+		  "arc": 45,
+		  "mount": "TURRET",
+		  "size": "MEDIUM",
+		  "type": "BUILT_IN"
+	   },
+},
+}

@@ -9,7 +9,7 @@
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":["no_wingcom_docking"],
-    "systemId":"armaa_jauntbooster",
+    "systemId":"displacer",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInWeapons":[],

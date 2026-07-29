@@ -3,8 +3,7 @@
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"sprite":"graphics/armaa/weapons/beermissile.png",
-	"size":[7,12],
-	"armingTime":0.02,	
+	"size":[7,12],	
 	"noEngineGlowTime":0, # time spent without the engine glow being rendered
 	"center":[3,6],
 	"flameoutTime":1, # total time from flameout to full fadeout

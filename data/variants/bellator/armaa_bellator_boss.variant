@@ -1,0 +1,69 @@
+{
+  "variantId": "armaa_bellator_boss",
+  "hullId": "armaa_bellator",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armaa_spare_chassis_storage",
+    "targetingunit",
+    "turretgyros",
+    "extendedshieldemitter",
+    "advancedshieldemitter",
+    "armaa_himac"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "assaying_rift",
+        "WS0004": "assaying_rift",
+        "WS0005": "assaying_rift",
+        "WS0006": "assaying_rift",
+        "WS0007": "hveldriver",
+        "WS0008": "dualflak",
+        "WS0009": "vpdriver",
+        "WS0010": "devastator",
+        "WS0011": "ionbeam",
+        "WS0013": "hveldriver",
+        "WS0014": "dualflak",
+        "WS0015": "armaa_morgana_beam",
+        "WS0016": "mjolnir",
+        "WS0017": "hveldriver"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "guardian",
+        "WS0002": "guardian",
+        "WS0012": "heavyburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "armaa_musham3_wing",
+    "armaa_musham3_wing"
+  ]
+}
