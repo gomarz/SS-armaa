@@ -2131,15 +2131,13 @@ FireAll PopulateOptions","$armaa_dawnMarket...
 armaa_dawnSit2,armaa_DawnSituationComment,$armaa_dawnTopic == path,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-""Take the worst of a Church port and multiply it tenfold."" A short laugh, not much humor in it. 
-
-""That's about the Pather experience, near as I can tell. Ain't the accommodations I mind, though. It's hearin' 'em invoke Ludd's name in their heresy.""",,
+""Take the worst of a Church port and multiply it tenfold, and you have yourself the Pather experience, near as I can tell. Ain't the accommodations I mind, though. It's hearin' 'em invoke Ludd's name in their heresy.""",,
 armaa_dawnSit3,armaa_DawnSituationComment,$armaa_dawnTopic == luddicUnderRule,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-""Most folks here seem to share the faith. Ain't a Church world, though.""
+""Most folks here seem to share the faith.""
 
-""Come out this far and you can pray how you like, nobody takin' attendance."" She glances away from the display. ""Place may even run better for it, too.""",,
+""Come out this far and you can pray how you like without the church breathin' down your neck."" She glances away from the display. ""Place may even run better for it, too.""",,
 armaa_dawnSit4,armaa_DawnSituationComment,$armaa_dawnTopic == idle,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
@@ -2151,12 +2149,11 @@ FireAll PopulateOptions","$armaa_dawnMarket...
 armaa_dawnSit6,armaa_DawnSituationComment,$armaa_dawnTopic == pirates,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-""Pirate port. Been in worse. Coin's coin, and I've taken it from folks I'd rather not name, not about to pretend otherwise.""
-""Keep somebody aboard while we're docked, though. They'll be friendly as anythin' right up til you turn your back.""",,
+""Pirate ports are a tossup. Keep somebody aboard while we're docked. They'll be friendly as anythin' right up til you turn your back.""",,
 armaa_dawnSit7,armaa_DawnSituationComment,$armaa_dawnTopic == freeport,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-""Good place to sell somethin' you'd rather not explain. Half the manifests here are fiction and nobody's readin' 'em close. Cheaper than honest, and about as safe.""",,
+""Good place to sell somethin' you'd rather not explain. People mind their business, and I don't mind that at all.""",,
 armaa_dawnSit8,armaa_DawnSituationComment,$armaa_dawnTopic == hegemony,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
@@ -2164,14 +2161,13 @@ FireAll PopulateOptions","$armaa_dawnMarket...
 armaa_dawnSit9,armaa_DawnSituationComment,$armaa_dawnTopic == tritachyon,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-""Doors open before you reach 'em here. Lifts already know what floor you want. Somethin's doin' the thinkin' for all that, and I'd sooner not learn what.""
-""I'll mind the ship while you're ashore, if it's all the same. Ain't gonna make a sermon of it."" She almost smiles. ""Just rather be where the machines are dumb.""",,
+""Corpo markets are, ugh. Everything is for sale..and I mean everything, even the air. It doesn't help that I feel like some creep is watchin' my every move at the same time.""",,
 armaa_dawnSit10,armaa_DawnSituationComment,$armaa_dawnTopic == poisoned,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-She makes a face. ""Air's got a taste to it - metal, mostly, somethin' sweeter underneath. Not sure what it is exactly, but it's definitely man-made.""
+""I really don't like the air here. It's got an almost metallic taste to it? Not sure what that is exactly, but it's a lot like the air out on New Meshan.""
 
-""I'd filter the water twice. Locals  probably don't even notice anymore."" A shrug. ""Reckon that's the part I couldn't get used to. But then I've said that about six ports and kept takin' the work, so what do I know.""",,
+""I'd run any water here through a filter twice, or better yet just not drink anything that ain't in a sealed bottle, personally.""",,
 armaa_dawnSit11,armaa_DawnSituationComment,$armaa_dawnTopic == inhospitable,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
@@ -2182,6 +2178,16 @@ FireAll PopulateOptions","$armaa_dawnMarket...
 
 ""Ordinary place, by all accounts. Gettin' rare, those.""",,
 armaa_dawnSit13,armaa_DawnSituationComment,$armaa_dawnTopic == repeat,FireAll PopulateOptions,"""Ain't changed since you asked, $playerSirOrMadam.""",,
+armaa_dawnSitMazalot,armaa_DawnSituationComment,"$armaa_dawnTopic == mazalot
+$faction.id == persean","SetTextHighlights $armaa_dawnMarket
+FireAll PopulateOptions","$armaa_dawnMarket...
+
+""Most folks here share the faith. Come out this far and you can live how you like without the church breathin' down your neck."" She clasps her hands together, putting on a mockingly cheerful tone. ""Instead, you get trampled on by a pampered gens-baby. Tch.""
+
+""I have a few words to share with the guy runnin' things here. Let's hope I never get the chance to.""",,
+,,,,,,
+,,,,,,
+,,,,,,
 armaa_dawnSitBaetis,armaa_DawnSituationComment,$armaa_dawnTopic == baetis,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","""$armaa_dawnMarket...the ol' stomping grounds."" She pulls something up on her end, scanning it instead of looking at you. ""...not much else to it. Well..there is, but it's a story for another day.""",,
 armaa_dawnSitBaetis2,armaa_DawnSituationComment,"$armaa_dawnTopic == baetis
@@ -4301,11 +4307,7 @@ She frowns.
 armaa_dawnMazalot,PopulateOptions,"$player.armaa_mazalot_event_id == true
 armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
-$player.armaa_mazalot_event_id = false","""Mazalot."" She says it like a verdict. ""Terraforming worked, which is about the only thing that did. Luddics here get treated like second-class citizens and the League won't touch it - non-intervention policy. Members handle their own business.""
-
-She shrugs, but there's an edge under it.
-
-""Which sounds principled until you're the one bein' handled.""","armaa_dawnMazalotRespA:Sounds like Mazalot's got its fair share of challenges.
+$player.armaa_mazalot_event_id = false","""Mazalot's not far from here. Just another miserable planet in a miserable place. Terraforming worked, which is about the only thing that did. Luddics here get treated like second-class citizens and the League won't touch it - non-intervention policy. Members handle their own business. Sounds principled until you're the one bein' handled.""","armaa_dawnMazalotRespA:Sounds like Mazalot's got its fair share of challenges.
 armaa_dawnMazalotRespB:The League should be about freedom for everyone, not just the privileged few.
 armaa_dawnMazalotRespC:Typical League passivity, huh? That's nothing new.
 armaa_dawnMazalotRespD:If the League won't act, maybe it's time someone did. The Luddics in Mazalot deserve justice.",
@@ -8850,15 +8852,13 @@ armaa_cgOptSitOut,armaa_cgOpts1,,,,armaa_cgSitOut:Sit this one out [Observe],
 armaa_cgBigTalk,DialogOptionSelected,$option == armaa_cgBigTalk,"$armaa_cardGame_seated = true
 FireBest armaa_cgAnte","You state in no uncertain terms that you'll be lightening both their pockets.
 
-""Mm."" Dawn doesn't look up from squaring the deck. ""Spoken like a $playerManOrWoman about to fund this whole table."" She slides Yunifer's hand across to her. ""Big talk's free, $playerSirOrMadam. Sit down and let's see it.",,
+""Mm. Sure you will,"" Dawn doesn't look up from squaring the deck. ""Sounds like something spoken like a $playerManOrWoman about to fund this whole table."" She slides Yunifer's hand across to her. ""Big talk's free, $playerSirOrMadam. Sit down and let's see it.",,
 armaa_cgGenerous,DialogOptionSelected,$option == armaa_cgGenerous,"$armaa_cardGame_seated = true
 FireBest armaa_cgAnte","You ask whether this is just a game - or whether Dawn's angling at something.
 
-""Everybody's always angling at somethin', $playerSirOrMadam. Me, I'm angling at your credits."" Her eyes sweep from you to Yunifer.
+""There's always a reason for somethin', $playerSirOrMadam. Me, I'm angling at your credits."" Her eyes sweep from you to Yunifer.
 
-""Anything past that, well.. sit down and maybe you'll find out.""
-
-",,
+""Anything past that, well.. sit down and maybe you'll find out.""",,
 armaa_cgTimidQuip,DialogOptionSelected,$option == armaa_cgTimidQuip,"$armaa_cardGame_seated = true
 AdjustRepPerson sfcruni FRIENDLY 1
 FireBest armaa_cgAnte","You give her a small, steadying nod - nothing to it, you're telling her, and for her it likely isn't, whether she believes that yet or not.",,
@@ -8914,7 +8914,7 @@ FireBest armaa_cardGame","Dawn deals the last card down and sits back. ""Ante's 
 The game continues much like any other, the three of you trading banter as the pot grows.",,
 ,,,,,,
 armaa_cardGameOpenerPlay,armaa_cardGame,$armaa_cardGame_seated,FireAll armaa_cgOpts2,"* * *
-The credits go back and forth, nobody much ahead - you're up a little, then you're down a little. Your total climbs into the high teens and stays there, one good draw from taking the whole pot. This is the hand that decides it, one way or another.",,
+The credits go back and forth, nobody much ahead - you're up a little, then you're down a little. Your total climbs into the high teens and stays there, one good draw from taking the whole pot. This is deciding hand, one way or the other.",,
 armaa_cardGameOpenerWatch,armaa_cardGame,!$armaa_cardGame_seated,FireAll armaa_cardGameYuni,"* * *
 The credits go back and forth, nobody much ahead. It looks like this next hand's the one that decides it.",,
 ,,,,,,

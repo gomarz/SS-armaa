@@ -20,13 +20,6 @@ V3.3.4
 	- will not relocate while player has an active mission from her
 	- will not relocate to diktat markets
 	- fixed random option in bar event 3 triggering bar event 2 again
-- GuarDUAL (LPC)
-	- adjusted AI
-	- SCTR-40F Minigun
-		- damage: 25 -> 35
-		- max spread 10 → 5, 
-		- spread decay 3 → 10
-		- turn rate 30-> 80
 
 - Rajanya
 	- Updated binder sprite & bounds
