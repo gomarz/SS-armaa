@@ -1,7 +1,13 @@
-# SS-armaa
-Arma Armatura is a large-scale content and systems mod for Starsector (Java), adding transforming mech strike craft, custom combat AI, pilot progression, and narrative content, etc.
-
-Armaa is a mod for the game [Starsector](http://fractalsoftworks.com). It implements functionality to allow gameplay with the smallest class of ships in the game, fighters, adding animated strikecraft, custom combat AI, pilot progression, and narrative content, etc.
+# Arma Armatura (ArmaA)
+<p align="center">
+  <a href="https://github.com/gomarz/SS-armaa/releases" target="_blank">
+    <img alt="release" src="https://img.shields.io/github/v/release/gomarz/SS-armaa?color=4166f5&style=flat-square" />
+  </a>
+  <a href="https://github.com/gomarz/SS-armaa/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/downloads/gomarz/SS-armaa/total?color=4166f5&style=flat-square" />
+  </a>
+</p>
+A large-scale content and systems mod for Starsector(http://fractalsoftworks.com)
 
 ArmaA adds game mechanics that emulate the behavior of fighters to a certain degree, as well as several new ships with custom ship systems and AI, a pilot progression system that gives every fighter wing a named crew that levels up, and custom missions / narrative campaign content.
 
@@ -31,6 +37,15 @@ BONESAW - Battle Music
 HzDev, Mycophobia, Zeta04, zaz168 - CN Translation
 MesoTroniK - some SFX
 Tartiflette - Initial mech script
+Harupea - Initial Docking System
+Nia Tahl - Scripting, trail patterns, notWhiteBase
+Dark.Revenant - Scripting
+Selkie - Some sprites
+Avanitia,Bass, Alex_Sans, WMGreymind, Randall, Phantasia, Karleen, Finn, Unit9461, TheSoldier, Caymon Joestar, Selkie - Feedback / Testing
+
+License
+
+All the code material and graphic ressources therein can be freely reused in the context of modding projects for Starsector provided proper credits are attributed
 Harupea - Initial Docking System
 Nia Tahl - Scripting, trail patterns, notWhiteBase
 Dark.Revenant - Scripting
