@@ -166,7 +166,7 @@
 - Damage resistance to explosions: 90% → 95%
 - Increased the angular velocity imparted on user and target from axe swings. (In other words: hit stuff, make it spin.)
 - Updated melee effects.
-- Updated binder sprite and bounds.
+- Updated binder sprite (credit to Quacken) and bounds.
 - ARU is now built-in.
 - **Bit:** refit time 8 → 5; system None → Plasma Jets
 - **Binders (module):** no longer have shields. Each intact binder instead contributes 5% shield efficiency to the core unit, for +25% total.
