@@ -1,5 +1,9 @@
-Arma Armatura (ArmaA)
-
+# Arma Armatura (ArmaA)
+<p align="center">
+  <a href="https://github.com/gomarz/SS-armaa/releases" target="_blank">
+    <img alt="release" src="https://img.shields.io/github/v/release/gomarz/SS-armaa?color=4166f5&style=flat-square" />
+  </a>
+</p>
 A large-scale content and systems mod for [Starsector](http://fractalsoftworks.com), built in Java against the game's modding API.
 
 ArmaA adds game mechanics that emulate the behavior of fighters to a certain degree, as well as several new ships with custom ship systems and AI, a pilot progression system that gives every fighter wing a named crew that levels up, and custom missions / narrative campaign content.
