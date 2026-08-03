@@ -7,7 +7,7 @@
         "hulls":{
             "armaa_garegga_tt":0.3,
 	    "armaa_altagrave":0.4,
-            "armaa_garegga_tt_carrier":0.2,
+            "armaa_garegga_tt_carrier":0.5,
         },
     },
     "knownShips":{

@@ -1,41 +1,41 @@
 {
-  "variantId": "armaa_viator_standard",
+  "variantId": "armaa_viator_overdriven",
   "hullId": "armaa_viator",
-  "displayName": "Standard",
-  "goalVariant": true,
-  "fluxCapacitors": 19,
-  "fluxVents": 20,
+  "displayName": "Overdriven",
+  "goalVariant": True,
+  "fluxCapacitors": 10,
+  "fluxVents": 12,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit"
+    "unstable_injector",
+    "safetyoverrides"
   ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "lightdualac",
-        "WS0014": "shredder"
+        "WS0014": "chaingun"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "lightac",
+        "WS0001": "lightag",
+        "WS0003": "lightag",
+        "WS0005": "lightag",
         "WS0007": "lightac",
-        "WS0009": "lightac"
+        "WS0009": "lightac",
+        "WS0011": "irpulse"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "lightag",
-        "WS0004": "lightag",
-        "WS0008": "lightag",
-        "WS0010": "lightag"
+        "WS0013": "irpulse"
       }
     },
     {
@@ -46,13 +46,7 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS0005": "vulcan",
-        "WS0006": "vulcan",
-        "WS0011": "mininglaser",
-        "WS0012": "mininglaser",
-        "WS0013": "vulcan"
-      }
+      "weapons": {}
     }
   ],
   "modules": [],

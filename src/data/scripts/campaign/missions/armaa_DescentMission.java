@@ -83,7 +83,7 @@ public class armaa_DescentMission extends HubMissionWithSearch {
             info.addPara("Travel to the tech-mining facility on " + nekki1.getName() + ".", opad);
         }
         if (currentStage == Stage.GO_TO_MESHAN) {
-            info.addPara("Travel to the subterranean facility on " + nekki1.getName() + ".", opad);
+            info.addPara("Travel to the subterranean facility on " + "Meshan" + ".", opad);
         }
         if (currentStage == Stage.DESCENT) {
             info.addPara("Travel to Gravion and investigate the station", opad);

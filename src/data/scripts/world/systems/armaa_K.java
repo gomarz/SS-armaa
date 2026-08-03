@@ -262,7 +262,7 @@ public class armaa_K {
         debris.setSensorProfile(1f);
         debris.getDetectedRangeMod().modifyFlat("gen", 2000);
         SectorEntityToken gate = system.addCustomEntity("armaa_gate", "Gamlin Gate", "inactive_gate", Factions.NEUTRAL);
-        gate.setCircularOrbitPointingDown(pg_Star, 245 - 60, 6500, 1000);
+        gate.setCircularOrbitPointingDown(nekki_Star, 245 - 60, 6500, 1000);
 
         JumpPointAPI p_jumpPoint2 = Global.getFactory().createJumpPoint("gamlin_jump", "Gamlin's Inner Jump-point");
         p_jumpPoint2.setCircularOrbit(pg_Star, 250 - 60, 2000, 650);

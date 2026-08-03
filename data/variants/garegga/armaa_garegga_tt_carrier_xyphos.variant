@@ -1,0 +1,51 @@
+{
+  "variantId": "armaa_garegga_tt_carrier_xyphos",
+  "hullId": "armaa_garegga_tt_carrier",
+  "displayName": "Ultra Xyphos",
+  "goalVariant": false,
+  "fluxCapacitors": 12,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "sabot"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "MAIN_GUN": "tachyonlance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "gravitonbeam",
+        "WS0001": "gravitonbeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "heatseeker"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "MODULE": "armaa_xyphos_standard"
+    }
+  ],
+  "wings": []
+}

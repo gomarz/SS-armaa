@@ -258,7 +258,7 @@ public class armaa_spareChassis extends BaseHullMod {
                     PersonAPI commander = ship.getCaptain().getFleet() == null
                             ? Global.getCombatEngine().getFleetManager(ship.getOriginalOwner()).getFleetCommander()
                             : ship.getCaptain().getFleet().getCommander();
-                    if (commander.getFleet() != null) {
+                    if (commander != null && commander.getFleet() != null) {
                         member.setFleetCommanderForStats(commander, commander.getFleet().getFlagship().getFleetDataForStats());
                     }
                     member.setCaptain(ship.getCaptain());

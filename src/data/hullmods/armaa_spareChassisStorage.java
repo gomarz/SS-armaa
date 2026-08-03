@@ -46,19 +46,10 @@ public class armaa_spareChassisStorage extends BaseHullMod {
     }
 
     public boolean isApplicableToShip(ShipAPI ship) {
-        if (ship.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
-            for (FleetMemberAPI member : ship.getFleetMember().getFleetData().getMembersListCopy()) {
-                if (member.getVariant().hasHullMod("armaa_exclusive_hangar_assignment")) {
-                    return false;
-                }
-            }
-        }
-        if (ship.isCapital() || ship.isCruiser() || ship.isDestroyer()) {
-            if (ship.hasLaunchBays()) {
-                return true;
-            }
-        }
-        return false;
+
+        return  !ship.isFrigate() && (ship.getHullSpec().getFighterBays() > 0
+                || ship.getMutableStats().getNumFighterBays().isPositive());
+   
     }
 
     @Override

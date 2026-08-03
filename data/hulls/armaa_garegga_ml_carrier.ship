@@ -27,7 +27,7 @@
       "mount": "TURRET",
       "arc": 150,
       "angle": 0,
-      "locations": [19, -0]
+      "locations": [20, -70]
     },
     {
       "id": "MAIN_GUN",
@@ -74,6 +74,15 @@
       "arc": 90,
       "angle": -0,
       "locations": [19, -5]
+    },
+    {
+      "id": "MODULE_COMBAT_POS",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 150,
+      "angle": 0,
+      "locations": [20, -0]
     }
   ],
   "engineSlots": [

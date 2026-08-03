@@ -112,10 +112,24 @@ public class armaa_evasionAI implements ShipSystemAIScript {
                 dicision -= 0.5f;
             }
             final FluxTrackerAPI fluxTracker = ship.getFluxTracker();
-            if (dicision >= 1f) {
-                if (ship.isFighter()) {
-                    ship.giveCommand(randomCommand(), ship.getMouseTarget(), 0);
+                if (ship.isFighter()) 
+                {   
+                    boolean leaderActive = false;
+                    if(ship.getWingLeader() != null && ship.getWingLeader() != ship)
+                    {
+                        if(ship.getWingLeader().getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.REACHED_WAYPOINT) || ship.getWingLeader().getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.FINISHED_SPREADING))
+                        {
+                            leaderActive = true;
+                        }
+                    }
+                    if(flags.hasFlag(ShipwideAIFlags.AIFlags.REACHED_WAYPOINT))
+                    {
+                        if(flags.hasFlag(ShipwideAIFlags.AIFlags.FINISHED_SPREADING) || leaderActive)
+                            ship.useSystem();
+                    }
+                    return;
                 }
+            if (dicision >= 1f) {
                 if (phase) {
                     ship.giveCommand(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK, null, 0);
                 } else {

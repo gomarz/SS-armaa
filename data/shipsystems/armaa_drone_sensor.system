@@ -5,18 +5,18 @@
 	
 	"statsScript":"data.scripts.shipsystems.armaa_sensorDroneStats",
 	
-	"droneVariant":"drone_sensor",
+	"droneVariant":"armaa_drone_sensor_standard",
 	
 	"allowFreeRoam":false,
 	
 	"launchSpeed":300,
-	"launchDelay":1,
-	"maxDrones":2,
+	"launchDelay":0.5,
+	"maxDrones":3,
 	"droneBehavior":[
 		{"droneIndex":[0],
 		 "defaultFacing":"MATCH_SHIP_FACING",	# MATCH_DRONE_HEADING, MATCH_SHIP_HEADING, MATCH_SHIP_FACING, AWAY_FROM_SHIP
 		 "faceEnemy":true,
-		 "holdRoamRange":150,
+		 "holdRoamRange":200,
 		 "freeRoamRange":150,
 		 "targetPriority":[FIGHTER, SHIP],
 		 "initialOrbitAngle":150,
@@ -27,7 +27,7 @@
 		{"droneIndex":[1],
 		 "defaultFacing":"MATCH_SHIP_FACING",	# MATCH_DRONE_HEADING, MATCH_SHIP_HEADING, MATCH_SHIP_FACING, AWAY_FROM_SHIP
 		 "faceEnemy":true,
-		 "holdRoamRange":150,
+		 "holdRoamRange":200,
 		 "freeRoamRange":150,
 		 "targetPriority":[FIGHTER, SHIP],
 		 "initialOrbitAngle":210,

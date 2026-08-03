@@ -44,25 +44,25 @@ Broadsword (WINGCOM),armaa_broadsword,Heavy Fighter,Low Tech,flarelauncher,armaa
 Trident (WINGCOM),armaa_trident,Bomber,High Tech,,armaa_traveldrive,6,500,25,500,,50,15,,130,150,125,30,90,50,OMNI,,180,0,1,,,3,0,0,0,0.5,,11,28000,8,10,225,0.25,6,6,PLAY_FIGHTER_OVERLOAD_SOUNDS,"fake_fighter,rare_bp",0.5,0.5,1,2,,,,,,0,,
 Sarissa (WINGCOM),armaa_sarissa,Support Fighter,Low Tech,canister_flak,armaa_traveldrive,5,750,200,1800,,100,15,,140,250,200,100,200,40,NONE,,0,0,0,,,3,0,0,0,0.5,,11,16000,8,10,225,0.25,5,5,PLAY_FIGHTER_OVERLOAD_SOUNDS,fake_fighter,0.5,0.5,1,2,,,,,,0,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Spriggan Powered,armaa_record_frig,Cataphract,Arma Armatura,fastmissileracks,armaa_traveldrive,6,900,375,600,,50,40,,140,100,100,75,90,140,PHASE,armaa_jauntbooster,,,,,,1,0,0,0,0.5,,11,24000,8,10,250,0.25,6,6,"SHIP_WITH_MODULES,ALWAYS_PANIC","rare_bp,fake_fighter,hist1t,armaa_cataphract_bp,armaa_strikecraft_refit_outCombat",0.5,0.5,3,,3,,,,,,,
+Spriggan Powered,armaa_record_frig,Cataphract,Arma Armatura,fastmissileracks,armaa_traveldrive,6,900,375,600,,50,40,,140,100,100,75,90,140,PHASE,armaa_jauntbooster,,,,,,1,0,0,0,0.5,,11,24000,8,10,250,0.25,6,6,"SHIP_WITH_MODULES,ALWAYS_PANIC","rare_bp,fake_fighter,hist1t,armaa_cataphract_bp,armaa_strikecraft_refit_standard",0.5,0.5,3,,3,,,,,,,
 Spriggan Weapons Pack,armaa_wepPack,Module,,,,,500,100,300,,,,,0,0,0,0,0,20,NONE,,,,,,,,,,,,,,,,,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX,MODULE","module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.5,1,,2,,,,,,,
 Shield,armaa_shield,Shield,,,,,1200,500,400,,100,,,0,0,0,0,0,20,NONE,,45,0.2,1.1,,,,,,,,,,,,,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.5,1,,2,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Valken,armaa_valkenmp,Fodder Cataphract,Arma Armatura,maneuveringjets,,,400,75,200,,50,,,200,200,200,70,100,35,NONE,,,,,,,1,1,0,0,0.5,,1,,25,25,,,1,1,,,0.3,1,3,,2,,,,,,,
-Valken II,armaa_valkenx,Cataphract,Arma Armatura,maneuveringjets,,,750,175,200,0.75,50,,,160,100,180,80,80,60,NONE,,,,,0.05,0.05,2,2,0,0,0.5,,1,,25,25,,,1,1,,,0.3,1,3,,2,,,,,,,
+Valken II,armaa_valkenx,Cataphract,Arma Armatura,armaa_havocDrive,,,750,175,200,0.75,50,,,160,100,180,80,80,60,NONE,,,,,0.05,0.05,2,2,0,0,0.5,,1,,25,25,,,1,1,,,0.3,1,3,,2,,,,,,,
 Kouto,armaa_kouto,Vanguard Cataphract,Arma Armatura,,,,600,50,600,,75,,,130,160,75,75,75,75,OMNI,,75,,,,,2,2,0,0,0.5,,1,,25,25,,,1,1,,,0.5,0.5,3,,3,,,,,,,
 Spriggan,armaa_record,Cataphract,Arma Armatura,,,,600,70,300,,50,,,150,200,150,70,80,60,NONE,,,,,,,1,1,0,0,0.5,,1,,25,25,,,1,1,,,0.5,0.5,3,,3,,,,,,,
-Aleste (S-II),armaa_aleste,Cataphract S-II,Arma Armatura,plasmajets,,,1000,200,2000,,100,,,150,225,190,80,75,70,FRONT,,140,,,,,3,3,0,0,0.5,,1,,25,25,,,1,1,,,0.3,0.5,3,,2,,,,,,,
+Aleste (S-II),armaa_aleste,Cataphract S-II,Arma Armatura,armaa_havocDrive,,,1000,200,2000,,100,,,150,225,190,80,75,70,FRONT,,140,,,,,3,3,0,0,0.5,,1,,25,25,,,1,1,,,0.3,0.5,3,,2,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Fenris,armaa_whitebase,Carrier,Arma Armatura,armaa_recalldevice,,20,8000,1000,6000,4000,250,125,3,60,30,15,15,18,1500,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,20,20,CARRIER,,0.75,,,,,,,0.5,2,3,,407
 Caymon,armaa_caymon,Carrier,Arma Armatura,armaa_flarelauncher_active,,17,6000,750,5000,6000,300,110,2,80,60,40,20,25,800,OMNI,,180,0.5,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,17,17,"CARRIER, COMBAT,SHIP_WITH_MODULES",,0.5,2,3,,0.5,2,3,,407,,,407
 Exilium,armaa_exilium,Modified Battlecarrier,Arma Armatura,armaa_recalldevice,,24,8000,900,8000,6000,400,145,3,80,60,40,20,25,1500,OMNI,,180,0.5,0.8,,,225,400,90,60,3,20,8,520000,3,20,540,0.25,25,25,"CARRIER,COMBAT,NO_AUTO_ESCORT,SHIP_WITH_MODULES","no_dealer,restricted",,0.6,1,4,,,,,,,,
-Viator,armaa_viator,Destroyer,Midline,armaa_drone_sensor,,10,5000,800,4000,3333,300,125,,95,45,20,15,25,500,OMNI,,180,0.4,0.8,,,60,100,90,90,3,30,9,38000,5,12,420,0.25,9,9,,,,,,,,,,,,,,3
+Viator,armaa_viator,Destroyer,Midline,armaa_drone_sensor,,10,5000,600,4000,3333,300,105,,80,50,40,35,60,500,OMNI,,180,0.4,0.8,,,60,100,90,90,3,30,9,38000,5,12,420,0.25,9,9,,,,,,,,,,,,,,3
 Bellator,armaa_bellator,Battlecarrier,Midline,armaa_mine_strike,,60,12000,1200,21000,30000,1200,360,2,50,15,10,6,4,2500,OMNI,,120,0.4,0.8,,,500,800,250,300,10,30,8,300000,3,15,600,0.25,60,60,"CARRIER,COMBAT",,,,,,,,,,,,,4
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #MA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Altagrave,armaa_altagrave,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,375,5800,,400,80,,80,110,110,110,100,250,OMNI,,225,0.4,0.6,,,30,45,10,10,1,15,10,100000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,"armaa_mobilearmor,rare_bp,rare_bp, hist1t,codex_unlockable",0.5,0.3,2,4,2,,,,,,,
-Altagrave (C),armaa_altagrave_c,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,375,5800,,400,80,,80,110,80,95,100,250,OMNI,,225,0.4,0.65,,,30,45,10,10,1,15,10,100000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,"armaa_mobilearmor,rare_bp,hist1t,no_wingcom_docking,codex_unlockable",0.4,0.3,2,4,2,,,,,,,
+Altagrave (C),armaa_altagrave_c,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,375,5800,,400,80,1,80,110,80,95,100,250,OMNI,,225,0.4,0.65,,,30,45,10,10,1,15,10,100000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,"armaa_mobilearmor,rare_bp,hist1t,no_wingcom_docking,codex_unlockable",0.4,0.3,2,4,2,,,,,,,
 Altagrave (EX),armaa_altagrave_ex,Mobile Armor,Arma Armatura,plasmajets,,35,3250,425,6500,,400,80,,80,110,80,95,100,250,OMNI,,300,0.4,0.7,,,0,0,10,10,1,15,10,200000,6,20,280,0.25,35,35,SHIP_WITH_MODULES,"armaa_mobilearmor,no_sell,no_dealer,restricted,codex_unlockable",0.4,0.3,2,4,2,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Garegga,armaa_garegga,Mobile Armor,Arma Armatura,armaa_tshell,,10,3000,600,3250,,325,45,,120,150,150,85,190,250,FRONT,,270,0.4,0.8,,,10,0,0,10,1,20,9,42000,8,20,300,0.25,10,10,,"rare_bp, hist1t,codex_unlockable",0.7,0.4,2,4,309,,,,,,,
@@ -88,6 +88,7 @@ Blade Bit,armaa_bit_blade,UWS,Arma Armatura,temporalshell,,,500,150,1000,,,,,350
 Pila,armaa_bit,UWS,Arma Armatura,temporalshell,,,200,50,1000,,150,,,350,400,400,500,500,10,NONE,,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 Pila Mk.II,armaa_bit_kshatriya,UWS,Arma Armatura,plasmajets,,,200,25,500,,25,,,350,350,350,300,300,10,NONE,NONE,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
 Pila-X,armaa_bit_ex,UWS,Arma Armatura,temporalshell,,,200,50,1500,,150,,,350,400,400,300,300,10,PHASE,,,,,0.05,0.05,0,0,,,,,,,,,,,,,UNBOARDABLE,,,0.5,2,2,454,,,,,,,
+Sensor Drone,armaa_drone_sensor,,,,,,30,10,400,,100,,,100,150,150,120,240,5,FRONT,,180,,,,,,,,,,,,,,,,,,,,,,,,,,Not available (drone),,,0,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,armaa_altagrave_rightleg,Leg Module (R),,armaa_lowgradeemp,,1,1050,450,,,,,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.3,1,2,2,,,,,,,
 ,armaa_altagrave_leftleg,Leg Module (L),,armaa_lowgradeemp,,1,1050,450,,,,,,0,0,0,0,0,225,NONE,,,,,,,,,,,,,,,,10,,,0,0,"UNBOARDABLE,HIDE_IN_CODEX","module_unselectable, module_refit_bright, module_hull_bar_only,no_autofit",0.3,0.3,1,2,2,,,,,,,

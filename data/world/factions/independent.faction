@@ -8,8 +8,12 @@
 			"armaa_aleste_frig":0.4,
 			"armaa_leynos_frig":0.4,
 			"armaa_record_frig":0.7,
-			"armaa_xyphos":0.5,	
+			"armaa_xyphos":0.5,
+			"armaa_garegga_ml_carrier":0.5,	
 		},
+	},
+	"variantOverrides":{
+		"armaa_garegga_ml_carrier_broadsword":10,
 	},
 	"shipsWhenImporting":{
 		"hulls":[
@@ -26,6 +30,7 @@
 				"armaa_whitebase",
 				"armaa_record_frig",
 				"armaa_zanac",
+				"armaa_garegga_ml_carrier",
 				"armaa_zanac_grey",
 			],
 	},

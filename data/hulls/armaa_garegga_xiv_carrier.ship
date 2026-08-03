@@ -32,7 +32,7 @@
       "renderOrderMod": 100
     },
     {
-      "id": "MODULE",
+      "id": "MODULE_COMBAT_POS",
       "size": "LARGE",
       "type": "STATION_MODULE",
       "mount": "TURRET",
@@ -95,6 +95,15 @@
       "arc": 90,
       "angle": -0,
       "locations": [19, -5]
+    },
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [19, -70]
     }
   ],
   "engineSlots": [

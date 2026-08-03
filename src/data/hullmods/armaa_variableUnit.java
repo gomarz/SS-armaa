@@ -299,7 +299,7 @@ public class armaa_variableUnit extends BaseHullMod {
 
     public String getDescriptionParam(int index, HullSize hullSize) {
         if (index == 0) {
-            return "X";
+            return "X | Middle Mouse Button";
         }
         if (index == 1) {
             return "incompatible with Safety Overrides.";

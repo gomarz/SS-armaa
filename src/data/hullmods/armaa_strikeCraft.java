@@ -22,7 +22,6 @@ import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin;
 
 import org.lazywizard.lazylib.MathUtils;
-import org.magiclib.util.MagicUI;
 import data.scripts.ai.armaa_combat_docking_AI;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.VectorUtils;
@@ -148,8 +147,6 @@ public class armaa_strikeCraft extends BaseHullMod {
         }
 
         if (Global.getCurrentState() == GameState.COMBAT && engine != null && !engine.isSimulation()) {
-
-            //Global.getLogger(this.getClass()).info("unapplying corona effect.");
             stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).unmodify("armaa_carrierStorageHyper");
             //omg
             CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
@@ -177,7 +174,7 @@ public class armaa_strikeCraft extends BaseHullMod {
                     stats.getPeakCRDuration().modifyMult("armaa_coronaPPTpenalty", worstMult);
                 } else {
                     stats.getPeakCRDuration().unmodify("armaa_coronaPPTpenalty");
-                }                
+                }
             }
 
         } else if (carrierBonus) {
@@ -250,7 +247,7 @@ public class armaa_strikeCraft extends BaseHullMod {
         tooltip.addPara("%s " + "No %s.", padS, Misc.getHighlightColor(), "\u2022", "zero-flux speed bonus");
         tooltip.addPara("%s " + "Combat Readiness decreases %s faster.", padS, arr2, "\u2022", (int) DEGRADE_INCREASE_PERCENT + "%");
         if (ship != null) {
-            tooltip.addPara("%s " + "Can dock at carriers to fully restore PPT, armor, and hull %s times", padS, Misc.getHighlightColor(), "\u2022", "" + String.format("%.2f",(armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost())));
+            tooltip.addPara("%s " + "Can dock at carriers to fully restore PPT, armor, and hull %s times", padS, Misc.getHighlightColor(), "\u2022", "" + String.format("%.2f", (armaa_strikeCraftRepairTracker.getRepairPool(ship) / ship.getFleetMember().getDeploymentPointsCost())));
         }
         tooltip.addPara("%s " + "Docking always restores CR and ammo, even if repairs are exhausted.", padS, Misc.getHighlightColor(), "\u2022");
         tooltip.addPara("%s " + "Benefits from all bonuses that affect frigates.", padS, Misc.getHighlightColor(), "\u2022", "frigates");
@@ -259,9 +256,9 @@ public class armaa_strikeCraft extends BaseHullMod {
         pdWarning.addPara("%s " + "Receives extra damage ships/weapons would deal to fighters, up %s.", padS, Misc.getHighlightColor(), "\u2022", "25%");
         UIPanelAPI temp = tooltip.addImageWithText(10f);
         if (ship != null) {
-        tooltip.addSectionHeading("Refit Mode", Alignment.MID, 10);
-        tooltip.addPara("Ship will " + getRefitMode(ship), pad, arr, "\u2022");
-        tooltip.addSectionHeading("Carrier Bonuses", Alignment.MID, 10);
+            tooltip.addSectionHeading("Refit Mode", Alignment.MID, 10);
+            tooltip.addPara("Ship will " + getRefitMode(ship), pad, arr, "\u2022");
+            tooltip.addSectionHeading("Carrier Bonuses", Alignment.MID, 10);
 
             if (ship.getFleetMember() != null && ship.getFleetMember().getFleetData() != null) {
                 for (FleetMemberAPI member : ship.getFleetMember().getFleetData().getMembersListCopy()) {
@@ -272,8 +269,7 @@ public class armaa_strikeCraft extends BaseHullMod {
                 }
             }
 
-
-        tooltip.addSectionHeading("Refit Penalties", Alignment.MID, 10);
+            tooltip.addSectionHeading("Refit Penalties", Alignment.MID, 10);
 
             if (size.length() > 1) {
                 tooltip.addPara("%s " + "Large Strikecraft: %s", pad, arr2, "\u2022", size);
@@ -302,9 +298,6 @@ public class armaa_strikeCraft extends BaseHullMod {
         int dryWeps = 0;
 
         for (ShipAPI module : target.getChildModulesCopy()) {
-            if (module.getCollisionClass() != target.getCollisionClass()) {
-                module.setCollisionClass(target.getCollisionClass());
-            }
             String key = "moduleRepair_isDestroyed" + "_" + module.getId();
             if (Global.getCombatEngine().getCustomData().containsKey(key)) {
                 return true;
@@ -338,7 +331,6 @@ public class armaa_strikeCraft extends BaseHullMod {
             if (!w.getSlot().isDecorative() && !w.getId().equals("armaa_landingBeacon")) {
                 if (w.usesAmmo() && (w.getAmmo() < 1 && w.getAmmoPerSecond() == 0)) {
                     dryWeps++;
-                    return true;
                 } else if ((w.usesAmmo() && w.getAmmo() >= 1 && w.getAmmoPerSecond() >= 0) || !w.usesAmmo()) {
                     loadedWeps++;
                 }
@@ -572,6 +564,11 @@ public class armaa_strikeCraft extends BaseHullMod {
         // Refit interval - actual docking logic
         refitInterval.advance(amount);
         if (refitInterval.intervalElapsed()) {
+            for (ShipAPI module : ship.getChildModulesCopy()) {
+                if (module.getCollisionClass() != ship.getCollisionClass()) {
+                    module.setCollisionClass(ship.getCollisionClass());
+                }
+            }
             if (cachedCanRefit && cachedNeedsRefit) {
                 if (!ship.isStationModule() || ship.getStationSlot() == null) {
                     checkRefitStatus(ship, amount);

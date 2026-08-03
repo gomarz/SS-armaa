@@ -35,7 +35,7 @@ Booster,armaa_jauntbooster,,,,,,,,4,0.2,0.1,0.3,0,1,,,,TRUE,,,,,,,,,graphics/ico
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 AWACS,armaa_awacs,,,,,,0.2,,,,0.5,7,1,10,,,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Sensor Drones(IC),armaa_drone_sensor,,,,,,,,2,0.025,0,,0,0,,,,,,,,,,,,,graphics/icons/hullsys/drone_sensor.png
+Sensor Drones(IC),armaa_drone_sensor,,,,,,,,2,0.06,0,,0,0,,,,,,,,,,,,,graphics/icons/hullsys/drone_sensor.png
 Pinpoint Strike,armaa_reload,,,,,,,,,,0.5,1,,10,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Executioner's Mark,armaa_rampagedrive2,,,,,,0.05,,,,2,5,1,5,TRUE,,,,,TRUE,TRUE,TRUE,FALSE,TRUE,,movement,graphics/icons/hullsys/burn_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

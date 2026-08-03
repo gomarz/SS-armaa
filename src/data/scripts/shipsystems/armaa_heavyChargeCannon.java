@@ -35,7 +35,7 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
 
     // ---- commit-cost tunables s
     private static final float COMMIT_SPEED_MULT = 0.70f;
-    private static final float COMMIT_SHIELD_TAKEN_MULT = 1.25f;
+    private static final float COMMIT_SHIELD_TAKEN_MULT = 1.05f;
 
     // ---- charge timing / tiers (seconds) 
     private static final float CHARGE_MAX_SECONDS = 4.75f;
@@ -156,7 +156,7 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
 
         if (charging) {
             stats.getMaxSpeed().modifyMult(STAT_ID, mix(1f, COMMIT_SPEED_MULT, effectLevel));
-            //stats.getShieldDamageTakenMult().modifyMult(STAT_ID, mix(1f, COMMIT_SHIELD_TAKEN_MULT, effectLevel));
+            stats.getShieldDamageTakenMult().modifyMult(STAT_ID, mix(1f, COMMIT_SHIELD_TAKEN_MULT, effectLevel));
             String slotId = MUZZLE_SLOT_BETA;
             WeaponAPI w = findWeapon(ship, slotId);
             float facing = w.getCurrAngle();

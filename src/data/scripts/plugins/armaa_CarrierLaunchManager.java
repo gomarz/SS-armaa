@@ -2,7 +2,9 @@ package data.scripts.plugins;
  
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.input.InputEventAPI;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import data.scripts.util.armaa_utils;
 import org.lwjgl.util.vector.Vector2f;
  
@@ -16,8 +18,8 @@ import org.lazywizard.lazylib.combat.CombatUtils;
  * Manages staggered carrier launches for armaa strikecraft.
  *
  * Ships are queued here by armaa_TravelDriveStats when they first deploy.
- * While waiting, ships are tucked into their carrier (landing animation,
- * CollisionClass.NONE). When their delay expires the manager fires the
+ * While waiting, ships are tucked into their carrier. 
+ * When their delay expires the manager fires the
  * full launch sequence independently of the travel drive.
  *
  * Register once per combat via:
@@ -104,16 +106,16 @@ private void fireLaunch(ShipAPI ship, ShipAPI carrier) {
     ship.setControlsLocked(false);
 
     // Collect all launch bay slots
-    List<com.fs.starfarer.api.loading.WeaponSlotAPI> launchBays = new ArrayList<>();
-    for (com.fs.starfarer.api.loading.WeaponSlotAPI wep : carrier.getHullSpec().getAllWeaponSlotsCopy()) {
-        if (wep.getWeaponType() == com.fs.starfarer.api.combat.WeaponAPI.WeaponType.LAUNCH_BAY) {
+    List<WeaponSlotAPI> launchBays = new ArrayList<>();
+    for (WeaponSlotAPI wep : carrier.getHullSpec().getAllWeaponSlotsCopy()) {
+        if (wep.getWeaponType() == WeaponType.LAUNCH_BAY) {
             launchBays.add(wep);
         }
     }
 
     Vector2f takeOffLoc;
     if (!launchBays.isEmpty()) {
-        com.fs.starfarer.api.loading.WeaponSlotAPI slot = 
+        WeaponSlotAPI slot = 
             launchBays.get((int)(Math.random() * launchBays.size()));
         
         if (Global.getCombatEngine().getPlayerShip() == ship) {

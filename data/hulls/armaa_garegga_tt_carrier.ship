@@ -43,10 +43,10 @@
     {
       "id": "TRUE_GUN",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 45,
+      "angle": 23,
       "locations": [-33, 47]
     },
     {
@@ -60,13 +60,13 @@
       "renderOrderMod": 100
     },
     {
-      "id": "MODULE",
+      "id": "MODULE_COMBAT_POS",
       "size": "LARGE",
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 150,
       "angle": 0,
-      "locations": [-2, -0]
+      "locations": [0, -0]
     },
     {
       "id": "MAIN_GUN",
@@ -81,10 +81,10 @@
     {
       "id": "WS0001",
       "size": "MEDIUM",
-      "type": "MISSILE",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -45,
+      "angle": -23,
       "locations": [-33, -48]
     },
     {
@@ -105,6 +105,15 @@
       "arc": 90,
       "angle": 0,
       "locations": [3, -43]
+    },
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 0,
+      "locations": [0, -70]
     }
   ],
   "engineSlots": [

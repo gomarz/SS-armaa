@@ -64,7 +64,7 @@
       "locations": [-37, 46]
     },
     {
-      "id": "MODULE",
+      "id": "MODULE_COMBAT_POS",
       "size": "LARGE",
       "type": "STATION_MODULE",
       "mount": "TURRET",
@@ -146,6 +146,15 @@
       "arc": 0,
       "angle": 0,
       "locations": [-17, -0]
+    },
+    {
+      "id": "MODULE",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [15, -70]
     }
   ],
   "engineSlots": [

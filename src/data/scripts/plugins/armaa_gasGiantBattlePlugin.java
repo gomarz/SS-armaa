@@ -647,7 +647,8 @@ public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {
                         CombatUtils.applyForce(ship, 180f, 1f);
                     }
                 }
-                if (attackInterval.intervalElapsed() && !collapsed) {
+                if (attackInterval.intervalElapsed() && !collapsed) 
+                {
                     if (Math.random() < 0.10f) {
                         engine.spawnEmpArcVisual(new Vector2f(10000, -10000 * ship.getOwner()), null, ship.getLocation(), null, (float) Math.random() * 100f, generateLightningColor(), Color.white);
                         if (Math.random() > 0.50f) {

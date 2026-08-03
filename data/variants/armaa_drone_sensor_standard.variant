@@ -1,0 +1,22 @@
+{
+  "variantId": "armaa_drone_sensor_standard",
+  "hullId": "armaa_drone_sensor",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "ioncannon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

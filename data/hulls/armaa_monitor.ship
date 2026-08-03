@@ -174,7 +174,7 @@
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "HARDPOINT",
-      "arc": 70,
+      "arc": 5,
       "angle": 0,
       "locations": [17, 22]
     },

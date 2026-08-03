@@ -1365,7 +1365,8 @@ public class armaa_utils {
         if (carrier.getCurrentCR() <= 0) {
             return false;
         }
-
+        if(carrier.getVariant().getHullMods().contains("strikeCraft"))
+            return false;
         // Frigates only qualify as station modules
         if (carrier.isFrigate() && !carrier.isStationModule()) {
             return false;

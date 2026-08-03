@@ -10,6 +10,7 @@ import com.fs.starfarer.api.util.Misc.Token;
 import java.util.Map;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
+import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.MutableCharacterStatsAPI.SkillLevelAPI;
 import com.fs.starfarer.api.characters.OfficerDataAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
@@ -20,6 +21,7 @@ import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
+import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.BarCMD;
 import com.fs.starfarer.api.ui.CustomPanelAPI;
@@ -53,6 +55,20 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             return false; // should not be possible unless there are other big problems already
         }
 
+        if ("createTheoIfNecessary".equals(action)) {
+            if (Global.getSector().getImportantPeople().getPerson("armaa_theo") != null) {
+                return false;
+            }
+            PersonAPI person = Global.getFactory().createPerson();
+            person.setFaction("luddic_church");
+            person.setName(new FullName("Theophilus", "Given-to-god", FullName.Gender.MALE));
+            person.setPortraitSprite("graphics/armaa/portraits/armaa_theo.png");
+            person.setId("armaa_theo");
+            person.setRankId(Ranks.FATHER);
+            person.setPostId(Ranks.POST_CURATE);
+            Global.getSector().getImportantPeople().addPerson(person);
+            return true;
+        }
         if ("setHireDate".equals(action)) {
             if (Global.getSector().getMemoryWithoutUpdate().get("$armaa_dawnHireDate") != null) {
                 return false;
@@ -68,8 +84,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             Global.getSector().getPlayerFleet().getFleetData().addFleetMember(member);
             member.setCaptain(Global.getSector().getImportantPeople().getPerson("armaa_dawn"));
             return true;
-        }
-        if ("setInteractionTimestamp".equals(action)) {
+        } else if ("setInteractionTimestamp".equals(action)) {
             long timestamp = Global.getSector().getClock().getTimestamp();
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnBarTimestamp", timestamp);
             return true;
@@ -340,7 +355,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
         if (unsaid(global, "daud") && global.contains("$gaATG_gotDaudDeal")) {
             return "daud";
         }
-        */
+         */
         if (unsaid(global, "ZGR") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metZGR")) {
             return "ZGR";
         }
@@ -415,11 +430,13 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
     }
 
     private static final Map<String, String> NAMED_WORLDS = new HashMap<>();
+
     // why is this a map tho
     static {
         NAMED_WORLDS.put("baetis", "baetis");   // home
         NAMED_WORLDS.put("jangala", "jangala");
         NAMED_WORLDS.put("mazalot", "mazalot");
+        NAMED_WORLDS.put("armaa_meshanii_market", "armaa_meshanii_market");
     }
 
     /**

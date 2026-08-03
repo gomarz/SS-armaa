@@ -28,12 +28,19 @@ private static final float REFIT_BONUS = 50f;
     //Built-in only
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        return !ship.isFrigate() && ship.hasLaunchBays();
+        return  !ship.isFrigate() && (ship.getHullSpec().getFighterBays() > 0
+                || ship.getMutableStats().getNumFighterBays().isPositive());
     }
-
+    @Override
+    public String getUnapplicableReason(ShipAPI ship) {
+        if (ship != null && ship.getHullSize() == HullSize.FRIGATE) {
+            return "Cannot be installed on frigates.";
+        }
+        return null;
+    }
     @Override
     public boolean affectsOPCosts() {
-        return true;
+        return false;
     }
 
 }

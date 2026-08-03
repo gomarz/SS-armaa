@@ -866,7 +866,7 @@ FireAll PopulateOptions","""Hell of a fight over the capital.""
 
 He grabs a drink, swirling it lazily before setting it down. ""We secured everything valuable. Arusthai's feelin' the heat, but this ain't over.""
 
-His tone shifts, cutting to the chase. ""They're ready to be civil and hear me out now.Better than bleeding dry to hold the line, aye? I play it right, maybe we lock this down without more mess.""",,
+His tone shifts, cutting to the chase. ""They're ready to be civil and hear me out now. Better than bleeding dry to hold the line, aye? I play it right, maybe we lock this down without more mess.""",,
 armaa_ceylonGift,PickGreeting,"$id == armaa_kade
 !$givenCeylon
 $global.armaa_coc_missionCompleted
@@ -1569,7 +1569,7 @@ armaa_gravionInvestigationOptStationResp7,DialogOptionSelected,$option == armaa_
 
 ""...you, however, your... presence, has introduced a non-deterministic element.""
 
-The rings accelerate around the central eye.""My capacity for subtle correction is now constrained.""
+The rings accelerate around the central eye. ""My capacity for subtle correction is now constrained.""
 
 The central eye expands. ""Let me ask you something.""",armaa_gravionInvestigationOptStationResp8:Continue,
 armaa_gravionInvestigationOptStationResp8,DialogOptionSelected,$option == armaa_gravionInvestigationOptStationResp8,"AddTextSmall ""// BEGIN ASSESSMENT"" highlight
@@ -1694,7 +1694,7 @@ armaa_cassianPost,PopulateOptions,"$player.armaa_cassianReadyToChat_event_id == 
 armaa_Hikaru_Utada getPlayerFleetId score:1000","ShowImageVisual quartermaster
 $player.armaa_cassianReadyToChat_event_id = false
 SetTextHighlights ""Cassian Pha""
-armaa_Hikaru_Utada stopMusic","The comm panel pings- sharp, insistent.A face resolves in the feed under hard white light. ""Your Gravion popsicle just sat up and started looking around. Warming protocol's doing its job, but he's still coming up slow.""
+armaa_Hikaru_Utada stopMusic","The comm panel pings- sharp, insistent. A face resolves in the feed under hard white light. ""Your Gravion popsicle just sat up and started looking around. Warming protocol's doing its job, but he's still coming up slow.""
 
 ""He gave a name... Cassian Pha? And he's asking for you.""",armaa_cassianPost2:Continue,
 armaa_cassianPost2,DialogOptionSelected,$option == armaa_cassianPost2,"
@@ -1740,11 +1740,11 @@ ShowPersonVisual","Cassian reaches for the TriPad on the cot and taps the screen
 It's irritation.",armaa_cassianPost9:Continue,
 armaa_cassianPost9,DialogOptionSelected,$option == armaa_cassianPost9,FireAll armaa_cassianPostOpts2,"""Sera Pha,"" he says at last, enunciating it like he's reading it off a bill of lading. ""Your TriPad lists her as the Chief Executive of Arma Armatura.""
 
-""I have no siblings,"" Cassian says. ""Nor legitimate children So you will help me understand."" He holds the gaze for another moment, then continues as if he hasn't just demanded an answer. 
+""I have no siblings,"" Cassian says. ""Nor legitimate children, so you will help me understand."" He holds the gaze for another moment, then continues as if he hasn't just demanded an answer. 
 
-""Before you answer,"" he adds, ""understand that I am not asking to reclaim anything. I only want to know what been built on top of my name.
+""Before you answer,"" he adds, ""understand that I am not asking to reclaim anything. I only want to know what has been built on top of my name.
 
-""So,"" he says, ""tell me, Captain."" ""Who is Sera Pha?""",,
+""So,"" he says, ""tell me, Captain. Who is Sera Pha?""",,
 armaa_cassianPost9a,armaa_cassianPostOpts2,,,,"armaa_cassianPost9aResp:""Sera Pha is the public CEO of Arma Armatura. That's all I know.""",
 armaa_cassianPost9b,armaa_cassianPostOpts2,,,,"armaa_cassianPost9bResp:""I've met her. She's not a warlord. She does business.""",
 armaa_cassianPost9c,armaa_cassianPostOpts2,,,,"armaa_cassianPost9cResp:""I'm not discussing my relationship with her.""",
@@ -1847,7 +1847,7 @@ Inside is a small and totally unremarkable room. A simple table, long table sits
 Sera steps inside first and takes one of the seats. She folds her hands neatly.",armaa_hcChalet4:Continue,
 armaa_hcChalet4,DialogOptionSelected,$option == armaa_hcChalet4,,"Cassian doesn't sit right away. He stands across from her, a weak shadow of his former self, and for a moment he looks absurdly out of place in the room; a relic of a different era brought into a modern corporate set. Then, as if an invisible switch has been flicked, he looks exactly like he belongs.
 
-""You're using my surname."" Cassian says. ""On the surface, it comes across as a calm, matter of fact statement. In reality, there is an unusual intensity behind it.
+""You're using my surname."" Cassian says. On the surface, it comes across as a calm, matter of fact statement. In reality, there is an unusual intensity behind it.
 
 ""So I am,"" she replies. 
 
@@ -1866,11 +1866,11 @@ Cassian stares at her for a long time. Then, slowly, he pulls the chair out. ""T
 
 Sera's smile widens by a fraction.",armaa_hcChalet6:Continue,
 armaa_hcChalet6,DialogOptionSelected,$option == armaa_hcChalet6,"ShowLargePlanet
-armaa_Hikaru_Utada playMusic music_encounter_mysterious","You step outside to give the two time to speak privately. A few meters across from you, a woman in a skirt who has barely moved and seemingly finds the wall behind you more interesting than anything else in the room stands at attention. After painfully awkward silence, she speaks-eyes on a point over your shoulder.
+armaa_Hikaru_Utada playMusic music_encounter_mysterious","You step outside to give the two time to speak privately. A few meters across from you, a woman in a skirt who has barely moved and seemingly finds the wall behind you more interesting than anything else in the room stands at attention. After a painfully awkward silence, she speaks-eyes on a point over your shoulder.
 
-""You're not required to remain here, Captain. Please, make yourself comfortable while you wait.""
+""You're not required to remain here, captain. Please, make yourself comfortable while you wait.""
 
-From behind the door, you hear nothing. The room might be empty, for all your senses can prove. Another person - an employee, clearly - rounds the corner and approaches you. They stop at a polite distance and hold the tray out without speaking, offering a single glass with something amber in it that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again.",armaa_hcChalet7:Continue,
+From behind the door, you hear nothing. The room might be empty, for all your senses can prove. Another person - an employee, clearly - rounds the corner and approaches you. They stop at a polite distance and hold a tray out without speaking, offering a single glass with something amber in it that smells expensive and unnecessary. Afterwards, the aide retreats and vanishes again.",armaa_hcChalet7:Continue,
 armaa_hcChalet7,DialogOptionSelected,$option == armaa_hcChalet7,"BeginConversation armaa_cassian
 ShowPersonVisual","* * *
 
@@ -2177,31 +2177,154 @@ She glances off. ""I grew up somewhere not too different.""",,
 armaa_dawnSit12,armaa_DawnSituationComment,$armaa_dawnTopic == generic,"SetTextHighlights $armaa_dawnMarket
 FireAll PopulateOptions","$armaa_dawnMarket...
 
-""Ordinary place, by all accounts. Gettin' rare, those.""",,
+""Not really what i'd call habitable - I mean, nothin' out there wants folks livin' in it, but we're a stubborn lot.""",,
 armaa_dawnSit13,armaa_DawnSituationComment,$armaa_dawnTopic == repeat,FireAll PopulateOptions,"""Ain't changed since you asked, $playerSirOrMadam.""",,
+armaa_dawnSit14,armaa_DawnSituationComment,,,"""Nothin' worth reportin' here, $playerSirOrMadam.""",,
 armaa_dawnSitMazalot,armaa_DawnSituationComment,"$armaa_dawnTopic == mazalot
 $faction.id == persean","SetTextHighlights $armaa_dawnMarket
-FireAll PopulateOptions","$armaa_dawnMarket...
-
-""Most folks here share the faith. Come out this far and you can live how you like without the church breathin' down your neck."" She clasps her hands together, putting on a mockingly cheerful tone. ""Instead, you get trampled on by a pampered gens-baby. Tch.""
+FireAll PopulateOptions","""$armaa_dawnMarket? Most folks here share the faith. Come out this far and you can live how you like without the church breathin' down your neck."" She clasps her hands together, putting on a mockingly cheerful tone. ""Instead, you get trampled on by a pampered gens-baby. Tch.""
 
 ""I have a few words to share with the guy runnin' things here. Let's hope I never get the chance to.""",,
+armaa_dawnSitMeshanII,armaa_DawnSituationComment,"$armaa_dawnTopic == armaa_meshanii_market
+","SetTextHighlights $armaa_dawnMarket
+FireAll armaa_DawnSituationCommentMeshanII","""$armaa_dawnMarket used to be majority Luddic back in the day, but when Arma Armatura rolled in, there was... change. An' of course, that change brought a lot of friction. The Crown does its best to please everyone, sure, but in the eyes of the most faithful, this planet's been corrupted. "" She flicks a nonexistent speck of dirt off her flight jacket.
+
+""I won't jaw at you about buried history, but the crew I ran with was at odds with the Crown for a good bit, and so was I. I got a job out of it on account of my amazin' flyin' skills."" She smirks.",,
+armaa_dawnSitMeshanIIPress,armaa_DawnSituationCommentMeshanII,,,,armaa_dawnSitMeshanIIPressResp:Pry,
+armaa_dawnSitMeshanIIPLetGo,armaa_DawnSituationCommentMeshanII,,,,armaa_dawnSitMeshanIIPLetGoResp:Let it go,
+,,,,,,
+armaa_dawnSitMeshanIIPressResp,DialogOptionSelected,$option == armaa_dawnSitMeshanIIPressResp,"AdjustRepActivePerson SUSPICIOUS -1
+FireAll PopulateOptions","""If I wanted to tell you, $playerSirOrMadam, I would have."" She breaks eye contact and rubs her neck before quickly adding, ""Sorry, it's just history I'd rather not go over.""",,
+armaa_dawnSitMeshanIIPressResp2,DialogOptionSelected,"$option == armaa_dawnSitMeshanIIPressResp
+$rel > 0.50",,"""That schism between some of the faithful an' the Crown? Some of 'em got it in their heads they could do somethin' about it."" Her mouth twists.
+
+""An' I may have blown in here from off-world to help 'em do it.""","armaa_dawnSitMeshanIIPressResp2Pathers:Ask if they were Pathers
+armaa_dawnSitMeshanIIPLetGoResp:Say nothing",
+armaa_dawnSitMeshanIIPLetGoResp,DialogOptionSelected,$option == armaa_dawnSitMeshanIIPLetGoResp,FireAll PopulateOptions,,,
+armaa_dawnSitMeshanIIPressResp2Pathers,DialogOptionSelected,$option == armaa_dawnSitMeshanIIPressResp2Pathers,FireAll PopulateOptions,"""No. I mean, it's not like they had badges that said 'pather' on 'em. I'm sure some could have been. Someone died durin' an anti-industrialization demonstration, and folks suddenly wanted blood. Before I knew it, I was flyin' against mercs."" She flicks a nonexistent speck of dirt off her flight jacket.
+
+""Things cooled down after a while, but end of the day, I backed a group of insurgents. Got out of any real punishment on account of my amazin' flyin' skills, which you're no doubt familiar with."" She smirks.
+
+""Did my time working for Arma Armatura. Guess it all ended up workin' out but can't say I don't regret getting tangled up in the mess to begin with.""",,
+,,,,,,
+armaa_dawnSitMeshanIIPressResp3Illegal,DialogOptionSelected,$option == armaa_dawnSitMeshanIIPressResp3Illegal,,,,
+armaa_dawnSitMeshanIIPressResp3RestOfThem,DialogOptionSelected,$option == armaa_dawnSitMeshanIIPressResp3RestOfThem,FireAll PopulateOptions,"""Scattered, mostly. They probably didn't want to make martyrs twice over, so they sent 'em back to their fields an' never brought it up again.""",,
+armaa_dawnSitMeshanIIPressResp3Judge,DialogOptionSelected,$option == armaa_dawnSitMeshanIIPressResp3Judge,,,,
 ,,,,,,
 #armaa_dawnSitYunifer,armaa_DawnSituationComment,$armaa_dawnTopic == sfcruni,"SetTextHighlights $armaa_dawnMarket
 FireAll armaa_DawnSituationCommentZGR
 $global.armaa_dawnSaid_sfcruni = true",,,
 ,,,,,,
 armaa_dawnSitBaetis,armaa_DawnSituationComment,$armaa_dawnTopic == baetis,"SetTextHighlights $armaa_dawnMarket
-FireAll PopulateOptions","""$armaa_dawnMarket...the ol' stomping grounds."" She pulls something up on her end, scanning it instead of looking at you. ""...not much else to it. Well..there is, but it's a story for another day.""",,
+FireAll PopulateOptions","""$armaa_dawnMarket...the ol' stomping grounds."" She pulls something up on her end, scanning it instead of looking at you. ""...not much else to it.""",,
 armaa_dawnSitBaetis2,armaa_DawnSituationComment,"$armaa_dawnTopic == baetis
-$player.metDawnBar2Q3","SetTextHighlights $armaa_dawnMarket
-FireAll PopulateOptions","""What's there to say about $armaa_dawnMarket? Fittin' place to dump the people you don't want.""
+$player.metDawnBar2Q3
+!$metDawnsFamily ",SetTextHighlights $armaa_dawnMarket,"""What's there to say about $armaa_dawnMarket? Fittin' place to dump the people you don't want.""
 
 ""That's what it is, mind. I'd hang out around the landing bays with the holos promisin' whatever you'd pay for.""
 
 OR
+""Grandpa set up here and died doin' what he believed in, which was convertin' folks to the faith. Guess my old man decided he'd see it through instead of packin' up and headin' back to Tartessus.""",armaa_dawnSitBaetisFamilyResp:Ask about family,
+,,,,,,
+armaa_dawnSitBaetisFamilyResp,DialogOptionSelected,$option == armaa_dawnSitBaetisFamilyResp,,"""My folks? Yeah, they're still here- actually, I'll probably pay 'em a visit before we leave port.
 
-""What's there to say about $armaa_dawnMarket? Best part was the pilgrims. They'd come through on Church business and make a whole production of not goin' in. Stand out front of a place, talk loud about temptation, make sure somebody was takin' note.""",,
+""You wanna come with?"" She laughs at the notion herself.","armaa_dawnSitBaetisFamilyRespAccept:Accept
+armaa_dawnSitBaetisFamilyRespDecline:Decline",
+armaa_dawnSitBaetisFamilyRespAccept,DialogOptionSelected,$option == armaa_dawnSitBaetisFamilyRespAccept,armaa_dawnCMD createTheoIfNecessary,"Her expression could best be described as shock, though she recovers.
+
+""...You really? Ah - I mean, great."" She gives herself a moment, then brushes back a strand of hair.
+
+""It actually wouldn't be too strange for you to drop in.""",armaa_dawnSitBaetisFamily2:Take a shuttle down to Baetis,
+armaa_dawnSitBaetisFamilyRespDecline,DialogOptionSelected,$option == armaa_dawnSitBaetisFamilyRespDecline,FireAll PopulateOptions,"""Believe me, you're not missin' out on anything.""",,
+,,,,,,
+armaa_dawnSitBaetisFamily2,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily2,ShowLargePlanet,"Faint, shimmering veils of frost-mist claw upward as your shuttle descends toward the spaceport. Below, the landing bays are ringed in ad-holos advertising nearly every method of excess imaginable.
+
+Past the commercial strip, the gaudy lighting thins out as you enter an older structure where most of the permanent population lives. From there, the final leg of the trip is completed via ground transport, leaving you in front of a smattering of buildings shaped by the strength of human muscle.",armaa_dawnSitBaetisFamily3:Continue,
+armaa_dawnSitBaetisFamily3,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily3,ShowPersonVisual,"""The faithful tend to converge,"" Dawn offers. ""The more zealous types, usually. We're headed over there."" She gestures farther down the road to a building whose walls are decorated in cloth with bright patterns.",armaa_dawnSitBaetisFamily5:Continue,
+armaa_dawnSitBaetisFamily3b,DialogOptionSelected,"$option == armaa_dawnSitBaetisFamily3
+$player.luddicAttitudeFaithfulOrPather
+",ShowPersonVisual,"""You share the faith, so it's probably no suprise to you that the we tend to converge,"" Dawn offers helpfully. ""The more zealous types, usually. We're headed over there."" She gestures farther down the road to a building whose walls are decorated in cloth with bright patterns.",armaa_dawnSitBaetisFamily5:Continue,
+armaa_dawnSitBaetisFamily5,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily5,,"* * *
+
+Dawn pushes open large wooden doors to the chapel proper, holding one as you follow her in.
+
+She takes no more than four steps before a red-faced barrel of a man notices her. He crosses the room faster than one his size should, engulfing her in a bear hug.
+
+""Oh, my dear! Come to visit, have you? It's so, so good to see you!""",armaa_dawnSitBaetisFamily6:Continue,
+armaa_dawnSitBaetisFamily6,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily6,"BeginConversation armaa_theo
+ShrineCMD playMusic
+ShowSecondPerson armaa_dawn","""Blessin's upon you..now stop embarrasin' me in front of company,"" Dawn wheezes.
+
+The man pauses and sets her down, finally turning to face you and beaming a large smile. ""My apologies,$playerSirOrMadam. You must be Captain $playerFirstName, I take it? Good to meet you, good to meet you!""
+
+He grips your hand in both of his.",armaa_dawnSitBaetisFamily6a:Continue,
+armaa_dawnSitBaetisFamily6a,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily6a,,"""I am Curate Given-to-God. But you may call me Theo. Come, let us sit and have some tea.""",armaa_dawnSitBaetisFamily6b:Continue,
+armaa_dawnSitBaetisFamily6aHostileToChurch,DialogOptionSelected,"$option == armaa_dawnSitBaetisFamily6a
+RepLTE luddic_church HOSTILE",AdjustRepPerson armaa_theo SUSPICIOUS -11,"He holds his grasp on your hands longer than necessary. Finally, he relents. ""I am Curate Given-to-God. Come, let us sit and have some tea.""",armaa_dawnSitBaetisFamily6b:Continue,
+armaa_dawnSitBaetisFamily6aFriendlyToChurch,DialogOptionSelected,"$option == armaa_dawnSitBaetisFamily6a
+RepGTE luddic_church FRIENDLY",AdjustRepPerson armaa_theo FRIENDLY 5,"""Those within the Church speak highly of you. I am Curate Given-to-God, but please, call me Theo. Come, let us sit and have some tea.""",armaa_dawnSitBaetisFamily6b:Continue,
+armaa_dawnSitBaetisFamily6b,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily6b,,"You are guided past the clergy and those in attendance for the daily prayer into a small back room. There is no particular excess to the room: a table sits at the center of the room with a tea set on it, and several mismatched chairs alongside it. On the wall, an insignia framed in cloth hangs.
+
+You sit, and the Curate pours three cups. He watches his steep for a moment before speaking. ""There are better blends, but I find this to be the best one on Baetis."" He shifts his attention to Dawn. ""How long can we keep you?""","armaa_dawnSitBaetisFamily7a:Drink the tea
+armaa_dawnSitBaetisFamily7b:Wait for Dawn to answer",
+armaa_dawnSitBaetisFamily7a,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily7a,"$option = armaa_dawnSitBaetisFamily7b
+FireBest DialogOptionSelected",You wait a moment longer before taking a sip. It is a decent blend.,,
+armaa_dawnSitBaetisFamily7b,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily7b,"$option = armaa_dawnSitBaetisFamily8
+FireBest DialogOptionSelected","""Figured we'd stop by since we were in the area. Captain wanted to come along, actually,"" Dawn says, grasping the cup and taking a sip.""$playerHeOrShe's got a $shipOrFleet to run, so...""",,
+armaa_dawnSitBaetisFamily8,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily8,,"""Ah, your mother's out. She'll be sorry she missed you,"" the curate says, taking a sip of his own tea. It's not clear to you if he ignored Dawn's statement or simply didn't feel the need to address it directly.
+
+""How are things off world?""
+
+Dawn sets her cup down, leaning back. ""Let me think..""",armaa_dawnSitBaetisFamily8D:Continue,
+armaa_dawnSitBaetisFamily8Divide,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily8D,FireAll armaa_dawnSitBaetisAcheivements,,,
+,,,,,,
+armaa_dawnSitBaetisFamily9,armaa_dawnSitBaetisAcheivements,"$player.numColonies > 0
+$numAcheivements++",,"""The captain's got a few colonies of $playerHisOrHer own we've been tendin' to. Guess you could say we have our own little flock.""
+
+Theo inclines his head, ""Is that so?"" He looks at you, raising an eyebrow and covering his mouth with a hand. ""Looks like she took after me more than I thought, ha-ha.""",,
+armaa_dawnSitBaetisFamily9LKE,armaa_dawnSitBaetisAcheivements,"$global.lke_missionCompleted
+$numAcheivements++",,"""Done some work for the Archcurate here and there.""
+
+Theo stops drinking. ""The archcurate herself? Why, that is a calling many would dream of. Great work, my dear.""",,
+armaa_dawnSitBaetisFamily9LPPComplete,armaa_dawnSitBaetisAcheivements,"$player.dawnVisitedShrines >= 5
+$numAcheivements++",,"""Finally knocked out travelin' the Pilgrim's Path with the Captain's help.""",,
+armaa_dawnSitBaetisFamily9LPPIncomplete,armaa_dawnSitBaetisAcheivements,"$player.dawnVisitedShrines > 0
+$player.dawnVisitedShrines < 5",,"""Got started on the Pilgrim's Path.""",,
+armaa_dawnSitBaetisFamily9LPFallback,armaa_dawnSitBaetisAcheivements,,"$option = armaa_dawnSitBaetisFamily10
+FireBest DialogOptionSelected","""Other than the usual, there's not much else.""",,
+armaa_dawnSitBaetisFamily10,DialogOptionSelected,"$option == armaa_dawnSitBaetisFamily10
+$numAcheivements >= 3",AdjustRepPerson armaa_theo FRIENDLY 1,"The curate strokes his beard, "" I must admit, that is quite impressive. I see that you have been busy. It is humbling that you took the time to visit us, here."" He pauses, turning to you. ""You are in good company, indeed.""",armaa_dawnSitBaetisFamily11:Continue,
+armaa_dawnSitBaetisFamily10B,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily10,,"Theophiuls strokes his beard, ""I see."" he seems to realize something, turning to you. ""My apologies, captain. I have not yet thanked you for taking Dawn in.",armaa_dawnSitBaetisFamily11:Continue,
+armaa_dawnSitBaetisFamily11,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily11,,"The three of you make small talk. Theophilus is careful not to pry; Dawn offers the least information she can get away with. 
+It doesn't come across as tension or discomfort, though. Perhaps this is just the way they are.
+
+Dawn sets her cup down with a clink, standing and stretching with a yawn. ""I reckon we should get going,""","armaa_dawnSitBaetisFamily12:Stand
+armaa_dawnSitBaetisFamily11b:""I would like more tea, actually.""",
+armaa_dawnSitBaetisFamily11b,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily11b,AdjustRepPerson armaa_theo FRIENDLY 1,"Dawn shoots you a murderous look, but her father laughs. ""It would be my pleasure. To go, perhaps?""",armaa_dawnSitBaetisFamily12:Continue,
+armaa_dawnSitBaetisFamily12,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily12,"BeginConversation armaa_dawn
+ResumeNormalMusic
+$metDawnsFamily = true ","Theophiuls stands himself, ""Of course, of course. Let me see you out.""
+
+At the doors, the two exchange another hug. ""Come by whenever you get the chance,"" he says.
+
+""Sure,"" she replies.
+
+The shuttle ride back is uneventful. Dawn seems more interested in the passing scenery than sparking a conversation.","armaa_dawnSitBaetisFamily12a:Say it was nice
+armaa_dawnSitBaetisFamily12b:Ask about her father
+armaa_dawnSitBaetisFamily12c:Say nothing",
+armaa_dawnSitBaetisFamily12a,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily12a,"EndConversation
+ShowDefaultVisual
+FireAll PopulateOptions","""We're nothin' if not hospitable."" she simply says.
+
+Dawn hops out of her seat as the shuttle dock with the $shipOrFleet. ""Well, back to it. See ya 'round, $playerSirOrMadam. Thanks for comin' along.""",,
+armaa_dawnSitBaetisFamily12b,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily12b,"EndConversation
+ShowDefaultVisual
+FireAll PopulateOptions","""Told ya he was proper devout, didn't I? Been at this for around thirty cycles now.""
+
+Dawn hops out of her seat as the shuttle dock with the $shipOrFleet. ""Well, back to it. See ya 'round, $playerSirOrMadam. Thanks for comin' along.""",,
+armaa_dawnSitBaetisFamily12c,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily12c,"EndConversation
+ShowDefaultVisual
+FireAll PopulateOptions","Dawn hops out of her seat as the shuttle dock with the $shipOrFleet. ""Well, back to it. See ya 'round, $playerSirOrMadam. Thanks for comin' along.""",,
 ,,,,,,
 armaa_dawnSitZGR,armaa_DawnSituationComment,$armaa_dawnTopic == ZGR,"SetTextHighlights $armaa_dawnMarket
 FireAll armaa_DawnSituationCommentZGR
@@ -2212,7 +2335,7 @@ armaa_dawnSitZGRMerc,armaa_DawnSituationCommentZGR,,,,armaa_dawnSitZGRMercResp:S
 armaa_dawnSitZGRMercSus,armaa_DawnSituationCommentZGR,,,,"armaa_dawnSitZGRMercSusResp:Something's wrong with her, but she's useful",
 armaa_dawnSitZGRSus,armaa_DawnSituationCommentZGR,,,,armaa_dawnSitZGRSusResp:Don't trust her,
 armaa_dawnSitZGRBaird,armaa_DawnSituationCommentZGR,$player.metBaird,,,armaa_dawnSitZGRBairdResp:Reminds you of Baird,
-armaa_dawnSitZGRChurchWarned,armaa_DawnSituationCommentZGR,!$player.luddicAttitudeFaithfulOrPather,,,armaa_dawnSitZGRChurchResp:She's everything the Church warned about,
+armaa_dawnSitZGRChurchWarned,armaa_DawnSituationCommentZGR,!$player.luddicAttitudeFaithfulOrPather,,,armaa_dawnSitZGRChurchWarnedResp:She's everything the Church warned about,
 armaa_dawnSitZGRChurchWarnedFaithful,armaa_DawnSituationCommentZGR,$player.luddicAttitudeFaithfulOrPather,,,armaa_dawnSitZGRChurchFaithfulResp:She's everything Ludd warned about,
 ,,,,,,
 armaa_dawnSitZGRMercResp,DialogOptionSelected,$option == armaa_dawnSitZGRMercResp,FireAll PopulateOptions,"""Mm. Reckon that's the sensible read.""
@@ -2229,11 +2352,9 @@ armaa_dawnSitZGRSusResp,DialogOptionSelected,$option == armaa_dawnSitZGRSusResp,
 armaa_dawnSitZGRBairdResp,DialogOptionSelected,$option == armaa_dawnSitZGRBairdResp,FireAll PopulateOptions,"""Never met 'em."" She turns it over. ""Academy, though. Suppose that tracks, huh? Different collar, same trade. Both after somethin' out of the ground that maybe oughtn't come up.""
 
 ""Difference bein' the Academy writes it down after, corpo sells it.""",armaa_dawnSitZGRBairdResp:Reminds you of Baird,
-armaa_dawnSitZGRChurchWarnedResp,DialogOptionSelected,$option == armaa_dawnSitZGRChurchWarnedResp,FireAll PopulateOptions,"She looks at you a second longer than's comfortable.
+armaa_dawnSitZGRChurchWarnedResp,DialogOptionSelected,$option == armaa_dawnSitZGRChurchWarnedResp,FireAll PopulateOptions,"She looks at you a second longer than's comfortable. ""....maybe. Ain't gonna be the one to say it, though.""
 
-""....maybe. Ain't gonna be the one to say it, though.""
-
-""I fly a war machine for coin. Verdicts ain't mine to hand out. Ask me if she's dangerous and I'll say yes. Leave the rest to somebody cleaner.""",armaa_dawnSitZGRChurchResp:She's everything the Church warned about,
+""I fly a war machine for credits, after all, so verdicts ain't mine to hand out. Ask me if she's dangerous and I'll say yes, but i'll leave the rest to somebody else.""",armaa_dawnSitZGRChurchResp:She's everything the Church warned about,
 armaa_dawnSitZGRChurchWarnedFaithfulResp,DialogOptionSelected,$option == armaa_dawnSitZGRChurchFaithfulResp,FireAll PopulateOptions,"""There's always someone who thinks they can mess with the thing unmolested, 'cause they're smarter 'n the last fool.""
 
 ""So? Yeah, it'll probably blow up in her face, and it'll probably cost people when it does, but I won't pretend it costs me nothin', $playerBrotherOrSister. Neither of us is standin' on clean ground.""",armaa_dawnSitZGRChurchFaithfulResp:She's everything Ludd warned about,
@@ -2377,7 +2498,7 @@ armaa_dawnMeeting,DialogOptionSelected,$option == armaa_dawnMeeting,"BeginConver
 armaa_dawnCMD supressBarSupression
 armaa_Hikaru_Utada playMusic music_armaa_bar
 ShowPersonVisual
-$player.armaa_metDawnInitial = true","The two of you trade stories for a while - matching contrasting encounters with pirates ,pathers and smugglers. 
+$player.armaa_metDawnInitial = true","The two of you trade stories for a while - matching contrasting encounters with pirates, Pathers and smugglers. 
 
 ""Sounds like you could use work. Or advice. Maybe both. I might be able to help. Depends on the sort of person you are.""","armaa_dawn_barEvent1:""See you around.""
 armaa_dawn_barEvent2:""Thanks. I appreciate it.""
@@ -2541,7 +2662,7 @@ armaa_dawnCMD populateGuestPicker armaa_dawnBar2Start2","As you approach, Dawn w
 
 The officer present, is...",99:armaa_dawnBar2Start2:[Random],
 armaa_dawnBar2Start2,DialogOptionSelected,$option == armaa_dawnBar2Start2,"ShowPersonVisual
-armaa_dawnCMD showGuestOfficer","""You know $armaa_dawnGuestName, right? 'Course you do. Well. We've been havin' a a little.. conversation.""",armaa_dawnBar2OfficerReact:Continue,
+armaa_dawnCMD showGuestOfficer","""You know $armaa_dawnGuestName, right? 'Course you do. Well. We've been havin' a little.. conversation.""",armaa_dawnBar2OfficerReact:Continue,
 armaa_dawnBar2OfficerReactAggressiveResp,DialogOptionSelected,"$option == armaa_dawnBar2OfficerReact
 $armaa_dawnGuestPersonality == aggressive",FireAll armaa_dawnBar2QuestionOpts,"$armaa_dawnGuestName fires off an informal salute as you approach. ""Captain. She-- she started it.""
 
@@ -2656,7 +2777,7 @@ armaa_dawnBar2EndAggressiveResp,DialogOptionSelected,"$option == armaa_dawnBar2E
 $armaa_dawnGuestPersonality == aggressive","AdjustRepActivePerson 1
 EndConversation DO_NOT_FIRE
 RestoreSavedVisual
-BarCMD showOptions","A small salute. Informal. ""Sir."", $armaa_dawnGuestName says.",,
+BarCMD showOptions","A small, informal salute. ""...$playerSirOrMadam"", $armaa_dawnGuestName says.",,
 armaa_dawnBar2EndRecklessResp,DialogOptionSelected,"$option == armaa_dawnBar2End
 $armaa_dawnGuestPersonality == reckless","AdjustRepActivePerson 1
 EndConversation DO_NOT_FIRE
@@ -4101,7 +4222,7 @@ armaa_Hikaru_Utada getPlayerFleetId score:1000","BeginConversation armaa_dawn
 ShowPersonVisual
 $player.armaa_$bffi_goMeetMenesYaribay_event_id = false","Your comms chimes. You accept the request.
 
-""Hey, $playerHonorific. My stateroom. You should probably come see this."" It's Dawn, who sounds almost as if..they're trying not to laugh?",armaa_dawnJethro2:Continue,
+""Hey, $playerHonorific. Come to my stateroom. You should probably come see this."" It's Dawn, who sounds almost as if..they're trying not to laugh?",armaa_dawnJethro2:Continue,
 armaa_dawnJethro2,DialogOptionSelected,$option == armaa_dawnJethro2,"EndConversation
 BeginConversation bornanew
 ShowSecondPerson armaa_dawn
@@ -4139,9 +4260,7 @@ armaa_dawnKantaDenRespPather,DialogOptionSelected,$option == armaa_dawnKantaDenR
 FireBest DialogOptionSelected","Jethro's expression doesn't change, as if this was something that was always obvious. ""I see,"" he says.
 
 ""I won't pretend that's uncomplicated,"" he says. ""Given where we're going and what we're doing - But I've known people of the Path who were better than the Path they walked. And people of the Church who were worse than it.""",,
-armaa_dawnKantaDenRespAtheistic,DialogOptionSelected,$option == armaa_dawnKantaDenRespAtheistic,,"""At all?""
-
-""At all."", you confirm.
+armaa_dawnKantaDenRespAtheistic,DialogOptionSelected,$option == armaa_dawnKantaDenRespAtheistic,,"""At all?"" You confirm this.
 
 ""I hope you don't mind me asking,"" he says, ""and I beg your pardon if I am prying too much - but - what do you hold onto? When things go badly.""
 
@@ -4164,7 +4283,7 @@ FireBest DialogOptionSelected","Jethro considers this carefully.
 ""I think that takes more strength than people give it credit for,"" he says finally. ""Carrying your own weight with nothing underneath.""",,
 armaa_dawnKantaDenRespAtheisticIDK,DialogOptionSelected,$option == armaa_dawnKantaDenRespAtheisticIDK,"$option = armaa_dawnJethro3
 FireBest DialogOptionSelected","He doesn't offer anything to fill the silence.
-""Alright,"" he says finally. Gently.",,
+""Alright,"" he says finally.",,
 armaa_dawnKantaDenRespAtheisticDeflect,DialogOptionSelected,$option == armaa_dawnKantaDenRespAtheisticDeflect,"$option = armaa_dawnJethro3
 FireBest DialogOptionSelected","""Probably,"" he agrees. ""You don't have to give it.""
 He picks up his notebook again. This time he actually opens it.
@@ -7216,40 +7335,40 @@ $hailing = false 0
 FireAll armaa_KOLInterceptOpts","""Unidentified vessel, this is $Post $name of the Knights of Ludd. A word before you go about your business?"" $heOrShe doesn't wait for a response. ""Consider it a courtesy.""",,
 armaa_KoLComply,armaa_KOLInterceptOpts,,,,"armaa_KoLComplyResp:""Understood. What do you want?""",
 armaa_KoLDeflect,armaa_KOLInterceptOpts,,,,"armaa_KoLDeflectResp:""I'm just passing through. I don't have time for this.""",
-armaa_KoLComplyResp,DialogOptionSelected,$option == armaa_KoLComplyResp,,"""Appreciated. I'll be direct with you. We've been observing this system for some time now. Our mission is primarily to the safety of the flock herein, but the local government has proven... somewhat uncooperative. Which means, frankly, that you're of the minority we've had the opportunity to speak with in some shifts.""
+armaa_KoLComplyResp,DialogOptionSelected,$option == armaa_KoLComplyResp,,"""I see. Our mission is primarily to the safety of those within the domain of the Church, herein and elsewhere, but the local government has proven somewhat ...uncooperative."" $heOrShe hesitates. 
 
-""We know someone is moving on this system. We don't know who yet, or what their play is. Ships don't come through Gamlin without a reason. So, what's yours?""","armaa_KoLComply2Resp:""I'm just passing through.""
+""Which means, unfortunately, that spacers like you are all we've had the opportunity to speak with in some shifts.""
+
+""I presume you have a reason to pass through this volume. What is it?""","armaa_KoLComply2Resp:""I'm just passing through.""
 armaa_KoLSupplies2Resp:""I'm looking to resupply.""
 armaa_KoLCuriousity2Resp:""I don't know. Exploring, I guess.""",
 armaa_KoLDeflectResp,DialogOptionSelected,$option == armaa_KoLDeflectResp,"$option = armaa_KoLInfoDump
-FireBest DialogOptionSelected","$HeOrShe pauses.
-
-""We'll be brief. There's something you should know about Jenius before you get any closer to it.""",,
+FireBest DialogOptionSelected","""I beg you, hear me. There's something you should know about this place before you spend any longer in it.""",,
 ,,,,,,
 armaa_KoLComply2Resp,DialogOptionSelected,$option == armaa_KoLComply2Resp,"$option = armaa_KoLInfoDump
 FireBest DialogOptionSelected","""I won't press you on the details. A $manOrWoman's work ought to be their own business, and you're not obligated to share it with me. But I'll ask you to hear me out before you go about it.""",,
 armaa_KoLSupplies2Resp,DialogOptionSelected,$option == armaa_KoLSupplies2Resp,"$option = armaa_KoLInfoDump
-FireBest DialogOptionSelected","""Fair enough. New Meshan's a decent waystation if you don't mind it's debauchery."" $heOrShe says it without warmth.
+FireBest DialogOptionSelected","""Fair enough. New Meshan's a decent waystation if you don't mind its debauchery."" $heOrShe says it without warmth.
 
-""Before you make port, there's something you should know about this system. Won't take long. Consider it a toll for the road.""",,
+""Before you make port, allow me to give you fair warning, and a parting token of advice.""",,
 armaa_KoLCuriousity2Resp,DialogOptionSelected,$option == armaa_KoLCuriousity2Resp,"$option = armaa_KoLInfoDump
 FireBest DialogOptionSelected","$heOrShe almost smiles.
 
 ""Talk with me a moment. What you've heard and what's out there are likely two different things.""",,
-armaa_KoLInfoDump,DialogOptionSelected,$option == armaa_KoLInfoDump,,"""I'll speak plainly. This system is rife with the taint of Moloch. You have the data for Jenius on your charts, yes?  The unholy relics of the Domain still patrol their skies. The local population they leave unmolested - the Creator's mercy working through strange instruments, perhaps.""
+armaa_KoLInfoDump,DialogOptionSelected,$option == armaa_KoLInfoDump,,"""This system is rife with the taint of Moloch. You know the tales of AI abominations and when they were excised from civilized space, yes? Unholy relics of the Domain, not the same but borne from similar sin, still linger here. The local population they leave unmolested - the Creator's mercy working through strange instruments, perhaps.""
 
-""Anything else that enters their range is another matter. We lost a missionary vessel some cycles past. Good people, faithful people, gone before they could speak a single prayer.  Ludd holds them now. I take comfort in that, when I allow myself to.""","armaa_KoLInfoDumpWhyNotDestroyedResp:""Why hasn't the Church acted?""
+""Anything else that enters their range is another matter. We lost a missionary vessel some cycles past. Good people, faithful people, gone before they could speak a single prayer. Ludd holds them now. I take comfort in that, when I allow myself to.""","armaa_KoLInfoDumpWhyNotDestroyedResp:""Why hasn't the Church acted?""
 armaa_KoLInfoDumpObstructionsResp:""You mentioned the local government was uncooperative.""
 armaa_KoLInfoDumpEndResp:""I'll keep this in mind. (End)""",
-armaa_KoLInfoDumpWhyNotDestroyedResp,DialogOptionSelected,$option == armaa_KoLInfoDumpWhyNotDestroyedResp,,"""The Excubitor Orbis, in his wisdom, has determined that 'patience' is the proper response to an abomination that has been running unchecked for two hundred years."" A look of contempt washes over $hisOrHer face, but the $post almost immediately self corrects.
+armaa_KoLInfoDumpWhyNotDestroyedResp,DialogOptionSelected,$option == armaa_KoLInfoDumpWhyNotDestroyedResp,,"""The Excubitor Orbis, in his wisdom, has determined that 'patience' is the proper response."" A look of contempt washes over $hisOrHer face, but the $post almost immediately self corrects.
 
-""I do not say that with disrespect. We must move carefully, and for good reason.  We are not the Path, praise Ludd for that distinction. But I will tell you what I have told my novices: there is no diplomatic solution with a machine. You cannot appeal to its conscience. You cannot offer it redemption. It does not have a soul to save.""
+""I do not say that with disrespect. We must move carefully, and for good reason. We are not the Path, praise Ludd for that distinction. But I will tell you what I have told my novices: there is no diplomatic solution with a machine. You cannot appeal to its conscience, and you cannot offer it redemption, for it does not have a soul to save.""
 
-""So I watch and I pray. And I trust that Ludd illuminates the path when the time is right. That is my post. That is my duty. I do not resent it.""","armaa_KoLInfoDumpObstructionsResp:""You mentioned the local government was uncooperative.""
+""So I watch and I pray. And I trust that Ludd illuminates the path when the time is right.""","armaa_KoLInfoDumpObstructionsResp:""You mentioned the local government was uncooperative.""
 armaa_KoLInfoDumpEndResp:""I'll keep this in mind. (End)""",
-armaa_KoLInfoDumpObstructionsResp,DialogOptionSelected,$option == armaa_KoLInfoDumpObstructionsResp,,"""His Majesty's office has sent blessings twice."" $heOrShe sighs, ""Yet every request we have filed - survey records, historical data on the Jenius system - has been received, acknowledged, and not answered. The king appears a faithful man. I do not doubt that. But in my experience, captain, courteous silence and outright obstruction look very much alike from the outside.""
+armaa_KoLInfoDumpObstructionsResp,DialogOptionSelected,$option == armaa_KoLInfoDumpObstructionsResp,,"""His Majesty's office has sent blessings twice."" $heOrShe sighs, ""Yet every request we have filed  has been received, acknowledged, and not answered. The king appears a faithful man, and I do not doubt that he is. But in my experience, courteous silence and outright obstruction can be very much the same.""
 
-$HeOrShe glances toward New Meshan on the display.
+$HeOrShe leans in conspirationally.
 
 ""Who benefits from the Church remaining ignorant of what orbits Jenius? That is a question I have asked myself often enough. I will not accuse without evidence, as that is not the way of Ludd. But I will say that we have been kept at arm's length, and I do not think it is the king who is doing the keeping.""
 
@@ -8728,9 +8847,7 @@ armaa_bellatorCaelderIntro,DialogOptionSelected,$option == armaa_bellatorCaelder
 
 She doesn't offer anything further immediately. Whatever she's about to say, she's chosen her words carefully.
 
-""My..former CO submitted his final report before we lost contact with the station."" Her jaw tightens slightly. 
-
-""Our mission was the preservation of Sovereignty assets and continuity of command. That mission is..."" She looks at you directly. ""We're sitting in deep space with a capital ship, no orders, and a chain of command that ends somewhere I don't have clearance to look at directly. The former captain had no complaints, but I don't like not knowing who I'm actually working for.""
+""My former CO submitted his final report before we lost contact with the station. Our mission was the preservation of Sovereignty assets and continuity of command. That mission is..."" She looks at you directly. ""We're sitting in deep space with a capital ship, no orders, and a chain of command that ends somewhere I don't have clearance to look at directly. The former captain had no complaints, but I don't like not knowing who I'm actually working for.""
 
 ""What I do know is that their report described someone who made choices that didn't have to be made. And that Administrator Pha saw fit to make this introduction rather than leave us out there. The Bellator needs a commission it can stand behind. I'm told you might be in a position to offer one.""","armaa_bellatorRespWord:""You have my word the Bellator will be treated accordingly.""
 armaa_bellatorRespWhatChanged:""What changed your mind?""
@@ -8764,7 +8881,7 @@ $faction.id == armaarmatura_arusthai","$tradeMode = NONE 0
 SetTextHighlightColors bad
 Highlight $market.playerHostileTimeoutStr 
 FireAll armaa_marketdisable
-FireBest MarketPostDock",The dominant polity is hostile to spacers here; trading  isn't really worth the risk.,,
+FireBest MarketPostDock",The dominant polity is hostile to spacers here; trading isn't really worth the risk.,,
 ,,,,,,
 ,,,,,,
 armaa_coreUnitSelectOption,PopulateOptions,"$market.id == armaa_meshanii_market

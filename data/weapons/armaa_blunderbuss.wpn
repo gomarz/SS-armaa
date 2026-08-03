@@ -33,6 +33,6 @@
     30,
     -15
   ],
-  "type": "ENERGY",
+  "type": "BALLISTIC",
   "visualRecoil": 0
 }

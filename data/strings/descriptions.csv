@@ -152,6 +152,7 @@ Developed at some point between the Valken and the Valken II, the Spriggan was c
 armaa_record_frig,SHIP,"An advanced fire-support variant of the Spriggan-class Cataphract, the Powered model trades close-quarters punch for overwhelming ranged capability. It can mount larger missile systems than most other Cataphracts and fields a compact ballistic mount for flexible engagement options.",,,,,
 ,,,,,,,
 armaa_bellator,SHIP,"The Bellator was designed to sustain Arma Armatura's strikecraft in prolonged engagements, shoring up their most glaring weakness: fragility. While its flux grid holds, the built-in Aegis Field absorbs a percentage of the damage incoming to nearby craft; punishment they would otherwise be hard pressed to endure. The Bellator is no mere escort, either, carrying a respectable armament and fighter complement of its own.",,,,,
+armaa_viator,SHIP,"An uncommon design, the Viator eschews any meaningful punch for reach. Its shipboard sensor drones let it engage well beyond what its light mounts would suggest, a Viator that has lost them is an unremarkable ship with short arms.",,,,,
 ,,,,,,,
 armaa_whitebase,SHIP,"The Fenris is well-equipped to support both space and land battles, though it is not particularly suited for direct confrontation. Its vast hangar bays, however, enable it to deploy a wide array of strikecraft.
 

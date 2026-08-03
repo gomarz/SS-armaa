@@ -12,6 +12,7 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 104.5,
   "viewOffset": 0,
+    "builtInMods": ["ballistic_rangefinder"],
   "builtInWeapons": {
     "BRIDGE": "armaa_viator_deco"
   },
@@ -19,7 +20,7 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 145,
       "angle": 90,
@@ -28,7 +29,7 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 145,
       "angle": -90,
@@ -138,7 +139,7 @@
       "size": "MEDIUM",
       "type": "HYBRID",
       "mount": "TURRET",
-      "arc": 220,
+      "arc": 270,
       "angle": 180,
       "locations": [-50, -0]
     },

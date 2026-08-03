@@ -4,9 +4,13 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.CombatEntityAPI;
+import com.fs.starfarer.api.combat.DamageAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
+import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
+import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.input.InputEventAPI;
@@ -20,6 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.lazywizard.lazylib.MathUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 /**
  *
@@ -78,13 +83,10 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         interval3.advance(amount);
         if (interval3.intervalElapsed()) {
             for (ShipAPI ship : engine.getShips()) {
-                if (ship.isFighter()) {
+                if (ship.isFighter() || ship.isHulk() || !ship.isAlive()) {
                     continue;
                 }
-                if (!ship.controlsLocked() && ship.getMutableStats().getHullDamageTakenMult().getPercentMods().containsKey("armaa_invincible")) {
-                    ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
-                    ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
-                }
+
                 if (ship.getVariant().getHullMods().contains("armaa_comboUnit")) {
                     if (!cataphrachtii.contains(ship) && !ship.controlsLocked()) {
                         cataphrachtii.add(ship);
@@ -99,6 +101,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         if (!cataphrachtii.isEmpty()) {
             interval2.advance(amount);
             if (interval2.intervalElapsed()) {
+                toRemove.clear();
                 for (ShipAPI ship : cataphrachtii) {
                     if (!ship.isAlive()) {
                         toRemove.add(ship);
@@ -110,40 +113,67 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                     if (children == null || children.size() == 0) {
                         continue;
                     }
-                    if (children != null) {
-                        for (ShipAPI module : children) {
-                            module.ensureClonedStationSlotSpec();
-                            if (module.getStationSlot() != null && !module.controlsLocked()) {
-                                if (!module.isAlive() || module.isHulk() || module.getLocation().getY() == -1000000f) {
-                                    toRemove.add(ship);
-                                    ship.resetDefaultAI();
-                                }
-                                if (!doubletapped && engine.getPlayerShip() == ship) {
-                                    continue;
-                                }
-                                if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f || ship.getHullLevel()< 0.10f)) {
-                                    ShipAPI s = createShipFromModule(ship, module, engine);
-                                    if (engine.getPlayerShip() != ship && ship.getOwner() == 0) 
-                                    {
-                                        float variance = MathUtils.getRandomNumberInRange(-0.2f, 0.2f);
-                                        Global.getSoundPlayer().playUISound("cr_allied_warning", 1f,1f);
+                    for (ShipAPI module : children) {
+                        if(module.isHulk() || !module.isAlive())
+                        {
+                            continue;
+                        }
+                        if (module.getStationSlot() != null && (!module.getStationSlot().getId().equals("MODULE") && !module.getStationSlot().getId().equals("MODULE_COMBAT_POS"))) {
+                            continue;
+                        }
+                            //module.ensureClonedStationSlotSpec();
+                        if (ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS") != null && module.getStationSlot() != ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS")) {
+                            module.setStationSlot(ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS"));
+                            Global.getLogger(this.getClass()).info("Set statuin skit L " + ship.getName() + " " + module.getHullSpec().getHullNameWithDashClass());
 
-                                        Global.getCombatEngine().getCombatUI().addMessage(0, Misc.getPositiveHighlightColor(), s.getName() + "(" + s.getHullSpec().getHullNameWithDashClass() + ")",Color.white, " has ejected from " + ship.getName());
-                                    }
-                                    if (!engine.isSimulation() && ship.getOwner() == 0 && !ship.isAlly()) {
-                                        putMapping(s, module.getFleetMember());
-                                    }
+                        }
+                        if (module.controlsLocked()) {
+                            continue;
+                        }
+                        if (!module.hasListenerOfClass(armaa_comboUnitDeathListener.class)) {
+                            if (!Global.getCombatEngine().getCustomData().containsKey("armaa_autoEject_" + module.getParentStation().getId())) {
+                                Global.getLogger(this.getClass()).info("Added damage listener to module of " + ship.getName() + " " + module.getHullSpec().getHullNameWithDashClass());
+                                module.addListener(new armaa_comboUnitDeathListener(module));
+                            }
+                        }
+                        if (!Global.getCombatEngine().getCustomData().containsKey("armaa_comboUnitListener_" + module.getParentStation().getId())) {
+                            Global.getCombatEngine().getCustomData().put("armaa_comboUnitListener_" + module.getParentStation().getId(), true);
+                            Global.getLogger(this.getClass()).info("Added listener to module of " + ship.getName() + " " + module.getHullSpec().getHullNameWithDashClass());
+                            module.addListener(new armaa_comboUnitModuleListener(module));
+                        }
+
+                        module.ensureClonedStationSlotSpec();
+                        if (module.getStationSlot() != null) {
+                            if (!module.isAlive() || module.isHulk() || module.getLocation().getY() == -1000000f) {
+                                toRemove.add(ship);
+                                ship.resetDefaultAI();
+                                continue;
+                            }
+                            if (!doubletapped && engine.getPlayerShip() == ship) {
+                                continue;
+                            }
+                            if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f || ship.getHullLevel() < 0.10f)) {
+                                ShipAPI s = createShipFromModule(ship, module, engine);
+                                engine.addPlugin(new armaa_CoreEjectEffect(s));
+                                if (engine.getPlayerShip() != ship && ship.getOwner() == 0) {
+                                    float variance = MathUtils.getRandomNumberInRange(-0.2f, 0.2f);
+                                    Global.getSoundPlayer().playUISound("cr_allied_warning", 1f, 1f);
+
+                                    Global.getCombatEngine().getCombatUI().addMessage(0, Misc.getPositiveHighlightColor(), s.getName() + "(" + s.getHullSpec().getHullNameWithDashClass() + ")", Color.white, " has ejected from " + ship.getName());
                                 }
+                                if (!engine.isSimulation() && ship.getOwner() == 0 && !ship.isAlly()) {
+                                    putMapping(s, module.getFleetMember());
+                                }
+                                engine.getCustomData().remove("armaa_autoEject_" + ship.getId());
                             }
                         }
                     }
                 }
+                if (!toRemove.isEmpty()) {
+                    cataphrachtii.removeAll(toRemove);
+                }
             }
         }
-        if (!toRemove.isEmpty()) {
-            cataphrachtii.removeAll(toRemove);
-        }
-
     }
 
     public static ShipAPI createShipFromModule(ShipAPI ship, ShipAPI module, CombatEngineAPI engine) {
@@ -160,8 +190,6 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         var.removePermaMod("armaa_dpReduction");
         FleetMemberAPI f = Global.getFactory().createFleetMember(FleetMemberType.SHIP, var);
 
-        //If you're one of the player's ships, we should set commander to player
-        //Else, default behavior
         PersonAPI commander = ship.getCaptain();
         if (ship.getFleetMember().getFleetData() != null) {
             commander = ship.getOwner() == 0 && !ship.isAlly() ? Global.getSector().getPlayerPerson() : ship.getFleetMember().getFleetData().getCommander();
@@ -188,17 +216,14 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         if (ship.isAlly()) {
             s.setAlly(true);
         }
-        s.setHitpoints(module.getHitpoints());
+        s.setHitpoints(Math.min(module.getHitpoints(), s.getMaxHitpoints()));
         if (engine.getPlayerShip() == ship) {
             engine.setShipPlayerLastTransferredCommandTo(s);
             engine.setPlayerShipExternal(s);
         }
 
-        //module.fadeToColor(module, new Color(0, 0, 0, 0), 1f, 1f, 1f);
         s.setControlsLocked(false);
-        //if (!ship.getVariant().hasHullMod("neural_interface")) {
-        //    ship.setControlsLocked(true);
-        //}
+
         module.setControlsLocked(true);
         module.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
         module.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
@@ -223,14 +248,24 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         @Override
         public void advance(float amount) {
             if (ship.isHulk() || !ship.isAlive()) {
-                trueShip.setStationSlot(null);
-                //trueShip.getLocation().set(-10000000, -10000000);
+                trueShip.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
+                trueShip.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
+                // the fact we need to do it twice means something is wrong
+                trueShip.removeListenerOfClass(armaa_comboUnitDeathListener.class);
+                trueShip.setStationSlot(null);            
+                trueShip.getLocation().set(-10000,-10000);
                 armaa_utils.destroy(trueShip);
                 ship.removeListener(this);
+                return;
 
             }
             if (Global.getCombatEngine().isEntityInPlay(ship)) {
                 trueShip.setAnimatedLaunch();
+                if (trueShip.getAllWings().size() > 0) {
+                    for (ShipAPI fighter : trueShip.getAllWings().get(0).getWingMembers()) {
+                        trueShip.getAllWings().get(0).orderReturn(fighter);
+                    }
+                }
             }
             //redock logic
             if (ship.getShipTarget() != null && ship.getShipTarget().getOwner() == ship.getOwner()) {
@@ -252,8 +287,8 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                         module.ensureClonedStationSlotSpec();
                                         module.setControlsLocked(false);
                                         module.setCaptain(ship.getCaptain());
-                                        module.getMutableStats().getHullDamageTakenMult().unmodify();
-                                        module.getMutableStats().getArmorDamageTakenMult().unmodify();
+                                        module.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
+                                        module.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
                                     }
                                 }
                                 for (ShipAPI modules : ship.getChildModulesCopy()) {
@@ -261,13 +296,84 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                 }
                                 ship.removeListener(this);
                                 Global.getCombatEngine().getFleetManager(ship.getOwner()).removeDeployed(ship, false);
-                                engine.removeEntity(ship);
+                                ship.setHitpoints(0f);
                             }
                         }
                     }
                 }
             }
 
+        }
+    }
+
+    private class armaa_comboUnitDeathListener implements AdvanceableListener, HullDamageAboutToBeTakenListener {
+
+        private ShipAPI ship;
+
+        public armaa_comboUnitDeathListener(ShipAPI ship) {
+            this.ship = ship;
+        }
+
+        @Override
+        public void advance(float f) {
+        }
+
+        @Override
+        public boolean notifyAboutToTakeHullDamage(Object param, ShipAPI ship, Vector2f point, float damageAmount) {
+            float hull = ship.getHitpoints();
+            if (damageAmount >= hull && ship.getParentStation() != null) {
+                Global.getCombatEngine().getCustomData().put("armaa_autoEject_" + ship.getParentStation().getId(), true);
+                ship.setHitpoints(damageAmount + 1f);
+                // need to do this so we dont die in the 2-3 frames before listener is applied
+                ship.getMutableStats().getHullDamageTakenMult().modifyMult("armaa_invincible", 0f);
+                ship.getMutableStats().getArmorDamageTakenMult().modifyMult("armaa_invincible", 0f);
+                ship.removeListener(this);
+                return true;
+            }
+            return false;
+        }
+    }
+
+    private class armaa_comboUnitModuleListener implements AdvanceableListener, DamageTakenModifier {
+
+        private ShipAPI ship;
+        private ShipAPI parent;
+
+        armaa_comboUnitModuleListener(ShipAPI ship) {
+            this.ship = ship;
+            this.parent = ship.getParentStation();
+        }
+
+        @Override
+        public void advance(float f) {
+            if (!ship.isAlive() || ship.getLocation().getY() == -1000000f) {
+                if (parent != null) {
+                    boolean independent = parent.getVariant().hasHullMod("automated") || parent.getHullSpec().getMinCrew() <= 0 ||parent.getVariant().hasTag("armaa_core_independent") || parent.getHullSpec().hasTag("armaa_core_independent");
+                    if (!independent) {
+                        parent.setControlsLocked(true);
+                        parent.getFluxTracker().showOverloadFloatyIfNeeded("Core unit lost! Controls locked!", Color.red, 10f, true);
+
+                    }
+                }
+                ship.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
+                ship.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
+                ship.setHitpoints(0f);
+                ship.removeListener(this);
+            }
+
+        }
+
+        @Override
+        public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
+            if (parent == null || ship.controlsLocked()) {
+                return "";
+            }
+            if (parent.getShield() != null && parent.getShield().isOn()) {
+                damage.setDamage(0f);
+                return "armaa_shieldprotection";
+
+            }
+            return "";
         }
     }
 }
