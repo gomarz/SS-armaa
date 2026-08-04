@@ -3,7 +3,7 @@
   "hullId": "armaa_viator",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 19,
+  "fluxCapacitors": 15,
   "fluxVents": 20,
   "quality": 1,
   "permaMods": [],
@@ -12,11 +12,10 @@
   ],
   "weaponGroups": [
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "lightdualac",
-        "WS0014": "shredder"
+        "WS0014": "ionbeam"
       }
     },
     {
@@ -24,6 +23,7 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "lightac",
+        "WS0003": "lightac",
         "WS0007": "lightac",
         "WS0009": "lightac"
       }
@@ -41,17 +41,17 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0011": "lightmg",
+        "WS0012": "lightmg"
+      }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "WS0005": "vulcan",
-        "WS0006": "vulcan",
-        "WS0011": "mininglaser",
-        "WS0012": "mininglaser",
-        "WS0013": "vulcan"
+        "WS0006": "vulcan"
       }
     }
   ],

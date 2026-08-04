@@ -30,13 +30,12 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
     public static Map bugs = new HashMap();
     private static Map wide = new HashMap();
     private static Map damage = new HashMap();
-    private static Map SPEED_BOOST = new HashMap();
+    public static Map SPEED_BOOST = new HashMap();
     private static Map DAMAGE_MULT = new HashMap();
     private static float AFTERIMAGE_THRESHOLD = 0.09f;
     private static final float CONE_ANGLE = 150f;
     // one half of the angle. used internally, don't mess with thos
     private static final Color MUZZLE_FLASH_COLOR = new Color(250, 146, 0, 255);
-    private static final Color MUZZLE_FLASH_COLOR_ALT = new Color(255, 255, 255, 100);
     private static final Color MUZZLE_FLASH_COLOR_GLOW = new Color(255, 0, 0, 100);
     private static final float MUZZLE_FLASH_DURATION = 1f;
     private static final float MUZZLE_FLASH_SIZE = 50.0f;

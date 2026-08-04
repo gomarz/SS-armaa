@@ -416,11 +416,10 @@ public class armaa_kshatriyaAxeEffect implements EveryFrameWeaponEffectPlugin, O
                             }
                         }
                         engine.applyDamage(target, preciseHit, weapon.getDamage().getDamage(), weapon.getDamageType(), 0f, false, false, ship, true);
-                        // Hulk harvesting: chew up wrecks to regenerate hull and armor
                         if (target instanceof ShipAPI) {
                             ShipAPI enemy = (ShipAPI) target;
-                            if (enemy.isHulk()) {
-                                ship.setHitpoints(Math.min(ship.getHullLevelAtDeployment() * ship.getMaxHitpoints(), ship.getHitpoints() + Math.max(weapon.getDamage().getDamage() / 10f, 20f)));
+                            if (!enemy.isHulk()) {
+                                //ship.setHitpoints(Math.min(ship.getHullLevelAtDeployment() * ship.getMaxHitpoints(), ship.getHitpoints() + Math.max(weapon.getDamage().getDamage() / 10f, 20f)));
                                 ArmorGridAPI armorGrid = ship.getArmorGrid();
                                 float[][] grid = armorGrid.getGrid();
                                 float max = armorGrid.getMaxArmorInCell();

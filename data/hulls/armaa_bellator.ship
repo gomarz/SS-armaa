@@ -15,6 +15,7 @@
   "builtInMods": [
     "armaa_serviceBays",
     "armaa_bellatorAegis",
+    "armaa_bellatorFormationDrive",
     "armaa_spare_chassis_storage",
     "ground_support"
   ],

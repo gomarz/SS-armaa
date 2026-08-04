@@ -308,12 +308,13 @@ Reactive Carapace,armaa_reactiveCarapace,,,Arma Armatura,"special,no_drop",,,,TR
 DP Reducer,armaa_dpReduction,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_dpReduction,,,,
 Supplies Reducer,armaa_noSupplies,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noSupplies,this unit does not require supplies for maintenance or recovery,,,
 Auto Repair,armaa_autoModuleRepair,,,Arma Armatura,"special,no_drop",,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_autoModuleRepair,this unit does not require supplies for maintenance or recovery,,,
-Aegis Field,armaa_bellatorAegis,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_bellatorAegis,"Projects a barrier lattice attuned to the transponder codes of allied strike craft, extending to a radius of %s su. 
+Aegis Field,armaa_bellatorAegis,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_bellatorAegis,"Projects a barrier lattice attuned to the transponder codes of allied strike craft, extending to a radius of %s su.
 
-Covered strike craft take up to %s less damage from all sources; the deflected energy is shunted back along the lattice and absorbed by this ship's flux grid as hard flux, at a rate of %s flux per point of damage absorbed. Damage taken on the strike craft's own shields is not affected.
+Covered strike craft take up to %s less damage to hull and armor from all sources, converted to hard flux on this ship at %s flux per point absorbed. Damage to their own shields is unaffected. They also regain the zero-flux engine boost, maintained up to %s flux.
 
-The lattice also stabilizes covered drive fields: strike craft within the field maintain their zero-flux engine boost at up to %s flux.
-All effects of the field (damage mitigation, engine boost strength, and the flux threshold at which the boost is maintained) weaken as this ship's hard flux rises, failing entirely at %s hard flux or while venting or overloaded.
+All effects weaken as this ship's hard flux rises, failing entirely at %s hard flux, or while venting or overloaded. Overlapping fields do not stack; the strongest applies.",,,
+Formation Drive,armaa_bellatorFormationDrive,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_bellatorFormationDrive,"When more than %s units from the bulk of the fleet and moving towards it, top speed increases by up to +%s, scaling with distance, and the zero-flux engine boost is maintained up to %s flux. 
 
-Overlapping fields do not stack; the strongest applies.",,,
-,,,,,,,,,,,,,,,,,,,
+Disengages on turning away, or on closing back within %s units. 
+
+Fighter wing range is cut by %s while the boost is active, rising to %s at maximum distance.",,,

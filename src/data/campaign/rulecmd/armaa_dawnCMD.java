@@ -423,7 +423,10 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
         if (m.hasCondition(Conditions.POLLUTION)) {
             return "poisoned";
         }
-        if (!m.hasCondition(Conditions.HABITABLE)) {
+        if (!m.hasCondition(Conditions.HABITABLE)) 
+        {
+            if(Math.random() > .50f)
+                return "idle";
             return "inhospitable";
         }
         return "generic";

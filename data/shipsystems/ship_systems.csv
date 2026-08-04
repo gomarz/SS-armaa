@@ -37,8 +37,8 @@ AWACS,armaa_awacs,,,,,,0.2,,,,0.5,7,1,10,,,,,,,,,,,,,graphics/icons/hullsys/entr
 Sensor Drones,armaa_AWACSDrones,,,,,,,,3,0.025,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Sensor Drones(IC),armaa_drone_sensor,,,,,,,,2,0.06,0,,0,0,,,,,,,,,,,,,graphics/icons/hullsys/drone_sensor.png
 Pinpoint Strike,armaa_reload,,,,,,,,,,0.5,1,,10,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
-Executioner's Mark,armaa_rampagedrive2,,,,,,0.05,,,,2,5,1,5,TRUE,,,,,TRUE,TRUE,TRUE,FALSE,TRUE,,movement,graphics/icons/hullsys/burn_drive.png
+Executioner's Mark,armaa_rampagedrive2,,,,,,0.05,,,,2,5,1,8,TRUE,,,,,TRUE,TRUE,TRUE,FALSE,TRUE,,movement,graphics/icons/hullsys/burn_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Mine Strike,armaa_mine_strike,,,,,,0.025,,5,0.2,0.25,,0.25,0,,,,,,,,,,,,offensive,graphics/icons/hullsys/mine_strike.png
+Mine Strike,armaa_mine_strike,,,,,,0.025,,4,0.2,0.25,,0.25,0,,,,,,,,,,,,offensive,graphics/icons/hullsys/mine_strike.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

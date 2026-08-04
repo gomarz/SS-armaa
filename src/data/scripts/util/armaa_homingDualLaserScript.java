@@ -22,7 +22,7 @@ public class armaa_homingDualLaserScript extends BaseEveryFrameCombatPlugin {
     private CombatEngineAPI engine;
     private WeaponAPI weapon;
     private boolean even = false;
-    private float maxDamage = 2500f;
+    private float maxDamage = 2000f;
     private float maxProjs = 24f;
     private float guardBar = 0f;
     private SpriteAPI waveSprite;
