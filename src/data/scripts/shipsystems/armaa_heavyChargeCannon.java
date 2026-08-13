@@ -184,13 +184,13 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
                             engine,
                             muzzleOrShip(ship),
                             isRobot ? BETA_HITSCAN_RANGE : 1000f,
-                            facing,
+                            isRobot ? facing :ship.getFacing(),
                             3f,
                             engine.getElapsedInLastFrame(),
                             0f,
                             1f,
-                            new Color(1f, 0f, 0f, 1f * effectLevel),
-                            new Color(1f, 0f, 0f, 1f * effectLevel),
+                            new Color(0.8f, 0f, 0f, 0.7f * effectLevel),
+                            new Color(0.8f, 0f, 0f, 0.7f * effectLevel),
                             0f,
                             DamageType.OTHER,
                             0f,
@@ -399,7 +399,7 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
         }
     }
 
-    private static final float ALPHA_FIRE_PITCH_MIN = 0.8f;
+    private static final float ALPHA_FIRE_PITCH_MIN = 0.6f;
     private static final float ALPHA_FIRE_PITCH_MAX = 1.3f;
     private static final float ALPHA_FIRE_VOL_MIN = 0.8f;
     private static final float ALPHA_FIRE_VOL_MAX = 1.4f;
@@ -423,9 +423,10 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
             proj.setFacing(facing);
         }
         float t = (tier - 1) / (float) (TIER_DAMAGE.length - 1); // 0, .33, .67, 1
-        float pitch = ALPHA_FIRE_PITCH_MIN + (ALPHA_FIRE_PITCH_MAX - ALPHA_FIRE_PITCH_MIN) * t;
+float pitch = ALPHA_FIRE_PITCH_MAX - (ALPHA_FIRE_PITCH_MAX - ALPHA_FIRE_PITCH_MIN) * t;
         float volume = ALPHA_FIRE_VOL_MIN + (ALPHA_FIRE_VOL_MAX - ALPHA_FIRE_VOL_MIN) * t;
-        Global.getSoundPlayer().playSound("kinetic_blaster_fire", pitch, volume, origin, ship.getVelocity());
+        
+        Global.getSoundPlayer().playSound("gigacannon_fire", pitch, volume, origin, ship.getVelocity());
 
         //if (proj instanceof DamagingProjectileAPI) {
         //    ((DamagingProjectileAPI) proj).getDamage().setDamage(damage);
