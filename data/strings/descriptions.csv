@@ -5,7 +5,7 @@ Many late Cataphract designs trace core elements from breakthroughs pioneered by
 
 Today, intact Einhänder frames are exceedingly rare. Some are locked away in cold storage under corporate seal, while others persist as personal command craft or heirloom prototypes, handed down by those who knew just enough not to discard them. Whether by reverence or regret, the name endures.",,,,,
 ,,,,,,,
-armaa_einhander_plus,SHIP,"Exceptionally armed strikecraft with an equally steep logistical profile. A monstrous weapon in the hands of skilled pilots.
+armaa_einhander_plus,SHIP,"Heavily armed for its size and slow to answer the pilot, the Plus fights in short runs and cannot afford a prolonged exchange. Its EMP emitter fouls weapons and engines at close range, opening the window its guns were fitted to exploit.
 
 The Einhänder Plus is a Cataphract created by refurbishing and repairing the original Einhänder using Cataphract parts that are easier to find. Although not explicitly superior to the original, it has the advantage of being able to field a wider variety of weapons and addons due to the free space granted from the removal of the originals experimental weaponry.
 
@@ -143,7 +143,9 @@ The R-Type was left to languish in an unmarked hangar for some time until an ent
 armaa_aleste_frig,SHIP,"The Aleste S-II is tailored for close-quarters combat. Its design favors rapid, high-intensity strikes at the cost of structural resilience, leaving little margin for error. A chest-mounted ""Harpoon"" system allows the frame to reel in lighter prey or launch itself bodily against larger targets, where it is free to devastate it's target with the range of melee weapons available for the left arm.
 
 The Aleste was first deployed over a century ago on the eve of the First AI War. Where the Einhander represented a pre-Collapse ideal of singular, irreplaceable quality, the Aleste reflected harsher realities: a bleeding-edge strikecraft intended to narrow the gap against Tri-Tachyon's numerically and technologically superior fleets, but tempered with a pragmatism that allowed for wider deployment. Arma Armatura sanctioned the design as a calculated risk - a focus on leveraging pilot skill over rare technology.",,,,,
-armaa_aleste_frig_classic,SHIP,A stripped down (or perhaps older) version of the Aleste. Cheap and uncharacteristically overarmed like its descendent.,,,,,
+armaa_aleste_frig_classic,SHIP,"Cheap, crude, and over-armed for its size - a trait its lineage never grew out of. Carries a single modular mount, a limitation typical of Cataphracts built before the Variable Rifle.
+
+It takes Aleste equipment, which is reason enough for most catalogues to file it as an ""Aleste Early-Type,"" though the designation says more about the armory than the airframe. Others hold it is simply another Valken descendant wearing borrowed fittings.",,,,,
 ,,,,,,,
 armaa_record,SHIP,"The Spriggan is outfitted with a powerful recoilless rifle, making it an ideal choice for delivering a devastating blow that other Cataphract models cannot match. Must get up close to its target to fully unleash its firepower, in contrast to conventional bombers.
 
@@ -153,6 +155,11 @@ armaa_record_frig,SHIP,"An advanced fire-support variant of the Spriggan-class C
 ,,,,,,,
 armaa_bellator,SHIP,"The Bellator was designed to sustain Arma Armatura's strikecraft in prolonged engagements, shoring up their most glaring weakness: fragility. While its flux grid holds, the built-in Aegis Field absorbs a percentage of the damage incoming to nearby craft; punishment they would otherwise be hard pressed to endure. The Bellator is no mere escort, either, carrying a respectable armament and fighter complement of its own.",,,,,
 armaa_viator,SHIP,"An uncommon design, the Viator eschews any meaningful punch for reach. Its shipboard sensor drones let it engage well beyond what its light mounts would suggest, a Viator that has lost them is an unremarkable ship with short arms.",,,,,
+,,,,,,,
+armaa_ps_damascus,SHIP,I'm a WIP ship! You shouldn't see me yet~,,,,,
+armaa_ps_edessa,SHIP,I'm a WIP ship! You shouldn't see me yet~,,,,,
+armaa_ps_tripoli,SHIP,I'm a WIP ship! You shouldn't see me yet~,,,,,
+,,,,,,,
 ,,,,,,,
 armaa_whitebase,SHIP,"The Fenris is well-equipped to support both space and land battles, though it is not particularly suited for direct confrontation. Its vast hangar bays, however, enable it to deploy a wide array of strikecraft.
 
@@ -393,7 +400,7 @@ armaa_flarelauncher_active,SHIP_SYSTEM,Launches flares to confuse the guidance s
 armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,,,
-armaa_siegeMode,SHIP_SYSTEM,"Disables shields and diverts power from engines, doubling weapon and sensor range and increasing RoF slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
+armaa_siegeMode,SHIP_SYSTEM,"Diverts power from engines, doubling weapon and sensor range and increasing RoF slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
 armaa_recalldevice,SHIP_SYSTEM,"Teleports a single vessel in need (with the Strikecraft hullmod) back to the carrier, allowing them to be quickly refitted and relaunched.",,,,,
 armaa_plasmaJets,SHIP_SYSTEM,Grants an tremendous speed boost in the given direction briefly.,,,,,
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,,,

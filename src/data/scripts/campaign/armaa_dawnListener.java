@@ -5,7 +5,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PersonImportance;
 import com.fs.starfarer.api.campaign.RepLevel;
 import com.fs.starfarer.api.campaign.ReputationActionResponsePlugin.ReputationAdjustmentResult;
-import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.listeners.ColonyInteractionListener;
 import com.fs.starfarer.api.characters.PersonAPI;
@@ -17,7 +16,7 @@ import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.RepActions;
 import com.fs.starfarer.api.impl.campaign.intel.contacts.ContactIntel;
 import data.scripts.util.armaa_utils;
 
-public class armaa_dawnListener extends BaseCampaignEventListenerAndScript implements ColonyInteractionListener  {
+public class armaa_dawnListener extends BaseCampaignEventListenerAndScript implements ColonyInteractionListener {
 
     public armaa_dawnListener() {
         //this.days = Global.getSector().getClock().getTimestamp();
@@ -67,31 +66,40 @@ public class armaa_dawnListener extends BaseCampaignEventListenerAndScript imple
             }*/
         }
     }
+
     @Override
     public void reportPlayerOpenedMarket(MarketAPI market) {
-        if(market.isHidden())
+        if (market.isHidden()) {
             return;
-        
-        if(!market.hasSpaceport())
+        }
+
+        if (!market.hasSpaceport()) {
             return;
-        if(market.getFaction().isHostileTo("player"))
-            return;
-        
-        if(market.getFactionId().equals("sindrian_diktat"))
-            return;
+        }
+        boolean notHostile = true;
+        if (market.getFaction().isHostileTo(Global.getSector().getPlayerFaction())) {
+            notHostile = false;
+        }
         PersonAPI dawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
-        if (dawn == null) return;
-        if(armaa_utils.hasActiveMissionsFrom(dawn))
+        if (dawn == null) {
             return;
+        }
+        if (armaa_utils.hasActiveMissionsFrom(dawn)) {
+            return;
+        }
         ContactIntel intel = ContactIntel.getContactIntel(dawn);
-        if (intel == null || market == dawn.getMarket()) return;
-        if(Global.getSector().getPlayerFleet().getFleetData().getOfficerData(dawn) == null)
+        if (intel == null || market == dawn.getMarket()) {
             return;
+        }
+        if (Global.getSector().getPlayerFleet().getFleetData().getOfficerData(dawn) == null) {
+            return;
+        }
         PersonImportance imp = dawn.getImportance();
-        intel.relocateToMarket(market, true);
+        intel.relocateToMarket(market, notHostile);
         dawn.setImportance(imp);
-        Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnLastMarket",market.getId());
+        Global.getSector().getMemoryWithoutUpdate().set("$armaa_dawnLastMarket", market.getId());
     }
+
     @Override
     public void reportEconomyMonthEnd() {
         boolean hasDawn = Global.getSector().getImportantPeople().getPerson("armaa_dawn").getFleet() != null && Global.getSector().getImportantPeople().getPerson("armaa_dawn").getFleet() == Global.getSector().getPlayerFleet();

@@ -3,7 +3,7 @@
   "hullId": "armaa_aleste_frig_classic",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/valkenx/armaa_valkenxHips.png",
-  "style": "HIGH_TECH",
+  "style": "MIDLINE",
   "height": 26,
   "width": 18,
   "center": [9, 16.5],
@@ -20,9 +20,9 @@
   "builtInWeapons": {
     "B_TORSO": "armaa_aleste_torso",
     "C_ARMR": "armaa_sprigganRightArm",
-    "D_PAULDRONL": "armaa_valkenx_leftPauldron",
-    "D_PAULDRONR": "armaa_valkenx_rightPauldron",
-    "E_HEAD": "armaa_valkenHead",
+    "D_PAULDRONL": "armaa_aleste_classic_leftPauldron",
+    "D_PAULDRONR": "armaa_aleste_classic_rightPauldron",
+    "E_HEAD": "armaa_alesteHead2",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
@@ -117,40 +117,50 @@
       "arc": 135,
       "angle": 0,
       "locations": [0, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 26.5,
+      "locations": [-12, 16],
+      "renderOrderMod": 200
     }
   ],
   "engineSlots": [
     {
       "location": [-14, -5],
-      "length": 18,
+      "length": 12,
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "HIGH_TECH"
+      "style": "MIDLINE"
     },
     {
       "location": [-14, 5],
-      "length": 18,
+      "length": 12,
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
-      "style": "HIGH_TECH"
+      "style": "MIDLINE"
     },
     {
       "location": [-14, 6],
-      "length": 16.5,
-      "width": 5,
+      "length": 9.675766,
+      "width": 5.051555,
       "angle": 141.5,
-      "contrailSize": 5,
-      "style": "HIGH_TECH"
+      "contrailSize": 5.051555,
+      "style": "MIDLINE"
     },
     {
       "location": [-14, -6],
-      "length": 16.5,
-      "width": 5,
+      "length": 9.222275,
+      "width": 5.727007,
       "angle": -141.5,
-      "contrailSize": 5,
-      "style": "HIGH_TECH"
+      "contrailSize": 5.727007,
+      "style": "MIDLINE"
     }
   ],
   "bounds": [

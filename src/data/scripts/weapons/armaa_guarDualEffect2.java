@@ -196,7 +196,7 @@ private float transformCooldown = 0f;
             transformBlock = false;
             engine.getCustomData().remove("armaa_transformNow_" + ship.getId());
         }
-        if (!transformBlock && ship.isAlive()) {
+        if (ship.getParentStation() != null && !transformBlock && ship.isAlive()) {
             if (!ship.getFluxTracker().isOverloaded() && !transforming) {
 
                 // --- forced transform
@@ -234,7 +234,7 @@ private float transformCooldown = 0f;
                 }
 
                 if (transforming) {
-                    Global.getSoundPlayer().playSound("mechmoveRev", MathUtils.getRandomNumberInRange(1.1f, 1.25f), 1f, ship.getLocation(), ship.getVelocity());
+                    Global.getSoundPlayer().playSound("armaa_transform", MathUtils.getRandomNumberInRange(1.1f, 1.25f), 1f, ship.getLocation(), ship.getVelocity());
                 }
             }
         }
@@ -462,7 +462,7 @@ private float transformCooldown = 0f;
         }
         float recoil = realGun != null && realGun.getCooldown() > 0 ? (2 * (realGun.getCooldownRemaining() / realGun.getCooldown()) * (1f - sineC)) : 1 * 0;
         if (pauldronR != null) {
-            pauldronR.setCurrAngle(global + (sineA + sineC) * TORSO_OFFSET * 0.5f + (aim * (1f - transformLevel)) * 0.75f + RIGHT_ARM_OFFSET * 0.5f);
+            pauldronR.setCurrAngle(global + (sineA + sineC) * TORSO_OFFSET * 0.5f + (aim * (1f - transformLevel)) * 0.50f + RIGHT_ARM_OFFSET * 0.5f);
             pauldronR.getSprite().setCenterY(ogPosR.getY() - 6 * sineC + recoil);
             pauldronR.getSprite().setCenterX(ogPosR.getX() + (4 * sineC));
             wingR.setCurrAngle(pauldronR.getCurrAngle());

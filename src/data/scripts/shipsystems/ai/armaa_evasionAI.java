@@ -31,9 +31,9 @@ public class armaa_evasionAI implements ShipSystemAIScript {
     }
 
     {
-    command.add(ShipCommand.STRAFE_LEFT);
-    command.add(ShipCommand.STRAFE_RIGHT);
-    command.add(ShipCommand.ACCELERATE_BACKWARDS);
+        command.add(ShipCommand.STRAFE_LEFT);
+        command.add(ShipCommand.STRAFE_RIGHT);
+        command.add(ShipCommand.ACCELERATE_BACKWARDS);
     }
 
     private ShipCommand randomCommand() {
@@ -74,10 +74,12 @@ public class armaa_evasionAI implements ShipSystemAIScript {
             return;
         }
         // we're a module, using system is pointless
-        if(ship.getParentStation() != null)
+        if (ship.getParentStation() != null) {
             return;
-        if(ship.isLanding() || ship.controlsLocked())
+        }
+        if (ship.isLanding() || ship.controlsLocked()) {
             return;
+        }
         if (tracker.intervalElapsed()) {
             float dicision = 0.0f;
             if (flags.hasFlag(ShipwideAIFlags.AIFlags.PURSUING)) {
@@ -112,23 +114,13 @@ public class armaa_evasionAI implements ShipSystemAIScript {
                 dicision -= 0.5f;
             }
             final FluxTrackerAPI fluxTracker = ship.getFluxTracker();
-                if (ship.isFighter()) 
-                {   
-                    boolean leaderActive = false;
-                    if(ship.getWingLeader() != null && ship.getWingLeader() != ship)
-                    {
-                        if(ship.getWingLeader().getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.REACHED_WAYPOINT) || ship.getWingLeader().getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.FINISHED_SPREADING))
-                        {
-                            leaderActive = true;
-                        }
-                    }
-                    if(flags.hasFlag(ShipwideAIFlags.AIFlags.REACHED_WAYPOINT))
-                    {
-                        if(flags.hasFlag(ShipwideAIFlags.AIFlags.FINISHED_SPREADING) || leaderActive)
-                            ship.useSystem();
-                    }
-                    return;
+            if (ship.isFighter()) 
+            {
+                if (flags.hasFlag(ShipwideAIFlags.AIFlags.IN_ATTACK_RUN) || flags.hasFlag(ShipwideAIFlags.AIFlags.NEEDS_HELP)) {
+                        ship.useSystem();
                 }
+                return;
+            }
             if (dicision >= 1f) {
                 if (phase) {
                     ship.giveCommand(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK, null, 0);

@@ -11,7 +11,6 @@ import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
-import com.fs.starfarer.api.combat.DeployedFleetMemberAPI;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.MutableStat;
 import com.fs.starfarer.api.combat.ShieldAPI;
@@ -35,8 +34,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -45,11 +42,9 @@ import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
-import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.ReadableVector2f;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -196,54 +191,63 @@ public class armaa_utils {
         return onlineThrust / maxThrust;
     }
 
-    public static List<CombatEntityAPI> getCollideablesInRange(Vector2f at, float range) {
-        List<CombatEntityAPI> retVal = new LinkedList();
+    public static String getMoreAggressivePersonality(FleetMemberAPI member, ShipAPI ship) {
+        if (ship == null) {
+            return Personalities.AGGRESSIVE;
+        }
 
-        retVal.addAll(CombatUtils.getAsteroidsWithinRange(at, range));
+        boolean player = false;
+        if ((member != null) && (member.getFleetData() != null) && (member.getFleetData().getFleet() != null)
+                && member.getFleetData().getFleet().isPlayerFleet()) {
+            player = true;
+        }
 
-        for (ShipAPI ship : CombatUtils.getShipsWithinRange(at, range)) {
-            if (!ship.isFighter()) {
-                retVal.add(ship);
+        String personality = null;
+        if (member != null) {
+            if (member.getCaptain() != null) {
+                /* Skip the player's ship or any player officer ships */
+                if (player && (!member.getCaptain().isDefault() || member.getCaptain().isPlayer())) {
+                    return null;
+                }
+
+                personality = member.getCaptain().getPersonalityAPI().getId();
+            }
+        } else {
+            if (ship.getCaptain() != null) {
+                personality = ship.getCaptain().getPersonalityAPI().getId();
             }
         }
 
-        return retVal;
-    }
-
-    public static List<DamagingProjectileAPI> getProjectilesDamagedBy(ShipAPI ship) {
-        List retVal = new LinkedList();
-
-        for (DamagingProjectileAPI p : CombatUtils.getProjectilesWithinRange(ship.getLocation(), ship.getCollisionRadius())) {
-            if (p.didDamage() && p.getDamageTarget() == ship) {
-                retVal.add(p);
+        if ((ship.getShipAI() != null) && (ship.getShipAI().getConfig() != null)) {
+            if (ship.getShipAI().getConfig().personalityOverride != null) {
+                personality = ship.getShipAI().getConfig().personalityOverride;
             }
         }
 
-        return retVal;
-    }
-
-    public static float estimateOptimalRange(ShipAPI ship) {
-        float acc = 0, opAcc = 0;
-//        Map<WeaponType, Float> rangeBunuses = new HashMap();
-//        rangeBunuses.put(WeaponType.BALLISTIC, ship.getMutableStats().getBallisticWeaponRangeBonus().getBonusMult());
-//        rangeBunuses.put(WeaponType.ENERGY, ship.getMutableStats().getEnergyWeaponRangeBonus().getBonusMult());
-//        rangeBunuses.put(WeaponType.MISSILE, ship.getMutableStats().getMissileWeaponRangeBonus().getBonusMult());
-//        rangeBunuses.put(WeaponType., ship.getMutableStats().getBeamWeaponRangeBonus().getBonusMult());
-//        rangeBunuses.put(WeaponType.BALLISTIC, ship.getMutableStats().getBallisticWeaponRangeBonus().getBonusMult());
-
-        for (WeaponAPI w : ship.getAllWeapons()) {
-            float op = w.getSpec().getOrdnancePointCost(null);
-            if (w.getDamageType() == DamageType.FRAGMENTATION) {
-                op *= 0.2f;
+        String newPersonality;
+        if (personality == null) {
+            newPersonality = Personalities.AGGRESSIVE;
+        } else {
+            switch (personality) {
+                case Personalities.TIMID:
+                    newPersonality = Personalities.CAUTIOUS;
+                    break;
+                case Personalities.CAUTIOUS:
+                    newPersonality = Personalities.STEADY;
+                    break;
+                default:
+                case Personalities.STEADY:
+                    newPersonality = Personalities.AGGRESSIVE;
+                    break;
+                case Personalities.AGGRESSIVE:
+                case Personalities.RECKLESS:
+                    newPersonality = Personalities.RECKLESS;
+                    break;
             }
-            opAcc += op;
-            acc += op * w.getRange();
-
         }
 
-        return acc / opAcc;
+        return newPersonality;
     }
-
     public static Vector2f getDirectionalVector(float degrees) {
         double radians = Math.toRadians(degrees);
         return new Vector2f((float) Math.cos(radians), (float) Math.sin(radians));
@@ -375,18 +379,6 @@ public class armaa_utils {
         }
         return (CurrentHull < armaa_utils.getMaxHPRepair(ship) * HPPercent)
                 || (CurrentCR < armaa_utils.getMaxCRRepair(ship) * 0.50f);
-    }
-
-    public static ShipAPI getFirstShipOnSegment(Vector2f from, Vector2f to) {
-        return getFirstShipOnSegment(from, to, null);
-    }
-
-    public static ShipAPI getShipInLineOfFire(WeaponAPI weapon) {
-        Vector2f endPoint = weapon.getLocation();
-        endPoint.x += Math.cos(Math.toRadians(weapon.getCurrAngle())) * weapon.getRange();
-        endPoint.y += Math.sin(Math.toRadians(weapon.getCurrAngle())) * weapon.getRange();
-
-        return getFirstShipOnSegment(weapon.getLocation(), endPoint, weapon.getShip());
     }
 
     public static float getArmorPercent(ShipAPI ship) {
@@ -975,101 +967,6 @@ public class armaa_utils {
         }
     }
 
-    public static float getFPWorthOfSupport(ShipAPI ship, float range) {
-        float retVal = 0;
-
-        for (Iterator iter = AIUtils.getNearbyAllies(ship, range).iterator(); iter.hasNext();) {
-            ShipAPI ally = (ShipAPI) iter.next();
-            if (ally == ship) {
-                continue;
-            }
-            float colDist = ship.getCollisionRadius() + ally.getCollisionRadius();
-            float distance = Math.max(0, MathUtils.getDistance(ship, ally) - colDist);
-            float maxRange = Math.max(1, range - colDist);
-
-            retVal += getFPStrength(ally) * (1 - distance / maxRange);
-        }
-
-        return retVal;
-    }
-
-    public static float getFPWorthOfHostility(ShipAPI ship, float range) {
-        float retVal = 0;
-
-        for (Iterator iter = AIUtils.getNearbyEnemies(ship, range).iterator(); iter.hasNext();) {
-            ShipAPI enemy = (ShipAPI) iter.next();
-            float colDist = ship.getCollisionRadius() + enemy.getCollisionRadius();
-            float distance = Math.max(0, MathUtils.getDistance(ship, enemy) - colDist);
-            float maxRange = Math.max(1, range - colDist);
-
-            retVal += getFPStrength(enemy) * (1 - distance / maxRange);
-        }
-
-        return retVal;
-    }
-
-    public static float getStrengthInArea(Vector2f at, float range) {
-        float retVal = 0;
-
-        for (ShipAPI ship : CombatUtils.getShipsWithinRange(at, range)) {
-            retVal += getFPStrength(ship);
-        }
-
-        return retVal;
-    }
-
-    public static float getStrengthInArea(Vector2f at, float range, int owner) {
-        float retVal = 0;
-
-        for (ShipAPI ship : CombatUtils.getShipsWithinRange(at, range)) {
-            if (ship.getOwner() == owner) {
-                retVal += getFPStrength(ship);
-            }
-        }
-
-        return retVal;
-    }
-
-    public static float getFPStrength(ShipAPI ship) {
-        DeployedFleetMemberAPI member = Global.getCombatEngine().getFleetManager(ship.getOwner()).getDeployedFleetMember(ship);
-        return (member == null || member.getMember() == null)
-                ? 0
-                : member.getMember().getMemberStrength();
-    }
-
-    public static float getFP(ShipAPI ship) {
-        DeployedFleetMemberAPI member = Global.getCombatEngine().getFleetManager(ship.getOwner()).getDeployedFleetMember(ship);
-        return (member == null || member.getMember() == null)
-                ? 0
-                : member.getMember().getFleetPointCost();
-    }
-
-    public static float getBaseOverloadDuration(ShipAPI ship) {
-        return baseOverloadTimes.get(ship.getHullSize());
-    }
-
-    public static float estimateOverloadDurationOnHit(ShipAPI ship, float damage, DamageType type) {
-        if (ship.getShield() == null) {
-            return 0;
-        }
-
-        float fluxDamage = damage * type.getShieldMult()
-                * ship.getMutableStats().getShieldAbsorptionMult().getModifiedValue();
-        fluxDamage += ship.getFluxTracker().getCurrFlux()
-                - ship.getFluxTracker().getMaxFlux();
-
-        if (fluxDamage <= 0) {
-            return 0;
-        }
-
-        return Math.min(15, getBaseOverloadDuration(ship) + fluxDamage / 25);
-    }
-
-    public static float getLifeExpectancy(ShipAPI ship) {
-        float damage = estimateIncomingDamage(ship);
-        return (damage <= 0) ? 3600 : ship.getHitpoints() / damage;
-    }
-
     public static float lerp(float x, float y, float alpha) {
         return (1f - alpha) * x + alpha * y;
     }
@@ -1085,64 +982,6 @@ public class armaa_utils {
             float fudgeFactor = 1.5f;
             return ((ship.getSpriteAPI().getWidth() / 2f) + (ship.getSpriteAPI().getHeight() / 2f)) * 0.5f * fudgeFactor;
         }
-    }
-
-    public static String getMoreAggressivePersonality(FleetMemberAPI member, ShipAPI ship) {
-        if (ship == null) {
-            return Personalities.AGGRESSIVE;
-        }
-
-        boolean player = false;
-        if ((member != null) && (member.getFleetData() != null) && (member.getFleetData().getFleet() != null)
-                && member.getFleetData().getFleet().isPlayerFleet()) {
-            player = true;
-        }
-
-        String personality = null;
-        if (member != null) {
-            if (member.getCaptain() != null) {
-                /* Skip the player's ship or any player officer ships */
-                if (player && (!member.getCaptain().isDefault() || member.getCaptain().isPlayer())) {
-                    return null;
-                }
-
-                personality = member.getCaptain().getPersonalityAPI().getId();
-            }
-        } else {
-            if (ship.getCaptain() != null) {
-                personality = ship.getCaptain().getPersonalityAPI().getId();
-            }
-        }
-
-        if ((ship.getShipAI() != null) && (ship.getShipAI().getConfig() != null)) {
-            if (ship.getShipAI().getConfig().personalityOverride != null) {
-                personality = ship.getShipAI().getConfig().personalityOverride;
-            }
-        }
-
-        String newPersonality;
-        if (personality == null) {
-            newPersonality = Personalities.AGGRESSIVE;
-        } else {
-            switch (personality) {
-                case Personalities.TIMID:
-                    newPersonality = Personalities.CAUTIOUS;
-                    break;
-                case Personalities.CAUTIOUS:
-                    newPersonality = Personalities.STEADY;
-                    break;
-                default:
-                case Personalities.STEADY:
-                    newPersonality = Personalities.AGGRESSIVE;
-                    break;
-                case Personalities.AGGRESSIVE:
-                case Personalities.RECKLESS:
-                    newPersonality = Personalities.RECKLESS;
-                    break;
-            }
-        }
-
-        return newPersonality;
     }
 
     public static OfficerManagerEvent getOfficerManagerEvent() {
@@ -1349,9 +1188,6 @@ public class armaa_utils {
         if (carrier == null || carrier == ship) {
             return false;
         }
-        if (carrier.getHullSpec().hasTag("no_wingcom_docking")) {
-            return false;
-        }
         if (carrier.getOwner() != ship.getOwner()) {
             return false;
         }
@@ -1362,11 +1198,17 @@ public class armaa_utils {
                 || !Global.getCombatEngine().isEntityInPlay(carrier)) {
             return false;
         }
+                        if(carrier.getVariant().getHullMods().contains("armaa_spare_chassis"))
+            return false;
+        if (carrier.getHullSpec().hasTag("no_wingcom_docking")) {
+            return false;
+        }
+                if(carrier.getVariant().getHullMods().contains("armaa_strikeCraft"))
+            return false;
         if (carrier.getCurrentCR() <= 0) {
             return false;
         }
-        if(carrier.getVariant().getHullMods().contains("strikeCraft"))
-            return false;
+
         // Frigates only qualify as station modules
         if (carrier.isFrigate() && !carrier.isStationModule()) {
             return false;

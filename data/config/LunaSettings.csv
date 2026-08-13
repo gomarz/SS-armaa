@@ -1,8 +1,10 @@
 fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
 armaa_campaignHeader,Campaign Header,Header,Campaign settings,,,,,Settings
+,,,,,,,,
 armaa_wingcomMaxLevel,Wing Commander Level Cap,Int,3,,Max level that wingcommander pilots can reach.,2,7,Settings
-armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voicedchatter from Dawn.,,,Settings
-armaa_dawnCaresAboutHeresy,Devil's In The Details - Dawn & Heresy,Boolean,True,,"By setting this to false, Dawn will more...creatively interpret her core personal beliefs. Not the intended experience.",,,Settings
+armaa_enableDawnVoice,Enable Dawn Voice,Boolean,True,,Enable voiced chatter from Dawn.,,,Dawn
+armaa_dawnCaresAboutHeresy,Devil's In The Details - Dawn & Heresy,Boolean,True,,"By setting this to false, Dawn will more...creatively interpret her core personal beliefs. Not the intended experience.",,,Dawn
+armaa_dawnChatterFrequency,Dawn Chatter Frequency,Double,0.25,,"Determines how likely Dawn is to speak when deployed, where 1 = every battle, and 0.1 gives a one-in-ten chance per engagement.",0.1,1.0,Dawn
 armaa_enableReprisal,Enable MRC Reprisals,Boolean,False,,Enable MRCs reprisal events,,,Settings
 armaa_combatHeader,Combat,Header,Combat Settings,,,,,Settings
 armaa_performanceMode,Performance Mode,Boolean,False,,Reduce the amount of effects in the custom mission battles,,,Settings

@@ -3,32 +3,34 @@
   "hullId": "armaa_panther_frig_xiv",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 8,
+  "fluxCapacitors": 4,
   "fluxVents": 10,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "targetingunit",
     "heavyarmor"
   ],
   "weaponGroups": [
     {
       "autofire": false,
-      "mode": "ALTERNATING",
+      "mode": "LINKED",
       "weapons": {
-        "TRUE_GUN": "hveldriver",
-        "TRUE_GUN2": "shredder"
+        "TRUE_GUN2": "typhoon"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "TRUE_GUN": "mark9"
+      }
     },
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "E_HEAD": "armaa_pantherHead_xiv"
+      }
     }
   ],
   "modules": [

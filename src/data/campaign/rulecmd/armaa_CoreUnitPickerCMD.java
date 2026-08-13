@@ -1,6 +1,8 @@
 package data.campaign.rulecmd;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignFleetAPI;
+import com.fs.starfarer.api.campaign.FleetDataAPI;
 import com.fs.starfarer.api.campaign.FleetMemberPickerListener;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
@@ -17,9 +19,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import starship_legends.RepRecord;
-import starship_legends.hullmods.Reputation;
 
 public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
+
+    /**
+     * Persistent-data key prefix for parked core unit ids. One entry per
+     * (mobile armor, module slot) pair.
+     */
+    private static final String CORE_ID_KEY_PREFIX = "$armaa_installedCoreId_";
+
+    private static String coreIdKey(FleetMemberAPI armor, String slotId) {
+        return CORE_ID_KEY_PREFIX + armor.getId() + ":" + slotId;
+    }
+
+    private static boolean isIdInUse(FleetDataAPI data, String id) {
+        for (FleetMemberAPI m : data.getMembersListCopy()) {
+            if (id.equals(m.getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog,
@@ -64,9 +84,8 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
                     if (members == null || members.isEmpty()) {
                         return;
                     }
-                    if(members.get(0) == null)
-                    {
-                        dialog.getTextPanel().addParagraph("No Core unit found.");   
+                    if (members.get(0) == null) {
+                        dialog.getTextPanel().addParagraph("No Core unit found.");
                         return;
                     }
                     memory.set("$coreUnit", members.get(0), 1);
@@ -114,7 +133,12 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
                     }
                     FleetMemberAPI mobileArmor = members.get(0);
                     FleetMemberAPI coreUnit = (FleetMemberAPI) memory.get("$coreUnit");
+                    if (coreUnit == null) {
+                        dialog.getTextPanel().addParagraph("No core unit selected.");
+                        return;
+                    }
                     performSwap(coreUnit, mobileArmor, dialog);
+                    memory.unset("$coreUnit");
                 }
 
                 @Override
@@ -130,49 +154,105 @@ public class armaa_CoreUnitPickerCMD extends BaseCommandPlugin {
         return false;
     }
 
+    /**
+     * Swaps a new core unit into a mobile armor, ejecting the previous core back
+     * into the fleet.
+     *
+     * The mobile armor keeps its own fleet member id for its entire life - it is
+     * never given a core's id. Instead the installed core's id is parked in
+     * persistent data for as long as it is inside the armor, and handed back to the
+     * ship carrying that core's variant when it is ejected.
+     *
+     * A core's id is therefore absent from the fleet while it is installed, which
+     * every mod already has to cope with (players sell and lose ships constantly),
+     * rather than present on a hull of the wrong class and size, which many mods do
+     * not - see the upgrade-path CTD that motivated this.
+     */
     private void performSwap(FleetMemberAPI coreUnit, FleetMemberAPI mobileArmor,
             InteractionDialogAPI dialog) {
-        // Get the module slot id - you'll need to know what slot the core goes in
+
         String moduleSlotId = "MODULE"; // replace with your actual module slot id
+
+        CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
+        FleetDataAPI fleetData = playerFleet.getFleetData();
+        Map<String, Object> persist = Global.getSector().getPersistentData();
+
+        final String key = coreIdKey(mobileArmor, moduleSlotId);
+        // id of the core currently installed, if we parked one on a previous swap
+        final String parkedCoreId = (String) persist.get(key);
+        final String incomingCoreId = coreUnit.getId();
 
         PersonAPI corePilot = coreUnit.getCaptain();
         PersonAPI maPilot = mobileArmor.getCaptain();
-        // Save the current module variant from the bakraid
+
+        // Save the current module variant from the armor before we overwrite it
         ShipVariantAPI oldModuleVariant = mobileArmor.getVariant()
                 .getModuleVariant(moduleSlotId);
-        FleetMemberAPI oldModuleFleetMember = Global.getSettings().getModManager()
-                .isModEnabled("sun_starship_legends")
-                ? Reputation.moduleMap.get(oldModuleVariant.getHullVariantId())
-                : null;
-        // Set the bakraid's module to the chosen core unit's variant
+
+        // Set the armor's module to the chosen core unit's variant
         ShipVariantAPI newModuleVariant = coreUnit.getVariant().clone();
         newModuleVariant.setSource(VariantSource.REFIT);
         mobileArmor.getVariant().setModuleVariant(moduleSlotId, newModuleVariant);
         mobileArmor.setCaptain(corePilot);
+
+        boolean ssl = Global.getSettings().getModManager()
+                .isModEnabled("sun_starship_legends");
+
         // Add old module back to fleet as a standalone ship (if it existed)
+        FleetMemberAPI returnedShip = null;
         if (oldModuleVariant != null) {
             oldModuleVariant.removePermaMod("armaa_dpReduction");
-            FleetMemberAPI returnedShip = Global.getFactory()
+            returnedShip = Global.getFactory()
                     .createFleetMember(FleetMemberType.SHIP, oldModuleVariant);
-            Global.getSector().getPlayerFleet().getFleetData()
-                    .addFleetMember(returnedShip);
-            returnedShip.setCaptain(maPilot);
-            mobileArmor.updateStats();
-            if (Global.getSettings().getModManager().isModEnabled("sun_starship_legends")) {
-                RepRecord.transfer(mobileArmor, returnedShip);
-                RepRecord.transfer(coreUnit, mobileArmor);
-                newModuleVariant.removePermaMod("sun_sl_notable_1");
-                //FleetMemberAPI newModuleFM = Reputation.moduleMap.get(newModuleVariant.getHullVariantId());
-                //if (newModuleFM != null) {
-                //    RepRecord.transfer(coreUnit, newModuleFM);
-                //}
-            }
 
+            if (parkedCoreId != null) {
+                if (isIdInUse(fleetData, parkedCoreId)) {
+                    // Should not happen: the id was vacated when this core was
+                    // installed. If it fires, something else minted it in the
+                    // meantime, so leave the factory id alone rather than create
+                    // a duplicate.
+                    Global.getLogger(this.getClass()).warn(
+                            "armaa: parked core id " + parkedCoreId
+                            + " is already in use; ejected core keeps its factory id");
+                } else {
+                    // set BEFORE it enters fleet data, so nothing indexes it under
+                    // the factory-generated id
+                    returnedShip.setId(parkedCoreId);
+                }
+            }
+            // No parked id means this is the factory-default core, which never
+            // existed as a fleet member. It keeps its factory id - correct, since
+            // there is no prior identity to restore.
+
+            returnedShip.setCaptain(maPilot);
+            fleetData.addFleetMember(returnedShip);
+        } else {
+            Global.getLogger(this.getClass()).warn(
+                    "armaa: no module variant in slot " + moduleSlotId + " on "
+                    + mobileArmor.getShipName() + "; parked core id " + parkedCoreId
+                    + " has nothing to return to");
         }
 
-        // Remove the chosen core unit from fleet
-        Global.getSector().getPlayerFleet().getFleetData()
-                .removeFleetMember(coreUnit);
+        // Starship Legends is keyed on fleet member id, and ids no longer rotate,
+        // so the explicit transfers are needed again. Order matters: these must run
+        // AFTER returnedShip.setId(), or the record lands on the factory id and is
+        // orphaned the moment we overwrite it.
+        if (ssl) {
+            if (returnedShip != null) {
+                // armor's accumulated rep goes out with the core being ejected
+                RepRecord.transfer(mobileArmor, returnedShip);
+            }
+            // incoming core's rep comes in with it
+            RepRecord.transfer(coreUnit, mobileArmor);
+            newModuleVariant.removePermaMod("sun_sl_notable_1");
+        }
+
+        // Park the incoming core's id so the next eject can hand it back
+        persist.put(key, incomingCoreId);
+
+        fleetData.removeFleetMember(coreUnit);
+        mobileArmor.updateStats();
+        fleetData.syncIfNeeded();
 
         dialog.getTextPanel().addParagraph(
                 coreUnit.getShipName() + " has been integrated as the core unit of "

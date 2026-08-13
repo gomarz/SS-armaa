@@ -46,6 +46,7 @@ public class armaa_notificationShower implements EveryFrameScript {
         // ??? Why is this seperate?
         validSingleKeys.add("$armaa_engagedValkHunters");
         validSingleKeys.add("$armaa_cassianReadyToChat");
+        validSingleKeys.add("$armaa_comboUnitTutorial");
         
     }
 
@@ -154,6 +155,11 @@ public class armaa_notificationShower implements EveryFrameScript {
                     && Global.getSector().getMemoryWithoutUpdate().contains("$armaa_cassianReadyToChat")) {
                 addNotification("cassianReadyToChat");
                 showNotificationOnce("armaa_cassianReadyToChat_event_id");
+            }
+            if (notifications.get("armaa_comboUnitTutorial_event_id") == null
+                    && Global.getSector().getMemoryWithoutUpdate().contains("$armaa_comboUnitTutorial")) {
+                addNotification("comboUnitTutorial");
+                showNotificationOnce("armaa_comboUnitTutorial_event_id");
             }
             // Dawn-triggered notifications
             if (dawnIsPresent()) {

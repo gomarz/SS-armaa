@@ -12,9 +12,7 @@
   "shieldRadius": 35,
   "viewOffset": 0,
   "builtInMods": [
-    "cataphract",
-    "armaa_himac",
-    "armaa_fighterStrafe"
+    "cataphract"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_chaingun",
@@ -71,7 +69,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 3]
+      "locations": [0, 4]
     },
     {
       "id": "D_PAULDRONR",
@@ -80,7 +78,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -3]
+      "locations": [0, -4]
     },
     {
       "id": "E_HEAD",

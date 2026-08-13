@@ -13,6 +13,7 @@
   "viewOffset": 50,
   "builtInMods": [
     "armaa_comboUnit",
+    "armaa_suppressionLoad",
     "armaa_himac"
   ],
   "builtInWings": [

@@ -440,7 +440,8 @@ public class armaa_CustomProductionContract extends HubMissionWithBarEvent {
              if(Global.getSector().getMemoryWithoutUpdate().get("$armaa_hasMorgana") != null)
              {
                 ships.add("armaa_panther_frig");
-                ships.add("armaa_guardual");
+                if(Math.random() <= 0.25)
+                    ships.add("armaa_guardual");
              }
         for (String id : faction.getKnownWeapons()) {
             WeaponSpecAPI spec = Global.getSettings().getWeaponSpec(id);

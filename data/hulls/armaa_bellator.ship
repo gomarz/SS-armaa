@@ -10,7 +10,7 @@
   "center": [120, 270],
   "collisionRadius": 266,
   "shieldCenter": [0, -0],
-  "shieldRadius": 262,
+  "shieldRadius": 266,
   "viewOffset": 0,
   "builtInMods": [
     "armaa_serviceBays",
@@ -253,7 +253,7 @@
     }
   ],
   "bounds": [
-    263, 3,
+    259, 10.5,
     250, 15,
     147, 43.5,
     95, 75.5,
@@ -280,6 +280,6 @@
     83.5, -56.5,
     95, -72.5,
     136.5, -46,
-    262, -10.5
+    260, -10.5
   ]
 }

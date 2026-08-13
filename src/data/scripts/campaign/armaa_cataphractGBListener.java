@@ -12,7 +12,8 @@ import java.util.ArrayList;
 public class armaa_cataphractGBListener extends BaseCampaignEventListenerAndScript {
 
     @Override
-    public void reportPlayerOpenedMarket(MarketAPI market) {
+    public void reportPlayerOpenedMarket(MarketAPI market) 
+    {
         StatBonus mod = Global.getSector().getPlayerFleet().getStats()
                 .getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD);
 
@@ -41,7 +42,7 @@ public class armaa_cataphractGBListener extends BaseCampaignEventListenerAndScri
                         : f.getCaptain().getStats().getLevel();
                 Float groundVal = f.getDeploymentPointsCost();
                 float bonus = (groundVal != null) ? groundVal : f.getFleetPointCost();
-                mod.modifyFlat("armaa_" + f.getId(), Math.min(325f, bonus * level), f.getShipName());
+                mod.modifyFlat("armaa_" + f.getId(), Math.min(200, bonus * level), f.getShipName());
             }
         }
     }

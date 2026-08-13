@@ -97,6 +97,7 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
     private static final float STREAK_SPAWN_RADIUS_MIN = 40f;
     private static final float STREAK_SPAWN_RADIUS_MAX = 100f;
     private final IntervalUtil streakInterval = new IntervalUtil(STREAK_INTERVAL_MIN, STREAK_INTERVAL_MAX);
+    private final IntervalUtil targetingInterval = new IntervalUtil(0.1f, 0.1f);
 
     private static final float STREAK_INTERVAL_MIN = 0.05f;
     private static final float STREAK_INTERVAL_MAX = 0.1f;
@@ -161,21 +162,6 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
             WeaponAPI w = findWeapon(ship, slotId);
             float facing = w.getCurrAngle();
             boolean isRobot = readIsRobot(ship, engine);
-            MagicFakeBeam.spawnFakeBeam(
-                    engine,
-                    muzzleOrShip(ship),
-                    isRobot ? BETA_HITSCAN_RANGE : 1000f,
-                    facing,
-                    3f,
-                    engine.getElapsedInLastFrame(),
-                    0f,
-                    1f,
-                    new Color(1f, 0f, 0f, 1f * effectLevel),
-                    new Color(1f, 0f, 0f, 1f * effectLevel),
-                    0f,
-                    DamageType.OTHER,
-                    0f,
-                    ship);
             if (ship.getShipAI() != null && ship.getShipTarget() != null) {
                 w.setCurrAngle(VectorUtils.getAngle(w.getFirePoint(0), ship.getShipTarget().getLocation()));
             }
@@ -192,6 +178,24 @@ public class armaa_heavyChargeCannon extends BaseShipSystemScript {
                 // Deriving dt from the clock delta means it's correct whether apply() fires once or
                 // several times per frame (the clock only moves once), and sidesteps any extra
                 // scaling getElapsedInLastFrame() applies under time dilation.
+               // targetingInterval.advance(engine.getElapsedInLastFrame());
+                //if (targetingInterval.intervalElapsed()) {
+                    MagicFakeBeam.spawnFakeBeam(
+                            engine,
+                            muzzleOrShip(ship),
+                            isRobot ? BETA_HITSCAN_RANGE : 1000f,
+                            facing,
+                            3f,
+                            engine.getElapsedInLastFrame(),
+                            0f,
+                            1f,
+                            new Color(1f, 0f, 0f, 1f * effectLevel),
+                            new Color(1f, 0f, 0f, 1f * effectLevel),
+                            0f,
+                            DamageType.OTHER,
+                            0f,
+                            ship);
+                //}
                 float clock = engine.getTotalElapsedTime(false);
                 if (lastChargeClock < 0f) {
                     lastChargeClock = clock;

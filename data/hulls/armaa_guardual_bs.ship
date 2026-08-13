@@ -7,9 +7,9 @@
   "height": 46,
   "width": 40,
   "center": [20, 23],
-  "collisionRadius": 36,
+  "collisionRadius": 47,
   "shieldCenter": [0, -0],
-  "shieldRadius": 44,
+  "shieldRadius": 47,
   "viewOffset": 0,
   "builtInMods": [
     "strikeCraft",
@@ -66,7 +66,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [5, 4]
+      "locations": [4, 6]
     },
     {
       "id": "D_PAULDRONL",

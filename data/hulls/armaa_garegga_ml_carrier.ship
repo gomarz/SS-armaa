@@ -13,7 +13,7 @@
   "viewOffset": 50,
   "builtInMods": [
     "armaa_comboUnit",
-    "armaa_himac"
+    "armaa_suppressionLoad"
   ],
   "builtInWeapons": {
     "E_LSHOULDER": "armaa_garegga_ml_carrier_leftPauldron",
@@ -34,7 +34,7 @@
       "size": "MEDIUM",
       "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 90,
       "angle": 0,
       "locations": [-17, -0],
       "renderOrderMod": -99998
@@ -64,7 +64,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [19, 5]
+      "locations": [13, 10]
     },
     {
       "id": "E_RSHOULDER",
@@ -73,7 +73,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -0,
-      "locations": [19, -5]
+      "locations": [13, -10]
     },
     {
       "id": "MODULE_COMBAT_POS",
@@ -83,31 +83,49 @@
       "arc": 150,
       "angle": 0,
       "locations": [20, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": 45,
+      "locations": [-13, 24]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": -45,
+      "locations": [-13, -24]
     }
   ],
   "engineSlots": [
     {
       "location": [-57, 28],
-      "length": 48,
-      "width": 24,
+      "length": 52,
+      "width": 14,
       "angle": 180,
-      "contrailSize": 24,
+      "contrailSize": 14,
       "style": "LOW_TECH"
     },
     {
       "location": [-57, -28],
-      "length": 48,
-      "width": 24,
+      "length": 52,
+      "width": 14,
       "angle": -180,
-      "contrailSize": 24,
+      "contrailSize": 14,
       "style": "LOW_TECH"
     },
     {
       "location": [-53, 10],
-      "length": 24,
-      "width": 12,
+      "length": 60,
+      "width": 17,
       "angle": 180,
-      "contrailSize": 12,
+      "contrailSize": 17,
       "style": "LOW_TECH"
     },
     {
@@ -128,10 +146,10 @@
     },
     {
       "location": [-53, -12],
-      "length": 24,
-      "width": 12,
+      "length": 60,
+      "width": 17,
       "angle": 180,
-      "contrailSize": 12,
+      "contrailSize": 17,
       "style": "LOW_TECH"
     }
   ],

@@ -1,0 +1,41 @@
+{
+  "variantId": "armaa_panther_xiv_strike",
+  "hullId": "armaa_panther_frig_xiv",
+  "displayName": "Strike",
+  "goalVariant": true,
+  "fluxCapacitors": 6,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "hellbore",
+        "TRUE_GUN2": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_pantherHead_xiv"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "SHIELD": "armaa_shield_panther_xiv_standard"
+    }
+  ],
+  "wings": []
+}

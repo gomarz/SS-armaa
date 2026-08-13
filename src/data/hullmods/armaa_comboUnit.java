@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
@@ -28,6 +29,17 @@ public class armaa_comboUnit extends BaseHullMod {
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 
+    }
+    
+    @Override
+    public void advanceInCampaign(FleetMemberAPI member, float amount)
+    {
+         Object didExplanation = Global.getSector().getMemoryWithoutUpdate().get("$armaa_comboUnitTutorial");
+        if(didExplanation == null && Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy().contains(member))
+        {
+            Global.getSector().getMemoryWithoutUpdate().set("$armaa_comboUnitTutorial", true);     
+            Global.getSector().getMemoryWithoutUpdate().set("$armaa_comboUnitTutorialUnit", member,10); 
+        }        
     }
 
     @Override

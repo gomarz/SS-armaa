@@ -92,9 +92,11 @@ public class armaa_assaultPodKiller extends BaseHullMod {
             boom.setSoundSetId("mine_explosion");
             Global.getCombatEngine().spawnDamagingExplosion(boom, ship, ship.getLocation(), false);
             Global.getCombatEngine().applyDamage(ship, ship.getLocation(), 100000f, DamageType.ENERGY, 0f, true, false, ship, false);
+            Global.getCombatEngine().getFleetManager(ship.getOwner()).removeDeployed(ship, false);
         }
         if (Global.getCombatEngine().isCombatOver() || Global.getCombatEngine().getFleetManager(0).getTaskManager(false).isInFullRetreat() || Global.getCombatEngine().isEnemyInFullRetreat()) {
             ship.setHitpoints(0f);
+            Global.getCombatEngine().getFleetManager(ship.getOwner()).removeDeployed(ship, false);
         }
     }
 

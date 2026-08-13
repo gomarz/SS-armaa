@@ -57,7 +57,7 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
     // EMP lock (AI keeps shields up, so this frequently severs the embed against shielded targets,
     // turning the lash into a punish-the-shields-down tool). A short grace period guarantees SOME
     // payoff for landing the embed before the target can shield it off.
-    private static final float SHIELD_SEVER_GRACE = 0.7f;
+    private static final float SHIELD_SEVER_GRACE = 0.6f;
 
     public armaa_energyLashAI(MissileAPI missile, ShipAPI launchingShip) {
         this.missile = missile;
@@ -140,10 +140,14 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
                 shielded = true;
             }
         }
-
-        if (fooled || escaped || emped || outlasted || overRange || shielded || dead || overloaded) {
+        boolean isRobot = true;
+        if(launchingShip != null && engine.getCustomData().get("armaa_tranformState_" + launchingShip.getId()) != null)
+        {
+            isRobot = (Boolean)engine.getCustomData().get("armaa_tranformState_" + launchingShip.getId());
+        }
+        if (!isRobot || fooled || escaped || emped || outlasted || overRange || shielded || dead || overloaded) {
             tearOff = true;
-            if (shielded) {
+            if (shielded || !isRobot) {
                 missile.setArmingTime(missile.getElapsed() + 0.25f);
                 missile.setCollisionClass(CollisionClass.MISSILE_FF);                
                 missile.explode();

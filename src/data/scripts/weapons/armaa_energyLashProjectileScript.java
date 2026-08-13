@@ -27,8 +27,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
     private final Vector2f lastFarEnd = new Vector2f();
 
     private final IntervalUtil fireInterval = new IntervalUtil(0.25f, 0.25f);
-    private static final float AT_MAX_RANGE = 0.5f;
-    private static final float PUSH_CONSTANT = 2000f;
+    private static final float PUSH_CONSTANT = 5000f;
     private static final float MISSILE_SCALAR = 0.2f;
 
     private static final float SWING_MAX_RATE = 180f;    // clamp sweep rate (deg/sec)
@@ -63,8 +62,17 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
 
     private static final float RETRACT_DURATION = 0.5f;
 
+    private static final float SLACK_FRACTION = 0.15f; // below this fraction of tether length: no tension
+    private static final float TENSION_AT_SLACK = 0.0f;
+    private static final float TENSION_AT_TAUT = 2.00f;
+    private static final float TENSION_EXP = 1.0f;  // >1 = bites late and hard
+
     private Vector2f[] ropeNodes = null;
     private Vector2f[] ropePrev = null;
+
+// --- taut-rope radial constraint: the tether is inextensible near full extension ---
+    private static final float TAUT_FRACTION = 0.90f;
+    private static final float RADIAL_CLAMP_RATE = 20f; // 1/sec; higher = stiffer. ~6 is springy, ~30 is a wall
 
     public armaa_energyLashProjectileScript(@NotNull DamagingProjectileAPI primary, CombatEntityAPI source, CombatEntityAPI target) {
         this.primary = primary;
@@ -204,7 +212,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
                     spawnEmpAlongRope(engine);
                 }
                 if (Math.random() < EMP_PROC_CHANCE) {
-                    float dam = embedded.getWeapon().getDamage().getDamage() * 0.2f;
+                    float dam = 0f;
                     float emp = embedded.getWeapon().getDamage().getFluxComponent();
                     engine.spawnEmpArc((ShipAPI) source, embedded.getLocation(), empTarget, empTarget,
                             DamageType.ENERGY, dam, emp, 50f,
@@ -226,7 +234,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
         }
 
         float relativeMass = myMass / (myMass + targetMass);
-        float distanceModifier = 1f - (distance / 600f * AT_MAX_RANGE);
+        float distanceModifier = tension(distance);
 
         // --- momentum: scale radial pull by separation speed along the rope ---
         Vector2f relVel = Vector2f.sub(target.getVelocity(), source.getVelocity(), new Vector2f());
@@ -246,7 +254,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
         float hullRate = ((ShipAPI) source).getAngularVelocity(); // out of the weapon guard now
         float swingRate = Math.max(-SWING_MAX_RATE, Math.min(SWING_MAX_RATE, aimRate + hullRate));
         float step = amount / 0.1f;
-        if (distance > 300) {
+        if (distanceModifier > 0f) {
             Vector2f.add((Vector2f) new Vector2f(dir).scale(pushMe * distanceModifier * -step), source.getVelocity(), source.getVelocity());
             Vector2f.add((Vector2f) new Vector2f(dir).scale(pushYou * distanceModifier * step), target.getVelocity(), target.getVelocity());
         }
@@ -272,9 +280,41 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
             ts.setAngularVelocity(ts.getAngularVelocity() + torque * TORQUE_SCALAR / targetMass);
         }
 
+// --- rope goes rigid: cancel separating radial velocity ---
+        float frac = distance / Math.max(1f, tetherLength());
+        if (frac > TAUT_FRACTION) {
+            Vector2f relNow = Vector2f.sub(target.getVelocity(), source.getVelocity(), new Vector2f());
+            float sepNow = relNow.x * (-dir.x) + relNow.y * (-dir.y);
+            if (sepNow > 0f) {
+                float k = 1f - (float) Math.exp(-RADIAL_CLAMP_RATE * amount);
+                float kill = sepNow * k;
+                float youShare = myMass / (myMass + targetMass);
+                float meShare = targetMass / (myMass + targetMass);
+                Vector2f.add((Vector2f) new Vector2f(dir).scale(kill * youShare),
+                        target.getVelocity(), target.getVelocity());
+                Vector2f.add((Vector2f) new Vector2f(dir).scale(-kill * meShare),
+                        source.getVelocity(), source.getVelocity());
+            }
+        }
+
         if (embedded.getWeapon() != null) {
             lastWeaponAngle = embedded.getWeapon().getCurrAngle();
         }
+
+    }
+
+    private float tetherLength() {
+        WeaponAPI w = currentWeapon();
+        return (w != null) ? w.getRange() : 600f;
+    }
+
+    private float tension(float distance) {
+        float frac = distance / Math.max(1f, tetherLength());
+        if (frac <= SLACK_FRACTION) {
+            return 0f;
+        }
+        float t = Math.min(1f, (frac - SLACK_FRACTION) / (1f - SLACK_FRACTION));
+        return TENSION_AT_SLACK + (TENSION_AT_TAUT - TENSION_AT_SLACK) * (float) Math.pow(t, TENSION_EXP);
     }
 
     private void spawnEmpAlongRope(CombatEngineAPI engine) {

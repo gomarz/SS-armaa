@@ -315,9 +315,9 @@ public class armaa_bellatorFormationDrive extends BaseHullMod {
                     // Alpha tracks how hard the drive is pushing.
                     float intensity = MAX_SPEED_BONUS > 0f ? (currentBonus / MAX_SPEED_BONUS) : 1f;
                     Color c = new Color(
-                            ENGINE_COLOR.getRed(),
-                            ENGINE_COLOR.getGreen(),
-                            ENGINE_COLOR.getBlue(),
+                            0,
+                            150,
+                            100,
                             (int) (60f + 120f * intensity));
 
                     Vector2f v = ship.getVelocity();
@@ -326,12 +326,12 @@ public class armaa_bellatorFormationDrive extends BaseHullMod {
                             0f, 0f,
                             -v.x, // cancel ship motion so the image stays put in world space
                             -v.y,
-                            0f, // maxJitter
+                            2f, // maxJitter
                             0f, // fadeIn
-                            0.15f, // hold at full
-                            1f, // fadeOut
-                            false, // additive
-                            true, // combineWithSpriteColor
+                            0.5f, // hold at full
+                            1.25f, // fadeOut
+                            true, // additive
+                            false, // combineWithSpriteColor
                             false);        // aboveShip
                 }
             } else {

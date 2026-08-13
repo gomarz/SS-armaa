@@ -356,10 +356,13 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
             return "daud";
         }
          */
+        if (unsaid(global, "bffi") && global.contains("$bffi_missionCompleted")) {
+            return "bffi";
+        }
         if (unsaid(global, "ZGR") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metZGR")) {
             return "ZGR";
         }
-        if (unsaid(global, "sedge") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$killedSedge")) {
+        else if (unsaid(global, "sedge") && Global.getSector().getPlayerMemoryWithoutUpdate().contains("$killedSedge")) {
             return "sedge";
         }
         return null;

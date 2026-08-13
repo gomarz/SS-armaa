@@ -3,53 +3,50 @@
   "hullId": "armaa_bellator",
   "displayName": "Standard",
   "goalVariant": false,
-  "fluxCapacitors": 50,
-  "fluxVents": 50,
+  "fluxCapacitors": 43,
+  "fluxVents": 30,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "armaa_spare_chassis_storage",
     "targetingunit",
-    "turretgyros",
-    "extendedshieldemitter",
-    "advancedshieldemitter",
-    "armaa_himac"
+    "advancedshieldemitter"
   ],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "assaying_rift",
-        "WS0004": "assaying_rift",
-        "WS0005": "assaying_rift",
-        "WS0006": "assaying_rift",
-        "WS0007": "hveldriver",
-        "WS0008": "dualflak",
-        "WS0009": "vpdriver",
-        "WS0010": "devastator",
-        "WS0011": "ionbeam",
-        "WS0013": "hveldriver",
-        "WS0014": "dualflak",
-        "WS0015": "armaa_morgana_beam",
-        "WS0016": "mjolnir",
-        "WS0017": "hveldriver"
+        "WS0003": "resonatormrm",
+        "WS0004": "resonatormrm",
+        "WS0005": "resonatormrm",
+        "WS0006": "resonatormrm"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {}
+      "weapons": {
+        "WS0015": "armaa_morgana_beam"
+      }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0007": "heavymauler",
+        "WS0009": "tachyonlance",
+        "WS0011": "ionbeam",
+        "WS0013": "hveldriver"
+      }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0016": "mark9",
+        "WS0017": "heavymauler"
+      }
     },
     {
       "autofire": true,
@@ -57,7 +54,9 @@
       "weapons": {
         "WS0001": "guardian",
         "WS0002": "guardian",
-        "WS0012": "heavyburst"
+        "WS0008": "flak",
+        "WS0010": "devastator",
+        "WS0014": "flak"
       }
     }
   ],

@@ -17,17 +17,20 @@
       }
     },
     {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {"WS0001": "ioncannon_fighter"}
+    },
+    {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "C_ARML": "armaa_alesteLeftArm"
-      }
+      "weapons": {        "C_ARML": "armaa_aleste_blade_LeftArm_fighter"}
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "E_HEAD": "armaa_alesteHead2"
+        "E_HEAD": "armaa_alesteHead"
       }
     }
   ],

@@ -3,13 +3,12 @@
   "hullId": "armaa_garegga_ml_carrier",
   "displayName": "Standard",
   "goalVariant": true,
-  "fluxCapacitors": 10,
-  "fluxVents": 7,
+  "fluxCapacitors": 20,
+  "fluxVents": 15,
   "quality": 1,
   "permaMods": [],
   "hullMods": [
     "targetingunit",
-    "reinforcedhull",
     "hardenedshieldemitter"
   ],
   "weaponGroups": [
@@ -17,7 +16,7 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "MAIN_GUN": "annihilatorpod"
+        "MAIN_GUN": "sabotpod"
       }
     },
     {
@@ -33,7 +32,15 @@
       "weapons": {
         "WS0003": "heavymauler"
       }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0004": "sabot",
+        "WS0001": "sabot"
     }
+  },
   ],
   "modules": [
     {

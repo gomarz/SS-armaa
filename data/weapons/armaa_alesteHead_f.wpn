@@ -1,0 +1,51 @@
+{
+  "id": "armaa_alesteHead_f",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_torsoSwapper", 
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "displayArcRadius": 250,
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_head.png",
+  "hardpointSprite": "graphics/fx/empty.png",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 10,
+  "turretOffsets": [
+    0.5,
+    3.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    4,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    0,
+    0,
+    175
+  ],
+  "coreColor": [
+    255,
+    200,
+    200,
+    200
+  ],
+  #"darkCore": true,
+  #"convergeOnPoint": true,
+  "width": 8,
+  "textureType": SMOOTH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
+}

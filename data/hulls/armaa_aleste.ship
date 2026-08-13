@@ -13,15 +13,15 @@
   "viewOffset": 0,
   "builtInMods": [
     "cataphract",
-    "armaa_fighterStrafe",
     "no_weapon_flux"
   ],
   "builtInWeapons": {
     "B_TORSO": "armaa_aleste_torso_ace",
     "C_ARMR": "armaa_sprigganRightArm",
+    "C_ARML": "armaa_aleste_blade_LeftArm_fighter",
     "D_PAULDRONL": "armaa_aleste_leftPauldron",
     "D_PAULDRONR": "armaa_aleste_rightPauldron",
-    "E_HEAD": "armaa_alesteHead",
+    "E_HEAD": "armaa_alesteHead_f",
     "F_LEGS": "armaa_ht_legs",
     "H_GLOW": "armaa_sprigganHeadGlow"
   },
@@ -33,7 +33,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -15,
-      "locations": [0, -3]
+      "locations": [3, -6]
     },
     {
       "id": "B_TORSO",
@@ -51,7 +51,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 15,
-      "locations": [3, 3],
+      "locations": [3, 6],
       "renderOrderMod": -100
     },
     {
@@ -61,7 +61,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -15,
-      "locations": [3, -3]
+      "locations": [7, -2.5]
     },
     {
       "id": "D_PAULDRONL",
@@ -70,7 +70,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [0, 6]
+      "locations": [0, 8]
     },
     {
       "id": "D_PAULDRONR",
@@ -79,7 +79,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": -0,
-      "locations": [0, -6]
+      "locations": [0, -8]
     },
     {
       "id": "E_HEAD",
@@ -88,7 +88,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [3, -0]
+      "locations": [0, -0]
     },
     {
       "id": "F_LEGS",
@@ -97,7 +97,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [-7, -0],
+      "locations": [-8, -0],
       "renderOrderMod": -1000
     },
     {
@@ -117,6 +117,16 @@
       "arc": 135,
       "angle": 0,
       "locations": [1, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 33.5,
+      "renderOrderMod": 200,
+      "locations": [-15, 10]
     }
   ],
   "engineSlots": [

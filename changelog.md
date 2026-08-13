@@ -1,3 +1,271 @@
+# V3.3.6
+
+- Fixed a rare case where drone reinforcements could spawn indefinitely during the Jenius descent
+
+- Cataphract SII
+	- S-mod
+		- Autoaim bonus now is properly applied
+		- Maximum Damage vs Cruisers: 10%->5%
+		- Maximum Damage vs Capitals: 20%->10%
+		- Removed flux dissipation bonus
+			- Replaced with Fighter damage bonus: 15% maximum
+		- Bonus cap: Level 15->Level 6
+	- Max ground raid strength bonus: 325->200
+
+- Reactive Motion Sheath
+	- -25% all damage received from beams -> -30% hull/armor damage received from beams
+
+- Einhander Plus (Thanks Caymoni!)
+	- Fixed Over OP variant
+	- Updated mission variant
+	- Low Grade EMP: EMP Damage: 100->300
+
+- Exilium (Thanks Caymoni!)
+	- Updated mission variant
+	- Added needler variant
+
+- Bellator
+	- Slightly increased shield radius
+
+- Zwei
+	- Increased pull effect on EM Lash
+	- Transforming while the lash is extended will result in it exploding
+
+- Improved AI usage for fighters with Havoc Drive system
+
+- Einhander
+	- Energy Surge
+		- RoF Reduction: 50%->20%
+	- Phase Upkeep: 0.05->0.04
+	- DP: 15->13
+	- Dissipation: 275->325
+
+- Einhander Plus
+	- Low-Grade EMP Emitter
+		- EMP Damage: 100->300
+		- No longer can fire while enabled
+
+- Valk Kai
+	- Added MODULE hint to modules
+
+- Combo Unit / Bakraid
+	- Core unit IDs are now stored when installed into a mobile armor and restored when they are removed
+	- New Hullmod: Suppressed Shield Emitters
+		- Increases damage taken to shields by 30% when unit with PHASE type system is installed
+		- Added to all Bakraids
+	- Reworked most Bakraids
+		- goal was to give each one a reason to exist that the others can't cover, and clear space for future variants that don't overlap
+		- SSE exists since some things are priced around not having sustained mitigation, with heavier guns or stronger systems to compensate
+		- Havoc Drive and HI-MAC came off three of the four, and that's the change people will feel most. Anything that can reposition so freely doesn't need to make good decisions about where it stands, and all of them could do it, which meant none of them had a real weakness to build around. 
+
+- Raiden EX
+	- Max Flux: 9000->7000
+	- Flux Dissipation: 600->450
+	- PPT: 300->240
+	- CR to deploy: 12%->25%
+
+- Bakraid (HT)
+	- Dissipation: 250->300
+	- CR/Deploy: 12->20%
+	- Shield Arc: 120->160
+	- Removed HI-MAC
+	- Added Hullmod: Suppressed Shield Emitters
+	- System: High Energy Focus
+	- PPT: 300->260
+
+- Bakraid (H)
+	- Havoc Drive -> Burn Drive
+	- Armor: 500->750
+	- Diss: 150->210
+	- PPT: 300->450
+	- Removed HI-MAC
+	- Mass: 300->425
+	- Flux Capacity: 3000->4000
+	- Acceleration: 60->40
+	- Deceleration: 40->30
+	- Max Turn Rate: 30->30
+	- Turn Acceleration: 60->50
+	- Shield Efficiency: 0.8->0.9
+	- Shield Arc: 300->180
+	- DP: 12->9
+	- OP: 100->95
+	- Adjusted sprite, extended frontal bounds
+	- Added Hullmod: Suppressed Shield Emitters
+	- (H) mount overhaul (2 med ballistic + 1 med missile + 2 small missile -> 4 med ballistic + 1 small missile)
+
+- Bakraid
+	- Havoc Drive -> Missile Autoforge
+	- Adjusted sprite
+	- Removed HI-MAC
+	- DP: 10->8
+	- OP: 80->85
+	- HP: 5000->3000
+	- Armor: 400->600
+	- PPT: 300->400
+	- Speed: 75->80
+	- Diss: 150->200
+	- Flux Capacity: 3000->3500
+	- Gained two small missile turrets
+	- Added Hullmod: Suppressed Shield Emitters
+	- Medium missile went from a 360° arc to 90
+
+- Siege Mode
+	- Updated Description
+
+- Caracal
+	- Updated variants (thanks Caymoni)
+	- Capacity: 2500->2000
+
+- Aleste
+	- Flux Capacity: 2000->1000
+	- Top Speed: 150->140
+	- Acceleration: 225->175
+	
+	- Rynex Pulse Rifle
+		- Chargedown: 0.22->0.15
+	- Added 1x Ion Cannon (High Delay)
+
+- Aleste E-Type
+	- Adjusted sprite
+	- OP: 15->30
+	- Added 1 universal turret mount
+	- Updated desc
+	- Dissipation: 125->150
+
+- Broadsword (WINGCOM)
+	- OP: 15->30
+
+- Valken II
+	- Adjusted sprite
+	- Ship System: Havoc Drive
+	- Assault Chaingun (Fighter)
+		- Spread: 15->5
+		- Spread/shot: 3->1
+		- Range: 500->350
+	- Refit Time: 10->12
+	- Top Speed: 180->130
+	- Hull: 750->800
+	- Armor: 175->200
+
+- Spriggan
+	- Improved aiming AI
+
+- Spriggan Powered
+	- System: Jaunt Booster -> None
+	- Top Speed: 140->160
+
+- Musha M1
+	- Light Crusher Cannon
+		- Spread: 30->6
+	- Annihilator Rocket Pod (Fighter)
+		- Spread: 30->0
+
+- Viator
+	- Top speed: 95->85
+
+- Valkazard
+	- Devastator: was classified as an ENERGY weapon when it should have been BALLISTIC
+
+- Dawn
+	- Added LL option to adjust Dawn voice chatter frequency
+	- Dawn will only move between player and independent markets
+
+- Misc
+	- Added hullmod icons for Aegis Field, Formation Drive, Spare Chassis, Spare Chassis Storage
+
+# V3.3.5
+
+- Bellator
+	- Mine Strike
+		- Uses: 5->4
+	- Added hullmod: Formation Drive
+		- Increase speed when far away from bulk of the fleet while decreasing fighter wing range
+		- Additionally enables zero flux boost while active while flux is below 15%
+
+- Executioner's Mark
+	- Should be more aggressively employed if eliminate order is given
+	- Should be more aggressively employed if allies are around
+	- Active Duration: 5->6
+	- Cooldown: 5->8
+
+- Variable Unit
+	- Added alternate transform key (Middle mouse button) to desc
+
+- Altagrave (C)
+	- Added 1 fighter bay
+
+- Zwei
+	- EM Lash Flux/Shot: 200->400
+
+- Fixed potential CTD with spare chassis
+- Fixed potential CTD with wingcom landing AI
+- Fixed potential CTD during Gravion mission
+- Fixed bug that prevented chassis storage/servicebays being preserved on autofit variants
+- Fixed missing text in compound unit hullmod desc
+- Fixed some dialogue typos / grammatical errors
+- Fixed a rare case where drone reinforcements could spawn indefinitely during the Jenius descent
+
+- Combo Unit / Bakraid
+	- Rewrote some internal logic
+	- Fixed bug where a dupe core unit would appear if it detached earlier, and then was destroyed
+	- Fixed core unit being destroyed instead of being auto-ejected when taking fatal damage for the first time
+	- Bakraid, Bakraid(XIV), Bakraid(HT), and Raiden's core unit will appear offset to the right of them instead of their actual combat position
+		- This should make refitting them much easier
+	- Persean League and independents now know Bakraid, @ .50 hull frequency
+	- Added additional variants for Bakraid and Bakraid(HT)
+
+- Valk Kai
+	- Max Flux: 6000->4000
+
+- SPLTR-25XS Shotgun
+	- Range: 600->500
+	- Damage: 125->100
+	- Flux/Shot: 125->105
+
+- Bakraid (HT)
+	- All medium missiles have been replaced with medium energies
+
+- Rajanya
+	- Particle Cannon (Binder)
+		- Chargedown: 1->3
+	- Heat Axe
+		- No longer restores HP on hitting hull
+		- The armor regen on hit is still preserved
+
+- Panther
+	- Armor: 275->250
+
+- Aleste
+	- Refit Time: 25->20
+	- OP: 20->16
+	- Ship System: Plasma Jets->Havoc Drive
+
+- Viator
+	- Medium Hybrid arc: 220->270
+	- Sensor Drones: regen 0.025->0.06
+	- Ballistic Rangefinder is now built-in
+	- OP: 125->105
+	- Top speed: 95->80
+	- Armor: 800->600
+	- Added description
+	- Turn Rate: 15->35
+	- Turn Accel: 25->60
+
+- Valkazard
+	- Blunderbuss: was classified as an ENERGY weapon when it should have been BALLISTIC
+
+- Dawn
+	- Added commentary for New Meshan
+	- Added commentary for Mazalot
+	- Added commentary for Baetis
+
+- Misc
+	- Slightly adjusted Luddic Church Fleet dialogue that appears in New Meshan
+
+- Portraits (Thanks Selkie!)
+	- Reduced saturation + naturalized tones on armaa_legioMechPilot, slightly sharpened
+	- Slightly more natural tones + sharpening on armaa_automaton, armaa_mrcgirl06, armaa_mrcgirl07, armaa_mrcguy01, armaa_mrcguy08
+	- Added subtle eye highlights to 3 that make armaa_legioMechPilot_anime feel less ded
 # V3.3.4
 
 ## New Units

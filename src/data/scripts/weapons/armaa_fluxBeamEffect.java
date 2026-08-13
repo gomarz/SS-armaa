@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import data.scripts.util.armaa_utils;
+import data.scripts.util.armaa_fighterBeamAim;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
@@ -14,8 +15,6 @@ import org.magiclib.util.MagicRender;
 
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipCommand;
-import com.fs.starfarer.api.combat.ShipwideAIFlags;
 
 public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
 
@@ -35,32 +34,27 @@ public class armaa_fluxBeamEffect implements EveryFrameWeaponEffectPlugin {
     private final IntervalUtil interval = new IntervalUtil(0.015f, 0.015f);
     private float level = 0f;
 
+    // One controller per weapon instance; dies with the weapon, no cleanup needed.
+    private final armaa_fighterBeamAim fighterAim = new armaa_fighterBeamAim();
+
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         if (engine.isPaused() || weapon.getShip().getOriginalOwner() == -1) {
             return;
         }
-        if (!MagicRender.screenCheck(0.2f, weapon.getLocation())) {
-            return;
-        }
+
         ShipAPI ship = weapon.getShip();
         if (ship == null) {
             return;
         }
-        
-        if (ship.isFighter()) {
-            if (weapon.isFiring() && weapon.getAmmo() <= 0) {
-                ship.blockCommandForOneFrame(ShipCommand.TURN_LEFT);
-                ship.blockCommandForOneFrame(ShipCommand.TURN_RIGHT);
-                if(ship.getAIFlags().hasFlag(ShipwideAIFlags.AIFlags.CARRIER_FIGHTER_TARGET))
-                    ship.setShipTarget((ShipAPI)ship.getAIFlags().getCustom(ShipwideAIFlags.AIFlags.CARRIER_FIGHTER_TARGET));
-                if(ship.getShipTarget() != null)
-                {
-                    weapon.setCurrAngle(VectorUtils.getAngle(ship.getLocation(), ship.getShipTarget().getLocation()));
-                    ship.setFacing(weapon.getCurrAngle());
-                }
-            }
+
+        fighterAim.advance(amount, ship, weapon);
+
+        // ---- everything past this point is cosmetic ----
+        if (!MagicRender.screenCheck(0.2f, weapon.getLocation())) {
+            return;
         }
+
         Vector2f origin = new Vector2f(weapon.getLocation());
         Vector2f offset = new Vector2f(TURRET_OFFSET, -0f);
         if (weapon.getSlot().isTurret()) {
