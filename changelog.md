@@ -30,6 +30,9 @@
 - Zwei
 	- Increased pull effect on EM Lash
 	- Transforming while the lash is extended will result in it exploding
+	- Will no longer transform while a "module"
+		- Functionally this means it will stay in mech mode while attached to something / in a bakraid
+		- Note this only applies to Zwei
 
 - Improved AI usage for fighters with Havoc Drive system
 

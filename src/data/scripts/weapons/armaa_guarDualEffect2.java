@@ -196,7 +196,7 @@ private float transformCooldown = 0f;
             transformBlock = false;
             engine.getCustomData().remove("armaa_transformNow_" + ship.getId());
         }
-        if (ship.getParentStation() != null && !transformBlock && ship.isAlive()) {
+        if (ship.getParentStation() == null && !transformBlock && ship.isAlive()) {
             if (!ship.getFluxTracker().isOverloaded() && !transforming) {
 
                 // --- forced transform
