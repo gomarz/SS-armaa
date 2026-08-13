@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-"everyFrameEffect": "data.scripts.weapons.armaa_wepRandomizer",
+  #"everyFrameEffect": "data.scripts.weapons.armaa_wepRandomizer",
   "displayArcRadius": 250,
   "fireSoundTwo": "needler_fire",
   "hardpointAngleOffsets": [
@@ -42,6 +42,6 @@
     0,
     4
   ],
-  "turretSprite": "graphics/armaa/ships/valkenx/playable/armaa_valkenXHead_ace_01alt2.png",
+  "turretSprite": "graphics/armaa/ships/aleste/armaa_aleste_head_lpc.png",
   "type": "BALLISTIC"
 }

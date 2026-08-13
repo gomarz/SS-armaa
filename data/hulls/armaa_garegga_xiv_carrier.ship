@@ -13,7 +13,7 @@
   "viewOffset": 50,
   "builtInMods": [
     "fourteenth",
-    "armaa_himac",
+    "armaa_suppressionLoad",
     "armaa_comboUnit"
   ],
   "builtInWeapons": {
@@ -23,10 +23,10 @@
   "weaponSlots": [
     {
       "id": "TRUE_GUN",
-      "size": "SMALL",
-      "type": "MISSILE",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 45,
+      "arc": 210,
       "angle": 45,
       "locations": [0, 37],
       "renderOrderMod": 100
@@ -42,20 +42,20 @@
     },
     {
       "id": "MAIN_GUN",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "MISSILE",
       "mount": "TURRET",
-      "arc": 360,
+      "arc": 90,
       "angle": 0,
       "locations": [-17, -0],
       "renderOrderMod": -99998
     },
     {
       "id": "WS0001",
-      "size": "SMALL",
-      "type": "MISSILE",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 45,
+      "arc": 210,
       "angle": -45,
       "locations": [0, -37],
       "renderOrderMod": 100
@@ -157,8 +157,8 @@
     }
   ],
   "bounds": [
-    18, -14,
-    37, -22.5,
+    46.5, -11,
+    43.5, -20,
     46, -27.5,
     45, -43,
     28, -44.5,
@@ -176,7 +176,7 @@
     23, 45,
     45, 43,
     46, 27.5,
-    37, 22.5,
-    18, 14
+    43.5, 20,
+    46.5, 11
   ]
 }

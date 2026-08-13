@@ -1,0 +1,39 @@
+{
+  "variantId": "armaa_kouto_frig_custom",
+  "hullId": "armaa_kouto_frig",
+  "displayName": "AR Squad",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "B_TORSO": "armaa_kouto_torso_frig"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "TRUE_GUN": "riftbeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "E_HEAD": "armaa_kouto_head"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

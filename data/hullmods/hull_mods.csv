@@ -301,7 +301,7 @@ Repair Kit,armaa_repair_kit,,,Arma Armatura,"special,no_drop",Strikecraft (ARMAA
 Exclusive Hangar Assignment,armaa_exclusive_hangar_assignment,,,Arma Armatura,"special,no_drop",Strikecraft (ARMAA),,TRUE,,,99,99,0,0,data.hullmods.armaa_exclusive_hangar_assignment,"Ships with the Strikecraft hullmod will exclusively launch from this carrier, overriding normal launch distribution.",Launches all ships with Strikecraft hullmod form this carrier,,graphics/armaa/hullmods/armaa_exclusive_hangar_assignment.png
 ,,,,,,,,,,,,,,,,,,,
 Spare Chassis,armaa_spare_chassis,,,Arma Armatura,"special,no_drop",Special,,,TRUE,,0,0,0,0,data.hullmods.armaa_spareChassis,"This unit is simple enough for multiple spare chassis to be produced prior to combat. If the current ship is destroyed, a spare will be deployed. Due to the ease of manufacture, damaged units will simply be recycled for a new frame. Receives no D-Mods.",,,
-Spare Chassis Storage,armaa_spare_chassis_storage,1,,Arma Armatura,"special,no_drop",Special,,TRUE,,,0,2,4,6,data.hullmods.armaa_spareChassisStorage,This ship forges spare hulls for Strikecraft with the %s hullmod.,,,
+Spare Chassis Storage,armaa_spare_chassis_storage,1,,Arma Armatura,"special,no_drop",Special,,TRUE,,,0,2,4,6,data.hullmods.armaa_spareChassisStorage,This ship forges spare hulls for Strikecraft with the %s hullmod.,,,graphics/armaa/hullmods/armaa_spare_chassis_storage.png
 ,,,,,,,,,,,,,,,,,,,
 Reactive Carapace,armaa_reactiveCarapace,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_reactiveCarapace,Carries a physical shield.,Carries a physical shield.,,graphics/hullmods/ablative_armor.png
 ,,,,,,,,,,,,,,,,,,,
@@ -312,9 +312,15 @@ Aegis Field,armaa_bellatorAegis,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0
 
 Covered strike craft take up to %s less damage to hull and armor from all sources, converted to hard flux on this ship at %s flux per point absorbed. Damage to their own shields is unaffected. They also regain the zero-flux engine boost, maintained up to %s flux.
 
-All effects weaken as this ship's hard flux rises, failing entirely at %s hard flux, or while venting or overloaded. Overlapping fields do not stack; the strongest applies.",,,
+All effects weaken as this ship's hard flux rises, failing entirely at %s hard flux, or while venting or overloaded. Overlapping fields do not stack; the strongest applies.",,,graphics/armaa/hullmods/armaa_aegis_field.png
 Formation Drive,armaa_bellatorFormationDrive,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_bellatorFormationDrive,"When more than %s units from the bulk of the fleet and moving towards it, top speed increases by up to +%s, scaling with distance, and the zero-flux engine boost is maintained up to %s flux. 
 
 Disengages on turning away, or on closing back within %s units. 
 
-Fighter wing range is cut by %s while the boost is active, rising to %s at maximum distance.",,,
+Fighter wing range is cut by %s while the boost is active, rising to %s at maximum distance.",,,graphics/armaa/hullmods/armaa_formation_drive.png
+Barbican Array,armaa_barbicanArray,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_barbicanArray,Reduces the ordnance point cost of small point defense weapons by %s and medium point defense weapons by %s. Increases point defense weapon range by %s and damage dealt to missiles and fighters by %s.,Reduces the ordnance point cost of point defense weapons and improves their range and effectiveness.,,graphics/armaa/hullmods/armaa_barbican_array.png
+Suppressed Shield Emitters,armaa_suppressionLoad,,,Arma Armatura,"special,no_drop",,,,TRUE,,0,0,0,0,data.hullmods.armaa_suppressionLoad,"Increases the flux cost of damage absorbed by shields by %s while a core with PHASE type defense system is docked.
+
+Effectively, this applies to any unit that has a system in place of a typical shield emitter.
+
+Units with no such system, or lacking shields, are not affected.",Reduces the ordnance point cost of point defense weapons and improves their range and effectiveness.,,graphics/armaa/hullmods/armaa_suppressed_shield_emitters.png

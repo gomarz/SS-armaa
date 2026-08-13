@@ -49,7 +49,8 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
     private int diagLine = 0;
     public static Map MANUVER_MALUS = new HashMap();
     FleetMemberAPI largest = null;
-
+private int wardensSpawned = 0;
+private static final int MAX_WARDENS = 20;
     static {
         /*mass_mult.put(HullSize.FRIGATE, 3f);
         mass_mult.put(HullSize.DESTROYER, 3f);
@@ -613,7 +614,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                     engine.getFleetManager(0).spawnShipOrWing("brawler_pather_Raider", new Vector2f(100, -10000), 0f, 10f);
                 }
             }
-            if ((bgStage >= 1.2f || engine.getFleetManager(1).getCurrStrength() <= 0f) && !spawnedBoss && !stationAlive) {
+            if ((bgStage >= 1.2f || engine.getFleetManager(1).getCurrStrength() <= 20f) && !spawnedBoss && !stationAlive) {
                 // Apparently this can be the case
                 //if (Misc.getAICoreOfficerPlugin(ITEM) != null) {
                 //	return;
@@ -873,7 +874,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                         );
                         warning = false;
                         engine.getCustomData().put("armaa_atmoWarningLoc" + i, vec);
-                    } else if (!warning && bgStage < 0.60f) {
+                    } else if (!warning && bgStage < 0.60f && wardensSpawned < MAX_WARDENS){
 
                         for (ShipAPI ship : engine.getShips()) {
                             if (ship.getOwner() != 1 || stationAlive) {
@@ -884,6 +885,7 @@ public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {
                             }
                             vec = (Vector2f) engine.getCustomData().get("armaa_atmoWarningLoc" + i);
                             engine.getFleetManager(1).spawnShipOrWing("warden_Defense", vec, 270f, 0f);
+                            wardensSpawned++;
                             engine.spawnExplosion(vec, new Vector2f(), shiftColor(new Color(0.29f, .1f, .1f, 0.50f), new Color(1f, 1f, 1f, 0.50f), bgStage), 250f, 1f);
                             //engine.spawnProjectile(ship,ship.getAllWeapons().get(0),"armaa_curvyLaser",vec,ship.getFacing(),ship.getVelocity());
                             break;

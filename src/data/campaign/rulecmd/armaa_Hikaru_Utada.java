@@ -424,6 +424,37 @@ public class armaa_Hikaru_Utada extends BaseCommandPlugin {
             SectorEntityToken token = Global.getSector().getEntityById(id);
             token.setExpired(true);
             return true;
+        } else if ("showFleetMember".equals(action)) {
+            if (params.size() <= 1) {
+                return false;
+            }
+
+            String raw = params.get(1).string;
+            Object value = null;
+
+            if (raw != null && raw.startsWith("$")) {
+                String body = raw.substring(1);
+                int dot = body.indexOf('.');
+                if (dot > 0) {
+                    MemoryAPI scoped = memoryMap.get(body.substring(0, dot));
+                    if (scoped != null) {
+                        value = scoped.get("$" + body.substring(dot + 1));
+                    }
+                } else {
+                    MemoryAPI local = memoryMap.get("local");
+                    if (local != null) {
+                        value = local.get(raw);
+                    }
+                }
+            }
+
+            if (!(value instanceof FleetMemberAPI)) {
+                return false;
+            }
+
+            dialog.flickerStatic(1f, 1f);
+            dialog.getVisualPanel().showFleetMemberInfo((FleetMemberAPI) value, true);
+            return true;
         } else if ("getShipDummy".equals(action)) {
             String id = params.get(1).getString(memoryMap);
             if (id == null || params.size() <= 1) {

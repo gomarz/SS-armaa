@@ -4,73 +4,72 @@ import java.awt.Color;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 
 public class EnergySurgeStats extends BaseShipSystemScript {
 
-	public static final float DAMAGE_BONUS_PERCENT = 0f;
-	public static float SPEED_BONUS = 50f;
-	public static float TURN_BONUS = 100f;
-	public float bonusPercent = 0f;
-	//private Color color = new Color(100,255,100,255);
-	private Color color = new Color(255,0,115,255);
+    public static final float SPEED_BONUS         = 50f;
+    public static final float ACCEL_PERCENT       = 150f;
+    public static final float TURN_RATE_FLAT      = 15f;
+    public static final float TURN_RATE_PERCENT   = 100f;
+    public static final float TURN_ACCEL_FLAT     = 100f;
+    public static final float TURN_ACCEL_PERCENT  = 500f;
+    public static final float FLUX_DAMAGE_SCALE   = 25f;
+    public static final float ROF_MULT            = 0.80f;
+    public static final float RECOIL_MULT         = 2f;
 
-	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
-		
-		ShipAPI ship = (ShipAPI) stats.getEntity();
-		bonusPercent = (DAMAGE_BONUS_PERCENT + (ship.getFluxLevel())*25f) * effectLevel;
-		//stats.getEnergyWeaponDamageMult().modifyPercent(id, bonusPercent);
+    private float bonusPercent = 0f;
+    private final Color color = new Color(255, 0, 115, 255);
 
-		if (state == ShipSystemStatsScript.State.OUT) {
-			stats.getMaxSpeed().unmodify(id); //slow ship to regular top speed while powering drive down
-			stats.getMaxTurnRate().unmodify(id);
-		} else {
-			stats.getMaxSpeed().modifyFlat(id, SPEED_BONUS);
-			stats.getAcceleration().modifyPercent(id, SPEED_BONUS * 3f * effectLevel);
-			stats.getDeceleration().modifyPercent(id, SPEED_BONUS * 3f * effectLevel);
-			stats.getTurnAcceleration().modifyFlat(id, TURN_BONUS * effectLevel);
-			stats.getTurnAcceleration().modifyPercent(id, TURN_BONUS * 5f * effectLevel);
-			
-			stats.getMaxTurnRate().modifyFlat(id, 15f);
-			stats.getMaxTurnRate().modifyPercent(id, 100f);
-			
-			stats.getEnergyRoFMult().modifyMult(id,0.50f);
-			stats.getMaxRecoilMult().modifyMult(id,2f);
-			stats.getRecoilPerShotMult().modifyMult(id,2f);
-			
-			stats.getEnergyWeaponDamageMult().modifyPercent(id, bonusPercent);
-		}
-		
-		if (stats.getEntity() instanceof ShipAPI) 
-		{
-			//ship = (ShipAPI) stats.getEntity();
-			
-			ship.getEngineController().fadeToOtherColor(this, color, new Color(0,0,0,0), effectLevel, 0.67f);
-			ship.getEngineController().extendFlame(this, 1.35f * effectLevel, 1.35f * effectLevel, 0f * effectLevel);
-		}
-	}
-        @Override
-	public void unapply(MutableShipStatsAPI stats, String id) {
-		stats.getMaxSpeed().unmodify(id);
-		stats.getMaxTurnRate().unmodify(id);
-		stats.getTurnAcceleration().unmodify(id);
-		stats.getAcceleration().unmodify(id);
-		stats.getDeceleration().unmodify(id);
-		
-		stats.getMaxRecoilMult().unmodify(id);
-		stats.getRecoilPerShotMult().unmodify(id);
-		stats.getEnergyRoFMult().unmodify(id);
-		stats.getEnergyWeaponDamageMult().unmodify(id);
+    @Override
+    public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
+        if (!(stats.getEntity() instanceof ShipAPI)) return;
+        ShipAPI ship = (ShipAPI) stats.getEntity();
 
-	}
-	
-        @Override
-	public StatusData getStatusData(int index, State state, float effectLevel) {
-		//float bonusPercent = DAMAGE_BONUS_PERCENT * effectLevel;
-		if (index == 0) 
-		{
-			return new StatusData("Improved maneuverability, +" + (int)bonusPercent+"% DMG", false);
-		}
-		return null;
-	}
+        bonusPercent = ship.getFluxLevel() * FLUX_DAMAGE_SCALE * effectLevel;
+
+        stats.getMaxSpeed().modifyFlat(id, SPEED_BONUS * effectLevel);
+        stats.getAcceleration().modifyPercent(id, ACCEL_PERCENT * effectLevel);
+        stats.getDeceleration().modifyPercent(id, ACCEL_PERCENT * effectLevel);
+        stats.getMaxTurnRate().modifyFlat(id, TURN_RATE_FLAT * effectLevel);
+        stats.getMaxTurnRate().modifyPercent(id, TURN_RATE_PERCENT * effectLevel);
+        stats.getTurnAcceleration().modifyFlat(id, TURN_ACCEL_FLAT * effectLevel);
+        stats.getTurnAcceleration().modifyPercent(id, TURN_ACCEL_PERCENT * effectLevel);
+
+        // ramp penalties with effectLevel so IN/OUT aren't pure downside
+        float rof    = 1f - (1f - ROF_MULT)    * effectLevel;
+        float recoil = 1f + (RECOIL_MULT - 1f) * effectLevel;
+        stats.getEnergyRoFMult().modifyMult(id, rof);
+        stats.getMaxRecoilMult().modifyMult(id, recoil);
+        stats.getRecoilPerShotMult().modifyMult(id, recoil);
+        stats.getEnergyWeaponDamageMult().modifyPercent(id, bonusPercent);
+
+        ship.getEngineController().fadeToOtherColor(this, color,
+                new Color(0, 0, 0, 0), effectLevel, 0.67f);
+        ship.getEngineController().extendFlame(this,
+                1.35f * effectLevel, 1.35f * effectLevel, 0f);
+    }
+
+    @Override
+    public void unapply(MutableShipStatsAPI stats, String id) {
+        stats.getMaxSpeed().unmodify(id);
+        stats.getMaxTurnRate().unmodify(id);
+        stats.getTurnAcceleration().unmodify(id);
+        stats.getAcceleration().unmodify(id);
+        stats.getDeceleration().unmodify(id);
+        stats.getMaxRecoilMult().unmodify(id);
+        stats.getRecoilPerShotMult().unmodify(id);
+        stats.getEnergyRoFMult().unmodify(id);
+        stats.getEnergyWeaponDamageMult().unmodify(id);
+    }
+
+    @Override
+    public StatusData getStatusData(int index, State state, float effectLevel) {
+        if (index == 0) {
+            return new StatusData("Safety release: +" + (int) bonusPercent + "% energy damage", false);
+        }
+        if (index == 1) {
+            return new StatusData("-50% energy rate of fire, increased recoil", true);
+        }
+        return null;
+    }
 }

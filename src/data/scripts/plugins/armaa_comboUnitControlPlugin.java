@@ -14,6 +14,7 @@ import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.input.InputEventAPI;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import static com.fs.starfarer.api.util.Misc.ZERO;
@@ -39,6 +40,8 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
     private final IntervalUtil interval2 = new IntervalUtil(.05f, .05f);
     private final IntervalUtil interval3 = new IntervalUtil(.05f, .1f);
     Map<FleetMemberAPI, ShipAPI> memberToShip = new HashMap<>();
+    // module -> id of the station slot it was docked in before we moved it to MODULE_COMBAT_POS
+    private final Map<ShipAPI, String> originalSlotIds = new HashMap<ShipAPI, String>();
 
     public void putMapping(ShipAPI ship, FleetMemberAPI member) {
         if (ship == null || member == null) {
@@ -58,6 +61,30 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         }
     }
 
+
+    private void restoreSlot(ShipAPI module) {
+        String origId = originalSlotIds.remove(module);
+        if (origId == null) {
+            return;
+        }
+        if (module.controlsLocked()) {
+            return; // core ejected; husk is meant to die
+        }
+        if (!module.isAlive() || module.isHulk()) {
+            return;
+        }
+
+        ShipAPI parent = module.getParentStation();
+        if (parent == null) {
+            return;
+        }
+
+        WeaponSlotAPI orig = parent.getHullSpec().getWeaponSlot(origId);
+        if (orig != null) {
+            module.setStationSlot(orig);
+        }
+    }
+
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
 
@@ -65,6 +92,13 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         // is intact, they aren't considered destryoed/ need repairs
         // even if base unit dies
         if (engine.isCombatOver() || engine.isEnemyInFullRetreat()) {
+            if (engine.isCombatOver()) {
+                // backstop sweep: iterate the map, not engine.getShips(), because a
+                // retreated parent is already out of the engine
+                for (ShipAPI module : new ArrayList<ShipAPI>(originalSlotIds.keySet())) {
+                    restoreSlot(module);
+                }
+            }
             for (ShipAPI ship : engine.getShips()) {
                 if (modulesToUpdate.get(ship) != null) {
                     if (ship.getOwner() == 0) {
@@ -78,6 +112,11 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                     modulesToUpdate.remove(ship);
 
                 }
+            }
+            if (engine.isCombatOver()) {
+                // stop here, otherwise the module loop below immediately re-swaps
+                // every module back onto MODULE_COMBAT_POS and undoes the restore
+                return;
             }
         }
         interval3.advance(amount);
@@ -114,18 +153,29 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                         continue;
                     }
                     for (ShipAPI module : children) {
-                        if(module.isHulk() || !module.isAlive())
-                        {
+                        if (module.isHulk() || !module.isAlive()) {
                             continue;
                         }
                         if (module.getStationSlot() != null && (!module.getStationSlot().getId().equals("MODULE") && !module.getStationSlot().getId().equals("MODULE_COMBAT_POS"))) {
                             continue;
                         }
+                        // restore while the parent is still valid; the combat-over
+                        // sweep is too late for a ship that has already left the engine
+                        boolean travelling = ship.getTravelDrive() != null && ship.getTravelDrive().isActive();
+                        if ((travelling && (ship.isDirectRetreat() || ship.isRetreating())) || !engine.isEntityInPlay(ship)) {
+                            restoreSlot(module);
+                        } else {
                             //module.ensureClonedStationSlotSpec();
-                        if (ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS") != null && module.getStationSlot() != ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS")) {
-                            module.setStationSlot(ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS"));
-                            Global.getLogger(this.getClass()).info("Set statuin skit L " + ship.getName() + " " + module.getHullSpec().getHullNameWithDashClass());
-
+                            WeaponSlotAPI combatPos = ship.getHullSpec().getWeaponSlot("MODULE_COMBAT_POS");
+                            WeaponSlotAPI current = module.getStationSlot();
+                            if (combatPos != null && current != null
+                                    && !"MODULE_COMBAT_POS".equals(current.getId())) {
+                                if (!originalSlotIds.containsKey(module)) {
+                                    originalSlotIds.put(module, current.getId());
+                                }
+                                module.setStationSlot(combatPos);
+                                Global.getLogger(this.getClass()).info("Set station slot on " + ship.getName() + " " + module.getHullSpec().getHullNameWithDashClass());
+                            }
                         }
                         if (module.controlsLocked()) {
                             continue;
@@ -152,7 +202,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                             if (!doubletapped && engine.getPlayerShip() == ship) {
                                 continue;
                             }
-                            if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f || ship.getHullLevel() < 0.10f)) {
+                            if (doubletapped || engine.getPlayerShip() != ship && (module.getHullLevel() < 0.50f || ship.isDirectRetreat() || ship.getCurrentCR() <= 0.25f || ship.getHullLevel() < 0.25f)) {
                                 ShipAPI s = createShipFromModule(ship, module, engine);
                                 engine.addPlugin(new armaa_CoreEjectEffect(s));
                                 if (engine.getPlayerShip() != ship && ship.getOwner() == 0) {
@@ -231,6 +281,9 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
             s.setCaptain(ship.getCaptain());
         }
         ship.setCaptain(null);
+        // guardual workaround
+        Global.getCombatEngine().getCustomData().put("armaa_guarDualPaintjob_" + s.getId(), Global.getCombatEngine().getCustomData().get("armaa_guarDualPaintjob_" + ship.getId()));
+
         return s;
     }
 
@@ -252,8 +305,8 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                 trueShip.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
                 // the fact we need to do it twice means something is wrong
                 trueShip.removeListenerOfClass(armaa_comboUnitDeathListener.class);
-                trueShip.setStationSlot(null);            
-                trueShip.getLocation().set(-10000,-10000);
+                trueShip.setStationSlot(null);
+                trueShip.getLocation().set(-10000, -10000);
                 armaa_utils.destroy(trueShip);
                 ship.removeListener(this);
                 return;
@@ -296,6 +349,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                 }
                                 ship.removeListener(this);
                                 Global.getCombatEngine().getFleetManager(ship.getOwner()).removeDeployed(ship, false);
+                                armaa_utils.setLocation(ship, new Vector2f(-10000,-10000));
                                 ship.setHitpoints(0f);
                             }
                         }
@@ -348,7 +402,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         public void advance(float f) {
             if (!ship.isAlive() || ship.getLocation().getY() == -1000000f) {
                 if (parent != null) {
-                    boolean independent = parent.getVariant().hasHullMod("automated") || parent.getHullSpec().getMinCrew() <= 0 ||parent.getVariant().hasTag("armaa_core_independent") || parent.getHullSpec().hasTag("armaa_core_independent");
+                    boolean independent = parent.getVariant().hasHullMod("automated") || parent.getHullSpec().getMinCrew() <= 0 || parent.getVariant().hasTag("armaa_core_independent") || parent.getHullSpec().hasTag("armaa_core_independent");
                     if (!independent) {
                         parent.setControlsLocked(true);
                         parent.getFluxTracker().showOverloadFloatyIfNeeded("Core unit lost! Controls locked!", Color.red, 10f, true);

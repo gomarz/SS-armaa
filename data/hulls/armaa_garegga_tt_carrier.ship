@@ -13,7 +13,7 @@
   "viewOffset": 50,
   "builtInMods": [
     "armaa_comboUnit",
-    "armaa_himac"
+    "armaa_suppressionLoad"
   ],
   "builtInWeapons": {
     "E_LSHOULDER": "armaa_garegga_tt_carrier_leftPauldron",

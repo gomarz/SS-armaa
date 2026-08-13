@@ -254,7 +254,7 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
                     }
                 }
                 if (!tinyBoi) {
-                    CombatUtils.applyForce(weapon.getShip(), weapon.getShip().getFacing() - 180f, Math.min(target.getMass() / 4, BLADE_KNOCKBACK_MAX));
+                    CombatUtils.applyForce(weapon.getShip(), weapon.getShip().getFacing() - 180f, Math.min(target.getMass() / 2, BLADE_KNOCKBACK_MAX));
                 }
             }
 

@@ -1,7 +1,7 @@
 {
   "id": "armaa_valkenxHead",
   "specClass": "beam",
-  "type": "DECORATIVE",
+  "type": "ENERGY",
   "size": "SMALL",
   "collisionClass": "RAY",
   #"everyFrameEffect": "data.scripts.weapons.armaa_torsoSwapper", 
@@ -16,7 +16,7 @@
     255,
     255
   ],
-  "hitGlowRadius": 0,
+  "hitGlowRadius": 10,
   "turretOffsets": [
     0.5,
     3.5
@@ -35,17 +35,17 @@
     255,
     0,
     0,
-    255
+    175
   ],
   "coreColor": [
     255,
-    0,
-    0,
-    255
+    200,
+    200,
+    200
   ],
-  "darkCore": true,
+  "darkCore": false,
   #"convergeOnPoint": true,
-  "width": 2,
+  "width": 8,
   "textureType": SMOOTH,
   "textureScrollSpeed": 64,
   "pixelsPerTexel": 1

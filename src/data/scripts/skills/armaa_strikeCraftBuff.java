@@ -17,7 +17,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 public class armaa_strikeCraftBuff {
 
     public static final float SPEED_BONUS = 25f;
-    private static final float BEAM_RESISTANCE = 25f;
+    private static final float BEAM_RESISTANCE = 30f;
     public static final float OVERLOAD_MULT = 0.25f;
     public static final float VENT_MULT = 0.25f;
     private static final float NO_DMOD_CHANCE_MULT = 0.50f;
@@ -57,7 +57,7 @@ public class armaa_strikeCraftBuff {
         @Override
         public String getEffectDescription(float level) {
             return "- -" + (int) (NO_DMOD_CHANCE_MULT * 100) + "% chance to acquire DMods\n"
-                    + "- -" + (int) (BEAM_RESISTANCE)+ "% damage received from beam weapons\n"
+                    + "- -" + (int) (BEAM_RESISTANCE) + "% hull/armor damage received from beam weapons\n"
                     + "- As hull level decreases (reaching full effect at or below 45% hull):\n"
                     + "- up to +" + (int) SPEED_BONUS + "% max speed\n"
                     + "- up to +" + (int) (OVERLOAD_MULT * 100) + "% shorter overload time, and " + (int) (VENT_MULT * 100) + "% faster active vent rate";
@@ -73,14 +73,14 @@ public class armaa_strikeCraftBuff {
 
         @Override
         public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
-            stats.getBeamDamageTakenMult().modifyMult(id, 1f - (BEAM_RESISTANCE / 100f));
-            stats.getBeamShieldDamageTakenMult().modifyMult(id, 1f - (BEAM_RESISTANCE / 100f));
+            if (isStrikecraft(stats)) {
+                stats.getBeamDamageTakenMult().modifyMult(id, 1f - (BEAM_RESISTANCE / 100f));
+            }
         }
 
         @Override
         public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
             stats.getBeamDamageTakenMult().unmodify(id);
-            stats.getBeamShieldDamageTakenMult().unmodify(id);
         }
 
         @Override

@@ -1,0 +1,281 @@
+{
+  "hullName": "Damascus",
+  "hullId": "armaa_ps_damascus",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/armaa/ships/damascus/ps_damascus.png",
+  "style": "MIDLINE",
+  "height": 272,
+  "width": 188,
+  "center": [94, 136],
+  "collisionRadius": 156.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 156.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "DECO_CENTER": "armaa_damascus_deco_trench",
+    "DECO_L": "armaa_damascus_deco_l",
+    "DECO_R": "armaa_damascus_deco_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": 115,
+      "locations": [-32, 42]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": -115,
+      "locations": [-32, -42]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 20,
+      "locations": [117, 57],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -20,
+      "locations": [117, -57],
+      "renderOrderMod": -1000
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [124, 10]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [124, -10]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": 90,
+      "locations": [98, 72],
+      "renderOrderMod": 2000
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": -90,
+      "locations": [98, -72],
+      "renderOrderMod": 2000
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 215,
+      "angle": 180,
+      "locations": [-31, -0]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [106, 33],
+      "renderOrderMod": 2000
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [106, -33],
+      "renderOrderMod": 2000
+    },
+    {
+      "id": "DECO_L",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [102, 56],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "DECO_R",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [102, -56],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [116.5, 0.5]
+    },
+    {
+      "id": "DECO_CENTER",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [103, -0],
+      "renderOrderMod": 100
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-91.5, 17],
+      "length": 80,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 20,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-91.5, -17],
+      "length": 80,
+      "width": 20,
+      "angle": -180,
+      "contrailSize": 20,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-74, 29],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-74, -29],
+      "length": 80,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-73, 42],
+      "length": 80,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-73, -42],
+      "length": 80,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [80, 79],
+      "length": 37.000088,
+      "width": 10.861599,
+      "angle": 139.5,
+      "contrailSize": 10.861599,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [80, -79],
+      "length": 37.000088,
+      "width": 10.861599,
+      "angle": -139.5,
+      "contrailSize": 10.861599,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [72.5, 71],
+      "length": 27.026911,
+      "width": 12.33631,
+      "angle": 149.5,
+      "contrailSize": 12.33631,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [72.5, -71],
+      "length": 27.026911,
+      "width": 12.33631,
+      "angle": -149.5,
+      "contrailSize": 12.33631,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -137, -3.5,
+    -90.5, -19.5,
+    -72, -28,
+    -69, -50,
+    -89.5, -54,
+    -87.5, -65,
+    -45, -62,
+    -47.5, -71.5,
+    -14, -65,
+    3, -40,
+    66.5, -32,
+    78.5, -53,
+    71.5, -68,
+    91.5, -86,
+    110, -86.5,
+    134.5, -16,
+    134.5, 16,
+    110, 86.5,
+    91.5, 86,
+    71.5, 68,
+    78.5, 53,
+    66.5, 32,
+    3, 40,
+    -14, 65,
+    -47.5, 71.5,
+    -45, 62,
+    -87.5, 65,
+    -89.5, 54,
+    -69, 50,
+    -72, 28,
+    -90.5, 19.5,
+    -137, 3.5
+  ]
+}

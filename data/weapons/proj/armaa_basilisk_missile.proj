@@ -1,0 +1,32 @@
+{
+	"id":"armaa_basilisk_missile",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+	"sprite":"graphics/missiles/heavy_mine.png",
+	"onFireEffect":"data.scripts.weapons.basilisk.armaa_BasiliskOnFire",
+	"size":[40, 40],
+	"center":[20, 20],
+	"collisionRadius":40,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,225,180,255],
+	"explosionRadius":30,
+	"explosionDamage":0,
+	"flameoutTime":0.4,
+	"noEngineGlowTime":0.1,
+	"fadeTime":0.2,
+	"engineSpec":{
+		"turnAcc":40,
+		"turnRate":28,
+		"acc":90,
+		"dec":120
+	},
+	"engineSlots":[
+		{"id":"BASILISK_MAIN",
+		 "loc":[-22, 0],
+		 "style":"COBRA_BOMBER",
+		 "angle":180,
+		 "length":72,
+		 "width":16,
+		 "contrailSize":24}
+	],
+}

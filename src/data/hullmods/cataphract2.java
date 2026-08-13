@@ -40,8 +40,13 @@ public class cataphract2 extends BaseHullMod {
     private static final float CR_PENALTY = 0.10f;
 
     public static float SMOD_BONUS = 2f;
-    public static float CRUISER_DAMAGE_BONUS = 10f;
-    public static float CAPITAL_DAMAGE_BONUS = 20f;
+    public static float CRUISER_DAMAGE_BONUS = 5f;
+    public static float CAPITAL_DAMAGE_BONUS = 10f;
+    public static float FIGHTER_DAMAGE_BONUS = 15f;   // percent at cap
+    public static float AUTOFIRE_ACCURACY_BONUS = 0.25f; // 0-1 scale; 1f = perfect (cf. TerminatorCore)
+    public static float TURN_BONUS = 12f;   // percent at cap
+    public static float DP_PENALTY = 12f;   // percent at cap
+    private static final float MAX_PILOT_LEVEL = 6f;
     //  S-mod no-officer bonuses 
     private static final float NO_OFFICER_DP_REDUCTION_PCT = 0.20f;
     private static final float NO_OFFICER_DP_REDUCTION_MAX = 10f;
@@ -113,19 +118,19 @@ public class cataphract2 extends BaseHullMod {
 
         if (hasOfficer) {
 
-            float level = Math.min(15, stats.getFleetMember().getCaptain().getStats().getLevel());
-            float capitalBonus = (level / 15f) * CAPITAL_DAMAGE_BONUS;   // scales 0-20% with level
-            float cruiserBonus = (level / 15f) * CRUISER_DAMAGE_BONUS;   // scales 0-10% with level            
-            int dpCost = (int) stats.getFleetMember().getDeploymentPointsCost();
+            float level = Math.min(MAX_PILOT_LEVEL, stats.getFleetMember().getCaptain().getStats().getLevel());
+            float t = level / MAX_PILOT_LEVEL;
+            //int dpCost = (int) stats.getFleetMember().getDeploymentPointsCost();
 
-            stats.getDamageToCapital().modifyPercent(id, capitalBonus);
-            stats.getDamageToCruisers().modifyPercent(id, cruiserBonus);
-            stats.getFluxDissipation().modifyMult(id, 1f + SMOD_BONUS * (level * 0.01f));
-            stats.getAutofireAimAccuracy().modifyMult(id, SMOD_BONUS * (level * 0.01f));
-            stats.getMaxTurnRate().modifyMult(id, 1f + SMOD_BONUS * (level * 0.01f));
-            stats.getTurnAcceleration().modifyMult(id, 1f + SMOD_BONUS * (level * 0.01f));
-            stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD)
-                    .modifyFlat(id, dpCost * (SMOD_BONUS * (level * 0.01f)));
+            stats.getDamageToCapital().modifyPercent(id, t * CAPITAL_DAMAGE_BONUS);
+            stats.getDamageToCruisers().modifyPercent(id, t * CRUISER_DAMAGE_BONUS);
+            stats.getDamageToFighters().modifyPercent(id, t * FIGHTER_DAMAGE_BONUS);
+            stats.getAutofireAimAccuracy().modifyFlat(id, t * AUTOFIRE_ACCURACY_BONUS);
+            stats.getMaxTurnRate().modifyPercent(id, t * TURN_BONUS);
+            stats.getTurnAcceleration().modifyPercent(id, t * TURN_BONUS);
+float baseCost = stats.getSuppliesToRecover().getBaseValue();
+stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD)
+     .modifyFlat(id, baseCost * t * (DP_PENALTY / 100f));
 
         } else {
 
@@ -319,7 +324,7 @@ public class cataphract2 extends BaseHullMod {
         tooltip.addPara("%s Weapons and engines are %s less likely to be disabled.", padS,
                 Misc.getHighlightColor(), "\u2022", (int) DISABLE_RESIST + "%");
         tooltip.addPara("%s Weapons and engines repair %s faster when disabled.", padS,
-                Misc.getHighlightColor(), "\u2022", (int) REPAIR_BONUS + "%");        
+                Misc.getHighlightColor(), "\u2022", (int) REPAIR_BONUS + "%");
         tooltip.addPara("%s While marines are present, increases effective strength of ground ops by Level*Deploy Cost: %s.", padS,
                 Misc.getHighlightColor(), "\u2022", Integer.toString(n));
         if (ship != null) {
@@ -390,10 +395,9 @@ public class cataphract2 extends BaseHullMod {
         boolean hasOfficer = false;
         if (ship != null) {
             hasOfficer = !ship.getCaptain().isDefault();
-            level = hasOfficer ? ship.getCaptain().getStats().getLevel() : 0f;
+            level = hasOfficer ? Math.min(6f, ship.getCaptain().getStats().getLevel()) : 0f;
         }
 
-        float value = SMOD_BONUS;
 
         tooltip.addPara("%s When hull drops below %s, gain +%s speed and maneuverability"
                 + " for %s. Weapon flux cost is increased by %s.",
@@ -408,18 +412,29 @@ public class cataphract2 extends BaseHullMod {
                 pad, color);
         if (hasOfficer || ship == null) {
             // Officer bonuses
-            tooltip.addPara("%s Officer assigned: Increases flux dissipation, turning rate, and autofire accuracy"
-                    + " by %s per pilot level. Current increase: %s.",
-                    pad, color, Misc.getHighlightColor(),
-                    "\u2022", (int) value + "%", (int) (value * level) + "%");
-            tooltip.addPara("%s Increases damage dealt to cruisers by up to %s and capitals by up to %s, scaling with pilot level. Current bonus: %s / %s.",
-                    pad, color, Misc.getHighlightColor(),
-                    "\u2022", "10%", "20%",
-                    (int) ((level / 15f) * 10f) + "%",
-                    (int) ((level / 15f) * 20f) + "%");
-            tooltip.addPara("%s Increases deployment cost by %s.",
-                    pad, color, Misc.getHighlightColor(),
-                    "\u2022", (int) (value * level) + "%");
+            float t = level / MAX_PILOT_LEVEL;
+
+            tooltip.addPara("%s Officer assigned: Increases turning rate by up to %s and autofire "
+                    + "accuracy by up to %s, scaling with pilot level. Current: %s / %s.",
+                    pad, color, Misc.getHighlightColor(), "\u2022",
+                    (int) TURN_BONUS + "%",
+                    (int) (AUTOFIRE_ACCURACY_BONUS * 100f) + "%",
+                    (int) (t * TURN_BONUS) + "%",
+                    (int) (t * AUTOFIRE_ACCURACY_BONUS * 100f) + "%");
+
+            tooltip.addPara("%s Increases damage dealt to fighters by up to %s, cruisers by up to %s, "
+                    + "and capitals by up to %s. Current: %s / %s / %s.",
+                    pad, color, Misc.getHighlightColor(), "\u2022",
+                    (int) FIGHTER_DAMAGE_BONUS + "%",
+                    (int) CRUISER_DAMAGE_BONUS + "%",
+                    (int) CAPITAL_DAMAGE_BONUS + "%",
+                    (int) (t * FIGHTER_DAMAGE_BONUS) + "%",
+                    (int) (t * CRUISER_DAMAGE_BONUS) + "%",
+                    (int) (t * CAPITAL_DAMAGE_BONUS) + "%");
+
+            tooltip.addPara("%s Increases deployment cost by %s. Current: %s.",
+                    pad, color, Misc.getHighlightColor(), "\u2022",
+                    (int) DP_PENALTY + "%", (int) (t * DP_PENALTY) + "%");
         } else {
             // No-officer bonuses
             tooltip.addPara("%s No assigned officer: Deployment point cost reduced by %s"
