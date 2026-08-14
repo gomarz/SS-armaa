@@ -10,6 +10,7 @@ import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.magiclib.util.MagicRender;
+import data.scripts.weapons.armaa_energyLashProjectileScript;
 import data.scripts.weapons.armaa_energyLashThrowerEffect;
 import java.awt.Color;
 import java.util.List;
@@ -33,12 +34,22 @@ import org.lwjgl.util.vector.Vector2f;
  * infinitely. This enforces the tether's max length = the weapon's range. -
  * Embed duration is a named constant (EMBED_DURATION) instead of the magic
  * "99".
+ *
+ * ROPE OWNERSHIP: the AI holds a direct reference to the rope and calls
+ * rope.release() on EVERY exit path. The rope's own spikeAlive() check
+ * (isFizzling / didDamage / isEntityInPlay) is not sufficient on its own --
+ * conditions like transform or shield-sever leave the spike perfectly healthy,
+ * and explode() on a missile whose arming time was just pushed forward does not
+ * reliably remove it, so the rope would hang forever waiting on a death that
+ * never comes. release() is the authoritative signal; the missile-state check
+ * remains as a backstop for cases the AI never sees (missile shot down, etc).
  */
 public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
 
     private CombatEngineAPI engine;
     private final MissileAPI missile;
     private final ShipAPI launchingShip;
+    private final armaa_energyLashProjectileScript rope;
     private CombatEntityAPI target;
     private CombatEntityAPI anchor;
 
@@ -59,9 +70,16 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
     // payoff for landing the embed before the target can shield it off.
     private static final float SHIELD_SEVER_GRACE = 0.6f;
 
-    public armaa_energyLashAI(MissileAPI missile, ShipAPI launchingShip) {
+    public armaa_energyLashAI(MissileAPI missile, ShipAPI launchingShip,
+                              armaa_energyLashProjectileScript rope) {
         this.missile = missile;
         this.launchingShip = launchingShip;
+        this.rope = rope;
+    }
+
+    /** Legacy 2-arg form. The rope will fall back to its own missile-state check. */
+    public armaa_energyLashAI(MissileAPI missile, ShipAPI launchingShip) {
+        this(missile, launchingShip, null);
     }
 
     @Override
@@ -79,6 +97,7 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
                     = ((armaa_energyLashThrowerEffect) missile.getWeapon().getEffectPlugin()).getHITS();
 
             if (list.isEmpty()) {
+                releaseRope();
                 missile.flameOut();
                 return;
             }
@@ -92,6 +111,7 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
                 }
             }
             if (anchor == null) {
+                releaseRope();
                 return;
             }
 
@@ -106,6 +126,7 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
             if (anchor == null
                     || ((armaa_energyLashThrowerEffect) missile.getWeapon().getEffectPlugin()).getDetonation(anchor)) {
                 missile.setCollisionClass(CollisionClass.MISSILE_FF);
+                releaseRope();
                 return;
             }
         }
@@ -141,15 +162,20 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
             }
         }
         boolean isRobot = true;
-        if(launchingShip != null && engine.getCustomData().get("armaa_tranformState_" + launchingShip.getId()) != null)
-        {
-            isRobot = (Boolean)engine.getCustomData().get("armaa_tranformState_" + launchingShip.getId());
+        if (launchingShip != null && engine.getCustomData().get("armaa_tranformState_" + launchingShip.getId()) != null) {
+            isRobot = (Boolean) engine.getCustomData().get("armaa_tranformState_" + launchingShip.getId());
         }
         if (!isRobot || fooled || escaped || emped || outlasted || overRange || shielded || dead || overloaded) {
             tearOff = true;
+
+            // Retract FIRST, unconditionally. Neither explode() nor flameOut() is a reliable
+            // retract trigger, and conditions like !isRobot leave the spike otherwise healthy.
+            releaseRope();
+            ((armaa_energyLashThrowerEffect) missile.getWeapon().getEffectPlugin()).applyDetonation(anchor);
+
             if (shielded || !isRobot) {
                 missile.setArmingTime(missile.getElapsed() + 0.25f);
-                missile.setCollisionClass(CollisionClass.MISSILE_FF);                
+                missile.setCollisionClass(CollisionClass.MISSILE_FF);
                 missile.explode();
             } else {
                 missile.setArmingTime(missile.getElapsed() + 0.25f);
@@ -173,7 +199,9 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
 
         // ---- fixed-duration auto-release ----
         if (missile.getElapsed() > EMBED_DURATION) {
+            tearOff = true;
             missile.setCollisionClass(CollisionClass.MISSILE_FF);
+            releaseRope();
             ((armaa_energyLashThrowerEffect) missile.getWeapon().getEffectPlugin()).applyDetonation(anchor);
             return;
         }
@@ -202,6 +230,13 @@ public class armaa_energyLashAI implements MissileAIPlugin, GuidedMissileAI {
                                 0.25f + 0.5f * (float) Math.random(),
                                 0.25f * (float) Math.random()));
             }
+        }
+    }
+
+    /** Single choke point for ending the tether. Safe to call more than once. */
+    private void releaseRope() {
+        if (rope != null) {
+            rope.release();
         }
     }
 

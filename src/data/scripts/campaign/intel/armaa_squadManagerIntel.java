@@ -140,7 +140,6 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         }
     }
 
-
     private static List<String> getValidSkillList() {
         return armaa_wingCommander.VALID_SKILLS;
     }
@@ -168,7 +167,7 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
                 continue;
             }
             FleetMemberAPI assignedShip = player.getFleetData().getMemberWithCaptain(od.getPerson());
-            if (!assignedShip.getVariant().hasHullMod("armaa_wingCommander")) {
+            if (!armaa_wingCommander.hasWingComInGroup(assignedShip.getVariant())) {
                 continue;
             }
             officers.add(od.getPerson());
@@ -227,24 +226,25 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         member = null;
     }
 
-private float computeRowHeight(PersonAPI pilot, float opad) {
-    int swappableSkills = 0;
-    for (MutableCharacterStatsAPI.SkillLevelAPI skill : pilot.getStats().getSkillsCopy()) {
-        if (skill.getLevel() <= 0) {
-            continue;
+    private float computeRowHeight(PersonAPI pilot, float opad) {
+        int swappableSkills = 0;
+        for (MutableCharacterStatsAPI.SkillLevelAPI skill : pilot.getStats().getSkillsCopy()) {
+            if (skill.getLevel() <= 0) {
+                continue;
+            }
+            if (armaa_AceUtil.ACE_SKILL_ID.equals(skill.getSkill().getId())) {
+                continue;
+            }
+            swappableSkills++;
         }
-        if (armaa_AceUtil.ACE_SKILL_ID.equals(skill.getSkill().getId())) {
-            continue;
-        }
-        swappableSkills++;
+        // skill header (20) + one row per swappable skill (22 each)
+        // + ace button/label (22) + callsign button (20) + gap (3) + callsign field (22)
+        float skillColHeight = 20 + swappableSkills * 22 + 22 + 20 + 3 + 22;
+        // left column: portrait (ENTRY_HEIGHT) + 'Portrait' label button (~21)
+        float leftColHeight = ENTRY_HEIGHT + 21;
+        return Math.max(skillColHeight, leftColHeight) + opad;
     }
-    // skill header (20) + one row per swappable skill (22 each)
-    // + ace button/label (22) + callsign button (20) + gap (3) + callsign field (22)
-    float skillColHeight = 20 + swappableSkills * 22 + 22 + 20 + 3 + 22;
-    // left column: portrait (ENTRY_HEIGHT) + 'Portrait' label button (~21)
-    float leftColHeight = ENTRY_HEIGHT + 21;
-    return Math.max(skillColHeight, leftColHeight) + opad;
-}    
+
     protected void createSquadView(CustomPanelAPI panel, TooltipMakerAPI info,
             float width, PersonAPI squadLeader) {
         float pad = 3;
@@ -687,7 +687,7 @@ private float computeRowHeight(PersonAPI pilot, float opad) {
         help2.addPara("You can also simply %s for promotion.", pad, h, "pass them over");
         help2.setBulletedListMode(BaseIntelPlugin.BULLET);
         temp = info.addImageWithText(pad);
-        unindent(info);        
+        unindent(info);
 
         TooltipMakerAPI help3 = info.beginImageWithText("graphics/icons/skills/crew_training.png", 64f);
         help3.setParaInsigniaLarge();
@@ -702,7 +702,7 @@ private float computeRowHeight(PersonAPI pilot, float opad) {
         help3.addPara("Click a pilot's portrait to change their appearance.", pad);
         help3.setBulletedListMode(BaseIntelPlugin.BULLET);
         temp = info.addImageWithText(pad);
-        unindent(info);        
+        unindent(info);
     }
 
     public TooltipMakerAPI generateTabButton(CustomPanelAPI buttonRow, String nameId, Tab tab,

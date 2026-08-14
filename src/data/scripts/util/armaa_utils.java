@@ -248,6 +248,7 @@ public class armaa_utils {
 
         return newPersonality;
     }
+
     public static Vector2f getDirectionalVector(float degrees) {
         double radians = Math.toRadians(degrees);
         return new Vector2f((float) Math.cos(radians), (float) Math.sin(radians));
@@ -1198,13 +1199,17 @@ public class armaa_utils {
                 || !Global.getCombatEngine().isEntityInPlay(carrier)) {
             return false;
         }
-                        if(carrier.getVariant().getHullMods().contains("armaa_spare_chassis"))
+        if (carrier.getVariant().getHullMods().contains("armaa_spare_chassis")) {
+            return false;
+        }
+        if(carrier.getVariant().getHullSpec().getBuiltInMods().contains("armaa_spare_chassis"))
             return false;
         if (carrier.getHullSpec().hasTag("no_wingcom_docking")) {
             return false;
         }
-                if(carrier.getVariant().getHullMods().contains("armaa_strikeCraft"))
+        if (carrier.getVariant().getHullMods().contains("armaa_strikeCraft")) {
             return false;
+        }
         if (carrier.getCurrentCR() <= 0) {
             return false;
         }
