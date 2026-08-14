@@ -6,6 +6,8 @@ import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageAPI;
+import com.fs.starfarer.api.combat.FighterLaunchBayAPI;
+import com.fs.starfarer.api.combat.FighterWingAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
@@ -30,6 +32,10 @@ import org.lwjgl.util.vector.Vector2f;
 /**
  *
  * @author shoi needs its own script to avoid ConcurrentModificationException
+ * launch bays go completely inert under controlsLocked, and setSourceShip/setSourceBay 
+ * only move the wing's outbound pointers, not its membership in a hull's bay collection
+ * keep this in mind when eventually come back to try and refactor this again so 
+ * we don't waste time again
  */
 public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
 
@@ -60,7 +66,6 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
             memberToShip.remove(oldMember);
         }
     }
-
 
     private void restoreSlot(ShipAPI module) {
         String origId = originalSlotIds.remove(module);
@@ -280,13 +285,90 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         if (s.getCaptain() != ship.getCaptain()) {
             s.setCaptain(ship.getCaptain());
         }
-        ship.setCaptain(null);
+        //ship.setCaptain(null);
+        // Record how many fighters the core actually had before we destroy them,
+        // so redock restores that count rather than a full wing. Without this,
+        // ejecting and redocking launders a chewed-up wing into a fresh one.
+        // Must be counted before purgeWing empties the member list.
+        snapshotWingCount(module);
+        purgeWing(module);
         // guardual workaround
         Global.getCombatEngine().getCustomData().put("armaa_guarDualPaintjob_" + s.getId(), Global.getCombatEngine().getCustomData().get("armaa_guarDualPaintjob_" + ship.getId()));
 
         return s;
     }
+    private static final String WING_COUNT_KEY = "armaa_comboUnit_wingCount_";
 
+    /**
+     * Stores the number of live fighters across all of this hull's bays. Call
+     * immediately before purging them.
+     */
+    private static void snapshotWingCount(ShipAPI hull) {
+        if (hull == null) {
+            return;
+        }
+        int alive = 0;
+        for (FighterLaunchBayAPI bay : hull.getLaunchBaysCopy()) {
+            if (bay.getWing() != null) {
+                alive += bay.getWing().getWingMembers().size();
+            }
+        }
+        Global.getCombatEngine().getCustomData().put(WING_COUNT_KEY + hull.getId(), alive);
+    }
+
+    /**
+     * Brings the hull back up to its pre-eject fighter count on the fast refit
+     * timer instead of the normal one. Fighters lost before ejecting stay lost.
+     *
+     * setFastReplacements does not create fighters directly; the bay still has
+     * to advance and launch them, which it only does once controls are unlocked
+     * (a locked ship's bay returns immediately from its advance). So this must
+     * run after the redock unlock, not before.
+     */
+    private static void restoreWingCount(ShipAPI hull) {
+        if (hull == null) {
+            return;
+        }
+        final String key = WING_COUNT_KEY + hull.getId();
+        Object saved = Global.getCombatEngine().getCustomData().get(key);
+        if (!(saved instanceof Integer)) {
+            return;
+        }
+        int remaining = (Integer) saved;
+        for (FighterLaunchBayAPI bay : hull.getLaunchBaysCopy()) {
+            FighterWingAPI wing = bay.getWing();
+            if (wing == null) {
+                continue;
+            }
+            int capacity = wing.getSpec().getNumFighters();
+            int wantHere = Math.min(remaining, capacity);
+            int add = wantHere - wing.getWingMembers().size();
+            if (add > 0) {
+                bay.setFastReplacements(add);
+            }
+            remaining -= wantHere;
+            if (remaining <= 0) {
+                break;
+            }
+        }
+        // Clear it, or a second eject/redock cycle reads a stale count.
+        Global.getCombatEngine().getCustomData().remove(key);
+    }
+
+    private static void purgeWing(ShipAPI hull) {
+    CombatEngineAPI engine = Global.getCombatEngine();
+    for (FighterLaunchBayAPI bay : hull.getLaunchBaysCopy()) {
+        FighterWingAPI wing = bay.getWing();
+        if (wing == null) {
+            continue;
+        }
+        for (ShipAPI f : new ArrayList<ShipAPI>(wing.getWingMembers())) {
+            if (f != null) {
+                engine.removeEntity(f);
+            }
+        }
+    }
+}
     protected static class armaa_comboUnitListener implements AdvanceableListener {
 
         ShipAPI ship;
@@ -342,6 +424,10 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                         module.setCaptain(ship.getCaptain());
                                         module.getMutableStats().getHullDamageTakenMult().unmodify("armaa_invincible");
                                         module.getMutableStats().getArmorDamageTakenMult().unmodify("armaa_invincible");
+                                        // After the unlock, so the bay is actually
+                                        // advancing and will consume the fast
+                                        // replacements we just queued.
+                                        restoreWingCount(module);
                                     }
                                 }
                                 for (ShipAPI modules : ship.getChildModulesCopy()) {
@@ -349,7 +435,8 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                 }
                                 ship.removeListener(this);
                                 Global.getCombatEngine().getFleetManager(ship.getOwner()).removeDeployed(ship, false);
-                                armaa_utils.setLocation(ship, new Vector2f(-10000,-10000));
+                                armaa_utils.setLocation(ship, new Vector2f(-10000, -10000));
+                                purgeWing(ship);
                                 ship.setHitpoints(0f);
                             }
                         }

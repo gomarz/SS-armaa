@@ -23,8 +23,14 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
 
     private boolean attached = false;
     private boolean retracting = false;
+    private boolean released = false;        // authoritative tear-off signal from the AI
     private float retractElapsed = 0f;
     private final Vector2f lastFarEnd = new Vector2f();
+
+    // cached muzzle position in ship-local space, so the retract still anchors correctly
+    // if the weapon is swapped off the slot (e.g. the unit transforms mid-tether)
+    private final Vector2f muzzleLocalOffset = new Vector2f();
+    private boolean haveMuzzleOffset = false;
 
     private final IntervalUtil fireInterval = new IntervalUtil(0.25f, 0.25f);
     private static final float PUSH_CONSTANT = 5000f;
@@ -91,6 +97,19 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
         this.attached = true;
     }
 
+    /**
+     * Authoritative tear-off. Called by the AI whenever the tether ends for ANY reason
+     * (fixed-duration expiry, shield sever, transform, over-range, etc).
+     *
+     * Do NOT rely on the missile's own state to end the tether: conditions like transform
+     * or shield-sever leave the embedded spike perfectly healthy, and explode() on a
+     * missile whose arming time was just pushed forward is not guaranteed to remove it.
+     * When that happens spikeAlive() stays true forever and the rope hangs.
+     */
+    public void release() {
+        this.released = true;
+    }
+
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
         CombatEngineAPI engine = Global.getCombatEngine();
@@ -152,6 +171,9 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
     }
 
     private boolean spikeAlive(CombatEngineAPI engine) {
+        if (released) {
+            return false;
+        }
         if (embedded != null) {
             return !embedded.isFizzling() && !embedded.didDamage() && engine.isEntityInPlay(embedded);
         }
@@ -172,17 +194,35 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
     }
 
     private Vector2f computeMuzzle() {
+        ShipAPI ship = (ShipAPI) source;
         WeaponAPI weapon = currentWeapon();
-        if (weapon == null) {
-            return new Vector2f(((ShipAPI) source).getLocation());
+
+        // Only trust the weapon while it is actually still mounted on the source ship.
+        // A transform (variant swap) can leave the missile holding a detached weapon whose
+        // location no longer tracks the hull.
+        if (weapon != null && ship.getAllWeapons() != null && ship.getAllWeapons().contains(weapon)) {
+            float ox = weapon.getSpec().getTurretFireOffsets().get(0).x;
+            float oy = weapon.getSpec().getTurretFireOffsets().get(0).y;
+            Vector2f origin = new Vector2f(weapon.getLocation());
+            Vector2f off = new Vector2f(ox, oy);
+            VectorUtils.rotate(off, weapon.getCurrAngle(), off);
+            Vector2f.add(off, origin, origin);
+
+            // cache in ship-local space for the fallback below
+            Vector2f local = Vector2f.sub(origin, ship.getLocation(), new Vector2f());
+            VectorUtils.rotate(local, -ship.getFacing(), local);
+            muzzleLocalOffset.set(local);
+            haveMuzzleOffset = true;
+            return origin;
         }
-        float ox = weapon.getSpec().getTurretFireOffsets().get(0).x;
-        float oy = weapon.getSpec().getTurretFireOffsets().get(0).y;
-        Vector2f origin = new Vector2f(weapon.getLocation());
-        Vector2f off = new Vector2f(ox, oy);
-        VectorUtils.rotate(off, weapon.getCurrAngle(), off);
-        Vector2f.add(off, origin, origin);
-        return origin;
+
+        // weapon gone: keep the rope pinned to where the muzzle last was, relative to the hull
+        if (haveMuzzleOffset) {
+            Vector2f off = new Vector2f(muzzleLocalOffset);
+            VectorUtils.rotate(off, ship.getFacing(), off);
+            return Vector2f.add(off, ship.getLocation(), new Vector2f());
+        }
+        return new Vector2f(ship.getLocation());
     }
 
     private void applyPullAndEmp(CombatEngineAPI engine, Vector2f origin, float amount) {
@@ -211,7 +251,7 @@ public class armaa_energyLashProjectileScript extends BaseEveryFrameCombatPlugin
                 if (Math.random() < EMP_PROC_CHANCE) {
                     spawnEmpAlongRope(engine);
                 }
-                if (Math.random() < EMP_PROC_CHANCE) {
+                if (Math.random() < EMP_PROC_CHANCE && embedded.getWeapon() != null) {
                     float dam = 0f;
                     float emp = embedded.getWeapon().getDamage().getFluxComponent();
                     engine.spawnEmpArc((ShipAPI) source, embedded.getLocation(), empTarget, empTarget,

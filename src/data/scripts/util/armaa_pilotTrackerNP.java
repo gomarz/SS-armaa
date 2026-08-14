@@ -41,9 +41,15 @@ public class armaa_pilotTrackerNP extends BaseEveryFrameCombatPlugin
         this.fighter = fighter;
 		this.name  = name;
 		this.pilotNo = pilotNo;
-		this.ship = fighter.getWing().getSourceShip();
-		this.captain = fighter.getWing().getSourceShip().getCaptain();
+		// An orphaned wing (source deliberately nulled, e.g. a combo unit's
+		// suppressed frame wing) has no source ship. Tolerate it instead of
+		// NPEing; advance() bails out when captain is null.
+		FighterWingAPI wing = fighter.getWing();
+		this.ship = wing != null ? wing.getSourceShip() : null;
+		this.captain = this.ship != null ? this.ship.getCaptain() : null;
 		//logger = Logger.getLogger(this.getClass());
+		if(this.ship == null || this.captain == null)
+			return;
 
 		introChatter.addAll(MechaModPlugin.introChatter);
 		combatChatter.addAll(MechaModPlugin.combatChatter);
@@ -69,6 +75,13 @@ public class armaa_pilotTrackerNP extends BaseEveryFrameCombatPlugin
 	{
 		if(Global.getCombatEngine().isPaused())
 			return;
+		// Nothing to track: the wing had no source ship at construction time.
+		// Every custom-data key below is built from captain.getId().
+		if(captain == null)
+		{
+			Global.getCombatEngine().removePlugin(this);
+			return;
+		}
 		
 		if(!introChatter.isEmpty() && MechaModPlugin.chatterEnabled)
 		{
@@ -112,6 +125,7 @@ public class armaa_pilotTrackerNP extends BaseEveryFrameCombatPlugin
 		{
 			Global.getCombatEngine().getCustomData().put("armaa_wingCommander_wingman_"+pilotNo+"_wasAssigned_"+captain.getId(),false);
 			Global.getCombatEngine().removePlugin(this);
+			return;
 		}	
 		
 		if(MagicRender.screenCheck(0.2f, fighter.getLocation()) && !fighter.isLiftingOff() && fighter.isAlive())

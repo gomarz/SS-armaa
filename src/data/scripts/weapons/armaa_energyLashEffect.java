@@ -54,13 +54,16 @@ public class armaa_energyLashEffect implements OnHitEffectPlugin {
         armaa_energyLashProjectileScript rope = thrower.ropeForPrimary(projectile);
         if (secondary instanceof MissileAPI) {
             MissileAPI missile = (MissileAPI) secondary;
-            missile.setMissileAI(new data.scripts.ai.armaa_energyLashAI(
-                    missile, (ShipAPI) projectile.getSource()));
 
             // hand the trailing rope (which had been following THIS primary) off to the embedded missile
             if (rope != null) {
                 rope.handoff(missile, target);
             }
+
+            // the AI owns the tether's lifetime: it calls rope.release() on every exit path,
+            // so retraction never depends on the missile happening to die
+            missile.setMissileAI(new data.scripts.ai.armaa_energyLashAI(
+                    missile, (ShipAPI) projectile.getSource(), rope));
         }
     }
 }
