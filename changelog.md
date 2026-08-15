@@ -1,6 +1,8 @@
 # V3.3.6
 
 - Fixed a rare case where drone reinforcements could spawn indefinitely during the Jenius descent
+- added  armaa_strikeCraft.suppressRefit(ShipAPI ship, float seconds) which blocks a strikecraft from deciding to go refit for that many seconds 
+	- writing Global.getCombatEngine().getTotalElapsedTime(false) + seconds to the ship's customData under "armaa_refitSuppressedUntil" does the same thing
 
 - Cataphract SII
 	- S-mod
