@@ -1983,9 +1983,9 @@ $player.armaa_comboUnitTutorial_event_id = false","The comm panel pings- sharp, 
 armaa_bakraidBriefStart,PopulateOptions,"$player.armaa_comboUnitTutorial_event_id == true
 armaa_Hikaru_Utada getPlayerFleetId score:1000","$player.armaa_comboUnitTutorial_event_id = false
 ShowImageVisual quartermaster
-SetShortcut armaa_bakraidBriefEnd ""ESCAPE""","The Bakraid sits open on its cradle in the aft bay, chest plating hinged away, the core unit still seated in the  central cavity.
+SetShortcut armaa_bakraidBriefEnd ""ESCAPE""","The Bakraid sits open on its cradle in the aft bay with the core harness ajar, the core unit itsels still hoisted in the central cavity.
 
-Your chief engineer is halfway up the gantry with a TriPad, arguing with someone below about tolerances on the release bolts. The chief spots you at the rail slides down to meet you in what could be perceived as a glaring safety violation.
+Your chief engineer is halfway up the gantry with a TriPad, arguing with someone below about tolerances on the release bolts. The chief spots you at the rail  and slides down to meet you in what could be perceived as a glaring safety violation.
 
 ""$PlayerSirOrMadam, had one of these out yet?""","armaa_bakraidBrief1:""Assume I haven't.""",Fired from the travel event script. Gate on the player actually having a combo unit in fleet before firing.
 armaa_bakraidBrief1,DialogOptionSelected,$option == armaa_bakraidBrief1,"SetTextHighlights ""core unit"" ""frame""
@@ -2244,7 +2244,19 @@ She glances off. ""I grew up somewhere not too different.""",,
 armaa_dawnSit12,armaa_DawnSituationComment,$armaa_dawnTopic == generic,"SetTextHighlights $armaa_dawnMarket
 FireAll armaa_dawnOpts","$armaa_dawnMarket...
 
-""Not really what i'd call habitable - I mean, nothin' out there wants folks livin' in it, but we're a stubborn lot.""",,
+""Not really what i'd call habitable - I mean, nothin' out there wants folks livin' in it, but we're a stubborn lot.""
+
+OR
+
+$armaa_dawnMarket...
+
+""I don't know..it's somewhere to lay your head down, I guess.""
+
+OR
+
+$armaa_dawnMarket...
+
+""Mmm..can't say I have anything to say about this port.""",,
 armaa_dawnSit13,armaa_DawnSituationComment,$armaa_dawnTopic == repeat,FireAll armaa_dawnOpts,"""Ain't changed since you asked, $playerSirOrMadam.""",,
 armaa_dawnSit14,armaa_DawnSituationComment,,$armaa_dawnTopic = repeat,"""Nothin' worth reportin' here, $playerSirOrMadam.""",,
 armaa_dawnSitMazalot,armaa_DawnSituationComment,"$armaa_dawnTopic == mazalot
@@ -2580,7 +2592,7 @@ armaaDEVdawnDeadFled:DEAD - she got away
 armaaDEVdawnUnclear:UNCLEAR - fallback
 armaaDEVdawnToggleMet:Toggle MET flag
 armaaDEVdawnToggleChalcedon:Toggle Chalcedon flag
-armaaDEVdawnReset:Reset asked flag only",your presence key is built by concatenation - substitute the literal here
+armaaDEVdawnReset:Reset asked flag only",
 #armaaDEVdawnToggleMetOff,DialogOptionSelected,$option == armaaDEVdawnToggleMet,$player.armaa_$bffi_goMeetMenesYaribay_event_id = true,[DEV] MET = off,"armaaDEVdawnClean:CLEAN - arrested, unhurt
 armaaDEVdawnHurt:HURT - arrested, he was shot
 armaaDEVdawnFled:FLED - she escaped Tartessus

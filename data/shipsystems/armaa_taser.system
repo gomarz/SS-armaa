@@ -1,0 +1,72 @@
+{
+	"id":"armaa_taser",
+	"type":"STAT_MOD",
+	"statsScript":"data.scripts.shipsystems.armaa_taserStats",
+
+	# NOT "aiType":"EMP" - that AI casts the system to the concrete EMP
+	# system class and a STAT_MOD system is a different class, so it throws
+	# ClassCastException when the ship AI is constructed. Custom AI instead.
+        "aiType":"CUSTOM",
+	"aiScript":"data.scripts.ai.armaa_TaserAI",
+
+	# NOTE: charge up / active / down / cooldown / flux per second /
+	# flux per use / max uses / regen / toggle / hardFlux and the
+	# noFiring-noTurning-noShield-noVent flags are all columns in
+	# data/shipsystems/ship_systems.csv. They are NOT read from here.
+
+	"range":800,
+
+	"empDamage":500,
+	"damage":200,
+	"damageType":ENERGY,
+
+	"effectColor1":[255,150,255,200],
+	"effectColor2":[255,175,255,255],
+
+	# lets apply() run with State.IDLE for the resting antenna crackle
+	"runScriptWhileIdle":true,
+
+	"useSound":"system_emp_emitter_activate",
+	"loopSound":"system_emp_emitter_loop",
+	"impactSound":"system_emp_emitter_impact",
+	"outOfUsesSound":"gun_out_of_ammo",
+
+	# see EmpArcParams.loadFromSystemJson() - applies to the zaps only
+"emp_segmentLengthMult":25f,
+"emp_zigZagReductionFactor":0.25f,
+"emp_glowSizeMult":1.1f,
+
+	# read by ArmaaTaserStats.readConfig() via getSpecJson()
+	"taser_rimIntervalMin":0.6,
+	"taser_rimIntervalMax":0.9,
+	"taser_zapIntervalMin":0.2,
+	"taser_zapIntervalMax":0.3,
+	"taser_maxTargetsPerTick":8,
+	"taser_fighterEmpMult":0.3,
+	"taser_missileEmpMult":0.05,
+	"taser_strandSkipChance":0.1,
+	"taser_rimThickness":17,
+	"taser_zapThickness":16,
+	"taser_pierceShields":0,
+"taser_idleArcSpeed":2200,
+	# idle discharge: arcs fired into empty space when nothing is in reach.
+	# Range values are fractions of the system's "range" above.
+	"taser_idleArcsPerTick":1,
+	"taser_idleArcMinRange":0.25,
+	"taser_idleArcMaxRange":0.75,
+	"taser_idleArcSpread":220,
+
+	# arc styling, matched to vanilla's mote attractor.
+	# zigZagReduction is INVERSE: higher = straighter.
+	"taser_rimSegmentLengthMult":8,
+	"taser_rimZigZagReduction":0.15,
+	"taser_rimMaxZigZag":1.0,
+	"taser_rimGlowSize":1.2,
+
+	"aiHints":{
+		"threatRange":900,
+		"threatAmount":4,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}
