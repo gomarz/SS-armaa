@@ -10,4 +10,5 @@
 	},
 	"starsectorVersion":"0.98",
 	"directDownloadURL":"https://github.com/gomarz/SS-armaa/releases/download/v3.3.6/armaa-3.3.6.zip",
+	"changelogURL":"https://raw.githubusercontent.com/gomarz/ss-armaa/master/changelog.md"
 }
