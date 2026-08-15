@@ -156,9 +156,25 @@ armaa_record_frig,SHIP,"An advanced fire-support variant of the Spriggan-class C
 armaa_bellator,SHIP,"The Bellator was designed to sustain Arma Armatura's strikecraft in prolonged engagements, shoring up their most glaring weakness: fragility. While its flux grid holds, the built-in Aegis Field absorbs a percentage of the damage incoming to nearby craft; punishment they would otherwise be hard pressed to endure. The Bellator is no mere escort, either, carrying a respectable armament and fighter complement of its own.",,,,,
 armaa_viator,SHIP,"An uncommon design, the Viator eschews any meaningful punch for reach. Its shipboard sensor drones let it engage well beyond what its light mounts would suggest, a Viator that has lost them is an unremarkable ship with short arms.",,,,,
 ,,,,,,,
-armaa_ps_damascus,SHIP,I'm a WIP ship! You shouldn't see me yet~,,,,,
-armaa_ps_edessa,SHIP,I'm a WIP ship! You shouldn't see me yet~,,,,,
-armaa_ps_tripoli,SHIP,I'm a WIP ship! You shouldn't see me yet~,,,,,
+armaa_ps_damascus,SHIP,"I'm a WIP ship! You shouldn't see me yet~
+
+The Damascus is built to Fikenhild specifications and seldom encountered outside the orders' service. Effectively a scaled-up version of the Hammerhead, its ballistic armament is fed by an accelerated ammunition system, giving it a heavy sustained volume of fire along a narrow frontal arc. 
+
+It is vital that a Damascus keeps both its guns and its heraldry in frame for the duration of any engagement while charging daringly into enemy lines, as flanking maneuvers and standoff fire record poorly by comparison - the order has found that hulls which perform well on broadcast tend also to be the hulls that are commissioned again.
+
+Line crews are sometimes said to take a dimmer view as the class has an unhappy record against opponent's patient enough to decline the charge. It is named, as most of the order's ships are, for a siege that failed.",,,,,
+armaa_ps_edessa,SHIP,"I'm a WIP ship! You shouldn't see me yet~
+
+The Edessa is built around a dense number of small mounts and an unusually efficient shield array. Intended to deny the surrounding volume to strikecraft and ordnance, while fielding a massive torpedo capable of severely crippling multiple targets at once.
+
+Assignment to an Edessa is broadly considered a death knell to an upcoming knight's career or a cushy post for those nearing retirement. By its nature, Edessas do not produce the footage that can be neatly cut into a highlight reel like other classes can; its contribution to an engagement is a count of things that did not happen. The singular exception, the Basilisk Siege Torpedo is quite the spectacle to see, but features such a low fire rate it typically can only be employed sparingly, making captains hesitant to spend it until the timing is near perfect. 
+
+For standard personnel, however, there is nevertheless no shortage of volunteers. Crews across the League speak well of the class, and it is said among them that a knight who requests an Edessa has stopped performing at knighthood and started doing it.",,,,,
+armaa_ps_tripoli,SHIP,"I'm a WIP ship! You shouldn't see me yet~
+
+The Tripoli possesses an impressive forward-facing armament complemented by an arc emitter of unusual scale. Fast for its tonnage and slow to change its mind, the Tripoli assumes the engagement will be brought to the enemy rather than accepted from it.
+
+Command of a Tripoli is effectively a public office in all but name. Only the most popular knights can hope to attain the station, and its captain is expected to sit for court between deployments for contractually obligated broadcasts. It has been said that the position can even serve as a springboard for those whose ambitions lie on the throne itself.",,,,,
 ,,,,,,,
 ,,,,,,,
 armaa_whitebase,SHIP,"The Fenris is well-equipped to support both space and land battles, though it is not particularly suited for direct confrontation. Its vast hangar bays, however, enable it to deploy a wide array of strikecraft.
@@ -174,11 +190,9 @@ armaa_garegga,SHIP,"The RA-96 GAREGGA stands first-class amongst craft that exce
 Following the uneasy tension that befell the Sector following the events of Mairaath, the Garegga represented a shift in ArmaA priorities as the corporation was spurred into developing larger and more powerful machines to supplement their embryonic navy. Derived as a testbed for adapting technology behind cataphract-type mechs to a platform optimized for space combat, the Garegga is significantly larger to accomodate a greater power core and ship-grade weaponry, but lacks any ground combat capability. 
 
 The combination neural and targeting interface SILVERSWORD establishes a raw, semi-invasive connection between the pilots brain and an AI core adjunct to the machine itself, and safety limiters can be disabled in order to bring out its maximum potential. Sadly, sustained use resulted in catastrophic brain injury in 96.875% of all trial runs as the human component's mental bandwith was overwhelmed by the exponentially increasing information load fed into it. It was for this reason that an additional emergency stop circuit was introduced shortly thereafter, which automatically halts the system, violently shunting excess flux into the void. This method of interfacing would eventually be discarded in favor of a system that distributed the mental strain across multiple crewmembers.",,,,,
-armaa_garegga_xiv_carrier,SHIP,The Bakraid is an experimental weapons platform: battleship-grade striking power and endurance built around a single Cataphract as its core.,,,,,
-armaa_garegga_ml_carrier,SHIP,The Bakraid is an experimental weapons platform: battleship-grade striking power and endurance built around a single Cataphract as its core.,,,,,
-armaa_garegga_tt_carrier,SHIP,"The Bakraid is an experimental weapons platform: battleship-grade striking power and endurance built around a single Cataphract as its core. Official records describe it as a Tri-Tachyon/Arma Armatura co-development effort. Internal correspondence is more careful with language, preferring ""materials access"" and ""testing support"" to the word ""partnership"" - a distinction that matters, given the century-old allegations that Tri-Tachyon ended Arma's first homeworld from orbit.
-
-The concept was born from a blunt limitation of high-performance Cataphracts: they are lethal at the point of contact, but strategically short-legged. The Bakraid's answer is not refinement, but scale - an external motherframe built as a carrier-body for a single ace unit. It brings what a strike chassis cannot:  independent operation, measurable cargo capacity, and long range travel.",,,,,
+armaa_garegga_xiv_carrier,SHIP,The Bakraid is an experimental weapons platform: battleship-grade striking power and endurance built around a single Cataphract as its core. This version features improved armor and a heavy ballistics loadout.,,,,,
+armaa_garegga_ml_carrier,SHIP,The Bakraid is an experimental weapons platform: battleship-grade striking power and endurance built around a single Cataphract as its core. This is an entry-level version that is relatively well-rounded with an emphasis on missile weapons.,,,,,
+armaa_garegga_tt_carrier,SHIP,"The Bakraid is an experimental weapons platform: battleship-grade striking power and endurance built around a single Cataphract as its core. Official records describe it as a Tri-Tachyon/Arma Armatura co-development effort. Internal correspondence is more careful with language, preferring ""materials access"" and ""testing support"" to the word ""partnership"" - a distinction that matters, given the century-old allegations that Tri-Tachyon ended Arma's first homeworld from orbit.",,,,,
 armaa_raiden_carrier,SHIP,"An upgraded Bakraid prototype, enhanced using data collated through ATAC operations. Arma Armatura's latest weapon technology has been integrated throughout, delivering specs well above its weight class. Innovations related to the SILVERSWORD system have been upscaled and stabilized, resulting in unparalleled flux performance.",,,,,
 armaa_panther_frig,SHIP,"A phase cataphract configured for anti-ship operations. Carries a phase-capable shield that compensates for its limited armor at the cost of maneuverability. The Mirage Shroud generates short-lived combat phantoms - functional copies of the vessel operating at reduced hull integrity and weapons output.
 

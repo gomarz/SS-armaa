@@ -4,6 +4,7 @@ Mirage Shroud,armaa_mirageShroud,,,,,,.25,,,,0.25,10,0.25,40,TRUE,FALSE,TRUE,TRU
 GU-14 Firebolt Feeder,armaa_fireboltfeed,,,,,,,,,,1,6,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 K.A.R.M.A.,armaa_karma,,,,,,0.1,,2,0.08,,,0.25,2,FALSE,,,TRUE,,,,,,,,,graphics/icons/hullsys/damper_field.png
 Low-Grade EMP Emitter,armaa_lowgradeemp,,,0.02,,,,,,,0.15,1,0.15,2,,,,,TRUE,,,,,,,,graphics/icons/hullsys/emp_emitter.png
+Taser,armaa_taser,1,,,,,0.2,,,,0.5,6,0.5,25,,,,,TRUE,,,,,,,"defensive, offensive",graphics/icons/hullsys/emp_emitter.png
 Pila,armaa_piladrone,,,,,,0.2,,6,0.1,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 CLAW Bits[FTR],armaa_claw,,,,,,,,2,0.05,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png
 Spark Drones,armaa_spark_drone_ex,,,,,,0.2,,6,0.1,0,,0,1,,,,,,,,,,,,,graphics/icons/hullsys/drone_pd_high.png

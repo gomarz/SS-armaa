@@ -275,6 +275,42 @@
       "arc": 5,
       "angle": 0,
       "locations": [-72, -0]
+    },
+    {
+      "id": "WS0030",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -30,
+      "locations": [169, -38]
+    },
+    {
+      "id": "WS0031",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 30,
+      "locations": [169, 38]
+    },
+    {
+      "id": "WS0032",
+      "size": "LARGE",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 91.5,
+      "locations": [-100, 22.5]
+    },
+    {
+      "id": "WS0033",
+      "size": "LARGE",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -91.5,
+      "locations": [-100, -22.5]
     }
   ],
   "engineSlots": [
