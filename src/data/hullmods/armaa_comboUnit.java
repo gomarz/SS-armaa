@@ -35,7 +35,7 @@ public class armaa_comboUnit extends BaseHullMod {
     public void advanceInCampaign(FleetMemberAPI member, float amount)
     {
          Object didExplanation = Global.getSector().getMemoryWithoutUpdate().get("$armaa_comboUnitTutorial");
-        if(didExplanation == null && Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy().contains(member))
+        if(didExplanation == null && Global.getSector() != null && Global.getSector().getPlayerFleet() != null && Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy().contains(member))
         {
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_comboUnitTutorial", true);     
             Global.getSector().getMemoryWithoutUpdate().set("$armaa_comboUnitTutorialUnit", member,10); 

@@ -91,6 +91,30 @@ public class armaa_strikeCraft extends BaseHullMod {
         DAMAGE_MAP.put(HullSize.CRUISER, 0.90f);
         DAMAGE_MAP.put(HullSize.CAPITAL_SHIP, 0.80f);
     }
+    public static final String REFIT_SUPPRESS_KEY = "armaa_refitSuppressedUntil";
+
+    public static void suppressRefit(ShipAPI ship, float seconds) {
+        if (ship == null) {
+            return;
+        }
+        float until = Global.getCombatEngine().getTotalElapsedTime(false) + seconds;
+        Object cur = ship.getCustomData().get(REFIT_SUPPRESS_KEY);
+        if (cur instanceof Float && (Float) cur >= until) {
+            return; // never shorten
+        }
+        ship.getCustomData().put(REFIT_SUPPRESS_KEY, until);
+    }
+
+    public static boolean isRefitSuppressed(ShipAPI ship) {
+        // Too late to abort — let a committed approach finish
+        if (Global.getCombatEngine().getCustomData().containsKey("armaa_strikecraftisLanding" + ship.getId())
+                || ship.isLanding() || ship.isFinishedLanding()) {
+            return false;
+        }
+        Object o = ship.getCustomData().get(REFIT_SUPPRESS_KEY);
+        return o instanceof Float
+                && Global.getCombatEngine().getTotalElapsedTime(false) < (Float) o;
+    }
 
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
         if (stats.getFleetMember() != null) {
@@ -349,6 +373,9 @@ public class armaa_strikeCraft extends BaseHullMod {
     }
 
     private boolean canRefit(ShipAPI ship) {
+        if (isRefitSuppressed(ship)) {
+            return false;
+        }
         for (ShipAPI module : ship.getChildModulesCopy()) {
             if (module.getVariant().hasTag("no_wingcom_docking")) {
                 return false;
@@ -545,7 +572,9 @@ public class armaa_strikeCraft extends BaseHullMod {
             cachedCarrier = (ShipAPI) cachedCarrierObj;
         }
 
-        boolean cachedCanRefit = Boolean.TRUE.equals(Global.getCombatEngine().getCustomData().get("armaa_cachedCanRefit_" + ship.getId()));
+        boolean cachedCanRefit = Boolean.TRUE.equals(
+                Global.getCombatEngine().getCustomData().get("armaa_cachedCanRefit_" + ship.getId()))
+                && !isRefitSuppressed(ship);
         boolean cachedNeedsRefit = Boolean.TRUE.equals(Global.getCombatEngine().getCustomData().get("armaa_cachedNeedsRefit_" + ship.getId()));
 
         // Validate cached carrier is still alive
