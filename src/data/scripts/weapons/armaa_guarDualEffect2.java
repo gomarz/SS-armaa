@@ -16,6 +16,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.hullmods.armaa_strikeCraft;
 import org.magiclib.util.MagicRender;
 
 // this is disgusting
@@ -149,6 +150,7 @@ private float transformCooldown = 0f;
             transforming = true;
             isRobot = false;
             init();
+            //armaa_strikeCraft.suppressRefit(ship, 100);
         }
         // refit screen
         if (ship.getOwner() == -1 || !ship.isAlive()) {
