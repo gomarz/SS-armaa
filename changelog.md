@@ -1,4 +1,5 @@
 V3.3.6
+------
 
 - Fixed a rare case where drone reinforcements could spawn indefinitely during the Jenius descent
 - added  armaa_strikeCraft.suppressRefit(ShipAPI ship, float seconds) which blocks a strikecraft from deciding to go refit for that many seconds 
@@ -178,7 +179,8 @@ V3.3.6
 - Misc
 	- Added hullmod icons for Aegis Field, Formation Drive, Spare Chassis, Spare Chassis Storage
 
-# V3.3.5
+V3.3.5
+------
 
 - Bellator
 	- Mine Strike
@@ -271,7 +273,8 @@ V3.3.6
 	- Reduced saturation + naturalized tones on armaa_legioMechPilot, slightly sharpened
 	- Slightly more natural tones + sharpening on armaa_automaton, armaa_mrcgirl06, armaa_mrcgirl07, armaa_mrcguy01, armaa_mrcguy08
 	- Added subtle eye highlights to 3 that make armaa_legioMechPilot_anime feel less ded
-# V3.3.4
+V3.3.4
+------
 
 ## New Units
 
