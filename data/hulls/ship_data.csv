@@ -63,7 +63,7 @@ Bellator,armaa_bellator,Battlecarrier,Midline,armaa_mine_strike,,60,12000,1200,2
 #SFO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Damascus,armaa_ps_damascus,Cruiser,Midline,ammofeed,,22,8500,900,9500,,575,170,,65,35,20,30,25,1200,FRONT,,270,0.4,0.8,,,50,100,100,60,2,30,9,100000,5,12,465,0.25,22,22,,"no_dealer,restricted",,0.5,,,,,,,0.5,2,3,
 Edessa,armaa_ps_edessa,Escort Battleship,Midline,flarelauncher_active,,40,18000,1500,15000,,850,330,,40,15,12,5,4,3000,OMNI,,120,0.4,0.8,,,500,800,250,300,10,30,8,300000,3,15,600,0.25,40,40,,,,0.5,,,,,,,,,,4
-Tripoli,armaa_ps_tripoli,Battlecruiser,Midline,,,40,16000,1600,23000,,1100,285,,50,20,15,7,5,3000,FRONT,,180,0.4,1.2,,,400,550,300,300,10,30,8,315000,3,15,600,0.25,40,40,,"no_dealer,restricted",,0.5,,,,,,,,,,4
+Tripoli,armaa_ps_tripoli,Battlecruiser,Midline,armaa_taser,,40,16000,1600,23000,,1100,285,,50,20,15,7,5,3000,FRONT,,180,0.4,1.2,,,400,550,300,300,10,30,8,315000,3,15,600,0.25,40,40,,"no_dealer,restricted",,0.5,,,,,,,,,,4
 #MA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Altagrave,armaa_altagrave,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,375,5800,,400,80,,80,110,110,110,100,250,OMNI,,225,0.4,0.6,,,30,45,10,10,1,15,10,100000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,"armaa_mobilearmor,rare_bp,rare_bp, hist1t,codex_unlockable",0.5,0.3,2,4,2,,,,,,,
 Altagrave (C),armaa_altagrave_c,Mobile Armor,Arma Armatura,armaa_karma,,18,3000,375,5800,,400,80,1,80,110,80,95,100,250,OMNI,,225,0.4,0.65,,,30,45,10,10,1,15,10,100000,6,20,280,0.25,18,18,SHIP_WITH_MODULES,"armaa_mobilearmor,rare_bp,hist1t,no_wingcom_docking,codex_unlockable",0.4,0.3,2,4,2,,,,,,,
