@@ -1,0 +1,68 @@
+{
+  "variantId": "armaa_ps_tripoli_standard",
+  "hullId": "armaa_ps_tripoli",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 24,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "hydra",
+        "WS0011": "hydra"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "gorgon",
+        "WS0005": "gorgon",
+        "WS0006": "gorgon",
+        "WS0007": "gorgon",
+        "WS0008": "gorgon",
+        "WS0009": "gorgon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "mjolnir",
+        "WS0003": "mjolnir"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0012": "irautolance",
+        "WS0013": "irautolance",
+        "WS0014": "hveldriver",
+        "WS0015": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "guardian",
+        "WS0016": "taclaser",
+        "WS0017": "taclaser",
+        "WS0018": "taclaser",
+        "WS0019": "taclaser",
+        "WS0023": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

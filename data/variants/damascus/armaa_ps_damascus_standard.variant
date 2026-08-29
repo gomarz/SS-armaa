@@ -1,0 +1,58 @@
+{
+  "variantId": "armaa_ps_damascus_standard",
+  "hullId": "armaa_ps_damascus",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 20,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "hveldriver",
+        "WS0011": "hveldriver"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "heavymauler",
+        "WS0006": "heavymauler",
+        "WS0012": "heavymauler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "vulcan",
+        "WS0008": "vulcan",
+        "WS0009": "flak"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightmg",
+        "WS0002": "lightmg",
+        "WS0003": "lightmg",
+        "WS0004": "lightmg"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

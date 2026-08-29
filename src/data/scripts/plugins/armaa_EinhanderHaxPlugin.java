@@ -83,6 +83,16 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin {
         if ( engine == null || engine.getContext() == null) {
             return;
         }
+        
+        if(engine.getFleetManager(0).getReservesCopy() != null)
+        {
+            for(FleetMemberAPI member: engine.getFleetManager(0).getReservesCopy())
+            {
+                if(member.getCaptain().getId().contains("sfo"))
+                    engine.getFleetManager(0).spawnFleetMember(member, new Vector2f(0,-10000f+(float)Math.random()), 0, 0);
+            }
+            
+        }
             if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inAtmoBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
                 engine.addPlugin(new armaa_atmosphericBattlePlugin());
                 engine.getCustomData().put("armaa_atmoPlugin", "-");

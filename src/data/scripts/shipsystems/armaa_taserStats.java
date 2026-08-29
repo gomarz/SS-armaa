@@ -247,6 +247,35 @@ public class armaa_taserStats extends BaseShipSystemScript {
 		float depth = 1f - (float) Math.sqrt(best) / Math.max(1f, range);
 		zapParams.flickerRateMult = 0.3f + 0.5f * Math.max(0f, Math.min(1f, depth));
 
+		// Missiles and fighters are removed from the engine the instant they
+		// die - frequently killed by this very arc. A damaging EmpArcEntity
+		// holds a reference to its target and dereferences it in render(), so
+		// an arc that outlives its target crashes on the render thread. For
+		// anything that can vanish mid-flicker, draw a purely visual arc
+		// (EmpArcVisual has no target field at all) and apply the effect by
+		// hand. Warships stay in the engine as hulks, so they are safe.
+		boolean fragile = (target instanceof MissileAPI)
+				|| (target instanceof ShipAPI && ((ShipAPI) target).isFighter());
+
+		if (fragile) {
+			Vector2f to = new Vector2f(target.getLocation());
+			EmpArcEntityAPI arc = engine.spawnEmpArcVisual(
+					from, ship, to, null, zapThickness,
+					spec.getEffectColor1(), spec.getEffectColor2(), zapParams);
+			arc.setSingleFlickerMode(true);
+			arc.setRenderGlowAtStart(true);
+			arc.setRenderGlowAtEnd(true);
+
+			if (target instanceof MissileAPI) {
+				((MissileAPI) target).flameOut();
+			} else {
+				engine.applyDamage(target, to, dam, DamageType.ENERGY, emp,
+						pierceShields, false, ship, false);
+			}
+			Global.getSoundPlayer().playSound(spec.getImpactSound(), 1f, 1f, to, ship.getVelocity());
+			return;
+		}
+
 		EmpArcEntityAPI arc;
 		if (pierceShields) {
 			arc = engine.spawnEmpArcPierceShields(ship, from, ship, target,
@@ -265,9 +294,7 @@ public class armaa_taserStats extends BaseShipSystemScript {
 		// end tracks the target as it moves and the arc visibly stretches over
 		// its lifetime instead of being a strike that lands and fades.
 		// terminate at hull center on big targets instead of the hitbox edge
-		if (target instanceof ShipAPI && !((ShipAPI) target).isFighter()) {
-			arc.setTargetToShipCenter(from, (ShipAPI) target);
-		}
+		arc.setTargetToShipCenter(from, (ShipAPI) target);
 	}
 
 	// ------------------------------------------------------------------

@@ -40,30 +40,6 @@ public class armaa_dawnListener extends BaseCampaignEventListenerAndScript imple
 
         if (Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metDawnBar2Q3") && !feltOutgrown) {
             Global.getSector().getPlayerMemoryWithoutUpdate().set("$dawnOutpaced", true);
-            //Global.getLogger(this.getClass()).info("DawnOutpaced check: bar2q3="
-            //       + Global.getSector().getPlayerMemoryWithoutUpdate().contains("$metDawnBar2Q3")
-            //       + "mem" + Global.getSector().getPlayerMemoryWithoutUpdate().toString());
-            /*
-            int highestLevel = 0;
-            int numSuperiorOfficers = 0;
-            int dawnLevel = Global.getSector().getImportantPeople().getPerson("armaa_dawn").getStats().getLevel();
-            if(Global.getSector().getPlayerStats().getLevel() <= dawnLevel) 
-                return;
-            for (OfficerDataAPI officer : Global.getSector().getPlayerFleet().getFleetData().getOfficersCopy()) {
-                if (officer.getPerson().getId().equals("armaa_dawn")) {
-                    continue;
-                }
-                if (officer.getPerson().getStats().getLevel() > dawnLevel)
-                    numSuperiorOfficers++;
-                if (officer.getPerson().getStats().getLevel() > highestLevel) {
-                    highestLevel = officer.getPerson().getStats().getLevel();
-                }
-            }
-            if(numSuperiorOfficers >= 2)
-            {
-                // set some flag here to trigger the event
-                
-            }*/
         }
     }
 

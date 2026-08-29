@@ -70,7 +70,7 @@ public class armaa_bellatorCMD extends BaseCommandPlugin {
                 @Override
                 public void reportBattleOccurred(CampaignFleetAPI fleet,
                         CampaignFleetAPI primaryWinner, BattleAPI battle) {
-                    
+
                     if (fleet.getFlagship() != null && !fleet.getFlagship().getHullId().contains("bellator")) {
                         Global.getSector().getMemoryWithoutUpdate()
                                 .set("$armaa_bellatorDefeated", true);

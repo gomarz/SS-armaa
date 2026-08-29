@@ -2,6 +2,7 @@
 	"ranks":{
 		#Mercenaries
 		"armaa_tokuMerc":{"name":"Ally of Justice"},
+		"armaa_aspirant":{"name":"Aspirant"},
 	},
 	"posts":{
 		"armaa_administrator":{"name":"Custodian"},

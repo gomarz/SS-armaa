@@ -14,6 +14,9 @@
   "builtInMods": [
     "armaa_barbicanArray"
   ],
+  "builtInWeapons": {
+    "WS0029": "armaa_basilisk"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -270,7 +273,7 @@
     {
       "id": "WS0029",
       "size": "LARGE",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,

@@ -1194,7 +1194,7 @@ OPs glances up from where they've been examining the ankle joint. ""Does this ch
 ""Then I'll let you two have this moment.""
 
 She ignores him. ""The GuarDUAL has no documented production chain.."" She finally looks back at you. ""This didn't come from a production chain either. Maybe it came first, or someone built this from what they had left. The same someone, I think.""",0:armaa_WFShaftGetKshatriya2:Continue,
-armaa_WFShaftGetKshatriya2,DialogOptionSelected,$option == armaa_WFShaftGetKshatriya2,,"An engineer crouches near the base of the frame, running a thumb along a seam in the plating. ""Nothing you'd expect on a production vehicle."" He stands. 
+armaa_WFShaftGetKshatriya2,DialogOptionSelected,$option == armaa_WFShaftGetKshatriya2,,"An engineer crouches near the base of the frame, running a thumb along a groove in the plating. ""Nothing you'd expect on a production vehicle."" He stands. 
 
 A custom build, then. One-of-a-kind, or close to it.
 
@@ -1985,7 +1985,7 @@ armaa_Hikaru_Utada getPlayerFleetId score:1000","$player.armaa_comboUnitTutorial
 ShowImageVisual quartermaster
 SetShortcut armaa_bakraidBriefEnd ""ESCAPE""","The Bakraid sits open on its cradle in the aft bay with the core harness ajar, the core unit itsels still hoisted in the central cavity.
 
-Your chief engineer is halfway up the gantry with a TriPad, arguing with someone below about tolerances on the release bolts. The chief spots you at the rail  and slides down to meet you in what could be perceived as a glaring safety violation.
+Your chief engineer is halfway up the gantry with a TriPad, arguing with someone below about tolerances on the release bolts. The chief spots you at the rail and slides down to meet you in what could be perceived as a glaring safety violation.
 
 ""$PlayerSirOrMadam, had one of these out yet?""","armaa_bakraidBrief1:""Assume I haven't.""",Fired from the travel event script. Gate on the player actually having a combo unit in fleet before firing.
 armaa_bakraidBrief1,DialogOptionSelected,$option == armaa_bakraidBrief1,"SetTextHighlights ""core unit"" ""frame""
@@ -2355,24 +2355,24 @@ armaa_dawnSitBaetisFamily8,DialogOptionSelected,$option == armaa_dawnSitBaetisFa
 ""How are things off world?""
 
 Dawn sets her cup down, leaning back. ""Let me think..""",armaa_dawnSitBaetisFamily8D:Continue,
-armaa_dawnSitBaetisFamily8Divide,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily8D,FireAll armaa_dawnSitBaetisAcheivements,,,
+armaa_dawnSitBaetisFamily8Divide,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily8D,FireAll armaa_dawnSitBaetis achievements,,,
 ,,,,,,
-armaa_dawnSitBaetisFamily9,armaa_dawnSitBaetisAcheivements,"$player.numColonies > 0
-$numAcheivements++",,"""The captain's got a few colonies of $playerHisOrHer own we've been tendin' to. Guess you could say we have our own little flock.""
+armaa_dawnSitBaetisFamily9,armaa_dawnSitBaetis achievements,"$player.numColonies > 0
+$num achievements++",,"""The captain's got a few colonies of $playerHisOrHer own we've been tendin' to. Guess you could say we have our own little flock.""
 
 Theo inclines his head, ""Is that so?"" He looks at you, raising an eyebrow and covering his mouth with a hand. ""Looks like she took after me more than I thought, ha-ha.""",,
-armaa_dawnSitBaetisFamily9LKE,armaa_dawnSitBaetisAcheivements,"$global.lke_missionCompleted
-$numAcheivements++",,"""Done some work for the Archcurate here and there.""
+armaa_dawnSitBaetisFamily9LKE,armaa_dawnSitBaetis achievements,"$global.lke_missionCompleted
+$num achievements++",,"""Done some work for the Archcurate here and there.""
 
 Theo stops drinking. ""The archcurate herself? Why, that is a calling many would dream of. Great work, my dear.""",,
-armaa_dawnSitBaetisFamily9LPPComplete,armaa_dawnSitBaetisAcheivements,"$player.dawnVisitedShrines >= 5
-$numAcheivements++",,"""Finally knocked out travelin' the Pilgrim's Path with the Captain's help.""",,
-armaa_dawnSitBaetisFamily9LPPIncomplete,armaa_dawnSitBaetisAcheivements,"$player.dawnVisitedShrines > 0
+armaa_dawnSitBaetisFamily9LPPComplete,armaa_dawnSitBaetis achievements,"$player.dawnVisitedShrines >= 5
+$num achievements++",,"""Finally knocked out travelin' the Pilgrim's Path with the Captain's help.""",,
+armaa_dawnSitBaetisFamily9LPPIncomplete,armaa_dawnSitBaetis achievements,"$player.dawnVisitedShrines > 0
 $player.dawnVisitedShrines < 5",,"""Got started on the Pilgrim's Path.""",,
-armaa_dawnSitBaetisFamily9LPFallback,armaa_dawnSitBaetisAcheivements,,"$option = armaa_dawnSitBaetisFamily10
+armaa_dawnSitBaetisFamily9LPFallback,armaa_dawnSitBaetis achievements,,"$option = armaa_dawnSitBaetisFamily10
 FireBest DialogOptionSelected","""Other than the usual, there's not much else.""",,
 armaa_dawnSitBaetisFamily10,DialogOptionSelected,"$option == armaa_dawnSitBaetisFamily10
-$numAcheivements >= 3",AdjustRepPerson armaa_theo FRIENDLY 1,"The curate strokes his beard, "" I must admit, that is quite impressive. I see that you have been busy. It is humbling that you took the time to visit us, here."" He pauses, turning to you. ""You are in good company, indeed.""",armaa_dawnSitBaetisFamily11:Continue,
+$num achievements >= 3",AdjustRepPerson armaa_theo FRIENDLY 1,"The curate strokes his beard, "" I must admit, that is quite impressive. I see that you have been busy. It is humbling that you took the time to visit us, here."" He pauses, turning to you. ""You are in good company, indeed.""",armaa_dawnSitBaetisFamily11:Continue,
 armaa_dawnSitBaetisFamily10B,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily10,,"Theophiuls strokes his beard, ""I see."" he seems to realize something, turning to you. ""My apologies, captain. I have not yet thanked you for taking Dawn in.",armaa_dawnSitBaetisFamily11:Continue,
 armaa_dawnSitBaetisFamily11,DialogOptionSelected,$option == armaa_dawnSitBaetisFamily11,,"The three of you make small talk. Theophilus is careful not to pry; Dawn offers the least information she can get away with. 
 It doesn't come across as tension or discomfort, though. Perhaps this is just the way they are.
@@ -2751,7 +2751,7 @@ armaa_dawnDeathBlameMet,DialogOptionSelected,"$option == armaa_dawnDeathBlame
 $dawnFate == dead
 $player.armaa_$bffi_goMeetMenesYaribay_event_id == false",FireAll armaa_dawnOpts,"She rubs her hands up across her face, the tips of her fingers converging over the bridge of her nose and down again.
 
-""Jethro wasn't the rash type.  He wouldn't have put himself into that situation unless he knew everythin' would work out in the end. Somethin' had to.."" She looks at you for a moment. ""Forget it. May he rest in peace.""
+""Jethro wasn't the rash type. He wouldn't have put himself into that situation unless he knew everythin' would work out in the end. Somethin' had to.."" She looks at you for a moment. ""Forget it. May he rest in peace.""
 ",,
 armaa_dawnDeathOwn,DialogOptionSelected,"$option == armaa_dawnDeathOwn
 $dawnFate == dead",FireAll armaa_dawnOpts,"She rubs her hands up across her face, the tips of her fingers converging over the bridge of her nose and down again. She seems to do her best not to look at you.",,
@@ -3353,7 +3353,8 @@ $player.metDawnBar2Q2 = true
 armaa_dawnCMD showGuestOfficer
 FireBest armaa_dawnBar2Q2Intros",,armaa_dawnBar2Q2Start2:Continue,
 armaa_dawnBar2Q2Start2,DialogOptionSelected,$option == armaa_dawnBar2Q2Start2,"$option = armaa_dawnBar2Q2OfficerReact
-FireBest DialogOptionSelected",,armaa_dawnBar2Q2OfficerReact:Continue,
+FireBest DialogOptionSelected
+$player.metDawnBar2Q2 = true",,armaa_dawnBar2Q2OfficerReact:Continue,
 ,,,,,,
 armaa_dawnBar2Q2Question,DialogOptionSelected,$option == armaa_dawnBar2Q2Question,FireAll armaa_dawnBar2Q2QuestionOpts,"She looks between you and the $armaa_dawnGuestName. ""Best port you've ever been in. Go.""",armaa_dawnBar2Q2OfficerReact:Continue,
 ,,,,,,
@@ -6718,7 +6719,7 @@ armaa_bts2,DialogOptionSelected,$option == armaa_bts2,"BeginMission armaa_bts fa
 Call $global.armaa_bts_ref updateData
 Call $global.armaa_bts_ref showMap $armaa_bts_marketName
 $global.armaa_bts_marketId = $armaa_bts_marketId
-FireAll armaa_btsOpts","""No. I want you to make sure he doesn't..hasn't talked."" The holofile loops silently in the background. ""If he's clean, extraction may not even be needed. If he's cracked, extraction's a liability. Make contact. Or confirm he hasn't gone out through a pressure seam-if you catch my drift.""
+FireAll armaa_btsOpts","""No. I want you to make sure he doesn't..hasn't talked."" The holofile loops silently in the background. ""If he's clean, extraction may not even be needed. If he's cracked, extraction's a liability. Make contact. Or confirm he hasn't gone out through an airlock-if you catch my drift.""
 
 $HeOrShe smiles apologetically, ""I know this might feel beneath your station. But if we send one of ours, it lights up every scanner from here to Eochu. You, though... people like you move different. Little more room to maneuver. Little more plausible deniability.""",,
 armaa_btsOptRisks,armaa_btsOpts,"!$armaa_askedWhatAgentRisks
@@ -6890,8 +6891,6 @@ AdjustRepActivePerson COOPERATIVE 5
 AddTextSmall ""Received comms-id for Felner"" highlight
 Call $global.armaa_bts_ref updateData
 FireAll PopulateOptions","You lean into the social machinery Tri-Tachyon lives by. A little respectful enthusiasm, a little shared context. You let the administrator talk about their workload and their responsibilities - and you make sure they feel seen for it.
-
-Somewhere along the line, contact details are exchanged. A low-stakes connection ping on TriLink. Nothing that looks like a bribe, nothing that looks like coercion. Just networking - the polite fiction that lubricates the Sector.
 
 By the time the conversation circles back to Felner, $heOrShe is already halfway convinced this is harmless.
 
@@ -9532,3 +9531,524 @@ You've got duties to return to - or you don't - either way, you leave them to it
 armaa_cardGameFoulDawnWinWatch,armaa_cardGameFoul,!$armaa_cardGame_seated,,"Dawn's the only one left in. With about the most indifferent expression a person can manage, she collects the pot all the same. ""Better luck next time, Yuni."" Neither of them seems in any hurry for the night to end.
 
 You've got duties to return to - or you don't - either way, you leave them to it as they continue to chat amongst themselves. Whatever this is between them, it started fine without you. It'll keep going the same way.",armaa_cardGameLeave:Leave,
+,,,,,,
+armaa_starfallScout_open,MarketPostDock,"$market.id == fikenhild
+$tradeMode != NONE
+!$player.receivedSFOComms","$player.receivedSFOComms = true
+BeginConversation POST:portmaster
+","You are alerted to a waiting priority comms request. The originating office is given as Royal Household, Public Engagement.","armaa_starfallScout_officer:Accept the link
+armaa_starfallScout_lapse:Let it lapse",
+armaa_starfallScout_decline,DialogOptionSelected,$option == armaa_starfallScout_lapse,"EndConversation
+FireBest MarketPostDock
+ShowDefaultVisual",,,
+armaa_starfallScout_officer,DialogOptionSelected,$option == armaa_starfallScout_officer,ShowPersonVisual,"""Captain $playerName, good shift - and thank you. I have a message - ahem."" $HisOrHer's eyes dart to the side.
+
+""His Majesty has taken an interest in your recent activities of note in and around the Persean volume, and wishes to extend an invitation to court.""","armaa_starfallScout_what:""What sort of interest?""
+armaa_starfallScout_refuse1:""No thanks.""
+armaa_starfallScout_accept:""I accept.""",
+armaa_starfallScout_what,DialogOptionSelected,$option == armaa_starfallScout_what,,"""Why, you're quite recognizable, given what you've done, and that is a quality that is uniquely valuable.""
+
+""I cannot go into specifics over comms - security concerns, you understand - but I can assure you our interest is regarding an arrangement His Majesty believes would suit you both.""","armaa_starfallScout_refuse1:""I'm not interested.""
+armaa_starfallScout_accept:""I accept.""",
+armaa_starfallScout_refuse1,DialogOptionSelected,$option == armaa_starfallScout_refuse1,,"""$playerSirOrMadam. I've made many of these calls and I have never made a second one. We do not extend invitations twice. Not from unwillingness, you see - it simply doesn't come up again.""
+
+""You needn't decide anything at this moment beyond whether to attend. Whatever else is being asked, you'd hear it in person, from someone permitted to say it.""","armaa_starfallScout_accept:""I accept.""
+armaa_starfallScout_refuse2:""No thanks.""",
+armaa_starfallScout_refuse2,DialogOptionSelected,$option == armaa_starfallScout_refuse2,,"$HisOrHer expression doesn't change, and $heOrShe simply nods politely. ""Very well. Good day to you, then.""
+They eend the connection.",marketArrivalEventContinue:Continue,
+armaa_starfallScout_accept,DialogOptionSelected,$option == armaa_starfallScout_accept,"$global.armaa_sfo_inProgress = true
+$global.armaa_sfo_stage = COURT_PENDING
+EndConversation
+FireAll PopulateOptions
+ShowDefaultVisual
+#armaa_starfallCMD addCourtIntel","""Very good, $playerSirOrMadam. I'll notify the proper parties and forward your people the details.""
+
+A ping indicates those details have already been sent, while $heOrShe is still on the channel. What follows is practical - the approach corridor, what time to present yourself - before the $post politely signs off.",marketArrivalEventContinue:Continue,
+armaa_starfallCourtOption,PopulateOptions,"$market.id == fikenhild
+$menuState == main
+$global.armaa_sfo_inProgress
+$global.armaa_sfo_stage == COURT_PENDING",,,4:armaa_starfallCourt1:Take a shuttle to the royal court,
+armaa_starfallCourt1,DialogOptionSelected,$option == armaa_starfallCourt1,,"Your shuttle drops through pillars of storm cloud over sparkling seas. Kay-arco is visible on the horizon, its hundred-thousand windows glimmering in the light as your approach corridor bends north toward a similar structure.
+
+The flight path begins ticking off consent notices as you enter the volume - likeness capture, third-party licensing (in perpetuity), the right of edit, et cetera - you are three notices into declining them when a royal clearance code resolves and the whole stack self-deletes.
+
+The rapidly growing silhouette of Aylmer-arco rises above the ocean like a knuckle.",4:armaa_starfallCourt2:Continue,
+armaa_starfallCourt2,DialogOptionSelected,$option == armaa_starfallCourt2,"BeginConversation POST:portmaster
+HideVisual",An attendant meets you at the landing pad and you are walked through a surprisingly utilitarian hall of pale stone to a waiting lift upwards.,4:armaa_starfallCourt3:Continue,
+armaa_starfallCourt3,DialogOptionSelected,$option == armaa_starfallCourt3,"armaa_starfallPeopleCMD ensure
+ShowPersonVisual
+$option = armaa_starfallCourt4
+FireBest DialogOptionSelected","The $post $PersonName is waiting outside two large double doors and looks at you with something like relief as you approach. ""Captain, you came.""
+
+""His Majesty wanted to meet you, but court is running long today. A knight of the Starfall Order should be here shortly.""",,
+armaa_starfallCourt4,DialogOptionSelected,$option == armaa_starfallCourt4,"FireBest armaa_starfallAccomplishments
+BeginConversation armaa_sfo_roland
+ShowPersonVisual","On cue, the doors open a hand's width and a man comes out sideways through the gap, still turned toward whatever is happening inside. For a moment you catch a glimpse of the king, who appears to be haranguing one of his subjects to the raucous laughter of the observers present.
+
+The approaching man is perhaps sixty and wears a ceremonial uniform, and he is flanked by a recorder drone just over shoulder height which he does not appear to notice.
+
+""Captain $playerName."" He takes your hand in both of his. ""Sir Roland, of the Starfall Order. I have heard a lot about you.""","armaa_starfallCourt_why:""Why do you want me?""
+armaa_starfallCourt_what:""What's going on in there?""",
+armaa_starfallKnightAccomplishment_heg,armaa_starfallAccomplishments,$player.defeatedHegemony score: 95,,"""You faced down the Hegemony! There are people in this order who would dream to attain such a feat."" A short laugh.",,
+armaa_starfallKnightAccomplishment_tt,armaa_starfallAccomplishments,$player.counterRaidedTriTach score: 80,,"""You were in quite a scrap with Tri-Tachyon over your colonies, yes? They think they can hit whomever they like, and no one will hit back."" He seems genuinely pleased about this.",,
+armaa_starfallKnightAccomplishment_atg,armaa_starfallAccomplishments,$global.gaATG_missionCompleted score: 100,,"""The gates, and the, ah, 'Janus Device' - that was you? I made them run it twice for me. I have a note about it somewhere, but - ah, forgive me, I am rambling.""",,
+armaa_starfallKnightAccomplishment_oneslaught,armaa_starfallAccomplishments,$global.foundOneslaught score: 90,,"""Is it true? You are the discoverer of an intact Onslaught Mk. I? Most impressive $playerSirOrMadam, most impressive!""",,
+armaa_starfallKnightAccomplishment_generic,armaa_starfallAccomplishments,,,"""You've been on. Twice, I think, maybe three times. There's a segment I keep meaning to find again where you come about into a second wave and the whole mess went up. I have a note about it somewhere.""",,
+,,,,,,
+armaa_starfallCourt_why,DialogOptionSelected,$option == armaa_starfallCourt_why,,"""We would have you serve as an auxiliary instructor, on a temporary basis. Sit in on the training, give your opinion where it's wanted, and come out with us for the live exercise at the end. Our charges gain the insight of a veteran commander, and our sponsors gain a high-profile guest for the broadcasts.""",armaa_starfallCourt_why2:Continue,
+armaa_starfallCourt_why2,DialogOptionSelected,$option == armaa_starfallCourt_why2,,"He holds up a single finger. ""First and foremost, you are a seasoned commander who has accomplished things I am meant to teach them to do.""
+
+Another finger. ""The second is that the Order is concerned about appearances and other frivolities. A high profile  operator such as yourself is sure to draw eyes upon the King, and perhaps even improve public perception.""
+
+""I petitioned for your aid on the first point, but I regret to say you were chosen for the second.""","armaa_starfallCourt_accept:""I'll do it.""
+armaa_starfallCourt_noXP:""How much experience do they actually have?""",
+armaa_starfallCourt_noXP,DialogOptionSelected,$option == armaa_starfallCourt_noXP,,"""Many, many hours."" He pauses, ""In a simulator. Live?"" He says nothing, an answer in and of itself.
+
+""Ten cycles ago they'd have fetched tea aboard another officer's bridge for some time before being let anywhere near their own. They still should today, if you ask me. This is just the royal office's idea of pushing the envelope, as they put it.""
+
+""Each of them has a lieutenant aboard with real hours. If it gets away from them, they will take the bridge.""","armaa_starfallCourt_accept:""I'll do it.""",
+armaa_starfallCourt_what,DialogOptionSelected,$option == armaa_starfallCourt_what,,"Roland sighs. ""Nothing important. A property dispute between two individuals who are unwilling to be reasonable in private."" He glances back at the doors.
+
+""The parties get their say, and the audience votes on which of them was more insufferable. The loser pays the fees. A Westernesse pastime, you could say.""
+
+""Not when I was young, mind you. Why, in my day..."" he begins to ramble befor realizing what he is doing, ""...ah, but that's neither here nor there.""","armaa_starfallCourt_why:""Why me?""",
+armaa_starfallCourt_accept,DialogOptionSelected,$option == armaa_starfallCourt_accept,"$global.armaa_sfo_stage = ASSIGNED
+$global.armaa_sfo_favor = 0
+$global.armaa_sfo_ratings = 0
+EndConversation
+ShowDefaultVisual
+FireAll PopulateOptions","""Good...good. Thank you, Captain."" Roland grasps your hand again.
+
+A voice from behind you, quite kind about it, asks whether the two of you would mind doing that once more.
+
+Roland lets go, waits for the count, and takes your hand again with exactly the same warmth. You gather this is a dance he is familiar with.
+
+""Once more, and then we're clear,"" says the voice.
+
+You are left with a timetable of when your 'services' will be needed, and the location to the knights training grounds.
+
+The return to the shuttle is uneventful.",,
+armaa_starfallTrainOption,PopulateOptions,"$market.id == fikenhild
+$menuState == main
+$global.armaa_sfo_stage == ASSIGNED",,,4:armaa_starfallTrain1:Take a shuttle to meet with Roland,
+,,,,,,
+armaa_starfallTrain1,DialogOptionSelected,$option == armaa_starfallTrain1,,"The return to Aylmer-arco is along the same flight path and you navigate to the compound without issue.
+
+The compound itself is incredibly busy. It almost feels more like the hub of a megacorp than the den of a martial order - many people scurry to and fro, some of whom are fully encased in powered armor. 
+
+The armor is structurally similar to the design the Church's knights wear, and that is where the similarities end. Each is painted in colors you don't quite know the significance of and personal marks. On some, the shoulder and thigh plates carry the names of minor corporations or brands one could buy from a vendor.
+
+One such clad individual helpfully directs you to where the current season of 'THE KING'S OWN' is being filmed.",armaa_starfallTrain2:Continue,
+armaa_starfallTrain2,DialogOptionSelected,$option == armaa_starfallTrain2,"$option = armaa_starfallTrain2b
+FireBest DialogOptionSelected","There you find Roland with his cohort. A holo-rec drone takes the opportunity to close in a few feet from you. It buzzes near your face for a moment before retreating and slowly rotating to face the same direction as you. A dramatic panning shot, perhaps.
+
+""Ah, Captain $playerName!"" Roland greets, closing the distance remarkably quickly for one of his age. ""Glad to see you - these are my charges..."" he makes a wide sweeping gesture towards the three, ""...though they are not much yet."" He says it fondly and without lowering his voice, and none of them react. ""Come. I'll not waste your time. Let's get to the introductions.""",,
+armaa_starfallTrain2b,DialogOptionSelected,$option == armaa_starfallTrain2b,"BeginConversation armaa_sfo_roland
+ShowPersonVisual
+FireAll armaa_starfallRecruitOpts",,,
+armaa_starfallRecruitOpt_voit,armaa_starfallRecruitOpts,!$metVoit,,,8:armaa_starfallRecruit_voit:Speak with Recruit Voit,
+armaa_starfallRecruit_voit,DialogOptionSelected,$option == armaa_starfallRecruit_voit,"$metVoit = true 5
+BeginConversation armaa_sfo_voit
+ShowPersonVisual
+FireAll armaa_starfallRecruitVoitOpts","""Captain."" Voit offers.
+
+Roland says, with some pride, that Voit came up through the trade schools under Kay-arco and holds the highest marks from all previous tactical war games.
+
+Her file tells the same tale, though less glowing - two assessors have called her a talented officer in the making, but, in their own words, 'has not yet developed the presence expected of a command officer'.",,
+armaa_starfallRecruitOpt_voitReturn,armaa_starfallRecruitVoitOpts,,,,armaa_starfallTrain2b:Return to Roland,
+armaa_starfallRecruitOpt_voitOnAlard,armaa_starfallRecruitVoitOpts,!$saidVoitAlard,,,6:armaa_starfallRecruit_voitOnAlard:Ask Voit about Recruit Alard,
+armaa_starfallRecruitOpt_voitOnPresence,armaa_starfallRecruitVoitOpts,!$saidVoitPresence ,,,"6:armaa_starfallRecruit_voitOnPresence:""Why the poor assessment?""",
+armaa_starfallRecruit_voitOnAlard,DialogOptionSelected,$option == armaa_starfallRecruit_voitOnAlard,"$saidVoitAlard = true 0
+
+FireAll armaa_starfallRecruitVoitOpts","""Alard's pretty familiar with this-"" Voit gestures at a nearby holorec drone dismissively ""-whole business, but I don't think even she enjoys it."" 
+
+She looks down and to the side. ""I didn't pry too much, but it sounds like she has bigger ambitions. I'd be proud to serve with her, either way.""",,
+armaa_starfallRecruit_voitOnPresence,DialogOptionSelected,$option == armaa_starfallRecruit_voitOnPresence,"$saidVoitPresence = true 0
+
+FireAll armaa_starfallRecruitVoitOpts","Voit grimaces. ""It means I'm bad on camera.""
+
+Roland's expression suggests he has had this conversation before. 
+""It is a real assessment criterion, but not one of mine.""",,
+armaa_starfallRecruitOpt_ehren,armaa_starfallRecruitOpts,!$metEhren,,,8:armaa_starfallRecruit_ehren:Speak with Recruit Ehrenmark,
+armaa_starfallRecruit_ehren,DialogOptionSelected,$option == armaa_starfallRecruit_ehren,"$metEhren = true 5
+BeginConversation armaa_sfo_ehrenmark
+FireAll armaa_starfallRecruitEhrenOpts","Corvin swoops in on you like a Wolf intercepting a hapless cargo ship.
+
+""Captain, captain! It's truly an honor. Corvin Ehrenmark."" His handshake is very good. 
+
+""You'll have seen my mother, yes, or heard of her? Most people have.""
+
+Roland tells you the Ehrenmarks are a Kazeron house with holdings in the western core, and that Corvin has been nothing if not consistent.
+
+""Consistent,"" Corvin agrees happily. ""is the word they use, but i'm third of three in this group, and I've been third since the beginning. So in that sense, I guess I am, ha-ha.""",,
+,,,,,,
+armaa_starfallRecruitOpt_ehrenReturn,armaa_starfallRecruitEhrenOpts,,,,armaa_starfallTrain2b:Return to Roland,
+armaa_starfallRecruitOpt_ehrenOnVoit,armaa_starfallRecruitEhrenOpts,"$metEhren
+!$saidEhrenVoit",,,6:armaa_starfallRecruit_ehrenOnVoit:Ask Ehrenmark about Recruit Voit,
+armaa_starfallRecruit_ehrenOnVoit,DialogOptionSelected,$option == armaa_starfallRecruit_ehrenOnVoit,"$saidEhrenVoit = true
+
+FireAll armaa_starfallRecruitEhrenOpts","""Voit's probably the best of us. Ask anyone, they'll say the same - though that doesn't mean they're pleased about it.""
+
+""She'll get a frigate, I expect. Somewhere quiet and out of sight."" He says it kindly, and entirely without noticing what he's said.",,
+armaa_starfallRecruitOpt_ehrenOnFamily,armaa_starfallRecruitEhrenOpts,!$askedAboutFamily,,,armaa_starfallRecruit_ehrenOnFamily:Ask about the Ehrenmark family,
+armaa_starfallRecruit_ehrenOnFamily,DialogOptionSelected,$option == armaa_starfallRecruit_ehrenOnFamily,"$askedAboutFamily = true
+
+FireAll armaa_starfallRecruitEhrenOpts","""Oh, we're nobody- really. My grandfather sat on a council on Kazeron, the whole business. My father went to the academy and did rather well, I'm told, and my mother is the host for a rather embarrassing program detailing the scandals of the Eventide houses. I was on her programme for six cycles, you see."" He doesn't seem aware of the contradiction between the two statements as he counts these off on his fingers and appears delighted rather than otherwise.",,
+armaa_starfallRecruitOpt_alard,armaa_starfallRecruitOpts,!$metAlard,,,8:armaa_starfallRecruit_alard:Speak with Recruit Alard,
+armaa_starfallRecruit_alard,DialogOptionSelected,$option == armaa_starfallRecruit_alard,"$metAlard = true 5
+BeginConversation armaa_sfo_alard
+ShowPersonVisual
+FireAll armaa_starfallRecruitAlardOpts","She sees you coming and stops what she is doing entirely, and her voice comes up half an octave.
+
+""Ser Roland - you didn't tell me -"" She approaches you at an angle, and by the time you've turned to face her, you're both in clean line of sight of a drone. ""- Vivi Alard, $playerSirOrMadam.""
+
+""No, this is, you have to understand what this is. Some of us grew up watching people who've never been within a jump point of a real fight,"" she fans herself. ""and now I'm going to be insufferable about it.""
+
+Alard's file is thicker than the other two combined. While her actual  achievements are promising, it goes into more detail regarding the viewership her appearances bring, and glowing recommendations to pursue a contract for a spin-off reality docu-series.",,
+armaa_starfallRecruitOpt_alardReturn,armaa_starfallRecruitAlardOpts,,,,armaa_starfallTrain2b:Return to Roland,
+armaa_starfallRecruitOpt_alardOnSituation,armaa_starfallRecruitAlardOpts,!$askedAboutSituation,,,"armaa_starfallRecruit_alardOnSituation:""You'd know better than me. What makes good viewing material?""",
+armaa_starfallRecruitOpt_alardOnOrder,armaa_starfallRecruitAlardOpts,!$askedAboutOrder,,,"armaa_starfallRecruit_alardOnOrder:""What brought you to the order?""",
+armaa_starfallRecruitOpt_alardOnOthers,armaa_starfallRecruitAlardOpts,!$askedAboutOthers,,,"armaa_starfallRecruit_alardOnOthers:""What's your read on the others?""",
+armaa_starfallRecruit_alardOnOthers,DialogOptionSelected,$option == armaa_starfallRecruit_alardOnOthers,"$askedAboutOthers = true
+
+FireAll armaa_starfallRecruitAlardOpts","She rubs her neck, seemingly weighing something before speaking. 
+
+""Let's see. On paper, Voit is the super serious, all business, 'bad with people' type. She's not, though. Actually, she's great company! She's just...authentic. With Voit you get the real deal, all of the time. We're working on her, uh...theatrical skills."" 
+
+""As for Ehrenmark, he's the oblivious, handsome, pampered gens-baby with a surprising heart of gold. Hmm, that's just what the producers like to highlight, though. He's been in the public eye before this show even began, like me.""",,
+armaa_starfallRecruit_alardOnOrder,DialogOptionSelected,$option == armaa_starfallRecruit_alardOnOrder,"$askedAboutOrder = true
+
+FireAll armaa_starfallRecruitAlardOpts","""Some people think I just want the exposure,"" she wags a finger, ""I have plenty of exposure! I could fall down a flight of stairs and have a show about it by next shift."" She nods to herself, smugly, as a drone drifts in closer.
+
+""You can't act your way through a boarding action, though. Either the ship comes home or it doesn't. You know exactly what I mean, right? Nobody can edit that.""",,
+armaa_starfallRecruit_alardOnSituation,DialogOptionSelected,$option == armaa_starfallRecruit_alardOnSituation,"$askedAboutSituation = true
+
+FireAll armaa_starfallRecruitAlardOpts
+
+SetTextHighlights ""outnumbered"" ""dire""","Alard bats her eyelashes at you and places a hand on her hip as she shifts a step away. ""Why, $playerSirOrMadam, you're such a flatterer.""
+
+She drops the act - or perhaps part of it. ""It's pretty simple. Holoserials run on interpersonal drama, mostly. And at this point in the show, the three of us are pretty tight.""
+
+She lets that sit for a moment, apparently without hearing it.
+
+""So we work with what we've got. People root for the underdog for a reason, right? Whatever we end up going after, the more outnumbered we seem to be, or the more dire the situation gets, the better. In other words, the less you do, the better it plays."" She seems to consider this a moment, before straightening and raising her hands up, palms facing you.
+
+""I'm too young and beautiful to die, so if it gets bad, don't hesitate to send in the cavalry.""",,
+#armaa_starfallRecruitOpt_alardAdvice,armaa_starfallRecruitOpts,"$metAlard
+!$saidAlardAdvice",,,6:armaa_starfallRecruit_alardAdvice:Ask Alard who she would bench,
+#armaa_starfallRecruit_alardAdvice,DialogOptionSelected,$option == armaa_starfallRecruit_alardAdvice,"$saidAlardAdvice = true 0
+
+FireAll armaa_starfallRecruitOpts","[TODO] She tells you, and she is right, and her reasoning is entirely about airtime.",,
+#armaa_starfallRecruitOpt_reyn,armaa_starfallRecruitOpts,!$metReyn,,,8:armaa_starfallRecruit_reyn:Speak with Recruit Reyn,
+#armaa_starfallRecruit_reyn,DialogOptionSelected,$option == armaa_starfallRecruit_reyn,"$metReyn = true 0
+
+FireAll armaa_starfallRecruitOpts",[TODO personality] Child of someone Roland served with. Tries harder than anyone here and is going to get somebody killed. Roland cannot see it.,,
+armaa_starfallRecruitOpt_done,armaa_starfallRecruitOpts,"$metVoit
+$metEhren
+$metAlard",,,"1:armaa_starfallTrain_done:""That's all of them.""",
+armaa_starfallTrain_done,DialogOptionSelected,$option == armaa_starfallTrain_done,armaa_starfallCMD proposeTarget,"After meeting the three, you give a few words and partake in several exercises that don't much resemble anything you've done from a bridge, and near the end of it find yourself with Roland once more. ""They'll want a live exercise next,"" Roland says. ""I've submitted some ideal targets, but I fear they will want to go big this season. It's likely they'll want us going after some established target with a strong pirate presence. Casualties could be quite high..."" He is quiet for a moment. ""If your fleet were to support us, the sponsors get their footage and I keep my charges. Most of them.""","armaa_starfallTrain_target:""What is the target?""
+armaa_starfallTrain_go:""Let's get on with it.""",
+armaa_starfallTrain_target,DialogOptionSelected,$option == armaa_starfallTrain_target,"ShowMapMarker $global.armaa_sfo_proposedTarget $global.armaa_sfo_proposedTarget_name ""Selected by the Household.""
+SetTextHighlights  $global.armaa_sfo_proposedTarget_name","""A minor pirate-infested world seems suitable. My superiors have proposed..."" he brings up a map, which settles squarely on $global.armaa_sfo_proposedTarget_name. ""This.""
+
+Roland rubs his hands together. ""As our auxiliary instructor, your say in the matter is just as important. So, what do you think? Should we proceed with this as the objective?""","armaa_starfallTrain_retarget:""Let's try another one.""
+armaa_starfallTrain_go:""This seems suitable.""",
+armaa_starfallTrain_retarget,DialogOptionSelected,$option == armaa_starfallTrain_retarget,"HideMapMarker
+armaa_starfallCMD rerollTarget
+ShowMapMarker $global.armaa_sfo_proposedTarget $global.armaa_sfo_proposedTarget_name ""Selected by the Household.""","""How about this?""
+OR
+""Ah, I see..well then, there is also $global.armaa_sfo_proposedTarget_name... ","armaa_starfallTrain_retarget:""Let's try another one.""
+armaa_starfallTrain_go:""This seems suitable.""",
+armaa_starfallTrain_go,DialogOptionSelected,$option == armaa_starfallTrain_go,"armaa_starfallCMD startMission
+$global.armaa_sfo_stage = RAID_PENDING","""Right."" Roland straightens, and for a moment you can see what he must have looked like when he earned his reputation.
+
+""Some of our recording staff will be temporarily attached to your $shipOrFleet, if you don't mind. I'll clear any footage they want to use with you first."" He places a hand on your shoulder. ""And they have been trained to keep out of the crews way.""
+
+""I'll depart immediately. Let's rendezvous near the target on arrival.""",armaa_starfallTrain_go2:Continue,
+armaa_starfallTrain_go2,DialogOptionSelected,$option == armaa_starfallTrain_go2,"ShowLargePlanet
+FireAll armaa_starfallNotableFleetOpts","* * *
+
+True to his word, a contingent of filming staff and their train of equipment carts board the fleet with no hassle.
+
+Some time later on the bridge, an older man in a guady outfit with a crooked grin approaches you.
+
+""Captain $playerName! I was, ah, wondering- it would be great for the show if we were able to interview your crew, get an idea of how the working $manOrWoman views their job, perhaps even get a tour of the $shipOrFleet? I'm sure the people are dying to learn more about you.""",,
+armaa_starfallTrain_go3,DialogOptionSelected,$option == armaa_starfallTrain_go3,"EndConversation
+FireAll PopulateOptions","The producer thumbs the display dark and stands, tucking the datapad under one arm.
+
+""Provisional, all of it, you understand. Once we have the rest of the footage, the whole thing gets recut around that.""
+
+Then he's gone, and his crew go with him. There is more to do before the $shipOrFleet departs.",,
+,,,,"* * *
+
+True to his word, a contingent of filming staff and their train of equipment carts board the fleet with no hassle.
+
+Some time later on the bridge, an older man in a gaudy outfit with a crooked grin approaches you.
+
+""Captain $playerName! I was, ah, wondering- it would be great for the show if we were able to interview your crew, get an idea of how the working $manOrWoman views their job, perhaps even get a tour of the $shipOrFleet? I'm sure the people are dying to learn more about you.""",,
+"# ziggurat, oneslaught, ships with shroud mods, ships with threat mods
+# AI Ships",#TODO co,,,,,
+armaa_starfallNotableFleetOptGeneric,armaa_starfallNotableFleetOpts,,,,armaa_starfallNotableFleetOptGenericResp:Allow the producer to interview your crew,
+armaa_starfallNotableFleetOptZiggy,armaa_starfallNotableFleetOpts,PlayerFleetHasShipWithBaseHull ziggurat,,,armaa_starfallNotableFleetOptZiggyResp:Allow limited access to the Ziggurat,
+armaa_starfallNotableFleetOptOneslaught,armaa_starfallNotableFleetOpts,PlayerFleetHasShipWithBaseHull onslaught_mk1,,,armaa_starfallNotableFleetOptOneslaughtResp:Allow limited access to the Onslaught Mk. I,
+armaa_starfallNotableFleetOptFragment,armaa_starfallNotableFleetOpts,PlayerFleetHasFragmentShips,,,armaa_starfallNotableFleetOptFragmentResp:Allow limited access to ships utilizing Threat technology,
+armaa_starfallNotableFleetOptDecline,armaa_starfallNotableFleetOpts,,,,"armaa_starfallNotableFleetOptDeclineResp:""No filming, please.""",
+armaa_starfallNotableFleetOptFragmentShips,armaa_starfallNotableFleetOpts,"PlayerFleetHasFragmentShips
+!PlayerFleetHasShroudedShips",,Your $shipOrFleet uses technology obtained from the Threat - but perhaps that is not something that should be divulged.,,
+armaa_starfallNotableFleetOptShroudedShips,armaa_starfallNotableFleetOpts,"PlayerFleetHasShroudedShips
+!PlayerFleetHasFragmentShips",,"Your $shipOrFleet uses technology some would consider demonic - this, of course, is something that probably should not be openly broadcasted.",,
+armaa_starfallNotableFleetOptShroudedFragShips,armaa_starfallNotableFleetOpts,"PlayerFleetHasShroudedShips
+PlayerFleetHasFragmentShips",,Your $shipOrFleet carries Threat salvage and worse besides modifications some would call demonic - not the sort of thing to broadcast openly.,,
+,,,,,,
+armaa_starfallNotableFleetOptDeclineResp,DialogOptionSelected,$option == armaa_starfallNotableFleetOptDeclineResp,"EndConversation
+FireAll PopulateOptions","The grin does not go anywhere, which tells you he has been told no before and has a procedure for it.
+
+""Of course, of course. Your $shipOrFleet, your call."" He makes a note on the datapad without looking at it. ""We'll work with what the exercise gives us. It usually gives us plenty.""",,
+armaa_starfallNotableFleetOptGenericResp,DialogOptionSelected,$option == armaa_starfallNotableFleetOptGenericResp,$global.armaa_sfo_ratings=1,"They spend the better part of a day at it. Your crew are asked what they eat, what they miss, and whether they are ever frightened, and most of them give the answer they think is wanted rather than the true one.
+
+The rough cut runs four minutes. An engineer you have never spoken with at length talks about a what she is proud of; a deckhand's joke about the food is trimmed to the half of it that sounds like a complaint. There is a long, slow pass down a corridor with the lights dimmed for it, which is not how the corridor naturally looks.
+
+""Warm,"" the producer says, pleased. ""That's the word we want. Warm.""
+
+None of it is untrue. It is simply not what happened.",armaa_starfallTrain_go3:Continue,
+armaa_starfallNotableFleetOptZiggyResp,DialogOptionSelected,$option == armaa_starfallNotableFleetOptZiggyResp,"Highlight ""A SHIP THAT SHOULDN'T EXIST?!""
+$global.armaa_sfo_ratings=2
+$player.armaa_sfo_showedZiggurat = true","The rough cut you are shown opens on the motes being deployed, which have been slowed to a third of their speed and scored with something in a minor key. A caption reads 'A SHIP THAT SHOULDN'T EXIST?!', in bold font. 
+
+Your technology officer's carefully hedged assessment and your own curated account of its acquisition have been cut and remixed to stress nobody knows how the hull was built or what it was built for. Interestingly, the cut seems to go to great lengths avoiding suggesting Tri-Tachyon has any involvement in its creation.
+
+The producer, perhaps weighing your reaction, volunteers, ""We had to trim for pacing.""
+
+There is an interview-like segment in which the XO of the Ziggurat-class and a tech officer appear to be feuding. As far as you're aware, they rarely speak to each other, but the edit is very convincing.",armaa_starfallTrain_go3:Continue,
+armaa_starfallNotableFleetOptFragmentResp,DialogOptionSelected,$option == armaa_starfallNotableFleetOptFragmentResp,"Highlight ""WHAT ELSE IS OUT THERE""
+$global.armaa_sfo_ratings=2
+$player.armaa_sfo_showedThreat = true","You are shown a rough cut. It opens on the salvage under hard white light, turning slowly, beneath a caption: WHAT ELSE IS OUT THERE?
+
+Between shots of your ships, three experts, none of whom have seen it in person, agree that the implications are grave, then disagree at length about which implications and how grave. A man captioned as the 'foremost Domain Era archivist' explains that these things exist to destroy technology, and that this is why they will come for us, and surely it is the punishment Ludd himself has personally selected.
+
+The segment moves to the question the average viewer has a frame of reference for, and stays there: Is it AI? 
+
+Two of the panel say obviously. The third begins to explain why the distinction matters enormously and is cut off mid-sentence by a graphic. The narration asks three separate times whether the Sector is prepared as ominous music swells in the background. 
+
+""People like a question,"" the producer says.",armaa_starfallTrain_go3:Continue,
+armaa_starfallNotableFleetOptOneslaughtResp,DialogOptionSelected,$option == armaa_starfallNotableFleetOptOneslaughtResp,"$global.armaa_sfo_ratings=2
+$player.armaa_sfo_showedOneslaught = true","You grant limited access to the Onslaught Mk.I. Whatever you tell them about how it came to be yours, very little of it survives the edit.
+
+A historian credited to an institution you have never heard of walks along a holo of the hull and speaks about the Onslaught lineage with enormous confidence, followed by a retired Hegemony officer who claims the successor states ""rightful custody"" and is not asked to elaborate. Nothing in the segment is a claim exactly, and all of it provides plausible deniability.
+
+There is slowed footage of you placing a hand on the armor, and more of you walking its length, wearing an expression the director described at the time as legacy.
+
+""People connect with a moment,"" the producer says.",armaa_starfallTrain_go3:Continue,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+armaa_starfallIntakeHail,BeginFleetEncounter,"$armaa_sfo_intakeSpawned score:100
+!$entity.ignorePlayerCommRequests
+!$global.armaa_sfo_briefed
+$global.armaa_sfo_atTarget","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
+$hailing = true 0",,,
+armaa_starfallIntakeComms,OpenCommLink,"$entity.armaa_sfo_intakeSpawned score:9999
+!$entity.ignorePlayerCommRequests
+$global.armaa_sfo_atTarget","$entity.ignorePlayerCommRequests = true 1
+$hailing = false 0
+BeginConversation armaa_sfo_roland
+ShowPersonVisual
+$option = armaa_starfallBrief1 0
+FireBest DialogOptionSelected",,,
+armaa_starfallBrief1,DialogOptionSelected,$option == armaa_starfallBrief1,ShowSecondPerson armaa_sfo_alard,"""Captain! Good. The way I see it, we should move together and strike the enemy at-""
+
+""Sir, if I may?"" Vivi interjects. ""Wouldn't it be better if we take charge here?"" She shifts about onscreen. ""It'd make a better opening shot."" Roland grimaces.
+
+""Be that as it may, the Captain here has the more experienced crew, so it's reasonable that we defer to $himOrHer."" 
+
+Vivi nods along to the explanation. ""That's true. But having $himOrHer wipe them out isn't going to get a lot of traction for any of us. And,"" she continues, ""the better we perform here, the more leverage we'll have in the future."" Roland exhales, rubbing his temples. ""...Voit?"" ",armaa_starfallBrief2:Continue,
+armaa_starfallBrief2,DialogOptionSelected,$option == armaa_starfallBrief2,"HideSecondPerson
+ShowSecondPerson armaa_sfo_voit
+ShowThirdPerson armaa_sfo_ehrenmark","""I see what Alard is after."" A pause. ""A decisive blow with us at the forefront demonstrates the aptitude of the Order better than Captain $playerLastName leading the charge. Tactically, though, it is unwise.""
+
+""Mmm."" Roland taps a nearby console. ""Ehrenmark?""
+
+""Huh? Oh, I, ah- well..I'm inclined to agree with Alard."" Ehrenmark says. ""We might as well make a show out of it. I know that's not really your thing, Voit, and same for you, Sir Roland, but we can use it to our advantage.""",armaa_starfallBrief3:Continue,
+armaa_starfallBrief3,DialogOptionSelected,$option == armaa_starfallBrief3,,"Roland shares a look with you. Two people who have done this for real, in a room with three who haven't. Then, for their benefit: ""I don't agree. You are all untested in live combat. Do not underestimate the enemy."" He sighs.
+
+""Let us settle this in the spirit of the League and decide by vote. I believe Voit has the more reasonable approach, which leaves us two-for-two."" He nods to you. ""Captain, if you will: speak your piece.""","armaa_starfallBrief_go:""Let's not take any unnecessary risks. Follow my lead.""
+armaa_starfallBrief_goAggressive:""Take the lead. We'll be right behind you.""",
+armaa_starfallBrief_go,DialogOptionSelected,$option == armaa_starfallBrief_go,"armaa_starfallCMD watchBattle
+armaa_starfallCMD briefingDone
+$global.armaa_sfo_favor++
+FireAll PopulateOptions","""Right."" Roland does not look pleased so much as relieved. ""You heard the Captain. Form on their flank and hold there until you're told otherwise.""
+
+The three sound off their acknowledgements; and Alard smiles at the drone rather than at you, and says of course, absolutely, whatever the Captain thinks best.
+
+The exercise fleet slides into position and stays there.",,
+armaa_starfallBrief_goAggressive,DialogOptionSelected,$option == armaa_starfallBrief_goAggressive,"armaa_starfallCMD watchBattle
+armaa_starfallCMD briefingDoneLead
+$global.armaa_sfo_ratings++
+FireAll PopulateOptions","There is a pause on the channel.
+
+""Very well."" Roland says it evenly. ""We have the approach. Let's move in.""",,
+armaa_starfallGarrisonDefeated,ArmaaStarfallGarrisonDefeated,,"armaa_starfallCMD raidDone
+armaa_starfallCMD tallyLosses
+armaa_starfallCMD stopWatchingBattle
+armaa_starfallCMD score
+$option = armaa_starfallDebrief1
+FireBest DialogOptionSelected",,,
+armaa_starfallDebrief1,DialogOptionSelected,$option == armaa_starfallDebrief1,"$global.armaa_sfo_stage = DEBRIEF
+$option = armaa_starfallDebrief2
+FireBest DialogOptionSelected","The debris is still hot when Roland is patched onto the bridge.
+
+""Captain."" He looks a decade older than he did two hours ago, which you gather is normal for him. ""Give me a moment.""",,
+armaa_starfallDebrief2,DialogOptionSelected,$option == armaa_starfallDebrief2,FireAll armaa_starfallResolution,,,"Everything below appends via FireAll, then the options node fires last."
+armaa_starfallRes_voitOk,armaa_starfallResolution,$global.armaa_sfo_alive_voit score:30,,"""Voit's reported in already, no issues to speak of.""",,
+armaa_starfallRes_voitLost,armaa_starfallResolution,!$global.armaa_sfo_alive_voit score:30,,"""Voit's flagship was lost..luckily, her escape pod was recovered. We're still performing search and rescue for the remainder of the crew and command staff.""",,
+armaa_starfallRes_ehrenOk,armaa_starfallResolution,$global.armaa_sfo_alive_ehrenmark score:20,,"""Ehrenmark pulled out intact.""",,
+armaa_starfallRes_ehrenLost,armaa_starfallResolution,!$global.armaa_sfo_alive_ehrenmark score:20,,"""Ehrenmark lost his flagship, but seemed rather.. cheerful about it, which I've not decided how I feel about yet.""",,
+armaa_starfallRes_alardOk,armaa_starfallResolution,$global.armaa_sfo_alive_alard score:10,,"""The XO assisting Alard has reported that they're fine. I have not been able to get her on a channel just yet.""",,
+armaa_starfallRes_alardLost,armaa_starfallResolution,!$global.armaa_sfo_alive_alard score:10,,"""Alard's escape pod was recovered. She asked whether it was caught on camera before she asked for a medic.""",,
+armaa_starfallRes_clean,armaa_starfallResolution,$global.armaa_sfo_losses == 0 score:1,,"""All in all, a clean operation. Losses have been kept to a minimum. Let us hope it's enough to satisfy everyone.""",,
+armaa_starfallRes_bloodied,armaa_starfallResolution,$global.armaa_sfo_losses > 0 score:1,,"""We took a few losses, but we came out victorious in the end. I'm not sure how this will be received, but..mission accomplished.""",,
+armaa_starfallRes_wiped,armaa_starfallResolution,$global.armaa_sfo_wiped score:2,,"""Search and rescue operations are still underway. However, we've suffered critical losses..this will be considered a failure, from all angles.""",,
+,,,,,,
+,,,#$player.isLeagueMember,,,
+armaa_starfallDebriefOption,PopulateOptions,"$market.id == fikenhild
+$menuState == main
+$global.armaa_sfo_stage == DEBRIEF",,,4:armaa_starfallDebrief3:Meet Ser Roland,
+armaa_starfallDebrief3,DialogOptionSelected,$option == armaa_starfallDebrief3,"BeginConversation armaa_sfo_roland
+armaa_starfallCMD score
+ShowPersonVisual","You, yet again, take the now familiar path to the Starfall Order's HQ. This time however, Roland is sitting outside on a bench.
+
+""Captain. Sit, if you like.""
+
+""The broadcast has been cut up and they're preparing to release it. I've watched it twice, which is twice more than I generally manage."" He rubs the back of his neck. ""It's ... good, I'll give them that. Whoever cut it knows their business better than I know mine.""
+
+""Only I've had the returns since the second, you see, and I've had four days to sit with the pair of them. If you'd handed me the segment and the figures separately I'd not have guessed they came off the same engagement.""
+
+""Anyway. Here's what I actually have.""",armaa_starfallDebrief4:Continue,"tallyLosses here as a backstop. stopWatchingBattle before anything reads the flags, so a scrap on the way home cannot overwrite them."
+armaa_starfallDebrief4,DialogOptionSelected,$option == armaa_starfallDebrief4,"SetTextHighlights  ""Fleet Rating"" ""Forces commited"" ""SFO Losses"" ""Ratings"" $global.armaa_sfo_playerTotalFP $global.armaa_sfo_playerCommitPct $global.armaa_sfo_losses
+FireAll armaa_starfallResolution2","///--- REPORT
+
+Fleet Rating: $global.armaa_sfo_playerTotalFP
+///---------
+Forces commited: $global.armaa_sfo_playerShareOfForce%
+///---------
+SFO Losses: $global.armaa_sfo_losses
+///---------
+Ratings: $global.armaa_sfo_ratingsBand
+///---------",,
+,,,,,,
+armaa_starfallRes_mimimal,armaa_starfallResolution2,"$global.armaa_sfo_playerShareOfForce <= 35 score:5
+$global.armaa_sfo_battleSeen",,"""Highlighting the aspirants was easy enough, I'm given to understand. There wasn't a great deal else in frame. The producers are pleased.""",,
+armaa_starfallRes_equal,armaa_starfallResolution2,"$global.armaa_sfo_playerShareOfForce > 35
+$global.armaa_sfo_playerShareOfForce <= 55
+$global.armaa_sfo_battleSeen",,"""About half of what went in was yours. That's in the report, of course, so you'll have seen it.""
+
+""Makes for a muddled segment, mind. Whoever cut it had to decide whose engagement it was and never quite settled."" He shrugs  ""But the aspirants flew alongside somebody who knows the work. They'll have taken more out of that than out of the rest of it put together.""",,
+armaa_starfallRes_carried,armaa_starfallResolution2,"$global.armaa_sfo_playerShareOfForce > 55
+$global.armaa_sfo_battleSeen",,"""The producers were rather annoyed with how much of it you did yourself. They'll manage.""
+
+He looks at the bench rather than at you. ""Many made it back who might not have. In the end, that was the more preferable outcome anyway.""",,
+armaa_starfallRes_noData,armaa_starfallResolution2,!$global.armaa_sfo_battleSeen score:6,,"""I've not got a clean account of it yet. So this is the short version.""",,"If this ever shows in play, the listener is not firing. Check the log for [starfall] engagement."
+,,,,,,
+armaa_starfallRes_favor_high,armaa_starfallResolution2,$global.armaa_sfo_favor >= 7,,"""For my part, thank you. I don't know if things would have gone as smoothly without you. Our ships are mostly intact, and the quartermaster will be sure to send his regards.""",,
+armaa_starfallRes_favor_low,armaa_starfallResolution2,$global.armaa_sfo_favor <= 2,,"""They took their lumps."" He shrugs. 
+
+""But it's not the worst outcome. They'll fly again and they'll fly better for it, provided somebody sits them down about it, which I intend to.""",,
+armaa_starfallRes_favor_mid,armaa_starfallResolution2,"$global.armaa_sfo_favor < 4
+$global.armaa_sfo_favor >= 2",,"""This..wasn't pretty. I'll not pretend otherwise in the report. They were not ready for what they were put in front of.""",,
+,,,,,,
+armaa_starfallRes_ratings_high,armaa_starfallResolution2,$global.armaa_sfo_ratings >= 7,,"""The reception for our little exercise has been strong. The king has already credited his personal authorization of the operation. We'll see if it helps him.""",,
+armaa_starfallRes_ratings_low,armaa_starfallResolution2,$global.armaa_sfo_ratings <= 2,,"""Let's talk about how the broadcast was received, yes? I'm told the numbers were acceptable. """,,
+armaa_starfallRes_ratings_mid,armaa_starfallResolution2,"$global.armaa_sfo_ratings < 4
+$global.armaa_sfo_ratings > 2",,"""The reception for our little exercise was mild. Nothing wrong with that, though.""",,
+,,,,,,
+armaa_starfallRes_both_high,armaa_starfallResolution2,"$global.armaa_sfo_ratings >= 7
+$global.armaa_sfo_favor >= 7",,"""I must say, I am impressed. I thought the outcome would come at either the cost of our personnel or meeting our business obligations - but you have achieved both.""",,
+armaa_starfallRes_both_low,armaa_starfallResolution2,"$global.armaa_sfo_ratings < 2
+$global.armaa_sfo_favor < 2",,"""I must say.. this has been an utter failure.""",,
+armaa_starfallDebrief5,armaa_starfallResolution2,,,,armaa_starfallDebrief6:Continue,
+armaa_starfallDebrief6,DialogOptionSelected,$option == armaa_starfallDebrief6,"$global.armaa_sfo_stage = RESOLVED
+$global.armaa_sfo_debriefed = true
+!$global.armaa_sfo_wiped
+FireAll PopulateOptions","He gets up off the bench and does not sit back down, which is how you learn the conversation is over.
+
+""Walk with me. There's a thing I've been told to do properly and I'd sooner do it badly and be finished.""
+
+The berth is two levels down and colder than the rest of the compound. There is a Damascus in it with the Order's marks still on the hull and a crew standing about with nothing to do.
+
+""The Household is paying you, which you'll have seen. This is from us."" He puts a hand flat on the plating. ""She's sound. Ehrenmark took her out twice and brought her back both times, which I mention because he'll tell you himself if you let him.""
+
+""That's the whole of it, Captain. It'll air again next month and I'll not be watching.""
+
+He goes back inside before you can answer.",,
+armaa_starfallDebrief6_wiped,DialogOptionSelected,$option == armaa_starfallDebrief6,"$global.armaa_sfo_stage = RESOLVED
+$global.armaa_sfo_debriefed = true
+$global.armaa_sfo_wiped score: 10
+FireAll PopulateOptions","He gets up off the bench and stands there a moment without going anywhere.
+
+""The Household is paying you. That's arranged, and it'll be in order, and I'd not have you think otherwise.""
+
+Two levels down there is a berth with nothing in it. He does not take you to see it and you do not ask why you know it's there.
+
+""There was to be a ship. I'll not insult you by handing it over this week."" A pause. ""Ask me again when the search is called off. I'll either have it for you or I'll have a reason.""
+
+""Go on, then.""
+
+He is still standing outside when your shuttle lifts.",,
+,,,,,,
+# ---- Starfall: the broadcast (final reel) ----,,,,,,
+armaa_starfallReelBarStart,AddBarEvents,"$market.id == fikenhild
+!$global.armaa_sfo_watchedReel
+$global.armaa_sfo_debriefed","AddBarEvent armaa_starfallReel1 ""Watch the Starfall Order's reel"" ""A video is playing that includes your work with the Starfall Order.""",,,
+armaa_starfallReel1,DialogOptionSelected,$option == armaa_starfallReel1,"$global.armaa_sfo_watchedReel = true
+ShowDefaultVisual","You take a seat to watch the holorec. 
+
+The king of Fikenhild is featured first and prominently, looking rather sternly, arms crossed, before he smiles widely. Roland follows their appearance, followed by a run of faces you don't recognize. Voit, Ehrenmark, and Alard show up near the end. 
+
+It ends with a titlecard, THE KING'S OWN. Across from you a patron glances up at the screen, then over at your corner, then back at the screen.",armaa_starfallReel_open:Continue,
+armaa_starfallReel_open,DialogOptionSelected,$option == armaa_starfallReel_open,,"The episode opens on a recap: the aspirants taking on a run of challenges, edited for pace and scored for tension, ending with a young man being dismissed by a vote the audience apparently gets to cast.
+
+The crowd in the establishment says the phrase along with the narrator, which tells you how long this has been running.",armaa_starfallReel_open2:Continue,
+armaa_starfallReel_open2,DialogOptionSelected,$option == armaa_starfallReel_open2,FireAll armaa_starfallReel,"What follows next is standard reality-rec affair. Eventually the narrator announces the arrival of a special guest with a shot showing you walking into the building, flanked by your bodyguards.
+
+""...Celebrity captain $playerName has entered the King's castle...""",,
+armaa_starfallReel_cbZiggy,armaa_starfallReel,$player.armaa_sfo_showedZiggurat score:46,,"The Ziggurat appears, motes blooming out of it in slow motion, then a long pan down the hull from above. ""...owner of a mysterious phase ship...""",,
+armaa_starfallReel_cbOneslaught,armaa_starfallReel,$player.armaa_sfo_showedOneslaught score:44,,"A holo of the Onslaught Mk.I follows, with you and a few of your crew arranged in front of it. ""An ancient relic of the old Domain - but what does $playerHeOrShe intend to do with it?""",,
+armaa_starfallReel_cbThreat,armaa_starfallReel,$player.armaa_sfo_showedThreat score:42,,"The shot cuts to one of your ships modified with Threat technology. ""And what has $playerHeOrShe brought back from the dark?""",,
+armaa_starfallReel_cbNothing,armaa_starfallReel,,,"Another shot of your $shipOrFleet from orbit, at distance, scored like an omen arriving somewhere it is not welcome.",,
+armaa_starfallReel_cbReact,armaa_starfallReel,,,"The camera shifts to Alard, who seems all too surprised by your arrival. A confessional for each aspirant follows your introduction, all three of them saying the same complimentary things about you using different words.
+
+Your tenure as VIP instructor follows, most of which involved being coached to stand around and look imposing. Everything culminates with the king making an appearance and describing their final challenge - a live exercise. The production team goes to great lengths to show the reactions of everyone with multiple dramatically zoomed-in shots. 
+
+The final scene shows the order's ships departing Westernesse to swelling music, before cutting to a commercial break.",armaa_starfallReel2:Continue,
+armaa_starfallReel2,DialogOptionSelected,$option == armaa_starfallReel2,FireAll armaa_starfallReel2,,,
+armaa_starfallReel_roland,armaa_starfallReel2,$global.armaa_sfo_favor >= 4 score:20,,"Roland is shot the way the format shoots a second-in-command. He appears when someone needs correcting, delivers the correction, and the camera leaves. Twice the edit cuts to his face after a mistake.",,
+armaa_starfallReel_voitOk,armaa_starfallReel2,$global.armaa_sfo_alive_voit score:88,,"The SFO Gareth is shown unleashing a torrent of ballistics downrange into a hapless pirate. Production has clearly settled that Voit is the professional - she is shown briefly, stone-faced, but the body of the footage is the ship doing what it does best.",,
+armaa_starfallReel_voitLost,armaa_starfallReel2,!$global.armaa_sfo_alive_voit score:88,,"The SFO Gareth's loss runs long, most of it from inside, because there were people aboard filming. Voit is in it for two seconds, giving an order the audio doesn't carry. The final moments of the ship being sunk repeat from three different angles to rather somber music, before the show moves on to several escape pods rocketing away from the hull.
+
+The cut of this scene is a little strange. There is something they decided against showing.",,
+armaa_starfallReel_alardOk,armaa_starfallReel2,$global.armaa_sfo_alive_alard score:84,,"Alard is in a great deal of it, in a way Voit was not. The camera is inside the SFO Astolat for most of the engagement, on her face, and it cuts to her reactions during other people's fighting.",,
+armaa_starfallReel_alardLost,armaa_starfallReel2,!$global.armaa_sfo_alive_alard score:84,,"Plumes of smoke rise from the battered hull of the SFO Astolat as it goes down. Alard is shown personally helping crew into escape pods. She is shown in a confessional afterward, teary-eyed. You know these were shot long after the engagement, but judging by the reactions of other patrons, you appear to be the only one who does.",,
+armaa_starfallReel_ehrenOk,armaa_starfallReel2,$global.armaa_sfo_alive_ehrenmark score:80,,"Ehrenmark on the bridge is a different man. He is precise and wastes no words.
+
+That man is gone afterward. His confessional starts with real insight about the engagement and arrives, by a route you can't quite follow, at the name of popular energy drink brand.",,
+armaa_starfallReel_ehrenLost,armaa_starfallReel2,!$global.armaa_sfo_alive_ehrenmark score:80,,"Ehrenmark loses the SFO Lyonesse. There is no confessional afterward  - what runs instead is four minutes of a man expertly directing his crew as the ship comes apart around them, and it is the only stretch of the hour that isn't selling anything.",,
+armaa_starfallReel_break,armaa_starfallReel2,,,,armaa_starfallReel_final:Keep watching,
+armaa_starfallReel_final,DialogOptionSelected,$option == armaa_starfallReel_final,FireAll armaa_starfallReel3,"The exercise ends. There is the return to Westernesse, the ships coming back into the orbit of Fikenhild, and the arrivals hall.",,
+armaa_starfallReel_shareMinimal,armaa_starfallReel3,"$global.armaa_sfo_battleSeen
+$global.armaa_sfo_playerShareOfForce <= 35 score:60",,"Your forces appear intermittently, mostly at the edges of shots that are about someone else. The narration's angle is that you served as a watchful auxiliary, ready to step in should the need arise, while the prowess of the King's own won the day.",,
+armaa_starfallReel_shareEqual,armaa_starfallReel3,"$global.armaa_sfo_battleSeen
+$global.armaa_sfo_playerShareOfForce > 35
+$global.armaa_sfo_playerShareOfForce <= 50 score:60",,"Your ships are in a great deal of the footage and none of the narrative: the edit keeps having to account for you, and keeps finding ways not to. It seems they settled on treating your fleet like weather; present, consequential, and typically uninteresting.",,
+armaa_starfallReel_shareCarried,armaa_starfallReel3,"$global.armaa_sfo_battleSeen
+$global.armaa_sfo_playerShareOfForce > 50 score:60",,"The engagement you fought is not the engagement that airs. Your fleet is prominent, but the fighting is cut so the recruits appear at the end of every kill.",,
+armaa_starfallReel_closeHigh,armaa_starfallReel3,$global.armaa_sfo_ratings >= 4 score:12,,"The king meets them at the hall, in a suit, and thanks the Order and the Captain who flew with it. He does not hurry any of it. Whoever scheduled this understood exactly what they had.",,
+armaa_starfallReel_closeMid,armaa_starfallReel3,"$global.armaa_sfo_ratings >= 2
+$global.armaa_sfo_ratings < 4 score:11",,The king meets them at the hall and thanks the Order in the general direction of the camera. It is the correct length for the segment and not a second longer.,,
+armaa_starfallReel_closeLow,armaa_starfallReel3,$global.armaa_sfo_ratings <= 1 score:10,,"The king does not meet them. The episode ends on the ships coming in, which is a fine shot, and nobody says anything over it.",,
+armaa_starfallReel_opts,armaa_starfallReel3,$global.armaa_sfo_stage == RESOLVED score:5,,,"1:armaa_starfallReel_off:Turn it off
+1:armaa_starfallReel_again:Watch it again",
+armaa_starfallReel_again,DialogOptionSelected,$option == armaa_starfallReel_again,,"You watch it again. It is better the second time, which is the thing you will think about later.",1:armaa_starfallReel_off:Turn it off,
+armaa_starfallReel_off,DialogOptionSelected,$option == armaa_starfallReel_off,"EndConversation
+ShowDefaultVisual
+FireAll PopulateOptions",You turn it off.,,

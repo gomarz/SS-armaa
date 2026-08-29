@@ -46,12 +46,12 @@ public class armaa_counterShieldScript extends BaseEveryFrameCombatPlugin {
     private static final float TARGET_REACQUIRE_RANGE = 1200f;
     private static final float TARGET_REACQUIRE_ANGLE = 360f;
 
-    private static final float TURN_RATE = 180f;
+    private static final float TURN_RATE = 360f;
 
     // Homing degrades over projectile lifetime.
     // HOMING_DEGRADATION_MIN: fraction of TURN_RATE remaining at end of life (0.1 = 10% turn rate at expiry)
     // HOMING_DEGRADATION_CURVE: <1 falls off faster early, >1 stays sharp longer, 1 = linear
-    private static final float HOMING_DEGRADATION_MIN = 0.50f;
+    private static final float HOMING_DEGRADATION_MIN = 0.10f;
     private static final float HOMING_DEGRADATION_CURVE = 1.6f;
 
     private static final float SWAY_AMOUNT_PRIMARY = 1f;
@@ -66,8 +66,8 @@ public class armaa_counterShieldScript extends BaseEveryFrameCombatPlugin {
     private static final int INTERCEPT_ITERATIONS = 3;
     private static final float INTERCEPT_ACCURACY_FACTOR = 1f;
 
-    private static final float GUIDANCE_DELAY_MAX = .05f;
-    private static final float GUIDANCE_DELAY_MIN = 0f;
+    private static final float GUIDANCE_DELAY_MAX = .15f;
+    private static final float GUIDANCE_DELAY_MIN = .1f;
 
     private static final boolean BROKEN_BY_PHASE = true;
     private static final boolean RETARGET_ON_SIDE_SWITCH = false;
