@@ -1,0 +1,40 @@
+{
+  "hullName": "Shield",
+  "hullId": "armaa_shield_harper",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/armaa/ships/leynos/harper/armaa_harper_shield.png",
+  "style": "MIDLINE",
+  "height": 98,
+  "width": 48,
+  "center": [23, 58],
+  "collisionRadius": 42.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 42,
+  "viewOffset": 0,
+  "builtInMods": [
+    "novent",
+    "ablative_armor"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -90,
+      "locations": [28, -19]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -11, -18.5,
+    8, -21,
+    36, -18,
+    36, -13.5,
+    28, -9.5,
+    15.5, -8.5,
+    -2, -10,
+    -12, -15.5
+  ]
+}

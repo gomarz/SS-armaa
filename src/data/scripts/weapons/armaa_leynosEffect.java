@@ -169,7 +169,7 @@ public class armaa_leynosEffect extends BaseCombatLayeredRenderingPlugin impleme
         float aim2 = MathUtils.getShortestRotation(global, armL.getCurrAngle());
         boolean noanim = true;
 
-        if (armL.getSpec().getWeaponId().equals("armaa_leynosBoostKnuckle") ||armL.getSpec().getWeaponId().equals("armaa_ashura_leftArm") ) {
+        if (armL.getSpec().getWeaponId().equals("armaa_leynosBoostKnuckle") ||armL.getSpec().getWeaponId().equals("armaa_ashura_leftArm") || armL.getSpec().getWeaponId().equals("armaa_harper_leftArm")) {
             noanim = false;
         }
         if (armL != null) 

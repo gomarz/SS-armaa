@@ -71,6 +71,11 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
     // of the uptime slewing around. Checked against the FLANKED heading (where
     // we'll actually be going), not the direct angle-to-target.
     private static final float MAX_DASH_FACING_ERROR = 45f;
+    // Plain-engagement dash band. Below the low end the target is already in our
+    // face and a charge accomplishes nothing; above the high end we'd run out of
+    // dash before reaching it.
+    private static final float ENGAGE_REACH_MULT = 1.1f;  // fraction of estimated dash reach
+    private static final float ENGAGE_MIN_GAP    = 100f;  // gap beyond both collision radii
     // ========================================================================
 
     private static Map approachComfort = new HashMap();
@@ -130,8 +135,6 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
         if (engine.isPaused()) {
             return;
         }
-        Global.getLogger(this.getClass()).info("map " + engine.getMapWidth() + "x" + engine.getMapHeight()
-        + " ship at " + ship.getLocation().x + "," + ship.getLocation().y);
         tracker.advance(amount);
         if (!tracker.intervalElapsed()) {
             return;
@@ -155,25 +158,32 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
         boolean inCriticalState = flags.hasFlag(AIFlags.NEEDS_HELP) || flags.hasFlag(AIFlags.IN_CRITICAL_DPS_DANGER);
         boolean needsToGetToSafety = (Boolean) ship.getCustomData().get("armaa_isFallingBack");
 
-        // Recovery now also requires the critical flags to be clear. Previously
-        // this keyed on flux alone, which was fine when flux was the only
-        // trigger (FALLBACK_FLUX > RECOVER_FLUX gives hysteresis) but broke once
-        // a critical-flag fallback could fire at low flux: the state would set
-        // and clear on alternating ticks and the ship would jitter in place.
-        if (needsToGetToSafety && ship.getFluxLevel() <= RECOVER_FLUX && !inCriticalState) {
-            ship.getCustomData().put("armaa_isFallingBack", false);
-            ShipAPI newTarget = AIUtils.getNearestEnemy(ship);
-            ship.setShipTarget(newTarget); // can be null
-            return;
-        }
-
         // Ally crediting on the retreat trigger. The critical flags respond to
         // incoming damage pressure with no headcount awareness, which is why one
         // high-DPS boss read identically to being swarmed. Now they only force a
         // fallback when local net danger says nobody is actually covering us.
-        boolean fluxForcesFallback = ship.getFluxLevel() >= FALLBACK_FLUX;
-        boolean hullForcesFallback = ship.getHullLevel() <= FALLBACK_HULL_FLOOR;
         boolean unsupported = computeNetDangerAtPoint(ship.getLocation(), FALLBACK_SUPPORT_RADIUS) > FALLBACK_DANGER_FLOOR;
+        boolean fluxForcesFallback = ship.getFluxLevel() >= FALLBACK_FLUX;
+        // A dire hull only forces a fallback while nobody is covering us. Hull
+        // does not come back mid-battle, so an unconditional hull trigger is a
+        // one-way latch: it re-fired every tick for the rest of the fight, kept
+        // BACK_OFF pinned on, and re-armed the escape dash on every cooldown.
+        boolean hullForcesFallback = ship.getHullLevel() <= FALLBACK_HULL_FLOOR && unsupported;
+
+        // Two ways out of a fallback. Our own state recovered (flux vented and
+        // nothing critical), or the situation did (nothing is pressuring us any
+        // more). The second is what releases a hull-triggered fallback, since
+        // the first can never fire on hull alone.
+        boolean selfRecovered = ship.getFluxLevel() <= RECOVER_FLUX && !inCriticalState;
+        boolean situationRecovered = !unsupported && !inCriticalState && !fluxForcesFallback;
+        if (needsToGetToSafety && (selfRecovered || situationRecovered)) {
+            ship.getCustomData().put("armaa_isFallingBack", false);
+            ship.getCustomData().remove("armaa_isEscaping");
+            ship.getCustomData().remove("armaa_rampageHeading");
+            ShipAPI newTarget = AIUtils.getNearestEnemy(ship);
+            ship.setShipTarget(newTarget); // can be null
+            return;
+        }
 
         if (needsToGetToSafety || fluxForcesFallback || hullForcesFallback || (inCriticalState && unsupported)) {
             // force the core AI to back off for a bit
@@ -237,7 +247,19 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
         // willingness, this is about not wasting the system.
         float flankOffset = computeFlankOffset(attackTarget);
         float toTarget = VectorUtils.getAngle(ship.getLocation(), attackTarget.getLocation());
-        float desiredHeading = normalizeAngle(toTarget + flankOffset);
+        float rangeToTarget = MathUtils.getDistance(ship.getLocation(), attackTarget.getLocation());
+        // Check against the heading we'll ACTUALLY charge along, using the same
+        // distance fade the effect script applies to the offset. Comparing
+        // against the raw offset rejected close-range dashes over an arc that
+        // will already have faded to nothing by the time we steer by it -- the
+        // flank point sits a fixed distance off the hull, so the angle it
+        // subtends blows past MAX_DASH_FACING_ERROR as we close.
+        float straightenDist = attackTarget.getCollisionRadius() + 150f;
+        Object fadeObj = armaa_rampagedrive2.bugs.get(ship.getHullSize());
+        float fadeRange = (fadeObj instanceof Number) ? ((Number) fadeObj).floatValue() : 100f;
+        float fade = (rangeToTarget - straightenDist) / Math.max(1f, fadeRange);
+        fade = Math.max(0f, Math.min(1f, fade));
+        float desiredHeading = normalizeAngle(toTarget + (flankOffset * fade));
         float facingError = Math.abs(MathUtils.getShortestRotation(ship.getFacing(), desiredHeading));
         if (facingError > MAX_DASH_FACING_ERROR) {
             return;
@@ -260,13 +282,31 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
 
             boolean targetVuln = (attackTarget.getHullLevel() <= TARGET_VULN_HULL
                     || attackTarget.getHardFluxLevel() >= TARGET_VULN_FLUX);
+            // (was `targetVuln && okDespiteFlux`, where okDespiteFlux already
+            // contained targetVuln -- the same term twice)
+            boolean vulnOk = targetVuln && ship.getHardFluxLevel() < ATTACK_HARDFLUX_CAP;
 
-            boolean okDespiteFlux = targetVuln && ship.getHardFluxLevel() < ATTACK_HARDFLUX_CAP;
+            // Plain engagement. The target is inside dash reach, we aren't
+            // backing off, and our flux can afford it. Without this the only
+            // ways through were a vulnerable target, a PURSUING/HARASS_MOVE_IN
+            // flag, or an eliminate order. None of those are set in a stand-up
+            // fight against a healthy opponent, which is why a 1v1 only ever
+            // used the system once the player issued an eliminate order.
+            boolean inDashBand = rangeToTarget <= estimateDashReach() * ENGAGE_REACH_MULT
+                    && rangeToTarget >= attackTarget.getCollisionRadius()
+                            + ship.getCollisionRadius() + ENGAGE_MIN_GAP;
+            boolean engaging = inDashBand
+                    && !flags.hasFlag(AIFlags.BACK_OFF)
+                    && !flags.hasFlag(AIFlags.BACKING_OFF)
+                    && ship.getFluxLevel() < PURSUE_FLUX_CAP;
 
             boolean fluxOkToAttack = ship.getFluxLevel() < ATTACK_MAX_FLUX;
-            if (fluxOkToAttack && (hasEliminateOrder || (targetVuln && okDespiteFlux) || (pursuing && ship.getFluxLevel() < PURSUE_FLUX_CAP))) {
+            if (fluxOkToAttack && (hasEliminateOrder || vulnOk || engaging
+                    || (pursuing && ship.getFluxLevel() < PURSUE_FLUX_CAP))) {
 
                 ship.getCustomData().put("armaa_rampageFlankOffset", flankOffset);
+                ship.getCustomData().put("armaa_rampageRequestTime",
+                        engine.getTotalElapsedTime(false));
                 ship.getCustomData().remove("armaa_rampageHeading");  // not an escape
                 ship.getCustomData().remove("armaa_isEscaping");
                 ship.useSystem();
@@ -424,6 +464,7 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
                 // No enemies on the field at all: nothing to escape, don't burn
                 // a charge on a heading with no meaning.
                 ship.getCustomData().remove("armaa_rampageHeading");
+                ship.getCustomData().remove("armaa_isEscaping");
                 return;
             }
             threatCenter = nearest.getLocation();
@@ -445,6 +486,7 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
         float there = computeNetDangerAtPoint(landing, DANGER_SCAN_RADIUS);
         if (there > here && borderPenalty(ship.getLocation()) <= 0f) {
             ship.getCustomData().remove("armaa_rampageHeading");
+            ship.getCustomData().remove("armaa_isEscaping");
             return;
         }
 
@@ -460,6 +502,7 @@ public class armaa_ironrampage2 implements ShipSystemAIScript {
 
         ship.getCustomData().put("armaa_rampageHeading", escapeHeading);
         ship.getCustomData().put("armaa_isEscaping", true);
+        ship.getCustomData().put("armaa_rampageRequestTime", engine.getTotalElapsedTime(false));
         ship.getCustomData().remove("armaa_rampageFlankOffset"); // escape, not an attack arc
         ship.useSystem();
     }
@@ -511,7 +554,6 @@ private float estimateDashReach() {
     Object boost = armaa_rampagedrive2.SPEED_BOOST.get(ship.getHullSize());
     float bonus = (boost instanceof Number) ? ((Number) boost).floatValue() : 1f;
     float dur = system.getSpecAPI().getActive();
-    Global.getLogger(this.getClass()).info("Max Speed: " + ship.getMaxSpeed() + " Bonus:" +bonus + " Total:" +Math.max(ESCAPE_REACH_MIN, (ship.getMaxSpeed() + bonus) * dur * DASH_REACH_EFFICIENCY ));
     return Math.max(ESCAPE_REACH_MIN, (ship.getMaxSpeed() + bonus) * dur * DASH_REACH_EFFICIENCY);
 }
     

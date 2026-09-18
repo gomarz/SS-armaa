@@ -1,4 +1,4 @@
-package data.scripts.missions;
+package data.scripts.campaign.missions.plugins;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;

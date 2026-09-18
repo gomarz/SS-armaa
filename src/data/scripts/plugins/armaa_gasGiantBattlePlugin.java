@@ -16,9 +16,9 @@ import org.lazywizard.lazylib.MathUtils;
 
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import static data.campaign.rulecmd.armaa_gravionBattle.MISSION_TEXTURES_GRAVION;
-import data.scripts.missions.armaa_TransitionExplosion;
-import data.scripts.missions.armaa_WarningMessage;
-import data.scripts.missions.armaa_titleSplash;
+import data.scripts.campaign.missions.plugins.armaa_TransitionExplosion;
+import data.scripts.campaign.missions.plugins.armaa_WarningMessage;
+import data.scripts.campaign.missions.plugins.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
 
 public class armaa_gasGiantBattlePlugin extends BaseEveryFrameCombatPlugin {

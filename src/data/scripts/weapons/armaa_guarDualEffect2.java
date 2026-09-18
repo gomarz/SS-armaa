@@ -141,8 +141,9 @@ private float transformCooldown = 0f;
         if (ship == null) {
             ship = weapon.getShip();
         }
-        if(ship.isHulk())
+        if (ship.isHulk()) {
             return;
+        }
         if (!runOnce) {
             if (ship.getShield() != null) {
                 engine.getCustomData().put("armaa_transformState_sArc_" + ship.getId(), ship.getShield().getArc());
@@ -516,8 +517,7 @@ private float transformCooldown = 0f;
         String spriteString = "guardual";
         if (ship.getHullSpec().getHullId().contains("bs")) {
             spriteString += "_bs";
-        }
-        else if (ship.getHullSpec().getHullId().contains("_s")) {
+        } else if (ship.getHullSpec().getHullId().contains("_s")) {
             spriteString += "_s";
         }
         int frame = (int) Math.round(6 * (1f - transformLevel));
@@ -560,7 +560,7 @@ private float transformCooldown = 0f;
                 w.ensureClonedSpec();
                 List<Vector2f> ogSpec = new ArrayList<Vector2f>(w.getSpec().getTurretFireOffsets());
                 List<Float> ogAngle = new ArrayList<Float>(w.getSpec().getTurretAngleOffsets());
-                int size = w.getSpec().getTurretFireOffsets().size();
+                int size = w.getSpec().getHardpointFireOffsets().size();
                 int posL = size > 2 ? size - 1 : 0;
                 if (size > 1 && !cleared) {
                     w.getSpec().getHardpointFireOffsets().clear();

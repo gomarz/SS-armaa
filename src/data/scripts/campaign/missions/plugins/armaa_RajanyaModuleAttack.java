@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package data.scripts.missions;
+package data.scripts.campaign.missions.plugins;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;

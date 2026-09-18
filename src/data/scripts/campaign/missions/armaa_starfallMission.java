@@ -74,6 +74,22 @@ public class armaa_starfallMission extends HubMissionWithSearch {
     public static final String LEAD_ATTACK_KEY = "$armaa_sfo_leadAttack";
 
     /**
+     * Once the garrison is dead the intake breaks off the exercise and closes
+     * on the player so Roland can report in. This has to be its own reason
+     * rather than reusing ESCORT_REASON: the escort flags carry ESCORT_DAYS and
+     * are still live at this point, and FLEET_BUSY in particular has to come
+     * off or the hail never opens.
+     */
+    public static final String RENDEZVOUS_REASON = "armaa_sfo_rendezvous";
+    public static final float RENDEZVOUS_DAYS = 30f;
+
+    /**
+     * Set by armaa_starfallCMD debriefOpened, from the hail rule. Advances
+     * RAID_DONE -> DEBRIEF, which is what moves the map marker home.
+     */
+    public static final String DEBRIEF_OPENED_KEY = "$armaa_sfo_debriefOpened";
+
+    /**
      * The recruits, in the order they get put on hulls. Which one ends up on
      * which Damascus does not matter, so there is nothing to match.
      */
@@ -96,7 +112,8 @@ public class armaa_starfallMission extends HubMissionWithSearch {
     public static enum Stage {
         GO_TO_TARGET, // travel; intake intercepts and briefs the player
         RAID, // briefing done; garrison spawns and the exercise begins
-        DEBRIEF, // garrison dead; report back to Fikenhild once it has aired
+        RAID_DONE, // garrison dead; intake breaks off to come alongside
+        DEBRIEF, // Roland has reported in; report back to Fikenhild once it has aired
         COMPLETED,
         FAILED,
     }
@@ -172,8 +189,10 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         addSuccessStages(Stage.COMPLETED);
         addFailureStages(Stage.FAILED);
 
-        makeImportant(target, "$armaa_sfo_target", Stage.GO_TO_TARGET, Stage.RAID);
-        // the marker moves home for the after-action
+        makeImportant(target, "$armaa_sfo_target",
+                Stage.GO_TO_TARGET, Stage.RAID, Stage.RAID_DONE);
+        // the marker moves home for the after-action - DEBRIEF only, so it does
+        // not appear while Roland is still crossing the system to reach you
         makeImportant(fikenhild, "$armaa_sfo_home", Stage.DEBRIEF);
 
         // No $global. prefix - connectWithGlobalFlag resolves against global
@@ -181,10 +200,16 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         // Two hops. The garrison must not exist until the intake has briefed the
         // player, or the two can collide first and the briefing never happens.
         connectWithGlobalFlag(Stage.GO_TO_TARGET, Stage.RAID, "$armaa_sfo_briefed");
-        // Three hops now. The battle listener only reports once the combat
-        // dialogue has closed, so the numbers do not exist during the scene in
-        // the field - the real after-action has to happen later, at Fikenhild.
-        connectWithGlobalFlag(Stage.RAID, Stage.DEBRIEF, "$armaa_sfo_raidDone");
+        // RAID_DONE exists to separate "the garrison is dead" from "Roland has
+        // said his piece". The defeat trigger fires inside vanilla's engagement
+        // dialogue, which owns the option list and clears anything a rule adds
+        // there - so it only does bookkeeping, and the scene itself runs off the
+        // hail once the intake has closed. That is also the only point at which
+        // the battle listener has written: it reports on reportBattleOccurred,
+        // after the combat dialogue closes, so tallyLosses and score belong to
+        // the hail node and not to the defeat trigger.
+        connectWithGlobalFlag(Stage.RAID, Stage.RAID_DONE, "$armaa_sfo_raidDone");
+        connectWithGlobalFlag(Stage.RAID_DONE, Stage.DEBRIEF, DEBRIEF_OPENED_KEY);
         connectWithGlobalFlag(Stage.DEBRIEF, Stage.COMPLETED, "$armaa_sfo_debriefed");
 
         setNoAbandon();
@@ -215,35 +240,22 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         triggerMakeNonHostile();
         triggerMakeFleetIgnoreOtherFleetsExceptPlayer();
 
-        // order matters: pick location, spawn, then orders, then makeImportant
-        // 4-arg overload: the short forms pass DEFAULT_MIN_DIST_FROM_PLAYER,
-        // which is 3000f - the picker discards every candidate that close to the
-        // player and then shoves the spawn out to 3000su if none survive, so
-        // docked at Fikenhild the intake could never appear at the station.
-        // minDistFromPlayer = 0 lets it form up right off the docks.
         triggerPickLocationAroundEntity(fikenhild.getPrimaryEntity(), 0f, 150f, 400f);
         triggerSpawnFleetAtPickedLocation("$armaa_sfo_intakeSpawned", "$armaa_sfo_intakeRef");
         triggerSetFleetMissionRef("$armaa_sfo_ref");
         triggerOrderFleetAttackLocation(target.getPrimaryEntity());
-        triggerFleetMakeImportant("$armaa_sfo_intake", Stage.GO_TO_TARGET, Stage.RAID);
-        // The intercept is deliberately NOT set here. It would fire the instant
-        // the intake spawns, since the player is well inside range at Fikenhild,
-        // and the hail belongs at the target. A trigger only ever acts on the
-        // fleet created in its own block, so it is armed from advanceImpl once
-        // the player reaches the target system - see armInterceptIfNeeded().
+        triggerFleetMakeImportant("$armaa_sfo_intake",
+                Stage.GO_TO_TARGET, Stage.RAID, Stage.RAID_DONE);
+
 
         endTrigger();
 
-        // ---- the garrison ----
-        // The studios chose this target because it films well, so nobody
-        // weighted the strength estimate. Spawns when the briefing is done, and
-        // beating it is what completes the mission: the defeat trigger fires a
-        // rules trigger, which calls armaa_starfallCMD raidDone.
+
         beginStageTrigger(Stage.RAID);
 
-        triggerCreateFleet(FleetSize.LARGER, FleetQuality.DEFAULT, Factions.PIRATES,
+        triggerCreateFleet(FleetSize.LARGER, FleetQuality.DEFAULT, Factions.LUDDIC_PATH,
                 FleetTypes.TASK_FORCE, target.getStarSystem());
-        triggerAutoAdjustFleetStrengthModerate();
+        //triggerAutoAdjustFleetStrengthModerate();
         triggerFleetSetName("Garrison Force");
         triggerMakeHostileAndAggressive();
         triggerFleetNoAutoDespawn();
@@ -264,7 +276,7 @@ public class armaa_starfallMission extends HubMissionWithSearch {
     public void acceptImpl(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) {
         // rules.csv drives the dialogue side off this string enum; the mission
         // owns the real state. Keep the two in step here and nowhere else.
-        Global.getSector().getMemoryWithoutUpdate().set("$global.armaa_sfo_stage", "RAID_ACTIVE");
+        Global.getSector().getMemoryWithoutUpdate().set("$armaa_sfo_stage", "RAID_ACTIVE");
     }
 
     protected transient boolean interceptArmed = false;
@@ -281,24 +293,11 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         super.advanceImpl(amount);
         armInterceptIfNeeded();
         escortPlayerIfNeeded();
+        rendezvousIfNeeded();
         assignRecruitsIfNeeded();
         checkIntakeLostIfNeeded(amount);
     }
 
-    /**
-     * Once the briefing is done the intake drops the attack-location order from
-     * the spawn trigger and sticks with the player instead.
-     *
-     * Modelled on Nexerelin's FollowMeAbility rather than a plain FOLLOW.
-     * FOLLOW only asks the AI to keep loose station, which is why they wandered
-     * off; ORBIT_PASSIVE holds them on the target. FLEET_BUSY stops other AI
-     * systems reassigning them, and FLEET_IGNORES_OTHER_FLEETS keeps them from
-     * starting their own fight with the garrison - Nexerelin sets that same
-     * flag while following, which is why releaseIntakeForRaid() is gone.
-     *
-     * Both flags expire on their own and are refreshed by re-issuing, so there
-     * is no cleanup and no transient bookkeeping.
-     */
     protected void escortPlayerIfNeeded() {
         if (currentStage != Stage.RAID) {
             return;
@@ -351,6 +350,71 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         if (DEBUG) {
             Global.getLogger(armaa_starfallMission.class).info(
                     "[starfall] intake assignment: " + (lead ? "leading the attack" : "escorting the player"));
+        }
+    }
+
+    /**
+     * Garrison is dead: the intake breaks off and closes on the player so
+     * Roland can report in. This only gets them into comm range - the scene
+     * itself is the BeginFleetEncounter/OpenCommLink pair in rules.csv, gated
+     * on $armaa_sfo_raidDone and !$armaa_sfo_debriefOpened.
+     *
+     * Deliberately does nothing if the intake is gone. A wiped intake is a real
+     * outcome here rather than a failure, and the Fikenhild menu option is the
+     * backstop for it - so that option must accept RAID_DONE as well as DEBRIEF.
+     */
+    protected void rendezvousIfNeeded() {
+        if (currentStage != Stage.RAID_DONE) {
+            return;
+        }
+        if (Global.getSector().getMemoryWithoutUpdate().getBoolean(DEBRIEF_OPENED_KEY)) {
+            return;
+        }
+
+        CampaignFleetAPI intake = findIntake();
+        CampaignFleetAPI player = Global.getSector().getPlayerFleet();
+        if (intake == null || player == null) {
+            return;
+        }
+        if (intake.getBattle() != null) {
+            return;
+        }
+        if (intake.getContainingLocation() != player.getContainingLocation()) {
+            return;   // player left the system - Fikenhild picks it up instead
+        }
+        CampaignFleetAIAPI ai = intake.getAI();
+        if (ai == null) {
+            return;
+        }
+
+        // already closing - let it run rather than re-issuing every frame
+        FleetAssignmentDataAPI curr = ai.getCurrentAssignment();
+        if (curr != null && curr.getAssignment() == FleetAssignment.INTERCEPT
+                && curr.getTarget() == player) {
+            return;
+        }
+
+        MemoryAPI mem = intake.getMemoryWithoutUpdate();
+        // the escort flags are still live on ESCORT_DAYS. FLEET_BUSY has to come
+        // off or the hail never opens; the ignore flag goes back on under its
+        // own reason so they do not stop to fight their way across the system.
+        Misc.setFlagWithReason(mem, MemFlags.FLEET_BUSY, ESCORT_REASON, false, 0f);
+        Misc.setFlagWithReason(mem, MemFlags.FLEET_IGNORES_OTHER_FLEETS, ESCORT_REASON,
+                false, 0f);
+        Misc.setFlagWithReason(mem, MemFlags.FLEET_IGNORES_OTHER_FLEETS, RENDEZVOUS_REASON,
+                true, RENDEZVOUS_DAYS);
+
+        // clear whichever order the exercise left in front - on the lead branch
+        // that is ORBIT_AGGRESSIVE on a garrison that no longer exists
+        ai.removeFirstAssignmentIfItIs(ESCORT_ASSIGNMENT);
+        ai.removeFirstAssignmentIfItIs(FleetAssignment.ORBIT_AGGRESSIVE);
+        ai.removeFirstAssignmentIfItIs(FleetAssignment.INTERCEPT);
+        ai.addAssignmentAtStart(FleetAssignment.INTERCEPT, player, RENDEZVOUS_DAYS,
+                "moving to rendezvous", null);
+
+        if (DEBUG) {
+            Global.getLogger(armaa_starfallMission.class).info(
+                    "[starfall] intake breaking off to rendezvous");
         }
     }
 
@@ -412,6 +476,22 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         }
     }
 
+    private static String shipNameFor(String personId) {
+        if (armaa_starfallPeopleCMD.ROLAND.equals(personId)) {
+            return "Oliphant";
+        }
+        if (armaa_starfallPeopleCMD.VOIT.equals(personId)) {
+            return "Gareth";
+        }
+        if (armaa_starfallPeopleCMD.EHREN.equals(personId)) {
+            return "Lyonesse";
+        }
+        if (armaa_starfallPeopleCMD.ALARD.equals(personId)) {
+            return "Astolat";
+        }
+        return null;
+    }
+
     /**
      * triggerSetFleetOfficers only does bulk generation, so the named recruits
      * are attached after the fleet exists. Walks the Damascus hulls and drops
@@ -437,13 +517,17 @@ public class armaa_starfallMission extends HubMissionWithSearch {
             if (isRecruit(member.getCaptain())) {
                 continue;
             }
-            PersonAPI person = armaa_starfallPeopleCMD.get(RECRUITS[next]);
+            String id = RECRUITS[next];
+            PersonAPI person = armaa_starfallPeopleCMD.get(id);
             if (person == null) {
                 next++;
                 continue;
             }
             member.setCaptain(person);
-            member.setShipName(person.getName().getLast().toUpperCase());
+            String name = shipNameFor(id);
+            if (name != null) {
+                member.setShipName("SFO " + name);
+            }
             next++;
         }
 
@@ -564,7 +648,7 @@ public class armaa_starfallMission extends HubMissionWithSearch {
 
         requireMarketFaction(Factions.PIRATES);
         requireMarketNotInHyperspace();
-        requireMarketSizeAtMost(MAX_TARGET_SIZE);
+        // requireMarketSizeAtMost(MAX_TARGET_SIZE);
         // NOT requireMarketNotHidden(): most vanilla pirate holdings are hidden
         // markets, and requiring visibility narrows the pool to roughly Kanta's
         // Den alone - which is excluded below. Preference only.
@@ -575,13 +659,13 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         // MarketRequirement is an interface, so the check goes in directly.
         search.marketReqs.add(new MarketRequirement() {
             public boolean marketMatchesRequirement(MarketAPI market) {
-                if (market.hasTag(Tags.STORY_CRITICAL)) {
-                    return false;
-                }
+                //if (market.hasTag(Tags.STORY_CRITICAL)) {
+                //    return false;
+                //}
                 FactionAPI owner = Misc.getClaimingFaction(market.getPrimaryEntity().getStarSystem().getCenter());
-                if (owner != null && owner.isHostileTo("persean_league")) {
-                    return false;
-                }
+                //if (owner != null && !owner.getId().equals("luddic_path") && !owner.getId().equals("pirates") && owner.isHostileTo("persean_league")) {
+                //    return false;
+                //}
                 if (market.hasTag(Tags.NOT_RANDOM_MISSION_TARGET)) {
                     return false;
                 }
@@ -598,16 +682,16 @@ public class armaa_starfallMission extends HubMissionWithSearch {
             }
         });
 
-        if (strict) {
-            requireSystemNotAlreadyUsedForStory();
-            requireSystemTags(ReqMode.NOT_ANY, Tags.THEME_CORE, Tags.THEME_UNSAFE,
-                    Tags.THEME_SPECIAL, Tags.NOT_RANDOM_MISSION_TARGET);
-        } else {
+       // if (strict) {
+       //     requireSystemNotAlreadyUsedForStory();
+       //     requireSystemTags(ReqMode.NOT_ANY, Tags.THEME_CORE, Tags.THEME_UNSAFE,
+       //             Tags.THEME_SPECIAL, Tags.NOT_RANDOM_MISSION_TARGET);
+        // else {
             preferSystemTags(ReqMode.NOT_ANY, Tags.THEME_CORE, Tags.THEME_UNSAFE,
                     Tags.THEME_SPECIAL, Tags.NOT_RANDOM_MISSION_TARGET);
-        }
+        //}
 
-        preferMarketSizeAtLeast(2);
+        preferMarketSizeAtLeast(3);
         preferMarketNotHidden();
         preferMarketInDirectionOfOtherMissions();
 
@@ -646,6 +730,10 @@ public class armaa_starfallMission extends HubMissionWithSearch {
             info.addPara("The target was selected by the Household rather than by the order.",
                     opad);
         }
+        if (stage == Stage.RAID_DONE) {
+            info.addPara("The garrison is destroyed. The Starfall Order's fleet is breaking "
+                    + "off the exercise and closing on your position.", opad);
+        }
         if (stage == Stage.DEBRIEF) {
             info.addPara("The exercise is over. Ser Roland has asked you to meet him at %s "
                     + "once the segment has gone out.", opad, Misc.getHighlightColor(),
@@ -659,6 +747,11 @@ public class armaa_starfallMission extends HubMissionWithSearch {
         if (stage == Stage.GO_TO_TARGET) {
             info.addPara("Join the intake at %s", pad, tc,
                     Misc.getHighlightColor(), target.getName());
+            return true;
+        }
+        if (stage == Stage.RAID_DONE) {
+            info.addPara("Wait for the Starfall Order's fleet", pad, tc,
+                    Misc.getHighlightColor());
             return true;
         }
         if (stage == Stage.DEBRIEF) {

@@ -251,19 +251,23 @@ public class armaa_strikeCraftRepairTracker extends BaseEveryFrameCombatPlugin {
             carrier.getLaunchBaysCopy().get(bayNo).setCurrRate(carrier.getLaunchBaysCopy().get(bayNo).getCurrRate() - adjustedRate * (BAY_DRAIN_PER_SERVICE / BASE_REFIT.getMaxInterval()));
         }
 
-        String abortString = "";
+        boolean abort = false;
         ShipAPI playerShip = Global.getCombatEngine().getPlayerShip();
         if (ship == playerShip && BASE_REFIT.getElapsed() >= 0f) {
             Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem2", "graphics/ui/icons/icon_repair_refit.png", getBlinkyString("REPAIR STATUS"), String.valueOf(ship.getHullLevel() * 100f) + "%", true);
-            abortString = Global.getSettings().getControlStringForEnumName("C2_TOGGLE_AUTOPILOT");
+            String abortString = Global.getSettings().getControlStringForEnumName("C2_TOGGLE_AUTOPILOT");
             Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem", "graphics/ui/icons/icon_repair_refit.png", "RESTORING PPT/AMMO (PRESS " + abortString + " to abort)", timer + "%", true);
             // Show repair pool status to player
             int repairsLeft = getRepairsRemaining(ship);
             String poolDisplay = repairsLeft > 0 ? "REPAIR CAPACITY: " + repairsLeft : "REPAIR CAPACITY EXHAUSTED";
             Global.getCombatEngine().maintainStatusForPlayerShip("AceSystem3", "graphics/ui/icons/icon_repair_refit.png", poolDisplay, "", false);
+
+            // Keyboard.getKeyIndex("") returns 0, and isKeyDown(0) reads true on the
+            // affected runtime, so this must only ever run for the player ship.
+            int abortKey = Keyboard.getKeyIndex(abortString);
+            abort = abortKey > 0 && Keyboard.isKeyDown(abortKey);
         }
 
-        boolean abort = Keyboard.isKeyDown(Keyboard.getKeyIndex(abortString));
         if (BASE_REFIT.intervalElapsed() || abort) {
             takeOff(ship, landingLocation, abort);
             ship.setShipSystemDisabled(false);

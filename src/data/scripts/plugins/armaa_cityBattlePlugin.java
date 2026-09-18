@@ -19,7 +19,7 @@ import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.combat.dweller.WarpingSpriteRendererUtilV2;
 import data.campaign.rulecmd.armaa_jeniusCityBattle;
-import data.scripts.missions.armaa_titleSplash;
+import data.scripts.campaign.missions.plugins.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.opengl.GL11;

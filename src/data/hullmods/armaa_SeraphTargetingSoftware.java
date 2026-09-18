@@ -44,7 +44,6 @@ public class armaa_SeraphTargetingSoftware extends BaseHullMod {
 		stats.getDynamic().getMod(Stats.PD_BEST_TARGET_LEADING).modifyFlat(id, 1f);
         	stats.getAutofireAimAccuracy().modifyMult(id, 1.5f);
 		stats.getDamageToMissiles().modifyPercent(id, DAMAGE_BONUS);
-		//fuck fighters
 		stats.getDamageToFighters().modifyPercent(id, DAMAGE_BONUS);
 		
 	}

@@ -92,7 +92,6 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
                     // Play a sound
                     Global.getSoundPlayer().playSound("system_entropy", 1f + variance, 1f + variance, location, ship.getVelocity());
                     // Show the floaty text that it healed
-                    // I wanted to do the green heal visuals that floats up with "+" symbol, but I'm too fucking retarded
                     Vector2f origin2 = new Vector2f(ship.getLocation());
                     Vector2f offset2 = new Vector2f(0, 0);
                     float speed = MathUtils.getRandomNumberInRange(80f, 120f);

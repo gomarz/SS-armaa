@@ -1,10 +1,10 @@
 {
-	"id":"armaa_leynos_leftPauldron_lt",  # this id must match what's in the spreadsheet
+	"id":"armaa_harper_leftPauldron",  # this id must match what's in the spreadsheet
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"MEDIUM",
 	"showDamageWhenDecorative":true,
-	"turretSprite":"graphics/armaa/ships/leynos/armaa_leynosLeftShoulder_lt.png",
+	"turretSprite":"graphics/armaa/ships/leynos/harper/armaa_harperLeftShoulder.png",
 	"hardpointSprite":"",
 	#"numFrames":2,
 	#"frameRate":0,

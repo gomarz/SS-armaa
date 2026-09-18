@@ -4,7 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
-import data.scripts.missions.armaa_TransitionExplosion;
+import data.scripts.campaign.missions.plugins.armaa_TransitionExplosion;
 import data.scripts.util.armaa_guardualBladeParticleEffect;
 import data.scripts.util.armaa_utils;
 import org.magiclib.util.MagicAnim;

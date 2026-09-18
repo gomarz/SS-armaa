@@ -70,7 +70,7 @@ public class armaa_starfallPeopleCMD extends BaseCommandPlugin {
 
         make(EHREN, "Corvin", "Ehrenmark", Gender.MALE,
                 "graphics/armaa/portraits/armaa_ehrenmark.png",
-                "armaa_aspirant", Ranks.POST_OFFICER, Personalities.RECKLESS, 2);
+                "armaa_aspirant", Ranks.POST_OFFICER, Personalities.STEADY, 2);
 
         make(ALARD, "Vivi", "Alard", Gender.FEMALE,
                 "graphics/armaa/portraits/armaa_vivi.png",

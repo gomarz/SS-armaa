@@ -17,8 +17,8 @@ import org.lazywizard.lazylib.MathUtils;
 import lunalib.lunaSettings.LunaSettings;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import static data.campaign.rulecmd.armaa_jeniusAtmoBattle.MISSION_TEXTURES_ATMO;
-import data.scripts.missions.armaa_ReentryEffect;
-import data.scripts.missions.armaa_titleSplash;
+import data.scripts.campaign.missions.plugins.armaa_ReentryEffect;
+import data.scripts.campaign.missions.plugins.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
 
 public class armaa_atmosphericBattlePlugin extends BaseEveryFrameCombatPlugin {

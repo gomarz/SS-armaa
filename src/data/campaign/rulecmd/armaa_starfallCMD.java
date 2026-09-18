@@ -19,7 +19,7 @@ import data.scripts.campaign.missions.armaa_starfallMission;
 
 public class armaa_starfallCMD extends BaseCommandPlugin {
 
-    public static final String STAGE_KEY = "$global.armaa_sfo_stage";
+    public static final String STAGE_KEY = "$armaa_sfo_stage";
     public static final String RAID_DONE_KEY = "$armaa_sfo_raidDone";
     public static final int MIN_LEVEL = 8;
 
@@ -268,7 +268,9 @@ public class armaa_starfallCMD extends BaseCommandPlugin {
      */
     private boolean score() {
         MemoryAPI m = Global.getSector().getMemoryWithoutUpdate();
-
+        if (m.getBoolean("$armaa_sfo_scored")) {
+            return true;                      // already banked this raid
+        }
         int ratings = 0;
         int favor = 0;
 
@@ -291,42 +293,39 @@ public class armaa_starfallCMD extends BaseCommandPlugin {
             }
         }
 
-        // ---- what state they came home in ----
         int hull = m.contains("$armaa_sfo_intakeHullPct")
-                ? m.getInt("$armaa_sfo_intakeHullPct") : 100;
-        if (hull < 30) {
-            ratings += 2;
-        } else if (hull < 60) {
-            ratings += 1;
-        } else if (hull >= 80) {
-            favor += 2;
-            ratings += 1;
-        } else {
-            favor += 1;
-        }
-
-        // ---- losses ----
-        int losses = m.getInt("$armaa_sfo_losses");
-        if (losses > 0) {
-            ratings += 1;
-        } else {
-            favor += 2;
-            ratings += 1;
-        }
-
-        // ---- what you told the assessors ----
-        if (m.contains("$armaa_sfo_reportReady")) {
-            if (m.getBoolean("$armaa_sfo_reportReady")) {
+                ? m.getInt("$armaa_sfo_intakeHullPct") : 0;
+                    int losses = m.getInt("$armaa_sfo_losses");
+        if (m.getBoolean("$armaa_sfo_battleSeen") && m.contains("$armaa_sfo_intakeHullPct")) {
+            if (hull < 30) {
+                ratings += 2;
+            } else if (hull < 60) {
+                ratings += 1;
+            } else if (hull < 80) {
+                favor += 1;
+            } else {
+                favor += 2;
+            }
+}
+            // ---- losses ----
+            //int losses = m.getInt("$armaa_sfo_losses");
+            if(losses == 0)
+                favor +=2;
+            else if (losses == 1) {
                 ratings += 1;
             } else {
-                favor += 1;
+                ratings += 2;
             }
-        }
+        
+        int currRatings = m.contains("$armaa_sfo_ratings") ? m.getInt("$armaa_sfo_ratings") : 0;
+        int currFavor = m.contains("$armaa_sfo_favor") ? m.getInt("$armaa_sfo_favor") : 0;
+        int totalRatings = (int) (currRatings + ratings);
+        int totalFavor = (int) (currFavor + favor);
 
-        m.set("$armaa_sfo_ratings", ratings);
-        m.set("$armaa_sfo_favor", favor);
-        m.set("$armaa_sfo_ratingsBand", band(ratings));
-        m.set("$armaa_sfo_favorBand", band(favor));
+        m.set("$armaa_sfo_ratings", totalRatings);
+        m.set("$armaa_sfo_favor", totalFavor);
+        m.set("$armaa_sfo_ratingsBand", band(totalRatings));
+        m.set("$armaa_sfo_favorBand", band(totalFavor));
 
         Global.getLogger(armaa_starfallCMD.class).info(
                 "[starfall] score: ratings=" + ratings + " (" + band(ratings) + ")"
@@ -337,13 +336,13 @@ public class armaa_starfallCMD extends BaseCommandPlugin {
     }
 
     private static String band(int value) {
-        if (value >= 4) {
+        if (value >= 7) {
             return "High";
         }
-        if (value >= 1) {
+        if (value >= 4) {
             return "Medium";
         }
-        if (value <= 1) {
+        if (value <= 3) {
             return "Low";
         }
         return "Abysmal";

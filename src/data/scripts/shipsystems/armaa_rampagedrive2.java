@@ -76,16 +76,23 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
     private static String poopystinky3 = "READY";
 
     private boolean reset = true;
-    //private float activeTime = 0f;
     //private float jitterLevel;
     private boolean DidRam = false;
 
     private Float mass = null;
 
+    private boolean escapeMode = false;
+    private Float escapeHeading = null;
+    private Float flankOffset = null;
+    private float activeTime = 0f;
+
     private final IntervalUtil bailoutCheck = new IntervalUtil(0.1f, 0.1f);
     private static final float BAILOUT_SCAN_RADIUS = 1400f; // threat scan radius while dashing
-    private static final float BAILOUT_MAX_THREAT = 7.0f;  // attack dash bails if threat > this
-    private static final float ESCAPE_SAFE_THREAT = 2.5f;  // escape dash ends once threat < this
+    private static final float BAILOUT_MAX_THREAT = 7.0f;  // attack dash bails if net threat > this
+    private static final float ESCAPE_SAFE_THREAT = 2.5f;  // escape dash may end once net threat <= this
+    private static final float ESCAPE_SAFE_DISTANCE = 1200f; // ...and the nearest enemy is at least this far
+    private static final float MIN_ACTIVE_BEFORE_BAILOUT = 0.35f; // commit window before any bailout
+    private static final float REQUEST_MAX_AGE = 0.5f; // ignore AI dash requests older than this
     // ========================================================================
 
     public static class TargetData {
@@ -116,9 +123,10 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
 
         if (reset) {
             reset = false;
-            //activeTime = 0f;
             //jitterLevel = 0f;
             DidRam = false;
+            activeTime = 0f;
+            consumeDashRequest(ship);
         }
         if (!ship.hasListenerOfClass(RampageDriveListener.class)) {
             ship.addListener(new RampageDriveListener());
@@ -245,19 +253,28 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             stats.getEnergyRoFMult().unmodify(id);
             ship.setMass(mass);
             DidRam = false;
-            ship.getCustomData().remove("armaa_rampageHeading"); // clear escape heading
-            ship.getCustomData().remove("armaa_isEscaping");
-            ship.getCustomData().remove("armaa_rampageFlankOffset");
+            clearDashState(ship);
         } else {
 
-            if (!ship.isAlive() || ship != Global.getCombatEngine().getPlayerShip()) {
+            activeTime += Global.getCombatEngine().getElapsedInLastFrame();
+            if (ship != Global.getCombatEngine().getPlayerShip()) {
                 bailoutCheck.advance(Global.getCombatEngine().getElapsedInLastFrame());
-                if (bailoutCheck.intervalElapsed() && ship.getSystem() != null
+                // A dash always gets a commit window. Without it the first
+                // bailout tick lands 0.1s in and can cancel the activation
+                // before the ship has moved, burning the charge and the
+                // cooldown for nothing.
+                if (bailoutCheck.intervalElapsed() && activeTime >= MIN_ACTIVE_BEFORE_BAILOUT
+                        && ship.getSystem() != null
                         && ship.getSystem().isActive() && !ship.isDirectRetreat()) {
-                    boolean escaping = ship.getCustomData().get("armaa_isEscaping") != null;
-                    float threat = enemyThreatNear(ship.getLocation(), BAILOUT_SCAN_RADIUS, ship.getOwner());
-                    if (escaping) {
-                        if (threat < ESCAPE_SAFE_THREAT) {
+                    float threat = netThreatNear(ship.getLocation(), BAILOUT_SCAN_RADIUS, ship);
+                    if (escapeMode) {
+                        // Ending the escape needs actual separation, not just a
+                        // low score. Against one frigate (1.0) or destroyer
+                        // (2.0) the sum alone is already under the threshold
+                        // before we have moved an inch, which cancelled every
+                        // escape dash in a small fight on its first tick.
+                        if (threat <= ESCAPE_SAFE_THREAT
+                                && nearestEnemyDistance(ship) >= ESCAPE_SAFE_DISTANCE) {
                             ship.getSystem().deactivate();
                             return;
                         }
@@ -365,10 +382,10 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
             }
             if (ship.isDirectRetreat() && ship.getSystem().isActive()) {
                 ship.setAngularVelocity(Math.min(turnrate, Math.max(-turnrate, MathUtils.getShortestRotation(ship.getFacing(), ship.getOwner() == 0 ? Global.getCombatEngine().getFleetManager(ship.getOwner()).getGoal() == FleetGoal.ESCAPE ? 90f : 270f : Global.getCombatEngine().getFleetManager(ship.getOwner()).getGoal() == FleetGoal.ESCAPE ? 270f : 90f) * 2)));
-            } else if (ship.getCustomData().get("armaa_rampageHeading") != null && ship.getSystem().isActive()) {
+            } else if (escapeMode && escapeHeading != null && ship.getSystem().isActive()) {
                 // Escape mode: AI set a heading to flee along. Steer toward it
                 // directly rather than toward a ship target.
-                float wantHeading = (Float) ship.getCustomData().get("armaa_rampageHeading");
+                float wantHeading = escapeHeading;
                 float facing = MathUtils.getShortestRotation(ship.getFacing(), wantHeading);
                 ship.setAngularVelocity(Math.min(turnrate, Math.max(-turnrate, facing * 5)));
             } else if ((target != null && target.isAlive()) && ship.getSystem().isActive()) {
@@ -380,9 +397,8 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                     float aimAngle = VectorUtils.getAngle(ship.getLocation(), target.getLocation());
                     // Apply the AI's flank offset, faded out as we close so the
                     // ram lands straight on. Offset is 0 once within straightenDist.
-                    Object offObj = ship.getCustomData().get("armaa_rampageFlankOffset");
-                    if (offObj != null && !target.isFighter() && !target.isDrone()) {
-                        float offset = (Float) offObj;
+                    if (flankOffset != null && !target.isFighter() && !target.isDrone()) {
+                        float offset = flankOffset;
                         float dist = MathUtils.getDistance(ship.getLocation(), target.getLocation());
                         float straightenDist = target.getCollisionRadius() + 150f;
                         float fadeRange = (Float) bugs.get(ship.getHullSize());
@@ -517,6 +533,10 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
     @Override
     public void unapply(MutableShipStatsAPI stats, String id) {
         reset = true;
+        escapeMode = false;
+        escapeHeading = null;
+        flankOffset = null;
+        activeTime = 0f;
         ShipAPI ship = (ShipAPI) stats.getEntity();
         if (ship == null) {
             return;
@@ -580,21 +600,78 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
     }
 
     /**
-     * Sums ONLY enemy threat weight near a point (allies excluded). Mirrors the
-     * AI script's threat scoring so the mid-dash bailout uses the same scale.
+     * Reads the AI's dash request out of the ship's custom data and clears it,
+     * so the intent belongs to this activation and nothing else. Requests older
+     * than REQUEST_MAX_AGE are discarded: if the AI asked for a dash that never
+     * started (cooldown, overload, out of charges) that request must not be
+     * honoured by whatever activation happens next.
      */
-    private float enemyThreatNear(Vector2f point, float radius, int selfOwner) {
+    private void consumeDashRequest(ShipAPI ship) {
+        escapeMode = false;
+        escapeHeading = null;
+        flankOffset = null;
+
+        Object stamp = ship.getCustomData().get("armaa_rampageRequestTime");
+        boolean fresh = false;
+        if (stamp instanceof Number) {
+            float age = Global.getCombatEngine().getTotalElapsedTime(false) - ((Number) stamp).floatValue();
+            fresh = age >= 0f && age <= REQUEST_MAX_AGE;
+        }
+
+        if (fresh) {
+            Object heading = ship.getCustomData().get("armaa_rampageHeading");
+            Object offset = ship.getCustomData().get("armaa_rampageFlankOffset");
+            if (ship.getCustomData().get("armaa_isEscaping") != null && heading instanceof Number) {
+                escapeMode = true;
+                escapeHeading = ((Number) heading).floatValue();
+            } else if (offset instanceof Number) {
+                flankOffset = ((Number) offset).floatValue();
+            }
+        }
+        clearDashState(ship);
+    }
+
+    private void clearDashState(ShipAPI ship) {
+        ship.getCustomData().remove("armaa_rampageHeading");
+        ship.getCustomData().remove("armaa_isEscaping");
+        ship.getCustomData().remove("armaa_rampageFlankOffset");
+        ship.getCustomData().remove("armaa_rampageRequestTime");
+    }
+
+    /**
+     * Net threat near a point: enemies positive, allies negative. Mirrors the
+     * AI script's computeNetDangerAtPoint so the mid-dash bailout is measured
+     * on the same scale as the gate that approved the dash. The enemies-only
+     * version this replaces was strictly harsher than the AI's check, so the
+     * effect script could cancel a charge the AI had just cleared.
+     */
+    private float netThreatNear(Vector2f point, float radius, ShipAPI self) {
         float danger = 0f;
         for (ShipAPI s : CombatUtils.getShipsWithinRange(point, radius)) {
-            if (s == null || !s.isAlive() || s.isHulk() || s.isFighter()) {
+            if (s == null || s == self || !s.isAlive() || s.isHulk() || s.isFighter()) {
                 continue;
             }
-            if (s.getOwner() == selfOwner) {
-                continue; // skip allies and self
-            }
-            danger += threatWeightOf(s);
+            float w = threatWeightOf(s);
+            danger += (s.getOwner() == self.getOwner()) ? -w : w;
         }
         return danger;
+    }
+
+    private float nearestEnemyDistance(ShipAPI self) {
+        float best = Float.MAX_VALUE;
+        for (ShipAPI s : Global.getCombatEngine().getShips()) {
+            if (s == null || s == self || !s.isAlive() || s.isHulk() || s.isFighter()) {
+                continue;
+            }
+            if (s.getOwner() == self.getOwner()) {
+                continue;
+            }
+            float d = MathUtils.getDistance(self.getLocation(), s.getLocation());
+            if (d < best) {
+                best = d;
+            }
+        }
+        return best;
     }
 
     private float threatWeightOf(ShipAPI s) {

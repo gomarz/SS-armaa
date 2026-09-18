@@ -15,18 +15,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicRender;
 
-/**
- * Formation drive. While well out of position and moving to rejoin the fleet,
- * grants the zero-flux engine boost below a flux threshold plus a flat
- * distance-scaled top speed bonus.
- *
- * Wing range is cut while the zero-flux boost is actually paying out, which is
- * the anti-kite measure for the carrier case: the flux gate stops the ship
- * fighting with its guns at range, the wing cut stops it fighting with its
- * strikecraft.
- *
- * Split out of armaa_bellatorAegis: shares no state with the Aegis field.
- */
+
 public class armaa_bellatorFormationDrive extends BaseHullMod {
 
     public static final String MOD_ID = "armaa_bellatorFormationDrive";
@@ -484,7 +473,7 @@ public class armaa_bellatorFormationDrive extends BaseHullMod {
          * still works in small engagements.
          */
         private static Vector2f findAnchor(CombatEngineAPI engine, ShipAPI self) {
-            Vector2f heavy = weightedCentroid(engine, self, true);
+            Vector2f heavy = weightedCentroid(engine, self, false);
             if (heavy != null) {
                 return heavy;
             }

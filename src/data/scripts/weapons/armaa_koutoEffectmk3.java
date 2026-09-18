@@ -219,14 +219,14 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
                     weapon.setCurrAngle(global + (sineA * (TORSO_OFFSET) + aim * 0.3f) + currentRotateR);
 
                     if (trueWeapon != null && trueWeapon.getCooldown() > 0) {
-                        float t = trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown();                        
-                        gun.getSprite().setCenterY(originalRArmPos + (2 * t*t));
-                        pauldronR.getSprite().setCenterY(originalRShoulderPos + (1.5f * t*t));
+                        float t = trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown();
+                        gun.getSprite().setCenterY(originalRArmPos + (2 * t * t));
+                        pauldronR.getSprite().setCenterY(originalRShoulderPos + (1.5f * t * t));
 
                         if (sinceB >= 0.95) {
                             // t*t eases out
                             armL.getSprite().setCenterY(originalArmPos + (1.5f * t * t));
-                            pauldronL.getSprite().setCenterY(originalShoulderPos + (1.0f * t * t));                            
+                            pauldronL.getSprite().setCenterY(originalShoulderPos + (1.0f * t * t));
                             //armL.getSprite().setCenterY(originalArmPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
                             //pauldronL.getSprite().setCenterY(originalShoulderPos + (1.8f * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
 
@@ -266,8 +266,9 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
                 if (m.getStationSlot() == null) {
                     continue;
                 }
-                if(m.getStationSlot().getId().equals("SHIELD2"))
+                if (m.getStationSlot().getId().equals("SHIELD2")) {
                     continue;
+                }
                 m.ensureClonedStationSlotSpec();
                 m.setHullSize(HullSize.FIGHTER);
                 if (m.getStationSlot().getId().equals("MODULE")) {
@@ -309,7 +310,7 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
                     if (armL != null) {
                         m.setFacing(armL.getCurrAngle());
                         if (ship.areAnyEnemiesInRange() && trueWeapon != null) {
-                            m.getSpriteAPI().setCenterY(originalShieldPos + (2 * Math.max(0,trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown())));
+                            m.getSpriteAPI().setCenterY(originalShieldPos + (2 * Math.max(0, trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown())));
                         }
 
                     }

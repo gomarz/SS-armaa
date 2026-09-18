@@ -1,4 +1,4 @@
-package data.missions.armaa_duel;
+package data.scripts.campaign.missions.plugins;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;
