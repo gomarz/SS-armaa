@@ -262,15 +262,6 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
             core.setAICoreId(ITEM);
             data.put(coreKey, core);
         }
-        if (data.containsKey(DATA_PREFIX + member.getId())) {
-            return;
-        }
-        tracker2.advance(amount);
-        if (!member.getVariant().hasHullMod("armaa_aicoreutilityscript")) {
-            data.put(DATA_PREFIX + member.getId(), "_");
-            member.getVariant().addPermaMod("armaa_aicoreutilityscript");
-        }
-
     }
 
     @Override
