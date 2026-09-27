@@ -4,7 +4,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogPlugin;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.util.Misc;
 
 //yoinked for svc
 abstract class armaa_NotificationBase {
@@ -65,7 +64,8 @@ abstract class armaa_NotificationBase {
         mem.set(getTriggerKey(), true);//$armaa_mazalot_event_id
 
         showAttempts++;
-        Misc.showRuleDialog(interactionTarget, "PopulateOptions");
+        Global.getSector().getCampaignUI().showInteractionDialog(
+                new armaa_notificationRuleDialog(getTriggerKey()), interactionTarget);
 
         shouldBeShownOnce = false;
         shouldBeShownRepeatable = false;

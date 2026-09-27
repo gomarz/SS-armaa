@@ -272,7 +272,11 @@ public class armaa_squadManagerIntel extends BaseIntelPlugin {
         // Squadron rename row - field and button both flow into info so they
         // stay visually adjacent rather than on separate containers.
         List<Object> squadParams = new ArrayList<Object>();
-        TextFieldAPI squadName = info.addTextField(200f, pad);
+        // Limit by characters, not pixel width: at 200px the default width limit
+        // cut "Squadron" off at the n, shorter than the generated names.
+        TextFieldAPI squadName = info.addTextField(320f, pad);
+        squadName.setLimitByStringWidth(false);
+        squadName.setMaxChars(32);
         squadParams.add(squadLeader);
         squadParams.add(squadName);
         info.addButton("Rename Squadron", squadParams, 160, 20, pad);

@@ -6,6 +6,8 @@ V3.3.6.1
 		- Ships that got the suite before cores were tracked by the game still get their core back when it is removed
 	- Fixed AI strikecraft aborting their carrier refit immediately and relaunching in a loop (#96)
 	- Cataphract ground operations bonus no longer applies when the fleet has no marines
+	- Squadron rename field is now limited to 32 characters instead of by text width, so names as long as the generated ones fit
+	- Fixed Dawn notifications that could open an empty dialog with only a "Leave" option (e.g. after recovering the planetkiller); a notification with no matching dialog now closes itself and logs a warning
 	- GuarDUAL: fixed missile hardpoint fire offsets, and a possible crash with missiles that have fewer turret than hardpoint barrels
 	- Combo Unit: module is now correctly marked detached/restored when the core dies or retreats
 	- Fixed a possible crash in Spare Chassis when the player fleet had no fleet data
@@ -22,6 +24,7 @@ V3.3.6.1
 
 - Kouto
 	- Torso Karma Seekers are now decorative and no longer fire
+	- Kouto LPC torso no longer sits turned at rest and snaps straight when the left arm fires
 
 - Valkazard Kai
 	- CR/day: 3->6
