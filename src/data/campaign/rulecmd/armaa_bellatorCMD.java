@@ -52,29 +52,35 @@ public class armaa_bellatorCMD extends BaseCommandPlugin {
             mrcGuardFleet.getAbility(Abilities.TRANSVERSE_JUMP).activate();
             mrcGuardFleet.setId("armaa_escapingBellator");
             mrcGuardFleet.addEventListener(new FleetEventListener() {
+                // Never remove the listener from inside a callback: the engine iterates the listener list
+                // while dispatching, so removal there throws ConcurrentModificationException.
+                private boolean resolved = false;
+
                 @Override
                 public void reportFleetDespawnedToListener(CampaignFleetAPI fleet,
                         FleetDespawnReason reason, Object param) {
+                    if (resolved) {
+                        return;
+                    }
+                    resolved = true;
                     if (reason == FleetDespawnReason.REACHED_DESTINATION || reason == FleetDespawnReason.PLAYER_FAR_AWAY) {
                         Global.getSector().getMemoryWithoutUpdate()
                                 .set("$armaa_bellatorEscaped", true);
-                        mrcGuardFleet.removeEventListener(this);
                     } else {
                         // Escaped or let go
                         Global.getSector().getMemoryWithoutUpdate()
                                 .set("$armaa_bellatorDefeated", true);
-                        mrcGuardFleet.removeEventListener(this);
                     }
                 }
 
                 @Override
                 public void reportBattleOccurred(CampaignFleetAPI fleet,
                         CampaignFleetAPI primaryWinner, BattleAPI battle) {
-                    
-                    if (fleet.getFlagship() != null && !fleet.getFlagship().getHullId().contains("bellator")) {
+
+                    if (!resolved && fleet.getFlagship() != null && !fleet.getFlagship().getHullId().contains("bellator")) {
                         Global.getSector().getMemoryWithoutUpdate()
                                 .set("$armaa_bellatorDefeated", true);
-                        mrcGuardFleet.removeEventListener(this);
+                        resolved = true;
                     }
                 }
             });

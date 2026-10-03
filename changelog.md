@@ -1,3 +1,39 @@
+V3.3.7
+------
+
+- Fixes
+	- Fixed OVERLORD SUITE giving back an extra AI core every time it was removed (#97)
+		- Ships that got the suite before cores were tracked by the game still get their core back when it is removed
+	- Fixed AI strikecraft aborting their carrier refit immediately and relaunching in a loop (#96)
+	- Cataphract ground operations bonus no longer applies when the fleet has no marines
+	- Squadron rename field is now limited to 32 characters instead of by text width, so names as long as the generated ones fit
+	- Fixed Dawn notifications that could open an empty dialog with only a "Leave" option (e.g. after recovering the planetkiller); a notification with no matching dialog now closes itself and logs a warning
+	- GuarDUAL: fixed missile hardpoint fire offsets, and a possible crash with missiles that have fewer turret than hardpoint barrels
+	- Combo Unit: module is now correctly marked detached/restored when the core dies or retreats
+	- Fixed a possible crash in Spare Chassis when the player fleet had no fleet data
+	- Executioner's Mark (Ashura, Garegga (H), Rajanya)
+		- AI no longer gets stuck in fallback after taking hull damage
+		- AI now dashes in plain engagements instead of only on eliminate orders
+		- Dashes get a short commit window before they can be aborted, and escape dashes are no longer cancelled on the first tick
+		- Stale dash requests are no longer carried into a later activation
+	- Armored Boarding Pod
+		- No longer detonates on hulks or anything else it touches
+		- Latches onto the first hostile hull it strikes
+		- Bounces off raised shields for 40 kinetic damage (first 3 bounces only)
+	- Bellator Formation Drive: anchors on the whole fleet's centroid instead of only heavy ships
+	- Fixed a crash (ConcurrentModificationException) when returning to the campaign after defeating the escaping Bellator fleet
+
+- Kouto
+	- Torso Karma Seekers are now decorative and no longer fire
+	- Kouto LPC torso no longer sits turned at rest and snaps straight when the left arm fires
+
+- Valkazard Kai
+	- CR/day: 3->6
+	- CR to deploy: 45%->40%
+
+- Valkazard
+	- Torso flamer: Energy->Ballistic
+
 V3.3.6
 ------
 

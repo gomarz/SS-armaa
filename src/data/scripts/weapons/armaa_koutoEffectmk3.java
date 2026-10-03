@@ -4,7 +4,6 @@ import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.magiclib.util.MagicAnim;
 import java.awt.Color;
 import java.util.List;
 import org.lazywizard.lazylib.MathUtils;
@@ -30,7 +29,7 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
     private boolean windingup = false;
     private float overlap = 0, originalRArmPos = 0f, originalArmPos = 0f, originalShoulderPos = 0f, originalRShoulderPos = 0f;
     private float originalShieldPos = 0f;
-    private final float TORSO_OFFSET = -45, LEFT_ARM_OFFSET = -70, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
+    private final float LEFT_ARM_OFFSET = -70, RIGHT_ARM_OFFSET = -25, MAX_OVERLAP = 10;
 
     public void init() {
         runOnce = true;
@@ -181,73 +180,49 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
             currentRotateR -= 0.4f;
         }
 
-        float sineA = 0, sineC = 0, sinceG = 0;
         float global = ship.getFacing();
         float aim = MathUtils.getShortestRotation(global, gun.getCurrAngle());
-        boolean noanim = !ship.getHullSpec().getHullId().equals("armaa_kouto") ? true : false;
-        //noanim  = true;
-        if (armL != null && !noanim) {
 
-            if (armL.getChargeLevel() > 0) {
-                sineA = MagicAnim.smoothNormalizeRange(armL.getChargeLevel(), 0.5f, 1f);
-                sinceB = MagicAnim.smoothNormalizeRange(armL.getChargeLevel(), 0.3f, 1f);
-            } else {
-                sineA = 1;
-                sinceB = 1;
-            }
-
-            //armL.getSprite().setCenterY(originalArmPos-(16*sinceB)+(8*sinceG));
-        }
-
-        if (weapon != null) {
-            if (armL != null) {
-                if (!noanim) {
-                    weapon.setCurrAngle(global + (sineA * (TORSO_OFFSET) - (sinceG * TORSO_OFFSET) + ((sineC * (TORSO_OFFSET)))) + aim * 0.3f + currentRotateR);
-                    armL.setCurrAngle(armL.getCurrAngle() + (sineA * (TORSO_OFFSET / 7) * .7f) - (sinceG * TORSO_OFFSET * .5f) + (sineC * (TORSO_OFFSET)));
+        if (armL != null) {
+            // The left arm is only posed when it's a dummy and the real gun sits in
+            // TRUE_GUN. Where the arm is the weapon itself (Kouto LPC's bazooka) it
+            // is left to aim on its own.
+            if (trueWeapon != null) {
+                if (ship.areAnyEnemiesInRange()) {
+                    sinceB += amount;
                 } else {
-                    if (ship.areAnyEnemiesInRange() && (trueWeapon != null)) {
-                        sinceB += amount;
-                    } else {
-                        sinceB -= amount;
-                    }
-                    if (sinceB < 0) {
-                        sinceB = 0;
-                    } else if (sinceB > 1) {
-                        sinceB = 1;
-                    }
-                    armL.setCurrAngle(global + ((aim + LEFT_ARM_OFFSET) * sinceB) + ((overlap + aim * 0.25f) * (1 - sinceB)));
-                    weapon.setCurrAngle(global + (sineA * (TORSO_OFFSET) + aim * 0.3f) + currentRotateR);
+                    sinceB -= amount;
+                }
+                if (sinceB < 0) {
+                    sinceB = 0;
+                } else if (sinceB > 1) {
+                    sinceB = 1;
+                }
+                armL.setCurrAngle(global + ((aim + LEFT_ARM_OFFSET) * sinceB) + ((overlap + aim * 0.25f) * (1 - sinceB)));
+            }
+            weapon.setCurrAngle(global + aim * 0.3f + currentRotateR);
 
-                    if (trueWeapon != null && trueWeapon.getCooldown() > 0) {
-                        float t = trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown();                        
-                        gun.getSprite().setCenterY(originalRArmPos + (2 * t*t));
-                        pauldronR.getSprite().setCenterY(originalRShoulderPos + (1.5f * t*t));
+            if (trueWeapon != null && trueWeapon.getCooldown() > 0) {
+                float t = trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown();
+                gun.getSprite().setCenterY(originalRArmPos + (2 * t * t));
+                pauldronR.getSprite().setCenterY(originalRShoulderPos + (1.5f * t * t));
 
-                        if (sinceB >= 0.95) {
-                            // t*t eases out
-                            armL.getSprite().setCenterY(originalArmPos + (1.5f * t * t));
-                            pauldronL.getSprite().setCenterY(originalShoulderPos + (1.0f * t * t));                            
-                            //armL.getSprite().setCenterY(originalArmPos + (2 * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
-                            //pauldronL.getSprite().setCenterY(originalShoulderPos + (1.8f * trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown()));
-
-                        }
-
-                    }
+                if (sinceB >= 0.95) {
+                    // t*t eases out
+                    armL.getSprite().setCenterY(originalArmPos + (1.5f * t * t));
+                    pauldronL.getSprite().setCenterY(originalShoulderPos + (1.0f * t * t));
                 }
             }
         }
 
         if (armR != null) {
-            armR.setCurrAngle(gun.getCurrAngle() + RIGHT_ARM_OFFSET + ((sineC * (TORSO_OFFSET))));
+            armR.setCurrAngle(gun.getCurrAngle() + RIGHT_ARM_OFFSET);
         }
 
         if (pauldronR != null) {
-            pauldronR.setCurrAngle(global + sineA * (TORSO_OFFSET) - (sinceG * TORSO_OFFSET) + ((sineC * (TORSO_OFFSET))) * 0.5f + aim * 0.75f + RIGHT_ARM_OFFSET * 0.5f + currentRotateR * 0.75f);
+            pauldronR.setCurrAngle(global + aim * 0.75f + RIGHT_ARM_OFFSET * 0.5f + currentRotateR * 0.75f);
             if (gun.getBarrelSpriteAPI() != null) {
                 pauldronR.getSprite().setCenterY(gun.getBarrelSpriteAPI().getCenterY() - 40f);
-            }
-            if (sineC > 0) {
-                gun.setCurrAngle(gun.getCurrAngle() + sineC * TORSO_OFFSET * .70f);
             }
         }
 
@@ -266,8 +241,9 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
                 if (m.getStationSlot() == null) {
                     continue;
                 }
-                if(m.getStationSlot().getId().equals("SHIELD2"))
+                if (m.getStationSlot().getId().equals("SHIELD2")) {
                     continue;
+                }
                 m.ensureClonedStationSlotSpec();
                 m.setHullSize(HullSize.FIGHTER);
                 if (m.getStationSlot().getId().equals("MODULE")) {
@@ -309,7 +285,7 @@ public class armaa_koutoEffectmk3 implements EveryFrameWeaponEffectPlugin {
                     if (armL != null) {
                         m.setFacing(armL.getCurrAngle());
                         if (ship.areAnyEnemiesInRange() && trueWeapon != null) {
-                            m.getSpriteAPI().setCenterY(originalShieldPos + (2 * Math.max(0,trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown())));
+                            m.getSpriteAPI().setCenterY(originalShieldPos + (2 * Math.max(0, trueWeapon.getCooldownRemaining() / trueWeapon.getCooldown())));
                         }
 
                     }

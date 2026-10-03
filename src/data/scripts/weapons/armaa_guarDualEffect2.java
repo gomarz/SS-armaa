@@ -560,18 +560,22 @@ private float transformCooldown = 0f;
                 w.ensureClonedSpec();
                 List<Vector2f> ogSpec = new ArrayList<Vector2f>(w.getSpec().getTurretFireOffsets());
                 List<Float> ogAngle = new ArrayList<Float>(w.getSpec().getTurretAngleOffsets());
-                int size = w.getSpec().getTurretFireOffsets().size();
+                int size = w.getSpec().getHardpointFireOffsets().size();
                 int posL = size > 2 ? size - 1 : 0;
-                if (size > 1 && !cleared) {
+                // the source lists are the turret offsets, which can be shorter
+                // than the hardpoint list, so clamp into them
+                int lastSpec = ogSpec.size() - 1;
+                int lastAngle = ogAngle.size() - 1;
+                if (size > 1 && !cleared && lastSpec >= 0 && lastAngle >= 0) {
                     w.getSpec().getHardpointFireOffsets().clear();
                     w.getSpec().getHardpointAngleOffsets().clear();
                     for (int i = 0; i < size; i++) {
                         if (w.getSlot().getId().equals("WS0002")) {
-                            w.getSpec().getHardpointFireOffsets().add(ogSpec.get(posL));
-                            w.getSpec().getHardpointAngleOffsets().add(ogAngle.get(posL));
+                            w.getSpec().getHardpointFireOffsets().add(ogSpec.get(Math.min(posL, lastSpec)));
+                            w.getSpec().getHardpointAngleOffsets().add(ogAngle.get(Math.min(posL, lastAngle)));
                         } else if (w.getSlot().getId().equals("WS0004")) {
-                            w.getSpec().getHardpointFireOffsets().add(ogSpec.get(size - 1));
-                            w.getSpec().getHardpointAngleOffsets().add(ogAngle.get(size - 1));
+                            w.getSpec().getHardpointFireOffsets().add(ogSpec.get(Math.min(size - 1, lastSpec)));
+                            w.getSpec().getHardpointAngleOffsets().add(ogAngle.get(Math.min(size - 1, lastAngle)));
                         }
                     }
                 }

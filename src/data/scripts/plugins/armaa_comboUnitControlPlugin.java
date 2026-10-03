@@ -32,10 +32,10 @@ import org.lwjgl.util.vector.Vector2f;
 /**
  *
  * @author shoi needs its own script to avoid ConcurrentModificationException
- * launch bays go completely inert under controlsLocked, and setSourceShip/setSourceBay 
- * only move the wing's outbound pointers, not its membership in a hull's bay collection
- * keep this in mind when eventually come back to try and refactor this again so 
- * we don't waste time again
+ * launch bays go completely inert under controlsLocked, and
+ * setSourceShip/setSourceBay only move the wing's outbound pointers, not its
+ * membership in a hull's bay collection keep this in mind when eventually come
+ * back to try and refactor this again so we don't waste time again
  */
 public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
 
@@ -67,13 +67,17 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
         }
     }
 
+    // only restores while attached
+    // if detached, we let the listener figure it out
     private void restoreSlot(ShipAPI module) {
         String origId = originalSlotIds.remove(module);
         if (origId == null) {
             return;
         }
         if (module.controlsLocked()) {
-            return; // core ejected; husk is meant to die
+            return; // core ejected;
+                    // we could assume its alive and always restore anyway
+                    // but doesnt work as is for some reason
         }
         if (!module.isAlive() || module.isHulk()) {
             return;
@@ -356,28 +360,32 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
     }
 
     private static void purgeWing(ShipAPI hull) {
-    CombatEngineAPI engine = Global.getCombatEngine();
-    for (FighterLaunchBayAPI bay : hull.getLaunchBaysCopy()) {
-        FighterWingAPI wing = bay.getWing();
-        if (wing == null) {
-            continue;
-        }
-        for (ShipAPI f : new ArrayList<ShipAPI>(wing.getWingMembers())) {
-            if (f != null) {
-                engine.removeEntity(f);
+        CombatEngineAPI engine = Global.getCombatEngine();
+        for (FighterLaunchBayAPI bay : hull.getLaunchBaysCopy()) {
+            FighterWingAPI wing = bay.getWing();
+            if (wing == null) {
+                continue;
+            }
+            for (ShipAPI f : new ArrayList<ShipAPI>(wing.getWingMembers())) {
+                if (f != null) {
+                    engine.removeEntity(f);
+                }
             }
         }
     }
-}
+
     protected static class armaa_comboUnitListener implements AdvanceableListener {
 
         ShipAPI ship;
         ShipAPI trueShip;
+        FleetMemberAPI trueFM;
 
         // CombatEngineAPI engine;
         public armaa_comboUnitListener(ShipAPI ship, ShipAPI trueShip) {
             this.ship = ship;
             this.trueShip = trueShip;
+            if(trueShip.getParentStation() != null && trueShip.getParentStation().getFleetMember() != null )
+            trueFM = trueShip.getParentStation().getFleetMember();
         }
 
         @Override
@@ -390,9 +398,32 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                 trueShip.setStationSlot(null);
                 trueShip.getLocation().set(-10000, -10000);
                 armaa_utils.destroy(trueShip);
+                // remove module from the variant, should do this in case it retreated before this guy died
+                if(trueFM != null)
+                for (int i = 0; i < trueFM.getVariant().getModuleSlots().size(); i++) {
+                    String slotId = trueFM.getVariant().getModuleSlots().get(i);
+                    if (slotId.equals("MODULE")) {
+                        trueFM.getStatus().setDetached(i + 1, true);
+                        trueFM.getStatus().setHullFraction(i + 1, 0f);
+                    }
+                }
                 ship.removeListener(this);
                 return;
 
+            }
+            boolean travelling = ship.getTravelDrive() != null && ship.getTravelDrive().isActive();
+
+            if (Global.getCombatEngine().isCombatOver() || (travelling && (ship.isDirectRetreat() || ship.isRetreating()))) {
+                if(trueFM != null)
+                for (int i = 0; i < trueFM.getVariant().getModuleSlots().size(); i++) {
+                    String slotId = trueFM.getVariant().getModuleSlots().get(i);
+                    if (slotId.equals("MODULE")) {
+                        trueFM.getStatus().setDetached(i + 1, false);
+                        trueFM.getStatus().setHullFraction(i + 1, ship.getHullLevel());
+                    }
+                }
+                ship.removeListener(this);
+                return;
             }
             if (Global.getCombatEngine().isEntityInPlay(ship)) {
                 trueShip.setAnimatedLaunch();
@@ -438,6 +469,7 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
                                 armaa_utils.setLocation(ship, new Vector2f(-10000, -10000));
                                 purgeWing(ship);
                                 ship.setHitpoints(0f);
+                                armaa_utils.destroy(ship);
                             }
                         }
                     }
@@ -517,4 +549,5 @@ public class armaa_comboUnitControlPlugin extends BaseEveryFrameCombatPlugin {
             return "";
         }
     }
+
 }

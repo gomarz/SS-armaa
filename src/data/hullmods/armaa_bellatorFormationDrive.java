@@ -484,7 +484,7 @@ public class armaa_bellatorFormationDrive extends BaseHullMod {
          * still works in small engagements.
          */
         private static Vector2f findAnchor(CombatEngineAPI engine, ShipAPI self) {
-            Vector2f heavy = weightedCentroid(engine, self, true);
+            Vector2f heavy = weightedCentroid(engine, self, false);
             if (heavy != null) {
                 return heavy;
             }

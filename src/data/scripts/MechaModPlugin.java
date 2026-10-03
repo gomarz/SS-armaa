@@ -37,6 +37,7 @@ import data.scripts.ai.armaa_curvyLaserAI;
 import data.scripts.ai.armaa_armorPodAI;
 import data.scripts.world.ARMAAWorldGen;
 import data.scripts.campaign.notifications.armaa_notificationShower;
+import data.hullmods.armaa_aicoreutilityscript;
 import data.hullmods.cataphract;
 
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
@@ -266,6 +267,7 @@ public class MechaModPlugin extends BaseModPlugin {
         removeScript(reprisalScript);
         removeScript(notificationScript);
         removeScript(GBScript);
+        armaa_aicoreutilityscript.checkPlayerFleet();
         boolean hiredDawn = false;
 
         for (ShipHullSpecAPI spec : Global.getSettings().getAllShipHullSpecs()) {

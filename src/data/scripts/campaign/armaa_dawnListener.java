@@ -122,9 +122,15 @@ public class armaa_dawnListener extends BaseCampaignEventListenerAndScript imple
     public void reportPlayerEngagement(EngagementResultAPI result) {
         boolean noticedAI = Global.getSector().getPlayerMemoryWithoutUpdate().contains("$dawnNoticedAI");
         if (!noticedAI) {
-            for (FleetMemberAPI member : result.getBattle().getPlayerCombined().getFleetData().getMembersListCopy()) {
+            // Own fleet only: getPlayerCombined() includes allies, and the Dawn rule
+            // (armaa_dawnCMD getAICoreForDawnEvent) needs an AI captain in the player's fleet
+            if (Global.getSector().getPlayerFleet() == null) {
+                return;
+            }
+            for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
                 if (member.getCaptain() != null && member.getCaptain().isAICore()) {
                     Global.getSector().getPlayerMemoryWithoutUpdate().set("$dawnNoticedAI", true);
+                    break;
                 }
             }
         }

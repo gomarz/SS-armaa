@@ -39,7 +39,7 @@
     {
       "id": "B_TORSO",
       "size": "SMALL",
-      "type": "MISSILE",
+      "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,

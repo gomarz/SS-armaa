@@ -76,7 +76,8 @@ public class armaa_spareChassis extends BaseHullMod {
 
         int fleetTotal = 0;
         if (!ai) {
-            if (Global.getSector().getPlayerFleet() != null) {
+            if (Global.getSector().getPlayerFleet() != null && Global.getSector().getPlayerFleet()
+                        .getFleetData() != null) {
                 for (FleetMemberAPI member : Global.getSector().getPlayerFleet()
                         .getFleetData().getMembersListCopy()) {
                     if (member.getVariant() == null) {
