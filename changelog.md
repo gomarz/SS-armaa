@@ -21,6 +21,7 @@ V3.3.6.1
 		- Latches onto the first hostile hull it strikes
 		- Bounces off raised shields for 40 kinetic damage (first 3 bounces only)
 	- Bellator Formation Drive: anchors on the whole fleet's centroid instead of only heavy ships
+	- Fixed a crash (ConcurrentModificationException) when returning to the campaign after defeating the escaping Bellator fleet
 
 - Kouto
 	- Torso Karma Seekers are now decorative and no longer fire
