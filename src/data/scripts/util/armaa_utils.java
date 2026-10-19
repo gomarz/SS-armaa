@@ -784,13 +784,13 @@ public class armaa_utils {
     }
 
     public static void makeAfterImages(ShipAPI ship, float AFTERIMAGE_THRESHOLD, float amount, Color tint) {
-        //afterimage shit from tahlan
+        //afterimage effect adapted from Tahlan Shipworks
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerNullerID", -1);
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerID",
                 ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() + amount);
 
         if (ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
-            // Sprite offset fuckery - Don't you love trigonometry?
+            // Sprite offset math
             SpriteAPI sprite = ship.getSpriteAPI();
             float offsetX = sprite.getWidth() / 2 - sprite.getCenterX();
             float offsetY = sprite.getHeight() / 2 - sprite.getCenterY();
@@ -898,13 +898,13 @@ public class armaa_utils {
     }
 
     public static void makeWeaponAfterImages(ShipAPI ship, WeaponAPI w, float AFTERIMAGE_THRESHOLD, float amount) {
-        //afterimage shit from tahlan
+        //afterimage effect adapted from Tahlan Shipworks
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerNullerID", -1);
         ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerID",
                 ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() + amount);
 
         if (ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
-            // Sprite offset fuckery - Don't you love trigonometry?
+            // Sprite offset math
             SpriteAPI sprite = ship.getSpriteAPI();
             float offsetX = sprite.getWidth() / 2 - sprite.getCenterX();
             float offsetY = sprite.getHeight() / 2 - sprite.getCenterY();

@@ -39,8 +39,6 @@ import data.scripts.campaign.armaa_mrcReprisalListener;
 import data.scripts.campaign.intel.events.armaa_combatDataEventIntel;
 import data.scripts.util.armaa_utils;
 import exerelin.campaign.SectorManager;
-//wtf i love MOOD RUNES
-// endless if else if else is peak efficiency
 
 public class armaa_Hikaru_Utada extends BaseCommandPlugin {
 

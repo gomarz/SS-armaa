@@ -55,7 +55,7 @@ public class armaa_AFCSStats extends BaseShipSystemScript {
         //friendlyECM += bonus;
         SpriteAPI waveSprite = Global.getSettings().getSprite("misc", "armaa_sfxpulse");
 
-        //why the FUCK is this not working?
+        //the sprite pulse below doesn't render reliably
         //fallback to plan B: copy IS
         if (waveSprite != null) {
             interval.advance(.025f);
@@ -168,7 +168,7 @@ public class armaa_AFCSStats extends BaseShipSystemScript {
                             interval.advance(amount);
                             SpriteAPI waveSprite = Global.getSettings().getSprite("misc", "armaa_target");
 
-                            //why the FUCK is this not working?
+                            //the sprite pulse below doesn't render reliably
                             //fallback to plan B: copy IS
                             if (waveSprite != null) {
                                 float radius = targetData.target.getCollisionRadius() * 3;

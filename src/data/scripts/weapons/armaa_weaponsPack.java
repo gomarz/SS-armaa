@@ -10,7 +10,7 @@ public class armaa_weaponsPack implements EveryFrameWeaponEffectPlugin {
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) 
     {
 
-        // not used anywhere..but somehow is affecting the bakraids...wtf just delete it 
+        // Not referenced anywhere, but removing it affected the Bakraids, so it stays for now
 
     }
 }

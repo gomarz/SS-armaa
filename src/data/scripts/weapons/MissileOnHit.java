@@ -51,6 +51,6 @@ public class MissileOnHit implements OnHitEffectPlugin
 
     @Override
     public void onHit(DamagingProjectileAPI dpapi, CombatEntityAPI ceapi, Vector2f vctrf, boolean bln, ApplyDamageResultAPI adrapi, CombatEngineAPI ceapi1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

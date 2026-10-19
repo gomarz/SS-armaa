@@ -158,9 +158,9 @@ public class armaa_SilverSwordHM extends BaseHullMod {
         //weapons are PD_ALSO now, don't know if this does anything
         stats.getDynamic().getMod(Stats.PD_BEST_TARGET_LEADING).modifyFlat(id, 1f);
 
-        //fuck missiles
+        //bonus vs missiles
         stats.getDamageToMissiles().modifyPercent(id, DAMAGE_BONUS);
-        //fuck fighters
+        //bonus vs fighters
         stats.getDamageToFighters().modifyPercent(id, DAMAGE_BONUS);
 
         //aimbot

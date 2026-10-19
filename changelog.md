@@ -1,3 +1,16 @@
+Unreleased
+------
+
+- Fixes
+	- Watchdog: Guardian Protocol
+		- Fixed the range ring being cut off, and the mouse cursor being thrown off, at UI scaling above 100%
+		- Fixed allies taking almost no shield damage while the system charged up (now ramps to a 10% reduction at full effect)
+		- Fixed the Watchdog being unable to move or turn when the system activated
+		- Rate of fire bonus is now +10% (was +1.1%), and sensor range bonus is now +50%
+		- Ally jitter and the player status line no longer flicker; status lines now describe the actual bonuses
+		- Ring now spins at a fixed rate instead of with frame rate
+	- Karma: range rings no longer use raw OpenGL calls outside the render pass; fixed ring size and position under UI scaling
+
 V3.3.7
 ------
 

@@ -16,7 +16,7 @@ import org.magiclib.util.MagicRender;
 
 /**
  *
- * @author bra20
+ * @author gomarz
  */
 public class armaa_ashuraHammerProjectileEffect extends BaseEveryFrameCombatPlugin {
 
