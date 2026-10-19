@@ -312,7 +312,7 @@ public class armaa_SilverSysStatsValkazard extends BaseShipSystemScript {
                 stats.getBallisticAmmoRegenMult().unmodify(id);
                 stats.getEnergyAmmoRegenMult().unmodify(id);
 
-                /* Ham-fisted attempt to get rid of that FUCKING glow */
+                /* Force the weapon glow off; it otherwise lingers after the system ends */
                 ship.setWeaponGlow(0f, new Color(255, 125, 50, 220), EnumSet.of(WeaponAPI.WeaponType.BALLISTIC, WeaponAPI.WeaponType.MISSILE, WeaponAPI.WeaponType.ENERGY));
 
                 if (ship.getFluxTracker().getCurrFlux() > ship.getFluxTracker().getMaxFlux()) {
@@ -334,7 +334,6 @@ public class armaa_SilverSysStatsValkazard extends BaseShipSystemScript {
         }
 
 
-        /* WTF? */
         if (effectLevel <= 0f) {
             tempGauge = odData.gauge;
             if (unbugify) {
@@ -436,7 +435,7 @@ public class armaa_SilverSysStatsValkazard extends BaseShipSystemScript {
 
             if (ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
 
-                // Sprite offset fuckery - Don't you love trigonometry?
+                // Sprite offset math
                 SpriteAPI sprite = ship.getSpriteAPI();
                 float offsetX = sprite.getWidth() / 2 - sprite.getCenterX();
                 float offsetY = sprite.getHeight() / 2 - sprite.getCenterY();

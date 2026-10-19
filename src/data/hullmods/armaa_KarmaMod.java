@@ -67,7 +67,7 @@ private static final List<String> BAD_MODS = new ArrayList<>();
 				stats.getEnergyWeaponFluxCostMod().modifyMult(id, 1f - (mult*2 * 0.01f));
 				stats.getMaxSpeed().modifyPercent(id, mult);
 				stats.getMaxTurnRate().modifyPercent(id,mult);
-				//afterimage shit from tahlan
+				//afterimage effect adapted from Tahlan Shipworks
 				ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerNullerID", -1);
 				ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerID",
                 ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() + amount);
@@ -75,7 +75,7 @@ private static final List<String> BAD_MODS = new ArrayList<>();
 				if(ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) 
 				{
 
-					// Sprite offset fuckery - Don't you love trigonometry?
+					// Sprite offset math
 					SpriteAPI sprite = ship.getSpriteAPI();
 					float offsetX = sprite.getWidth()/2 - sprite.getCenterX();
 					float offsetY = sprite.getHeight()/2 - sprite.getCenterY();

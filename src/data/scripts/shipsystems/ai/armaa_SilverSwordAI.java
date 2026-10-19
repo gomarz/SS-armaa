@@ -202,7 +202,7 @@ public class armaa_SilverSwordAI implements ShipSystemAIScript {
                 
             }
 
-            /* "Oh shit!" - dont overload us, though */
+            /* Emergency use - don't overload us, though */
             if (flags.hasFlag(AIFlags.NEEDS_HELP)) {
                 if (overloadDanger && !panic) {
                     desire += 1f;
@@ -211,7 +211,7 @@ public class armaa_SilverSwordAI implements ShipSystemAIScript {
                 }
             }
 
-            /* If we need to tank some shit *right now*, this system can save our lives. Likewise, if we're outclassed,
+            /* If we need to tank damage *right now*, this system can save our lives. Likewise, if we're outclassed,
                the system will come in handy -- but let's not waste it too soon, nor screw ourselves by overloading. */
             if (flags.hasFlag(AIFlags.HAS_INCOMING_DAMAGE) && flags.hasFlag(AIFlags.IN_CRITICAL_DPS_DANGER)) {
                 if (veryHighFlux) {

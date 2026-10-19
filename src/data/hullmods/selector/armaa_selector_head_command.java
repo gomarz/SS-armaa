@@ -175,8 +175,7 @@ public class armaa_selector_head_command extends BaseHullMod {
     }
 
     private float getDilationAmount(ShipAPI ship) {
-        // TODO: hook into your level/range system
-        // Returning LV4 range 1 value for now
+        // Flat LV4 value for now; not yet tied to pilot level
         return 0.10f;
     }
     private final Color HL = Global.getSettings().getColor("hColor");

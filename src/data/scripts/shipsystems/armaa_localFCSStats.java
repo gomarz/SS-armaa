@@ -114,7 +114,7 @@ public class armaa_localFCSStats extends BaseShipSystemScript {
 
                     interval.advance(amount);
                     SpriteAPI waveSprite = Global.getSettings().getSprite("ceylon", "armaa_ceylontarget");
-                    //why the FUCK is this not working?
+                    //the sprite pulse below doesn't render reliably
                     //fallback to plan B: copy IS
                     if (waveSprite != null) {
                         float radius = targetData.target.getCollisionRadius() * 3;

@@ -183,7 +183,7 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                             interval.advance(amount);
                             SpriteAPI waveSprite = Global.getSettings().getSprite("ceylon", "armaa_ceylontarget");
 
-                            //why the FUCK is this not working?
+                            //the sprite pulse below doesn't render reliably
                             //fallback to plan B: copy IS
                             if (waveSprite != null) {
                                 float radius = targetData.target.getCollisionRadius() * 3;
@@ -416,14 +416,14 @@ public class armaa_rampagedrive2 extends BaseShipSystemScript {
                 }
             }
             float amount = Global.getCombatEngine().getElapsedInLastFrame();
-            //afterimage shit from tahlan
+            //afterimage effect adapted from Tahlan Shipworks
             ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerNullerID", -1);
             ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").modifyFlat("armaa_NNAfterimageTrackerID",
                     ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() + amount);
 
             if (ship.getMutableStats().getDynamic().getStat("armaa_NNAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
 
-                // Sprite offset fuckery - Don't you love trigonometry?
+                // Sprite offset math
                 SpriteAPI sprite = ship.getSpriteAPI();
                 float offsetX = sprite.getWidth() / 2 - sprite.getCenterX();
                 float offsetY = sprite.getHeight() / 2 - sprite.getCenterY();

@@ -68,7 +68,6 @@ import lunalib.lunaSettings.LunaSettings;
 
 //import exerelin.campaign.SectorManager;
 //TODO: This was fine at first but I need to refactor it
-//lot of outdated/ugly stuff in here
 public class MechaModPlugin extends BaseModPlugin {
 
     public static final String spike_ID = "armaa_spike_rod";
@@ -294,7 +293,6 @@ public class MechaModPlugin extends BaseModPlugin {
         Global.getSector().addTransientScript(notificationScript = new armaa_notificationShower());
         Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_cataphract", 1);
 
-        // ugly
         if (Global.getSector().getImportantPeople().getPerson("armaa_dawn") != null) {
             PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
             if (haveAnime) {
