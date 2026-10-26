@@ -11,6 +11,7 @@ V3.3.8
 		- Ring now spins at a fixed rate instead of with frame rate
 	- Karma: range rings no longer use raw OpenGL calls outside the render pass; fixed ring size and position under UI scaling
 	- Dawn: the "Join Dawn and one of your officers" bar events no longer show when none of your officers can join the scene (e.g. only unique officers from other mods), which caused an error
+	- WINGCOM / OVERLORD SUITE: returning fighters are now routed to a carrier as soon as they head home, instead of sometimes landing on their own parent frigate first; they also no longer restart their approach every second, and several OVERLORD ships no longer share one landing timer
 
 V3.3.7
 ------
