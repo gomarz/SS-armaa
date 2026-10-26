@@ -141,7 +141,9 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
         } // ShowSecondPerson only checks for important people, so..
         else if ("showGuestOfficer".equals(action)) {
             PersonAPI person = (PersonAPI) memory.get("$armaa_dawnGuestPerson");
-            dialog.getVisualPanel().showSecondPerson(person);
+            if (person != null) {
+                dialog.getVisualPanel().showSecondPerson(person);
+            }
         } else if ("supressBarSupression".equals(action)) {
             //lol
             EveryFrameScript barscript = null;
@@ -171,8 +173,11 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
 
             return true;
         } else if ("hasOfficerForBarEvent".equals(action)) {
-            if (Misc.getNumNonMercOfficers(Global.getSector().getPlayerFleet()) > 1) {
-                return true;
+            // Same filter as the guest picker, so the event only shows when someone can actually join Dawn
+            for (OfficerDataAPI od : Global.getSector().getPlayerFleet().getFleetData().getOfficersCopy()) {
+                if (isEligibleGuest(od.getPerson())) {
+                    return true;
+                }
             }
             return false;
         } else if ("hasMoreCombatSkillsThanDawn".equals(action)) {
