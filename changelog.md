@@ -3,28 +3,29 @@ V3.3.8
 
 - Fixes
 	- Watchdog: Guardian Protocol
-		- Fixed the range ring being cut off, and the mouse cursor being thrown off, at UI scaling above 100%
+		- Fixed the range ring being cut off and the mouse cursor being thrown off at UI scaling above 100%
 		- Fixed allies taking almost no shield damage while the system charged up (now ramps to a 10% reduction at full effect)
 		- Fixed the Watchdog being unable to move or turn when the system activated
 		- Rate of fire bonus is now +10% (was +1.1%), and sensor range bonus is now +50%
-		- Ally jitter and the player status line no longer flicker; status lines now describe the actual bonuses
+		- player status lines now describe the actual bonuses
 		- Ring now spins at a fixed rate instead of with frame rate
-	- Karma: range rings no longer use raw OpenGL calls outside the render pass; fixed ring size and position under UI scaling
-	- Dawn: the "Join Dawn and one of your officers" bar events no longer appear, and error, when none of your officers can join them (e.g. only unique officers from other mods)
+	- Karma: fixed ring size and position under UI scaling
+	- Dawn: the "Join Dawn and one of your officers" bar events no longer appear when none of your officers can join them (e.g. only unique officers from other mods)
 	- WINGCOM / OVERLORD SUITE
-		- Returning fighters go straight to a carrier instead of sometimes landing on their own frigate
+		- Returning fighters go straight to a carrier instead of sometimes landing on a ship with no "real" fighter bays (I.E., WINGCOM frigates)
 		- Fighters no longer restart their landing approach every second
-		- Fixed fighter landing when several OVERLORD ships are deployed
+		- Fixed fighter landing when several OVERLORD ships are deployed due to a shared tracker in hullmod
 
-- Strikecraft (optional, requires PatchLib)
-	- AI strikecraft no longer hold fire when allies are in the way, since their shots pass over them; the red friendly-fire aim warning no longer shows for them either
-	- Other ships no longer hold fire at or steer around friendly strikecraft, which their shots and hulls pass through
+- Strikecraft (requires PatchLib)
+	- AI strikecraft no longer hold fire when allies are in the way since they inherently cannot cause FF in most cases. The red friendly fire aim warning no longer shows for them either. The same applies to allies when firing in the proximity of allied AI strikecraft
+  	- AI strikecraft no longer attempt to avoid collisions that could never be caused
+  	- Strikecraft are still capable of taking friendly fire and crashing into entities while flamed out, so original behavior is preserved there
 
 - Garegga (H), Bakraid (H), Bakraid (HT), Bakraid and Corsair (H) can now be sold by dealers; Bakraid (HT) is no longer restricted
 
 - GuarDUAL (F)
-	- Built-in Fighter Strafing and Automated Repair Unit replaced with Cataphract S-II
-	- Canister flak now deploys forwards instead of backwards
+	- Automated Repair Unit replaced with Cataphract S-II
+	- Canister flak now deploys forwards instead of backwards, which is significantly more effective
 	- Standard variant no longer comes with Integrated Point Defense AI and ECCM Package
 
 V3.3.7
