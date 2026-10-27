@@ -17,7 +17,7 @@ V3.3.8
 	- AI strikecraft no longer hold fire for fear of hitting allies their shots pass over, and the red friendly-fire aim warning no longer shows for them
 	- Other ships no longer hold fire, or steer around, friendly strikecraft that their shots and hulls pass through
 
-- Garegga (H), Bakraid (H), Bakraid (HT) and Bakraid can now be sold by dealers; Bakraid (HT) is no longer restricted
+- Garegga (H), Bakraid (H), Bakraid (HT), Bakraid and Corsair (H) can now be sold by dealers; Bakraid (HT) is no longer restricted
 
 V3.3.7
 ------
