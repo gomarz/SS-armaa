@@ -19,6 +19,10 @@ V3.3.8
 
 - Garegga (H), Bakraid (H), Bakraid (HT), Bakraid and Corsair (H) can now be sold by dealers; Bakraid (HT) is no longer restricted
 
+- GuarDUAL (F)
+	- Built-in Fighter Strafing and Automated Repair Unit replaced with Cataphract S-II
+	- Standard variant no longer comes with Integrated Point Defense AI and ECCM Package
+
 V3.3.7
 ------
 

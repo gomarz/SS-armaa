@@ -13,8 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "armaa_variableUnit",
-    "armaa_fighterStrafe",
-    "autorepair"
+    "cataphract2"
   ],
   "builtInWeapons": {
     "A_GUN": "armaa_guardual_arm_right",
@@ -158,7 +157,7 @@
       "type": "SYSTEM",
       "mount": "HARDPOINT",
       "arc": 5,
-      "angle": 180,
+      "angle": 0,
       "locations": [-8, -0]
     }
   ],
