@@ -20,6 +20,7 @@ V3.3.8
 	- AI strikecraft no longer hold fire when allies are in the way since they inherently cannot cause FF in most cases. The red friendly fire aim warning no longer shows for them either. The same applies to allies when firing in the proximity of allied AI strikecraft
   	- AI strikecraft no longer attempt to avoid collisions that could never be caused
   	- Strikecraft are still capable of taking friendly fire and crashing into entities while flamed out, so original behavior is preserved there
+  	- Missiles that can hit allies, such as the Reaper, still check for friendly fire before strikecraft launch them
 
 - Garegga (H), Bakraid (H), Bakraid (HT), Bakraid and Corsair (H) can now be sold by dealers; Bakraid (HT) is no longer restricted
 

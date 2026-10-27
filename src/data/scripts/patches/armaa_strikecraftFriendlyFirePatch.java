@@ -22,8 +22,10 @@ import patchlib.api.patch.Patch;
 /**
  * Patches vanilla's friendly-fire danger score itself, so every caller agrees: autofire, the AI's
  * manually fired weapon group, the player's red aim-line warning, dash systems, and mods using
- * SettingsAPI.getFriendlyFireDanger. The score only exempts fighter-sized ships, but strikecraft
- * shots pass over allies and friendly shots pass through strikecraft (FIGHTER collision class).
+ * SettingsAPI.getFriendlyFireDanger. The score treats every non-fighter-sized ally as an obstacle, but
+ * friendly shots, beams and missiles all pass through a ship with FIGHTER collision, so flying strikecraft
+ * are left out of it. Strikecraft as shooters are handled by armaa_strikecraftProjectileClassPatch, which
+ * keeps missiles that can hit allies under this check.
  *
  * The danger function is a static (ShipAPI shooter, target, Vector2f from, Vector2f to, float, float, float)
  * method in com.fs.starfarer.combat.ai. Two other static 7-arg float methods share that package and arity, and
@@ -52,10 +54,6 @@ public class armaa_strikecraftFriendlyFirePatch {
             return;
         }
         ShipAPI shooter = (ShipAPI) ctx.getArg(0);
-        if (isStrikecraft(shooter)) {
-            // Result is replaced in afterDanger; the original still runs so other patches see a normal call
-            return;
-        }
 
         // The danger loop skips drones with FIGHTER collision, so flag friendly strikecraft as drones for this call only
         CombatEngineAPI engine = Global.getCombatEngine();
@@ -82,10 +80,6 @@ public class armaa_strikecraftFriendlyFirePatch {
     @After(target = @MethodMatch(parameterCount = 7, returnTypeName = "float", staticType = StaticType.STATIC))
     public static void afterDanger(AfterContext ctx) {
         restore(ctx);
-        // Same runtime check as beforeDanger: this hook also sits on the two other overloads
-        if (isDangerCall(ctx) && isStrikecraft((ShipAPI) ctx.getArg(0))) {
-            ctx.setReturnValue(0f);
-        }
     }
 
     @Except(target = @MethodMatch(parameterCount = 7, returnTypeName = "float", staticType = StaticType.STATIC))
