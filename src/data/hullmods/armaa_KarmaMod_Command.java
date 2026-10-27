@@ -153,8 +153,8 @@ public class armaa_KarmaMod_Command extends BaseHullMod
 
 				final Vector2f loc = ship.getLocation();
 				final ViewportAPI view = Global.getCombatEngine().getViewport();
-				// MagicRender draws in world coords during the render pass; raw GL here ran outside it.
-				// Fresh sprite per call: hullmod instances are shared, so the cached one would share alpha across ships.
+				// advanceInCombat runs outside the render pass, so draw through MagicRender in world coords, not raw GL.
+				// Fresh sprite per call: hullmod instances are shared between ships, so a cached sprite would share its alpha.
 				if (view.isNearViewport(loc, EFFECT_RANGE) && !Global.getCombatEngine().isPaused()) {
 					SpriteAPI ring = Global.getSettings().getSprite(SPRITE_PATH);
 					ring.setAlphaMult(0.3f*total);

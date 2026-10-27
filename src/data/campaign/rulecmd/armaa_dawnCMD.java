@@ -173,7 +173,7 @@ public class armaa_dawnCMD extends BaseCommandPlugin {
 
             return true;
         } else if ("hasOfficerForBarEvent".equals(action)) {
-            // Same filter as the guest picker, so the event only shows when someone can actually join Dawn
+            // Same filter as the guest picker, so the event only shows when an officer can join the scene
             for (OfficerDataAPI od : Global.getSector().getPlayerFleet().getFleetData().getOfficersCopy()) {
                 if (isEligibleGuest(od.getPerson())) {
                     return true;

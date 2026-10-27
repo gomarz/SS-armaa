@@ -10,12 +10,15 @@ V3.3.8
 		- Ally jitter and the player status line no longer flicker; status lines now describe the actual bonuses
 		- Ring now spins at a fixed rate instead of with frame rate
 	- Karma: range rings no longer use raw OpenGL calls outside the render pass; fixed ring size and position under UI scaling
-	- Dawn: the "Join Dawn and one of your officers" bar events no longer show when none of your officers can join the scene (e.g. only unique officers from other mods), which caused an error
-	- WINGCOM / OVERLORD SUITE: returning fighters are now routed to a carrier as soon as they head home, instead of sometimes landing on their own parent frigate first; they also no longer restart their approach every second, and several OVERLORD ships no longer share one landing timer
+	- Dawn: the "Join Dawn and one of your officers" bar events no longer appear, and error, when none of your officers can join them (e.g. only unique officers from other mods)
+	- WINGCOM / OVERLORD SUITE
+		- Returning fighters go straight to a carrier instead of sometimes landing on their own frigate
+		- Fighters no longer restart their landing approach every second
+		- Fixed fighter landing when several OVERLORD ships are deployed
 
 - Strikecraft (optional, requires PatchLib)
-	- AI strikecraft no longer hold fire for fear of hitting allies their shots pass over, and the red friendly-fire aim warning no longer shows for them
-	- Other ships no longer hold fire, or steer around, friendly strikecraft that their shots and hulls pass through
+	- AI strikecraft no longer hold fire when allies are in the way, since their shots pass over them; the red friendly-fire aim warning no longer shows for them either
+	- Other ships no longer hold fire at or steer around friendly strikecraft, which their shots and hulls pass through
 
 - Garegga (H), Bakraid (H), Bakraid (HT), Bakraid and Corsair (H) can now be sold by dealers; Bakraid (HT) is no longer restricted
 

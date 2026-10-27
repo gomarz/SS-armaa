@@ -65,7 +65,7 @@ public class armaa_KarmaEffect implements EveryFrameWeaponEffectPlugin {
 
         final Vector2f loc = ship.getLocation();
         final ViewportAPI view = Global.getCombatEngine().getViewport();
-        // MagicRender draws in world coords during the render pass; raw GL here ran outside it
+        // advance() runs outside the render pass, so draw through MagicRender in world coords, not raw GL
         if (view.isNearViewport(loc, EFFECT_RANGE) && !engine.isPaused()) {
             float adjustedRange = ship.getMutableStats().getSystemRangeBonus().computeEffective(EFFECT_RANGE);
             if (ship.isFrigate() || ship.isDestroyer()) {adjustedRange *= 0.75;}

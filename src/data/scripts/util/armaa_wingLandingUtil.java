@@ -52,7 +52,6 @@ public class armaa_wingLandingUtil {
                     continue;
                 }
 
-                //build the "set" key once, do single map lookup ---
                 final String setKey = "armaa_wingCommander_landingLocation_" + fighter.getId() + "_set";
                 Object setFlag = Global.getCombatEngine().getCustomData().get(setKey);
                 boolean done = setFlag instanceof Boolean && (Boolean) setFlag;
@@ -60,7 +59,6 @@ public class armaa_wingLandingUtil {
                 if (fighter.isLiftingOff() && !done) {
                     Vector2f landingLoc = null;
 
-                    // build per-index key once ---
                     final String indexKey = "armaa_wingCommander_landingLocation_" + shipId + "_" + i;
 
                     ShipAPI potentialLaunchPoint = (ShipAPI) Global.getCombatEngine()
@@ -148,7 +146,7 @@ public class armaa_wingLandingUtil {
             ShipAPI best = null;
             float bestDist = Float.MAX_VALUE;
 
-            // Tight pass: 3000 units around source.  Covers the vast majority of cases.
+            // Tight pass: 3000 units around source, which covers most cases.
             for (ShipAPI carrier : CombatUtils.getShipsWithinRange(sourceLoc, 3000f)) {
                 if (!isValidCarrier(carrier, ship)) {
                     continue;
@@ -191,7 +189,6 @@ public class armaa_wingLandingUtil {
         return null;
     }
 
-    // Extracted predicate so getCarrier stays readable.
     private static boolean isValidCarrier(ShipAPI carrier, ShipAPI ship) {
         if (carrier.getOwner() != ship.getOwner()) {
             return false;

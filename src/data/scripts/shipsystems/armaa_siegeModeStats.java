@@ -78,8 +78,8 @@ public class armaa_siegeModeStats extends BaseShipSystemScript {
             target.setCircularJitter(true);
             target.setJitterShields(true);
         }
-        // Drawn in world coords through MagicRender. Raw GL calls here run outside the render pass,
-        // and the old glViewport call was never restored, which skewed the cursor under UI scaling.
+        // apply() runs outside the render pass, so draw through MagicRender in world coords. GL state set
+        // here leaks into the frame: an unrestored glViewport skews the cursor under UI scaling.
         final ViewportAPI view = Global.getCombatEngine().getViewport();
         float radius = 1000f * effectLevel;
         final Vector2f loc = ship.getLocation();
