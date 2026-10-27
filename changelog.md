@@ -21,6 +21,7 @@ V3.3.8
 
 - GuarDUAL (F)
 	- Built-in Fighter Strafing and Automated Repair Unit replaced with Cataphract S-II
+	- Canister flak now deploys forwards instead of backwards
 	- Standard variant no longer comes with Integrated Point Defense AI and ECCM Package
 
 V3.3.7
