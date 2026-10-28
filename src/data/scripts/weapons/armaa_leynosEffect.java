@@ -265,7 +265,9 @@ public class armaa_leynosEffect extends BaseCombatLayeredRenderingPlugin impleme
             if (armL != null) {
                 pauldronL.setCurrAngle(global + sineA * (TORSO_OFFSET) - (sinceG * TORSO_OFFSET) * 0.5f + ((sineC * (TORSO_OFFSET))) + aim2 * 0.75f - RIGHT_ARM_OFFSET * 0.5f + currentRotateL * 0.75f);
             }
-            pauldronL.getSprite().setCenterY(originalShoulderPos - (8 * sinceB));
+            Object recoilObj = ship.getCustomData().get(armaa_tengaiFlamerEffect.RECOIL_KEY);
+            float recoil = recoilObj instanceof Float ? (Float) recoilObj : 0f;
+            pauldronL.getSprite().setCenterY(originalShoulderPos - (8 * sinceB) + (1f * recoil));
         }
 
         if (headGlow != null) {

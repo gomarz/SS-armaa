@@ -414,7 +414,7 @@ armaa_flarelauncher_active,SHIP_SYSTEM,Launches flares to confuse the guidance s
 armaa_havocDrive,SHIP_SYSTEM,"Briefly slows time, before granting an tremendous speed boost.",,,,,
 armaa_mb,SHIP_SYSTEM,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",Movement,"Provides a brief engine boost, propelling the ship forward at an extreme velocity.",,,
 armaa_amalgamatefeed,SHIP_SYSTEM,"Increases Weapon RoF, Speed, and Manuverability of the host ship and fighters while reducing weapon flux cost based on what percentage of the wing is alive.",,,,,
-armaa_siegeMode,SHIP_SYSTEM,"Diverts power from engines, doubling weapon and sensor range and increasing RoF slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
+armaa_siegeMode,SHIP_SYSTEM,"Diverts power from engines, doubling weapon range, increasing sensor range by 50% and increasing RoF slightly. Shield resistance of friendly craft within 1000 SU is increased by 10%.",,,increased by 10%,,
 armaa_recalldevice,SHIP_SYSTEM,"Teleports a single vessel in need (with the Strikecraft hullmod) back to the carrier, allowing them to be quickly refitted and relaunched.",,,,,
 armaa_plasmaJets,SHIP_SYSTEM,Grants an tremendous speed boost in the given direction briefly.,,,,,
 armaa_fireboltfeed,SHIP_SYSTEM,"Increases damage and firerate by 25%, while reducing flux cost by 10%.",,,,,

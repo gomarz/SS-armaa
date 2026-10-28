@@ -1,9 +1,9 @@
 {
 	"hullFrequency":{
 		"hulls":{
-			"armaa_garegga_xiv_carrier":0.50,
-			"armaa_corsair_xiv":0.50,
-			"armaa_monitor_xiv":0.50,
+			"armaa_garegga_xiv_carrier":0.80,
+			"armaa_corsair_xiv":0.80,
+			"armaa_monitor_xiv":0.80,
 		},
 	},
 	"variantOverrides":{

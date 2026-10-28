@@ -48,7 +48,7 @@ public class armaa_evasionAI implements ShipSystemAIScript {
         this.system = ship.getSystem();
 
         //at this point we know the ship has  a system
-        if (system != null) {
+        //if (system != null) {
             //check if it has phase
             if (ship.getPhaseCloak() != null) {
                 //We know it has a phase system, check if it is our system
@@ -57,7 +57,7 @@ public class armaa_evasionAI implements ShipSystemAIScript {
                     phase = true;
                 }
             }
-        } //if there's no system
+        //} //if there's no system
         else {
             phase = false;
             //this.system = ship.getPhaseCloak();
@@ -117,7 +117,12 @@ public class armaa_evasionAI implements ShipSystemAIScript {
             if (ship.isFighter()) 
             {
                 if (flags.hasFlag(ShipwideAIFlags.AIFlags.IN_ATTACK_RUN) || flags.hasFlag(ShipwideAIFlags.AIFlags.NEEDS_HELP)) {
-                        ship.useSystem();
+                    if(phase) {
+                    ship.giveCommand(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK, null, 0);
+                }
+                    else
+                    
+                    ship.useSystem();
                 }
                 return;
             }

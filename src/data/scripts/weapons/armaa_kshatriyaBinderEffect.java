@@ -1,6 +1,7 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.combat.*;
+import data.hullmods.armaa_renderAboveParent;
 import java.util.List;
 import org.lazywizard.lazylib.MathUtils;
 
@@ -53,8 +54,8 @@ public class armaa_kshatriyaBinderEffect implements EveryFrameWeaponEffectPlugin
                         m.setShipTarget(ship.getShipTarget());
                     }
 
-                    if (m.getLayer() != CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER) {
-                        m.setLayer(CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
+                    if (m.getLayer() != armaa_renderAboveParent.LAYER) {
+                        m.setLayer(armaa_renderAboveParent.LAYER);
                     }
 
                     if (engine.getCustomData().get("" + m.getStationSlot().getId() + "_centerX") == null) {

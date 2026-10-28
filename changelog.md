@@ -1,3 +1,100 @@
+V3.3.7 (in dev)
+------
+
+- New quest: Starfall (Contact: Roland, Fikenhild)
+	- Raid exercise escorted by the intake fleet, followed by a debrief where you choose to Deny, Accept, or go Solo
+	- Accept/Solo raises a Pather installation and triggers an ambush, fought against a custom sky backdrop
+	- Completing the quest pays monthly royalties from THE KING'S OWN for a fixed number of months
+	- New portraits: Sella, Vivi, Ehrenmark
+	- Updated portraits: Cassian, Felner, Leos, Lingfeng, Mr. C Guy, Pariah, Theo
+
+- New SFO ships
+	- Damascus (Cruiser)
+	- Edessa (Escort Battleship)
+	- Tripoli (Battlecruiser)
+
+- New Heavy Cataphract: Harper
+	- Damper Field, Maneuvering Jets
+	- Carries a shield module
+	- Blasthole Spear: lance with Repeater and Burst modes
+	- Variable Rifle
+
+- Damascus
+	- Flux Dissipation: 575->650
+	- Deceleration: 20->30
+	- Turn Acceleration: 25->45
+
+- Edessa
+	- Large missile slot is now a built-in Basilisk
+
+- Tripoli
+	- Added system: Taser
+
+- Valkazard Kai
+	- CR/day: 3->6
+	- CR to deploy: 45%->40%
+
+- Valkazard
+	- Torso flamer: Energy->Ballistic
+
+- Leynos
+	- Max Speed: 135->120
+
+- Kouto
+	- Torso Karma Seekers are now decorative and no longer fire
+	- Kouto LPC torso no longer sits turned at rest and snaps straight when the left arm fires
+	- SCTR-20 Minigun ammo regen: 7.5/s->10/s (sustained DPS 150->200)
+
+- Damper Field (Leynos/Harper)
+	- Now uses vanilla Damper Field logic and AI
+	- Adjusted timings
+
+- Armored Boarding Pod
+	- Now latches onto the first hostile hull it strikes
+	- Bounces off raised shields for 40 kinetic damage (first 3 bounces only)
+	- No longer detonates on hulks or anything else it touches
+
+- Counter Shield projectiles
+	- Turn Rate: 180->360
+	- Guidance delay and homing degradation adjusted
+
+- Rampage Drive (Ashura)
+	- Improved AI: dashes in plain engagements, no longer stuck in fallback after taking hull damage, no longer cancels escape dashes on the first tick
+	- Dashes get a short commit window before they can be aborted
+
+- Kshatriya axe swing rewritten on the shared melee swing code
+
+- Fixes
+	- Fixed OVERLORD SUITE giving back an extra AI core every time it was removed (#97)
+	- Cataphract ground operations bonus no longer applies when the fleet has no marines
+	- Squadron rename field is now limited to 32 characters instead of by text width, so names as long as the generated ones fit
+	- Fixed Dawn notifications that could open an empty dialog with only a "Leave" option (e.g. after recovering the planetkiller); a notification with no matching dialog now closes itself and logs a warning
+	- Fixed a crash when the Taser arc killed a missile or fighter
+	- Fixed strikecraft aborting their repair run with no key pressed
+	- Fixed a possible crash in Spare Chassis when the player fleet had no fleet data
+	- Combo Unit: module is now correctly marked detached/restored when the core dies or retreats
+	- GuarDUAL: fixed weapon fire offsets
+	- Dawn: the "Join Dawn and one of your officers" bar events no longer appear when none of your officers can join them (e.g. only unique officers from other mods)
+	- WINGCOM / OVERLORD SUITE
+		- Returning fighters go straight to a carrier instead of sometimes landing on a ship with no "real" fighter bays (I.E., WINGCOM frigates)
+		- Fighters no longer restart their landing approach every second
+		- Fixed fighter landing when several OVERLORD ships are deployed due to a shared tracker in hullmod
+
+- Strikecraft (requires PatchLib)
+	- AI strikecraft no longer hold fire when allies are in the way since they inherently cannot cause FF in most cases. The red friendly fire aim warning no longer shows for them either. The same applies to allies when firing in the proximity of allied AI strikecraft
+  	- AI strikecraft no longer attempt to avoid collisions that could never be caused
+  	- Strikecraft are still capable of taking friendly fire and crashing into entities while flamed out, so original behavior is preserved there
+  	- Missiles that can hit allies, such as the Reaper, still check for friendly fire before strikecraft launch them
+
+- Garegga (H), Bakraid (H), Bakraid (HT), Bakraid, Corsair (H), Corsair (ISEN) and Raiden EX can now be sold by dealers; Bakraid (HT) is no longer restricted
+
+- GuarDUAL (F)
+	- Automated Repair Unit replaced with Cataphract S-II
+	- Canister flak now deploys forwards instead of backwards, which is significantly more effective
+	- Standard variant no longer comes with Integrated Point Defense AI and ECCM Package
+
+- Removed unused missions: armaa_last, armaa_transport
+
 V3.3.6
 ------
 

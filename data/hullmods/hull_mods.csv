@@ -25,6 +25,7 @@ No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables a
 Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,,graphics/hullmods/reduced_explosion.png
 Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,,graphics/hullmods/vast_bulk.png
 Karma Counter,armaa_karma,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
+Render Above Parent,armaa_renderAboveParent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_renderAboveParent,Draws this module above its parent's weapons.,,,graphics/hullmods/vast_bulk.png
 Karma Counter [C],armaa_karmaC,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod_Command,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Greater Reduced Explosion,explosionredux,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.greaterReducedExplosion,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Modular Mobile Armor,armaa_ma,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_ma,"This vessel is modular in nature; the core unit houses the pilot and support staff and is equipped with additional modules that grant bonuses during battle.
@@ -287,7 +288,7 @@ L ARM: BLADE,armaa_aleste_blade,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.ar
 L ARM: PILEBUNKER,armaa_alestePilebunker,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_alestePilebunker,[REDACTED],Color Scheme of the 'Rocket Stars' mercenary outfit,,graphics/armaa/hullmods/armaa_paint.png
 ,,,,,,,,,,,,,,,,,,,
 Compound Unit,armaa_comboUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_comboUnit,"The attached unit can detach for independent operations with the [%s] button, switching control to it. Approaching the unit and double tapping the [%s] can be used to reattach.",,,
-Variable Unit,armaa_variableUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_variableUnit,This unit can switch between modes by double-tapping the [%s] button.,,,
+Variable Unit,armaa_variableUnit,,,,no_build_in,,,,TRUE,,0,0,0,0,data.hullmods.armaa_variableUnit,"This unit can switch between modes by double-tapping the [%s] button, altering power distribution to various systems in the process.",,,
 #CEYLON,,,,,,,,,,,,,,,,,,,
 AWACS Suite,armaa_AWACS,,,,,,0,,TRUE,,0,0,0,0,data.hullmods.armaa_AWACSHM,Projects a field that buffs friendly ships within a radius of 2000 SU. This effect scales based off of the number of active sensor drones - range of the aura and its effects diminish as drones are lost.,,,
 ,,,,,,,,,,,,,,,,,,,

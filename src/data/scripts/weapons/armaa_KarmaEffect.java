@@ -4,11 +4,9 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
 import java.awt.*;
-
-import static org.lwjgl.opengl.GL11.*;
 
 public class armaa_KarmaEffect implements EveryFrameWeaponEffectPlugin {
     private static final float[] COLOR_NORMAL = {255f / 255f, 100f / 255f, 20f / 255f};
@@ -67,26 +65,14 @@ public class armaa_KarmaEffect implements EveryFrameWeaponEffectPlugin {
 
         final Vector2f loc = ship.getLocation();
         final ViewportAPI view = Global.getCombatEngine().getViewport();
-        if (view.isNearViewport(loc, EFFECT_RANGE)) {
-            glPushAttrib(GL_ENABLE_BIT);
-            glMatrixMode(GL_PROJECTION);
-            glPushMatrix();
-            glViewport(0, 0, Display.getWidth(), Display.getHeight());
-            glOrtho(0.0, Display.getWidth(), 0.0, Display.getHeight(), -1.0, 1.0);
-            glEnable(GL_TEXTURE_2D);
-            glEnable(GL_BLEND);
-            float scale = Global.getSettings().getScreenScaleMult();
+        // advance() runs outside the render pass, so draw through MagicRender in world coords, not raw GL
+        if (view.isNearViewport(loc, EFFECT_RANGE) && !engine.isPaused()) {
             float adjustedRange = ship.getMutableStats().getSystemRangeBonus().computeEffective(EFFECT_RANGE);
             if (ship.isFrigate() || ship.isDestroyer()) {adjustedRange *= 0.75;}
-            float radius = ((adjustedRange+ship.getCollisionRadius()) * 2f * scale / view.getViewMult());
-            sprite.setSize(radius, radius);
-            sprite.setColor(COLOR);
-            sprite.setAdditiveBlend();
+            float diameter = (adjustedRange + ship.getCollisionRadius()) * 2f;
             sprite.setAlphaMult(0.4f*opacity);
-            sprite.renderAtCenter(view.convertWorldXtoScreenX(loc.x) * scale, view.convertWorldYtoScreenY(loc.y) * scale);
-            sprite.setAngle(rotation);
-            glPopMatrix();
-            glPopAttrib();
+            MagicRender.singleframe(sprite, new Vector2f(loc), new Vector2f(diameter, diameter), rotation, COLOR, true,
+                    CombatEngineLayers.BELOW_SHIPS_LAYER);
         }
 
         // We can just jump out here. Stops the rotation while paused and none of the other stuff needs to run while paused

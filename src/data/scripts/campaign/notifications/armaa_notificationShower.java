@@ -40,7 +40,6 @@ public class armaa_notificationShower implements EveryFrameScript {
         validKeys.add("$encounteredDweller");
         validKeys.add("$dawnOutpaced");
         validKeys.add("$dawnNoticedAI");
-        validKeys.add("$pk_recovered");
         validKeys.add("$bffi_goMeetMenesYaribay");
 
         // ??? Why is this seperate?

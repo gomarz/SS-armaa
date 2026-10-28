@@ -1,18 +1,22 @@
 {
-  "displayName": "Crew",
-  "fluxCapacitors": 0,
-  "goalVariant": true,
-  "fluxVents": 0,
-  "hullId": "armaa_crew",
-  "hullMods": ["no_weapon_flux"],
   "variantId": "armaa_crew_standard",
+  "hullId": "armaa_crew",
+  "displayName": "Crew",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "no_weapon_flux"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS0001": "lightmg",
-      }
+      "weapons": {}
     }
-  ]
+  ],
+  "modules": [],
+  "wings": []
 }

@@ -1,0 +1,40 @@
+{
+  "id": "armaa_tengai_rightArm",
+  "specClass": "projectile",
+  "projectileSpecId": "heavyneedler_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/armaa/ships/tengai/armaa_tengai_rightArm.png",
+  "hardpointSprite": "graphics/armaa/ships/tengai/armaa_tengai_rightArm.png",
+  "showDamageWhenDecorative": true,
+  "visualRecoil": 3,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    49, -13,
+    49, -7
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    49, -13,
+    49, -7
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30.0,
+    "spread": 0.0,
+    "particleSizeMin": 7.0,
+    "particleSizeRange": 7.0,
+    "particleDuration": 0.2,
+    "particleCount": 12,
+    "particleColor": [255,255,255,175]
+  },
+  "fireSoundTwo": "needler_fire"
+}

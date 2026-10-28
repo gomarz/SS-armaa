@@ -13,6 +13,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.util.Misc.Token;
+import data.scripts.MechaModPlugin;
 
 /**
  * Creates the Starfall Order cast as persistent named people.
@@ -65,15 +66,15 @@ public class armaa_starfallPeopleCMD extends BaseCommandPlugin {
                 Ranks.KNIGHT_CAPTAIN, Ranks.POST_FLEET_COMMANDER, Personalities.STEADY, 6);
 
         make(VOIT, "Sella", "Voit", Gender.FEMALE,
-                "graphics/armaa/portraits/armaa_sella.png",
+                MechaModPlugin.getPortrait(VOIT),
                 "armaa_aspirant", Ranks.POST_OFFICER, Personalities.CAUTIOUS, 3);
 
         make(EHREN, "Corvin", "Ehrenmark", Gender.MALE,
-                "graphics/armaa/portraits/armaa_ehrenmark.png",
+                MechaModPlugin.getPortrait(EHREN),
                 "armaa_aspirant", Ranks.POST_OFFICER, Personalities.STEADY, 2);
 
         make(ALARD, "Vivi", "Alard", Gender.FEMALE,
-                "graphics/armaa/portraits/armaa_vivi.png",
+                MechaModPlugin.getPortrait(ALARD),
                 "armaa_aspirant", Ranks.POST_OFFICER, Personalities.AGGRESSIVE, 2);
     }
 

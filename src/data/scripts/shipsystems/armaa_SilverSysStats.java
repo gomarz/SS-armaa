@@ -309,7 +309,7 @@ public class armaa_SilverSysStats extends BaseShipSystemScript {
                 Global.getCombatEngine().getTimeMult().unmodify(id);
                 stats.getTimeMult().unmodify(id);
 
-                /* Ham-fisted attempt to get rid of that FUCKING glow */
+                /* Force the weapon glow off; it otherwise lingers after the system ends */
                 ship.setWeaponGlow(0f, new Color(255, 125, 50, 220), EnumSet.of(WeaponAPI.WeaponType.BALLISTIC, WeaponAPI.WeaponType.MISSILE, WeaponAPI.WeaponType.ENERGY));
 
                 if (ship.getFluxTracker().getCurrFlux() > ship.getFluxTracker().getMaxFlux()) {
@@ -331,7 +331,6 @@ public class armaa_SilverSysStats extends BaseShipSystemScript {
         }
 
 
-        /* WTF? */
         if (effectLevel <= 0f) {
             tempGauge = odData.gauge;
             if (unbugify) {

@@ -210,13 +210,13 @@ public class armaa_valkenBlade implements BeamEffectPlugin {
                     if (!hitShield || piercedShield) {
                         Vector2f empPoint = beam.getRayEndPrevFrame();
                         float emp = beam.getDamage().getFluxComponent() * 1f;
-                        float dam = beam.getDamage().getDamage() * 1f;
+                        float dam = 0f;
                         engine.spawnEmpArcPierceShields(
                                 beam.getSource(), empPoint, beam.getDamageTarget(), beam.getDamageTarget(),
                                 DamageType.ENERGY,
                                 dam, // damage
                                 emp, // emp 
-                                100000f, // max range 
+                                100f, // max range
                                 "tachyon_lance_emp_impact",
                                 beam.getWidth() + 9f,
                                 beam.getFringeColor(),

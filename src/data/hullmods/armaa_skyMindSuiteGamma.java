@@ -1,6 +1,7 @@
 package data.hullmods;
 
 import com.fs.starfarer.api.combat.*;
+import data.scripts.util.armaa_wingLandingUtil;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.*;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
@@ -38,7 +39,6 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
     public static final String DATA_PREFIX = "gamma_core_skymind_check_";
     public static final String coreType = "GAMMA CORE";
     private Color COLOR = new Color(0, 106, 0, 50);
-    private static final float RETREAT_AREA_SIZE = 2000f;
     private boolean hasLanded;
     public static final String ITEM = Commodities.GAMMA_CORE;
     private Vector2f landingLoc = new Vector2f();
@@ -49,7 +49,6 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
     private static final float FIGHTER_REPLACEMENT_TIME_MULT = .70f;
     private static final float FIGHTER_RATE = 1.25f;
     private static final float CREW_LOSS_MULT = 0.25f;
-    private IntervalUtil tracker = new IntervalUtil(0.5f, 1.0f);
     private IntervalUtil tracker2 = new IntervalUtil(0.05f, 0.05f);
     private final List<String> squadChatter_gamma = MechaModPlugin.squadChatter_gamma;
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>();
@@ -262,15 +261,6 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
             core.setAICoreId(ITEM);
             data.put(coreKey, core);
         }
-        if (data.containsKey(DATA_PREFIX + member.getId())) {
-            return;
-        }
-        tracker2.advance(amount);
-        if (!member.getVariant().hasHullMod("armaa_aicoreutilityscript")) {
-            data.put(DATA_PREFIX + member.getId(), "_");
-            member.getVariant().addPermaMod("armaa_aicoreutilityscript");
-        }
-
     }
 
     @Override
@@ -286,87 +276,7 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
             return;
         }
 
-        FighterLaunchBayAPI bay = ship.getLaunchBaysCopy().get(0);
-        if (ship.isLanding()) {
-            ShipAPI defaultCarrier = getCarrier(ship);
-            if (defaultCarrier != null) {
-                Global.getCombatEngine().getCustomData().put("armaa_wingCommander_landingLocation_default" + ship.getId(), defaultCarrier);
-            }
-        }
-        //Global.getCombatEngine().addFloatingText(ship.getLocation(), "asdf", 10f, Color.white, ship, 0f, 0f); 
-        if (bay.getWing() != null) {
-            if (!bay.getWing().getWingMembers().isEmpty()) {
-                for (int i = 0; i < bay.getWing().getWingMembers().size(); i++) {
-                    ShipAPI fighter = bay.getWing().getWingMembers().get(i);
-                    if (fighter == null || fighter.isHulk()) {
-                        continue;
-                    }
-                    if (fighter != null) {
-                        Object b = Global.getCombatEngine().getCustomData().get("armaa_wingCommander_landingLocation_" + fighter.getId() + "_set");
-                        boolean done = b instanceof Boolean ? (Boolean) b : false;
-                        if (fighter.isLiftingOff() && !done) {
-                            float mapWidth = Global.getCombatEngine().getMapWidth() / 2f, mapHeight = Global.getCombatEngine().getMapHeight() / 2f;
-                            Vector2f rawLL = new Vector2f(-mapWidth, -mapHeight), rawUR = new Vector2f(mapWidth, mapHeight);
-                            Vector2f landingLoc = null;
-
-                            //set launch point to the motherships by default
-                            ShipAPI potentialLaunchPoint = (ShipAPI) Global.getCombatEngine().getCustomData().get("armaa_wingCommander_landingLocation_default" + ship.getId());
-
-                            //Is there a carrier this index remembers landing at?
-                            if (Global.getCombatEngine().getCustomData().get("armaa_wingCommander_landingLocation_" + ship.getId() + "_" + i) instanceof ShipAPI) {
-                                //if so, use as launch point
-                                potentialLaunchPoint = (ShipAPI) Global.getCombatEngine().getCustomData().get("armaa_wingCommander_landingLocation_" + ship.getId() + "_" + i);
-
-                            }
-
-                            if (potentialLaunchPoint != null && (!potentialLaunchPoint.isAlive() || potentialLaunchPoint.isHulk())) {
-                                potentialLaunchPoint = null;
-                            }
-                            if (potentialLaunchPoint == null) {
-                                potentialLaunchPoint = getCarrier(fighter);
-                            }
-                            if (Global.getCombatEngine().isEntityInPlay(potentialLaunchPoint) && potentialLaunchPoint.isAlive()) {
-                                for (FighterLaunchBayAPI wep : potentialLaunchPoint.getLaunchBaysCopy()) {
-                                    if (wep.getWeaponSlot() != null) {
-                                        WeaponSlotAPI w = wep.getWeaponSlot();
-                                        landingLoc = new Vector2f(potentialLaunchPoint.getLocation().x + w.getLocation().y, potentialLaunchPoint.getLocation().y + w.getLocation().x);
-                                        if (Math.random() <= .50f) {
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-
-                            //if we are here, we still have nowhere to land
-                            if (landingLoc == null) {
-                                if (potentialLaunchPoint != null && potentialLaunchPoint.getLocation() != null && potentialLaunchPoint.isAlive()) {
-                                    landingLoc = potentialLaunchPoint.getLocation();
-                                } else {
-                                    if (fighter.getOwner() == 0) {
-                                        if (ship.getLocation().getY() > rawLL.getY() - RETREAT_AREA_SIZE) {
-                                            landingLoc = new Vector2f((ship.getLocation().getX()), ship.getLocation().getY() - 2000);
-                                        } else {
-                                            landingLoc = new Vector2f((rawLL.x + rawUR.x) / 2, rawLL.y);
-                                        }
-                                    } else {
-                                        landingLoc = new Vector2f((rawLL.x + rawUR.x) / 2, rawUR.y);
-                                    }
-                                }
-                            }
-                            armaa_utils.setLocation(fighter, landingLoc);
-                            Global.getCombatEngine().getCustomData().put("armaa_wingCommander_landingLocation_" + fighter.getId() + "_set", true);
-
-                        }
-                    }
-                }
-            }
-            tracker.advance(amount);
-            if (tracker.intervalElapsed()) {
-                if (!bay.getWing().getReturning().isEmpty()) {
-                    doLanding(bay, ship);
-                }
-            }
-        }
+        armaa_wingLandingUtil.advanceLanding(ship, ship.getLaunchBaysCopy().get(0), amount);
     }
 
     public int getWingSize(ShipAPI ship) {
@@ -444,105 +354,5 @@ public class armaa_skyMindSuiteGamma extends BaseHullMod {
 
     public String getDescriptionParam(int index, HullSize hullSize) {
         return null;
-    }
-
-    public ShipAPI getCarrier(ShipAPI ship) {
-        ShipAPI potentialCarrier = null;
-        boolean isFakeFighter = ship.getVariant().getHullSize() == HullSize.FRIGATE ? true : false;
-        float distance = 99999f;
-        for (ShipAPI carrier : CombatUtils.getShipsWithinRange(ship.getLocation(), 10000f)) {
-            if (carrier.getOwner() != ship.getOwner()) {
-                continue;
-            }
-            if (!carrier.isAlive() || carrier.isHulk()) {
-                continue;
-            }
-
-            if ((carrier.isFighter() && !carrier.getHullSpec().hasTag("strikecraft_with_bays")) || carrier.getHullSpec().getFighterBays() < 1) {
-                continue;
-            }
-
-            //If this is a normal fighter we want to get the nearest carrier to the source ship
-            if (!isFakeFighter && ship.getWing() != null && ship.getWing().getSourceShip() != null) {
-                ShipAPI source = ship.getWing().getSourceShip();
-                if (distance > MathUtils.getDistance(carrier, source)) {
-                    distance = MathUtils.getDistance(carrier, source);
-                    potentialCarrier = carrier;
-                    continue;
-                }
-
-            } else if ((!carrier.isFrigate() || carrier.isStationModule())) {
-                if (carrier.hasLaunchBays()) {
-                    //carriersExist = true;
-                    potentialCarrier = carrier;
-                    return potentialCarrier;
-                }
-            }
-        }
-
-        return potentialCarrier;
-
-    }
-
-    public void doLanding(FighterLaunchBayAPI bay, ShipAPI ship) {
-        for (int i = 0; i < bay.getWing().getReturning().size(); i++) {
-            ShipAPI fighter = bay.getWing().getReturning().get(i).fighter;
-            if (fighter == null) {
-                continue;
-            }
-            if (fighter != null) {
-                if (bay.getWing().isReturning(fighter)) {
-                    boolean carriersExist = false;
-                    ShipAPI posCarrier = getCarrier(fighter);
-                    if (posCarrier != null) {
-                        armaa_combat_docking_AI_fighter DockingAI = new armaa_combat_docking_AI_fighter(fighter);
-                        if (fighter.getShipAI() != DockingAI);
-                        {
-                            fighter.setShipAI(DockingAI);
-                            DockingAI.init();
-                        }
-                    } else {
-                        boolean alreadyHasAI = false;
-                        if (fighter.getCustomData().get("armaa_wingCommander_fighterRetreat_" + fighter.getId()) instanceof Boolean) {
-                            alreadyHasAI = (Boolean) fighter.getCustomData().get("armaa_wingCommander_fighterRetreat_" + fighter.getId());
-                        }
-                        if (!alreadyHasAI) {
-                            armaa_combat_retreat_AI_fighter RetreatAI = new armaa_combat_retreat_AI_fighter(fighter);
-                            if (fighter.getShipAI() != RetreatAI);
-                            {
-                                fighter.setShipAI(RetreatAI);
-                                fighter.getCustomData().put("armaa_wingCommander_fighterRetreat_" + fighter.getId(), true);
-                                //DockingAI.init();
-                            }
-                        }
-
-                    }
-                }
-
-                if (fighter.isLanding()) {
-                    ShipAPI carrierLandingOn;
-                    for (ShipAPI carrier : CombatUtils.getShipsWithinRange(fighter.getLocation(), 100f)) {
-                        if (carrier.getOwner() != fighter.getOwner()) {
-                            continue;
-                        }
-                        if (carrier.isFighter()) {
-                            continue;
-                        }
-                        if ((!carrier.isFrigate() || carrier.isStationModule())) {
-                            if (carrier.hasLaunchBays()) {
-                                Global.getCombatEngine().getCustomData().put("armaa_wingCommander_landingLocation_" + ship.getId() + "_" + i, carrier);
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                if (fighter.isFinishedLanding()) {
-                    bay.land(fighter);
-                    Global.getCombatEngine().removeEntity(fighter);
-                }
-
-            }
-        }
     }
 }

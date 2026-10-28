@@ -232,9 +232,9 @@
 		"carriers":2,
 		"phaseShips":3,
 
-		"officerQuality":2,
+		"officerQuality":3,
 		"shipQuality":2,
-		"numShips":4,
+		"numShips":3,
 
 		"shipSize":2,
 

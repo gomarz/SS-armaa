@@ -8,8 +8,6 @@
   "quality": 1,
   "permaMods": [],
   "hullMods": [
-    "pointdefenseai",
-    "eccm",
     "no_weapon_flux"
   ],
   "weaponGroups": [

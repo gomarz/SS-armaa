@@ -3,7 +3,7 @@
 	"name":"Arma Armatura",
 	"author":"shoi",
 	"version":"3.3.6",
-	"description":"Mechs n Fighters. Requires LazyLib + MagicLib.",
+	"description":"Mechs n Fighters. Requires LazyLib + MagicLib. PatchLib is optional and improves strikecraft AI.",
 	"gameVersion":"0.98a-RC6",
 	"jars":["jars/armaa.jar"],
     "dependencies": [

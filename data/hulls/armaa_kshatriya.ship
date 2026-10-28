@@ -102,7 +102,7 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 67,
+      "angle": 28,
       "locations": [18, 60]
     },
     {
@@ -147,7 +147,7 @@
       "type": "STATION_MODULE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -67,
+      "angle": -28,
       "locations": [18, -60]
     },
     {

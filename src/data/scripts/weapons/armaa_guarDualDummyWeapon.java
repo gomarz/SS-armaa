@@ -4,6 +4,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 import java.awt.Color;
 import java.util.*;
@@ -14,6 +15,7 @@ public class armaa_guarDualDummyWeapon implements EveryFrameWeaponEffectPlugin {
     private WeaponAPI falseWeapon, trueWeapon, gunF, head, headWeapon;
     private List<Vector2f> ogOffset;
     private List<Float> ogAngleOffsets;
+    private int trueBarrels = 0;
 
     public void init(WeaponAPI weapon) {
         runOnce = true;
@@ -36,17 +38,20 @@ public class armaa_guarDualDummyWeapon implements EveryFrameWeaponEffectPlugin {
                     }
                     break;
 
-                case "F_GUN":
+                case "F_GPOD":
                     if (gunF == null) {
                         gunF = w;
+                        ogOffset = gunF.getSpec().getTurretFireOffsets();
+                        ogAngleOffsets = gunF.getSpec().getTurretAngleOffsets();
                     }
                     break;
 
                 case "TRUE_GUN":
                     if (trueWeapon == null) {
                         trueWeapon = w;
-                        ogOffset = trueWeapon.getSpec().getTurretFireOffsets();
-                        ogAngleOffsets = trueWeapon.getSpec().getTurretAngleOffsets();
+                        trueBarrels = w.getSpec().getTurretFireOffsets().size();
+                        //ogOffset = trueWeapon.getSpec().getTurretFireOffsets();
+                        //ogAngleOffsets = trueWeapon.getSpec().getTurretAngleOffsets();
                     }
                     break;
             }
@@ -93,14 +98,18 @@ public class armaa_guarDualDummyWeapon implements EveryFrameWeaponEffectPlugin {
             } else {
                 trueWeapon.getSpec().getTurretFireOffsets().clear();
                 trueWeapon.getSpec().getTurretAngleOffsets().clear();
-                size = ogOffset.size();
+                // F_GPOD's offsets are relative to F_GPOD's own mount, so convert the nose point
+                // into TRUE_GUN's local frame instead of copying them raw
+                Vector2f nose = new Vector2f(gunF.getSpec().getTurretFireOffsets().get(2));
+                VectorUtils.rotate(nose, gunF.getCurrAngle(), nose);
+                Vector2f.add(nose, gunF.getLocation(), nose);
+                Vector2f.sub(nose, trueWeapon.getLocation(), nose);
+                VectorUtils.rotate(nose, -trueWeapon.getCurrAngle(), nose);
+                // barrel count must match TRUE_GUN's original; the recoil tracker is sized to it
+                size = trueBarrels;
                 for (int i = 0; i < size; i++) {
-                    trueWeapon.getSpec().getTurretFireOffsets().add(ogOffset.get(i));
-
-                }
-                size = ogAngleOffsets.size();
-                for (int i = 0; i < size; i++) {
-                    trueWeapon.getSpec().getTurretAngleOffsets().add(ogAngleOffsets.get(i));
+                    trueWeapon.getSpec().getTurretFireOffsets().add(new Vector2f(nose));
+                    trueWeapon.getSpec().getTurretAngleOffsets().add(gunF.getSpec().getTurretAngleOffsets().get(2));
                 }
             }
         }

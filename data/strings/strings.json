@@ -22,6 +22,7 @@
 		"armaa_shaft_top":"graphics/armaa/backgrounds/armaa_shaft_top.jpg",
 		"armaa_gravion":"graphics/armaa/backgrounds/armaa_gravion.jpg",
 		"armaa_gravion2":"graphics/armaa/backgrounds/armaa_gravion_2.jpg",
+		"armaa_sfo_sky":"graphics/armaa/backgrounds/armaa_sfo_sky.jpg",
 
 	},
 	"armaa_notifications":{

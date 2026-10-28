@@ -13,12 +13,9 @@ import java.util.List;
 import java.util.Collection;
 //import java.util.Set;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL11.glPopAttrib;
-import static org.lwjgl.opengl.GL11.glPopMatrix;
 import org.lazywizard.lazylib.MathUtils;
+import org.magiclib.util.MagicRender;
 import java.io.IOException;
-import org.lwjgl.opengl.Display;
 
 
 public class armaa_KarmaMod_Command extends BaseHullMod 
@@ -156,22 +153,13 @@ public class armaa_KarmaMod_Command extends BaseHullMod
 
 				final Vector2f loc = ship.getLocation();
 				final ViewportAPI view = Global.getCombatEngine().getViewport();
-				if (view.isNearViewport(loc, EFFECT_RANGE)) {
-					glPushAttrib(GL_ENABLE_BIT);
-					glMatrixMode(GL_PROJECTION);
-					glPushMatrix();
-					glViewport(0, 0, Display.getWidth(), Display.getHeight());
-					glOrtho(0.0, Display.getWidth(), 0.0, Display.getHeight(), -1.0, 1.0);
-					glEnable(GL_TEXTURE_2D);
-					glEnable(GL_BLEND);
-					final float radius = (EFFECT_RANGE * 2f) / view.getViewMult();
-					sprite.setSize(radius, radius);
-					sprite.setColor(COLOR);
-					sprite.setAlphaMult(0.3f*total);
-					sprite.renderAtCenter(view.convertWorldXtoScreenX(loc.x), view.convertWorldYtoScreenY(loc.y));
-					sprite.setAngle(rotation);
-					glPopMatrix();
-					glPopAttrib();
+				// advanceInCombat runs outside the render pass, so draw through MagicRender in world coords, not raw GL.
+				// Fresh sprite per call: hullmod instances are shared between ships, so a cached sprite would share its alpha.
+				if (view.isNearViewport(loc, EFFECT_RANGE) && !Global.getCombatEngine().isPaused()) {
+					SpriteAPI ring = Global.getSettings().getSprite(SPRITE_PATH);
+					ring.setAlphaMult(0.3f*total);
+					MagicRender.singleframe(ring, new Vector2f(loc), new Vector2f(EFFECT_RANGE * 2f, EFFECT_RANGE * 2f), rotation, COLOR, false,
+							CombatEngineLayers.BELOW_SHIPS_LAYER);
 				}
 
 				// Spin it

@@ -37,6 +37,7 @@ import data.scripts.ai.armaa_curvyLaserAI;
 import data.scripts.ai.armaa_armorPodAI;
 import data.scripts.world.ARMAAWorldGen;
 import data.scripts.campaign.notifications.armaa_notificationShower;
+import data.hullmods.armaa_aicoreutilityscript;
 import data.hullmods.cataphract;
 
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
@@ -67,7 +68,6 @@ import lunalib.lunaSettings.LunaSettings;
 
 //import exerelin.campaign.SectorManager;
 //TODO: This was fine at first but I need to refactor it
-//lot of outdated/ugly stuff in here
 public class MechaModPlugin extends BaseModPlugin {
 
     public static final String spike_ID = "armaa_spike_rod";
@@ -250,6 +250,58 @@ public class MechaModPlugin extends BaseModPlugin {
         Global.getSector().addTransientScript(GBScript = new armaa_cataphractGBListener());
     }
 
+    private static final String PORTRAIT_DIR = "graphics/armaa/portraits/";
+    private static final String[] PORTRAIT_PEOPLE = {
+        "armaa_dawn", "armaa_seraph", "armaa_imelda", "armaa_redeye", "armaa_felner", "armaa_kade",
+        "armaa_cassian", "armaa_gira", "armaa_felix", "armaa_lingfeng",
+        "armaa_sfo_voit", "armaa_sfo_ehrenmark", "armaa_sfo_alard"
+    };
+    // Person ids whose portrait file isn't named after the id (base name without .png)
+    private static final Map<String, String> PORTRAIT_FILE_NAMES = new HashMap<>();
+    // Anime variants that don't follow the <file>_anim.png convention
+    private static final Map<String, String> ANIME_PORTRAIT_OVERRIDES = new HashMap<>();
+
+    static {
+        PORTRAIT_FILE_NAMES.put("armaa_sfo_voit", "armaa_sella");
+        PORTRAIT_FILE_NAMES.put("armaa_sfo_ehrenmark", "armaa_ehrenmark");
+        PORTRAIT_FILE_NAMES.put("armaa_sfo_alard", "armaa_vivi");
+        ANIME_PORTRAIT_OVERRIDES.put("armaa_dawn", "armaa_dawn2.png");
+    }
+
+    /**
+     * Returns the anime portrait path for the person if the anime submod is
+     * enabled and the sprite exists, otherwise the base portrait.
+     */
+    public static String getPortrait(String personId) {
+        return getPortrait(personId, Global.getSettings().getModManager().isModEnabled("zzarmaa_anime"));
+    }
+
+    public static String getPortrait(String personId, boolean haveAnime) {
+        String file = PORTRAIT_FILE_NAMES.containsKey(personId) ? PORTRAIT_FILE_NAMES.get(personId) : personId;
+        String base = PORTRAIT_DIR + file + ".png";
+        if (!haveAnime) {
+            return base;
+        }
+        String animeName = ANIME_PORTRAIT_OVERRIDES.get(personId);
+        String anime = PORTRAIT_DIR + (animeName != null ? animeName : file + "_anim.png");
+        try {
+            Global.getSettings().loadTexture(anime);
+            return anime;
+        } catch (Exception ex) {
+            // the game throws RuntimeException (not IOException) for a missing resource
+            return base;
+        }
+    }
+
+    private static void updatePortraits(boolean haveAnime) {
+        for (String id : PORTRAIT_PEOPLE) {
+            PersonAPI person = Global.getSector().getImportantPeople().getPerson(id);
+            if (person != null) {
+                person.setPortraitSprite(getPortrait(id, haveAnime));
+            }
+        }
+    }
+
     @Override
     public void onGameLoad(boolean newGame) {
         boolean haveAnime = Global.getSettings().getModManager().isModEnabled("zzarmaa_anime");
@@ -266,6 +318,7 @@ public class MechaModPlugin extends BaseModPlugin {
         removeScript(reprisalScript);
         removeScript(notificationScript);
         removeScript(GBScript);
+        armaa_aicoreutilityscript.checkPlayerFleet();
         boolean hiredDawn = false;
 
         for (ShipHullSpecAPI spec : Global.getSettings().getAllShipHullSpecs()) {
@@ -292,55 +345,7 @@ public class MechaModPlugin extends BaseModPlugin {
         Global.getSector().addTransientScript(notificationScript = new armaa_notificationShower());
         Global.getSector().getPlayerPerson().getStats().setSkillLevel("armaa_cataphract", 1);
 
-        // ugly
-        if (Global.getSector().getImportantPeople().getPerson("armaa_dawn") != null) {
-            PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_dawn");
-            if (haveAnime) {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_dawn2.png");
-            } else {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_dawn.png");
-            }
-        }
-        if (Global.getSector().getImportantPeople().getPerson("armaa_seraph") != null) {
-            PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_seraph");
-            if (haveAnime) {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_seraph_anim.png");
-            } else {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_seraph.png");
-            }
-        }
-        if (Global.getSector().getImportantPeople().getPerson("armaa_imelda") != null) {
-            PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_imelda");
-            if (haveAnime) {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_imelda_anim.png");
-            } else {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_imelda.png");
-            }
-        }
-        if (Global.getSector().getImportantPeople().getPerson("armaa_redeye") != null) {
-            PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_redeye");
-            if (haveAnime) {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_redeye_anim.png");
-            } else {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_redeye.png");
-            }
-        }
-        if (Global.getSector().getImportantPeople().getPerson("armaa_felner") != null) {
-            PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_felner");
-            if (haveAnime) {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_felner_anim.png");
-            } else {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_felner.png");
-            }
-        }
-        if (Global.getSector().getImportantPeople().getPerson("armaa_kade") != null) {
-            PersonAPI secretary = Global.getSector().getImportantPeople().getPerson("armaa_kade");
-            if (haveAnime) {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_kade_anim.png");
-            } else {
-                secretary.setPortraitSprite("graphics/armaa/portraits/armaa_kade.png");
-            }
-        }
+        updatePortraits(haveAnime);
 
         if (Global.getSector().getImportantPeople().getPerson("armaa_kade") == null) {
             PersonAPI kade = Global.getFactory().createPerson();
@@ -352,11 +357,7 @@ public class MechaModPlugin extends BaseModPlugin {
             kade.setId("armaa_kade");
             //kade.getName().setLast("Pha");
             kade.setImportanceAndVoice(PersonImportance.HIGH, new Random());
-            if (haveAnime) {
-                kade.setPortraitSprite("graphics/armaa/portraits/armaa_kade_anim.png");
-            } else {
-                kade.setPortraitSprite("graphics/armaa/portraits/armaa_kade.png");
-            }
+            kade.setPortraitSprite(getPortrait("armaa_kade", haveAnime));
             Global.getSector().getImportantPeople().addPerson(kade);
         }
         PersonAPI kade = Global.getSector().getImportantPeople().getPerson("armaa_kade");
@@ -521,11 +522,7 @@ public class MechaModPlugin extends BaseModPlugin {
             admin.getName().setLast("Pha");
             admin.setImportanceAndVoice(PersonImportance.HIGH, new Random());
             admin.setMarket(market);
-            if (haveAnime) {
-                admin.setPortraitSprite("graphics/armaa/portraits/armaa_seraph_anim.png");
-            } else {
-                admin.setPortraitSprite("graphics/armaa/portraits/armaa_seraph.png");
-            }
+            admin.setPortraitSprite(getPortrait("armaa_seraph", haveAnime));
             admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 1);
             admin.getStats().setSkillLevel(Skills.HYPERCOGNITION, 1);
             if (!admin.getId().equals("armaa_seraph")) {
@@ -542,11 +539,7 @@ public class MechaModPlugin extends BaseModPlugin {
                 PersonAPI secretary = Global.getFactory().createPerson();
                 secretary.setRankId(Ranks.PILOT);
                 secretary.setPostId(Ranks.POST_MERCENARY);
-                if (haveAnime) {
-                    secretary.setPortraitSprite("graphics/armaa/portraits/armaa_dawn2.png");
-                } else {
-                    secretary.setPortraitSprite("graphics/armaa/portraits/armaa_dawn.png");
-                }
+                secretary.setPortraitSprite(getPortrait("armaa_dawn", haveAnime));
                 secretary.setFaction("armaarmatura");
                 secretary.setGender(FullName.Gender.FEMALE);
                 secretary.addTag(Tags.CONTACT_MILITARY);

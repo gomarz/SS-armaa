@@ -86,6 +86,8 @@ public class armaa_harperLanceEffect implements EveryFrameWeaponEffectPlugin, On
     private static final float THRUST_DURATION = 0.22f;
     private static final float THRUST_EXTEND = 40f;
     private static final float ARREST_VELOCITY_SCALE = 0.55f;
+    /** Backward velocity kick (su/s) on the wielder when the lance lands. */
+    private static final float HIT_RECOIL = 30f;
 
     private static final String HIT_SOUND = "armaa_polearm";
     private static final String READY_SOUND = "armaa_polearm";
@@ -649,7 +651,8 @@ public class armaa_harperLanceEffect implements EveryFrameWeaponEffectPlugin, On
 
         float axis = weapon.getCurrAngle();
         CombatUtils.applyForce(target, axis, ship.getMass() * mult * 0.8f);
-        CombatUtils.applyForce(ship, axis + 180f, ship.getMass() * 0.1f);
+        CombatUtils.applyForce(ship, axis + 180f,
+                ship.getMass() * HIT_RECOIL * Math.min(mult, 1.5f));
 
         stopThrust = true;
 

@@ -53,13 +53,13 @@ public class armaa_variableUnit extends BaseHullMod {
 
     private static Bonuses makeBase() {
         Bonuses b = new Bonuses();
-        b.betaWeaponDamagePct = 50f;
+        b.betaWeaponDamagePct = 30f;
         b.betaTurnRatePct = 50f;
         b.betaTurnAccelPct = 50f;
         b.betaDecelPct = 100f;
         b.betaAccelMult = 0.5f;            // -50% accel in mech
-        b.betaArmorDamageTakenMult = 0.5f; // -50% armor damage taken
-        b.betaEngineDamageTakenMult = 0.5f;
+        b.betaArmorDamageTakenMult = 0.65f; // -35% armor damage taken
+        b.betaEngineDamageTakenMult = 0.65f;
         b.alphaProjectileSpeedPct = 50f;
         b.alphaAccelPct = 50f;             // +50% accel in fighter
         b.alphaTurnRateMult = 0.5f;        // -50% turn rate
@@ -69,7 +69,7 @@ public class armaa_variableUnit extends BaseHullMod {
         b.shieldDamageTakenBonus = 0.25f;
         b.shieldArcReductionMult = 0.5f;
         b.speedMalusAtMech = 0.5f;         // -50% top speed in mech
-        b.maxTimeMult = 1.15f;
+        b.maxTimeMult = 1.10f;
         b.groundBonus = 40f;
         return b;
     }
@@ -79,9 +79,11 @@ public class armaa_variableUnit extends BaseHullMod {
      */
     private static Bonuses makeHeavy() {
         Bonuses b = makeBase();
-        b.betaWeaponDamagePct = 50f; // 
+        b.betaWeaponDamagePct = 25f;
+        b.betaArmorDamageTakenMult = 0.7f;
+        b.betaEngineDamageTakenMult = 0.7f;
         b.rofPct = 10f;              // ALPHA RoF trimmed
-        b.maxTimeMult = 1.05f;
+        b.maxTimeMult = 1.00f;
         b.shieldArcReductionMult = 0.75f;
         b.speedMalusAtMech = 0.55f;         // -45% top speed in mech
         b.shieldDamageTakenBonus = 0.43f;

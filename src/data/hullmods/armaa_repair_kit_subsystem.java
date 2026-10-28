@@ -14,8 +14,7 @@ import org.magiclib.util.MagicRender;
 
 /**
  *
- * @author Mayu || A Repair Kit system I made for UAF's unique Strikecraft I
- * then copied and stole mayu's homework kekekekekek - shoi
+ * @author Mayu (originally written for UAF's strikecraft), adapted by shoi
  */
 public class armaa_repair_kit_subsystem extends BaseHullMod {
 
@@ -29,7 +28,7 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-        // Reset these variable shits in non-combat instance
+        // Reset these variables in non-combat instance
         // What? Don't look at me like that! If it works then it WORKS!
         if (Global.getCurrentState() != GameState.COMBAT) {
             // Repair Kit
@@ -49,7 +48,7 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
             return;
         }
 
-        boolean canYouFuckingUseItNow = true;
+        boolean canUseKit = true;
         float howManyRepairKitRemaining = 1f;
         String repairKitDescriptionActivation = "Only usable at below 70% hull level";
         Vector2f location = ship.getLocation();
@@ -75,8 +74,8 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
 
         final float percentageOfHPLeft = ship.getHitpoints() / ship.getMaxHitpoints();
 
-        // 30% Recovery just change the 30 below to anything, this is an example and I fucking hate math
-        // float redpotionDoYouUseitMotherfucker = Math.round(((float) 30 / 100 * ship.getMaxHitpoints()) + (ship.getHitpoints()));
+        // 30% recovery: change the 30 below to adjust
+        // float partialHeal = Math.round(((float) 30 / 100 * ship.getMaxHitpoints()) + (ship.getHitpoints()));
         // 100% Recovery
         float fullHeal = Math.round(ship.getMaxHitpoints());
 
@@ -84,7 +83,7 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
             if (percentageOfHPLeft < 0.7f) {
 
                 repairKitDescriptionActivation = "Press " + statusKeyOne + " + " + statusKeyTwo + " to use the repair kit";
-                canYouFuckingUseItNow = false;
+                canUseKit = false;
 
                 if (Keyboard.isKeyDown(Keyboard.getKeyIndex(KEYPRESS_KEY_ONE)) && Keyboard.isKeyDown(Keyboard.getKeyIndex(KEYPRESS_KEY_TWO)) || !player && percentageOfHPLeft < 0.25f) {
                     // Apply the repair kit
@@ -146,7 +145,7 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
                 ship.setJitterUnder(ship, new Color(13f/255f, 241f/255f, 112f/255f, (225f/255f)*((jitterTimer/jitterTimerDuration))), 3f, 5, 5.0f);
             }
 
-            canYouFuckingUseItNow = true;
+            canUseKit = true;
             repairKitDescriptionActivation = "The repair kit has been already used";
             // Deduct the number of use, in this case, since we only have one repair kit
             // Set it to zero!
@@ -161,7 +160,7 @@ public class armaa_repair_kit_subsystem extends BaseHullMod {
                     Global.getSettings().getSpriteName("tooltip", "uaf_lynx_emergency_repair_kit"),
                     "Emergency Repair Kit: " + Misc.getRoundedValue(howManyRepairKitRemaining) + " Remaining",
                     repairKitDescriptionActivation,
-                    canYouFuckingUseItNow
+                    canUseKit
             );
         }
     }

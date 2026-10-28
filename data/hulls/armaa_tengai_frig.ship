@@ -1,0 +1,153 @@
+{
+  "hullName": "Tengai",
+  "hullId": "armaa_tengai_frig",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/armaa/ships/tengai/armaa_tengai_hips.png",
+  "style": "LOW_TECH",
+  "height": 44,
+  "width": 42,
+  "center": [21, 22],
+  "collisionRadius": 48,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 47,
+  "viewOffset": 0,
+  "builtInMods": [
+    "cataphract2",
+    "strikeCraft",
+    "reduced_explosion",
+    "armoredweapons"
+  ],
+  "builtInWeapons": {
+    "A_GUN": "armaa_tengai_rightArm",
+    "B_TORSO": "armaa_tengai_torso",
+    "C_ARML": "armaa_tengai_leftArm",
+    "D_PAULDRONL": "armaa_tengai_leftPauldron",
+    "D_PAULDRONR": "armaa_tengai_rightPauldron",
+    "E_HEAD": "armaa_tengai_head"
+  },
+  "weaponSlots": [
+    {
+      "id": "A_GUN",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": -10,
+      "locations": [-2, -6]
+    },
+    {
+      "id": "B_TORSO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-1, -0]
+    },
+    {
+      "id": "C_ARML",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": 10,
+      "locations": [-2, 6]
+    },
+    {
+      "id": "TRUE_GUN",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 260,
+      "angle": -15,
+      "locations": [2.5, -6]
+    },
+    {
+      "id": "D_PAULDRONL",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [-3, 6]
+    },
+    {
+      "id": "D_PAULDRONR",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-3, -6]
+    },
+    {
+      "id": "E_HEAD",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-1, -0]
+    },
+    {
+      "id": "RACK_L",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-20, 11],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "RACK_R",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-20, -11],
+      "renderOrderMod": 200
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-19, 12.5],
+      "length": 18,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-19.5, 15],
+      "length": 12,
+      "width": 6.5,
+      "angle": 151.5,
+      "contrailSize": 6.5,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-19.5, 9],
+      "length": 12,
+      "width": 6.5,
+      "angle": -151.5,
+      "contrailSize": 6.5,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    9.5, 7.5,
+    0.5, 4,
+    -2.5, -1.5,
+    -6.5, -1.5,
+    -8.5, 5.5,
+    -18.5, 6.5,
+    -18.5, 17.5,
+    -8.5, 18.5,
+    -6.5, 25.5,
+    -2.5, 25.5,
+    0.5, 20,
+    9.5, 16.5
+  ]
+}

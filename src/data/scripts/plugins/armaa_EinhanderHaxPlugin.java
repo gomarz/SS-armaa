@@ -108,6 +108,9 @@ public class armaa_EinhanderHaxPlugin extends BaseEveryFrameCombatPlugin {
             } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inGravionBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
                 engine.addPlugin(new armaa_gasGiantBattlePlugin());
                 engine.getCustomData().put("armaa_atmoPlugin", "-");
+            } else if (engine.getContext().getOtherFleet() != null && engine.getContext().getOtherFleet().getMemoryWithoutUpdate().contains("$inSfoAmbushBattle") && engine.getCustomData().get("armaa_atmoPlugin") == null) {
+                engine.addPlugin(new armaa_sfoAmbushBattlePlugin());
+                engine.getCustomData().put("armaa_atmoPlugin", "-");
                 // im not going thru the effort of converting to magicbounties lol
             } else if (engine.getContext().getOtherFleet() != null && engine.getCustomData().get("armaa_fightingBounty") == null) {
                 Collection<String> tags = engine.getContext().getOtherFleet().getMemoryWithoutUpdate().getKeys();

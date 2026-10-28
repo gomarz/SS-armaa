@@ -77,6 +77,25 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
     private static final float SCATTER_MIN = 0.35f;
     private static final float SCATTER_MAX = 0.8f;
 
+    /**
+     * The pod is unarmed for its first seconds, so a raised shield does not
+     * detonate it - it just stops the pod dead. Instead it bounces off: it is
+     * thrown back along the shield normal at BOUNCE_RESTITUTION of its closing
+     * speed (never less than BOUNCE_MIN_SPEED), and the shield takes a little
+     * kinetic damage. Only the first MAX_DAMAGING_BOUNCES do damage, so a pod
+     * that keeps pushing against a shield is not a flux farm.
+     */
+    private static final float SHIELD_BOUNCE_DAMAGE = 40f;
+    private static final float BOUNCE_RESTITUTION = 0.6f;
+    private static final float BOUNCE_MIN_SPEED = 120f;
+    /** Seconds the pod coasts after a bounce before it steers again. */
+    private static final float BOUNCE_COOLDOWN = 0.6f;
+    private static final int MAX_DAMAGING_BOUNCES = 3;
+    /** Slack on the shield-contact test, on top of half the pod's collision radius. */
+    private static final float SHIELD_PAD = 6f;
+    /** Ships farther than their own collision radius plus this are not checked for contact. */
+    private static final float CONTACT_PREFILTER = 150f;
+
     private static final String MALF_KEY = "armaa_boardingPod_malf";
 
     private static final String REAPER_KEY = "armaa_boardingPod_reaper";
@@ -95,6 +114,9 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
 
     private boolean freeDeployed = false;
 
+    private float bounceCooldown = 0f;
+    private int bounces = 0;
+
     private final float scatterAngle = (float) (Math.random() * 360f);
     private final float scatterFrac
             = SCATTER_MIN + (float) Math.random() * (SCATTER_MAX - SCATTER_MIN);
@@ -104,6 +126,12 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
         this.engine = Global.getCombatEngine();
         this.tag = "[armaaPod-" + (podCounter++) + "]";
         this.TURN_RATE = missile.getTurnAcceleration();
+        // The projectile arms after a few seconds, and an armed missile detonates
+        // on whatever it touches - a hulk, a hull it should have latched onto. The
+        // pod never explodes on contact: it pushes against hulks, bounces off
+        // shields and latches onto boardable hulls, so it stays unarmed for its
+        // whole flight.
+        missile.setArmingTime(missile.getMaxFlightTime() + 10f);
 
         // Prefer the launching ship's deliberate target if it's boardable.
         if (launchingShip != null && launchingShip.getShipTarget() != null
@@ -129,10 +157,101 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
             }
             return;
         }
+        if (bounceCooldown > 0f) {
+            bounceCooldown -= amount;
+        }
+        if (checkContacts()) {
+            return;   // attached
+        }
         advanceSeeking(amount);
     }
 
+    /**
+     * Whatever the pod touches decides what happens, not just its chosen
+     * target: an unshielded hostile hull it can board gets boarded, and a
+     * raised shield bounces it. Runs whether or not the pod has a target.
+     *
+     * @return true if the pod attached this frame
+     */
+    private boolean checkContacts() {
+        for (ShipAPI ship : engine.getShips()) {
+            if (ship.isPhased() || !isValidTarget(ship)) {
+                continue;
+            }
+            float d = MathUtils.getDistance(missile, ship);
+            if (d > ship.getCollisionRadius() + CONTACT_PREFILTER) {
+                continue;
+            }
+
+            ShieldAPI shield = ship.getShield();
+            if (shield != null && shield.isOn() && shield.isWithinArc(missile.getLocation())
+                    && MathUtils.getDistance(missile.getLocation(), shield.getLocation())
+                    <= shield.getRadius() + missile.getCollisionRadius() * 0.5f + SHIELD_PAD) {
+                if (bounceCooldown <= 0f) {
+                    bounceOffShield(ship, shield);
+                }
+                continue;
+            }
+
+            Vector2f nearest = CollisionUtils.getNearestPointOnBounds(missile.getLocation(), ship);
+            if (MathUtils.getDistance(missile.getLocation(), nearest)
+                    <= missile.getCollisionRadius() + ATTACH_RANGE) {
+                target = ship;
+                attach();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void bounceOffShield(ShipAPI ship, ShieldAPI shield) {
+        Vector2f center = shield.getLocation();
+        Vector2f normal = Vector2f.sub(missile.getLocation(), center, null);
+        if (normal.lengthSquared() < 0.01f) {
+            normal = MathUtils.getPointOnCircumference(null, 1f, missile.getFacing() + 180f);
+        }
+        normal.normalise();
+
+        Vector2f rel = Vector2f.sub(missile.getVelocity(), ship.getVelocity(), null);
+        float into = Vector2f.dot(rel, normal);   // negative while closing on the shield
+        if (into >= 0f) {
+            return;   // already moving away
+        }
+
+        float outSpeed = Math.max(-into * BOUNCE_RESTITUTION, BOUNCE_MIN_SPEED);
+        Vector2f tangent = new Vector2f(normal);
+        tangent.scale(into);
+        Vector2f.sub(rel, tangent, tangent);          // rel minus its normal component
+        Vector2f out = new Vector2f(normal);
+        out.scale(outSpeed);
+        Vector2f newVel = Vector2f.add(tangent, out, null);
+        Vector2f.add(newVel, ship.getVelocity(), newVel);
+        missile.getVelocity().set(newVel);
+
+        // Sit just outside the shield so the next frame does not count as a second hit.
+        float minDist = shield.getRadius() + missile.getCollisionRadius() * 0.5f + SHIELD_PAD + 2f;
+        Vector2f outside = new Vector2f(normal);
+        outside.scale(minDist);
+        Vector2f.add(center, outside, outside);
+        missile.getLocation().set(outside);
+
+        Vector2f contact = new Vector2f(normal);
+        contact.scale(shield.getRadius());
+        Vector2f.add(center, contact, contact);
+
+        if (bounces < MAX_DAMAGING_BOUNCES) {
+            engine.applyDamage(ship, contact, SHIELD_BOUNCE_DAMAGE, DamageType.KINETIC, 0f,
+                    false, false, missile.getSource(), true);
+        }
+        bounces++;
+        bounceCooldown = BOUNCE_COOLDOWN;
+        engine.spawnExplosion(contact, ship.getVelocity(), new Color(140, 200, 255, 200), 22f, 0.25f);
+    }
+
     private void advanceSeeking(float amount) {
+        if (bounceCooldown > 0f) {
+            return;   // coasting off a shield
+        }
         if (!isValidTarget(target)) {
             target = acquireTarget();
             if (target == null) {
@@ -156,13 +275,6 @@ public class armaa_armorPodAI implements MissileAIPlugin, GuidedMissileAI {
                 + Math.max(-maxTurn, Math.min(maxTurn, delta)));
         missile.giveCommand(ShipCommand.ACCELERATE);
 
-        if (MathUtils.getDistance(missile, target) < missile.getCollisionRadius() + ATTACH_RANGE) {
-            Vector2f nearest = CollisionUtils.getNearestPointOnBounds(missile.getLocation(), target);
-            if (MathUtils.getDistance(missile.getLocation(), nearest)
-                    <= missile.getCollisionRadius() + ATTACH_RANGE) {
-                attach();
-            }
-        }
     }
 
     private void attach() {

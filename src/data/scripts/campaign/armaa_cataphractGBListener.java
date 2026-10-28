@@ -25,7 +25,7 @@ public class armaa_cataphractGBListener extends BaseCampaignEventListenerAndScri
         }
 
         // Reapply from current fleet
-        if (Global.getSector().getPlayerFleet().getCargo().getMarines() < 0) {
+        if (Global.getSector().getPlayerFleet().getCargo().getMarines() < 1) {
             return;
         }
         for (FleetMemberAPI f : Global.getSector().getPlayerFleet()
