@@ -25,6 +25,7 @@ No Venting,novent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_noVent,Disables a
 Leg Engines,leg_engine,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_legEngineCheck,Prevents engines from being visible while legs are attached.,,,graphics/hullmods/reduced_explosion.png
 Core Block System,armaa_legmodule,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_DharmaModule,"This vehicle is composed of multiple modular components that enhance its combat performance. Destruction of these modules will result in an overall loss in speed in manuverability, as well as these extra systems granted.",,,graphics/hullmods/vast_bulk.png
 Karma Counter,armaa_karma,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
+Render Above Parent,armaa_renderAboveParent,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_renderAboveParent,Draws this module above its parent's weapons.,,,graphics/hullmods/vast_bulk.png
 Karma Counter [C],armaa_karmaC,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.armaa_KarmaMod_Command,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Greater Reduced Explosion,explosionredux,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.greaterReducedExplosion,Counts Karma for ship system,,,graphics/hullmods/vast_bulk.png
 Modular Mobile Armor,armaa_ma,,,Arma Armatura,,,,,TRUE,,0,0,0,0,data.hullmods.armaa_ma,"This vessel is modular in nature; the core unit houses the pilot and support staff and is equipped with additional modules that grant bonuses during battle.

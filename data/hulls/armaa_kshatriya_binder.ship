@@ -1,7 +1,7 @@
 {
   "hullName": "Kshatriya Binder",
   "hullId": "armaa_kshatriya_binder",
-  "hullSize": "FIGHTER",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/armaa/ships/kshatriya/armaa_kshatriya_binder.png",
   "style": "MIDLINE",
   "height": 154,
@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "fluxshunt",
-    "no_weapon_flux"
+    "no_weapon_flux",
+    "armaa_renderAboveParent"
   ],
   "builtInWings": [
     "armaa_bit_kshatriya_wing"

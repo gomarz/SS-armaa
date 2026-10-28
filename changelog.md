@@ -15,6 +15,7 @@ V3.3.8
 		- Returning fighters go straight to a carrier instead of sometimes landing on a ship with no "real" fighter bays (I.E., WINGCOM frigates)
 		- Fighters no longer restart their landing approach every second
 		- Fixed fighter landing when several OVERLORD ships are deployed due to a shared tracker in hullmod
+	- Rajanya: fixed a crash when auto-fitting it, caused by its Binder modules being given Flux Distributor (mostly with mods that add flat ordnance points)
 
 - Strikecraft (requires PatchLib)
 	- AI strikecraft no longer hold fire when allies are in the way since they inherently cannot cause FF in most cases. The red friendly fire aim warning no longer shows for them either. The same applies to allies when firing in the proximity of allied AI strikecraft
