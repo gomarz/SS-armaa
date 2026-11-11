@@ -42,7 +42,7 @@ public class armaa_SilverSwordAIValkazard implements ShipSystemAIScript {
     private float reEvalTimer = 0f;
     private boolean forceTimidAI = false;
     private boolean forceAggressiveAI = true;
-    private final ShipAIConfig savedConfig = new ShipAIConfig();
+    private final ShipAIConfig savedConfig = new ShipAIConfig(null);
 
     @Override
     public void advance(float amount, Vector2f missileDangerDir, Vector2f collisionDangerDir, ShipAPI target) {

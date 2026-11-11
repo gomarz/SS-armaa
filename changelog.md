@@ -1,3 +1,9 @@
+V3.3.9
+------
+
+- Fixes
+	- Fixed a crash in strikecraft, drone and Silver Sword AI on Starsector 0.98.5a (ShipAIConfig constructor change). This version requires 0.98.5a or newer.
+
 V3.3.8
 ------
 

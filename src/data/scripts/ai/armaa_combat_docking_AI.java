@@ -25,7 +25,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 public class armaa_combat_docking_AI extends BaseShipAI {
 
     private final ShipwideAIFlags flags = new ShipwideAIFlags();
-    private final ShipAIConfig config = new ShipAIConfig();
+    private final ShipAIConfig config = new ShipAIConfig(null);
 
     public ShipAPI carrier;
     public Vector2f landingLoc;

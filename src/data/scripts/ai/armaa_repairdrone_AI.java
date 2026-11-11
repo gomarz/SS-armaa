@@ -30,7 +30,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 public class armaa_repairdrone_AI extends BaseShipAI {
 
     private final ShipwideAIFlags flags = new ShipwideAIFlags();
-    private final ShipAIConfig config = new ShipAIConfig();
+    private final ShipAIConfig config = new ShipAIConfig(null);
     private ShipAPI carrier;
     ShipAPI target;
     Vector2f targetOffset;
