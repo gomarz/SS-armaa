@@ -118,7 +118,7 @@ public class armaa_pilotTracker extends BaseEveryFrameCombatPlugin
 						{
 							if(Global.getCombatEngine().getCustomData().containsKey("armaa_alreadyUsedLines"))
 								alreadyUsed = (HashSet)Global.getCombatEngine().getCustomData().get("armaa_alreadyUsedLines");
-							String squadName = (String)Global.getSector().getPersistentData().get("armaa_wingCommander_squadronName_"+captain.getId());
+							String squadName = getSquadName();
 							Random rand = new Random();
 							int size = rand.nextInt(introChatter.size());
 							String chatter = introChatter.get(size);
@@ -180,7 +180,7 @@ public class armaa_pilotTracker extends BaseEveryFrameCombatPlugin
 					Random rand = new Random();
 					int size = rand.nextInt(combatChatter.size());
 					String chatter = combatChatter.get(size);
-					String squadName = (String)Global.getSector().getPersistentData().get("armaa_wingCommander_squadronName_"+captain.getId());
+					String squadName = getSquadName();
 					
 					if(chatter.contains("$"))
 					{
@@ -199,7 +199,8 @@ public class armaa_pilotTracker extends BaseEveryFrameCombatPlugin
 
 			else if(Math.random() <= .15f/prob && !hasSquadChattered)
 			{
-				int count = (Integer)Global.getSector().getPersistentData().get("armaa_wingCommander_squadSize_"+captain.getId());
+				Object sizeObj = Global.getSector().getPersistentData().get("armaa_wingCommander_squadSize_" + captain.getId());
+				int count = sizeObj instanceof Integer ? (Integer) sizeObj : 0;
 				for(int j = 0; j < count; j++)
 				{
 					boolean wasAssigned = false;
@@ -217,7 +218,7 @@ public class armaa_pilotTracker extends BaseEveryFrameCombatPlugin
 						if(pilot == fighter.getCaptain())
 							continue;
 						String otherguy = (String)Global.getSector().getPersistentData().get("armaa_wingCommander_wingman_"+j+"_"+"callsign_"+captain.getId());
-						String squadName = (String)Global.getSector().getPersistentData().get("armaa_wingCommander_squadronName_"+captain.getId());
+						String squadName = getSquadName();
 						
 						Random rand = new Random();
 						int size = rand.nextInt(squadChatter_s.size());
@@ -277,6 +278,13 @@ public class armaa_pilotTracker extends BaseEveryFrameCombatPlugin
 		}
 	}
 	
+	// Squadron names only exist for wings that went through createSquad; a null name crashes addMessage.
+	private String getSquadName()
+	{
+		Object name = Global.getSector().getPersistentData().get("armaa_wingCommander_squadronName_" + captain.getId());
+		return name instanceof String ? (String) name : "Wing";
+	}
+
 	private String processSpecialStrings(ShipAPI fighter, ShipAPI ship,String chatter)
 	{
 		int side = fighter.getOwner() == 0 ? 1 : 0;
@@ -333,7 +341,7 @@ public class armaa_pilotTracker extends BaseEveryFrameCombatPlugin
 		
 		if(chatter2.contains("$squadronname"))
 		{
-			String squadName = (String)Global.getSector().getPersistentData().get("armaa_wingCommander_squadronName_"+captain.getId());
+			String squadName = getSquadName();
 			chatter2 = chatter.replace("$squadronname",squadName);
 			chatter = chatter2;
 		}
