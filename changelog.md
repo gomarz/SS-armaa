@@ -2,7 +2,8 @@ V3.3.9
 ------
 
 - Fixes
-	- Fixed a crash in strikecraft, drone and Silver Sword AI on Starsector 0.98.5a (ShipAIConfig constructor change). This version requires 0.98.5a or newer.
+	- Compatibility: fixed a crash in the strikecraft, repair drone and Silver Sword AIs on Starsector 0.98.5a. This version requires 0.98.5a or newer
+	- Fixed a crash in the wing commander pilot tracker when a wing had no squadron name
 
 V3.3.8
 ------
