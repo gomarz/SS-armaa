@@ -8,7 +8,7 @@
 		"minor":3,
 		"patch":9,
 	},
-	"starsectorVersion":"0.98",
+	"starsectorVersion":"0.98.5a-RC1",
 	"directDownloadURL":"https://github.com/gomarz/SS-armaa/releases/download/v3.3.9/armaa-3.3.9.zip",
 	"changelogURL":"https://raw.githubusercontent.com/gomarz/ss-armaa/master/changelog.md"
 }
