@@ -21,6 +21,7 @@ import com.fs.starfarer.api.impl.combat.dweller.WarpingSpriteRendererUtilV2;
 import data.campaign.rulecmd.armaa_jeniusCityBattle;
 import data.scripts.missions.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
+import data.scripts.util.armaa_stuckBattleWatchdog;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL14;
@@ -197,6 +198,7 @@ public class armaa_cityBattlePlugin extends BaseEveryFrameCombatPlugin {
             f.setAlly(true);
             engine.getFleetManager(0).setSuppressDeploymentMessages(false);
             reinforcementsTriggered = true;
+            engine.addPlugin(new armaa_stuckBattleWatchdog("city battle", 15f, 60f, () -> !wave2Triggered, true));
         }
 
         if (!engine.isPaused()) {
