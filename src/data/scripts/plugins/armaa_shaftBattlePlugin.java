@@ -21,6 +21,7 @@ import data.scripts.missions.armaa_WarningMessage;
 import data.scripts.missions.armaa_rajanyaBossPlugin;
 import data.scripts.missions.armaa_titleSplash;
 import data.scripts.util.armaa_utils;
+import data.scripts.util.armaa_stuckBattleWatchdog;
 import org.lazywizard.lazylib.MathUtils;
 
 public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
@@ -213,6 +214,7 @@ public class armaa_shaftBattlePlugin extends BaseEveryFrameCombatPlugin {
         if (!startedMusic) {
             startedMusic = true;
             engine.setDoNotEndCombat(true);
+            engine.addPlugin(new armaa_stuckBattleWatchdog("shaft battle", 15f, 120f, () -> !reinforcementsTriggered, false));
             Global.getSoundPlayer().playCustomMusic(0, 0, "music_armaa_mission_descent", true);
             particleRenderer = new armaa_ShaftDescentRenderer();
             Global.getCombatEngine().addLayeredRenderingPlugin(particleRenderer);

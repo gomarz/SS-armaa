@@ -1,3 +1,12 @@
+V3.3.9
+------
+
+- NOT COMPATIBLE WITH STARSECTOR VERSIONS EARLIER THAN 0.98.5a. REQUIRES 0.98.5a OR NEWER
+
+- Fixes
+	- Compatibility: fixed a crash in the strikecraft, repair drone and Silver Sword AIs on Starsector 0.98.5a
+	- Fixed a crash in the wing commander pilot tracker when a wing had no squadron name
+
 V3.3.8
 ------
 
