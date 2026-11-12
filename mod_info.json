@@ -4,7 +4,7 @@
 	"author":"shoi",
 	"version":"3.3.9",
 	"description":"Mechs n Fighters. Requires LazyLib + MagicLib. PatchLib is optional and improves strikecraft AI.",
-	"gameVersion":"0.98a-RC6",
+	"gameVersion":"0.98.5a-RC1",
 	"jars":["jars/armaa.jar"],
     "dependencies": [
         {
